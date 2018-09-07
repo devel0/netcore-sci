@@ -15,15 +15,24 @@ browse [myget istructions](https://www.myget.org/feed/devel0/package/nuget/netco
 ## how this project was built
 
 ```sh
-mkdir -p netcore-sci/{src,test}
+mkdir netcore-sci
 cd netcore-sci
+
 dotnet new sln
-cd src
-dotnet new classlib
-cd ../test
-dotnet new xunit
-dotnet add reference ../src/src.csproj
-dotnet sln netcore-sci.sln add src/src.csproj
+dotnet new classlib -n netcore-sci
+
+cd netcore-sci
+dotnet add package netcore-util --version 1.0.0-CI00035 --source https://www.myget.org/F/devel0/api/v3/index.json
+dotnet add package netcore-psql-util --version 1.0.0-CI00003 --source https://www.myget.org/F/devel0/api/v3/index.json
+dotnet add package netDXF.Standard --version 2.1.1
+cd ..
+
+dotnet new xunit -n test
+cd test
+dotnet add reference ../netcore-sci/netcore-sci.csproj
+cd ..
+
+dotnet sln netcore-sci.sln add netcore-sci/netcore-sci.csproj
 dotnet sln netcore-sci.sln add test/test.csproj 
 dotnet restore
 dotnet build
