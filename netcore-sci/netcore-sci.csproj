@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>            
+    <PackageReference Include="netcore-util" Version="1.0.0-CI00037" />
+    <PackageReference Include="netDXF.Standard" Version="2.1.1" />
+    <PackageReference Include="netcore-psql-util" Version="1.0.0-CI00006" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\thirdy-clipper\thirdy-clipper.csproj" />
+    <ProjectReference Include="..\thirdy-quaternion\thirdy-quaternion.csproj" />
+  </ItemGroup>
+
+</Project>

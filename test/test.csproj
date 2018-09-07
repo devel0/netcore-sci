@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\src.csproj" />
+    <ProjectReference Include="..\netcore-sci\netcore-sci.csproj" />
   </ItemGroup>
 
 </Project>
