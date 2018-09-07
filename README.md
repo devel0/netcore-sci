@@ -22,7 +22,7 @@ dotnet new sln
 dotnet new classlib -n netcore-sci
 
 cd netcore-sci
-dotnet add package netcore-util --version 1.0.0-CI00035 --source https://www.myget.org/F/devel0/api/v3/index.json
+dotnet add package netcore-util --version 1.0.0-CI00039 --source https://www.myget.org/F/devel0/api/v3/index.json
 dotnet add package netcore-psql-util --version 1.0.0-CI00003 --source https://www.myget.org/F/devel0/api/v3/index.json
 dotnet add package netDXF.Standard --version 2.1.1
 cd ..
