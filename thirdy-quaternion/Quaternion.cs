@@ -76,7 +76,7 @@ namespace YLScsDrawing.Drawing3d
 
         //                  -1
         // V'=q*V*q     ,
-        public void Rotate(Point3d pt)
+        public Point3d Rotate(Point3d pt)
         {
             this.Normalise();
             Quaternion q1 = this.Copy();
@@ -87,6 +87,8 @@ namespace YLScsDrawing.Drawing3d
             pt.X = qNode.X;
             pt.Y = qNode.Y;
             pt.Z = qNode.Z;
+
+            return pt;
         }
 
         public void Rotate(Point3d[] nodes)
