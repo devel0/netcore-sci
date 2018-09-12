@@ -17,4 +17,8 @@
     <ProjectReference Include="..\netcore-sci\netcore-sci.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="$(ProjectDir)data\**"  CopyToOutputDirectory="PreserveNewest"  />
+  </ItemGroup>
+
 </Project>

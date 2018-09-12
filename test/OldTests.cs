@@ -13,7 +13,7 @@ namespace SearchAThing.Sci.Tests
     public class OldTests
     {
 
-        // tests from https://github.com/devel0/SearchAThing.UnitTest
+        // tests from https://github.com/SearchAThing-old1/SearchAThing.UnitTest
 
         IModel model = new SampleModel();
 
