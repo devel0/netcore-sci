@@ -1063,7 +1063,7 @@ namespace SearchAThing
 
             while (segsLeft.Count > 0)
             {
-                Console.WriteLine($"segsLeft: {segsLeft.Count} polys:{polys.Count}");
+                //Console.WriteLine($"segsLeft: {segsLeft.Count} polys:{polys.Count}");
 
                 var seg = segsLeft.First();
                 segsLeft.Remove(seg);

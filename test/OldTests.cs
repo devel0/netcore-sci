@@ -234,9 +234,9 @@ namespace SearchAThing.Sci.Tests
                     );
 
                 // tol is 1e-3
-                Assert.True(lst.Contains(new Vector3D(.004, .45, 30), cmp));
-                Assert.True(lst.Contains(new Vector3D(.0049, .45, 30), cmp));
-                Assert.False(lst.Contains(new Vector3D(.0051, .45, 30), cmp));
+                Assert.Contains(new Vector3D(.004, .45, 30), lst, cmp);
+                Assert.Contains(new Vector3D(.0049, .45, 30), lst, cmp);
+                Assert.DoesNotContain(new Vector3D(.0051, .45, 30), lst, cmp);
             }
 
             {
@@ -472,8 +472,8 @@ namespace SearchAThing.Sci.Tests
 
                 Assert.True(circles.Count() == 2);
                 Assert.True(circles.All(w => w.Radius.EqualsTol(tol, 9.81913052)));
-                Assert.True(circles.Any(w => w.Center.EqualsTol(tol, 12.18378030, 13.65597387)));
-                Assert.True(circles.Any(w => w.Center.EqualsTol(tol, -6.47673267, 10.41894611)));
+                Assert.Contains(circles, (w) => w.Center.EqualsTol(tol, 12.18378030, 13.65597387));
+                Assert.Contains(circles, (w) => w.Center.EqualsTol(tol, -6.47673267, 10.41894611));
             }
         }
 
