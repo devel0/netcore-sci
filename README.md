@@ -18,6 +18,10 @@
 
 browse [myget istructions](https://www.myget.org/feed/devel0/package/nuget/netcore-sci)
 
+## usage
+
+check out [unit tests](test)
+
 ## debugging unit tests
 
 - from vscode just run debug test from code lens balloon
