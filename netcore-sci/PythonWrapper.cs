@@ -39,7 +39,7 @@ namespace SearchAThing
 
         object wrapper_initialized = new object();
         Action<string> debug = null;
-        
+
         Process process = null;
         StringBuilder sberr = new StringBuilder();
         StringBuilder sbout = new StringBuilder();
@@ -54,11 +54,8 @@ matplotlib.use('Agg')
 
         Thread th_pipe = null;
 
-        /// <summary>
-        /// custom_python_args="-i" (unix)
-        /// custom_python_args="-i -q" (windows)
-        /// some windows python requires custom_python_args="-i" because -q not supported
-        /// </summary>        
+        bool startup_error = false;
+
         public PythonPipe(string initial_imports = "", Action<string> _debug = null, string tempFolder = null, bool delete_tmp_files = true,
             string custom_python_executable = null, string custom_python_args = null)
         {
@@ -75,10 +72,7 @@ matplotlib.use('Agg')
 
                     process = new Process();
                     process.StartInfo.FileName = custom_python_executable == null ? PythonExePathfilename : custom_python_executable;
-                    if (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.MacOSX)
-                        process.StartInfo.Arguments = (custom_python_args == null) ? "-i" : custom_python_args;
-                    else
-                        process.StartInfo.Arguments = (custom_python_args == null) ? "-i -q" : custom_python_args;
+                    process.StartInfo.Arguments = (custom_python_args == null) ? "-i" : custom_python_args;
                     process.StartInfo.UseShellExecute = false;
                     process.StartInfo.ErrorDialog = false;
                     process.StartInfo.CreateNoWindow = true;
@@ -90,6 +84,12 @@ matplotlib.use('Agg')
                     process.ErrorDataReceived += Process_ErrorDataReceived;
 
                     var started = process.Start();
+
+                    if (process.HasExited)
+                    {
+                        startup_error = true;
+                        return;
+                    }
 
                     if (started)
                     {
@@ -147,8 +147,8 @@ matplotlib.use('Agg')
         {
             if (e.Data == null) return;
             if (finished) return;
-            
-            debug?.Invoke($"output received [{e.Data}]");            
+
+            debug?.Invoke($"output received [{e.Data}]");
 
             if (!initialized)
                 initialized = true;
@@ -174,7 +174,7 @@ matplotlib.use('Agg')
         {
             if (e.Data == null) return;
             if (finished) return;
-            
+
             if (e.Data.StartsWith("Python ") || e.Data.StartsWith("[GCC ") || e.Data.StartsWith("Type \"help\"")) return;
 
             debug?.Invoke($"***error received [{e.Data}]");
@@ -235,7 +235,11 @@ matplotlib.use('Agg')
 
             string res = "";
 
-            while (!initialized) Thread.Sleep(25);
+            while (!initialized) 
+            {
+                if (startup_error) throw new Exception($"startup error [{sberr.ToString()}]");
+                Thread.Sleep(25);
+            }
 
             lock (wrapper_initialized)
             {
