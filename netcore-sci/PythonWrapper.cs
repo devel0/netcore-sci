@@ -52,19 +52,30 @@ import matplotlib
 matplotlib.use('Agg')
 ";
 
-        Thread th_pipe = null;
-
+        
         bool startup_error = false;
+        string custom_python_executable =null;
+        string custom_python_args = null;
+        string initial_imports = "";
 
-        public PythonPipe(string initial_imports = "", Action<string> _debug = null, string tempFolder = null, bool delete_tmp_files = true,
-            string custom_python_executable = null, string custom_python_args = null)
+        public PythonPipe(string _initial_imports = "", Action<string> _debug = null, string tempFolder = null, bool delete_tmp_files = true,
+            string _custom_python_executable = null, string _custom_python_args = null)
         {
+            custom_python_executable = _custom_python_executable;
+            custom_python_args = _custom_python_args;
+            initial_imports = _initial_imports;
+
             DeleteTmpFiles = delete_tmp_files;
             TempFolder = tempFolder;
             debug = _debug;
 
-            th_pipe = new Thread(() =>
-            {
+            ThreadPool.QueueUserWorkItem(new WaitCallback(ThFunction), cts.Token);            
+        }
+
+        void ThFunction(object obj)
+        {
+            var token = (CancellationToken)obj;
+
                 debug?.Invoke("initializing python");
                 lock (wrapper_initialized)
                 {
@@ -119,7 +130,7 @@ matplotlib.use('Agg')
 
                             process.StandardInput.Flush();
 
-                            while (!initialized)
+                            while (!initialized && !token.IsCancellationRequested)
                             {
                                 Thread.Sleep(250);
                             }
@@ -136,9 +147,7 @@ matplotlib.use('Agg')
                     }
                 }
                 process.WaitForExit();
-            });
-            th_pipe.Start();
-        }
+            }
 
         bool initialized = false;
         string guid = null;
@@ -281,18 +290,19 @@ matplotlib.use('Agg')
             return new StringWrapper() { str = res };
         }
 
+        CancellationTokenSource cts = new CancellationTokenSource();
+
         public void Dispose()
         {
-            if (th_pipe != null)
-            {
+            cts.Cancel();
+            /*
                 debug?.Invoke($"kill python");
                 process.Kill();
                 if (Environment.OSVersion.Platform != PlatformID.Unix && Environment.OSVersion.Platform != PlatformID.MacOSX)
                 {
-                    th_pipe.Abort();
-                }
-                th_pipe = null;
-            }
+                    
+                }*/
+            
         }
     }
     #endregion
