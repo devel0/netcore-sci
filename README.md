@@ -22,6 +22,8 @@ browse [myget istructions](https://www.myget.org/feed/devel0/package/nuget/netco
 
 check out [unit tests](test)
 
+add `nuget.config` where your solution or csproj that refer this library in order to allow other to restore correcly myget dependencies.
+
 ## debugging unit tests
 
 - from vscode just run debug test from code lens balloon
