@@ -170,7 +170,7 @@ namespace SearchAThing
                 yield return MathHelper.Transform(
                     new Vector3(v.Position.X, v.Position.Y, lwp.Elevation), lwp.Normal, CoordinateSystem.Object, CoordinateSystem.World);
             }
-        }       
+        }
 
         /// <summary>
         /// given points a,b,c it will return a,b,c,a ( first is repeated at end )
@@ -407,61 +407,120 @@ namespace SearchAThing
             return eo;
         }
 
-   /*     /// <summary>
-        /// retrieve rainbow rgb color from a double value between [0,1]
-        /// </summary>        
-        public static IRgb FromRainbow(this double factor)
-        {*/
-            /*
-             * test : http://serennu.com/colour/hsltorgb.php
-             * RGB: 218 165 32
-             * HSL: 43° 74% 49%
-             * Hex: #DAA520
-            */
+        /*     /// <summary>
+             /// retrieve rainbow rgb color from a double value between [0,1]
+             /// </summary>        
+             public static IRgb FromRainbow(this double factor)
+             {*/
+        /*
+         * test : http://serennu.com/colour/hsltorgb.php
+         * RGB: 218 165 32
+         * HSL: 43° 74% 49%
+         * Hex: #DAA520
+        */
 
-            /*
-             * RAINBOW COLORS
-             * 
-             * red hsl(0,100%,50%)
-             * orange hsl(30,100%,50%)
-             * yellow hsl(60,100%,50%)
-             * green hsl(120,100%,50%)
-             * cyan hsl(180,100%,50%)
-             * blue hsl(240,100%,50%)
-             * purple hsl(270,100%,50%)
-             * magenta hsl(300,100%,50%)
-             */
-             /*
-            var hsl = new Hsl();
+        /*
+         * RAINBOW COLORS
+         * 
+         * red hsl(0,100%,50%)
+         * orange hsl(30,100%,50%)
+         * yellow hsl(60,100%,50%)
+         * green hsl(120,100%,50%)
+         * cyan hsl(180,100%,50%)
+         * blue hsl(240,100%,50%)
+         * purple hsl(270,100%,50%)
+         * magenta hsl(300,100%,50%)
+         */
+        /*
+       var hsl = new Hsl();
 
-            // rainbow hue on range [0,240]
-            hsl.H = (1.0 - factor) * 240;
+       // rainbow hue on range [0,240]
+       hsl.H = (1.0 - factor) * 240;
 
-            // 100% saturation
-            hsl.S = 100;
+       // 100% saturation
+       hsl.S = 100;
 
-            // 50% luminance
-            hsl.L = 50;
+       // 50% luminance
+       hsl.L = 50;
 
-            return hsl.ToRgb();
-        }        */
+       return hsl.ToRgb();
+   }        */
 
-/*
-        /// <summary>
-        /// rgb contains r,g,b field each with 0-255 range integer value
-        /// </summary>        
-        public static AciColor AciColor(this IRgb rgb)
-        {
-            var r = (int)rgb.R;
-            var g = (int)rgb.G;
-            var b = (int)rgb.B;
+        /*
+                /// <summary>
+                /// rgb contains r,g,b field each with 0-255 range integer value
+                /// </summary>        
+                public static AciColor AciColor(this IRgb rgb)
+                {
+                    var r = (int)rgb.R;
+                    var g = (int)rgb.G;
+                    var b = (int)rgb.B;
 
-            return netDxf.AciColor.FromTrueColor((r << 16) + (g << 8) + b);
-        }*/
+                    return netDxf.AciColor.FromTrueColor((r << 16) + (g << 8) + b);
+                }*/
 
         public static UCS ToDxfUCS(this CoordinateSystem3D cs, string name)
         {
             return new UCS(name, cs.Origin, cs.BaseX, cs.BaseY);
+        }
+
+        public static IEnumerable<EntityObject> DrawTimeline(this DxfObject dxf, List<(DateTime from, DateTime to)> timeline,
+        double textHeight = 2, double circleRadius = 1.5, double maxWidth = 180, double stopDays = 60, Func<DateTime, string> dtStr = null)
+        {
+            var q = timeline.OrderBy(w => w.from).ToList();
+
+            var days = (timeline.Max(w => w.to) - timeline.Min(w => w.from)).TotalDays;
+
+            var dayWidth = maxWidth / days;
+
+            Func<double, double> dayGetX = (day) =>
+            {
+                return day * dayWidth;
+            };
+
+            if (dtStr == null) dtStr = (dt) => dt.Year.ToString();
+
+            for (int i = 0; i < q.Count; ++i)
+            {
+                var prevWasStop = i == 0 || (q[i].from - q[i - 1].to).TotalDays > stopDays;
+
+                var dayFromX = dayGetX((q[i].from - q[0].from).TotalDays);
+                var dayToX = dayGetX((q[i].to - q[0].from).TotalDays);
+
+                if (prevWasStop)
+                {
+                    // circle start
+                    var circle = new Circle(new Vector3D(dayFromX, 0, 0), circleRadius);
+                    yield return circle;
+
+                    // prev vertical stop
+                    if (i > 0)
+                    {
+                        var prevDayToX = dayGetX((q[i - 1].to - q[0].from).TotalDays);
+                        yield return new Line(new Vector3D(prevDayToX, circleRadius, 0), new Vector3D(prevDayToX, -circleRadius, 0));
+                    }
+                }
+                else
+                {
+                    // vertical start
+                    yield return new Line(new Vector3D(dayFromX, circleRadius, 0), new Vector3D(dayFromX, -circleRadius, 0));
+                }
+
+                // horizontal line
+                yield return new Line(new Vector3D(dayFromX + (prevWasStop ? circleRadius : 0), 0, 0), new Vector3D(dayToX, 0, 0));
+
+                // year text
+                var txt = new Text(dtStr(q[i].from), new Vector3D(dayFromX, circleRadius + textHeight, 0), textHeight);
+                txt.Alignment = TextAlignment.BottomCenter;
+                yield return txt;
+            }
+
+            /*
+            var ents = DxfKit.Cuboid(center, size).ToList();
+
+            dxfObj.AddEntities(ents, layer);
+
+            return ents;*/
         }
 
     }

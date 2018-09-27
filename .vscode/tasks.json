@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/test/test.csproj"
+                "${workspaceFolder}/netcore-sci.sln"
             ],
             "problemMatcher": "$msCompile"
         }
