@@ -4,6 +4,7 @@ using SearchAThing.Sci;
 using SearchAThing;
 using System.Linq;
 using netDxf;
+using System.IO;
 
 namespace examples
 {
@@ -30,7 +31,7 @@ namespace examples
             dxf.AddEntities(ents);
 
             dxf.Viewport.ShowGrid = false;
-            dxf.Save("timeline.dxf", isBinary: true);
+            dxf.Save(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "timeline.dxf"), isBinary: true);
         }
     }
 }
