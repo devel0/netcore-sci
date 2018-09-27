@@ -510,17 +510,24 @@ namespace SearchAThing
                 yield return new Line(new Vector3D(dayFromX + (prevWasStop ? circleRadius : 0), 0, 0), new Vector3D(dayToX, 0, 0));
 
                 // year text
-                var txt = new Text(dtStr(q[i].from), new Vector3D(dayFromX, circleRadius + textHeight, 0), textHeight);
-                txt.Alignment = TextAlignment.BottomCenter;
-                yield return txt;
+                {
+                    var yearFrom = new DateTime(q[i].from.Year, 1, 1);
+                    var yearFromX = dayGetX((yearFrom - q[0].from).TotalDays);
+                    var txt = new Text(dtStr(yearFrom), new Vector3D(yearFromX, circleRadius + textHeight, 0), textHeight);
+                    txt.Alignment = TextAlignment.BottomCenter;
+                    yield return txt;
+                }
+
+                if (i == q.Count - 1)
+                {
+                    var yearTo = new DateTime(q[i].to.Year, 1, 1);
+                    var yearToX = dayGetX((yearTo - q[0].from).TotalDays);
+                    var txt = new Text(dtStr(yearTo), new Vector3D(yearToX, circleRadius + textHeight, 0), textHeight);
+                    txt.Alignment = TextAlignment.BottomCenter;
+                    yield return txt;
+                }
             }
 
-            /*
-            var ents = DxfKit.Cuboid(center, size).ToList();
-
-            dxfObj.AddEntities(ents, layer);
-
-            return ents;*/
         }
 
     }
