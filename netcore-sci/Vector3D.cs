@@ -459,7 +459,28 @@ namespace SearchAThing
                 return new Vector3D(X * xs, Y * ys, Z * zs);
             }
 
+            /// <summary>
+            /// convert each vector component value from to measure units
+            /// </summary>
             public Vector3D Convert(MeasureUnit from, MeasureUnit to)
+            {
+                return new Vector3D(X.Convert(from, to), Y.Convert(from, to), Z.Convert(from, to));
+            }
+
+            /// <summary>
+            /// convert each vector component value from to measure units
+            /// to measure unit is given from the correspondent physical quantity measure unit of from mu        
+            /// </summary>
+            public Vector3D Convert(MeasureUnit from, IMUDomain to)
+            {
+                return new Vector3D(X.Convert(from, to), Y.Convert(from, to), Z.Convert(from, to));
+            }
+
+            /// <summary>
+            /// convert each vector component value from to measure units
+            /// from measure unit is given from the correspondent physical quantity measure unit of to mu
+            /// </summary>
+            public Vector3D Convert(IMUDomain from, MeasureUnit to)
             {
                 return new Vector3D(X.Convert(from, to), Y.Convert(from, to), Z.Convert(from, to));
             }
