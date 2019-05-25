@@ -441,11 +441,17 @@ namespace SearchAThing
                 return false;
             }
 
+            /// <summary>
+            /// Convert this wcs considered vector to given cs
+            /// </summary>
             public Vector3D ToUCS(CoordinateSystem3D cs)
             {
                 return cs.ToUCS(this);
             }
 
+            /// <summary>
+            /// Convert this ucs considered vector using given cs to the wcs
+            /// </summary>
             public Vector3D ToWCS(CoordinateSystem3D cs)
             {
                 return cs.ToWCS(this);
