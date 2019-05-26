@@ -596,29 +596,13 @@ namespace SearchAThing
             /// create offseted line toward refPt for given offset
             /// </summary>
             public Line3D Offset(double tol, Vector3D refPt, double offset)
-            {
-                var d = new netDxf.DxfDocument();
-
-                {
-                    var line = this.DxfEntity;
-                    line.Color.Index = 1; // red
-                    d.AddEntity(line);
-                }
-
-                var perp = this.Perpendicular(tol, refPt);
-
-                {
-                    var line = perp.DxfEntity;
-                    line.Color.Index = 2;
-                    d.AddEntity(line);
-                }
+            {                
+                var perp = this.Perpendicular(tol, refPt);                
 
                 var voff = (-perp.V).Normalized() * offset;
 
                 var res = new Line3D(From + voff, To + voff);
-
-                d.Save("/tmp/test.dxf", true);
-
+                
                 return res;
             }
 
