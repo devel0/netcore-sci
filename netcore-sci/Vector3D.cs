@@ -164,6 +164,9 @@ namespace SearchAThing
                 return new Vector3D(X / l, Y / l, Z / l);
             }
 
+            /// <summary>
+            /// distance between two points
+            /// </summary>
             public double Distance(Vector3D other)
             {
                 return (this - other).Length;

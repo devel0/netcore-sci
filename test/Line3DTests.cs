@@ -196,18 +196,29 @@ namespace SearchAThing.Sci.Tests
         [Fact]
         public void PerpendicularTest()
         {
-            var l = new Line3D(0, 0, 0, 10, 0, 0);
-            var p = new Vector3D(5, 10, 0);
-            var lperp = l.Perpendicular(1e-1, p);
+            {
+                var l = new Line3D(0, 0, 0, 10, 0, 0);
+                var p = new Vector3D(5, 10, 0);
+                var lperp = l.Perpendicular(1e-1, p);
 
-            // perpendicular segment From equals to the given point
-            Assert.True(lperp.From.EqualsTol(1e-1, p));
+                // perpendicular segment From equals to the given point
+                Assert.True(lperp.From.EqualsTol(1e-1, p));
 
-            // perpendicular segment end to the line which is perpendicular
-            Assert.True(l.SegmentContainsPoint(1e-1, lperp.To));
+                // perpendicular segment end to the line which is perpendicular
+                Assert.True(l.SegmentContainsPoint(1e-1, lperp.To));
 
-            // two seg are perpendicular
-            Assert.True(l.V.IsPerpendicular(lperp.V));
+                // two seg are perpendicular
+                Assert.True(l.V.IsPerpendicular(lperp.V));
+            }
+
+            {
+                var l = new Line3D(new Vector3D(441.37, 689.699, -179.739), new Vector3D(695.01, 759.599, 301.543));
+                var p = new Vector3D(740.754, 286.803, 687.757);
+                var lPerp = l.Perpendicular(1e-2, p);
+
+                Assert.True(l.LineContainsPoint(1e-2, l.Intersect(1e-2, lPerp)));
+                Assert.True(l.V.IsPerpendicular(lPerp.V));
+            }
         }
 
         [Fact]
@@ -435,6 +446,23 @@ namespace SearchAThing.Sci.Tests
                     Assert.True(bisect.EqualsTol(1e-4, new Line3D(0, 0, 0, 0, -10, 0)));
                 }
             }
+        }
+
+        [Fact]
+        public void LineOffseted()
+        {
+            var l = new Line3D(new Vector3D(441.37, 689.699, -179.739), new Vector3D(695.01, 759.599, 301.543));
+            var p = new Vector3D(740.754, 286.803, 687.757);
+
+            var off = 15.5;
+            var lOff = l.Offset(1e-2, p, off);
+
+            Assert.True(l.V.IsParallelTo(1e-2, lOff.V));
+
+            var dLO = l.From.Distance(1e-2, lOff);
+            var dOL = lOff.From.Distance(1e-2, l);
+            Assert.True(dLO.EqualsTol(1e-2, dOL));
+            Assert.True(dOL.EqualsTol(1e-2, off));
         }
 
     }

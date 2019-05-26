@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\netcore-sci\netcore-sci.csproj" />
+    <ProjectReference Include="..\test\test.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

@@ -5,13 +5,14 @@ using SearchAThing;
 using System.Linq;
 using netDxf;
 using System.IO;
+using SearchAThing.Sci.Tests;
 
 namespace examples
 {
     class Program
     {
         static void Main(string[] args)
-        {
+        {            
             DxfKitTimeline();
         }
 

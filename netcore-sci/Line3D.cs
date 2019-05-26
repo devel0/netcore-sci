@@ -148,7 +148,7 @@ namespace SearchAThing
                     (From.EqualsTol(tol, other.From) && To.EqualsTol(tol, other.To))
                     ||
                     (From.EqualsTol(tol, other.To) && To.EqualsTol(tol, other.From));
-            }          
+            }
 
             /// <summary>
             /// returns the common point from,to between two lines or null if not consecutives
@@ -452,7 +452,9 @@ namespace SearchAThing
             {
                 if (LineContainsPoint(tol, p)) return null;
 
-                return new Line3D(p, p.Project(V));
+                var pRelVProj = (p - From).Project(V);
+
+                return new Line3D(p, From + pRelVProj);
             }
 
             public bool Colinear(double tol, Line3D other)
@@ -590,6 +592,36 @@ namespace SearchAThing
                 throw new System.Exception($"not found valuable from-to in seg [{this}] that can satisfy from or to equals [{pt}]");
             }
 
+            /// <summary>
+            /// create offseted line toward refPt for given offset
+            /// </summary>
+            public Line3D Offset(double tol, Vector3D refPt, double offset)
+            {
+                var d = new netDxf.DxfDocument();
+
+                {
+                    var line = this.DxfEntity;
+                    line.Color.Index = 1; // red
+                    d.AddEntity(line);
+                }
+
+                var perp = this.Perpendicular(tol, refPt);
+
+                {
+                    var line = perp.DxfEntity;
+                    line.Color.Index = 2;
+                    d.AddEntity(line);
+                }
+
+                var voff = (-perp.V).Normalized() * offset;
+
+                var res = new Line3D(From + voff, To + voff);
+
+                d.Save("/tmp/test.dxf", true);
+
+                return res;
+            }
+
             public string CadScript
             {
                 get
@@ -667,8 +699,6 @@ namespace SearchAThing
                 return new Line3D(From, V.Normalized(), Line3DConstructMode.PointAndVector);
             }
 
-           
-
             /// <summary>
             /// return segment with swapped from,to
             /// </summary>
@@ -733,11 +763,11 @@ namespace SearchAThing
 
         public class Line3DEqualityComparer : IEqualityComparer<Line3D>
         {
-            double tol;            
+            double tol;
 
             public Line3DEqualityComparer(double _tol)
             {
-                tol = _tol;                
+                tol = _tol;
             }
 
             public bool Equals(Line3D x, Line3D y)

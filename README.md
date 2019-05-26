@@ -28,6 +28,14 @@ check out [unit tests](test)
 
 - from vscode just run debug test from code lens balloon
 
+## executing all tests
+
+- from solution root folder
+
+```sh
+dotnet test
+```
+
 ## how this project was built
 
 ```sh
