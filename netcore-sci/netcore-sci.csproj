@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>            
-    <PackageReference Include="netcore-util" Version="1.0.0-CI00041" />
+    <PackageReference Include="netcore-util" Version="1.0.0-CI00056" />
     <PackageReference Include="netDXF.Standard" Version="2.1.1" />
     <PackageReference Include="netcore-psql-util" Version="1.0.0-CI00006" />
   </ItemGroup>
