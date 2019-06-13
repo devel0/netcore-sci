@@ -27,7 +27,8 @@ namespace examples
                 (new DateTime(2007,4,1), new DateTime(2008,12,31)),
                 (new DateTime(2008,8,1), new DateTime(2012,10,31)),
                 (new DateTime(2012,11,1), new DateTime(2015,10,31)),
-                (new DateTime(2016,4,1), new DateTime(2017,12,31))
+                (new DateTime(2016,4,1), new DateTime(2017,12,31)),
+                (new DateTime(2019,1,7), new DateTime(2019,7,7))
             });
             dxf.AddEntities(ents);
 

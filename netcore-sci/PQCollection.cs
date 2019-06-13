@@ -354,6 +354,7 @@ namespace SearchAThing.Sci
         // velocity
 
         public static readonly PhysicalQuantity Length3 = new PhysicalQuantity("Length3", typeof(MUCollection.Length3));
+        public static readonly PhysicalQuantity Length4= new PhysicalQuantity("Length4", typeof(MUCollection.Length4));
 
         public static readonly PhysicalQuantity VolumetricFlowRate = new PhysicalQuantity("VolumetricFlowRate", typeof(MUCollection.VolumetricFlowRate));
 

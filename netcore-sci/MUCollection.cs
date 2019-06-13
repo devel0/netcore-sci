@@ -64,6 +64,7 @@ namespace SearchAThing.Sci
 
         public static class Length
         {
+
             public static readonly MeasureUnit mm = new MeasureUnit(PQCollection.Length, "mm");
             public static readonly MeasureUnit cm = new MeasureUnit(PQCollection.Length, "cm", mm, 1e1);
             public static readonly MeasureUnit m = new MeasureUnit(PQCollection.Length, "m", mm, 1e3);
@@ -81,6 +82,19 @@ namespace SearchAThing.Sci
 
         public static class Length2
         {
+            /// <summary>
+            /// retrieve mm2 when input length=mm, etc
+            /// </summary>            
+            public static MeasureUnit Auto(MeasureUnit length)
+            {
+                if (length.Equals(Length.mm)) return mm2;
+                if (length.Equals(Length.cm)) return cm2;
+                if (length.Equals(Length.m)) return m2;
+                if (length.Equals(Length.inch)) return inch2;                
+
+                throw new Exception($"undefined auto Length for unit [{length}]");
+            }
+
             public static readonly MeasureUnit mm2 = new MeasureUnit(PQCollection.Length2, "mm2");
             public static readonly MeasureUnit cm2 = new MeasureUnit(PQCollection.Length2, "cm2", mm2, Pow((1.0).Convert(Length.cm, Length.mm), 2));
             public static readonly MeasureUnit m2 = new MeasureUnit(PQCollection.Length2, "m2", mm2, Pow((1.0).Convert(Length.m, Length.mm), 2));
@@ -93,11 +107,49 @@ namespace SearchAThing.Sci
 
         public static class Length3
         {
+            /// <summary>
+            /// retrieve mm3 when input length=mm, etc
+            /// </summary>            
+            public static MeasureUnit Auto(MeasureUnit length)
+            {
+                if (length.Equals(Length.mm)) return mm3;
+                if (length.Equals(Length.cm)) return cm3;
+                if (length.Equals(Length.m)) return m3;
+                if (length.Equals(Length.inch)) return in3;
+
+                throw new Exception($"undefined auto Length for unit [{length}]");
+            }
+
             public static readonly MeasureUnit mm3 = new MeasureUnit(PQCollection.Length3, "mm3");
             public static readonly MeasureUnit cm3 = new MeasureUnit(PQCollection.Length3, "cm3", mm3, Pow((1.0).Convert(Length.cm, Length.mm), 3));
             public static readonly MeasureUnit m3 = new MeasureUnit(PQCollection.Length3, "m3", mm3, Pow((1.0).Convert(Length.m, Length.mm), 3));
             public static readonly MeasureUnit in3 = new MeasureUnit(PQCollection.Length3, "in3", mm3, Pow((1.0).Convert(Length.inch, Length.mm), 3));
             public static readonly MeasureUnit lt = new MeasureUnit(PQCollection.Length3, "lt", mm3, 1e6);
+        }
+
+        #endregion
+
+        #region Length4
+
+        public static class Length4
+        {
+            /// <summary>
+            /// retrieve mm4 when input length=mm, etc
+            /// </summary>            
+            public static MeasureUnit Auto(MeasureUnit length)
+            {
+                if (length.Equals(Length.mm)) return mm4;
+                if (length.Equals(Length.cm)) return cm4;
+                if (length.Equals(Length.m)) return m4;
+                if (length.Equals(Length.inch)) return in4;
+
+                throw new Exception($"undefined auto Length for unit [{length}]");
+            }
+
+            public static readonly MeasureUnit mm4 = new MeasureUnit(PQCollection.Length4, "mm4");
+            public static readonly MeasureUnit cm4 = new MeasureUnit(PQCollection.Length4, "cm4", mm4, Pow((1.0).Convert(Length.cm, Length.mm), 4));
+            public static readonly MeasureUnit m4 = new MeasureUnit(PQCollection.Length4, "m4", mm4, Pow((1.0).Convert(Length.m, Length.mm), 4));
+            public static readonly MeasureUnit in4 = new MeasureUnit(PQCollection.Length4, "in4", mm4, Pow((1.0).Convert(Length.inch, Length.mm), 4));            
         }
 
         #endregion
@@ -227,6 +279,9 @@ namespace SearchAThing.Sci
         {
             public static readonly MeasureUnit Pa = new MeasureUnit(PQCollection.Pressure, "Pa");
             public static readonly MeasureUnit kPa = new MeasureUnit(PQCollection.Pressure, "kPa", Pa, 1e3);
+            /// <summary>
+            /// N/mm2
+            /// </summary>
             public static readonly MeasureUnit MPa = new MeasureUnit(PQCollection.Pressure, "MPa", kPa, 1e3);
             public static readonly MeasureUnit GPa = new MeasureUnit(PQCollection.Pressure, "GPa", MPa, 1e3);
             public static readonly MeasureUnit bar = new MeasureUnit(PQCollection.Pressure, "bar", Pa, 1e5);
