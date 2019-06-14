@@ -122,7 +122,7 @@ namespace SearchAThing.Sci
 
             public static readonly MeasureUnit mm3 = new MeasureUnit(PQCollection.Length3, "mm3");
             public static readonly MeasureUnit cm3 = new MeasureUnit(PQCollection.Length3, "cm3", mm3, Pow((1.0).Convert(Length.cm, Length.mm), 3));
-            public static readonly MeasureUnit m3 = new MeasureUnit(PQCollection.Length3, "m3", mm3, Pow((1.0).Convert(Length.m, Length.mm), 3));
+            public static readonly MeasureUnit m3 = new MeasureUnit(PQCollection.Length3, "m3", mm3, Pow((1.0).Convert(Length.m, Length.mm), 3));            
             public static readonly MeasureUnit in3 = new MeasureUnit(PQCollection.Length3, "in3", mm3, Pow((1.0).Convert(Length.inch, Length.mm), 3));
             public static readonly MeasureUnit lt = new MeasureUnit(PQCollection.Length3, "lt", mm3, 1e6);
         }
