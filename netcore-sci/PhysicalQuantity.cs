@@ -14,27 +14,23 @@ namespace SearchAThing.Sci
         Linear,
         NonLinear
     };
-
-    [DataContract(IsReference = true)]
+    
     public class PhysicalQuantity : IEquatable<PhysicalQuantity>
     {
 
         static int global_static_id_counter;
-        
-        [DataMember]
+                
         internal int id;
 
         public MeasureUnitConversionTypeEnum MUConversionType { get; private set; }
 
         /// <summary>
         /// conversion factor to the ref unit
-        /// </summary>        
-        [DataMember]
+        /// </summary>                
         List<double> linearConvFactors = new List<double>();
 
         double[,] conversionMatrix = null;
-        
-        [DataMember]
+                
         public MeasureUnit LinearConversionRefMU { get; private set; }
 
         Dictionary<string, MeasureUnit> _dict_mu;
@@ -59,8 +55,7 @@ namespace SearchAThing.Sci
         /// Convert between nonlinear measure units
         /// </summary>
         internal Func<MeasureUnit, MeasureUnit, double, double> NonLinearConversionFunctor { get; private set; }
-        
-        [DataMember]
+                
         List<MeasureUnit> measureUnits;
         public IEnumerable<MeasureUnit> MeasureUnits
         {
@@ -80,8 +75,7 @@ namespace SearchAThing.Sci
                 return measureUnits;
             }
         }
-        
-        [DataMember]
+                
         public string Name { get; private set; }
 
         Type measureUnitsContainerType;

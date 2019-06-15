@@ -125,155 +125,130 @@ namespace SearchAThing
         /// f1 = 4 [N]
         /// 
         /// test = m1 * a1 > f1
-        /// </summary>
-        [DataContract(IsReference = true)]
+        /// </summary>        
         public class MUDomain : IMUDomain
         {
 
             /// <summary>
             /// 
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance Adimensional { get; set; }
 
             /// <summary>
             /// [L]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance Length { get; set; }
 
             /// <summary>
             /// [L^2]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance Length2 { get; set; }
 
             /// <summary>
             /// [L^3]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance Length3 { get; set; }
 
             /// <summary>
             /// [L^4]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance Length4 { get; set; }
 
             /// <summary>
             /// [M]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance Mass { get; set; }
 
             /// <summary>
             /// [T]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance Time { get; set; }
 
             /// <summary>
             /// [I]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance ElectricCurrent { get; set; }
 
             /// <summary>
             /// [K]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance Temperature { get; set; }
 
             /// <summary>
             /// [N]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance AmountOfSubstance { get; set; }
 
             /// <summary>
             /// [J]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance LuminousIntensity { get; set; }
 
             //------------------------------------------------------------------------------
 
             /// <summary>
             /// [1]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance PlaneAngle { get; set; }
 
             /// <summary>
             /// [M L−1 T−2]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance Pressure { get; set; }
 
             /// <summary>
             /// [L T−2]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance Acceleration { get; set; }
 
             /// <summary>
             /// [M L T−2]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance Force { get; set; }
 
             /// <summary>
             /// [L T−1]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance Speed { get; set; }
 
             /// <summary>
             /// [M L2 T-2]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance BendingMoment { get; set; }
 
             /// <summary>
             /// [M L2 T−2]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance Energy { get; set; }
 
             /// <summary>
             /// 
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance Turbidity { get; set; }
 
             /// <summary>
             /// [T-1]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance Frequency { get; set; }
 
             /// <summary>
             /// [M L2 T−3]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance Power { get; set; }
 
             /// <summary>
             /// [L−2 M−1 T3 I2]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance ElectricalConductance { get; set; }
 
             /// <summary>
             /// [L−3 M−1 T3 I2]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance ElectricalConductivity { get; set; }
 
             /// <summary>
             /// [L3 T−1]
-            /// </summary>
-            [DataMember]
+            /// </summary>            
             public MeasureUnitWithDefaultTolerance VolumetricFlowRate { get; set; }
 
             //------------------------------------------------------------------------------

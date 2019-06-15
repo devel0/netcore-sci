@@ -11,27 +11,22 @@ namespace SearchAThing
 
     namespace Sci
     {
-
-        [DataContract]
+        
         public class MeasureUnit : IEquatable<MeasureUnit>
         {
             /// <summary>
             /// all measure units for any physical quantity
             /// this list is used to avoid double registration of a measure unit with same name
             /// for a given physical quantity
-            /// </summary>            
-            [DataMember]
+            /// </summary>                        
             static List<MeasureUnit> AllMeasureUnits = new List<MeasureUnit>();
 
             static Dictionary<int, int> global_static_id_counter = new Dictionary<int, int>();
-            
-            [DataMember]
+                        
             internal int id;
-
-            [DataMember]
+            
             public string Name { get; private set; }
-
-            [DataMember]
+            
             public PhysicalQuantity PhysicalQuantity { get; private set; }
 
             void Init(PhysicalQuantity physicalQuantity, string name, MeasureUnit convRefUnit = null)

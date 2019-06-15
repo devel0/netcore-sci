@@ -7,32 +7,18 @@ using static System.FormattableString;
 using static System.Math;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json;
 
 namespace SearchAThing.Sci
 {
-    
-    [DataContract(IsReference = true)]
+
+    [JsonConverter(typeof(MeasureJsonConverter))]    
     public class Measure
     {
-        
-        public string BsonValue
-        {
-            get
-            {
-                return ToString(CultureInfo.InvariantCulture, true);
-            }
-            set
-            {
-                var measure = TryParse(value, null, CultureInfo.InvariantCulture);
-                MU = measure.MU;
-                Value = measure.Value;
-            }
-        }
-        
-        [DataMember]
+         
         public double Value { get; private set; }
         
-        [DataMember]
+        [JsonIgnore]
         public MeasureUnit MU { get; private set; }
 
         public Measure(double value, MeasureUnit mu)
@@ -85,6 +71,11 @@ namespace SearchAThing.Sci
 
         #endregion
 
+        public static implicit operator Measure(string str)
+        {
+            return TryParse(str);
+        }
+
         /// <summary>
         /// Convert to the implicit measure of the given mu domain
         /// </summary>
@@ -132,8 +123,8 @@ namespace SearchAThing.Sci
 
             return value.Convert(from.ByPhysicalQuantity(to.PhysicalQuantity).MU, to);
         }
-
-        public string ToString(CultureInfo culture, bool includePQ = false, int? digits = null)
+                
+        public string ToString(bool includePQ = false, int? digits = null)
         {
             var res = "";
 
@@ -153,26 +144,24 @@ namespace SearchAThing.Sci
                 if (digits.HasValue) v = Round(v, digits.Value);
                 res = Invariant($"{v}e{ExpPref.Value} {(mustr.Length > 0 ? mustr : "")}");
             }
-
+            
             if (includePQ) res += $" [{MU.PhysicalQuantity}]";
 
-            return res;
+            return res.Trim();
         }
 
         public override string ToString()
         {
-            return this.ToString(CultureInfo.InvariantCulture, includePQ: false);
+            return this.ToString(includePQ: false);
         }
 
         public string ToString(int digits)
         {
-            return this.ToString(CultureInfo.InvariantCulture, includePQ: false, digits: digits);
+            return this.ToString(includePQ: false, digits: digits);
         }
 
-        public static Measure TryParse(string text, PhysicalQuantity pq = null, CultureInfo culture = null)
-        {
-            if (culture == null) culture = CultureInfo.InvariantCulture;
-
+        public static Measure TryParse(string text, PhysicalQuantity pq = null)
+        {            
             if (pq == null)
             {
                 var pqstart = text.LastIndexOf('[') + 1;
@@ -188,7 +177,7 @@ namespace SearchAThing.Sci
             if (pq != null && pq.Equals(PQCollection.Adimensional))
             {
                 double n;
-                if (double.TryParse(text, NumberStyles.Number | NumberStyles.AllowExponent, culture, out n))
+                if (double.TryParse(text, NumberStyles.Number | NumberStyles.AllowExponent, CultureInfo.InvariantCulture, out n))
                 {
                     var res = new Measure(n, MUCollection.Adimensional.adim);
                     var regex = new Regex("([0-9.]*)([eE])(.*)");
@@ -240,7 +229,7 @@ namespace SearchAThing.Sci
                 s = s.StripEnd(mu.ToString());
 
                 double n;
-                if (double.TryParse(s, NumberStyles.Number | NumberStyles.AllowExponent, culture, out n))
+                if (double.TryParse(s, NumberStyles.Number | NumberStyles.AllowExponent, CultureInfo.InvariantCulture, out n))
                 {
                     var res = new Measure(n, mu);
 

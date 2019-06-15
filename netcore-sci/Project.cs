@@ -7,11 +7,9 @@ using System.Runtime.Serialization;
 namespace SearchAThing.Sci
 {
 
-    [DataContract(IsReference = true)]
     public class Project
     {
-
-        [DataMember]
+        
         public MUDomain MUDomain { get; private set; }
 
         public Project(MUDomain mud)
