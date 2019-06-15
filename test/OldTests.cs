@@ -715,7 +715,7 @@ namespace SearchAThing.Sci.Tests
         {
             {
 
-                var measure = Measure.TryParse("10mm [Length]", null, CultureInfo.InvariantCulture);
+                var measure = Measure.TryParse("10mm [Length]");
                 Assert.True(measure != null &&
                     measure.MU == MUCollection.Length.mm &&
                     measure.MU.PhysicalQuantity == PQCollection.Length &&
