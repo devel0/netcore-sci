@@ -360,6 +360,7 @@ namespace SearchAThing.Sci
         public static class BendingMoment
         {
             public static readonly MeasureUnit Nm = new MeasureUnit(PQCollection.BendingMoment, "Nm");
+            public static readonly MeasureUnit Nmm = new MeasureUnit(PQCollection.BendingMoment, "Nmm", Nm, 1e-3);
             public static readonly MeasureUnit kNm = new MeasureUnit(PQCollection.BendingMoment, "kNm", Nm, 1e3);
 
             /// <summary>
@@ -368,7 +369,8 @@ namespace SearchAThing.Sci
             public static MeasureUnit Auto(MeasureUnit force, MeasureUnit length)
             {
                 if (force.Equals(Force.N) && length.Equals(Length.m)) return Nm;
-                if (force.Equals(Force.kN) && length.Equals(Length.m)) return kNm;                
+                if (force.Equals(Force.kN) && length.Equals(Length.m)) return kNm;
+                if (force.Equals(Force.N) && length.Equals(Length.mm)) return Nmm;
 
                 throw new Exception($"undefined auto BendingMoment for unit force=[{force}] length=[{length}]");
             }
