@@ -361,6 +361,17 @@ namespace SearchAThing.Sci
         {
             public static readonly MeasureUnit Nm = new MeasureUnit(PQCollection.BendingMoment, "Nm");
             public static readonly MeasureUnit kNm = new MeasureUnit(PQCollection.BendingMoment, "kNm", Nm, 1e3);
+
+            /// <summary>
+            /// retrieve Nm when input force=N, length=m etc
+            /// </summary>            
+            public static MeasureUnit Auto(MeasureUnit force, MeasureUnit length)
+            {
+                if (force.Equals(Force.N) && length.Equals(Length.m)) return Nm;
+                if (force.Equals(Force.kN) && length.Equals(Length.m)) return kNm;                
+
+                throw new Exception($"undefined auto BendingMoment for unit force=[{force}] length=[{length}]");
+            }
         }
 
         #endregion
