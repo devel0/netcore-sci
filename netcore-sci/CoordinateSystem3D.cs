@@ -136,21 +136,34 @@ namespace SearchAThing
                 return mInv * (p - Origin);
             }
 
+            /// <summary>
+            /// transform given CS coordinate to WCS
+            /// </summary>            
             public Vector3D ToWCS(Vector3D p)
             {
                 return m * p + Origin;
             }
 
+            /// <summary>
+            /// states if this cs have Z base parallel to the other given cs
+            /// </summary>            
             public bool IsParallelTo(double tol, CoordinateSystem3D other)
             {
                 return BaseZ.IsParallelTo(tol, other.BaseZ);
             }
 
+            /// <summary>
+            /// return another cs with origin translated
+            /// </summary>            
             public CoordinateSystem3D Move(Vector3D delta)
             {
                 return new CoordinateSystem3D(Origin + delta, BaseX, BaseY, BaseZ);
             }
 
+            /// <summary>
+            /// return another cs with same origin and base vector rotated about given axis
+            /// note that given axis should be a non applied vector because it rotate base vectors
+            /// </summary>            
             public CoordinateSystem3D Rotate(Vector3D axis, double angleRad)
             {
                 return new CoordinateSystem3D(
