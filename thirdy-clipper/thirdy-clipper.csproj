@@ -1,7 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
-
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <PackageId>netcore-sci-thirdy-clipper</PackageId>   
+        <PackageVersion>1.0.3</PackageVersion>
+        <Title>Clipper library</Title>
+        <Description>http://www.angusj.com/delphi/clipper.php</Description>
+        <Authors>Lorenzo Delana</Authors>
+        <PackageTags></PackageTags>
+        <PackageProjectUrl>https://github.com/devel0/netcore-sci/tree/master/thirdy-clipper</PackageProjectUrl>
+        <PackageLicenseExpression>BSL-1.0</PackageLicenseExpression>
+    </PropertyGroup>
 </Project>

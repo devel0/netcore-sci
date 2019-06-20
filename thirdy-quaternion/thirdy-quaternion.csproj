@@ -1,7 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
-
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>        
+        <PackageId>netcore-sci-thirdy-quaternion</PackageId>   
+        <PackageVersion>1.0.3</PackageVersion>
+        <Title>Quaternion library</Title>
+        <Description></Description>
+        <Authors>Lorenzo Delana</Authors>
+        <PackageTags></PackageTags>
+        <PackageProjectUrl>https://github.com/devel0/netcore-sci/tree/master/thirdy-quaternion</PackageProjectUrl>
+        <PackageLicenseExpression>CPOL-1.02</PackageLicenseExpression>
+    </PropertyGroup>
 </Project>
