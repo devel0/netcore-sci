@@ -116,23 +116,12 @@ namespace SearchAThing.Sci
 
         public static readonly PhysicalQuantity Acceleration = new PhysicalQuantity("Acceleration", typeof(MUCollection.Acceleration));
 
-        public static readonly PhysicalQuantity Turbidity = new PhysicalQuantity("Turbidity", typeof(MUCollection.Turbidity));
+        public static readonly PhysicalQuantity Turbidity = new PhysicalQuantity("Turbidity", typeof(MUCollection.Turbidity));        
 
-        // angularAcceleration
+        public static readonly PhysicalQuantity AngularSpeed = new PhysicalQuantity("AngularSpeed", typeof(MUCollection.AngularSpeed));
 
-        /*
-        static PhysicalQuantity angularSpeed;
-        public static PhysicalQuantity AngularSpeed
-        {
-            get
-            {
-                if (angularSpeed == null) angularSpeed = new PhysicalQuantity("AngularSpeed");
-
-                return angularSpeed;
-            }
-        }
-        */
-
+        public static readonly PhysicalQuantity AngularAcceleration = new PhysicalQuantity("AngularAcceleration", typeof(MUCollection.AngularAcceleration));
+      
         // angularMomentum
 
         // area
@@ -354,7 +343,7 @@ namespace SearchAThing.Sci
         // velocity
 
         public static readonly PhysicalQuantity Length3 = new PhysicalQuantity("Length3", typeof(MUCollection.Length3));
-        public static readonly PhysicalQuantity Length4= new PhysicalQuantity("Length4", typeof(MUCollection.Length4));
+        public static readonly PhysicalQuantity Length4 = new PhysicalQuantity("Length4", typeof(MUCollection.Length4));
 
         public static readonly PhysicalQuantity VolumetricFlowRate = new PhysicalQuantity("VolumetricFlowRate", typeof(MUCollection.VolumetricFlowRate));
 

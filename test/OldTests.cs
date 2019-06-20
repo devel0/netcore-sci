@@ -782,6 +782,26 @@ namespace SearchAThing.Sci.Tests
 
             }
 
+            // Angular speed
+            {
+                var a = (2.5) * MUCollection.AngularSpeed.rad_s;
+                var b = a.ConvertTo(MUCollection.AngularSpeed.deg_s);
+                Assert.True(b.Value.EqualsTol(1e-3, 143.239));
+            }
+
+            // Angular acceleration
+            {
+                var a = (2.5) * MUCollection.AngularAcceleration.rad_s2;
+                var b = a.ConvertTo(MUCollection.AngularAcceleration.deg_s2);
+                Assert.True(b.Value.EqualsTol(1e-3, 143.239));
+            }
+
+            // Bending moment
+            {
+                
+                
+            }
+
         }
 
         [Fact(DisplayName = "Line3DAutoIntersect")]

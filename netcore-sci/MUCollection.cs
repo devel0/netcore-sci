@@ -90,7 +90,7 @@ namespace SearchAThing.Sci
                 if (length.Equals(Length.mm)) return mm2;
                 if (length.Equals(Length.cm)) return cm2;
                 if (length.Equals(Length.m)) return m2;
-                if (length.Equals(Length.inch)) return inch2;                
+                if (length.Equals(Length.inch)) return inch2;
 
                 throw new Exception($"undefined auto Length for unit [{length}]");
             }
@@ -122,7 +122,7 @@ namespace SearchAThing.Sci
 
             public static readonly MeasureUnit mm3 = new MeasureUnit(PQCollection.Length3, "mm3");
             public static readonly MeasureUnit cm3 = new MeasureUnit(PQCollection.Length3, "cm3", mm3, Pow((1.0).Convert(Length.cm, Length.mm), 3));
-            public static readonly MeasureUnit m3 = new MeasureUnit(PQCollection.Length3, "m3", mm3, Pow((1.0).Convert(Length.m, Length.mm), 3));            
+            public static readonly MeasureUnit m3 = new MeasureUnit(PQCollection.Length3, "m3", mm3, Pow((1.0).Convert(Length.m, Length.mm), 3));
             public static readonly MeasureUnit in3 = new MeasureUnit(PQCollection.Length3, "in3", mm3, Pow((1.0).Convert(Length.inch, Length.mm), 3));
             public static readonly MeasureUnit lt = new MeasureUnit(PQCollection.Length3, "lt", mm3, 1e6);
         }
@@ -149,7 +149,7 @@ namespace SearchAThing.Sci
             public static readonly MeasureUnit mm4 = new MeasureUnit(PQCollection.Length4, "mm4");
             public static readonly MeasureUnit cm4 = new MeasureUnit(PQCollection.Length4, "cm4", mm4, Pow((1.0).Convert(Length.cm, Length.mm), 4));
             public static readonly MeasureUnit m4 = new MeasureUnit(PQCollection.Length4, "m4", mm4, Pow((1.0).Convert(Length.m, Length.mm), 4));
-            public static readonly MeasureUnit in4 = new MeasureUnit(PQCollection.Length4, "in4", mm4, Pow((1.0).Convert(Length.inch, Length.mm), 4));            
+            public static readonly MeasureUnit in4 = new MeasureUnit(PQCollection.Length4, "in4", mm4, Pow((1.0).Convert(Length.inch, Length.mm), 4));
         }
 
         #endregion
@@ -273,6 +273,26 @@ namespace SearchAThing.Sci
 
         #endregion
 
+        #region AngularSpeed
+
+        public static class AngularSpeed
+        {
+            public static readonly MeasureUnit rad_s = new MeasureUnit(PQCollection.AngularSpeed, "rad_s");
+            public static readonly MeasureUnit deg_s = new MeasureUnit(PQCollection.AngularSpeed, "deg_s", rad_s, PI / 180.0);
+        }
+
+        #endregion
+
+        #region AngularAcceleration
+
+        public static class AngularAcceleration
+        {
+            public static readonly MeasureUnit rad_s2 = new MeasureUnit(PQCollection.AngularAcceleration, "rad_s2");
+            public static readonly MeasureUnit deg_s2 = new MeasureUnit(PQCollection.AngularAcceleration, "deg_s2", rad_s2, PI / 180.0);
+        }
+
+        #endregion
+
         #region Pressure
 
         public static class Pressure
@@ -325,7 +345,7 @@ namespace SearchAThing.Sci
             public static readonly MeasureUnit m_s2 = new MeasureUnit(PQCollection.Acceleration, "m_s2");
         }
 
-        #endregion
+        #endregion        
 
         #region Turbidity
 
