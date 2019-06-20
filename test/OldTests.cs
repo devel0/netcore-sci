@@ -782,6 +782,13 @@ namespace SearchAThing.Sci.Tests
 
             }
 
+            // Linear acceleration
+            {
+                var a = 4.4 * MUCollection.Acceleration.mm_s2;
+                var b = a.ConvertTo(MUCollection.Acceleration.m_s2).Value;
+                Assert.True(b.EqualsTol(1e-4, 0.0044));
+            }
+
             // Angular speed
             {
                 var a = (2.5) * MUCollection.AngularSpeed.rad_s;
@@ -803,7 +810,7 @@ namespace SearchAThing.Sci.Tests
 
                 var a = 1.78 * Nmm;
                 var b = a.ConvertTo(MUCollection.BendingMoment.kNm);
-                Assert.True(b.Value.EqualsTol(1e-8, 1.78e-6)); 
+                Assert.True(b.Value.EqualsTol(1e-8, 1.78e-6));
             }
 
         }

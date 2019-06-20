@@ -343,6 +343,7 @@ namespace SearchAThing.Sci
         public static class Acceleration
         {
             public static readonly MeasureUnit m_s2 = new MeasureUnit(PQCollection.Acceleration, "m_s2");
+            public static readonly MeasureUnit mm_s2 = new MeasureUnit(PQCollection.Acceleration, "mm_s2", m_s2, 1e-3);
         }
 
         #endregion        
