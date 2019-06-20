@@ -798,8 +798,12 @@ namespace SearchAThing.Sci.Tests
 
             // Bending moment
             {
-                
-                
+                var Nmm = MUCollection.BendingMoment.Auto(MUCollection.Force.N, MUCollection.Length.mm);
+                Assert.True(Nmm.Equals(MUCollection.BendingMoment.Nmm));
+
+                var a = 1.78 * Nmm;
+                var b = a.ConvertTo(MUCollection.BendingMoment.kNm);
+                Assert.True(b.Value.EqualsTol(1e-8, 1.78e-6)); 
             }
 
         }
