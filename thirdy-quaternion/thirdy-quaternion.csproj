@@ -8,6 +8,5 @@
         <Authors>Lorenzo Delana</Authors>
         <PackageTags></PackageTags>
         <PackageProjectUrl>https://github.com/devel0/netcore-sci/tree/master/thirdy-quaternion</PackageProjectUrl>
-        <PackageLicenseExpression>CPOL-1.02</PackageLicenseExpression>
     </PropertyGroup>
 </Project>

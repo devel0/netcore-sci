@@ -7,6 +7,7 @@ using System;
 using System.Globalization;
 using ClipperLib;
 using SearchAThing.Util;
+using static SearchAThing.Sci.MUCollection;
 
 namespace SearchAThing.Sci.Tests
 {
@@ -794,6 +795,11 @@ namespace SearchAThing.Sci.Tests
                 var a = (2.5) * MUCollection.AngularSpeed.rad_s;
                 var b = a.ConvertTo(MUCollection.AngularSpeed.deg_s);
                 Assert.True(b.Value.EqualsTol(1e-3, 143.239));
+
+                Assert.True(AngularAcceleration.Auto(MUCollection.PlaneAngle.deg, MUCollection.Time.sec)
+                    .Equals(MUCollection.AngularSpeed.deg_s));
+                Assert.True(AngularAcceleration.Auto(MUCollection.PlaneAngle.deg, MUCollection.Time.sec)
+                    .Equals(MUCollection.AngularSpeed.rad_s));
             }
 
             // Angular acceleration
@@ -801,6 +807,11 @@ namespace SearchAThing.Sci.Tests
                 var a = (2.5) * MUCollection.AngularAcceleration.rad_s2;
                 var b = a.ConvertTo(MUCollection.AngularAcceleration.deg_s2);
                 Assert.True(b.Value.EqualsTol(1e-3, 143.239));
+
+                Assert.True(AngularAcceleration.Auto(MUCollection.PlaneAngle.deg, MUCollection.Time.sec)
+                    .Equals(MUCollection.AngularAcceleration.deg_s2));
+                Assert.True(AngularAcceleration.Auto(MUCollection.PlaneAngle.rad, MUCollection.Time.sec)
+                    .Equals(MUCollection.AngularAcceleration.rad_s2));
             }
 
             // Bending moment

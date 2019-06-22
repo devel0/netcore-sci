@@ -279,6 +279,14 @@ namespace SearchAThing.Sci
         {
             public static readonly MeasureUnit rad_s = new MeasureUnit(PQCollection.AngularSpeed, "rad_s");
             public static readonly MeasureUnit deg_s = new MeasureUnit(PQCollection.AngularSpeed, "deg_s", rad_s, PI / 180.0);
+
+            public static MeasureUnit Auto(MeasureUnit planeAngle, MeasureUnit time)
+            {
+                if (planeAngle.Equals(PlaneAngle.rad) && time.Equals(Time.sec)) return rad_s;
+                if (planeAngle.Equals(PlaneAngle.deg) && time.Equals(Time.sec)) return deg_s;
+
+                throw new NotImplementedException($"AngularSpeed mu automatic not defined for input planeAngle=[{planeAngle.Name}] and time=[{time.Name}]");
+            }
         }
 
         #endregion
@@ -289,6 +297,14 @@ namespace SearchAThing.Sci
         {
             public static readonly MeasureUnit rad_s2 = new MeasureUnit(PQCollection.AngularAcceleration, "rad_s2");
             public static readonly MeasureUnit deg_s2 = new MeasureUnit(PQCollection.AngularAcceleration, "deg_s2", rad_s2, PI / 180.0);
+
+            public static MeasureUnit Auto(MeasureUnit planeAngle, MeasureUnit time)
+            {
+                if (planeAngle.Equals(PlaneAngle.rad) && time.Equals(Time.sec)) return rad_s2;
+                if (planeAngle.Equals(PlaneAngle.deg) && time.Equals(Time.sec)) return deg_s2;
+
+                throw new NotImplementedException($"AngularAcceleration mu automatic not defined for input planeAngle=[{planeAngle.Name}] and time=[{time.Name}]");
+            }
         }
 
         #endregion
@@ -340,10 +356,24 @@ namespace SearchAThing.Sci
 
         #region Acceleration
 
+        /// <summary>
+        /// Linear acceleration
+        /// </summary>
         public static class Acceleration
         {
             public static readonly MeasureUnit m_s2 = new MeasureUnit(PQCollection.Acceleration, "m_s2");
             public static readonly MeasureUnit mm_s2 = new MeasureUnit(PQCollection.Acceleration, "mm_s2", m_s2, 1e-3);
+
+            /// <summary>
+            /// retrieve m/s2 when length=m and time=s
+            /// </summary>            
+            public static MeasureUnit Auto(MeasureUnit length, MeasureUnit time)
+            {
+                if (length.Equals(Length.m) && time.Equals(Time.sec)) return m_s2;
+                if (length.Equals(Length.mm) && time.Equals(Time.sec)) return mm_s2;
+
+                throw new Exception($"undefined auto Acceleration for unit length=[{length}] time=[{time}]");
+            }
         }
 
         #endregion        

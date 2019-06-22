@@ -14,11 +14,9 @@
 - [Fluent](netcore-sci/Fluent.cs)
 - [PythonWrapper](netcore-sci/PythonWrapper.cs)
 
-## install and usage
+## install
 
-browse [myget instructions](https://www.myget.org/feed/devel0/package/nuget/netcore-sci)
-
-add `nuget.config` where your solution or csproj that refer this library in order to allow other to restore correcly myget dependencies.
+install [nuget package](https://www.nuget.org/packages/netcore-sci/)
 
 ## usage
 
@@ -46,8 +44,8 @@ dotnet new sln
 dotnet new classlib -n netcore-sci
 
 cd netcore-sci
-dotnet add package netcore-util --version 1.0.0-CI00039 --source https://www.myget.org/F/devel0/api/v3/index.json
-dotnet add package netcore-psql-util --version 1.0.0-CI00003 --source https://www.myget.org/F/devel0/api/v3/index.json
+dotnet add package netcore-util --version 1.0.2
+dotnet add package netcore-psql-util --version 1.0.3
 dotnet add package netDXF.Standard --version 2.1.1
 cd ..
 
