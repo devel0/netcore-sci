@@ -328,3 +328,8 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+# sonarqube and code coverage
+.sonarqube/
+lcov.*
+coverage.json
