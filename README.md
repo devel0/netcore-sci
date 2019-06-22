@@ -16,7 +16,7 @@
 
 ## install
 
-install [nuget package](https://www.nuget.org/packages/netcore-sci/)
+- [nuget package](https://www.nuget.org/packages/netcore-sci/)
 
 ## usage
 
