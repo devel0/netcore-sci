@@ -1,6 +1,6 @@
 # netcore-sci
 
-[![devel0 MyGet Build Status](https://www.myget.org/BuildSource/Badge/devel0?identifier=4e07c427-6364-4390-8a07-1c615433e660)](https://www.myget.org/)
+[![NuGet Badge](https://buildstats.info/nuget/netcore-sci)](https://www.nuget.org/packages/netcore-sci/)
 
 .NET core sci
 
@@ -16,7 +16,7 @@
 
 ## install
 
-install [nuget package](https://www.nuget.org/packages/netcore-sci/)
+- [nuget package](https://www.nuget.org/packages/netcore-sci/)
 
 ## usage
 
