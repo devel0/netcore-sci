@@ -798,7 +798,7 @@ namespace SearchAThing.Sci.Tests
 
                 Assert.True(AngularAcceleration.Auto(MUCollection.PlaneAngle.deg, MUCollection.Time.sec)
                     .Equals(MUCollection.AngularSpeed.deg_s));
-                Assert.True(AngularAcceleration.Auto(MUCollection.PlaneAngle.deg, MUCollection.Time.sec)
+                Assert.True(AngularAcceleration.Auto(MUCollection.PlaneAngle.rad, MUCollection.Time.sec)
                     .Equals(MUCollection.AngularSpeed.rad_s));
             }
 
