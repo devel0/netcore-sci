@@ -1,7 +1,5 @@
 # netcore-sci
 
-[![devel0 MyGet Build Status](https://www.myget.org/BuildSource/Badge/devel0?identifier=4e07c427-6364-4390-8a07-1c615433e660)](https://www.myget.org/)
-
 .NET core sci
 
 - [Constants](netcore-sci/Constants.cs)
