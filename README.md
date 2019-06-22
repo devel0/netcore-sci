@@ -1,5 +1,7 @@
 # netcore-sci
 
+[![NuGet Badge](https://buildstats.info/nuget/netcore-sci)](https://www.nuget.org/packages/netcore-sci/)
+
 .NET core sci
 
 - [Constants](netcore-sci/Constants.cs)
