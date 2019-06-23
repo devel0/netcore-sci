@@ -162,16 +162,31 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// return another cs with same origin and base vector rotated about given axis
-            /// note that given axis should be a non applied vector because it rotate base vectors
+            /// return another cs rotated respect given axis
             /// </summary>            
-            public CoordinateSystem3D Rotate(Vector3D axis, double angleRad)
+            public CoordinateSystem3D Rotate(Line3D axis, double angleRad)
+            {
+                var bx = new Line3D(Origin, Origin + BaseX).RotateAboutAxis(axis, angleRad);
+                var by = new Line3D(Origin, Origin + BaseY).RotateAboutAxis(axis, angleRad);
+                var bz = new Line3D(Origin, Origin + BaseZ).RotateAboutAxis(axis, angleRad);
+
+                return new CoordinateSystem3D(
+                    Origin.RotateAboutAxis(axis, angleRad),
+                    (bx - Origin).Normalized().V,
+                    (by - Origin).Normalized().V,
+                    (bz - Origin).Normalized().V);
+            }
+
+            /// <summary>
+            /// return another cs with same origin and base vector rotated about given vector            
+            /// </summary>            
+            public CoordinateSystem3D Rotate(Vector3D vectorAxis, double angleRad)
             {
                 return new CoordinateSystem3D(
                     Origin,
-                    BaseX.RotateAboutAxis(axis, angleRad),
-                    BaseY.RotateAboutAxis(axis, angleRad),
-                    BaseZ.RotateAboutAxis(axis, angleRad));
+                    BaseX.RotateAboutAxis(vectorAxis, angleRad),
+                    BaseY.RotateAboutAxis(vectorAxis, angleRad),
+                    BaseZ.RotateAboutAxis(vectorAxis, angleRad));
             }
 
             /// <summary>
