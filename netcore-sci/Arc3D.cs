@@ -393,19 +393,27 @@ namespace SearchAThing
 
         /// <summary>
         /// states if given angle is contained in from, to angle range
-        /// where angle_from assumed smaller angle
-        /// and angle_to gets normalized taking in account 2*PI difference when angle_to &lt; angle_from
         /// </summary>        
         public static bool AngleInRange(this double pt_angle, double tol_rad, double angle_from, double angle_to)
         {
             pt_angle = pt_angle.NormalizeAngle2PI();
+            var angle_from_normalized = angle_from.NormalizeAngle2PI();
+            var angle_to_normalized = angle_to.NormalizeAngle2PI();
 
-            if (pt_angle.LessThanTol(tol_rad, angle_from)) pt_angle += 2 * PI;
-
-            var upper_bound_angle = angle_to;
-            if (upper_bound_angle.LessThanTol(tol_rad, angle_from)) upper_bound_angle += 2 * PI;
-
-            return pt_angle.GreatThanOrEqualsTol(tol_rad, angle_from) && pt_angle.LessThanOrEqualsTol(tol_rad, upper_bound_angle);
+            if (angle_from.GreatThanTol(tol_rad, angle_to))
+            {
+                return
+                    pt_angle.LessThanOrEqualsTol(tol_rad, angle_to)
+                    ||
+                    pt_angle.GreatThanOrEqualsTol(tol_rad, angle_from);
+            }
+            else // from < to
+            {
+                return
+                    pt_angle.GreatThanOrEqualsTol(tol_rad, angle_from)
+                    &&
+                    pt_angle.LessThanOrEqualsTol(tol_rad, angle_to);
+            }
         }
 
     }
