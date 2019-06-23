@@ -149,6 +149,11 @@ namespace SearchAThing
         /// </summary>       
         public static IEnumerable<Line3D> PolygonSegments(this IEnumerable<Vector3D> pts, double tol)
         {
+            if (!pts.Any()) throw new ArgumentException("empty set given");
+        }
+
+        private static IEnumerable<Line3D> PolygonSegmentsIterator(this IEnumerable<Vector3D> pts, double tol)
+        {
             Vector3D first = null;
             Vector3D prev = null;
 
@@ -166,7 +171,6 @@ namespace SearchAThing
                 yield return seg;
             }
 
-            if (prev == null) throw new ArgumentException("empty set given");
             if (!prev.EqualsTol(tol, first)) yield return new Line3D(prev, first);
         }
 
@@ -485,7 +489,7 @@ namespace SearchAThing
 
             if (!closed)
             {
-                if (lastPt==null) throw new Exception("can't find last pt");
+                if (lastPt == null) throw new ArgumentException("can't find last pt");
                 var lwpv = new netDxf.Entities.LwPolylineVertex(lastPt.ToUCS(cs).ToVector2());
                 pvtx.Add(lwpv);
             }

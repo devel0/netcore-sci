@@ -596,13 +596,13 @@ namespace SearchAThing
             /// create offseted line toward refPt for given offset
             /// </summary>
             public Line3D Offset(double tol, Vector3D refPt, double offset)
-            {                
-                var perp = this.Perpendicular(tol, refPt);                
+            {
+                var perp = this.Perpendicular(tol, refPt);
 
                 var voff = (-perp.V).Normalized() * offset;
 
                 var res = new Line3D(From + voff, To + voff);
-                
+
                 return res;
             }
 
@@ -793,6 +793,12 @@ namespace SearchAThing
         /// </summary>        
         public static IEnumerable<Vector3D> PolyPoints(this IEnumerable<Line3D> segs)
         {
+            if (!segs.Any()) throw new ArgumentException("empty set given");
+            return PolyPointsIterator(segs);
+        }
+
+        private static IEnumerable<Vector3D> PolyPointsIterator(this IEnumerable<Line3D> segs)
+        {
             var en = segs.GetEnumerator();
 
             Line3D seg = null;
@@ -801,9 +807,7 @@ namespace SearchAThing
             {
                 seg = en.Current;
                 yield return seg.From;
-            }
-
-            if (seg == null) throw new ArgumentException("empty set given");
+            }            
 
             yield return seg.To;
         }

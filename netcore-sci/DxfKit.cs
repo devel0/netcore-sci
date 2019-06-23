@@ -178,6 +178,12 @@ namespace SearchAThing
         /// </summary>        
         public static IEnumerable<Vector3D> RepeatFirstAtEnd(this IEnumerable<Vector3D> pts, double tol)
         {
+            if (!pts.Any()) throw new ArgumentException("invalid empty set given");
+            return RepeatFirstAtEndIterator(pts, tol);
+        }
+
+        private static IEnumerable<Vector3D> RepeatFirstAtEndIterator(this IEnumerable<Vector3D> pts, double tol)
+        {
             Vector3D first = null;
             Vector3D last = null;
             foreach (var x in pts)
@@ -186,8 +192,7 @@ namespace SearchAThing
                 last = x;
                 yield return x;
             }
-
-            if (last == null) throw new ArgumentException($"invalid empty set given");
+            
             if (!last.EqualsTol(tol, first)) yield return first;
         }
 
