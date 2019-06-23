@@ -15,23 +15,26 @@ namespace SearchAThing.Sci.Tests
         }
 
         [Fact]
-        public void Arc3DTest()
+        public void Arc3DTest_001()
         {
             var o = new Vector3D(4.4249, 1.0332, -3.7054);
-            var cs = new CoordinateSystem3D(o,
+            var cs_ = new CoordinateSystem3D(o,
                 new Vector3D(-.1201, 4.4926, 1.4138),
                 new Vector3D(-1.6282, 3.2952, 2.1837));
 
+            // build cs for arc with same cad representation
+            var csCAD = new CoordinateSystem3D(o, cs_.BaseZ, CoordinateSystem3DAutoEnum.AAA);
+
             var r = 4.2753;
-            var ang1 = 26.10878d.ToRad();
-            var ange2 = 63.97731d.ToRad();
-            var arc = new Arc3D(cs, r, ang1, ange2);
+            var ang1 = 63.97731d.ToRad();
+            var ange2 = 26.10878d.ToRad();
+            var arc = new Arc3D(csCAD, r, ang1, ange2);
 
             var seg_i = new Line3D(2.2826, 10.2516, -3.7469, 1.3767, -3.7709, 1.5019);
             var ip_circ = arc.Intersect(1e-4, seg_i);
             var ip_arc = arc.IntersectArc(1e-2, rad_tol, seg_i);
 
-            // aegment intersecting arc
+            // segment intersecting arc
             Assert.True(ip_circ.Count() == 1);
             Assert.True(ip_circ.First().EqualsTol(1e-4, ip_arc.First()));
             Assert.True(ip_circ.First().EqualsTol(1e-2, 1.83, 3.24, -1.12));
