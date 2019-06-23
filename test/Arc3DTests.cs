@@ -55,6 +55,34 @@ namespace SearchAThing.Sci.Tests
             Assert.True(arc.IntersectArc(1e-4, rad_tol, seg_e).Count() == 0);
         }
 
+        [Fact]
+        public void Arc3DTest_002()
+        {
+            var p1 = new Vector3D(20.175, 178.425, -56.314);
+            var p2 = new Vector3D(1.799, 231.586, -18.134);
+            var p3 = new Vector3D(262.377, 302.118, 132.195);
+
+            var c = Arc3D.CircleBy3Points(p1, p2, p3);
+            var cs = c.CS;
+
+            // cscad retrieved from cad using ucs align entity
+            var cscad = new CoordinateSystem3D(new Vector3D(165.221, 214.095, 24.351),
+                new Vector3D(-0.259, -0.621, 0.74), CoordinateSystem3DAutoEnum.AAA);
+
+            // assert cs and cscad are coplanar with same origin
+            Assert.True(cscad.Origin.EqualsTol(1e-3, cs.Origin));
+            Assert.True((cscad.BaseX + cs.Origin).ToUCS(cs).Z.EqualsTol(1e-3, 0));
+            Assert.True((cscad.BaseY + cs.Origin).ToUCS(cs).Z.EqualsTol(1e-3, 0));
+
+            Assert.True(c.Radius.EqualsTol(1e-3, 169.758));
+
+            // create a circle through p1,p2,p3 and states if the same as arc by 3 points
+            var c2 = new Circle3D(p1, p2, p3);
+            Assert.True(c.Radius.EqualsAutoTol(c2.Radius));            
+            Assert.True(c.CS.Origin.EqualsAutoTol(c2.CS.Origin));
+            Assert.True(c.CS.IsParallelTo(1e-3, c2.CS));
+        }
+
     }
 
 }

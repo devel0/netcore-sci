@@ -136,6 +136,17 @@ namespace SearchAThing
             }
 
             /// <summary>
+            /// check if this vector equals the given one component by component using EqualsAutoTol
+            /// </summary>
+            public bool EqualsAutoTol(Vector3D other)
+            {
+                return
+                    X.EqualsAutoTol(other.X) &&
+                    Y.EqualsAutoTol(other.Y) &&
+                    Z.EqualsAutoTol(other.Z);
+            }
+
+            /// <summary>
             /// checks only x,y
             /// </summary>        
             public bool EqualsTol(double tol, double x, double y)

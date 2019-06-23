@@ -13,7 +13,7 @@ namespace SearchAThing.Sci.Tests
 {
     public class OldTests
     {
-
+/*
         // tests from https://github.com/SearchAThing-old1/SearchAThing.UnitTest
 
         IModel model = new SampleModel();
@@ -861,18 +861,7 @@ namespace SearchAThing.Sci.Tests
         void NumberTest()
         {
             Assert.True((3.1415926535897931).NormalizeAngle2PI() == (3.1415926535897931));
-        }
-
-        /*
-        [Fact(DisplayName = "ConvexHull")]
-        void ConvexHullTest()
-        {
-            var pts = new List<Vector3D>();
-
-            pts.SampleIp();
-
-        }
-        */
+        } 
 
         [Fact(DisplayName = "PolyBool")]
         public void PolyBool()
@@ -884,7 +873,7 @@ namespace SearchAThing.Sci.Tests
 
             Assert.True(q.Count() != 0);
         }
-
+*/
     }
 
 }
