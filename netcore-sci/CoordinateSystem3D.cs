@@ -57,6 +57,8 @@ namespace SearchAThing
 
             public CoordinateSystem3D(Vector3D o, Vector3D normal, CoordinateSystem3DAutoEnum csAutoType = CoordinateSystem3DAutoEnum.AAA)
             {
+                Origin = o;
+
                 switch (csAutoType)
                 {
                     case CoordinateSystem3DAutoEnum.AAA:
@@ -69,8 +71,7 @@ namespace SearchAThing
                                 Ax = Vector3D.ZAxis.CrossProduct(normal).Normalized();
 
                             var Ay = normal.CrossProduct(Ax).Normalized();
-
-                            Origin = o;
+                            
                             BaseX = Ax;
                             BaseY = Ay;
                             BaseZ = Ax.CrossProduct(Ay).Normalized();
@@ -78,7 +79,7 @@ namespace SearchAThing
                         break;
 
                     case CoordinateSystem3DAutoEnum.St7:
-                        {
+                        {                            
                             BaseZ = normal.Normalized();
 
                             // axis 2
