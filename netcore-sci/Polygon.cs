@@ -150,6 +150,7 @@ namespace SearchAThing
         public static IEnumerable<Line3D> PolygonSegments(this IEnumerable<Vector3D> pts, double tol)
         {
             if (!pts.Any()) throw new ArgumentException("empty set given");
+            return PolygonSegmentsIterator(pts, tol);
         }
 
         private static IEnumerable<Line3D> PolygonSegmentsIterator(this IEnumerable<Vector3D> pts, double tol)
