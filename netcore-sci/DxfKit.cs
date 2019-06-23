@@ -187,6 +187,7 @@ namespace SearchAThing
                 yield return x;
             }
 
+            if (last == null) throw new ArgumentException($"invalid empty set given");
             if (!last.EqualsTol(tol, first)) yield return first;
         }
 

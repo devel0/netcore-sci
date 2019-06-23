@@ -32,6 +32,7 @@ namespace SearchAThing
             void Init(PhysicalQuantity physicalQuantity, string name, MeasureUnit convRefUnit = null)
             {
                 PhysicalQuantity = physicalQuantity;
+                Name = name;
 
                 if (AllMeasureUnits
                     .Where(r => r.PhysicalQuantity.id == physicalQuantity.id)
@@ -47,10 +48,7 @@ namespace SearchAThing
                 if (global_static_id_counter.ContainsKey(physicalQuantity.id))
                     id = ++global_static_id_counter[physicalQuantity.id];
                 else
-                    global_static_id_counter.Add(physicalQuantity.id, id = 0);
-
-                Name = name;
-                PhysicalQuantity = PhysicalQuantity;
+                    global_static_id_counter.Add(physicalQuantity.id, id = 0);                                
             }
 
             public MeasureUnit(PhysicalQuantity physicalQuantity, string name, MeasureUnit convRefUnit = null, double convRefFactor = 0)

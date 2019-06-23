@@ -803,6 +803,8 @@ namespace SearchAThing
                 yield return seg.From;
             }
 
+            if (seg == null) throw new ArgumentException("empty set given");
+
             yield return seg.To;
         }
 
