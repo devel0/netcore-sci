@@ -3,7 +3,7 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageId>netcore-sci</PackageId>   
-        <PackageVersion>1.0.10</PackageVersion>
+        <PackageVersion>1.0.11</PackageVersion>
         <Title>net core scientific</Title>
         <Description></Description>
         <Authors>Lorenzo Delana</Authors>

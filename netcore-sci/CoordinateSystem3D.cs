@@ -189,6 +189,11 @@ namespace SearchAThing
                     BaseZ.RotateAboutAxis(vectorAxis, angleRad));
             }
 
+            public override string ToString()
+            {
+                return $"O:{Origin} X:{BaseX} Y:{BaseY} Z:{BaseZ}";
+            }
+
             /// <summary>
             /// CS RGB ( X=RED Y=GREEN Z=BLUE )
             /// </summary>            
