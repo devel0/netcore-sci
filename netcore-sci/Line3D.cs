@@ -793,12 +793,6 @@ namespace SearchAThing
         /// </summary>        
         public static IEnumerable<Vector3D> PolyPoints(this IEnumerable<Line3D> segs)
         {
-            if (!segs.Any()) throw new ArgumentException("empty set given");
-            return PolyPointsIterator(segs);
-        }
-
-        private static IEnumerable<Vector3D> PolyPointsIterator(this IEnumerable<Line3D> segs)
-        {
             var en = segs.GetEnumerator();
 
             Line3D seg = null;
@@ -807,7 +801,9 @@ namespace SearchAThing
             {
                 seg = en.Current;
                 yield return seg.From;
-            }            
+            }
+
+            if (seg == null) yield break;
 
             yield return seg.To;
         }
