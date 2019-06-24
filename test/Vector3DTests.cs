@@ -373,7 +373,7 @@ namespace SearchAThing.Sci.Tests
                 angleFactor: 1.5);
             Assert.True(vr.EqualsTol(1e-4, 1.6205, .6586, 3.3076));
             vr = v.RotateAs(1e-4, new Vector3D(3.0258, 2.9241, 1), new Vector3D(5.561, 2.304, 2),
-                angleFactor: 1.5, angleAddictional: 11.2d.ToRad());
+                angleFactor: 1.5, angleAddictionalRad: 11.2d.ToRad());
             Assert.True(vr.EqualsTol(1e-4, 1.6602, 0.126, 3.3508));
         }
 

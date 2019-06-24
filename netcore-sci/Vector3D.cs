@@ -17,20 +17,35 @@ namespace SearchAThing
 
     namespace Sci
     {
+
+        /// <summary>
+        /// can be used to describe a wcs point or a vector x,y,z components from some reference origin
+        /// </summary>
         public partial class Vector3D : Geometry
         {
 
-            public static Vector3D Zero = new Vector3D(0, 0, 0);
-            public static Vector3D XAxis = new Vector3D(1, 0, 0);
-            public static Vector3D YAxis = new Vector3D(0, 1, 0);
-            public static Vector3D ZAxis = new Vector3D(0, 0, 1);
+            public static readonly Vector3D Zero = new Vector3D(0, 0, 0);
+            public static readonly Vector3D XAxis = new Vector3D(1, 0, 0);
+            public static readonly Vector3D YAxis = new Vector3D(0, 1, 0);
+            public static readonly Vector3D ZAxis = new Vector3D(0, 0, 1);
 
+            /// <summary>
+            /// Geometry GeomFrom implementation
+            /// </summary>
             [JsonIgnore]
             public override Vector3D GeomFrom => this;
 
+            /// <summary>
+            /// Geometry GeomTo implementation
+            /// </summary>
             [JsonIgnore]
             public override Vector3D GeomTo => this;
 
+            /// <summary>
+            /// retrieve vector component through index
+            /// </summary>
+            /// <param name="ord">0(x) 1(y) 2(z)</param>
+            /// <returns>vector component</returns>
             public static Vector3D Axis(int ord)
             {
                 switch (ord)
@@ -42,10 +57,24 @@ namespace SearchAThing
                 }
             }
 
+            /// <summary>
+            /// X vector component
+            /// </summary>
             public double X { get; private set; }
+
+            /// <summary>
+            /// Y vector component
+            /// </summary>            
             public double Y { get; private set; }
+
+            /// <summary>
+            /// Z vector component
+            /// </summary>            
             public double Z { get; private set; }
 
+            /// <summary>
+            /// zero vector
+            /// </summary>
             public Vector3D() : base(GeometryType.Vector3D)
             {
             }
@@ -61,19 +90,32 @@ namespace SearchAThing
                 if (arr.Length > 3) throw new Exception($"too much coordinates to build a vector3d");
             }
 
+            /// <summary>
+            /// build a vector by given components
+            /// </summary>
+            /// <param name="x">x component</param>
+            /// <param name="y">y component</param>
+            /// <param name="z">z component</param>
+            /// <returns>vector</returns>
             public Vector3D(double x, double y, double z) : base(GeometryType.Vector3D)
             {
                 X = x; Y = y; Z = z;
             }
 
             /// <summary>
-            /// initialize 3d vector with z implicitly 0
-            /// </summary>        
+            /// build a vector by given components ( z implicitly 0 )
+            /// </summary>
+            /// <param name="x">x component</param>
+            /// <param name="y">y component</param>            
+            /// <returns>vector</returns>  
             public Vector3D(double x, double y) : base(GeometryType.Vector3D)
             {
                 X = x; Y = y;
             }
 
+            /// <summary>
+            /// Geometry vertexes implementation
+            /// </summary>
             [JsonIgnore]
             public override IEnumerable<Vector3D> Vertexes
             {
@@ -111,6 +153,9 @@ namespace SearchAThing
                 }
             }
 
+            /// <summary>
+            /// enumerate coordinates
+            /// </summary>
             public IEnumerable<double> Coordinates
             {
                 get
@@ -121,12 +166,22 @@ namespace SearchAThing
                 }
             }
 
+            /// <summary>
+            /// states if this is a zero vector
+            /// </summary>
             public bool IsZeroLength { get { return (X + Y + Z).EqualsTol(Constants.NormalizedLengthTolerance, 0); } }
 
             /// <summary>
             /// Note: tol must be Constant.NormalizedLengthTolerance
             /// if comparing normalized vectors
             /// </summary>        
+
+            /// <summary>
+            /// checks vector component equality vs other given            
+            /// </summary>
+            /// <param name="tol">geometric tolerance ( note: use Constant.NormalizedLengthTolerance )</param>
+            /// <param name="other">vector to compare to this</param>
+            /// <returns>true if this vector equals the given one, false otherwise</returns>
             public bool EqualsTol(double tol, Vector3D other)
             {
                 return
@@ -154,13 +209,27 @@ namespace SearchAThing
                 return X.EqualsTol(tol, x) && Y.EqualsTol(tol, y);
             }
 
+            /// <summary>
+            /// checks vector component equality vs other given            
+            /// </summary>
+            /// <param name="tol">geometric tolerance ( note: use Constant.NormalizedLengthTolerance )</param>
+            /// <param name="x">other vector ( x component )</param>
+            /// <param name="y">other vector ( y component )</param>
+            /// <param name="z">other vector ( z component )</param>
+            /// <returns>true if this vector equals given on, false otherwise</returns>
             public bool EqualsTol(double tol, double x, double y, double z)
             {
                 return X.EqualsTol(tol, x) && Y.EqualsTol(tol, y) && Z.EqualsTol(tol, z);
             }
 
+            /// <summary>
+            /// length of this vector
+            /// </summary>
             public override double Length { get { return Sqrt(X * X + Y * Y + Z * Z); } }
 
+            /// <summary>
+            /// create dxf point entity suitable for netDxf addEntity
+            /// </summary>
             public override netDxf.Entities.EntityObject DxfEntity
             {
                 get
@@ -169,6 +238,9 @@ namespace SearchAThing
                 }
             }
 
+            /// <summary>
+            /// create a normalized version of this vector
+            /// </summary>
             public Vector3D Normalized()
             {
                 var l = Length;
@@ -176,8 +248,10 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// distance between two points
+            /// compute distance between this point and the other given
             /// </summary>
+            /// <param name="other">other point</param>
+            /// <returns>distance</returns>
             public double Distance(Vector3D other)
             {
                 return (this - other).Length;
@@ -186,23 +260,33 @@ namespace SearchAThing
             /// <summary>
             /// retrieve perpendicular distance of this point from the given line
             /// </summary>            
+
+            /// <summary>
+            /// compute perpendicular(min) distance of this point from given line
+            /// </summary>
+            /// <param name="tol">geometric tolerance</param>
+            /// <param name="other">line</param>
+            /// <returns>distance</returns>
             public double Distance(double tol, Line3D other)
             {
                 return other.Perpendicular(tol, this).Length;
             }
 
             /// <summary>
-            /// distance between two points ( without considering Z )
-            /// </summary>            
+            /// compute distance of this point from the given in 2d ( x,y ) without consider z component
+            /// </summary>
+            /// <param name="other">other point</param>
+            /// <returns>2d distance</returns>
             public double Distance2D(Vector3D other)
             {
                 return Sqrt((X - other.X) * (X - other.X) + (Y - other.Y) * (Y - other.Y));
             }
 
             /// <summary>
-            /// Dot product
-            /// a b = |a| |b| cos(alfa)
-            /// </summary>        
+            /// compute dot product of this vector for the given one
+            /// </summary>
+            /// <param name="other">second vector</param>
+            /// <returns>a b = |a| |b| cos(alfa)</returns>
             public double DotProduct(Vector3D other)
             {
                 return X * other.X + Y * other.Y + Z * other.Z;
@@ -210,20 +294,24 @@ namespace SearchAThing
 
             /// <summary>
             /// states is this vector is perpendicular to the given one
-            /// </summary>            
+            /// </summary>
+            /// <param name="other">other vector</param>
+            /// <returns>true if this vector is perpendicular to the given on, false otherwise</returns>
             public bool IsPerpendicular(Vector3D other)
             {
                 return Normalized().DotProduct(other.Normalized()).EqualsTol(Constants.NormalizedLengthTolerance, 0);
             }
 
             /// <summary>
-            /// Cross product ( note that resulting vector is not subjected to normalization )
+            /// Cross product
             /// a x b = |a| |b| sin(alfa) N
             /// a x b = |  x  y  z |
             ///         | ax ay az |
             ///         | bx by bz |
             /// https://en.wikipedia.org/wiki/Cross_product
-            /// </summary>        
+            /// </summary>               
+            /// <param name="other">other vector</param>
+            /// <returns>cross product this for given one ( result not normalized )</returns>      
             public Vector3D CrossProduct(Vector3D other)
             {
                 return new Vector3D(
@@ -233,10 +321,11 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// Angle (rad) between this and other given vector.
-            /// Note: tol must be Constant.NormalizedLengthTolerance
-            /// if comparing normalized vectors
-            /// </summary>        
+            /// angle between this and given vector
+            /// </summary>
+            /// <param name="tolLen">geometric tolerance ( use Constant.NormalizedLengthTolerance when comparing normalized vectors )</param>
+            /// <param name="to">other vector</param>
+            /// <returns>angle between two vectors (rad)</returns>
             public double AngleRad(double tolLen, Vector3D to)
             {
                 if (this.EqualsTol(tolLen, to)) return 0;
@@ -262,9 +351,10 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// project this vector to the other given,
-            /// the resulting vector will be colinear the given one
-            /// </summary>        
+            /// project this vector to the given one
+            /// </summary>
+            /// <param name="to">other vector</param>
+            /// <returns>projected vector ( will be colinear to the given one )</returns>
             public Vector3D Project(Vector3D to)
             {
                 // https://en.wikipedia.org/wiki/Vector_projection
@@ -276,17 +366,21 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// project this vector to the given line
-            /// </summary>            
+            /// project this point to the given line
+            /// </summary>
+            /// <param name="line">line to project the point onto</param>
+            /// <returns>projected point onto the line ( perpendicularly )</returns>
             public Vector3D Project(Line3D line)
             {
                 return (this - line.From).Project(line.V) + line.From;
             }
 
-
             /// <summary>
-            /// return a copy of this vector with ordinate ( 0:x 1:y 2:z ) changed
-            /// </summary>            
+            /// create a point copy of this one with component changed
+            /// </summary>
+            /// <param name="ordIdx">component to change ( 0:x 1:y 2:z )</param>
+            /// <param name="value">value to assign to the component</param>
+            /// <returns>new vector with component changed</returns>
             public Vector3D Set(OrdIdx ordIdx, double value)
             {
                 var x = X;
@@ -305,33 +399,45 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// Note: tol must be Constant.NormalizedLengthTolerance
-            /// if comparing normalized vectors
-            /// </summary>        
+            /// states if this vector concord to the given one
+            /// </summary>
+            /// <param name="tol">geometric tolerance ( Constant.NormalizedLengthTolerance if comparing normalized vectors )</param>
+            /// <param name="other">other vector</param>
+            /// <returns>true if this vector concordant to the other, false otherwise</returns>
             public bool Concordant(double tol, Vector3D other)
             {
                 return DotProduct(other) > tol;
             }
 
             /// <summary>
-            /// this relative to given origin
-            /// </summary>            
+            /// create a vector relative to given origin from this point and given origin
+            /// </summary>
+            /// <param name="origin">origin to make this point relative to</param>
+            /// <returns>vector</returns>
             public Vector3D Rel(Vector3D origin)
             {
                 return this - origin;
             }
 
+            /// <summary>
+            /// states if this vector is colinear to the given one
+            /// </summary>
+            /// <param name="tol">geometric tolerance</param>
+            /// <param name="other">other vector</param>
+            /// <returns>true if this vector colinear the given one, false otherwise</returns>
             public bool Colinear(double tol, Vector3D other)
             {
                 return new Line3D(Vector3D.Zero, this).Colinear(tol, new Line3D(Vector3D.Zero, other));
             }
 
             /// <summary>
-            /// Angle (rad) between this going toward the given other vector
-            /// rotating (right-hand-rule) around the given comparing axis
-            /// Note: tol must be Constant.NormalizedLengthTolerance
-            /// if comparing normalized vectors
-            /// </summary>        
+            /// compute angle required to make this point go to the given one
+            /// if rotate right-hand around given reference axis
+            /// </summary>
+            /// <param name="tolLen">geometric tolerance ( use Constant.NormalizedLengthTolerance if working with normalized vectors )</param>
+            /// <param name="to">point toward rotate this one</param>
+            /// <param name="refAxis">reference axis to make right-hand rotation of this point toward given one</param>
+            /// <returns>angle (rad)</returns>
             public double AngleToward(double tolLen, Vector3D to, Vector3D refAxis)
             {
                 var c = this.CrossProduct(to);
@@ -342,6 +448,11 @@ namespace SearchAThing
                     return 2 * PI - AngleRad(tolLen, to);
             }
 
+            /// <summary>
+            /// rotate this point around x-axis using quaternion
+            /// </summary>
+            /// <param name="angleRad">angle (rad) of rotation</param>
+            /// <returns>rotated point</returns>
             public Vector3D RotateAboutXAxis(double angleRad)
             {
                 var t = new Transform3D();
@@ -349,6 +460,11 @@ namespace SearchAThing
                 return t.Apply(this);
             }
 
+            /// <summary>
+            /// rotate this point around y-axis using quaternion
+            /// </summary>
+            /// <param name="angleRad">angle (rad) of rotation</param>
+            /// <returns>rotated point</returns>
             public Vector3D RotateAboutYAxis(double angleRad)
             {
                 var t = new Transform3D();
@@ -356,6 +472,11 @@ namespace SearchAThing
                 return t.Apply(this);
             }
 
+            /// <summary>
+            /// rotate this point around z-axis using quaternion
+            /// </summary>
+            /// <param name="angleRad">angle (rad) of rotation</param>
+            /// <returns>rotated point</returns>
             public Vector3D RotateAboutZAxis(double angleRad)
             {
                 var t = new Transform3D();
@@ -363,6 +484,12 @@ namespace SearchAThing
                 return t.Apply(this);
             }
 
+            /// <summary>
+            /// rotate this point right-hand around given axis using quaternion
+            /// </summary>
+            /// <param name="axis">rotation axis</param>
+            /// <param name="angleRad">angle (rad) of rotation</param>
+            /// <returns>rotated point</returns>
             public Vector3D RotateAboutAxis(Vector3D axis, double angleRad)
             {
                 var t = new Transform3D();
@@ -370,6 +497,12 @@ namespace SearchAThing
                 return t.Apply(this);
             }
 
+            /// <summary>
+            /// rotate this point right-hand around given segment using quaternion
+            /// </summary>
+            /// <param name="axisSegment">rotation axis segment</param>
+            /// <param name="angleRad">angle (rad) of rotation</param>
+            /// <returns>rotated point</returns>
             public Vector3D RotateAboutAxis(Line3D axisSegment, double angleRad)
             {
                 var vrel = this - axisSegment.From;
@@ -381,10 +514,20 @@ namespace SearchAThing
             /// Note: tol must be Constant.NormalizedLengthTolerance
             /// if comparing normalized vectors
             /// rotation from-to will be multiplied for given angleFactor ( default 1.0 )
-            /// </summary>        
-            public Vector3D RotateAs(double tol, Vector3D from, Vector3D to, double angleFactor = 1.0, double angleAddictional = 0)
+            /// </summary>      
+            
+            /// <summary>
+            /// rotate this point using rotation like point from goes toward point to
+            /// </summary>
+            /// <param name="tol">geometric tolerance ( use Constant.NormalizedLengthTolerance if vectors are normalized )</param>
+            /// <param name="from">point from describing rotation path</param>
+            /// <param name="to">point to describing rotation path</param>
+            /// <param name="angleFactor">optional angle rotation scaler</param>
+            /// <param name="angleAddictionalRad">optional angle (rad) component (added after angleFactor scaler)</param>
+            /// <returns></returns>
+            public Vector3D RotateAs(double tol, Vector3D from, Vector3D to, double angleFactor = 1.0, double angleAddictionalRad = 0)
             {
-                var angle = from.AngleRad(tol, to) * angleFactor + angleAddictional;
+                var angle = from.AngleRad(tol, to) * angleFactor + angleAddictionalRad;
                 var N = from.CrossProduct(to);
                 return this.RotateAboutAxis(N, angle);
             }

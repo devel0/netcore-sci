@@ -49,9 +49,9 @@ namespace SearchAThing
 
         public class Line3D : Geometry
         {
-            public static Line3D XAxisLine = new Line3D(Vector3D.Zero, Vector3D.XAxis);
-            public static Line3D YAxisLine = new Line3D(Vector3D.Zero, Vector3D.YAxis);
-            public static Line3D ZAxisLine = new Line3D(Vector3D.Zero, Vector3D.ZAxis);
+            public static readonly Line3D XAxisLine = new Line3D(Vector3D.Zero, Vector3D.XAxis);
+            public static readonly Line3D YAxisLine = new Line3D(Vector3D.Zero, Vector3D.YAxis);
+            public static readonly Line3D ZAxisLine = new Line3D(Vector3D.Zero, Vector3D.ZAxis);
 
             public Vector3D From { get; private set; }
             public Vector3D V { get; private set; }
