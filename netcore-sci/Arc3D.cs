@@ -12,11 +12,32 @@ namespace SearchAThing
     namespace Sci
     {
 
+        /// <summary>
+        /// base geometry for arc 3d entities
+        /// </summary>
         public class Arc3D : Geometry
         {
+
+            /// <summary>
+            /// coordinate system centered in arc center
+            /// angle is 0 at X axis
+            /// angle increase rotating right-hand on Z axis
+            /// </summary>            
             public CoordinateSystem3D CS { get; private set; }
+
+            /// <summary>
+            /// radius of arc
+            /// </summary>            
             public double Radius { get; private set; }
 
+            /// <summary>
+            /// construct 3d arc
+            /// </summary>
+            /// <param name="cs">coordinate system with origin at arc center, XY plane of cs contains the arc, angle is 0 at cs x-axis and increase right-hand around cs z-axis</param>
+            /// <param name="r">arc radius</param>
+            /// <param name="angleRadStart">arc angle start (rad). is not required that start angle less than end</param>
+            /// <param name="angleRadEnd">arc angle end (rad). is not require that end angle great than start</param>
+            /// <returns>3d arc</returns>
             public Arc3D(CoordinateSystem3D cs, double r, double angleRadStart, double angleRadEnd) :
                 base(GeometryType.Arc3D)
             {
@@ -26,6 +47,13 @@ namespace SearchAThing
                 Radius = r;
             }
 
+            /// <summary>
+            /// helper to build circle by given 3 points
+            /// </summary>
+            /// <param name="p1">first constraint point</param>            
+            /// <param name="p2">second constraint point</param>            
+            /// <param name="p3">third constraint point</param>            
+            /// <returns>cs and radius that describe a 3d circle</returns>
             public static (CoordinateSystem3D CS, double Radius) CircleBy3Points(Vector3D p1, Vector3D p2, Vector3D p3)
             {
                 // https://en.wikipedia.org/wiki/Circumscribed_circle
@@ -45,11 +73,14 @@ namespace SearchAThing
 
                 return (CS, Radius);
             }
-
+            
             /// <summary>
-            /// Build arc by 3 given points with angle 2*PI
-            /// ( the inside CS will centered in the arc center and Xaxis toward p1 )
-            /// </summary>        
+            /// build 3d arc by given 3 points
+            /// </summary>
+            /// <param name="p1">first constraint point</param>
+            /// <param name="p2">second constraint point</param>
+            /// <param name="p3">third constraint point</param>
+            /// <returns>3d arc passing for given points with angles 0-2pi</returns>
             internal Arc3D(Vector3D p1, Vector3D p2, Vector3D p3) :
                 base(GeometryType.Arc3D)
             {
@@ -80,7 +111,7 @@ namespace SearchAThing
 
                 if (normal != null)
                 {
-                    if (!normal.Colinear(tol_len, CS.BaseZ)) throw new Exception($"invalid given normal not colinear to arc axis");
+                    if (!normal.Colinear(tol_len, CS.BaseZ)) throw new ArgumentException($"invalid given normal not colinear to arc axis");
                     if (!normal.Concordant(tol_len, CS.BaseZ))
                     {
                         CS = CS.Rotate(CS.BaseX, PI);
@@ -421,12 +452,12 @@ namespace SearchAThing
     public class Arc3DEqualityComparer : IEqualityComparer<Arc3D>
     {
         double tolLen;
-        double tolRad;        
+        double tolRad;
 
         public Arc3DEqualityComparer(double _tolLen, double _tolRad)
         {
             tolLen = _tolLen;
-            tolRad = _tolRad;            
+            tolRad = _tolRad;
         }
 
         public bool Equals(Arc3D x, Arc3D y)

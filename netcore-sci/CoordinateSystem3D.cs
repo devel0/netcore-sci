@@ -1,6 +1,7 @@
 using SearchAThing.Sci;
 using System.Text;
 using static System.Math;
+using SearchAThing.Util;
 
 namespace SearchAThing
 {
@@ -28,31 +29,52 @@ namespace SearchAThing
             Matrix3D m;
             Matrix3D mInv;
 
+            /// <summary>
+            /// origin of cs where x,y,z base vectors applied
+            /// </summary>            
             public Vector3D Origin { get; private set; }
+
+            /// <summary>
+            /// cs x versor ( normalized )
+            /// </summary>            
             public Vector3D BaseX { get; private set; }
+
+            /// <summary>
+            /// cs y versor ( normalized )
+            /// </summary>            
             public Vector3D BaseY { get; private set; }
+
+            /// <summary>
+            /// cs z versor ( normalized )
+            /// </summary>            
             public Vector3D BaseZ { get; private set; }
 
             /// <summary>
             /// right handed XY ( Z ) : top view
             /// </summary>
-            public static CoordinateSystem3D XY =
+            public static readonly CoordinateSystem3D XY =
                 new CoordinateSystem3D(Vector3D.Zero, Vector3D.XAxis, Vector3D.YAxis, Vector3D.ZAxis);
 
             /// <summary>
             /// right handed XZ ( -Y ) : front view
             /// </summary>
-            public static CoordinateSystem3D XZ =
+            public static readonly CoordinateSystem3D XZ =
                 new CoordinateSystem3D(Vector3D.Zero, Vector3D.XAxis, Vector3D.ZAxis, -Vector3D.YAxis);
 
             /// <summary>
             /// right handed YZ ( X ) : side view
             /// </summary>
-            public static CoordinateSystem3D YZ =
+            public static readonly CoordinateSystem3D YZ =
                 new CoordinateSystem3D(Vector3D.Zero, Vector3D.YAxis, Vector3D.ZAxis, Vector3D.XAxis);
 
-            public static CoordinateSystem3D WCS = XY;
+            /// <summary>
+            /// world cs
+            /// </summary>
+            public static readonly CoordinateSystem3D WCS = XY;
 
+            /// <summary>
+            /// constant used for arbitrary axis alghoritm cs construction
+            /// </summary>
             const double aaaSmall = 1.0 / 64;
 
             public CoordinateSystem3D(Vector3D o, Vector3D normal, CoordinateSystem3DAutoEnum csAutoType = CoordinateSystem3DAutoEnum.AAA)
@@ -71,7 +93,7 @@ namespace SearchAThing
                                 Ax = Vector3D.ZAxis.CrossProduct(normal).Normalized();
 
                             var Ay = normal.CrossProduct(Ax).Normalized();
-                            
+
                             BaseX = Ax;
                             BaseY = Ay;
                             BaseZ = Ax.CrossProduct(Ay).Normalized();
@@ -79,7 +101,7 @@ namespace SearchAThing
                         break;
 
                     case CoordinateSystem3DAutoEnum.St7:
-                        {                            
+                        {
                             BaseZ = normal.Normalized();
 
                             // axis 2
@@ -99,8 +121,13 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// Construct a coordinate system with the given origin and orthonormal bases
-            /// </summary>        
+            /// construct a coordinate system with the given origin and orthonormal bases
+            /// note that given bases MUST already normalized
+            /// </summary>
+            /// <param name="o">cs origin</param>
+            /// <param name="baseX">cs X base ( must already normalized )</param>
+            /// <param name="baseY">cs Y base ( must already normalized )</param>
+            /// <param name="baseZ">cs Z base ( must already normalized )</param>
             public CoordinateSystem3D(Vector3D o, Vector3D baseX, Vector3D baseY, Vector3D baseZ)
             {
                 Origin = o;
@@ -143,6 +170,31 @@ namespace SearchAThing
             public Vector3D ToWCS(Vector3D p)
             {
                 return m * p + Origin;
+            }
+
+            /// <summary>
+            /// verify if this cs XY plane contains given wcs point
+            /// </summary>
+            /// <param name="tol">calc tolerance</param>
+            /// <param name="point">point to verify</param>
+            /// <returns>true if point contained in cs, else otherwise</returns>
+            public bool Contains(double tol, Vector3D point)
+            {
+                return point.ToUCS(this).Z.EqualsTol(tol, 0);
+            }
+
+            /// <summary>
+            /// verify is this cs is equals to otherByLayer ( same origin, x, y, z base vectors )
+            /// </summary>
+            /// <param name="tol">calc tolerance ( for origin check )</param>
+            /// <param name="other">cs to check equality against</param>
+            /// <returns>true if this cs equals the given on, false otherwise</returns>
+            public bool Equals(double tol, CoordinateSystem3D other)
+            {
+                return Origin.EqualsTol(tol, other.Origin) &&
+                    BaseX.EqualsTol(tol, other.BaseX) &&
+                    BaseY.EqualsTol(tol, other.BaseY) &&
+                    BaseZ.EqualsTol(tol, other.BaseZ);
             }
 
             /// <summary>
@@ -189,14 +241,20 @@ namespace SearchAThing
                     BaseZ.RotateAboutAxis(vectorAxis, angleRad));
             }
 
+            /// <summary>
+            /// debug string
+            /// </summary>
+            /// <returns>formatted representation of cs origin, x, y, z</returns>
             public override string ToString()
             {
                 return $"O:{Origin} X:{BaseX} Y:{BaseY} Z:{BaseZ}";
             }
 
             /// <summary>
-            /// CS RGB ( X=RED Y=GREEN Z=BLUE )
-            /// </summary>            
+            /// script to paste in cad to draw cs rgb mode ( x=red, y=green, z=blue )
+            /// </summary>                        
+            /// <param name="axisLen">length of x,y,z axes</param>
+            /// <returns>cad script</returns>
             public string ToCadString(double axisLen)
             {
                 var sb = new StringBuilder();
@@ -216,6 +274,9 @@ namespace SearchAThing
                 return sb.ToString();
             }
 
+            /// <summary>
+            /// script to paste in cad ( axis length = 1 )
+            /// </summary>
             public string CadScript
             {
                 get

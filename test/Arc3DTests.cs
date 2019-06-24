@@ -65,6 +65,11 @@ namespace SearchAThing.Sci.Tests
             var c = Arc3D.CircleBy3Points(p1, p2, p3);
             var cs = c.CS;
 
+            // verify points contained in arc plane
+            Assert.True(cs.Contains(1e-3, p1));
+            Assert.True(cs.Contains(1e-3, p2));
+            Assert.True(cs.Contains(1e-3, p3));
+
             // cscad retrieved from cad using ucs align entity
             var cscad = new CoordinateSystem3D(new Vector3D(165.221, 214.095, 24.351),
                 new Vector3D(-0.259, -0.621, 0.74), CoordinateSystem3DAutoEnum.AAA);
@@ -78,9 +83,32 @@ namespace SearchAThing.Sci.Tests
 
             // create a circle through p1,p2,p3 and states if the same as arc by 3 points
             var c2 = new Circle3D(p1, p2, p3);
-            Assert.True(c.Radius.EqualsAutoTol(c2.Radius));            
+            Assert.True(c.Radius.EqualsAutoTol(c2.Radius));
             Assert.True(c.CS.Origin.EqualsAutoTol(c2.CS.Origin));
             Assert.True(c.CS.IsParallelTo(1e-3, c2.CS));
+        }
+
+        [Fact]
+        public void Arc3DTest_003()
+        {
+            var p1 = new Vector3D(20.175, 178.425, -56.314);
+            var p2 = new Vector3D(1.799, 231.586, -18.134);
+            var p3 = new Vector3D(262.377, 302.118, 132.195);
+
+            var c = Arc3D.CircleBy3Points(p1, p2, p3);
+            var cs = c.CS;
+
+            var arc = new Arc3D(1e-3, p1, p2, p3, -cs.BaseZ);
+            var arcCs = arc.CS;
+
+            // two cs share same origin
+            Assert.True(arc.CS.Origin.EqualsTol(1e-3, cs.Origin));
+            // two cs with discordant colinear Z
+            Assert.True(arc.CS.BaseZ.Colinear(1e-3, cs.BaseZ) && !arc.CS.BaseZ.Concordant(1e-3, cs.BaseZ));
+            // two cs parallel
+            Assert.True(arc.CS.IsParallelTo(1e-3, cs));
+
+
         }
 
     }

@@ -379,22 +379,6 @@ namespace SearchAThing.Sci.Tests
             Assert.True(m.Solve(1.1, 2.2, 3.3).EqualsTol(1e-3, new Vector3D(-83.875, 4.95, 13.75)));
         }
 
-        [Fact(DisplayName = "CoordinateSystem3D")]
-        void Coordinate3DSystemTest()
-        {
-            var p = new Vector3D(53.0147, 34.5182, 20.1);
-
-            var o = new Vector3D(15.3106, 22.97, 0);
-            var v1 = new Vector3D(10.3859, 3.3294, 30);
-            var v2 = new Vector3D(2.3515, 14.101, 0);
-
-            var cs = new CoordinateSystem3D(o, v1, v2);
-
-            var u = p.ToUCS(cs);
-            Assert.True(u.EqualsTol(1e-4, 32.3623, 12.6875, -27.3984));
-            Assert.True(u.ToWCS(cs).EqualsTol(1e-4, p));
-        }
-
         [Fact(DisplayName = "Plane3D")]
         void Plane3DTest()
         {
