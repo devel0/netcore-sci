@@ -170,12 +170,7 @@ namespace SearchAThing
             /// states if this is a zero vector
             /// </summary>
             public bool IsZeroLength { get { return (X + Y + Z).EqualsTol(Constants.NormalizedLengthTolerance, 0); } }
-
-            /// <summary>
-            /// Note: tol must be Constant.NormalizedLengthTolerance
-            /// if comparing normalized vectors
-            /// </summary>        
-
+            
             /// <summary>
             /// checks vector component equality vs other given            
             /// </summary>
@@ -256,10 +251,6 @@ namespace SearchAThing
             {
                 return (this - other).Length;
             }
-
-            /// <summary>
-            /// retrieve perpendicular distance of this point from the given line
-            /// </summary>            
 
             /// <summary>
             /// compute perpendicular(min) distance of this point from given line
