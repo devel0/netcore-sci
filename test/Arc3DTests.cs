@@ -14,6 +14,9 @@ namespace SearchAThing.Sci.Tests
             rad_tol = (1e-1).ToRad();
         }
 
+        /// <summary>
+        /// Arc3DTest_001.dxf
+        /// </summary>
         [Fact]
         public void Arc3DTest_001()
         {
@@ -55,6 +58,9 @@ namespace SearchAThing.Sci.Tests
             Assert.True(arc.IntersectArc(1e-4, rad_tol, seg_e).Count() == 0);
         }
 
+        /// <summary>
+        /// Arc3DTest_002.dxf
+        /// </summary>
         [Fact]
         public void Arc3DTest_002()
         {
@@ -88,6 +94,9 @@ namespace SearchAThing.Sci.Tests
             Assert.True(c.CS.IsParallelTo(1e-3, c2.CS));
         }
 
+        /// <summary>
+        /// Arc3DTest_003.dxf
+        /// </summary>
         [Fact]
         public void Arc3DTest_003()
         {
@@ -107,8 +116,6 @@ namespace SearchAThing.Sci.Tests
             Assert.True(arc.CS.BaseZ.Colinear(1e-3, cs.BaseZ) && !arc.CS.BaseZ.Concordant(1e-3, cs.BaseZ));
             // two cs parallel
             Assert.True(arc.CS.IsParallelTo(1e-3, cs));
-
-
         }
 
     }

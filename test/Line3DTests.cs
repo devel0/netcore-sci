@@ -14,43 +14,62 @@ namespace SearchAThing.Sci.Tests
             rad_tol = (1e-1).ToRad();
         }
 
+        /// <summary>
+        /// 3d line by given two vectors, first is from, second is to
+        /// </summary>
         [Fact]
-        public void Line3DTest()
+        public void Line3DTest_001()
         {
             var l = new Line3D(new Vector3D(1, 2, 3), new Vector3D(4, 5, 6));
             Assert.True(l.From.EqualsTol(1e-1, 1, 2, 3) && l.To.EqualsTol(1e-1, 4, 5, 6));
         }
 
+        /// <summary>
+        /// 3d line by 1 point and 1 vector, first is start, second summed up to result in to
+        /// </summary>
         [Fact]
-        public void Line3DTest1()
+        public void Line3DTest_002()
         {
             var l = new Line3D(new Vector3D(1, 2, 3), new Vector3D(4, 5, 6), Line3DConstructMode.PointAndVector);
             Assert.True(l.From.EqualsTol(1e-1, 1, 2, 3) && l.To.EqualsTol(1e-1, 1 + 4, 2 + 5, 3 + 6));
         }
 
+        /// <summary>
+        /// 3d line by two 2d tuples ( z zero )
+        /// </summary>
         [Fact]
-        public void Line3DTest2()
+        public void Line3DTest_003()
         {
             var l = new Line3D(1, 2, 3, 4);
             Assert.True(l.From.EqualsTol(1e-1, 1, 2, 0) && l.To.EqualsTol(1e-1, 3, 4, 0));
         }
 
+        /// <summary>
+        /// 3d line by two 3d tuples ( from is x1,y1,z1 while to is x2,y2,z2 )
+        /// </summary>
         [Fact]
-        public void Line3DTest3()
+        public void Line3DTest_004()
         {
             var l = new Line3D(1, 2, 3, 4, 5, 6);
             Assert.True(l.From.EqualsTol(1e-1, 1, 2, 3) && l.To.EqualsTol(1e-1, 4, 5, 6));
         }
 
+        /// <summary>
+        /// 3d line equality
+        /// </summary>
         [Fact]
-        public void EqualsTolTest()
+        public void Line3DTest_005()
         {
             var l = new Line3D(1, 2, 3, 4, 5, 6);
             Assert.True(l.EqualsTol(1e-1, new Line3D(new Vector3D(1, 2, 3), new Vector3D(4, 5, 6))));
         }
 
+        /// <summary>
+        /// consecutive segment states which is the common point
+        /// or null if there isn't in the used tolerance
+        /// </summary>
         [Fact]
-        public void CommonPointTest()
+        public void Line3DTest_006()
         {
             var l = new Line3D(1, 2, 3, 4, 5, 6);
             var l2 = new Line3D(4, 5, 6, 7, 8, 9);
@@ -60,28 +79,50 @@ namespace SearchAThing.Sci.Tests
             Assert.True(l.CommonPoint(1e-1, l3) == null);
         }
 
+        /// <summary>
+        /// revert a 3d line swaps from,to
+        /// </summary>
         [Fact]
-        public void ReverseTest()
+        public void Line3DTest_007()
         {
             var l = new Line3D(1, 2, 3, 4, 5, 6);
             var r = l.Reverse();
             Assert.True(r.From.EqualsTol(1e-1, 4, 5, 6) && r.To.EqualsTol(1e-1, 1, 2, 3));
         }
 
+        /// <summary>
+        /// inverted line retrieve a line with same from but to inverted respect to from
+        /// Line3DTest_008.dxf
+        /// </summary>
         [Fact]
-        public void ScaleTest()
+        public void Line3DTest_008()
         {
-            var l = new Line3D(0, 0, 0, 1, 2, 3);
+            var l = new Line3D(1, 2, 3, 4, 5, 6);
+            var i = l.Inverted;
+            Assert.True(i.From.EqualsTol(1e-1, 1, 2, 3) && i.To.EqualsTol(1e-1, -2, -1, 0));
+        }
 
-            Assert.True(l.Scale(new Vector3D(0, 0, 0), .5).EqualsTol(1e-1,
-                new Line3D(0, 0, 0, .5, 1, 1.5)));
-            Assert.True(l.Scale(new Vector3D(0, 0, 0), -.5).EqualsTol(1e-1,
-                new Line3D(0, 0, 0, -.5, -1, -1.5)));
+        /// <summary>
+        /// scale line respect a given point
+        /// Line3DTest_009.dxf
+        /// </summary>
+        [Fact]
+        public void Line3DTest_009()
+        {
+            var l = new Line3D(
+                new Vector3D(16.423, 80.164, -18.989),
+                new Vector3D(218.367, 151.378, 63.243));
 
-            Assert.True(l.Scale(new Vector3D(.5, .5, .5), .5).EqualsTol(1e-1,
-                new Line3D(.25, .25, .25, .75, 1.25, 1.75)));
-            Assert.True(l.Scale(new Vector3D(.5, .5, .5), -.5).EqualsTol(1e-1,
-                new Line3D(.75, .75, .75, .25, -.25, -.75)));
+            var p = new Vector3D(119.015, 54.432, 5.66);
+            var l2 = l.Scale(p, .71);
+            Assert.True(l2.EqualsTol(1e-3, new Line3D(
+                new Vector3D(46.175, 72.702, -11.841),
+                new Vector3D(189.555, 123.264, 46.544))));
+
+            var l4 = l.Scale(p, -1.5);
+            Assert.True(l4.EqualsTol(1e-3, new Line3D(
+                new Vector3D(272.903, 15.834, 42.634),
+                new Vector3D(-30.013, -90.987, -80.715))));
         }
 
         [Fact]

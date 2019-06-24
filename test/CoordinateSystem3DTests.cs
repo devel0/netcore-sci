@@ -11,6 +11,9 @@ namespace SearchAThing.Sci.Tests
         {
         }
 
+        /// <summary>
+        /// CoordinateSystem3DTest_001.dxf
+        /// </summary>
         [Fact]
         public void CoordinateSystem3DTest_001()
         {
@@ -30,6 +33,9 @@ namespace SearchAThing.Sci.Tests
             Assert.True(cs2.Equals(1e-3, cs2cad));
         }
 
+        /// <summary>
+        /// CoordinateSystem3DTest_002.dxf
+        /// </summary>
         [Fact]
         public void CoordinateSystem3DTest_002()
         {
@@ -49,6 +55,9 @@ namespace SearchAThing.Sci.Tests
             Assert.True(cs.ToWCS(u).EqualsTol(1e-4, u.ToWCS(cs)));
         }
 
+        /// <summary>
+        /// CoordinateSystem3DTest_003.dxf
+        /// </summary>
         [Fact]
         public void CoordinateSystem3DTest_003()
         {
@@ -66,6 +75,9 @@ namespace SearchAThing.Sci.Tests
             Assert.True(cs1cad.Move(delta).Equals(1e-3, cs2cad));
         }
 
+        /// <summary>
+        /// CoordinateSystem3DTest_004.dxf
+        /// </summary>
         [Fact]
         public void CoordinateSystem3DTest_004()
         {
