@@ -5,13 +5,15 @@ using System.Runtime.Serialization;
 using System.Globalization;
 using SearchAThing.Sci;
 using SearchAThing.Util;
+using Newtonsoft.Json;
 
 namespace SearchAThing
 {
 
     namespace Sci
     {
-        
+
+        [JsonConverter(typeof(MeasureUnitJsonConverter))]
         public class MeasureUnit : IEquatable<MeasureUnit>
         {
             /// <summary>
@@ -27,6 +29,7 @@ namespace SearchAThing
             
             public string Name { get; private set; }
             
+            [JsonIgnore]
             public PhysicalQuantity PhysicalQuantity { get; private set; }
 
             void Init(PhysicalQuantity physicalQuantity, string name, MeasureUnit convRefUnit = null)
