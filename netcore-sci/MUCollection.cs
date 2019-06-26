@@ -328,6 +328,7 @@ namespace SearchAThing.Sci
                 if (force.Equals(Force.N))
                 {
                     if (length.Equals(Length.m)) return Pa;
+                    if (length.Equals(Length.mm)) return MPa;
                 }
                 #endregion
 
