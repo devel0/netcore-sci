@@ -590,7 +590,7 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// Convert this wcs considered vector to given cs
+            /// Convert this wcs considered vector to given cs (cs origin will subtracted from this point)
             /// </summary>
             public Vector3D ToUCS(CoordinateSystem3D cs)
             {
@@ -598,7 +598,7 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// Convert this ucs considered vector using given cs to the wcs
+            /// Convert this ucs considered vector using given cs to the wcs ( cs origin will added )
             /// </summary>
             public Vector3D ToWCS(CoordinateSystem3D cs)
             {

@@ -157,7 +157,7 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// Transform given wcs vector into this ucs
+            /// Transform given wcs vector into this ucs (ucs origin will subtracted from wcs point)
             /// </summary>        
             public Vector3D ToUCS(Vector3D p)
             {
@@ -165,7 +165,7 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// transform given CS coordinate to WCS
+            /// transform given CS coordinate to WCS ( cs origin will added )
             /// </summary>            
             public Vector3D ToWCS(Vector3D p)
             {
@@ -293,7 +293,10 @@ namespace SearchAThing
     {
 
         /// <summary>
-        /// project given point to the given cs ( zap vector z' to 0 )
+        /// project given point to the given cs;
+        /// - cs origin will subtracted from this vector
+        /// - zap vector z' to 0
+        /// - reconvert to wcs ( cs origin will added )
         /// </summary>        
         public static Vector3D Project(this Vector3D v, CoordinateSystem3D cs)
         {
