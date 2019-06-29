@@ -157,17 +157,21 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// Transform given wcs vector into this ucs (ucs origin will subtracted from wcs point)
-            /// </summary>        
-            public Vector3D ToUCS(Vector3D p)
+            /// Transform wcs point to given cs
+            /// </summary>
+            /// <param name="p">wcs point</param>
+            /// <param name="evalCSOrigin">if true CS origin will subtracted from wcs point before transform</param>            
+            public Vector3D ToUCS(Vector3D p, bool evalCSOrigin = true)
             {
                 return mInv * (p - Origin);
             }
 
             /// <summary>
-            /// transform given CS coordinate to WCS ( cs origin will added )
-            /// </summary>            
-            public Vector3D ToWCS(Vector3D p)
+            /// transform ucs point to wcs
+            /// </summary>
+            /// <param name="p">ucs point</param>
+            /// <param name="evalCSOrigin">if true CS origin will added after transform</param>            
+            public Vector3D ToWCS(Vector3D p, bool evalCSOrigin = true)
             {
                 return m * p + Origin;
             }
@@ -177,10 +181,11 @@ namespace SearchAThing
             /// </summary>
             /// <param name="tol">calc tolerance</param>
             /// <param name="point">point to verify</param>
+            /// <param name="evalCSOrigin">if true CS origin will subtracted before transform test</param>
             /// <returns>true if point contained in cs, else otherwise</returns>
-            public bool Contains(double tol, Vector3D point)
+            public bool Contains(double tol, Vector3D point, bool evalCSOrigin = true)
             {
-                return point.ToUCS(this).Z.EqualsTol(tol, 0);
+                return point.ToUCS(this, evalCSOrigin).Z.EqualsTol(tol, 0);
             }
 
             /// <summary>
@@ -293,14 +298,14 @@ namespace SearchAThing
     {
 
         /// <summary>
-        /// project given point to the given cs;
-        /// - cs origin will subtracted from this vector
-        /// - zap vector z' to 0
-        /// - reconvert to wcs ( cs origin will added )
-        /// </summary>        
-        public static Vector3D Project(this Vector3D v, CoordinateSystem3D cs)
+        /// project given point to the given cs
+        /// </summary>
+        /// <param name="v">wcs point</param>
+        /// <param name="cs">cs to project</param>
+        /// <param name="evalCSOrigin">if true cs origin will subtracted before transform, then readded to obtain wcs point</param>        
+        public static Vector3D Project(this Vector3D v, CoordinateSystem3D cs, bool evalCSOrigin = true)
         {
-            return v.ToUCS(cs).Set(OrdIdx.Z, 0).ToWCS(cs);
+            return v.ToUCS(cs, evalCSOrigin).Set(OrdIdx.Z, 0).ToWCS(cs, evalCSOrigin);
         }
 
     }

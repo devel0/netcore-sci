@@ -590,19 +590,23 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// Convert this wcs considered vector to given cs (cs origin will subtracted from this point)
+            /// Convert this wcs point to given cs coord
             /// </summary>
-            public Vector3D ToUCS(CoordinateSystem3D cs)
+            /// <param name="cs">dest CS</param>
+            /// <param name="evalCSOrigin">if true CS origin will subtracted before transform</param>            
+            public Vector3D ToUCS(CoordinateSystem3D cs, bool evalCSOrigin = true)
             {
-                return cs.ToUCS(this);
+                return cs.ToUCS(this, evalCSOrigin);
             }
 
             /// <summary>
-            /// Convert this ucs considered vector using given cs to the wcs ( cs origin will added )
+            /// Convert this ucs considered vector using given cs to the wcs
             /// </summary>
-            public Vector3D ToWCS(CoordinateSystem3D cs)
+            /// <param name="cs">ucs point</param>
+            /// <param name="evalCSOrigin">if true CS origin will added after transform</param>
+            public Vector3D ToWCS(CoordinateSystem3D cs, bool evalCSOrigin = true)
             {
-                return cs.ToWCS(this);
+                return cs.ToWCS(this, evalCSOrigin);
             }
 
             /// <summary>
