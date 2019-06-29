@@ -293,7 +293,7 @@ namespace SearchAThing
     {
 
         /// <summary>
-        /// project given vector to the given cs ( zap vector z' to 0 )
+        /// project given point to the given cs ( zap vector z' to 0 )
         /// </summary>        
         public static Vector3D Project(this Vector3D v, CoordinateSystem3D cs)
         {

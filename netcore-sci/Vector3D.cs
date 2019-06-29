@@ -170,7 +170,7 @@ namespace SearchAThing
             /// states if this is a zero vector
             /// </summary>
             public bool IsZeroLength { get { return (X + Y + Z).EqualsTol(Constants.NormalizedLengthTolerance, 0); } }
-            
+
             /// <summary>
             /// checks vector component equality vs other given            
             /// </summary>
@@ -506,7 +506,7 @@ namespace SearchAThing
             /// if comparing normalized vectors
             /// rotation from-to will be multiplied for given angleFactor ( default 1.0 )
             /// </summary>      
-            
+
             /// <summary>
             /// rotate this point using rotation like point from goes toward point to
             /// </summary>
@@ -836,6 +836,9 @@ namespace SearchAThing
                 return Invariant($"({X}, {Y}, {Z})");
             }
 
+            /// <summary>
+            /// cad script for this vector as wcs point
+            /// </summary>
             public string CadScript
             {
                 get
@@ -844,6 +847,14 @@ namespace SearchAThing
                 }
             }
 
+            /// <summary>
+            /// cad script for a line (0,0,0) to this vector
+            /// </summary>
+            public string CadScriptLine => new Line3D(Vector3D.Zero, this).CadScript;
+
+            /// <summary>
+            /// cad script for a line departing from this wcs point
+            /// </summary>
             public string CadScriptLineFrom
             {
                 get
