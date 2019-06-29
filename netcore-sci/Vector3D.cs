@@ -595,7 +595,7 @@ namespace SearchAThing
             /// <param name="cs">dest CS</param>
             /// <param name="evalCSOrigin">if true CS origin will subtracted before transform</param>            
             public Vector3D ToUCS(CoordinateSystem3D cs, bool evalCSOrigin = true)
-            {
+            {                
                 return cs.ToUCS(this, evalCSOrigin);
             }
 

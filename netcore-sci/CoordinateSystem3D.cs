@@ -163,7 +163,10 @@ namespace SearchAThing
             /// <param name="evalCSOrigin">if true CS origin will subtracted from wcs point before transform</param>            
             public Vector3D ToUCS(Vector3D p, bool evalCSOrigin = true)
             {
-                return mInv * (p - Origin);
+                if (evalCSOrigin)
+                    return mInv * (p - Origin);
+                else
+                    return mInv * p;
             }
 
             /// <summary>
@@ -173,7 +176,10 @@ namespace SearchAThing
             /// <param name="evalCSOrigin">if true CS origin will added after transform</param>            
             public Vector3D ToWCS(Vector3D p, bool evalCSOrigin = true)
             {
-                return m * p + Origin;
+                if (evalCSOrigin)
+                    return m * p + Origin;
+                else
+                    return m * p;
             }
 
             /// <summary>
