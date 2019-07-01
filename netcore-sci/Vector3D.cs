@@ -972,7 +972,7 @@ namespace SearchAThing
         Circle
     };
 
-    public static partial class Extensions
+    public static partial class SciExt
     {
 
         /// <summary>

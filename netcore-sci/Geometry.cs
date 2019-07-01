@@ -42,7 +42,7 @@ namespace SearchAThing
 
     }
 
-    public static partial class Extensions
+    public static partial class SciExt
     {
 
         public static IEnumerable<Geometry> ToGeometryBlock(this netDxf.Entities.LwPolyline lwpolyline, double tolLen)

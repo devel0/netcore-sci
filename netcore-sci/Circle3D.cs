@@ -126,7 +126,7 @@ namespace SearchAThing
         }
     }
 
-    public static partial class Extensions
+    public static partial class SciExt
     {
 
         public static Circle3D CircleBy3Points(this IEnumerable<Vector3D> _pts)

@@ -5,7 +5,7 @@ using SearchAThing.Util;
 namespace SearchAThing
 {
 
-    public static partial class Extensions
+    public static partial class SciExt
     {
 
         /// <summary>

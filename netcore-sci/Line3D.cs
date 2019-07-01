@@ -768,7 +768,7 @@ namespace SearchAThing
 
     }
 
-    public static partial class Extensions
+    public static partial class SciExt
     {
 
         public static string ToCadScript(this IEnumerable<Line3D> lines)

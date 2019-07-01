@@ -413,7 +413,7 @@ namespace SearchAThing
 
     }
 
-    public static partial class Extensions
+    public static partial class SciExt
     {
 
         public static Arc3D ToArc3D(this netDxf.Entities.Arc dxf_arc)

@@ -344,7 +344,7 @@ namespace SearchAThing
 
     }
 
-    public static partial class Extensions
+    public static partial class SciExt
     {
 
         public static MeasureUnitWithDefaultTolerance ByPhysicalQuantity(this IMUDomain mud, PhysicalQuantity physicalQuantity)
