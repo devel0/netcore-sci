@@ -3,7 +3,7 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageId>netcore-sci</PackageId>   
-        <PackageVersion>1.0.18</PackageVersion>
+        <PackageVersion>1.0.19</PackageVersion>
         <Title>net core scientific</Title>
         <Description></Description>
         <Authors>Lorenzo Delana</Authors>
@@ -13,7 +13,7 @@
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="netcore-psql-util" Version="1.0.2" />
-        <PackageReference Include="netcore-util" Version="1.0.0" />
+        <PackageReference Include="netcore-util" Version="1.0.4" />
         <PackageReference Include="netDXF.Standard" Version="2.1.1" />
     </ItemGroup>
     <ItemGroup>

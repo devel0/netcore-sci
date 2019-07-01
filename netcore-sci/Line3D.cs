@@ -53,10 +53,25 @@ namespace SearchAThing
             public static readonly Line3D YAxisLine = new Line3D(Vector3D.Zero, Vector3D.YAxis);
             public static readonly Line3D ZAxisLine = new Line3D(Vector3D.Zero, Vector3D.ZAxis);
 
+            /// <summary>
+            /// application point vector
+            /// </summary>
             public Vector3D From { get; private set; }
+
+            /// <summary>
+            /// vector depart at From to identify To
+            /// </summary>
             public Vector3D V { get; private set; }
+
+            /// <summary>
+            /// From + V
+            /// </summary>            
             public Vector3D To { get { return From + V; } }
-            public Vector3D Dir { get { return (To - From).Normalized(); } }
+
+            /// <summary>
+            /// V normalized
+            /// </summary>            
+            public Vector3D Dir { get { return V.Normalized(); } }
 
             [JsonIgnore]
             public override Vector3D GeomFrom => From;
