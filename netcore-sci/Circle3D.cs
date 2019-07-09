@@ -39,6 +39,9 @@ namespace SearchAThing
                 }
             }
 
+            public override bool Contains(double tol, Vector3D pt, bool onlyPerimeter) =>
+                Contains(tol, pt, inArcAngleRange: false, onlyPerimeter: onlyPerimeter);            
+
             /// <summary>
             /// creates a polygon approximation of this circle with segments of given maxLength
             /// </summary>            

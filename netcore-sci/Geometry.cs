@@ -29,7 +29,7 @@ namespace SearchAThing
             public abstract Vector3D GeomTo { get; }
             public abstract double Length { get; }
             public abstract IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false);
-            public abstract BBox3D BBox(double tol_len, double tol_rad);
+            public abstract BBox3D BBox(double tol_len);
 
             public abstract netDxf.Entities.EntityObject DxfEntity { get; }
 
@@ -213,11 +213,11 @@ namespace SearchAThing
             }
         }
 
-        public static BBox3D BBox(this IEnumerable<Geometry> geometry_block, double tol_len, double tol_rad)
+        public static BBox3D BBox(this IEnumerable<Geometry> geometry_block, double tol_len)
         {
             var bbox = new BBox3D();
 
-            foreach (var x in geometry_block) bbox = bbox.Union(x.BBox(tol_len, tol_rad));
+            foreach (var x in geometry_block) bbox = bbox.Union(x.BBox(tol_len));
 
             return bbox;
         }

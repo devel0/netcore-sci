@@ -35,14 +35,14 @@ namespace SearchAThing
             /// </summary>
             /// <param name="cs">coordinate system with origin at arc center, XY plane of cs contains the arc, angle is 0 at cs x-axis and increase right-hand around cs z-axis</param>
             /// <param name="r">arc radius</param>
-            /// <param name="angleRadStart">arc angle start (rad). is not required that start angle less than end</param>
-            /// <param name="angleRadEnd">arc angle end (rad). is not require that end angle great than start</param>
+            /// <param name="angleRadStart">arc angle start (rad). is not required that start angle less than end. It will normalized 0-2pi</param>
+            /// <param name="angleRadEnd">arc angle end (rad). is not require that end angle great than start. It will normalized 0-2pi</param>
             /// <returns>3d arc</returns>
             public Arc3D(CoordinateSystem3D cs, double r, double angleRadStart, double angleRadEnd) :
                 base(GeometryType.Arc3D)
             {
-                AngleStartRad = angleRadStart;
-                AngleEndRad = angleRadEnd;
+                AngleStart = angleRadStart.NormalizeAngle2PI();
+                AngleEnd = angleRadEnd.NormalizeAngle2PI();
                 CS = cs;
                 Radius = r;
             }
@@ -73,7 +73,14 @@ namespace SearchAThing
 
                 return (CS, Radius);
             }
-            
+
+            /// <summary>
+            /// compute angle rad tolerance by given arc length tolerance
+            /// </summary>
+            /// <param name="lenTol">length tolerance on the arc</param>
+            /// <param name="radius">radius of the arc</param>
+            public static double ArcLenTolToRadTol(double lenTol, double radius) => lenTol / radius;
+
             /// <summary>
             /// build 3d arc by given 3 points
             /// </summary>
@@ -91,8 +98,8 @@ namespace SearchAThing
                 CS = nfo.CS;
                 Radius = nfo.Radius;
 
-                AngleStartRad = 0;
-                AngleEndRad = 2 * PI;
+                AngleStart = 0;
+                AngleEnd = 2 * PI;
             }
 
             /// <summary>
@@ -118,23 +125,41 @@ namespace SearchAThing
                     }
                 }
 
-                AngleStartRad = CS.BaseX.AngleToward(tol_len, p1 - CS.Origin, CS.BaseZ);
-                AngleEndRad = CS.BaseX.AngleToward(tol_len, p3 - CS.Origin, CS.BaseZ);
+                AngleStart = CS.BaseX.AngleToward(tol_len, p1 - CS.Origin, CS.BaseZ).NormalizeAngle2PI();
+                AngleEnd = CS.BaseX.AngleToward(tol_len, p3 - CS.Origin, CS.BaseZ).NormalizeAngle2PI();
             }
 
+            /// <summary>
+            /// create an arc copy with origin moved
+            /// </summary>
+            /// <param name="delta">new arc origin delta</param>
             public Arc3D Move(Vector3D delta)
             {
-                return new Arc3D(CS.Move(delta), Radius, AngleStartRad, AngleEndRad);
+                return new Arc3D(CS.Move(delta), Radius, AngleStart, AngleEnd);
             }
 
-            public double AngleStartRad { get; private set; }
-            public double AngleEndRad { get; private set; }
-            public double AngleRad
+            /// <summary>
+            /// start angle (rad) [0-2pi) respect cs xaxis rotating around cs zaxis
+            /// note that start angle can be greather than end angle
+            /// </summary>
+            public double AngleStart { get; private set; }
+
+            /// <summary>
+            /// end angle (rad) [0-2pi) respect cs xaxis rotating around cs zaxis
+            /// note that start angle can be greather than end angle
+            /// </summary>            
+            public double AngleEnd { get; private set; }
+
+            /// <summary>
+            /// Arc (rad) angle length.
+            /// angle between start-end or end-start depending on what start is less than end or not
+            /// </summary>
+            public double Angle
             {
                 get
                 {
-                    var astart = AngleStartRad.NormalizeAngle2PI();
-                    var aend = AngleEndRad.NormalizeAngle2PI();
+                    var astart = AngleStart;
+                    var aend = AngleEnd;
 
                     if (astart > aend)
                         return aend + (2 * PI - astart);
@@ -150,29 +175,36 @@ namespace SearchAThing
             {
                 get
                 {
-                    return AngleRad * Radius;
+                    return Angle * Radius;
                 }
             }
 
             public override Vector3D GeomFrom => From;
+
             public override Vector3D GeomTo => To;
 
+            /// <summary>
+            /// point on the arc circumnfere at given angle (rotating cs basex around cs basez)
+            /// </summary>
             public Vector3D PtAtAngle(double angleRad)
             {
                 return (Vector3D.XAxis * Radius).RotateAboutZAxis(angleRad).ToWCS(CS);
             }
 
+            /// <summary>
+            /// mid point eval as arc point at angle start + arc angle/2
+            /// </summary>
             public Vector3D MidPoint
             {
                 get
                 {
-                    return PtAtAngle(AngleStartRad + AngleRad / 2);
+                    return PtAtAngle(AngleStart + Angle / 2);
                 }
             }
 
-            /// <summary>
-            /// assuming pt is a point on the arc
-            /// return the angle of the point ( rad )
+            /// <summary>            
+            /// return the angle (rad) of the point respect cs x axis rotating around cs z axis
+            /// to reach given point angle alignment
             /// </summary>            
             public double PtAngle(double tolLen, Vector3D pt)
             {
@@ -182,8 +214,8 @@ namespace SearchAThing
                 return v_x.AngleToward(tolLen, v_pt, CS.BaseZ);
             }
 
-            public Vector3D From { get { return PtAtAngle(AngleStartRad); } }
-            public Vector3D To { get { return PtAtAngle(AngleEndRad); } }
+            public Vector3D From { get { return PtAtAngle(AngleStart); } }
+            public Vector3D To { get { return PtAtAngle(AngleEnd); } }
             /// <summary>
             /// return From,To segment
             /// </summary>
@@ -225,40 +257,58 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// check if this circle contains given point
-            /// </summary>            
-            public bool Contains(double tol, Vector3D pt, bool onlyAtCircumnfere = false)
+            /// statis if given point contained in arc perimeter/shape or circle perimeter/shape depending on specified mode
+            /// </summary>                
+            /// <param name="tol">len tolerance</param>
+            /// <param name="pt">point to test</param>
+            /// <param name="inArcAngleRange">true if point angle must contained in arc angles, false to test like a circle</param>
+            /// <param name="onlyPerimeter">true to test point contained only in perimeter, false to test also contained in area</param>
+            /// <returns></returns>//         
+            protected bool Contains(double tol, Vector3D pt, bool inArcAngleRange, bool onlyPerimeter)
             {
                 var onplane = pt.ToUCS(CS).Z.EqualsTol(tol, 0);
                 var center_dst = pt.Distance(CS.Origin);
 
-                if (onlyAtCircumnfere)
+                if (inArcAngleRange)
+                {
+                    var tolRad = Arc3D.ArcLenTolToRadTol(tol, Radius);
+                    var ptAngle = PtAngle(tol, pt);
+                    var isInAngleRange = ptAngle.AngleInRange(tolRad, AngleStart, AngleEnd);
+                    if (!isInAngleRange) return false;
+                }
+
+                if (onlyPerimeter)
                     return onplane && center_dst.EqualsTol(tol, Radius);
                 else
                     return onplane && center_dst.LessThanOrEqualsTol(tol, Radius);
             }
 
             /// <summary>
-            /// verify if given point is in this arc between its start-to arc angles
-            /// </summary>            
-            public bool Contains(double tolLen, double tolRad, Vector3D pt)
+            /// states if given point relies on this arc perimeter or shape depending on arguments
+            /// </summary>
+            /// <param name="tol">length tolerance</param>
+            /// <param name="pt">point to check</param>
+            /// <param name="onlyPerimeter">if true it checks if point is on perimeter; if false it will check in area too</param>
+            public virtual bool Contains(double tol, Vector3D pt, bool onlyPerimeter)
             {
-                // if not in circle stop
-                if (!this.Contains(tolLen, pt)) return false;
-
-                return PtAngle(tolLen, pt).AngleInRange(tolRad, AngleStartRad, AngleEndRad);
+                return Contains(tol, pt, true, onlyPerimeter);
             }
 
             /// <summary>
             /// if validate_pts false it assume all given split points are valid point on the arc
-            /// </summary>            
-            public IEnumerable<Arc3D> Split(double tolLen, double tolRad, IEnumerable<Vector3D> _splitPts, bool validate_pts = false)
+            /// </summary>                        
+            /// <param name="tolLen">arc length tolerance</param>
+            /// <param name="_splitPts"></param>
+            /// <param name="validate_pts"></param>            
+            public IEnumerable<Arc3D> Split(double tolLen, IEnumerable<Vector3D> _splitPts, bool validate_pts = false)
             {
+                var tolRad = Arc3D.ArcLenTolToRadTol(tolLen, Radius);
+
                 if (_splitPts == null || _splitPts.Count() == 0) yield break;
 
                 IEnumerable<Vector3D> splitPts = _splitPts;
 
-                if (validate_pts) splitPts = _splitPts.Where(pt => Contains(tolLen, tolRad, pt)).ToList();
+                if (validate_pts) splitPts = _splitPts.Where(pt => Contains(tolLen, pt, onlyPerimeter: true)).ToList();
 
                 var radCmp = new DoubleEqualityComparer(tolRad);
 
@@ -270,8 +320,8 @@ namespace SearchAThing
                 }
 
                 var angles_rad = hs_angles_rad.OrderBy(w => w).ToList();
-                if (!hs_angles_rad.Contains(AngleStartRad)) angles_rad.Insert(0, AngleStartRad);
-                if (!hs_angles_rad.Contains(AngleEndRad)) angles_rad.Add(AngleEndRad);
+                if (!hs_angles_rad.Contains(AngleStart)) angles_rad.Insert(0, AngleStart);
+                if (!hs_angles_rad.Contains(AngleEnd)) angles_rad.Add(AngleEnd);
 
                 for (int i = 0; i < angles_rad.Count - 1; ++i)
                 {
@@ -336,7 +386,7 @@ namespace SearchAThing
             {
                 // https://en.wikipedia.org/wiki/List_of_centroids
 
-                var alpha = AngleRad / 2;
+                var alpha = Angle / 2;
                 A = Pow(Radius, 2) / 2 * (2 * alpha - Sin(2 * alpha));
 
                 var x = (4 * Radius * Pow(Sin(alpha), 3)) / (3 * (2 * alpha - Sin(2 * alpha)));
@@ -357,13 +407,13 @@ namespace SearchAThing
                 }
             }
 
-            public override BBox3D BBox(double tol_len, double tol_rad)
+            public override BBox3D BBox(double tol_len)
             {
                 var pts = new List<Vector3D>() { From, To };
 
                 foreach (var csdir in new[] { CS.BaseX, CS.BaseY })
                 {
-                    pts.AddRange(IntersectArc(tol_len, tol_rad,
+                    pts.AddRange(IntersectArc(tol_len,
                         new Line3D(CS.Origin, csdir, Line3DConstructMode.PointAndVector),
                         segment_mode: false,
                         arc_mode: true));
@@ -372,12 +422,20 @@ namespace SearchAThing
                 return new BBox3D(pts);
             }
 
-            public IEnumerable<Vector3D> IntersectArc(double tol, double tolRad, Line3D l, bool segment_mode = false, bool arc_mode = true)
+            /// <summary>
+            /// states if this arc intersect given line
+            /// </summary>
+            /// <param name="tol">arc tolerance</param>
+            /// <param name="l"></param>
+            /// <param name="segment_mode"></param>
+            /// <param name="arc_mode"></param>
+            public IEnumerable<Vector3D> IntersectArc(double tol, Line3D l,
+                bool segment_mode = false, bool arc_mode = true)
             {
                 var q = Intersect(tol, l, segment_mode);
                 if (q == null) yield break;
 
-                q = q.Where(r => this.Contains(tol, tolRad, r)).ToList();
+                q = q.Where(r => this.Contains(tol, r, onlyPerimeter: true)).ToList();
                 if (q.Count() == 0) yield break;
 
                 foreach (var x in q) yield return x;
@@ -385,7 +443,7 @@ namespace SearchAThing
 
             public override string ToString()
             {
-                return $"C:{Center} r:{Round(Radius, 3)} ANGLE:{Round(AngleRad.ToDeg(), 1)}deg FROM[{From} {Round(AngleStartRad.ToDeg(), 1)} deg] TO[{To} {Round(AngleEndRad.ToDeg(), 1)} deg]";
+                return $"C:{Center} r:{Round(Radius, 3)} ANGLE:{Round(Angle.ToDeg(), 1)}deg FROM[{From} {Round(AngleStart.ToDeg(), 1)} deg] TO[{To} {Round(AngleEnd.ToDeg(), 1)} deg]";
             }
 
             public override IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false)
@@ -394,7 +452,7 @@ namespace SearchAThing
                 if (include_endpoints) yield return from;
 
                 var p = from;
-                var ang_step = AngleRad / cnt;
+                var ang_step = Angle / cnt;
 
                 var ang = ang_step;
                 var ax_rot = new Line3D(Center, CS.BaseZ, Line3DConstructMode.PointAndVector);
@@ -423,9 +481,15 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// states if given angle is contained in from, to angle range
-        /// </summary>        
-        public static bool AngleInRange(this double pt_angle, double tol_rad, double angle_from, double angle_to)
+        /// states if given angle is contained in from, to angle range;
+        /// multiturn angles are supported because test will normalize to [0,2pi) automatically.
+        /// </summary>                
+        /// <param name="pt_angle">angle(rad) to test</param>
+        /// <param name="tol_rad">rad tolerance</param>
+        /// <param name="angle_from">angle(rad) from</param>
+        /// <param name="angle_to">angle(rad) to</param>        
+        public static bool AngleInRange(this double pt_angle, double tol_rad,
+            double angle_from, double angle_to)
         {
             pt_angle = pt_angle.NormalizeAngle2PI();
             angle_from = angle_from.NormalizeAngle2PI();
