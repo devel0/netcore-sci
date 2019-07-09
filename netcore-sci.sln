@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netcore-sci", "netcore-sci\netcore-sci.csproj", "{C0961EC5-82D4-4A10-BCEA-8CDFC7EA438A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "netcore-sci", "netcore-sci\netcore-sci.csproj", "{C0961EC5-82D4-4A10-BCEA-8CDFC7EA438A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{AF97E38F-CAE8-4DA0-BAC9-1B292CE9A05C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "test", "test\test.csproj", "{AF97E38F-CAE8-4DA0-BAC9-1B292CE9A05C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "thirdy-clipper", "thirdy-clipper\thirdy-clipper.csproj", "{6A66A5BD-8096-435F-AEAF-FFFD34011899}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "thirdy-quaternion", "thirdy-quaternion\thirdy-quaternion.csproj", "{AA314CF3-8182-4398-A91F-890B5781855D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C0961EC5-82D4-4A10-BCEA-8CDFC7EA438A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,5 +45,35 @@ Global
 		{AF97E38F-CAE8-4DA0-BAC9-1B292CE9A05C}.Release|x64.Build.0 = Release|Any CPU
 		{AF97E38F-CAE8-4DA0-BAC9-1B292CE9A05C}.Release|x86.ActiveCfg = Release|Any CPU
 		{AF97E38F-CAE8-4DA0-BAC9-1B292CE9A05C}.Release|x86.Build.0 = Release|Any CPU
+		{6A66A5BD-8096-435F-AEAF-FFFD34011899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A66A5BD-8096-435F-AEAF-FFFD34011899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A66A5BD-8096-435F-AEAF-FFFD34011899}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6A66A5BD-8096-435F-AEAF-FFFD34011899}.Debug|x64.Build.0 = Debug|Any CPU
+		{6A66A5BD-8096-435F-AEAF-FFFD34011899}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6A66A5BD-8096-435F-AEAF-FFFD34011899}.Debug|x86.Build.0 = Debug|Any CPU
+		{6A66A5BD-8096-435F-AEAF-FFFD34011899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A66A5BD-8096-435F-AEAF-FFFD34011899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A66A5BD-8096-435F-AEAF-FFFD34011899}.Release|x64.ActiveCfg = Release|Any CPU
+		{6A66A5BD-8096-435F-AEAF-FFFD34011899}.Release|x64.Build.0 = Release|Any CPU
+		{6A66A5BD-8096-435F-AEAF-FFFD34011899}.Release|x86.ActiveCfg = Release|Any CPU
+		{6A66A5BD-8096-435F-AEAF-FFFD34011899}.Release|x86.Build.0 = Release|Any CPU
+		{AA314CF3-8182-4398-A91F-890B5781855D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA314CF3-8182-4398-A91F-890B5781855D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA314CF3-8182-4398-A91F-890B5781855D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AA314CF3-8182-4398-A91F-890B5781855D}.Debug|x64.Build.0 = Debug|Any CPU
+		{AA314CF3-8182-4398-A91F-890B5781855D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AA314CF3-8182-4398-A91F-890B5781855D}.Debug|x86.Build.0 = Debug|Any CPU
+		{AA314CF3-8182-4398-A91F-890B5781855D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA314CF3-8182-4398-A91F-890B5781855D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA314CF3-8182-4398-A91F-890B5781855D}.Release|x64.ActiveCfg = Release|Any CPU
+		{AA314CF3-8182-4398-A91F-890B5781855D}.Release|x64.Build.0 = Release|Any CPU
+		{AA314CF3-8182-4398-A91F-890B5781855D}.Release|x86.ActiveCfg = Release|Any CPU
+		{AA314CF3-8182-4398-A91F-890B5781855D}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A21C6039-CC74-4364-9307-2B361654126A}
 	EndGlobalSection
 EndGlobal
