@@ -262,6 +262,15 @@ namespace SearchAThing.Sci.Tests
             }
         }
 
+         [Fact]
+        public void SemiLineContainsPointTest()
+        {
+            var l = new Line3D(0, 0, 0, 10, 10, 10);
+            
+            Assert.True(l.SemiLineContainsPoints(1e-1, new Vector3D(9,9,9)));
+            Assert.False(l.SemiLineContainsPoints(1e-1, new Vector3D(-1,-1,-1)));
+        }
+
         [Fact]
         public void ColinearTest()
         {
@@ -442,7 +451,7 @@ namespace SearchAThing.Sci.Tests
         public void BBoxTest()
         {
             var l = new Line3D(10, 50, -10, -10, -50, 60);
-            var bbox = l.BBox(1e-1, rad_tol);
+            var bbox = l.BBox(1e-1);
             Assert.True(bbox.Min.EqualsTol(1e-1, -10, -50, -10));
             Assert.True(bbox.Max.EqualsTol(1e-1, 10, 50, 60));
         }

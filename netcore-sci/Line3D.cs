@@ -311,6 +311,16 @@ namespace SearchAThing
             }
 
             /// <summary>
+            /// states if semiline From-To(inf) contains given point
+            /// </summary>
+            /// <param name="tol">len tolerance</param>
+            /// <param name="p">point to verify is it on semiline</param>
+            public bool SemiLineContainsPoints(double tol, Vector3D p)
+            {
+                return LineContainsPoint(tol, p) && (p - From).Concordant(tol, To - From);
+            }
+
+            /// <summary>
             /// Find intersection point between this and other line using given tolerance.
             /// Returns null if no intersection, otherwise it returns a point on
             /// the shortest segment ( the one that's perpendicular to either lines )
@@ -720,7 +730,7 @@ namespace SearchAThing
                 }
             }
 
-            public override BBox3D BBox(double tol_len, double tol_rad)
+            public override BBox3D BBox(double tol_len)
             {
                 return new BBox3D(new[] { From, To });
             }

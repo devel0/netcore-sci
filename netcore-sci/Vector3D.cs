@@ -867,7 +867,7 @@ namespace SearchAThing
                 }
             }
 
-            public override BBox3D BBox(double tol_len, double tol_rad)
+            public override BBox3D BBox(double tol_len)
             {
                 return new BBox3D(new[] { this });
             }

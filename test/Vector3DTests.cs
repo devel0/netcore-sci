@@ -63,7 +63,7 @@ namespace SearchAThing.Sci.Tests
         public void BBoxTest()
         {
             var v = new Vector3D(1, 2, 3);
-            var bbox = v.BBox(1e-6, rad_tol);
+            var bbox = v.BBox(1e-6);
             Assert.True(bbox.Min.EqualsTol(1e-6, bbox.Max));
             Assert.True(bbox.Min.EqualsTol(1e-6, v));
         }
