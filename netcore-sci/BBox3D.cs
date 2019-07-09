@@ -207,7 +207,7 @@ namespace SearchAThing
             return new BBox3D(pts);
         }
 
-        public static BBox3D BBox(this EntityObject eo)
+        public static BBox3D BBox(this EntityObject eo, double tol_len)
         {
             switch (eo.Type)
             {
@@ -222,11 +222,11 @@ namespace SearchAThing
 
                 case EntityType.Arc:
                     {
-                        var arc = (eo as Arc).ToArc3D();
+                        var arc = (eo as Arc).ToArc3D(tol_len);
                         return new BBox3D(new[] { arc.From, arc.To, arc.MidPoint });
                     }
 
-                case EntityType.Circle: return ((Circle)eo).ToPolyline(4).BBox();
+                case EntityType.Circle: return ((Circle)eo).ToPolyline(4).BBox(tol_len);
 
                 case EntityType.LightWeightPolyline:
                     {
@@ -246,13 +246,13 @@ namespace SearchAThing
             }
         }
 
-        public static BBox3D BBox(this IEnumerable<EntityObject> ents)
+        public static BBox3D BBox(this IEnumerable<EntityObject> ents, double tol_len)
         {
             var bbox = new BBox3D();
 
             foreach (var x in ents)
             {
-                bbox = bbox.Union(x.BBox());
+                bbox = bbox.Union(x.BBox(tol_len));
             }
 
             return bbox;

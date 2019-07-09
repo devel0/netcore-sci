@@ -30,7 +30,7 @@ namespace SearchAThing.Sci.Tests
             var r = 4.2753;
             var ang1 = 63.97731d.ToRad();
             var ange2 = 26.10878d.ToRad();
-            var arc = new Arc3D(csCAD, r, ang1, ange2);
+            var arc = new Arc3D(1e-4, csCAD, r, ang1, ange2);
 
             var seg_i = new Line3D(2.2826, 10.2516, -3.7469, 1.3767, -3.7709, 1.5019);
             var ip_circ = arc.Intersect(1e-4, seg_i);
@@ -141,29 +141,28 @@ namespace SearchAThing.Sci.Tests
         [Fact]
         public void Arc3DTest_005()
         {
-            var p1 = new Vector3D(20.175, 178.425, -56.314);
-            var p2 = new Vector3D(1.799, 231.586, -18.134);
-            var p3 = new Vector3D(262.377, 302.118, 132.195);
+            var p1 = new Vector3D(20.17459383, 178.42487311, -56.31435851);
+            var p2 = new Vector3D(1.7990927, 231.58612295, -18.13420814);
+            var p3 = new Vector3D(262.37695212, 302.11773752, 132.19450446);
 
             var c = new Arc3D(1e-3, p1, p2, p3);
             Assert.True(new Line3D(c.Center, c.CS.BaseX, Line3DConstructMode.PointAndVector)
                 .SemiLineContainsPoints(1e-3, p1));
-            var radTol = Arc3D.ArcLenTolToRadTol(1e-1, c.Radius);
+            var radTol = (1e-1).RadTol(c.Radius);
+            var degTol = radTol.ToDeg();
             {
                 var cinverse = new Arc3D(1e-3, p3, p2, p1);
                 Assert.True(new Line3D(c.Center, cinverse.CS.BaseX, Line3DConstructMode.PointAndVector)
                     .SemiLineContainsPoints(1e-3, p3));
                 Assert.True(c.AngleStart.EqualsTol(radTol, cinverse.AngleStart));
                 Assert.True(c.AngleEnd.EqualsTol(radTol, cinverse.AngleEnd));
-            }
-            var cs = c.CS;
-
-            var degTol = radTol.ToDeg();
+            }            
+            
             Assert.True(c.AngleStart.ToDeg().EqualsTol(degTol, 0));
             Assert.True(c.AngleEnd.ToDeg().EqualsTol(degTol, 154.14));
 
             var moveVector = new Vector3D(-1998.843, -6050.954, -1980.059);
-            var cmoved = c.Move(moveVector);
+            var cmoved = c.Move(1e-3, moveVector);
 
             var p1moved = p1 + moveVector;
             var p2moved = p2 + moveVector;
@@ -172,28 +171,15 @@ namespace SearchAThing.Sci.Tests
             Assert.True(cmoved.Contains(1e-3, p1moved, onlyPerimeter: true));
             Assert.True(cmoved.Contains(1e-3, p2moved, onlyPerimeter: true));
             Assert.True(cmoved.Contains(1e-3, p3moved, onlyPerimeter: true));
-        }
-
-        /// <summary>
-        /// Arc3DTest_005.dxf
-        /// </summary>
-        [Fact]
-        public void Arc3DTest_006()
-        {
-            var p1 = new Vector3D(20.175, 178.425, -56.314);
-            var p2 = new Vector3D(1.799, 231.586, -18.134);
-            var p3 = new Vector3D(262.377, 302.118, 132.195);
-
-            var c = new Arc3D(1e-3, p1, p2, p3);
-            var radTol = Arc3D.ArcLenTolToRadTol(1e-1, c.Radius);
-            var degTol = radTol.ToDeg();
 
             Assert.True(c.Angle.ToDeg().EqualsTol(degTol, 154.14));
 
-            var c2 = new Arc3D(c.CS, c.Radius, c.AngleEnd, c.AngleStart);
+            var c2 = new Arc3D(1e-3, c.CS, c.Radius, c.AngleEnd, c.AngleStart);
 
             Assert.True(c2.Angle.ToDeg().EqualsTol(degTol, 360d - 154.14));
-        }
+
+            Assert.True(c.Length.EqualsTol(1e-3, 456.67959116));
+        }       
 
     }
 

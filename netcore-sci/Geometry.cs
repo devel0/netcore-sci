@@ -45,7 +45,8 @@ namespace SearchAThing
     public static partial class SciExt
     {
 
-        public static IEnumerable<Geometry> ToGeometryBlock(this netDxf.Entities.LwPolyline lwpolyline, double tolLen)
+        public static IEnumerable<Geometry> ToGeometryBlock(this netDxf.Entities.LwPolyline lwpolyline,
+            double tolLen)
         {
             var geoms = new List<Geometry>();
 
@@ -55,7 +56,7 @@ namespace SearchAThing
             {
                 if (el.Type == netDxf.Entities.EntityType.Arc)
                 {
-                    yield return (el as netDxf.Entities.Arc).ToArc3D();
+                    yield return (el as netDxf.Entities.Arc).ToArc3D(tolLen);
                 }
                 else if (el.Type == netDxf.Entities.EntityType.Line)
                 {

@@ -15,7 +15,7 @@ namespace SearchAThing
         public class Circle3D : Arc3D
         {
 
-            public Circle3D(CoordinateSystem3D cs, double r) : base(cs, r, 0, 2 * PI)
+            public Circle3D(double tol_len, CoordinateSystem3D cs, double r) : base(tol_len, cs, r, 0, 2 * PI)
             {
                 Type = GeometryType.Circle3D;
             }
@@ -96,13 +96,13 @@ namespace SearchAThing
                     var Radius = p.Distance(c);
                     var CS = new CoordinateSystem3D(c, lpp.V, t2.V);
 
-                    yield return new Circle3D(CS, Radius);
+                    yield return new Circle3D(tol_len, CS, Radius);
 
                     // mirrored addictional circle
 
                     var mc = c.Mirror(new Line3D(p, p.Project(lNp) - p, Line3DConstructMode.PointAndVector));
 
-                    yield return new Circle3D(new CoordinateSystem3D(mc, lpp.V, t2.V), Radius);
+                    yield return new Circle3D(tol_len, new CoordinateSystem3D(mc, lpp.V, t2.V), Radius);
                 }
             }
 
@@ -140,9 +140,9 @@ namespace SearchAThing
             return new Circle3D(pts[0], pts[1], pts[2]);
         }
 
-        public static Circle3D ToCircle3D(this netDxf.Entities.Circle dxf_circle)
+        public static Circle3D ToCircle3D(this netDxf.Entities.Circle dxf_circle, double tol_len)
         {
-            return new Circle3D(new CoordinateSystem3D(dxf_circle.Center, dxf_circle.Normal, CoordinateSystem3DAutoEnum.AAA), dxf_circle.Radius);
+            return new Circle3D(tol_len, new CoordinateSystem3D(dxf_circle.Center, dxf_circle.Normal, CoordinateSystem3DAutoEnum.AAA), dxf_circle.Radius);
         }
 
     }
