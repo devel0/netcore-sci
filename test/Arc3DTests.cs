@@ -16,7 +16,7 @@ namespace SearchAThing.Sci.Tests
         /// <summary>
         /// Arc3DTest_001.dxf
         /// </summary>
-      x  [Fact]
+        [Fact]
         public void Arc3DTest_001()
         {
             var o = new Vector3D(4.4249, 1.0332, -3.7054);
