@@ -191,6 +191,35 @@ namespace SearchAThing
                 });
             }
 
+            public string CadScript
+            {
+                get
+                {
+                    var sb = new StringBuilder();
+
+                    var coords = Coords3D.ToList();
+
+                    {
+                        var q = coords.Take(4).ToList();
+                        q.Add(q[0]);
+                        sb.Append(q.CadScriptPolyline());
+                    }
+
+                    for (int i = 0; i < 4; ++i)
+                    {
+                        sb.AppendLine(new Line3D(coords[i], coords[i + 4]).CadScript);
+                    }
+
+                    {
+                        var q = coords.Skip(4).ToList();
+                        q.Add(q[0]);
+                        sb.Append(q.CadScriptPolyline());
+                    }
+
+                    return sb.ToString();
+                }
+            }
+
             public override string ToString()
             {
                 return $"{Min}-{Max}";
@@ -203,7 +232,7 @@ namespace SearchAThing
     {
 
         public static BBox3D BBox(this IEnumerable<Vector3D> pts)
-        {            
+        {
             return new BBox3D(pts);
         }
 
