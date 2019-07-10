@@ -228,7 +228,7 @@ namespace SearchAThing
             /// <summary>
             /// Checks if two arcs are equals ( it checks agains swapped from-to too )
             /// </summary>        
-            public bool EqualsTol(double tolLen, double tolRad, Arc3D other)
+            public bool EqualsTol(double tolLen, Arc3D other)
             {
                 if (!Center.EqualsTol(tolLen, other.Center)) return false;
                 if (!Radius.EqualsTol(tolLen, other.Radius)) return false;
@@ -386,7 +386,7 @@ namespace SearchAThing
 
                 var x = (4 * Radius * Pow(Sin(alpha), 3)) / (3 * (2 * alpha - Sin(2 * alpha)));
 
-                return (MidPoint - Center).Normalized() * x;
+                return Center + (MidPoint - Center).Normalized() * x;
             }
 
             public override EntityObject DxfEntity
@@ -441,6 +441,11 @@ namespace SearchAThing
                 return $"C:{Center} r:{Round(Radius, 3)} ANGLE:{Round(Angle.ToDeg(), 1)}deg FROM[{From} {Round(AngleStart.ToDeg(), 1)} deg] TO[{To} {Round(AngleEnd.ToDeg(), 1)} deg]";
             }
 
+            /// <summary>
+            /// split arc into pieces and retrieve split points
+            /// </summary>
+            /// <param name="cnt">nr of piece</param>
+            /// <param name="include_endpoints">if true returns also boundary points</param>
             public override IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false)
             {
                 var from = GeomFrom;
@@ -517,20 +522,22 @@ namespace SearchAThing
 
     }
 
+    /// <summary>
+    /// checks if arcs share same plane, origin, radius, angle start-end
+    /// </summary>
     public class Arc3DEqualityComparer : IEqualityComparer<Arc3D>
     {
         double tolLen;
         double tolRad;
 
-        public Arc3DEqualityComparer(double _tolLen, double _tolRad)
+        public Arc3DEqualityComparer(double _tolLen)
         {
             tolLen = _tolLen;
-            tolRad = _tolRad;
         }
 
         public bool Equals(Arc3D x, Arc3D y)
         {
-            return x.EqualsTol(tolLen, tolRad, y);
+            return x.EqualsTol(tolLen, y);
         }
 
         public int GetHashCode(Arc3D obj)
