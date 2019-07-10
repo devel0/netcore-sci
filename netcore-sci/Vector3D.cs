@@ -116,7 +116,7 @@ namespace SearchAThing
             }
 
 
-            static Regex _cad_id_regex = null;            
+            static Regex _cad_id_regex = null;
             /// <summary>
             /// static instance of regex to parse cad id string
             /// https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.0#thread-safety
@@ -139,7 +139,7 @@ namespace SearchAThing
             public Vector3D(string cad_id_string) : base(GeometryType.Vector3D)
             {
                 var matches = cad_id_regex.Match(cad_id_string);
-                if (!matches.Success || matches.Groups.Count != 4) 
+                if (!matches.Success || matches.Groups.Count != 4)
                     throw new ArgumentException($"unable to parse cad id string [{cad_id_string}]");
 
                 var x = matches.Groups[1].Value.InvDoubleParse();
@@ -1002,12 +1002,6 @@ namespace SearchAThing
         Z = 2
     }
 
-    public enum CadPointMode
-    {
-        Point,
-        Circle
-    };
-
     public static partial class SciExt
     {
 
@@ -1116,32 +1110,28 @@ namespace SearchAThing
             return sb.ToString();
         }
 
-        public static string ToCadScript(this IEnumerable<Vector3D> points, CadPointMode mode = CadPointMode.Point, double radius = 10)
+        public static string CadScriptPolyline(this IEnumerable<Vector3D> points)
+        {
+            var sb = new StringBuilder();
+            sb.Append("_POLYLINE ");
+            foreach (var p in points)
+            {
+                sb.Append(Invariant($"{p.X},{p.Y},{p.Z}\r\n"));
+            }
+            sb.AppendLine();
+
+            return sb.ToString();
+        }
+
+        public static string CadScriptPoint(this IEnumerable<Vector3D> points)
         {
             var sb = new StringBuilder();
 
-            switch (mode)
+            foreach (var p in points)
             {
-                case CadPointMode.Point:
-                    {
-                        foreach (var p in points)
-                        {
-                            sb.AppendLine(string.Format(CultureInfo.InvariantCulture, "_POINT {0},{1},{2}", p.X, p.Y, p.Z));
-                            sb.AppendLine();
-                        }
-                    }
-                    break;
-
-                case CadPointMode.Circle:
-                    {
-                        foreach (var p in points)
-                        {
-                            sb.AppendLine(string.Format(CultureInfo.InvariantCulture, "_CIRCLE {0},{1},{2} {3}", p.X, p.Y, p.Z, radius));
-                            sb.AppendLine();
-                        }
-                    }
-                    break;
+                sb.AppendLine(Invariant($"_POINT {p.X},{p.Y},{p.Z}\r\n"));
             }
+            sb.AppendLine();
 
             return sb.ToString();
         }
