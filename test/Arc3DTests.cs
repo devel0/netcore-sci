@@ -55,6 +55,56 @@ namespace SearchAThing.Sci.Tests
             Assert.True(arc.Intersect(1e-4, seg_e).Count() == 1);
             Assert.True(arc.Intersect(1e-4, seg_e).First().EqualsTol(1e-2, 3.53, 4.82, -1.93));
             Assert.True(arc.IntersectArc(1e-4, seg_e).Count() == 0);
+
+            // Geometry
+            Assert.True(arc.GeomFrom.EqualsTol(1e-3, arc.From));
+            Assert.True(arc.GeomTo.EqualsTol(1e-3, arc.To));
+            var vertexes = arc.Vertexes.ToList();
+            Assert.True(vertexes.Count == 2 &&
+                vertexes.Any(a => a.EqualsTol(1e-3, arc.From)) &&
+                vertexes.Any(a => a.EqualsTol(1e-3, arc.To)));
+
+            // PtAngle and mid
+            var midpoint = arc.MidPoint;
+            Assert.True(arc.PtAtAngle(arc.AngleStart + arc.Angle / 2).EqualsTol(1e-3, midpoint));
+
+            // segment
+            Assert.True(arc.Segment.EqualsTol(1e-3, new Line3D(arc.From, arc.To)));
+
+            // arc equals
+            Assert.True(arc.EqualsTol(1e-3, new Arc3D(1e-3, arc.From, arc.MidPoint, arc.To)));
+            Assert.True(arc.EqualsTol(1e-3, new Arc3D(1e-3, arc.CS, arc.Radius, arc.AngleStart, arc.AngleEnd)));
+            Assert.False(arc.EqualsTol(1e-3, new Arc3D(1e-3, arc.CS, arc.Radius / 2, arc.AngleStart, arc.AngleEnd)));
+            Assert.False(arc.EqualsTol(1e-3, new Arc3D(1e-3, arc.CS.Move(new Vector3D(1, 0, 0)),
+                arc.Radius, arc.AngleStart, arc.AngleEnd)));
+            Assert.False(arc.EqualsTol(1e-3, new Arc3D(1e-3, arc.CS, arc.Radius, arc.AngleStart + 1, arc.AngleEnd + 1)));
+
+            // arc bulge
+            Assert.True(arc.Bulge(1e-3, arc.From, arc.To, arc.CS.BaseZ).EqualsTol(1e-3, Tan(arc.Angle / 4)));
+            Assert.True(arc.Bulge(1e-3, arc.From, arc.To, -arc.CS.BaseZ).EqualsTol(1e-3, -Tan(arc.Angle / 4)));
+
+            // arc contains            
+            Assert.False(arc.Contains(1e-3, new Vector3D(3.084, 3.965, -1.843), onlyPerimeter: false)); // out arc shape - in plane
+            Assert.False(arc.Contains(1e-3, new Vector3D(2.821, 4.417, -2.795), onlyPerimeter: false)); // out of plane
+
+            Assert.True(arc.Contains(1e-3, new Vector3D(5.446, 3.708, -3.677), onlyPerimeter: false)); // arc shape - in plane
+            Assert.False(arc.Contains(1e-3, new Vector3D(5.142, 3.774, -4.713), onlyPerimeter: false)); // out of plane            
+
+            // read arc from dxf and use comparer
+            {
+                var doc = netDxf.DxfDocument.Load("doc/Arc3DTest_001.dxf");
+
+                var arc_from_dxf = doc.Arcs.First().ToArc3D(1e-3);
+                var cmp = new Arc3DEqualityComparer(1e-3);
+                var q = new[] {
+                    arc_from_dxf,
+                    arc,
+                    new Arc3D(1e-3, arc.From, arc.MidPoint, arc.To),
+                    new Arc3D(1e-3, arc.CS, arc.Radius, arc.AngleStart, arc.AngleEnd) };
+                Assert.True(q.Distinct(cmp).Count() == 1);
+
+                Assert.True(arc_from_dxf.EqualsTol(1e-3, ((netDxf.Entities.Arc)arc.DxfEntity).ToArc3D(1e-3)));
+            }            
         }
 
         /// <summary>
@@ -156,8 +206,8 @@ namespace SearchAThing.Sci.Tests
                     .SemiLineContainsPoints(1e-3, p3));
                 Assert.True(c.AngleStart.EqualsTol(radTol, cinverse.AngleStart));
                 Assert.True(c.AngleEnd.EqualsTol(radTol, cinverse.AngleEnd));
-            }            
-            
+            }
+
             Assert.True(c.AngleStart.ToDeg().EqualsTol(degTol, 0));
             Assert.True(c.AngleEnd.ToDeg().EqualsTol(degTol, 154.14));
 
@@ -179,7 +229,40 @@ namespace SearchAThing.Sci.Tests
             Assert.True(c2.Angle.ToDeg().EqualsTol(degTol, 360d - 154.14));
 
             Assert.True(c.Length.EqualsTol(1e-3, 456.67959116));
-        }       
+        }
+
+        /// <summary>
+        /// Arc3DTest_006.dxf
+        /// </summary>
+        [Fact]
+        public void Arc3DTest_006()
+        {
+            var tol = 1e-7;
+
+            var p1 = new Vector3D(20.17459383, 178.42487311, -56.31435851);
+            var p2 = new Vector3D(1.7990927, 231.58612295, -18.13420814);
+            var p3 = new Vector3D(262.37695212, 302.11773752, 132.19450446);            
+            var arc = new Arc3D(tol, p1, p2, p3);
+
+            // area and centre of mass
+            var A = 0d;
+            var centroid = arc.CentreOfMass(out A);
+            Assert.True(A.EqualsTol(1e-7, 32476.83673649));
+            Assert.True(centroid.EqualsTol(1e-7, new Vector3D("X=106.62109106 Y=278.15563166 Z=57.60718457")));            
+
+            var dp1 = new Vector3D("X = 4.11641325 Y = 266.06066703 Z = 11.60392802");
+            var dp2 = new Vector3D("X = 58.22323201 Y = 331.06393108 Z = 85.07377904");
+            var dp3 = new Vector3D("X = 158.93019908 Y = 345.12414417 Z = 132.0972665");
+            {
+                var q = arc.Divide(4, include_endpoints: true).ToList();
+                Assert.True(q.Count == 3 + 2);
+                Assert.True(q.Any(w => w.EqualsTol(tol, p1)));
+                Assert.True(q.Any(w => w.EqualsTol(tol, dp1)));
+                Assert.True(q.Any(w => w.EqualsTol(tol, dp2)));
+                Assert.True(q.Any(w => w.EqualsTol(tol, dp3)));
+                Assert.True(q.Any(w => w.EqualsTol(tol, p3)));
+            }
+        }
 
     }
 

@@ -289,20 +289,20 @@ namespace SearchAThing.Sci.Tests
             Assert.True(vp.EqualsTol(1e-4, 1.5565, .6341, 0));
         }
 
-/*
-        [Fact]
-        public void Project4Test()
-        {
-            // Cusago, Italy : 45,448365 E, 9,034168 N ( geodetic system )
-            var v = new Vector3D(9.034168, 45.448365);
+        /*
+                [Fact]
+                public void Project4Test()
+                {
+                    // Cusago, Italy : 45,448365 E, 9,034168 N ( geodetic system )
+                    var v = new Vector3D(9.034168, 45.448365);
 
-            // epsg3003 : monte mario / italy zone 1 ( projected system )
-            var epsg3003 = CRSCatalog.CRSList["EPSG:3003"];
+                    // epsg3003 : monte mario / italy zone 1 ( projected system )
+                    var epsg3003 = CRSCatalog.CRSList["EPSG:3003"];
 
-            var q = v.Project(CRSCatalog.WGS84, epsg3003);
-            q.EqualsTol(1e-2, 1502699.63, 5032780.63);
-            // TODO
-        }*/
+                    var q = v.Project(CRSCatalog.WGS84, epsg3003);
+                    q.EqualsTol(1e-2, 1502699.63, 5032780.63);
+                    // TODO
+                }*/
 
         [Fact]
         public void Random1Test()
@@ -572,6 +572,15 @@ namespace SearchAThing.Sci.Tests
             var vs2 = v2 + v1;
             Assert.True(vs1.EqualsTol(1e-4, vs2));
             Assert.True(vs1.EqualsTol(1e-4, v1.X + v2.X, v1.Y + v2.Y, v1.Z + v2.Z));
+        }
+
+        [Fact]
+        public void CadIdLocationTest()
+        {
+            var v1 = new Vector3D("X = 4.11641325 Y = 266.06066703 Z = 11.60392802");
+            var v2 = new Vector3D("X = 4.11641325  Y = 266.06066703  Z = 11.60392802");
+
+            Assert.True(v1.EqualsTol(1e-8, v2));
         }
 
     }

@@ -9,8 +9,10 @@ using SearchAThing.PsqlUtil;
 using Newtonsoft.Json;
 using static System.Math;
 using static System.FormattableString;
+using SearchAThing;
 using netDxf.Entities;
 using netDxf;
+using System.Text.RegularExpressions;
 
 namespace SearchAThing
 {
@@ -111,6 +113,40 @@ namespace SearchAThing
             public Vector3D(double x, double y) : base(GeometryType.Vector3D)
             {
                 X = x; Y = y;
+            }
+
+
+            static Regex _cad_id_regex = null;            
+            /// <summary>
+            /// static instance of regex to parse cad id string
+            /// https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.0#thread-safety
+            /// </summary>            
+            static Regex cad_id_regex
+            {
+                get
+                {
+                    if (_cad_id_regex == null)
+                        _cad_id_regex = new Regex(@"X\s*=\s*([\d\.]*)\s*Y\s*=\s*([\d\.]*)\s*Z\s*=\s*([\d\.]*)");
+                    return _cad_id_regex;
+                }
+            }
+
+            /// <summary>
+            /// parse cad id string (eg. "X = 4.11641325 Y = 266.06066703 Z = 11.60392802")
+            /// constructing a point
+            /// </summary>
+            /// <param name="cad_id_string">cad id string</param>
+            public Vector3D(string cad_id_string) : base(GeometryType.Vector3D)
+            {
+                var matches = cad_id_regex.Match(cad_id_string);
+                if (!matches.Success || matches.Groups.Count != 4) 
+                    throw new ArgumentException($"unable to parse cad id string [{cad_id_string}]");
+
+                var x = matches.Groups[1].Value.InvDoubleParse();
+                var y = matches.Groups[2].Value.InvDoubleParse();
+                var z = matches.Groups[3].Value.InvDoubleParse();
+
+                X = x; Y = y; Z = z;
             }
 
             /// <summary>
@@ -595,7 +631,7 @@ namespace SearchAThing
             /// <param name="cs">dest CS</param>
             /// <param name="evalCSOrigin">if true CS origin will subtracted before transform</param>            
             public Vector3D ToUCS(CoordinateSystem3D cs, bool evalCSOrigin = true)
-            {                
+            {
                 return cs.ToUCS(this, evalCSOrigin);
             }
 
