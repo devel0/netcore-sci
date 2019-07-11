@@ -45,6 +45,7 @@ public static class SciExt
 - [GetType](SciExt/GetType.md)
 - [Intersect](SciExt/Intersect.md) (static)
 - [IsAClosedPoly](SciExt/IsAClosedPoly.md) (static)
+- [IsLinearIndependent](SciExt/IsLinearIndependent.md) (static)
 - [Length](SciExt/Length.md) (static)
 - [Mean](SciExt/Mean.md) (static)
 - [MergeColinearSegments](SciExt/MergeColinearSegments.md) (static)

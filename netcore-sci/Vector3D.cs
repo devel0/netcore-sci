@@ -26,7 +26,13 @@ namespace SearchAThing
         public partial class Vector3D : Geometry
         {
 
+            /// <summary>
+            /// zero vector
+            /// [unit test](/test/Vector3D/Vector3DTest_0001.cs)
+            /// </summary>
+            /// <returns>(0,0,0) vector</returns>
             public static readonly Vector3D Zero = new Vector3D(0, 0, 0);
+
             public static readonly Vector3D XAxis = new Vector3D(1, 0, 0);
             public static readonly Vector3D YAxis = new Vector3D(0, 1, 0);
             public static readonly Vector3D ZAxis = new Vector3D(0, 0, 1);
@@ -1384,6 +1390,35 @@ namespace SearchAThing
         public static netDxf.Entities.Point ToDxfPoint(this Vector3D pt)
         {
             return new netDxf.Entities.Point(new Vector3(pt.X, pt.Y, pt.Z));
+        }
+
+        /// <summary>
+        /// states if given 3 vectors are linearly independent
+        /// </summary>            
+        /// <returns>true if given vector are linearly independent</returns>
+        public static bool IsLinearIndependent(this IEnumerable<Vector3D> vectors)
+        {
+            var en = vectors.GetEnumerator();
+            Action<bool> testMoveNext = (expectedResult) =>
+            {
+                if (en.MoveNext() != expectedResult)
+                    throw new ArgumentException($"3 vectors required to test 3d linear independence");
+            };
+
+            testMoveNext(true);
+            var v1 = en.Current;
+
+            testMoveNext(true);
+            var v2 = en.Current;
+
+            testMoveNext(true);
+            var v3 = en.Current;
+
+            testMoveNext(false);
+
+            var m = Matrix3D.FromVectorsAsColumns(v1, v2, v3);
+
+            return !m.Determinant().EqualsAutoTol(0);
         }
 
     }
