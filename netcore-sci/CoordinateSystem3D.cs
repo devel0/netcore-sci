@@ -253,6 +253,25 @@ namespace SearchAThing
             }
 
             /// <summary>
+            /// return intersect line between two cs xy planes
+            /// </summary>
+            /// <param name="tol_len">len tolernace</param>
+            /// <param name="other">other cs</param>
+            /// <returns>null if cs parallel to the given other</returns>
+            public Line3D Intersect(double tol_len, CoordinateSystem3D other)
+            {
+                if (this.IsParallelTo(tol_len, other)) return null;
+
+                var l1 = new Line3D(other.Origin, other.BaseX, Line3DConstructMode.PointAndVector);
+                var l2 = new Line3D(other.Origin, other.BaseY, Line3DConstructMode.PointAndVector);
+
+                var i1 = l1.Intersect(tol_len, this);
+                var i2 = l2.Intersect(tol_len, this);
+
+                return new Line3D(i1, i2);
+            }
+
+            /// <summary>
             /// debug string
             /// </summary>
             /// <returns>formatted representation of cs origin, x, y, z</returns>
@@ -304,11 +323,11 @@ namespace SearchAThing
     {
 
         /// <summary>
-        /// project given point to the given cs
+        /// wcs coord of projected coord to the given cs
         /// </summary>
         /// <param name="v">wcs point</param>
         /// <param name="cs">cs to project</param>
-        /// <param name="evalCSOrigin">if true cs origin will subtracted before transform, then readded to obtain wcs point</param>        
+        /// <param name="evalCSOrigin">if true cs origin will subtracted before transform, then readded to obtain wcs point</param>                        
         public static Vector3D Project(this Vector3D v, CoordinateSystem3D cs, bool evalCSOrigin = true)
         {
             return v.ToUCS(cs, evalCSOrigin).Set(OrdIdx.Z, 0).ToWCS(cs, evalCSOrigin);
