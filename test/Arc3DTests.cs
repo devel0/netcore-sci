@@ -104,7 +104,7 @@ namespace SearchAThing.Sci.Tests
                 Assert.True(q.Distinct(cmp).Count() == 1);
 
                 Assert.True(arc_from_dxf.EqualsTol(1e-3, ((netDxf.Entities.Arc)arc.DxfEntity).ToArc3D(1e-3)));
-            }            
+            }
         }
 
         /// <summary>
@@ -241,14 +241,14 @@ namespace SearchAThing.Sci.Tests
 
             var p1 = new Vector3D(20.17459383, 178.42487311, -56.31435851);
             var p2 = new Vector3D(1.7990927, 231.58612295, -18.13420814);
-            var p3 = new Vector3D(262.37695212, 302.11773752, 132.19450446);            
+            var p3 = new Vector3D(262.37695212, 302.11773752, 132.19450446);
             var arc = new Arc3D(tol, p1, p2, p3);
 
             // area and centre of mass
             var A = 0d;
             var centroid = arc.CentreOfMass(out A);
             Assert.True(A.EqualsTol(1e-7, 32476.83673649));
-            Assert.True(centroid.EqualsTol(1e-7, new Vector3D("X=106.62109106 Y=278.15563166 Z=57.60718457")));            
+            Assert.True(centroid.EqualsTol(1e-7, new Vector3D("X=106.62109106 Y=278.15563166 Z=57.60718457")));
 
             var dp1 = new Vector3D("X = 4.11641325 Y = 266.06066703 Z = 11.60392802");
             var dp2 = new Vector3D("X = 58.22323201 Y = 331.06393108 Z = 85.07377904");
@@ -262,6 +262,42 @@ namespace SearchAThing.Sci.Tests
                 Assert.True(q.Any(w => w.EqualsTol(tol, dp3)));
                 Assert.True(q.Any(w => w.EqualsTol(tol, p3)));
             }
+
+            // bbox
+            var bbox = arc.BBox(tol);
+            Assert.True(bbox.Contains(tol, new Vector3D("X = 1.24800294 Y = 178.42487311 Z = -56.31435851")));
+            Assert.True(bbox.Contains(tol, new Vector3D("X = 262.37695212 Y = 178.42487311 Z = -56.31435851")));
+            Assert.True(bbox.Contains(tol, new Vector3D("X = 262.37695212 Y = 347.16710407 Z = -56.31435851")));
+            Assert.True(bbox.Contains(tol, new Vector3D("X = 1.24800294 Y = 347.16710407 Z = -56.31435851")));
+            Assert.True(bbox.Contains(tol, new Vector3D("X = 1.24800294 Y = 178.42487311 Z = 138.54160976")));
+            Assert.True(bbox.Contains(tol, new Vector3D("X = 262.37695212 Y = 178.42487311 Z = 138.54160976")));
+            Assert.True(bbox.Contains(tol, new Vector3D("X = 262.37695212 Y = 347.16710407 Z = 138.54160976")));
+            Assert.True(bbox.Contains(tol, new Vector3D("X = 1.24800294 Y = 347.16710407 Z = 138.54160976")));
+        }
+
+        /// <summary>
+        /// Arc3DTest_007.dxf
+        /// </summary>
+        [Fact]
+        public void Arc3DTest_007()
+        {
+            var tol = 1e-7;
+
+            var p1 = new Vector3D(20.17459383, 178.42487311, -56.31435851);
+            var p2 = new Vector3D(1.7990927, 231.58612295, -18.13420814);
+            var p3 = new Vector3D(262.37695212, 302.11773752, 132.19450446);
+            var arc = new Arc3D(tol, p1, p2, p3);
+
+            var cso = new Vector3D("X = -153.32147396 Y = 128.44203407 Z = -156.2065643");
+            var csv1 = new Line3D(cso, new Vector3D("X = 71.66072643 Y = 278.03911571 Z = -156.2065643"));
+            var csv2 = new Line3D(cso, new Vector3D("X = -153.32147396 Y = 128.44203407 Z = 2.05865164"));
+
+            var csplane = new CoordinateSystem3D(cso, csv1.V, csv2.V);
+            var ipts = arc.IntersectArc(tol, csplane).ToList();
+            Assert.True(ipts.Count == 2);
+            var ipLine = new Line3D(ipts[0], ipts[1]);
+            Assert.True(ipts.Any(r => r.EqualsTol(tol, new Vector3D("X = 1.7990927 Y = 231.58612296 Z = -18.13420814"))));
+            Assert.True(ipts.Any(r => r.EqualsTol(tol, new Vector3D("X = 169.80266871 Y = 343.29649219 Z = 134.36668758"))));
         }
 
     }
