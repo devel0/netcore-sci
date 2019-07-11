@@ -12,11 +12,11 @@ namespace SearchAThing
     {
 
         public class MeasureUnitWithDefaultTolerance
-        {            
+        {
 
             public double DefaultTolerance { get; private set; }
 
-            string _PQName;            
+            string _PQName;
             public string PQName
             {
                 get
@@ -29,7 +29,7 @@ namespace SearchAThing
                     _PQName = value;
                 }
             }
-            
+
             public string MUName
             {
                 get { return MU.ToString(); }
@@ -38,7 +38,7 @@ namespace SearchAThing
                     MU = PQCollection.PhysicalQuantities.First(w => w.Name == PQName).MeasureUnits.First(w => w.Name == value);
                 }
             }
-            
+
             public MeasureUnit MU { get; private set; }
 
             public MeasureUnitWithDefaultTolerance(double _DefaultTolerance, MeasureUnit _MU)
@@ -73,7 +73,7 @@ namespace SearchAThing
             IEnumerable<MeasureUnitWithDefaultTolerance> _All { get; }
 
             void SetupItem(string physicalQuantityName, string measureUnitName, double? defaultTolerance = null);
-            
+
             MeasureUnitWithDefaultTolerance Length { get; set; }
             MeasureUnitWithDefaultTolerance Length2 { get; set; }
             MeasureUnitWithDefaultTolerance Length3 { get; set; }
@@ -92,6 +92,8 @@ namespace SearchAThing
             MeasureUnitWithDefaultTolerance Acceleration { get; set; }
             MeasureUnitWithDefaultTolerance Force { get; set; }
             MeasureUnitWithDefaultTolerance Speed { get; set; }
+            MeasureUnitWithDefaultTolerance AngularSpeed { get; set; }
+            MeasureUnitWithDefaultTolerance AngularAcceleration { get; set; }
             MeasureUnitWithDefaultTolerance BendingMoment { get; set; }
             MeasureUnitWithDefaultTolerance Energy { get; set; }
             MeasureUnitWithDefaultTolerance Turbidity { get; set; }
@@ -104,6 +106,8 @@ namespace SearchAThing
         }
 
         /// <summary>
+        /// [list of physical quantities](https://en.wikipedia.org/wiki/List_of_physical_quantities)
+        /// 
         /// Measures here contains information about implicit measure unit
         /// and value of the tolerance.
         /// 
@@ -210,6 +214,16 @@ namespace SearchAThing
             /// [L T−1]
             /// </summary>            
             public MeasureUnitWithDefaultTolerance Speed { get; set; }
+
+            /// <summary>
+            /// [T−1]
+            /// </summary>            
+            public MeasureUnitWithDefaultTolerance AngularSpeed { get; set; }
+
+            /// <summary>
+            /// [T−2]
+            /// </summary>            
+            public MeasureUnitWithDefaultTolerance AngularAcceleration { get; set; }
 
             /// <summary>
             /// [M L2 T-2]
@@ -330,6 +344,8 @@ namespace SearchAThing
                 Pressure = new MeasureUnitWithDefaultTolerance(1e-1, MUCollection.Pressure.Pa);
                 Acceleration = new MeasureUnitWithDefaultTolerance(1e-1, MUCollection.Acceleration.m_s2);
                 Speed = new MeasureUnitWithDefaultTolerance(1e-1, MUCollection.Speed.m_s);
+                AngularSpeed = new MeasureUnitWithDefaultTolerance(PI / 180d / 10d, MUCollection.AngularSpeed.rad_s);
+                AngularAcceleration = new MeasureUnitWithDefaultTolerance(PI / 180d / 10d, MUCollection.AngularAcceleration.rad_s2);
                 BendingMoment = new MeasureUnitWithDefaultTolerance(1e-2, MUCollection.BendingMoment.Nm);
                 Energy = new MeasureUnitWithDefaultTolerance(1e-4, MUCollection.Energy.J);
                 Power = new MeasureUnitWithDefaultTolerance(1e-4, MUCollection.Power.W);
@@ -369,6 +385,8 @@ namespace SearchAThing
             else if (mud.Acceleration.MU.PhysicalQuantity.id == id) return mud.Acceleration;
             else if (mud.Force.MU.PhysicalQuantity.id == id) return mud.Force;
             else if (mud.Speed.MU.PhysicalQuantity.id == id) return mud.Speed;
+            else if (mud.AngularSpeed.MU.PhysicalQuantity.id == id) return mud.AngularSpeed;
+            else if (mud.AngularAcceleration.MU.PhysicalQuantity.id == id) return mud.AngularAcceleration;
             else if (mud.BendingMoment.MU.PhysicalQuantity.id == id) return mud.BendingMoment;
             else if (mud.Energy.MU.PhysicalQuantity.id == id) return mud.Energy;
             else if (mud.Power.MU.PhysicalQuantity.id == id) return mud.Power;

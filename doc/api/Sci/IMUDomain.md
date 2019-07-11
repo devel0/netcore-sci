@@ -15,6 +15,8 @@ public interface IMUDomain
 - [_All](IMUDomain/_All.md)
 - [Acceleration](IMUDomain/Acceleration.md)
 - [AmountOfSubstance](IMUDomain/AmountOfSubstance.md)
+- [AngularAcceleration](IMUDomain/AngularAcceleration.md)
+- [AngularSpeed](IMUDomain/AngularSpeed.md)
 - [BendingMoment](IMUDomain/BendingMoment.md)
 - [ElectricalConductance](IMUDomain/ElectricalConductance.md)
 - [ElectricalConductivity](IMUDomain/ElectricalConductivity.md)

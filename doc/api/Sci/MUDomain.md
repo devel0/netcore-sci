@@ -3,7 +3,9 @@
 
 **Inheritance:** Object → MUDomain
 
-Measures here contains information about implicit measure unit
+[list of physical quantities](https://en.wikipedia.org/wiki/List_of_physical_quantities)
+            
+            Measures here contains information about implicit measure unit
             and value of the tolerance.
             
             Note that all measure must be dimensionally equivalent.
@@ -40,6 +42,8 @@ public class MUDomain : SearchAThing.Sci.IMUDomain
 - [Acceleration](MUDomain/Acceleration.md)
 - [Adimensional](MUDomain/Adimensional.md)
 - [AmountOfSubstance](MUDomain/AmountOfSubstance.md)
+- [AngularAcceleration](MUDomain/AngularAcceleration.md)
+- [AngularSpeed](MUDomain/AngularSpeed.md)
 - [BendingMoment](MUDomain/BendingMoment.md)
 - [ElectricalConductance](MUDomain/ElectricalConductance.md)
 - [ElectricalConductivity](MUDomain/ElectricalConductivity.md)
