@@ -581,6 +581,9 @@ namespace SearchAThing.Sci.Tests
             var v2 = new Vector3D("X = 4.11641325  Y = 266.06066703  Z = 11.60392802");
 
             Assert.True(v1.EqualsTol(1e-8, v2));
+
+            var v3 = new Vector3D("X = -4.11641325  Y = -266.06066703  Z = -11.60392802");
+            Assert.True((-1d * v3).EqualsTol(1e-8, v1));
         }
 
     }
