@@ -33,21 +33,26 @@ namespace SearchAThing
             /// <returns>(0,0,0) vector</returns>
             public static readonly Vector3D Zero = new Vector3D(0, 0, 0);
 
+            /// <summary>
+            /// xaxis vector
+            /// [unit test](/test/Vector3D/Vector3DTest_0001.cs)
+            /// </summary>
+            /// <returns>(1,0,0) vector</returns>
             public static readonly Vector3D XAxis = new Vector3D(1, 0, 0);
+
+            /// <summary>
+            /// yaxis vector
+            /// [unit test](/test/Vector3D/Vector3DTest_0001.cs)
+            /// </summary>
+            /// <returns>(0,1,0) vector</returns>
             public static readonly Vector3D YAxis = new Vector3D(0, 1, 0);
+
+            /// <summary>
+            /// zaxis vector
+            /// [unit test](/test/Vector3D/Vector3DTest_0001.cs)
+            /// </summary>
+            /// <returns>(0,0,1) vector</returns>
             public static readonly Vector3D ZAxis = new Vector3D(0, 0, 1);
-
-            /// <summary>
-            /// Geometry GeomFrom implementation
-            /// </summary>
-            [JsonIgnore]
-            public override Vector3D GeomFrom => this;
-
-            /// <summary>
-            /// Geometry GeomTo implementation
-            /// </summary>
-            [JsonIgnore]
-            public override Vector3D GeomTo => this;
 
             /// <summary>
             /// retrieve vector component through index
@@ -156,18 +161,6 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// Geometry vertexes implementation
-            /// </summary>
-            [JsonIgnore]
-            public override IEnumerable<Vector3D> Vertexes
-            {
-                get
-                {
-                    yield return this;
-                }
-            }
-
-            /// <summary>
             /// retrieve the component (0:X, 1:Y, 2:Z)
             /// </summary>        
             public double GetOrd(int ord)
@@ -257,22 +250,6 @@ namespace SearchAThing
             public bool EqualsTol(double tol, double x, double y, double z)
             {
                 return X.EqualsTol(tol, x) && Y.EqualsTol(tol, y) && Z.EqualsTol(tol, z);
-            }
-
-            /// <summary>
-            /// length of this vector
-            /// </summary>
-            public override double Length { get { return Sqrt(X * X + Y * Y + Z * Z); } }
-
-            /// <summary>
-            /// create dxf point entity suitable for netDxf addEntity
-            /// </summary>
-            public override netDxf.Entities.EntityObject DxfEntity
-            {
-                get
-                {
-                    return this.ToDxfPoint();
-                }
             }
 
             /// <summary>
@@ -909,15 +886,80 @@ namespace SearchAThing
                 }
             }
 
+            #region Geometry implementation
+
+            /// <summary>
+            /// This vector.
+            /// ( Geometry GeomFrom implementation )
+            /// [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+            /// </summary>
+            [JsonIgnore]
+            public override Vector3D GeomFrom => this;
+
+            /// <summary>
+            /// This vector.
+            /// ( Geometry GeomTo implementation) 
+            /// [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+            /// </summary>
+            [JsonIgnore]
+            public override Vector3D GeomTo => this;
+
+            /// <summary>
+            /// Enumerable with only this vector.
+            /// ( Geometry Vertexes implementation )
+            /// [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+            /// </summary>
+            [JsonIgnore]
+            public override IEnumerable<Vector3D> Vertexes
+            {
+                get
+                {
+                    yield return this;
+                }
+            }
+
+            /// <summary>
+            /// Length of this vector.
+            /// ( Geometry Length implementation )
+            /// [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+            /// </summary>
+            public override double Length { get { return Sqrt(X * X + Y * Y + Z * Z); } }
+
+            /// <summary>
+            /// Create dxf point entity suitable for netDxf addEntity.
+            /// ( Geometry DxfEntity implementation )
+            /// [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+            /// </summary>
+            public override netDxf.Entities.EntityObject DxfEntity
+            {
+                get
+                {
+                    return this.ToDxfPoint();
+                }
+            }
+
+            /// <summary>
+            /// Divide this point returning itself.
+            /// ( Geometry Divide implementation )
+            /// [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+            /// </summary>
+            public override IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false)
+            {
+                return new[] { this };
+            }
+
+            /// <summary>
+            /// Compute bbox of this point.
+            /// ( Geometry BBox implementation ).
+            /// [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+            /// </summary>
+            /// <param name="tol_len">length tolerance</param>            
             public override BBox3D BBox(double tol_len)
             {
                 return new BBox3D(new[] { this });
             }
 
-            public override IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false)
-            {
-                throw new NotImplementedException();
-            }
+            #endregion
 
             /// <summary>
             /// convert given Vector2 to a Vector3D ( with z=0 )

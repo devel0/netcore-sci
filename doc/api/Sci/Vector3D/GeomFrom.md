@@ -1,5 +1,7 @@
 # GeomFrom property (SearchAThing.Sci.Vector3D)
-Geometry GeomFrom implementation
+This vector.
+            ( Geometry GeomFrom implementation )
+            [unit test](/test/Vector3D/Vector3DTest_0002.cs)
 
 ## Signature
 ```csharp

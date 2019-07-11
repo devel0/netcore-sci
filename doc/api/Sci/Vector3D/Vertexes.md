@@ -1,5 +1,7 @@
 # Vertexes property (SearchAThing.Sci.Vector3D)
-Geometry vertexes implementation
+Enumerable with only this vector.
+            ( Geometry Vertexes implementation )
+            [unit test](/test/Vector3D/Vector3DTest_0002.cs)
 
 ## Signature
 ```csharp

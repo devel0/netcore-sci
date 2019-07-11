@@ -1,5 +1,7 @@
 # DxfEntity property (SearchAThing.Sci.Vector3D)
-create dxf point entity suitable for netDxf addEntity
+Create dxf point entity suitable for netDxf addEntity.
+            ( Geometry DxfEntity implementation )
+            [unit test](/test/Vector3D/Vector3DTest_0002.cs)
 
 ## Signature
 ```csharp
