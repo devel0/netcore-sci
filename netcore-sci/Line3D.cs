@@ -350,7 +350,7 @@ namespace SearchAThing
             /// Returns null if no intersection, otherwise it returns
             /// the shortest segment ( the one that's perpendicular to either lines )            
             /// </summary>        
-            public Line3D Intersect2(double tol, Line3D other)
+            protected Line3D Intersect2(double tol, Line3D other)
             {
                 // this  : t = tf + tu * tv
                 // other : o = of + ou * ov                
@@ -490,21 +490,23 @@ namespace SearchAThing
                     (other.LineContainsPoint(tol, From) && other.LineContainsPoint(tol, To));
             }
 
-            public bool IsParallelTo(double tol, Plane3D plane)
+            public bool IsParallelTo(double tol, CoordinateSystem3D cs)
             {
-                var from_ = this.From.ToUCS(plane.CS);
-                var to_ = this.To.ToUCS(plane.CS);
+                var from_ = this.From.ToUCS(cs);
+                var to_ = this.To.ToUCS(cs);
 
                 return from_.Z.EqualsTol(tol, to_.Z);
             }
 
+            public bool IsParallelTo(double tol, Plane3D plane) => IsParallelTo(tol, plane.CS);
+
             /// <summary>
-            /// returns null if this line is parallel to the plane,
+            /// returns null if this line is parallel to the cs xy plane,
             /// the intersection point otherwise
             /// </summary>        
-            public Vector3D Intersect(double tol, Plane3D plane)
+            public Vector3D Intersect(double tol, CoordinateSystem3D cs)
             {
-                if (IsParallelTo(tol, plane)) return null;
+                if (IsParallelTo(tol, cs)) return null;
 
                 // O = plane.Origin    Vx = plane.CS.BaseX    Vy = plane.CS.BaseY
                 //
@@ -513,12 +515,19 @@ namespace SearchAThing
                 //
                 // => m:{ alpha * Vx + beta * Vy - gamma * V } * s = n:{ From - O }
 
-                var m = Matrix3D.FromVectorsAsColumns(plane.CS.BaseX, plane.CS.BaseY, -V);
-                var n = From - plane.CS.Origin;
+                var m = Matrix3D.FromVectorsAsColumns(cs.BaseX, cs.BaseY, -V);
+                var n = From - cs.Origin;
                 var s = m.Solve(n);
 
                 return From + s.Z * V;
             }
+
+            /// <summary>
+            /// returns null if this line is parallel to the plane,
+            /// the intersection point otherwise
+            /// </summary>        
+            public Vector3D Intersect(double tol, Plane3D plane) => Intersect(tol, plane.CS);
+
             public Vector3D MidPoint { get { return (From + To) / 2; } }
 
             /// <summary>
