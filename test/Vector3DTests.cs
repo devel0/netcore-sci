@@ -6,7 +6,7 @@ using SearchAThing.Util;
 
 namespace SearchAThing.Sci.Tests
 {
-    public class Vector3DTests
+    public partial class Vector3DTests
     {
 
         double rad_tol;
@@ -14,6 +14,12 @@ namespace SearchAThing.Sci.Tests
         public Vector3DTests()
         {
             rad_tol = (1e-1).ToRad();
+        }
+
+        [Fact]
+        public void ConstructorTest()
+        {
+            Assert.Throws<ArgumentException>(new Action(() => new Vector3D(new double[] { 10, 0, 0, 1 })));
         }
 
         [Fact]
@@ -57,6 +63,8 @@ namespace SearchAThing.Sci.Tests
 
             var zaxis = Vector3D.Axis(2);
             Assert.True(zaxis.EqualsTol(1e-6, Vector3D.ZAxis));
+
+            Assert.Throws<ArgumentException>(new Action(() => Vector3D.Axis(3)));
         }
 
         [Fact]
@@ -221,6 +229,7 @@ namespace SearchAThing.Sci.Tests
             Assert.True(v.GetOrd(0).EqualsTol(1e-6, 1));
             Assert.True(v.GetOrd(1).EqualsTol(1e-6, 2));
             Assert.True(v.GetOrd(2).EqualsTol(1e-6, 3));
+            Assert.Throws<ArgumentException>(new Action(() => v.GetOrd(3)));
         }
 
         [Fact]
@@ -575,15 +584,23 @@ namespace SearchAThing.Sci.Tests
         }
 
         [Fact]
-        public void CadIdLocationTest()
+        public void Vector3D_Test001()
         {
+            var tol = 1e-8;
+
             var v1 = new Vector3D("X = 4.11641325 Y = 266.06066703 Z = 11.60392802");
             var v2 = new Vector3D("X = 4.11641325  Y = 266.06066703  Z = 11.60392802");
 
-            Assert.True(v1.EqualsTol(1e-8, v2));
+            Assert.True(v1.EqualsTol(tol, v2));
 
             var v3 = new Vector3D("X = -4.11641325  Y = -266.06066703  Z = -11.60392802");
-            Assert.True((-1d * v3).EqualsTol(1e-8, v1));
+            Assert.True((-1d * v3).EqualsTol(tol, v1));
+
+            Assert.Throws<ArgumentException>(new Action(() => new Vector3D("X = 10, Y = 20, Z = 30")));
+
+            // geometry
+            Assert.True(v1.GeomFrom.EqualsTol(tol, v1));
+            Assert.True(v1.GeomTo.EqualsTol(tol, v1));
         }
 
     }
