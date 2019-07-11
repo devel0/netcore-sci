@@ -8,7 +8,7 @@ compute angle required to make this point go to the given one
 public double AngleToward(double tolLen, Vector3D to, Vector3D refAxis)
 ```
 ### Parameters
-- `tolLen`: geometric tolerance ( use Constant.NormalizedLengthTolerance if working with normalized vectors )
+- `tolLen`: geometric tolerance ( use Constants.NormalizedLengthTolerance if working with normalized vectors )
 - `to`: point toward rotate this one
 - `refAxis`: reference axis to make right-hand rotation of this point toward given one
 

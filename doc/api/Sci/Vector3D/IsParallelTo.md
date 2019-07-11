@@ -1,6 +1,6 @@
 # SearchAThing.Sci.Vector3D.IsParallelTo method
 ## IsParallelTo(double, Vector3D)
-Note: tol must be Constant.NormalizedLengthTolerance
+Note: tol must be Constants.NormalizedLengthTolerance
             if comparing normalized vectors
 
 ### Signature

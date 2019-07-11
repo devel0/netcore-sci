@@ -68,7 +68,8 @@ namespace SearchAThing
                 new CoordinateSystem3D(Vector3D.Zero, Vector3D.YAxis, Vector3D.ZAxis, Vector3D.XAxis);
 
             /// <summary>
-            /// world cs
+            /// world cs : basex=(1,0,0) basey=(0,1,0) basez=(0,0,1)
+            /// [unit test](/test/Vector3D/Vector3DTest_0001.cs)
             /// </summary>
             public static readonly CoordinateSystem3D WCS = XY;
 
@@ -196,6 +197,7 @@ namespace SearchAThing
 
             /// <summary>
             /// verify is this cs is equals to otherByLayer ( same origin, x, y, z base vectors )
+            /// [unit test](/test/Vector3D/Vector3DTest_0001.cs)
             /// </summary>
             /// <param name="tol">calc tolerance ( for origin check )</param>
             /// <param name="other">cs to check equality against</param>

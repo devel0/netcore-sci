@@ -6,9 +6,6 @@ compute distance between this point and the other given
 ```csharp
 public double Distance(Vector3D other)
 ```
-### Parameters
-- `other`: other point
-
 ## Distance(double, Line3D)
 compute perpendicular(min) distance of this point from given line
 

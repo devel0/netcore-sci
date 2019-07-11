@@ -7,6 +7,6 @@ angle between this and given vector
 public double AngleRad(double tolLen, Vector3D to)
 ```
 ### Parameters
-- `tolLen`: geometric tolerance ( use Constant.NormalizedLengthTolerance when comparing normalized vectors )
+- `tolLen`: geometric tolerance ( use Constants.NormalizedLengthTolerance when comparing normalized vectors )
 - `to`: other vector
 

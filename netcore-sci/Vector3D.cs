@@ -35,30 +35,30 @@ namespace SearchAThing
 
             /// <summary>
             /// xaxis vector
-            /// [unit test](/test/Vector3D/Vector3DTest_0001.cs)
+            /// [unit test](/test/Vector3D/Vector3DTest_0004.cs)
             /// </summary>
             /// <returns>(1,0,0) vector</returns>
             public static readonly Vector3D XAxis = new Vector3D(1, 0, 0);
 
             /// <summary>
             /// yaxis vector
-            /// [unit test](/test/Vector3D/Vector3DTest_0001.cs)
+            /// [unit test](/test/Vector3D/Vector3DTest_0004.cs)
             /// </summary>
             /// <returns>(0,1,0) vector</returns>
             public static readonly Vector3D YAxis = new Vector3D(0, 1, 0);
 
             /// <summary>
             /// zaxis vector
-            /// [unit test](/test/Vector3D/Vector3DTest_0001.cs)
+            /// [unit test](/test/Vector3D/Vector3DTest_0004.cs)
             /// </summary>
             /// <returns>(0,0,1) vector</returns>
             public static readonly Vector3D ZAxis = new Vector3D(0, 0, 1);
 
             /// <summary>
-            /// retrieve vector component through index
+            /// retrieve wcs axis by given index
+            /// [unit test](/test/Vector3D/Vector3DTest_0004.cs)
             /// </summary>
-            /// <param name="ord">0(x) 1(y) 2(z)</param>
-            /// <returns>vector component</returns>
+            /// <param name="ord">0:(1,0,0) 1:(0,1,0) 2:(0,0,1)</param>                                    
             public static Vector3D Axis(int ord)
             {
                 switch (ord)
@@ -71,22 +71,56 @@ namespace SearchAThing
             }
 
             /// <summary>
+            /// retrieve the component (0:X, 1:Y, 2:Z)
+            /// [unit test](/test/Vector3D/Vector3DTest_0003.cs)
+            /// </summary>        
+            public double GetOrd(int ord)
+            {
+                switch (ord)
+                {
+                    case 0: return X;
+                    case 1: return Y;
+                    case 2: return Z;
+                    default: throw new ArgumentException($"invalid ord {ord}. Must between one of 0,1,2");
+                }
+            }
+
+            /// <summary>
+            /// retrieve the component (0:X, 1:Y, 2:Z)
+            /// [unit test](/test/Vector3D/Vector3DTest_0003.cs)
+            /// </summary>        
+            public double GetOrd(OrdIdx ord)
+            {
+                switch (ord)
+                {
+                    case OrdIdx.X: return X;
+                    case OrdIdx.Y: return Y;
+                    case OrdIdx.Z: return Z;
+                    default: throw new ArgumentException($"invalid ord {ord}. Must between one of 0,1,2");
+                }
+            }
+
+            /// <summary>
             /// X vector component
+            /// [unit test](/test/Vector3D/Vector3DTest_0005.cs)
             /// </summary>
             public double X { get; private set; }
 
             /// <summary>
             /// Y vector component
+            /// [unit test](/test/Vector3D/Vector3DTest_0005.cs)
             /// </summary>            
             public double Y { get; private set; }
 
             /// <summary>
             /// Z vector component
+            /// [unit test](/test/Vector3D/Vector3DTest_0005.cs)
             /// </summary>            
             public double Z { get; private set; }
 
             /// <summary>
             /// zero vector
+            /// [unit test](/test/Vector3D/Vector3DTest_0006.cs)
             /// </summary>
             public Vector3D() : base(GeometryType.Vector3D)
             {
@@ -94,6 +128,7 @@ namespace SearchAThing
 
             /// <summary>
             /// build a vector (x,y,0) or (x,y,z) from given 2 or 3 doubles
+            /// [unit test](/test/Vector3D/Vector3DTest_0007.cs)
             /// </summary>            
             public Vector3D(double[] arr) : base(GeometryType.Vector3D)
             {
@@ -105,27 +140,21 @@ namespace SearchAThing
 
             /// <summary>
             /// build a vector by given components
-            /// </summary>
-            /// <param name="x">x component</param>
-            /// <param name="y">y component</param>
-            /// <param name="z">z component</param>
-            /// <returns>vector</returns>
+            /// [unit test](/test/Vector3D/Vector3DTest_0008.cs)
+            /// </summary>            
             public Vector3D(double x, double y, double z) : base(GeometryType.Vector3D)
             {
                 X = x; Y = y; Z = z;
             }
 
             /// <summary>
-            /// build a vector by given components ( z implicitly 0 )
-            /// </summary>
-            /// <param name="x">x component</param>
-            /// <param name="y">y component</param>            
-            /// <returns>vector</returns>  
+            /// build a vector (x,y,0) by given components
+            /// [unit test](/test/Vector3D/Vector3DTest_0008.cs)
+            /// </summary>            
             public Vector3D(double x, double y) : base(GeometryType.Vector3D)
             {
                 X = x; Y = y;
             }
-
 
             static Regex _cad_id_regex = null;
             /// <summary>
@@ -145,6 +174,7 @@ namespace SearchAThing
             /// <summary>
             /// parse cad id string (eg. "X = 4.11641325 Y = 266.06066703 Z = 11.60392802")
             /// constructing a point
+            /// [unit test](/test/Vector3D/Vector3DTest_0009.cs)
             /// </summary>
             /// <param name="cad_id_string">cad id string</param>
             public Vector3D(string cad_id_string) : base(GeometryType.Vector3D)
@@ -161,35 +191,8 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// retrieve the component (0:X, 1:Y, 2:Z)
-            /// </summary>        
-            public double GetOrd(int ord)
-            {
-                switch (ord)
-                {
-                    case 0: return X;
-                    case 1: return Y;
-                    case 2: return Z;
-                    default: throw new ArgumentException($"invalid ord {ord}. Must between one of 0,1,2");
-                }
-            }
-
-            /// <summary>
-            /// retrieve the component (0:X, 1:Y, 2:Z)
-            /// </summary>        
-            public double GetOrd(OrdIdx ord)
-            {
-                switch (ord)
-                {
-                    case OrdIdx.X: return X;
-                    case OrdIdx.Y: return Y;
-                    case OrdIdx.Z: return Z;
-                    default: throw new ArgumentException($"invalid ord {ord}. Must between one of 0,1,2");
-                }
-            }
-
-            /// <summary>
             /// enumerate coordinates
+            /// [unit test](/test/Vector3D/Vector3DTest_0010.cs)
             /// </summary>
             public IEnumerable<double> Coordinates
             {
@@ -203,13 +206,15 @@ namespace SearchAThing
 
             /// <summary>
             /// states if this is a zero vector
+            /// [unit test](/test/Vector3D/Vector3DTest_0011.cs)
             /// </summary>
             public bool IsZeroLength { get { return (X + Y + Z).EqualsTol(Constants.NormalizedLengthTolerance, 0); } }
 
             /// <summary>
-            /// checks vector component equality vs other given            
+            /// checks vector component equality vs other given           
+            /// [unit test](/test/Vector3D/Vector3DTest_0012.cs)
             /// </summary>
-            /// <param name="tol">geometric tolerance ( note: use Constant.NormalizedLengthTolerance )</param>
+            /// <param name="tol">geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</param>
             /// <param name="other">vector to compare to this</param>
             /// <returns>true if this vector equals the given one, false otherwise</returns>
             public bool EqualsTol(double tol, Vector3D other)
@@ -222,6 +227,7 @@ namespace SearchAThing
 
             /// <summary>
             /// check if this vector equals the given one component by component using EqualsAutoTol
+            /// [unit test](/test/Vector3D/Vector3DTest_0012.cs)
             /// </summary>
             public bool EqualsAutoTol(Vector3D other)
             {
@@ -233,6 +239,7 @@ namespace SearchAThing
 
             /// <summary>
             /// checks only x,y
+            /// [unit test](/test/Vector3D/Vector3DTest_0012.cs)
             /// </summary>        
             public bool EqualsTol(double tol, double x, double y)
             {
@@ -241,12 +248,9 @@ namespace SearchAThing
 
             /// <summary>
             /// checks vector component equality vs other given            
+            /// [unit test](/test/Vector3D/Vector3DTest_0012.cs)
             /// </summary>
-            /// <param name="tol">geometric tolerance ( note: use Constant.NormalizedLengthTolerance )</param>
-            /// <param name="x">other vector ( x component )</param>
-            /// <param name="y">other vector ( y component )</param>
-            /// <param name="z">other vector ( z component )</param>
-            /// <returns>true if this vector equals given on, false otherwise</returns>
+            /// <param name="tol">geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</param>            
             public bool EqualsTol(double tol, double x, double y, double z)
             {
                 return X.EqualsTol(tol, x) && Y.EqualsTol(tol, y) && Z.EqualsTol(tol, z);
@@ -254,6 +258,7 @@ namespace SearchAThing
 
             /// <summary>
             /// create a normalized version of this vector
+            /// [unit test](/test/Vector3D/Vector3DTest_0013.cs)
             /// </summary>
             public Vector3D Normalized()
             {
@@ -262,10 +267,8 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// compute distance between this point and the other given
-            /// </summary>
-            /// <param name="other">other point</param>
-            /// <returns>distance</returns>
+            /// compute distance between this point and the other given            
+            /// </summary>            
             public double Distance(Vector3D other)
             {
                 return (this - other).Length;
@@ -333,7 +336,7 @@ namespace SearchAThing
             /// <summary>
             /// angle between this and given vector
             /// </summary>
-            /// <param name="tolLen">geometric tolerance ( use Constant.NormalizedLengthTolerance when comparing normalized vectors )</param>
+            /// <param name="tolLen">geometric tolerance ( use Constants.NormalizedLengthTolerance when comparing normalized vectors )</param>
             /// <param name="to">other vector</param>
             /// <returns>angle between two vectors (rad)</returns>
             public double AngleRad(double tolLen, Vector3D to)
@@ -411,7 +414,7 @@ namespace SearchAThing
             /// <summary>
             /// states if this vector concord to the given one
             /// </summary>
-            /// <param name="tol">geometric tolerance ( Constant.NormalizedLengthTolerance if comparing normalized vectors )</param>
+            /// <param name="tol">geometric tolerance ( Constants.NormalizedLengthTolerance if comparing normalized vectors )</param>
             /// <param name="other">other vector</param>
             /// <returns>true if this vector concordant to the other, false otherwise</returns>
             public bool Concordant(double tol, Vector3D other)
@@ -444,7 +447,7 @@ namespace SearchAThing
             /// compute angle required to make this point go to the given one
             /// if rotate right-hand around given reference axis
             /// </summary>
-            /// <param name="tolLen">geometric tolerance ( use Constant.NormalizedLengthTolerance if working with normalized vectors )</param>
+            /// <param name="tolLen">geometric tolerance ( use Constants.NormalizedLengthTolerance if working with normalized vectors )</param>
             /// <param name="to">point toward rotate this one</param>
             /// <param name="refAxis">reference axis to make right-hand rotation of this point toward given one</param>
             /// <returns>angle (rad)</returns>
@@ -521,7 +524,7 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// Note: tol must be Constant.NormalizedLengthTolerance
+            /// Note: tol must be Constants.NormalizedLengthTolerance
             /// if comparing normalized vectors
             /// rotation from-to will be multiplied for given angleFactor ( default 1.0 )
             /// </summary>      
@@ -529,7 +532,7 @@ namespace SearchAThing
             /// <summary>
             /// rotate this point using rotation like point from goes toward point to
             /// </summary>
-            /// <param name="tol">geometric tolerance ( use Constant.NormalizedLengthTolerance if vectors are normalized )</param>
+            /// <param name="tol">geometric tolerance ( use Constants.NormalizedLengthTolerance if vectors are normalized )</param>
             /// <param name="from">point from describing rotation path</param>
             /// <param name="to">point to describing rotation path</param>
             /// <param name="angleFactor">optional angle rotation scaler</param>
@@ -571,7 +574,7 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// Note: tol must be Constant.NormalizedLengthTolerance
+            /// Note: tol must be Constants.NormalizedLengthTolerance
             /// if comparing normalized vectors
             /// </summary>        
             public bool IsParallelTo(double tol, Vector3D other)
@@ -1436,6 +1439,7 @@ namespace SearchAThing
 
         /// <summary>
         /// states if given 3 vectors are linearly independent
+        /// [unit test](/test/Vector3D/Vector3DTest_0001.cs)
         /// </summary>            
         /// <returns>true if given vector are linearly independent</returns>
         public static bool IsLinearIndependent(this IEnumerable<Vector3D> vectors)
