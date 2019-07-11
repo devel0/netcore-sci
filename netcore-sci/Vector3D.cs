@@ -126,7 +126,7 @@ namespace SearchAThing
                 get
                 {
                     if (_cad_id_regex == null)
-                        _cad_id_regex = new Regex(@"X\s*=\s*([\d\.]*)\s*Y\s*=\s*([\d\.]*)\s*Z\s*=\s*([\d\.]*)");
+                        _cad_id_regex = new Regex(@"X\s*=\s*([-]?[\d\.]*)\s*Y\s*=\s*([-]?[\d\.]*)\s*Z\s*=\s*([-]?[\d\.]*)");
                     return _cad_id_regex;
                 }
             }
