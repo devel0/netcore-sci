@@ -89,7 +89,7 @@ namespace SearchAThing
                 X = arr[0];
                 Y = arr[1];
                 if (arr.Length == 3) Z = arr[2];
-                if (arr.Length > 3) throw new Exception($"too much coordinates to build a vector3d");
+                if (arr.Length > 3) throw new ArgumentException($"too much coordinates to build a vector3d");
             }
 
             /// <summary>
