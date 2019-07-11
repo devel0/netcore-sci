@@ -13,6 +13,26 @@ namespace SearchAThing
     {
 
         /// <summary>
+        /// retrieve angle between from and to given;
+        /// angles will subjected to normalization [0,2pi) and angle from can be greather than to
+        /// </summary>
+        /// <param name="angleFrom">angle from</param>
+        /// <param name="angleTo">angle to</param>
+        public static double Angle(this double angleFrom, double tol_rad, double angleTo, bool normalizeAngles = true)
+        {
+            if (normalizeAngles)
+            {
+                angleFrom = angleFrom.NormalizeAngle2PI(tol_rad);
+                angleTo = angleTo.NormalizeAngle2PI(tol_rad);
+            }
+            
+            if (angleFrom > angleTo)
+                return angleTo + (2 * PI - angleFrom);
+            else
+                return angleTo - angleFrom;
+        }
+
+        /// <summary>
         /// ensure given angle in [0,2*PI] range
         /// </summary>        
         public static double NormalizeAngle2PI(this double angle_rad, double tol_rad)
@@ -112,7 +132,7 @@ namespace SearchAThing
             var step = dst / (N - 1);
             var half_step = step / 2;
 
-            var wcnt = new(double off, double w_hits)[N];
+            var wcnt = new (double off, double w_hits)[N];
             {
                 var pos = min;
                 for (int i = 0; i < N; ++i, pos += step)
