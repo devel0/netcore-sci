@@ -8,7 +8,7 @@
 
 ## documentation
 
-- [api reference](api-doc/docs/SearchAThing)
+- [api reference](doc/api/)
 
 ## install
 
