@@ -1,0 +1,28 @@
+# Int64MapExceptionRange Class
+**Namespace:** SearchAThing.Sci
+
+**Inheritance:** Object → Exception → Int64MapExceptionRange
+
+(No Description)
+
+## Signature
+```csharp
+public class Int64MapExceptionRange : System.Exception, System.Runtime.Serialization.ISerializable
+```
+## Methods
+- [Equals](Int64MapExceptionRange/Equals.md)
+- [GetBaseException](Int64MapExceptionRange/GetBaseException.md)
+- [GetHashCode](Int64MapExceptionRange/GetHashCode.md)
+- [GetObjectData](Int64MapExceptionRange/GetObjectData.md)
+- [GetType](Int64MapExceptionRange/GetType.md)
+- [ToString](Int64MapExceptionRange/ToString.md)
+## Properties
+- [Data](Int64MapExceptionRange/Data.md)
+- [HelpLink](Int64MapExceptionRange/HelpLink.md)
+- [HResult](Int64MapExceptionRange/HResult.md)
+- [InnerException](Int64MapExceptionRange/InnerException.md)
+- [Message](Int64MapExceptionRange/Message.md)
+- [Source](Int64MapExceptionRange/Source.md)
+- [StackTrace](Int64MapExceptionRange/StackTrace.md)
+- [TargetSite](Int64MapExceptionRange/TargetSite.md)
+## Conversions
