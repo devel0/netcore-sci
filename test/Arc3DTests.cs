@@ -3,6 +3,7 @@ using System.Linq;
 using SearchAThing.Util;
 using System;
 using static System.Math;
+using System.Collections.Generic;
 
 namespace SearchAThing.Sci.Tests
 {
@@ -292,12 +293,70 @@ namespace SearchAThing.Sci.Tests
             var csv1 = new Line3D(cso, new Vector3D("X = 71.66072643 Y = 278.03911571 Z = -156.2065643"));
             var csv2 = new Line3D(cso, new Vector3D("X = -153.32147396 Y = 128.44203407 Z = 2.05865164"));
 
+            Assert.True(arc.IntersectArc(1e-6, arc.CS.Move(arc.CS.BaseZ * 1000)).Count() == 0);
+
             var csplane = new CoordinateSystem3D(cso, csv1.V, csv2.V);
             var ipts = arc.IntersectArc(tol, csplane).ToList();
             Assert.True(ipts.Count == 2);
             var ipLine = new Line3D(ipts[0], ipts[1]);
             Assert.True(ipts.Any(r => r.EqualsTol(tol, new Vector3D("X = 1.7990927 Y = 231.58612296 Z = -18.13420814"))));
             Assert.True(ipts.Any(r => r.EqualsTol(tol, new Vector3D("X = 169.80266871 Y = 343.29649219 Z = 134.36668758"))));
+        }
+
+        /// <summary>
+        /// Arc3DTest_008.dxf
+        /// </summary>
+        [Fact]
+        public void Arc3DTest_008()
+        {
+            var tol = 1e-7;
+
+            var p1 = new Vector3D(20.17459383, 178.42487311, -56.31435851);
+            var p2 = new Vector3D(1.7990927, 231.58612295, -18.13420814);
+            var p3 = new Vector3D(262.37695212, 302.11773752, 132.19450446);
+            var arc = new Arc3D(tol, p1, p2, p3);
+
+            var dp1 = new Vector3D("X = 4.11641325 Y = 266.06066703 Z = 11.60392802");
+            var dp2 = new Vector3D("X = 58.22323201 Y = 331.06393108 Z = 85.07377904");
+            var dp3 = new Vector3D("X = 158.93019908 Y = 345.12414417 Z = 132.0972665");
+            var dp4 = new Vector3D("X = 62.63561614 Y = 268.87580225 Z = 34.43511732");
+            var dp4_ = new Vector3D("X = 16.03656748 Y = 293.76000567 Z = 39.01589812");
+
+            Action<Arc3D, Vector3D, Vector3D> test = (subarc, ap1, ap2) =>
+            {
+                Assert.True(arc.CS.Origin.EqualsTol(tol, subarc.CS.Origin));
+                Assert.True(arc.CS.IsParallelTo(tol, subarc.CS));
+                Assert.True(subarc.From.EqualsTol(tol, ap1));
+                Assert.True(subarc.To.EqualsTol(tol, ap2));
+            };
+
+            Assert.True(arc.Split(tol, null).Count() == 0);
+            Assert.True(arc.Split(tol, new Vector3D[] { }).Count() == 0);
+            Assert.True(arc.Split(tol, new[] { dp1, dp2, dp3, dp4, arc.From, arc.To }).Count() == 5);
+
+            {
+                var dps = new[] { dp1, dp2, dp3, dp4 };
+                var subarcs = arc.Split(tol, dps).ToList();
+                Assert.True(subarcs.Count == 5);
+
+                test(subarcs[0], arc.From, dp1);
+                test(subarcs[1], dp1, dp4_);
+                test(subarcs[2], dp4_, dp2);
+                test(subarcs[3], dp2, dp3);
+                test(subarcs[4], dp3, arc.To);
+            }
+
+            {
+                var dps = new[] { dp1, dp2, dp3, dp4 };
+                var subarcs = arc.Split(tol, dps, validate_pts: true).ToList();
+                Assert.True(subarcs.Count == 4);
+
+                test(subarcs[0], arc.From, dp1);
+                test(subarcs[1], dp1, dp2);
+                test(subarcs[2], dp2, dp3);
+                test(subarcs[3], dp3, arc.To);
+            }
+
         }
 
     }

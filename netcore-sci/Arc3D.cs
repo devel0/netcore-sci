@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using SearchAThing.Sci;
 using netDxf.Entities;
 using SearchAThing.Util;
+using System.Diagnostics.CodeAnalysis;
 
 namespace SearchAThing
 {
@@ -295,42 +296,6 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// if validate_pts false it assume all given split points are valid point on the arc
-            /// </summary>                        
-            /// <param name="tol_len">arc length tolerance</param>
-            /// <param name="_splitPts"></param>
-            /// <param name="validate_pts"></param>            
-            public IEnumerable<Arc3D> Split(double tol_len, IEnumerable<Vector3D> _splitPts, bool validate_pts = false)
-            {
-                var tol_rad = tol_len.RadTol(Radius);
-
-                if (_splitPts == null || _splitPts.Count() == 0) yield break;
-
-                IEnumerable<Vector3D> splitPts = _splitPts;
-
-                if (validate_pts) splitPts = _splitPts.Where(pt => Contains(tol_len, pt, onlyPerimeter: true)).ToList();
-
-                var radCmp = new DoubleEqualityComparer(tol_rad);
-
-                var hs_angles_rad = new HashSet<double>(radCmp);
-                foreach (var splitPt in splitPts.Select(pt => PtAngle(tol_len, pt)))
-                {
-                    if (PtAtAngle(splitPt).EqualsTol(tol_len, From) || PtAtAngle(splitPt).EqualsTol(tol_len, To)) continue;
-                    hs_angles_rad.Add(splitPt.NormalizeAngle2PI(tol_rad));
-                }
-
-                var angles_rad = hs_angles_rad.OrderBy(w => w).ToList();
-                if (!hs_angles_rad.Contains(AngleStart)) angles_rad.Insert(0, AngleStart);
-                if (!hs_angles_rad.Contains(AngleEnd)) angles_rad.Add(AngleEnd);
-
-                for (int i = 0; i < angles_rad.Count - 1; ++i)
-                {
-                    var arc = new Arc3D(tol_len, CS, Radius, angles_rad[i], angles_rad[i + 1]);
-                    yield return arc;
-                }
-            }
-
-            /// <summary>
             /// intersect this 3d circle with given 3d line
             /// </summary>            
             public IEnumerable<Vector3D> Intersect(double tol, Line3D l, bool segment_mode = false)
@@ -480,7 +445,7 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// find ips of intersect this arc to the given cs plane
+            /// find ips of intersect this arc to the given cs plane; return empty set if arc cs plane parallel to other given cs
             /// </summary>
             /// <param name="tol">len tolerance</param>
             /// <param name="cs">cs xy plane</param>
@@ -493,6 +458,7 @@ namespace SearchAThing
                     yield return x;
             }
 
+            [ExcludeFromCodeCoverage]
             public override string ToString()
             {
                 return $"C:{Center} r:{Round(Radius, 3)} ANGLE:{Round(Angle.ToDeg(), 1)}deg FROM[{From} {Round(AngleStart.ToDeg(), 1)} deg] TO[{To} {Round(AngleEnd.ToDeg(), 1)} deg]";
@@ -524,6 +490,45 @@ namespace SearchAThing
 
                 if (include_endpoints) yield return GeomTo;
             }
+
+            /// <summary>
+            /// create a set of subarc from this by splitting through given split points
+            /// split point are not required to be on perimeter of the arc ( a center arc to point line will split )
+            /// generated subarcs will start from this arc angleFrom and contiguosly end to angleTo
+            /// </summary>                        
+            /// <param name="tol_len">arc length tolerance</param>
+            /// <param name="_splitPts">point where split arc</param>
+            /// <param name="validate_pts">if true split only for split points on arc perimeter</param>            
+            public IEnumerable<Arc3D> Split(double tol_len, IEnumerable<Vector3D> _splitPts, bool validate_pts = false)
+            {
+                var tol_rad = tol_len.RadTol(Radius);
+
+                if (_splitPts == null || _splitPts.Count() == 0) yield break;
+
+                IEnumerable<Vector3D> splitPts = _splitPts;
+
+                if (validate_pts) splitPts = _splitPts.Where(pt => Contains(tol_len, pt, onlyPerimeter: true)).ToList();
+
+                var radCmp = new DoubleEqualityComparer(tol_rad);
+
+                var hs_angles_rad = new HashSet<double>(radCmp);
+                foreach (var splitPt in splitPts.Select(pt => PtAngle(tol_len, pt)))
+                {
+                    if (PtAtAngle(splitPt).EqualsTol(tol_len, From) || PtAtAngle(splitPt).EqualsTol(tol_len, To)) continue;
+                    hs_angles_rad.Add(splitPt.NormalizeAngle2PI(tol_rad));
+                }
+
+                var angles_rad = hs_angles_rad.OrderBy(w => w).ToList();
+                if (!hs_angles_rad.Contains(AngleStart)) angles_rad.Insert(0, AngleStart);
+                if (!hs_angles_rad.Contains(AngleEnd)) angles_rad.Add(AngleEnd);
+
+                for (int i = 0; i < angles_rad.Count - 1; ++i)
+                {
+                    var arc = new Arc3D(tol_len, CS, Radius, angles_rad[i], angles_rad[i + 1]);
+                    yield return arc;
+                }
+            }
+
         }
 
     }
