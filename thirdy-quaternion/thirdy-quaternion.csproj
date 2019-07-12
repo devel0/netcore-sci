@@ -2,10 +2,10 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>        
         <PackageId>netcore-sci-thirdy-quaternion</PackageId>   
-        <PackageVersion>1.0.3</PackageVersion>
+        <PackageVersion>1.0.4</PackageVersion>
         <Title>Quaternion library</Title>
         <Description></Description>
-        <Authors>Lorenzo Delana</Authors>
+        <Authors>YLS CS (https://www.codeproject.com/script/Membership/View.aspx?mid=4931736)</Authors>
         <PackageTags></PackageTags>
         <PackageProjectUrl>https://github.com/devel0/netcore-sci/tree/master/thirdy-quaternion</PackageProjectUrl>
     </PropertyGroup>

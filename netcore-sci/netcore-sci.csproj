@@ -3,12 +3,14 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageId>netcore-sci</PackageId>   
-        <PackageVersion>1.0.21</PackageVersion>
+        <PackageVersion>1.0.22</PackageVersion>
         <Title>net core scientific</Title>
         <Description></Description>
         <Authors>Lorenzo Delana</Authors>
         <PackageTags>netcore scientific linear-algebra measure units-of-measure 3d polygon dxf</PackageTags>
         <PackageProjectUrl>https://github.com/devel0/netcore-sci</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/devel0/netcore-sci</RepositoryUrl>
+        <RepositoryType>GitHub</RepositoryType>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
     <ItemGroup>
