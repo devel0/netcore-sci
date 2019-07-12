@@ -2,7 +2,8 @@
 ## AutoIntersect(IReadOnlyList<SearchAThing.Sci.Line3D>, double, bool, IEnumerable<SearchAThing.Sci.Vector3D>)
 autointersect given list of segments
             ( duplicates and overlapping are removed )
-            TODO : dummy function, optimize
+            
+            TODO: dummy function, optimize
 
 ### Signature
 ```csharp

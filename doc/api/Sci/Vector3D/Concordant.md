@@ -1,6 +1,8 @@
 # SearchAThing.Sci.Vector3D.Concordant method
 ## Concordant(double, Vector3D)
 states if this vector concord to the given one
+            
+            **NOTE**: it does not test two vectors are parallels ( precondition must meet )
 
 ### Signature
 ```csharp

@@ -16,6 +16,7 @@ public class Vector3D : SearchAThing.Sci.Geometry
 - [BBox](Vector3D/BBox.md)
 - [Colinear](Vector3D/Colinear.md)
 - [Concordant](Vector3D/Concordant.md)
+- [ConcordantColinear](Vector3D/ConcordantColinear.md)
 - [Convert](Vector3D/Convert.md)
 - [CrossProduct](Vector3D/CrossProduct.md)
 - [Distance](Vector3D/Distance.md)
