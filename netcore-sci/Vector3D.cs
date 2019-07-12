@@ -268,6 +268,7 @@ namespace SearchAThing
 
             /// <summary>
             /// compute distance between this point and the other given            
+            /// [unit test](/test/Vector3D/Vector3DTest_0014.cs)
             /// </summary>            
             public double Distance(Vector3D other)
             {
@@ -276,10 +277,11 @@ namespace SearchAThing
 
             /// <summary>
             /// compute perpendicular(min) distance of this point from given line
+            /// [unit test](/test/Vector3D/Vector3DTest_0014.cs)
+            /// ![img](/test/Vector3D/Vector3DTest_0014.png)
             /// </summary>
             /// <param name="tol">geometric tolerance</param>
-            /// <param name="other">line</param>
-            /// <returns>distance</returns>
+            /// <param name="other">line</param>            
             public double Distance(double tol, Line3D other)
             {
                 return other.Perpendicular(tol, this).Length;
@@ -336,7 +338,7 @@ namespace SearchAThing
             /// <summary>
             /// angle between this and given vector
             /// </summary>
-            /// <param name="tolLen">geometric tolerance ( use Constants.NormalizedLengthTolerance when comparing normalized vectors )</param>
+            /// <param name="tolLen">geometric tolerance to test vector equalities ( use Constants.NormalizedLengthTolerance when comparing normalized vectors )</param>
             /// <param name="to">other vector</param>
             /// <returns>angle between two vectors (rad)</returns>
             public double AngleRad(double tolLen, Vector3D to)

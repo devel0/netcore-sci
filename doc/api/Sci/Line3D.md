@@ -10,6 +10,7 @@
 public class Line3D : SearchAThing.Sci.Geometry
 ```
 ## Methods
+- [ApparentIntersect](Line3D/ApparentIntersect.md)
 - [BBox](Line3D/BBox.md)
 - [Bisect](Line3D/Bisect.md)
 - [Colinear](Line3D/Colinear.md)
