@@ -297,8 +297,7 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// compute dot product of this vector for the given one
-            /// 
+            /// compute dot product of this vector for the given one            
             /// a b = |a| |b| cos(alfa)
             /// [unit test](/test/Vector3D/Vector3DTest_0017.cs)            
             /// </summary>
