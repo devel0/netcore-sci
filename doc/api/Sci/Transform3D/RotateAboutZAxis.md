@@ -1,7 +1,7 @@
 # SearchAThing.Sci.Transform3D.RotateAboutZAxis method
 ## RotateAboutZAxis(double)
 add rotation about z axis of given angle to the current rotation matrix
-            [unit test](/test/Transform3D/Transform3D_0001.cs)
+            [unit test](/test/Transform3D/Transform3DTest_0001.cs)
 
 ### Signature
 ```csharp

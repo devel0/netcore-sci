@@ -2,7 +2,7 @@
 ## RotateAboutAxis(Vector3D, double)
 add rotation about given axis of given angle to the current rotation matrix.
             given axis will subjected to normalization
-            [unit test](/test/Transform3D/Transform3D_0001.cs)
+            [unit test](/test/Transform3D/Transform3DTest_0001.cs)
 
 ### Signature
 ```csharp
