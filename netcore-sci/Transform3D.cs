@@ -1,71 +1,109 @@
 
-using SearchAThing;
-using SearchAThing.Util;
-using YLScsDrawing.Drawing3d;
+using System.DoubleNumerics;
 
 namespace SearchAThing.Sci
 {
 
+    /// <summary>
+    /// Use quaternion to append rotate transformations
+    /// [unit test](/test/Transform3D/Transform3D_0001.cs)
+    /// ![img](/test/Transform3D/Transform3D_0001.png)
+    /// </summary>
     public class Transform3D
-    {        
+    {
 
         Quaternion q;
-        Vector3d xAxis;
-        Vector3d yAxis;
-        Vector3d zAxis;
+        Vector3 xAxis;
+        Vector3 yAxis;
+        Vector3 zAxis;
 
+        /// <summary>
+        /// instantiate an identity transformation
+        /// [unit test](/test/Transform3D/Transform3D_0001.cs)
+        /// </summary>
         public Transform3D()
         {
-            xAxis = new Vector3d(1,0,0);
-            yAxis = new Vector3d(0,1,0);
-            zAxis = new Vector3d(0,0,1);
-            q = new Quaternion(1,0,0,0);
-            //m = sMatrix3D.Identity;
+            xAxis = new Vector3(1, 0, 0);
+            yAxis = new Vector3(0, 1, 0);
+            zAxis = new Vector3(0, 0, 1);
+            q = Quaternion.Identity;
         }
 
+        /// <summary>
+        /// add rotation about X axis of given angle to the current rotation matrix
+        /// [unit test](/test/Transform3D/Transform3D_0001.cs)
+        /// </summary>
+        /// <param name="angleRad">rotation angle about X axis</param>
         public void RotateAboutXAxis(double angleRad)
         {
-            var q = new Quaternion();
-            q.FromAxisAngle(xAxis, angleRad);
-            this.q = q * this.q;
-            //m = m * sMatrix3D.CreateFromQuaternion(sQuaternion.CreateFromAxisAngle(sXAxis, (float)angleRad));
-            ////m.Rotate(new sQuaternion(sXAxis, angleRad.ToDeg()));
+            // https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
+            // q' = q2 * q1
+            var q1 = this.q;
+            var q2 = Quaternion.CreateFromAxisAngle(xAxis, angleRad);
+            this.q = q2 * q1;
         }
 
+        /// <summary>
+        /// add rotation about Y axis of given angle to the current rotation matrix
+        /// [unit test](/test/Transform3D/Transform3D_0001.cs)
+        /// </summary>
+        /// <param name="angleRad">rotation angle about Y axis</param>
         public void RotateAboutYAxis(double angleRad)
         {
-            var q = new Quaternion();
-            q.FromAxisAngle(yAxis, angleRad);
-            this.q = q * this.q;
-            //m = m * sMatrix3D.CreateFromQuaternion(sQuaternion.CreateFromAxisAngle(sYAxis, (float)angleRad));
-            ////m.Rotate(new sQuaternion(sYAxis, angleRad.ToDeg()));
+            // https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
+            // q' = q2 * q1
+            var q1 = this.q;
+            var q2 = Quaternion.CreateFromAxisAngle(yAxis, angleRad);
+            this.q = q2 * q1;
         }
 
+        /// <summary>
+        /// add rotation about z axis of given angle to the current rotation matrix
+        /// [unit test](/test/Transform3D/Transform3D_0001.cs)
+        /// </summary>
+        /// <param name="angleRad">rotation angle about Z axis</param>
         public void RotateAboutZAxis(double angleRad)
         {
-            var q = new Quaternion();
-            q.FromAxisAngle(zAxis, angleRad);
-            this.q = q * this.q;
-            //m = m * sMatrix3D.CreateFromQuaternion(sQuaternion.CreateFromAxisAngle(sZAxis, (float)angleRad));
-            ////m.Rotate(new sQuaternion(sZAxis, angleRad.ToDeg()));
+            // https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
+            // q' = q2 * q1
+            var q1 = this.q;
+            var q2 = Quaternion.CreateFromAxisAngle(zAxis, angleRad);
+            this.q = q2 * q1;
         }
 
+        /// <summary>
+        /// add rotation about given axis of given angle to the current rotation matrix.
+        /// given axis will subjected to normalization
+        /// [unit test](/test/Transform3D/Transform3D_0001.cs)
+        /// </summary>        
+        /// <param name="axis">custom rotation axis</param>
+        /// <param name="angleRad">rotation angle about given axis</param>                                
         public void RotateAboutAxis(Vector3D axis, double angleRad)
         {
-            var v = new Vector3d(axis.X, axis.Y, axis.Z);
-            var q = new Quaternion();
-            q.FromAxisAngle(v, angleRad);
-            this.q = q * this.q;
-            //var v = new sVector3D((float)axis.X, (float)axis.Y, (float)axis.Z);
-            //m = m * sMatrix3D.CreateFromQuaternion(sQuaternion.CreateFromAxisAngle(v, (float)angleRad));
-            ////m.Rotate(new sQuaternion(new sVector3D(axis.X, axis.Y, axis.Z), angleRad.ToDeg()));
+            var normalizedAxis = axis.Normalized();
+
+            // https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
+            // q' = q2 * q1            
+            var q1 = this.q;
+            var q2 = Quaternion.CreateFromAxisAngle(
+                new Vector3(normalizedAxis.X, normalizedAxis.Y, normalizedAxis.Z), angleRad);
+            this.q = q2 * q1;
         }
 
+        /// <summary>
+        /// apply this transformation to given vector returning new one
+        /// [unit test](/test/Transform3D/Transform3D_0001.cs)
+        /// </summary>
+        /// <param name="v">vector to transform</param>
         public Vector3D Apply(Vector3D v)
-        {            
-            var p = new Point3d(v.X, v.Y, v.Z);
-            var pr = q.Rotate(p);
-            return new Vector3D(pr.X, pr.Y, pr.Z);            
+        {
+            // https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
+            // p' = qpq^(-1)
+            //var q_1 = Quaternion.Conjugate(q);//Quaternion.Normalize(q));
+            var q_1 = Quaternion.Conjugate(q);
+            var p = new Quaternion(v.X, v.Y, v.Z, 0);
+            var p_ = q * p * q_1;
+            return new Vector3D(p_.X, p_.Y, p_.Z);
         }
 
     }

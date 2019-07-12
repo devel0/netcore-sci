@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "netcore-sci", "netcore-sci\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "test", "test\test.csproj", "{AF97E38F-CAE8-4DA0-BAC9-1B292CE9A05C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "thirdy-quaternion", "thirdy-quaternion\thirdy-quaternion.csproj", "{AA314CF3-8182-4398-A91F-890B5781855D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,18 +41,6 @@ Global
 		{AF97E38F-CAE8-4DA0-BAC9-1B292CE9A05C}.Release|x64.Build.0 = Release|Any CPU
 		{AF97E38F-CAE8-4DA0-BAC9-1B292CE9A05C}.Release|x86.ActiveCfg = Release|Any CPU
 		{AF97E38F-CAE8-4DA0-BAC9-1B292CE9A05C}.Release|x86.Build.0 = Release|Any CPU
-		{AA314CF3-8182-4398-A91F-890B5781855D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA314CF3-8182-4398-A91F-890B5781855D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA314CF3-8182-4398-A91F-890B5781855D}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{AA314CF3-8182-4398-A91F-890B5781855D}.Debug|x64.Build.0 = Debug|Any CPU
-		{AA314CF3-8182-4398-A91F-890B5781855D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{AA314CF3-8182-4398-A91F-890B5781855D}.Debug|x86.Build.0 = Debug|Any CPU
-		{AA314CF3-8182-4398-A91F-890B5781855D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA314CF3-8182-4398-A91F-890B5781855D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA314CF3-8182-4398-A91F-890B5781855D}.Release|x64.ActiveCfg = Release|Any CPU
-		{AA314CF3-8182-4398-A91F-890B5781855D}.Release|x64.Build.0 = Release|Any CPU
-		{AA314CF3-8182-4398-A91F-890B5781855D}.Release|x86.ActiveCfg = Release|Any CPU
-		{AA314CF3-8182-4398-A91F-890B5781855D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

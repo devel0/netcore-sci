@@ -3,7 +3,7 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageId>netcore-sci</PackageId>   
-        <PackageVersion>1.0.22</PackageVersion>
+        <PackageVersion>1.0.23</PackageVersion>
         <Title>net core scientific</Title>
         <Description></Description>
         <Authors>Lorenzo Delana</Authors>
@@ -18,8 +18,6 @@
         <PackageReference Include="netcore-psql-util" Version="1.0.2" />
         <PackageReference Include="netcore-util" Version="1.0.4" />
         <PackageReference Include="netDXF.Standard" Version="2.1.1" />
-    </ItemGroup>
-    <ItemGroup>        
-        <ProjectReference Include="..\thirdy-quaternion\thirdy-quaternion.csproj" />
-    </ItemGroup>
+        <PackageReference Include="System.DoubleNumerics" Version="3.1.3" />
+    </ItemGroup>    
 </Project>

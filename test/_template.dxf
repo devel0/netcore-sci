@@ -501,19 +501,19 @@ $TDUCREATE
   9
 $TDUPDATE
  40
-2458677.445039456
+2458677.620991933
   9
 $TDUUPDATE
  40
-2458677.403372789
+2458677.579325266
   9
 $TDINDWG
  40
-0.0000000579
+0.0000001273
   9
 $TDUSRTIMER
  40
-0.0000271759
+0.0001396065
   9
 $USRTIMER
  70
@@ -553,7 +553,7 @@ $SPLINESEGS
   9
 $HANDSEED
   5
-C6
+C9
   9
 $SURFTAB1
  70
@@ -1123,7 +1123,7 @@ ObjectDBX Classes
  90
         0
  91
-       10
+       11
 280
      0
 281
@@ -1139,7 +1139,7 @@ ObjectDBX Classes
  90
      4095
  91
-       10
+       11
 280
      0
 281
@@ -1155,7 +1155,7 @@ ObjectDBX Classes
  90
      4095
  91
-       10
+       11
 280
      0
 281
@@ -1171,7 +1171,7 @@ ObjectDBX Classes
  90
         0
  91
-       10
+       11
 280
      0
 281
@@ -1187,7 +1187,7 @@ ObjectDBX Classes
  90
      1153
  91
-       10
+       11
 280
      0
 281
@@ -1203,7 +1203,7 @@ ObjectDBX Classes
  90
      1152
  91
-       10
+       11
 280
      0
 281
@@ -1219,7 +1219,7 @@ ISM
  90
         0
  91
-       10
+       11
 280
      0
 281
@@ -1235,7 +1235,7 @@ ObjectDBX Classes
  90
      1153
  91
-       10
+       11
 280
      0
 281
@@ -1251,7 +1251,7 @@ SCENEOE
  90
      1153
  91
-       10
+       11
 280
      0
 281
@@ -1267,7 +1267,7 @@ ACDB_MLEADERSTYLE_CLASS
  90
      4095
  91
-       10
+       11
 280
      0
 281
@@ -1341,9 +1341,9 @@ AcDbViewportTableRecord
  37
 0.0
  40
-385.2
+302.94
  41
-1.11214953271028
+1.997304582210243
  42
 50.0
  43
@@ -2121,7 +2121,7 @@ ACAD_VISUALSTYLE
   3
 ACDB_RECOMPOSE_DATA
 350
-C5
+C8
   3
 AcDbVariableDictionary
 350
@@ -2667,7 +2667,7 @@ X-Ray
   0
 XRECORD
   5
-C5
+C8
 102
 {ACAD_REACTORS
 330
@@ -4283,7 +4283,7 @@ TABLESTYLE
 102
 {ACAD_XDICTIONARY
 360
-C3
+C6
 102
 }
 330
@@ -11395,7 +11395,7 @@ DictionaryVariables
   0
 DICTIONARY
   5
-C3
+C6
 330
 3C
 100
@@ -11407,19 +11407,19 @@ AcDbDictionary
   3
 ACAD_ROUNDTRIP_2008_TABLESTYLE_CELLSTYLEMAP
 360
-C4
+C7
   0
 CELLSTYLEMAP
   5
-C4
+C7
 102
 {ACAD_REACTORS
 330
-C3
+C6
 102
 }
 330
-C3
+C6
 100
 AcDbCellStyleMap
  90
