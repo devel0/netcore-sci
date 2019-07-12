@@ -103,7 +103,7 @@ dotnet run
 
 - [result dxf](examples/example_0001/output.dxf)
 
-![](examples/example_0001/output.png | width=300)
+<img src="examples/example_0001/output.png" width=300>
 
 ## documentation
 
