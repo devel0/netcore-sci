@@ -9,7 +9,7 @@ namespace example_0001
         static void Main(string[] args)
         {
             var tol = 1e-8;
-            var R = 100;            
+            var R = 100;
 
             var dxf = new netDxf.DxfDocument();
             var ang = 0d;
@@ -55,7 +55,7 @@ namespace example_0001
             }
 
             dxf.Viewport.ShowGrid = false;
-            dxf.Save("output.dxf");
+            dxf.Save("output.dxf", isBinary: true);
         }
     }
 }
