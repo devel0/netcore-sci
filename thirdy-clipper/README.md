@@ -1,6 +1,6 @@
 # thirdy-clipper
 
-NET standard porting of polygon clipping library from [Angus Johnson](http://www.angusj.com/delphi/clipper.php)
+NET standard porting of [Angus Johnson](http://www.angusj.com/delphi/clipper.php) Clipping and offsetting lines and polygons library
 
 ```
 /*******************************************************************************

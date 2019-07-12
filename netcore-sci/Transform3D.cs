@@ -31,7 +31,7 @@ namespace SearchAThing.Sci
 
         /// <summary>
         /// add rotation about X axis of given angle to the current rotation matrix
-        /// [unit test](/test/Transform3D/Transform3D_0001.cs)
+        /// [unit test](/test/Transform3D/Transform3DTest_0001.cs)
         /// </summary>
         /// <param name="angleRad">rotation angle about X axis</param>
         public void RotateAboutXAxis(double angleRad)
@@ -45,7 +45,7 @@ namespace SearchAThing.Sci
 
         /// <summary>
         /// add rotation about Y axis of given angle to the current rotation matrix
-        /// [unit test](/test/Transform3D/Transform3D_0001.cs)
+        /// [unit test](/test/Transform3D/Transform3DTest_0001.cs)
         /// </summary>
         /// <param name="angleRad">rotation angle about Y axis</param>
         public void RotateAboutYAxis(double angleRad)
@@ -59,7 +59,7 @@ namespace SearchAThing.Sci
 
         /// <summary>
         /// add rotation about z axis of given angle to the current rotation matrix
-        /// [unit test](/test/Transform3D/Transform3D_0001.cs)
+        /// [unit test](/test/Transform3D/Transform3DTest_0001.cs)
         /// </summary>
         /// <param name="angleRad">rotation angle about Z axis</param>
         public void RotateAboutZAxis(double angleRad)
@@ -74,7 +74,7 @@ namespace SearchAThing.Sci
         /// <summary>
         /// add rotation about given axis of given angle to the current rotation matrix.
         /// given axis will subjected to normalization
-        /// [unit test](/test/Transform3D/Transform3D_0001.cs)
+        /// [unit test](/test/Transform3D/Transform3DTest_0001.cs)
         /// </summary>        
         /// <param name="axis">custom rotation axis</param>
         /// <param name="angleRad">rotation angle about given axis</param>                                
@@ -92,7 +92,7 @@ namespace SearchAThing.Sci
 
         /// <summary>
         /// apply this transformation to given vector returning new one
-        /// [unit test](/test/Transform3D/Transform3D_0001.cs)
+        /// [unit test](/test/Transform3D/Transform3DTest_0001.cs)
         /// </summary>
         /// <param name="v">vector to transform</param>
         public Vector3D Apply(Vector3D v)
