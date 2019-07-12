@@ -159,6 +159,7 @@ cd netcore-sci
 dotnet add package netcore-util --version 1.0.2
 dotnet add package netcore-psql-util --version 1.0.3
 dotnet add package netDXF.Standard --version 2.1.1
+dotnet add package com.angusj.Clipper --version 6.4.2
 cd ..
 
 dotnet new xunit -n test
