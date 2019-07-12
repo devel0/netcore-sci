@@ -7,7 +7,7 @@ namespace SearchAThing.Sci
     /// <summary>
     /// Use quaternion to append rotate transformations
     /// [unit test](/test/Transform3D/Transform3DTest_0001.cs)
-    /// ![img](/test/Transform3D/Transform3DTest_0001.png)
+    /// ![](/test/Transform3D/Transform3DTest_0001.png)
     /// </summary>
     public class Transform3D
     {

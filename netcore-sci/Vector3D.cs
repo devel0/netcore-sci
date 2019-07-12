@@ -211,8 +211,7 @@ namespace SearchAThing
             /// [unit test](/test/Vector3D/Vector3DTest_0012.cs)
             /// </summary>
             /// <param name="tol">geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</param>
-            /// <param name="other">vector to compare to this</param>
-            /// <returns>true if this vector equals the given one, false otherwise</returns>
+            /// <param name="other">vector to compare to this</param>            
             public bool EqualsTol(double tol, Vector3D other)
             {
                 return
@@ -237,6 +236,7 @@ namespace SearchAThing
             /// checks only x,y
             /// [unit test](/test/Vector3D/Vector3DTest_0012.cs)
             /// </summary>        
+            /// <param name="tol">geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</param>            
             public bool EqualsTol(double tol, double x, double y)
             {
                 return X.EqualsTol(tol, x) && Y.EqualsTol(tol, y);
@@ -273,21 +273,24 @@ namespace SearchAThing
 
             /// <summary>
             /// compute perpendicular(min) distance of this point from given line
-            /// [unit test](/test/Vector3D/Vector3DTest_0014.cs)
-            /// ![img](/test/Vector3D/Vector3DTest_0014.png)
+            /// [unit test](/test/Vector3D/Vector3DTest_0015.cs)
+            /// ![](/test/Vector3D/Vector3DTest_0015.png)
             /// </summary>
-            /// <param name="tol">geometric tolerance</param>
+            /// <param name="tol">length tolerance ( used to check if point contained in line )</param>
             /// <param name="other">line</param>            
             public double Distance(double tol, Line3D other)
             {
-                return other.Perpendicular(tol, this).Length;
+                var q = other.Perpendicular(tol, this);
+                if (q == null) return 0;
+                return q.Length;
             }
 
             /// <summary>
             /// compute distance of this point from the given in 2d ( x,y ) without consider z component
+            /// [unit test](/test/Vector3D/Vector3DTest_0016.cs)
+            /// ![](/test/Vector3D/Vector3DTest_0016.png)
             /// </summary>
-            /// <param name="other">other point</param>
-            /// <returns>2d distance</returns>
+            /// <param name="other">other point</param>            
             public double Distance2D(Vector3D other)
             {
                 return Sqrt((X - other.X) * (X - other.X) + (Y - other.Y) * (Y - other.Y));
@@ -295,9 +298,11 @@ namespace SearchAThing
 
             /// <summary>
             /// compute dot product of this vector for the given one
+            /// 
+            /// a b = |a| |b| cos(alfa)
+            /// [unit test](/test/Vector3D/Vector3DTest_0017.cs)            
             /// </summary>
-            /// <param name="other">second vector</param>
-            /// <returns>a b = |a| |b| cos(alfa)</returns>
+            /// <param name="other">second vector</param>            
             public double DotProduct(Vector3D other)
             {
                 return X * other.X + Y * other.Y + Z * other.Z;
@@ -305,24 +310,28 @@ namespace SearchAThing
 
             /// <summary>
             /// states is this vector is perpendicular to the given one
+            /// [unit test](/test/Vector3D/Vector3DTest_0018.cs)
             /// </summary>
             /// <param name="other">other vector</param>
-            /// <returns>true if this vector is perpendicular to the given on, false otherwise</returns>
             public bool IsPerpendicular(Vector3D other)
             {
-                return Normalized().DotProduct(other.Normalized()).EqualsTol(Constants.NormalizedLengthTolerance, 0);
+                return Normalized().DotProduct(other.Normalized())
+                    .EqualsTol(Constants.NormalizedLengthTolerance, 0);
             }
 
             /// <summary>
-            /// Cross product
+            /// Cross product ( not normalized )
+            /// 
             /// a x b = |a| |b| sin(alfa) N
+            /// 
             /// a x b = |  x  y  z |
             ///         | ax ay az |
             ///         | bx by bz |
             /// https://en.wikipedia.org/wiki/Cross_product
+            /// [unit test](/test/Vector3D/Vector3DTest_0019.cs)
+            /// ![](/test/Vector3D/Vector3DTest_0019.png)
             /// </summary>               
-            /// <param name="other">other vector</param>
-            /// <returns>cross product this for given one ( result not normalized )</returns>      
+            /// <param name="other">other vector</param>            
             public Vector3D CrossProduct(Vector3D other)
             {
                 return new Vector3D(
@@ -410,17 +419,6 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// states if this vector concord to the given one
-            /// </summary>
-            /// <param name="tol">geometric tolerance ( Constants.NormalizedLengthTolerance if comparing normalized vectors )</param>
-            /// <param name="other">other vector</param>
-            /// <returns>true if this vector concordant to the other, false otherwise</returns>
-            public bool Concordant(double tol, Vector3D other)
-            {
-                return DotProduct(other) > tol;
-            }
-
-            /// <summary>
             /// create a vector relative to given origin from this point and given origin
             /// </summary>
             /// <param name="origin">origin to make this point relative to</param>
@@ -431,14 +429,74 @@ namespace SearchAThing
             }
 
             /// <summary>
+            /// Note: tol must be Constants.NormalizedLengthTolerance
+            /// if comparing normalized vectors
+            /// </summary>        
+            public bool IsParallelTo(double tol, Vector3D other)
+            {
+                // two vectors a,b are parallel if there is a factor c such that a=cb
+                // but first we need to exclude test over null components
+
+                var nullSum = 0;
+
+                var xNull = false;
+                var yNull = false;
+                var zNull = false;
+
+                if (X.EqualsTol(tol, 0) && other.X.EqualsTol(tol, 0)) { xNull = true; ++nullSum; }
+                if (Y.EqualsTol(tol, 0) && other.Y.EqualsTol(tol, 0)) { yNull = true; ++nullSum; }
+                if (Z.EqualsTol(tol, 0) && other.Z.EqualsTol(tol, 0)) { zNull = true; ++nullSum; }
+
+                if (nullSum == 0) // 3-d
+                {
+                    var c = X / other.X;
+                    return c.EqualsTol(tol, Y / other.Y) && c.EqualsTol(tol, Z / other.Z);
+                }
+                else if (nullSum == 1) // 2-d
+                {
+                    if (xNull) return (Y / other.Y).EqualsTol(tol, Z / other.Z);
+                    if (yNull) return (X / other.X).EqualsTol(tol, Z / other.Z);
+                    if (zNull) return (X / other.X).EqualsTol(tol, Y / other.Y);
+                }
+                else if (nullSum == 2) // 1-d
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            /// <summary>
             /// states if this vector is colinear to the given one
             /// </summary>
             /// <param name="tol">geometric tolerance</param>
-            /// <param name="other">other vector</param>
-            /// <returns>true if this vector colinear the given one, false otherwise</returns>
+            /// <param name="other">other vector</param>            
             public bool Colinear(double tol, Vector3D other)
             {
+                //return this.IsParallelTo(tol, other);
                 return new Line3D(Vector3D.Zero, this).Colinear(tol, new Line3D(Vector3D.Zero, other));
+            }
+
+            /// <summary>
+            /// states if this vector concord to the given one
+            /// 
+            /// **NOTE**: it does not test two vectors are parallels ( precondition must meet )
+            /// </summary>
+            /// <param name="tol">geometric tolerance ( Constants.NormalizedLengthTolerance if comparing normalized vectors )</param>
+            /// <param name="other">other vector</param>            
+            public bool Concordant(double tol, Vector3D other)
+            {
+                return DotProduct(other) > tol;
+            }
+
+            /// <summary>
+            /// statis if this vector is concordant and colinear to the given one
+            /// </summary>
+            /// <param name="tol">geometric tolerance ( Constants.NormalizedLengthTolerance if comparing normalized vectors )</param>
+            /// <param name="other">other vector</param>                        
+            public bool ConcordantColinear(double tol, Vector3D other)
+            {
+                return Concordant(tol, other) && Colinear(tol, other);
             }
 
             /// <summary>
@@ -569,44 +627,6 @@ namespace SearchAThing
             public Vector3D Mirror(Line3D axis)
             {
                 return this + 2 * (Project(axis) - this);
-            }
-
-            /// <summary>
-            /// Note: tol must be Constants.NormalizedLengthTolerance
-            /// if comparing normalized vectors
-            /// </summary>        
-            public bool IsParallelTo(double tol, Vector3D other)
-            {
-                // two vectors a,b are parallel if there is a factor c such that a=cb
-                // but first we need to exclude test over null components
-
-                var nullSum = 0;
-
-                var xNull = false;
-                var yNull = false;
-                var zNull = false;
-
-                if (X.EqualsTol(tol, 0) && other.X.EqualsTol(tol, 0)) { xNull = true; ++nullSum; }
-                if (Y.EqualsTol(tol, 0) && other.Y.EqualsTol(tol, 0)) { yNull = true; ++nullSum; }
-                if (Z.EqualsTol(tol, 0) && other.Z.EqualsTol(tol, 0)) { zNull = true; ++nullSum; }
-
-                if (nullSum == 0) // 3-d
-                {
-                    var c = X / other.X;
-                    return c.EqualsTol(tol, Y / other.Y) && c.EqualsTol(tol, Z / other.Z);
-                }
-                else if (nullSum == 1) // 2-d
-                {
-                    if (xNull) return (Y / other.Y).EqualsTol(tol, Z / other.Z);
-                    if (yNull) return (X / other.X).EqualsTol(tol, Z / other.Z);
-                    if (zNull) return (X / other.X).EqualsTol(tol, Y / other.Y);
-                }
-                else if (nullSum == 2) // 1-d
-                {
-                    return true;
-                }
-
-                return false;
             }
 
             /// <summary>

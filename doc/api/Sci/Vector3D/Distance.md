@@ -9,14 +9,14 @@ public double Distance(Vector3D other)
 ```
 ## Distance(double, Line3D)
 compute perpendicular(min) distance of this point from given line
-            [unit test](/test/Vector3D/Vector3DTest_0014.cs)
-            ![img](/test/Vector3D/Vector3DTest_0014.png)
+            [unit test](/test/Vector3D/Vector3DTest_0015.cs)
+            ![](/test/Vector3D/Vector3DTest_0015.png)
 
 ### Signature
 ```csharp
 public double Distance(double tol, Line3D other)
 ```
 ### Parameters
-- `tol`: geometric tolerance
+- `tol`: length tolerance ( used to check if point contained in line )
 - `other`: line
 

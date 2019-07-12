@@ -5,7 +5,7 @@ Find apparent intersection between this and given other line
             This method will used from Intersect to find intersection between lines when
             perpendicular segment length not exceed given length tolerance.
             [unit test](/test/Line3D/Line3DTest_0001.cs)
-            ![img](/test/Line3D/Line3DTest_0001.png)
+            ![](/test/Line3D/Line3DTest_0001.png)
 
 ### Signature
 ```csharp

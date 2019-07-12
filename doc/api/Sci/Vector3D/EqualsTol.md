@@ -19,6 +19,11 @@ checks only x,y
 ```csharp
 public bool EqualsTol(double tol, double x, double y)
 ```
+### Parameters
+- `tol`: geometric tolerance ( note: use Constants.NormalizedLengthTolerance )
+- `x`: (No Description)
+- `y`: (No Description)
+
 ## EqualsTol(double, double, double, double)
 checks vector component equality vs other given            
             [unit test](/test/Vector3D/Vector3DTest_0012.cs)

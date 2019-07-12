@@ -13,7 +13,7 @@ namespace SearchAThing.Sci.Tests
 {
     public class OldTests
     {
-/*
+
         // tests from https://github.com/SearchAThing-old1/SearchAThing.UnitTest
 
         IModel model = new SampleModel();
@@ -598,8 +598,7 @@ namespace SearchAThing.Sci.Tests
         [Fact(DisplayName = "ClosedPolys2D")]
         void ClosedPolys2D()
         {
-            var dxf = netDxf.DxfDocument.Load(
-                System.IO.Path.Combine(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data"), "test_closed_polys1.dxf"));
+            var dxf = netDxf.DxfDocument.Load("_torefact/doc/test_closed_polys1.dxf");
 
             var segs = dxf.Lines.Select(w => w.ToLine3D()).ToList();
             segs = segs.AutoIntersect(1e-3).ToList();
@@ -813,10 +812,7 @@ namespace SearchAThing.Sci.Tests
         [Fact(DisplayName = "Line3DAutoIntersect")]
         void Line3DAutoIntersect()
         {
-            var dxf = netDxf.DxfDocument.Load(
-                System.IO.Path.Combine(
-                    System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data"),
-                    "test_autointersect.dxf"));
+            var dxf = netDxf.DxfDocument.Load("_torefact/doc/test_autointersect.dxf");
 
             var input_segs = dxf.Lines
                 .Where(r => r.Layer.Name == "lay_input")
@@ -857,7 +853,7 @@ namespace SearchAThing.Sci.Tests
 
             Assert.True(q.Count() != 0);
         }
-*/
+
     }
 
 }
