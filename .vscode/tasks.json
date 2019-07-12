@@ -10,7 +10,7 @@
                 "${workspaceFolder}/netcore-sci.sln"
             ],
             "problemMatcher": "$msCompile"
-        },
+        },       
         {
             "label": "test",
             "command": "dotnet",
