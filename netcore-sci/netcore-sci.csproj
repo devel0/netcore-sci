@@ -2,22 +2,20 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <PackageId>netcore-sci</PackageId>   
-        <PackageVersion>1.0.23</PackageVersion>
+        <PackageId>netcore-sci</PackageId>
+        <PackageVersion>1.0.24</PackageVersion>
         <Title>net core scientific</Title>
         <Description></Description>
         <Authors>Lorenzo Delana</Authors>
         <PackageTags>netcore scientific linear-algebra measure units-of-measure 3d polygon dxf</PackageTags>
-        <PackageProjectUrl>https://github.com/devel0/netcore-sci</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/devel0/netcore-sci</RepositoryUrl>
-        <RepositoryType>GitHub</RepositoryType>
+        <PackageProjectUrl>https://github.com/devel0/netcore-sci</PackageProjectUrl>        
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="com.angusj.Clipper" Version="6.4.2" />
         <PackageReference Include="netcore-psql-util" Version="1.0.2" />
         <PackageReference Include="netcore-util" Version="1.0.4" />
         <PackageReference Include="netDXF.Standard" Version="2.1.1" />
         <PackageReference Include="System.DoubleNumerics" Version="3.1.3" />
-    </ItemGroup>    
+        <ProjectReference Include="..\thirdy-clipper\thirdy-clipper.csproj" />
+    </ItemGroup>
 </Project>

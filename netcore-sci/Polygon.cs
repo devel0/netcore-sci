@@ -114,33 +114,6 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// can generate a Int64MapExceptionRange exception if double values can't fit into a In64 representation.
-        /// In that case try with tolerances not too small.
-        /// It is suggested to use a lenTol/10 to avoid lost of precision during domain conversions.
-        /// </summary>        
-        public static IEnumerable<IEnumerable<Vector3D>> Boolean(this IEnumerable<Vector3D> polyA, double tol, IEnumerable<Vector3D> polyB, ClipType type, bool selfCheckInt64MapTolerance = true)
-        {
-            var intmap = new Int64Map(tol, polyA.SelectMany(x => x.Coordinates).Union(polyB.SelectMany(x => x.Coordinates)), selfCheckInt64MapTolerance);
-
-            var clipper = new Clipper();
-            {
-                var path = polyA.Select(p => new IntPoint(intmap.ToInt64(p.X), intmap.ToInt64(p.Y))).ToList();
-                clipper.AddPath(path, PolyType.ptSubject, true);
-            }
-            {
-                var path = polyB.Select(p => new IntPoint(intmap.ToInt64(p.X), intmap.ToInt64(p.Y))).ToList();
-                clipper.AddPath(path, PolyType.ptClip, true);
-            }
-
-            var sol = new List<List<IntPoint>>();
-            clipper.Execute(type, sol);
-
-            var res = sol.Select(s => s.Select(si => new Vector3D(intmap.FromInt64(si.X), intmap.FromInt64(si.Y), 0)));
-
-            return res;
-        }
-
-        /// <summary>
         /// given a set of polygon pts, returns the enumeation of all pts
         /// so that the last not attach to the first ( if makeClosed = false ).
         /// Elsewhere it returns a last point equals the first ( makeClosed = true ).
@@ -532,6 +505,33 @@ namespace SearchAThing
         public static netDxf.Entities.Polyline ToPolyline(this IEnumerable<Vector3D> pts, bool isClosed = true)
         {
             return new netDxf.Entities.Polyline(pts.Select(r => (Vector3)r).ToList(), isClosed);
+        }
+
+        /// <summary>
+        /// can generate a Int64MapExceptionRange exception if double values can't fit into a In64 representation.
+        /// In that case try with tolerances not too small.
+        /// It is suggested to use a lenTol/10 to avoid lost of precision during domain conversions.
+        /// </summary>        
+        public static IEnumerable<IEnumerable<Vector3D>> Boolean(this IEnumerable<Vector3D> polyA, double tol, IEnumerable<Vector3D> polyB, ClipType type, bool selfCheckInt64MapTolerance = true)
+        {
+            var intmap = new Int64Map(tol, polyA.SelectMany(x => x.Coordinates).Union(polyB.SelectMany(x => x.Coordinates)), selfCheckInt64MapTolerance);
+
+            var clipper = new Clipper();
+            {
+                var path = polyA.Select(p => new IntPoint(intmap.ToInt64(p.X), intmap.ToInt64(p.Y))).ToList();
+                clipper.AddPath(path, PolyType.ptSubject, true);
+            }
+            {
+                var path = polyB.Select(p => new IntPoint(intmap.ToInt64(p.X), intmap.ToInt64(p.Y))).ToList();
+                clipper.AddPath(path, PolyType.ptClip, true);
+            }
+
+            var sol = new List<List<IntPoint>>();
+            clipper.Execute(type, sol);
+
+            var res = sol.Select(s => s.Select(si => new Vector3D(intmap.FromInt64(si.X), intmap.FromInt64(si.Y), 0)));
+
+            return res;
         }
 
         /// <summary>
