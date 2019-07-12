@@ -2,7 +2,7 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <PackageId>netcore-sci-thirdy-clipper</PackageId>   
-        <PackageVersion>1.0.4</PackageVersion>
+        <PackageVersion>1.0.5</PackageVersion>
         <Title>Clipper library</Title>
         <Description>clipping and offsetting lines and polygons</Description>
         <Authors>Angus Johnson (http://www.angusj.com/delphi/clipper.php)</Authors>
