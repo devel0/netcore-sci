@@ -325,7 +325,7 @@ namespace SearchAThing
             /// a x b = |  x  y  z |
             ///         | ax ay az |
             ///         | bx by bz |            
-            /// https://en.wikipedia.org/wiki/Cross_product
+            /// [reference](https://en.wikipedia.org/wiki/Cross_product) ;
             /// [unit test](/test/Vector3D/Vector3DTest_0019.cs)
             /// ![](/test/Vector3D/Vector3DTest_0019.png)
             /// </summary>               
