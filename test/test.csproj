@@ -25,6 +25,6 @@
         <ProjectReference Include="..\netcore-sci\netcore-sci.csproj" />
     </ItemGroup>
     <ItemGroup>
-        <None Update="$(ProjectDir)data\**" CopyToOutputDirectory="PreserveNewest" />
+        <None Update="$(ProjectDir)_torefact/doc/**" CopyToOutputDirectory="PreserveNewest" />
     </ItemGroup>
 </Project>

@@ -93,7 +93,7 @@ namespace SearchAThing.Sci.Tests
 
             // read arc from dxf and use comparer
             {
-                var doc = netDxf.DxfDocument.Load("doc/Arc3DTest_001.dxf");
+                var doc = netDxf.DxfDocument.Load("_torefact/doc/Arc3DTest_001.dxf");
 
                 var arc_from_dxf = doc.Arcs.First().ToArc3D(1e-3);
                 var cmp = new Arc3DEqualityComparer(1e-3);
