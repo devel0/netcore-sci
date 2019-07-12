@@ -27,31 +27,27 @@ namespace SearchAThing
         {
 
             /// <summary>
-            /// zero vector
+            /// zero vector (0,0,0)
             /// [unit test](/test/Vector3D/Vector3DTest_0001.cs)
-            /// </summary>
-            /// <returns>(0,0,0) vector</returns>
+            /// </summary>            
             public static readonly Vector3D Zero = new Vector3D(0, 0, 0);
 
             /// <summary>
-            /// xaxis vector
+            /// xaxis vector (1,0,0)
             /// [unit test](/test/Vector3D/Vector3DTest_0004.cs)
-            /// </summary>
-            /// <returns>(1,0,0) vector</returns>
+            /// </summary>            
             public static readonly Vector3D XAxis = new Vector3D(1, 0, 0);
 
             /// <summary>
-            /// yaxis vector
+            /// yaxis vector (0,1,0)
             /// [unit test](/test/Vector3D/Vector3DTest_0004.cs)
-            /// </summary>
-            /// <returns>(0,1,0) vector</returns>
+            /// </summary>            
             public static readonly Vector3D YAxis = new Vector3D(0, 1, 0);
 
             /// <summary>
-            /// zaxis vector
+            /// zaxis vector (0,0,1)
             /// [unit test](/test/Vector3D/Vector3DTest_0004.cs)
-            /// </summary>
-            /// <returns>(0,0,1) vector</returns>
+            /// </summary>            
             public static readonly Vector3D ZAxis = new Vector3D(0, 0, 1);
 
             /// <summary>
