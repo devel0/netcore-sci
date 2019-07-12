@@ -8,8 +8,6 @@
 
 ## documentation
 
-- [**FULL API REFERENCE LIST**](doc/api/)
-
 - **3D Geometry**
   - [Vector3D](doc/api/Sci/Vector3D.md)
   - [Line3D](doc/api/Sci/Line3D.md)  
