@@ -1,5 +1,5 @@
 # ZAxis field (SearchAThing.Sci.Vector3D)
-zaxis vector
+zaxis vector (0,0,1)
             [unit test](/test/Vector3D/Vector3DTest_0004.cs)
 
 ## Signature

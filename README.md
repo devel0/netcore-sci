@@ -6,7 +6,14 @@
 
 .NET core sci
 
-## quickstart
+- [Quickstart](#quickstart)
+- [API Documentation](#api-documentation)
+- [Unit tests](#unit-tests)
+- [How this project was built](#how-this-project-was-built)
+
+<hr/>
+
+## Quickstart
 
 From [examples](examples) follow [example_0001](examples/example_0001) can be created following these steps:
 
@@ -105,7 +112,7 @@ dotnet run
 
 <img src="examples/example_0001/output.png" width=300>
 
-## documentation
+## API Documentation
 
 - **3D Geometry**
   - [Vector3D](doc/api/Sci/Vector3D.md)
@@ -129,17 +136,8 @@ dotnet run
   - [MeasureUnit](doc/api/Sci/MeasureUnit.md)
   - [MUDomain](doc/api/Sci/MUDomain.md)
   - [MUCollection](doc/api/Sci/MUCollection.md)
-    
 
-## install
-
-- [nuget package](https://www.nuget.org/packages/netcore-sci/)
-
-## usage
-
-check out [unit tests](test)
-
-## unit tests
+## Unit tests
 
 - debugging unit tests
   - from vscode just run debug test from code lens balloon
@@ -148,7 +146,7 @@ check out [unit tests](test)
 - testing coverage
   - from vscode run task ( ctrl+shift+p ) `Tasks: Run Task` then `test with coverage` ( `.NET Core Test Explorer` extension required then move to some file eg. Vector3D.cs and click on `Add Watch` from bottom bar )
 
-## how this project was built
+## How this project was built
 
 ```sh
 mkdir netcore-sci

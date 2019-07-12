@@ -1,5 +1,5 @@
 # Zero field (SearchAThing.Sci.Vector3D)
-zero vector
+zero vector (0,0,0)
             [unit test](/test/Vector3D/Vector3DTest_0001.cs)
 
 ## Signature
