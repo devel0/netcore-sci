@@ -6,12 +6,37 @@
 
 .NET core sci
 
-- [Quickstart](#quickstart)
 - [API Documentation](#api-documentation)
+- [Quickstart](#quickstart)
 - [Unit tests](#unit-tests)
 - [How this project was built](#how-this-project-was-built)
 
 <hr/>
+
+## API Documentation
+
+- **3D Geometry**
+  - [Vector3D](doc/api/Sci/Vector3D.md)
+  - [Line3D](doc/api/Sci/Line3D.md)  
+  - [Transform3D](doc/api/Sci/Transform3D.md)  
+  - [CoordinateSystem3D](doc/api/Sci/CoordinateSystem3D.md)
+  - [Plane3D](doc/api/Sci/Plane3D.md)
+  - [Arc3D](doc/api/Sci/Arc3D.md)
+  - [Circle3D](doc/api/Sci/Circle3D.md)
+  - [Geometry](doc/api/Sci/Geometry.md)
+  - [BBox3D](doc/api/Sci/BBox3D.md)  
+  - [DiscreteSpace](doc/api/Sci/DiscreteSpace-1.md)
+  - [DxfKit](doc/api/Sci/DxfKit.md)
+  - [Polygon](doc/api/Sci/Polygon.md)
+- [**Extension methods**](doc/api/SciExt.md)
+- [Python wrapper](doc/api/PythonPipe.md)
+- **Measure unit and physical quantities**
+  - [Measure](doc/api/Sci/Measure.md)
+  - [PhysicalQuantity](doc/api/Sci/PhysicalQuantity.md)
+  - [PQCollection](doc/api/Sci/PQCollection.md)
+  - [MeasureUnit](doc/api/Sci/MeasureUnit.md)
+  - [MUDomain](doc/api/Sci/MUDomain.md)
+  - [MUCollection](doc/api/Sci/MUCollection.md)
 
 ## Quickstart
 
@@ -111,31 +136,6 @@ dotnet run
 - [result dxf](examples/example_0001/output.dxf)
 
 <img src="examples/example_0001/output.png" width=300>
-
-## API Documentation
-
-- **3D Geometry**
-  - [Vector3D](doc/api/Sci/Vector3D.md)
-  - [Line3D](doc/api/Sci/Line3D.md)  
-  - [Transform3D](doc/api/Sci/Transform3D.md)  
-  - [CoordinateSystem3D](doc/api/Sci/CoordinateSystem3D.md)
-  - [Plane3D](doc/api/Sci/Plane3D.md)
-  - [Arc3D](doc/api/Sci/Arc3D.md)
-  - [Circle3D](doc/api/Sci/Circle3D.md)
-  - [Geometry](doc/api/Sci/Geometry.md)
-  - [BBox3D](doc/api/Sci/BBox3D.md)  
-  - [DiscreteSpace](doc/api/Sci/DiscreteSpace-1.md)
-  - [DxfKit](doc/api/Sci/DxfKit.md)
-  - [Polygon](doc/api/Sci/Polygon.md)
-- [**Extension methods**](doc/api/SciExt.md)
-- [Python wrapper](doc/api/PythonPipe.md)
-- **Measure unit and physical quantities**
-  - [Measure](doc/api/Sci/Measure.md)
-  - [PhysicalQuantity](doc/api/Sci/PhysicalQuantity.md)
-  - [PQCollection](doc/api/Sci/PQCollection.md)
-  - [MeasureUnit](doc/api/Sci/MeasureUnit.md)
-  - [MUDomain](doc/api/Sci/MUDomain.md)
-  - [MUCollection](doc/api/Sci/MUCollection.md)
 
 ## Unit tests
 
