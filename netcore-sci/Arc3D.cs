@@ -469,11 +469,13 @@ namespace SearchAThing
             }
 
             public virtual IEnumerable<Vector3D> Intersect(double tol, Line3D l,
-                bool only_perimeter = true, bool segment_mode = false) =>
-                Intersect(tol, l,
+                bool only_perimeter = true, bool segment_mode = false)
+            {
+                return Intersect(tol, l,
                     only_perimeter: only_perimeter,
                     segment_mode: segment_mode,
                     circle_mode: false);
+            }
 
             /// <summary>
             /// find ips of intersect this arc to the given cs plane; 
@@ -483,6 +485,7 @@ namespace SearchAThing
             /// </summary>
             /// <param name="tol">len tolerance</param>
             /// <param name="cs">cs xy plane</param>
+            /// <param name="only_perimeter">if false it will check in the arc area too, otherwise only on arc perimeter</param>
             public IEnumerable<Vector3D> Intersect(double tol, CoordinateSystem3D cs,
                 bool only_perimeter = true)
             {

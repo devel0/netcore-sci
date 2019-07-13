@@ -21,7 +21,6 @@ public class Arc3D : SearchAThing.Sci.Geometry
 - [GetHashCode](Arc3D/GetHashCode.md)
 - [GetType](Arc3D/GetType.md)
 - [Intersect](Arc3D/Intersect.md)
-- [IntersectArc](Arc3D/IntersectArc.md)
 - [Move](Arc3D/Move.md)
 - [PtAngle](Arc3D/PtAngle.md)
 - [PtAtAngle](Arc3D/PtAtAngle.md)

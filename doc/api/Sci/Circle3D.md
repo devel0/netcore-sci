@@ -22,7 +22,6 @@ public class Circle3D : SearchAThing.Sci.Arc3D
 - [GetHashCode](Circle3D/GetHashCode.md)
 - [GetType](Circle3D/GetType.md)
 - [Intersect](Circle3D/Intersect.md)
-- [IntersectArc](Circle3D/IntersectArc.md)
 - [Move](Circle3D/Move.md)
 - [PtAngle](Circle3D/PtAngle.md)
 - [PtAtAngle](Circle3D/PtAtAngle.md)
