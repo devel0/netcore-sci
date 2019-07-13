@@ -270,6 +270,9 @@ namespace SearchAThing
                 var i1 = l1.Intersect(tol_len, this);
                 var i2 = l2.Intersect(tol_len, this);
 
+                if (i1 == null) i1 = i2 + l1.V;
+                else if (i2 == null) i2 = i1 + l2.V;
+
                 return new Line3D(i1, i2);
             }
 
