@@ -21,6 +21,15 @@ namespace SearchAThing
             }
 
             /// <summary>
+            /// create circle from given arc
+            /// </summary>
+            /// <param name="arc">arc used to build circle</param>
+            public Circle3D(Arc3D arc) : base(arc.From, arc.MidPoint, arc.To)
+            {
+                Type = GeometryType.Circle3D;
+            }
+
+            /// <summary>
             /// Build 3d circle that intersect p1,p2,p3
             /// ( the inside CS will centered in the circle center and Xaxis toward p1 )
             /// </summary>        
@@ -40,7 +49,7 @@ namespace SearchAThing
             }
 
             public override bool Contains(double tol, Vector3D pt, bool onlyPerimeter) =>
-                Contains(tol, pt, inArcAngleRange: false, onlyPerimeter: onlyPerimeter);            
+                Contains(tol, pt, inArcAngleRange: false, onlyPerimeter: onlyPerimeter);
 
             /// <summary>
             /// creates a polygon approximation of this circle with segments of given maxLength
@@ -121,6 +130,14 @@ namespace SearchAThing
                 var t2 = new Line3D(p, t.V.RotateAboutAxis(axisz, beta), Line3DConstructMode.PointAndVector);
 
                 return CirclesTan12P(tol_len, t, t2, p).Where(w => w.Radius.EqualsTol(tol_len, r));
+            }
+
+            /// <summary>
+            /// intersect this 3d circle with given 3d line
+            /// </summary>            
+            public override IEnumerable<Vector3D> Intersect(double tol, Line3D l, bool segment_mode = false)
+            {
+                return base.Intersect(tol, l, segment_mode, circle_mode: true);
             }
 
             public double Area { get { return PI * Radius * Radius; } }

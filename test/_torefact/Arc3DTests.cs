@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace SearchAThing.Sci.Tests
 {
-    public class Arc3DTests
+    public partial class Arc3DTests
     {
 
         public Arc3DTests()
@@ -32,10 +32,11 @@ namespace SearchAThing.Sci.Tests
             var ang1 = 63.97731d.ToRad();
             var ange2 = 26.10878d.ToRad();
             var arc = new Arc3D(1e-4, csCAD, r, ang1, ange2);
+            var c = new Circle3D(arc);
 
             var seg_i = new Line3D(2.2826, 10.2516, -3.7469, 1.3767, -3.7709, 1.5019);
-            var ip_circ = arc.Intersect(1e-4, seg_i);
-            var ip_arc = arc.IntersectArc(1e-2, seg_i);
+            var ip_circ = c.Intersect(1e-4, seg_i, segment_mode: false);
+            var ip_arc = arc.Intersect(1e-2, seg_i);
 
             // segment intersecting arc
             Assert.True(ip_circ.Count() == 1);
@@ -44,18 +45,18 @@ namespace SearchAThing.Sci.Tests
 
             // segment not intersecting arc
             var seg_i2 = seg_i.Scale(seg_i.From, .3);
+            Assert.True(c.Intersect(1e-4, seg_i2, segment_mode: true).Count() == 0);
             Assert.True(arc.Intersect(1e-4, seg_i2, segment_mode: true).Count() == 0);
-            Assert.True(arc.IntersectArc(1e-4, seg_i2, segment_mode: true).Count() == 0);
 
             // segment not intersecting, but line intersecting arc
-            Assert.True(arc.Intersect(1e-4, seg_i2).Count() == 1);
-            Assert.True(arc.Intersect(1e-4, seg_i2).First().EqualsTol(1e-4, ip_arc.First()));
+            Assert.True(c.Intersect(1e-4, seg_i2, segment_mode: false).Count() == 1);
+            Assert.True(c.Intersect(1e-4, seg_i2, segment_mode: false).First().EqualsTol(1e-4, ip_arc.First()));
 
             // segment intresecting circle, but not arc
             var seg_e = new Line3D(2.4523, 9.6971, -1.8004, 4.6142, -.0631, -2.0519);
-            Assert.True(arc.Intersect(1e-4, seg_e).Count() == 1);
-            Assert.True(arc.Intersect(1e-4, seg_e).First().EqualsTol(1e-2, 3.53, 4.82, -1.93));
-            Assert.True(arc.IntersectArc(1e-4, seg_e).Count() == 0);
+            Assert.True(c.Intersect(1e-4, seg_e, segment_mode: false).Count() == 1);
+            Assert.True(c.Intersect(1e-4, seg_e, segment_mode: false).First().EqualsTol(1e-2, 3.53, 4.82, -1.93));
+            Assert.True(arc.Intersect(1e-4, seg_e).Count() == 0);
 
             // Geometry
             Assert.True(arc.GeomFrom.EqualsTol(1e-3, arc.From));
@@ -293,10 +294,10 @@ namespace SearchAThing.Sci.Tests
             var csv1 = new Line3D(cso, new Vector3D("X = 71.66072643 Y = 278.03911571 Z = -156.2065643"));
             var csv2 = new Line3D(cso, new Vector3D("X = -153.32147396 Y = 128.44203407 Z = 2.05865164"));
 
-            Assert.True(arc.IntersectArc(1e-6, arc.CS.Move(arc.CS.BaseZ * 1000)).Count() == 0);
+            Assert.True(arc.Intersect(1e-6, arc.CS.Move(arc.CS.BaseZ * 1000)).Count() == 0);
 
             var csplane = new CoordinateSystem3D(cso, csv1.V, csv2.V);
-            var ipts = arc.IntersectArc(tol, csplane).ToList();
+            var ipts = arc.Intersect(tol, csplane).ToList();
             Assert.True(ipts.Count == 2);
             var ipLine = new Line3D(ipts[0], ipts[1]);
             Assert.True(ipts.Any(r => r.EqualsTol(tol, new Vector3D("X = 1.7990927 Y = 231.58612296 Z = -18.13420814"))));

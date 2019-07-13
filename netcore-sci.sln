@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "test", "test\test.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "thirdy-clipper", "thirdy-clipper\thirdy-clipper.csproj", "{6A66A5BD-8096-435F-AEAF-FFFD34011899}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{A719D568-63BF-4486-8C7D-093FC5E1F21D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "example_0001", "examples\example_0001\example_0001.csproj", "{C01829D6-EE20-4E37-ABA7-BECD948FAB95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,11 +71,26 @@ Global
 		{AA314CF3-8182-4398-A91F-890B5781855D}.Release|x64.Build.0 = Release|Any CPU
 		{AA314CF3-8182-4398-A91F-890B5781855D}.Release|x86.ActiveCfg = Release|Any CPU
 		{AA314CF3-8182-4398-A91F-890B5781855D}.Release|x86.Build.0 = Release|Any CPU
+		{C01829D6-EE20-4E37-ABA7-BECD948FAB95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C01829D6-EE20-4E37-ABA7-BECD948FAB95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C01829D6-EE20-4E37-ABA7-BECD948FAB95}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C01829D6-EE20-4E37-ABA7-BECD948FAB95}.Debug|x64.Build.0 = Debug|Any CPU
+		{C01829D6-EE20-4E37-ABA7-BECD948FAB95}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C01829D6-EE20-4E37-ABA7-BECD948FAB95}.Debug|x86.Build.0 = Debug|Any CPU
+		{C01829D6-EE20-4E37-ABA7-BECD948FAB95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C01829D6-EE20-4E37-ABA7-BECD948FAB95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C01829D6-EE20-4E37-ABA7-BECD948FAB95}.Release|x64.ActiveCfg = Release|Any CPU
+		{C01829D6-EE20-4E37-ABA7-BECD948FAB95}.Release|x64.Build.0 = Release|Any CPU
+		{C01829D6-EE20-4E37-ABA7-BECD948FAB95}.Release|x86.ActiveCfg = Release|Any CPU
+		{C01829D6-EE20-4E37-ABA7-BECD948FAB95}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A21C6039-CC74-4364-9307-2B361654126A}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C01829D6-EE20-4E37-ABA7-BECD948FAB95} = {A719D568-63BF-4486-8C7D-093FC5E1F21D}
 	EndGlobalSection
 EndGlobal

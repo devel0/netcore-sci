@@ -49,7 +49,7 @@ namespace SearchAThing
                 AngleEnd = angleRadEnd.NormalizeAngle2PI(tol_rad);
                 CS = cs;
                 Radius = r;
-            }
+            }            
 
             /// <summary>
             /// helper to build circle by given 3 points
@@ -295,53 +295,6 @@ namespace SearchAThing
                 return Contains(tol, pt, true, onlyPerimeter);
             }
 
-            /// <summary>
-            /// intersect this 3d circle with given 3d line
-            /// </summary>            
-            public IEnumerable<Vector3D> Intersect(double tol, Line3D l, bool segment_mode = false)
-            {
-                var lprj = new Line3D(l.From.ToUCS(CS).Set(OrdIdx.Z, 0), l.To.ToUCS(CS).Set(OrdIdx.Z, 0));
-
-                var a = Pow(lprj.To.X - lprj.From.X, 2) + Pow(lprj.To.Y - lprj.From.Y, 2);
-                var b = 2 * lprj.From.X * (lprj.To.X - lprj.From.X) + 2 * lprj.From.Y * (lprj.To.Y - lprj.From.Y);
-                var c = Pow(lprj.From.X, 2) + Pow(lprj.From.Y, 2) - Pow(Radius, 2);
-                var d = Pow(b, 2) - 4 * a * c;
-
-                if (d.LessThanTol(tol, 0)) yield break; // no intersection at all
-
-                var sd = Sqrt(Abs(d));
-                var f1 = (-b + sd) / (2 * a);
-                var f2 = (-b - sd) / (2 * a);
-
-                // one intersection point is
-                var ip = new Vector3D(
-                    lprj.From.X + (lprj.To.X - lprj.From.X) * f1,
-                    lprj.From.Y + (lprj.To.Y - lprj.From.Y) * f1,
-                    0);
-
-                Vector3D ip2 = null;
-
-                if (!f1.EqualsTol(Constants.NormalizedLengthTolerance, f2))
-                {
-                    // second intersection point is
-                    ip2 = new Vector3D(
-                        lprj.From.X + (lprj.To.X - lprj.From.X) * f2,
-                        lprj.From.Y + (lprj.To.Y - lprj.From.Y) * f2,
-                        0);
-                }
-
-                // back to wcs, check line contains point
-                var wcs_ip = ip.ToWCS(CS);
-                Vector3D wcs_ip2 = null;
-                if (ip2 != null) wcs_ip2 = ip2.ToWCS(CS);
-
-                if (l.LineContainsPoint(tol, wcs_ip, segment_mode))
-                    yield return wcs_ip;
-
-                if (ip2 != null && l.LineContainsPoint(tol, wcs_ip2, segment_mode))
-                    yield return wcs_ip2;
-            }
-
             public Vector3D Center { get { return CS.Origin; } }
 
             /// <summary>
@@ -426,35 +379,94 @@ namespace SearchAThing
             }
 
             /// <summary>
+            /// intersect this 3d circle with given 3d line
+            /// </summary>            
+            private IEnumerable<Vector3D> IntersectCircle(double tol, Line3D l, bool segment_mode = false)
+            {
+                var lprj = new Line3D(l.From.ToUCS(CS).Set(OrdIdx.Z, 0), l.To.ToUCS(CS).Set(OrdIdx.Z, 0));
+
+                var a = Pow(lprj.To.X - lprj.From.X, 2) + Pow(lprj.To.Y - lprj.From.Y, 2);
+                var b = 2 * lprj.From.X * (lprj.To.X - lprj.From.X) + 2 * lprj.From.Y * (lprj.To.Y - lprj.From.Y);
+                var c = Pow(lprj.From.X, 2) + Pow(lprj.From.Y, 2) - Pow(Radius, 2);
+                var d = Pow(b, 2) - 4 * a * c;
+
+                if (d.LessThanTol(tol, 0)) yield break; // no intersection at all
+
+                var sd = Sqrt(Abs(d));
+                var f1 = (-b + sd) / (2 * a);
+                var f2 = (-b - sd) / (2 * a);
+
+                // one intersection point is
+                var ip = new Vector3D(
+                    lprj.From.X + (lprj.To.X - lprj.From.X) * f1,
+                    lprj.From.Y + (lprj.To.Y - lprj.From.Y) * f1,
+                    0);
+
+                Vector3D ip2 = null;
+
+                if (!f1.EqualsTol(Constants.NormalizedLengthTolerance, f2))
+                {
+                    // second intersection point is
+                    ip2 = new Vector3D(
+                        lprj.From.X + (lprj.To.X - lprj.From.X) * f2,
+                        lprj.From.Y + (lprj.To.Y - lprj.From.Y) * f2,
+                        0);
+                }
+
+                // back to wcs, check line contains point
+                var wcs_ip = ip.ToWCS(CS);
+                Vector3D wcs_ip2 = null;
+                if (ip2 != null) wcs_ip2 = ip2.ToWCS(CS);
+
+                if (l.LineContainsPoint(tol, wcs_ip, segment_mode))
+                    yield return wcs_ip;
+
+                if (ip2 != null && l.LineContainsPoint(tol, wcs_ip2, segment_mode))
+                    yield return wcs_ip2;
+            }
+
+            /// <summary>
             /// states if this arc intersect given line
             /// </summary>
             /// <param name="tol">arc tolerance</param>
             /// <param name="l">line to test intersect</param>
-            /// <param name="segment_mode">if true line treat as segment instead of infinite</param>
-            /// <param name="arc_mode">if true arc goes from-to ; if false arc treat as circle</param>
-            public IEnumerable<Vector3D> IntersectArc(double tol, Line3D l,
-                bool segment_mode = false, bool arc_mode = true)
+            /// <param name="segment_mode">if true line treat as segment instead of infinite</param>            
+            /// <param name="circle_mode">if true arc treat as circle</param>            
+            protected IEnumerable<Vector3D> Intersect(double tol, Line3D l, bool segment_mode = false,
+                bool circle_mode = false)
             {
-                var q = Intersect(tol, l, segment_mode);
+                var q = IntersectCircle(tol, l, segment_mode);
                 if (q == null) yield break;
 
-                q = q.Where(r => this.Contains(tol, r, onlyPerimeter: true)).ToList();
+                if (circle_mode)
+                    q = q.Where(r => this.Contains(tol, r, inArcAngleRange: false, onlyPerimeter: true)).ToList();
+                else
+                    q = q.Where(r => this.Contains(tol, r, onlyPerimeter: true)).ToList();
                 if (q.Count() == 0) yield break;
 
                 foreach (var x in q) yield return x;
             }
 
+            public virtual IEnumerable<Vector3D> Intersect(double tol, Line3D l, bool segment_mode = false)
+            {
+                return Intersect(tol, l, segment_mode: segment_mode, circle_mode: false);
+            }
+
             /// <summary>
-            /// find ips of intersect this arc to the given cs plane; return empty set if arc cs plane parallel to other given cs
+            /// find ips of intersect this arc to the given cs plane; 
+            /// return empty set if arc cs plane parallel to other given cs
+            /// [unit test](/test/Arc3D/Arc3DTest_0001.cs)
+            /// ![](/test/Arc3D/Arc3DTest_0001.png)
             /// </summary>
             /// <param name="tol">len tolerance</param>
             /// <param name="cs">cs xy plane</param>
-            public IEnumerable<Vector3D> IntersectArc(double tol, CoordinateSystem3D cs)
+            public IEnumerable<Vector3D> Intersect(double tol, CoordinateSystem3D cs)
             {
                 if (this.CS.IsParallelTo(tol, cs)) yield break;
 
+// TODO: intersect two ortho cs
                 var iLine = this.CS.Intersect(tol, cs);
-                foreach (var x in this.IntersectArc(tol, iLine))
+                foreach (var x in this.Intersect(tol, iLine, segment_mode: false, circle_mode: false))
                     yield return x;
             }
 
@@ -534,8 +546,7 @@ namespace SearchAThing
     }
 
     public static partial class SciExt
-    {
-
+    {        
 
         /// <summary>
         /// compute angle rad tolerance by given arc length tolerance
