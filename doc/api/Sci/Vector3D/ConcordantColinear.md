@@ -10,3 +10,7 @@ public bool ConcordantColinear(double tol, Vector3D other)
 - `tol`: geometric tolerance ( Constants.NormalizedLengthTolerance if comparing normalized vectors )
 - `other`: other vector
 
+### Returns
+
+### Remarks
+

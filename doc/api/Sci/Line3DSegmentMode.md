@@ -10,13 +10,18 @@
 public enum Line3DSegmentMode
 ```
 ## Methods
-- [CompareTo](Line3DSegmentMode/CompareTo.md)
-- [Equals](Line3DSegmentMode/Equals.md)
-- [GetHashCode](Line3DSegmentMode/GetHashCode.md)
-- [GetType](Line3DSegmentMode/GetType.md)
-- [GetTypeCode](Line3DSegmentMode/GetTypeCode.md)
-- [HasFlag](Line3DSegmentMode/HasFlag.md)
-- [ToString](Line3DSegmentMode/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[CompareTo](Line3DSegmentMode/CompareTo.md)||
+|[Equals](Line3DSegmentMode/Equals.md)||
+|[GetHashCode](Line3DSegmentMode/GetHashCode.md)||
+|[GetType](Line3DSegmentMode/GetType.md)||
+|[GetTypeCode](Line3DSegmentMode/GetTypeCode.md)||
+|[HasFlag](Line3DSegmentMode/HasFlag.md)||
+|[ToString](Line3DSegmentMode/ToString.md)||
+|[ToString](Line3DSegmentMode/ToString.md#tostringstring)||
+|[ToString](Line3DSegmentMode/ToString.md#tostringiformatprovider)||
+|[ToString](Line3DSegmentMode/ToString.md#tostringstring-iformatprovider)||
 ## Fields
 - [From](Line3DSegmentMode/From.md) (static)
 - [FromTo](Line3DSegmentMode/FromTo.md) (static)

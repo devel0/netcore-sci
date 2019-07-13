@@ -6,3 +6,7 @@ exec given code through a temp file
 ```csharp
 public SearchAThing.StringWrapper Exec(StringWrapper code, bool remove_tmp_file = True)
 ```
+### Returns
+
+### Remarks
+

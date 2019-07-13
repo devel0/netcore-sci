@@ -10,10 +10,12 @@
 static class Temperature
 ```
 ## Methods
-- [Equals](Temperature/Equals.md)
-- [GetHashCode](Temperature/GetHashCode.md)
-- [GetType](Temperature/GetType.md)
-- [ToString](Temperature/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Equals](Temperature/Equals.md)||
+|[GetHashCode](Temperature/GetHashCode.md)||
+|[GetType](Temperature/GetType.md)||
+|[ToString](Temperature/ToString.md)||
 ## Properties
 - [NonLinearConvFunctor](Temperature/NonLinearConvFunctor.md) (static)
 ## Fields

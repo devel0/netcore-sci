@@ -10,10 +10,12 @@
 static class ElectricCurrent
 ```
 ## Methods
-- [Equals](ElectricCurrent/Equals.md)
-- [GetHashCode](ElectricCurrent/GetHashCode.md)
-- [GetType](ElectricCurrent/GetType.md)
-- [ToString](ElectricCurrent/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Equals](ElectricCurrent/Equals.md)||
+|[GetHashCode](ElectricCurrent/GetHashCode.md)||
+|[GetType](ElectricCurrent/GetType.md)||
+|[ToString](ElectricCurrent/ToString.md)||
 ## Fields
 - [A](ElectricCurrent/A.md) (static)
 ## Conversions

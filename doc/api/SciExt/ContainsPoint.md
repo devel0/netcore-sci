@@ -9,3 +9,7 @@ states if the given polygon contains the test point ( z not considered )
 ```csharp
 public static bool ContainsPoint(IReadOnlyList<SearchAThing.Sci.Vector3D> _pts, double tol, Vector3D _pt, bool zapDuplicates = False)
 ```
+### Returns
+
+### Remarks
+

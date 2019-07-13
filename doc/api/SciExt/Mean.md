@@ -7,3 +7,7 @@ mean of given vetor3d list
 ```csharp
 public static SearchAThing.Sci.Vector3D Mean(IEnumerable<SearchAThing.Sci.Vector3D> lst, bool skipFirstAtEnd = False)
 ```
+### Returns
+
+### Remarks
+

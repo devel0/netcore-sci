@@ -10,13 +10,15 @@
 public class MeasureUnitJsonConverter : Newtonsoft.Json.JsonConverter
 ```
 ## Methods
-- [CanConvert](MeasureUnitJsonConverter/CanConvert.md)
-- [Equals](MeasureUnitJsonConverter/Equals.md)
-- [GetHashCode](MeasureUnitJsonConverter/GetHashCode.md)
-- [GetType](MeasureUnitJsonConverter/GetType.md)
-- [ReadJson](MeasureUnitJsonConverter/ReadJson.md)
-- [ToString](MeasureUnitJsonConverter/ToString.md)
-- [WriteJson](MeasureUnitJsonConverter/WriteJson.md)
+|**Name**|**Summary**|
+|---|---|
+|[CanConvert](MeasureUnitJsonConverter/CanConvert.md)||
+|[Equals](MeasureUnitJsonConverter/Equals.md)||
+|[GetHashCode](MeasureUnitJsonConverter/GetHashCode.md)||
+|[GetType](MeasureUnitJsonConverter/GetType.md)||
+|[ReadJson](MeasureUnitJsonConverter/ReadJson.md)||
+|[ToString](MeasureUnitJsonConverter/ToString.md)||
+|[WriteJson](MeasureUnitJsonConverter/WriteJson.md)||
 ## Properties
 - [CanRead](MeasureUnitJsonConverter/CanRead.md)
 - [CanWrite](MeasureUnitJsonConverter/CanWrite.md)

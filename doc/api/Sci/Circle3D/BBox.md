@@ -6,3 +6,7 @@ compute wcs bbox executing a recursive bisect search of min and max
 ```csharp
 public override SearchAThing.Sci.BBox3D BBox(double tol_len)
 ```
+### Returns
+
+### Remarks
+

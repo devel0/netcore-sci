@@ -10,11 +10,13 @@
 static class Length4
 ```
 ## Methods
-- [Auto](Length4/Auto.md) (static)
-- [Equals](Length4/Equals.md)
-- [GetHashCode](Length4/GetHashCode.md)
-- [GetType](Length4/GetType.md)
-- [ToString](Length4/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Auto](Length4/Auto.md) (static)||
+|[Equals](Length4/Equals.md)||
+|[GetHashCode](Length4/GetHashCode.md)||
+|[GetType](Length4/GetType.md)||
+|[ToString](Length4/ToString.md)||
 ## Fields
 - [cm4](Length4/cm4.md) (static)
 - [in4](Length4/in4.md) (static)

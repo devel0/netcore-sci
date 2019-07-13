@@ -7,3 +7,7 @@ add entity to the given dxf object ( it can be Dxfdocument or Block )
 ```csharp
 public static netDxf.Entities.EntityObject AddEntity(DxfObject dxfObj, EntityObject eo, Layer layer = null)
 ```
+### Returns
+
+### Remarks
+

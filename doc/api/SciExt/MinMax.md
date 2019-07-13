@@ -6,3 +6,7 @@ retrieve min,max w/single sweep
 ```csharp
 public static System.ValueTuple<double, double> MinMax(IEnumerable<double> input)
 ```
+### Returns
+
+### Remarks
+

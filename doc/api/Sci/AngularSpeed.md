@@ -10,11 +10,13 @@
 static class AngularSpeed
 ```
 ## Methods
-- [Auto](AngularSpeed/Auto.md) (static)
-- [Equals](AngularSpeed/Equals.md)
-- [GetHashCode](AngularSpeed/GetHashCode.md)
-- [GetType](AngularSpeed/GetType.md)
-- [ToString](AngularSpeed/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Auto](AngularSpeed/Auto.md) (static)||
+|[Equals](AngularSpeed/Equals.md)||
+|[GetHashCode](AngularSpeed/GetHashCode.md)||
+|[GetType](AngularSpeed/GetType.md)||
+|[ToString](AngularSpeed/ToString.md)||
 ## Fields
 - [deg_s](AngularSpeed/deg_s.md) (static)
 - [rad_s](AngularSpeed/rad_s.md) (static)

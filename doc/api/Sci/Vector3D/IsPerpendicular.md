@@ -10,3 +10,7 @@ public bool IsPerpendicular(Vector3D other)
 ### Parameters
 - `other`: other vector
 
+### Returns
+
+### Remarks
+

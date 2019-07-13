@@ -10,11 +10,13 @@
 static class Pressure
 ```
 ## Methods
-- [Auto](Pressure/Auto.md) (static)
-- [Equals](Pressure/Equals.md)
-- [GetHashCode](Pressure/GetHashCode.md)
-- [GetType](Pressure/GetType.md)
-- [ToString](Pressure/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Auto](Pressure/Auto.md) (static)||
+|[Equals](Pressure/Equals.md)||
+|[GetHashCode](Pressure/GetHashCode.md)||
+|[GetType](Pressure/GetType.md)||
+|[ToString](Pressure/ToString.md)||
 ## Fields
 - [bar](Pressure/bar.md) (static)
 - [GPa](Pressure/GPa.md) (static)

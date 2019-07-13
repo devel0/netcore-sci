@@ -6,6 +6,10 @@ return another cs rotated respect given axis
 ```csharp
 public SearchAThing.Sci.CoordinateSystem3D Rotate(Line3D axis, double angleRad)
 ```
+### Returns
+
+### Remarks
+
 ## Rotate(Vector3D, double)
 return another cs with same origin and base vector rotated about given vector
 
@@ -13,3 +17,7 @@ return another cs with same origin and base vector rotated about given vector
 ```csharp
 public SearchAThing.Sci.CoordinateSystem3D Rotate(Vector3D vectorAxis, double angleRad)
 ```
+### Returns
+
+### Remarks
+

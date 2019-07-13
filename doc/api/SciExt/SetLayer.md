@@ -11,3 +11,7 @@ Set layer of given set of dxf entities
 ```csharp
 public static System.Collections.Generic.IEnumerable<netDxf.Entities.EntityObject> SetLayer(IEnumerable<netDxf.Entities.EntityObject> ents, Layer layer)
 ```
+### Returns
+
+### Remarks
+

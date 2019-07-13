@@ -10,10 +10,12 @@
 static class ElectricalConductivity
 ```
 ## Methods
-- [Equals](ElectricalConductivity/Equals.md)
-- [GetHashCode](ElectricalConductivity/GetHashCode.md)
-- [GetType](ElectricalConductivity/GetType.md)
-- [ToString](ElectricalConductivity/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Equals](ElectricalConductivity/Equals.md)||
+|[GetHashCode](ElectricalConductivity/GetHashCode.md)||
+|[GetType](ElectricalConductivity/GetType.md)||
+|[ToString](ElectricalConductivity/ToString.md)||
 ## Fields
 - [S_m](ElectricalConductivity/S_m.md) (static)
 ## Conversions

@@ -10,10 +10,12 @@
 static class Force
 ```
 ## Methods
-- [Equals](Force/Equals.md)
-- [GetHashCode](Force/GetHashCode.md)
-- [GetType](Force/GetType.md)
-- [ToString](Force/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Equals](Force/Equals.md)||
+|[GetHashCode](Force/GetHashCode.md)||
+|[GetType](Force/GetType.md)||
+|[ToString](Force/ToString.md)||
 ## Fields
 - [kN](Force/kN.md) (static)
 - [N](Force/N.md) (static)

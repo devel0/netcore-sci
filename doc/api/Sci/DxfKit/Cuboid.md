@@ -6,3 +6,7 @@ Creates dxf entities for 6 faces of a cuboid
 ```csharp
 public static System.Collections.Generic.IEnumerable<netDxf.Entities.Face3d> Cuboid(Vector3D center, Vector3D size)
 ```
+### Returns
+
+### Remarks
+

@@ -10,10 +10,12 @@
 public static class MUCollection
 ```
 ## Methods
-- [Equals](MUCollection/Equals.md)
-- [GetHashCode](MUCollection/GetHashCode.md)
-- [GetType](MUCollection/GetType.md)
-- [ToString](MUCollection/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Equals](MUCollection/Equals.md)||
+|[GetHashCode](MUCollection/GetHashCode.md)||
+|[GetType](MUCollection/GetType.md)||
+|[ToString](MUCollection/ToString.md)||
 ## Properties
 - [MeasureUnits](MUCollection/MeasureUnits.md) (static)
 ## Conversions

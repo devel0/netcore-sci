@@ -7,6 +7,10 @@ compute distance between this point and the other given
 ```csharp
 public double Distance(Vector3D other)
 ```
+### Returns
+
+### Remarks
+
 ## Distance(double, Line3D)
 compute perpendicular(min) distance of this point from given line
             [unit test](/test/Vector3D/Vector3DTest_0015.cs)
@@ -19,4 +23,8 @@ public double Distance(double tol, Line3D other)
 ### Parameters
 - `tol`: length tolerance ( used to check if point contained in line )
 - `other`: line
+
+### Returns
+
+### Remarks
 

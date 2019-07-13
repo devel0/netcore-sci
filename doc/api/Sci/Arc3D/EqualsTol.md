@@ -6,3 +6,7 @@ Checks if two arcs are equals ( it checks agains swapped from-to too )
 ```csharp
 public bool EqualsTol(double tolLen, Arc3D other)
 ```
+### Returns
+
+### Remarks
+

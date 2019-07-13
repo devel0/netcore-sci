@@ -6,6 +6,10 @@ scalar div
 ```csharp
 public static SearchAThing.Sci.Matrix3D operator /(double s, Matrix3D m)
 ```
+### Returns
+
+### Remarks
+
 ## operator /(Matrix3D, double)
 scalar div
 
@@ -13,3 +17,7 @@ scalar div
 ```csharp
 public static SearchAThing.Sci.Matrix3D operator /(Matrix3D m, double s)
 ```
+### Returns
+
+### Remarks
+

@@ -8,3 +8,7 @@ merge colinear overlapped segments into single
 ```csharp
 public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Line3D> MergeColinearSegments(IEnumerable<SearchAThing.Sci.Line3D> _segs, double tol_len)
 ```
+### Returns
+
+### Remarks
+

@@ -468,6 +468,14 @@ namespace SearchAThing
                 return res;
             }
 
+            /// <summary>
+            /// find ips of intersection between this arc and given line
+            /// </summary>
+            /// <param name="tol">length tolerance</param>
+            /// <param name="l">line</param>
+            /// <param name="only_perimeter">check intersection only along perimeter; if false it will check intersection along arc area shape border too</param>
+            /// <param name="segment_mode">if true treat given line as segment; if false as infinite line</param>
+            /// <returns>intersection points between this arc and given line</returns>
             public virtual IEnumerable<Vector3D> Intersect(double tol, Line3D l,
                 bool only_perimeter = true, bool segment_mode = false)
             {
@@ -480,12 +488,15 @@ namespace SearchAThing
             /// <summary>
             /// find ips of intersect this arc to the given cs plane; 
             /// return empty set if arc cs plane parallel to other given cs
+            /// </summary>
+            /// <remarks>            
             /// [unit test](/test/Arc3D/Arc3DTest_0001.cs)
             /// ![](/test/Arc3D/Arc3DTest_0001.png)
-            /// </summary>
+            /// </remarks>            
             /// <param name="tol">len tolerance</param>
             /// <param name="cs">cs xy plane</param>
             /// <param name="only_perimeter">if false it will check in the arc area too, otherwise only on arc perimeter</param>
+            /// <returns>sample</returns>
             public IEnumerable<Vector3D> Intersect(double tol, CoordinateSystem3D cs,
                 bool only_perimeter = true)
             {

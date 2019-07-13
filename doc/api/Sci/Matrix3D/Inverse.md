@@ -7,3 +7,7 @@ Inverse matrix
 ```csharp
 public SearchAThing.Sci.Matrix3D Inverse()
 ```
+### Returns
+
+### Remarks
+

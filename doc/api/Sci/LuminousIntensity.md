@@ -10,10 +10,12 @@
 static class LuminousIntensity
 ```
 ## Methods
-- [Equals](LuminousIntensity/Equals.md)
-- [GetHashCode](LuminousIntensity/GetHashCode.md)
-- [GetType](LuminousIntensity/GetType.md)
-- [ToString](LuminousIntensity/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Equals](LuminousIntensity/Equals.md)||
+|[GetHashCode](LuminousIntensity/GetHashCode.md)||
+|[GetType](LuminousIntensity/GetType.md)||
+|[ToString](LuminousIntensity/ToString.md)||
 ## Fields
 - [cd](LuminousIntensity/cd.md) (static)
 ## Conversions

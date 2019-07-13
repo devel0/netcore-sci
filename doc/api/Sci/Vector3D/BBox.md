@@ -11,3 +11,7 @@ public virtual SearchAThing.Sci.BBox3D BBox(double tol_len)
 ### Parameters
 - `tol_len`: length tolerance
 
+### Returns
+
+### Remarks
+

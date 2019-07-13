@@ -10,3 +10,7 @@ public static double RadTol(double lenTol, double radius)
 - `lenTol`: length tolerance on the arc
 - `radius`: radius of the arc
 
+### Returns
+
+### Remarks
+

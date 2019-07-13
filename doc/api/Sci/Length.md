@@ -10,10 +10,12 @@
 static class Length
 ```
 ## Methods
-- [Equals](Length/Equals.md)
-- [GetHashCode](Length/GetHashCode.md)
-- [GetType](Length/GetType.md)
-- [ToString](Length/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Equals](Length/Equals.md)||
+|[GetHashCode](Length/GetHashCode.md)||
+|[GetType](Length/GetType.md)||
+|[ToString](Length/ToString.md)||
 ## Fields
 - [cm](Length/cm.md) (static)
 - [ft](Length/ft.md) (static)

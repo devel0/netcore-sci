@@ -6,3 +6,7 @@ creates a polygon approximation of this circle with segments of given maxLength
 ```csharp
 public System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D> ToPolygon3D(double segLenMax)
 ```
+### Returns
+
+### Remarks
+

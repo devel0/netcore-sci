@@ -10,10 +10,12 @@
 public static class Constants
 ```
 ## Methods
-- [Equals](Constants/Equals.md)
-- [GetHashCode](Constants/GetHashCode.md)
-- [GetType](Constants/GetType.md)
-- [ToString](Constants/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Equals](Constants/Equals.md)||
+|[GetHashCode](Constants/GetHashCode.md)||
+|[GetType](Constants/GetType.md)||
+|[ToString](Constants/ToString.md)||
 ## Fields
 - [NormalizedLengthTolerance](Constants/NormalizedLengthTolerance.md) (static)
 ## Conversions

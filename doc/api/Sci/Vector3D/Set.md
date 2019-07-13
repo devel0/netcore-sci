@@ -10,3 +10,7 @@ public SearchAThing.Sci.Vector3D Set(OrdIdx ordIdx, double value)
 - `ordIdx`: component to change ( 0:x 1:y 2:z )
 - `value`: value to assign to the component
 
+### Returns
+new vector with component changed
+### Remarks
+

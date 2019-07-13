@@ -6,3 +6,7 @@ increase of decrease polygon points offseting
 ```csharp
 public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D> Offset(IReadOnlyList<SearchAThing.Sci.Vector3D> pts, double tol, double offset)
 ```
+### Returns
+
+### Remarks
+

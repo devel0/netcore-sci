@@ -7,3 +7,7 @@ create a normalized version of this vector
 ```csharp
 public SearchAThing.Sci.Vector3D Normalized()
 ```
+### Returns
+
+### Remarks
+

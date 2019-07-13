@@ -7,3 +7,7 @@ allow to set programmatically the associated measure unit and tolerance in the m
 ```csharp
 public virtual void SetupItem(string physicalQuantityName, string measureUnitName, Nullable<double> defaultTolerance = null)
 ```
+### Returns
+
+### Remarks
+

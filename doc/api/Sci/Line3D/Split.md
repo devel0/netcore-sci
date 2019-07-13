@@ -8,3 +8,7 @@ split current segment into one or more depending on which of given split points 
 ```csharp
 public System.Collections.Generic.IReadOnlyList<SearchAThing.Sci.Line3D> Split(double tolLen, IReadOnlyList<SearchAThing.Sci.Vector3D> splitPts)
 ```
+### Returns
+
+### Remarks
+

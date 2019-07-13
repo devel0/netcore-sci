@@ -11,3 +11,7 @@ public static System.ValueTuple<SearchAThing.Sci.CoordinateSystem3D, double> Cir
 - `p2`: second constraint point
 - `p3`: third constraint point
 
+### Returns
+cs and radius that describe a 3d circle
+### Remarks
+

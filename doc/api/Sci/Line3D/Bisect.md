@@ -11,3 +11,7 @@ returns bisect of two given segment/lines
 ```csharp
 public SearchAThing.Sci.Line3D Bisect(double tol_len, Line3D other, Vector3D parallelRotationAxis = null)
 ```
+### Returns
+
+### Remarks
+

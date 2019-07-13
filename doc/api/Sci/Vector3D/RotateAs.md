@@ -15,3 +15,7 @@ public SearchAThing.Sci.Vector3D RotateAs(double tol, Vector3D from, Vector3D to
 - `angleFactor`: optional angle rotation scaler
 - `angleAddictionalRad`: optional angle (rad) component (added after angleFactor scaler)
 
+### Returns
+
+### Remarks
+

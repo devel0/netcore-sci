@@ -6,3 +6,7 @@ Move this segment midpoint to the given coord
 ```csharp
 public SearchAThing.Sci.Line3D MoveMidpoint(Vector3D newMidpoint)
 ```
+### Returns
+
+### Remarks
+

@@ -6,3 +6,7 @@ Move this line of given delta subtracting value either at From, To
 ```csharp
 public static SearchAThing.Sci.Line3D operator -(Line3D l, Vector3D delta)
 ```
+### Returns
+
+### Remarks
+

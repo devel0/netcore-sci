@@ -7,3 +7,7 @@ segments representation of given geometries
 ```csharp
 public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Line3D> Segments(IEnumerable<SearchAThing.Sci.Geometry> geometry_block, double tol_len)
 ```
+### Returns
+
+### Remarks
+

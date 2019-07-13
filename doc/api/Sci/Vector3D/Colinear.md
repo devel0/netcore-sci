@@ -10,3 +10,7 @@ public bool Colinear(double tol, Vector3D other)
 - `tol`: geometric tolerance
 - `other`: other vector
 
+### Returns
+
+### Remarks
+

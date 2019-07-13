@@ -7,3 +7,7 @@ Adjoint matrix
 ```csharp
 public SearchAThing.Sci.Matrix3D Adjoint()
 ```
+### Returns
+
+### Remarks
+

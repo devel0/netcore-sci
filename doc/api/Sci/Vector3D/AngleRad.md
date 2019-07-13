@@ -10,3 +10,7 @@ public double AngleRad(double tolLen, Vector3D to)
 - `tolLen`: geometric tolerance to test vector equalities ( use Constants.NormalizedLengthTolerance when comparing normalized vectors )
 - `to`: other vector
 
+### Returns
+angle between two vectors (rad)
+### Remarks
+

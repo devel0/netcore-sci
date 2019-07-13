@@ -7,3 +7,7 @@ Area of a polygon (does not consider z)
 ```csharp
 public static double Area(IReadOnlyList<SearchAThing.Sci.Vector3D> pts, double tol)
 ```
+### Returns
+
+### Remarks
+

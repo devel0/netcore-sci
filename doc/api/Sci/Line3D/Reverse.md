@@ -6,3 +6,7 @@ return the segment with swapped from,to
 ```csharp
 public SearchAThing.Sci.Line3D Reverse()
 ```
+### Returns
+
+### Remarks
+

@@ -10,10 +10,12 @@
 static class Turbidity
 ```
 ## Methods
-- [Equals](Turbidity/Equals.md)
-- [GetHashCode](Turbidity/GetHashCode.md)
-- [GetType](Turbidity/GetType.md)
-- [ToString](Turbidity/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Equals](Turbidity/Equals.md)||
+|[GetHashCode](Turbidity/GetHashCode.md)||
+|[GetType](Turbidity/GetType.md)||
+|[ToString](Turbidity/ToString.md)||
 ## Fields
 - [FNU](Turbidity/FNU.md) (static)
 ## Conversions

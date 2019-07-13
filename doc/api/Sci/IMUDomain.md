@@ -10,7 +10,9 @@
 public interface IMUDomain
 ```
 ## Methods
-- [SetupItem](IMUDomain/SetupItem.md)
+|**Name**|**Summary**|
+|---|---|
+|[SetupItem](IMUDomain/SetupItem.md)||
 ## Properties
 - [_All](IMUDomain/_All.md)
 - [Acceleration](IMUDomain/Acceleration.md)

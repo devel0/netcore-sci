@@ -18,3 +18,7 @@ retrieve a list of N pairs (value,presence)
 ```csharp
 public static System.ValueTuple<double, double>[] WeightedDistribution(IEnumerable<double> inputs, int N)
 ```
+### Returns
+
+### Remarks
+

@@ -6,3 +6,7 @@ Scalar multiply each components
 ```csharp
 public SearchAThing.Sci.Vector3D Scalar(double xs, double ys, double zs)
 ```
+### Returns
+
+### Remarks
+

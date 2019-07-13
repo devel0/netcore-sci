@@ -6,3 +6,7 @@ build a segment with same from and vector normalized
 ```csharp
 public SearchAThing.Sci.Line3D Normalized()
 ```
+### Returns
+
+### Remarks
+

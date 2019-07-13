@@ -6,3 +6,7 @@ states if this cs have Z base parallel to the other given cs
 ```csharp
 public bool IsParallelTo(double tol, CoordinateSystem3D other)
 ```
+### Returns
+
+### Remarks
+

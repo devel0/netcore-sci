@@ -14,3 +14,7 @@ public SearchAThing.Sci.Line3D ApparentIntersect(Line3D other)
 ### Parameters
 - `other`: other 3d line
 
+### Returns
+
+### Remarks
+

@@ -9,3 +9,7 @@ public SearchAThing.Sci.Vector3D Rel(Vector3D origin)
 ### Parameters
 - `origin`: origin to make this point relative to
 
+### Returns
+vector
+### Remarks
+

@@ -10,3 +10,7 @@ public SearchAThing.Sci.Line3D Intersect(double tol_len, Plane3D other)
 - `tol_len`: len tolerance
 - `other`: other plane
 
+### Returns
+
+### Remarks
+

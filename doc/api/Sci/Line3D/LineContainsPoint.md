@@ -6,6 +6,10 @@ Infinite line contains point.
 ```csharp
 public bool LineContainsPoint(double tol, Vector3D p, bool segmentMode = False, bool excludeExtreme = False)
 ```
+### Returns
+
+### Remarks
+
 ## LineContainsPoint(double, double, double, double, bool)
 Infinite line contains point.
             Note: tol must be Constant.NormalizedLengthTolerance
@@ -15,3 +19,7 @@ Infinite line contains point.
 ```csharp
 public bool LineContainsPoint(double tol, double x, double y, double z, bool segmentMode = False)
 ```
+### Returns
+
+### Remarks
+

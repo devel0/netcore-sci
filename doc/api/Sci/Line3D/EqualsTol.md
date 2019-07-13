@@ -6,3 +6,7 @@ Checks if two lines are equals ( it checks agains swapped from-to too )
 ```csharp
 public bool EqualsTol(double tol, Line3D other)
 ```
+### Returns
+
+### Remarks
+

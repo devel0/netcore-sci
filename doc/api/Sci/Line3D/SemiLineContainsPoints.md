@@ -10,3 +10,7 @@ public bool SemiLineContainsPoints(double tol, Vector3D p)
 - `tol`: len tolerance
 - `p`: point to verify is it on semiline
 
+### Returns
+
+### Remarks
+

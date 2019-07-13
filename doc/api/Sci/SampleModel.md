@@ -10,10 +10,12 @@
 public class SampleModel : SearchAThing.Sci.IModel
 ```
 ## Methods
-- [Equals](SampleModel/Equals.md)
-- [GetHashCode](SampleModel/GetHashCode.md)
-- [GetType](SampleModel/GetType.md)
-- [ToString](SampleModel/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Equals](SampleModel/Equals.md)||
+|[GetHashCode](SampleModel/GetHashCode.md)||
+|[GetType](SampleModel/GetType.md)||
+|[ToString](SampleModel/ToString.md)||
 ## Properties
 - [MUDomain](SampleModel/MUDomain.md)
 ## Conversions

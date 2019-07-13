@@ -10,12 +10,15 @@
 public class PythonException : System.Exception, System.Runtime.Serialization.ISerializable
 ```
 ## Methods
-- [Equals](PythonException/Equals.md)
-- [GetBaseException](PythonException/GetBaseException.md)
-- [GetHashCode](PythonException/GetHashCode.md)
-- [GetObjectData](PythonException/GetObjectData.md)
-- [GetType](PythonException/GetType.md)
-- [ToString](PythonException/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Equals](PythonException/Equals.md)||
+|[GetBaseException](PythonException/GetBaseException.md)||
+|[GetHashCode](PythonException/GetHashCode.md)||
+|[GetObjectData](PythonException/GetObjectData.md)||
+|[GetType](PythonException/GetType.md)||
+|[GetType](PythonException/GetType.md#gettype)||
+|[ToString](PythonException/ToString.md)||
 ## Properties
 - [Data](PythonException/Data.md)
 - [Error](PythonException/Error.md)

@@ -10,9 +10,11 @@
 public static class Polygon
 ```
 ## Methods
-- [EllipseToPolygon2D](Polygon/EllipseToPolygon2D.md) (static)
-- [Equals](Polygon/Equals.md)
-- [GetHashCode](Polygon/GetHashCode.md)
-- [GetType](Polygon/GetType.md)
-- [ToString](Polygon/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[EllipseToPolygon2D](Polygon/EllipseToPolygon2D.md) (static)||
+|[Equals](Polygon/Equals.md)||
+|[GetHashCode](Polygon/GetHashCode.md)||
+|[GetType](Polygon/GetType.md)||
+|[ToString](Polygon/ToString.md)||
 ## Conversions

@@ -6,3 +6,7 @@ tries to zoom dxf viewport on the given bbox
 ```csharp
 public static void AutoZoom(DxfDocument dxf, BBox3D bbox)
 ```
+### Returns
+
+### Remarks
+

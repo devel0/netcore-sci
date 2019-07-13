@@ -6,3 +6,7 @@ Creates dxf entities for a 3 axis of given length centered in given center point
 ```csharp
 public static System.Collections.Generic.IEnumerable<netDxf.Entities.Line> Star(Vector3D center, double L)
 ```
+### Returns
+
+### Remarks
+

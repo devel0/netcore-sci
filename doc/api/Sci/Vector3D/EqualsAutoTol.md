@@ -7,3 +7,7 @@ check if this vector equals the given one component by component using EqualsAut
 ```csharp
 public bool EqualsAutoTol(Vector3D other)
 ```
+### Returns
+
+### Remarks
+

@@ -12,6 +12,10 @@ Sort polygon segments so that they can form a polygon ( if they really form one 
 ```csharp
 public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Line3D> SortPoly(IEnumerable<SearchAThing.Sci.Line3D> segs, double tol, Vector3D refAxis = null)
 ```
+### Returns
+
+### Remarks
+
 ## SortPoly<T>(IEnumerable<T>, double, Func<T, SearchAThing.Sci.Vector3D>, Vector3D)
 ### Signature
 ```csharp

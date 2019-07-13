@@ -11,3 +11,7 @@ public bool Contains(double tol, Vector3D point, bool evalCSOrigin = True)
 - `point`: point to verify
 - `evalCSOrigin`: if true CS origin will subtracted before transform test
 
+### Returns
+true if point contained in cs, else otherwise
+### Remarks
+

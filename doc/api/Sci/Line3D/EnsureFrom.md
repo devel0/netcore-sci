@@ -8,3 +8,7 @@ if this segment from matches the given point returns this;
 ```csharp
 public SearchAThing.Sci.Line3D EnsureFrom(double tolLen, Vector3D pt)
 ```
+### Returns
+
+### Remarks
+

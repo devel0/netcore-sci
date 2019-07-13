@@ -11,3 +11,7 @@ Creates and add dxf entities for 6 faces of a cuboid
 ```csharp
 public static System.Collections.Generic.IEnumerable<netDxf.Entities.EntityObject> DrawCuboid(DxfObject dxfObj, Vector3D center, Vector3D size, Layer layer = null)
 ```
+### Returns
+
+### Remarks
+

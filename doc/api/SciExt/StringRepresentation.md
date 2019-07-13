@@ -6,3 +6,7 @@ array invariant string vector3d representation "(x1,y1,z2);(x2,y2,z2)"
 ```csharp
 public static string StringRepresentation(IEnumerable<SearchAThing.Sci.Vector3D> pts)
 ```
+### Returns
+
+### Remarks
+

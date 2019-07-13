@@ -6,3 +6,7 @@ convert between linear measure units
 ```csharp
 public double ConvertFactor(MeasureUnit from, MeasureUnit to)
 ```
+### Returns
+
+### Remarks
+

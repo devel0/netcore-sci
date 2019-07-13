@@ -6,6 +6,10 @@ enumerate as Vector3D given dxf polyline vertexes
 ```csharp
 public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D> Vector3DCoords(Polyline pl)
 ```
+### Returns
+
+### Remarks
+
 ## Vector3DCoords(LwPolyline)
 enumerate as Vector3D given dxf lwpolyline vertexes
 
@@ -13,3 +17,7 @@ enumerate as Vector3D given dxf lwpolyline vertexes
 ```csharp
 public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D> Vector3DCoords(LwPolyline lwp)
 ```
+### Returns
+
+### Remarks
+

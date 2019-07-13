@@ -8,3 +8,7 @@ retrieve given input set ordered with only distinct values after comparing throu
 ```csharp
 public static System.Collections.Generic.List<double> Thin(IEnumerable<double> input, double tol, bool keep_ends = True, bool maintain_original_values = True)
 ```
+### Returns
+
+### Remarks
+

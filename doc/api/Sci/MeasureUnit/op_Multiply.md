@@ -6,6 +6,10 @@ Builds a Measure object of value * given mu
 ```csharp
 public static SearchAThing.Sci.Measure operator *(double value, MeasureUnit mu)
 ```
+### Returns
+
+### Remarks
+
 ## operator *(Nullable<double>, MeasureUnit)
 ### Signature
 ```csharp

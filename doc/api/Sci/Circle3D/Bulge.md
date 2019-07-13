@@ -6,3 +6,7 @@ http://www.lee-mac.com/bulgeconversion.html
 ```csharp
 public override double Bulge(double tolLen, Vector3D from, Vector3D to, Vector3D N)
 ```
+### Returns
+
+### Remarks
+

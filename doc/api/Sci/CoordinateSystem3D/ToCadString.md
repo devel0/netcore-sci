@@ -9,3 +9,7 @@ public string ToCadString(double axisLen)
 ### Parameters
 - `axisLen`: length of x,y,z axes
 
+### Returns
+cad script
+### Remarks
+

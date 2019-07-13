@@ -12,3 +12,7 @@ public void RotateAboutAxis(Vector3D axis, double angleRad)
 - `axis`: custom rotation axis
 - `angleRad`: rotation angle about given axis
 
+### Returns
+
+### Remarks
+

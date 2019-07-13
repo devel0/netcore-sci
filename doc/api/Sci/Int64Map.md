@@ -13,12 +13,14 @@ Scan a given domain of doubles, determine the midpoint ( Origin )
 public class Int64Map
 ```
 ## Methods
-- [Equals](Int64Map/Equals.md)
-- [FromInt64](Int64Map/FromInt64.md)
-- [GetHashCode](Int64Map/GetHashCode.md)
-- [GetType](Int64Map/GetType.md)
-- [ToInt64](Int64Map/ToInt64.md)
-- [ToString](Int64Map/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Equals](Int64Map/Equals.md)||
+|[FromInt64](Int64Map/FromInt64.md)||
+|[GetHashCode](Int64Map/GetHashCode.md)||
+|[GetType](Int64Map/GetType.md)||
+|[ToInt64](Int64Map/ToInt64.md)||
+|[ToString](Int64Map/ToString.md)||
 ## Properties
 - [Origin](Int64Map/Origin.md)
 - [Tolerance](Int64Map/Tolerance.md)

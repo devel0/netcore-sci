@@ -8,3 +8,7 @@ exports to a csv string some known fields
 ```csharp
 public static string ToCSV(IEnumerable<object> lst)
 ```
+### Returns
+
+### Remarks
+

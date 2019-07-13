@@ -13,3 +13,7 @@ public override System.Collections.Generic.IEnumerable<SearchAThing.Sci.Arc3D> S
 - `_splitPts`: point where split arc
 - `validate_pts`: if true split only for split points on arc perimeter
 
+### Returns
+
+### Remarks
+

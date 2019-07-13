@@ -6,3 +6,7 @@ resize this segment to a new one with same From
 ```csharp
 public SearchAThing.Sci.Line3D SetLength(double len)
 ```
+### Returns
+
+### Remarks
+

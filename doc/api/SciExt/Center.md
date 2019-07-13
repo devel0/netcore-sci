@@ -6,3 +6,7 @@ Same as mean
 ```csharp
 public static SearchAThing.Sci.Vector3D Center(IEnumerable<SearchAThing.Sci.Vector3D> lst)
 ```
+### Returns
+
+### Remarks
+

@@ -10,3 +10,7 @@ public void RotateAboutXAxis(double angleRad)
 ### Parameters
 - `angleRad`: rotation angle about X axis
 
+### Returns
+
+### Remarks
+

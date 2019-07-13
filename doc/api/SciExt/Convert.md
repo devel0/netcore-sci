@@ -6,6 +6,10 @@ convert nullable double from to measure units
 ```csharp
 public static System.Nullable<double> Convert(Nullable<double> value, MeasureUnit from, MeasureUnit to)
 ```
+### Returns
+
+### Remarks
+
 ## Convert(Nullable<double>, IMUDomain, MeasureUnit)
 convert nullable double from to measure units
 
@@ -13,6 +17,10 @@ convert nullable double from to measure units
 ```csharp
 public static System.Nullable<double> Convert(Nullable<double> value, IMUDomain mud, MeasureUnit to)
 ```
+### Returns
+
+### Remarks
+
 ## Convert(Nullable<double>, MeasureUnit, IMUDomain)
 convert nullable double from to measure units
 
@@ -20,6 +28,10 @@ convert nullable double from to measure units
 ```csharp
 public static System.Nullable<double> Convert(Nullable<double> value, MeasureUnit from, IMUDomain mud)
 ```
+### Returns
+
+### Remarks
+
 ## Convert(double, MeasureUnit, MeasureUnit)
 convert given value from to measure units
 
@@ -27,6 +39,10 @@ convert given value from to measure units
 ```csharp
 public static double Convert(double value, MeasureUnit from, MeasureUnit to)
 ```
+### Returns
+
+### Remarks
+
 ## Convert(double, MeasureUnit, IMUDomain)
 convert given value from to measure units
             to measure unit is given from the correspondent physical quantity measure unit of from mu
@@ -35,6 +51,10 @@ convert given value from to measure units
 ```csharp
 public static double Convert(double value, MeasureUnit from, IMUDomain to)
 ```
+### Returns
+
+### Remarks
+
 ## Convert(double, IMUDomain, MeasureUnit)
 convert given value from to measure units
             from measure unit is given from the correspondent physical quantity measure unit of to mu
@@ -43,3 +63,7 @@ convert given value from to measure units
 ```csharp
 public static double Convert(double value, IMUDomain from, MeasureUnit to)
 ```
+### Returns
+
+### Remarks
+

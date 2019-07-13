@@ -10,8 +10,12 @@
 public class DoubleEqualityComparer : System.Collections.Generic.IEqualityComparer<double>
 ```
 ## Methods
-- [Equals](DoubleEqualityComparer/Equals.md)
-- [GetHashCode](DoubleEqualityComparer/GetHashCode.md)
-- [GetType](DoubleEqualityComparer/GetType.md)
-- [ToString](DoubleEqualityComparer/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Equals](DoubleEqualityComparer/Equals.md)||
+|[Equals](DoubleEqualityComparer/Equals.md#equalsdouble-double)||
+|[GetHashCode](DoubleEqualityComparer/GetHashCode.md)||
+|[GetHashCode](DoubleEqualityComparer/GetHashCode.md#gethashcodedouble)||
+|[GetType](DoubleEqualityComparer/GetType.md)||
+|[ToString](DoubleEqualityComparer/ToString.md)||
 ## Conversions

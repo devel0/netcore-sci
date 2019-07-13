@@ -10,3 +10,7 @@ public SearchAThing.Sci.Line3D Intersect(double tol_len, CoordinateSystem3D othe
 - `tol_len`: len tolernace
 - `other`: other cs
 
+### Returns
+null if cs parallel to the given other
+### Remarks
+

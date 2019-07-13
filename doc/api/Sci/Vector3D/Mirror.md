@@ -6,3 +6,7 @@ mirror this point about given axis
 ```csharp
 public SearchAThing.Sci.Vector3D Mirror(Line3D axis)
 ```
+### Returns
+
+### Remarks
+

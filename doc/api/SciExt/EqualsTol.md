@@ -6,6 +6,10 @@ checks two list of vectors are equals and with same order of elements
 ```csharp
 public static bool EqualsTol(IEnumerable<SearchAThing.Sci.Vector3D> lst, double tol, IEnumerable<SearchAThing.Sci.Vector3D> other)
 ```
+### Returns
+
+### Remarks
+
 ## EqualsTol(IEnumerable<System.ValueTuple<double, double>>, IEnumerable<System.ValueTuple<double, double>>, double, double)
 compares two list tuples
 
@@ -13,3 +17,7 @@ compares two list tuples
 ```csharp
 public static bool EqualsTol(IEnumerable<System.ValueTuple<double, double>> tuple_list1, IEnumerable<System.ValueTuple<double, double>> tuple_list2, double tol1, double tol2)
 ```
+### Returns
+
+### Remarks
+

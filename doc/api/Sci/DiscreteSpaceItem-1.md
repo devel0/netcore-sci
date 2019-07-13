@@ -10,10 +10,12 @@
 public class DiscreteSpaceItem
 ```
 ## Methods
-- [Equals](DiscreteSpaceItem-1/Equals.md)
-- [GetHashCode](DiscreteSpaceItem-1/GetHashCode.md)
-- [GetType](DiscreteSpaceItem-1/GetType.md)
-- [ToString](DiscreteSpaceItem-1/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Equals](DiscreteSpaceItem-1/Equals.md)||
+|[GetHashCode](DiscreteSpaceItem-1/GetHashCode.md)||
+|[GetType](DiscreteSpaceItem-1/GetType.md)||
+|[ToString](DiscreteSpaceItem-1/ToString.md)||
 ## Properties
 - [Item](DiscreteSpaceItem-1/Item.md)
 - [Mean](DiscreteSpaceItem-1/Mean.md)

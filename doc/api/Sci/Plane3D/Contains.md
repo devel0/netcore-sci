@@ -6,6 +6,10 @@ states if given wcs point is contained in this plane
 ```csharp
 public bool Contains(double tol, Vector3D pt)
 ```
+### Returns
+
+### Remarks
+
 ## Contains(double, Line3D)
 states if given wcs segment is contained in this plane
 
@@ -13,3 +17,7 @@ states if given wcs segment is contained in this plane
 ```csharp
 public bool Contains(double tol, Line3D line)
 ```
+### Returns
+
+### Remarks
+

@@ -32,11 +32,13 @@
 public class MUDomain : SearchAThing.Sci.IMUDomain
 ```
 ## Methods
-- [Equals](MUDomain/Equals.md)
-- [GetHashCode](MUDomain/GetHashCode.md)
-- [GetType](MUDomain/GetType.md)
-- [SetupItem](MUDomain/SetupItem.md)
-- [ToString](MUDomain/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Equals](MUDomain/Equals.md)||
+|[GetHashCode](MUDomain/GetHashCode.md)||
+|[GetType](MUDomain/GetType.md)||
+|[SetupItem](MUDomain/SetupItem.md)|allow to set programmatically the associated measure unit and tolerance in the model of a given physical quantity<br/>            if given defaulttolreance is null, then current default tolerance will be converted to given measure unit|
+|[ToString](MUDomain/ToString.md)||
 ## Properties
 - [_All](MUDomain/_All.md)
 - [Acceleration](MUDomain/Acceleration.md)

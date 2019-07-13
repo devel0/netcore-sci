@@ -10,11 +10,13 @@
 public static class PQCollection
 ```
 ## Methods
-- [ByName](PQCollection/ByName.md) (static)
-- [Equals](PQCollection/Equals.md)
-- [GetHashCode](PQCollection/GetHashCode.md)
-- [GetType](PQCollection/GetType.md)
-- [ToString](PQCollection/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[ByName](PQCollection/ByName.md) (static)||
+|[Equals](PQCollection/Equals.md)||
+|[GetHashCode](PQCollection/GetHashCode.md)||
+|[GetType](PQCollection/GetType.md)||
+|[ToString](PQCollection/ToString.md)||
 ## Properties
 - [PhysicalQuantities](PQCollection/PhysicalQuantities.md) (static)
 ## Fields

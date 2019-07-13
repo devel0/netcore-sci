@@ -10,9 +10,11 @@
 public class DiscreteSpaceItemComparer : System.Collections.Generic.IComparer<SearchAThing.Sci.DiscreteSpaceItem<T>>
 ```
 ## Methods
-- [Compare](DiscreteSpaceItemComparer-1/Compare.md)
-- [Equals](DiscreteSpaceItemComparer-1/Equals.md)
-- [GetHashCode](DiscreteSpaceItemComparer-1/GetHashCode.md)
-- [GetType](DiscreteSpaceItemComparer-1/GetType.md)
-- [ToString](DiscreteSpaceItemComparer-1/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Compare](DiscreteSpaceItemComparer-1/Compare.md)||
+|[Equals](DiscreteSpaceItemComparer-1/Equals.md)||
+|[GetHashCode](DiscreteSpaceItemComparer-1/GetHashCode.md)||
+|[GetType](DiscreteSpaceItemComparer-1/GetType.md)||
+|[ToString](DiscreteSpaceItemComparer-1/ToString.md)||
 ## Conversions

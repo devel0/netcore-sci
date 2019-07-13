@@ -10,12 +10,15 @@
 public class Int64MapExceptionRange : System.Exception, System.Runtime.Serialization.ISerializable
 ```
 ## Methods
-- [Equals](Int64MapExceptionRange/Equals.md)
-- [GetBaseException](Int64MapExceptionRange/GetBaseException.md)
-- [GetHashCode](Int64MapExceptionRange/GetHashCode.md)
-- [GetObjectData](Int64MapExceptionRange/GetObjectData.md)
-- [GetType](Int64MapExceptionRange/GetType.md)
-- [ToString](Int64MapExceptionRange/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Equals](Int64MapExceptionRange/Equals.md)||
+|[GetBaseException](Int64MapExceptionRange/GetBaseException.md)||
+|[GetHashCode](Int64MapExceptionRange/GetHashCode.md)||
+|[GetObjectData](Int64MapExceptionRange/GetObjectData.md)||
+|[GetType](Int64MapExceptionRange/GetType.md)||
+|[GetType](Int64MapExceptionRange/GetType.md#gettype)||
+|[ToString](Int64MapExceptionRange/ToString.md)||
 ## Properties
 - [Data](Int64MapExceptionRange/Data.md)
 - [HelpLink](Int64MapExceptionRange/HelpLink.md)

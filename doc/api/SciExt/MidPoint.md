@@ -7,3 +7,7 @@ get the midpoint of the 3d polyline
 ```csharp
 public static SearchAThing.Sci.Vector3D MidPoint(Polyline poly)
 ```
+### Returns
+
+### Remarks
+

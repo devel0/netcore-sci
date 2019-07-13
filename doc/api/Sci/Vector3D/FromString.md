@@ -6,3 +6,7 @@ parse vector3d from string format "(x y z)" or "(x,y,z)" invariant type
 ```csharp
 public static SearchAThing.Sci.Vector3D FromString(string str)
 ```
+### Returns
+
+### Remarks
+

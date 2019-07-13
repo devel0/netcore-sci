@@ -10,12 +10,14 @@
 public abstract class Geometry
 ```
 ## Methods
-- [BBox](Geometry/BBox.md)
-- [Divide](Geometry/Divide.md)
-- [Equals](Geometry/Equals.md)
-- [GetHashCode](Geometry/GetHashCode.md)
-- [GetType](Geometry/GetType.md)
-- [ToString](Geometry/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[BBox](Geometry/BBox.md)||
+|[Divide](Geometry/Divide.md)||
+|[Equals](Geometry/Equals.md)||
+|[GetHashCode](Geometry/GetHashCode.md)||
+|[GetType](Geometry/GetType.md)||
+|[ToString](Geometry/ToString.md)||
 ## Properties
 - [DxfEntity](Geometry/DxfEntity.md)
 - [GeomFrom](Geometry/GeomFrom.md)

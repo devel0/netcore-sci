@@ -6,3 +6,7 @@ Creates and add dxf entities for a 3 axis of given length centered in given cent
 ```csharp
 public static System.Collections.Generic.IEnumerable<netDxf.Entities.EntityObject> DrawStar(DxfObject dxfObj, Vector3D center, double L, Layer layer = null)
 ```
+### Returns
+
+### Remarks
+

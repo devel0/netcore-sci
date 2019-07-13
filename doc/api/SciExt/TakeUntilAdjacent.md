@@ -8,3 +8,7 @@ Return the input set of segments until an adjacency between one and next is foun
 ```csharp
 public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Line3D> TakeUntilAdjacent(IEnumerable<SearchAThing.Sci.Line3D> segs, double tol, bool rectifyVersus = True)
 ```
+### Returns
+
+### Remarks
+

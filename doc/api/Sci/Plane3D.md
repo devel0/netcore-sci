@@ -10,12 +10,15 @@
 public class Plane3D
 ```
 ## Methods
-- [Contains](Plane3D/Contains.md)
-- [Equals](Plane3D/Equals.md)
-- [GetHashCode](Plane3D/GetHashCode.md)
-- [GetType](Plane3D/GetType.md)
-- [Intersect](Plane3D/Intersect.md)
-- [ToString](Plane3D/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Contains](Plane3D/Contains.md)|states if given wcs point is contained in this plane|
+|[Contains](Plane3D/Contains.md#containsdouble-line3d)|states if given wcs segment is contained in this plane|
+|[Equals](Plane3D/Equals.md)||
+|[GetHashCode](Plane3D/GetHashCode.md)||
+|[GetType](Plane3D/GetType.md)||
+|[Intersect](Plane3D/Intersect.md)|return intersection line between two planes or null if they parallels|
+|[ToString](Plane3D/ToString.md)||
 ## Properties
 - [CS](Plane3D/CS.md)
 ## Fields

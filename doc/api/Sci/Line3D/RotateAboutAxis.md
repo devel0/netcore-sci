@@ -6,3 +6,7 @@ rotate this segment about given axis
 ```csharp
 public SearchAThing.Sci.Line3D RotateAboutAxis(Line3D axisSegment, double angleRad)
 ```
+### Returns
+
+### Remarks
+

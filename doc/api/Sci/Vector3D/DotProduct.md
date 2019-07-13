@@ -11,3 +11,7 @@ public double DotProduct(Vector3D other)
 ### Parameters
 - `other`: second vector
 
+### Returns
+
+### Remarks
+

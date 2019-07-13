@@ -7,3 +7,7 @@ Matrix determinant
 ```csharp
 public double Determinant()
 ```
+### Returns
+
+### Remarks
+

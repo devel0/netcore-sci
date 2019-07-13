@@ -7,3 +7,7 @@ Matrix of cofactors
 ```csharp
 public SearchAThing.Sci.Matrix3D Cofactor()
 ```
+### Returns
+
+### Remarks
+

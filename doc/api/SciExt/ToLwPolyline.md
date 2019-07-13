@@ -7,3 +7,7 @@ build 2d dxf polyline.
 ```csharp
 public static netDxf.Entities.LwPolyline ToLwPolyline(IEnumerable<SearchAThing.Sci.Geometry> _geom, double tolLen, bool closed = True)
 ```
+### Returns
+
+### Remarks
+

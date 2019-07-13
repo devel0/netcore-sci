@@ -6,3 +6,7 @@ create new bbox extending by subtract margin to Min and by add to Max
 ```csharp
 public SearchAThing.Sci.BBox3D AddMargin(Vector3D margin)
 ```
+### Returns
+
+### Remarks
+

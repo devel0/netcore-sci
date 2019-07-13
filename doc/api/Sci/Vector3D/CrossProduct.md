@@ -16,3 +16,7 @@ public SearchAThing.Sci.Vector3D CrossProduct(Vector3D other)
 ### Parameters
 - `other`: other vector
 
+### Returns
+
+### Remarks
+

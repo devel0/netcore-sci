@@ -8,3 +8,7 @@ Divide this point returning itself.
 ```csharp
 public virtual System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D> Divide(int cnt, bool include_endpoints = False)
 ```
+### Returns
+
+### Remarks
+

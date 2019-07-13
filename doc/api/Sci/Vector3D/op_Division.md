@@ -6,6 +6,10 @@ scalar div
 ```csharp
 public static SearchAThing.Sci.Vector3D operator /(double s, Vector3D v)
 ```
+### Returns
+
+### Remarks
+
 ## operator /(Vector3D, double)
 scalar div
 
@@ -13,3 +17,7 @@ scalar div
 ```csharp
 public static SearchAThing.Sci.Vector3D operator /(Vector3D v, double s)
 ```
+### Returns
+
+### Remarks
+

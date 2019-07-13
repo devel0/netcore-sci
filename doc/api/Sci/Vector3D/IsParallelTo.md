@@ -7,3 +7,7 @@ Note: tol must be Constants.NormalizedLengthTolerance
 ```csharp
 public bool IsParallelTo(double tol, Vector3D other)
 ```
+### Returns
+
+### Remarks
+

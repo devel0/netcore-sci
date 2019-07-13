@@ -10,3 +10,7 @@ public static SearchAThing.Sci.Vector3D Axis(int ord)
 ### Parameters
 - `ord`: 0:(1,0,0) 1:(0,1,0) 2:(0,0,1)
 
+### Returns
+
+### Remarks
+

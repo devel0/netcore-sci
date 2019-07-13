@@ -7,3 +7,7 @@ Find intersection points (0,1,2) of the given line with the given polygon
 ```csharp
 public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D> Intersect(IEnumerable<SearchAThing.Sci.Line3D> polygonSegments, double tol, Line3D line, Line3DSegmentMode segmentMode)
 ```
+### Returns
+
+### Remarks
+

@@ -6,6 +6,10 @@ Scale this point about the given origin with the given factor.
 ```csharp
 public SearchAThing.Sci.Vector3D ScaleAbout(Vector3D origin, double factor)
 ```
+### Returns
+
+### Remarks
+
 ## ScaleAbout(Vector3D, Vector3D)
 Scale this point about the given origin with the given factor as (sx,sy,sz).
 
@@ -13,3 +17,7 @@ Scale this point about the given origin with the given factor as (sx,sy,sz).
 ```csharp
 public SearchAThing.Sci.Vector3D ScaleAbout(Vector3D origin, Vector3D factor)
 ```
+### Returns
+
+### Remarks
+

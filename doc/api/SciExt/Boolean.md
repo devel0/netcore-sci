@@ -8,3 +8,7 @@ can generate a Int64MapExceptionRange exception if double values can't fit into 
 ```csharp
 public static System.Collections.Generic.IEnumerable<System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D>> Boolean(IEnumerable<SearchAThing.Sci.Vector3D> polyA, double tol, IEnumerable<SearchAThing.Sci.Vector3D> polyB, ClipType type, bool selfCheckInt64MapTolerance = True)
 ```
+### Returns
+
+### Remarks
+

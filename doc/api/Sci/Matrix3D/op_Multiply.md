@@ -6,6 +6,10 @@ scalar multiply
 ```csharp
 public static SearchAThing.Sci.Matrix3D operator *(double s, Matrix3D m)
 ```
+### Returns
+
+### Remarks
+
 ## operator *(Matrix3D, double)
 scalar multiply
 
@@ -13,6 +17,10 @@ scalar multiply
 ```csharp
 public static SearchAThing.Sci.Matrix3D operator *(Matrix3D m, double s)
 ```
+### Returns
+
+### Remarks
+
 ## operator *(Matrix3D, Vector3D)
 matrix * vector as column -> vector
             3x3 x 3x1 -> 3x1
@@ -21,6 +29,10 @@ matrix * vector as column -> vector
 ```csharp
 public static SearchAThing.Sci.Vector3D operator *(Matrix3D m, Vector3D v)
 ```
+### Returns
+
+### Remarks
+
 ## operator *(Vector3D, Matrix3D)
 vector as row * matrix -> vector
             1x3 * 3x3 -> 1x3
@@ -29,3 +41,7 @@ vector as row * matrix -> vector
 ```csharp
 public static SearchAThing.Sci.Vector3D operator *(Vector3D v, Matrix3D m)
 ```
+### Returns
+
+### Remarks
+

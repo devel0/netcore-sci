@@ -6,3 +6,7 @@ Creates dxf entities for a 6 faces of a cube
 ```csharp
 public static System.Collections.Generic.IEnumerable<netDxf.Entities.Face3d> Cube(Vector3D center, double L)
 ```
+### Returns
+
+### Remarks
+

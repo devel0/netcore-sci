@@ -9,3 +9,7 @@ public SearchAThing.Sci.Vector3D RotateAboutXAxis(double angleRad)
 ### Parameters
 - `angleRad`: angle (rad) of rotation
 
+### Returns
+rotated point
+### Remarks
+

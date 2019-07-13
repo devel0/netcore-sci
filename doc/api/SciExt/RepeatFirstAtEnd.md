@@ -7,3 +7,7 @@ given points a,b,c it will return a,b,c,a ( first is repeated at end )
 ```csharp
 public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D> RepeatFirstAtEnd(IEnumerable<SearchAThing.Sci.Vector3D> pts, double tol)
 ```
+### Returns
+
+### Remarks
+

@@ -9,6 +9,10 @@ Centroid of a polygon (does not consider z)
 ```csharp
 public static SearchAThing.Sci.Vector3D Centroid(IReadOnlyList<SearchAThing.Sci.Vector3D> pts, double tol)
 ```
+### Returns
+
+### Remarks
+
 ## Centroid(IReadOnlyList<SearchAThing.Sci.Vector3D>, double, double)
 Centroid of a polygon (does not consider z)
             note: points must ordered anticlockwise
@@ -18,3 +22,7 @@ Centroid of a polygon (does not consider z)
 ```csharp
 public static SearchAThing.Sci.Vector3D Centroid(IReadOnlyList<SearchAThing.Sci.Vector3D> pts, double tol, double area)
 ```
+### Returns
+
+### Remarks
+

@@ -11,3 +11,7 @@ public virtual bool Contains(double tol, Vector3D pt, bool onlyPerimeter)
 - `pt`: point to check
 - `onlyPerimeter`: if true it checks if point is on perimeter; if false it will check in area too
 
+### Returns
+
+### Remarks
+

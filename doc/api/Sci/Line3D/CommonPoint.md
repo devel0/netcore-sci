@@ -6,3 +6,7 @@ returns the common point from,to between two lines or null if not consecutives
 ```csharp
 public SearchAThing.Sci.Vector3D CommonPoint(double tol, Line3D other)
 ```
+### Returns
+
+### Remarks
+

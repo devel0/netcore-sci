@@ -7,3 +7,7 @@ Matrix of minors
 ```csharp
 public SearchAThing.Sci.Matrix3D Minor()
 ```
+### Returns
+
+### Remarks
+

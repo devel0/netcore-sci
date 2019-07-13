@@ -12,3 +12,7 @@ Span a set of qty vector3d with random coord between given range.
 ```csharp
 public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D> Random(int qty, double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, int seed = 0, Random random = null)
 ```
+### Returns
+
+### Remarks
+

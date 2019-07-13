@@ -6,3 +6,7 @@ move this segment of given delta
 ```csharp
 public SearchAThing.Sci.Line3D Move(Vector3D delta)
 ```
+### Returns
+
+### Remarks
+

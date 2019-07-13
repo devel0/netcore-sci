@@ -6,3 +6,7 @@ negate
 ```csharp
 public static SearchAThing.Sci.Vector3D operator -(Vector3D a)
 ```
+### Returns
+
+### Remarks
+

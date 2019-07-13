@@ -7,3 +7,7 @@ Preprocess segs with SortPoly if needed.
 ```csharp
 public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Line3D> IsAClosedPoly(IEnumerable<SearchAThing.Sci.Line3D> segs, double tol)
 ```
+### Returns
+
+### Remarks
+

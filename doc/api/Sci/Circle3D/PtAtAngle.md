@@ -7,3 +7,7 @@ point on the arc circumnfere at given angle (rotating cs basex around cs basez)
 ```csharp
 public override SearchAThing.Sci.Vector3D PtAtAngle(double angleRad)
 ```
+### Returns
+
+### Remarks
+

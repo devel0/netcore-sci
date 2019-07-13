@@ -6,3 +6,7 @@ create offseted line toward refPt for given offset
 ```csharp
 public SearchAThing.Sci.Line3D Offset(double tol, Vector3D refPt, double offset)
 ```
+### Returns
+
+### Remarks
+

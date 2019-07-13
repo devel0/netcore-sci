@@ -11,6 +11,10 @@ public bool EqualsTol(double tol, Vector3D other)
 - `tol`: geometric tolerance ( note: use Constants.NormalizedLengthTolerance )
 - `other`: vector to compare to this
 
+### Returns
+
+### Remarks
+
 ## EqualsTol(double, double, double)
 checks only x,y
             [unit test](/test/Vector3D/Vector3DTest_0012.cs)
@@ -23,6 +27,10 @@ public bool EqualsTol(double tol, double x, double y)
 - `tol`: geometric tolerance ( note: use Constants.NormalizedLengthTolerance )
 - `x`: (No Description)
 - `y`: (No Description)
+
+### Returns
+
+### Remarks
 
 ## EqualsTol(double, double, double, double)
 checks vector component equality vs other given            
@@ -37,4 +45,8 @@ public bool EqualsTol(double tol, double x, double y, double z)
 - `x`: (No Description)
 - `y`: (No Description)
 - `z`: (No Description)
+
+### Returns
+
+### Remarks
 

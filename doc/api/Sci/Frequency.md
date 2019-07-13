@@ -10,10 +10,12 @@
 static class Frequency
 ```
 ## Methods
-- [Equals](Frequency/Equals.md)
-- [GetHashCode](Frequency/GetHashCode.md)
-- [GetType](Frequency/GetType.md)
-- [ToString](Frequency/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Equals](Frequency/Equals.md)||
+|[GetHashCode](Frequency/GetHashCode.md)||
+|[GetType](Frequency/GetType.md)||
+|[ToString](Frequency/ToString.md)||
 ## Fields
 - [hz](Frequency/hz.md) (static)
 ## Conversions

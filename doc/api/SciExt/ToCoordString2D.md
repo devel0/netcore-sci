@@ -6,3 +6,7 @@ produce a string with x1,y1,x2,y2, ...
 ```csharp
 public static string ToCoordString2D(IEnumerable<SearchAThing.Sci.Vector3D> points)
 ```
+### Returns
+
+### Remarks
+

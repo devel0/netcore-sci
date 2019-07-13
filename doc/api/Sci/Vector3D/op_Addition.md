@@ -6,3 +6,7 @@ sum
 ```csharp
 public static SearchAThing.Sci.Vector3D operator +(Vector3D a, Vector3D b)
 ```
+### Returns
+
+### Remarks
+

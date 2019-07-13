@@ -16,3 +16,7 @@ public bool Equals(double tol, CoordinateSystem3D other)
 - `tol`: calc tolerance ( for origin check )
 - `other`: cs to check equality against
 
+### Returns
+true if this cs equals the given on, false otherwise
+### Remarks
+

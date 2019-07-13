@@ -12,3 +12,7 @@ public double AngleToward(double tolLen, Vector3D to, Vector3D refAxis)
 - `to`: point toward rotate this one
 - `refAxis`: reference axis to make right-hand rotation of this point toward given one
 
+### Returns
+angle (rad)
+### Remarks
+

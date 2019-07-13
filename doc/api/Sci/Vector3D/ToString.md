@@ -7,6 +7,10 @@ string invariant representation "(x,y,z)"
 ```csharp
 public virtual string ToString()
 ```
+### Returns
+
+### Remarks
+
 ## ToString(int)
 string invariant representation "(x,y,z)" w/given digits
 
@@ -14,6 +18,10 @@ string invariant representation "(x,y,z)" w/given digits
 ```csharp
 public string ToString(int digits = 3)
 ```
+### Returns
+
+### Remarks
+
 ## ToString(double)
 hash string with given tolerance
 
@@ -21,3 +29,7 @@ hash string with given tolerance
 ```csharp
 public string ToString(double tol)
 ```
+### Returns
+
+### Remarks
+

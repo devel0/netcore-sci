@@ -10,10 +10,12 @@
 static class Time
 ```
 ## Methods
-- [Equals](Time/Equals.md)
-- [GetHashCode](Time/GetHashCode.md)
-- [GetType](Time/GetType.md)
-- [ToString](Time/ToString.md)
+|**Name**|**Summary**|
+|---|---|
+|[Equals](Time/Equals.md)||
+|[GetHashCode](Time/GetHashCode.md)||
+|[GetType](Time/GetType.md)||
+|[ToString](Time/ToString.md)||
 ## Fields
 - [hr](Time/hr.md) (static)
 - [min](Time/min.md) (static)

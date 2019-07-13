@@ -7,6 +7,10 @@ build an invariant string representation w/3 digits
 ```csharp
 public virtual string ToString()
 ```
+### Returns
+
+### Remarks
+
 ## ToString(double)
 hash string with given tolerance
 
@@ -14,6 +18,10 @@ hash string with given tolerance
 ```csharp
 public string ToString(double tolLen)
 ```
+### Returns
+
+### Remarks
+
 ## ToString(int)
 build an invariant string representation w/given digits
             (f.x, f.y, f.z)-(t.x, t.y, t.z) L=len Δ=(v.x, v.y, v.z)
@@ -22,3 +30,7 @@ build an invariant string representation w/given digits
 ```csharp
 public string ToString(int digits = 3)
 ```
+### Returns
+
+### Remarks
+

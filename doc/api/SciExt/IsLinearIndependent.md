@@ -7,3 +7,7 @@ states if given 3 vectors are linearly independent
 ```csharp
 public static bool IsLinearIndependent(IEnumerable<SearchAThing.Sci.Vector3D> vectors)
 ```
+### Returns
+true if given vector are linearly independent
+### Remarks
+

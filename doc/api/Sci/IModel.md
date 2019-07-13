@@ -10,6 +10,8 @@
 public interface IModel
 ```
 ## Methods
+|**Name**|**Summary**|
+|---|---|
 ## Properties
 - [MUDomain](IModel/MUDomain.md)
 ## Conversions

@@ -6,3 +6,7 @@ scale from,to of this line using given refpt and factor
 ```csharp
 public SearchAThing.Sci.Line3D Scale(Vector3D refpt, double factor)
 ```
+### Returns
+
+### Remarks
+

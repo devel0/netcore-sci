@@ -6,3 +6,7 @@ swap row, cols
 ```csharp
 public SearchAThing.Sci.Matrix3D Transpose()
 ```
+### Returns
+
+### Remarks
+

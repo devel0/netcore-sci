@@ -7,3 +7,7 @@ Create an array of Vector3D from given list of 3d coords ( eg. { 100, 200, 10, 3
 ```csharp
 public static System.Collections.Generic.List<SearchAThing.Sci.Vector3D> From3DCoords(params double[] coords)
 ```
+### Returns
+
+### Remarks
+

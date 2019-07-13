@@ -7,3 +7,7 @@ compute convex hull using LoycCore
 ```csharp
 public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D> ConvexHull2D(IEnumerable<SearchAThing.Sci.Vector3D> pts)
 ```
+### Returns
+
+### Remarks
+

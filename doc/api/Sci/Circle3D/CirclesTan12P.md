@@ -9,3 +9,7 @@ build 3d circle that tangent to lines t1,t2 and that intersects point p
 ```csharp
 public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Circle3D> CirclesTan12P(double tol_len, Line3D t1, Line3D t2, Vector3D p)
 ```
+### Returns
+
+### Remarks
+

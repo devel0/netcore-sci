@@ -10,3 +10,7 @@ public virtual System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D>
 - `cnt`: nr of piece
 - `include_endpoints`: if true returns also boundary points
 
+### Returns
+
+### Remarks
+

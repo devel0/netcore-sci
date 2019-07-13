@@ -7,6 +7,10 @@ return pts (maintaining order) w/out duplicates
 ```csharp
 public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D> ZapDuplicates(IEnumerable<SearchAThing.Sci.Vector3D> pts, double tol)
 ```
+### Returns
+
+### Remarks
+
 ## ZapDuplicates(IEnumerable<SearchAThing.Sci.Vector3D>, Vector3DEqualityComparer)
 return pts (maintaining order) w/out duplicates
 
@@ -14,3 +18,7 @@ return pts (maintaining order) w/out duplicates
 ```csharp
 public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D> ZapDuplicates(IEnumerable<SearchAThing.Sci.Vector3D> pts, Vector3DEqualityComparer cmp)
 ```
+### Returns
+
+### Remarks
+

@@ -11,3 +11,7 @@ build a clone of the given entity with coord transformed accordingly given funct
 ```csharp
 public static netDxf.Entities.EntityObject CoordTransform(EntityObject eo, Func<SearchAThing.Sci.Vector3D, SearchAThing.Sci.Vector3D> transform, Vector3D origin = null)
 ```
+### Returns
+
+### Remarks
+

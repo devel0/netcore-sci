@@ -6,3 +6,7 @@ string invariant representation "(x,y,z)"
 ```csharp
 public string StringRepresentation()
 ```
+### Returns
+
+### Remarks
+

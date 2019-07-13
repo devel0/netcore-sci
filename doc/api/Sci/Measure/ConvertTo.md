@@ -6,6 +6,10 @@ Convert to the implicit measure of the given mu domain
 ```csharp
 public SearchAThing.Sci.Measure ConvertTo(IMUDomain mud)
 ```
+### Returns
+
+### Remarks
+
 ## ConvertTo(MeasureUnit)
 ### Signature
 ```csharp

@@ -6,3 +6,7 @@ neg
 ```csharp
 public static SearchAThing.Sci.Matrix3D operator -(Matrix3D m)
 ```
+### Returns
+
+### Remarks
+

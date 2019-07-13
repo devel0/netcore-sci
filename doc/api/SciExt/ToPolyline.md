@@ -7,3 +7,7 @@ build 3d dxf polyline
 ```csharp
 public static netDxf.Entities.Polyline ToPolyline(IEnumerable<SearchAThing.Sci.Vector3D> pts, bool isClosed = True)
 ```
+### Returns
+
+### Remarks
+

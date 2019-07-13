@@ -6,3 +6,7 @@ scalar mul
 ```csharp
 public static SearchAThing.Sci.Measure operator -(Measure a)
 ```
+### Returns
+
+### Remarks
+

@@ -8,3 +8,7 @@ build polygons from given list of segments
 ```csharp
 public static System.Collections.Generic.IEnumerable<System.Collections.Generic.IReadOnlyList<SearchAThing.Sci.Vector3D>> ClosedPolys2D(IEnumerable<SearchAThing.Sci.Line3D> segs, double tolLen, int polyMaxPoints = 0)
 ```
+### Returns
+
+### Remarks
+
