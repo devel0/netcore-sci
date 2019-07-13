@@ -17,7 +17,9 @@ static class Temperature
 |[GetType](Temperature/GetType.md)||
 |[ToString](Temperature/ToString.md)||
 ## Properties
-- [NonLinearConvFunctor](Temperature/NonLinearConvFunctor.md) (static)
+|**Name**|**Summary**|
+|---|---|
+|[NonLinearConvFunctor](Temperature/NonLinearConvFunctor.md) (static)|
 ## Fields
 - [C](Temperature/C.md) (static)
 - [F](Temperature/F.md) (static)

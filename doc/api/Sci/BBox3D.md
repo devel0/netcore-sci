@@ -25,11 +25,13 @@ public class BBox3D
 |[Union](BBox3D/Union.md)||
 |[Union](BBox3D/Union.md#unionbbox3d)||
 ## Properties
-- [CadScript](BBox3D/CadScript.md)
-- [Coords2D](BBox3D/Coords2D.md)
-- [Coords3D](BBox3D/Coords3D.md)
-- [IsEmpty](BBox3D/IsEmpty.md)
-- [Max](BBox3D/Max.md)
-- [Min](BBox3D/Min.md)
-- [Size](BBox3D/Size.md)
+|**Name**|**Summary**|
+|---|---|
+|[CadScript](BBox3D/CadScript.md)|
+|[Coords2D](BBox3D/Coords2D.md)|build a 4 point bbox coords for 2D using Z=Min.Z
+|[Coords3D](BBox3D/Coords3D.md)|build 8 coords 3d of current bbox
+|[IsEmpty](BBox3D/IsEmpty.md)|
+|[Max](BBox3D/Max.md)|
+|[Min](BBox3D/Min.md)|
+|[Size](BBox3D/Size.md)|
 ## Conversions

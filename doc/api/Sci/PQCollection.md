@@ -18,7 +18,9 @@ public static class PQCollection
 |[GetType](PQCollection/GetType.md)||
 |[ToString](PQCollection/ToString.md)||
 ## Properties
-- [PhysicalQuantities](PQCollection/PhysicalQuantities.md) (static)
+|**Name**|**Summary**|
+|---|---|
+|[PhysicalQuantities](PQCollection/PhysicalQuantities.md) (static)|
 ## Fields
 - [Acceleration](PQCollection/Acceleration.md) (static)
 - [Adimensional](PQCollection/Adimensional.md) (static)

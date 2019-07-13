@@ -20,8 +20,10 @@ public class MeasureUnit : System.IEquatable<SearchAThing.Sci.MeasureUnit>
 |[Tolerance](MeasureUnit/Tolerance.md)||
 |[ToString](MeasureUnit/ToString.md)||
 ## Properties
-- [Name](MeasureUnit/Name.md)
-- [PhysicalQuantity](MeasureUnit/PhysicalQuantity.md)
+|**Name**|**Summary**|
+|---|---|
+|[Name](MeasureUnit/Name.md)|
+|[PhysicalQuantity](MeasureUnit/PhysicalQuantity.md)|
 ## Operators
 - [*](MeasureUnit/op_Multiply.md)
 - [*](MeasureUnit/op_Multiply.md)

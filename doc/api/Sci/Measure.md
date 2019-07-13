@@ -26,9 +26,11 @@ public class Measure
 |[ToString](Measure/ToString.md#tostringbool-nullableint)||
 |[TryParse](Measure/TryParse.md) (static)||
 ## Properties
-- [ExpPref](Measure/ExpPref.md)
-- [MU](Measure/MU.md)
-- [Value](Measure/Value.md)
+|**Name**|**Summary**|
+|---|---|
+|[ExpPref](Measure/ExpPref.md)|use of exponential pref<br/>            eg. <br/>            120 with ExpPref=2 -> 1.2e2<br/>            120 with ExpPref=-1 -> 1200e-1
+|[MU](Measure/MU.md)|
+|[Value](Measure/Value.md)|
 ## Operators
 - [*](Measure/op_Multiply.md)
 - [*](Measure/op_Multiply.md)

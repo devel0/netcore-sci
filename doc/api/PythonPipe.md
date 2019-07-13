@@ -19,5 +19,7 @@ public class PythonPipe : System.IDisposable
 |[GetType](PythonPipe/GetType.md)||
 |[ToString](PythonPipe/ToString.md)||
 ## Properties
-- [DeleteTmpFiles](PythonPipe/DeleteTmpFiles.md)
+|**Name**|**Summary**|
+|---|---|
+|[DeleteTmpFiles](PythonPipe/DeleteTmpFiles.md)|
 ## Conversions

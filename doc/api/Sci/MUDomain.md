@@ -40,31 +40,33 @@ public class MUDomain : SearchAThing.Sci.IMUDomain
 |[SetupItem](MUDomain/SetupItem.md)|allow to set programmatically the associated measure unit and tolerance in the model of a given physical quantity<br/>            if given defaulttolreance is null, then current default tolerance will be converted to given measure unit|
 |[ToString](MUDomain/ToString.md)||
 ## Properties
-- [_All](MUDomain/_All.md)
-- [Acceleration](MUDomain/Acceleration.md)
-- [Adimensional](MUDomain/Adimensional.md)
-- [AmountOfSubstance](MUDomain/AmountOfSubstance.md)
-- [AngularAcceleration](MUDomain/AngularAcceleration.md)
-- [AngularSpeed](MUDomain/AngularSpeed.md)
-- [BendingMoment](MUDomain/BendingMoment.md)
-- [ElectricalConductance](MUDomain/ElectricalConductance.md)
-- [ElectricalConductivity](MUDomain/ElectricalConductivity.md)
-- [ElectricCurrent](MUDomain/ElectricCurrent.md)
-- [Energy](MUDomain/Energy.md)
-- [Force](MUDomain/Force.md)
-- [Frequency](MUDomain/Frequency.md)
-- [Length](MUDomain/Length.md)
-- [Length2](MUDomain/Length2.md)
-- [Length3](MUDomain/Length3.md)
-- [Length4](MUDomain/Length4.md)
-- [LuminousIntensity](MUDomain/LuminousIntensity.md)
-- [Mass](MUDomain/Mass.md)
-- [PlaneAngle](MUDomain/PlaneAngle.md)
-- [Power](MUDomain/Power.md)
-- [Pressure](MUDomain/Pressure.md)
-- [Speed](MUDomain/Speed.md)
-- [Temperature](MUDomain/Temperature.md)
-- [Time](MUDomain/Time.md)
-- [Turbidity](MUDomain/Turbidity.md)
-- [VolumetricFlowRate](MUDomain/VolumetricFlowRate.md)
+|**Name**|**Summary**|
+|---|---|
+|[_All](MUDomain/_All.md)|
+|[Acceleration](MUDomain/Acceleration.md)|[L T−2]
+|[Adimensional](MUDomain/Adimensional.md)|
+|[AmountOfSubstance](MUDomain/AmountOfSubstance.md)|[N]
+|[AngularAcceleration](MUDomain/AngularAcceleration.md)|[T−2]
+|[AngularSpeed](MUDomain/AngularSpeed.md)|[T−1]
+|[BendingMoment](MUDomain/BendingMoment.md)|[M L2 T-2]
+|[ElectricalConductance](MUDomain/ElectricalConductance.md)|[L−2 M−1 T3 I2]
+|[ElectricalConductivity](MUDomain/ElectricalConductivity.md)|[L−3 M−1 T3 I2]
+|[ElectricCurrent](MUDomain/ElectricCurrent.md)|[I]
+|[Energy](MUDomain/Energy.md)|[M L2 T−2]
+|[Force](MUDomain/Force.md)|[M L T−2]
+|[Frequency](MUDomain/Frequency.md)|[T-1]
+|[Length](MUDomain/Length.md)|[L]
+|[Length2](MUDomain/Length2.md)|[L^2]
+|[Length3](MUDomain/Length3.md)|[L^3]
+|[Length4](MUDomain/Length4.md)|[L^4]
+|[LuminousIntensity](MUDomain/LuminousIntensity.md)|[J]
+|[Mass](MUDomain/Mass.md)|[M]
+|[PlaneAngle](MUDomain/PlaneAngle.md)|[1]
+|[Power](MUDomain/Power.md)|[M L2 T−3]
+|[Pressure](MUDomain/Pressure.md)|[M L−1 T−2]
+|[Speed](MUDomain/Speed.md)|[L T−1]
+|[Temperature](MUDomain/Temperature.md)|[K]
+|[Time](MUDomain/Time.md)|[T]
+|[Turbidity](MUDomain/Turbidity.md)|
+|[VolumetricFlowRate](MUDomain/VolumetricFlowRate.md)|[L3 T−1]
 ## Conversions

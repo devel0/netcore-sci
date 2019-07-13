@@ -27,11 +27,13 @@ public class CoordinateSystem3D
 |[ToUCS](CoordinateSystem3D/ToUCS.md)|Transform wcs point to given cs|
 |[ToWCS](CoordinateSystem3D/ToWCS.md)|transform ucs point to wcs|
 ## Properties
-- [BaseX](CoordinateSystem3D/BaseX.md)
-- [BaseY](CoordinateSystem3D/BaseY.md)
-- [BaseZ](CoordinateSystem3D/BaseZ.md)
-- [CadScript](CoordinateSystem3D/CadScript.md)
-- [Origin](CoordinateSystem3D/Origin.md)
+|**Name**|**Summary**|
+|---|---|
+|[BaseX](CoordinateSystem3D/BaseX.md)|cs x versor ( normalized )
+|[BaseY](CoordinateSystem3D/BaseY.md)|cs y versor ( normalized )
+|[BaseZ](CoordinateSystem3D/BaseZ.md)|cs z versor ( normalized )
+|[CadScript](CoordinateSystem3D/CadScript.md)|script to paste in cad ( axis length = 1 )
+|[Origin](CoordinateSystem3D/Origin.md)|origin of cs where x,y,z base vectors applied
 ## Fields
 - [WCS](CoordinateSystem3D/WCS.md) (static)
 - [XY](CoordinateSystem3D/XY.md) (static)

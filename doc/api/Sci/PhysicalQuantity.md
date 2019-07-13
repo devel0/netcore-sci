@@ -20,8 +20,10 @@ public class PhysicalQuantity : System.IEquatable<SearchAThing.Sci.PhysicalQuant
 |[GetType](PhysicalQuantity/GetType.md)||
 |[ToString](PhysicalQuantity/ToString.md)||
 ## Properties
-- [LinearConversionRefMU](PhysicalQuantity/LinearConversionRefMU.md)
-- [MeasureUnits](PhysicalQuantity/MeasureUnits.md)
-- [MUConversionType](PhysicalQuantity/MUConversionType.md)
-- [Name](PhysicalQuantity/Name.md)
+|**Name**|**Summary**|
+|---|---|
+|[LinearConversionRefMU](PhysicalQuantity/LinearConversionRefMU.md)|
+|[MeasureUnits](PhysicalQuantity/MeasureUnits.md)|
+|[MUConversionType](PhysicalQuantity/MUConversionType.md)|
+|[Name](PhysicalQuantity/Name.md)|
 ## Conversions

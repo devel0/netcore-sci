@@ -67,20 +67,22 @@ public class Vector3D : SearchAThing.Sci.Geometry
 |[ToUCS](Vector3D/ToUCS.md)|Convert this wcs point to given cs coord|
 |[ToWCS](Vector3D/ToWCS.md)|Convert this ucs considered vector using given cs to the wcs|
 ## Properties
-- [CadScript](Vector3D/CadScript.md)
-- [CadScriptLine](Vector3D/CadScriptLine.md)
-- [CadScriptLineFrom](Vector3D/CadScriptLineFrom.md)
-- [Coordinates](Vector3D/Coordinates.md)
-- [DxfEntity](Vector3D/DxfEntity.md)
-- [GeomFrom](Vector3D/GeomFrom.md)
-- [GeomTo](Vector3D/GeomTo.md)
-- [IsZeroLength](Vector3D/IsZeroLength.md)
-- [Length](Vector3D/Length.md)
-- [Type](Vector3D/Type.md)
-- [Vertexes](Vector3D/Vertexes.md)
-- [X](Vector3D/X.md)
-- [Y](Vector3D/Y.md)
-- [Z](Vector3D/Z.md)
+|**Name**|**Summary**|
+|---|---|
+|[CadScript](Vector3D/CadScript.md)|cad script for this vector as wcs point
+|[CadScriptLine](Vector3D/CadScriptLine.md)|cad script for a line (0,0,0) to this vector
+|[CadScriptLineFrom](Vector3D/CadScriptLineFrom.md)|cad script for a line departing from this wcs point
+|[Coordinates](Vector3D/Coordinates.md)|enumerate coordinates<br/>            [unit test](/test/Vector3D/Vector3DTest_0010.cs)
+|[DxfEntity](Vector3D/DxfEntity.md)|Create dxf point entity suitable for netDxf addEntity.<br/>            ( Geometry DxfEntity implementation )<br/>            [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+|[GeomFrom](Vector3D/GeomFrom.md)|This vector.<br/>            ( Geometry GeomFrom implementation )<br/>            [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+|[GeomTo](Vector3D/GeomTo.md)|This vector.<br/>            ( Geometry GeomTo implementation) <br/>            [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+|[IsZeroLength](Vector3D/IsZeroLength.md)|states if this is a zero vector<br/>            [unit test](/test/Vector3D/Vector3DTest_0011.cs)
+|[Length](Vector3D/Length.md)|Length of this vector.<br/>            ( Geometry Length implementation )<br/>            [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+|[Type](Vector3D/Type.md)|
+|[Vertexes](Vector3D/Vertexes.md)|Enumerable with only this vector.<br/>            ( Geometry Vertexes implementation )<br/>            [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+|[X](Vector3D/X.md)|X vector component<br/>            [unit test](/test/Vector3D/Vector3DTest_0005.cs)
+|[Y](Vector3D/Y.md)|Y vector component<br/>            [unit test](/test/Vector3D/Vector3DTest_0005.cs)
+|[Z](Vector3D/Z.md)|Z vector component<br/>            [unit test](/test/Vector3D/Vector3DTest_0005.cs)
 ## Fields
 - [XAxis](Vector3D/XAxis.md) (static)
 - [YAxis](Vector3D/YAxis.md) (static)

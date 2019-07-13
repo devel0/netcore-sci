@@ -20,12 +20,14 @@ public class Int64MapExceptionRange : System.Exception, System.Runtime.Serializa
 |[GetType](Int64MapExceptionRange/GetType.md#gettype)||
 |[ToString](Int64MapExceptionRange/ToString.md)||
 ## Properties
-- [Data](Int64MapExceptionRange/Data.md)
-- [HelpLink](Int64MapExceptionRange/HelpLink.md)
-- [HResult](Int64MapExceptionRange/HResult.md)
-- [InnerException](Int64MapExceptionRange/InnerException.md)
-- [Message](Int64MapExceptionRange/Message.md)
-- [Source](Int64MapExceptionRange/Source.md)
-- [StackTrace](Int64MapExceptionRange/StackTrace.md)
-- [TargetSite](Int64MapExceptionRange/TargetSite.md)
+|**Name**|**Summary**|
+|---|---|
+|[Data](Int64MapExceptionRange/Data.md)|
+|[HelpLink](Int64MapExceptionRange/HelpLink.md)|
+|[HResult](Int64MapExceptionRange/HResult.md)|
+|[InnerException](Int64MapExceptionRange/InnerException.md)|
+|[Message](Int64MapExceptionRange/Message.md)|
+|[Source](Int64MapExceptionRange/Source.md)|
+|[StackTrace](Int64MapExceptionRange/StackTrace.md)|
+|[TargetSite](Int64MapExceptionRange/TargetSite.md)|
 ## Conversions

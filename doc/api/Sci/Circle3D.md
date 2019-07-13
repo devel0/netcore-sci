@@ -32,21 +32,23 @@ public class Circle3D : SearchAThing.Sci.Arc3D
 |[ToPolygon3D](Circle3D/ToPolygon3D.md)|creates a polygon approximation of this circle with segments of given maxLength|
 |[ToString](Circle3D/ToString.md)||
 ## Properties
-- [Angle](Circle3D/Angle.md)
-- [AngleEnd](Circle3D/AngleEnd.md)
-- [AngleStart](Circle3D/AngleStart.md)
-- [Area](Circle3D/Area.md)
-- [Center](Circle3D/Center.md)
-- [CS](Circle3D/CS.md)
-- [DxfEntity](Circle3D/DxfEntity.md)
-- [From](Circle3D/From.md)
-- [GeomFrom](Circle3D/GeomFrom.md)
-- [GeomTo](Circle3D/GeomTo.md)
-- [Length](Circle3D/Length.md)
-- [MidPoint](Circle3D/MidPoint.md)
-- [Radius](Circle3D/Radius.md)
-- [Segment](Circle3D/Segment.md)
-- [To](Circle3D/To.md)
-- [Type](Circle3D/Type.md)
-- [Vertexes](Circle3D/Vertexes.md)
+|**Name**|**Summary**|
+|---|---|
+|[Angle](Circle3D/Angle.md)|Arc (rad) angle length.<br/>            angle between start-end or end-start depending on what start is less than end or not
+|[AngleEnd](Circle3D/AngleEnd.md)|end angle (rad) [0-2pi) respect cs xaxis rotating around cs zaxis<br/>            note that start angle can be greather than end angle
+|[AngleStart](Circle3D/AngleStart.md)|start angle (rad) [0-2pi) respect cs xaxis rotating around cs zaxis<br/>            note that start angle can be greather than end angle
+|[Area](Circle3D/Area.md)|
+|[Center](Circle3D/Center.md)|
+|[CS](Circle3D/CS.md)|coordinate system centered in arc center<br/>            angle is 0 at X axis<br/>            angle increase rotating right-hand on Z axis
+|[DxfEntity](Circle3D/DxfEntity.md)|
+|[From](Circle3D/From.md)|point at angle start
+|[GeomFrom](Circle3D/GeomFrom.md)|
+|[GeomTo](Circle3D/GeomTo.md)|
+|[Length](Circle3D/Length.md)|
+|[MidPoint](Circle3D/MidPoint.md)|mid point eval as arc point at angle start + arc angle/2
+|[Radius](Circle3D/Radius.md)|radius of arc
+|[Segment](Circle3D/Segment.md)|return From,To segment
+|[To](Circle3D/To.md)|point at angle end
+|[Type](Circle3D/Type.md)|
+|[Vertexes](Circle3D/Vertexes.md)|
 ## Conversions

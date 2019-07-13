@@ -17,5 +17,7 @@ public static class MUCollection
 |[GetType](MUCollection/GetType.md)||
 |[ToString](MUCollection/ToString.md)||
 ## Properties
-- [MeasureUnits](MUCollection/MeasureUnits.md) (static)
+|**Name**|**Summary**|
+|---|---|
+|[MeasureUnits](MUCollection/MeasureUnits.md) (static)|through reflector returns all measure units along all physical quantities declared in MUCollection
 ## Conversions

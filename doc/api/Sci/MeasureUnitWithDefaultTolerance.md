@@ -19,8 +19,10 @@ public class MeasureUnitWithDefaultTolerance
 |[ToMeasure](MeasureUnitWithDefaultTolerance/ToMeasure.md)||
 |[ToString](MeasureUnitWithDefaultTolerance/ToString.md)||
 ## Properties
-- [DefaultTolerance](MeasureUnitWithDefaultTolerance/DefaultTolerance.md)
-- [MU](MeasureUnitWithDefaultTolerance/MU.md)
-- [MUName](MeasureUnitWithDefaultTolerance/MUName.md)
-- [PQName](MeasureUnitWithDefaultTolerance/PQName.md)
+|**Name**|**Summary**|
+|---|---|
+|[DefaultTolerance](MeasureUnitWithDefaultTolerance/DefaultTolerance.md)|
+|[MU](MeasureUnitWithDefaultTolerance/MU.md)|
+|[MUName](MeasureUnitWithDefaultTolerance/MUName.md)|
+|[PQName](MeasureUnitWithDefaultTolerance/PQName.md)|
 ## Conversions

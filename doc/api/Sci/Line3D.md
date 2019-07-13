@@ -48,22 +48,24 @@ public class Line3D : SearchAThing.Sci.Geometry
 |[ToString](Line3D/ToString.md#tostringdouble)|hash string with given tolerance|
 |[ToString](Line3D/ToString.md#tostringint)|build an invariant string representation w/given digits<br/>            (f.x, f.y, f.z)-(t.x, t.y, t.z) L=len Δ=(v.x, v.y, v.z)|
 ## Properties
-- [CadScript](Line3D/CadScript.md)
-- [Dir](Line3D/Dir.md)
-- [DisambiguatedPoints](Line3D/DisambiguatedPoints.md)
-- [DxfEntity](Line3D/DxfEntity.md)
-- [From](Line3D/From.md)
-- [GeomFrom](Line3D/GeomFrom.md)
-- [GeomTo](Line3D/GeomTo.md)
-- [Inverted](Line3D/Inverted.md)
-- [Length](Line3D/Length.md)
-- [MidPoint](Line3D/MidPoint.md)
-- [Points](Line3D/Points.md)
-- [Swapped](Line3D/Swapped.md)
-- [To](Line3D/To.md)
-- [Type](Line3D/Type.md)
-- [V](Line3D/V.md)
-- [Vertexes](Line3D/Vertexes.md)
+|**Name**|**Summary**|
+|---|---|
+|[CadScript](Line3D/CadScript.md)|
+|[Dir](Line3D/Dir.md)|V normalized
+|[DisambiguatedPoints](Line3D/DisambiguatedPoints.md)|retrieve a unique endpoint representation of this line3d segment (regardless its from-to or to-from order)<br/>            such that From.Distance(Vector3D.Zero) less than To.Distance(Vector3D.Zero)
+|[DxfEntity](Line3D/DxfEntity.md)|
+|[From](Line3D/From.md)|application point vector
+|[GeomFrom](Line3D/GeomFrom.md)|
+|[GeomTo](Line3D/GeomTo.md)|
+|[Inverted](Line3D/Inverted.md)|return inverted segment
+|[Length](Line3D/Length.md)|
+|[MidPoint](Line3D/MidPoint.md)|
+|[Points](Line3D/Points.md)|
+|[Swapped](Line3D/Swapped.md)|return segment with swapped from,to
+|[To](Line3D/To.md)|From + V
+|[Type](Line3D/Type.md)|
+|[V](Line3D/V.md)|vector depart at From to identify To
+|[Vertexes](Line3D/Vertexes.md)|
 ## Fields
 - [XAxisLine](Line3D/XAxisLine.md) (static)
 - [YAxisLine](Line3D/YAxisLine.md) (static)

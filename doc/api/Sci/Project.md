@@ -18,5 +18,7 @@ public class Project
 |[Save](Project/Save.md)||
 |[ToString](Project/ToString.md)||
 ## Properties
-- [MUDomain](Project/MUDomain.md)
+|**Name**|**Summary**|
+|---|---|
+|[MUDomain](Project/MUDomain.md)|
 ## Conversions

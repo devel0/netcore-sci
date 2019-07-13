@@ -20,7 +20,9 @@ public class Plane3D
 |[Intersect](Plane3D/Intersect.md)|return intersection line between two planes or null if they parallels|
 |[ToString](Plane3D/ToString.md)||
 ## Properties
-- [CS](Plane3D/CS.md)
+|**Name**|**Summary**|
+|---|---|
+|[CS](Plane3D/CS.md)|
 ## Fields
 - [XY](Plane3D/XY.md) (static)
 - [XZ](Plane3D/XZ.md) (static)

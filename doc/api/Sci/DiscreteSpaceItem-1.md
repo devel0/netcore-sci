@@ -17,6 +17,8 @@ public class DiscreteSpaceItem
 |[GetType](DiscreteSpaceItem-1/GetType.md)||
 |[ToString](DiscreteSpaceItem-1/ToString.md)||
 ## Properties
-- [Item](DiscreteSpaceItem-1/Item.md)
-- [Mean](DiscreteSpaceItem-1/Mean.md)
+|**Name**|**Summary**|
+|---|---|
+|[Item](DiscreteSpaceItem-1/Item.md)|
+|[Mean](DiscreteSpaceItem-1/Mean.md)|
 ## Conversions

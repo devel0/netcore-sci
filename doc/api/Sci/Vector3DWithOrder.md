@@ -17,6 +17,8 @@ public class Vector3DWithOrder
 |[GetType](Vector3DWithOrder/GetType.md)||
 |[ToString](Vector3DWithOrder/ToString.md)||
 ## Properties
-- [Order](Vector3DWithOrder/Order.md)
-- [Vector](Vector3DWithOrder/Vector.md)
+|**Name**|**Summary**|
+|---|---|
+|[Order](Vector3DWithOrder/Order.md)|
+|[Vector](Vector3DWithOrder/Vector.md)|
 ## Conversions

@@ -22,6 +22,8 @@ public class Int64Map
 |[ToInt64](Int64Map/ToInt64.md)||
 |[ToString](Int64Map/ToString.md)||
 ## Properties
-- [Origin](Int64Map/Origin.md)
-- [Tolerance](Int64Map/Tolerance.md)
+|**Name**|**Summary**|
+|---|---|
+|[Origin](Int64Map/Origin.md)|
+|[Tolerance](Int64Map/Tolerance.md)|
 ## Conversions

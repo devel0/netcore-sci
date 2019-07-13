@@ -17,5 +17,7 @@ public class SampleModel : SearchAThing.Sci.IModel
 |[GetType](SampleModel/GetType.md)||
 |[ToString](SampleModel/ToString.md)||
 ## Properties
-- [MUDomain](SampleModel/MUDomain.md)
+|**Name**|**Summary**|
+|---|---|
+|[MUDomain](SampleModel/MUDomain.md)|
 ## Conversions

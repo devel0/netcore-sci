@@ -13,5 +13,7 @@ public interface IModel
 |**Name**|**Summary**|
 |---|---|
 ## Properties
-- [MUDomain](IModel/MUDomain.md)
+|**Name**|**Summary**|
+|---|---|
+|[MUDomain](IModel/MUDomain.md)|
 ## Conversions

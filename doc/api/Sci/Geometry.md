@@ -19,10 +19,12 @@ public abstract class Geometry
 |[GetType](Geometry/GetType.md)||
 |[ToString](Geometry/ToString.md)||
 ## Properties
-- [DxfEntity](Geometry/DxfEntity.md)
-- [GeomFrom](Geometry/GeomFrom.md)
-- [GeomTo](Geometry/GeomTo.md)
-- [Length](Geometry/Length.md)
-- [Type](Geometry/Type.md)
-- [Vertexes](Geometry/Vertexes.md)
+|**Name**|**Summary**|
+|---|---|
+|[DxfEntity](Geometry/DxfEntity.md)|
+|[GeomFrom](Geometry/GeomFrom.md)|
+|[GeomTo](Geometry/GeomTo.md)|
+|[Length](Geometry/Length.md)|
+|[Type](Geometry/Type.md)|
+|[Vertexes](Geometry/Vertexes.md)|
 ## Conversions

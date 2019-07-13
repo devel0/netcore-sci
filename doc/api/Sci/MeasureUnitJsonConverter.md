@@ -20,6 +20,8 @@ public class MeasureUnitJsonConverter : Newtonsoft.Json.JsonConverter
 |[ToString](MeasureUnitJsonConverter/ToString.md)||
 |[WriteJson](MeasureUnitJsonConverter/WriteJson.md)||
 ## Properties
-- [CanRead](MeasureUnitJsonConverter/CanRead.md)
-- [CanWrite](MeasureUnitJsonConverter/CanWrite.md)
+|**Name**|**Summary**|
+|---|---|
+|[CanRead](MeasureUnitJsonConverter/CanRead.md)|
+|[CanWrite](MeasureUnitJsonConverter/CanWrite.md)|
 ## Conversions
