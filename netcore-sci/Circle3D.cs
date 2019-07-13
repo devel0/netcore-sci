@@ -135,9 +135,11 @@ namespace SearchAThing
             /// <summary>
             /// intersect this 3d circle with given 3d line
             /// </summary>            
-            public override IEnumerable<Vector3D> Intersect(double tol, Line3D l, bool segment_mode = false)
+            public override IEnumerable<Vector3D> Intersect(double tol, Line3D l, 
+                bool only_perimeter = true,
+                bool segment_mode = false)
             {
-                return base.Intersect(tol, l, segment_mode, circle_mode: true);
+                return base.Intersect(tol, l, only_perimeter, segment_mode, circle_mode: true);
             }
 
             public double Area { get { return PI * Radius * Radius; } }

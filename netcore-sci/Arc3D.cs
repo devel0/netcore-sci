@@ -49,7 +49,7 @@ namespace SearchAThing
                 AngleEnd = angleRadEnd.NormalizeAngle2PI(tol_rad);
                 CS = cs;
                 Radius = r;
-            }            
+            }
 
             /// <summary>
             /// helper to build circle by given 3 points
@@ -265,7 +265,8 @@ namespace SearchAThing
             /// <param name="inArcAngleRange">true if point angle must contained in arc angles, false to test like a circle</param>
             /// <param name="onlyPerimeter">true to test point contained only in perimeter, false to test also contained in area</param>
             /// <returns></returns>//         
-            protected bool Contains(double tol_len, Vector3D pt, bool inArcAngleRange, bool onlyPerimeter)
+            protected bool Contains(double tol_len, Vector3D pt,
+                bool inArcAngleRange, bool onlyPerimeter)
             {
                 var onplane = pt.ToUCS(CS).Z.EqualsTol(tol_len, 0);
                 var center_dst = pt.Distance(CS.Origin);
@@ -290,10 +291,8 @@ namespace SearchAThing
             /// <param name="tol">length tolerance</param>
             /// <param name="pt">point to check</param>
             /// <param name="onlyPerimeter">if true it checks if point is on perimeter; if false it will check in area too</param>
-            public virtual bool Contains(double tol, Vector3D pt, bool onlyPerimeter)
-            {
-                return Contains(tol, pt, true, onlyPerimeter);
-            }
+            public virtual bool Contains(double tol, Vector3D pt, bool onlyPerimeter) =>
+                Contains(tol, pt, true, onlyPerimeter);
 
             public Vector3D Center { get { return CS.Origin; } }
 
@@ -432,25 +431,49 @@ namespace SearchAThing
             /// <param name="l">line to test intersect</param>
             /// <param name="segment_mode">if true line treat as segment instead of infinite</param>            
             /// <param name="circle_mode">if true arc treat as circle</param>            
-            protected IEnumerable<Vector3D> Intersect(double tol, Line3D l, bool segment_mode = false,
-                bool circle_mode = false)
+            protected IEnumerable<Vector3D> Intersect(double tol, Line3D l,
+                bool only_perimeter,
+                bool segment_mode,
+                bool circle_mode)
             {
-                var q = IntersectCircle(tol, l, segment_mode);
-                if (q == null) yield break;
+                var cmp = new Vector3DEqualityComparer(tol);
+                var res = new HashSet<Vector3D>(cmp);
 
-                if (circle_mode)
-                    q = q.Where(r => this.Contains(tol, r, inArcAngleRange: false, onlyPerimeter: true)).ToList();
-                else
-                    q = q.Where(r => this.Contains(tol, r, onlyPerimeter: true)).ToList();
-                if (q.Count() == 0) yield break;
+                foreach (var x in IntersectCircle(tol, l, segment_mode))
+                {
+                    res.Add(x);
+                }
 
-                foreach (var x in q) yield return x;
+                if (!only_perimeter)
+                {
+                    var c_f = new Line3D(Center, From);
+                    {
+                        var q_c_f = c_f.Intersect(tol, l);
+                        if (q_c_f != null) res.Add(q_c_f);
+                    }
+
+                    if (!circle_mode)
+                    {
+                        var c_e = new Line3D(Center, To);
+                        {
+                            var q_c_e = c_e.Intersect(tol, l);
+                            if (q_c_e != null) res.Add(q_c_e);
+                        }
+                    }
+                }
+
+                if (!circle_mode)
+                    return res.Where(r => this.Contains(tol, r, onlyPerimeter: only_perimeter));
+
+                return res;
             }
 
-            public virtual IEnumerable<Vector3D> Intersect(double tol, Line3D l, bool segment_mode = false)
-            {
-                return Intersect(tol, l, segment_mode: segment_mode, circle_mode: false);
-            }
+            public virtual IEnumerable<Vector3D> Intersect(double tol, Line3D l,
+                bool only_perimeter = true, bool segment_mode = false) =>
+                Intersect(tol, l,
+                    only_perimeter: only_perimeter,
+                    segment_mode: segment_mode,
+                    circle_mode: false);
 
             /// <summary>
             /// find ips of intersect this arc to the given cs plane; 
@@ -460,13 +483,17 @@ namespace SearchAThing
             /// </summary>
             /// <param name="tol">len tolerance</param>
             /// <param name="cs">cs xy plane</param>
-            public IEnumerable<Vector3D> Intersect(double tol, CoordinateSystem3D cs)
+            public IEnumerable<Vector3D> Intersect(double tol, CoordinateSystem3D cs,
+                bool only_perimeter = true)
             {
                 if (this.CS.IsParallelTo(tol, cs)) yield break;
 
-// TODO: intersect two ortho cs
                 var iLine = this.CS.Intersect(tol, cs);
-                foreach (var x in this.Intersect(tol, iLine, segment_mode: false, circle_mode: false))
+
+                foreach (var x in this.Intersect(tol, iLine,
+                    only_perimeter: only_perimeter,
+                    segment_mode: false,
+                    circle_mode: false))
                     yield return x;
             }
 
@@ -546,7 +573,7 @@ namespace SearchAThing
     }
 
     public static partial class SciExt
-    {        
+    {
 
         /// <summary>
         /// compute angle rad tolerance by given arc length tolerance
