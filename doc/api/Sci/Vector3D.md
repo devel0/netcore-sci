@@ -22,12 +22,12 @@ public class Vector3D : SearchAThing.Sci.Geometry
 |[Convert](Vector3D/Convert.md)|convert each vector component value from to measure units|
 |[Convert](Vector3D/Convert.md#convertmeasureunit-imudomain)|convert each vector component value from to measure units<br/>            to measure unit is given from the correspondent physical quantity measure unit of from mu|
 |[Convert](Vector3D/Convert.md#convertimudomain-measureunit)|convert each vector component value from to measure units<br/>            from measure unit is given from the correspondent physical quantity measure unit of to mu|
-|[CrossProduct](Vector3D/CrossProduct.md)|Cross product ( not normalized ) ;            <br/>            a x b = |a| |b| sin(alfa) N ;        <br/>            a x b = |  x  y  z |<br/>                    | ax ay az |<br/>                    | bx by bz |            <br/>            [reference](https://en.wikipedia.org/wiki/Cross_product) ;|
+|[CrossProduct](Vector3D/CrossProduct.md)|Cross product ( not normalized ) ;            <br/>            a x b = \|a\| \|b\| sin(alfa) N ;        <br/>            a x b = \|  x  y  z \|<br/>                    \| ax ay az \|<br/>                    \| bx by bz \|            <br/>            [reference](https://en.wikipedia.org/wiki/Cross_product) ;|
 |[Distance](Vector3D/Distance.md)|compute distance between this point and the other given|
 |[Distance](Vector3D/Distance.md#distancedouble-line3d)|compute perpendicular(min) distance of this point from given line|
 |[Distance2D](Vector3D/Distance2D.md)|compute distance of this point from the given in 2d ( x,y ) without consider z component|
 |[Divide](Vector3D/Divide.md)|Divide this point returning itself.<br/>            ( Geometry Divide implementation )|
-|[DotProduct](Vector3D/DotProduct.md)|compute dot product of this vector for the given one            <br/>            a b = |a| |b| cos(alfa)|
+|[DotProduct](Vector3D/DotProduct.md)|compute dot product of this vector for the given one            <br/>            a b = \|a\| \|b\| cos(alfa)|
 |[Equals](Vector3D/Equals.md)||
 |[EqualsAutoTol](Vector3D/EqualsAutoTol.md)|check if this vector equals the given one component by component using EqualsAutoTol|
 |[EqualsTol](Vector3D/EqualsTol.md)|checks vector component equality vs other given|
