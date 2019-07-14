@@ -6,8 +6,6 @@ Cross product ( not normalized ) ;
                     | ax ay az |
                     | bx by bz |            
             [reference](https://en.wikipedia.org/wiki/Cross_product) ;
-            [unit test](/test/Vector3D/Vector3DTest_0019.cs)
-            ![](/test/Vector3D/Vector3DTest_0019.png)
 
 ### Signature
 ```csharp
@@ -19,4 +17,5 @@ public SearchAThing.Sci.Vector3D CrossProduct(Vector3D other)
 ### Returns
 
 ### Remarks
-
+[unit test](/test/Vector3D/Vector3DTest_0019.cs)
+            ![](/test/Vector3D/Vector3DTest_0019.png)

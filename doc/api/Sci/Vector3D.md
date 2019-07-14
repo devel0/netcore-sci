@@ -14,37 +14,37 @@ public class Vector3D : SearchAThing.Sci.Geometry
 |---|---|
 |[AngleRad](Vector3D/AngleRad.md)|angle between this and given vector|
 |[AngleToward](Vector3D/AngleToward.md)|compute angle required to make this point go to the given one<br/>            if rotate right-hand around given reference axis|
-|[Axis](Vector3D/Axis.md) (static)|retrieve wcs axis by given index<br/>            [unit test](/test/Vector3D/Vector3DTest_0004.cs)|
-|[BBox](Vector3D/BBox.md)|Compute bbox of this point.<br/>            ( Geometry BBox implementation ).<br/>            [unit test](/test/Vector3D/Vector3DTest_0002.cs)|
+|[Axis](Vector3D/Axis.md) (static)|retrieve wcs axis by given index|
+|[BBox](Vector3D/BBox.md)|Compute bbox of this point.<br/>            ( Geometry BBox implementation ).|
 |[Colinear](Vector3D/Colinear.md)|states if this vector is colinear to the given one|
 |[Concordant](Vector3D/Concordant.md)|states if this vector concord to the given one<br/>            <br/>            **NOTE**: it does not test two vectors are parallels ( precondition must meet )|
 |[ConcordantColinear](Vector3D/ConcordantColinear.md)|statis if this vector is concordant and colinear to the given one|
 |[Convert](Vector3D/Convert.md)|convert each vector component value from to measure units|
 |[Convert](Vector3D/Convert.md#convertmeasureunit-imudomain)|convert each vector component value from to measure units<br/>            to measure unit is given from the correspondent physical quantity measure unit of from mu|
 |[Convert](Vector3D/Convert.md#convertimudomain-measureunit)|convert each vector component value from to measure units<br/>            from measure unit is given from the correspondent physical quantity measure unit of to mu|
-|[CrossProduct](Vector3D/CrossProduct.md)|Cross product ( not normalized ) ;            <br/>            a x b = |a| |b| sin(alfa) N ;        <br/>            a x b = |  x  y  z |<br/>                    | ax ay az |<br/>                    | bx by bz |            <br/>            [reference](https://en.wikipedia.org/wiki/Cross_product) ;<br/>            [unit test](/test/Vector3D/Vector3DTest_0019.cs)<br/>            ![](/test/Vector3D/Vector3DTest_0019.png)|
-|[Distance](Vector3D/Distance.md)|compute distance between this point and the other given            <br/>            [unit test](/test/Vector3D/Vector3DTest_0014.cs)|
-|[Distance](Vector3D/Distance.md#distancedouble-line3d)|compute perpendicular(min) distance of this point from given line<br/>            [unit test](/test/Vector3D/Vector3DTest_0015.cs)<br/>            ![](/test/Vector3D/Vector3DTest_0015.png)|
-|[Distance2D](Vector3D/Distance2D.md)|compute distance of this point from the given in 2d ( x,y ) without consider z component<br/>            [unit test](/test/Vector3D/Vector3DTest_0016.cs)<br/>            ![](/test/Vector3D/Vector3DTest_0016.png)|
-|[Divide](Vector3D/Divide.md)|Divide this point returning itself.<br/>            ( Geometry Divide implementation )<br/>            [unit test](/test/Vector3D/Vector3DTest_0002.cs)|
-|[DotProduct](Vector3D/DotProduct.md)|compute dot product of this vector for the given one            <br/>            a b = |a| |b| cos(alfa)<br/>            [unit test](/test/Vector3D/Vector3DTest_0017.cs)|
+|[CrossProduct](Vector3D/CrossProduct.md)|Cross product ( not normalized ) ;            <br/>            a x b = |a| |b| sin(alfa) N ;        <br/>            a x b = |  x  y  z |<br/>                    | ax ay az |<br/>                    | bx by bz |            <br/>            [reference](https://en.wikipedia.org/wiki/Cross_product) ;|
+|[Distance](Vector3D/Distance.md)|compute distance between this point and the other given|
+|[Distance](Vector3D/Distance.md#distancedouble-line3d)|compute perpendicular(min) distance of this point from given line|
+|[Distance2D](Vector3D/Distance2D.md)|compute distance of this point from the given in 2d ( x,y ) without consider z component|
+|[Divide](Vector3D/Divide.md)|Divide this point returning itself.<br/>            ( Geometry Divide implementation )|
+|[DotProduct](Vector3D/DotProduct.md)|compute dot product of this vector for the given one            <br/>            a b = |a| |b| cos(alfa)|
 |[Equals](Vector3D/Equals.md)||
-|[EqualsAutoTol](Vector3D/EqualsAutoTol.md)|check if this vector equals the given one component by component using EqualsAutoTol<br/>            [unit test](/test/Vector3D/Vector3DTest_0012.cs)|
-|[EqualsTol](Vector3D/EqualsTol.md)|checks vector component equality vs other given           <br/>            [unit test](/test/Vector3D/Vector3DTest_0012.cs)|
-|[EqualsTol](Vector3D/EqualsTol.md#equalstoldouble-double-double)|checks only x,y<br/>            [unit test](/test/Vector3D/Vector3DTest_0012.cs)|
-|[EqualsTol](Vector3D/EqualsTol.md#equalstoldouble-double-double-double)|checks vector component equality vs other given            <br/>            [unit test](/test/Vector3D/Vector3DTest_0012.cs)|
+|[EqualsAutoTol](Vector3D/EqualsAutoTol.md)|check if this vector equals the given one component by component using EqualsAutoTol|
+|[EqualsTol](Vector3D/EqualsTol.md)|checks vector component equality vs other given|
+|[EqualsTol](Vector3D/EqualsTol.md#equalstoldouble-double-double)|checks only x,y|
+|[EqualsTol](Vector3D/EqualsTol.md#equalstoldouble-double-double-double)|checks vector component equality vs other given|
 |[From2DCoords](Vector3D/From2DCoords.md) (static)|Create an array of Vector3D from given list of 2d coords ( eg. { 100, 200, 300, 400 }<br/>            will create follow list of vector3d = { (100,200,0), (300,400,0) }|
 |[From3DCoords](Vector3D/From3DCoords.md) (static)|Create an array of Vector3D from given list of 3d coords ( eg. { 100, 200, 10, 300, 400, 20 }<br/>            will create follow list of vector3d = { (100,200,10), (300,400,20) }|
 |[FromString](Vector3D/FromString.md) (static)|parse vector3d from string format "(x y z)" or "(x,y,z)" invariant type|
 |[FromStringArray](Vector3D/FromStringArray.md) (static)|parse vector3d from array "(x1,y1,z1);(x2,y2,z2)"|
 |[GetHashCode](Vector3D/GetHashCode.md)||
-|[GetOrd](Vector3D/GetOrd.md)|retrieve the component (0:X, 1:Y, 2:Z)<br/>            [unit test](/test/Vector3D/Vector3DTest_0003.cs)|
-|[GetOrd](Vector3D/GetOrd.md#getordordidx)|retrieve the component (0:X, 1:Y, 2:Z)<br/>            [unit test](/test/Vector3D/Vector3DTest_0003.cs)|
+|[GetOrd](Vector3D/GetOrd.md)|retrieve the component (0:X, 1:Y, 2:Z)|
+|[GetOrd](Vector3D/GetOrd.md#getordordidx)|retrieve the component (0:X, 1:Y, 2:Z)|
 |[GetType](Vector3D/GetType.md)||
 |[IsParallelTo](Vector3D/IsParallelTo.md)|Note: tol must be Constants.NormalizedLengthTolerance<br/>            if comparing normalized vectors|
-|[IsPerpendicular](Vector3D/IsPerpendicular.md)|states is this vector is perpendicular to the given one<br/>            [unit test](/test/Vector3D/Vector3DTest_0018.cs)|
+|[IsPerpendicular](Vector3D/IsPerpendicular.md)|states is this vector is perpendicular to the given one|
 |[Mirror](Vector3D/Mirror.md)|mirror this point about given axis|
-|[Normalized](Vector3D/Normalized.md)|create a normalized version of this vector<br/>            [unit test](/test/Vector3D/Vector3DTest_0013.cs)|
+|[Normalized](Vector3D/Normalized.md)|create a normalized version of this vector|
 |[Project](Vector3D/Project.md)|project this vector to the given one|
 |[Project](Vector3D/Project.md#projectline3d)|project this point to the given line|
 |[Random](Vector3D/Random.md) (static)||
@@ -72,17 +72,17 @@ public class Vector3D : SearchAThing.Sci.Geometry
 |[CadScript](Vector3D/CadScript.md)|cad script for this vector as wcs point
 |[CadScriptLine](Vector3D/CadScriptLine.md)|cad script for a line (0,0,0) to this vector
 |[CadScriptLineFrom](Vector3D/CadScriptLineFrom.md)|cad script for a line departing from this wcs point
-|[Coordinates](Vector3D/Coordinates.md)|enumerate coordinates<br/>            [unit test](/test/Vector3D/Vector3DTest_0010.cs)
-|[DxfEntity](Vector3D/DxfEntity.md)|Create dxf point entity suitable for netDxf addEntity.<br/>            ( Geometry DxfEntity implementation )<br/>            [unit test](/test/Vector3D/Vector3DTest_0002.cs)
-|[GeomFrom](Vector3D/GeomFrom.md)|This vector.<br/>            ( Geometry GeomFrom implementation )<br/>            [unit test](/test/Vector3D/Vector3DTest_0002.cs)
-|[GeomTo](Vector3D/GeomTo.md)|This vector.<br/>            ( Geometry GeomTo implementation) <br/>            [unit test](/test/Vector3D/Vector3DTest_0002.cs)
-|[IsZeroLength](Vector3D/IsZeroLength.md)|states if this is a zero vector<br/>            [unit test](/test/Vector3D/Vector3DTest_0011.cs)
-|[Length](Vector3D/Length.md)|Length of this vector.<br/>            ( Geometry Length implementation )<br/>            [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+|[Coordinates](Vector3D/Coordinates.md)|enumerate coordinates
+|[DxfEntity](Vector3D/DxfEntity.md)|Create dxf point entity suitable for netDxf addEntity.<br/>            ( Geometry DxfEntity implementation )
+|[GeomFrom](Vector3D/GeomFrom.md)|This vector.<br/>            ( Geometry GeomFrom implementation )
+|[GeomTo](Vector3D/GeomTo.md)|This vector.<br/>            ( Geometry GeomTo implementation)
+|[IsZeroLength](Vector3D/IsZeroLength.md)|states if this is a zero vector
+|[Length](Vector3D/Length.md)|Length of this vector.<br/>            ( Geometry Length implementation )
 |[Type](Vector3D/Type.md)|
-|[Vertexes](Vector3D/Vertexes.md)|Enumerable with only this vector.<br/>            ( Geometry Vertexes implementation )<br/>            [unit test](/test/Vector3D/Vector3DTest_0002.cs)
-|[X](Vector3D/X.md)|X vector component<br/>            [unit test](/test/Vector3D/Vector3DTest_0005.cs)
-|[Y](Vector3D/Y.md)|Y vector component<br/>            [unit test](/test/Vector3D/Vector3DTest_0005.cs)
-|[Z](Vector3D/Z.md)|Z vector component<br/>            [unit test](/test/Vector3D/Vector3DTest_0005.cs)
+|[Vertexes](Vector3D/Vertexes.md)|Enumerable with only this vector.<br/>            ( Geometry Vertexes implementation )
+|[X](Vector3D/X.md)|X vector component
+|[Y](Vector3D/Y.md)|Y vector component
+|[Z](Vector3D/Z.md)|Z vector component
 ## Fields
 - [XAxis](Vector3D/XAxis.md) (static)
 - [YAxis](Vector3D/YAxis.md) (static)

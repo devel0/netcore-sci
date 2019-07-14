@@ -1,7 +1,6 @@
 # SearchAThing.Sci.Vector3D.Axis method
 ## Axis(int)
 retrieve wcs axis by given index
-            [unit test](/test/Vector3D/Vector3DTest_0004.cs)
 
 ### Signature
 ```csharp
@@ -13,4 +12,4 @@ public static SearchAThing.Sci.Vector3D Axis(int ord)
 ### Returns
 
 ### Remarks
-
+[unit test](/test/Vector3D/Vector3DTest_0004.cs)

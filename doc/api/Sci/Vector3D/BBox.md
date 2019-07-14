@@ -2,7 +2,6 @@
 ## BBox(double)
 Compute bbox of this point.
             ( Geometry BBox implementation ).
-            [unit test](/test/Vector3D/Vector3DTest_0002.cs)
 
 ### Signature
 ```csharp
@@ -14,4 +13,4 @@ public virtual SearchAThing.Sci.BBox3D BBox(double tol_len)
 ### Returns
 
 ### Remarks
-
+[unit test](/test/Vector3D/Vector3DTest_0002.cs)

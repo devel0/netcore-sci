@@ -60,7 +60,7 @@ public static class SciExt
 |[GetType](SciExt/GetType.md)||
 |[Intersect](SciExt/Intersect.md) (static)|Find intersection points (0,1,2) of the given line with the given polygon<br/>            TODO unit test|
 |[IsAClosedPoly](SciExt/IsAClosedPoly.md) (static)|Preprocess segs with SortPoly if needed.<br/>            Return the ordered segments poly or null if not a closed poly.|
-|[IsLinearIndependent](SciExt/IsLinearIndependent.md) (static)|states if given 3 vectors are linearly independent<br/>            [unit test](/test/Vector3D/Vector3DTest_0001.cs)|
+|[IsLinearIndependent](SciExt/IsLinearIndependent.md) (static)|states if given 3 vectors are linearly independent|
 |[Length](SciExt/Length.md) (static)|compute length of polyline from given seq_pts|
 |[Mean](SciExt/Mean.md) (static)|mean of given vetor3d list<br/>            note: if used to compute poly center enable skipFirstAtEnd|
 |[MergeColinearSegments](SciExt/MergeColinearSegments.md) (static)|merge colinear overlapped segments into single<br/>            result segments direction and order is not ensured<br/>            pre: segs must colinear|

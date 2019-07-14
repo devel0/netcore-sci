@@ -1,7 +1,6 @@
 # SearchAThing.Sci.Vector3D.Distance method
 ## Distance(Vector3D)
-compute distance between this point and the other given            
-            [unit test](/test/Vector3D/Vector3DTest_0014.cs)
+compute distance between this point and the other given
 
 ### Signature
 ```csharp
@@ -10,11 +9,9 @@ public double Distance(Vector3D other)
 ### Returns
 
 ### Remarks
-
+[unit test](/test/Vector3D/Vector3DTest_0014.cs)
 ## Distance(double, Line3D)
 compute perpendicular(min) distance of this point from given line
-            [unit test](/test/Vector3D/Vector3DTest_0015.cs)
-            ![](/test/Vector3D/Vector3DTest_0015.png)
 
 ### Signature
 ```csharp
@@ -27,4 +24,5 @@ public double Distance(double tol, Line3D other)
 ### Returns
 
 ### Remarks
-
+[unit test](/test/Vector3D/Vector3DTest_0015.cs)
+            ![](/test/Vector3D/Vector3DTest_0015.png)

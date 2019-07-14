@@ -14,7 +14,7 @@ public class CoordinateSystem3D
 |---|---|
 |[Contains](CoordinateSystem3D/Contains.md)|verify if this cs XY plane contains given wcs point|
 |[Equals](CoordinateSystem3D/Equals.md)||
-|[Equals](CoordinateSystem3D/Equals.md#equalsdouble-coordinatesystem3d)|verify is this cs is equals to otherByLayer ( same origin, x, y, z base vectors )<br/>            [unit test](/test/Vector3D/Vector3DTest_0001.cs)|
+|[Equals](CoordinateSystem3D/Equals.md#equalsdouble-coordinatesystem3d)|verify is this cs is equals to otherByLayer ( same origin, x, y, z base vectors )|
 |[GetHashCode](CoordinateSystem3D/GetHashCode.md)||
 |[GetType](CoordinateSystem3D/GetType.md)||
 |[Intersect](CoordinateSystem3D/Intersect.md)|return intersect line between two cs xy planes|

@@ -1,7 +1,6 @@
 # SearchAThing.Sci.Transform3D.RotateAboutXAxis method
 ## RotateAboutXAxis(double)
 add rotation about X axis of given angle to the current rotation matrix
-            [unit test](/test/Transform3D/Transform3DTest_0001.cs)
 
 ### Signature
 ```csharp
@@ -13,4 +12,4 @@ public void RotateAboutXAxis(double angleRad)
 ### Returns
 
 ### Remarks
-
+[unit test](/test/Transform3D/Transform3DTest_0001.cs)

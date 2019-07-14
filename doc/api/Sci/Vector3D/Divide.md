@@ -2,7 +2,6 @@
 ## Divide(int, bool)
 Divide this point returning itself.
             ( Geometry Divide implementation )
-            [unit test](/test/Vector3D/Vector3DTest_0002.cs)
 
 ### Signature
 ```csharp
@@ -11,4 +10,4 @@ public virtual System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D>
 ### Returns
 
 ### Remarks
-
+[unit test](/test/Vector3D/Vector3DTest_0002.cs)

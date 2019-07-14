@@ -6,7 +6,6 @@ public override bool Equals(object obj)
 ```
 ## Equals(double, CoordinateSystem3D)
 verify is this cs is equals to otherByLayer ( same origin, x, y, z base vectors )
-            [unit test](/test/Vector3D/Vector3DTest_0001.cs)
 
 ### Signature
 ```csharp
@@ -19,4 +18,4 @@ public bool Equals(double tol, CoordinateSystem3D other)
 ### Returns
 true if this cs equals the given on, false otherwise
 ### Remarks
-
+[unit test](/test/Vector3D/Vector3DTest_0001.cs)

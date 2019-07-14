@@ -1,7 +1,6 @@
 # GeomTo property (SearchAThing.Sci.Vector3D)
 This vector.
-            ( Geometry GeomTo implementation) 
-            [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+            ( Geometry GeomTo implementation)
 
 ## Signature
 ```csharp

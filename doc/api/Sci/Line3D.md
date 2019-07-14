@@ -12,7 +12,7 @@ public class Line3D : SearchAThing.Sci.Geometry
 ## Methods
 |**Name**|**Summary**|
 |---|---|
-|[ApparentIntersect](Line3D/ApparentIntersect.md)|Find apparent intersection between this and given other line<br/>            returning (shortest) segment perpendicular to either lines or null if lines parallels.<br/>            This method will used from Intersect to find intersection between lines when<br/>            perpendicular segment length not exceed given length tolerance.<br/>            [unit test](/test/Line3D/Line3DTest_0001.cs)<br/>            ![](/test/Line3D/Line3DTest_0001.png)|
+|[ApparentIntersect](Line3D/ApparentIntersect.md)|Find apparent intersection between this and given other line<br/>            returning (shortest) segment perpendicular to either lines or null if lines parallels.<br/>            This method will used from Intersect to find intersection between lines when<br/>            perpendicular segment length not exceed given length tolerance.|
 |[BBox](Line3D/BBox.md)||
 |[Bisect](Line3D/Bisect.md)|returns bisect of two given segment/lines<br/>            ( if given segment not share nodes but intesects returned bisect start from ip )<br/>            bisect choosen will be the one between this and other withing shortest angle<br/>            <br/>            if two given lines are parallel and parallelRotationAxis is given then<br/>            bisect results as this segment rotated PI/2 about given axis using To as rotcenter|
 |[Colinear](Line3D/Colinear.md)||
