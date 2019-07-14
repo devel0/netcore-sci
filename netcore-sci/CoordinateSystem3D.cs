@@ -69,8 +69,10 @@ namespace SearchAThing
 
             /// <summary>
             /// world cs : basex=(1,0,0) basey=(0,1,0) basez=(0,0,1)
-            /// [unit test](/test/Vector3D/Vector3DTest_0001.cs)
             /// </summary>
+            /// <remarks>      
+            /// [unit test](/test/Vector3D/Vector3DTest_0001.cs)
+            /// </remarks>
             public static readonly CoordinateSystem3D WCS = XY;
 
             /// <summary>
@@ -196,12 +198,14 @@ namespace SearchAThing
             }
 
             /// <summary>
-            /// verify is this cs is equals to otherByLayer ( same origin, x, y, z base vectors )
-            /// [unit test](/test/Vector3D/Vector3DTest_0001.cs)
-            /// </summary>
+            /// verify is this cs is equals to otherByLayer ( same origin, x, y, z base vectors )            
+            /// </summary>            
             /// <param name="tol">calc tolerance ( for origin check )</param>
             /// <param name="other">cs to check equality against</param>
             /// <returns>true if this cs equals the given on, false otherwise</returns>
+            /// <remarks>      
+            /// [unit test](/test/Vector3D/Vector3DTest_0001.cs)
+            /// </remarks>
             public bool Equals(double tol, CoordinateSystem3D other)
             {
                 return Origin.EqualsTol(tol, other.Origin) &&
