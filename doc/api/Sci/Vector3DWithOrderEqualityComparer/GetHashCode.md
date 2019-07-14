@@ -1,4 +1,9 @@
 # SearchAThing.Sci.Vector3DWithOrderEqualityComparer.GetHashCode method
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## GetHashCode()
 ### Signature
 ```csharp

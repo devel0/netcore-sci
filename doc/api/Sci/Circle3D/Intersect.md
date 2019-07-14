@@ -1,4 +1,9 @@
 # SearchAThing.Sci.Circle3D.Intersect method
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## Intersect(double, CoordinateSystem3D, bool)
 find ips of intersect this arc to the given cs plane; 
             return empty set if arc cs plane parallel to other given cs

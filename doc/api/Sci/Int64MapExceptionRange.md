@@ -9,6 +9,10 @@
 ```csharp
 public class Int64MapExceptionRange : System.Exception, System.Runtime.Serialization.ISerializable
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[Int64MapExceptionRange(string)](Int64MapExceptionRange/ctors.md)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

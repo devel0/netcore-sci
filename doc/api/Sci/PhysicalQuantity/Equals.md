@@ -4,6 +4,11 @@
 ```csharp
 public virtual bool Equals(PhysicalQuantity other)
 ```
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## Equals(object)
 ### Signature
 ```csharp

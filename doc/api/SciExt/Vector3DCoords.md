@@ -10,6 +10,11 @@ public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D> 
 
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## Vector3DCoords(LwPolyline)
 enumerate as Vector3D given dxf lwpolyline vertexes
 

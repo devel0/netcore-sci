@@ -9,6 +9,10 @@
 ```csharp
 public class Line3DEqualityComparer : System.Collections.Generic.IEqualityComparer<SearchAThing.Sci.Line3D>
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[Line3DEqualityComparer(double)](Line3DEqualityComparer/ctors.md)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

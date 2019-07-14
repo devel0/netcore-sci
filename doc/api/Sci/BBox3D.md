@@ -9,6 +9,11 @@
 ```csharp
 public class BBox3D
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[BBox3D()](BBox3D/ctors.md)||
+|[BBox3D(IEnumerable<SearchAThing.Sci.Vector3D>)](BBox3D/ctors.md#bbox3dienumerablesearchathingscivector3d)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

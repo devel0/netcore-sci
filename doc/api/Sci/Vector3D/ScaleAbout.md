@@ -10,6 +10,11 @@ public SearchAThing.Sci.Vector3D ScaleAbout(Vector3D origin, double factor)
 
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## ScaleAbout(Vector3D, Vector3D)
 Scale this point about the given origin with the given factor as (sx,sy,sz).
 

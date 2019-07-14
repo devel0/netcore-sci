@@ -10,6 +10,11 @@ public static SearchAThing.Sci.Measure operator *(double s, Measure v)
 
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## operator *(Measure, double)
 scalar mul
 

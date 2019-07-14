@@ -12,6 +12,11 @@ public bool SegmentContainsPoint(double tol, Vector3D p, bool excludeExtreme = F
 
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## SegmentContainsPoint(double, double, double, double)
 Finite segment contains point.
             Note: tol must be Constant.NormalizedLengthTolerance

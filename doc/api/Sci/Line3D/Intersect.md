@@ -1,4 +1,9 @@
 # SearchAThing.Sci.Line3D.Intersect method
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## Intersect(double, CoordinateSystem3D)
 returns null if this line is parallel to the cs xy plane,
             the intersection point otherwise
@@ -10,6 +15,11 @@ public SearchAThing.Sci.Vector3D Intersect(double tol, CoordinateSystem3D cs)
 ### Returns
 
 ### Remarks
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
 
 ## Intersect(double, Plane3D)
 returns null if this line is parallel to the plane,
@@ -36,6 +46,11 @@ public SearchAThing.Sci.Vector3D Intersect(double tol, Line3D other, LineInterse
 ### Returns
 
 ### Remarks
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
 
 ## Intersect(double, Line3D, bool, bool)
 Intersects two lines with arbitrary segment mode for each.

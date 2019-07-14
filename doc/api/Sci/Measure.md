@@ -9,6 +9,10 @@
 ```csharp
 public class Measure
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[Measure(double, MeasureUnit)](Measure/ctors.md)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

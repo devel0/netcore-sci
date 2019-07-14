@@ -9,6 +9,10 @@
 ```csharp
 public class Vector3DEqualityComparer : System.Collections.Generic.IEqualityComparer<SearchAThing.Sci.Vector3D>
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[Vector3DEqualityComparer(double)](Vector3DEqualityComparer/ctors.md)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

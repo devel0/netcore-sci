@@ -9,6 +9,10 @@
 ```csharp
 public class PhysicalQuantity : System.IEquatable<SearchAThing.Sci.PhysicalQuantity>
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[PhysicalQuantity(string, Type, MeasureUnitConversionTypeEnum)](PhysicalQuantity/ctors.md)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

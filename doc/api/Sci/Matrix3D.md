@@ -9,6 +9,11 @@
 ```csharp
 public class Matrix3D
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[Matrix3D()](Matrix3D/ctors.md)|empty matrix|
+|[Matrix3D(double[])](Matrix3D/ctors.md#matrix3ddouble)|Init matrix using terms m00 m01 m02 - m10 m11 m12 - m20 m21 m22|
 ## Methods
 |**Name**|**Summary**|
 |---|---|

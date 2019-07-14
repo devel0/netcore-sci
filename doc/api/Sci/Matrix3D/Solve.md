@@ -1,4 +1,9 @@
 # SearchAThing.Sci.Matrix3D.Solve method
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## Solve(Vector3D)
 Solve linear system of eq represented by this matrix
             defined n known term.

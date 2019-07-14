@@ -10,6 +10,11 @@ public double GetOrd(int ord)
 
 ### Remarks
 [unit test](/test/Vector3D/Vector3DTest_0003.cs)
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## GetOrd(OrdIdx)
 retrieve the component (0:X, 1:Y, 2:Z)
 

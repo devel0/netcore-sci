@@ -9,6 +9,11 @@ base geometry for arc 3d entities
 ```csharp
 public class Arc3D : SearchAThing.Sci.Geometry
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[Arc3D(double, CoordinateSystem3D, double, double, double)](Arc3D/ctors.md)|construct 3d arc|
+|[Arc3D(double, Vector3D, Vector3D, Vector3D, Vector3D)](Arc3D/ctors.md#arc3ddouble-vector3d-vector3d-vector3d-vector3d)|Build arc by 3 given points<br/>            ( the inside CS will centered in the arc center and Xaxis toward p1 )|
 ## Methods
 |**Name**|**Summary**|
 |---|---|

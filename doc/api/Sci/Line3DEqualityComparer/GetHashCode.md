@@ -1,4 +1,9 @@
 # SearchAThing.Sci.Line3DEqualityComparer.GetHashCode method
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## GetHashCode()
 ### Signature
 ```csharp

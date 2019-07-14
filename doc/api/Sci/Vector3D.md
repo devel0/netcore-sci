@@ -9,6 +9,14 @@ can be used to describe a wcs point or a vector x,y,z components from some refer
 ```csharp
 public class Vector3D : SearchAThing.Sci.Geometry
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[Vector3D()](Vector3D/ctors.md)|zero vector|
+|[Vector3D(double[])](Vector3D/ctors.md#vector3ddouble)|build a vector (x,y,0) or (x,y,z) from given 2 or 3 doubles|
+|[Vector3D(double, double, double)](Vector3D/ctors.md#vector3ddouble-double-double)|build a vector by given components|
+|[Vector3D(double, double)](Vector3D/ctors.md#vector3ddouble-double)|build a vector (x,y,0) by given components|
+|[Vector3D(string)](Vector3D/ctors.md#vector3dstring)|parse cad id string (eg. "X = 4.11641325 Y = 266.06066703 Z = 11.60392802")<br/>            constructing a point|
 ## Methods
 |**Name**|**Summary**|
 |---|---|

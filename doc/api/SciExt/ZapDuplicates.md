@@ -11,6 +11,11 @@ public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D> 
 
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## ZapDuplicates(IEnumerable<SearchAThing.Sci.Vector3D>, Vector3DEqualityComparer)
 return pts (maintaining order) w/out duplicates
 

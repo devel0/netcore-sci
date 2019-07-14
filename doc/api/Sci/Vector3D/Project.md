@@ -13,6 +13,11 @@ public SearchAThing.Sci.Vector3D Project(Vector3D to)
 projected vector ( will be colinear to the given one )
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## Project(Line3D)
 project this point to the given line
 

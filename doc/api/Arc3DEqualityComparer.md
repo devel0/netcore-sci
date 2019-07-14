@@ -9,6 +9,10 @@ checks if arcs share same plane, origin, radius, angle start-end
 ```csharp
 public class Arc3DEqualityComparer : System.Collections.Generic.IEqualityComparer<SearchAThing.Sci.Arc3D>
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[Arc3DEqualityComparer(double)](Arc3DEqualityComparer/ctors.md)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

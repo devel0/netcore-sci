@@ -10,6 +10,11 @@ public SearchAThing.Sci.CoordinateSystem3D Rotate(Line3D axis, double angleRad)
 
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## Rotate(Vector3D, double)
 return another cs with same origin and base vector rotated about given vector
 

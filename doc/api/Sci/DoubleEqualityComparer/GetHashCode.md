@@ -1,4 +1,9 @@
 # SearchAThing.Sci.DoubleEqualityComparer.GetHashCode method
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## GetHashCode()
 ### Signature
 ```csharp

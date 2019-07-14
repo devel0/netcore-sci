@@ -9,6 +9,10 @@
 ```csharp
 public class MeasureJsonConverter : Newtonsoft.Json.JsonConverter
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[MeasureJsonConverter()](MeasureJsonConverter/ctors.md)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

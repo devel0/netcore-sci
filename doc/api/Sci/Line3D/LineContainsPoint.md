@@ -1,4 +1,9 @@
 # SearchAThing.Sci.Line3D.LineContainsPoint method
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## LineContainsPoint(double, Vector3D, bool, bool)
 Infinite line contains point.
 

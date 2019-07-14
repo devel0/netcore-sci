@@ -9,6 +9,12 @@
 ```csharp
 public class Circle3D : SearchAThing.Sci.Arc3D
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[Circle3D(double, CoordinateSystem3D, double)](Circle3D/ctors.md)||
+|[Circle3D(Arc3D)](Circle3D/ctors.md#circle3darc3d)|create circle from given arc|
+|[Circle3D(Vector3D, Vector3D, Vector3D)](Circle3D/ctors.md#circle3dvector3d-vector3d-vector3d)|Build 3d circle that intersect p1,p2,p3<br/>            ( the inside CS will centered in the circle center and Xaxis toward p1 )|
 ## Methods
 |**Name**|**Summary**|
 |---|---|

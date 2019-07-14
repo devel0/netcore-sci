@@ -10,6 +10,11 @@ public static SearchAThing.Sci.Measure operator *(double value, MeasureUnit mu)
 
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## operator *(Nullable<double>, MeasureUnit)
 ### Signature
 ```csharp

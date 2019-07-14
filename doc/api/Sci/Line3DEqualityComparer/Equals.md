@@ -1,4 +1,9 @@
 # SearchAThing.Sci.Line3DEqualityComparer.Equals method
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## Equals(object)
 ### Signature
 ```csharp

@@ -9,6 +9,10 @@
 ```csharp
 public class Project
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[Project(MUDomain)](Project/ctors.md)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

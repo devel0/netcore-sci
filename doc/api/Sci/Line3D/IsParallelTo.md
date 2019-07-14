@@ -4,6 +4,11 @@
 ```csharp
 public bool IsParallelTo(double tol, CoordinateSystem3D cs)
 ```
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## IsParallelTo(double, Plane3D)
 ### Signature
 ```csharp

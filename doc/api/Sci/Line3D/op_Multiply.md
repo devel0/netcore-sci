@@ -11,6 +11,11 @@ public static SearchAThing.Sci.Line3D operator *(double s, Line3D l)
 
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## operator *(Line3D, double)
 multiply Length by given scalar factor
             Note : this will change To

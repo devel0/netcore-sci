@@ -1,4 +1,9 @@
 # SearchAThing.Sci.Line3D.ToString method
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## ToString()
 build an invariant string representation w/3 digits
             (f.x, f.y, f.z)-(t.x, t.y, t.z) L=len Δ=(v.x, v.y, v.z)
@@ -21,6 +26,11 @@ public string ToString(double tolLen)
 ### Returns
 
 ### Remarks
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
 
 ## ToString(int)
 build an invariant string representation w/given digits

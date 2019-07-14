@@ -9,6 +9,11 @@
 ```csharp
 public class DiscreteSpaceItem
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[DiscreteSpaceItem<T>(T, Func<T, SearchAThing.Sci.Vector3D>)](DiscreteSpaceItem-1/ctors.md)||
+|[DiscreteSpaceItem<T>(T, Func<T, System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D>>)](DiscreteSpaceItem-1/ctors.md#discretespaceitemtt-funct-systemcollectionsgenericienumerablesearchathingscivector3d)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

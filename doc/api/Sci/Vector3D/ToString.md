@@ -11,6 +11,11 @@ public virtual string ToString()
 
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## ToString(int)
 string invariant representation "(x,y,z)" w/given digits
 
@@ -21,6 +26,11 @@ public string ToString(int digits = 3)
 ### Returns
 
 ### Remarks
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
 
 ## ToString(double)
 hash string with given tolerance

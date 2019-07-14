@@ -10,6 +10,11 @@ public static SearchAThing.Sci.Vector3D operator /(double s, Vector3D v)
 
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## operator /(Vector3D, double)
 scalar div
 

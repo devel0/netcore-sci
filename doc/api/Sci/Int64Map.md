@@ -12,6 +12,10 @@ Scan a given domain of doubles, determine the midpoint ( Origin )
 ```csharp
 public class Int64Map
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[Int64Map(double, IEnumerable<double>, bool)](Int64Map/ctors.md)|use small tolerance to avoid lost of precision<br/>            Note: too small tolerance can generate Int64MapExceptionRange|
 ## Methods
 |**Name**|**Summary**|
 |---|---|

@@ -9,6 +9,10 @@
 ```csharp
 public class PythonPipe : System.IDisposable
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[PythonPipe(string, Action<string>, string, bool, string, string)](PythonPipe/ctors.md)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

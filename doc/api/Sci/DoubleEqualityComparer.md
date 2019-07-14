@@ -9,6 +9,10 @@
 ```csharp
 public class DoubleEqualityComparer : System.Collections.Generic.IEqualityComparer<double>
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[DoubleEqualityComparer(double)](DoubleEqualityComparer/ctors.md)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

@@ -9,6 +9,10 @@ support class for DistinctKeepOrder extension
 ```csharp
 public class Vector3DWithOrder
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[Vector3DWithOrder(Vector3D, int)](Vector3DWithOrder/ctors.md)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

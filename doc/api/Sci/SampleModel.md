@@ -9,6 +9,10 @@
 ```csharp
 public class SampleModel : SearchAThing.Sci.IModel
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[SampleModel()](SampleModel/ctors.md)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

@@ -9,6 +9,10 @@
 ```csharp
 public class DiscreteSpaceItemComparer : System.Collections.Generic.IComparer<SearchAThing.Sci.DiscreteSpaceItem<T>>
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[DiscreteSpaceItemComparer<T>(double, int)](DiscreteSpaceItemComparer-1/ctors.md)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

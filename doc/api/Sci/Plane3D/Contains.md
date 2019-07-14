@@ -10,6 +10,11 @@ public bool Contains(double tol, Vector3D pt)
 
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## Contains(double, Line3D)
 states if given wcs segment is contained in this plane
 

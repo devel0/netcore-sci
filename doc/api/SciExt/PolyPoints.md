@@ -10,6 +10,11 @@ public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D> 
 
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## PolyPoints(IEnumerable<SearchAThing.Sci.Vector3D>, double, bool)
 given a set of polygon pts, returns the enumeation of all pts
             so that the last not attach to the first ( if makeClosed = false ).

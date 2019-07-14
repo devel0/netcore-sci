@@ -4,6 +4,11 @@
 ```csharp
 public static netDxf.Entities.EntityObject SetLayer(EntityObject eo, Layer layer)
 ```
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## SetLayer(IEnumerable<netDxf.Entities.EntityObject>, Layer)
 Set layer of given set of dxf entities
 

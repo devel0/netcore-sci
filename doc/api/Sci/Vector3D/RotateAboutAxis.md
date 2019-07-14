@@ -14,6 +14,11 @@ public SearchAThing.Sci.Vector3D RotateAboutAxis(Vector3D axis, double angleRad)
 rotated point
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## RotateAboutAxis(Line3D, double)
 rotate this point right-hand around given segment using quaternion
 

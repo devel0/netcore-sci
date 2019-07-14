@@ -9,6 +9,10 @@
 ```csharp
 public class MeasureUnitWithDefaultTolerance
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[MeasureUnitWithDefaultTolerance(double, MeasureUnit)](MeasureUnitWithDefaultTolerance/ctors.md)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

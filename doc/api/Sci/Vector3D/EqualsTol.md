@@ -14,6 +14,11 @@ public bool EqualsTol(double tol, Vector3D other)
 
 ### Remarks
 [unit test](/test/Vector3D/Vector3DTest_0012.cs)
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## EqualsTol(double, double, double)
 checks only x,y
 
@@ -30,6 +35,11 @@ public bool EqualsTol(double tol, double x, double y)
 
 ### Remarks
 [unit test](/test/Vector3D/Vector3DTest_0012.cs)
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## EqualsTol(double, double, double, double)
 checks vector component equality vs other given
 

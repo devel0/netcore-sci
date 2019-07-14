@@ -31,6 +31,10 @@
 ```csharp
 public class MUDomain : SearchAThing.Sci.IMUDomain
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[MUDomain()](MUDomain/ctors.md)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

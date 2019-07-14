@@ -9,6 +9,10 @@
 ```csharp
 public abstract class Geometry
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[Geometry(GeometryType)](Geometry/ctors.md)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

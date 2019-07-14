@@ -9,6 +9,13 @@
 ```csharp
 public class Line3D : SearchAThing.Sci.Geometry
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[Line3D(Vector3D, Vector3D)](Line3D/ctors.md)|build segment|
+|[Line3D(double, double, double, double)](Line3D/ctors.md#line3ddouble-double-double-double)|z=0|
+|[Line3D(double, double, double, double, double, double)](Line3D/ctors.md#line3ddouble-double-double-double-double-double)||
+|[Line3D(Vector3D, Vector3D, Line3DConstructMode)](Line3D/ctors.md#line3dvector3d-vector3d-line3dconstructmode)|build segment from plus the given vector form to|
 ## Methods
 |**Name**|**Summary**|
 |---|---|

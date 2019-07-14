@@ -4,6 +4,11 @@
 ```csharp
 public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D> SortPoly(IEnumerable<SearchAThing.Sci.Vector3D> pts, double tol, Vector3D refAxis = null)
 ```
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## SortPoly(IEnumerable<SearchAThing.Sci.Line3D>, double, Vector3D)
 Sort polygon segments so that they can form a polygon ( if they really form one ).
             It will not check for segment versus adjancency
@@ -15,6 +20,11 @@ public static System.Collections.Generic.IEnumerable<SearchAThing.Sci.Line3D> So
 ### Returns
 
 ### Remarks
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
 
 ## SortPoly<T>(IEnumerable<T>, double, Func<T, SearchAThing.Sci.Vector3D>, Vector3D)
 ### Signature

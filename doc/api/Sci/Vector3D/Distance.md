@@ -10,6 +10,11 @@ public double Distance(Vector3D other)
 
 ### Remarks
 [unit test](/test/Vector3D/Vector3DTest_0014.cs)
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## Distance(double, Line3D)
 compute perpendicular(min) distance of this point from given line
 

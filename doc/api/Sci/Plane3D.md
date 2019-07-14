@@ -9,6 +9,10 @@
 ```csharp
 public class Plane3D
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[Plane3D(CoordinateSystem3D)](Plane3D/ctors.md)|build plane using cs as reference for origin and x,y axes|
 ## Methods
 |**Name**|**Summary**|
 |---|---|

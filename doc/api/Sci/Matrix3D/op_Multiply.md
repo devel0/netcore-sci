@@ -10,6 +10,11 @@ public static SearchAThing.Sci.Matrix3D operator *(double s, Matrix3D m)
 
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## operator *(Matrix3D, double)
 scalar multiply
 
@@ -20,6 +25,11 @@ public static SearchAThing.Sci.Matrix3D operator *(Matrix3D m, double s)
 ### Returns
 
 ### Remarks
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
 
 ## operator *(Matrix3D, Vector3D)
 matrix * vector as column -> vector
@@ -32,6 +42,11 @@ public static SearchAThing.Sci.Vector3D operator *(Matrix3D m, Vector3D v)
 ### Returns
 
 ### Remarks
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
 
 ## operator *(Vector3D, Matrix3D)
 vector as row * matrix -> vector

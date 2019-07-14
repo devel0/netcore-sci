@@ -9,6 +9,10 @@
 ```csharp
 public class PythonException : System.Exception, System.Runtime.Serialization.ISerializable
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[PythonException(string, string)](PythonException/ctors.md)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

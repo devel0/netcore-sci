@@ -9,6 +9,11 @@
 ```csharp
 public class MeasureUnit : System.IEquatable<SearchAThing.Sci.MeasureUnit>
 ```
+## Constructors
+|**Name**|**Summary**|
+|---|---|
+|[MeasureUnit(PhysicalQuantity, string, MeasureUnit, double)](MeasureUnit/ctors.md)||
+|[MeasureUnit(PhysicalQuantity, string, Func<SearchAThing.Sci.MeasureUnit, SearchAThing.Sci.MeasureUnit, double, double>)](MeasureUnit/ctors.md#measureunitphysicalquantity-string-funcsearchathingscimeasureunit-searchathingscimeasureunit-double-double)||
 ## Methods
 |**Name**|**Summary**|
 |---|---|

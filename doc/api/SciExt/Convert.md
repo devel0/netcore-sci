@@ -10,6 +10,11 @@ public static System.Nullable<double> Convert(Nullable<double> value, MeasureUni
 
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## Convert(Nullable<double>, IMUDomain, MeasureUnit)
 convert nullable double from to measure units
 
@@ -20,6 +25,11 @@ public static System.Nullable<double> Convert(Nullable<double> value, IMUDomain 
 ### Returns
 
 ### Remarks
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
 
 ## Convert(Nullable<double>, MeasureUnit, IMUDomain)
 convert nullable double from to measure units
@@ -32,6 +42,11 @@ public static System.Nullable<double> Convert(Nullable<double> value, MeasureUni
 
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## Convert(double, MeasureUnit, MeasureUnit)
 convert given value from to measure units
 
@@ -42,6 +57,11 @@ public static double Convert(double value, MeasureUnit from, MeasureUnit to)
 ### Returns
 
 ### Remarks
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
 
 ## Convert(double, MeasureUnit, IMUDomain)
 convert given value from to measure units
@@ -54,6 +74,11 @@ public static double Convert(double value, MeasureUnit from, IMUDomain to)
 ### Returns
 
 ### Remarks
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
 
 ## Convert(double, IMUDomain, MeasureUnit)
 convert given value from to measure units

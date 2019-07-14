@@ -1,9 +1,19 @@
 # SearchAThing.Sci.Measure.ToString method
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## ToString()
 ### Signature
 ```csharp
 public virtual string ToString()
 ```
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## ToString(int)
 ### Signature
 ```csharp

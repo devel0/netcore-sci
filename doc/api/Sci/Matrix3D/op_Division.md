@@ -10,6 +10,11 @@ public static SearchAThing.Sci.Matrix3D operator /(double s, Matrix3D m)
 
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## operator /(Matrix3D, double)
 scalar div
 

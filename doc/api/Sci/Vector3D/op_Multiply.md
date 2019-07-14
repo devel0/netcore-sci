@@ -10,6 +10,11 @@ public static SearchAThing.Sci.Vector3D operator *(double s, Vector3D v)
 
 ### Remarks
 
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## operator *(Vector3D, double)
 scalar mul
 
@@ -20,6 +25,11 @@ public static SearchAThing.Sci.Vector3D operator *(Vector3D v, double s)
 ### Returns
 
 ### Remarks
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
 
 ## operator *(Vector3D, Vector3D)
 scalar multiply vector components V1 * V2 =

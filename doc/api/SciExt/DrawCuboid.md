@@ -4,6 +4,11 @@
 ```csharp
 public static System.Collections.Generic.IEnumerable<netDxf.Entities.Face3d> DrawCuboid(BBox3D bbox, DxfObject dxfObj, Layer layer = null)
 ```
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## DrawCuboid(DxfObject, Vector3D, Vector3D, Layer)
 Creates and add dxf entities for 6 faces of a cuboid
 
