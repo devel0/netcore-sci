@@ -1,14 +1,14 @@
 # SearchAThing.Arc3DEqualityComparer.GetHashCode method
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<hr/>
-
 ## GetHashCode()
 ### Signature
 ```csharp
 public override int GetHashCode()
 ```
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## GetHashCode(Arc3D)
 ### Signature
 ```csharp

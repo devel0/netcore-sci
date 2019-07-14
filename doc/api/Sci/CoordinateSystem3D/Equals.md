@@ -1,14 +1,14 @@
 # SearchAThing.Sci.CoordinateSystem3D.Equals method
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<hr/>
-
 ## Equals(object)
 ### Signature
 ```csharp
 public override bool Equals(object obj)
 ```
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## Equals(double, CoordinateSystem3D)
 verify is this cs is equals to otherByLayer ( same origin, x, y, z base vectors )
 

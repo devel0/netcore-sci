@@ -1,14 +1,14 @@
 # SearchAThing.Sci.DoubleEqualityComparer.GetHashCode method
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<hr/>
-
 ## GetHashCode()
 ### Signature
 ```csharp
 public override int GetHashCode()
 ```
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## GetHashCode(double)
 ### Signature
 ```csharp

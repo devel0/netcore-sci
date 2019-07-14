@@ -1,9 +1,4 @@
 # SearchAThing.Sci.Line3D.ToString method
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<hr/>
-
 ## ToString()
 build an invariant string representation w/3 digits
             (f.x, f.y, f.z)-(t.x, t.y, t.z) L=len Δ=(v.x, v.y, v.z)
@@ -15,6 +10,11 @@ public virtual string ToString()
 ### Returns
 
 ### Remarks
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
 
 ## ToString(double)
 hash string with given tolerance

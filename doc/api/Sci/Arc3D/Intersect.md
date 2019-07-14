@@ -1,9 +1,4 @@
 # SearchAThing.Sci.Arc3D.Intersect method
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<hr/>
-
 ## Intersect(double, CoordinateSystem3D, bool)
 find ips of intersect this arc to the given cs plane; 
             return empty set if arc cs plane parallel to other given cs
@@ -22,6 +17,11 @@ sample
 ### Remarks
 [unit test](/test/Arc3D/Arc3DTest_0001.cs)
             ![](/test/Arc3D/Arc3DTest_0001.png)
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## Intersect(double, Line3D, bool, bool)
 find ips of intersection between this arc and given line
 

@@ -1,14 +1,14 @@
 # SearchAThing.Sci.DoubleEqualityComparer.Equals method
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<hr/>
-
 ## Equals(object)
 ### Signature
 ```csharp
 public override bool Equals(object obj)
 ```
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## Equals(double, double)
 ### Signature
 ```csharp

@@ -1,9 +1,4 @@
 # SearchAThing.Sci.Line3D.Intersect method
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<hr/>
-
 ## Intersect(double, CoordinateSystem3D)
 returns null if this line is parallel to the cs xy plane,
             the intersection point otherwise
@@ -32,6 +27,11 @@ public SearchAThing.Sci.Vector3D Intersect(double tol, Plane3D plane)
 ### Returns
 
 ### Remarks
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
 
 ## Intersect(double, Line3D, LineIntersectBehavior)
 Find intersection point between this and other line using given tolerance.

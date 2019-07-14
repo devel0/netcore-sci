@@ -8,7 +8,7 @@
         <Description></Description>
         <Authors>Lorenzo Delana</Authors>
         <PackageTags>netcore scientific linear-algebra measure units-of-measure 3d polygon dxf</PackageTags>
-        <PackageProjectUrl>https://github.com/devel0/netcore-sci</PackageProjectUrl>        
+        <PackageProjectUrl>https://github.com/devel0/netcore-sci#netcore-sci</PackageProjectUrl>        
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
     <ItemGroup>

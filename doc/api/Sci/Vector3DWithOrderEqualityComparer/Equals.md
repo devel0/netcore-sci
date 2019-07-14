@@ -1,14 +1,14 @@
 # SearchAThing.Sci.Vector3DWithOrderEqualityComparer.Equals method
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<hr/>
-
 ## Equals(object)
 ### Signature
 ```csharp
 public override bool Equals(object obj)
 ```
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## Equals(Vector3DWithOrder, Vector3DWithOrder)
 ### Signature
 ```csharp

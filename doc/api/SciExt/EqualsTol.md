@@ -1,9 +1,4 @@
 # SearchAThing.SciExt.EqualsTol method
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<hr/>
-
 ## EqualsTol(IEnumerable<SearchAThing.Sci.Vector3D>, double, IEnumerable<SearchAThing.Sci.Vector3D>)
 checks two list of vectors are equals and with same order of elements
 
@@ -14,6 +9,11 @@ public static bool EqualsTol(IEnumerable<SearchAThing.Sci.Vector3D> lst, double 
 ### Returns
 
 ### Remarks
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
 
 ## EqualsTol(IEnumerable<System.ValueTuple<double, double>>, IEnumerable<System.ValueTuple<double, double>>, double, double)
 compares two list tuples

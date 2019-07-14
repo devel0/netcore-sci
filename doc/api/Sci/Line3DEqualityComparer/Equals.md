@@ -1,14 +1,14 @@
 # SearchAThing.Sci.Line3DEqualityComparer.Equals method
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<hr/>
-
 ## Equals(object)
 ### Signature
 ```csharp
 public override bool Equals(object obj)
 ```
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## Equals(Line3D, Line3D)
 ### Signature
 ```csharp

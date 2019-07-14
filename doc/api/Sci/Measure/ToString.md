@@ -1,9 +1,4 @@
 # SearchAThing.Sci.Measure.ToString method
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<hr/>
-
 ## ToString()
 ### Signature
 ```csharp
@@ -19,6 +14,11 @@ public virtual string ToString()
 ```csharp
 public string ToString(int digits)
 ```
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+
 ## ToString(bool, Nullable<int>)
 ### Signature
 ```csharp
