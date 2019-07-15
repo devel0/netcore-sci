@@ -286,7 +286,7 @@ namespace SearchAThing
                         return point;
                     }
 
-                case EntityType.LightWeightPolyline:
+                case EntityType.LwPolyline:
                     {
                         var lw = (LwPolyline)eo.Clone();
                         lw.Vertexes.ForEach(w =>
