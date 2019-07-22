@@ -70,9 +70,9 @@ public static class SciExt
 |[NormalizeAngle2PI](SciExt/NormalizeAngle2PI.md) (static)|ensure given angle in [0,2*PI] range|
 |[Offset](SciExt/Offset.md) (static)|increase of decrease polygon points offseting|
 |[Points](SciExt/Points.md) (static)||
-|[PolygonSegments](SciExt/PolygonSegments.md) (static)|yields an ienumerable of polygon segments corresponding to the given polygon pts ( z is not considered )<br/>            works even last point not equals the first one|
 |[PolyPoints](SciExt/PolyPoints.md) (static)|retrieve s[0].from, s[1].from, ... s[n-1].from, s[n-1].to points|
 |[PolyPoints](SciExt/PolyPoints.md#polypointsienumerablesearchathingscivector3d-double-bool) (static)|given a set of polygon pts, returns the enumeation of all pts<br/>            so that the last not attach to the first ( if makeClosed = false ).<br/>            Elsewhere it returns a last point equals the first ( makeClosed = true ).|
+|[PolygonSegments](SciExt/PolygonSegments.md) (static)|yields an ienumerable of polygon segments corresponding to the given polygon pts ( z is not considered )<br/>            works even last point not equals the first one|
 |[Project](SciExt/Project.md) (static)|wcs coord of projected coord to the given cs|
 |[RadTol](SciExt/RadTol.md) (static)|compute angle rad tolerance by given arc length tolerance|
 |[RepeatFirstAtEnd](SciExt/RepeatFirstAtEnd.md) (static)|given points a,b,c it will return a,b,c,a ( first is repeated at end )<br/>            it avoid to repeat first at end when latest point already equals the first one|
@@ -88,12 +88,12 @@ public static class SciExt
 |[TakeUntilAdjacent](SciExt/TakeUntilAdjacent.md) (static)|Return the input set of segments until an adjacency between one and next is found.<br/>            It can rectify the versus of line (by default) if needed.<br/>            Note: returned set references can be different if rectifyVersus==true|
 |[Thin](SciExt/Thin.md) (static)|retrieve given input set ordered with only distinct values after comparing through tolerance<br/>            in this case result set contains only values from the input set (default) or rounding to given tol if maintain_original_values is false;<br/>            if keep_ends true (default) min and max already exists at begin/end of returned sequence|
 |[ToArc3D](SciExt/ToArc3D.md) (static)||
+|[ToCSV](SciExt/ToCSV.md) (static)|exports to a csv string some known fields<br/>            note: not really a csv its a tab separated values for debug purpose<br/>            just copy and paste|
 |[ToCadScript](SciExt/ToCadScript.md) (static)||
 |[ToCircle3D](SciExt/ToCircle3D.md) (static)||
 |[ToCoordSequence](SciExt/ToCoordSequence.md) (static)|from a list of vector3d retrieve x1,y1,z1,x2,y2,z2,... coord sequence|
 |[ToCoordString2D](SciExt/ToCoordString2D.md) (static)|produce a string with x1,y1,x2,y2, ...|
 |[ToCoordString3D](SciExt/ToCoordString3D.md) (static)|produce a string with x1,y1,z1,x2,y2,z2, ...|
-|[ToCSV](SciExt/ToCSV.md) (static)|exports to a csv string some known fields<br/>            note: not really a csv its a tab separated values for debug purpose<br/>            just copy and paste|
 |[ToDxfPoint](SciExt/ToDxfPoint.md) (static)|create dxf point from given vector3d|
 |[ToDxfUCS](SciExt/ToDxfUCS.md) (static)||
 |[ToFace3DList](SciExt/ToFace3DList.md) (static)||

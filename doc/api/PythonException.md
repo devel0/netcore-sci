@@ -28,8 +28,8 @@ public class PythonException : System.Exception, System.Runtime.Serialization.IS
 |---|---|
 |[Data](PythonException/Data.md)|
 |[Error](PythonException/Error.md)|stderr result
-|[HelpLink](PythonException/HelpLink.md)|
 |[HResult](PythonException/HResult.md)|
+|[HelpLink](PythonException/HelpLink.md)|
 |[InnerException](PythonException/InnerException.md)|
 |[Message](PythonException/Message.md)|
 |[Output](PythonException/Output.md)|stdout result

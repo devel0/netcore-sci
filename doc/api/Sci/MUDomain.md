@@ -46,16 +46,15 @@ public class MUDomain : SearchAThing.Sci.IMUDomain
 ## Properties
 |**Name**|**Summary**|
 |---|---|
-|[_All](MUDomain/_All.md)|
 |[Acceleration](MUDomain/Acceleration.md)|[L T−2]
 |[Adimensional](MUDomain/Adimensional.md)|
 |[AmountOfSubstance](MUDomain/AmountOfSubstance.md)|[N]
 |[AngularAcceleration](MUDomain/AngularAcceleration.md)|[T−2]
 |[AngularSpeed](MUDomain/AngularSpeed.md)|[T−1]
 |[BendingMoment](MUDomain/BendingMoment.md)|[M L2 T-2]
+|[ElectricCurrent](MUDomain/ElectricCurrent.md)|[I]
 |[ElectricalConductance](MUDomain/ElectricalConductance.md)|[L−2 M−1 T3 I2]
 |[ElectricalConductivity](MUDomain/ElectricalConductivity.md)|[L−3 M−1 T3 I2]
-|[ElectricCurrent](MUDomain/ElectricCurrent.md)|[I]
 |[Energy](MUDomain/Energy.md)|[M L2 T−2]
 |[Force](MUDomain/Force.md)|[M L T−2]
 |[Frequency](MUDomain/Frequency.md)|[T-1]
@@ -73,4 +72,5 @@ public class MUDomain : SearchAThing.Sci.IMUDomain
 |[Time](MUDomain/Time.md)|[T]
 |[Turbidity](MUDomain/Turbidity.md)|
 |[VolumetricFlowRate](MUDomain/VolumetricFlowRate.md)|[L3 T−1]
+|[_All](MUDomain/_All.md)|
 ## Conversions

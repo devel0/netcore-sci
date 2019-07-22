@@ -18,7 +18,7 @@ static class BendingMoment
 |[GetType](BendingMoment/GetType.md)||
 |[ToString](BendingMoment/ToString.md)||
 ## Fields
-- [kNm](BendingMoment/kNm.md) (static)
 - [Nm](BendingMoment/Nm.md) (static)
 - [Nmm](BendingMoment/Nmm.md) (static)
+- [kNm](BendingMoment/kNm.md) (static)
 ## Conversions
