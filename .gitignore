@@ -333,3 +333,4 @@ ASALocalRun/
 .sonarqube/
 lcov.*
 coverage.json
+*.bak
