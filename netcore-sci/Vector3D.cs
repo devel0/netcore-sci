@@ -399,6 +399,10 @@ namespace SearchAThing
             /// <param name="tolLen">geometric tolerance to test vector equalities ( use Constants.NormalizedLengthTolerance when comparing normalized vectors )</param>
             /// <param name="to">other vector</param>
             /// <returns>angle between two vectors (rad)</returns>
+            /// <remarks>      
+            /// [unit test](/test/Vector3D/Vector3DTest_0020.cs)
+            /// ![](/test/Vector3D/Vector3DTest_0020.png)
+            /// </remarks>
             public double AngleRad(double tolLen, Vector3D to)
             {
                 if (this.EqualsTol(tolLen, to)) return 0;
@@ -428,6 +432,10 @@ namespace SearchAThing
             /// </summary>
             /// <param name="to">other vector</param>
             /// <returns>projected vector ( will be colinear to the given one )</returns>
+            /// <remarks>      
+            /// [unit test](/test/Vector3D/Vector3DTest_0021.cs)
+            /// ![](/test/Vector3D/Vector3DTest_0021.png)
+            /// </remarks>
             public Vector3D Project(Vector3D to)
             {
                 // https://en.wikipedia.org/wiki/Vector_projection
