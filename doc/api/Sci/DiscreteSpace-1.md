@@ -12,8 +12,8 @@ public class DiscreteSpace
 ## Constructors
 |**Name**|**Summary**|
 |---|---|
-|[DiscreteSpace<T>(double, IEnumerable<T>, Func<T, System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D>>, int)](DiscreteSpace-1/ctors.md)||
-|[DiscreteSpace<T>(double, IEnumerable<T>, Func<T, SearchAThing.Sci.Vector3D>, int)](DiscreteSpace-1/ctors.md#discretespacetdouble-ienumerablet-funct-searchathingscivector3d-int)||
+|[DiscreteSpace<T>(double, IEnumerable<T>, Func<T, System.Collections.Generic.IEnumerable<SearchAThing.Sci.Vector3D>>, int)](DiscreteSpace-1/ctors.md)|Build a discrete space to search within GetItemsAt.<br/>            spaceDim need to equals 3 when using vector in 3d|
+|[DiscreteSpace<T>(double, IEnumerable<T>, Func<T, SearchAThing.Sci.Vector3D>, int)](DiscreteSpace-1/ctors.md#discretespacetdouble-ienumerablet-funct-searchathingscivector3d-int)|Build a discrete space to search within GetItemsAt.<br/>            spaceDim need to equals 3 when using vector in 3d|
 ## Methods
 |**Name**|**Summary**|
 |---|---|
