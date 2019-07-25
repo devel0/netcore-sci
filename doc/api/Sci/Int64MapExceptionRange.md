@@ -27,8 +27,8 @@ public class Int64MapExceptionRange : System.Exception, System.Runtime.Serializa
 |**Name**|**Summary**|
 |---|---|
 |[Data](Int64MapExceptionRange/Data.md)|
-|[HResult](Int64MapExceptionRange/HResult.md)|
 |[HelpLink](Int64MapExceptionRange/HelpLink.md)|
+|[HResult](Int64MapExceptionRange/HResult.md)|
 |[InnerException](Int64MapExceptionRange/InnerException.md)|
 |[Message](Int64MapExceptionRange/Message.md)|
 |[Source](Int64MapExceptionRange/Source.md)|

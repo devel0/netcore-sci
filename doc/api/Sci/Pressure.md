@@ -18,9 +18,9 @@ static class Pressure
 |[GetType](Pressure/GetType.md)||
 |[ToString](Pressure/ToString.md)||
 ## Fields
+- [bar](Pressure/bar.md) (static)
 - [GPa](Pressure/GPa.md) (static)
+- [kPa](Pressure/kPa.md) (static)
 - [MPa](Pressure/MPa.md) (static)
 - [Pa](Pressure/Pa.md) (static)
-- [bar](Pressure/bar.md) (static)
-- [kPa](Pressure/kPa.md) (static)
 ## Conversions

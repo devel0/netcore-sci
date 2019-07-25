@@ -40,8 +40,8 @@ public class Arc3D : SearchAThing.Sci.Geometry
 |[Angle](Arc3D/Angle.md)|Arc (rad) angle length.<br/>            angle between start-end or end-start depending on what start is less than end or not
 |[AngleEnd](Arc3D/AngleEnd.md)|end angle (rad) [0-2pi) respect cs xaxis rotating around cs zaxis<br/>            note that start angle can be greather than end angle
 |[AngleStart](Arc3D/AngleStart.md)|start angle (rad) [0-2pi) respect cs xaxis rotating around cs zaxis<br/>            note that start angle can be greather than end angle
-|[CS](Arc3D/CS.md)|coordinate system centered in arc center<br/>            angle is 0 at X axis<br/>            angle increase rotating right-hand on Z axis
 |[Center](Arc3D/Center.md)|
+|[CS](Arc3D/CS.md)|coordinate system centered in arc center<br/>            angle is 0 at X axis<br/>            angle increase rotating right-hand on Z axis
 |[DxfEntity](Arc3D/DxfEntity.md)|
 |[From](Arc3D/From.md)|point at angle start
 |[GeomFrom](Arc3D/GeomFrom.md)|

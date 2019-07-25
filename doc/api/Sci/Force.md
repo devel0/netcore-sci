@@ -17,6 +17,6 @@ static class Force
 |[GetType](Force/GetType.md)||
 |[ToString](Force/ToString.md)||
 ## Fields
-- [N](Force/N.md) (static)
 - [kN](Force/kN.md) (static)
+- [N](Force/N.md) (static)
 ## Conversions

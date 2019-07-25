@@ -16,14 +16,15 @@ public interface IMUDomain
 ## Properties
 |**Name**|**Summary**|
 |---|---|
+|[_All](IMUDomain/_All.md)|
 |[Acceleration](IMUDomain/Acceleration.md)|
 |[AmountOfSubstance](IMUDomain/AmountOfSubstance.md)|
 |[AngularAcceleration](IMUDomain/AngularAcceleration.md)|
 |[AngularSpeed](IMUDomain/AngularSpeed.md)|
 |[BendingMoment](IMUDomain/BendingMoment.md)|
-|[ElectricCurrent](IMUDomain/ElectricCurrent.md)|
 |[ElectricalConductance](IMUDomain/ElectricalConductance.md)|
 |[ElectricalConductivity](IMUDomain/ElectricalConductivity.md)|
+|[ElectricCurrent](IMUDomain/ElectricCurrent.md)|
 |[Energy](IMUDomain/Energy.md)|
 |[Force](IMUDomain/Force.md)|
 |[Frequency](IMUDomain/Frequency.md)|
@@ -41,5 +42,4 @@ public interface IMUDomain
 |[Time](IMUDomain/Time.md)|
 |[Turbidity](IMUDomain/Turbidity.md)|
 |[VolumetricFlowRate](IMUDomain/VolumetricFlowRate.md)|
-|[_All](IMUDomain/_All.md)|
 ## Conversions

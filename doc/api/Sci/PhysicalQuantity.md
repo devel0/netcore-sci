@@ -27,7 +27,7 @@ public class PhysicalQuantity : System.IEquatable<SearchAThing.Sci.PhysicalQuant
 |**Name**|**Summary**|
 |---|---|
 |[LinearConversionRefMU](PhysicalQuantity/LinearConversionRefMU.md)|
-|[MUConversionType](PhysicalQuantity/MUConversionType.md)|
 |[MeasureUnits](PhysicalQuantity/MeasureUnits.md)|
+|[MUConversionType](PhysicalQuantity/MUConversionType.md)|
 |[Name](PhysicalQuantity/Name.md)|
 ## Conversions

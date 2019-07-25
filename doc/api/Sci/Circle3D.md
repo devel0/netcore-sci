@@ -44,8 +44,8 @@ public class Circle3D : SearchAThing.Sci.Arc3D
 |[AngleEnd](Circle3D/AngleEnd.md)|end angle (rad) [0-2pi) respect cs xaxis rotating around cs zaxis<br/>            note that start angle can be greather than end angle
 |[AngleStart](Circle3D/AngleStart.md)|start angle (rad) [0-2pi) respect cs xaxis rotating around cs zaxis<br/>            note that start angle can be greather than end angle
 |[Area](Circle3D/Area.md)|
-|[CS](Circle3D/CS.md)|coordinate system centered in arc center<br/>            angle is 0 at X axis<br/>            angle increase rotating right-hand on Z axis
 |[Center](Circle3D/Center.md)|
+|[CS](Circle3D/CS.md)|coordinate system centered in arc center<br/>            angle is 0 at X axis<br/>            angle increase rotating right-hand on Z axis
 |[DxfEntity](Circle3D/DxfEntity.md)|
 |[From](Circle3D/From.md)|point at angle start
 |[GeomFrom](Circle3D/GeomFrom.md)|

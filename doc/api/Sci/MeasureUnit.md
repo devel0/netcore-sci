@@ -22,8 +22,8 @@ public class MeasureUnit : System.IEquatable<SearchAThing.Sci.MeasureUnit>
 |[GetHashCode](MeasureUnit/GetHashCode.md)||
 |[GetType](MeasureUnit/GetType.md)||
 |[Related](MeasureUnit/Related.md)|retrieve correspondent measure unit ( same physical quantity ) from given domain|
-|[ToString](MeasureUnit/ToString.md)||
 |[Tolerance](MeasureUnit/Tolerance.md)||
+|[ToString](MeasureUnit/ToString.md)||
 ## Properties
 |**Name**|**Summary**|
 |---|---|
