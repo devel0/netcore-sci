@@ -50,6 +50,9 @@ namespace SearchAThing.Sci
         }
     }
 
+    /// <summary>
+    /// organize given item list into a discretized space to allow fast query of elements in a space region
+    /// </summary>
     public class DiscreteSpace<T>
     {
 
@@ -62,7 +65,7 @@ namespace SearchAThing.Sci
         DiscreteSpace(double _tol, List<DiscreteSpaceItem<T>> q, int _spaceDim)
         {
             tol = _tol;
-            spaceDim = _spaceDim;            
+            spaceDim = _spaceDim;
 
             sorted = new List<DiscreteSpaceItem<T>>[spaceDim];
             cmp = new DiscreteSpaceItemComparer<T>[spaceDim];
@@ -80,7 +83,7 @@ namespace SearchAThing.Sci
         /// </summary>        
         public DiscreteSpace(double _tol, IEnumerable<T> ents, Func<T, IEnumerable<Vector3D>> entPoints, int _spaceDim) :
             this(_tol, ents.Select(ent => new DiscreteSpaceItem<T>(ent, entPoints)).ToList(), _spaceDim)
-        {            
+        {
         }
 
         /// <summary>
@@ -118,6 +121,9 @@ namespace SearchAThing.Sci
 
         }
 
+        /// <summary>
+        /// retrieve items that resides in the space at given point with given extents max distance
+        /// </summary>
         public IEnumerable<T> GetItemsAt(Vector3D pt, double maxDist)
         {
             IEnumerable<T> set = null;

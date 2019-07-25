@@ -3,7 +3,7 @@
 
 **Inheritance:** Object → DiscreteSpace<T>
 
-(No Description)
+organize given item list into a discretized space to allow fast query of elements in a space region
 
 ## Signature
 ```csharp
@@ -19,7 +19,7 @@ public class DiscreteSpace
 |---|---|
 |[Equals](DiscreteSpace-1/Equals.md)||
 |[GetHashCode](DiscreteSpace-1/GetHashCode.md)||
-|[GetItemsAt](DiscreteSpace-1/GetItemsAt.md)||
+|[GetItemsAt](DiscreteSpace-1/GetItemsAt.md)|retrieve items that resides in the space at given point with given extents max distance|
 |[GetType](DiscreteSpace-1/GetType.md)||
 |[ToString](DiscreteSpace-1/ToString.md)||
 ## Conversions
