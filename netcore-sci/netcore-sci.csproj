@@ -3,11 +3,11 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageId>netcore-sci</PackageId>
-        <PackageVersion>1.0.28</PackageVersion>
+        <PackageVersion>1.0.29</PackageVersion>
         <Title>net core scientific</Title>
         <Description></Description>
         <Authors>Lorenzo Delana</Authors>
-        <PackageTags>netcore scientific linear-algebra measure units-of-measure 3d polygon dxf</PackageTags>
+        <PackageTags>netcore scientific linear-algebra measure units-of-measure 3d polygon dxf quaternion</PackageTags>
         <PackageProjectUrl>https://github.com/devel0/netcore-sci#netcore-sci</PackageProjectUrl>        
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
@@ -15,7 +15,6 @@
         <PackageReference Include="netcore-psql-util" Version="1.0.3" />
         <PackageReference Include="netcore-util" Version="1.0.4" />
         <PackageReference Include="netDxf.netstandard" Version="2.3.0" />
-        <PackageReference Include="System.DoubleNumerics" Version="3.1.3" />
         <ProjectReference Include="..\thirdy-clipper\thirdy-clipper.csproj" />
     </ItemGroup>
 </Project>

@@ -1,6 +1,3 @@
-
-using System.DoubleNumerics;
-
 namespace SearchAThing.Sci
 {
 
@@ -15,9 +12,6 @@ namespace SearchAThing.Sci
     {
 
         Quaternion q;
-        Vector3 xAxis;
-        Vector3 yAxis;
-        Vector3 zAxis;
 
         /// <summary>
         /// instantiate an identity transformation        
@@ -27,9 +21,6 @@ namespace SearchAThing.Sci
         /// </remarks>
         public Transform3D()
         {
-            xAxis = new Vector3(1, 0, 0);
-            yAxis = new Vector3(0, 1, 0);
-            zAxis = new Vector3(0, 0, 1);
             q = Quaternion.Identity;
         }
 
@@ -45,7 +36,7 @@ namespace SearchAThing.Sci
             // https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
             // q' = q2 * q1
             var q1 = this.q;
-            var q2 = Quaternion.CreateFromAxisAngle(xAxis, angleRad);
+            var q2 = new Quaternion(Vector3D.XAxis, angleRad);
             this.q = q2 * q1;
         }
 
@@ -61,7 +52,7 @@ namespace SearchAThing.Sci
             // https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
             // q' = q2 * q1
             var q1 = this.q;
-            var q2 = Quaternion.CreateFromAxisAngle(yAxis, angleRad);
+            var q2 = new Quaternion(Vector3D.YAxis, angleRad);
             this.q = q2 * q1;
         }
 
@@ -77,7 +68,7 @@ namespace SearchAThing.Sci
             // https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
             // q' = q2 * q1
             var q1 = this.q;
-            var q2 = Quaternion.CreateFromAxisAngle(zAxis, angleRad);
+            var q2 = new Quaternion(Vector3D.ZAxis, angleRad);
             this.q = q2 * q1;
         }
 
@@ -92,13 +83,10 @@ namespace SearchAThing.Sci
         /// </remarks>
         public void RotateAboutAxis(Vector3D axis, double angleRad)
         {
-            var normalizedAxis = axis.Normalized();
-
             // https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
             // q' = q2 * q1            
             var q1 = this.q;
-            var q2 = Quaternion.CreateFromAxisAngle(
-                new Vector3(normalizedAxis.X, normalizedAxis.Y, normalizedAxis.Z), angleRad);
+            var q2 = new Quaternion(axis, angleRad);
             this.q = q2 * q1;
         }
 
@@ -112,12 +100,12 @@ namespace SearchAThing.Sci
         public Vector3D Apply(Vector3D v)
         {
             // https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
-            // p' = qpq^(-1)
-            //var q_1 = Quaternion.Conjugate(q);//Quaternion.Normalize(q));
-            var q_1 = Quaternion.Conjugate(q);
-            var p = new Quaternion(v.X, v.Y, v.Z, 0);
+            // p' = qpq^(-1)            
+            var q_1 = q.Conjugate();
+            var p = new Quaternion(0, v);
             var p_ = q * p * q_1;
-            return new Vector3D(p_.X, p_.Y, p_.Z);
+
+            return p_.v;
         }
 
     }
