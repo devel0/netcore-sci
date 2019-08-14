@@ -20,6 +20,7 @@
 - **3D Geometry**
   - [Vector3D](doc/api/Sci/Vector3D.md)
   - [Line3D](doc/api/Sci/Line3D.md)  
+  - [Quaternion](doc/api/Sci/Quaternion.md)
   - [Transform3D](doc/api/Sci/Transform3D.md)  
   - [CoordinateSystem3D](doc/api/Sci/CoordinateSystem3D.md)
   - [Plane3D](doc/api/Sci/Plane3D.md)
