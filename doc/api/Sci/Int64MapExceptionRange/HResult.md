@@ -6,6 +6,6 @@ _(No Description)_
 public override int HResult
 {
     get;
-    protected set;
+    set;
 }
 ```
