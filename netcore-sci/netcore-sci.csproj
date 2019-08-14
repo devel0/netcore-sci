@@ -13,7 +13,7 @@
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="netcore-psql-util" Version="1.0.3" />
-        <PackageReference Include="netcore-util" Version="1.0.4" />
+        <PackageReference Include="netcore-util" Version="1.0.12" />
         <PackageReference Include="netDxf.netstandard" Version="2.3.0" />
         <ProjectReference Include="..\thirdy-clipper\thirdy-clipper.csproj" />
     </ItemGroup>

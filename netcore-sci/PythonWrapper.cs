@@ -29,7 +29,7 @@ namespace SearchAThing
                         )
                         ? "python" : "python.exe";
 
-                    _PythonExePathfilename = Util.Path.SearchInPath(searchFor);
+                    _PythonExePathfilename = PathUtil.SearchInPath(searchFor);
                     if (_PythonExePathfilename == null) _PythonExePathfilename = "";
                 }
                 return _PythonExePathfilename;
