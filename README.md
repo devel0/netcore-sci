@@ -1,7 +1,6 @@
 # netcore-sci
 
 [![NuGet Badge](https://buildstats.info/nuget/netcore-sci)](https://www.nuget.org/packages/netcore-sci/)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdevel0%2Fnetcore-sci.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdevel0%2Fnetcore-sci?ref=badge_shield)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=devel0_netcore-sci&metric=alert_status)](https://sonarcloud.io/dashboard?id=devel0_netcore-sci)
 
@@ -11,7 +10,6 @@
 - [Quickstart](#quickstart)
 - [Unit tests](#unit-tests)
 - [How this project was built](#how-this-project-was-built)
-- [license scan](#license-scan)
 
 <hr/>
 
@@ -176,7 +174,3 @@ dotnet restore
 dotnet build
 dotnet test test/test.csproj
 ```
-
-## license scan
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdevel0%2Fnetcore-sci.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdevel0%2Fnetcore-sci?ref=badge_large)
