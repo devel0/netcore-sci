@@ -930,7 +930,8 @@ namespace SearchAThing
             /// </summary>            
             public string ToString(double tol)
             {
-                return Invariant($"({X.MRound(tol)}, {Y.MRound(tol)}, {Z.MRound(tol)})");
+                var digits = Math.Max(0, -tol.Magnitude());
+                return Invariant($"({X.MRound(tol).ToString(digits)}, {Y.MRound(tol).ToString(digits)}, {Z.MRound(tol).ToString(digits)})");
             }
 
             /// <summary>
