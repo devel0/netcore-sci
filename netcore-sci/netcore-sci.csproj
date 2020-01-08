@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
+        <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageId>netcore-sci</PackageId>
-        <PackageVersion>1.1.30</PackageVersion>
+        <PackageVersion>1.1.31</PackageVersion>
         <Title>net core scientific</Title>
         <Description></Description>
         <Authors>Lorenzo Delana</Authors>
@@ -13,7 +13,7 @@
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="netcore-psql-util" Version="1.0.3" />
-        <PackageReference Include="netcore-util" Version="1.1.0" />
+        <PackageReference Include="netcore-util" Version="1.2.2" />
         <PackageReference Include="netDxf.netstandard" Version="2.3.0" />
         <ProjectReference Include="..\thirdy-clipper\thirdy-clipper.csproj" />
     </ItemGroup>
