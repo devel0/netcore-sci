@@ -12,7 +12,7 @@ public class CoordinateSystem3D
 ## Constructors
 |**Name**|**Summary**|
 |---|---|
-|[CoordinateSystem3D(Vector3D, Vector3D, CoordinateSystem3DAutoEnum)](CoordinateSystem3D/ctors.md)||
+|[CoordinateSystem3D(Vector3D, Vector3D, CoordinateSystem3DAutoEnum)](CoordinateSystem3D/ctors.md)|build coordinate system with given origin and given BaseZ on given vector normal;<br/>            given normal will subjected to normalization;<br/>            depending on csAutoType one or another arbitrary axis alghoritm will used to build cs from a point and a normal.|
 |[CoordinateSystem3D(Vector3D, Vector3D, Vector3D, Vector3D)](CoordinateSystem3D/ctors.md#coordinatesystem3dvector3d-vector3d-vector3d-vector3d)|construct a coordinate system with the given origin and orthonormal bases<br/>            note that given bases MUST already normalized|
 |[CoordinateSystem3D(Vector3D, Vector3D, Vector3D)](CoordinateSystem3D/ctors.md#coordinatesystem3dvector3d-vector3d-vector3d)|Construct a right-hand coordinate system with the given origin and bases such as:<br/>            BaseX = v1<br/>            BaseZ = v1 x BaseY<br/>            BaseY = BaseZ x BaseX|
 ## Methods
