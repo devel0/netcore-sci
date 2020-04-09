@@ -80,6 +80,14 @@ namespace SearchAThing
             /// </summary>
             const double aaaSmall = 1.0 / 64;
 
+            /// <summary>
+            /// build coordinate system with given origin and given BaseZ on given vector normal;
+            /// given normal will subjected to normalization;
+            /// depending on csAutoType one or another arbitrary axis alghoritm will used to build cs from a point and a normal.
+            /// </summary>
+            /// <param name="o">origin of cs</param>
+            /// <param name="normal">Z vector of cs</param>
+            /// <param name="csAutoType">auto cs type</param>
             public CoordinateSystem3D(Vector3D o, Vector3D normal, CoordinateSystem3DAutoEnum csAutoType = CoordinateSystem3DAutoEnum.AAA)
             {
                 Origin = o;
@@ -89,6 +97,8 @@ namespace SearchAThing
                     case CoordinateSystem3DAutoEnum.AAA:
                         {
                             Vector3D Ax = null;
+
+                            normal = normal.Normalized();
 
                             if (Abs(normal.X) < aaaSmall && Abs(normal.Y) < aaaSmall)
                                 Ax = Vector3D.YAxis.CrossProduct(normal).Normalized();
@@ -298,15 +308,15 @@ namespace SearchAThing
             {
                 var sb = new StringBuilder();
 
-                sb.Append(string.Format("-COLOR 1\r\n"));
+                sb.Append(string.Format("_-COLOR 1\r\n"));
                 sb.Append(new Line3D(Origin, BaseX * axisLen, Line3DConstructMode.PointAndVector).CadScript);
                 sb.Append("\r\n");
 
-                sb.Append(string.Format("-COLOR 3\r\n"));
+                sb.Append(string.Format("_-COLOR 3\r\n"));
                 sb.Append(new Line3D(Origin, BaseY * axisLen, Line3DConstructMode.PointAndVector).CadScript);
                 sb.Append("\r\n");
 
-                sb.Append(string.Format("-COLOR 5\r\n"));
+                sb.Append(string.Format("_-COLOR 5\r\n"));
                 sb.Append(new Line3D(Origin, BaseZ * axisLen, Line3DConstructMode.PointAndVector).CadScript);
                 sb.Append("\r\n");
 
