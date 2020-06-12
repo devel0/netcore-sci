@@ -1,12 +1,15 @@
+using System.Threading;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Avalonia.Threading;
+using OpenToolkit.Windowing.GraphicsLibraryFramework;
 using SearchAThing.Sci;
 
 namespace example_avalonia_opengl.Views
 {
-    public class MainWindow : Window
+    public class MainWindow : Avalonia.Controls.Window
     {
         public MainWindow()
         {
@@ -16,16 +19,31 @@ namespace example_avalonia_opengl.Views
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
-            
+
         }
 
         private void click1(object sender, RoutedEventArgs e)
         {
-            var ctl = this.FindControl<GLControl>("glctl");
+            var ctl = this.FindControl<GLControlTest>("glctl");
 
-            ctl.win.MakeCurrent();
-
-            ctl.InvalidateVisual();
+            var th = new Thread(() =>
+            {
+                while (true)
+                {
+                    ctl.cnt++;
+                    // unsafe
+                    // {
+                    //     GLFW.MakeContextCurrent(null);
+                    // }
+                    Dispatcher.UIThread.InvokeAsync(() =>
+                    {
+                        ctl.win.MakeCurrent();
+                        ctl.InvalidateVisual();
+                    });                    
+                    Thread.Sleep(20);
+                }
+            });
+            th.Start();
         }
     }
 }
