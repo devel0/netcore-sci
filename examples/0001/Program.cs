@@ -2,7 +2,7 @@
 using SearchAThing.Sci;
 using SearchAThing;
 
-namespace example_0001
+namespace test
 {
     class Program
     {
