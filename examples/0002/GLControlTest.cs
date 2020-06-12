@@ -79,13 +79,7 @@ namespace example_avalonia_opengl
                 GL.VertexAttribPointer(positionLocation, 4, VertexAttribPointerType.Float, false, 0, 0);
                 GL.EnableVertexAttribArray(positionLocation);
 
-                DebugProc cback = (src, type, id, severity, length, message, userParam) =>
-                {
-                    var msg = Marshal.PtrToStringAuto(message);
-                    System.Console.WriteLine($"GL ERROR:" + msg);
-                };
-                GL.Enable(EnableCap.DebugOutput);
-                GL.DebugMessageCallback(cback, (IntPtr)null);
+              
 
                 GL.BindBuffer(BufferTarget.ArrayBuffer, VertexBufferObject);
                 GL.BindVertexArray(VertexArrayObject);
@@ -97,7 +91,7 @@ namespace example_avalonia_opengl
             GL.ClearColor(Color.LightYellow);
             GL.Clear(ClearBufferMask.ColorBufferBit);
 
-            System.Console.WriteLine($"***GetFrame cnt:{cnt}");
+            System.Console.WriteLine($"***GetFrame cnt:{cnt} w:{w} x h:{h}");
 
             var colorLocation = GL.GetUniformLocation(ShaderProgram, "inColor");
 

@@ -37,7 +37,7 @@ namespace example_avalonia_opengl.Views
                     // }
                     Dispatcher.UIThread.InvokeAsync(() =>
                     {
-                        ctl.win.MakeCurrent();
+                        //ctl.win.MakeCurrent();
                         ctl.InvalidateVisual();
                     });                    
                     Thread.Sleep(20);
