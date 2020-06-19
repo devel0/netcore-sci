@@ -1,6 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
     <ProjectReference Include="..\..\netcore-sci\netcore-sci.csproj"/>
+    <ProjectReference Include="..\..\opentk\src\Generator.Rewrite\Generator.Rewrite.csproj"/>
+    <ProjectReference Include="..\..\opentk\src\OpenToolkit.Windowing.Desktop\OpenToolkit.Windowing.Desktop.csproj"/>
+    <ProjectReference Include="..\..\opentk\src\OpenToolkit.Core\OpenToolkit.Core.csproj"/>
+    <ProjectReference Include="..\..\opentk\src\OpenToolkit.Graphics\OpenToolkit.Graphics.csproj"/>
+    <ProjectReference Include="..\..\opentk\src\OpenToolkit.Input\OpenToolkit.Input.csproj"/>
+    <ProjectReference Include="..\..\opentk\src\OpenToolkit.Mathematics\OpenToolkit.Mathematics.csproj"/>
+    <ProjectReference Include="..\..\opentk\src\OpenToolkit.Windowing.Common\OpenToolkit.Windowing.Common.csproj"/>
+    <ProjectReference Include="..\..\opentk\src\OpenToolkit.Windowing.GraphicsLibraryFramework\OpenToolkit.Windowing.GraphicsLibraryFramework.csproj"/>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\"/>
@@ -15,15 +23,15 @@
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.9.10"/>
     <PackageReference Include="Avalonia.Desktop" Version="0.9.10"/>
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.10"/>
-    <PackageReference Include="OpenTK" Version="4.0.0-pre9.1"/>
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.10"/><!-- <PackageReference Include="OpenTK" Version="4.0.0-pre9.1"/> -->
   </ItemGroup>
   <PropertyGroup>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>example</AssemblyName>
-  </PropertyGroup><!-- <Target Name="PostBuildScript" AfterTargets="Build">
-        <Exec Command="~/opensource/netcore-sci/process-rewrite-opentk.sh" />
-    </Target>  -->
+  </PropertyGroup>
+   <Target Name="PostBuildScript" AfterTargets="Build">
+    <Exec Command="../../opentk/src/Generator.Rewrite/bin/Debug/netcoreapp3.1/Rewrite -a bin/Debug/netcoreapp3.1//OpenToolkit.Graphics.dll bin/Debug/netcoreapp3.1/OpenToolkit.Graphics.dll" />
+  </Target>
 </Project>
