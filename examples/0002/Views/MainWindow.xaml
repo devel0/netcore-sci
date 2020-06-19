@@ -1,9 +1,20 @@
-<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="clr-namespace:example_avalonia_opengl.ViewModels;assembly=example" xmlns:local="clr-namespace:example_avalonia_opengl;assembly=example" xmlns:sci="clr-namespace:SearchAThing.Sci;assembly=netcore-sci" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" x:Class="example_avalonia_opengl.Views.MainWindow" Icon="/Assets/avalonia-logo.ico" Title="example_avalonia_opengl">
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="clr-namespace:example_avalonia_opengl.ViewModels;assembly=example" xmlns:local="clr-namespace:example_avalonia_opengl;assembly=example" xmlns:sci="clr-namespace:SearchAThing.Sci;assembly=netcore-sci" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" x:Class="example_avalonia_opengl.Views.MainWindow" Icon="/Assets/avalonia-logo.ico" x:Name="awin" Title="example_avalonia_opengl">
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-    <Grid ColumnDefinitions="1*,9*" RowDefinitions="1*">
-        <Button Grid.Row="0" Grid.Column="0" Content="test" Click="click1"/>
+    <Grid ColumnDefinitions="100,9*" RowDefinitions="1*">
+        <StackPanel>
+            <Button Content="1.makecur" Click="click6"/>
+            <Button Content="2.doViewPort" Click="click4"/>
+            <Button Content="3.getFrame" Click="click5"/>
+            <Button Content="4.doFlush" Click="click2"/>
+            <Button Content="5.swapbuf" Click="click3"/>
+            <Button Content="6.invalidateVis" Click="click7"/>
+            <Button Content="1..6" Click="click7a"/>
+            <Button Content="2..6" Click="click7b"/>
+            <CheckBox Content="AUTO" IsChecked="{Binding AutoMode, ElementName=awin, Mode=TwoWay}"/>
+            <Button Content="chColor" Click="click1"/>
+        </StackPanel>
         <local:GLControlTest Grid.Row="0" Grid.Column="1" x:Name="glctl"/>
     </Grid>
 </Window>

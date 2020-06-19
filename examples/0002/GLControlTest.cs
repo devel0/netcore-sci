@@ -47,7 +47,17 @@ namespace example_avalonia_opengl
         int VertexBufferObject;
         int VertexArrayObject;
 
-        internal int cnt = 0;
+        Color _color = Color.Red;
+
+        public Color color
+        {
+            get { return _color; }
+            set
+            {
+                _color = value;
+                System.Console.WriteLine($"set color to {value.ToString()}");
+            }
+        }        
 
         bool shader_initialized = false;
 
@@ -79,27 +89,23 @@ namespace example_avalonia_opengl
                 GL.VertexAttribPointer(positionLocation, 4, VertexAttribPointerType.Float, false, 0, 0);
                 GL.EnableVertexAttribArray(positionLocation);
 
-              
-
                 GL.BindBuffer(BufferTarget.ArrayBuffer, VertexBufferObject);
                 GL.BindVertexArray(VertexArrayObject);
                 GL.UseProgram(ShaderProgram);
 
                 shader_initialized = true;
             }
-            
+
             GL.ClearColor(Color.LightYellow);
             GL.Clear(ClearBufferMask.ColorBufferBit);
 
-            System.Console.WriteLine($"***GetFrame cnt:{cnt} w:{w} x h:{h}");
+            System.Console.WriteLine($"***GetFrame Color:{color} w:{w} x h:{h}");
 
             var colorLocation = GL.GetUniformLocation(ShaderProgram, "inColor");
 
-            GL.Uniform4(colorLocation, cnt % 2 == 0 ? Color.Blue : Color.Red);
+            GL.Uniform4(colorLocation, color);
             //++cnt;
             GL.DrawArrays(PrimitiveType.Triangles, 0, 3);
-
-            GL.Flush();
         }
 
     }
