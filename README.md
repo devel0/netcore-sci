@@ -136,11 +136,11 @@ dotnet run
 
 - [result dxf](examples/example_0001/output.dxf)
 
-<img src="examples/example_0001/output.png" width=300>
+<img src="examples/0001/output.png" width=300>
 
 ## examples
 
-- example/0002 : currently not working with official nuget packages due to missing of Avalonia.OpenGL.OpenGlControlBase
+- **example/0002** ( avalonia/opengl example ) : currently not working with official nuget packages due to missing of Avalonia.OpenGL.OpenGlControlBase [issue](https://github.com/AvaloniaUI/Avalonia/issues/4148); as workaround can be compiled from [sources](https://github.com/SearchAThing-forks/Avalonia) with `./build.sh Package` then set [nuget.config](./nuget.config) to point local nuget packages.
 
 ## Unit tests
 
