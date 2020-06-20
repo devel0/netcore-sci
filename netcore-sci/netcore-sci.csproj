@@ -8,13 +8,34 @@
         <Description></Description>
         <Authors>Lorenzo Delana</Authors>
         <PackageTags>netcore scientific linear-algebra measure units-of-measure 3d polygon dxf quaternion</PackageTags>
-        <PackageProjectUrl>https://github.com/devel0/netcore-sci#netcore-sci</PackageProjectUrl>        
+        <PackageProjectUrl>https://github.com/devel0/netcore-sci#netcore-sci</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <noWarn>1591</noWarn>
+    </PropertyGroup>
+    <PropertyGroup>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="netcore-psql-util" Version="1.0.3" />
-        <PackageReference Include="netcore-util" Version="1.2.2" />
-        <PackageReference Include="netDxf.netstandard" Version="2.3.0" />
-        <ProjectReference Include="..\thirdy-clipper\thirdy-clipper.csproj" />
+        <!-- <PackageReference Include="Avalonia" Version="0.9.10"/>
+        <PackageReference Include="Avalonia.Controls.DataGrid" Version="0.9.10"/>
+        <PackageReference Include="Avalonia.Desktop" Version="0.9.10"/>
+        <PackageReference Include="Avalonia.Direct2D1" Version="0.9.10"/>
+        <PackageReference Include="Avalonia.FreeDesktop" Version="0.9.10"/>
+        <PackageReference Include="Avalonia.LinuxFramebuffer" Version="0.9.10"/>
+        <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.10"/>
+        <PackageReference Include="Avalonia.Remote.Protocol" Version="0.9.10"/>
+        <PackageReference Include="Avalonia.Skia" Version="0.9.10"/>
+        <PackageReference Include="Avalonia.Win32" Version="0.9.10"/>
+        <PackageReference Include="Avalonia.Win32.Interoperability" Version="0.9.10"/>
+        <PackageReference Include="Avalonia.X11" Version="0.9.10"/>
+        <PackageReference Include="Avalonia.Angle.Windows.Natives" Version="2.1.0.2019013001"/> -->
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="netcore-psql-util" Version="1.0.3"/>
+        <PackageReference Include="netcore-util" Version="1.2.2"/>
+        <PackageReference Include="netDxf.netstandard" Version="2.3.0"/>        
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\thirdy-clipper\thirdy-clipper.csproj"/>
     </ItemGroup>
 </Project>

@@ -138,6 +138,10 @@ dotnet run
 
 <img src="examples/example_0001/output.png" width=300>
 
+## examples
+
+- example/0002 : currently not working with official nuget packages due to missing of Avalonia.OpenGL.OpenGlControlBase
+
 ## Unit tests
 
 - debugging unit tests

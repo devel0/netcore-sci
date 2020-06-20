@@ -4,7 +4,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
-using OpenToolkit.Windowing.GraphicsLibraryFramework;
+using ControlCatalog.Pages;
 using SearchAThing.Sci;
 
 namespace example_avalonia_opengl.Views
@@ -24,26 +24,9 @@ namespace example_avalonia_opengl.Views
 
         private void click1(object sender, RoutedEventArgs e)
         {
-            var ctl = this.FindControl<GLControlTest>("glctl");
+            var ctl = this.FindControl<OpenGlPageControl>("glctl");
 
-            var th = new Thread(() =>
-            {
-                while (true)
-                {
-                    ctl.cnt++;
-                    // unsafe
-                    // {
-                    //     GLFW.MakeContextCurrent(null);
-                    // }
-                    Dispatcher.UIThread.InvokeAsync(() =>
-                    {
-                        //ctl.win.MakeCurrent();
-                        ctl.InvalidateVisual();
-                    });                    
-                    Thread.Sleep(20);
-                }
-            });
-            th.Start();
+             
         }
     }
 }
