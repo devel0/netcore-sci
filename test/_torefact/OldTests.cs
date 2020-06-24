@@ -779,9 +779,11 @@ namespace SearchAThing.Sci.Tests
                 var b = a.ConvertTo(MUCollection.AngularSpeed.deg_s);
                 Assert.True(b.Value.EqualsTol(1e-3, 143.239));
 
-                Assert.True(AngularAcceleration.Auto(MUCollection.PlaneAngle.deg, MUCollection.Time.sec)
+                Assert.False(AngularAcceleration.Auto(MUCollection.PlaneAngle.deg, MUCollection.Time.sec)
                     .Equals(MUCollection.AngularSpeed.deg_s));
-                Assert.True(AngularAcceleration.Auto(MUCollection.PlaneAngle.rad, MUCollection.Time.sec)
+                Assert.True(AngularSpeed.Auto(MUCollection.PlaneAngle.deg, MUCollection.Time.sec)
+                    .Equals(MUCollection.AngularSpeed.deg_s));
+                Assert.True(AngularSpeed.Auto(MUCollection.PlaneAngle.rad, MUCollection.Time.sec)
                     .Equals(MUCollection.AngularSpeed.rad_s));
             }
 
