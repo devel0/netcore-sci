@@ -100,7 +100,7 @@ namespace SearchAThing
 
             public bool Equals(MeasureUnit other)
             {
-                return id == other.id;
+                return PhysicalQuantity.id == other.PhysicalQuantity.id && id == other.id;
             }
 
             public double Tolerance(IModel model)
