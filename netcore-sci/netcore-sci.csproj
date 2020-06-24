@@ -6,6 +6,7 @@
         <PackageVersion>1.1.32</PackageVersion>
         <Title>net core scientific</Title>
         <Description></Description>
+      <LangVersion>8</LangVersion>
         <Authors>Lorenzo Delana</Authors>
         <PackageTags>netcore scientific linear-algebra measure units-of-measure 3d polygon dxf quaternion</PackageTags>
         <PackageProjectUrl>https://github.com/devel0/netcore-sci#netcore-sci</PackageProjectUrl>
