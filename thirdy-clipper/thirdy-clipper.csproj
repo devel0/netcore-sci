@@ -9,5 +9,14 @@
         <PackageTags></PackageTags>
         <PackageProjectUrl>https://github.com/devel0/netcore-sci/tree/master/thirdy-clipper</PackageProjectUrl>
         <PackageLicenseExpression>BSL-1.0</PackageLicenseExpression>
-    </PropertyGroup>
+    
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
 </Project>
