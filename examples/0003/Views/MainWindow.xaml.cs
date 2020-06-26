@@ -24,7 +24,7 @@ namespace example_avalonia_opengl.Views
 
         private void click1(object sender, RoutedEventArgs e)
         {
-            var ctl = this.FindControl<OpenGlPageControl>("glctl");
+            //var ctl = this.FindControl<OpenGlPageControl>("glctl");
 
              
         }

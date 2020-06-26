@@ -6,11 +6,13 @@ using System.Numerics;
 using System.Runtime.InteropServices;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.OpenGL;
 using Avalonia.Platform.Interop;
 using Avalonia.Threading;
 using static Avalonia.OpenGL.GlConsts;
 // ReSharper disable StringLiteralTypo
+using static System.Math;
 
 namespace ControlCatalog.Pages
 {
@@ -29,7 +31,11 @@ namespace ControlCatalog.Pages
         public float Yaw
         {
             get => _yaw;
-            set => SetAndRaise(YawProperty, ref _yaw, value);
+            set
+            {
+                SetAndRaise(YawProperty, ref _yaw, value);
+                System.Console.WriteLine($"yaw:{value}");
+            }
         }
 
         private float _pitch;
@@ -168,7 +174,7 @@ namespace ControlCatalog.Pages
                 0.25 + (smoothstep(0.3, 0.8, y) * (0.5 - c / 4.0)),
                 0.25 + abs((smoothstep(0.1, 0.4, y) * (0.5 - s / 4.0))));
 
-            vec3 objectColor = vec3((1.0 - y), 0.40 +  y / 4.0, y * 0.75 + 0.25);
+            vec3 objectColor = vec3(1,0,0);// vec3((1.0 - y), 0.40 +  y / 4.0, y * 0.75 + 0.25);
             objectColor = objectColor * (1.0 - uDisco) + discoColor * uDisco;
 
             float ambientStrength = 0.3;
@@ -201,17 +207,55 @@ namespace ControlCatalog.Pages
         private readonly float _minY;
         private readonly float _maxY;
 
+        PointerPoint? mousePress = null;
+        float startYaw;
 
         public OpenGlPageControl()
         {
+            this.PointerPressed += (a, b) =>
+            {
+                var cp = b.GetCurrentPoint(this);
+                mousePress = cp;
+                //b.Pointer.Capture(this);
+                System.Console.WriteLine($"pointer pressed evt:{cp.Position}");
+                startYaw = Yaw;
+            };
+
+            this.PointerMoved += (a, b) =>
+            {
+                var cp = b.GetCurrentPoint(this);
+                System.Console.WriteLine($"pointer move evt:{cp.Position}");
+                if (mousePress != null)
+                {
+                    if (mousePress.Properties.IsLeftButtonPressed)
+                    {
+                        var curx = cp.Position.X;
+                        var startx = mousePress.Position.X;
+                        var deltaYaw = (float)((curx - startx) / Bounds.Width * PI);
+                        Yaw = startYaw + deltaYaw;
+                    }
+                }
+
+            };
+
+            this.PointerReleased += (a, b) =>
+            {
+                if (mousePress != null)
+                {
+                }
+                mousePress = null;
+            };
+
             //var name = typeof(OpenGlPage).Assembly.GetManifestResourceNames().First(x => x.Contains("teapot.bin"));
             //using (var sr = new BinaryReader(typeof(OpenGlPage).Assembly.GetManifestResourceStream(name)))
             {
                 _points = new Vertex[]
                 {
-                        new Vertex() { Position = new Vector3( -0.5f, -0.5f, 0.0f) },
-                        new Vertex() { Position= new Vector3(    0.5f, -0.5f, 0.0f) },
-                        new Vertex() { Position = new Vector3(     0.0f,  0.5f, 0.0f) }
+                    new Vertex() { Position = new Vector3( -0.5f, 0, 0 ) },
+                    new Vertex() { Position = new Vector3( 0.5f, 0, 0 ) } ,
+                        // new Vertex() { Position = new Vector3( -0.5f, -0.5f, 0.0f) },
+                        // new Vertex() { Position= new Vector3(  0.5f, -0.5f, 0.0f) },
+                        // new Vertex() { Position = new Vector3(     0.0f,  0.5f, 0.0f) }
                 };
                 /*
                     var buf = new byte[sr.ReadInt32()];
@@ -353,7 +397,7 @@ namespace ControlCatalog.Pages
                     0.01f, 1000);
 
 
-            var view = Matrix4x4.CreateLookAt(new Vector3(25, 25, 25), new Vector3(), new Vector3(0, -1, 0));
+            var view = Matrix4x4.CreateLookAt(new Vector3(0, 0, 1), new Vector3(), new Vector3(0, -1, 0));
             var model = Matrix4x4.CreateFromYawPitchRoll(_yaw, _pitch, _roll);
             var modelLoc = GL.GetUniformLocationString(_shaderProgram, "uModel");
             var viewLoc = GL.GetUniformLocationString(_shaderProgram, "uView");
@@ -371,12 +415,14 @@ namespace ControlCatalog.Pages
             GL.Uniform1f(discoLoc, _disco);
             CheckError(GL);
             //GL.DrawElements(GL_TRIANGLES, _indices.Length, GL_UNSIGNED_SHORT, IntPtr.Zero);
-            GL.DrawArrays(GL_TRIANGLES, 0, new IntPtr(3));
+            GL.DrawArrays(GL_LINES, 0, new IntPtr(3));
 
             CheckError(GL);
             if (_disco > 0.01)
                 Dispatcher.UIThread.Post(InvalidateVisual, DispatcherPriority.Background);
         }
+
+
 
         class GlExtrasInterface : GlInterfaceBase<GlInterface.GlContextInfo>
         {
