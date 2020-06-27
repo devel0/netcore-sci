@@ -55,7 +55,7 @@ cd example_0001
 - add reference to netcore-sci ( check latest version [here](https://www.nuget.org/packages/netcore-sci/) )
 
 ```sh
-dotnet add package netcore-sci --version 1.0.21
+dotnet add package netcore-sci
 ```
 
 if prefer to link source code directly to stepin with debugger add project reference instead
