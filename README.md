@@ -50,6 +50,8 @@ dotnet new console -n example_0001
 cd example_0001
 ```
 
+- **from 1.1.34** ensure [nuget.config](nuget.config) in your project in order to locate avalonia 0.9.999 packages because currently there isn't nuget packages for avalonia with OpenGlControlBase used in the project ( see [issue](https://github.com/AvaloniaUI/Avalonia/issues/4148) )
+
 - add reference to netcore-sci ( check latest version [here](https://www.nuget.org/packages/netcore-sci/) )
 
 ```sh
@@ -140,7 +142,11 @@ dotnet run
 
 ## examples
 
-- **example/0002** ( avalonia/opengl example ) : currently not working with official nuget packages due to missing of Avalonia.OpenGL.OpenGlControlBase [issue](https://github.com/AvaloniaUI/Avalonia/issues/4148); as workaround can be compiled from [sources](https://github.com/SearchAThing-forks/Avalonia) with `./build.sh Package` then set [nuget.config](./nuget.config) to point local nuget packages.
+- **example/0002** ( avalonia/opengl example ) : basic gl test
+
+- **example/0003** ( avalonia/opengl example ) : test display of dxf face3d into opengl
+
+![](examples/0003/out.png)
 
 ## Unit tests
 
@@ -150,6 +156,12 @@ dotnet run
   - from solution root folder `dotnet test`
 - testing coverage
   - from vscode run task ( ctrl+shift+p ) `Tasks: Run Task` then `test with coverage` ( `.NET Core Test Explorer` extension required then move to some file eg. Vector3D.cs and click on `Add Watch` from bottom bar )
+
+## Build
+
+```sh
+dotnet build
+```
 
 ## How this project was built
 

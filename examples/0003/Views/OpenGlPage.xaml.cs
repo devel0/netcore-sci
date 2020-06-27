@@ -1,6 +1,7 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using SearchAThing.Sci.Lab;
 // ReSharper disable StringLiteralTypo
 
 namespace Example.Views

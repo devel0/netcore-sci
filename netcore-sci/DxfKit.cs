@@ -10,6 +10,7 @@ using System.Text;
 using System.Globalization;
 using SearchAThing;
 using SearchAThing.Util;
+using System.Runtime.InteropServices;
 
 namespace SearchAThing
 {
@@ -177,7 +178,7 @@ namespace SearchAThing
         /// it avoid to repeat first at end when latest point already equals the first one
         /// </summary>        
         public static IEnumerable<Vector3D> RepeatFirstAtEnd(this IEnumerable<Vector3D> pts, double tol)
-        {          
+        {
             Vector3D first = null;
             Vector3D last = null;
             foreach (var x in pts)
@@ -188,7 +189,7 @@ namespace SearchAThing
             }
 
             if (last == null) yield break;
-            
+
             if (!last.EqualsTol(tol, first)) yield return first;
         }
 
@@ -530,6 +531,37 @@ namespace SearchAThing
                 }
             }
 
+        }
+
+        public static GLLineVertex[] ToGLLinesVertexes(this netDxf.DxfDocument dxf)
+        {
+            var res = new List<GLLineVertex>();
+
+            foreach (var x in dxf.Faces3d)
+            {
+                res.Add(x.FirstVertex.ToGLLineVertex());
+                res.Add(x.SecondVertex.ToGLLineVertex());
+                res.Add(x.ThirdVertex.ToGLLineVertex());
+                if (x.FourthVertex != null)
+                {
+                    res.Add(x.FourthVertex.ToGLLineVertex());
+                }
+                res.Add(x.FirstVertex.ToGLLineVertex());
+            }
+
+            return res.ToArray();
+
+            var _points = new GLLineVertex[]
+            {
+                new GLLineVertex() { Position = new System.Numerics.Vector3( -0.5f, 0, 0 ) },
+                new GLLineVertex() { Position = new System.Numerics.Vector3( 0.5f, 0, 0 ) },
+                new GLLineVertex() { Position = new System.Numerics.Vector3( 0, 0.5f, 0 ) },
+                new GLLineVertex() { Position = new System.Numerics.Vector3( -0.5f, 0, 0 ) },
+                // new Vertex() { Position = new Vector3( -0.5f, -0.5f, 0.0f) },
+                // new Vertex() { Position= new Vector3(  0.5f, -0.5f, 0.0f) },
+                // new Vertex() { Position = new Vector3(     0.0f,  0.5f, 0.0f) }
+            };
+            return _points;
         }
 
     }

@@ -9,7 +9,7 @@
     d:DesignWidth="800" d:DesignHeight="450"
     x:Class="Example.Views.MainWindow" Icon="/Assets/avalonia-logo.ico" Title="example_avalonia_opengl">    
     <Grid ColumnDefinitions="1*,9*" RowDefinitions="1*">
-        <Button Grid.Row="0" Grid.Column="0" Content="test" Click="click1"/>
+        <!-- <Button Grid.Row="0" Grid.Column="0" Content="test" Click="click1"/> -->
         <v:OpenGlPage Grid.Row="0" Grid.Column="1" x:Name="glctl"/>
     </Grid>
 </Window>

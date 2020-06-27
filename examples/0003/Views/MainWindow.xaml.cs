@@ -1,10 +1,5 @@
-using System.Threading;
-using Avalonia;
-using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using Avalonia.Threading;
-using SearchAThing.Sci;
 
 namespace Example.Views
 {
@@ -19,13 +14,6 @@ namespace Example.Views
         {
             AvaloniaXamlLoader.Load(this);
 
-        }
-
-        private void click1(object sender, RoutedEventArgs e)
-        {
-            //var ctl = this.FindControl<OpenGlPageControl>("glctl");
-
-             
         }
     }
 }

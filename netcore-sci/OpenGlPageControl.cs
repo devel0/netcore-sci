@@ -14,19 +14,16 @@ using static Avalonia.OpenGL.GlConsts;
 // ReSharper disable StringLiteralTypo
 using static System.Math;
 using Avalonia.Interactivity;
+using SearchAThing.Sci;
+using static SearchAThing.SciExt;
 
-namespace Example.Views
-{    
+namespace SearchAThing.Sci.Lab
+{
 
     public class OpenGlPageControl : OpenGlControlBase
     {
 
-        public void Reset()
-        {
-            Yaw = 0;
-            Pitch = 0;
-            Roll = 0;
-        }
+
 
         private float _yaw;
 
@@ -200,20 +197,41 @@ namespace Example.Views
         }
 ");
 
-        [StructLayout(LayoutKind.Sequential, Pack = 4)]
-        private struct Vertex
-        {
-            public Vector3 Position;
-            public Vector3 Normal;
-        }
+        // [StructLayout(LayoutKind.Sequential, Pack = 4)]
+        // private struct Vertex
+        // {
+        //     public Vector3 Position;
+        //     public Vector3 Normal;
+        // }
 
-        private readonly Vertex[] _points;
+        private readonly GLLineVertex[] _points;
         //private readonly ushort[] _indices;
         private readonly float _minY;
         private readonly float _maxY;
 
         PointerPoint? mousePress = null;
         float startYaw;
+        float startPitch;
+
+        Vector3 cameraPos = new Vector3(0, 0, 2);
+        Vector3 cameraTarget = new Vector3();
+        Vector3 startCameraPos;
+        Vector3 startCameraTarget;
+
+        netDxf.DxfDocument dxf = null;        
+
+        public const float PAN_FACTOR = 0.01f;
+
+        public void Reset()
+        {
+            Yaw = 0;
+            Pitch = 0;
+            Roll = 0;
+            cameraPos = new Vector3(0, 0, 2);
+            cameraTarget = new Vector3();
+
+            Dispatcher.UIThread.Post(InvalidateVisual, DispatcherPriority.Background);
+        }
 
         public OpenGlPageControl()
         {
@@ -227,23 +245,55 @@ namespace Example.Views
                 //b.Pointer.Capture(this);
                 System.Console.WriteLine($"pointer pressed evt:{cp.Position}");
                 startYaw = Yaw;
+                startPitch = Pitch;
+                startCameraPos = cameraPos;
+                startCameraTarget = cameraTarget;
+            };
+
+            this.PointerWheelChanged += (a, b) =>
+            {
+                cameraPos = cameraPos + (cameraTarget - cameraPos) / 2 * (b.Delta.Y > 0 ? 1 : -1);
+                Dispatcher.UIThread.Post(InvalidateVisual, DispatcherPriority.Background);
             };
 
             this.PointerMoved += (a, b) =>
             {
                 var cp = b.GetCurrentPoint(this);
-                System.Console.WriteLine($"pointer move evt:{cp.Position}");
+
                 if (mousePress != null)
                 {
+                    var curx = cp.Position.X;
+                    var cury = cp.Position.Y;
+
+                    var startx = mousePress.Position.X;
+                    var starty = mousePress.Position.Y;
+
                     if (mousePress.Properties.IsLeftButtonPressed)
                     {
-                        var curx = cp.Position.X;
-                        var startx = mousePress.Position.X;
                         var deltaYaw = (float)((curx - startx) / Bounds.Width * PI);
-                        Yaw = startYaw + deltaYaw;
+                        Yaw = startYaw - deltaYaw;
+
+                        var deltaPitch = (float)((cury - starty) / Bounds.Height * PI);
+                        Pitch = startPitch + deltaPitch;
+                    }
+                    else if (mousePress.Properties.IsRightButtonPressed)
+                    {
+                        var dx = startx - curx;
+                        var dy = starty - cury;
+
+                        cameraPos.X = startCameraPos.X - (float)dx * PAN_FACTOR;
+                        cameraPos.Y = startCameraPos.Y - (float)dy * PAN_FACTOR;
+
+                        cameraTarget.X = startCameraTarget.X - (float)dx * PAN_FACTOR;
+                        cameraTarget.Y = startCameraTarget.Y - (float)dy * PAN_FACTOR;
+
+                        Dispatcher.UIThread.Post(InvalidateVisual, DispatcherPriority.Background);
+                        // trackBall.Pan(-dx, -dy);
                     }
                 }
 
+                //System.Console.WriteLine($"pointer move evt:{cp.Position}");
+                System.Console.WriteLine($"yaw:{Yaw} pitch:{Pitch} roll:{Roll} cameraPos:{cameraPos} cameraTarget:{cameraTarget}");
             };
 
             this.PointerReleased += (a, b) =>
@@ -257,15 +307,32 @@ namespace Example.Views
             //var name = typeof(OpenGlPage).Assembly.GetManifestResourceNames().First(x => x.Contains("teapot.bin"));
             //using (var sr = new BinaryReader(typeof(OpenGlPage).Assembly.GetManifestResourceStream(name)))
             {
-                _points = new Vertex[]
+
+                if (dxf == null)
                 {
-                    new Vertex() { Position = new Vector3( -0.5f, 0, 0 ) },
-                    new Vertex() { Position = new Vector3( 0.5f, 0, 0 ) } ,
-                    new Vertex() { Position = new Vector3( 0, 0.5f, 0 ) } ,
-                        // new Vertex() { Position = new Vector3( -0.5f, -0.5f, 0.0f) },
-                        // new Vertex() { Position= new Vector3(  0.5f, -0.5f, 0.0f) },
-                        // new Vertex() { Position = new Vector3(     0.0f,  0.5f, 0.0f) }
-                };
+                    dxf = new netDxf.DxfDocument();
+
+                    var cube = DxfKit.Cube(new Vector3D(), 1);
+
+                    dxf.AddEntity(cube);
+
+                    dxf.Save("out.dxf", true);
+                }
+
+
+                // _points = new Vertex[]
+                // {
+                //     new Vertex() { Position = new Vector3( -0.5f, 0, 0 ) },
+                //     new Vertex() { Position = new Vector3( 0.5f, 0, 0 ) },
+                //     new Vertex() { Position = new Vector3( 0, 0.5f, 0 ) },
+                //     new Vertex() { Position = new Vector3( -0.5f, 0, 0 ) },
+                //         // new Vertex() { Position = new Vector3( -0.5f, -0.5f, 0.0f) },
+                //         // new Vertex() { Position= new Vector3(  0.5f, -0.5f, 0.0f) },
+                //         // new Vertex() { Position = new Vector3(     0.0f,  0.5f, 0.0f) }
+                // };
+
+                _points = dxf.ToGLLinesVertexes();
+
                 /*
                     var buf = new byte[sr.ReadInt32()];
                     sr.Read(buf, 0, buf.Length);
@@ -346,7 +413,7 @@ namespace Example.Views
             // Bind the VBO and copy the vertex data into it.
             GL.BindBuffer(GL_ARRAY_BUFFER, _vertexBufferObject);
             CheckError(GL);
-            var vertexSize = Marshal.SizeOf<Vertex>();
+            var vertexSize = Marshal.SizeOf<GLLineVertex>();
             fixed (void* pdata = _points)
                 GL.BufferData(GL_ARRAY_BUFFER, new IntPtr(_points.Length * vertexSize),
                     new IntPtr(pdata), GL_STATIC_DRAW);
@@ -371,8 +438,6 @@ namespace Example.Views
 
         }
 
-
-
         protected override void OnOpenGlDeinit(GlInterface GL, int fb)
         {
             // Unbind everything
@@ -390,6 +455,7 @@ namespace Example.Views
         }
 
         static Stopwatch St = Stopwatch.StartNew();
+
         protected override unsafe void OnOpenGlRender(GlInterface gl, int fb)
         {
             gl.ClearColor(0, 0, 0, 0);
@@ -407,8 +473,8 @@ namespace Example.Views
                 Matrix4x4.CreatePerspectiveFieldOfView((float)(Math.PI / 4), (float)(Bounds.Width / Bounds.Height),
                     0.01f, 1000);
 
-
-            var view = Matrix4x4.CreateLookAt(new Vector3(0, 0, 1), new Vector3(), new Vector3(0, -1, 0));
+            //System.Console.WriteLine($"camerapos:{cameraPos}");
+            var view = Matrix4x4.CreateLookAt(cameraPos, cameraTarget, new Vector3(0, -1, 0));
             var model = Matrix4x4.CreateFromYawPitchRoll(_yaw, _pitch, _roll);
             var modelLoc = GL.GetUniformLocationString(_shaderProgram, "uModel");
             var viewLoc = GL.GetUniformLocationString(_shaderProgram, "uView");
@@ -426,7 +492,7 @@ namespace Example.Views
             GL.Uniform1f(discoLoc, _disco);
             CheckError(GL);
             //GL.DrawElements(GL_TRIANGLES, _indices.Length, GL_UNSIGNED_SHORT, IntPtr.Zero);
-            GL.DrawArrays(GL_LINE_STRIP, 0, new IntPtr(3));
+            GL.DrawArrays(GL_LINE_STRIP, 0, new IntPtr(_points.Length));
 
             CheckError(GL);
             if (_disco > 0.01)

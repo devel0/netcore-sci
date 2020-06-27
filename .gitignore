@@ -334,3 +334,5 @@ ASALocalRun/
 lcov.*
 coverage.json
 *.bak
+
+out.dxf

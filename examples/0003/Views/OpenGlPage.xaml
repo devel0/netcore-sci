@@ -1,6 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"             
-             xmlns:v="clr-namespace:Example.Views;assembly=example"    
+             xmlns:v="clr-namespace:SearchAThing.Sci.Lab;assembly=netcore-sci"    
              x:Class="Example.Views.OpenGlPage"
              >
   <Grid>
@@ -27,7 +27,7 @@
         </StackPanel>
         <Slider Value="{Binding Disco, Mode=TwoWay, ElementName=GL}" Maximum="1"/>
 
-        <Button Grid.Row="0" Grid.Column="0" Content="test" Click="click_reset"/>
+        <Button Grid.Row="0" Grid.Column="0" Content="Reset" Click="click_reset"/>
       </StackPanel>
     </Grid>
   </Grid>
