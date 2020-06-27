@@ -29,7 +29,6 @@
     <!-- <EmbeddedResource Include="Assets\Fonts\SourceSansPro-Bold.ttf" />
     <EmbeddedResource Include="Assets\Fonts\SourceSansPro-BoldItalic.ttf" />
     <EmbeddedResource Include="Assets\Fonts\SourceSansPro-Italic.ttf" />
-    <EmbeddedResource Include="Assets\Fonts\SourceSansPro-Regular.ttf" /> -->
-    <EmbeddedResource Include="Views\teapot.bin" />
+    <EmbeddedResource Include="Assets\Fonts\SourceSansPro-Regular.ttf" /> -->    
   </ItemGroup>
 </Project>

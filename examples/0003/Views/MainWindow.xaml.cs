@@ -4,10 +4,9 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
-using ControlCatalog.Pages;
 using SearchAThing.Sci;
 
-namespace example_avalonia_opengl.Views
+namespace Example.Views
 {
     public class MainWindow : Avalonia.Controls.Window
     {

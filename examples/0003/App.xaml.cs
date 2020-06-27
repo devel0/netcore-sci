@@ -1,10 +1,9 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using example_avalonia_opengl.ViewModels;
-using example_avalonia_opengl.Views;
+using Example.Views;
 
-namespace example_avalonia_opengl
+namespace Example
 {
     public class App : Application
     {
@@ -19,7 +18,7 @@ namespace example_avalonia_opengl
             {
                 desktop.MainWindow = new MainWindow
                 {
-                    DataContext = new MainWindowViewModel(),
+                    //DataContext = new MainWindowViewModel(),
                 };
             }
 
