@@ -6,8 +6,9 @@
 
 .NET core sci
 
-- [API Documentation](#api-documentation)
+- [API Documentation](https://devel0.github.io/netcore-sci/api/SearchAThing.Sci.html)
 - [Quickstart](#quickstart)
+- [Examples](#examples)
 - [Unit tests](#unit-tests)
 - [How this project was built](#how-this-project-was-built)
 
@@ -15,7 +16,7 @@
 
 ## API Documentation
 
-- [API reference](https://devel0.github.io/netcore-sci/api/index.html)
+- [API reference](https://devel0.github.io/netcore-sci/api/SearchAThing.Sci.html)
 
 ## Quickstart
 
@@ -114,7 +115,7 @@ namespace example_0001
 dotnet run
 ```
 
-## examples
+## Examples
 
 - **example/0001***
 
@@ -136,12 +137,6 @@ dotnet run
   - from solution root folder `dotnet test`
 - testing coverage
   - from vscode run task ( ctrl+shift+p ) `Tasks: Run Task` then `test with coverage` ( `.NET Core Test Explorer` extension required then move to some file eg. Vector3D.cs and click on `Add Watch` from bottom bar )
-
-## Build
-
-```sh
-dotnet build
-```
 
 ## How this project was built
 
