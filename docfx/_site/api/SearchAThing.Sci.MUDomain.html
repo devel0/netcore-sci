@@ -1,0 +1,905 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MUDomain
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MUDomain
+   ">
+    <meta name="generator" content="docfx 2.55.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="SearchAThing.Sci.MUDomain">
+  
+  
+  <h1 id="SearchAThing_Sci_MUDomain" data-uid="SearchAThing.Sci.MUDomain" class="text-break">Class MUDomain
+  </h1>
+  <div class="markdown level0 summary"><p><a href="https://en.wikipedia.org/wiki/List_of_physical_quantities">list of physical quantities</a></p>
+<p>Measures here contains information about implicit measure unit
+and value of the tolerance.</p>
+<p>Note that all measure must be dimensionally equivalent.
+For example:
+[length] = m
+[length2] = [length] * [length] = m2
+[time] = s
+[time2] = [time] * [time] = s2
+[speed] = [length] / [time] = m/s
+[acceleration] = [length] / [time2] = m/s2
+[mass] = kg
+[force] = [mass] * [acceleration] = kg * m/s2 = N
+[pressure] = [force] / [length2] = N / m2 = Pa</p>
+<p>This will ensure measure comparision without further conversion, for example
+m1 = 1 [kg]
+a1 = 2 [m/s2]
+f1 = 4 [N]</p>
+<p>test = m1 * a1 &gt; f1</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">MUDomain</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="SearchAThing.Sci.IMUDomain.html">IMUDomain</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="SearchAThing.Sci.html">SearchAThing.Sci</a></h6>
+  <h6><strong>Assembly</strong>: netcore-sci.dll</h6>
+  <h5 id="SearchAThing_Sci_MUDomain_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MUDomain : object, IMUDomain</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain__ctor_" data-uid="SearchAThing.Sci.MUDomain.#ctor*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain__ctor" data-uid="SearchAThing.Sci.MUDomain.#ctor">MUDomain()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MUDomain()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain__All_" data-uid="SearchAThing.Sci.MUDomain._All*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain__All" data-uid="SearchAThing.Sci.MUDomain._All">_All</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;MeasureUnitWithDefaultTolerance&gt; _All { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_Acceleration_" data-uid="SearchAThing.Sci.MUDomain.Acceleration*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_Acceleration" data-uid="SearchAThing.Sci.MUDomain.Acceleration">Acceleration</h4>
+  <div class="markdown level1 summary"><p>[L T−2]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance Acceleration { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_Adimensional_" data-uid="SearchAThing.Sci.MUDomain.Adimensional*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_Adimensional" data-uid="SearchAThing.Sci.MUDomain.Adimensional">Adimensional</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance Adimensional { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_AmountOfSubstance_" data-uid="SearchAThing.Sci.MUDomain.AmountOfSubstance*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_AmountOfSubstance" data-uid="SearchAThing.Sci.MUDomain.AmountOfSubstance">AmountOfSubstance</h4>
+  <div class="markdown level1 summary"><p>[N]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance AmountOfSubstance { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_AngularAcceleration_" data-uid="SearchAThing.Sci.MUDomain.AngularAcceleration*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_AngularAcceleration" data-uid="SearchAThing.Sci.MUDomain.AngularAcceleration">AngularAcceleration</h4>
+  <div class="markdown level1 summary"><p>[T−2]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance AngularAcceleration { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_AngularSpeed_" data-uid="SearchAThing.Sci.MUDomain.AngularSpeed*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_AngularSpeed" data-uid="SearchAThing.Sci.MUDomain.AngularSpeed">AngularSpeed</h4>
+  <div class="markdown level1 summary"><p>[T−1]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance AngularSpeed { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_BendingMoment_" data-uid="SearchAThing.Sci.MUDomain.BendingMoment*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_BendingMoment" data-uid="SearchAThing.Sci.MUDomain.BendingMoment">BendingMoment</h4>
+  <div class="markdown level1 summary"><p>[M L2 T-2]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance BendingMoment { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_ElectricalConductance_" data-uid="SearchAThing.Sci.MUDomain.ElectricalConductance*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_ElectricalConductance" data-uid="SearchAThing.Sci.MUDomain.ElectricalConductance">ElectricalConductance</h4>
+  <div class="markdown level1 summary"><p>[L−2 M−1 T3 I2]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance ElectricalConductance { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_ElectricalConductivity_" data-uid="SearchAThing.Sci.MUDomain.ElectricalConductivity*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_ElectricalConductivity" data-uid="SearchAThing.Sci.MUDomain.ElectricalConductivity">ElectricalConductivity</h4>
+  <div class="markdown level1 summary"><p>[L−3 M−1 T3 I2]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance ElectricalConductivity { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_ElectricCurrent_" data-uid="SearchAThing.Sci.MUDomain.ElectricCurrent*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_ElectricCurrent" data-uid="SearchAThing.Sci.MUDomain.ElectricCurrent">ElectricCurrent</h4>
+  <div class="markdown level1 summary"><p>[I]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance ElectricCurrent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_Energy_" data-uid="SearchAThing.Sci.MUDomain.Energy*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_Energy" data-uid="SearchAThing.Sci.MUDomain.Energy">Energy</h4>
+  <div class="markdown level1 summary"><p>[M L2 T−2]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance Energy { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_Force_" data-uid="SearchAThing.Sci.MUDomain.Force*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_Force" data-uid="SearchAThing.Sci.MUDomain.Force">Force</h4>
+  <div class="markdown level1 summary"><p>[M L T−2]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance Force { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_Frequency_" data-uid="SearchAThing.Sci.MUDomain.Frequency*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_Frequency" data-uid="SearchAThing.Sci.MUDomain.Frequency">Frequency</h4>
+  <div class="markdown level1 summary"><p>[T-1]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance Frequency { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_Length_" data-uid="SearchAThing.Sci.MUDomain.Length*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_Length" data-uid="SearchAThing.Sci.MUDomain.Length">Length</h4>
+  <div class="markdown level1 summary"><p>[L]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance Length { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_Length2_" data-uid="SearchAThing.Sci.MUDomain.Length2*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_Length2" data-uid="SearchAThing.Sci.MUDomain.Length2">Length2</h4>
+  <div class="markdown level1 summary"><p>[L^2]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance Length2 { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_Length3_" data-uid="SearchAThing.Sci.MUDomain.Length3*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_Length3" data-uid="SearchAThing.Sci.MUDomain.Length3">Length3</h4>
+  <div class="markdown level1 summary"><p>[L^3]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance Length3 { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_Length4_" data-uid="SearchAThing.Sci.MUDomain.Length4*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_Length4" data-uid="SearchAThing.Sci.MUDomain.Length4">Length4</h4>
+  <div class="markdown level1 summary"><p>[L^4]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance Length4 { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_LuminousIntensity_" data-uid="SearchAThing.Sci.MUDomain.LuminousIntensity*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_LuminousIntensity" data-uid="SearchAThing.Sci.MUDomain.LuminousIntensity">LuminousIntensity</h4>
+  <div class="markdown level1 summary"><p>[J]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance LuminousIntensity { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_Mass_" data-uid="SearchAThing.Sci.MUDomain.Mass*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_Mass" data-uid="SearchAThing.Sci.MUDomain.Mass">Mass</h4>
+  <div class="markdown level1 summary"><p>[M]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance Mass { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_PlaneAngle_" data-uid="SearchAThing.Sci.MUDomain.PlaneAngle*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_PlaneAngle" data-uid="SearchAThing.Sci.MUDomain.PlaneAngle">PlaneAngle</h4>
+  <div class="markdown level1 summary"><p>[1]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance PlaneAngle { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_Power_" data-uid="SearchAThing.Sci.MUDomain.Power*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_Power" data-uid="SearchAThing.Sci.MUDomain.Power">Power</h4>
+  <div class="markdown level1 summary"><p>[M L2 T−3]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance Power { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_Pressure_" data-uid="SearchAThing.Sci.MUDomain.Pressure*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_Pressure" data-uid="SearchAThing.Sci.MUDomain.Pressure">Pressure</h4>
+  <div class="markdown level1 summary"><p>[M L−1 T−2]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance Pressure { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_Speed_" data-uid="SearchAThing.Sci.MUDomain.Speed*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_Speed" data-uid="SearchAThing.Sci.MUDomain.Speed">Speed</h4>
+  <div class="markdown level1 summary"><p>[L T−1]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance Speed { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_Temperature_" data-uid="SearchAThing.Sci.MUDomain.Temperature*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_Temperature" data-uid="SearchAThing.Sci.MUDomain.Temperature">Temperature</h4>
+  <div class="markdown level1 summary"><p>[K]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance Temperature { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_Time_" data-uid="SearchAThing.Sci.MUDomain.Time*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_Time" data-uid="SearchAThing.Sci.MUDomain.Time">Time</h4>
+  <div class="markdown level1 summary"><p>[T]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance Time { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_Turbidity_" data-uid="SearchAThing.Sci.MUDomain.Turbidity*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_Turbidity" data-uid="SearchAThing.Sci.MUDomain.Turbidity">Turbidity</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance Turbidity { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_VolumetricFlowRate_" data-uid="SearchAThing.Sci.MUDomain.VolumetricFlowRate*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_VolumetricFlowRate" data-uid="SearchAThing.Sci.MUDomain.VolumetricFlowRate">VolumetricFlowRate</h4>
+  <div class="markdown level1 summary"><p>[L3 T−1]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeasureUnitWithDefaultTolerance VolumetricFlowRate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="SearchAThing_Sci_MUDomain_SetupItem_" data-uid="SearchAThing.Sci.MUDomain.SetupItem*"></a>
+  <h4 id="SearchAThing_Sci_MUDomain_SetupItem_System_String_System_String_System_Nullable_System_Double__" data-uid="SearchAThing.Sci.MUDomain.SetupItem(System.String,System.String,System.Nullable{System.Double})">SetupItem(String, String, Nullable&lt;Double&gt;)</h4>
+  <div class="markdown level1 summary"><p>allow to set programmatically the associated measure unit and tolerance in the model of a given physical quantity
+if given defaulttolreance is null, then current default tolerance will be converted to given measure unit</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetupItem(string physicalQuantityName, string measureUnitName, double? defaultTolerance = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">physicalQuantityName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">measureUnitName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td><span class="parametername">defaultTolerance</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="SearchAThing.Sci.IMUDomain.html">IMUDomain</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

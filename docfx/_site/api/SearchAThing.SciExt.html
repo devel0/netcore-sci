@@ -1,0 +1,4979 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SciExt
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SciExt
+   ">
+    <meta name="generator" content="docfx 2.55.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="SearchAThing.SciExt">
+  
+  
+  <h1 id="SearchAThing_SciExt" data-uid="SearchAThing.SciExt" class="text-break">Class SciExt
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">SciExt</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="SearchAThing.html">SearchAThing</a></h6>
+  <h6><strong>Assembly</strong>: netcore-sci.dll</h6>
+  <h5 id="SearchAThing_SciExt_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class SciExt : object</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="SearchAThing_SciExt_AddEntities_" data-uid="SearchAThing.SciExt.AddEntities*"></a>
+  <h4 id="SearchAThing_SciExt_AddEntities_DxfObject_IEnumerable_EntityObject__Layer_" data-uid="SearchAThing.SciExt.AddEntities(DxfObject,IEnumerable{EntityObject},Layer)">AddEntities(DxfObject, IEnumerable&lt;EntityObject&gt;, Layer)</h4>
+  <div class="markdown level1 summary"><p>add entity to the given dxf object ( it can be Dxfdocument or Block )
+optionally set layer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddEntities(this DxfObject dxfObj, IEnumerable&lt;EntityObject&gt; ents, Layer layer = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DxfObject</span></td>
+        <td><span class="parametername">dxfObj</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">EntityObject</span>&gt;</td>
+        <td><span class="parametername">ents</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Layer</span></td>
+        <td><span class="parametername">layer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_AddEntity_" data-uid="SearchAThing.SciExt.AddEntity*"></a>
+  <h4 id="SearchAThing_SciExt_AddEntity_DxfObject_EntityObject_Layer_" data-uid="SearchAThing.SciExt.AddEntity(DxfObject,EntityObject,Layer)">AddEntity(DxfObject, EntityObject, Layer)</h4>
+  <div class="markdown level1 summary"><p>add entity to the given dxf object ( it can be Dxfdocument or Block )
+optionally set layer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EntityObject AddEntity(this DxfObject dxfObj, EntityObject eo, Layer layer = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DxfObject</span></td>
+        <td><span class="parametername">dxfObj</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityObject</span></td>
+        <td><span class="parametername">eo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Layer</span></td>
+        <td><span class="parametername">layer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityObject</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Angle_" data-uid="SearchAThing.SciExt.Angle*"></a>
+  <h4 id="SearchAThing_SciExt_Angle_System_Double_System_Double_System_Double_System_Boolean_" data-uid="SearchAThing.SciExt.Angle(System.Double,System.Double,System.Double,System.Boolean)">Angle(Double, Double, Double, Boolean)</h4>
+  <div class="markdown level1 summary"><p>retrieve angle between from and to given;
+angles will subjected to normalization [0,2pi) and angle from can be greather than to</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double Angle(this double angleFrom, double tol_rad, double angleTo, bool normalizeAngles = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">angleFrom</span></td>
+        <td><p>angle from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol_rad</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">angleTo</span></td>
+        <td><p>angle to</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalizeAngles</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_AngleInRange_" data-uid="SearchAThing.SciExt.AngleInRange*"></a>
+  <h4 id="SearchAThing_SciExt_AngleInRange_System_Double_System_Double_System_Double_System_Double_" data-uid="SearchAThing.SciExt.AngleInRange(System.Double,System.Double,System.Double,System.Double)">AngleInRange(Double, Double, Double, Double)</h4>
+  <div class="markdown level1 summary"><p>states if given angle is contained in from, to angle range;
+multiturn angles are supported because test will normalize to [0,2pi) automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool AngleInRange(this double pt_angle, double tol_rad, double angle_from, double angle_to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">pt_angle</span></td>
+        <td><p>angle(rad) to test</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol_rad</span></td>
+        <td><p>angle(rad) tolerance</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">angle_from</span></td>
+        <td><p>angle(rad) from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">angle_to</span></td>
+        <td><p>angle(rad) to</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Area_" data-uid="SearchAThing.SciExt.Area*"></a>
+  <h4 id="SearchAThing_SciExt_Area_IReadOnlyList_SearchAThing_Sci_Vector3D__System_Double_" data-uid="SearchAThing.SciExt.Area(IReadOnlyList{SearchAThing.Sci.Vector3D},System.Double)">Area(IReadOnlyList&lt;Vector3D&gt;, Double)</h4>
+  <div class="markdown level1 summary"><p>Area of a polygon (does not consider z)
+<a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double Area(this IReadOnlyList&lt;Vector3D&gt; pts, double tol)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">pts</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_AutoIntersect_" data-uid="SearchAThing.SciExt.AutoIntersect*"></a>
+  <h4 id="SearchAThing_SciExt_AutoIntersect_IReadOnlyList_SearchAThing_Sci_Line3D__System_Double_System_Boolean_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.SciExt.AutoIntersect(IReadOnlyList{SearchAThing.Sci.Line3D},System.Double,System.Boolean,IEnumerable{SearchAThing.Sci.Vector3D})">AutoIntersect(IReadOnlyList&lt;Line3D&gt;, Double, Boolean, IEnumerable&lt;Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"><p>autointersect given list of segments
+( duplicates and overlapping are removed )</p>
+<p>TODO: dummy function, optimize</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyList&lt;Line3D&gt; AutoIntersect(this IReadOnlyList&lt;Line3D&gt; segs, double tolLen, bool mergeColinearSegments = true, IEnumerable&lt;Vector3D&gt; addictionalSplitPoints = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a>&gt;</td>
+        <td><span class="parametername">segs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tolLen</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">mergeColinearSegments</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">addictionalSplitPoints</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_AutoZoom_" data-uid="SearchAThing.SciExt.AutoZoom*"></a>
+  <h4 id="SearchAThing_SciExt_AutoZoom_DxfDocument_SearchAThing_Sci_BBox3D_" data-uid="SearchAThing.SciExt.AutoZoom(DxfDocument,SearchAThing.Sci.BBox3D)">AutoZoom(DxfDocument, BBox3D)</h4>
+  <div class="markdown level1 summary"><p>tries to zoom dxf viewport on the given bbox</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AutoZoom(this DxfDocument dxf, BBox3D bbox)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DxfDocument</span></td>
+        <td><span class="parametername">dxf</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.BBox3D.html">BBox3D</a></td>
+        <td><span class="parametername">bbox</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_BBox_" data-uid="SearchAThing.SciExt.BBox*"></a>
+  <h4 id="SearchAThing_SciExt_BBox_EntityObject_System_Double_" data-uid="SearchAThing.SciExt.BBox(EntityObject,System.Double)">BBox(EntityObject, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BBox3D BBox(this EntityObject eo, double tol_len)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityObject</span></td>
+        <td><span class="parametername">eo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol_len</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.BBox3D.html">BBox3D</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_BBox_" data-uid="SearchAThing.SciExt.BBox*"></a>
+  <h4 id="SearchAThing_SciExt_BBox_IEnumerable_EntityObject__System_Double_" data-uid="SearchAThing.SciExt.BBox(IEnumerable{EntityObject},System.Double)">BBox(IEnumerable&lt;EntityObject&gt;, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BBox3D BBox(this IEnumerable&lt;EntityObject&gt; ents, double tol_len)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">EntityObject</span>&gt;</td>
+        <td><span class="parametername">ents</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol_len</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.BBox3D.html">BBox3D</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_BBox_" data-uid="SearchAThing.SciExt.BBox*"></a>
+  <h4 id="SearchAThing_SciExt_BBox_IEnumerable_SearchAThing_Sci_Geometry__System_Double_" data-uid="SearchAThing.SciExt.BBox(IEnumerable{SearchAThing.Sci.Geometry},System.Double)">BBox(IEnumerable&lt;Geometry&gt;, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BBox3D BBox(this IEnumerable&lt;Geometry&gt; geometry_block, double tol_len)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a>&gt;</td>
+        <td><span class="parametername">geometry_block</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol_len</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.BBox3D.html">BBox3D</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_BBox_" data-uid="SearchAThing.SciExt.BBox*"></a>
+  <h4 id="SearchAThing_SciExt_BBox_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.SciExt.BBox(IEnumerable{SearchAThing.Sci.Vector3D})">BBox(IEnumerable&lt;Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BBox3D BBox(this IEnumerable&lt;Vector3D&gt; pts)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">pts</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.BBox3D.html">BBox3D</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Boolean_" data-uid="SearchAThing.SciExt.Boolean*"></a>
+  <h4 id="SearchAThing_SciExt_Boolean_IEnumerable_SearchAThing_Sci_Vector3D__System_Double_IEnumerable_SearchAThing_Sci_Vector3D__ClipperLib_ClipType_System_Boolean_" data-uid="SearchAThing.SciExt.Boolean(IEnumerable{SearchAThing.Sci.Vector3D},System.Double,IEnumerable{SearchAThing.Sci.Vector3D},ClipperLib.ClipType,System.Boolean)">Boolean(IEnumerable&lt;Vector3D&gt;, Double, IEnumerable&lt;Vector3D&gt;, ClipType, Boolean)</h4>
+  <div class="markdown level1 summary"><p>can generate a Int64MapExceptionRange exception if double values can't fit into a In64 representation.
+In that case try with tolerances not too small.
+It is suggested to use a lenTol/10 to avoid lost of precision during domain conversions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;IEnumerable&lt;Vector3D&gt;&gt; Boolean(this IEnumerable&lt;Vector3D&gt; polyA, double tol, IEnumerable&lt;Vector3D&gt; polyB, ClipType type, bool selfCheckInt64MapTolerance = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">polyA</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">polyB</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">ClipperLib.ClipType</span></td>
+        <td><span class="parametername">type</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">selfCheckInt64MapTolerance</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ByPhysicalQuantity_" data-uid="SearchAThing.SciExt.ByPhysicalQuantity*"></a>
+  <h4 id="SearchAThing_SciExt_ByPhysicalQuantity_SearchAThing_Sci_IMUDomain_SearchAThing_Sci_PhysicalQuantity_" data-uid="SearchAThing.SciExt.ByPhysicalQuantity(SearchAThing.Sci.IMUDomain,SearchAThing.Sci.PhysicalQuantity)">ByPhysicalQuantity(IMUDomain, PhysicalQuantity)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MeasureUnitWithDefaultTolerance ByPhysicalQuantity(this IMUDomain mud, PhysicalQuantity physicalQuantity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.IMUDomain.html">IMUDomain</a></td>
+        <td><span class="parametername">mud</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.PhysicalQuantity.html">PhysicalQuantity</a></td>
+        <td><span class="parametername">physicalQuantity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_CadScript_" data-uid="SearchAThing.SciExt.CadScript*"></a>
+  <h4 id="SearchAThing_SciExt_CadScript_Face3d_" data-uid="SearchAThing.SciExt.CadScript(Face3d)">CadScript(Face3d)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string CadScript(this Face3d face)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Face3d</span></td>
+        <td><span class="parametername">face</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_CadScript_" data-uid="SearchAThing.SciExt.CadScript*"></a>
+  <h4 id="SearchAThing_SciExt_CadScript_SearchAThing_Sci_BBox3D_" data-uid="SearchAThing.SciExt.CadScript(SearchAThing.Sci.BBox3D)">CadScript(BBox3D)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string CadScript(this BBox3D bbox)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.BBox3D.html">BBox3D</a></td>
+        <td><span class="parametername">bbox</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_CadScriptPoint_" data-uid="SearchAThing.SciExt.CadScriptPoint*"></a>
+  <h4 id="SearchAThing_SciExt_CadScriptPoint_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.SciExt.CadScriptPoint(IEnumerable{SearchAThing.Sci.Vector3D})">CadScriptPoint(IEnumerable&lt;Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string CadScriptPoint(this IEnumerable&lt;Vector3D&gt; points)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">points</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_CadScriptPolyline_" data-uid="SearchAThing.SciExt.CadScriptPolyline*"></a>
+  <h4 id="SearchAThing_SciExt_CadScriptPolyline_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.SciExt.CadScriptPolyline(IEnumerable{SearchAThing.Sci.Vector3D})">CadScriptPolyline(IEnumerable&lt;Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string CadScriptPolyline(this IEnumerable&lt;Vector3D&gt; points)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">points</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Center_" data-uid="SearchAThing.SciExt.Center*"></a>
+  <h4 id="SearchAThing_SciExt_Center_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.SciExt.Center(IEnumerable{SearchAThing.Sci.Vector3D})">Center(IEnumerable&lt;Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"><p>Same as mean</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D Center(this IEnumerable&lt;Vector3D&gt; lst)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">lst</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Centroid_" data-uid="SearchAThing.SciExt.Centroid*"></a>
+  <h4 id="SearchAThing_SciExt_Centroid_IReadOnlyList_SearchAThing_Sci_Vector3D__System_Double_" data-uid="SearchAThing.SciExt.Centroid(IReadOnlyList{SearchAThing.Sci.Vector3D},System.Double)">Centroid(IReadOnlyList&lt;Vector3D&gt;, Double)</h4>
+  <div class="markdown level1 summary"><p>Centroid of a polygon (does not consider z)
+note: points must ordered anticlockwise
+( if have area specify the parameter to avoid recomputation )
+<a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D Centroid(this IReadOnlyList&lt;Vector3D&gt; pts, double tol)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">pts</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Centroid_" data-uid="SearchAThing.SciExt.Centroid*"></a>
+  <h4 id="SearchAThing_SciExt_Centroid_IReadOnlyList_SearchAThing_Sci_Vector3D__System_Double_System_Double_" data-uid="SearchAThing.SciExt.Centroid(IReadOnlyList{SearchAThing.Sci.Vector3D},System.Double,System.Double)">Centroid(IReadOnlyList&lt;Vector3D&gt;, Double, Double)</h4>
+  <div class="markdown level1 summary"><p>Centroid of a polygon (does not consider z)
+note: points must ordered anticlockwise
+<a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D Centroid(this IReadOnlyList&lt;Vector3D&gt; pts, double tol, double area)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">pts</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">area</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_CircleBy3Points_" data-uid="SearchAThing.SciExt.CircleBy3Points*"></a>
+  <h4 id="SearchAThing_SciExt_CircleBy3Points_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.SciExt.CircleBy3Points(IEnumerable{SearchAThing.Sci.Vector3D})">CircleBy3Points(IEnumerable&lt;Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Circle3D CircleBy3Points(this IEnumerable&lt;Vector3D&gt; _pts)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">_pts</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Circle3D.html">Circle3D</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ClosedPolys2D_" data-uid="SearchAThing.SciExt.ClosedPolys2D*"></a>
+  <h4 id="SearchAThing_SciExt_ClosedPolys2D_IEnumerable_SearchAThing_Sci_Line3D__System_Double_System_Int32_" data-uid="SearchAThing.SciExt.ClosedPolys2D(IEnumerable{SearchAThing.Sci.Line3D},System.Double,System.Int32)">ClosedPolys2D(IEnumerable&lt;Line3D&gt;, Double, Int32)</h4>
+  <div class="markdown level1 summary"><p>build polygons from given list of segments
+if want to represent arcs, add them as dummy lines to segs
+polys returned are ordered anticlockwise</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;IReadOnlyList&lt;Vector3D&gt;&gt; ClosedPolys2D(this IEnumerable&lt;Line3D&gt; segs, double tolLen, int polyMaxPoints = 0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a>&gt;</td>
+        <td><span class="parametername">segs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tolLen</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">polyMaxPoints</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ContainsPoint_" data-uid="SearchAThing.SciExt.ContainsPoint*"></a>
+  <h4 id="SearchAThing_SciExt_ContainsPoint_IReadOnlyList_SearchAThing_Sci_Vector3D__System_Double_SearchAThing_Sci_Vector3D_System_Boolean_" data-uid="SearchAThing.SciExt.ContainsPoint(IReadOnlyList{SearchAThing.Sci.Vector3D},System.Double,SearchAThing.Sci.Vector3D,System.Boolean)">ContainsPoint(IReadOnlyList&lt;Vector3D&gt;, Double, Vector3D, Boolean)</h4>
+  <div class="markdown level1 summary"><p>states if the given polygon contains the test point ( z not considered )
+<a href="https://en.wikipedia.org/wiki/Point_in_polygon">https://en.wikipedia.org/wiki/Point_in_polygon</a>
+By default check the point contained in the polygon perimeter.
+Optionally duplicate points are zapped in comparing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool ContainsPoint(this IReadOnlyList&lt;Vector3D&gt; _pts, double tol, Vector3D _pt, bool zapDuplicates = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">_pts</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">_pt</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">zapDuplicates</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Convert_" data-uid="SearchAThing.SciExt.Convert*"></a>
+  <h4 id="SearchAThing_SciExt_Convert_System_Double_SearchAThing_Sci_IMUDomain_SearchAThing_Sci_MeasureUnit_" data-uid="SearchAThing.SciExt.Convert(System.Double,SearchAThing.Sci.IMUDomain,SearchAThing.Sci.MeasureUnit)">Convert(Double, IMUDomain, MeasureUnit)</h4>
+  <div class="markdown level1 summary"><p>convert given value from to measure units
+from measure unit is given from the correspondent physical quantity measure unit of to mu</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double Convert(this double value, IMUDomain from, MeasureUnit to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.IMUDomain.html">IMUDomain</a></td>
+        <td><span class="parametername">from</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnit.html">MeasureUnit</a></td>
+        <td><span class="parametername">to</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Convert_" data-uid="SearchAThing.SciExt.Convert*"></a>
+  <h4 id="SearchAThing_SciExt_Convert_System_Double_SearchAThing_Sci_MeasureUnit_SearchAThing_Sci_IMUDomain_" data-uid="SearchAThing.SciExt.Convert(System.Double,SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.IMUDomain)">Convert(Double, MeasureUnit, IMUDomain)</h4>
+  <div class="markdown level1 summary"><p>convert given value from to measure units
+to measure unit is given from the correspondent physical quantity measure unit of from mu</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double Convert(this double value, MeasureUnit from, IMUDomain to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnit.html">MeasureUnit</a></td>
+        <td><span class="parametername">from</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.IMUDomain.html">IMUDomain</a></td>
+        <td><span class="parametername">to</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Convert_" data-uid="SearchAThing.SciExt.Convert*"></a>
+  <h4 id="SearchAThing_SciExt_Convert_System_Double_SearchAThing_Sci_MeasureUnit_SearchAThing_Sci_MeasureUnit_" data-uid="SearchAThing.SciExt.Convert(System.Double,SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.MeasureUnit)">Convert(Double, MeasureUnit, MeasureUnit)</h4>
+  <div class="markdown level1 summary"><p>convert given value from to measure units</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double Convert(this double value, MeasureUnit from, MeasureUnit to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnit.html">MeasureUnit</a></td>
+        <td><span class="parametername">from</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnit.html">MeasureUnit</a></td>
+        <td><span class="parametername">to</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Convert_" data-uid="SearchAThing.SciExt.Convert*"></a>
+  <h4 id="SearchAThing_SciExt_Convert_System_Nullable_System_Double__SearchAThing_Sci_IMUDomain_SearchAThing_Sci_MeasureUnit_" data-uid="SearchAThing.SciExt.Convert(System.Nullable{System.Double},SearchAThing.Sci.IMUDomain,SearchAThing.Sci.MeasureUnit)">Convert(Nullable&lt;Double&gt;, IMUDomain, MeasureUnit)</h4>
+  <div class="markdown level1 summary"><p>convert nullable double from to measure units</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double? Convert(this double? value, IMUDomain mud, MeasureUnit to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.IMUDomain.html">IMUDomain</a></td>
+        <td><span class="parametername">mud</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnit.html">MeasureUnit</a></td>
+        <td><span class="parametername">to</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Convert_" data-uid="SearchAThing.SciExt.Convert*"></a>
+  <h4 id="SearchAThing_SciExt_Convert_System_Nullable_System_Double__SearchAThing_Sci_MeasureUnit_SearchAThing_Sci_IMUDomain_" data-uid="SearchAThing.SciExt.Convert(System.Nullable{System.Double},SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.IMUDomain)">Convert(Nullable&lt;Double&gt;, MeasureUnit, IMUDomain)</h4>
+  <div class="markdown level1 summary"><p>convert nullable double from to measure units</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double? Convert(this double? value, MeasureUnit from, IMUDomain mud)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnit.html">MeasureUnit</a></td>
+        <td><span class="parametername">from</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.IMUDomain.html">IMUDomain</a></td>
+        <td><span class="parametername">mud</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Convert_" data-uid="SearchAThing.SciExt.Convert*"></a>
+  <h4 id="SearchAThing_SciExt_Convert_System_Nullable_System_Double__SearchAThing_Sci_MeasureUnit_SearchAThing_Sci_MeasureUnit_" data-uid="SearchAThing.SciExt.Convert(System.Nullable{System.Double},SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.MeasureUnit)">Convert(Nullable&lt;Double&gt;, MeasureUnit, MeasureUnit)</h4>
+  <div class="markdown level1 summary"><p>convert nullable double from to measure units</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double? Convert(this double? value, MeasureUnit from, MeasureUnit to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnit.html">MeasureUnit</a></td>
+        <td><span class="parametername">from</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnit.html">MeasureUnit</a></td>
+        <td><span class="parametername">to</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ConvertToMeasure_" data-uid="SearchAThing.SciExt.ConvertToMeasure*"></a>
+  <h4 id="SearchAThing_SciExt_ConvertToMeasure_System_Double_SearchAThing_Sci_IMUDomain_SearchAThing_Sci_MeasureUnit_" data-uid="SearchAThing.SciExt.ConvertToMeasure(System.Double,SearchAThing.Sci.IMUDomain,SearchAThing.Sci.MeasureUnit)">ConvertToMeasure(Double, IMUDomain, MeasureUnit)</h4>
+  <div class="markdown level1 summary"><p>convert given value from the given measure unit in the domain corresponding to the physical quantity of given to
+and build a measure with given to measure unit</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Measure ConvertToMeasure(this double value, IMUDomain from, MeasureUnit to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.IMUDomain.html">IMUDomain</a></td>
+        <td><span class="parametername">from</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.MeasureUnit.html">MeasureUnit</a></td>
+        <td><span class="parametername">to</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Measure.html">Measure</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ConvexHull2D_" data-uid="SearchAThing.SciExt.ConvexHull2D*"></a>
+  <h4 id="SearchAThing_SciExt_ConvexHull2D_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.SciExt.ConvexHull2D(IEnumerable{SearchAThing.Sci.Vector3D})">ConvexHull2D(IEnumerable&lt;Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"><p>compute convex hull using LoycCore
+<a href="https://github.com/qwertie/LoycCore">https://github.com/qwertie/LoycCore</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3D&gt; ConvexHull2D(this IEnumerable&lt;Vector3D&gt; pts)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">pts</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_CoordTransform_" data-uid="SearchAThing.SciExt.CoordTransform*"></a>
+  <h4 id="SearchAThing_SciExt_CoordTransform_DxfDocument_Func_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.SciExt.CoordTransform(DxfDocument,Func{SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D})">CoordTransform(DxfDocument, Func&lt;Vector3D, Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;EntityObject&gt; CoordTransform(this DxfDocument dxf, Func&lt;Vector3D, Vector3D&gt; transform)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DxfDocument</span></td>
+        <td><span class="parametername">dxf</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>, <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">transform</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">EntityObject</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_CoordTransform_" data-uid="SearchAThing.SciExt.CoordTransform*"></a>
+  <h4 id="SearchAThing_SciExt_CoordTransform_EntityObject_Func_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D__SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.SciExt.CoordTransform(EntityObject,Func{SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D},SearchAThing.Sci.Vector3D)">CoordTransform(EntityObject, Func&lt;Vector3D, Vector3D&gt;, Vector3D)</h4>
+  <div class="markdown level1 summary"><p>build a clone of the given entity with coord transformed accordingly given function.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EntityObject CoordTransform(this EntityObject eo, Func&lt;Vector3D, Vector3D&gt; transform, Vector3D origin = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityObject</span></td>
+        <td><span class="parametername">eo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>, <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">transform</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">origin</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityObject</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_DistinctKeepOrder_" data-uid="SearchAThing.SciExt.DistinctKeepOrder*"></a>
+  <h4 id="SearchAThing_SciExt_DistinctKeepOrder_IEnumerable_SearchAThing_Sci_Vector3D__SearchAThing_Sci_Vector3DEqualityComparer_" data-uid="SearchAThing.SciExt.DistinctKeepOrder(IEnumerable{SearchAThing.Sci.Vector3D},SearchAThing.Sci.Vector3DEqualityComparer)">DistinctKeepOrder(IEnumerable&lt;Vector3D&gt;, Vector3DEqualityComparer)</h4>
+  <div class="markdown level1 summary"><p>retrieve distinct of given vector set ensuring to maintain given order</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3D&gt; DistinctKeepOrder(this IEnumerable&lt;Vector3D&gt; vectors, Vector3DEqualityComparer cmp)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">vectors</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3DEqualityComparer.html">Vector3DEqualityComparer</a></td>
+        <td><span class="parametername">cmp</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_DrawCube_" data-uid="SearchAThing.SciExt.DrawCube*"></a>
+  <h4 id="SearchAThing_SciExt_DrawCube_DxfObject_SearchAThing_Sci_Vector3D_System_Double_Layer_" data-uid="SearchAThing.SciExt.DrawCube(DxfObject,SearchAThing.Sci.Vector3D,System.Double,Layer)">DrawCube(DxfObject, Vector3D, Double, Layer)</h4>
+  <div class="markdown level1 summary"><p>Creates and add dxf entities for a 6 faces of a cube</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;EntityObject&gt; DrawCube(this DxfObject dxfObj, Vector3D center, double L, Layer layer = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DxfObject</span></td>
+        <td><span class="parametername">dxfObj</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">center</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">L</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Layer</span></td>
+        <td><span class="parametername">layer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">EntityObject</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_DrawCuboid_" data-uid="SearchAThing.SciExt.DrawCuboid*"></a>
+  <h4 id="SearchAThing_SciExt_DrawCuboid_DxfObject_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_Layer_" data-uid="SearchAThing.SciExt.DrawCuboid(DxfObject,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,Layer)">DrawCuboid(DxfObject, Vector3D, Vector3D, Layer)</h4>
+  <div class="markdown level1 summary"><p>Creates and add dxf entities for 6 faces of a cuboid</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;EntityObject&gt; DrawCuboid(this DxfObject dxfObj, Vector3D center, Vector3D size, Layer layer = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DxfObject</span></td>
+        <td><span class="parametername">dxfObj</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">center</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">size</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Layer</span></td>
+        <td><span class="parametername">layer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">EntityObject</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_DrawCuboid_" data-uid="SearchAThing.SciExt.DrawCuboid*"></a>
+  <h4 id="SearchAThing_SciExt_DrawCuboid_SearchAThing_Sci_BBox3D_DxfObject_Layer_" data-uid="SearchAThing.SciExt.DrawCuboid(SearchAThing.Sci.BBox3D,DxfObject,Layer)">DrawCuboid(BBox3D, DxfObject, Layer)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Face3d&gt; DrawCuboid(this BBox3D bbox, DxfObject dxfObj, Layer layer = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.BBox3D.html">BBox3D</a></td>
+        <td><span class="parametername">bbox</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">DxfObject</span></td>
+        <td><span class="parametername">dxfObj</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Layer</span></td>
+        <td><span class="parametername">layer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Face3d</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_DrawStar_" data-uid="SearchAThing.SciExt.DrawStar*"></a>
+  <h4 id="SearchAThing_SciExt_DrawStar_DxfObject_SearchAThing_Sci_Vector3D_System_Double_Layer_" data-uid="SearchAThing.SciExt.DrawStar(DxfObject,SearchAThing.Sci.Vector3D,System.Double,Layer)">DrawStar(DxfObject, Vector3D, Double, Layer)</h4>
+  <div class="markdown level1 summary"><p>Creates and add dxf entities for a 3 axis of given length centered in given center point.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;EntityObject&gt; DrawStar(this DxfObject dxfObj, Vector3D center, double L, Layer layer = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DxfObject</span></td>
+        <td><span class="parametername">dxfObj</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">center</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">L</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Layer</span></td>
+        <td><span class="parametername">layer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">EntityObject</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_DrawTimeline_" data-uid="SearchAThing.SciExt.DrawTimeline*"></a>
+  <h4 id="SearchAThing_SciExt_DrawTimeline_DxfObject_List_System_ValueTuple_DateTime_DateTime___System_Double_System_Double_System_Double_System_Double_Func_DateTime_System_String__" data-uid="SearchAThing.SciExt.DrawTimeline(DxfObject,List{System.ValueTuple{DateTime,DateTime}},System.Double,System.Double,System.Double,System.Double,Func{DateTime,System.String})">DrawTimeline(DxfObject, List&lt;(DateTime from, DateTime to)&gt;, Double, Double, Double, Double, Func&lt;DateTime, String&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;EntityObject&gt; DrawTimeline(this DxfObject dxf, List&lt;(DateTime from, DateTime to)&gt; timeline, double textHeight = null, double circleRadius = 1.5, double maxWidth = null, double stopDays = null, Func&lt;DateTime, string&gt; dtStr = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DxfObject</span></td>
+        <td><span class="parametername">dxf</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">System.ValueTuple</span>&lt;<span class="xref">DateTime</span>, <span class="xref">DateTime</span>&gt;&gt;</td>
+        <td><span class="parametername">timeline</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">textHeight</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">circleRadius</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">maxWidth</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">stopDays</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">DateTime</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">dtStr</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">EntityObject</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_EqualsTol_" data-uid="SearchAThing.SciExt.EqualsTol*"></a>
+  <h4 id="SearchAThing_SciExt_EqualsTol_IEnumerable_SearchAThing_Sci_Vector3D__System_Double_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.SciExt.EqualsTol(IEnumerable{SearchAThing.Sci.Vector3D},System.Double,IEnumerable{SearchAThing.Sci.Vector3D})">EqualsTol(IEnumerable&lt;Vector3D&gt;, Double, IEnumerable&lt;Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"><p>checks two list of vectors are equals and with same order of elements</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool EqualsTol(this IEnumerable&lt;Vector3D&gt; lst, double tol, IEnumerable&lt;Vector3D&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">lst</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_EqualsTol_" data-uid="SearchAThing.SciExt.EqualsTol*"></a>
+  <h4 id="SearchAThing_SciExt_EqualsTol_IEnumerable_System_ValueTuple_System_Double_System_Double___IEnumerable_System_ValueTuple_System_Double_System_Double___System_Double_System_Double_" data-uid="SearchAThing.SciExt.EqualsTol(IEnumerable{System.ValueTuple{System.Double,System.Double}},IEnumerable{System.ValueTuple{System.Double,System.Double}},System.Double,System.Double)">EqualsTol(IEnumerable&lt;(Double, Double)&gt;, IEnumerable&lt;(Double, Double)&gt;, Double, Double)</h4>
+  <div class="markdown level1 summary"><p>compares two list tuples</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool EqualsTol(this IEnumerable&lt;(double, double)&gt; tuple_list1, IEnumerable&lt;(double, double)&gt; tuple_list2, double tol1, double tol2)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.Double</span>, <span class="xref">System.Double</span>&gt;&gt;</td>
+        <td><span class="parametername">tuple_list1</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.Double</span>, <span class="xref">System.Double</span>&gt;&gt;</td>
+        <td><span class="parametername">tuple_list2</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol1</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Explode_" data-uid="SearchAThing.SciExt.Explode*"></a>
+  <h4 id="SearchAThing_SciExt_Explode_Insert_" data-uid="SearchAThing.SciExt.Explode(Insert)">Explode(Insert)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;EntityObject&gt; Explode(this Insert ins)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Insert</span></td>
+        <td><span class="parametername">ins</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">EntityObject</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_GeomCentroid_" data-uid="SearchAThing.SciExt.GeomCentroid*"></a>
+  <h4 id="SearchAThing_SciExt_GeomCentroid_IReadOnlyList_SearchAThing_Sci_Geometry__System_Double_" data-uid="SearchAThing.SciExt.GeomCentroid(IReadOnlyList{SearchAThing.Sci.Geometry},System.Double)">GeomCentroid(IReadOnlyList&lt;Geometry&gt;, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D GeomCentroid(this IReadOnlyList&lt;Geometry&gt; geometry_block, double tolLen)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a>&gt;</td>
+        <td><span class="parametername">geometry_block</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tolLen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Intersect_" data-uid="SearchAThing.SciExt.Intersect*"></a>
+  <h4 id="SearchAThing_SciExt_Intersect_IEnumerable_SearchAThing_Sci_Line3D__System_Double_SearchAThing_Sci_Line3D_SearchAThing_Sci_Line3DSegmentMode_" data-uid="SearchAThing.SciExt.Intersect(IEnumerable{SearchAThing.Sci.Line3D},System.Double,SearchAThing.Sci.Line3D,SearchAThing.Sci.Line3DSegmentMode)">Intersect(IEnumerable&lt;Line3D&gt;, Double, Line3D, Line3DSegmentMode)</h4>
+  <div class="markdown level1 summary"><p>Find intersection points (0,1,2) of the given line with the given polygon
+TODO unit test</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3D&gt; Intersect(this IEnumerable&lt;Line3D&gt; polygonSegments, double tol, Line3D line, Line3DSegmentMode segmentMode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a>&gt;</td>
+        <td><span class="parametername">polygonSegments</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></td>
+        <td><span class="parametername">line</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Line3DSegmentMode.html">Line3DSegmentMode</a></td>
+        <td><span class="parametername">segmentMode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_IsAClosedPoly_" data-uid="SearchAThing.SciExt.IsAClosedPoly*"></a>
+  <h4 id="SearchAThing_SciExt_IsAClosedPoly_IEnumerable_SearchAThing_Sci_Line3D__System_Double_" data-uid="SearchAThing.SciExt.IsAClosedPoly(IEnumerable{SearchAThing.Sci.Line3D},System.Double)">IsAClosedPoly(IEnumerable&lt;Line3D&gt;, Double)</h4>
+  <div class="markdown level1 summary"><p>Preprocess segs with SortPoly if needed.
+Return the ordered segments poly or null if not a closed poly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Line3D&gt; IsAClosedPoly(this IEnumerable&lt;Line3D&gt; segs, double tol)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a>&gt;</td>
+        <td><span class="parametername">segs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_IsLinearIndependent_" data-uid="SearchAThing.SciExt.IsLinearIndependent*"></a>
+  <h4 id="SearchAThing_SciExt_IsLinearIndependent_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.SciExt.IsLinearIndependent(IEnumerable{SearchAThing.Sci.Vector3D})">IsLinearIndependent(IEnumerable&lt;Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"><p>states if given 3 vectors are linearly independent</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsLinearIndependent(this IEnumerable&lt;Vector3D&gt; vectors)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">vectors</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if given vector are linearly independent</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="SearchAThing_SciExt_IsLinearIndependent_IEnumerable_SearchAThing_Sci_Vector3D___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><a href="/test/Vector3D/Vector3DTest_0001.cs">unit test</a></p>
+</div>
+  
+  
+  <a id="SearchAThing_SciExt_Length_" data-uid="SearchAThing.SciExt.Length*"></a>
+  <h4 id="SearchAThing_SciExt_Length_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.SciExt.Length(IEnumerable{SearchAThing.Sci.Vector3D})">Length(IEnumerable&lt;Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"><p>compute length of polyline from given seq_pts</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double Length(this IEnumerable&lt;Vector3D&gt; seq_pts)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">seq_pts</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Mean_" data-uid="SearchAThing.SciExt.Mean*"></a>
+  <h4 id="SearchAThing_SciExt_Mean_IEnumerable_SearchAThing_Sci_Vector3D__System_Boolean_" data-uid="SearchAThing.SciExt.Mean(IEnumerable{SearchAThing.Sci.Vector3D},System.Boolean)">Mean(IEnumerable&lt;Vector3D&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>mean of given vetor3d list
+note: if used to compute poly center enable skipFirstAtEnd</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D Mean(this IEnumerable&lt;Vector3D&gt; lst, bool skipFirstAtEnd = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">lst</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">skipFirstAtEnd</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_MergeColinearSegments_" data-uid="SearchAThing.SciExt.MergeColinearSegments*"></a>
+  <h4 id="SearchAThing_SciExt_MergeColinearSegments_IEnumerable_SearchAThing_Sci_Line3D__System_Double_" data-uid="SearchAThing.SciExt.MergeColinearSegments(IEnumerable{SearchAThing.Sci.Line3D},System.Double)">MergeColinearSegments(IEnumerable&lt;Line3D&gt;, Double)</h4>
+  <div class="markdown level1 summary"><p>merge colinear overlapped segments into single
+result segments direction and order is not ensured
+pre: segs must colinear</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Line3D&gt; MergeColinearSegments(this IEnumerable&lt;Line3D&gt; _segs, double tol_len)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a>&gt;</td>
+        <td><span class="parametername">_segs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol_len</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_MidPoint_" data-uid="SearchAThing.SciExt.MidPoint*"></a>
+  <h4 id="SearchAThing_SciExt_MidPoint_Polyline_" data-uid="SearchAThing.SciExt.MidPoint(Polyline)">MidPoint(Polyline)</h4>
+  <div class="markdown level1 summary"><p>get the midpoint of the 3d polyline
+distance is computed over all segments</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D MidPoint(this Polyline poly)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Polyline</span></td>
+        <td><span class="parametername">poly</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_MinDistance_" data-uid="SearchAThing.SciExt.MinDistance*"></a>
+  <h4 id="SearchAThing_SciExt_MinDistance_IEnumerable_System_Double__" data-uid="SearchAThing.SciExt.MinDistance(IEnumerable{System.Double})">MinDistance(IEnumerable&lt;Double&gt;)</h4>
+  <div class="markdown level1 summary"><p>Return the min distance between two adiacent number
+given from all of the given ordered set of numbers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double MinDistance(this IEnumerable&lt;double&gt; orderedNumbers)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td><span class="parametername">orderedNumbers</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>0 if empty set or 1 element. min distance otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_MinMax_" data-uid="SearchAThing.SciExt.MinMax*"></a>
+  <h4 id="SearchAThing_SciExt_MinMax_IEnumerable_System_Double__" data-uid="SearchAThing.SciExt.MinMax(IEnumerable{System.Double})">MinMax(IEnumerable&lt;Double&gt;)</h4>
+  <div class="markdown level1 summary"><p>retrieve min,max w/single sweep</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (double min, double max) MinMax(this IEnumerable&lt;double&gt; input)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td><span class="parametername">input</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.Double</span>, <span class="xref">System.Double</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_NormalizeAngle2PI_" data-uid="SearchAThing.SciExt.NormalizeAngle2PI*"></a>
+  <h4 id="SearchAThing_SciExt_NormalizeAngle2PI_System_Double_System_Double_" data-uid="SearchAThing.SciExt.NormalizeAngle2PI(System.Double,System.Double)">NormalizeAngle2PI(Double, Double)</h4>
+  <div class="markdown level1 summary"><p>ensure given angle in [0,2*PI] range</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double NormalizeAngle2PI(this double angle_rad, double tol_rad)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">angle_rad</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol_rad</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Offset_" data-uid="SearchAThing.SciExt.Offset*"></a>
+  <h4 id="SearchAThing_SciExt_Offset_IReadOnlyList_SearchAThing_Sci_Vector3D__System_Double_System_Double_" data-uid="SearchAThing.SciExt.Offset(IReadOnlyList{SearchAThing.Sci.Vector3D},System.Double,System.Double)">Offset(IReadOnlyList&lt;Vector3D&gt;, Double, Double)</h4>
+  <div class="markdown level1 summary"><p>increase of decrease polygon points offseting</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3D&gt; Offset(this IReadOnlyList&lt;Vector3D&gt; pts, double tol, double offset)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">pts</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Points_" data-uid="SearchAThing.SciExt.Points*"></a>
+  <h4 id="SearchAThing_SciExt_Points_EntityObject_" data-uid="SearchAThing.SciExt.Points(EntityObject)">Points(EntityObject)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3D&gt; Points(this EntityObject eo)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityObject</span></td>
+        <td><span class="parametername">eo</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_PolygonSegments_" data-uid="SearchAThing.SciExt.PolygonSegments*"></a>
+  <h4 id="SearchAThing_SciExt_PolygonSegments_IEnumerable_SearchAThing_Sci_Vector3D__System_Double_" data-uid="SearchAThing.SciExt.PolygonSegments(IEnumerable{SearchAThing.Sci.Vector3D},System.Double)">PolygonSegments(IEnumerable&lt;Vector3D&gt;, Double)</h4>
+  <div class="markdown level1 summary"><p>yields an ienumerable of polygon segments corresponding to the given polygon pts ( z is not considered )
+works even last point not equals the first one</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Line3D&gt; PolygonSegments(this IEnumerable&lt;Vector3D&gt; pts, double tol)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">pts</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_PolyPoints_" data-uid="SearchAThing.SciExt.PolyPoints*"></a>
+  <h4 id="SearchAThing_SciExt_PolyPoints_IEnumerable_SearchAThing_Sci_Line3D__" data-uid="SearchAThing.SciExt.PolyPoints(IEnumerable{SearchAThing.Sci.Line3D})">PolyPoints(IEnumerable&lt;Line3D&gt;)</h4>
+  <div class="markdown level1 summary"><p>retrieve s[0].from, s[1].from, ... s[n-1].from, s[n-1].to points</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3D&gt; PolyPoints(this IEnumerable&lt;Line3D&gt; segs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a>&gt;</td>
+        <td><span class="parametername">segs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_PolyPoints_" data-uid="SearchAThing.SciExt.PolyPoints*"></a>
+  <h4 id="SearchAThing_SciExt_PolyPoints_IEnumerable_SearchAThing_Sci_Vector3D__System_Double_System_Boolean_" data-uid="SearchAThing.SciExt.PolyPoints(IEnumerable{SearchAThing.Sci.Vector3D},System.Double,System.Boolean)">PolyPoints(IEnumerable&lt;Vector3D&gt;, Double, Boolean)</h4>
+  <div class="markdown level1 summary"><p>given a set of polygon pts, returns the enumeation of all pts
+so that the last not attach to the first ( if makeClosed = false ).
+Elsewhere it returns a last point equals the first ( makeClosed = true ).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3D&gt; PolyPoints(this IEnumerable&lt;Vector3D&gt; pts, double tol, bool makeClosed = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">pts</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">makeClosed</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Project_" data-uid="SearchAThing.SciExt.Project*"></a>
+  <h4 id="SearchAThing_SciExt_Project_SearchAThing_Sci_Vector3D_SearchAThing_Sci_CoordinateSystem3D_System_Boolean_" data-uid="SearchAThing.SciExt.Project(SearchAThing.Sci.Vector3D,SearchAThing.Sci.CoordinateSystem3D,System.Boolean)">Project(Vector3D, CoordinateSystem3D, Boolean)</h4>
+  <div class="markdown level1 summary"><p>wcs coord of projected coord to the given cs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D Project(this Vector3D v, CoordinateSystem3D cs, bool evalCSOrigin = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">v</span></td>
+        <td><p>wcs point</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></td>
+        <td><span class="parametername">cs</span></td>
+        <td><p>cs to project</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">evalCSOrigin</span></td>
+        <td><p>if true cs origin will subtracted before transform, then readded to obtain wcs point</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_RadTol_" data-uid="SearchAThing.SciExt.RadTol*"></a>
+  <h4 id="SearchAThing_SciExt_RadTol_System_Double_System_Double_" data-uid="SearchAThing.SciExt.RadTol(System.Double,System.Double)">RadTol(Double, Double)</h4>
+  <div class="markdown level1 summary"><p>compute angle rad tolerance by given arc length tolerance</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double RadTol(this double lenTol, double radius)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">lenTol</span></td>
+        <td><p>length tolerance on the arc</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>radius of the arc</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_RepeatFirstAtEnd_" data-uid="SearchAThing.SciExt.RepeatFirstAtEnd*"></a>
+  <h4 id="SearchAThing_SciExt_RepeatFirstAtEnd_IEnumerable_SearchAThing_Sci_Vector3D__System_Double_" data-uid="SearchAThing.SciExt.RepeatFirstAtEnd(IEnumerable{SearchAThing.Sci.Vector3D},System.Double)">RepeatFirstAtEnd(IEnumerable&lt;Vector3D&gt;, Double)</h4>
+  <div class="markdown level1 summary"><p>given points a,b,c it will return a,b,c,a ( first is repeated at end )
+it avoid to repeat first at end when latest point already equals the first one</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3D&gt; RepeatFirstAtEnd(this IEnumerable&lt;Vector3D&gt; pts, double tol)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">pts</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Segments_" data-uid="SearchAThing.SciExt.Segments*"></a>
+  <h4 id="SearchAThing_SciExt_Segments_IEnumerable_SearchAThing_Sci_Geometry__System_Double_" data-uid="SearchAThing.SciExt.Segments(IEnumerable{SearchAThing.Sci.Geometry},System.Double)">Segments(IEnumerable&lt;Geometry&gt;, Double)</h4>
+  <div class="markdown level1 summary"><p>segments representation of given geometries
+if arc found a segment between endpoints returns</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Line3D&gt; Segments(this IEnumerable&lt;Geometry&gt; geometry_block, double tol_len)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a>&gt;</td>
+        <td><span class="parametername">geometry_block</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol_len</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_SetColor_" data-uid="SearchAThing.SciExt.SetColor*"></a>
+  <h4 id="SearchAThing_SciExt_SetColor_EntityObject_AciColor_" data-uid="SearchAThing.SciExt.SetColor(EntityObject,AciColor)">SetColor(EntityObject, AciColor)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EntityObject SetColor(this EntityObject eo, AciColor color)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityObject</span></td>
+        <td><span class="parametername">eo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">AciColor</span></td>
+        <td><span class="parametername">color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityObject</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_SetLayer_" data-uid="SearchAThing.SciExt.SetLayer*"></a>
+  <h4 id="SearchAThing_SciExt_SetLayer_EntityObject_Layer_" data-uid="SearchAThing.SciExt.SetLayer(EntityObject,Layer)">SetLayer(EntityObject, Layer)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EntityObject SetLayer(this EntityObject eo, Layer layer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityObject</span></td>
+        <td><span class="parametername">eo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Layer</span></td>
+        <td><span class="parametername">layer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityObject</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_SetLayer_" data-uid="SearchAThing.SciExt.SetLayer*"></a>
+  <h4 id="SearchAThing_SciExt_SetLayer_IEnumerable_EntityObject__Layer_" data-uid="SearchAThing.SciExt.SetLayer(IEnumerable{EntityObject},Layer)">SetLayer(IEnumerable&lt;EntityObject&gt;, Layer)</h4>
+  <div class="markdown level1 summary"><p>Set layer of given set of dxf entities</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;EntityObject&gt; SetLayer(this IEnumerable&lt;EntityObject&gt; ents, Layer layer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">EntityObject</span>&gt;</td>
+        <td><span class="parametername">ents</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Layer</span></td>
+        <td><span class="parametername">layer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">EntityObject</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_SortPoly_" data-uid="SearchAThing.SciExt.SortPoly*"></a>
+  <h4 id="SearchAThing_SciExt_SortPoly_IEnumerable_SearchAThing_Sci_Line3D__System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.SciExt.SortPoly(IEnumerable{SearchAThing.Sci.Line3D},System.Double,SearchAThing.Sci.Vector3D)">SortPoly(IEnumerable&lt;Line3D&gt;, Double, Vector3D)</h4>
+  <div class="markdown level1 summary"><p>Sort polygon segments so that they can form a polygon ( if they really form one ).
+It will not check for segment versus adjancency</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Line3D&gt; SortPoly(this IEnumerable&lt;Line3D&gt; segs, double tol, Vector3D refAxis = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a>&gt;</td>
+        <td><span class="parametername">segs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">refAxis</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_SortPoly_" data-uid="SearchAThing.SciExt.SortPoly*"></a>
+  <h4 id="SearchAThing_SciExt_SortPoly_IEnumerable_SearchAThing_Sci_Vector3D__System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.SciExt.SortPoly(IEnumerable{SearchAThing.Sci.Vector3D},System.Double,SearchAThing.Sci.Vector3D)">SortPoly(IEnumerable&lt;Vector3D&gt;, Double, Vector3D)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3D&gt; SortPoly(this IEnumerable&lt;Vector3D&gt; pts, double tol, Vector3D refAxis = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">pts</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">refAxis</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_SortPoly_" data-uid="SearchAThing.SciExt.SortPoly*"></a>
+  <h4 id="SearchAThing_SciExt_SortPoly__1_IEnumerable___0__System_Double_Func___0_SearchAThing_Sci_Vector3D__SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.SciExt.SortPoly``1(IEnumerable{``0},System.Double,Func{``0,SearchAThing.Sci.Vector3D},SearchAThing.Sci.Vector3D)">SortPoly&lt;T&gt;(IEnumerable&lt;T&gt;, Double, Func&lt;T, Vector3D&gt;, Vector3D)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;T&gt; SortPoly&lt;T&gt;(this IEnumerable&lt;T&gt; pts, double tol, Func&lt;T, Vector3D&gt; getPoint, Vector3D refAxis = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
+        <td><span class="parametername">pts</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;T, <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">getPoint</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">refAxis</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_StringRepresentation_" data-uid="SearchAThing.SciExt.StringRepresentation*"></a>
+  <h4 id="SearchAThing_SciExt_StringRepresentation_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.SciExt.StringRepresentation(IEnumerable{SearchAThing.Sci.Vector3D})">StringRepresentation(IEnumerable&lt;Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"><p>array invariant string vector3d representation &quot;(x1,y1,z2);(x2,y2,z2)&quot;</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string StringRepresentation(this IEnumerable&lt;Vector3D&gt; pts)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">pts</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Sum_" data-uid="SearchAThing.SciExt.Sum*"></a>
+  <h4 id="SearchAThing_SciExt_Sum_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.SciExt.Sum(IEnumerable{SearchAThing.Sci.Vector3D})">Sum(IEnumerable&lt;Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D Sum(this IEnumerable&lt;Vector3D&gt; lst)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">lst</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_TakeUntilAdjacent_" data-uid="SearchAThing.SciExt.TakeUntilAdjacent*"></a>
+  <h4 id="SearchAThing_SciExt_TakeUntilAdjacent_IEnumerable_SearchAThing_Sci_Line3D__System_Double_System_Boolean_" data-uid="SearchAThing.SciExt.TakeUntilAdjacent(IEnumerable{SearchAThing.Sci.Line3D},System.Double,System.Boolean)">TakeUntilAdjacent(IEnumerable&lt;Line3D&gt;, Double, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Return the input set of segments until an adjacency between one and next is found.
+It can rectify the versus of line (by default) if needed.
+Note: returned set references can be different if rectifyVersus==true</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Line3D&gt; TakeUntilAdjacent(this IEnumerable&lt;Line3D&gt; segs, double tol, bool rectifyVersus = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a>&gt;</td>
+        <td><span class="parametername">segs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">rectifyVersus</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Thin_" data-uid="SearchAThing.SciExt.Thin*"></a>
+  <h4 id="SearchAThing_SciExt_Thin_IEnumerable_System_Double__System_Double_System_Boolean_System_Boolean_" data-uid="SearchAThing.SciExt.Thin(IEnumerable{System.Double},System.Double,System.Boolean,System.Boolean)">Thin(IEnumerable&lt;Double&gt;, Double, Boolean, Boolean)</h4>
+  <div class="markdown level1 summary"><p>retrieve given input set ordered with only distinct values after comparing through tolerance
+in this case result set contains only values from the input set (default) or rounding to given tol if maintain_original_values is false;
+if keep_ends true (default) min and max already exists at begin/end of returned sequence</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;double&gt; Thin(this IEnumerable&lt;double&gt; input, double tol, bool keep_ends = true, bool maintain_original_values = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td><span class="parametername">input</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">keep_ends</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">maintain_original_values</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToArc3D_" data-uid="SearchAThing.SciExt.ToArc3D*"></a>
+  <h4 id="SearchAThing_SciExt_ToArc3D_netDxf_Entities_Arc_System_Double_" data-uid="SearchAThing.SciExt.ToArc3D(netDxf.Entities.Arc,System.Double)">ToArc3D(netDxf.Entities.Arc, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Arc3D ToArc3D(this netDxf.Entities.Arc dxf_arc, double tolLen)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">netDxf.Entities.Arc</span></td>
+        <td><span class="parametername">dxf_arc</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tolLen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Arc3D.html">Arc3D</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToCadScript_" data-uid="SearchAThing.SciExt.ToCadScript*"></a>
+  <h4 id="SearchAThing_SciExt_ToCadScript_IEnumerable_SearchAThing_Sci_Line3D__" data-uid="SearchAThing.SciExt.ToCadScript(IEnumerable{SearchAThing.Sci.Line3D})">ToCadScript(IEnumerable&lt;Line3D&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ToCadScript(this IEnumerable&lt;Line3D&gt; lines)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a>&gt;</td>
+        <td><span class="parametername">lines</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToCircle3D_" data-uid="SearchAThing.SciExt.ToCircle3D*"></a>
+  <h4 id="SearchAThing_SciExt_ToCircle3D_netDxf_Entities_Circle_System_Double_" data-uid="SearchAThing.SciExt.ToCircle3D(netDxf.Entities.Circle,System.Double)">ToCircle3D(netDxf.Entities.Circle, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Circle3D ToCircle3D(this netDxf.Entities.Circle dxf_circle, double tol_len)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">netDxf.Entities.Circle</span></td>
+        <td><span class="parametername">dxf_circle</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol_len</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Circle3D.html">Circle3D</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToCoordSequence_" data-uid="SearchAThing.SciExt.ToCoordSequence*"></a>
+  <h4 id="SearchAThing_SciExt_ToCoordSequence_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.SciExt.ToCoordSequence(IEnumerable{SearchAThing.Sci.Vector3D})">ToCoordSequence(IEnumerable&lt;Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"><p>from a list of vector3d retrieve x1,y1,z1,x2,y2,z2,... coord sequence</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;double&gt; ToCoordSequence(this IEnumerable&lt;Vector3D&gt; pts)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">pts</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToCoordString2D_" data-uid="SearchAThing.SciExt.ToCoordString2D*"></a>
+  <h4 id="SearchAThing_SciExt_ToCoordString2D_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.SciExt.ToCoordString2D(IEnumerable{SearchAThing.Sci.Vector3D})">ToCoordString2D(IEnumerable&lt;Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"><p>produce a string with x1,y1,x2,y2, ...</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ToCoordString2D(this IEnumerable&lt;Vector3D&gt; points)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">points</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToCoordString3D_" data-uid="SearchAThing.SciExt.ToCoordString3D*"></a>
+  <h4 id="SearchAThing_SciExt_ToCoordString3D_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.SciExt.ToCoordString3D(IEnumerable{SearchAThing.Sci.Vector3D})">ToCoordString3D(IEnumerable&lt;Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"><p>produce a string with x1,y1,z1,x2,y2,z2, ...</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ToCoordString3D(this IEnumerable&lt;Vector3D&gt; points)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">points</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToCSV_" data-uid="SearchAThing.SciExt.ToCSV*"></a>
+  <h4 id="SearchAThing_SciExt_ToCSV_IEnumerable_System_Object__" data-uid="SearchAThing.SciExt.ToCSV(IEnumerable{System.Object})">ToCSV(IEnumerable&lt;Object&gt;)</h4>
+  <div class="markdown level1 summary"><p>exports to a csv string some known fields
+note: not really a csv its a tab separated values for debug purpose
+just copy and paste</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ToCSV(this IEnumerable&lt;object&gt; lst)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.Object</span>&gt;</td>
+        <td><span class="parametername">lst</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToDxfPoint_" data-uid="SearchAThing.SciExt.ToDxfPoint*"></a>
+  <h4 id="SearchAThing_SciExt_ToDxfPoint_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.SciExt.ToDxfPoint(SearchAThing.Sci.Vector3D)">ToDxfPoint(Vector3D)</h4>
+  <div class="markdown level1 summary"><p>create dxf point from given vector3d</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static netDxf.Entities.Point ToDxfPoint(this Vector3D pt)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">pt</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">netDxf.Entities.Point</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToDxfUCS_" data-uid="SearchAThing.SciExt.ToDxfUCS*"></a>
+  <h4 id="SearchAThing_SciExt_ToDxfUCS_SearchAThing_Sci_CoordinateSystem3D_System_String_" data-uid="SearchAThing.SciExt.ToDxfUCS(SearchAThing.Sci.CoordinateSystem3D,System.String)">ToDxfUCS(CoordinateSystem3D, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UCS ToDxfUCS(this CoordinateSystem3D cs, string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></td>
+        <td><span class="parametername">cs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UCS</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToFace3DList_" data-uid="SearchAThing.SciExt.ToFace3DList*"></a>
+  <h4 id="SearchAThing_SciExt_ToFace3DList_SearchAThing_Sci_BBox3D_" data-uid="SearchAThing.SciExt.ToFace3DList(SearchAThing.Sci.BBox3D)">ToFace3DList(BBox3D)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Face3d&gt; ToFace3DList(this BBox3D bbox)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.BBox3D.html">BBox3D</a></td>
+        <td><span class="parametername">bbox</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Face3d</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToGeometryBlock_" data-uid="SearchAThing.SciExt.ToGeometryBlock*"></a>
+  <h4 id="SearchAThing_SciExt_ToGeometryBlock_netDxf_Entities_LwPolyline_System_Double_" data-uid="SearchAThing.SciExt.ToGeometryBlock(netDxf.Entities.LwPolyline,System.Double)">ToGeometryBlock(netDxf.Entities.LwPolyline, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Geometry&gt; ToGeometryBlock(this netDxf.Entities.LwPolyline lwpolyline, double tolLen)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">netDxf.Entities.LwPolyline</span></td>
+        <td><span class="parametername">lwpolyline</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tolLen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToGLLinesVertexes_" data-uid="SearchAThing.SciExt.ToGLLinesVertexes*"></a>
+  <h4 id="SearchAThing_SciExt_ToGLLinesVertexes_netDxf_DxfDocument_" data-uid="SearchAThing.SciExt.ToGLLinesVertexes(netDxf.DxfDocument)">ToGLLinesVertexes(netDxf.DxfDocument)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GLLineVertex[] ToGLLinesVertexes(this netDxf.DxfDocument dxf)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">netDxf.DxfDocument</span></td>
+        <td><span class="parametername">dxf</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.GLLineVertex.html">GLLineVertex</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToLine_" data-uid="SearchAThing.SciExt.ToLine*"></a>
+  <h4 id="SearchAThing_SciExt_ToLine_SearchAThing_Sci_Line3D_" data-uid="SearchAThing.SciExt.ToLine(SearchAThing.Sci.Line3D)">ToLine(Line3D)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Line ToLine(this Line3D line)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></td>
+        <td><span class="parametername">line</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Line</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToLine3D_" data-uid="SearchAThing.SciExt.ToLine3D*"></a>
+  <h4 id="SearchAThing_SciExt_ToLine3D_netDxf_Entities_Line_" data-uid="SearchAThing.SciExt.ToLine3D(netDxf.Entities.Line)">ToLine3D(netDxf.Entities.Line)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Line3D ToLine3D(this netDxf.Entities.Line line)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">netDxf.Entities.Line</span></td>
+        <td><span class="parametername">line</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToLwPolyline_" data-uid="SearchAThing.SciExt.ToLwPolyline*"></a>
+  <h4 id="SearchAThing_SciExt_ToLwPolyline_IEnumerable_SearchAThing_Sci_Geometry__System_Double_System_Boolean_" data-uid="SearchAThing.SciExt.ToLwPolyline(IEnumerable{SearchAThing.Sci.Geometry},System.Double,System.Boolean)">ToLwPolyline(IEnumerable&lt;Geometry&gt;, Double, Boolean)</h4>
+  <div class="markdown level1 summary"><p>build 2d dxf polyline.
+note: use RepeatFirstAtEnd extension to build a closed polyline</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static netDxf.Entities.LwPolyline ToLwPolyline(this IEnumerable&lt;Geometry&gt; _geom, double tolLen, bool closed = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a>&gt;</td>
+        <td><span class="parametername">_geom</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tolLen</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">closed</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">netDxf.Entities.LwPolyline</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToPoint_" data-uid="SearchAThing.SciExt.ToPoint*"></a>
+  <h4 id="SearchAThing_SciExt_ToPoint_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.SciExt.ToPoint(SearchAThing.Sci.Vector3D)">ToPoint(Vector3D)</h4>
+  <div class="markdown level1 summary"><p>To point (double x, double y)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Point ToPoint(this Vector3D v)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">v</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Point</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToPolyline_" data-uid="SearchAThing.SciExt.ToPolyline*"></a>
+  <h4 id="SearchAThing_SciExt_ToPolyline_IEnumerable_SearchAThing_Sci_Vector3D__System_Boolean_" data-uid="SearchAThing.SciExt.ToPolyline(IEnumerable{SearchAThing.Sci.Vector3D},System.Boolean)">ToPolyline(IEnumerable&lt;Vector3D&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>build 3d dxf polyline
+note: use RepeatFirstAtEnd extension to build a closed polyline</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static netDxf.Entities.Polyline ToPolyline(this IEnumerable&lt;Vector3D&gt; pts, bool isClosed = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">pts</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">isClosed</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">netDxf.Entities.Polyline</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToPsql_" data-uid="SearchAThing.SciExt.ToPsql*"></a>
+  <h4 id="SearchAThing_SciExt_ToPsql_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.SciExt.ToPsql(IEnumerable{SearchAThing.Sci.Vector3D})">ToPsql(IEnumerable&lt;Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"><p>create a psql representation of double[] coord sequence x1,y1,z1,x2,y2,z2, ... of given points</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ToPsql(this IEnumerable&lt;Vector3D&gt; pts)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">pts</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToPsql_" data-uid="SearchAThing.SciExt.ToPsql*"></a>
+  <h4 id="SearchAThing_SciExt_ToPsql_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.SciExt.ToPsql(SearchAThing.Sci.Vector3D)">ToPsql(Vector3D)</h4>
+  <div class="markdown level1 summary"><p>creates a psql double[] string</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ToPsql(this Vector3D v)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">v</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToVector2_" data-uid="SearchAThing.SciExt.ToVector2*"></a>
+  <h4 id="SearchAThing_SciExt_ToVector2_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.SciExt.ToVector2(SearchAThing.Sci.Vector3D)">ToVector2(Vector3D)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static netDxf.Vector2 ToVector2(this Vector3D v)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">v</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">netDxf.Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ToVector3D_" data-uid="SearchAThing.SciExt.ToVector3D*"></a>
+  <h4 id="SearchAThing_SciExt_ToVector3D_netDxf_Vector2_" data-uid="SearchAThing.SciExt.ToVector3D(netDxf.Vector2)">ToVector3D(netDxf.Vector2)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D ToVector3D(this netDxf.Vector2 v)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">netDxf.Vector2</span></td>
+        <td><span class="parametername">v</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Vector3DCoords_" data-uid="SearchAThing.SciExt.Vector3DCoords*"></a>
+  <h4 id="SearchAThing_SciExt_Vector3DCoords_LwPolyline_" data-uid="SearchAThing.SciExt.Vector3DCoords(LwPolyline)">Vector3DCoords(LwPolyline)</h4>
+  <div class="markdown level1 summary"><p>enumerate as Vector3D given dxf lwpolyline vertexes</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3D&gt; Vector3DCoords(this LwPolyline lwp)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">LwPolyline</span></td>
+        <td><span class="parametername">lwp</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Vector3DCoords_" data-uid="SearchAThing.SciExt.Vector3DCoords*"></a>
+  <h4 id="SearchAThing_SciExt_Vector3DCoords_Polyline_" data-uid="SearchAThing.SciExt.Vector3DCoords(Polyline)">Vector3DCoords(Polyline)</h4>
+  <div class="markdown level1 summary"><p>enumerate as Vector3D given dxf polyline vertexes</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3D&gt; Vector3DCoords(this Polyline pl)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Polyline</span></td>
+        <td><span class="parametername">pl</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_Vertexes_" data-uid="SearchAThing.SciExt.Vertexes*"></a>
+  <h4 id="SearchAThing_SciExt_Vertexes_IReadOnlyList_SearchAThing_Sci_Geometry__System_Double_" data-uid="SearchAThing.SciExt.Vertexes(IReadOnlyList{SearchAThing.Sci.Geometry},System.Double)">Vertexes(IReadOnlyList&lt;Geometry&gt;, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3D&gt; Vertexes(this IReadOnlyList&lt;Geometry&gt; geometry_block, double tolLen)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a>&gt;</td>
+        <td><span class="parametername">geometry_block</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tolLen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_WeightedDistribution_" data-uid="SearchAThing.SciExt.WeightedDistribution*"></a>
+  <h4 id="SearchAThing_SciExt_WeightedDistribution_IEnumerable_System_Double__System_Int32_" data-uid="SearchAThing.SciExt.WeightedDistribution(IEnumerable{System.Double},System.Int32)">WeightedDistribution(IEnumerable&lt;Double&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>retrieve a list of N pairs (value,presence)
+with value between min and max of inputs and presence between 0..1 that represents the percent of presence of the value</p>
+<p>examples:</p>
+<p>inputs = ( 1, 2, 3 ), N = 3
+results: ( (1, .33), (2, .33), (3, .33) )</p>
+<p>inputs = ( 1, 2.49, 3), N = 3
+results: ( (1, .33), (2, .169), (3, .497) )</p>
+<p>inputs = ( 1, 2, 3), N = 4
+results: ( (1, .33), (1.6, .16), (2.3, .16), (3, .33) )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (double off, double weight)[] WeightedDistribution(this IEnumerable&lt;double&gt; inputs, int N)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td><span class="parametername">inputs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">N</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.Double</span>, <span class="xref">System.Double</span>&gt;[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ZapDuplicates_" data-uid="SearchAThing.SciExt.ZapDuplicates*"></a>
+  <h4 id="SearchAThing_SciExt_ZapDuplicates_IEnumerable_SearchAThing_Sci_Vector3D__SearchAThing_Sci_Vector3DEqualityComparer_" data-uid="SearchAThing.SciExt.ZapDuplicates(IEnumerable{SearchAThing.Sci.Vector3D},SearchAThing.Sci.Vector3DEqualityComparer)">ZapDuplicates(IEnumerable&lt;Vector3D&gt;, Vector3DEqualityComparer)</h4>
+  <div class="markdown level1 summary"><p>return pts (maintaining order) w/out duplicates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3D&gt; ZapDuplicates(this IEnumerable&lt;Vector3D&gt; pts, Vector3DEqualityComparer cmp)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">pts</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Sci.Vector3DEqualityComparer.html">Vector3DEqualityComparer</a></td>
+        <td><span class="parametername">cmp</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="SearchAThing_SciExt_ZapDuplicates_" data-uid="SearchAThing.SciExt.ZapDuplicates*"></a>
+  <h4 id="SearchAThing_SciExt_ZapDuplicates_IEnumerable_SearchAThing_Sci_Vector3D__System_Double_" data-uid="SearchAThing.SciExt.ZapDuplicates(IEnumerable{SearchAThing.Sci.Vector3D},System.Double)">ZapDuplicates(IEnumerable&lt;Vector3D&gt;, Double)</h4>
+  <div class="markdown level1 summary"><p>return pts (maintaining order) w/out duplicates
+use the other overloaded method if already have a vector 3d equality comparer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3D&gt; ZapDuplicates(this IEnumerable&lt;Vector3D&gt; pts, double tol)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">pts</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
