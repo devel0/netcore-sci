@@ -336,3 +336,13 @@ coverage.json
 *.bak
 
 out.dxf
+
+###############
+#    folder   #
+###############
+/**/DROP/
+/**/TEMP/
+/**/packages/
+/**/bin/
+/**/obj/
+_site

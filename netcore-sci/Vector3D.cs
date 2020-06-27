@@ -400,8 +400,9 @@ namespace SearchAThing
             /// <param name="to">other vector</param>
             /// <returns>angle between two vectors (rad)</returns>
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0020.cs)
-            /// ![](/test/Vector3D/Vector3DTest_0020.png)
+            /// [unit test](../test/Vector3D/Vector3DTest_0020.cs)
+            /// 
+            /// <a href="../test/Vector3D/Vector3DTest_0020.png">![image](../test/Vector3D/Vector3DTest_0020.png)</a>
             /// </remarks>
             public double AngleRad(double tolLen, Vector3D to)
             {
