@@ -136,15 +136,17 @@ namespace example_0001
 dotnet run
 ```
 
+## examples
+
+- **example/0001***
+
 - [result dxf](examples/example_0001/output.dxf)
 
 <img src="examples/0001/output.png" width=300>
 
-## examples
-
 - **example/0002** ( avalonia/opengl example ) : basic gl test
 
-- **example/0003** ( avalonia/opengl example ) : test display of dxf face3d into opengl
+- **example/0003** ( avalonia/opengl example ) : test display of [dxf face3d](https://github.com/devel0/netcore-sci/blob/609ffaacb38821ff1dc2f90eae01ae4a1d442936/netcore-sci/lab/OpenGlPageControl.cs#L334) into opengl
 
 ![](examples/0003/out.png)
 
