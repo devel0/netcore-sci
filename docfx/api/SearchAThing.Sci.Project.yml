@@ -1,0 +1,256 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.Project
+  commentId: T:SearchAThing.Sci.Project
+  id: Project
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.Project.#ctor(SearchAThing.Sci.MUDomain)
+  - SearchAThing.Sci.Project.MUDomain
+  - SearchAThing.Sci.Project.Save(System.String,System.Boolean,IEnumerable{Type})
+  langs:
+  - csharp
+  - vb
+  name: Project
+  nameWithType: Project
+  fullName: SearchAThing.Sci.Project
+  type: Class
+  source:
+    id: Project
+    path: Z:\netcore-sci\netcore-sci\Project.cs
+    startLine: 9
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public class Project : object'
+    content.vb: >-
+      Public Class Project
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: SearchAThing.Sci.Project.MUDomain
+  commentId: P:SearchAThing.Sci.Project.MUDomain
+  id: MUDomain
+  parent: SearchAThing.Sci.Project
+  langs:
+  - csharp
+  - vb
+  name: MUDomain
+  nameWithType: Project.MUDomain
+  fullName: SearchAThing.Sci.Project.MUDomain
+  type: Property
+  source:
+    id: MUDomain
+    path: Z:\netcore-sci\netcore-sci\Project.cs
+    startLine: 12
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public MUDomain MUDomain { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.MUDomain
+    content.vb: Public ReadOnly Property MUDomain As MUDomain
+  overload: SearchAThing.Sci.Project.MUDomain*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.Project.#ctor(SearchAThing.Sci.MUDomain)
+  commentId: M:SearchAThing.Sci.Project.#ctor(SearchAThing.Sci.MUDomain)
+  id: '#ctor(SearchAThing.Sci.MUDomain)'
+  parent: SearchAThing.Sci.Project
+  langs:
+  - csharp
+  - vb
+  name: Project(MUDomain)
+  nameWithType: Project.Project(MUDomain)
+  fullName: SearchAThing.Sci.Project.Project(SearchAThing.Sci.MUDomain)
+  type: Constructor
+  source:
+    id: .ctor
+    path: Z:\netcore-sci\netcore-sci\Project.cs
+    startLine: 14
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public Project(MUDomain mud)
+    parameters:
+    - id: mud
+      type: SearchAThing.Sci.MUDomain
+    content.vb: Public Sub New(mud As MUDomain)
+  overload: SearchAThing.Sci.Project.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Project.Save(System.String,System.Boolean,IEnumerable{Type})
+  commentId: M:SearchAThing.Sci.Project.Save(System.String,System.Boolean,IEnumerable{Type})
+  id: Save(System.String,System.Boolean,IEnumerable{Type})
+  parent: SearchAThing.Sci.Project
+  langs:
+  - csharp
+  - vb
+  name: Save(String, Boolean, IEnumerable<Type>)
+  nameWithType: Project.Save(String, Boolean, IEnumerable<Type>)
+  fullName: SearchAThing.Sci.Project.Save(System.String, System.Boolean, IEnumerable<Type>)
+  type: Method
+  source:
+    id: Save
+    path: Z:\netcore-sci\netcore-sci\Project.cs
+    startLine: 19
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public void Save(string dstPathfilename, bool binary = true, IEnumerable<Type> knownTypes = null)
+    parameters:
+    - id: dstPathfilename
+      type: System.String
+    - id: binary
+      type: System.Boolean
+    - id: knownTypes
+      type: IEnumerable{Type}
+    content.vb: Public Sub Save(dstPathfilename As String, binary As Boolean = True, knownTypes As IEnumerable(Of Type) = Nothing)
+  overload: SearchAThing.Sci.Project.Save*
+  nameWithType.vb: Project.Save(String, Boolean, IEnumerable(Of Type))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: SearchAThing.Sci.Project.Save(System.String, System.Boolean, IEnumerable(Of Type))
+  name.vb: Save(String, Boolean, IEnumerable(Of Type))
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.Project.MUDomain*
+  commentId: Overload:SearchAThing.Sci.Project.MUDomain
+  name: MUDomain
+  nameWithType: Project.MUDomain
+  fullName: SearchAThing.Sci.Project.MUDomain
+- uid: SearchAThing.Sci.MUDomain
+  commentId: T:SearchAThing.Sci.MUDomain
+  parent: SearchAThing.Sci
+  name: MUDomain
+  nameWithType: MUDomain
+  fullName: SearchAThing.Sci.MUDomain
+- uid: SearchAThing.Sci.Project.#ctor*
+  commentId: Overload:SearchAThing.Sci.Project.#ctor
+  name: Project
+  nameWithType: Project.Project
+  fullName: SearchAThing.Sci.Project.Project
+- uid: SearchAThing.Sci.Project.Save*
+  commentId: Overload:SearchAThing.Sci.Project.Save
+  name: Save
+  nameWithType: Project.Save
+  fullName: SearchAThing.Sci.Project.Save
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: IEnumerable{Type}
+  commentId: '!:IEnumerable{Type}'
+  definition: IEnumerable`1
+  name: IEnumerable<Type>
+  nameWithType: IEnumerable<Type>
+  fullName: IEnumerable<Type>
+  nameWithType.vb: IEnumerable(Of Type)
+  fullName.vb: IEnumerable(Of Type)
+  name.vb: IEnumerable(Of Type)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Type
+    name: Type
+    nameWithType: Type
+    fullName: Type
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Type
+    name: Type
+    nameWithType: Type
+    fullName: Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

@@ -1,0 +1,161 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.MUCollection.Acceleration
+  commentId: T:SearchAThing.Sci.MUCollection.Acceleration
+  id: MUCollection.Acceleration
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.MUCollection.Acceleration.Auto(SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.MeasureUnit)
+  - SearchAThing.Sci.MUCollection.Acceleration.m_s2
+  - SearchAThing.Sci.MUCollection.Acceleration.mm_s2
+  langs:
+  - csharp
+  - vb
+  name: MUCollection.Acceleration
+  nameWithType: MUCollection.Acceleration
+  fullName: SearchAThing.Sci.MUCollection.Acceleration
+  type: Class
+  source:
+    id: Acceleration
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 362
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nLinear acceleration\n"
+  example: []
+  syntax:
+    content: 'public static class Acceleration : object'
+    content.vb: >-
+      Public Module Acceleration
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: SearchAThing.Sci.MUCollection.Acceleration.m_s2
+  commentId: F:SearchAThing.Sci.MUCollection.Acceleration.m_s2
+  id: m_s2
+  parent: SearchAThing.Sci.MUCollection.Acceleration
+  langs:
+  - csharp
+  - vb
+  name: m_s2
+  nameWithType: MUCollection.Acceleration.m_s2
+  fullName: SearchAThing.Sci.MUCollection.Acceleration.m_s2
+  type: Field
+  source:
+    id: m_s2
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 364
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit m_s2
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly m_s2 As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Acceleration.mm_s2
+  commentId: F:SearchAThing.Sci.MUCollection.Acceleration.mm_s2
+  id: mm_s2
+  parent: SearchAThing.Sci.MUCollection.Acceleration
+  langs:
+  - csharp
+  - vb
+  name: mm_s2
+  nameWithType: MUCollection.Acceleration.mm_s2
+  fullName: SearchAThing.Sci.MUCollection.Acceleration.mm_s2
+  type: Field
+  source:
+    id: mm_s2
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 365
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit mm_s2
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly mm_s2 As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Acceleration.Auto(SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.MeasureUnit)
+  commentId: M:SearchAThing.Sci.MUCollection.Acceleration.Auto(SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.MeasureUnit)
+  id: Auto(SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.MeasureUnit)
+  parent: SearchAThing.Sci.MUCollection.Acceleration
+  langs:
+  - csharp
+  - vb
+  name: Auto(MeasureUnit, MeasureUnit)
+  nameWithType: MUCollection.Acceleration.Auto(MeasureUnit, MeasureUnit)
+  fullName: SearchAThing.Sci.MUCollection.Acceleration.Auto(SearchAThing.Sci.MeasureUnit, SearchAThing.Sci.MeasureUnit)
+  type: Method
+  source:
+    id: Auto
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 370
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nretrieve m/s2 when length=m and time=s\n"
+  example: []
+  syntax:
+    content: public static MeasureUnit Auto(MeasureUnit length, MeasureUnit time)
+    parameters:
+    - id: length
+      type: SearchAThing.Sci.MeasureUnit
+    - id: time
+      type: SearchAThing.Sci.MeasureUnit
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared Function Auto(length As MeasureUnit, time As MeasureUnit) As MeasureUnit
+  overload: SearchAThing.Sci.MUCollection.Acceleration.Auto*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.MeasureUnit
+  commentId: T:SearchAThing.Sci.MeasureUnit
+  parent: SearchAThing.Sci
+  name: MeasureUnit
+  nameWithType: MeasureUnit
+  fullName: SearchAThing.Sci.MeasureUnit
+- uid: SearchAThing.Sci.MUCollection.Acceleration.Auto*
+  commentId: Overload:SearchAThing.Sci.MUCollection.Acceleration.Auto
+  name: Auto
+  nameWithType: MUCollection.Acceleration.Auto
+  fullName: SearchAThing.Sci.MUCollection.Acceleration.Auto

@@ -1,0 +1,785 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl
+  commentId: T:SearchAThing.Sci.Lab.OpenGlPageControl
+  id: OpenGlPageControl
+  parent: SearchAThing.Sci.Lab
+  children:
+  - SearchAThing.Sci.Lab.OpenGlPageControl.#ctor
+  - SearchAThing.Sci.Lab.OpenGlPageControl.Disco
+  - SearchAThing.Sci.Lab.OpenGlPageControl.DiscoProperty
+  - SearchAThing.Sci.Lab.OpenGlPageControl.Info
+  - SearchAThing.Sci.Lab.OpenGlPageControl.InfoProperty
+  - SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlDeinit(GlInterface,System.Int32)
+  - SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlInit(GlInterface,System.Int32)
+  - SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlRender(GlInterface,System.Int32)
+  - SearchAThing.Sci.Lab.OpenGlPageControl.PAN_FACTOR
+  - SearchAThing.Sci.Lab.OpenGlPageControl.Pitch
+  - SearchAThing.Sci.Lab.OpenGlPageControl.PitchProperty
+  - SearchAThing.Sci.Lab.OpenGlPageControl.Reset
+  - SearchAThing.Sci.Lab.OpenGlPageControl.Roll
+  - SearchAThing.Sci.Lab.OpenGlPageControl.RollProperty
+  - SearchAThing.Sci.Lab.OpenGlPageControl.Yaw
+  - SearchAThing.Sci.Lab.OpenGlPageControl.YawProperty
+  langs:
+  - csharp
+  - vb
+  name: OpenGlPageControl
+  nameWithType: OpenGlPageControl
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl
+  type: Class
+  source:
+    id: OpenGlPageControl
+    path: Z:\netcore-sci\netcore-sci\lab\OpenGlPageControl.cs
+    startLine: 22
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci.Lab
+  syntax:
+    content: 'public class OpenGlPageControl : OpenGlControlBase'
+    content.vb: >-
+      Public Class OpenGlPageControl
+          Inherits OpenGlControlBase
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.YawProperty
+  commentId: F:SearchAThing.Sci.Lab.OpenGlPageControl.YawProperty
+  id: YawProperty
+  parent: SearchAThing.Sci.Lab.OpenGlPageControl
+  langs:
+  - csharp
+  - vb
+  name: YawProperty
+  nameWithType: OpenGlPageControl.YawProperty
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.YawProperty
+  type: Field
+  source:
+    id: YawProperty
+    path: Z:\netcore-sci\netcore-sci\lab\OpenGlPageControl.cs
+    startLine: 29
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci.Lab
+  syntax:
+    content: public static readonly DirectProperty<OpenGlPageControl, float> YawProperty
+    return:
+      type: DirectProperty{SearchAThing.Sci.Lab.OpenGlPageControl,System.Single}
+    content.vb: Public Shared ReadOnly YawProperty As DirectProperty(Of OpenGlPageControl, Single)
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Yaw
+  commentId: P:SearchAThing.Sci.Lab.OpenGlPageControl.Yaw
+  id: Yaw
+  parent: SearchAThing.Sci.Lab.OpenGlPageControl
+  langs:
+  - csharp
+  - vb
+  name: Yaw
+  nameWithType: OpenGlPageControl.Yaw
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Yaw
+  type: Property
+  source:
+    id: Yaw
+    path: Z:\netcore-sci\netcore-sci\lab\OpenGlPageControl.cs
+    startLine: 32
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci.Lab
+  syntax:
+    content: public float Yaw { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Yaw As Single
+  overload: SearchAThing.Sci.Lab.OpenGlPageControl.Yaw*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.PitchProperty
+  commentId: F:SearchAThing.Sci.Lab.OpenGlPageControl.PitchProperty
+  id: PitchProperty
+  parent: SearchAThing.Sci.Lab.OpenGlPageControl
+  langs:
+  - csharp
+  - vb
+  name: PitchProperty
+  nameWithType: OpenGlPageControl.PitchProperty
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.PitchProperty
+  type: Field
+  source:
+    id: PitchProperty
+    path: Z:\netcore-sci\netcore-sci\lab\OpenGlPageControl.cs
+    startLine: 44
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci.Lab
+  syntax:
+    content: public static readonly DirectProperty<OpenGlPageControl, float> PitchProperty
+    return:
+      type: DirectProperty{SearchAThing.Sci.Lab.OpenGlPageControl,System.Single}
+    content.vb: Public Shared ReadOnly PitchProperty As DirectProperty(Of OpenGlPageControl, Single)
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Pitch
+  commentId: P:SearchAThing.Sci.Lab.OpenGlPageControl.Pitch
+  id: Pitch
+  parent: SearchAThing.Sci.Lab.OpenGlPageControl
+  langs:
+  - csharp
+  - vb
+  name: Pitch
+  nameWithType: OpenGlPageControl.Pitch
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Pitch
+  type: Property
+  source:
+    id: Pitch
+    path: Z:\netcore-sci\netcore-sci\lab\OpenGlPageControl.cs
+    startLine: 47
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci.Lab
+  syntax:
+    content: public float Pitch { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Pitch As Single
+  overload: SearchAThing.Sci.Lab.OpenGlPageControl.Pitch*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.RollProperty
+  commentId: F:SearchAThing.Sci.Lab.OpenGlPageControl.RollProperty
+  id: RollProperty
+  parent: SearchAThing.Sci.Lab.OpenGlPageControl
+  langs:
+  - csharp
+  - vb
+  name: RollProperty
+  nameWithType: OpenGlPageControl.RollProperty
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.RollProperty
+  type: Field
+  source:
+    id: RollProperty
+    path: Z:\netcore-sci\netcore-sci\lab\OpenGlPageControl.cs
+    startLine: 56
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci.Lab
+  syntax:
+    content: public static readonly DirectProperty<OpenGlPageControl, float> RollProperty
+    return:
+      type: DirectProperty{SearchAThing.Sci.Lab.OpenGlPageControl,System.Single}
+    content.vb: Public Shared ReadOnly RollProperty As DirectProperty(Of OpenGlPageControl, Single)
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Roll
+  commentId: P:SearchAThing.Sci.Lab.OpenGlPageControl.Roll
+  id: Roll
+  parent: SearchAThing.Sci.Lab.OpenGlPageControl
+  langs:
+  - csharp
+  - vb
+  name: Roll
+  nameWithType: OpenGlPageControl.Roll
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Roll
+  type: Property
+  source:
+    id: Roll
+    path: Z:\netcore-sci\netcore-sci\lab\OpenGlPageControl.cs
+    startLine: 59
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci.Lab
+  syntax:
+    content: public float Roll { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Roll As Single
+  overload: SearchAThing.Sci.Lab.OpenGlPageControl.Roll*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.DiscoProperty
+  commentId: F:SearchAThing.Sci.Lab.OpenGlPageControl.DiscoProperty
+  id: DiscoProperty
+  parent: SearchAThing.Sci.Lab.OpenGlPageControl
+  langs:
+  - csharp
+  - vb
+  name: DiscoProperty
+  nameWithType: OpenGlPageControl.DiscoProperty
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.DiscoProperty
+  type: Field
+  source:
+    id: DiscoProperty
+    path: Z:\netcore-sci\netcore-sci\lab\OpenGlPageControl.cs
+    startLine: 68
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci.Lab
+  syntax:
+    content: public static readonly DirectProperty<OpenGlPageControl, float> DiscoProperty
+    return:
+      type: DirectProperty{SearchAThing.Sci.Lab.OpenGlPageControl,System.Single}
+    content.vb: Public Shared ReadOnly DiscoProperty As DirectProperty(Of OpenGlPageControl, Single)
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Disco
+  commentId: P:SearchAThing.Sci.Lab.OpenGlPageControl.Disco
+  id: Disco
+  parent: SearchAThing.Sci.Lab.OpenGlPageControl
+  langs:
+  - csharp
+  - vb
+  name: Disco
+  nameWithType: OpenGlPageControl.Disco
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Disco
+  type: Property
+  source:
+    id: Disco
+    path: Z:\netcore-sci\netcore-sci\lab\OpenGlPageControl.cs
+    startLine: 71
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci.Lab
+  syntax:
+    content: public float Disco { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Disco As Single
+  overload: SearchAThing.Sci.Lab.OpenGlPageControl.Disco*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.InfoProperty
+  commentId: F:SearchAThing.Sci.Lab.OpenGlPageControl.InfoProperty
+  id: InfoProperty
+  parent: SearchAThing.Sci.Lab.OpenGlPageControl
+  langs:
+  - csharp
+  - vb
+  name: InfoProperty
+  nameWithType: OpenGlPageControl.InfoProperty
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.InfoProperty
+  type: Field
+  source:
+    id: InfoProperty
+    path: Z:\netcore-sci\netcore-sci\lab\OpenGlPageControl.cs
+    startLine: 79
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci.Lab
+  syntax:
+    content: public static readonly DirectProperty<OpenGlPageControl, string> InfoProperty
+    return:
+      type: DirectProperty{SearchAThing.Sci.Lab.OpenGlPageControl,System.String}
+    content.vb: Public Shared ReadOnly InfoProperty As DirectProperty(Of OpenGlPageControl, String)
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Info
+  commentId: P:SearchAThing.Sci.Lab.OpenGlPageControl.Info
+  id: Info
+  parent: SearchAThing.Sci.Lab.OpenGlPageControl
+  langs:
+  - csharp
+  - vb
+  name: Info
+  nameWithType: OpenGlPageControl.Info
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Info
+  type: Property
+  source:
+    id: Info
+    path: Z:\netcore-sci\netcore-sci\lab\OpenGlPageControl.cs
+    startLine: 82
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci.Lab
+  syntax:
+    content: public string Info { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Info As String
+  overload: SearchAThing.Sci.Lab.OpenGlPageControl.Info*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.PAN_FACTOR
+  commentId: F:SearchAThing.Sci.Lab.OpenGlPageControl.PAN_FACTOR
+  id: PAN_FACTOR
+  parent: SearchAThing.Sci.Lab.OpenGlPageControl
+  langs:
+  - csharp
+  - vb
+  name: PAN_FACTOR
+  nameWithType: OpenGlPageControl.PAN_FACTOR
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.PAN_FACTOR
+  type: Field
+  source:
+    id: PAN_FACTOR
+    path: Z:\netcore-sci\netcore-sci\lab\OpenGlPageControl.cs
+    startLine: 222
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci.Lab
+  syntax:
+    content: public const float PAN_FACTOR = null
+    return:
+      type: System.Single
+    content.vb: Public Const PAN_FACTOR As Single = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Reset
+  commentId: M:SearchAThing.Sci.Lab.OpenGlPageControl.Reset
+  id: Reset
+  parent: SearchAThing.Sci.Lab.OpenGlPageControl
+  langs:
+  - csharp
+  - vb
+  name: Reset()
+  nameWithType: OpenGlPageControl.Reset()
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Reset()
+  type: Method
+  source:
+    id: Reset
+    path: Z:\netcore-sci\netcore-sci\lab\OpenGlPageControl.cs
+    startLine: 224
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci.Lab
+  syntax:
+    content: public void Reset()
+    content.vb: Public Sub Reset
+  overload: SearchAThing.Sci.Lab.OpenGlPageControl.Reset*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.#ctor
+  commentId: M:SearchAThing.Sci.Lab.OpenGlPageControl.#ctor
+  id: '#ctor'
+  parent: SearchAThing.Sci.Lab.OpenGlPageControl
+  langs:
+  - csharp
+  - vb
+  name: OpenGlPageControl()
+  nameWithType: OpenGlPageControl.OpenGlPageControl()
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.OpenGlPageControl()
+  type: Constructor
+  source:
+    id: .ctor
+    path: Z:\netcore-sci\netcore-sci\lab\OpenGlPageControl.cs
+    startLine: 235
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci.Lab
+  syntax:
+    content: public OpenGlPageControl()
+    content.vb: Public Sub New
+  overload: SearchAThing.Sci.Lab.OpenGlPageControl.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlInit(GlInterface,System.Int32)
+  commentId: M:SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlInit(GlInterface,System.Int32)
+  id: OnOpenGlInit(GlInterface,System.Int32)
+  parent: SearchAThing.Sci.Lab.OpenGlPageControl
+  langs:
+  - csharp
+  - vb
+  name: OnOpenGlInit(GlInterface, Int32)
+  nameWithType: OpenGlPageControl.OnOpenGlInit(GlInterface, Int32)
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlInit(GlInterface, System.Int32)
+  type: Method
+  source:
+    id: OnOpenGlInit
+    path: Z:\netcore-sci\netcore-sci\lab\OpenGlPageControl.cs
+    startLine: 384
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci.Lab
+  syntax:
+    content: protected override void OnOpenGlInit(GlInterface GL, int fb)
+    parameters:
+    - id: GL
+      type: GlInterface
+    - id: fb
+      type: System.Int32
+    content.vb: Protected Overrides Sub OnOpenGlInit(GL As GlInterface, fb As Integer)
+  overload: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlInit*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlDeinit(GlInterface,System.Int32)
+  commentId: M:SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlDeinit(GlInterface,System.Int32)
+  id: OnOpenGlDeinit(GlInterface,System.Int32)
+  parent: SearchAThing.Sci.Lab.OpenGlPageControl
+  langs:
+  - csharp
+  - vb
+  name: OnOpenGlDeinit(GlInterface, Int32)
+  nameWithType: OpenGlPageControl.OnOpenGlDeinit(GlInterface, Int32)
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlDeinit(GlInterface, System.Int32)
+  type: Method
+  source:
+    id: OnOpenGlDeinit
+    path: Z:\netcore-sci\netcore-sci\lab\OpenGlPageControl.cs
+    startLine: 440
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci.Lab
+  syntax:
+    content: protected override void OnOpenGlDeinit(GlInterface GL, int fb)
+    parameters:
+    - id: GL
+      type: GlInterface
+    - id: fb
+      type: System.Int32
+    content.vb: Protected Overrides Sub OnOpenGlDeinit(GL As GlInterface, fb As Integer)
+  overload: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlDeinit*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlRender(GlInterface,System.Int32)
+  commentId: M:SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlRender(GlInterface,System.Int32)
+  id: OnOpenGlRender(GlInterface,System.Int32)
+  parent: SearchAThing.Sci.Lab.OpenGlPageControl
+  langs:
+  - csharp
+  - vb
+  name: OnOpenGlRender(GlInterface, Int32)
+  nameWithType: OpenGlPageControl.OnOpenGlRender(GlInterface, Int32)
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlRender(GlInterface, System.Int32)
+  type: Method
+  source:
+    id: OnOpenGlRender
+    path: Z:\netcore-sci\netcore-sci\lab\OpenGlPageControl.cs
+    startLine: 458
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci.Lab
+  syntax:
+    content: protected override void OnOpenGlRender(GlInterface gl, int fb)
+    parameters:
+    - id: gl
+      type: GlInterface
+    - id: fb
+      type: System.Int32
+    content.vb: Protected Overrides Sub OnOpenGlRender(gl As GlInterface, fb As Integer)
+  overload: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlRender*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+references:
+- uid: SearchAThing.Sci.Lab
+  commentId: N:SearchAThing.Sci.Lab
+  name: SearchAThing.Sci.Lab
+  nameWithType: SearchAThing.Sci.Lab
+  fullName: SearchAThing.Sci.Lab
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: DirectProperty{SearchAThing.Sci.Lab.OpenGlPageControl,System.Single}
+  commentId: '!:DirectProperty{SearchAThing.Sci.Lab.OpenGlPageControl,System.Single}'
+  definition: DirectProperty`2
+  name: DirectProperty<OpenGlPageControl, Single>
+  nameWithType: DirectProperty<OpenGlPageControl, Single>
+  fullName: DirectProperty<SearchAThing.Sci.Lab.OpenGlPageControl, System.Single>
+  nameWithType.vb: DirectProperty(Of OpenGlPageControl, Single)
+  fullName.vb: DirectProperty(Of SearchAThing.Sci.Lab.OpenGlPageControl, System.Single)
+  name.vb: DirectProperty(Of OpenGlPageControl, Single)
+  spec.csharp:
+  - uid: DirectProperty`2
+    name: DirectProperty
+    nameWithType: DirectProperty
+    fullName: DirectProperty
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: SearchAThing.Sci.Lab.OpenGlPageControl
+    name: OpenGlPageControl
+    nameWithType: OpenGlPageControl
+    fullName: SearchAThing.Sci.Lab.OpenGlPageControl
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: DirectProperty`2
+    name: DirectProperty
+    nameWithType: DirectProperty
+    fullName: DirectProperty
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: SearchAThing.Sci.Lab.OpenGlPageControl
+    name: OpenGlPageControl
+    nameWithType: OpenGlPageControl
+    fullName: SearchAThing.Sci.Lab.OpenGlPageControl
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DirectProperty`2
+  isExternal: true
+  name: DirectProperty<, >
+  nameWithType: DirectProperty<, >
+  fullName: DirectProperty<, >
+  nameWithType.vb: DirectProperty(Of , )
+  fullName.vb: DirectProperty(Of , )
+  name.vb: DirectProperty(Of , )
+  spec.csharp:
+  - uid: DirectProperty`2
+    name: DirectProperty
+    nameWithType: DirectProperty
+    fullName: DirectProperty
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: DirectProperty`2
+    name: DirectProperty
+    nameWithType: DirectProperty
+    fullName: DirectProperty
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Yaw*
+  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.Yaw
+  name: Yaw
+  nameWithType: OpenGlPageControl.Yaw
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Yaw
+- uid: System.Single
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Pitch*
+  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.Pitch
+  name: Pitch
+  nameWithType: OpenGlPageControl.Pitch
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Pitch
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Roll*
+  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.Roll
+  name: Roll
+  nameWithType: OpenGlPageControl.Roll
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Roll
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Disco*
+  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.Disco
+  name: Disco
+  nameWithType: OpenGlPageControl.Disco
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Disco
+- uid: DirectProperty{SearchAThing.Sci.Lab.OpenGlPageControl,System.String}
+  commentId: '!:DirectProperty{SearchAThing.Sci.Lab.OpenGlPageControl,System.String}'
+  definition: DirectProperty`2
+  name: DirectProperty<OpenGlPageControl, String>
+  nameWithType: DirectProperty<OpenGlPageControl, String>
+  fullName: DirectProperty<SearchAThing.Sci.Lab.OpenGlPageControl, System.String>
+  nameWithType.vb: DirectProperty(Of OpenGlPageControl, String)
+  fullName.vb: DirectProperty(Of SearchAThing.Sci.Lab.OpenGlPageControl, System.String)
+  name.vb: DirectProperty(Of OpenGlPageControl, String)
+  spec.csharp:
+  - uid: DirectProperty`2
+    name: DirectProperty
+    nameWithType: DirectProperty
+    fullName: DirectProperty
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: SearchAThing.Sci.Lab.OpenGlPageControl
+    name: OpenGlPageControl
+    nameWithType: OpenGlPageControl
+    fullName: SearchAThing.Sci.Lab.OpenGlPageControl
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: DirectProperty`2
+    name: DirectProperty
+    nameWithType: DirectProperty
+    fullName: DirectProperty
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: SearchAThing.Sci.Lab.OpenGlPageControl
+    name: OpenGlPageControl
+    nameWithType: OpenGlPageControl
+    fullName: SearchAThing.Sci.Lab.OpenGlPageControl
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Info*
+  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.Info
+  name: Info
+  nameWithType: OpenGlPageControl.Info
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Info
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Reset*
+  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.Reset
+  name: Reset
+  nameWithType: OpenGlPageControl.Reset
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Reset
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.#ctor*
+  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.#ctor
+  name: OpenGlPageControl
+  nameWithType: OpenGlPageControl.OpenGlPageControl
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.OpenGlPageControl
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlInit*
+  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlInit
+  name: OnOpenGlInit
+  nameWithType: OpenGlPageControl.OnOpenGlInit
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlInit
+- uid: GlInterface
+  isExternal: true
+  name: GlInterface
+  nameWithType: GlInterface
+  fullName: GlInterface
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlDeinit*
+  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlDeinit
+  name: OnOpenGlDeinit
+  nameWithType: OpenGlPageControl.OnOpenGlDeinit
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlDeinit
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlRender*
+  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlRender
+  name: OnOpenGlRender
+  nameWithType: OpenGlPageControl.OnOpenGlRender
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlRender

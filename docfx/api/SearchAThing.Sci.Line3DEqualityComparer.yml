@@ -1,0 +1,177 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.Line3DEqualityComparer
+  commentId: T:SearchAThing.Sci.Line3DEqualityComparer
+  id: Line3DEqualityComparer
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.Line3DEqualityComparer.#ctor(System.Double)
+  - SearchAThing.Sci.Line3DEqualityComparer.Equals(SearchAThing.Sci.Line3D,SearchAThing.Sci.Line3D)
+  - SearchAThing.Sci.Line3DEqualityComparer.GetHashCode(SearchAThing.Sci.Line3D)
+  langs:
+  - csharp
+  - vb
+  name: Line3DEqualityComparer
+  nameWithType: Line3DEqualityComparer
+  fullName: SearchAThing.Sci.Line3DEqualityComparer
+  type: Class
+  source:
+    id: Line3DEqualityComparer
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 783
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public class Line3DEqualityComparer : IEqualityComparer<Line3D>'
+    content.vb: >-
+      Public Class Line3DEqualityComparer
+          Inherits IEqualityComparer(Of Line3D)
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: SearchAThing.Sci.Line3DEqualityComparer.#ctor(System.Double)
+  commentId: M:SearchAThing.Sci.Line3DEqualityComparer.#ctor(System.Double)
+  id: '#ctor(System.Double)'
+  parent: SearchAThing.Sci.Line3DEqualityComparer
+  langs:
+  - csharp
+  - vb
+  name: Line3DEqualityComparer(Double)
+  nameWithType: Line3DEqualityComparer.Line3DEqualityComparer(Double)
+  fullName: SearchAThing.Sci.Line3DEqualityComparer.Line3DEqualityComparer(System.Double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 787
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public Line3DEqualityComparer(double _tol)
+    parameters:
+    - id: _tol
+      type: System.Double
+    content.vb: Public Sub New(_tol As Double)
+  overload: SearchAThing.Sci.Line3DEqualityComparer.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3DEqualityComparer.Equals(SearchAThing.Sci.Line3D,SearchAThing.Sci.Line3D)
+  commentId: M:SearchAThing.Sci.Line3DEqualityComparer.Equals(SearchAThing.Sci.Line3D,SearchAThing.Sci.Line3D)
+  id: Equals(SearchAThing.Sci.Line3D,SearchAThing.Sci.Line3D)
+  parent: SearchAThing.Sci.Line3DEqualityComparer
+  langs:
+  - csharp
+  - vb
+  name: Equals(Line3D, Line3D)
+  nameWithType: Line3DEqualityComparer.Equals(Line3D, Line3D)
+  fullName: SearchAThing.Sci.Line3DEqualityComparer.Equals(SearchAThing.Sci.Line3D, SearchAThing.Sci.Line3D)
+  type: Method
+  source:
+    id: Equals
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 792
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public bool Equals(Line3D x, Line3D y)
+    parameters:
+    - id: x
+      type: SearchAThing.Sci.Line3D
+    - id: y
+      type: SearchAThing.Sci.Line3D
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(x As Line3D, y As Line3D) As Boolean
+  overload: SearchAThing.Sci.Line3DEqualityComparer.Equals*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3DEqualityComparer.GetHashCode(SearchAThing.Sci.Line3D)
+  commentId: M:SearchAThing.Sci.Line3DEqualityComparer.GetHashCode(SearchAThing.Sci.Line3D)
+  id: GetHashCode(SearchAThing.Sci.Line3D)
+  parent: SearchAThing.Sci.Line3DEqualityComparer
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode(Line3D)
+  nameWithType: Line3DEqualityComparer.GetHashCode(Line3D)
+  fullName: SearchAThing.Sci.Line3DEqualityComparer.GetHashCode(SearchAThing.Sci.Line3D)
+  type: Method
+  source:
+    id: GetHashCode
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 797
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public int GetHashCode(Line3D obj)
+    parameters:
+    - id: obj
+      type: SearchAThing.Sci.Line3D
+    return:
+      type: System.Int32
+    content.vb: Public Function GetHashCode(obj As Line3D) As Integer
+  overload: SearchAThing.Sci.Line3DEqualityComparer.GetHashCode*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.Line3DEqualityComparer.#ctor*
+  commentId: Overload:SearchAThing.Sci.Line3DEqualityComparer.#ctor
+  name: Line3DEqualityComparer
+  nameWithType: Line3DEqualityComparer.Line3DEqualityComparer
+  fullName: SearchAThing.Sci.Line3DEqualityComparer.Line3DEqualityComparer
+- uid: System.Double
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: SearchAThing.Sci.Line3DEqualityComparer.Equals*
+  commentId: Overload:SearchAThing.Sci.Line3DEqualityComparer.Equals
+  name: Equals
+  nameWithType: Line3DEqualityComparer.Equals
+  fullName: SearchAThing.Sci.Line3DEqualityComparer.Equals
+- uid: SearchAThing.Sci.Line3D
+  commentId: T:SearchAThing.Sci.Line3D
+  parent: SearchAThing.Sci
+  name: Line3D
+  nameWithType: Line3D
+  fullName: SearchAThing.Sci.Line3D
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: SearchAThing.Sci.Line3DEqualityComparer.GetHashCode*
+  commentId: Overload:SearchAThing.Sci.Line3DEqualityComparer.GetHashCode
+  name: GetHashCode
+  nameWithType: Line3DEqualityComparer.GetHashCode
+  fullName: SearchAThing.Sci.Line3DEqualityComparer.GetHashCode
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32

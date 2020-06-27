@@ -1,0 +1,171 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.DoubleEqualityComparer
+  commentId: T:SearchAThing.Sci.DoubleEqualityComparer
+  id: DoubleEqualityComparer
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.DoubleEqualityComparer.#ctor(System.Double)
+  - SearchAThing.Sci.DoubleEqualityComparer.Equals(System.Double,System.Double)
+  - SearchAThing.Sci.DoubleEqualityComparer.GetHashCode(System.Double)
+  langs:
+  - csharp
+  - vb
+  name: DoubleEqualityComparer
+  nameWithType: DoubleEqualityComparer
+  fullName: SearchAThing.Sci.DoubleEqualityComparer
+  type: Class
+  source:
+    id: DoubleEqualityComparer
+    path: Z:\netcore-sci\netcore-sci\Tolerance.cs
+    startLine: 10
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public class DoubleEqualityComparer : IEqualityComparer<double>'
+    content.vb: >-
+      Public Class DoubleEqualityComparer
+          Inherits IEqualityComparer(Of Double)
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: SearchAThing.Sci.DoubleEqualityComparer.#ctor(System.Double)
+  commentId: M:SearchAThing.Sci.DoubleEqualityComparer.#ctor(System.Double)
+  id: '#ctor(System.Double)'
+  parent: SearchAThing.Sci.DoubleEqualityComparer
+  langs:
+  - csharp
+  - vb
+  name: DoubleEqualityComparer(Double)
+  nameWithType: DoubleEqualityComparer.DoubleEqualityComparer(Double)
+  fullName: SearchAThing.Sci.DoubleEqualityComparer.DoubleEqualityComparer(System.Double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: Z:\netcore-sci\netcore-sci\Tolerance.cs
+    startLine: 15
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public DoubleEqualityComparer(double _tol)
+    parameters:
+    - id: _tol
+      type: System.Double
+    content.vb: Public Sub New(_tol As Double)
+  overload: SearchAThing.Sci.DoubleEqualityComparer.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.DoubleEqualityComparer.Equals(System.Double,System.Double)
+  commentId: M:SearchAThing.Sci.DoubleEqualityComparer.Equals(System.Double,System.Double)
+  id: Equals(System.Double,System.Double)
+  parent: SearchAThing.Sci.DoubleEqualityComparer
+  langs:
+  - csharp
+  - vb
+  name: Equals(Double, Double)
+  nameWithType: DoubleEqualityComparer.Equals(Double, Double)
+  fullName: SearchAThing.Sci.DoubleEqualityComparer.Equals(System.Double, System.Double)
+  type: Method
+  source:
+    id: Equals
+    path: Z:\netcore-sci\netcore-sci\Tolerance.cs
+    startLine: 20
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public bool Equals(double x, double y)
+    parameters:
+    - id: x
+      type: System.Double
+    - id: y
+      type: System.Double
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(x As Double, y As Double) As Boolean
+  overload: SearchAThing.Sci.DoubleEqualityComparer.Equals*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.DoubleEqualityComparer.GetHashCode(System.Double)
+  commentId: M:SearchAThing.Sci.DoubleEqualityComparer.GetHashCode(System.Double)
+  id: GetHashCode(System.Double)
+  parent: SearchAThing.Sci.DoubleEqualityComparer
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode(Double)
+  nameWithType: DoubleEqualityComparer.GetHashCode(Double)
+  fullName: SearchAThing.Sci.DoubleEqualityComparer.GetHashCode(System.Double)
+  type: Method
+  source:
+    id: GetHashCode
+    path: Z:\netcore-sci\netcore-sci\Tolerance.cs
+    startLine: 25
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public int GetHashCode(double obj)
+    parameters:
+    - id: obj
+      type: System.Double
+    return:
+      type: System.Int32
+    content.vb: Public Function GetHashCode(obj As Double) As Integer
+  overload: SearchAThing.Sci.DoubleEqualityComparer.GetHashCode*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.DoubleEqualityComparer.#ctor*
+  commentId: Overload:SearchAThing.Sci.DoubleEqualityComparer.#ctor
+  name: DoubleEqualityComparer
+  nameWithType: DoubleEqualityComparer.DoubleEqualityComparer
+  fullName: SearchAThing.Sci.DoubleEqualityComparer.DoubleEqualityComparer
+- uid: System.Double
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: SearchAThing.Sci.DoubleEqualityComparer.Equals*
+  commentId: Overload:SearchAThing.Sci.DoubleEqualityComparer.Equals
+  name: Equals
+  nameWithType: DoubleEqualityComparer.Equals
+  fullName: SearchAThing.Sci.DoubleEqualityComparer.Equals
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: SearchAThing.Sci.DoubleEqualityComparer.GetHashCode*
+  commentId: Overload:SearchAThing.Sci.DoubleEqualityComparer.GetHashCode
+  name: GetHashCode
+  nameWithType: DoubleEqualityComparer.GetHashCode
+  fullName: SearchAThing.Sci.DoubleEqualityComparer.GetHashCode
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32

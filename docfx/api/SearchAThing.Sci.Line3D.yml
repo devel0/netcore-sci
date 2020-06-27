@@ -1,0 +1,2801 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.Line3D
+  commentId: T:SearchAThing.Sci.Line3D
+  id: Line3D
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.Line3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.Line3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Line3DConstructMode)
+  - SearchAThing.Sci.Line3D.#ctor(System.Double,System.Double,System.Double,System.Double)
+  - SearchAThing.Sci.Line3D.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)
+  - SearchAThing.Sci.Line3D.ApparentIntersect(SearchAThing.Sci.Line3D)
+  - SearchAThing.Sci.Line3D.BBox(System.Double)
+  - SearchAThing.Sci.Line3D.Bisect(System.Double,SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.Line3D.CadScript
+  - SearchAThing.Sci.Line3D.Colinear(System.Double,SearchAThing.Sci.Line3D)
+  - SearchAThing.Sci.Line3D.CommonPoint(System.Double,SearchAThing.Sci.Line3D)
+  - SearchAThing.Sci.Line3D.Dir
+  - SearchAThing.Sci.Line3D.DisambiguatedPoints
+  - SearchAThing.Sci.Line3D.Divide(System.Int32,System.Boolean)
+  - SearchAThing.Sci.Line3D.DxfEntity
+  - SearchAThing.Sci.Line3D.EnsureFrom(System.Double,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.Line3D.EqualsTol(System.Double,SearchAThing.Sci.Line3D)
+  - SearchAThing.Sci.Line3D.From
+  - SearchAThing.Sci.Line3D.GeomFrom
+  - SearchAThing.Sci.Line3D.GeomTo
+  - SearchAThing.Sci.Line3D.Intersect(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  - SearchAThing.Sci.Line3D.Intersect(System.Double,SearchAThing.Sci.Line3D,SearchAThing.Sci.LineIntersectBehavior)
+  - SearchAThing.Sci.Line3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean)
+  - SearchAThing.Sci.Line3D.Intersect(System.Double,SearchAThing.Sci.Plane3D)
+  - SearchAThing.Sci.Line3D.Inverted
+  - SearchAThing.Sci.Line3D.IsParallelTo(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  - SearchAThing.Sci.Line3D.IsParallelTo(System.Double,SearchAThing.Sci.Plane3D)
+  - SearchAThing.Sci.Line3D.Length
+  - SearchAThing.Sci.Line3D.LineContainsPoint(System.Double,SearchAThing.Sci.Vector3D,System.Boolean,System.Boolean)
+  - SearchAThing.Sci.Line3D.LineContainsPoint(System.Double,System.Double,System.Double,System.Double,System.Boolean)
+  - SearchAThing.Sci.Line3D.MidPoint
+  - SearchAThing.Sci.Line3D.Move(SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.Line3D.MoveMidpoint(SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.Line3D.Normalized
+  - SearchAThing.Sci.Line3D.Offset(System.Double,SearchAThing.Sci.Vector3D,System.Double)
+  - SearchAThing.Sci.Line3D.op_Addition(SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.Line3D.op_Multiply(SearchAThing.Sci.Line3D,System.Double)
+  - SearchAThing.Sci.Line3D.op_Multiply(System.Double,SearchAThing.Sci.Line3D)
+  - SearchAThing.Sci.Line3D.op_Subtraction(SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.Line3D.Perpendicular(System.Double,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.Line3D.Points
+  - SearchAThing.Sci.Line3D.Reverse
+  - SearchAThing.Sci.Line3D.RotateAboutAxis(SearchAThing.Sci.Line3D,System.Double)
+  - SearchAThing.Sci.Line3D.Scale(SearchAThing.Sci.Vector3D,System.Double)
+  - SearchAThing.Sci.Line3D.SegmentContainsPoint(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)
+  - SearchAThing.Sci.Line3D.SegmentContainsPoint(System.Double,System.Double,System.Double,System.Double)
+  - SearchAThing.Sci.Line3D.SemiLineContainsPoints(System.Double,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.Line3D.SetLength(System.Double)
+  - SearchAThing.Sci.Line3D.Split(System.Double,IReadOnlyList{SearchAThing.Sci.Vector3D})
+  - SearchAThing.Sci.Line3D.Swapped
+  - SearchAThing.Sci.Line3D.To
+  - SearchAThing.Sci.Line3D.ToString
+  - SearchAThing.Sci.Line3D.ToString(System.Double)
+  - SearchAThing.Sci.Line3D.ToString(System.Int32)
+  - SearchAThing.Sci.Line3D.V
+  - SearchAThing.Sci.Line3D.Vertexes
+  - SearchAThing.Sci.Line3D.XAxisLine
+  - SearchAThing.Sci.Line3D.YAxisLine
+  - SearchAThing.Sci.Line3D.ZAxisLine
+  langs:
+  - csharp
+  - vb
+  name: Line3D
+  nameWithType: Line3D
+  fullName: SearchAThing.Sci.Line3D
+  type: Class
+  source:
+    id: Line3D
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 49
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public class Line3D : Geometry'
+    content.vb: >-
+      Public Class Line3D
+          Inherits Geometry
+  inheritance:
+  - System.Object
+  - SearchAThing.Sci.Geometry
+  inheritedMembers:
+  - SearchAThing.Sci.Geometry.Type
+  extensionMethods:
+  - SearchAThing.Sci.Line3D.SearchAThing.SciExt.ToLine
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: SearchAThing.Sci.Line3D.XAxisLine
+  commentId: F:SearchAThing.Sci.Line3D.XAxisLine
+  id: XAxisLine
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: XAxisLine
+  nameWithType: Line3D.XAxisLine
+  fullName: SearchAThing.Sci.Line3D.XAxisLine
+  type: Field
+  source:
+    id: XAxisLine
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 51
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly Line3D XAxisLine
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Shared ReadOnly XAxisLine As Line3D
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.Line3D.YAxisLine
+  commentId: F:SearchAThing.Sci.Line3D.YAxisLine
+  id: YAxisLine
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: YAxisLine
+  nameWithType: Line3D.YAxisLine
+  fullName: SearchAThing.Sci.Line3D.YAxisLine
+  type: Field
+  source:
+    id: YAxisLine
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 52
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly Line3D YAxisLine
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Shared ReadOnly YAxisLine As Line3D
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.Line3D.ZAxisLine
+  commentId: F:SearchAThing.Sci.Line3D.ZAxisLine
+  id: ZAxisLine
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: ZAxisLine
+  nameWithType: Line3D.ZAxisLine
+  fullName: SearchAThing.Sci.Line3D.ZAxisLine
+  type: Field
+  source:
+    id: ZAxisLine
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 53
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly Line3D ZAxisLine
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Shared ReadOnly ZAxisLine As Line3D
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.Line3D.From
+  commentId: P:SearchAThing.Sci.Line3D.From
+  id: From
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: From
+  nameWithType: Line3D.From
+  fullName: SearchAThing.Sci.Line3D.From
+  type: Property
+  source:
+    id: From
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 58
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\napplication point vector\n"
+  example: []
+  syntax:
+    content: public Vector3D From { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public ReadOnly Property From As Vector3D
+  overload: SearchAThing.Sci.Line3D.From*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.Line3D.V
+  commentId: P:SearchAThing.Sci.Line3D.V
+  id: V
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: V
+  nameWithType: Line3D.V
+  fullName: SearchAThing.Sci.Line3D.V
+  type: Property
+  source:
+    id: V
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 63
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nvector depart at From to identify To\n"
+  example: []
+  syntax:
+    content: public Vector3D V { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public ReadOnly Property V As Vector3D
+  overload: SearchAThing.Sci.Line3D.V*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.Line3D.To
+  commentId: P:SearchAThing.Sci.Line3D.To
+  id: To
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: To
+  nameWithType: Line3D.To
+  fullName: SearchAThing.Sci.Line3D.To
+  type: Property
+  source:
+    id: To
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 68
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nFrom + V\n"
+  example: []
+  syntax:
+    content: public Vector3D To { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public ReadOnly Property To As Vector3D
+  overload: SearchAThing.Sci.Line3D.To*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.Line3D.Dir
+  commentId: P:SearchAThing.Sci.Line3D.Dir
+  id: Dir
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Dir
+  nameWithType: Line3D.Dir
+  fullName: SearchAThing.Sci.Line3D.Dir
+  type: Property
+  source:
+    id: Dir
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 73
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nV normalized\n"
+  example: []
+  syntax:
+    content: public Vector3D Dir { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public ReadOnly Property Dir As Vector3D
+  overload: SearchAThing.Sci.Line3D.Dir*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.Line3D.GeomFrom
+  commentId: P:SearchAThing.Sci.Line3D.GeomFrom
+  id: GeomFrom
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: GeomFrom
+  nameWithType: Line3D.GeomFrom
+  fullName: SearchAThing.Sci.Line3D.GeomFrom
+  type: Property
+  source:
+    id: GeomFrom
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 75
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public override Vector3D GeomFrom { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public Overrides ReadOnly Property GeomFrom As Vector3D
+  overridden: SearchAThing.Sci.Geometry.GeomFrom
+  overload: SearchAThing.Sci.Line3D.GeomFrom*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: SearchAThing.Sci.Line3D.GeomTo
+  commentId: P:SearchAThing.Sci.Line3D.GeomTo
+  id: GeomTo
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: GeomTo
+  nameWithType: Line3D.GeomTo
+  fullName: SearchAThing.Sci.Line3D.GeomTo
+  type: Property
+  source:
+    id: GeomTo
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 78
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public override Vector3D GeomTo { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public Overrides ReadOnly Property GeomTo As Vector3D
+  overridden: SearchAThing.Sci.Geometry.GeomTo
+  overload: SearchAThing.Sci.Line3D.GeomTo*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: SearchAThing.Sci.Line3D.Vertexes
+  commentId: P:SearchAThing.Sci.Line3D.Vertexes
+  id: Vertexes
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Vertexes
+  nameWithType: Line3D.Vertexes
+  fullName: SearchAThing.Sci.Line3D.Vertexes
+  type: Property
+  source:
+    id: Vertexes
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 81
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public override IEnumerable<Vector3D> Vertexes { get; }
+    parameters: []
+    return:
+      type: IEnumerable{SearchAThing.Sci.Vector3D}
+    content.vb: Public Overrides ReadOnly Property Vertexes As IEnumerable(Of Vector3D)
+  overridden: SearchAThing.Sci.Geometry.Vertexes
+  overload: SearchAThing.Sci.Line3D.Vertexes*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: SearchAThing.Sci.Line3D.DisambiguatedPoints
+  commentId: P:SearchAThing.Sci.Line3D.DisambiguatedPoints
+  id: DisambiguatedPoints
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: DisambiguatedPoints
+  nameWithType: Line3D.DisambiguatedPoints
+  fullName: SearchAThing.Sci.Line3D.DisambiguatedPoints
+  type: Property
+  source:
+    id: DisambiguatedPoints
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 95
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nretrieve a unique endpoint representation of this line3d segment (regardless its from-to or to-from order)\nsuch that From.Distance(Vector3D.Zero) less than To.Distance(Vector3D.Zero)\n"
+  example: []
+  syntax:
+    content: public IEnumerable<Vector3D> DisambiguatedPoints { get; }
+    parameters: []
+    return:
+      type: IEnumerable{SearchAThing.Sci.Vector3D}
+    content.vb: Public ReadOnly Property DisambiguatedPoints As IEnumerable(Of Vector3D)
+  overload: SearchAThing.Sci.Line3D.DisambiguatedPoints*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.Line3D.Points
+  commentId: P:SearchAThing.Sci.Line3D.Points
+  id: Points
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Points
+  nameWithType: Line3D.Points
+  fullName: SearchAThing.Sci.Line3D.Points
+  type: Property
+  source:
+    id: Points
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 112
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public IEnumerable<Vector3D> Points { get; }
+    parameters: []
+    return:
+      type: IEnumerable{SearchAThing.Sci.Vector3D}
+    content.vb: Public ReadOnly Property Points As IEnumerable(Of Vector3D)
+  overload: SearchAThing.Sci.Line3D.Points*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.Line3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.Line3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  id: '#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)'
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Line3D(Vector3D, Vector3D)
+  nameWithType: Line3D.Line3D(Vector3D, Vector3D)
+  fullName: SearchAThing.Sci.Line3D.Line3D(SearchAThing.Sci.Vector3D, SearchAThing.Sci.Vector3D)
+  type: Constructor
+  source:
+    id: .ctor
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 124
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nbuild segment\n"
+  example: []
+  syntax:
+    content: public Line3D(Vector3D from, Vector3D to)
+    parameters:
+    - id: from
+      type: SearchAThing.Sci.Vector3D
+    - id: to
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public Sub New(from As Vector3D, to As Vector3D)
+  overload: SearchAThing.Sci.Line3D.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.#ctor(System.Double,System.Double,System.Double,System.Double)
+  commentId: M:SearchAThing.Sci.Line3D.#ctor(System.Double,System.Double,System.Double,System.Double)
+  id: '#ctor(System.Double,System.Double,System.Double,System.Double)'
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Line3D(Double, Double, Double, Double)
+  nameWithType: Line3D.Line3D(Double, Double, Double, Double)
+  fullName: SearchAThing.Sci.Line3D.Line3D(System.Double, System.Double, System.Double, System.Double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 133
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nz=0\n"
+  example: []
+  syntax:
+    content: public Line3D(double x1, double y1, double x2, double y2)
+    parameters:
+    - id: x1
+      type: System.Double
+    - id: y1
+      type: System.Double
+    - id: x2
+      type: System.Double
+    - id: y2
+      type: System.Double
+    content.vb: Public Sub New(x1 As Double, y1 As Double, x2 As Double, y2 As Double)
+  overload: SearchAThing.Sci.Line3D.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)
+  commentId: M:SearchAThing.Sci.Line3D.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)
+  id: '#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)'
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Line3D(Double, Double, Double, Double, Double, Double)
+  nameWithType: Line3D.Line3D(Double, Double, Double, Double, Double, Double)
+  fullName: SearchAThing.Sci.Line3D.Line3D(System.Double, System.Double, System.Double, System.Double, System.Double, System.Double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 139
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public Line3D(double x1, double y1, double z1, double x2, double y2, double z2)
+    parameters:
+    - id: x1
+      type: System.Double
+    - id: y1
+      type: System.Double
+    - id: z1
+      type: System.Double
+    - id: x2
+      type: System.Double
+    - id: y2
+      type: System.Double
+    - id: z2
+      type: System.Double
+    content.vb: Public Sub New(x1 As Double, y1 As Double, z1 As Double, x2 As Double, y2 As Double, z2 As Double)
+  overload: SearchAThing.Sci.Line3D.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Line3DConstructMode)
+  commentId: M:SearchAThing.Sci.Line3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Line3DConstructMode)
+  id: '#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Line3DConstructMode)'
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Line3D(Vector3D, Vector3D, Line3DConstructMode)
+  nameWithType: Line3D.Line3D(Vector3D, Vector3D, Line3DConstructMode)
+  fullName: SearchAThing.Sci.Line3D.Line3D(SearchAThing.Sci.Vector3D, SearchAThing.Sci.Vector3D, SearchAThing.Sci.Line3DConstructMode)
+  type: Constructor
+  source:
+    id: .ctor
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 148
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nbuild segment from plus the given vector form to\n"
+  example: []
+  syntax:
+    content: public Line3D(Vector3D from, Vector3D v, Line3DConstructMode mode)
+    parameters:
+    - id: from
+      type: SearchAThing.Sci.Vector3D
+    - id: v
+      type: SearchAThing.Sci.Vector3D
+    - id: mode
+      type: SearchAThing.Sci.Line3DConstructMode
+    content.vb: Public Sub New(from As Vector3D, v As Vector3D, mode As Line3DConstructMode)
+  overload: SearchAThing.Sci.Line3D.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.Length
+  commentId: P:SearchAThing.Sci.Line3D.Length
+  id: Length
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Length
+  nameWithType: Line3D.Length
+  fullName: SearchAThing.Sci.Line3D.Length
+  type: Property
+  source:
+    id: Length
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 154
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public override double Length { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Overrides ReadOnly Property Length As Double
+  overridden: SearchAThing.Sci.Geometry.Length
+  overload: SearchAThing.Sci.Line3D.Length*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: SearchAThing.Sci.Line3D.EqualsTol(System.Double,SearchAThing.Sci.Line3D)
+  commentId: M:SearchAThing.Sci.Line3D.EqualsTol(System.Double,SearchAThing.Sci.Line3D)
+  id: EqualsTol(System.Double,SearchAThing.Sci.Line3D)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: EqualsTol(Double, Line3D)
+  nameWithType: Line3D.EqualsTol(Double, Line3D)
+  fullName: SearchAThing.Sci.Line3D.EqualsTol(System.Double, SearchAThing.Sci.Line3D)
+  type: Method
+  source:
+    id: EqualsTol
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 159
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nChecks if two lines are equals ( it checks agains swapped from-to too )\n"
+  example: []
+  syntax:
+    content: public bool EqualsTol(double tol, Line3D other)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: other
+      type: SearchAThing.Sci.Line3D
+    return:
+      type: System.Boolean
+    content.vb: Public Function EqualsTol(tol As Double, other As Line3D) As Boolean
+  overload: SearchAThing.Sci.Line3D.EqualsTol*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.CommonPoint(System.Double,SearchAThing.Sci.Line3D)
+  commentId: M:SearchAThing.Sci.Line3D.CommonPoint(System.Double,SearchAThing.Sci.Line3D)
+  id: CommonPoint(System.Double,SearchAThing.Sci.Line3D)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: CommonPoint(Double, Line3D)
+  nameWithType: Line3D.CommonPoint(Double, Line3D)
+  fullName: SearchAThing.Sci.Line3D.CommonPoint(System.Double, SearchAThing.Sci.Line3D)
+  type: Method
+  source:
+    id: CommonPoint
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 170
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nreturns the common point from,to between two lines or null if not consecutives\n"
+  example: []
+  syntax:
+    content: public Vector3D CommonPoint(double tol, Line3D other)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: other
+      type: SearchAThing.Sci.Line3D
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public Function CommonPoint(tol As Double, other As Line3D) As Vector3D
+  overload: SearchAThing.Sci.Line3D.CommonPoint*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.Reverse
+  commentId: M:SearchAThing.Sci.Line3D.Reverse
+  id: Reverse
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Reverse()
+  nameWithType: Line3D.Reverse()
+  fullName: SearchAThing.Sci.Line3D.Reverse()
+  type: Method
+  source:
+    id: Reverse
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 181
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nreturn the segment with swapped from,to\n"
+  example: []
+  syntax:
+    content: public Line3D Reverse()
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Function Reverse As Line3D
+  overload: SearchAThing.Sci.Line3D.Reverse*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.Scale(SearchAThing.Sci.Vector3D,System.Double)
+  commentId: M:SearchAThing.Sci.Line3D.Scale(SearchAThing.Sci.Vector3D,System.Double)
+  id: Scale(SearchAThing.Sci.Vector3D,System.Double)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Scale(Vector3D, Double)
+  nameWithType: Line3D.Scale(Vector3D, Double)
+  fullName: SearchAThing.Sci.Line3D.Scale(SearchAThing.Sci.Vector3D, System.Double)
+  type: Method
+  source:
+    id: Scale
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 189
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nscale from,to of this line using given refpt and factor\n"
+  example: []
+  syntax:
+    content: public Line3D Scale(Vector3D refpt, double factor)
+    parameters:
+    - id: refpt
+      type: SearchAThing.Sci.Vector3D
+    - id: factor
+      type: System.Double
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Function Scale(refpt As Vector3D, factor As Double) As Line3D
+  overload: SearchAThing.Sci.Line3D.Scale*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.op_Multiply(System.Double,SearchAThing.Sci.Line3D)
+  commentId: M:SearchAThing.Sci.Line3D.op_Multiply(System.Double,SearchAThing.Sci.Line3D)
+  id: op_Multiply(System.Double,SearchAThing.Sci.Line3D)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Multiply(Double, Line3D)
+  nameWithType: Line3D.Multiply(Double, Line3D)
+  fullName: SearchAThing.Sci.Line3D.Multiply(System.Double, SearchAThing.Sci.Line3D)
+  type: Operator
+  source:
+    id: op_Multiply
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 199
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nmultiply Length by given scalar factor\nNote : this will change To\n"
+  example: []
+  syntax:
+    content: public static Line3D operator *(double s, Line3D l)
+    parameters:
+    - id: s
+      type: System.Double
+    - id: l
+      type: SearchAThing.Sci.Line3D
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Shared Operator *(s As Double, l As Line3D) As Line3D
+  overload: SearchAThing.Sci.Line3D.op_Multiply*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: SearchAThing.Sci.Line3D.op_Multiply(SearchAThing.Sci.Line3D,System.Double)
+  commentId: M:SearchAThing.Sci.Line3D.op_Multiply(SearchAThing.Sci.Line3D,System.Double)
+  id: op_Multiply(SearchAThing.Sci.Line3D,System.Double)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Multiply(Line3D, Double)
+  nameWithType: Line3D.Multiply(Line3D, Double)
+  fullName: SearchAThing.Sci.Line3D.Multiply(SearchAThing.Sci.Line3D, System.Double)
+  type: Operator
+  source:
+    id: op_Multiply
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 208
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nmultiply Length by given scalar factor\nNote : this will change To\n"
+  example: []
+  syntax:
+    content: public static Line3D operator *(Line3D l, double s)
+    parameters:
+    - id: l
+      type: SearchAThing.Sci.Line3D
+    - id: s
+      type: System.Double
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Shared Operator *(l As Line3D, s As Double) As Line3D
+  overload: SearchAThing.Sci.Line3D.op_Multiply*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: SearchAThing.Sci.Line3D.op_Addition(SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.Line3D.op_Addition(SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)
+  id: op_Addition(SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Addition(Line3D, Vector3D)
+  nameWithType: Line3D.Addition(Line3D, Vector3D)
+  fullName: SearchAThing.Sci.Line3D.Addition(SearchAThing.Sci.Line3D, SearchAThing.Sci.Vector3D)
+  type: Operator
+  source:
+    id: op_Addition
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 216
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nMove this line of given delta adding value either at From, To\n"
+  example: []
+  syntax:
+    content: public static Line3D operator +(Line3D l, Vector3D delta)
+    parameters:
+    - id: l
+      type: SearchAThing.Sci.Line3D
+    - id: delta
+      type: SearchAThing.Sci.Vector3D
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Shared Operator +(l As Line3D, delta As Vector3D) As Line3D
+  overload: SearchAThing.Sci.Line3D.op_Addition*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: SearchAThing.Sci.Line3D.op_Subtraction(SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.Line3D.op_Subtraction(SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)
+  id: op_Subtraction(SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Subtraction(Line3D, Vector3D)
+  nameWithType: Line3D.Subtraction(Line3D, Vector3D)
+  fullName: SearchAThing.Sci.Line3D.Subtraction(SearchAThing.Sci.Line3D, SearchAThing.Sci.Vector3D)
+  type: Operator
+  source:
+    id: op_Subtraction
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 224
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nMove this line of given delta subtracting value either at From, To\n"
+  example: []
+  syntax:
+    content: public static Line3D operator -(Line3D l, Vector3D delta)
+    parameters:
+    - id: l
+      type: SearchAThing.Sci.Line3D
+    - id: delta
+      type: SearchAThing.Sci.Vector3D
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Shared Operator -(l As Line3D, delta As Vector3D) As Line3D
+  overload: SearchAThing.Sci.Line3D.op_Subtraction*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: SearchAThing.Sci.Line3D.LineContainsPoint(System.Double,System.Double,System.Double,System.Double,System.Boolean)
+  commentId: M:SearchAThing.Sci.Line3D.LineContainsPoint(System.Double,System.Double,System.Double,System.Double,System.Boolean)
+  id: LineContainsPoint(System.Double,System.Double,System.Double,System.Double,System.Boolean)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: LineContainsPoint(Double, Double, Double, Double, Boolean)
+  nameWithType: Line3D.LineContainsPoint(Double, Double, Double, Double, Boolean)
+  fullName: SearchAThing.Sci.Line3D.LineContainsPoint(System.Double, System.Double, System.Double, System.Double, System.Boolean)
+  type: Method
+  source:
+    id: LineContainsPoint
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 235
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nInfinite line contains point.\nNote: tol must be Constant.NormalizedLengthTolerance\nif comparing normalized vectors\n"
+  example: []
+  syntax:
+    content: public bool LineContainsPoint(double tol, double x, double y, double z, bool segmentMode = false)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: x
+      type: System.Double
+    - id: y
+      type: System.Double
+    - id: z
+      type: System.Double
+    - id: segmentMode
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Public Function LineContainsPoint(tol As Double, x As Double, y As Double, z As Double, segmentMode As Boolean = False) As Boolean
+  overload: SearchAThing.Sci.Line3D.LineContainsPoint*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.LineContainsPoint(System.Double,SearchAThing.Sci.Vector3D,System.Boolean,System.Boolean)
+  commentId: M:SearchAThing.Sci.Line3D.LineContainsPoint(System.Double,SearchAThing.Sci.Vector3D,System.Boolean,System.Boolean)
+  id: LineContainsPoint(System.Double,SearchAThing.Sci.Vector3D,System.Boolean,System.Boolean)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: LineContainsPoint(Double, Vector3D, Boolean, Boolean)
+  nameWithType: Line3D.LineContainsPoint(Double, Vector3D, Boolean, Boolean)
+  fullName: SearchAThing.Sci.Line3D.LineContainsPoint(System.Double, SearchAThing.Sci.Vector3D, System.Boolean, System.Boolean)
+  type: Method
+  source:
+    id: LineContainsPoint
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 243
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nInfinite line contains point.            \n"
+  example: []
+  syntax:
+    content: public bool LineContainsPoint(double tol, Vector3D p, bool segmentMode = false, bool excludeExtreme = false)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: p
+      type: SearchAThing.Sci.Vector3D
+    - id: segmentMode
+      type: System.Boolean
+    - id: excludeExtreme
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Public Function LineContainsPoint(tol As Double, p As Vector3D, segmentMode As Boolean = False, excludeExtreme As Boolean = False) As Boolean
+  overload: SearchAThing.Sci.Line3D.LineContainsPoint*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.SegmentContainsPoint(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)
+  commentId: M:SearchAThing.Sci.Line3D.SegmentContainsPoint(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)
+  id: SegmentContainsPoint(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: SegmentContainsPoint(Double, Vector3D, Boolean)
+  nameWithType: Line3D.SegmentContainsPoint(Double, Vector3D, Boolean)
+  fullName: SearchAThing.Sci.Line3D.SegmentContainsPoint(System.Double, SearchAThing.Sci.Vector3D, System.Boolean)
+  type: Method
+  source:
+    id: SegmentContainsPoint
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 297
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nFinite segment contains point.\nNote: tol must be Constant.NormalizedLengthTolerance\nif comparing normalized vectors\n"
+  example: []
+  syntax:
+    content: public bool SegmentContainsPoint(double tol, Vector3D p, bool excludeExtreme = false)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: p
+      type: SearchAThing.Sci.Vector3D
+    - id: excludeExtreme
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Public Function SegmentContainsPoint(tol As Double, p As Vector3D, excludeExtreme As Boolean = False) As Boolean
+  overload: SearchAThing.Sci.Line3D.SegmentContainsPoint*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.SegmentContainsPoint(System.Double,System.Double,System.Double,System.Double)
+  commentId: M:SearchAThing.Sci.Line3D.SegmentContainsPoint(System.Double,System.Double,System.Double,System.Double)
+  id: SegmentContainsPoint(System.Double,System.Double,System.Double,System.Double)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: SegmentContainsPoint(Double, Double, Double, Double)
+  nameWithType: Line3D.SegmentContainsPoint(Double, Double, Double, Double)
+  fullName: SearchAThing.Sci.Line3D.SegmentContainsPoint(System.Double, System.Double, System.Double, System.Double)
+  type: Method
+  source:
+    id: SegmentContainsPoint
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 307
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nFinite segment contains point.\nNote: tol must be Constant.NormalizedLengthTolerance\nif comparing normalized vectors\n"
+  example: []
+  syntax:
+    content: public bool SegmentContainsPoint(double tol, double x, double y, double z)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: x
+      type: System.Double
+    - id: y
+      type: System.Double
+    - id: z
+      type: System.Double
+    return:
+      type: System.Boolean
+    content.vb: Public Function SegmentContainsPoint(tol As Double, x As Double, y As Double, z As Double) As Boolean
+  overload: SearchAThing.Sci.Line3D.SegmentContainsPoint*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.SemiLineContainsPoints(System.Double,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.Line3D.SemiLineContainsPoints(System.Double,SearchAThing.Sci.Vector3D)
+  id: SemiLineContainsPoints(System.Double,SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: SemiLineContainsPoints(Double, Vector3D)
+  nameWithType: Line3D.SemiLineContainsPoints(Double, Vector3D)
+  fullName: SearchAThing.Sci.Line3D.SemiLineContainsPoints(System.Double, SearchAThing.Sci.Vector3D)
+  type: Method
+  source:
+    id: SemiLineContainsPoints
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 317
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nstates if semiline From-To(inf) contains given point\n"
+  example: []
+  syntax:
+    content: public bool SemiLineContainsPoints(double tol, Vector3D p)
+    parameters:
+    - id: tol
+      type: System.Double
+      description: len tolerance
+    - id: p
+      type: SearchAThing.Sci.Vector3D
+      description: point to verify is it on semiline
+    return:
+      type: System.Boolean
+    content.vb: Public Function SemiLineContainsPoints(tol As Double, p As Vector3D) As Boolean
+  overload: SearchAThing.Sci.Line3D.SemiLineContainsPoints*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.Intersect(System.Double,SearchAThing.Sci.Line3D,SearchAThing.Sci.LineIntersectBehavior)
+  commentId: M:SearchAThing.Sci.Line3D.Intersect(System.Double,SearchAThing.Sci.Line3D,SearchAThing.Sci.LineIntersectBehavior)
+  id: Intersect(System.Double,SearchAThing.Sci.Line3D,SearchAThing.Sci.LineIntersectBehavior)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Intersect(Double, Line3D, LineIntersectBehavior)
+  nameWithType: Line3D.Intersect(Double, Line3D, LineIntersectBehavior)
+  fullName: SearchAThing.Sci.Line3D.Intersect(System.Double, SearchAThing.Sci.Line3D, SearchAThing.Sci.LineIntersectBehavior)
+  type: Method
+  source:
+    id: Intersect
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 328
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nFind intersection point between this and other line using given tolerance.\nReturns null if no intersection, otherwise it returns a point on\nthe shortest segment ( the one that&apos;s perpendicular to either lines )\nbased on given behavior ( default midpoint ).      \n"
+  example: []
+  syntax:
+    content: public Vector3D Intersect(double tol, Line3D other, LineIntersectBehavior behavior = LineIntersectBehavior.MidPoint)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: other
+      type: SearchAThing.Sci.Line3D
+    - id: behavior
+      type: SearchAThing.Sci.LineIntersectBehavior
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public Function Intersect(tol As Double, other As Line3D, behavior As LineIntersectBehavior = LineIntersectBehavior.MidPoint) As Vector3D
+  overload: SearchAThing.Sci.Line3D.Intersect*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.ApparentIntersect(SearchAThing.Sci.Line3D)
+  commentId: M:SearchAThing.Sci.Line3D.ApparentIntersect(SearchAThing.Sci.Line3D)
+  id: ApparentIntersect(SearchAThing.Sci.Line3D)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: ApparentIntersect(Line3D)
+  nameWithType: Line3D.ApparentIntersect(Line3D)
+  fullName: SearchAThing.Sci.Line3D.ApparentIntersect(SearchAThing.Sci.Line3D)
+  type: Method
+  source:
+    id: ApparentIntersect
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 358
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nFind apparent intersection between this and given other line\nreturning (shortest) segment perpendicular to either lines or null if lines parallels.\nThis method will used from Intersect to find intersection between lines when\nperpendicular segment length not exceed given length tolerance.            \n"
+  remarks: "\n[unit test](/test/Line3D/Line3DTest_0001.cs)\n![](/test/Line3D/Line3DTest_0001.png)\n"
+  example: []
+  syntax:
+    content: public Line3D ApparentIntersect(Line3D other)
+    parameters:
+    - id: other
+      type: SearchAThing.Sci.Line3D
+      description: other 3d line
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Function ApparentIntersect(other As Line3D) As Line3D
+  overload: SearchAThing.Sci.Line3D.ApparentIntersect*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean)
+  commentId: M:SearchAThing.Sci.Line3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean)
+  id: Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Intersect(Double, Line3D, Boolean, Boolean)
+  nameWithType: Line3D.Intersect(Double, Line3D, Boolean, Boolean)
+  fullName: SearchAThing.Sci.Line3D.Intersect(System.Double, SearchAThing.Sci.Line3D, System.Boolean, System.Boolean)
+  type: Method
+  source:
+    id: Intersect
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 463
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nIntersects two lines with arbitrary segment mode for each.\n"
+  example: []
+  syntax:
+    content: public Vector3D Intersect(double tol, Line3D other, bool thisSegment, bool otherSegment)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: other
+      type: SearchAThing.Sci.Line3D
+    - id: thisSegment
+      type: System.Boolean
+    - id: otherSegment
+      type: System.Boolean
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public Function Intersect(tol As Double, other As Line3D, thisSegment As Boolean, otherSegment As Boolean) As Vector3D
+  overload: SearchAThing.Sci.Line3D.Intersect*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.Perpendicular(System.Double,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.Line3D.Perpendicular(System.Double,SearchAThing.Sci.Vector3D)
+  id: Perpendicular(System.Double,SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Perpendicular(Double, Vector3D)
+  nameWithType: Line3D.Perpendicular(Double, Vector3D)
+  fullName: SearchAThing.Sci.Line3D.Perpendicular(System.Double, SearchAThing.Sci.Vector3D)
+  type: Method
+  source:
+    id: Perpendicular
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 477
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nBuild a perpendicular vector to this one starting from the given point p.\n"
+  example: []
+  syntax:
+    content: public Line3D Perpendicular(double tol, Vector3D p)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: p
+      type: SearchAThing.Sci.Vector3D
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Function Perpendicular(tol As Double, p As Vector3D) As Line3D
+  overload: SearchAThing.Sci.Line3D.Perpendicular*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.Colinear(System.Double,SearchAThing.Sci.Line3D)
+  commentId: M:SearchAThing.Sci.Line3D.Colinear(System.Double,SearchAThing.Sci.Line3D)
+  id: Colinear(System.Double,SearchAThing.Sci.Line3D)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Colinear(Double, Line3D)
+  nameWithType: Line3D.Colinear(Double, Line3D)
+  fullName: SearchAThing.Sci.Line3D.Colinear(System.Double, SearchAThing.Sci.Line3D)
+  type: Method
+  source:
+    id: Colinear
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 486
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public bool Colinear(double tol, Line3D other)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: other
+      type: SearchAThing.Sci.Line3D
+    return:
+      type: System.Boolean
+    content.vb: Public Function Colinear(tol As Double, other As Line3D) As Boolean
+  overload: SearchAThing.Sci.Line3D.Colinear*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.IsParallelTo(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  commentId: M:SearchAThing.Sci.Line3D.IsParallelTo(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  id: IsParallelTo(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: IsParallelTo(Double, CoordinateSystem3D)
+  nameWithType: Line3D.IsParallelTo(Double, CoordinateSystem3D)
+  fullName: SearchAThing.Sci.Line3D.IsParallelTo(System.Double, SearchAThing.Sci.CoordinateSystem3D)
+  type: Method
+  source:
+    id: IsParallelTo
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 494
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public bool IsParallelTo(double tol, CoordinateSystem3D cs)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: cs
+      type: SearchAThing.Sci.CoordinateSystem3D
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsParallelTo(tol As Double, cs As CoordinateSystem3D) As Boolean
+  overload: SearchAThing.Sci.Line3D.IsParallelTo*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.IsParallelTo(System.Double,SearchAThing.Sci.Plane3D)
+  commentId: M:SearchAThing.Sci.Line3D.IsParallelTo(System.Double,SearchAThing.Sci.Plane3D)
+  id: IsParallelTo(System.Double,SearchAThing.Sci.Plane3D)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: IsParallelTo(Double, Plane3D)
+  nameWithType: Line3D.IsParallelTo(Double, Plane3D)
+  fullName: SearchAThing.Sci.Line3D.IsParallelTo(System.Double, SearchAThing.Sci.Plane3D)
+  type: Method
+  source:
+    id: IsParallelTo
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 502
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public bool IsParallelTo(double tol, Plane3D plane)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: plane
+      type: SearchAThing.Sci.Plane3D
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsParallelTo(tol As Double, plane As Plane3D) As Boolean
+  overload: SearchAThing.Sci.Line3D.IsParallelTo*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.Intersect(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  commentId: M:SearchAThing.Sci.Line3D.Intersect(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  id: Intersect(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Intersect(Double, CoordinateSystem3D)
+  nameWithType: Line3D.Intersect(Double, CoordinateSystem3D)
+  fullName: SearchAThing.Sci.Line3D.Intersect(System.Double, SearchAThing.Sci.CoordinateSystem3D)
+  type: Method
+  source:
+    id: Intersect
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 508
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nreturns null if this line is parallel to the cs xy plane,\nthe intersection point otherwise\n"
+  example: []
+  syntax:
+    content: public Vector3D Intersect(double tol, CoordinateSystem3D cs)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: cs
+      type: SearchAThing.Sci.CoordinateSystem3D
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public Function Intersect(tol As Double, cs As CoordinateSystem3D) As Vector3D
+  overload: SearchAThing.Sci.Line3D.Intersect*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.Intersect(System.Double,SearchAThing.Sci.Plane3D)
+  commentId: M:SearchAThing.Sci.Line3D.Intersect(System.Double,SearchAThing.Sci.Plane3D)
+  id: Intersect(System.Double,SearchAThing.Sci.Plane3D)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Intersect(Double, Plane3D)
+  nameWithType: Line3D.Intersect(Double, Plane3D)
+  fullName: SearchAThing.Sci.Line3D.Intersect(System.Double, SearchAThing.Sci.Plane3D)
+  type: Method
+  source:
+    id: Intersect
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 530
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nreturns null if this line is parallel to the plane,\nthe intersection point otherwise\n"
+  example: []
+  syntax:
+    content: public Vector3D Intersect(double tol, Plane3D plane)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: plane
+      type: SearchAThing.Sci.Plane3D
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public Function Intersect(tol As Double, plane As Plane3D) As Vector3D
+  overload: SearchAThing.Sci.Line3D.Intersect*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.MidPoint
+  commentId: P:SearchAThing.Sci.Line3D.MidPoint
+  id: MidPoint
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: MidPoint
+  nameWithType: Line3D.MidPoint
+  fullName: SearchAThing.Sci.Line3D.MidPoint
+  type: Property
+  source:
+    id: MidPoint
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 532
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public Vector3D MidPoint { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public ReadOnly Property MidPoint As Vector3D
+  overload: SearchAThing.Sci.Line3D.MidPoint*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.Line3D.RotateAboutAxis(SearchAThing.Sci.Line3D,System.Double)
+  commentId: M:SearchAThing.Sci.Line3D.RotateAboutAxis(SearchAThing.Sci.Line3D,System.Double)
+  id: RotateAboutAxis(SearchAThing.Sci.Line3D,System.Double)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: RotateAboutAxis(Line3D, Double)
+  nameWithType: Line3D.RotateAboutAxis(Line3D, Double)
+  fullName: SearchAThing.Sci.Line3D.RotateAboutAxis(SearchAThing.Sci.Line3D, System.Double)
+  type: Method
+  source:
+    id: RotateAboutAxis
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 537
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nrotate this segment about given axis\n"
+  example: []
+  syntax:
+    content: public Line3D RotateAboutAxis(Line3D axisSegment, double angleRad)
+    parameters:
+    - id: axisSegment
+      type: SearchAThing.Sci.Line3D
+    - id: angleRad
+      type: System.Double
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Function RotateAboutAxis(axisSegment As Line3D, angleRad As Double) As Line3D
+  overload: SearchAThing.Sci.Line3D.RotateAboutAxis*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.SetLength(System.Double)
+  commentId: M:SearchAThing.Sci.Line3D.SetLength(System.Double)
+  id: SetLength(System.Double)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: SetLength(Double)
+  nameWithType: Line3D.SetLength(Double)
+  fullName: SearchAThing.Sci.Line3D.SetLength(System.Double)
+  type: Method
+  source:
+    id: SetLength
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 545
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nresize this segment to a new one with same From\n"
+  example: []
+  syntax:
+    content: public Line3D SetLength(double len)
+    parameters:
+    - id: len
+      type: System.Double
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Function SetLength(len As Double) As Line3D
+  overload: SearchAThing.Sci.Line3D.SetLength*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.Move(SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.Line3D.Move(SearchAThing.Sci.Vector3D)
+  id: Move(SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Move(Vector3D)
+  nameWithType: Line3D.Move(Vector3D)
+  fullName: SearchAThing.Sci.Line3D.Move(SearchAThing.Sci.Vector3D)
+  type: Method
+  source:
+    id: Move
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 553
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nmove this segment of given delta\n"
+  example: []
+  syntax:
+    content: public Line3D Move(Vector3D delta)
+    parameters:
+    - id: delta
+      type: SearchAThing.Sci.Vector3D
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Function Move(delta As Vector3D) As Line3D
+  overload: SearchAThing.Sci.Line3D.Move*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.MoveMidpoint(SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.Line3D.MoveMidpoint(SearchAThing.Sci.Vector3D)
+  id: MoveMidpoint(SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: MoveMidpoint(Vector3D)
+  nameWithType: Line3D.MoveMidpoint(Vector3D)
+  fullName: SearchAThing.Sci.Line3D.MoveMidpoint(SearchAThing.Sci.Vector3D)
+  type: Method
+  source:
+    id: MoveMidpoint
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 561
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nMove this segment midpoint to the given coord\n"
+  example: []
+  syntax:
+    content: public Line3D MoveMidpoint(Vector3D newMidpoint)
+    parameters:
+    - id: newMidpoint
+      type: SearchAThing.Sci.Vector3D
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Function MoveMidpoint(newMidpoint As Vector3D) As Line3D
+  overload: SearchAThing.Sci.Line3D.MoveMidpoint*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.Split(System.Double,IReadOnlyList{SearchAThing.Sci.Vector3D})
+  commentId: M:SearchAThing.Sci.Line3D.Split(System.Double,IReadOnlyList{SearchAThing.Sci.Vector3D})
+  id: Split(System.Double,IReadOnlyList{SearchAThing.Sci.Vector3D})
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Split(Double, IReadOnlyList<Vector3D>)
+  nameWithType: Line3D.Split(Double, IReadOnlyList<Vector3D>)
+  fullName: SearchAThing.Sci.Line3D.Split(System.Double, IReadOnlyList<SearchAThing.Sci.Vector3D>)
+  type: Method
+  source:
+    id: Split
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 572
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nsplit current segment into one or more depending on which of given split points was found on the segment            \nsplitted segments start from begin of line\nTODO : not optimized\n"
+  example: []
+  syntax:
+    content: public IReadOnlyList<Line3D> Split(double tolLen, IReadOnlyList<Vector3D> splitPts)
+    parameters:
+    - id: tolLen
+      type: System.Double
+    - id: splitPts
+      type: IReadOnlyList{SearchAThing.Sci.Vector3D}
+    return:
+      type: IReadOnlyList{SearchAThing.Sci.Line3D}
+    content.vb: Public Function Split(tolLen As Double, splitPts As IReadOnlyList(Of Vector3D)) As IReadOnlyList(Of Line3D)
+  overload: SearchAThing.Sci.Line3D.Split*
+  nameWithType.vb: Line3D.Split(Double, IReadOnlyList(Of Vector3D))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: SearchAThing.Sci.Line3D.Split(System.Double, IReadOnlyList(Of SearchAThing.Sci.Vector3D))
+  name.vb: Split(Double, IReadOnlyList(Of Vector3D))
+- uid: SearchAThing.Sci.Line3D.EnsureFrom(System.Double,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.Line3D.EnsureFrom(System.Double,SearchAThing.Sci.Vector3D)
+  id: EnsureFrom(System.Double,SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: EnsureFrom(Double, Vector3D)
+  nameWithType: Line3D.EnsureFrom(Double, Vector3D)
+  fullName: SearchAThing.Sci.Line3D.EnsureFrom(System.Double, SearchAThing.Sci.Vector3D)
+  type: Method
+  source:
+    id: EnsureFrom
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 623
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nif this segment from matches the given point returns this;\nif this segment to matches the given point return this with from,to swapped;\nprecondition: this segment must have from or to equals given from\n"
+  example: []
+  syntax:
+    content: public Line3D EnsureFrom(double tolLen, Vector3D pt)
+    parameters:
+    - id: tolLen
+      type: System.Double
+    - id: pt
+      type: SearchAThing.Sci.Vector3D
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Function EnsureFrom(tolLen As Double, pt As Vector3D) As Line3D
+  overload: SearchAThing.Sci.Line3D.EnsureFrom*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.Offset(System.Double,SearchAThing.Sci.Vector3D,System.Double)
+  commentId: M:SearchAThing.Sci.Line3D.Offset(System.Double,SearchAThing.Sci.Vector3D,System.Double)
+  id: Offset(System.Double,SearchAThing.Sci.Vector3D,System.Double)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Offset(Double, Vector3D, Double)
+  nameWithType: Line3D.Offset(Double, Vector3D, Double)
+  fullName: SearchAThing.Sci.Line3D.Offset(System.Double, SearchAThing.Sci.Vector3D, System.Double)
+  type: Method
+  source:
+    id: Offset
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 633
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\ncreate offseted line toward refPt for given offset\n"
+  example: []
+  syntax:
+    content: public Line3D Offset(double tol, Vector3D refPt, double offset)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: refPt
+      type: SearchAThing.Sci.Vector3D
+    - id: offset
+      type: System.Double
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Function Offset(tol As Double, refPt As Vector3D, offset As Double) As Line3D
+  overload: SearchAThing.Sci.Line3D.Offset*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.CadScript
+  commentId: P:SearchAThing.Sci.Line3D.CadScript
+  id: CadScript
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: CadScript
+  nameWithType: Line3D.CadScript
+  fullName: SearchAThing.Sci.Line3D.CadScript
+  type: Property
+  source:
+    id: CadScript
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 644
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public string CadScript { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property CadScript As String
+  overload: SearchAThing.Sci.Line3D.CadScript*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.Line3D.DxfEntity
+  commentId: P:SearchAThing.Sci.Line3D.DxfEntity
+  id: DxfEntity
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: DxfEntity
+  nameWithType: Line3D.DxfEntity
+  fullName: SearchAThing.Sci.Line3D.DxfEntity
+  type: Property
+  source:
+    id: DxfEntity
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 653
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public override EntityObject DxfEntity { get; }
+    parameters: []
+    return:
+      type: EntityObject
+    content.vb: Public Overrides ReadOnly Property DxfEntity As EntityObject
+  overridden: SearchAThing.Sci.Geometry.DxfEntity
+  overload: SearchAThing.Sci.Line3D.DxfEntity*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: SearchAThing.Sci.Line3D.ToString(System.Double)
+  commentId: M:SearchAThing.Sci.Line3D.ToString(System.Double)
+  id: ToString(System.Double)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: ToString(Double)
+  nameWithType: Line3D.ToString(Double)
+  fullName: SearchAThing.Sci.Line3D.ToString(System.Double)
+  type: Method
+  source:
+    id: ToString
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 664
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nhash string with given tolerance\n"
+  example: []
+  syntax:
+    content: public string ToString(double tolLen)
+    parameters:
+    - id: tolLen
+      type: System.Double
+    return:
+      type: System.String
+    content.vb: Public Function ToString(tolLen As Double) As String
+  overload: SearchAThing.Sci.Line3D.ToString*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.ToString
+  commentId: M:SearchAThing.Sci.Line3D.ToString
+  id: ToString
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Line3D.ToString()
+  fullName: SearchAThing.Sci.Line3D.ToString()
+  type: Method
+  source:
+    id: ToString
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 684
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nbuild an invariant string representation w/3 digits\n(f.x, f.y, f.z)-(t.x, t.y, t.z) L=len Δ=(v.x, v.y, v.z)\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overload: SearchAThing.Sci.Line3D.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: SearchAThing.Sci.Line3D.ToString(System.Int32)
+  commentId: M:SearchAThing.Sci.Line3D.ToString(System.Int32)
+  id: ToString(System.Int32)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: ToString(Int32)
+  nameWithType: Line3D.ToString(Int32)
+  fullName: SearchAThing.Sci.Line3D.ToString(System.Int32)
+  type: Method
+  source:
+    id: ToString
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 693
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nbuild an invariant string representation w/given digits\n(f.x, f.y, f.z)-(t.x, t.y, t.z) L=len Δ=(v.x, v.y, v.z)\n"
+  example: []
+  syntax:
+    content: public string ToString(int digits = 3)
+    parameters:
+    - id: digits
+      type: System.Int32
+    return:
+      type: System.String
+    content.vb: Public Function ToString(digits As Integer = 3) As String
+  overload: SearchAThing.Sci.Line3D.ToString*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.Divide(System.Int32,System.Boolean)
+  commentId: M:SearchAThing.Sci.Line3D.Divide(System.Int32,System.Boolean)
+  id: Divide(System.Int32,System.Boolean)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Divide(Int32, Boolean)
+  nameWithType: Line3D.Divide(Int32, Boolean)
+  fullName: SearchAThing.Sci.Line3D.Divide(System.Int32, System.Boolean)
+  type: Method
+  source:
+    id: Divide
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 698
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public override IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false)
+    parameters:
+    - id: cnt
+      type: System.Int32
+    - id: include_endpoints
+      type: System.Boolean
+    return:
+      type: IEnumerable{SearchAThing.Sci.Vector3D}
+    content.vb: Public Overrides Function Divide(cnt As Integer, include_endpoints As Boolean = False) As IEnumerable(Of Vector3D)
+  overridden: SearchAThing.Sci.Geometry.Divide(System.Int32,System.Boolean)
+  overload: SearchAThing.Sci.Line3D.Divide*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: SearchAThing.Sci.Line3D.Normalized
+  commentId: M:SearchAThing.Sci.Line3D.Normalized
+  id: Normalized
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Normalized()
+  nameWithType: Line3D.Normalized()
+  fullName: SearchAThing.Sci.Line3D.Normalized()
+  type: Method
+  source:
+    id: Normalized
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 716
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nbuild a segment with same from and vector normalized\n"
+  example: []
+  syntax:
+    content: public Line3D Normalized()
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Function Normalized As Line3D
+  overload: SearchAThing.Sci.Line3D.Normalized*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Line3D.Swapped
+  commentId: P:SearchAThing.Sci.Line3D.Swapped
+  id: Swapped
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Swapped
+  nameWithType: Line3D.Swapped
+  fullName: SearchAThing.Sci.Line3D.Swapped
+  type: Property
+  source:
+    id: Swapped
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 724
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nreturn segment with swapped from,to\n"
+  example: []
+  syntax:
+    content: public Line3D Swapped { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public ReadOnly Property Swapped As Line3D
+  overload: SearchAThing.Sci.Line3D.Swapped*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.Line3D.Inverted
+  commentId: P:SearchAThing.Sci.Line3D.Inverted
+  id: Inverted
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Inverted
+  nameWithType: Line3D.Inverted
+  fullName: SearchAThing.Sci.Line3D.Inverted
+  type: Property
+  source:
+    id: Inverted
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 735
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nreturn inverted segment\n"
+  example: []
+  syntax:
+    content: public Line3D Inverted { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public ReadOnly Property Inverted As Line3D
+  overload: SearchAThing.Sci.Line3D.Inverted*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.Line3D.BBox(System.Double)
+  commentId: M:SearchAThing.Sci.Line3D.BBox(System.Double)
+  id: BBox(System.Double)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: BBox(Double)
+  nameWithType: Line3D.BBox(Double)
+  fullName: SearchAThing.Sci.Line3D.BBox(System.Double)
+  type: Method
+  source:
+    id: BBox
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 743
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public override BBox3D BBox(double tol_len)
+    parameters:
+    - id: tol_len
+      type: System.Double
+    return:
+      type: SearchAThing.Sci.BBox3D
+    content.vb: Public Overrides Function BBox(tol_len As Double) As BBox3D
+  overridden: SearchAThing.Sci.Geometry.BBox(System.Double)
+  overload: SearchAThing.Sci.Line3D.BBox*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: SearchAThing.Sci.Line3D.Bisect(System.Double,SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.Line3D.Bisect(System.Double,SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)
+  id: Bisect(System.Double,SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.Line3D
+  langs:
+  - csharp
+  - vb
+  name: Bisect(Double, Line3D, Vector3D)
+  nameWithType: Line3D.Bisect(Double, Line3D, Vector3D)
+  fullName: SearchAThing.Sci.Line3D.Bisect(System.Double, SearchAThing.Sci.Line3D, SearchAThing.Sci.Vector3D)
+  type: Method
+  source:
+    id: Bisect
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 756
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nreturns bisect of two given segment/lines\n( if given segment not share nodes but intesects returned bisect start from ip )\nbisect choosen will be the one between this and other withing shortest angle\n\nif two given lines are parallel and parallelRotationAxis is given then\nbisect results as this segment rotated PI/2 about given axis using To as rotcenter\n"
+  example: []
+  syntax:
+    content: public Line3D Bisect(double tol_len, Line3D other, Vector3D parallelRotationAxis = null)
+    parameters:
+    - id: tol_len
+      type: System.Double
+    - id: other
+      type: SearchAThing.Sci.Line3D
+    - id: parallelRotationAxis
+      type: SearchAThing.Sci.Vector3D
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Function Bisect(tol_len As Double, other As Line3D, parallelRotationAxis As Vector3D = Nothing) As Line3D
+  overload: SearchAThing.Sci.Line3D.Bisect*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.Geometry
+  commentId: T:SearchAThing.Sci.Geometry
+  parent: SearchAThing.Sci
+  name: Geometry
+  nameWithType: Geometry
+  fullName: SearchAThing.Sci.Geometry
+- uid: SearchAThing.Sci.Geometry.Type
+  commentId: P:SearchAThing.Sci.Geometry.Type
+  parent: SearchAThing.Sci.Geometry
+  name: Type
+  nameWithType: Geometry.Type
+  fullName: SearchAThing.Sci.Geometry.Type
+- uid: SearchAThing.Sci.Line3D.SearchAThing.SciExt.ToLine
+  commentId: M:SearchAThing.SciExt.ToLine(SearchAThing.Sci.Line3D)
+  parent: SearchAThing.SciExt
+  definition: SearchAThing.SciExt.ToLine(SearchAThing.Sci.Line3D)
+  name: ToLine()
+  nameWithType: SciExt.ToLine()
+  fullName: SearchAThing.SciExt.ToLine()
+  spec.csharp:
+  - uid: SearchAThing.SciExt.ToLine
+    name: ToLine
+    nameWithType: SciExt.ToLine
+    fullName: SearchAThing.SciExt.ToLine
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.SciExt.ToLine
+    name: ToLine
+    nameWithType: SciExt.ToLine
+    fullName: SearchAThing.SciExt.ToLine
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.SciExt.ToLine(SearchAThing.Sci.Line3D)
+  commentId: M:SearchAThing.SciExt.ToLine(SearchAThing.Sci.Line3D)
+  name: ToLine(Line3D)
+  nameWithType: SciExt.ToLine(Line3D)
+  fullName: SearchAThing.SciExt.ToLine(SearchAThing.Sci.Line3D)
+  spec.csharp:
+  - uid: SearchAThing.SciExt.ToLine(SearchAThing.Sci.Line3D)
+    name: ToLine
+    nameWithType: SciExt.ToLine
+    fullName: SearchAThing.SciExt.ToLine
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: SearchAThing.Sci.Line3D
+    name: Line3D
+    nameWithType: Line3D
+    fullName: SearchAThing.Sci.Line3D
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.SciExt.ToLine(SearchAThing.Sci.Line3D)
+    name: ToLine
+    nameWithType: SciExt.ToLine
+    fullName: SearchAThing.SciExt.ToLine
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: SearchAThing.Sci.Line3D
+    name: Line3D
+    nameWithType: Line3D
+    fullName: SearchAThing.Sci.Line3D
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.SciExt
+  commentId: T:SearchAThing.SciExt
+  parent: SearchAThing
+  name: SciExt
+  nameWithType: SciExt
+  fullName: SearchAThing.SciExt
+- uid: SearchAThing
+  commentId: N:SearchAThing
+  name: SearchAThing
+  nameWithType: SearchAThing
+  fullName: SearchAThing
+- uid: SearchAThing.Sci.Line3D
+  commentId: T:SearchAThing.Sci.Line3D
+  parent: SearchAThing.Sci
+  name: Line3D
+  nameWithType: Line3D
+  fullName: SearchAThing.Sci.Line3D
+- uid: SearchAThing.Sci.Line3D.From*
+  commentId: Overload:SearchAThing.Sci.Line3D.From
+  name: From
+  nameWithType: Line3D.From
+  fullName: SearchAThing.Sci.Line3D.From
+- uid: SearchAThing.Sci.Vector3D
+  commentId: T:SearchAThing.Sci.Vector3D
+  parent: SearchAThing.Sci
+  name: Vector3D
+  nameWithType: Vector3D
+  fullName: SearchAThing.Sci.Vector3D
+- uid: SearchAThing.Sci.Line3D.V*
+  commentId: Overload:SearchAThing.Sci.Line3D.V
+  name: V
+  nameWithType: Line3D.V
+  fullName: SearchAThing.Sci.Line3D.V
+- uid: SearchAThing.Sci.Line3D.To*
+  commentId: Overload:SearchAThing.Sci.Line3D.To
+  name: To
+  nameWithType: Line3D.To
+  fullName: SearchAThing.Sci.Line3D.To
+- uid: SearchAThing.Sci.Line3D.Dir*
+  commentId: Overload:SearchAThing.Sci.Line3D.Dir
+  name: Dir
+  nameWithType: Line3D.Dir
+  fullName: SearchAThing.Sci.Line3D.Dir
+- uid: SearchAThing.Sci.Geometry.GeomFrom
+  commentId: P:SearchAThing.Sci.Geometry.GeomFrom
+  parent: SearchAThing.Sci.Geometry
+  name: GeomFrom
+  nameWithType: Geometry.GeomFrom
+  fullName: SearchAThing.Sci.Geometry.GeomFrom
+- uid: SearchAThing.Sci.Line3D.GeomFrom*
+  commentId: Overload:SearchAThing.Sci.Line3D.GeomFrom
+  name: GeomFrom
+  nameWithType: Line3D.GeomFrom
+  fullName: SearchAThing.Sci.Line3D.GeomFrom
+- uid: SearchAThing.Sci.Geometry.GeomTo
+  commentId: P:SearchAThing.Sci.Geometry.GeomTo
+  parent: SearchAThing.Sci.Geometry
+  name: GeomTo
+  nameWithType: Geometry.GeomTo
+  fullName: SearchAThing.Sci.Geometry.GeomTo
+- uid: SearchAThing.Sci.Line3D.GeomTo*
+  commentId: Overload:SearchAThing.Sci.Line3D.GeomTo
+  name: GeomTo
+  nameWithType: Line3D.GeomTo
+  fullName: SearchAThing.Sci.Line3D.GeomTo
+- uid: SearchAThing.Sci.Geometry.Vertexes
+  commentId: P:SearchAThing.Sci.Geometry.Vertexes
+  parent: SearchAThing.Sci.Geometry
+  name: Vertexes
+  nameWithType: Geometry.Vertexes
+  fullName: SearchAThing.Sci.Geometry.Vertexes
+- uid: SearchAThing.Sci.Line3D.Vertexes*
+  commentId: Overload:SearchAThing.Sci.Line3D.Vertexes
+  name: Vertexes
+  nameWithType: Line3D.Vertexes
+  fullName: SearchAThing.Sci.Line3D.Vertexes
+- uid: IEnumerable{SearchAThing.Sci.Vector3D}
+  commentId: '!:IEnumerable{SearchAThing.Sci.Vector3D}'
+  definition: IEnumerable`1
+  name: IEnumerable<Vector3D>
+  nameWithType: IEnumerable<Vector3D>
+  fullName: IEnumerable<SearchAThing.Sci.Vector3D>
+  nameWithType.vb: IEnumerable(Of Vector3D)
+  fullName.vb: IEnumerable(Of SearchAThing.Sci.Vector3D)
+  name.vb: IEnumerable(Of Vector3D)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Line3D.DisambiguatedPoints*
+  commentId: Overload:SearchAThing.Sci.Line3D.DisambiguatedPoints
+  name: DisambiguatedPoints
+  nameWithType: Line3D.DisambiguatedPoints
+  fullName: SearchAThing.Sci.Line3D.DisambiguatedPoints
+- uid: SearchAThing.Sci.Line3D.Points*
+  commentId: Overload:SearchAThing.Sci.Line3D.Points
+  name: Points
+  nameWithType: Line3D.Points
+  fullName: SearchAThing.Sci.Line3D.Points
+- uid: SearchAThing.Sci.Line3D.#ctor*
+  commentId: Overload:SearchAThing.Sci.Line3D.#ctor
+  name: Line3D
+  nameWithType: Line3D.Line3D
+  fullName: SearchAThing.Sci.Line3D.Line3D
+- uid: System.Double
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: SearchAThing.Sci.Line3DConstructMode
+  commentId: T:SearchAThing.Sci.Line3DConstructMode
+  parent: SearchAThing.Sci
+  name: Line3DConstructMode
+  nameWithType: Line3DConstructMode
+  fullName: SearchAThing.Sci.Line3DConstructMode
+- uid: SearchAThing.Sci.Geometry.Length
+  commentId: P:SearchAThing.Sci.Geometry.Length
+  parent: SearchAThing.Sci.Geometry
+  name: Length
+  nameWithType: Geometry.Length
+  fullName: SearchAThing.Sci.Geometry.Length
+- uid: SearchAThing.Sci.Line3D.Length*
+  commentId: Overload:SearchAThing.Sci.Line3D.Length
+  name: Length
+  nameWithType: Line3D.Length
+  fullName: SearchAThing.Sci.Line3D.Length
+- uid: SearchAThing.Sci.Line3D.EqualsTol*
+  commentId: Overload:SearchAThing.Sci.Line3D.EqualsTol
+  name: EqualsTol
+  nameWithType: Line3D.EqualsTol
+  fullName: SearchAThing.Sci.Line3D.EqualsTol
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: SearchAThing.Sci.Line3D.CommonPoint*
+  commentId: Overload:SearchAThing.Sci.Line3D.CommonPoint
+  name: CommonPoint
+  nameWithType: Line3D.CommonPoint
+  fullName: SearchAThing.Sci.Line3D.CommonPoint
+- uid: SearchAThing.Sci.Line3D.Reverse*
+  commentId: Overload:SearchAThing.Sci.Line3D.Reverse
+  name: Reverse
+  nameWithType: Line3D.Reverse
+  fullName: SearchAThing.Sci.Line3D.Reverse
+- uid: SearchAThing.Sci.Line3D.Scale*
+  commentId: Overload:SearchAThing.Sci.Line3D.Scale
+  name: Scale
+  nameWithType: Line3D.Scale
+  fullName: SearchAThing.Sci.Line3D.Scale
+- uid: SearchAThing.Sci.Line3D.op_Multiply*
+  commentId: Overload:SearchAThing.Sci.Line3D.op_Multiply
+  name: Multiply
+  nameWithType: Line3D.Multiply
+  fullName: SearchAThing.Sci.Line3D.Multiply
+- uid: SearchAThing.Sci.Line3D.op_Addition*
+  commentId: Overload:SearchAThing.Sci.Line3D.op_Addition
+  name: Addition
+  nameWithType: Line3D.Addition
+  fullName: SearchAThing.Sci.Line3D.Addition
+- uid: SearchAThing.Sci.Line3D.op_Subtraction*
+  commentId: Overload:SearchAThing.Sci.Line3D.op_Subtraction
+  name: Subtraction
+  nameWithType: Line3D.Subtraction
+  fullName: SearchAThing.Sci.Line3D.Subtraction
+- uid: SearchAThing.Sci.Line3D.LineContainsPoint*
+  commentId: Overload:SearchAThing.Sci.Line3D.LineContainsPoint
+  name: LineContainsPoint
+  nameWithType: Line3D.LineContainsPoint
+  fullName: SearchAThing.Sci.Line3D.LineContainsPoint
+- uid: SearchAThing.Sci.Line3D.SegmentContainsPoint*
+  commentId: Overload:SearchAThing.Sci.Line3D.SegmentContainsPoint
+  name: SegmentContainsPoint
+  nameWithType: Line3D.SegmentContainsPoint
+  fullName: SearchAThing.Sci.Line3D.SegmentContainsPoint
+- uid: SearchAThing.Sci.Line3D.SemiLineContainsPoints*
+  commentId: Overload:SearchAThing.Sci.Line3D.SemiLineContainsPoints
+  name: SemiLineContainsPoints
+  nameWithType: Line3D.SemiLineContainsPoints
+  fullName: SearchAThing.Sci.Line3D.SemiLineContainsPoints
+- uid: SearchAThing.Sci.Line3D.Intersect*
+  commentId: Overload:SearchAThing.Sci.Line3D.Intersect
+  name: Intersect
+  nameWithType: Line3D.Intersect
+  fullName: SearchAThing.Sci.Line3D.Intersect
+- uid: SearchAThing.Sci.LineIntersectBehavior
+  commentId: T:SearchAThing.Sci.LineIntersectBehavior
+  parent: SearchAThing.Sci
+  name: LineIntersectBehavior
+  nameWithType: LineIntersectBehavior
+  fullName: SearchAThing.Sci.LineIntersectBehavior
+- uid: SearchAThing.Sci.Line3D.ApparentIntersect*
+  commentId: Overload:SearchAThing.Sci.Line3D.ApparentIntersect
+  name: ApparentIntersect
+  nameWithType: Line3D.ApparentIntersect
+  fullName: SearchAThing.Sci.Line3D.ApparentIntersect
+- uid: SearchAThing.Sci.Line3D.Perpendicular*
+  commentId: Overload:SearchAThing.Sci.Line3D.Perpendicular
+  name: Perpendicular
+  nameWithType: Line3D.Perpendicular
+  fullName: SearchAThing.Sci.Line3D.Perpendicular
+- uid: SearchAThing.Sci.Line3D.Colinear*
+  commentId: Overload:SearchAThing.Sci.Line3D.Colinear
+  name: Colinear
+  nameWithType: Line3D.Colinear
+  fullName: SearchAThing.Sci.Line3D.Colinear
+- uid: SearchAThing.Sci.Line3D.IsParallelTo*
+  commentId: Overload:SearchAThing.Sci.Line3D.IsParallelTo
+  name: IsParallelTo
+  nameWithType: Line3D.IsParallelTo
+  fullName: SearchAThing.Sci.Line3D.IsParallelTo
+- uid: SearchAThing.Sci.CoordinateSystem3D
+  commentId: T:SearchAThing.Sci.CoordinateSystem3D
+  parent: SearchAThing.Sci
+  name: CoordinateSystem3D
+  nameWithType: CoordinateSystem3D
+  fullName: SearchAThing.Sci.CoordinateSystem3D
+- uid: SearchAThing.Sci.Plane3D
+  commentId: T:SearchAThing.Sci.Plane3D
+  parent: SearchAThing.Sci
+  name: Plane3D
+  nameWithType: Plane3D
+  fullName: SearchAThing.Sci.Plane3D
+- uid: SearchAThing.Sci.Line3D.MidPoint*
+  commentId: Overload:SearchAThing.Sci.Line3D.MidPoint
+  name: MidPoint
+  nameWithType: Line3D.MidPoint
+  fullName: SearchAThing.Sci.Line3D.MidPoint
+- uid: SearchAThing.Sci.Line3D.RotateAboutAxis*
+  commentId: Overload:SearchAThing.Sci.Line3D.RotateAboutAxis
+  name: RotateAboutAxis
+  nameWithType: Line3D.RotateAboutAxis
+  fullName: SearchAThing.Sci.Line3D.RotateAboutAxis
+- uid: SearchAThing.Sci.Line3D.SetLength*
+  commentId: Overload:SearchAThing.Sci.Line3D.SetLength
+  name: SetLength
+  nameWithType: Line3D.SetLength
+  fullName: SearchAThing.Sci.Line3D.SetLength
+- uid: SearchAThing.Sci.Line3D.Move*
+  commentId: Overload:SearchAThing.Sci.Line3D.Move
+  name: Move
+  nameWithType: Line3D.Move
+  fullName: SearchAThing.Sci.Line3D.Move
+- uid: SearchAThing.Sci.Line3D.MoveMidpoint*
+  commentId: Overload:SearchAThing.Sci.Line3D.MoveMidpoint
+  name: MoveMidpoint
+  nameWithType: Line3D.MoveMidpoint
+  fullName: SearchAThing.Sci.Line3D.MoveMidpoint
+- uid: SearchAThing.Sci.Line3D.Split*
+  commentId: Overload:SearchAThing.Sci.Line3D.Split
+  name: Split
+  nameWithType: Line3D.Split
+  fullName: SearchAThing.Sci.Line3D.Split
+- uid: IReadOnlyList{SearchAThing.Sci.Vector3D}
+  commentId: '!:IReadOnlyList{SearchAThing.Sci.Vector3D}'
+  definition: IReadOnlyList`1
+  name: IReadOnlyList<Vector3D>
+  nameWithType: IReadOnlyList<Vector3D>
+  fullName: IReadOnlyList<SearchAThing.Sci.Vector3D>
+  nameWithType.vb: IReadOnlyList(Of Vector3D)
+  fullName.vb: IReadOnlyList(Of SearchAThing.Sci.Vector3D)
+  name.vb: IReadOnlyList(Of Vector3D)
+  spec.csharp:
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IReadOnlyList{SearchAThing.Sci.Line3D}
+  commentId: '!:IReadOnlyList{SearchAThing.Sci.Line3D}'
+  definition: IReadOnlyList`1
+  name: IReadOnlyList<Line3D>
+  nameWithType: IReadOnlyList<Line3D>
+  fullName: IReadOnlyList<SearchAThing.Sci.Line3D>
+  nameWithType.vb: IReadOnlyList(Of Line3D)
+  fullName.vb: IReadOnlyList(Of SearchAThing.Sci.Line3D)
+  name.vb: IReadOnlyList(Of Line3D)
+  spec.csharp:
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: SearchAThing.Sci.Line3D
+    name: Line3D
+    nameWithType: Line3D
+    fullName: SearchAThing.Sci.Line3D
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: SearchAThing.Sci.Line3D
+    name: Line3D
+    nameWithType: Line3D
+    fullName: SearchAThing.Sci.Line3D
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IReadOnlyList`1
+  isExternal: true
+  name: IReadOnlyList<>
+  nameWithType: IReadOnlyList<>
+  fullName: IReadOnlyList<>
+  nameWithType.vb: IReadOnlyList(Of )
+  fullName.vb: IReadOnlyList(Of )
+  name.vb: IReadOnlyList(Of )
+  spec.csharp:
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Line3D.EnsureFrom*
+  commentId: Overload:SearchAThing.Sci.Line3D.EnsureFrom
+  name: EnsureFrom
+  nameWithType: Line3D.EnsureFrom
+  fullName: SearchAThing.Sci.Line3D.EnsureFrom
+- uid: SearchAThing.Sci.Line3D.Offset*
+  commentId: Overload:SearchAThing.Sci.Line3D.Offset
+  name: Offset
+  nameWithType: Line3D.Offset
+  fullName: SearchAThing.Sci.Line3D.Offset
+- uid: SearchAThing.Sci.Line3D.CadScript*
+  commentId: Overload:SearchAThing.Sci.Line3D.CadScript
+  name: CadScript
+  nameWithType: Line3D.CadScript
+  fullName: SearchAThing.Sci.Line3D.CadScript
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: SearchAThing.Sci.Geometry.DxfEntity
+  commentId: P:SearchAThing.Sci.Geometry.DxfEntity
+  parent: SearchAThing.Sci.Geometry
+  name: DxfEntity
+  nameWithType: Geometry.DxfEntity
+  fullName: SearchAThing.Sci.Geometry.DxfEntity
+- uid: SearchAThing.Sci.Line3D.DxfEntity*
+  commentId: Overload:SearchAThing.Sci.Line3D.DxfEntity
+  name: DxfEntity
+  nameWithType: Line3D.DxfEntity
+  fullName: SearchAThing.Sci.Line3D.DxfEntity
+- uid: EntityObject
+  isExternal: true
+  name: EntityObject
+  nameWithType: EntityObject
+  fullName: EntityObject
+- uid: SearchAThing.Sci.Line3D.ToString*
+  commentId: Overload:SearchAThing.Sci.Line3D.ToString
+  name: ToString
+  nameWithType: Line3D.ToString
+  fullName: SearchAThing.Sci.Line3D.ToString
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: SearchAThing.Sci.Geometry.Divide(System.Int32,System.Boolean)
+  commentId: M:SearchAThing.Sci.Geometry.Divide(System.Int32,System.Boolean)
+  parent: SearchAThing.Sci.Geometry
+  isExternal: true
+  name: Divide(Int32, Boolean)
+  nameWithType: Geometry.Divide(Int32, Boolean)
+  fullName: SearchAThing.Sci.Geometry.Divide(System.Int32, System.Boolean)
+  spec.csharp:
+  - uid: SearchAThing.Sci.Geometry.Divide(System.Int32,System.Boolean)
+    name: Divide
+    nameWithType: Geometry.Divide
+    fullName: SearchAThing.Sci.Geometry.Divide
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.Sci.Geometry.Divide(System.Int32,System.Boolean)
+    name: Divide
+    nameWithType: Geometry.Divide
+    fullName: SearchAThing.Sci.Geometry.Divide
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Line3D.Divide*
+  commentId: Overload:SearchAThing.Sci.Line3D.Divide
+  name: Divide
+  nameWithType: Line3D.Divide
+  fullName: SearchAThing.Sci.Line3D.Divide
+- uid: SearchAThing.Sci.Line3D.Normalized*
+  commentId: Overload:SearchAThing.Sci.Line3D.Normalized
+  name: Normalized
+  nameWithType: Line3D.Normalized
+  fullName: SearchAThing.Sci.Line3D.Normalized
+- uid: SearchAThing.Sci.Line3D.Swapped*
+  commentId: Overload:SearchAThing.Sci.Line3D.Swapped
+  name: Swapped
+  nameWithType: Line3D.Swapped
+  fullName: SearchAThing.Sci.Line3D.Swapped
+- uid: SearchAThing.Sci.Line3D.Inverted*
+  commentId: Overload:SearchAThing.Sci.Line3D.Inverted
+  name: Inverted
+  nameWithType: Line3D.Inverted
+  fullName: SearchAThing.Sci.Line3D.Inverted
+- uid: SearchAThing.Sci.Geometry.BBox(System.Double)
+  commentId: M:SearchAThing.Sci.Geometry.BBox(System.Double)
+  parent: SearchAThing.Sci.Geometry
+  isExternal: true
+  name: BBox(Double)
+  nameWithType: Geometry.BBox(Double)
+  fullName: SearchAThing.Sci.Geometry.BBox(System.Double)
+  spec.csharp:
+  - uid: SearchAThing.Sci.Geometry.BBox(System.Double)
+    name: BBox
+    nameWithType: Geometry.BBox
+    fullName: SearchAThing.Sci.Geometry.BBox
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.Sci.Geometry.BBox(System.Double)
+    name: BBox
+    nameWithType: Geometry.BBox
+    fullName: SearchAThing.Sci.Geometry.BBox
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Line3D.BBox*
+  commentId: Overload:SearchAThing.Sci.Line3D.BBox
+  name: BBox
+  nameWithType: Line3D.BBox
+  fullName: SearchAThing.Sci.Line3D.BBox
+- uid: SearchAThing.Sci.BBox3D
+  commentId: T:SearchAThing.Sci.BBox3D
+  parent: SearchAThing.Sci
+  name: BBox3D
+  nameWithType: BBox3D
+  fullName: SearchAThing.Sci.BBox3D
+- uid: SearchAThing.Sci.Line3D.Bisect*
+  commentId: Overload:SearchAThing.Sci.Line3D.Bisect
+  name: Bisect
+  nameWithType: Line3D.Bisect
+  fullName: SearchAThing.Sci.Line3D.Bisect

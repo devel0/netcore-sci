@@ -1,0 +1,255 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.MUCollection.Pressure
+  commentId: T:SearchAThing.Sci.MUCollection.Pressure
+  id: MUCollection.Pressure
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.MUCollection.Pressure.Auto(SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.MeasureUnit)
+  - SearchAThing.Sci.MUCollection.Pressure.bar
+  - SearchAThing.Sci.MUCollection.Pressure.GPa
+  - SearchAThing.Sci.MUCollection.Pressure.kPa
+  - SearchAThing.Sci.MUCollection.Pressure.MPa
+  - SearchAThing.Sci.MUCollection.Pressure.Pa
+  langs:
+  - csharp
+  - vb
+  name: MUCollection.Pressure
+  nameWithType: MUCollection.Pressure
+  fullName: SearchAThing.Sci.MUCollection.Pressure
+  type: Class
+  source:
+    id: Pressure
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 313
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public static class Pressure : object'
+    content.vb: >-
+      Public Module Pressure
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: SearchAThing.Sci.MUCollection.Pressure.Pa
+  commentId: F:SearchAThing.Sci.MUCollection.Pressure.Pa
+  id: Pa
+  parent: SearchAThing.Sci.MUCollection.Pressure
+  langs:
+  - csharp
+  - vb
+  name: Pa
+  nameWithType: MUCollection.Pressure.Pa
+  fullName: SearchAThing.Sci.MUCollection.Pressure.Pa
+  type: Field
+  source:
+    id: Pa
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 315
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit Pa
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly Pa As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Pressure.kPa
+  commentId: F:SearchAThing.Sci.MUCollection.Pressure.kPa
+  id: kPa
+  parent: SearchAThing.Sci.MUCollection.Pressure
+  langs:
+  - csharp
+  - vb
+  name: kPa
+  nameWithType: MUCollection.Pressure.kPa
+  fullName: SearchAThing.Sci.MUCollection.Pressure.kPa
+  type: Field
+  source:
+    id: kPa
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 316
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit kPa
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly kPa As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Pressure.MPa
+  commentId: F:SearchAThing.Sci.MUCollection.Pressure.MPa
+  id: MPa
+  parent: SearchAThing.Sci.MUCollection.Pressure
+  langs:
+  - csharp
+  - vb
+  name: MPa
+  nameWithType: MUCollection.Pressure.MPa
+  fullName: SearchAThing.Sci.MUCollection.Pressure.MPa
+  type: Field
+  source:
+    id: MPa
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 320
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nN/mm2\n"
+  example: []
+  syntax:
+    content: public static readonly MeasureUnit MPa
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly MPa As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Pressure.GPa
+  commentId: F:SearchAThing.Sci.MUCollection.Pressure.GPa
+  id: GPa
+  parent: SearchAThing.Sci.MUCollection.Pressure
+  langs:
+  - csharp
+  - vb
+  name: GPa
+  nameWithType: MUCollection.Pressure.GPa
+  fullName: SearchAThing.Sci.MUCollection.Pressure.GPa
+  type: Field
+  source:
+    id: GPa
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 321
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit GPa
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly GPa As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Pressure.bar
+  commentId: F:SearchAThing.Sci.MUCollection.Pressure.bar
+  id: bar
+  parent: SearchAThing.Sci.MUCollection.Pressure
+  langs:
+  - csharp
+  - vb
+  name: bar
+  nameWithType: MUCollection.Pressure.bar
+  fullName: SearchAThing.Sci.MUCollection.Pressure.bar
+  type: Field
+  source:
+    id: bar
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 322
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit bar
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly bar As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Pressure.Auto(SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.MeasureUnit)
+  commentId: M:SearchAThing.Sci.MUCollection.Pressure.Auto(SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.MeasureUnit)
+  id: Auto(SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.MeasureUnit)
+  parent: SearchAThing.Sci.MUCollection.Pressure
+  langs:
+  - csharp
+  - vb
+  name: Auto(MeasureUnit, MeasureUnit)
+  nameWithType: MUCollection.Pressure.Auto(MeasureUnit, MeasureUnit)
+  fullName: SearchAThing.Sci.MUCollection.Pressure.Auto(SearchAThing.Sci.MeasureUnit, SearchAThing.Sci.MeasureUnit)
+  type: Method
+  source:
+    id: Auto
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 324
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static MeasureUnit Auto(MeasureUnit force, MeasureUnit length)
+    parameters:
+    - id: force
+      type: SearchAThing.Sci.MeasureUnit
+    - id: length
+      type: SearchAThing.Sci.MeasureUnit
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared Function Auto(force As MeasureUnit, length As MeasureUnit) As MeasureUnit
+  overload: SearchAThing.Sci.MUCollection.Pressure.Auto*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.MeasureUnit
+  commentId: T:SearchAThing.Sci.MeasureUnit
+  parent: SearchAThing.Sci
+  name: MeasureUnit
+  nameWithType: MeasureUnit
+  fullName: SearchAThing.Sci.MeasureUnit
+- uid: SearchAThing.Sci.MUCollection.Pressure.Auto*
+  commentId: Overload:SearchAThing.Sci.MUCollection.Pressure.Auto
+  name: Auto
+  nameWithType: MUCollection.Pressure.Auto
+  fullName: SearchAThing.Sci.MUCollection.Pressure.Auto

@@ -1,0 +1,253 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.MUCollection.Length3
+  commentId: T:SearchAThing.Sci.MUCollection.Length3
+  id: MUCollection.Length3
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.MUCollection.Length3.Auto(SearchAThing.Sci.MeasureUnit)
+  - SearchAThing.Sci.MUCollection.Length3.cm3
+  - SearchAThing.Sci.MUCollection.Length3.in3
+  - SearchAThing.Sci.MUCollection.Length3.lt
+  - SearchAThing.Sci.MUCollection.Length3.m3
+  - SearchAThing.Sci.MUCollection.Length3.mm3
+  langs:
+  - csharp
+  - vb
+  name: MUCollection.Length3
+  nameWithType: MUCollection.Length3
+  fullName: SearchAThing.Sci.MUCollection.Length3
+  type: Class
+  source:
+    id: Length3
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 107
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public static class Length3 : object'
+    content.vb: >-
+      Public Module Length3
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: SearchAThing.Sci.MUCollection.Length3.Auto(SearchAThing.Sci.MeasureUnit)
+  commentId: M:SearchAThing.Sci.MUCollection.Length3.Auto(SearchAThing.Sci.MeasureUnit)
+  id: Auto(SearchAThing.Sci.MeasureUnit)
+  parent: SearchAThing.Sci.MUCollection.Length3
+  langs:
+  - csharp
+  - vb
+  name: Auto(MeasureUnit)
+  nameWithType: MUCollection.Length3.Auto(MeasureUnit)
+  fullName: SearchAThing.Sci.MUCollection.Length3.Auto(SearchAThing.Sci.MeasureUnit)
+  type: Method
+  source:
+    id: Auto
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 112
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nretrieve mm3 when input length=mm, etc\n"
+  example: []
+  syntax:
+    content: public static MeasureUnit Auto(MeasureUnit length)
+    parameters:
+    - id: length
+      type: SearchAThing.Sci.MeasureUnit
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared Function Auto(length As MeasureUnit) As MeasureUnit
+  overload: SearchAThing.Sci.MUCollection.Length3.Auto*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: SearchAThing.Sci.MUCollection.Length3.mm3
+  commentId: F:SearchAThing.Sci.MUCollection.Length3.mm3
+  id: mm3
+  parent: SearchAThing.Sci.MUCollection.Length3
+  langs:
+  - csharp
+  - vb
+  name: mm3
+  nameWithType: MUCollection.Length3.mm3
+  fullName: SearchAThing.Sci.MUCollection.Length3.mm3
+  type: Field
+  source:
+    id: mm3
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 122
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit mm3
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly mm3 As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Length3.cm3
+  commentId: F:SearchAThing.Sci.MUCollection.Length3.cm3
+  id: cm3
+  parent: SearchAThing.Sci.MUCollection.Length3
+  langs:
+  - csharp
+  - vb
+  name: cm3
+  nameWithType: MUCollection.Length3.cm3
+  fullName: SearchAThing.Sci.MUCollection.Length3.cm3
+  type: Field
+  source:
+    id: cm3
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 123
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit cm3
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly cm3 As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Length3.m3
+  commentId: F:SearchAThing.Sci.MUCollection.Length3.m3
+  id: m3
+  parent: SearchAThing.Sci.MUCollection.Length3
+  langs:
+  - csharp
+  - vb
+  name: m3
+  nameWithType: MUCollection.Length3.m3
+  fullName: SearchAThing.Sci.MUCollection.Length3.m3
+  type: Field
+  source:
+    id: m3
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 124
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit m3
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly m3 As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Length3.in3
+  commentId: F:SearchAThing.Sci.MUCollection.Length3.in3
+  id: in3
+  parent: SearchAThing.Sci.MUCollection.Length3
+  langs:
+  - csharp
+  - vb
+  name: in3
+  nameWithType: MUCollection.Length3.in3
+  fullName: SearchAThing.Sci.MUCollection.Length3.in3
+  type: Field
+  source:
+    id: in3
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 125
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit in3
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly in3 As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Length3.lt
+  commentId: F:SearchAThing.Sci.MUCollection.Length3.lt
+  id: lt
+  parent: SearchAThing.Sci.MUCollection.Length3
+  langs:
+  - csharp
+  - vb
+  name: lt
+  nameWithType: MUCollection.Length3.lt
+  fullName: SearchAThing.Sci.MUCollection.Length3.lt
+  type: Field
+  source:
+    id: lt
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 126
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit lt
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly lt As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.MUCollection.Length3.Auto*
+  commentId: Overload:SearchAThing.Sci.MUCollection.Length3.Auto
+  name: Auto
+  nameWithType: MUCollection.Length3.Auto
+  fullName: SearchAThing.Sci.MUCollection.Length3.Auto
+- uid: SearchAThing.Sci.MeasureUnit
+  commentId: T:SearchAThing.Sci.MeasureUnit
+  parent: SearchAThing.Sci
+  name: MeasureUnit
+  nameWithType: MeasureUnit
+  fullName: SearchAThing.Sci.MeasureUnit

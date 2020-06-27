@@ -1,0 +1,148 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.MUCollection.VolumetricFlowRate
+  commentId: T:SearchAThing.Sci.MUCollection.VolumetricFlowRate
+  id: MUCollection.VolumetricFlowRate
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.MUCollection.VolumetricFlowRate.lt_min
+  - SearchAThing.Sci.MUCollection.VolumetricFlowRate.lt_s
+  - SearchAThing.Sci.MUCollection.VolumetricFlowRate.m3_s
+  langs:
+  - csharp
+  - vb
+  name: MUCollection.VolumetricFlowRate
+  nameWithType: MUCollection.VolumetricFlowRate
+  fullName: SearchAThing.Sci.MUCollection.VolumetricFlowRate
+  type: Class
+  source:
+    id: VolumetricFlowRate
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 158
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public static class VolumetricFlowRate : object'
+    content.vb: >-
+      Public Module VolumetricFlowRate
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: SearchAThing.Sci.MUCollection.VolumetricFlowRate.m3_s
+  commentId: F:SearchAThing.Sci.MUCollection.VolumetricFlowRate.m3_s
+  id: m3_s
+  parent: SearchAThing.Sci.MUCollection.VolumetricFlowRate
+  langs:
+  - csharp
+  - vb
+  name: m3_s
+  nameWithType: MUCollection.VolumetricFlowRate.m3_s
+  fullName: SearchAThing.Sci.MUCollection.VolumetricFlowRate.m3_s
+  type: Field
+  source:
+    id: m3_s
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 160
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit m3_s
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly m3_s As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.VolumetricFlowRate.lt_s
+  commentId: F:SearchAThing.Sci.MUCollection.VolumetricFlowRate.lt_s
+  id: lt_s
+  parent: SearchAThing.Sci.MUCollection.VolumetricFlowRate
+  langs:
+  - csharp
+  - vb
+  name: lt_s
+  nameWithType: MUCollection.VolumetricFlowRate.lt_s
+  fullName: SearchAThing.Sci.MUCollection.VolumetricFlowRate.lt_s
+  type: Field
+  source:
+    id: lt_s
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 161
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit lt_s
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly lt_s As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.VolumetricFlowRate.lt_min
+  commentId: F:SearchAThing.Sci.MUCollection.VolumetricFlowRate.lt_min
+  id: lt_min
+  parent: SearchAThing.Sci.MUCollection.VolumetricFlowRate
+  langs:
+  - csharp
+  - vb
+  name: lt_min
+  nameWithType: MUCollection.VolumetricFlowRate.lt_min
+  fullName: SearchAThing.Sci.MUCollection.VolumetricFlowRate.lt_min
+  type: Field
+  source:
+    id: lt_min
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 162
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit lt_min
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly lt_min As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.MeasureUnit
+  commentId: T:SearchAThing.Sci.MeasureUnit
+  parent: SearchAThing.Sci
+  name: MeasureUnit
+  nameWithType: MeasureUnit
+  fullName: SearchAThing.Sci.MeasureUnit

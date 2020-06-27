@@ -1,0 +1,84 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.MUCollection.Turbidity
+  commentId: T:SearchAThing.Sci.MUCollection.Turbidity
+  id: MUCollection.Turbidity
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.MUCollection.Turbidity.FNU
+  langs:
+  - csharp
+  - vb
+  name: MUCollection.Turbidity
+  nameWithType: MUCollection.Turbidity
+  fullName: SearchAThing.Sci.MUCollection.Turbidity
+  type: Class
+  source:
+    id: Turbidity
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 383
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public static class Turbidity : object'
+    content.vb: >-
+      Public Module Turbidity
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: SearchAThing.Sci.MUCollection.Turbidity.FNU
+  commentId: F:SearchAThing.Sci.MUCollection.Turbidity.FNU
+  id: FNU
+  parent: SearchAThing.Sci.MUCollection.Turbidity
+  langs:
+  - csharp
+  - vb
+  name: FNU
+  nameWithType: MUCollection.Turbidity.FNU
+  fullName: SearchAThing.Sci.MUCollection.Turbidity.FNU
+  type: Field
+  source:
+    id: FNU
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 385
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit FNU
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly FNU As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.MeasureUnit
+  commentId: T:SearchAThing.Sci.MeasureUnit
+  parent: SearchAThing.Sci
+  name: MeasureUnit
+  nameWithType: MeasureUnit
+  fullName: SearchAThing.Sci.MeasureUnit

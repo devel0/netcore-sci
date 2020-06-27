@@ -1,0 +1,84 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.MUCollection.Energy
+  commentId: T:SearchAThing.Sci.MUCollection.Energy
+  id: MUCollection.Energy
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.MUCollection.Energy.J
+  langs:
+  - csharp
+  - vb
+  name: MUCollection.Energy
+  nameWithType: MUCollection.Energy
+  fullName: SearchAThing.Sci.MUCollection.Energy
+  type: Class
+  source:
+    id: Energy
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 434
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public static class Energy : object'
+    content.vb: >-
+      Public Module Energy
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: SearchAThing.Sci.MUCollection.Energy.J
+  commentId: F:SearchAThing.Sci.MUCollection.Energy.J
+  id: J
+  parent: SearchAThing.Sci.MUCollection.Energy
+  langs:
+  - csharp
+  - vb
+  name: J
+  nameWithType: MUCollection.Energy.J
+  fullName: SearchAThing.Sci.MUCollection.Energy.J
+  type: Field
+  source:
+    id: J
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 436
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit J
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly J As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.MeasureUnit
+  commentId: T:SearchAThing.Sci.MeasureUnit
+  parent: SearchAThing.Sci
+  name: MeasureUnit
+  nameWithType: MeasureUnit
+  fullName: SearchAThing.Sci.MeasureUnit

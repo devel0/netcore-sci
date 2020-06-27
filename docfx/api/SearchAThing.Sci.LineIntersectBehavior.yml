@@ -1,0 +1,129 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.LineIntersectBehavior
+  commentId: T:SearchAThing.Sci.LineIntersectBehavior
+  id: LineIntersectBehavior
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.LineIntersectBehavior.MidPoint
+  - SearchAThing.Sci.LineIntersectBehavior.PointOnOther
+  - SearchAThing.Sci.LineIntersectBehavior.PointOnThis
+  langs:
+  - csharp
+  - vb
+  name: LineIntersectBehavior
+  nameWithType: LineIntersectBehavior
+  fullName: SearchAThing.Sci.LineIntersectBehavior
+  type: Enum
+  source:
+    id: LineIntersectBehavior
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 42
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public enum LineIntersectBehavior : int'
+    content.vb: Public Enum LineIntersectBehavior As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: SearchAThing.Sci.LineIntersectBehavior.MidPoint
+  commentId: F:SearchAThing.Sci.LineIntersectBehavior.MidPoint
+  id: MidPoint
+  parent: SearchAThing.Sci.LineIntersectBehavior
+  langs:
+  - csharp
+  - vb
+  name: MidPoint
+  nameWithType: LineIntersectBehavior.MidPoint
+  fullName: SearchAThing.Sci.LineIntersectBehavior.MidPoint
+  type: Field
+  source:
+    id: MidPoint
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 44
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: MidPoint = 0
+    return:
+      type: SearchAThing.Sci.LineIntersectBehavior
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: SearchAThing.Sci.LineIntersectBehavior.PointOnThis
+  commentId: F:SearchAThing.Sci.LineIntersectBehavior.PointOnThis
+  id: PointOnThis
+  parent: SearchAThing.Sci.LineIntersectBehavior
+  langs:
+  - csharp
+  - vb
+  name: PointOnThis
+  nameWithType: LineIntersectBehavior.PointOnThis
+  fullName: SearchAThing.Sci.LineIntersectBehavior.PointOnThis
+  type: Field
+  source:
+    id: PointOnThis
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 45
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: PointOnThis = 1
+    return:
+      type: SearchAThing.Sci.LineIntersectBehavior
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: SearchAThing.Sci.LineIntersectBehavior.PointOnOther
+  commentId: F:SearchAThing.Sci.LineIntersectBehavior.PointOnOther
+  id: PointOnOther
+  parent: SearchAThing.Sci.LineIntersectBehavior
+  langs:
+  - csharp
+  - vb
+  name: PointOnOther
+  nameWithType: LineIntersectBehavior.PointOnOther
+  fullName: SearchAThing.Sci.LineIntersectBehavior.PointOnOther
+  type: Field
+  source:
+    id: PointOnOther
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 46
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: PointOnOther = 2
+    return:
+      type: SearchAThing.Sci.LineIntersectBehavior
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: SearchAThing.Sci.LineIntersectBehavior
+  commentId: T:SearchAThing.Sci.LineIntersectBehavior
+  parent: SearchAThing.Sci
+  name: LineIntersectBehavior
+  nameWithType: LineIntersectBehavior
+  fullName: SearchAThing.Sci.LineIntersectBehavior

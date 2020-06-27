@@ -1,0 +1,84 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.MUCollection.Speed
+  commentId: T:SearchAThing.Sci.MUCollection.Speed
+  id: MUCollection.Speed
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.MUCollection.Speed.m_s
+  langs:
+  - csharp
+  - vb
+  name: MUCollection.Speed
+  nameWithType: MUCollection.Speed
+  fullName: SearchAThing.Sci.MUCollection.Speed
+  type: Class
+  source:
+    id: Speed
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 402
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public static class Speed : object'
+    content.vb: >-
+      Public Module Speed
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: SearchAThing.Sci.MUCollection.Speed.m_s
+  commentId: F:SearchAThing.Sci.MUCollection.Speed.m_s
+  id: m_s
+  parent: SearchAThing.Sci.MUCollection.Speed
+  langs:
+  - csharp
+  - vb
+  name: m_s
+  nameWithType: MUCollection.Speed.m_s
+  fullName: SearchAThing.Sci.MUCollection.Speed.m_s
+  type: Field
+  source:
+    id: m_s
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 404
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit m_s
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly m_s As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.MeasureUnit
+  commentId: T:SearchAThing.Sci.MeasureUnit
+  parent: SearchAThing.Sci
+  name: MeasureUnit
+  nameWithType: MeasureUnit
+  fullName: SearchAThing.Sci.MeasureUnit

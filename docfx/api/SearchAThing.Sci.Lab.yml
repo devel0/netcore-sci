@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.Lab
+  commentId: N:SearchAThing.Sci.Lab
+  id: SearchAThing.Sci.Lab
+  children:
+  - SearchAThing.Sci.Lab.OpenGlPageControl
+  langs:
+  - csharp
+  - vb
+  name: SearchAThing.Sci.Lab
+  nameWithType: SearchAThing.Sci.Lab
+  fullName: SearchAThing.Sci.Lab
+  type: Namespace
+  assemblies:
+  - netcore-sci
+references:
+- uid: SearchAThing.Sci.Lab.OpenGlPageControl
+  commentId: T:SearchAThing.Sci.Lab.OpenGlPageControl
+  name: OpenGlPageControl
+  nameWithType: OpenGlPageControl
+  fullName: SearchAThing.Sci.Lab.OpenGlPageControl

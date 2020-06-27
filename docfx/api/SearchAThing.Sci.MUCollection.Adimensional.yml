@@ -1,0 +1,84 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.MUCollection.Adimensional
+  commentId: T:SearchAThing.Sci.MUCollection.Adimensional
+  id: MUCollection.Adimensional
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.MUCollection.Adimensional.adim
+  langs:
+  - csharp
+  - vb
+  name: MUCollection.Adimensional
+  nameWithType: MUCollection.Adimensional
+  fullName: SearchAThing.Sci.MUCollection.Adimensional
+  type: Class
+  source:
+    id: Adimensional
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 52
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public static class Adimensional : object'
+    content.vb: >-
+      Public Module Adimensional
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: SearchAThing.Sci.MUCollection.Adimensional.adim
+  commentId: F:SearchAThing.Sci.MUCollection.Adimensional.adim
+  id: adim
+  parent: SearchAThing.Sci.MUCollection.Adimensional
+  langs:
+  - csharp
+  - vb
+  name: adim
+  nameWithType: MUCollection.Adimensional.adim
+  fullName: SearchAThing.Sci.MUCollection.Adimensional.adim
+  type: Field
+  source:
+    id: adim
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 54
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit adim
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly adim As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.MeasureUnit
+  commentId: T:SearchAThing.Sci.MeasureUnit
+  parent: SearchAThing.Sci
+  name: MeasureUnit
+  nameWithType: MeasureUnit
+  fullName: SearchAThing.Sci.MeasureUnit

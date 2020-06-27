@@ -1,0 +1,132 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.OrdIdx
+  commentId: T:SearchAThing.OrdIdx
+  id: OrdIdx
+  parent: SearchAThing
+  children:
+  - SearchAThing.OrdIdx.X
+  - SearchAThing.OrdIdx.Y
+  - SearchAThing.OrdIdx.Z
+  langs:
+  - csharp
+  - vb
+  name: OrdIdx
+  nameWithType: OrdIdx
+  fullName: SearchAThing.OrdIdx
+  type: Enum
+  source:
+    id: OrdIdx
+    path: Z:\netcore-sci\netcore-sci\Vector3D.cs
+    startLine: 1143
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing
+  syntax:
+    content: 'public enum OrdIdx : int'
+    content.vb: Public Enum OrdIdx As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: SearchAThing.OrdIdx.X
+  commentId: F:SearchAThing.OrdIdx.X
+  id: X
+  parent: SearchAThing.OrdIdx
+  langs:
+  - csharp
+  - vb
+  name: X
+  nameWithType: OrdIdx.X
+  fullName: SearchAThing.OrdIdx.X
+  type: Field
+  source:
+    id: X
+    path: Z:\netcore-sci\netcore-sci\Vector3D.cs
+    startLine: 1145
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing
+  syntax:
+    content: X = null
+    return:
+      type: SearchAThing.OrdIdx
+    content.vb: X = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: SearchAThing.OrdIdx.Y
+  commentId: F:SearchAThing.OrdIdx.Y
+  id: Y
+  parent: SearchAThing.OrdIdx
+  langs:
+  - csharp
+  - vb
+  name: Y
+  nameWithType: OrdIdx.Y
+  fullName: SearchAThing.OrdIdx.Y
+  type: Field
+  source:
+    id: Y
+    path: Z:\netcore-sci\netcore-sci\Vector3D.cs
+    startLine: 1146
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing
+  syntax:
+    content: Y = null
+    return:
+      type: SearchAThing.OrdIdx
+    content.vb: Y = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: SearchAThing.OrdIdx.Z
+  commentId: F:SearchAThing.OrdIdx.Z
+  id: Z
+  parent: SearchAThing.OrdIdx
+  langs:
+  - csharp
+  - vb
+  name: Z
+  nameWithType: OrdIdx.Z
+  fullName: SearchAThing.OrdIdx.Z
+  type: Field
+  source:
+    id: Z
+    path: Z:\netcore-sci\netcore-sci\Vector3D.cs
+    startLine: 1147
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing
+  syntax:
+    content: Z = null
+    return:
+      type: SearchAThing.OrdIdx
+    content.vb: Z = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: SearchAThing
+  commentId: N:SearchAThing
+  name: SearchAThing
+  nameWithType: SearchAThing
+  fullName: SearchAThing
+- uid: SearchAThing.OrdIdx
+  commentId: T:SearchAThing.OrdIdx
+  parent: SearchAThing
+  name: OrdIdx
+  nameWithType: OrdIdx
+  fullName: SearchAThing.OrdIdx

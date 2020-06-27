@@ -1,0 +1,1794 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.Circle3D
+  commentId: T:SearchAThing.Sci.Circle3D
+  id: Circle3D
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.Circle3D.#ctor(SearchAThing.Sci.Arc3D)
+  - SearchAThing.Sci.Circle3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.Circle3D.#ctor(System.Double,SearchAThing.Sci.CoordinateSystem3D,System.Double)
+  - SearchAThing.Sci.Circle3D.Area
+  - SearchAThing.Sci.Circle3D.CircleRTanP(System.Double,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Line3D,System.Double)
+  - SearchAThing.Sci.Circle3D.CirclesTan12P(System.Double,SearchAThing.Sci.Line3D,SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.Circle3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)
+  - SearchAThing.Sci.Circle3D.DxfEntity
+  - SearchAThing.Sci.Circle3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean)
+  - SearchAThing.Sci.Circle3D.Length
+  - SearchAThing.Sci.Circle3D.ToPolygon3D(System.Double)
+  langs:
+  - csharp
+  - vb
+  name: Circle3D
+  nameWithType: Circle3D
+  fullName: SearchAThing.Sci.Circle3D
+  type: Class
+  source:
+    id: Circle3D
+    path: Z:\netcore-sci\netcore-sci\Circle3D.cs
+    startLine: 14
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public class Circle3D : Arc3D'
+    content.vb: >-
+      Public Class Circle3D
+          Inherits Arc3D
+  inheritance:
+  - System.Object
+  - SearchAThing.Sci.Geometry
+  - SearchAThing.Sci.Arc3D
+  inheritedMembers:
+  - SearchAThing.Sci.Arc3D.CS
+  - SearchAThing.Sci.Arc3D.Radius
+  - SearchAThing.Sci.Arc3D.CircleBy3Points(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.Arc3D.Move(System.Double,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.Arc3D.AngleStart
+  - SearchAThing.Sci.Arc3D.AngleEnd
+  - SearchAThing.Sci.Arc3D.Angle
+  - SearchAThing.Sci.Arc3D.GeomFrom
+  - SearchAThing.Sci.Arc3D.GeomTo
+  - SearchAThing.Sci.Arc3D.PtAtAngle(System.Double)
+  - SearchAThing.Sci.Arc3D.MidPoint
+  - SearchAThing.Sci.Arc3D.PtAngle(System.Double,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.Arc3D.From
+  - SearchAThing.Sci.Arc3D.To
+  - SearchAThing.Sci.Arc3D.Segment
+  - SearchAThing.Sci.Arc3D.Vertexes
+  - SearchAThing.Sci.Arc3D.EqualsTol(System.Double,SearchAThing.Sci.Arc3D)
+  - SearchAThing.Sci.Arc3D.Bulge(System.Double,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.Arc3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean,System.Boolean)
+  - SearchAThing.Sci.Arc3D.Center
+  - SearchAThing.Sci.Arc3D.CentreOfMass(System.Double@)
+  - SearchAThing.Sci.Arc3D.BBox(System.Double)
+  - SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean,System.Boolean)
+  - SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.CoordinateSystem3D,System.Boolean)
+  - SearchAThing.Sci.Arc3D.ToString
+  - SearchAThing.Sci.Arc3D.Divide(System.Int32,System.Boolean)
+  - SearchAThing.Sci.Arc3D.Split(System.Double,IEnumerable{SearchAThing.Sci.Vector3D},System.Boolean)
+  - SearchAThing.Sci.Geometry.Type
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: SearchAThing.Sci.Circle3D.#ctor(System.Double,SearchAThing.Sci.CoordinateSystem3D,System.Double)
+  commentId: M:SearchAThing.Sci.Circle3D.#ctor(System.Double,SearchAThing.Sci.CoordinateSystem3D,System.Double)
+  id: '#ctor(System.Double,SearchAThing.Sci.CoordinateSystem3D,System.Double)'
+  parent: SearchAThing.Sci.Circle3D
+  langs:
+  - csharp
+  - vb
+  name: Circle3D(Double, CoordinateSystem3D, Double)
+  nameWithType: Circle3D.Circle3D(Double, CoordinateSystem3D, Double)
+  fullName: SearchAThing.Sci.Circle3D.Circle3D(System.Double, SearchAThing.Sci.CoordinateSystem3D, System.Double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: Z:\netcore-sci\netcore-sci\Circle3D.cs
+    startLine: 17
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public Circle3D(double tol_len, CoordinateSystem3D cs, double r)
+    parameters:
+    - id: tol_len
+      type: System.Double
+    - id: cs
+      type: SearchAThing.Sci.CoordinateSystem3D
+    - id: r
+      type: System.Double
+    content.vb: Public Sub New(tol_len As Double, cs As CoordinateSystem3D, r As Double)
+  overload: SearchAThing.Sci.Circle3D.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Circle3D.#ctor(SearchAThing.Sci.Arc3D)
+  commentId: M:SearchAThing.Sci.Circle3D.#ctor(SearchAThing.Sci.Arc3D)
+  id: '#ctor(SearchAThing.Sci.Arc3D)'
+  parent: SearchAThing.Sci.Circle3D
+  langs:
+  - csharp
+  - vb
+  name: Circle3D(Arc3D)
+  nameWithType: Circle3D.Circle3D(Arc3D)
+  fullName: SearchAThing.Sci.Circle3D.Circle3D(SearchAThing.Sci.Arc3D)
+  type: Constructor
+  source:
+    id: .ctor
+    path: Z:\netcore-sci\netcore-sci\Circle3D.cs
+    startLine: 26
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\ncreate circle from given arc\n"
+  example: []
+  syntax:
+    content: public Circle3D(Arc3D arc)
+    parameters:
+    - id: arc
+      type: SearchAThing.Sci.Arc3D
+      description: arc used to build circle
+    content.vb: Public Sub New(arc As Arc3D)
+  overload: SearchAThing.Sci.Circle3D.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Circle3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.Circle3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  id: '#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)'
+  parent: SearchAThing.Sci.Circle3D
+  langs:
+  - csharp
+  - vb
+  name: Circle3D(Vector3D, Vector3D, Vector3D)
+  nameWithType: Circle3D.Circle3D(Vector3D, Vector3D, Vector3D)
+  fullName: SearchAThing.Sci.Circle3D.Circle3D(SearchAThing.Sci.Vector3D, SearchAThing.Sci.Vector3D, SearchAThing.Sci.Vector3D)
+  type: Constructor
+  source:
+    id: .ctor
+    path: Z:\netcore-sci\netcore-sci\Circle3D.cs
+    startLine: 35
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nBuild 3d circle that intersect p1,p2,p3\n( the inside CS will centered in the circle center and Xaxis toward p1 )\n"
+  example: []
+  syntax:
+    content: public Circle3D(Vector3D p1, Vector3D p2, Vector3D p3)
+    parameters:
+    - id: p1
+      type: SearchAThing.Sci.Vector3D
+    - id: p2
+      type: SearchAThing.Sci.Vector3D
+    - id: p3
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public Sub New(p1 As Vector3D, p2 As Vector3D, p3 As Vector3D)
+  overload: SearchAThing.Sci.Circle3D.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Circle3D.DxfEntity
+  commentId: P:SearchAThing.Sci.Circle3D.DxfEntity
+  id: DxfEntity
+  parent: SearchAThing.Sci.Circle3D
+  langs:
+  - csharp
+  - vb
+  name: DxfEntity
+  nameWithType: Circle3D.DxfEntity
+  fullName: SearchAThing.Sci.Circle3D.DxfEntity
+  type: Property
+  source:
+    id: DxfEntity
+    path: Z:\netcore-sci\netcore-sci\Circle3D.cs
+    startLine: 40
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public override EntityObject DxfEntity { get; }
+    parameters: []
+    return:
+      type: EntityObject
+    content.vb: Public Overrides ReadOnly Property DxfEntity As EntityObject
+  overridden: SearchAThing.Sci.Arc3D.DxfEntity
+  overload: SearchAThing.Sci.Circle3D.DxfEntity*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: SearchAThing.Sci.Circle3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)
+  commentId: M:SearchAThing.Sci.Circle3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)
+  id: Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)
+  parent: SearchAThing.Sci.Circle3D
+  langs:
+  - csharp
+  - vb
+  name: Contains(Double, Vector3D, Boolean)
+  nameWithType: Circle3D.Contains(Double, Vector3D, Boolean)
+  fullName: SearchAThing.Sci.Circle3D.Contains(System.Double, SearchAThing.Sci.Vector3D, System.Boolean)
+  type: Method
+  source:
+    id: Contains
+    path: Z:\netcore-sci\netcore-sci\Circle3D.cs
+    startLine: 50
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public override bool Contains(double tol, Vector3D pt, bool onlyPerimeter)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: pt
+      type: SearchAThing.Sci.Vector3D
+    - id: onlyPerimeter
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Contains(tol As Double, pt As Vector3D, onlyPerimeter As Boolean) As Boolean
+  overridden: SearchAThing.Sci.Arc3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)
+  overload: SearchAThing.Sci.Circle3D.Contains*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: SearchAThing.Sci.Circle3D.ToPolygon3D(System.Double)
+  commentId: M:SearchAThing.Sci.Circle3D.ToPolygon3D(System.Double)
+  id: ToPolygon3D(System.Double)
+  parent: SearchAThing.Sci.Circle3D
+  langs:
+  - csharp
+  - vb
+  name: ToPolygon3D(Double)
+  nameWithType: Circle3D.ToPolygon3D(Double)
+  fullName: SearchAThing.Sci.Circle3D.ToPolygon3D(System.Double)
+  type: Method
+  source:
+    id: ToPolygon3D
+    path: Z:\netcore-sci\netcore-sci\Circle3D.cs
+    startLine: 56
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\ncreates a polygon approximation of this circle with segments of given maxLength\n"
+  example: []
+  syntax:
+    content: public IEnumerable<Vector3D> ToPolygon3D(double segLenMax)
+    parameters:
+    - id: segLenMax
+      type: System.Double
+    return:
+      type: IEnumerable{SearchAThing.Sci.Vector3D}
+    content.vb: Public Function ToPolygon3D(segLenMax As Double) As IEnumerable(Of Vector3D)
+  overload: SearchAThing.Sci.Circle3D.ToPolygon3D*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Circle3D.CirclesTan12P(System.Double,SearchAThing.Sci.Line3D,SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.Circle3D.CirclesTan12P(System.Double,SearchAThing.Sci.Line3D,SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)
+  id: CirclesTan12P(System.Double,SearchAThing.Sci.Line3D,SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.Circle3D
+  langs:
+  - csharp
+  - vb
+  name: CirclesTan12P(Double, Line3D, Line3D, Vector3D)
+  nameWithType: Circle3D.CirclesTan12P(Double, Line3D, Line3D, Vector3D)
+  fullName: SearchAThing.Sci.Circle3D.CirclesTan12P(System.Double, SearchAThing.Sci.Line3D, SearchAThing.Sci.Line3D, SearchAThing.Sci.Vector3D)
+  type: Method
+  source:
+    id: CirclesTan12P
+    path: Z:\netcore-sci\netcore-sci\Circle3D.cs
+    startLine: 87
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nbuild 3d circle that tangent to lines t1,t2 and that intersects point p\nnote: point p must contained in one of t1,t2\ncircle will be inside region t1.V toward t2.V\nthey are 4 circles\n"
+  example: []
+  syntax:
+    content: public static IEnumerable<Circle3D> CirclesTan12P(double tol_len, Line3D t1, Line3D t2, Vector3D p)
+    parameters:
+    - id: tol_len
+      type: System.Double
+    - id: t1
+      type: SearchAThing.Sci.Line3D
+    - id: t2
+      type: SearchAThing.Sci.Line3D
+    - id: p
+      type: SearchAThing.Sci.Vector3D
+    return:
+      type: IEnumerable{SearchAThing.Sci.Circle3D}
+    content.vb: Public Shared Function CirclesTan12P(tol_len As Double, t1 As Line3D, t2 As Line3D, p As Vector3D) As IEnumerable(Of Circle3D)
+  overload: SearchAThing.Sci.Circle3D.CirclesTan12P*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: SearchAThing.Sci.Circle3D.CircleRTanP(System.Double,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Line3D,System.Double)
+  commentId: M:SearchAThing.Sci.Circle3D.CircleRTanP(System.Double,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Line3D,System.Double)
+  id: CircleRTanP(System.Double,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Line3D,System.Double)
+  parent: SearchAThing.Sci.Circle3D
+  langs:
+  - csharp
+  - vb
+  name: CircleRTanP(Double, Vector3D, Line3D, Double)
+  nameWithType: Circle3D.CircleRTanP(Double, Vector3D, Line3D, Double)
+  fullName: SearchAThing.Sci.Circle3D.CircleRTanP(System.Double, SearchAThing.Sci.Vector3D, SearchAThing.Sci.Line3D, System.Double)
+  type: Method
+  source:
+    id: CircleRTanP
+    path: Z:\netcore-sci\netcore-sci\Circle3D.cs
+    startLine: 121
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nbuild 3d circle through point p, tangent to given t line, with given radius r            \nthey can be two\n"
+  example: []
+  syntax:
+    content: public static IEnumerable<Circle3D> CircleRTanP(double tol_len, Vector3D p, Line3D t, double r)
+    parameters:
+    - id: tol_len
+      type: System.Double
+    - id: p
+      type: SearchAThing.Sci.Vector3D
+    - id: t
+      type: SearchAThing.Sci.Line3D
+    - id: r
+      type: System.Double
+    return:
+      type: IEnumerable{SearchAThing.Sci.Circle3D}
+    content.vb: Public Shared Function CircleRTanP(tol_len As Double, p As Vector3D, t As Line3D, r As Double) As IEnumerable(Of Circle3D)
+  overload: SearchAThing.Sci.Circle3D.CircleRTanP*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: SearchAThing.Sci.Circle3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean)
+  commentId: M:SearchAThing.Sci.Circle3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean)
+  id: Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean)
+  parent: SearchAThing.Sci.Circle3D
+  langs:
+  - csharp
+  - vb
+  name: Intersect(Double, Line3D, Boolean, Boolean)
+  nameWithType: Circle3D.Intersect(Double, Line3D, Boolean, Boolean)
+  fullName: SearchAThing.Sci.Circle3D.Intersect(System.Double, SearchAThing.Sci.Line3D, System.Boolean, System.Boolean)
+  type: Method
+  source:
+    id: Intersect
+    path: Z:\netcore-sci\netcore-sci\Circle3D.cs
+    startLine: 137
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nintersect this 3d circle with given 3d line\n"
+  example: []
+  syntax:
+    content: public override IEnumerable<Vector3D> Intersect(double tol, Line3D l, bool only_perimeter = true, bool segment_mode = false)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: l
+      type: SearchAThing.Sci.Line3D
+    - id: only_perimeter
+      type: System.Boolean
+    - id: segment_mode
+      type: System.Boolean
+    return:
+      type: IEnumerable{SearchAThing.Sci.Vector3D}
+    content.vb: Public Overrides Function Intersect(tol As Double, l As Line3D, only_perimeter As Boolean = True, segment_mode As Boolean = False) As IEnumerable(Of Vector3D)
+  overridden: SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean)
+  overload: SearchAThing.Sci.Circle3D.Intersect*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: SearchAThing.Sci.Circle3D.Area
+  commentId: P:SearchAThing.Sci.Circle3D.Area
+  id: Area
+  parent: SearchAThing.Sci.Circle3D
+  langs:
+  - csharp
+  - vb
+  name: Area
+  nameWithType: Circle3D.Area
+  fullName: SearchAThing.Sci.Circle3D.Area
+  type: Property
+  source:
+    id: Area
+    path: Z:\netcore-sci\netcore-sci\Circle3D.cs
+    startLine: 144
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public double Area { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property Area As Double
+  overload: SearchAThing.Sci.Circle3D.Area*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.Circle3D.Length
+  commentId: P:SearchAThing.Sci.Circle3D.Length
+  id: Length
+  parent: SearchAThing.Sci.Circle3D
+  langs:
+  - csharp
+  - vb
+  name: Length
+  nameWithType: Circle3D.Length
+  fullName: SearchAThing.Sci.Circle3D.Length
+  type: Property
+  source:
+    id: Length
+    path: Z:\netcore-sci\netcore-sci\Circle3D.cs
+    startLine: 145
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public override double Length { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Overrides ReadOnly Property Length As Double
+  overridden: SearchAThing.Sci.Arc3D.Length
+  overload: SearchAThing.Sci.Circle3D.Length*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.Geometry
+  commentId: T:SearchAThing.Sci.Geometry
+  parent: SearchAThing.Sci
+  name: Geometry
+  nameWithType: Geometry
+  fullName: SearchAThing.Sci.Geometry
+- uid: SearchAThing.Sci.Arc3D
+  commentId: T:SearchAThing.Sci.Arc3D
+  parent: SearchAThing.Sci
+  name: Arc3D
+  nameWithType: Arc3D
+  fullName: SearchAThing.Sci.Arc3D
+- uid: SearchAThing.Sci.Arc3D.CS
+  commentId: P:SearchAThing.Sci.Arc3D.CS
+  parent: SearchAThing.Sci.Arc3D
+  name: CS
+  nameWithType: Arc3D.CS
+  fullName: SearchAThing.Sci.Arc3D.CS
+- uid: SearchAThing.Sci.Arc3D.Radius
+  commentId: P:SearchAThing.Sci.Arc3D.Radius
+  parent: SearchAThing.Sci.Arc3D
+  name: Radius
+  nameWithType: Arc3D.Radius
+  fullName: SearchAThing.Sci.Arc3D.Radius
+- uid: SearchAThing.Sci.Arc3D.CircleBy3Points(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.Arc3D.CircleBy3Points(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.Arc3D
+  name: CircleBy3Points(Vector3D, Vector3D, Vector3D)
+  nameWithType: Arc3D.CircleBy3Points(Vector3D, Vector3D, Vector3D)
+  fullName: SearchAThing.Sci.Arc3D.CircleBy3Points(SearchAThing.Sci.Vector3D, SearchAThing.Sci.Vector3D, SearchAThing.Sci.Vector3D)
+  spec.csharp:
+  - uid: SearchAThing.Sci.Arc3D.CircleBy3Points(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+    name: CircleBy3Points
+    nameWithType: Arc3D.CircleBy3Points
+    fullName: SearchAThing.Sci.Arc3D.CircleBy3Points
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.Sci.Arc3D.CircleBy3Points(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+    name: CircleBy3Points
+    nameWithType: Arc3D.CircleBy3Points
+    fullName: SearchAThing.Sci.Arc3D.CircleBy3Points
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Arc3D.Move(System.Double,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.Arc3D.Move(System.Double,SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.Arc3D
+  isExternal: true
+  name: Move(Double, Vector3D)
+  nameWithType: Arc3D.Move(Double, Vector3D)
+  fullName: SearchAThing.Sci.Arc3D.Move(System.Double, SearchAThing.Sci.Vector3D)
+  spec.csharp:
+  - uid: SearchAThing.Sci.Arc3D.Move(System.Double,SearchAThing.Sci.Vector3D)
+    name: Move
+    nameWithType: Arc3D.Move
+    fullName: SearchAThing.Sci.Arc3D.Move
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.Sci.Arc3D.Move(System.Double,SearchAThing.Sci.Vector3D)
+    name: Move
+    nameWithType: Arc3D.Move
+    fullName: SearchAThing.Sci.Arc3D.Move
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Arc3D.AngleStart
+  commentId: P:SearchAThing.Sci.Arc3D.AngleStart
+  parent: SearchAThing.Sci.Arc3D
+  name: AngleStart
+  nameWithType: Arc3D.AngleStart
+  fullName: SearchAThing.Sci.Arc3D.AngleStart
+- uid: SearchAThing.Sci.Arc3D.AngleEnd
+  commentId: P:SearchAThing.Sci.Arc3D.AngleEnd
+  parent: SearchAThing.Sci.Arc3D
+  name: AngleEnd
+  nameWithType: Arc3D.AngleEnd
+  fullName: SearchAThing.Sci.Arc3D.AngleEnd
+- uid: SearchAThing.Sci.Arc3D.Angle
+  commentId: P:SearchAThing.Sci.Arc3D.Angle
+  parent: SearchAThing.Sci.Arc3D
+  name: Angle
+  nameWithType: Arc3D.Angle
+  fullName: SearchAThing.Sci.Arc3D.Angle
+- uid: SearchAThing.Sci.Arc3D.GeomFrom
+  commentId: P:SearchAThing.Sci.Arc3D.GeomFrom
+  parent: SearchAThing.Sci.Arc3D
+  name: GeomFrom
+  nameWithType: Arc3D.GeomFrom
+  fullName: SearchAThing.Sci.Arc3D.GeomFrom
+- uid: SearchAThing.Sci.Arc3D.GeomTo
+  commentId: P:SearchAThing.Sci.Arc3D.GeomTo
+  parent: SearchAThing.Sci.Arc3D
+  name: GeomTo
+  nameWithType: Arc3D.GeomTo
+  fullName: SearchAThing.Sci.Arc3D.GeomTo
+- uid: SearchAThing.Sci.Arc3D.PtAtAngle(System.Double)
+  commentId: M:SearchAThing.Sci.Arc3D.PtAtAngle(System.Double)
+  parent: SearchAThing.Sci.Arc3D
+  isExternal: true
+  name: PtAtAngle(Double)
+  nameWithType: Arc3D.PtAtAngle(Double)
+  fullName: SearchAThing.Sci.Arc3D.PtAtAngle(System.Double)
+  spec.csharp:
+  - uid: SearchAThing.Sci.Arc3D.PtAtAngle(System.Double)
+    name: PtAtAngle
+    nameWithType: Arc3D.PtAtAngle
+    fullName: SearchAThing.Sci.Arc3D.PtAtAngle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.Sci.Arc3D.PtAtAngle(System.Double)
+    name: PtAtAngle
+    nameWithType: Arc3D.PtAtAngle
+    fullName: SearchAThing.Sci.Arc3D.PtAtAngle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Arc3D.MidPoint
+  commentId: P:SearchAThing.Sci.Arc3D.MidPoint
+  parent: SearchAThing.Sci.Arc3D
+  name: MidPoint
+  nameWithType: Arc3D.MidPoint
+  fullName: SearchAThing.Sci.Arc3D.MidPoint
+- uid: SearchAThing.Sci.Arc3D.PtAngle(System.Double,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.Arc3D.PtAngle(System.Double,SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.Arc3D
+  isExternal: true
+  name: PtAngle(Double, Vector3D)
+  nameWithType: Arc3D.PtAngle(Double, Vector3D)
+  fullName: SearchAThing.Sci.Arc3D.PtAngle(System.Double, SearchAThing.Sci.Vector3D)
+  spec.csharp:
+  - uid: SearchAThing.Sci.Arc3D.PtAngle(System.Double,SearchAThing.Sci.Vector3D)
+    name: PtAngle
+    nameWithType: Arc3D.PtAngle
+    fullName: SearchAThing.Sci.Arc3D.PtAngle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.Sci.Arc3D.PtAngle(System.Double,SearchAThing.Sci.Vector3D)
+    name: PtAngle
+    nameWithType: Arc3D.PtAngle
+    fullName: SearchAThing.Sci.Arc3D.PtAngle
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Arc3D.From
+  commentId: P:SearchAThing.Sci.Arc3D.From
+  parent: SearchAThing.Sci.Arc3D
+  name: From
+  nameWithType: Arc3D.From
+  fullName: SearchAThing.Sci.Arc3D.From
+- uid: SearchAThing.Sci.Arc3D.To
+  commentId: P:SearchAThing.Sci.Arc3D.To
+  parent: SearchAThing.Sci.Arc3D
+  name: To
+  nameWithType: Arc3D.To
+  fullName: SearchAThing.Sci.Arc3D.To
+- uid: SearchAThing.Sci.Arc3D.Segment
+  commentId: P:SearchAThing.Sci.Arc3D.Segment
+  parent: SearchAThing.Sci.Arc3D
+  name: Segment
+  nameWithType: Arc3D.Segment
+  fullName: SearchAThing.Sci.Arc3D.Segment
+- uid: SearchAThing.Sci.Arc3D.Vertexes
+  commentId: P:SearchAThing.Sci.Arc3D.Vertexes
+  parent: SearchAThing.Sci.Arc3D
+  name: Vertexes
+  nameWithType: Arc3D.Vertexes
+  fullName: SearchAThing.Sci.Arc3D.Vertexes
+- uid: SearchAThing.Sci.Arc3D.EqualsTol(System.Double,SearchAThing.Sci.Arc3D)
+  commentId: M:SearchAThing.Sci.Arc3D.EqualsTol(System.Double,SearchAThing.Sci.Arc3D)
+  parent: SearchAThing.Sci.Arc3D
+  isExternal: true
+  name: EqualsTol(Double, Arc3D)
+  nameWithType: Arc3D.EqualsTol(Double, Arc3D)
+  fullName: SearchAThing.Sci.Arc3D.EqualsTol(System.Double, SearchAThing.Sci.Arc3D)
+  spec.csharp:
+  - uid: SearchAThing.Sci.Arc3D.EqualsTol(System.Double,SearchAThing.Sci.Arc3D)
+    name: EqualsTol
+    nameWithType: Arc3D.EqualsTol
+    fullName: SearchAThing.Sci.Arc3D.EqualsTol
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Arc3D
+    name: Arc3D
+    nameWithType: Arc3D
+    fullName: SearchAThing.Sci.Arc3D
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.Sci.Arc3D.EqualsTol(System.Double,SearchAThing.Sci.Arc3D)
+    name: EqualsTol
+    nameWithType: Arc3D.EqualsTol
+    fullName: SearchAThing.Sci.Arc3D.EqualsTol
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Arc3D
+    name: Arc3D
+    nameWithType: Arc3D
+    fullName: SearchAThing.Sci.Arc3D
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Arc3D.Bulge(System.Double,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.Arc3D.Bulge(System.Double,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.Arc3D
+  isExternal: true
+  name: Bulge(Double, Vector3D, Vector3D, Vector3D)
+  nameWithType: Arc3D.Bulge(Double, Vector3D, Vector3D, Vector3D)
+  fullName: SearchAThing.Sci.Arc3D.Bulge(System.Double, SearchAThing.Sci.Vector3D, SearchAThing.Sci.Vector3D, SearchAThing.Sci.Vector3D)
+  spec.csharp:
+  - uid: SearchAThing.Sci.Arc3D.Bulge(System.Double,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+    name: Bulge
+    nameWithType: Arc3D.Bulge
+    fullName: SearchAThing.Sci.Arc3D.Bulge
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.Sci.Arc3D.Bulge(System.Double,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+    name: Bulge
+    nameWithType: Arc3D.Bulge
+    fullName: SearchAThing.Sci.Arc3D.Bulge
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Arc3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean,System.Boolean)
+  commentId: M:SearchAThing.Sci.Arc3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean,System.Boolean)
+  parent: SearchAThing.Sci.Arc3D
+  isExternal: true
+  name: Contains(Double, Vector3D, Boolean, Boolean)
+  nameWithType: Arc3D.Contains(Double, Vector3D, Boolean, Boolean)
+  fullName: SearchAThing.Sci.Arc3D.Contains(System.Double, SearchAThing.Sci.Vector3D, System.Boolean, System.Boolean)
+  spec.csharp:
+  - uid: SearchAThing.Sci.Arc3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean,System.Boolean)
+    name: Contains
+    nameWithType: Arc3D.Contains
+    fullName: SearchAThing.Sci.Arc3D.Contains
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.Sci.Arc3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean,System.Boolean)
+    name: Contains
+    nameWithType: Arc3D.Contains
+    fullName: SearchAThing.Sci.Arc3D.Contains
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Arc3D.Center
+  commentId: P:SearchAThing.Sci.Arc3D.Center
+  parent: SearchAThing.Sci.Arc3D
+  name: Center
+  nameWithType: Arc3D.Center
+  fullName: SearchAThing.Sci.Arc3D.Center
+- uid: SearchAThing.Sci.Arc3D.CentreOfMass(System.Double@)
+  commentId: M:SearchAThing.Sci.Arc3D.CentreOfMass(System.Double@)
+  parent: SearchAThing.Sci.Arc3D
+  isExternal: true
+  name: CentreOfMass(Double)
+  nameWithType: Arc3D.CentreOfMass(Double)
+  fullName: SearchAThing.Sci.Arc3D.CentreOfMass(System.Double)
+  spec.csharp:
+  - uid: SearchAThing.Sci.Arc3D.CentreOfMass(System.Double@)
+    name: CentreOfMass
+    nameWithType: Arc3D.CentreOfMass
+    fullName: SearchAThing.Sci.Arc3D.CentreOfMass
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.Sci.Arc3D.CentreOfMass(System.Double@)
+    name: CentreOfMass
+    nameWithType: Arc3D.CentreOfMass
+    fullName: SearchAThing.Sci.Arc3D.CentreOfMass
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Arc3D.BBox(System.Double)
+  commentId: M:SearchAThing.Sci.Arc3D.BBox(System.Double)
+  parent: SearchAThing.Sci.Arc3D
+  isExternal: true
+  name: BBox(Double)
+  nameWithType: Arc3D.BBox(Double)
+  fullName: SearchAThing.Sci.Arc3D.BBox(System.Double)
+  spec.csharp:
+  - uid: SearchAThing.Sci.Arc3D.BBox(System.Double)
+    name: BBox
+    nameWithType: Arc3D.BBox
+    fullName: SearchAThing.Sci.Arc3D.BBox
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.Sci.Arc3D.BBox(System.Double)
+    name: BBox
+    nameWithType: Arc3D.BBox
+    fullName: SearchAThing.Sci.Arc3D.BBox
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean,System.Boolean)
+  commentId: M:SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean,System.Boolean)
+  parent: SearchAThing.Sci.Arc3D
+  isExternal: true
+  name: Intersect(Double, Line3D, Boolean, Boolean, Boolean)
+  nameWithType: Arc3D.Intersect(Double, Line3D, Boolean, Boolean, Boolean)
+  fullName: SearchAThing.Sci.Arc3D.Intersect(System.Double, SearchAThing.Sci.Line3D, System.Boolean, System.Boolean, System.Boolean)
+  spec.csharp:
+  - uid: SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean,System.Boolean)
+    name: Intersect
+    nameWithType: Arc3D.Intersect
+    fullName: SearchAThing.Sci.Arc3D.Intersect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Line3D
+    name: Line3D
+    nameWithType: Line3D
+    fullName: SearchAThing.Sci.Line3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean,System.Boolean)
+    name: Intersect
+    nameWithType: Arc3D.Intersect
+    fullName: SearchAThing.Sci.Arc3D.Intersect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Line3D
+    name: Line3D
+    nameWithType: Line3D
+    fullName: SearchAThing.Sci.Line3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.CoordinateSystem3D,System.Boolean)
+  commentId: M:SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.CoordinateSystem3D,System.Boolean)
+  parent: SearchAThing.Sci.Arc3D
+  isExternal: true
+  name: Intersect(Double, CoordinateSystem3D, Boolean)
+  nameWithType: Arc3D.Intersect(Double, CoordinateSystem3D, Boolean)
+  fullName: SearchAThing.Sci.Arc3D.Intersect(System.Double, SearchAThing.Sci.CoordinateSystem3D, System.Boolean)
+  spec.csharp:
+  - uid: SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.CoordinateSystem3D,System.Boolean)
+    name: Intersect
+    nameWithType: Arc3D.Intersect
+    fullName: SearchAThing.Sci.Arc3D.Intersect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.CoordinateSystem3D
+    name: CoordinateSystem3D
+    nameWithType: CoordinateSystem3D
+    fullName: SearchAThing.Sci.CoordinateSystem3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.CoordinateSystem3D,System.Boolean)
+    name: Intersect
+    nameWithType: Arc3D.Intersect
+    fullName: SearchAThing.Sci.Arc3D.Intersect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.CoordinateSystem3D
+    name: CoordinateSystem3D
+    nameWithType: CoordinateSystem3D
+    fullName: SearchAThing.Sci.CoordinateSystem3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Arc3D.ToString
+  commentId: M:SearchAThing.Sci.Arc3D.ToString
+  parent: SearchAThing.Sci.Arc3D
+  name: ToString()
+  nameWithType: Arc3D.ToString()
+  fullName: SearchAThing.Sci.Arc3D.ToString()
+  spec.csharp:
+  - uid: SearchAThing.Sci.Arc3D.ToString
+    name: ToString
+    nameWithType: Arc3D.ToString
+    fullName: SearchAThing.Sci.Arc3D.ToString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.Sci.Arc3D.ToString
+    name: ToString
+    nameWithType: Arc3D.ToString
+    fullName: SearchAThing.Sci.Arc3D.ToString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Arc3D.Divide(System.Int32,System.Boolean)
+  commentId: M:SearchAThing.Sci.Arc3D.Divide(System.Int32,System.Boolean)
+  parent: SearchAThing.Sci.Arc3D
+  isExternal: true
+  name: Divide(Int32, Boolean)
+  nameWithType: Arc3D.Divide(Int32, Boolean)
+  fullName: SearchAThing.Sci.Arc3D.Divide(System.Int32, System.Boolean)
+  spec.csharp:
+  - uid: SearchAThing.Sci.Arc3D.Divide(System.Int32,System.Boolean)
+    name: Divide
+    nameWithType: Arc3D.Divide
+    fullName: SearchAThing.Sci.Arc3D.Divide
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.Sci.Arc3D.Divide(System.Int32,System.Boolean)
+    name: Divide
+    nameWithType: Arc3D.Divide
+    fullName: SearchAThing.Sci.Arc3D.Divide
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Arc3D.Split(System.Double,IEnumerable{SearchAThing.Sci.Vector3D},System.Boolean)
+  commentId: M:SearchAThing.Sci.Arc3D.Split(System.Double,IEnumerable{SearchAThing.Sci.Vector3D},System.Boolean)
+  parent: SearchAThing.Sci.Arc3D
+  isExternal: true
+  name: Split(Double, IEnumerable<Vector3D>, Boolean)
+  nameWithType: Arc3D.Split(Double, IEnumerable<Vector3D>, Boolean)
+  fullName: SearchAThing.Sci.Arc3D.Split(System.Double, IEnumerable<SearchAThing.Sci.Vector3D>, System.Boolean)
+  nameWithType.vb: Arc3D.Split(Double, IEnumerable(Of Vector3D), Boolean)
+  fullName.vb: SearchAThing.Sci.Arc3D.Split(System.Double, IEnumerable(Of SearchAThing.Sci.Vector3D), System.Boolean)
+  name.vb: Split(Double, IEnumerable(Of Vector3D), Boolean)
+  spec.csharp:
+  - uid: SearchAThing.Sci.Arc3D.Split(System.Double,IEnumerable{SearchAThing.Sci.Vector3D},System.Boolean)
+    name: Split
+    nameWithType: Arc3D.Split
+    fullName: SearchAThing.Sci.Arc3D.Split
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.Sci.Arc3D.Split(System.Double,IEnumerable{SearchAThing.Sci.Vector3D},System.Boolean)
+    name: Split
+    nameWithType: Arc3D.Split
+    fullName: SearchAThing.Sci.Arc3D.Split
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Geometry.Type
+  commentId: P:SearchAThing.Sci.Geometry.Type
+  parent: SearchAThing.Sci.Geometry
+  name: Type
+  nameWithType: Geometry.Type
+  fullName: SearchAThing.Sci.Geometry.Type
+- uid: SearchAThing.Sci.Circle3D.#ctor*
+  commentId: Overload:SearchAThing.Sci.Circle3D.#ctor
+  name: Circle3D
+  nameWithType: Circle3D.Circle3D
+  fullName: SearchAThing.Sci.Circle3D.Circle3D
+- uid: System.Double
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: SearchAThing.Sci.CoordinateSystem3D
+  commentId: T:SearchAThing.Sci.CoordinateSystem3D
+  parent: SearchAThing.Sci
+  name: CoordinateSystem3D
+  nameWithType: CoordinateSystem3D
+  fullName: SearchAThing.Sci.CoordinateSystem3D
+- uid: SearchAThing.Sci.Vector3D
+  commentId: T:SearchAThing.Sci.Vector3D
+  parent: SearchAThing.Sci
+  name: Vector3D
+  nameWithType: Vector3D
+  fullName: SearchAThing.Sci.Vector3D
+- uid: SearchAThing.Sci.Arc3D.DxfEntity
+  commentId: P:SearchAThing.Sci.Arc3D.DxfEntity
+  parent: SearchAThing.Sci.Arc3D
+  name: DxfEntity
+  nameWithType: Arc3D.DxfEntity
+  fullName: SearchAThing.Sci.Arc3D.DxfEntity
+- uid: SearchAThing.Sci.Circle3D.DxfEntity*
+  commentId: Overload:SearchAThing.Sci.Circle3D.DxfEntity
+  name: DxfEntity
+  nameWithType: Circle3D.DxfEntity
+  fullName: SearchAThing.Sci.Circle3D.DxfEntity
+- uid: EntityObject
+  isExternal: true
+  name: EntityObject
+  nameWithType: EntityObject
+  fullName: EntityObject
+- uid: SearchAThing.Sci.Arc3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)
+  commentId: M:SearchAThing.Sci.Arc3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)
+  parent: SearchAThing.Sci.Arc3D
+  isExternal: true
+  name: Contains(Double, Vector3D, Boolean)
+  nameWithType: Arc3D.Contains(Double, Vector3D, Boolean)
+  fullName: SearchAThing.Sci.Arc3D.Contains(System.Double, SearchAThing.Sci.Vector3D, System.Boolean)
+  spec.csharp:
+  - uid: SearchAThing.Sci.Arc3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)
+    name: Contains
+    nameWithType: Arc3D.Contains
+    fullName: SearchAThing.Sci.Arc3D.Contains
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.Sci.Arc3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)
+    name: Contains
+    nameWithType: Arc3D.Contains
+    fullName: SearchAThing.Sci.Arc3D.Contains
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Circle3D.Contains*
+  commentId: Overload:SearchAThing.Sci.Circle3D.Contains
+  name: Contains
+  nameWithType: Circle3D.Contains
+  fullName: SearchAThing.Sci.Circle3D.Contains
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: SearchAThing.Sci.Circle3D.ToPolygon3D*
+  commentId: Overload:SearchAThing.Sci.Circle3D.ToPolygon3D
+  name: ToPolygon3D
+  nameWithType: Circle3D.ToPolygon3D
+  fullName: SearchAThing.Sci.Circle3D.ToPolygon3D
+- uid: IEnumerable{SearchAThing.Sci.Vector3D}
+  commentId: '!:IEnumerable{SearchAThing.Sci.Vector3D}'
+  definition: IEnumerable`1
+  name: IEnumerable<Vector3D>
+  nameWithType: IEnumerable<Vector3D>
+  fullName: IEnumerable<SearchAThing.Sci.Vector3D>
+  nameWithType.vb: IEnumerable(Of Vector3D)
+  fullName.vb: IEnumerable(Of SearchAThing.Sci.Vector3D)
+  name.vb: IEnumerable(Of Vector3D)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Circle3D.CirclesTan12P*
+  commentId: Overload:SearchAThing.Sci.Circle3D.CirclesTan12P
+  name: CirclesTan12P
+  nameWithType: Circle3D.CirclesTan12P
+  fullName: SearchAThing.Sci.Circle3D.CirclesTan12P
+- uid: SearchAThing.Sci.Line3D
+  commentId: T:SearchAThing.Sci.Line3D
+  parent: SearchAThing.Sci
+  name: Line3D
+  nameWithType: Line3D
+  fullName: SearchAThing.Sci.Line3D
+- uid: IEnumerable{SearchAThing.Sci.Circle3D}
+  commentId: '!:IEnumerable{SearchAThing.Sci.Circle3D}'
+  definition: IEnumerable`1
+  name: IEnumerable<Circle3D>
+  nameWithType: IEnumerable<Circle3D>
+  fullName: IEnumerable<SearchAThing.Sci.Circle3D>
+  nameWithType.vb: IEnumerable(Of Circle3D)
+  fullName.vb: IEnumerable(Of SearchAThing.Sci.Circle3D)
+  name.vb: IEnumerable(Of Circle3D)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: SearchAThing.Sci.Circle3D
+    name: Circle3D
+    nameWithType: Circle3D
+    fullName: SearchAThing.Sci.Circle3D
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: SearchAThing.Sci.Circle3D
+    name: Circle3D
+    nameWithType: Circle3D
+    fullName: SearchAThing.Sci.Circle3D
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Circle3D.CircleRTanP*
+  commentId: Overload:SearchAThing.Sci.Circle3D.CircleRTanP
+  name: CircleRTanP
+  nameWithType: Circle3D.CircleRTanP
+  fullName: SearchAThing.Sci.Circle3D.CircleRTanP
+- uid: SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean)
+  commentId: M:SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean)
+  parent: SearchAThing.Sci.Arc3D
+  isExternal: true
+  name: Intersect(Double, Line3D, Boolean, Boolean)
+  nameWithType: Arc3D.Intersect(Double, Line3D, Boolean, Boolean)
+  fullName: SearchAThing.Sci.Arc3D.Intersect(System.Double, SearchAThing.Sci.Line3D, System.Boolean, System.Boolean)
+  spec.csharp:
+  - uid: SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean)
+    name: Intersect
+    nameWithType: Arc3D.Intersect
+    fullName: SearchAThing.Sci.Arc3D.Intersect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Line3D
+    name: Line3D
+    nameWithType: Line3D
+    fullName: SearchAThing.Sci.Line3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean)
+    name: Intersect
+    nameWithType: Arc3D.Intersect
+    fullName: SearchAThing.Sci.Arc3D.Intersect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.Line3D
+    name: Line3D
+    nameWithType: Line3D
+    fullName: SearchAThing.Sci.Line3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.Circle3D.Intersect*
+  commentId: Overload:SearchAThing.Sci.Circle3D.Intersect
+  name: Intersect
+  nameWithType: Circle3D.Intersect
+  fullName: SearchAThing.Sci.Circle3D.Intersect
+- uid: SearchAThing.Sci.Circle3D.Area*
+  commentId: Overload:SearchAThing.Sci.Circle3D.Area
+  name: Area
+  nameWithType: Circle3D.Area
+  fullName: SearchAThing.Sci.Circle3D.Area
+- uid: SearchAThing.Sci.Arc3D.Length
+  commentId: P:SearchAThing.Sci.Arc3D.Length
+  parent: SearchAThing.Sci.Arc3D
+  name: Length
+  nameWithType: Arc3D.Length
+  fullName: SearchAThing.Sci.Arc3D.Length
+- uid: SearchAThing.Sci.Circle3D.Length*
+  commentId: Overload:SearchAThing.Sci.Circle3D.Length
+  name: Length
+  nameWithType: Circle3D.Length
+  fullName: SearchAThing.Sci.Circle3D.Length

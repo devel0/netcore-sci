@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.Line3DSegmentMode
+  commentId: T:SearchAThing.Sci.Line3DSegmentMode
+  id: Line3DSegmentMode
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.Line3DSegmentMode.From
+  - SearchAThing.Sci.Line3DSegmentMode.FromTo
+  - SearchAThing.Sci.Line3DSegmentMode.None
+  - SearchAThing.Sci.Line3DSegmentMode.To
+  langs:
+  - csharp
+  - vb
+  name: Line3DSegmentMode
+  nameWithType: Line3DSegmentMode
+  fullName: SearchAThing.Sci.Line3DSegmentMode
+  type: Enum
+  source:
+    id: Line3DSegmentMode
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 19
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public enum Line3DSegmentMode : int'
+    content.vb: Public Enum Line3DSegmentMode As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: SearchAThing.Sci.Line3DSegmentMode.None
+  commentId: F:SearchAThing.Sci.Line3DSegmentMode.None
+  id: None
+  parent: SearchAThing.Sci.Line3DSegmentMode
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: Line3DSegmentMode.None
+  fullName: SearchAThing.Sci.Line3DSegmentMode.None
+  type: Field
+  source:
+    id: None
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 24
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\ninfinite line\n"
+  example: []
+  syntax:
+    content: None = 0
+    return:
+      type: SearchAThing.Sci.Line3DSegmentMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: SearchAThing.Sci.Line3DSegmentMode.From
+  commentId: F:SearchAThing.Sci.Line3DSegmentMode.From
+  id: From
+  parent: SearchAThing.Sci.Line3DSegmentMode
+  langs:
+  - csharp
+  - vb
+  name: From
+  nameWithType: Line3DSegmentMode.From
+  fullName: SearchAThing.Sci.Line3DSegmentMode.From
+  type: Field
+  source:
+    id: From
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 29
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nSemi-line start at From\n"
+  example: []
+  syntax:
+    content: From = 1
+    return:
+      type: SearchAThing.Sci.Line3DSegmentMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: SearchAThing.Sci.Line3DSegmentMode.To
+  commentId: F:SearchAThing.Sci.Line3DSegmentMode.To
+  id: To
+  parent: SearchAThing.Sci.Line3DSegmentMode
+  langs:
+  - csharp
+  - vb
+  name: To
+  nameWithType: Line3DSegmentMode.To
+  fullName: SearchAThing.Sci.Line3DSegmentMode.To
+  type: Field
+  source:
+    id: To
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 34
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nSemi-line ending at To\n"
+  example: []
+  syntax:
+    content: To = 2
+    return:
+      type: SearchAThing.Sci.Line3DSegmentMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: SearchAThing.Sci.Line3DSegmentMode.FromTo
+  commentId: F:SearchAThing.Sci.Line3DSegmentMode.FromTo
+  id: FromTo
+  parent: SearchAThing.Sci.Line3DSegmentMode
+  langs:
+  - csharp
+  - vb
+  name: FromTo
+  nameWithType: Line3DSegmentMode.FromTo
+  fullName: SearchAThing.Sci.Line3DSegmentMode.FromTo
+  type: Field
+  source:
+    id: FromTo
+    path: Z:\netcore-sci\netcore-sci\Line3D.cs
+    startLine: 39
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nSegment from-to\n"
+  example: []
+  syntax:
+    content: FromTo = 3
+    return:
+      type: SearchAThing.Sci.Line3DSegmentMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: SearchAThing.Sci.Line3DSegmentMode
+  commentId: T:SearchAThing.Sci.Line3DSegmentMode
+  parent: SearchAThing.Sci
+  name: Line3DSegmentMode
+  nameWithType: Line3DSegmentMode
+  fullName: SearchAThing.Sci.Line3DSegmentMode

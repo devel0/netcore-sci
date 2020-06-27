@@ -1,0 +1,100 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.MeasureUnitConversionTypeEnum
+  commentId: T:SearchAThing.Sci.MeasureUnitConversionTypeEnum
+  id: MeasureUnitConversionTypeEnum
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.MeasureUnitConversionTypeEnum.Linear
+  - SearchAThing.Sci.MeasureUnitConversionTypeEnum.NonLinear
+  langs:
+  - csharp
+  - vb
+  name: MeasureUnitConversionTypeEnum
+  nameWithType: MeasureUnitConversionTypeEnum
+  fullName: SearchAThing.Sci.MeasureUnitConversionTypeEnum
+  type: Enum
+  source:
+    id: MeasureUnitConversionTypeEnum
+    path: Z:\netcore-sci\netcore-sci\PhysicalQuantity.cs
+    startLine: 11
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public enum MeasureUnitConversionTypeEnum : int'
+    content.vb: Public Enum MeasureUnitConversionTypeEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: SearchAThing.Sci.MeasureUnitConversionTypeEnum.Linear
+  commentId: F:SearchAThing.Sci.MeasureUnitConversionTypeEnum.Linear
+  id: Linear
+  parent: SearchAThing.Sci.MeasureUnitConversionTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: Linear
+  nameWithType: MeasureUnitConversionTypeEnum.Linear
+  fullName: SearchAThing.Sci.MeasureUnitConversionTypeEnum.Linear
+  type: Field
+  source:
+    id: Linear
+    path: Z:\netcore-sci\netcore-sci\PhysicalQuantity.cs
+    startLine: 13
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: Linear = 0
+    return:
+      type: SearchAThing.Sci.MeasureUnitConversionTypeEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: SearchAThing.Sci.MeasureUnitConversionTypeEnum.NonLinear
+  commentId: F:SearchAThing.Sci.MeasureUnitConversionTypeEnum.NonLinear
+  id: NonLinear
+  parent: SearchAThing.Sci.MeasureUnitConversionTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: NonLinear
+  nameWithType: MeasureUnitConversionTypeEnum.NonLinear
+  fullName: SearchAThing.Sci.MeasureUnitConversionTypeEnum.NonLinear
+  type: Field
+  source:
+    id: NonLinear
+    path: Z:\netcore-sci\netcore-sci\PhysicalQuantity.cs
+    startLine: 14
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: NonLinear = 1
+    return:
+      type: SearchAThing.Sci.MeasureUnitConversionTypeEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: SearchAThing.Sci.MeasureUnitConversionTypeEnum
+  commentId: T:SearchAThing.Sci.MeasureUnitConversionTypeEnum
+  parent: SearchAThing.Sci
+  name: MeasureUnitConversionTypeEnum
+  nameWithType: MeasureUnitConversionTypeEnum
+  fullName: SearchAThing.Sci.MeasureUnitConversionTypeEnum

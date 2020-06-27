@@ -1,0 +1,84 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.MUCollection.ElectricalConductivity
+  commentId: T:SearchAThing.Sci.MUCollection.ElectricalConductivity
+  id: MUCollection.ElectricalConductivity
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.MUCollection.ElectricalConductivity.S_m
+  langs:
+  - csharp
+  - vb
+  name: MUCollection.ElectricalConductivity
+  nameWithType: MUCollection.ElectricalConductivity
+  fullName: SearchAThing.Sci.MUCollection.ElectricalConductivity
+  type: Class
+  source:
+    id: ElectricalConductivity
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 452
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public static class ElectricalConductivity : object'
+    content.vb: >-
+      Public Module ElectricalConductivity
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: SearchAThing.Sci.MUCollection.ElectricalConductivity.S_m
+  commentId: F:SearchAThing.Sci.MUCollection.ElectricalConductivity.S_m
+  id: S_m
+  parent: SearchAThing.Sci.MUCollection.ElectricalConductivity
+  langs:
+  - csharp
+  - vb
+  name: S_m
+  nameWithType: MUCollection.ElectricalConductivity.S_m
+  fullName: SearchAThing.Sci.MUCollection.ElectricalConductivity.S_m
+  type: Field
+  source:
+    id: S_m
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 454
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit S_m
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly S_m As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.MeasureUnit
+  commentId: T:SearchAThing.Sci.MeasureUnit
+  parent: SearchAThing.Sci
+  name: MeasureUnit
+  nameWithType: MeasureUnit
+  fullName: SearchAThing.Sci.MeasureUnit

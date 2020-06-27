@@ -1,0 +1,191 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.MUCollection.BendingMoment
+  commentId: T:SearchAThing.Sci.MUCollection.BendingMoment
+  id: MUCollection.BendingMoment
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.MUCollection.BendingMoment.Auto(SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.MeasureUnit)
+  - SearchAThing.Sci.MUCollection.BendingMoment.kNm
+  - SearchAThing.Sci.MUCollection.BendingMoment.Nm
+  - SearchAThing.Sci.MUCollection.BendingMoment.Nmm
+  langs:
+  - csharp
+  - vb
+  name: MUCollection.BendingMoment
+  nameWithType: MUCollection.BendingMoment
+  fullName: SearchAThing.Sci.MUCollection.BendingMoment
+  type: Class
+  source:
+    id: BendingMoment
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 411
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public static class BendingMoment : object'
+    content.vb: >-
+      Public Module BendingMoment
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: SearchAThing.Sci.MUCollection.BendingMoment.Nm
+  commentId: F:SearchAThing.Sci.MUCollection.BendingMoment.Nm
+  id: Nm
+  parent: SearchAThing.Sci.MUCollection.BendingMoment
+  langs:
+  - csharp
+  - vb
+  name: Nm
+  nameWithType: MUCollection.BendingMoment.Nm
+  fullName: SearchAThing.Sci.MUCollection.BendingMoment.Nm
+  type: Field
+  source:
+    id: Nm
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 413
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit Nm
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly Nm As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.BendingMoment.Nmm
+  commentId: F:SearchAThing.Sci.MUCollection.BendingMoment.Nmm
+  id: Nmm
+  parent: SearchAThing.Sci.MUCollection.BendingMoment
+  langs:
+  - csharp
+  - vb
+  name: Nmm
+  nameWithType: MUCollection.BendingMoment.Nmm
+  fullName: SearchAThing.Sci.MUCollection.BendingMoment.Nmm
+  type: Field
+  source:
+    id: Nmm
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 414
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit Nmm
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly Nmm As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.BendingMoment.kNm
+  commentId: F:SearchAThing.Sci.MUCollection.BendingMoment.kNm
+  id: kNm
+  parent: SearchAThing.Sci.MUCollection.BendingMoment
+  langs:
+  - csharp
+  - vb
+  name: kNm
+  nameWithType: MUCollection.BendingMoment.kNm
+  fullName: SearchAThing.Sci.MUCollection.BendingMoment.kNm
+  type: Field
+  source:
+    id: kNm
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 415
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit kNm
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly kNm As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.BendingMoment.Auto(SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.MeasureUnit)
+  commentId: M:SearchAThing.Sci.MUCollection.BendingMoment.Auto(SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.MeasureUnit)
+  id: Auto(SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.MeasureUnit)
+  parent: SearchAThing.Sci.MUCollection.BendingMoment
+  langs:
+  - csharp
+  - vb
+  name: Auto(MeasureUnit, MeasureUnit)
+  nameWithType: MUCollection.BendingMoment.Auto(MeasureUnit, MeasureUnit)
+  fullName: SearchAThing.Sci.MUCollection.BendingMoment.Auto(SearchAThing.Sci.MeasureUnit, SearchAThing.Sci.MeasureUnit)
+  type: Method
+  source:
+    id: Auto
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 420
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nretrieve Nm when input force=N, length=m etc\n"
+  example: []
+  syntax:
+    content: public static MeasureUnit Auto(MeasureUnit force, MeasureUnit length)
+    parameters:
+    - id: force
+      type: SearchAThing.Sci.MeasureUnit
+    - id: length
+      type: SearchAThing.Sci.MeasureUnit
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared Function Auto(force As MeasureUnit, length As MeasureUnit) As MeasureUnit
+  overload: SearchAThing.Sci.MUCollection.BendingMoment.Auto*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.MeasureUnit
+  commentId: T:SearchAThing.Sci.MeasureUnit
+  parent: SearchAThing.Sci
+  name: MeasureUnit
+  nameWithType: MeasureUnit
+  fullName: SearchAThing.Sci.MeasureUnit
+- uid: SearchAThing.Sci.MUCollection.BendingMoment.Auto*
+  commentId: Overload:SearchAThing.Sci.MUCollection.BendingMoment.Auto
+  name: Auto
+  nameWithType: MUCollection.BendingMoment.Auto
+  fullName: SearchAThing.Sci.MUCollection.BendingMoment.Auto

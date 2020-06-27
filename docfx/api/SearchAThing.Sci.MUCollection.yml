@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.MUCollection
+  commentId: T:SearchAThing.Sci.MUCollection
+  id: MUCollection
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.MUCollection.MeasureUnits
+  langs:
+  - csharp
+  - vb
+  name: MUCollection
+  nameWithType: MUCollection
+  fullName: SearchAThing.Sci.MUCollection
+  type: Class
+  source:
+    id: MUCollection
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 10
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public static class MUCollection : object'
+    content.vb: >-
+      Public Module MUCollection
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: SearchAThing.Sci.MUCollection.MeasureUnits
+  commentId: P:SearchAThing.Sci.MUCollection.MeasureUnits
+  id: MeasureUnits
+  parent: SearchAThing.Sci.MUCollection
+  langs:
+  - csharp
+  - vb
+  name: MeasureUnits
+  nameWithType: MUCollection.MeasureUnits
+  fullName: SearchAThing.Sci.MUCollection.MeasureUnits
+  type: Property
+  source:
+    id: MeasureUnits
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 21
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nthrough reflector returns all measure units along all physical quantities declared in MUCollection\n"
+  example: []
+  syntax:
+    content: public static IEnumerable<MeasureUnit> MeasureUnits { get; }
+    parameters: []
+    return:
+      type: IEnumerable{SearchAThing.Sci.MeasureUnit}
+    content.vb: Public Shared ReadOnly Property MeasureUnits As IEnumerable(Of MeasureUnit)
+  overload: SearchAThing.Sci.MUCollection.MeasureUnits*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.MUCollection.MeasureUnits*
+  commentId: Overload:SearchAThing.Sci.MUCollection.MeasureUnits
+  name: MeasureUnits
+  nameWithType: MUCollection.MeasureUnits
+  fullName: SearchAThing.Sci.MUCollection.MeasureUnits
+- uid: IEnumerable{SearchAThing.Sci.MeasureUnit}
+  commentId: '!:IEnumerable{SearchAThing.Sci.MeasureUnit}'
+  definition: IEnumerable`1
+  name: IEnumerable<MeasureUnit>
+  nameWithType: IEnumerable<MeasureUnit>
+  fullName: IEnumerable<SearchAThing.Sci.MeasureUnit>
+  nameWithType.vb: IEnumerable(Of MeasureUnit)
+  fullName.vb: IEnumerable(Of SearchAThing.Sci.MeasureUnit)
+  name.vb: IEnumerable(Of MeasureUnit)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: SearchAThing.Sci.MeasureUnit
+    name: MeasureUnit
+    nameWithType: MeasureUnit
+    fullName: SearchAThing.Sci.MeasureUnit
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: SearchAThing.Sci.MeasureUnit
+    name: MeasureUnit
+    nameWithType: MeasureUnit
+    fullName: SearchAThing.Sci.MeasureUnit
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

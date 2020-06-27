@@ -1,0 +1,294 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.Transform3D
+  commentId: T:SearchAThing.Sci.Transform3D
+  id: Transform3D
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.Transform3D.#ctor
+  - SearchAThing.Sci.Transform3D.Apply(SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.Transform3D.RotateAboutAxis(SearchAThing.Sci.Vector3D,System.Double)
+  - SearchAThing.Sci.Transform3D.RotateAboutXAxis(System.Double)
+  - SearchAThing.Sci.Transform3D.RotateAboutYAxis(System.Double)
+  - SearchAThing.Sci.Transform3D.RotateAboutZAxis(System.Double)
+  langs:
+  - csharp
+  - vb
+  name: Transform3D
+  nameWithType: Transform3D
+  fullName: SearchAThing.Sci.Transform3D
+  type: Class
+  source:
+    id: Transform3D
+    path: Z:\netcore-sci\netcore-sci\Transform3D.cs
+    startLine: 10
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nUse quaternion to append rotate transformations    \n"
+  remarks: "\n[unit test](/test/Transform3D/Transform3DTest_0001.cs)\n![](/test/Transform3D/Transform3DTest_0001.png)\n"
+  example: []
+  syntax:
+    content: 'public class Transform3D : object'
+    content.vb: >-
+      Public Class Transform3D
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: SearchAThing.Sci.Transform3D.#ctor
+  commentId: M:SearchAThing.Sci.Transform3D.#ctor
+  id: '#ctor'
+  parent: SearchAThing.Sci.Transform3D
+  langs:
+  - csharp
+  - vb
+  name: Transform3D()
+  nameWithType: Transform3D.Transform3D()
+  fullName: SearchAThing.Sci.Transform3D.Transform3D()
+  type: Constructor
+  source:
+    id: .ctor
+    path: Z:\netcore-sci\netcore-sci\Transform3D.cs
+    startLine: 21
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\ninstantiate an identity transformation        \n"
+  remarks: "\n[unit test](/test/Transform3D/Transform3D_0001.cs)\n"
+  example: []
+  syntax:
+    content: public Transform3D()
+    content.vb: Public Sub New
+  overload: SearchAThing.Sci.Transform3D.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Transform3D.RotateAboutXAxis(System.Double)
+  commentId: M:SearchAThing.Sci.Transform3D.RotateAboutXAxis(System.Double)
+  id: RotateAboutXAxis(System.Double)
+  parent: SearchAThing.Sci.Transform3D
+  langs:
+  - csharp
+  - vb
+  name: RotateAboutXAxis(Double)
+  nameWithType: Transform3D.RotateAboutXAxis(Double)
+  fullName: SearchAThing.Sci.Transform3D.RotateAboutXAxis(System.Double)
+  type: Method
+  source:
+    id: RotateAboutXAxis
+    path: Z:\netcore-sci\netcore-sci\Transform3D.cs
+    startLine: 33
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nadd rotation about X axis of given angle to the current rotation matrix        \n"
+  remarks: "\n[unit test](/test/Transform3D/Transform3DTest_0001.cs)\n"
+  example: []
+  syntax:
+    content: public void RotateAboutXAxis(double angleRad)
+    parameters:
+    - id: angleRad
+      type: System.Double
+      description: rotation angle about X axis
+    content.vb: Public Sub RotateAboutXAxis(angleRad As Double)
+  overload: SearchAThing.Sci.Transform3D.RotateAboutXAxis*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Transform3D.RotateAboutYAxis(System.Double)
+  commentId: M:SearchAThing.Sci.Transform3D.RotateAboutYAxis(System.Double)
+  id: RotateAboutYAxis(System.Double)
+  parent: SearchAThing.Sci.Transform3D
+  langs:
+  - csharp
+  - vb
+  name: RotateAboutYAxis(Double)
+  nameWithType: Transform3D.RotateAboutYAxis(Double)
+  fullName: SearchAThing.Sci.Transform3D.RotateAboutYAxis(System.Double)
+  type: Method
+  source:
+    id: RotateAboutYAxis
+    path: Z:\netcore-sci\netcore-sci\Transform3D.cs
+    startLine: 49
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nadd rotation about Y axis of given angle to the current rotation matrix        \n"
+  remarks: "\n[unit test](/test/Transform3D/Transform3DTest_0001.cs)\n"
+  example: []
+  syntax:
+    content: public void RotateAboutYAxis(double angleRad)
+    parameters:
+    - id: angleRad
+      type: System.Double
+      description: rotation angle about Y axis
+    content.vb: Public Sub RotateAboutYAxis(angleRad As Double)
+  overload: SearchAThing.Sci.Transform3D.RotateAboutYAxis*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Transform3D.RotateAboutZAxis(System.Double)
+  commentId: M:SearchAThing.Sci.Transform3D.RotateAboutZAxis(System.Double)
+  id: RotateAboutZAxis(System.Double)
+  parent: SearchAThing.Sci.Transform3D
+  langs:
+  - csharp
+  - vb
+  name: RotateAboutZAxis(Double)
+  nameWithType: Transform3D.RotateAboutZAxis(Double)
+  fullName: SearchAThing.Sci.Transform3D.RotateAboutZAxis(System.Double)
+  type: Method
+  source:
+    id: RotateAboutZAxis
+    path: Z:\netcore-sci\netcore-sci\Transform3D.cs
+    startLine: 65
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nadd rotation about z axis of given angle to the current rotation matrix        \n"
+  remarks: "\n[unit test](/test/Transform3D/Transform3DTest_0001.cs)\n"
+  example: []
+  syntax:
+    content: public void RotateAboutZAxis(double angleRad)
+    parameters:
+    - id: angleRad
+      type: System.Double
+      description: rotation angle about Z axis
+    content.vb: Public Sub RotateAboutZAxis(angleRad As Double)
+  overload: SearchAThing.Sci.Transform3D.RotateAboutZAxis*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Transform3D.RotateAboutAxis(SearchAThing.Sci.Vector3D,System.Double)
+  commentId: M:SearchAThing.Sci.Transform3D.RotateAboutAxis(SearchAThing.Sci.Vector3D,System.Double)
+  id: RotateAboutAxis(SearchAThing.Sci.Vector3D,System.Double)
+  parent: SearchAThing.Sci.Transform3D
+  langs:
+  - csharp
+  - vb
+  name: RotateAboutAxis(Vector3D, Double)
+  nameWithType: Transform3D.RotateAboutAxis(Vector3D, Double)
+  fullName: SearchAThing.Sci.Transform3D.RotateAboutAxis(SearchAThing.Sci.Vector3D, System.Double)
+  type: Method
+  source:
+    id: RotateAboutAxis
+    path: Z:\netcore-sci\netcore-sci\Transform3D.cs
+    startLine: 83
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nadd rotation about given axis of given angle to the current rotation matrix.\ngiven axis will subjected to normalization        \n"
+  remarks: "\n[unit test](/test/Transform3D/Transform3DTest_0001.cs)\n"
+  example: []
+  syntax:
+    content: public void RotateAboutAxis(Vector3D axis, double angleRad)
+    parameters:
+    - id: axis
+      type: SearchAThing.Sci.Vector3D
+      description: custom rotation axis
+    - id: angleRad
+      type: System.Double
+      description: rotation angle about given axis
+    content.vb: Public Sub RotateAboutAxis(axis As Vector3D, angleRad As Double)
+  overload: SearchAThing.Sci.Transform3D.RotateAboutAxis*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.Transform3D.Apply(SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.Transform3D.Apply(SearchAThing.Sci.Vector3D)
+  id: Apply(SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.Transform3D
+  langs:
+  - csharp
+  - vb
+  name: Apply(Vector3D)
+  nameWithType: Transform3D.Apply(Vector3D)
+  fullName: SearchAThing.Sci.Transform3D.Apply(SearchAThing.Sci.Vector3D)
+  type: Method
+  source:
+    id: Apply
+    path: Z:\netcore-sci\netcore-sci\Transform3D.cs
+    startLine: 99
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\napply this transformation to given vector returning new one        \n"
+  remarks: "\n[unit test](/test/Transform3D/Transform3DTest_0001.cs)\n"
+  example: []
+  syntax:
+    content: public Vector3D Apply(Vector3D v)
+    parameters:
+    - id: v
+      type: SearchAThing.Sci.Vector3D
+      description: vector to transform
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public Function Apply(v As Vector3D) As Vector3D
+  overload: SearchAThing.Sci.Transform3D.Apply*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.Transform3D.#ctor*
+  commentId: Overload:SearchAThing.Sci.Transform3D.#ctor
+  name: Transform3D
+  nameWithType: Transform3D.Transform3D
+  fullName: SearchAThing.Sci.Transform3D.Transform3D
+- uid: SearchAThing.Sci.Transform3D.RotateAboutXAxis*
+  commentId: Overload:SearchAThing.Sci.Transform3D.RotateAboutXAxis
+  name: RotateAboutXAxis
+  nameWithType: Transform3D.RotateAboutXAxis
+  fullName: SearchAThing.Sci.Transform3D.RotateAboutXAxis
+- uid: System.Double
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: SearchAThing.Sci.Transform3D.RotateAboutYAxis*
+  commentId: Overload:SearchAThing.Sci.Transform3D.RotateAboutYAxis
+  name: RotateAboutYAxis
+  nameWithType: Transform3D.RotateAboutYAxis
+  fullName: SearchAThing.Sci.Transform3D.RotateAboutYAxis
+- uid: SearchAThing.Sci.Transform3D.RotateAboutZAxis*
+  commentId: Overload:SearchAThing.Sci.Transform3D.RotateAboutZAxis
+  name: RotateAboutZAxis
+  nameWithType: Transform3D.RotateAboutZAxis
+  fullName: SearchAThing.Sci.Transform3D.RotateAboutZAxis
+- uid: SearchAThing.Sci.Transform3D.RotateAboutAxis*
+  commentId: Overload:SearchAThing.Sci.Transform3D.RotateAboutAxis
+  name: RotateAboutAxis
+  nameWithType: Transform3D.RotateAboutAxis
+  fullName: SearchAThing.Sci.Transform3D.RotateAboutAxis
+- uid: SearchAThing.Sci.Vector3D
+  commentId: T:SearchAThing.Sci.Vector3D
+  parent: SearchAThing.Sci
+  name: Vector3D
+  nameWithType: Vector3D
+  fullName: SearchAThing.Sci.Vector3D
+- uid: SearchAThing.Sci.Transform3D.Apply*
+  commentId: Overload:SearchAThing.Sci.Transform3D.Apply
+  name: Apply
+  nameWithType: Transform3D.Apply
+  fullName: SearchAThing.Sci.Transform3D.Apply

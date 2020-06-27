@@ -1,0 +1,1077 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.BBox3D
+  commentId: T:SearchAThing.Sci.BBox3D
+  id: BBox3D
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.BBox3D.#ctor
+  - SearchAThing.Sci.BBox3D.#ctor(IEnumerable{SearchAThing.Sci.Vector3D})
+  - SearchAThing.Sci.BBox3D.AddMargin(SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.BBox3D.CadScript
+  - SearchAThing.Sci.BBox3D.Contains(System.Double,SearchAThing.Sci.BBox3D)
+  - SearchAThing.Sci.BBox3D.Contains(System.Double,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.BBox3D.Contains2D(System.Double,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.BBox3D.Coords2D
+  - SearchAThing.Sci.BBox3D.Coords3D
+  - SearchAThing.Sci.BBox3D.EqualsTol(System.Double,SearchAThing.Sci.BBox3D)
+  - SearchAThing.Sci.BBox3D.IsEmpty
+  - SearchAThing.Sci.BBox3D.Max
+  - SearchAThing.Sci.BBox3D.Min
+  - SearchAThing.Sci.BBox3D.Scale(System.Double)
+  - SearchAThing.Sci.BBox3D.Size
+  - SearchAThing.Sci.BBox3D.ToString
+  - SearchAThing.Sci.BBox3D.Union(SearchAThing.Sci.BBox3D)
+  - SearchAThing.Sci.BBox3D.Union(SearchAThing.Sci.Vector3D)
+  langs:
+  - csharp
+  - vb
+  name: BBox3D
+  nameWithType: BBox3D
+  fullName: SearchAThing.Sci.BBox3D
+  type: Class
+  source:
+    id: BBox3D
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 17
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public class BBox3D : object'
+    content.vb: >-
+      Public Class BBox3D
+          Inherits Object
+  inheritance:
+  - System.Object
+  extensionMethods:
+  - SearchAThing.Sci.BBox3D.SearchAThing.SciExt.CadScript
+  - SearchAThing.Sci.BBox3D.SearchAThing.SciExt.ToFace3DList
+  - SearchAThing.Sci.BBox3D.SearchAThing.SciExt.DrawCuboid(DxfObject,Layer)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: SearchAThing.Sci.BBox3D.IsEmpty
+  commentId: P:SearchAThing.Sci.BBox3D.IsEmpty
+  id: IsEmpty
+  parent: SearchAThing.Sci.BBox3D
+  langs:
+  - csharp
+  - vb
+  name: IsEmpty
+  nameWithType: BBox3D.IsEmpty
+  fullName: SearchAThing.Sci.BBox3D.IsEmpty
+  type: Property
+  source:
+    id: IsEmpty
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 19
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public bool IsEmpty { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsEmpty As Boolean
+  overload: SearchAThing.Sci.BBox3D.IsEmpty*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.BBox3D.Min
+  commentId: P:SearchAThing.Sci.BBox3D.Min
+  id: Min
+  parent: SearchAThing.Sci.BBox3D
+  langs:
+  - csharp
+  - vb
+  name: Min
+  nameWithType: BBox3D.Min
+  fullName: SearchAThing.Sci.BBox3D.Min
+  type: Property
+  source:
+    id: Min
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 21
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public Vector3D Min { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public ReadOnly Property Min As Vector3D
+  overload: SearchAThing.Sci.BBox3D.Min*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.BBox3D.Max
+  commentId: P:SearchAThing.Sci.BBox3D.Max
+  id: Max
+  parent: SearchAThing.Sci.BBox3D
+  langs:
+  - csharp
+  - vb
+  name: Max
+  nameWithType: BBox3D.Max
+  fullName: SearchAThing.Sci.BBox3D.Max
+  type: Property
+  source:
+    id: Max
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 22
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public Vector3D Max { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public ReadOnly Property Max As Vector3D
+  overload: SearchAThing.Sci.BBox3D.Max*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.BBox3D.Size
+  commentId: P:SearchAThing.Sci.BBox3D.Size
+  id: Size
+  parent: SearchAThing.Sci.BBox3D
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: BBox3D.Size
+  fullName: SearchAThing.Sci.BBox3D.Size
+  type: Property
+  source:
+    id: Size
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 23
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public Vector3D Size { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public ReadOnly Property Size As Vector3D
+  overload: SearchAThing.Sci.BBox3D.Size*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.BBox3D.Coords2D
+  commentId: P:SearchAThing.Sci.BBox3D.Coords2D
+  id: Coords2D
+  parent: SearchAThing.Sci.BBox3D
+  langs:
+  - csharp
+  - vb
+  name: Coords2D
+  nameWithType: BBox3D.Coords2D
+  fullName: SearchAThing.Sci.BBox3D.Coords2D
+  type: Property
+  source:
+    id: Coords2D
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 28
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nbuild a 4 point bbox coords for 2D using Z=Min.Z\n"
+  example: []
+  syntax:
+    content: public IEnumerable<Vector3D> Coords2D { get; }
+    parameters: []
+    return:
+      type: IEnumerable{SearchAThing.Sci.Vector3D}
+    content.vb: Public ReadOnly Property Coords2D As IEnumerable(Of Vector3D)
+  overload: SearchAThing.Sci.BBox3D.Coords2D*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.BBox3D.Coords3D
+  commentId: P:SearchAThing.Sci.BBox3D.Coords3D
+  id: Coords3D
+  parent: SearchAThing.Sci.BBox3D
+  langs:
+  - csharp
+  - vb
+  name: Coords3D
+  nameWithType: BBox3D.Coords3D
+  fullName: SearchAThing.Sci.BBox3D.Coords3D
+  type: Property
+  source:
+    id: Coords3D
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 42
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nbuild 8 coords 3d of current bbox\n"
+  example: []
+  syntax:
+    content: public IEnumerable<Vector3D> Coords3D { get; }
+    parameters: []
+    return:
+      type: IEnumerable{SearchAThing.Sci.Vector3D}
+    content.vb: Public ReadOnly Property Coords3D As IEnumerable(Of Vector3D)
+  overload: SearchAThing.Sci.BBox3D.Coords3D*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.BBox3D.#ctor
+  commentId: M:SearchAThing.Sci.BBox3D.#ctor
+  id: '#ctor'
+  parent: SearchAThing.Sci.BBox3D
+  langs:
+  - csharp
+  - vb
+  name: BBox3D()
+  nameWithType: BBox3D.BBox3D()
+  fullName: SearchAThing.Sci.BBox3D.BBox3D()
+  type: Constructor
+  source:
+    id: .ctor
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 64
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public BBox3D()
+    content.vb: Public Sub New
+  overload: SearchAThing.Sci.BBox3D.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.BBox3D.Scale(System.Double)
+  commentId: M:SearchAThing.Sci.BBox3D.Scale(System.Double)
+  id: Scale(System.Double)
+  parent: SearchAThing.Sci.BBox3D
+  langs:
+  - csharp
+  - vb
+  name: Scale(Double)
+  nameWithType: BBox3D.Scale(Double)
+  fullName: SearchAThing.Sci.BBox3D.Scale(System.Double)
+  type: Method
+  source:
+    id: Scale
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 68
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public BBox3D Scale(double factor)
+    parameters:
+    - id: factor
+      type: System.Double
+    return:
+      type: SearchAThing.Sci.BBox3D
+    content.vb: Public Function Scale(factor As Double) As BBox3D
+  overload: SearchAThing.Sci.BBox3D.Scale*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.BBox3D.#ctor(IEnumerable{SearchAThing.Sci.Vector3D})
+  commentId: M:SearchAThing.Sci.BBox3D.#ctor(IEnumerable{SearchAThing.Sci.Vector3D})
+  id: '#ctor(IEnumerable{SearchAThing.Sci.Vector3D})'
+  parent: SearchAThing.Sci.BBox3D
+  langs:
+  - csharp
+  - vb
+  name: BBox3D(IEnumerable<Vector3D>)
+  nameWithType: BBox3D.BBox3D(IEnumerable<Vector3D>)
+  fullName: SearchAThing.Sci.BBox3D.BBox3D(IEnumerable<SearchAThing.Sci.Vector3D>)
+  type: Constructor
+  source:
+    id: .ctor
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 79
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public BBox3D(IEnumerable<Vector3D> pts)
+    parameters:
+    - id: pts
+      type: IEnumerable{SearchAThing.Sci.Vector3D}
+    content.vb: Public Sub New(pts As IEnumerable(Of Vector3D))
+  overload: SearchAThing.Sci.BBox3D.#ctor*
+  nameWithType.vb: BBox3D.BBox3D(IEnumerable(Of Vector3D))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: SearchAThing.Sci.BBox3D.BBox3D(IEnumerable(Of SearchAThing.Sci.Vector3D))
+  name.vb: BBox3D(IEnumerable(Of Vector3D))
+- uid: SearchAThing.Sci.BBox3D.Union(SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.BBox3D.Union(SearchAThing.Sci.Vector3D)
+  id: Union(SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.BBox3D
+  langs:
+  - csharp
+  - vb
+  name: Union(Vector3D)
+  nameWithType: BBox3D.Union(Vector3D)
+  fullName: SearchAThing.Sci.BBox3D.Union(SearchAThing.Sci.Vector3D)
+  type: Method
+  source:
+    id: Union
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 110
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public BBox3D Union(Vector3D p)
+    parameters:
+    - id: p
+      type: SearchAThing.Sci.Vector3D
+    return:
+      type: SearchAThing.Sci.BBox3D
+    content.vb: Public Function Union(p As Vector3D) As BBox3D
+  overload: SearchAThing.Sci.BBox3D.Union*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.BBox3D.Union(SearchAThing.Sci.BBox3D)
+  commentId: M:SearchAThing.Sci.BBox3D.Union(SearchAThing.Sci.BBox3D)
+  id: Union(SearchAThing.Sci.BBox3D)
+  parent: SearchAThing.Sci.BBox3D
+  langs:
+  - csharp
+  - vb
+  name: Union(BBox3D)
+  nameWithType: BBox3D.Union(BBox3D)
+  fullName: SearchAThing.Sci.BBox3D.Union(SearchAThing.Sci.BBox3D)
+  type: Method
+  source:
+    id: Union
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 130
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public BBox3D Union(BBox3D other)
+    parameters:
+    - id: other
+      type: SearchAThing.Sci.BBox3D
+    return:
+      type: SearchAThing.Sci.BBox3D
+    content.vb: Public Function Union(other As BBox3D) As BBox3D
+  overload: SearchAThing.Sci.BBox3D.Union*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.BBox3D.EqualsTol(System.Double,SearchAThing.Sci.BBox3D)
+  commentId: M:SearchAThing.Sci.BBox3D.EqualsTol(System.Double,SearchAThing.Sci.BBox3D)
+  id: EqualsTol(System.Double,SearchAThing.Sci.BBox3D)
+  parent: SearchAThing.Sci.BBox3D
+  langs:
+  - csharp
+  - vb
+  name: EqualsTol(Double, BBox3D)
+  nameWithType: BBox3D.EqualsTol(Double, BBox3D)
+  fullName: SearchAThing.Sci.BBox3D.EqualsTol(System.Double, SearchAThing.Sci.BBox3D)
+  type: Method
+  source:
+    id: EqualsTol
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 137
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public bool EqualsTol(double tol, BBox3D other)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: other
+      type: SearchAThing.Sci.BBox3D
+    return:
+      type: System.Boolean
+    content.vb: Public Function EqualsTol(tol As Double, other As BBox3D) As Boolean
+  overload: SearchAThing.Sci.BBox3D.EqualsTol*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.BBox3D.Contains(System.Double,SearchAThing.Sci.BBox3D)
+  commentId: M:SearchAThing.Sci.BBox3D.Contains(System.Double,SearchAThing.Sci.BBox3D)
+  id: Contains(System.Double,SearchAThing.Sci.BBox3D)
+  parent: SearchAThing.Sci.BBox3D
+  langs:
+  - csharp
+  - vb
+  name: Contains(Double, BBox3D)
+  nameWithType: BBox3D.Contains(Double, BBox3D)
+  fullName: SearchAThing.Sci.BBox3D.Contains(System.Double, SearchAThing.Sci.BBox3D)
+  type: Method
+  source:
+    id: Contains
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 144
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public bool Contains(double tol, BBox3D other)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: other
+      type: SearchAThing.Sci.BBox3D
+    return:
+      type: System.Boolean
+    content.vb: Public Function Contains(tol As Double, other As BBox3D) As Boolean
+  overload: SearchAThing.Sci.BBox3D.Contains*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.BBox3D.Contains(System.Double,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.BBox3D.Contains(System.Double,SearchAThing.Sci.Vector3D)
+  id: Contains(System.Double,SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.BBox3D
+  langs:
+  - csharp
+  - vb
+  name: Contains(Double, Vector3D)
+  nameWithType: BBox3D.Contains(Double, Vector3D)
+  fullName: SearchAThing.Sci.BBox3D.Contains(System.Double, SearchAThing.Sci.Vector3D)
+  type: Method
+  source:
+    id: Contains
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 157
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public bool Contains(double tol, Vector3D p)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: p
+      type: SearchAThing.Sci.Vector3D
+    return:
+      type: System.Boolean
+    content.vb: Public Function Contains(tol As Double, p As Vector3D) As Boolean
+  overload: SearchAThing.Sci.BBox3D.Contains*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.BBox3D.Contains2D(System.Double,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.BBox3D.Contains2D(System.Double,SearchAThing.Sci.Vector3D)
+  id: Contains2D(System.Double,SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.BBox3D
+  langs:
+  - csharp
+  - vb
+  name: Contains2D(Double, Vector3D)
+  nameWithType: BBox3D.Contains2D(Double, Vector3D)
+  fullName: SearchAThing.Sci.BBox3D.Contains2D(System.Double, SearchAThing.Sci.Vector3D)
+  type: Method
+  source:
+    id: Contains2D
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 170
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public bool Contains2D(double tol, Vector3D p)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: p
+      type: SearchAThing.Sci.Vector3D
+    return:
+      type: System.Boolean
+    content.vb: Public Function Contains2D(tol As Double, p As Vector3D) As Boolean
+  overload: SearchAThing.Sci.BBox3D.Contains2D*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.BBox3D.AddMargin(SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.BBox3D.AddMargin(SearchAThing.Sci.Vector3D)
+  id: AddMargin(SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.BBox3D
+  langs:
+  - csharp
+  - vb
+  name: AddMargin(Vector3D)
+  nameWithType: BBox3D.AddMargin(Vector3D)
+  fullName: SearchAThing.Sci.BBox3D.AddMargin(SearchAThing.Sci.Vector3D)
+  type: Method
+  source:
+    id: AddMargin
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 184
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\ncreate new bbox extending by subtract margin to Min and by add to Max\n"
+  example: []
+  syntax:
+    content: public BBox3D AddMargin(Vector3D margin)
+    parameters:
+    - id: margin
+      type: SearchAThing.Sci.Vector3D
+    return:
+      type: SearchAThing.Sci.BBox3D
+    content.vb: Public Function AddMargin(margin As Vector3D) As BBox3D
+  overload: SearchAThing.Sci.BBox3D.AddMargin*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.BBox3D.CadScript
+  commentId: P:SearchAThing.Sci.BBox3D.CadScript
+  id: CadScript
+  parent: SearchAThing.Sci.BBox3D
+  langs:
+  - csharp
+  - vb
+  name: CadScript
+  nameWithType: BBox3D.CadScript
+  fullName: SearchAThing.Sci.BBox3D.CadScript
+  type: Property
+  source:
+    id: CadScript
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 193
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public string CadScript { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property CadScript As String
+  overload: SearchAThing.Sci.BBox3D.CadScript*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.BBox3D.ToString
+  commentId: M:SearchAThing.Sci.BBox3D.ToString
+  id: ToString
+  parent: SearchAThing.Sci.BBox3D
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: BBox3D.ToString()
+  fullName: SearchAThing.Sci.BBox3D.ToString()
+  type: Method
+  source:
+    id: ToString
+    path: Z:\netcore-sci\netcore-sci\BBox3D.cs
+    startLine: 222
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overload: SearchAThing.Sci.BBox3D.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.BBox3D.SearchAThing.SciExt.CadScript
+  commentId: M:SearchAThing.SciExt.CadScript(SearchAThing.Sci.BBox3D)
+  parent: SearchAThing.SciExt
+  definition: SearchAThing.SciExt.CadScript(SearchAThing.Sci.BBox3D)
+  name: CadScript()
+  nameWithType: SciExt.CadScript()
+  fullName: SearchAThing.SciExt.CadScript()
+  spec.csharp:
+  - uid: SearchAThing.SciExt.CadScript
+    name: CadScript
+    nameWithType: SciExt.CadScript
+    fullName: SearchAThing.SciExt.CadScript
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.SciExt.CadScript
+    name: CadScript
+    nameWithType: SciExt.CadScript
+    fullName: SearchAThing.SciExt.CadScript
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.BBox3D.SearchAThing.SciExt.ToFace3DList
+  commentId: M:SearchAThing.SciExt.ToFace3DList(SearchAThing.Sci.BBox3D)
+  parent: SearchAThing.SciExt
+  definition: SearchAThing.SciExt.ToFace3DList(SearchAThing.Sci.BBox3D)
+  name: ToFace3DList()
+  nameWithType: SciExt.ToFace3DList()
+  fullName: SearchAThing.SciExt.ToFace3DList()
+  spec.csharp:
+  - uid: SearchAThing.SciExt.ToFace3DList
+    name: ToFace3DList
+    nameWithType: SciExt.ToFace3DList
+    fullName: SearchAThing.SciExt.ToFace3DList
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.SciExt.ToFace3DList
+    name: ToFace3DList
+    nameWithType: SciExt.ToFace3DList
+    fullName: SearchAThing.SciExt.ToFace3DList
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.BBox3D.SearchAThing.SciExt.DrawCuboid(DxfObject,Layer)
+  commentId: M:SearchAThing.SciExt.DrawCuboid(SearchAThing.Sci.BBox3D,DxfObject,Layer)
+  parent: SearchAThing.SciExt
+  definition: SearchAThing.SciExt.DrawCuboid(SearchAThing.Sci.BBox3D,DxfObject,Layer)
+  name: DrawCuboid(DxfObject, Layer)
+  nameWithType: SciExt.DrawCuboid(DxfObject, Layer)
+  fullName: SearchAThing.SciExt.DrawCuboid(DxfObject, Layer)
+  spec.csharp:
+  - uid: SearchAThing.SciExt.DrawCuboid(DxfObject,Layer)
+    name: DrawCuboid
+    nameWithType: SciExt.DrawCuboid
+    fullName: SearchAThing.SciExt.DrawCuboid
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DxfObject
+    name: DxfObject
+    nameWithType: DxfObject
+    fullName: DxfObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Layer
+    name: Layer
+    nameWithType: Layer
+    fullName: Layer
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.SciExt.DrawCuboid(DxfObject,Layer)
+    name: DrawCuboid
+    nameWithType: SciExt.DrawCuboid
+    fullName: SearchAThing.SciExt.DrawCuboid
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: DxfObject
+    name: DxfObject
+    nameWithType: DxfObject
+    fullName: DxfObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Layer
+    name: Layer
+    nameWithType: Layer
+    fullName: Layer
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.SciExt.CadScript(SearchAThing.Sci.BBox3D)
+  commentId: M:SearchAThing.SciExt.CadScript(SearchAThing.Sci.BBox3D)
+  name: CadScript(BBox3D)
+  nameWithType: SciExt.CadScript(BBox3D)
+  fullName: SearchAThing.SciExt.CadScript(SearchAThing.Sci.BBox3D)
+  spec.csharp:
+  - uid: SearchAThing.SciExt.CadScript(SearchAThing.Sci.BBox3D)
+    name: CadScript
+    nameWithType: SciExt.CadScript
+    fullName: SearchAThing.SciExt.CadScript
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: SearchAThing.Sci.BBox3D
+    name: BBox3D
+    nameWithType: BBox3D
+    fullName: SearchAThing.Sci.BBox3D
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.SciExt.CadScript(SearchAThing.Sci.BBox3D)
+    name: CadScript
+    nameWithType: SciExt.CadScript
+    fullName: SearchAThing.SciExt.CadScript
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: SearchAThing.Sci.BBox3D
+    name: BBox3D
+    nameWithType: BBox3D
+    fullName: SearchAThing.Sci.BBox3D
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.SciExt
+  commentId: T:SearchAThing.SciExt
+  parent: SearchAThing
+  name: SciExt
+  nameWithType: SciExt
+  fullName: SearchAThing.SciExt
+- uid: SearchAThing.SciExt.ToFace3DList(SearchAThing.Sci.BBox3D)
+  commentId: M:SearchAThing.SciExt.ToFace3DList(SearchAThing.Sci.BBox3D)
+  name: ToFace3DList(BBox3D)
+  nameWithType: SciExt.ToFace3DList(BBox3D)
+  fullName: SearchAThing.SciExt.ToFace3DList(SearchAThing.Sci.BBox3D)
+  spec.csharp:
+  - uid: SearchAThing.SciExt.ToFace3DList(SearchAThing.Sci.BBox3D)
+    name: ToFace3DList
+    nameWithType: SciExt.ToFace3DList
+    fullName: SearchAThing.SciExt.ToFace3DList
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: SearchAThing.Sci.BBox3D
+    name: BBox3D
+    nameWithType: BBox3D
+    fullName: SearchAThing.Sci.BBox3D
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.SciExt.ToFace3DList(SearchAThing.Sci.BBox3D)
+    name: ToFace3DList
+    nameWithType: SciExt.ToFace3DList
+    fullName: SearchAThing.SciExt.ToFace3DList
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: SearchAThing.Sci.BBox3D
+    name: BBox3D
+    nameWithType: BBox3D
+    fullName: SearchAThing.Sci.BBox3D
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.SciExt.DrawCuboid(SearchAThing.Sci.BBox3D,DxfObject,Layer)
+  commentId: M:SearchAThing.SciExt.DrawCuboid(SearchAThing.Sci.BBox3D,DxfObject,Layer)
+  isExternal: true
+  name: DrawCuboid(BBox3D, DxfObject, Layer)
+  nameWithType: SciExt.DrawCuboid(BBox3D, DxfObject, Layer)
+  fullName: SearchAThing.SciExt.DrawCuboid(SearchAThing.Sci.BBox3D, DxfObject, Layer)
+  spec.csharp:
+  - uid: SearchAThing.SciExt.DrawCuboid(SearchAThing.Sci.BBox3D,DxfObject,Layer)
+    name: DrawCuboid
+    nameWithType: SciExt.DrawCuboid
+    fullName: SearchAThing.SciExt.DrawCuboid
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: SearchAThing.Sci.BBox3D
+    name: BBox3D
+    nameWithType: BBox3D
+    fullName: SearchAThing.Sci.BBox3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DxfObject
+    name: DxfObject
+    nameWithType: DxfObject
+    fullName: DxfObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Layer
+    name: Layer
+    nameWithType: Layer
+    fullName: Layer
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.SciExt.DrawCuboid(SearchAThing.Sci.BBox3D,DxfObject,Layer)
+    name: DrawCuboid
+    nameWithType: SciExt.DrawCuboid
+    fullName: SearchAThing.SciExt.DrawCuboid
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: SearchAThing.Sci.BBox3D
+    name: BBox3D
+    nameWithType: BBox3D
+    fullName: SearchAThing.Sci.BBox3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: DxfObject
+    name: DxfObject
+    nameWithType: DxfObject
+    fullName: DxfObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Layer
+    name: Layer
+    nameWithType: Layer
+    fullName: Layer
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing
+  commentId: N:SearchAThing
+  name: SearchAThing
+  nameWithType: SearchAThing
+  fullName: SearchAThing
+- uid: SearchAThing.Sci.BBox3D.IsEmpty*
+  commentId: Overload:SearchAThing.Sci.BBox3D.IsEmpty
+  name: IsEmpty
+  nameWithType: BBox3D.IsEmpty
+  fullName: SearchAThing.Sci.BBox3D.IsEmpty
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: SearchAThing.Sci.BBox3D.Min*
+  commentId: Overload:SearchAThing.Sci.BBox3D.Min
+  name: Min
+  nameWithType: BBox3D.Min
+  fullName: SearchAThing.Sci.BBox3D.Min
+- uid: SearchAThing.Sci.Vector3D
+  commentId: T:SearchAThing.Sci.Vector3D
+  parent: SearchAThing.Sci
+  name: Vector3D
+  nameWithType: Vector3D
+  fullName: SearchAThing.Sci.Vector3D
+- uid: SearchAThing.Sci.BBox3D.Max*
+  commentId: Overload:SearchAThing.Sci.BBox3D.Max
+  name: Max
+  nameWithType: BBox3D.Max
+  fullName: SearchAThing.Sci.BBox3D.Max
+- uid: SearchAThing.Sci.BBox3D.Size*
+  commentId: Overload:SearchAThing.Sci.BBox3D.Size
+  name: Size
+  nameWithType: BBox3D.Size
+  fullName: SearchAThing.Sci.BBox3D.Size
+- uid: SearchAThing.Sci.BBox3D.Coords2D*
+  commentId: Overload:SearchAThing.Sci.BBox3D.Coords2D
+  name: Coords2D
+  nameWithType: BBox3D.Coords2D
+  fullName: SearchAThing.Sci.BBox3D.Coords2D
+- uid: IEnumerable{SearchAThing.Sci.Vector3D}
+  commentId: '!:IEnumerable{SearchAThing.Sci.Vector3D}'
+  definition: IEnumerable`1
+  name: IEnumerable<Vector3D>
+  nameWithType: IEnumerable<Vector3D>
+  fullName: IEnumerable<SearchAThing.Sci.Vector3D>
+  nameWithType.vb: IEnumerable(Of Vector3D)
+  fullName.vb: IEnumerable(Of SearchAThing.Sci.Vector3D)
+  name.vb: IEnumerable(Of Vector3D)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: SearchAThing.Sci.Vector3D
+    name: Vector3D
+    nameWithType: Vector3D
+    fullName: SearchAThing.Sci.Vector3D
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.BBox3D.Coords3D*
+  commentId: Overload:SearchAThing.Sci.BBox3D.Coords3D
+  name: Coords3D
+  nameWithType: BBox3D.Coords3D
+  fullName: SearchAThing.Sci.BBox3D.Coords3D
+- uid: SearchAThing.Sci.BBox3D.#ctor*
+  commentId: Overload:SearchAThing.Sci.BBox3D.#ctor
+  name: BBox3D
+  nameWithType: BBox3D.BBox3D
+  fullName: SearchAThing.Sci.BBox3D.BBox3D
+- uid: SearchAThing.Sci.BBox3D.Scale*
+  commentId: Overload:SearchAThing.Sci.BBox3D.Scale
+  name: Scale
+  nameWithType: BBox3D.Scale
+  fullName: SearchAThing.Sci.BBox3D.Scale
+- uid: System.Double
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: SearchAThing.Sci.BBox3D
+  commentId: T:SearchAThing.Sci.BBox3D
+  parent: SearchAThing.Sci
+  name: BBox3D
+  nameWithType: BBox3D
+  fullName: SearchAThing.Sci.BBox3D
+- uid: SearchAThing.Sci.BBox3D.Union*
+  commentId: Overload:SearchAThing.Sci.BBox3D.Union
+  name: Union
+  nameWithType: BBox3D.Union
+  fullName: SearchAThing.Sci.BBox3D.Union
+- uid: SearchAThing.Sci.BBox3D.EqualsTol*
+  commentId: Overload:SearchAThing.Sci.BBox3D.EqualsTol
+  name: EqualsTol
+  nameWithType: BBox3D.EqualsTol
+  fullName: SearchAThing.Sci.BBox3D.EqualsTol
+- uid: SearchAThing.Sci.BBox3D.Contains*
+  commentId: Overload:SearchAThing.Sci.BBox3D.Contains
+  name: Contains
+  nameWithType: BBox3D.Contains
+  fullName: SearchAThing.Sci.BBox3D.Contains
+- uid: SearchAThing.Sci.BBox3D.Contains2D*
+  commentId: Overload:SearchAThing.Sci.BBox3D.Contains2D
+  name: Contains2D
+  nameWithType: BBox3D.Contains2D
+  fullName: SearchAThing.Sci.BBox3D.Contains2D
+- uid: SearchAThing.Sci.BBox3D.AddMargin*
+  commentId: Overload:SearchAThing.Sci.BBox3D.AddMargin
+  name: AddMargin
+  nameWithType: BBox3D.AddMargin
+  fullName: SearchAThing.Sci.BBox3D.AddMargin
+- uid: SearchAThing.Sci.BBox3D.CadScript*
+  commentId: Overload:SearchAThing.Sci.BBox3D.CadScript
+  name: CadScript
+  nameWithType: BBox3D.CadScript
+  fullName: SearchAThing.Sci.BBox3D.CadScript
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: SearchAThing.Sci.BBox3D.ToString*
+  commentId: Overload:SearchAThing.Sci.BBox3D.ToString
+  name: ToString
+  nameWithType: BBox3D.ToString
+  fullName: SearchAThing.Sci.BBox3D.ToString

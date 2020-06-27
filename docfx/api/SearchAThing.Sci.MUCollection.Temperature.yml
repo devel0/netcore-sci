@@ -1,0 +1,348 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.MUCollection.Temperature
+  commentId: T:SearchAThing.Sci.MUCollection.Temperature
+  id: MUCollection.Temperature
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.MUCollection.Temperature.C
+  - SearchAThing.Sci.MUCollection.Temperature.F
+  - SearchAThing.Sci.MUCollection.Temperature.K
+  - SearchAThing.Sci.MUCollection.Temperature.NonLinearConvFunctor
+  langs:
+  - csharp
+  - vb
+  name: MUCollection.Temperature
+  nameWithType: MUCollection.Temperature
+  fullName: SearchAThing.Sci.MUCollection.Temperature
+  type: Class
+  source:
+    id: Temperature
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 200
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public static class Temperature : object'
+    content.vb: >-
+      Public Module Temperature
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: SearchAThing.Sci.MUCollection.Temperature.C
+  commentId: F:SearchAThing.Sci.MUCollection.Temperature.C
+  id: C
+  parent: SearchAThing.Sci.MUCollection.Temperature
+  langs:
+  - csharp
+  - vb
+  name: C
+  nameWithType: MUCollection.Temperature.C
+  fullName: SearchAThing.Sci.MUCollection.Temperature.C
+  type: Field
+  source:
+    id: C
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 202
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit C
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly C As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Temperature.K
+  commentId: F:SearchAThing.Sci.MUCollection.Temperature.K
+  id: K
+  parent: SearchAThing.Sci.MUCollection.Temperature
+  langs:
+  - csharp
+  - vb
+  name: K
+  nameWithType: MUCollection.Temperature.K
+  fullName: SearchAThing.Sci.MUCollection.Temperature.K
+  type: Field
+  source:
+    id: K
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 203
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit K
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly K As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Temperature.F
+  commentId: F:SearchAThing.Sci.MUCollection.Temperature.F
+  id: F
+  parent: SearchAThing.Sci.MUCollection.Temperature
+  langs:
+  - csharp
+  - vb
+  name: F
+  nameWithType: MUCollection.Temperature.F
+  fullName: SearchAThing.Sci.MUCollection.Temperature.F
+  type: Field
+  source:
+    id: F
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 204
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit F
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly F As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Temperature.NonLinearConvFunctor
+  commentId: P:SearchAThing.Sci.MUCollection.Temperature.NonLinearConvFunctor
+  id: NonLinearConvFunctor
+  parent: SearchAThing.Sci.MUCollection.Temperature
+  langs:
+  - csharp
+  - vb
+  name: NonLinearConvFunctor
+  nameWithType: MUCollection.Temperature.NonLinearConvFunctor
+  fullName: SearchAThing.Sci.MUCollection.Temperature.NonLinearConvFunctor
+  type: Property
+  source:
+    id: NonLinearConvFunctor
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 207
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static Func<MeasureUnit, MeasureUnit, double, double> NonLinearConvFunctor { get; }
+    parameters: []
+    return:
+      type: Func{SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.MeasureUnit,System.Double,System.Double}
+    content.vb: Public Shared ReadOnly Property NonLinearConvFunctor As Func(Of MeasureUnit, MeasureUnit, Double, Double)
+  overload: SearchAThing.Sci.MUCollection.Temperature.NonLinearConvFunctor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.MeasureUnit
+  commentId: T:SearchAThing.Sci.MeasureUnit
+  parent: SearchAThing.Sci
+  name: MeasureUnit
+  nameWithType: MeasureUnit
+  fullName: SearchAThing.Sci.MeasureUnit
+- uid: SearchAThing.Sci.MUCollection.Temperature.NonLinearConvFunctor*
+  commentId: Overload:SearchAThing.Sci.MUCollection.Temperature.NonLinearConvFunctor
+  name: NonLinearConvFunctor
+  nameWithType: MUCollection.Temperature.NonLinearConvFunctor
+  fullName: SearchAThing.Sci.MUCollection.Temperature.NonLinearConvFunctor
+- uid: Func{SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.MeasureUnit,System.Double,System.Double}
+  commentId: '!:Func{SearchAThing.Sci.MeasureUnit,SearchAThing.Sci.MeasureUnit,System.Double,System.Double}'
+  definition: Func`4
+  name: Func<MeasureUnit, MeasureUnit, Double, Double>
+  nameWithType: Func<MeasureUnit, MeasureUnit, Double, Double>
+  fullName: Func<SearchAThing.Sci.MeasureUnit, SearchAThing.Sci.MeasureUnit, System.Double, System.Double>
+  nameWithType.vb: Func(Of MeasureUnit, MeasureUnit, Double, Double)
+  fullName.vb: Func(Of SearchAThing.Sci.MeasureUnit, SearchAThing.Sci.MeasureUnit, System.Double, System.Double)
+  name.vb: Func(Of MeasureUnit, MeasureUnit, Double, Double)
+  spec.csharp:
+  - uid: Func`4
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: SearchAThing.Sci.MeasureUnit
+    name: MeasureUnit
+    nameWithType: MeasureUnit
+    fullName: SearchAThing.Sci.MeasureUnit
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.MeasureUnit
+    name: MeasureUnit
+    nameWithType: MeasureUnit
+    fullName: SearchAThing.Sci.MeasureUnit
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`4
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: SearchAThing.Sci.MeasureUnit
+    name: MeasureUnit
+    nameWithType: MeasureUnit
+    fullName: SearchAThing.Sci.MeasureUnit
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: SearchAThing.Sci.MeasureUnit
+    name: MeasureUnit
+    nameWithType: MeasureUnit
+    fullName: SearchAThing.Sci.MeasureUnit
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Func`4
+  isExternal: true
+  name: Func<, , , >
+  nameWithType: Func<, , , >
+  fullName: Func<, , , >
+  nameWithType.vb: Func(Of , , , )
+  fullName.vb: Func(Of , , , )
+  name.vb: Func(Of , , , )
+  spec.csharp:
+  - uid: Func`4
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`4
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

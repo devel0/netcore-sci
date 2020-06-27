@@ -1,0 +1,1101 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.CoordinateSystem3D
+  commentId: T:SearchAThing.Sci.CoordinateSystem3D
+  id: CoordinateSystem3D
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.CoordinateSystem3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.CoordinateSystem3DAutoEnum)
+  - SearchAThing.Sci.CoordinateSystem3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.CoordinateSystem3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.CoordinateSystem3D.BaseX
+  - SearchAThing.Sci.CoordinateSystem3D.BaseY
+  - SearchAThing.Sci.CoordinateSystem3D.BaseZ
+  - SearchAThing.Sci.CoordinateSystem3D.CadScript
+  - SearchAThing.Sci.CoordinateSystem3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)
+  - SearchAThing.Sci.CoordinateSystem3D.Equals(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  - SearchAThing.Sci.CoordinateSystem3D.Intersect(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  - SearchAThing.Sci.CoordinateSystem3D.IsParallelTo(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  - SearchAThing.Sci.CoordinateSystem3D.Move(SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.CoordinateSystem3D.Origin
+  - SearchAThing.Sci.CoordinateSystem3D.Rotate(SearchAThing.Sci.Line3D,System.Double)
+  - SearchAThing.Sci.CoordinateSystem3D.Rotate(SearchAThing.Sci.Vector3D,System.Double)
+  - SearchAThing.Sci.CoordinateSystem3D.ToCadString(System.Double)
+  - SearchAThing.Sci.CoordinateSystem3D.ToString
+  - SearchAThing.Sci.CoordinateSystem3D.ToUCS(SearchAThing.Sci.Vector3D,System.Boolean)
+  - SearchAThing.Sci.CoordinateSystem3D.ToWCS(SearchAThing.Sci.Vector3D,System.Boolean)
+  - SearchAThing.Sci.CoordinateSystem3D.WCS
+  - SearchAThing.Sci.CoordinateSystem3D.XY
+  - SearchAThing.Sci.CoordinateSystem3D.XZ
+  - SearchAThing.Sci.CoordinateSystem3D.YZ
+  langs:
+  - csharp
+  - vb
+  name: CoordinateSystem3D
+  nameWithType: CoordinateSystem3D
+  fullName: SearchAThing.Sci.CoordinateSystem3D
+  type: Class
+  source:
+    id: CoordinateSystem3D
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 25
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public class CoordinateSystem3D : object'
+    content.vb: >-
+      Public Class CoordinateSystem3D
+          Inherits Object
+  inheritance:
+  - System.Object
+  extensionMethods:
+  - SearchAThing.Sci.CoordinateSystem3D.SearchAThing.SciExt.ToDxfUCS(System.String)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: SearchAThing.Sci.CoordinateSystem3D.Origin
+  commentId: P:SearchAThing.Sci.CoordinateSystem3D.Origin
+  id: Origin
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: Origin
+  nameWithType: CoordinateSystem3D.Origin
+  fullName: SearchAThing.Sci.CoordinateSystem3D.Origin
+  type: Property
+  source:
+    id: Origin
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 34
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\norigin of cs where x,y,z base vectors applied\n"
+  example: []
+  syntax:
+    content: public Vector3D Origin { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public ReadOnly Property Origin As Vector3D
+  overload: SearchAThing.Sci.CoordinateSystem3D.Origin*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.CoordinateSystem3D.BaseX
+  commentId: P:SearchAThing.Sci.CoordinateSystem3D.BaseX
+  id: BaseX
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: BaseX
+  nameWithType: CoordinateSystem3D.BaseX
+  fullName: SearchAThing.Sci.CoordinateSystem3D.BaseX
+  type: Property
+  source:
+    id: BaseX
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 39
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\ncs x versor ( normalized )\n"
+  example: []
+  syntax:
+    content: public Vector3D BaseX { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public ReadOnly Property BaseX As Vector3D
+  overload: SearchAThing.Sci.CoordinateSystem3D.BaseX*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.CoordinateSystem3D.BaseY
+  commentId: P:SearchAThing.Sci.CoordinateSystem3D.BaseY
+  id: BaseY
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: BaseY
+  nameWithType: CoordinateSystem3D.BaseY
+  fullName: SearchAThing.Sci.CoordinateSystem3D.BaseY
+  type: Property
+  source:
+    id: BaseY
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 44
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\ncs y versor ( normalized )\n"
+  example: []
+  syntax:
+    content: public Vector3D BaseY { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public ReadOnly Property BaseY As Vector3D
+  overload: SearchAThing.Sci.CoordinateSystem3D.BaseY*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.CoordinateSystem3D.BaseZ
+  commentId: P:SearchAThing.Sci.CoordinateSystem3D.BaseZ
+  id: BaseZ
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: BaseZ
+  nameWithType: CoordinateSystem3D.BaseZ
+  fullName: SearchAThing.Sci.CoordinateSystem3D.BaseZ
+  type: Property
+  source:
+    id: BaseZ
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 49
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\ncs z versor ( normalized )\n"
+  example: []
+  syntax:
+    content: public Vector3D BaseZ { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public ReadOnly Property BaseZ As Vector3D
+  overload: SearchAThing.Sci.CoordinateSystem3D.BaseZ*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: SearchAThing.Sci.CoordinateSystem3D.XY
+  commentId: F:SearchAThing.Sci.CoordinateSystem3D.XY
+  id: XY
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: XY
+  nameWithType: CoordinateSystem3D.XY
+  fullName: SearchAThing.Sci.CoordinateSystem3D.XY
+  type: Field
+  source:
+    id: XY
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 54
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nright handed XY ( Z ) : top view\n"
+  example: []
+  syntax:
+    content: public static readonly CoordinateSystem3D XY
+    return:
+      type: SearchAThing.Sci.CoordinateSystem3D
+    content.vb: Public Shared ReadOnly XY As CoordinateSystem3D
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.CoordinateSystem3D.XZ
+  commentId: F:SearchAThing.Sci.CoordinateSystem3D.XZ
+  id: XZ
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: XZ
+  nameWithType: CoordinateSystem3D.XZ
+  fullName: SearchAThing.Sci.CoordinateSystem3D.XZ
+  type: Field
+  source:
+    id: XZ
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 60
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nright handed XZ ( -Y ) : front view\n"
+  example: []
+  syntax:
+    content: public static readonly CoordinateSystem3D XZ
+    return:
+      type: SearchAThing.Sci.CoordinateSystem3D
+    content.vb: Public Shared ReadOnly XZ As CoordinateSystem3D
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.CoordinateSystem3D.YZ
+  commentId: F:SearchAThing.Sci.CoordinateSystem3D.YZ
+  id: YZ
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: YZ
+  nameWithType: CoordinateSystem3D.YZ
+  fullName: SearchAThing.Sci.CoordinateSystem3D.YZ
+  type: Field
+  source:
+    id: YZ
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 66
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nright handed YZ ( X ) : side view\n"
+  example: []
+  syntax:
+    content: public static readonly CoordinateSystem3D YZ
+    return:
+      type: SearchAThing.Sci.CoordinateSystem3D
+    content.vb: Public Shared ReadOnly YZ As CoordinateSystem3D
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.CoordinateSystem3D.WCS
+  commentId: F:SearchAThing.Sci.CoordinateSystem3D.WCS
+  id: WCS
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: WCS
+  nameWithType: CoordinateSystem3D.WCS
+  fullName: SearchAThing.Sci.CoordinateSystem3D.WCS
+  type: Field
+  source:
+    id: WCS
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 75
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nworld cs : basex=(1,0,0) basey=(0,1,0) basez=(0,0,1)\n"
+  remarks: "\n[unit test](/test/Vector3D/Vector3DTest_0001.cs)\n"
+  example: []
+  syntax:
+    content: public static readonly CoordinateSystem3D WCS
+    return:
+      type: SearchAThing.Sci.CoordinateSystem3D
+    content.vb: Public Shared ReadOnly WCS As CoordinateSystem3D
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.CoordinateSystem3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.CoordinateSystem3DAutoEnum)
+  commentId: M:SearchAThing.Sci.CoordinateSystem3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.CoordinateSystem3DAutoEnum)
+  id: '#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.CoordinateSystem3DAutoEnum)'
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: CoordinateSystem3D(Vector3D, Vector3D, CoordinateSystem3DAutoEnum)
+  nameWithType: CoordinateSystem3D.CoordinateSystem3D(Vector3D, Vector3D, CoordinateSystem3DAutoEnum)
+  fullName: SearchAThing.Sci.CoordinateSystem3D.CoordinateSystem3D(SearchAThing.Sci.Vector3D, SearchAThing.Sci.Vector3D, SearchAThing.Sci.CoordinateSystem3DAutoEnum)
+  type: Constructor
+  source:
+    id: .ctor
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 90
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nbuild coordinate system with given origin and given BaseZ on given vector normal;\ngiven normal will subjected to normalization;\ndepending on csAutoType one or another arbitrary axis alghoritm will used to build cs from a point and a normal.\n"
+  example: []
+  syntax:
+    content: public CoordinateSystem3D(Vector3D o, Vector3D normal, CoordinateSystem3DAutoEnum csAutoType = CoordinateSystem3DAutoEnum.AAA)
+    parameters:
+    - id: o
+      type: SearchAThing.Sci.Vector3D
+      description: origin of cs
+    - id: normal
+      type: SearchAThing.Sci.Vector3D
+      description: Z vector of cs
+    - id: csAutoType
+      type: SearchAThing.Sci.CoordinateSystem3DAutoEnum
+      description: auto cs type
+    content.vb: Public Sub New(o As Vector3D, normal As Vector3D, csAutoType As CoordinateSystem3DAutoEnum = CoordinateSystem3DAutoEnum.AAA)
+  overload: SearchAThing.Sci.CoordinateSystem3D.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.CoordinateSystem3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.CoordinateSystem3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  id: '#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)'
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: CoordinateSystem3D(Vector3D, Vector3D, Vector3D, Vector3D)
+  nameWithType: CoordinateSystem3D.CoordinateSystem3D(Vector3D, Vector3D, Vector3D, Vector3D)
+  fullName: SearchAThing.Sci.CoordinateSystem3D.CoordinateSystem3D(SearchAThing.Sci.Vector3D, SearchAThing.Sci.Vector3D, SearchAThing.Sci.Vector3D, SearchAThing.Sci.Vector3D)
+  type: Constructor
+  source:
+    id: .ctor
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 143
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nconstruct a coordinate system with the given origin and orthonormal bases\nnote that given bases MUST already normalized\n"
+  example: []
+  syntax:
+    content: public CoordinateSystem3D(Vector3D o, Vector3D baseX, Vector3D baseY, Vector3D baseZ)
+    parameters:
+    - id: o
+      type: SearchAThing.Sci.Vector3D
+      description: cs origin
+    - id: baseX
+      type: SearchAThing.Sci.Vector3D
+      description: cs X base ( must already normalized )
+    - id: baseY
+      type: SearchAThing.Sci.Vector3D
+      description: cs Y base ( must already normalized )
+    - id: baseZ
+      type: SearchAThing.Sci.Vector3D
+      description: cs Z base ( must already normalized )
+    content.vb: Public Sub New(o As Vector3D, baseX As Vector3D, baseY As Vector3D, baseZ As Vector3D)
+  overload: SearchAThing.Sci.CoordinateSystem3D.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.CoordinateSystem3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.CoordinateSystem3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  id: '#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)'
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: CoordinateSystem3D(Vector3D, Vector3D, Vector3D)
+  nameWithType: CoordinateSystem3D.CoordinateSystem3D(Vector3D, Vector3D, Vector3D)
+  fullName: SearchAThing.Sci.CoordinateSystem3D.CoordinateSystem3D(SearchAThing.Sci.Vector3D, SearchAThing.Sci.Vector3D, SearchAThing.Sci.Vector3D)
+  type: Constructor
+  source:
+    id: .ctor
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 160
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nConstruct a right-hand coordinate system with the given origin and bases such as:\nBaseX = v1\nBaseZ = v1 x BaseY\nBaseY = BaseZ x BaseX\n"
+  example: []
+  syntax:
+    content: public CoordinateSystem3D(Vector3D o, Vector3D v1, Vector3D v2)
+    parameters:
+    - id: o
+      type: SearchAThing.Sci.Vector3D
+    - id: v1
+      type: SearchAThing.Sci.Vector3D
+    - id: v2
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public Sub New(o As Vector3D, v1 As Vector3D, v2 As Vector3D)
+  overload: SearchAThing.Sci.CoordinateSystem3D.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.CoordinateSystem3D.ToUCS(SearchAThing.Sci.Vector3D,System.Boolean)
+  commentId: M:SearchAThing.Sci.CoordinateSystem3D.ToUCS(SearchAThing.Sci.Vector3D,System.Boolean)
+  id: ToUCS(SearchAThing.Sci.Vector3D,System.Boolean)
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: ToUCS(Vector3D, Boolean)
+  nameWithType: CoordinateSystem3D.ToUCS(Vector3D, Boolean)
+  fullName: SearchAThing.Sci.CoordinateSystem3D.ToUCS(SearchAThing.Sci.Vector3D, System.Boolean)
+  type: Method
+  source:
+    id: ToUCS
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 176
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nTransform wcs point to given cs\n"
+  example: []
+  syntax:
+    content: public Vector3D ToUCS(Vector3D p, bool evalCSOrigin = true)
+    parameters:
+    - id: p
+      type: SearchAThing.Sci.Vector3D
+      description: wcs point
+    - id: evalCSOrigin
+      type: System.Boolean
+      description: if true CS origin will subtracted from wcs point before transform
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public Function ToUCS(p As Vector3D, evalCSOrigin As Boolean = True) As Vector3D
+  overload: SearchAThing.Sci.CoordinateSystem3D.ToUCS*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.CoordinateSystem3D.ToWCS(SearchAThing.Sci.Vector3D,System.Boolean)
+  commentId: M:SearchAThing.Sci.CoordinateSystem3D.ToWCS(SearchAThing.Sci.Vector3D,System.Boolean)
+  id: ToWCS(SearchAThing.Sci.Vector3D,System.Boolean)
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: ToWCS(Vector3D, Boolean)
+  nameWithType: CoordinateSystem3D.ToWCS(Vector3D, Boolean)
+  fullName: SearchAThing.Sci.CoordinateSystem3D.ToWCS(SearchAThing.Sci.Vector3D, System.Boolean)
+  type: Method
+  source:
+    id: ToWCS
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 189
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\ntransform ucs point to wcs\n"
+  example: []
+  syntax:
+    content: public Vector3D ToWCS(Vector3D p, bool evalCSOrigin = true)
+    parameters:
+    - id: p
+      type: SearchAThing.Sci.Vector3D
+      description: ucs point
+    - id: evalCSOrigin
+      type: System.Boolean
+      description: if true CS origin will added after transform
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public Function ToWCS(p As Vector3D, evalCSOrigin As Boolean = True) As Vector3D
+  overload: SearchAThing.Sci.CoordinateSystem3D.ToWCS*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.CoordinateSystem3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)
+  commentId: M:SearchAThing.Sci.CoordinateSystem3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)
+  id: Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: Contains(Double, Vector3D, Boolean)
+  nameWithType: CoordinateSystem3D.Contains(Double, Vector3D, Boolean)
+  fullName: SearchAThing.Sci.CoordinateSystem3D.Contains(System.Double, SearchAThing.Sci.Vector3D, System.Boolean)
+  type: Method
+  source:
+    id: Contains
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 204
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nverify if this cs XY plane contains given wcs point\n"
+  example: []
+  syntax:
+    content: public bool Contains(double tol, Vector3D point, bool evalCSOrigin = true)
+    parameters:
+    - id: tol
+      type: System.Double
+      description: calc tolerance
+    - id: point
+      type: SearchAThing.Sci.Vector3D
+      description: point to verify
+    - id: evalCSOrigin
+      type: System.Boolean
+      description: if true CS origin will subtracted before transform test
+    return:
+      type: System.Boolean
+      description: true if point contained in cs, else otherwise
+    content.vb: Public Function Contains(tol As Double, point As Vector3D, evalCSOrigin As Boolean = True) As Boolean
+  overload: SearchAThing.Sci.CoordinateSystem3D.Contains*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.CoordinateSystem3D.Equals(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  commentId: M:SearchAThing.Sci.CoordinateSystem3D.Equals(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  id: Equals(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: Equals(Double, CoordinateSystem3D)
+  nameWithType: CoordinateSystem3D.Equals(Double, CoordinateSystem3D)
+  fullName: SearchAThing.Sci.CoordinateSystem3D.Equals(System.Double, SearchAThing.Sci.CoordinateSystem3D)
+  type: Method
+  source:
+    id: Equals
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 218
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nverify is this cs is equals to otherByLayer ( same origin, x, y, z base vectors )            \n"
+  remarks: "\n[unit test](/test/Vector3D/Vector3DTest_0001.cs)\n"
+  example: []
+  syntax:
+    content: public bool Equals(double tol, CoordinateSystem3D other)
+    parameters:
+    - id: tol
+      type: System.Double
+      description: calc tolerance ( for origin check )
+    - id: other
+      type: SearchAThing.Sci.CoordinateSystem3D
+      description: cs to check equality against
+    return:
+      type: System.Boolean
+      description: true if this cs equals the given on, false otherwise
+    content.vb: Public Function Equals(tol As Double, other As CoordinateSystem3D) As Boolean
+  overload: SearchAThing.Sci.CoordinateSystem3D.Equals*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.CoordinateSystem3D.IsParallelTo(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  commentId: M:SearchAThing.Sci.CoordinateSystem3D.IsParallelTo(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  id: IsParallelTo(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: IsParallelTo(Double, CoordinateSystem3D)
+  nameWithType: CoordinateSystem3D.IsParallelTo(Double, CoordinateSystem3D)
+  fullName: SearchAThing.Sci.CoordinateSystem3D.IsParallelTo(System.Double, SearchAThing.Sci.CoordinateSystem3D)
+  type: Method
+  source:
+    id: IsParallelTo
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 229
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nstates if this cs have Z base parallel to the other given cs\n"
+  example: []
+  syntax:
+    content: public bool IsParallelTo(double tol, CoordinateSystem3D other)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: other
+      type: SearchAThing.Sci.CoordinateSystem3D
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsParallelTo(tol As Double, other As CoordinateSystem3D) As Boolean
+  overload: SearchAThing.Sci.CoordinateSystem3D.IsParallelTo*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.CoordinateSystem3D.Move(SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.CoordinateSystem3D.Move(SearchAThing.Sci.Vector3D)
+  id: Move(SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: Move(Vector3D)
+  nameWithType: CoordinateSystem3D.Move(Vector3D)
+  fullName: SearchAThing.Sci.CoordinateSystem3D.Move(SearchAThing.Sci.Vector3D)
+  type: Method
+  source:
+    id: Move
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 237
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nreturn another cs with origin translated\n"
+  example: []
+  syntax:
+    content: public CoordinateSystem3D Move(Vector3D delta)
+    parameters:
+    - id: delta
+      type: SearchAThing.Sci.Vector3D
+    return:
+      type: SearchAThing.Sci.CoordinateSystem3D
+    content.vb: Public Function Move(delta As Vector3D) As CoordinateSystem3D
+  overload: SearchAThing.Sci.CoordinateSystem3D.Move*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.CoordinateSystem3D.Rotate(SearchAThing.Sci.Line3D,System.Double)
+  commentId: M:SearchAThing.Sci.CoordinateSystem3D.Rotate(SearchAThing.Sci.Line3D,System.Double)
+  id: Rotate(SearchAThing.Sci.Line3D,System.Double)
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: Rotate(Line3D, Double)
+  nameWithType: CoordinateSystem3D.Rotate(Line3D, Double)
+  fullName: SearchAThing.Sci.CoordinateSystem3D.Rotate(SearchAThing.Sci.Line3D, System.Double)
+  type: Method
+  source:
+    id: Rotate
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 245
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nreturn another cs rotated respect given axis\n"
+  example: []
+  syntax:
+    content: public CoordinateSystem3D Rotate(Line3D axis, double angleRad)
+    parameters:
+    - id: axis
+      type: SearchAThing.Sci.Line3D
+    - id: angleRad
+      type: System.Double
+    return:
+      type: SearchAThing.Sci.CoordinateSystem3D
+    content.vb: Public Function Rotate(axis As Line3D, angleRad As Double) As CoordinateSystem3D
+  overload: SearchAThing.Sci.CoordinateSystem3D.Rotate*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.CoordinateSystem3D.Rotate(SearchAThing.Sci.Vector3D,System.Double)
+  commentId: M:SearchAThing.Sci.CoordinateSystem3D.Rotate(SearchAThing.Sci.Vector3D,System.Double)
+  id: Rotate(SearchAThing.Sci.Vector3D,System.Double)
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: Rotate(Vector3D, Double)
+  nameWithType: CoordinateSystem3D.Rotate(Vector3D, Double)
+  fullName: SearchAThing.Sci.CoordinateSystem3D.Rotate(SearchAThing.Sci.Vector3D, System.Double)
+  type: Method
+  source:
+    id: Rotate
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 261
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nreturn another cs with same origin and base vector rotated about given vector            \n"
+  example: []
+  syntax:
+    content: public CoordinateSystem3D Rotate(Vector3D vectorAxis, double angleRad)
+    parameters:
+    - id: vectorAxis
+      type: SearchAThing.Sci.Vector3D
+    - id: angleRad
+      type: System.Double
+    return:
+      type: SearchAThing.Sci.CoordinateSystem3D
+    content.vb: Public Function Rotate(vectorAxis As Vector3D, angleRad As Double) As CoordinateSystem3D
+  overload: SearchAThing.Sci.CoordinateSystem3D.Rotate*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.CoordinateSystem3D.Intersect(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  commentId: M:SearchAThing.Sci.CoordinateSystem3D.Intersect(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  id: Intersect(System.Double,SearchAThing.Sci.CoordinateSystem3D)
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: Intersect(Double, CoordinateSystem3D)
+  nameWithType: CoordinateSystem3D.Intersect(Double, CoordinateSystem3D)
+  fullName: SearchAThing.Sci.CoordinateSystem3D.Intersect(System.Double, SearchAThing.Sci.CoordinateSystem3D)
+  type: Method
+  source:
+    id: Intersect
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 276
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nreturn intersect line between two cs xy planes\n"
+  example: []
+  syntax:
+    content: public Line3D Intersect(double tol_len, CoordinateSystem3D other)
+    parameters:
+    - id: tol_len
+      type: System.Double
+      description: len tolernace
+    - id: other
+      type: SearchAThing.Sci.CoordinateSystem3D
+      description: other cs
+    return:
+      type: SearchAThing.Sci.Line3D
+      description: null if cs parallel to the given other
+    content.vb: Public Function Intersect(tol_len As Double, other As CoordinateSystem3D) As Line3D
+  overload: SearchAThing.Sci.CoordinateSystem3D.Intersect*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.CoordinateSystem3D.ToString
+  commentId: M:SearchAThing.Sci.CoordinateSystem3D.ToString
+  id: ToString
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: CoordinateSystem3D.ToString()
+  fullName: SearchAThing.Sci.CoordinateSystem3D.ToString()
+  type: Method
+  source:
+    id: ToString
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 296
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\ndebug string\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: formatted representation of cs origin, x, y, z
+    content.vb: Public Overrides Function ToString As String
+  overload: SearchAThing.Sci.CoordinateSystem3D.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: SearchAThing.Sci.CoordinateSystem3D.ToCadString(System.Double)
+  commentId: M:SearchAThing.Sci.CoordinateSystem3D.ToCadString(System.Double)
+  id: ToCadString(System.Double)
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: ToCadString(Double)
+  nameWithType: CoordinateSystem3D.ToCadString(Double)
+  fullName: SearchAThing.Sci.CoordinateSystem3D.ToCadString(System.Double)
+  type: Method
+  source:
+    id: ToCadString
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 306
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nscript to paste in cad to draw cs rgb mode ( x=red, y=green, z=blue )\n"
+  example: []
+  syntax:
+    content: public string ToCadString(double axisLen)
+    parameters:
+    - id: axisLen
+      type: System.Double
+      description: length of x,y,z axes
+    return:
+      type: System.String
+      description: cad script
+    content.vb: Public Function ToCadString(axisLen As Double) As String
+  overload: SearchAThing.Sci.CoordinateSystem3D.ToCadString*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: SearchAThing.Sci.CoordinateSystem3D.CadScript
+  commentId: P:SearchAThing.Sci.CoordinateSystem3D.CadScript
+  id: CadScript
+  parent: SearchAThing.Sci.CoordinateSystem3D
+  langs:
+  - csharp
+  - vb
+  name: CadScript
+  nameWithType: CoordinateSystem3D.CadScript
+  fullName: SearchAThing.Sci.CoordinateSystem3D.CadScript
+  type: Property
+  source:
+    id: CadScript
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 328
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nscript to paste in cad ( axis length = 1 )\n"
+  example: []
+  syntax:
+    content: public string CadScript { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property CadScript As String
+  overload: SearchAThing.Sci.CoordinateSystem3D.CadScript*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.CoordinateSystem3D.SearchAThing.SciExt.ToDxfUCS(System.String)
+  commentId: M:SearchAThing.SciExt.ToDxfUCS(SearchAThing.Sci.CoordinateSystem3D,System.String)
+  parent: SearchAThing.SciExt
+  definition: SearchAThing.SciExt.ToDxfUCS(SearchAThing.Sci.CoordinateSystem3D,System.String)
+  name: ToDxfUCS(String)
+  nameWithType: SciExt.ToDxfUCS(String)
+  fullName: SearchAThing.SciExt.ToDxfUCS(System.String)
+  spec.csharp:
+  - uid: SearchAThing.SciExt.ToDxfUCS(System.String)
+    name: ToDxfUCS
+    nameWithType: SciExt.ToDxfUCS
+    fullName: SearchAThing.SciExt.ToDxfUCS
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.SciExt.ToDxfUCS(System.String)
+    name: ToDxfUCS
+    nameWithType: SciExt.ToDxfUCS
+    fullName: SearchAThing.SciExt.ToDxfUCS
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.SciExt.ToDxfUCS(SearchAThing.Sci.CoordinateSystem3D,System.String)
+  commentId: M:SearchAThing.SciExt.ToDxfUCS(SearchAThing.Sci.CoordinateSystem3D,System.String)
+  isExternal: true
+  name: ToDxfUCS(CoordinateSystem3D, String)
+  nameWithType: SciExt.ToDxfUCS(CoordinateSystem3D, String)
+  fullName: SearchAThing.SciExt.ToDxfUCS(SearchAThing.Sci.CoordinateSystem3D, System.String)
+  spec.csharp:
+  - uid: SearchAThing.SciExt.ToDxfUCS(SearchAThing.Sci.CoordinateSystem3D,System.String)
+    name: ToDxfUCS
+    nameWithType: SciExt.ToDxfUCS
+    fullName: SearchAThing.SciExt.ToDxfUCS
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: SearchAThing.Sci.CoordinateSystem3D
+    name: CoordinateSystem3D
+    nameWithType: CoordinateSystem3D
+    fullName: SearchAThing.Sci.CoordinateSystem3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: SearchAThing.SciExt.ToDxfUCS(SearchAThing.Sci.CoordinateSystem3D,System.String)
+    name: ToDxfUCS
+    nameWithType: SciExt.ToDxfUCS
+    fullName: SearchAThing.SciExt.ToDxfUCS
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: SearchAThing.Sci.CoordinateSystem3D
+    name: CoordinateSystem3D
+    nameWithType: CoordinateSystem3D
+    fullName: SearchAThing.Sci.CoordinateSystem3D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.SciExt
+  commentId: T:SearchAThing.SciExt
+  parent: SearchAThing
+  name: SciExt
+  nameWithType: SciExt
+  fullName: SearchAThing.SciExt
+- uid: SearchAThing
+  commentId: N:SearchAThing
+  name: SearchAThing
+  nameWithType: SearchAThing
+  fullName: SearchAThing
+- uid: SearchAThing.Sci.CoordinateSystem3D.Origin*
+  commentId: Overload:SearchAThing.Sci.CoordinateSystem3D.Origin
+  name: Origin
+  nameWithType: CoordinateSystem3D.Origin
+  fullName: SearchAThing.Sci.CoordinateSystem3D.Origin
+- uid: SearchAThing.Sci.Vector3D
+  commentId: T:SearchAThing.Sci.Vector3D
+  parent: SearchAThing.Sci
+  name: Vector3D
+  nameWithType: Vector3D
+  fullName: SearchAThing.Sci.Vector3D
+- uid: SearchAThing.Sci.CoordinateSystem3D.BaseX*
+  commentId: Overload:SearchAThing.Sci.CoordinateSystem3D.BaseX
+  name: BaseX
+  nameWithType: CoordinateSystem3D.BaseX
+  fullName: SearchAThing.Sci.CoordinateSystem3D.BaseX
+- uid: SearchAThing.Sci.CoordinateSystem3D.BaseY*
+  commentId: Overload:SearchAThing.Sci.CoordinateSystem3D.BaseY
+  name: BaseY
+  nameWithType: CoordinateSystem3D.BaseY
+  fullName: SearchAThing.Sci.CoordinateSystem3D.BaseY
+- uid: SearchAThing.Sci.CoordinateSystem3D.BaseZ*
+  commentId: Overload:SearchAThing.Sci.CoordinateSystem3D.BaseZ
+  name: BaseZ
+  nameWithType: CoordinateSystem3D.BaseZ
+  fullName: SearchAThing.Sci.CoordinateSystem3D.BaseZ
+- uid: SearchAThing.Sci.CoordinateSystem3D
+  commentId: T:SearchAThing.Sci.CoordinateSystem3D
+  parent: SearchAThing.Sci
+  name: CoordinateSystem3D
+  nameWithType: CoordinateSystem3D
+  fullName: SearchAThing.Sci.CoordinateSystem3D
+- uid: SearchAThing.Sci.CoordinateSystem3D.#ctor*
+  commentId: Overload:SearchAThing.Sci.CoordinateSystem3D.#ctor
+  name: CoordinateSystem3D
+  nameWithType: CoordinateSystem3D.CoordinateSystem3D
+  fullName: SearchAThing.Sci.CoordinateSystem3D.CoordinateSystem3D
+- uid: SearchAThing.Sci.CoordinateSystem3DAutoEnum
+  commentId: T:SearchAThing.Sci.CoordinateSystem3DAutoEnum
+  parent: SearchAThing.Sci
+  name: CoordinateSystem3DAutoEnum
+  nameWithType: CoordinateSystem3DAutoEnum
+  fullName: SearchAThing.Sci.CoordinateSystem3DAutoEnum
+- uid: SearchAThing.Sci.CoordinateSystem3D.ToUCS*
+  commentId: Overload:SearchAThing.Sci.CoordinateSystem3D.ToUCS
+  name: ToUCS
+  nameWithType: CoordinateSystem3D.ToUCS
+  fullName: SearchAThing.Sci.CoordinateSystem3D.ToUCS
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: SearchAThing.Sci.CoordinateSystem3D.ToWCS*
+  commentId: Overload:SearchAThing.Sci.CoordinateSystem3D.ToWCS
+  name: ToWCS
+  nameWithType: CoordinateSystem3D.ToWCS
+  fullName: SearchAThing.Sci.CoordinateSystem3D.ToWCS
+- uid: SearchAThing.Sci.CoordinateSystem3D.Contains*
+  commentId: Overload:SearchAThing.Sci.CoordinateSystem3D.Contains
+  name: Contains
+  nameWithType: CoordinateSystem3D.Contains
+  fullName: SearchAThing.Sci.CoordinateSystem3D.Contains
+- uid: System.Double
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: SearchAThing.Sci.CoordinateSystem3D.Equals*
+  commentId: Overload:SearchAThing.Sci.CoordinateSystem3D.Equals
+  name: Equals
+  nameWithType: CoordinateSystem3D.Equals
+  fullName: SearchAThing.Sci.CoordinateSystem3D.Equals
+- uid: SearchAThing.Sci.CoordinateSystem3D.IsParallelTo*
+  commentId: Overload:SearchAThing.Sci.CoordinateSystem3D.IsParallelTo
+  name: IsParallelTo
+  nameWithType: CoordinateSystem3D.IsParallelTo
+  fullName: SearchAThing.Sci.CoordinateSystem3D.IsParallelTo
+- uid: SearchAThing.Sci.CoordinateSystem3D.Move*
+  commentId: Overload:SearchAThing.Sci.CoordinateSystem3D.Move
+  name: Move
+  nameWithType: CoordinateSystem3D.Move
+  fullName: SearchAThing.Sci.CoordinateSystem3D.Move
+- uid: SearchAThing.Sci.CoordinateSystem3D.Rotate*
+  commentId: Overload:SearchAThing.Sci.CoordinateSystem3D.Rotate
+  name: Rotate
+  nameWithType: CoordinateSystem3D.Rotate
+  fullName: SearchAThing.Sci.CoordinateSystem3D.Rotate
+- uid: SearchAThing.Sci.Line3D
+  commentId: T:SearchAThing.Sci.Line3D
+  parent: SearchAThing.Sci
+  name: Line3D
+  nameWithType: Line3D
+  fullName: SearchAThing.Sci.Line3D
+- uid: SearchAThing.Sci.CoordinateSystem3D.Intersect*
+  commentId: Overload:SearchAThing.Sci.CoordinateSystem3D.Intersect
+  name: Intersect
+  nameWithType: CoordinateSystem3D.Intersect
+  fullName: SearchAThing.Sci.CoordinateSystem3D.Intersect
+- uid: SearchAThing.Sci.CoordinateSystem3D.ToString*
+  commentId: Overload:SearchAThing.Sci.CoordinateSystem3D.ToString
+  name: ToString
+  nameWithType: CoordinateSystem3D.ToString
+  fullName: SearchAThing.Sci.CoordinateSystem3D.ToString
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: SearchAThing.Sci.CoordinateSystem3D.ToCadString*
+  commentId: Overload:SearchAThing.Sci.CoordinateSystem3D.ToCadString
+  name: ToCadString
+  nameWithType: CoordinateSystem3D.ToCadString
+  fullName: SearchAThing.Sci.CoordinateSystem3D.ToCadString
+- uid: SearchAThing.Sci.CoordinateSystem3D.CadScript*
+  commentId: Overload:SearchAThing.Sci.CoordinateSystem3D.CadScript
+  name: CadScript
+  nameWithType: CoordinateSystem3D.CadScript
+  fullName: SearchAThing.Sci.CoordinateSystem3D.CadScript

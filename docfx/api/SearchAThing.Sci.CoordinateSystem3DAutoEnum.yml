@@ -1,0 +1,104 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.CoordinateSystem3DAutoEnum
+  commentId: T:SearchAThing.Sci.CoordinateSystem3DAutoEnum
+  id: CoordinateSystem3DAutoEnum
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.CoordinateSystem3DAutoEnum.AAA
+  - SearchAThing.Sci.CoordinateSystem3DAutoEnum.St7
+  langs:
+  - csharp
+  - vb
+  name: CoordinateSystem3DAutoEnum
+  nameWithType: CoordinateSystem3DAutoEnum
+  fullName: SearchAThing.Sci.CoordinateSystem3DAutoEnum
+  type: Enum
+  source:
+    id: CoordinateSystem3DAutoEnum
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 11
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public enum CoordinateSystem3DAutoEnum : int'
+    content.vb: Public Enum CoordinateSystem3DAutoEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: SearchAThing.Sci.CoordinateSystem3DAutoEnum.AAA
+  commentId: F:SearchAThing.Sci.CoordinateSystem3DAutoEnum.AAA
+  id: AAA
+  parent: SearchAThing.Sci.CoordinateSystem3DAutoEnum
+  langs:
+  - csharp
+  - vb
+  name: AAA
+  nameWithType: CoordinateSystem3DAutoEnum.AAA
+  fullName: SearchAThing.Sci.CoordinateSystem3DAutoEnum.AAA
+  type: Field
+  source:
+    id: AAA
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 16
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nArbitrary Axis Alghoritm ( dxf spec )\n"
+  example: []
+  syntax:
+    content: AAA = 0
+    return:
+      type: SearchAThing.Sci.CoordinateSystem3DAutoEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: SearchAThing.Sci.CoordinateSystem3DAutoEnum.St7
+  commentId: F:SearchAThing.Sci.CoordinateSystem3DAutoEnum.St7
+  id: St7
+  parent: SearchAThing.Sci.CoordinateSystem3DAutoEnum
+  langs:
+  - csharp
+  - vb
+  name: St7
+  nameWithType: CoordinateSystem3DAutoEnum.St7
+  fullName: SearchAThing.Sci.CoordinateSystem3DAutoEnum.St7
+  type: Field
+  source:
+    id: St7
+    path: Z:\netcore-sci\netcore-sci\CoordinateSystem3D.cs
+    startLine: 22
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nStrand7 ( Element Library : Beam Principal Axis System ; Default principal axes of a beam element )\nNote: Normal must beam Start to End direction\n"
+  example: []
+  syntax:
+    content: St7 = 1
+    return:
+      type: SearchAThing.Sci.CoordinateSystem3DAutoEnum
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: SearchAThing.Sci.CoordinateSystem3DAutoEnum
+  commentId: T:SearchAThing.Sci.CoordinateSystem3DAutoEnum
+  parent: SearchAThing.Sci
+  name: CoordinateSystem3DAutoEnum
+  nameWithType: CoordinateSystem3DAutoEnum
+  fullName: SearchAThing.Sci.CoordinateSystem3DAutoEnum

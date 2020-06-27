@@ -1,0 +1,77 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.IModel
+  commentId: T:SearchAThing.Sci.IModel
+  id: IModel
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.IModel.MUDomain
+  langs:
+  - csharp
+  - vb
+  name: IModel
+  nameWithType: IModel
+  fullName: SearchAThing.Sci.IModel
+  type: Interface
+  source:
+    id: IModel
+    path: Z:\netcore-sci\netcore-sci\IModel.cs
+    startLine: 3
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public interface IModel
+    content.vb: Public Interface IModel
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: SearchAThing.Sci.IModel.MUDomain
+  commentId: P:SearchAThing.Sci.IModel.MUDomain
+  id: MUDomain
+  parent: SearchAThing.Sci.IModel
+  langs:
+  - csharp
+  - vb
+  name: MUDomain
+  nameWithType: IModel.MUDomain
+  fullName: SearchAThing.Sci.IModel.MUDomain
+  type: Property
+  source:
+    id: MUDomain
+    path: Z:\netcore-sci\netcore-sci\IModel.cs
+    startLine: 6
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: IMUDomain MUDomain { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.IMUDomain
+    content.vb: ReadOnly Property MUDomain As IMUDomain
+  overload: SearchAThing.Sci.IModel.MUDomain*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: SearchAThing.Sci.IModel.MUDomain*
+  commentId: Overload:SearchAThing.Sci.IModel.MUDomain
+  name: MUDomain
+  nameWithType: IModel.MUDomain
+  fullName: SearchAThing.Sci.IModel.MUDomain
+- uid: SearchAThing.Sci.IMUDomain
+  commentId: T:SearchAThing.Sci.IMUDomain
+  parent: SearchAThing.Sci
+  name: IMUDomain
+  nameWithType: IMUDomain
+  fullName: SearchAThing.Sci.IMUDomain

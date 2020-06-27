@@ -1,0 +1,84 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.MUCollection.AmountOfSubstance
+  commentId: T:SearchAThing.Sci.MUCollection.AmountOfSubstance
+  id: MUCollection.AmountOfSubstance
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.MUCollection.AmountOfSubstance.mol
+  langs:
+  - csharp
+  - vb
+  name: MUCollection.AmountOfSubstance
+  nameWithType: MUCollection.AmountOfSubstance
+  fullName: SearchAThing.Sci.MUCollection.AmountOfSubstance
+  type: Class
+  source:
+    id: AmountOfSubstance
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 246
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public static class AmountOfSubstance : object'
+    content.vb: >-
+      Public Module AmountOfSubstance
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: SearchAThing.Sci.MUCollection.AmountOfSubstance.mol
+  commentId: F:SearchAThing.Sci.MUCollection.AmountOfSubstance.mol
+  id: mol
+  parent: SearchAThing.Sci.MUCollection.AmountOfSubstance
+  langs:
+  - csharp
+  - vb
+  name: mol
+  nameWithType: MUCollection.AmountOfSubstance.mol
+  fullName: SearchAThing.Sci.MUCollection.AmountOfSubstance.mol
+  type: Field
+  source:
+    id: mol
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 248
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit mol
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly mol As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.MeasureUnit
+  commentId: T:SearchAThing.Sci.MeasureUnit
+  parent: SearchAThing.Sci
+  name: MeasureUnit
+  nameWithType: MeasureUnit
+  fullName: SearchAThing.Sci.MeasureUnit

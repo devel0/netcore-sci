@@ -1,0 +1,310 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.DxfKit
+  commentId: T:SearchAThing.Sci.DxfKit
+  id: DxfKit
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.DxfKit.Cube(SearchAThing.Sci.Vector3D,System.Double)
+  - SearchAThing.Sci.DxfKit.Cuboid(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.DxfKit.Star(SearchAThing.Sci.Vector3D,System.Double)
+  langs:
+  - csharp
+  - vb
+  name: DxfKit
+  nameWithType: DxfKit
+  fullName: SearchAThing.Sci.DxfKit
+  type: Class
+  source:
+    id: DxfKit
+    path: Z:\netcore-sci\netcore-sci\DxfKit.cs
+    startLine: 20
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public static class DxfKit : object'
+    content.vb: >-
+      Public Module DxfKit
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: SearchAThing.Sci.DxfKit.Star(SearchAThing.Sci.Vector3D,System.Double)
+  commentId: M:SearchAThing.Sci.DxfKit.Star(SearchAThing.Sci.Vector3D,System.Double)
+  id: Star(SearchAThing.Sci.Vector3D,System.Double)
+  parent: SearchAThing.Sci.DxfKit
+  langs:
+  - csharp
+  - vb
+  name: Star(Vector3D, Double)
+  nameWithType: DxfKit.Star(Vector3D, Double)
+  fullName: SearchAThing.Sci.DxfKit.Star(SearchAThing.Sci.Vector3D, System.Double)
+  type: Method
+  source:
+    id: Star
+    path: Z:\netcore-sci\netcore-sci\DxfKit.cs
+    startLine: 26
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nCreates dxf entities for a 3 axis of given length centered in given center point.\n"
+  example: []
+  syntax:
+    content: public static IEnumerable<Line> Star(Vector3D center, double L)
+    parameters:
+    - id: center
+      type: SearchAThing.Sci.Vector3D
+    - id: L
+      type: System.Double
+    return:
+      type: IEnumerable{Line}
+    content.vb: Public Shared Function Star(center As Vector3D, L As Double) As IEnumerable(Of Line)
+  overload: SearchAThing.Sci.DxfKit.Star*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: SearchAThing.Sci.DxfKit.Cube(SearchAThing.Sci.Vector3D,System.Double)
+  commentId: M:SearchAThing.Sci.DxfKit.Cube(SearchAThing.Sci.Vector3D,System.Double)
+  id: Cube(SearchAThing.Sci.Vector3D,System.Double)
+  parent: SearchAThing.Sci.DxfKit
+  langs:
+  - csharp
+  - vb
+  name: Cube(Vector3D, Double)
+  nameWithType: DxfKit.Cube(Vector3D, Double)
+  fullName: SearchAThing.Sci.DxfKit.Cube(SearchAThing.Sci.Vector3D, System.Double)
+  type: Method
+  source:
+    id: Cube
+    path: Z:\netcore-sci\netcore-sci\DxfKit.cs
+    startLine: 36
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nCreates dxf entities for a 6 faces of a cube\n"
+  example: []
+  syntax:
+    content: public static IEnumerable<Face3d> Cube(Vector3D center, double L)
+    parameters:
+    - id: center
+      type: SearchAThing.Sci.Vector3D
+    - id: L
+      type: System.Double
+    return:
+      type: IEnumerable{Face3d}
+    content.vb: Public Shared Function Cube(center As Vector3D, L As Double) As IEnumerable(Of Face3d)
+  overload: SearchAThing.Sci.DxfKit.Cube*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: SearchAThing.Sci.DxfKit.Cuboid(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.DxfKit.Cuboid(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  id: Cuboid(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.DxfKit
+  langs:
+  - csharp
+  - vb
+  name: Cuboid(Vector3D, Vector3D)
+  nameWithType: DxfKit.Cuboid(Vector3D, Vector3D)
+  fullName: SearchAThing.Sci.DxfKit.Cuboid(SearchAThing.Sci.Vector3D, SearchAThing.Sci.Vector3D)
+  type: Method
+  source:
+    id: Cuboid
+    path: Z:\netcore-sci\netcore-sci\DxfKit.cs
+    startLine: 44
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: "\nCreates dxf entities for 6 faces of a cuboid\n"
+  example: []
+  syntax:
+    content: public static IEnumerable<Face3d> Cuboid(Vector3D center, Vector3D size)
+    parameters:
+    - id: center
+      type: SearchAThing.Sci.Vector3D
+    - id: size
+      type: SearchAThing.Sci.Vector3D
+    return:
+      type: IEnumerable{Face3d}
+    content.vb: Public Shared Function Cuboid(center As Vector3D, size As Vector3D) As IEnumerable(Of Face3d)
+  overload: SearchAThing.Sci.DxfKit.Cuboid*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.DxfKit.Star*
+  commentId: Overload:SearchAThing.Sci.DxfKit.Star
+  name: Star
+  nameWithType: DxfKit.Star
+  fullName: SearchAThing.Sci.DxfKit.Star
+- uid: SearchAThing.Sci.Vector3D
+  commentId: T:SearchAThing.Sci.Vector3D
+  parent: SearchAThing.Sci
+  name: Vector3D
+  nameWithType: Vector3D
+  fullName: SearchAThing.Sci.Vector3D
+- uid: System.Double
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: IEnumerable{Line}
+  commentId: '!:IEnumerable{Line}'
+  definition: IEnumerable`1
+  name: IEnumerable<Line>
+  nameWithType: IEnumerable<Line>
+  fullName: IEnumerable<Line>
+  nameWithType.vb: IEnumerable(Of Line)
+  fullName.vb: IEnumerable(Of Line)
+  name.vb: IEnumerable(Of Line)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Line
+    name: Line
+    nameWithType: Line
+    fullName: Line
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Line
+    name: Line
+    nameWithType: Line
+    fullName: Line
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.DxfKit.Cube*
+  commentId: Overload:SearchAThing.Sci.DxfKit.Cube
+  name: Cube
+  nameWithType: DxfKit.Cube
+  fullName: SearchAThing.Sci.DxfKit.Cube
+- uid: IEnumerable{Face3d}
+  commentId: '!:IEnumerable{Face3d}'
+  definition: IEnumerable`1
+  name: IEnumerable<Face3d>
+  nameWithType: IEnumerable<Face3d>
+  fullName: IEnumerable<Face3d>
+  nameWithType.vb: IEnumerable(Of Face3d)
+  fullName.vb: IEnumerable(Of Face3d)
+  name.vb: IEnumerable(Of Face3d)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Face3d
+    name: Face3d
+    nameWithType: Face3d
+    fullName: Face3d
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Face3d
+    name: Face3d
+    nameWithType: Face3d
+    fullName: Face3d
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: SearchAThing.Sci.DxfKit.Cuboid*
+  commentId: Overload:SearchAThing.Sci.DxfKit.Cuboid
+  name: Cuboid
+  nameWithType: DxfKit.Cuboid
+  fullName: SearchAThing.Sci.DxfKit.Cuboid

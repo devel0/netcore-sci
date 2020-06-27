@@ -1,0 +1,308 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.MUCollection.Length
+  commentId: T:SearchAThing.Sci.MUCollection.Length
+  id: MUCollection.Length
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.MUCollection.Length.cm
+  - SearchAThing.Sci.MUCollection.Length.ft
+  - SearchAThing.Sci.MUCollection.Length.inch
+  - SearchAThing.Sci.MUCollection.Length.km
+  - SearchAThing.Sci.MUCollection.Length.links
+  - SearchAThing.Sci.MUCollection.Length.m
+  - SearchAThing.Sci.MUCollection.Length.mm
+  - SearchAThing.Sci.MUCollection.Length.yard
+  langs:
+  - csharp
+  - vb
+  name: MUCollection.Length
+  nameWithType: MUCollection.Length
+  fullName: SearchAThing.Sci.MUCollection.Length
+  type: Class
+  source:
+    id: Length
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 64
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: 'public static class Length : object'
+    content.vb: >-
+      Public Module Length
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: SearchAThing.Sci.MUCollection.Length.mm
+  commentId: F:SearchAThing.Sci.MUCollection.Length.mm
+  id: mm
+  parent: SearchAThing.Sci.MUCollection.Length
+  langs:
+  - csharp
+  - vb
+  name: mm
+  nameWithType: MUCollection.Length.mm
+  fullName: SearchAThing.Sci.MUCollection.Length.mm
+  type: Field
+  source:
+    id: mm
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 67
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit mm
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly mm As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Length.cm
+  commentId: F:SearchAThing.Sci.MUCollection.Length.cm
+  id: cm
+  parent: SearchAThing.Sci.MUCollection.Length
+  langs:
+  - csharp
+  - vb
+  name: cm
+  nameWithType: MUCollection.Length.cm
+  fullName: SearchAThing.Sci.MUCollection.Length.cm
+  type: Field
+  source:
+    id: cm
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 68
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit cm
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly cm As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Length.m
+  commentId: F:SearchAThing.Sci.MUCollection.Length.m
+  id: m
+  parent: SearchAThing.Sci.MUCollection.Length
+  langs:
+  - csharp
+  - vb
+  name: m
+  nameWithType: MUCollection.Length.m
+  fullName: SearchAThing.Sci.MUCollection.Length.m
+  type: Field
+  source:
+    id: m
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 69
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit m
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly m As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Length.km
+  commentId: F:SearchAThing.Sci.MUCollection.Length.km
+  id: km
+  parent: SearchAThing.Sci.MUCollection.Length
+  langs:
+  - csharp
+  - vb
+  name: km
+  nameWithType: MUCollection.Length.km
+  fullName: SearchAThing.Sci.MUCollection.Length.km
+  type: Field
+  source:
+    id: km
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 70
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit km
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly km As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Length.inch
+  commentId: F:SearchAThing.Sci.MUCollection.Length.inch
+  id: inch
+  parent: SearchAThing.Sci.MUCollection.Length
+  langs:
+  - csharp
+  - vb
+  name: inch
+  nameWithType: MUCollection.Length.inch
+  fullName: SearchAThing.Sci.MUCollection.Length.inch
+  type: Field
+  source:
+    id: inch
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 72
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit inch
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly inch As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Length.ft
+  commentId: F:SearchAThing.Sci.MUCollection.Length.ft
+  id: ft
+  parent: SearchAThing.Sci.MUCollection.Length
+  langs:
+  - csharp
+  - vb
+  name: ft
+  nameWithType: MUCollection.Length.ft
+  fullName: SearchAThing.Sci.MUCollection.Length.ft
+  type: Field
+  source:
+    id: ft
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 73
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit ft
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly ft As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Length.yard
+  commentId: F:SearchAThing.Sci.MUCollection.Length.yard
+  id: yard
+  parent: SearchAThing.Sci.MUCollection.Length
+  langs:
+  - csharp
+  - vb
+  name: yard
+  nameWithType: MUCollection.Length.yard
+  fullName: SearchAThing.Sci.MUCollection.Length.yard
+  type: Field
+  source:
+    id: yard
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 74
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit yard
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly yard As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: SearchAThing.Sci.MUCollection.Length.links
+  commentId: F:SearchAThing.Sci.MUCollection.Length.links
+  id: links
+  parent: SearchAThing.Sci.MUCollection.Length
+  langs:
+  - csharp
+  - vb
+  name: links
+  nameWithType: MUCollection.Length.links
+  fullName: SearchAThing.Sci.MUCollection.Length.links
+  type: Field
+  source:
+    id: links
+    path: Z:\netcore-sci\netcore-sci\MUCollection.cs
+    startLine: 75
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public static readonly MeasureUnit links
+    return:
+      type: SearchAThing.Sci.MeasureUnit
+    content.vb: Public Shared ReadOnly links As MeasureUnit
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: SearchAThing.Sci.MeasureUnit
+  commentId: T:SearchAThing.Sci.MeasureUnit
+  parent: SearchAThing.Sci
+  name: MeasureUnit
+  nameWithType: MeasureUnit
+  fullName: SearchAThing.Sci.MeasureUnit

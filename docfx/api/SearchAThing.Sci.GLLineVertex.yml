@@ -1,0 +1,69 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.GLLineVertex
+  commentId: T:SearchAThing.Sci.GLLineVertex
+  id: GLLineVertex
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.GLLineVertex.Position
+  langs:
+  - csharp
+  - vb
+  name: GLLineVertex
+  nameWithType: GLLineVertex
+  fullName: SearchAThing.Sci.GLLineVertex
+  type: Struct
+  source:
+    id: GLLineVertex
+    path: Z:\netcore-sci\netcore-sci\OpenGL.cs
+    startLine: 8
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public struct GLLineVertex
+    content.vb: Public Structure GLLineVertex
+  modifiers.csharp:
+  - public
+  - struct
+  modifiers.vb:
+  - Public
+  - Structure
+- uid: SearchAThing.Sci.GLLineVertex.Position
+  commentId: F:SearchAThing.Sci.GLLineVertex.Position
+  id: Position
+  parent: SearchAThing.Sci.GLLineVertex
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: GLLineVertex.Position
+  fullName: SearchAThing.Sci.GLLineVertex.Position
+  type: Field
+  source:
+    id: Position
+    path: Z:\netcore-sci\netcore-sci\OpenGL.cs
+    startLine: 11
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public Vector3 Position
+    return:
+      type: Vector3
+    content.vb: Public Position As Vector3
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+- uid: Vector3
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: Vector3
