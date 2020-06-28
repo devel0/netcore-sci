@@ -5,8 +5,8 @@ namespace SearchAThing.Sci
     /// Use quaternion to append rotate transformations    
     /// </summary>
     /// <remarks>      
-    /// [unit test](/test/Transform3D/Transform3DTest_0001.cs)
-    /// ![](/test/Transform3D/Transform3DTest_0001.png)
+    /// [unit test](../test/Transform3D/Transform3DTest_0001.cs)
+    /// ![image](../test/Transform3D/Transform3DTest_0001.png)
     /// </remarks>
     public class Transform3D
     {
@@ -17,7 +17,7 @@ namespace SearchAThing.Sci
         /// instantiate an identity transformation        
         /// </summary>
         /// <remarks>      
-        /// [unit test](/test/Transform3D/Transform3D_0001.cs)
+        /// [unit test](../test/Transform3D/Transform3D_0001.cs)
         /// </remarks>
         public Transform3D()
         {
@@ -29,7 +29,7 @@ namespace SearchAThing.Sci
         /// </summary>        
         /// <param name="angleRad">rotation angle about X axis</param>
         /// <remarks>      
-        /// [unit test](/test/Transform3D/Transform3DTest_0001.cs)
+        /// [unit test](../test/Transform3D/Transform3DTest_0001.cs)
         /// </remarks>
         public void RotateAboutXAxis(double angleRad)
         {
@@ -45,7 +45,7 @@ namespace SearchAThing.Sci
         /// </summary>
         /// <param name="angleRad">rotation angle about Y axis</param>
         /// <remarks>      
-        /// [unit test](/test/Transform3D/Transform3DTest_0001.cs)
+        /// [unit test](../test/Transform3D/Transform3DTest_0001.cs)
         /// </remarks>
         public void RotateAboutYAxis(double angleRad)
         {
@@ -61,7 +61,7 @@ namespace SearchAThing.Sci
         /// </summary>
         /// <param name="angleRad">rotation angle about Z axis</param>
         /// <remarks>      
-        /// [unit test](/test/Transform3D/Transform3DTest_0001.cs)
+        /// [unit test](../test/Transform3D/Transform3DTest_0001.cs)
         /// </remarks>
         public void RotateAboutZAxis(double angleRad)
         {
@@ -79,7 +79,7 @@ namespace SearchAThing.Sci
         /// <param name="axis">custom rotation axis</param>
         /// <param name="angleRad">rotation angle about given axis</param>                                
         /// <remarks>      
-        /// [unit test](/test/Transform3D/Transform3DTest_0001.cs)
+        /// [unit test](../test/Transform3D/Transform3DTest_0001.cs)
         /// </remarks>
         public void RotateAboutAxis(Vector3D axis, double angleRad)
         {
@@ -95,7 +95,7 @@ namespace SearchAThing.Sci
         /// </summary>
         /// <param name="v">vector to transform</param>
         /// <remarks>      
-        /// [unit test](/test/Transform3D/Transform3DTest_0001.cs)
+        /// [unit test](../test/Transform3D/Transform3DTest_0001.cs)
         /// </remarks>
         public Vector3D Apply(Vector3D v)
         {

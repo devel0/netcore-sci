@@ -30,7 +30,7 @@ namespace SearchAThing
             /// zero vector (0,0,0)            
             /// </summary> 
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0001.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0001.cs)
             /// </remarks>           
             public static readonly Vector3D Zero = new Vector3D(0, 0, 0);
 
@@ -38,7 +38,7 @@ namespace SearchAThing
             /// xaxis vector (1,0,0)            
             /// </summary>   
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0004.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0004.cs)
             /// </remarks>
             public static readonly Vector3D XAxis = new Vector3D(1, 0, 0);
 
@@ -46,7 +46,7 @@ namespace SearchAThing
             /// yaxis vector (0,1,0)            
             /// </summary>            
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0004.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0004.cs)
             /// </remarks>
             public static readonly Vector3D YAxis = new Vector3D(0, 1, 0);
 
@@ -54,7 +54,7 @@ namespace SearchAThing
             /// zaxis vector (0,0,1)            
             /// </summary>            
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0004.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0004.cs)
             /// </remarks>
             public static readonly Vector3D ZAxis = new Vector3D(0, 0, 1);
 
@@ -63,7 +63,7 @@ namespace SearchAThing
             /// </summary>
             /// <param name="ord">0:(1,0,0) 1:(0,1,0) 2:(0,0,1)</param>                                    
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0004.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0004.cs)
             /// </remarks>
             public static Vector3D Axis(int ord)
             {
@@ -80,7 +80,7 @@ namespace SearchAThing
             /// retrieve the component (0:X, 1:Y, 2:Z)            
             /// </summary>        
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0003.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0003.cs)
             /// </remarks>
             public double GetOrd(int ord)
             {
@@ -97,7 +97,7 @@ namespace SearchAThing
             /// retrieve the component (0:X, 1:Y, 2:Z)            
             /// </summary>        
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0003.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0003.cs)
             /// </remarks>
             public double GetOrd(OrdIdx ord)
             {
@@ -114,7 +114,7 @@ namespace SearchAThing
             /// X vector component            
             /// </summary>
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0005.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0005.cs)
             /// </remarks>
             public double X { get; private set; }
 
@@ -122,7 +122,7 @@ namespace SearchAThing
             /// Y vector component            
             /// </summary>            
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0005.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0005.cs)
             /// </remarks>
             public double Y { get; private set; }
 
@@ -130,7 +130,7 @@ namespace SearchAThing
             /// Z vector component            
             /// </summary>            
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0005.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0005.cs)
             /// </remarks>
             public double Z { get; private set; }
 
@@ -138,7 +138,7 @@ namespace SearchAThing
             /// zero vector            
             /// </summary>
             /// <remarks>  
-            /// [unit test](/test/Vector3D/Vector3DTest_0006.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0006.cs)
             /// </remarks>
             public Vector3D() : base(GeometryType.Vector3D)
             {
@@ -148,7 +148,7 @@ namespace SearchAThing
             /// build a vector (x,y,0) or (x,y,z) from given 2 or 3 doubles            
             /// </summary>            
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0007.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0007.cs)
             /// </remarks>
             public Vector3D(double[] arr) : base(GeometryType.Vector3D)
             {
@@ -162,7 +162,7 @@ namespace SearchAThing
             /// build a vector by given components            
             /// </summary>            
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0008.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0008.cs)
             /// </remarks>
             public Vector3D(double x, double y, double z) : base(GeometryType.Vector3D)
             {
@@ -173,7 +173,7 @@ namespace SearchAThing
             /// build a vector (x,y,0) by given components            
             /// </summary>            
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0008.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0008.cs)
             /// </remarks>
             public Vector3D(double x, double y) : base(GeometryType.Vector3D)
             {
@@ -201,7 +201,7 @@ namespace SearchAThing
             /// </summary>
             /// <param name="cad_id_string">cad id string</param>
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0009.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0009.cs)
             /// </remarks>
             public Vector3D(string cad_id_string) : base(GeometryType.Vector3D)
             {
@@ -220,7 +220,7 @@ namespace SearchAThing
             /// enumerate coordinates            
             /// </summary>
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0010.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0010.cs)
             /// </remarks>
             public IEnumerable<double> Coordinates
             {
@@ -236,7 +236,7 @@ namespace SearchAThing
             /// states if this is a zero vector            
             /// </summary>
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0011.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0011.cs)
             /// </remarks>
             public bool IsZeroLength { get { return (X + Y + Z).EqualsTol(Constants.NormalizedLengthTolerance, 0); } }
 
@@ -246,7 +246,7 @@ namespace SearchAThing
             /// <param name="tol">geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</param>
             /// <param name="other">vector to compare to this</param>            
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0012.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0012.cs)
             /// </remarks>
             public bool EqualsTol(double tol, Vector3D other)
             {
@@ -260,7 +260,7 @@ namespace SearchAThing
             /// check if this vector equals the given one component by component using EqualsAutoTol            
             /// </summary>
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0012.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0012.cs)
             /// </remarks>
             public bool EqualsAutoTol(Vector3D other)
             {
@@ -275,7 +275,7 @@ namespace SearchAThing
             /// </summary>        
             /// <param name="tol">geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</param>            
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0012.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0012.cs)
             /// </remarks>
             public bool EqualsTol(double tol, double x, double y)
             {
@@ -287,7 +287,7 @@ namespace SearchAThing
             /// </summary>
             /// <param name="tol">geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</param>            
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0012.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0012.cs)
             /// </remarks>
             public bool EqualsTol(double tol, double x, double y, double z)
             {
@@ -298,7 +298,7 @@ namespace SearchAThing
             /// create a normalized version of this vector            
             /// </summary>
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0013.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0013.cs)
             /// </remarks>
             public Vector3D Normalized()
             {
@@ -310,7 +310,7 @@ namespace SearchAThing
             /// compute distance between this point and the other given                        
             /// </summary>            
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0014.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0014.cs)
             /// </remarks>
             public double Distance(Vector3D other)
             {
@@ -323,8 +323,8 @@ namespace SearchAThing
             /// <param name="tol">length tolerance ( used to check if point contained in line )</param>
             /// <param name="other">line</param>            
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0015.cs)
-            /// ![](/test/Vector3D/Vector3DTest_0015.png)
+            /// [unit test](../test/Vector3D/Vector3DTest_0015.cs)
+            /// ![image](../test/Vector3D/Vector3DTest_0015.png)
             /// </remarks>
             public double Distance(double tol, Line3D other)
             {
@@ -338,8 +338,8 @@ namespace SearchAThing
             /// </summary>
             /// <param name="other">other point</param>            
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0016.cs)
-            /// ![](/test/Vector3D/Vector3DTest_0016.png)
+            /// [unit test](../test/Vector3D/Vector3DTest_0016.cs)
+            /// ![image](../test/Vector3D/Vector3DTest_0016.png)
             /// </remarks>
             public double Distance2D(Vector3D other)
             {
@@ -352,7 +352,7 @@ namespace SearchAThing
             /// </summary>
             /// <param name="other">second vector</param>            
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0017.cs)            
+            /// [unit test](../test/Vector3D/Vector3DTest_0017.cs)            
             /// </remarks>
             public double DotProduct(Vector3D other)
             {
@@ -364,7 +364,7 @@ namespace SearchAThing
             /// </summary>
             /// <param name="other">other vector</param>
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0018.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0018.cs)
             /// </remarks>
             public bool IsPerpendicular(Vector3D other)
             {
@@ -382,8 +382,8 @@ namespace SearchAThing
             /// </summary>               
             /// <param name="other">other vector</param>            
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0019.cs)
-            /// ![](/test/Vector3D/Vector3DTest_0019.png)
+            /// [unit test](../test/Vector3D/Vector3DTest_0019.cs)
+            /// ![image](../test/Vector3D/Vector3DTest_0019.png)
             /// </remarks>
             public Vector3D CrossProduct(Vector3D other)
             {
@@ -433,8 +433,8 @@ namespace SearchAThing
             /// <param name="to">other vector</param>
             /// <returns>projected vector ( will be colinear to the given one )</returns>
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0021.cs)
-            /// ![image](/test/Vector3D/Vector3DTest_0021.png)
+            /// [unit test](../test/Vector3D/Vector3DTest_0021.cs)
+            /// ![image](../test/Vector3D/Vector3DTest_0021.png)
             /// </remarks>
             public Vector3D Project(Vector3D to)
             {
@@ -976,7 +976,7 @@ namespace SearchAThing
             /// ( Geometry GeomFrom implementation )            
             /// </summary>
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
             /// </remarks>
             [JsonIgnore]
             public override Vector3D GeomFrom => this;
@@ -986,7 +986,7 @@ namespace SearchAThing
             /// ( Geometry GeomTo implementation)             
             /// </summary>
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
             /// </remarks>
             [JsonIgnore]
             public override Vector3D GeomTo => this;
@@ -996,7 +996,7 @@ namespace SearchAThing
             /// ( Geometry Vertexes implementation )            
             /// </summary>
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
             /// </remarks>
             [JsonIgnore]
             public override IEnumerable<Vector3D> Vertexes
@@ -1012,7 +1012,7 @@ namespace SearchAThing
             /// ( Geometry Length implementation )            
             /// </summary>
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
             /// </remarks>
             public override double Length { get { return Sqrt(X * X + Y * Y + Z * Z); } }
 
@@ -1021,7 +1021,7 @@ namespace SearchAThing
             /// ( Geometry DxfEntity implementation )            
             /// </summary>
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
             /// </remarks>
             public override netDxf.Entities.EntityObject DxfEntity
             {
@@ -1036,7 +1036,7 @@ namespace SearchAThing
             /// ( Geometry Divide implementation )            
             /// </summary>
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
             /// </remarks>
             public override IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false)
             {
@@ -1049,7 +1049,7 @@ namespace SearchAThing
             /// </summary>
             /// <param name="tol_len">length tolerance</param>            
             /// <remarks>      
-            /// [unit test](/test/Vector3D/Vector3DTest_0002.cs)
+            /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
             /// </remarks>
             public override BBox3D BBox(double tol_len)
             {
@@ -1536,7 +1536,7 @@ namespace SearchAThing
         /// </summary>            
         /// <returns>true if given vector are linearly independent</returns>
         /// <remarks>
-        /// [unit test](/test/Vector3D/Vector3DTest_0001.cs)
+        /// [unit test](../test/Vector3D/Vector3DTest_0001.cs)
         /// </remarks>
         public static bool IsLinearIndependent(this IEnumerable<Vector3D> vectors)
         {

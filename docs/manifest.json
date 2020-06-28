@@ -12,7 +12,7 @@
           "hash": "upE2N2iIHWF657m69F5PIQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -24,7 +24,7 @@
           "hash": "GZ41MS3yn3+jwX36PbQr0Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -52,12 +52,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "ManagedReference",
       "source_relative_path": "api/SearchAThing.Sci.Arc3D.yml",
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.Sci.Arc3D.html",
-          "hash": "Jt+jlU/7PL0cEb7o2nBc3A=="
+          "hash": "D48l/se20RXN/tEPN5GAzg=="
         }
       },
       "is_incremental": false,
@@ -100,12 +103,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "ManagedReference",
       "source_relative_path": "api/SearchAThing.Sci.CoordinateSystem3D.yml",
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.Sci.CoordinateSystem3D.html",
-          "hash": "zdecAoz6anaOrST4OU7J4A=="
+          "hash": "dGbwuvfroP+O0ce+izxZeA=="
         }
       },
       "is_incremental": false,
@@ -292,12 +298,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "ManagedReference",
       "source_relative_path": "api/SearchAThing.Sci.Line3D.yml",
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.Sci.Line3D.html",
-          "hash": "wkCuMWzq5BmTNHCzSukCSQ=="
+          "hash": "ehItadG/cVtsCEkUVgjBEg=="
         }
       },
       "is_incremental": false,
@@ -324,7 +333,7 @@
           "hash": "Bek/J9uhjJfhMkqC0WuNaw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -832,12 +841,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "ManagedReference",
       "source_relative_path": "api/SearchAThing.Sci.Quaternion.yml",
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.Sci.Quaternion.html",
-          "hash": "P8Vji2P+V7mUpy/kSx4spg=="
+          "hash": "cxoxRhn5VPTNdeE6fm1MRA=="
         }
       },
       "is_incremental": false,
@@ -868,12 +880,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "ManagedReference",
       "source_relative_path": "api/SearchAThing.Sci.Transform3D.yml",
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.Sci.Transform3D.html",
-          "hash": "NZVuTzknBv2YTfvi8K7ApA=="
+          "hash": "rAv6A1JualpOZIBijuaPjg=="
         }
       },
       "is_incremental": false,
@@ -888,7 +903,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.Sci.Vector3D.html",
-          "hash": "Bn7gN98enFXC8t47crmrKg=="
+          "hash": "fzFythuQxW8dMnmYhn6PIQ=="
         }
       },
       "is_incremental": false,
@@ -927,7 +942,7 @@
           "hash": "jTI3/nayNs+VFYeYsejCXQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -943,12 +958,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "ManagedReference",
       "source_relative_path": "api/SearchAThing.SciExt.yml",
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.SciExt.html",
-          "hash": "LQqmdfO2FdGPC4wEqhyPIg=="
+          "hash": "m0BAwT7uDiTOSnCTxa0wXQ=="
         }
       },
       "is_incremental": false,
@@ -1061,7 +1079,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 80,
-          "skipped_file_count": 74
+          "skipped_file_count": 73
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

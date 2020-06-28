@@ -353,8 +353,8 @@ namespace SearchAThing
             /// </summary>             
             /// <param name="other">other 3d line</param>      
             /// <remarks>      
-            /// [unit test](/test/Line3D/Line3DTest_0001.cs)
-            /// ![](/test/Line3D/Line3DTest_0001.png)
+            /// [unit test](../test/Line3D/Line3DTest_0001.cs)
+            /// ![image](../test/Line3D/Line3DTest_0001.png)
             /// </remarks>
             public Line3D ApparentIntersect(Line3D other)
             {
