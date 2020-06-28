@@ -14,10 +14,6 @@
 
 <hr/>
 
-## API Documentation
-
-- [API reference](https://devel0.github.io/netcore-sci/api/SearchAThing.Sci.html)
-
 ## Quickstart
 
 From [examples](examples) follow [example_0001](examples/0001) can be created following these steps:
