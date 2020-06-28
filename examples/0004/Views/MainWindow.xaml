@@ -1,0 +1,15 @@
+<Window
+    xmlns="https://github.com/avaloniaui" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
+    xmlns:v="clr-namespace:Example.Views;assembly=example"    
+    xmlns:sci="clr-namespace:SearchAThing.Sci;assembly=netcore-sci"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignWidth="800" d:DesignHeight="450"
+    x:Class="Example.Views.MainWindow" Icon="/Assets/avalonia-logo.ico" Title="example_avalonia_opengl">    
+    <Grid ColumnDefinitions="1*,9*" RowDefinitions="1*">
+        <!-- <Button Grid.Row="0" Grid.Column="0" Content="test" Click="click1"/> -->
+        <v:OpenGlPage Grid.Row="0" Grid.Column="1" x:Name="glctl"/>
+    </Grid>
+</Window>

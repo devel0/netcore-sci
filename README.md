@@ -113,17 +113,27 @@ dotnet run
 
 ## Examples
 
-- **example/0001***
+#### 0001
 
 - [result dxf](examples/example_0001/output.dxf)
 
 <img src="examples/0001/output.png" width=300>
 
-- **example/0002** ( avalonia/opengl example ) : basic gl test
+#### 0002
 
-- **example/0003** ( avalonia/opengl example ) : test display of [dxf face3d](https://github.com/devel0/netcore-sci/blob/609ffaacb38821ff1dc2f90eae01ae4a1d442936/netcore-sci/lab/OpenGlPageControl.cs#L334) into opengl
+( avalonia/opengl example ) : basic gl test
+
+#### 0003
+
+( avalonia/opengl example ) : test display of [dxf face3d](https://github.com/devel0/netcore-sci/blob/609ffaacb38821ff1dc2f90eae01ae4a1d442936/netcore-sci/lab/OpenGlPageControl.cs#L334) into opengl
 
 <img src="examples/0003/out.png" width=400>
+
+#### 0004
+
+( avalonia/opengl example ) : test display of [dxf face3d]() into opengl
+
+<img src="examples/0004/out.png" width=400>
 
 ## Unit tests
 

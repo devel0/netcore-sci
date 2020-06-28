@@ -1,6 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"             
-             xmlns:v="clr-namespace:SearchAThing.Sci.Lab.example0003;assembly=netcore-sci"    
+             xmlns:v="clr-namespace:SearchAThing.Sci.Lab.example0004;assembly=netcore-sci"    
              x:Class="Example.Views.OpenGlPage"
              >
   <Grid>

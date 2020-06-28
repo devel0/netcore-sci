@@ -1,31 +1,21 @@
 using System;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
 using System.Numerics;
 using System.Runtime.InteropServices;
 using Avalonia;
-using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.OpenGL;
-using Avalonia.Platform.Interop;
 using Avalonia.Threading;
 using static Avalonia.OpenGL.GlConsts;
 // ReSharper disable StringLiteralTypo
 using static System.Math;
-using Avalonia.Interactivity;
-using SearchAThing.Sci;
-using static SearchAThing.SciExt;
-using System.Reflection;
-using static SearchAThing.UtilExt;
+using System.Collections.Generic;
 
-namespace SearchAThing.Sci.Lab
+namespace SearchAThing.Sci.Lab.example0004
 {
 
     public class OpenGlPageControl : OpenGlControlBase
     {
-
-
 
         private float _yaw;
 
@@ -127,20 +117,13 @@ namespace SearchAThing.Sci.Lab
         }
 
         private string VertexShaderSource => GetShader(false,
-            "netcore-sci.lab.vertexShader.glsl".GetEmbeddedFileContent<SearchAThing.Sci.Lab.OpenGlPageControl>());
+            "netcore-sci.lab.vertexShader.glsl".GetEmbeddedFileContent<OpenGlPageControl>());
 
         private string FragmentShaderSource => GetShader(true,
-            "netcore-sci.lab.fragmentShader.glsl".GetEmbeddedFileContent<SearchAThing.Sci.Lab.OpenGlPageControl>());
+            "netcore-sci.lab.fragmentShader.glsl".GetEmbeddedFileContent<OpenGlPageControl>());
 
-        // [StructLayout(LayoutKind.Sequential, Pack = 4)]
-        // private struct Vertex
-        // {
-        //     public Vector3 Position;
-        //     public Vector3 Normal;
-        // }
-
-        private readonly GLLineVertex[] _points;
-        //private readonly ushort[] _indices;
+        private readonly GLTriangleVertex[] _points;
+        private readonly uint[] _indices;
         private readonly float _minY;
         private readonly float _maxY;
 
@@ -251,7 +234,7 @@ namespace SearchAThing.Sci.Lab
 
                     dxf.AddEntity(cube);
 
-                    dxf.Save("out.dxf", true);
+                    //dxf.Save("out.dxf", true);
                 }
 
 
@@ -266,7 +249,78 @@ namespace SearchAThing.Sci.Lab
                 //         // new Vertex() { Position = new Vector3(     0.0f,  0.5f, 0.0f) }
                 // };
 
-                _points = dxf.ToGLLinesVertexes();
+                var TOL = 1e-3;
+
+                (GLTriangleVertex[] points, uint[] indices) GetVertexes(netDxf.DxfDocument dxf)
+                {
+                    var vtxs = new List<GLTriangleVertex>();
+                    var idxs = new List<uint>();
+                    var cmp = new Vector3DEqualityComparer(TOL);
+                    var dictIdx = new Dictionary<Vector3D, uint>(cmp);
+
+                    /// <summary>
+                    /// retrieve vertex number and provides to add to vtxs if not already present
+                    /// </summary>
+                    /// <param name="v">vector to add vtxs if not already present</param>
+                    /// <returns>id of the vertex</returns>
+                    uint GetVertIdx(Vector3D v)
+                    {
+                        uint res = 0;
+
+                        if (!dictIdx.TryGetValue(v, out res))
+                        {
+                            res = (uint)dictIdx.Count;
+                            dictIdx.Add(v, res);
+                            vtxs.Add(v.ToGLTriangleVertex());
+                        }
+
+                        return res;
+                    }
+
+                    foreach (var x in dxf.Faces3d)
+                    {
+                        var i1 = GetVertIdx(x.FirstVertex);
+                        var i2 = GetVertIdx(x.SecondVertex);
+                        var i3 = GetVertIdx(x.ThirdVertex);
+                        if (x.FourthVertex != null)
+                        {
+                            var i4 = GetVertIdx(x.FourthVertex);
+                            idxs.Add(i1);
+                            idxs.Add(i2);
+                            idxs.Add(i3);
+
+                            idxs.Add(i3);
+                            idxs.Add(i4);
+                            idxs.Add(i1);
+                        }
+                        else
+                        {
+                            idxs.Add(i1);
+                            idxs.Add(i2);
+                            idxs.Add(i3);
+                        }
+                        //vtxs.Add(x.FirstVertex.ToGLLineVertex());
+                    }
+
+                    return (points: vtxs.ToArray(), indices: idxs.ToArray());
+
+                    // var _points = new GLLineVertex[]
+                    // {
+                    //     new GLLineVertex() { Position = new System.Numerics.Vector3( -0.5f, 0, 0 ) },
+                    //     new GLLineVertex() { Position = new System.Numerics.Vector3( 0.5f, 0, 0 ) },
+                    //     new GLLineVertex() { Position = new System.Numerics.Vector3( 0, 0.5f, 0 ) },
+                    //     new GLLineVertex() { Position = new System.Numerics.Vector3( -0.5f, 0, 0 ) },
+                    //     // new Vertex() { Position = new Vector3( -0.5f, -0.5f, 0.0f) },
+                    //     // new Vertex() { Position= new Vector3(  0.5f, -0.5f, 0.0f) },
+                    //     // new Vertex() { Position = new Vector3(     0.0f,  0.5f, 0.0f) }
+                    // };
+                    // return _points;
+                }
+
+                var q = GetVertexes(dxf);
+
+                _points = q.points;
+                _indices = q.indices;
 
                 /*
                     var buf = new byte[sr.ReadInt32()];
@@ -286,26 +340,26 @@ namespace SearchAThing.Sci.Lab
                             Position = new Vector3(points[srci], points[srci + 1], points[srci + 2])
                         };
                     }
+*/
+                for (int i = 0; i < _indices.Length; i += 3)
+                {
+                    Vector3 a = _points[_indices[i]].Position;
+                    Vector3 b = _points[_indices[i + 1]].Position;
+                    Vector3 c = _points[_indices[i + 2]].Position;
+                    var normal = Vector3.Normalize(Vector3.Cross(c - b, a - b));
 
-                    for (int i = 0; i < _indices.Length; i += 3)
-                    {
-                        Vector3 a = _points[_indices[i]].Position;
-                        Vector3 b = _points[_indices[i + 1]].Position;
-                        Vector3 c = _points[_indices[i + 2]].Position;
-                        var normal = Vector3.Normalize(Vector3.Cross(c - b, a - b));
+                    _points[_indices[i]].Normal += normal;
+                    _points[_indices[i + 1]].Normal += normal;
+                    _points[_indices[i + 2]].Normal += normal;
+                }
 
-                        _points[_indices[i]].Normal += normal;
-                        _points[_indices[i + 1]].Normal += normal;
-                        _points[_indices[i + 2]].Normal += normal;
-                    }
+                for (int i = 0; i < _points.Length; i++)
+                {
+                    _points[i].Normal = Vector3.Normalize(_points[i].Normal);
+                    _maxY = Math.Max(_maxY, _points[i].Position.Y);
+                    _minY = Math.Min(_minY, _points[i].Position.Y);
+                }
 
-                    for (int i = 0; i < _points.Length; i++)
-                    {
-                        _points[i].Normal = Vector3.Normalize(_points[i].Normal);
-                        _maxY = Math.Max(_maxY, _points[i].Position.Y);
-                        _minY = Math.Min(_minY, _points[i].Position.Y);
-                    }
-                }*/
             }
 
         }
@@ -348,7 +402,7 @@ namespace SearchAThing.Sci.Lab
             // Bind the VBO and copy the vertex data into it.
             GL.BindBuffer(GL_ARRAY_BUFFER, _vertexBufferObject);
             CheckError(GL);
-            var vertexSize = Marshal.SizeOf<GLLineVertex>();
+            var vertexSize = Marshal.SizeOf<GLTriangleVertex>();
             fixed (void* pdata = _points)
                 GL.BufferData(GL_ARRAY_BUFFER, new IntPtr(_points.Length * vertexSize),
                     new IntPtr(pdata), GL_STATIC_DRAW);
@@ -356,21 +410,21 @@ namespace SearchAThing.Sci.Lab
             _indexBufferObject = GL.GenBuffer();
             GL.BindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBufferObject);
             CheckError(GL);
-            // fixed (void* pdata = _indices)
-            //     GL.BufferData(GL_ELEMENT_ARRAY_BUFFER, new IntPtr(_indices.Length * sizeof(ushort)), new IntPtr(pdata),
-            //         GL_STATIC_DRAW);
-            // CheckError(GL);
+            fixed (void* pdata = _indices)
+                GL.BufferData(GL_ELEMENT_ARRAY_BUFFER, new IntPtr(_indices.Length * sizeof(uint)),
+                    new IntPtr(pdata), GL_STATIC_DRAW);
+            CheckError(GL);
+
             _vertexArrayObject = _glExt.GenVertexArray();
             _glExt.BindVertexArray(_vertexArrayObject);
             CheckError(GL);
-            GL.VertexAttribPointer(positionLocation, 3, GL_FLOAT,
-                0, vertexSize, IntPtr.Zero);
-            GL.VertexAttribPointer(normalLocation, 3, GL_FLOAT,
-                0, vertexSize, new IntPtr(12));
+
+            GL.VertexAttribPointer(positionLocation, 3, GL_FLOAT, 0, vertexSize, IntPtr.Zero);
+            GL.VertexAttribPointer(normalLocation, 3, GL_FLOAT, 0, vertexSize, new IntPtr(sizeof(Vector3)));
+
             GL.EnableVertexAttribArray(positionLocation);
             GL.EnableVertexAttribArray(normalLocation);
             CheckError(GL);
-
         }
 
         protected override void OnOpenGlDeinit(GlInterface GL, int fb)
@@ -404,9 +458,7 @@ namespace SearchAThing.Sci.Lab
             _glExt.BindVertexArray(_vertexArrayObject);
             GL.UseProgram(_shaderProgram);
             CheckError(GL);
-            var projection =
-                Matrix4x4.CreatePerspectiveFieldOfView((float)(Math.PI / 4), (float)(Bounds.Width / Bounds.Height),
-                    0.01f, 1000);
+            var projection = Matrix4x4.CreatePerspectiveFieldOfView((float)(Math.PI / 4), (float)(Bounds.Width / Bounds.Height), 0.01f, 1000);
 
             //System.Console.WriteLine($"camerapos:{cameraPos}");
             var view = Matrix4x4.CreateLookAt(cameraPos, cameraTarget, new Vector3(0, -1, 0));
@@ -426,8 +478,10 @@ namespace SearchAThing.Sci.Lab
             GL.Uniform1f(timeLoc, (float)St.Elapsed.TotalSeconds);
             GL.Uniform1f(discoLoc, _disco);
             CheckError(GL);
-            //GL.DrawElements(GL_TRIANGLES, _indices.Length, GL_UNSIGNED_SHORT, IntPtr.Zero);
-            GL.DrawArrays(GL_LINE_STRIP, 0, new IntPtr(_points.Length));
+
+            GL.DrawElements(GL_TRIANGLES, _indices.Length, GlConsts.GL_UNSIGNED_INT, IntPtr.Zero);
+
+            //GL.DrawArrays(GL_LINE_STRIP, 0, new IntPtr(_points.Length));
 
             CheckError(GL);
             if (_disco > 0.01)
