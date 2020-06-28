@@ -5,13 +5,13 @@
         {
           "files": [
             "netcore-sci/**.csproj"
-          ],
-		  "cwd": ".."
+          ],          
+		      "cwd": ".."
         }
       ],
       "dest": "api",
-      "disableGitFeatures": false,
-      "disableDefaultFilter": false
+      "disableGitFeatures": false,    
+      "filtertmp": "filterConfig.yml"    
     }
   ],
   "build": {
@@ -35,7 +35,7 @@
       {
         "files": [
           "images/**",
-		  "test/**",
+		      "test/**"
         ]
       }
     ],
@@ -44,7 +44,7 @@
         "files": [
           "apidoc/**.md"
         ],
-        "exclude": [
+        "exclude": [          
           "obj/**",
           "_site/**"
         ]
@@ -61,6 +61,6 @@
     "noLangKeyword": false,
     "keepFileLink": false,
     "cleanupCacheHistory": false,
-    "disableGitFeatures": false
+    "disableGitFeatures": false    
   }
 }

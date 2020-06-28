@@ -1698,6 +1698,24 @@ references:
   commentId: F:SearchAThing.Sci.GLLineVertex.Position
   fullName: SearchAThing.Sci.GLLineVertex.Position
   nameWithType: GLLineVertex.Position
+- uid: SearchAThing.Sci.GLTriangleVertex
+  name: GLTriangleVertex
+  href: api/SearchAThing.Sci.GLTriangleVertex.html
+  commentId: T:SearchAThing.Sci.GLTriangleVertex
+  fullName: SearchAThing.Sci.GLTriangleVertex
+  nameWithType: GLTriangleVertex
+- uid: SearchAThing.Sci.GLTriangleVertex.Normal
+  name: Normal
+  href: api/SearchAThing.Sci.GLTriangleVertex.html#SearchAThing_Sci_GLTriangleVertex_Normal
+  commentId: F:SearchAThing.Sci.GLTriangleVertex.Normal
+  fullName: SearchAThing.Sci.GLTriangleVertex.Normal
+  nameWithType: GLTriangleVertex.Normal
+- uid: SearchAThing.Sci.GLTriangleVertex.Position
+  name: Position
+  href: api/SearchAThing.Sci.GLTriangleVertex.html#SearchAThing_Sci_GLTriangleVertex_Position
+  commentId: F:SearchAThing.Sci.GLTriangleVertex.Position
+  fullName: SearchAThing.Sci.GLTriangleVertex.Position
+  nameWithType: GLTriangleVertex.Position
 - uid: SearchAThing.Sci.IModel
   name: IModel
   href: api/SearchAThing.Sci.IModel.html
@@ -2170,183 +2188,361 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Sci.Int64MapExceptionRange.Int64MapExceptionRange
   nameWithType: Int64MapExceptionRange.Int64MapExceptionRange
-- uid: SearchAThing.Sci.Lab
-  name: SearchAThing.Sci.Lab
-  href: api/SearchAThing.Sci.Lab.html
-  commentId: N:SearchAThing.Sci.Lab
-  fullName: SearchAThing.Sci.Lab
-  nameWithType: SearchAThing.Sci.Lab
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl
+- uid: SearchAThing.Sci.Lab.example0003
+  name: SearchAThing.Sci.Lab.example0003
+  href: api/SearchAThing.Sci.Lab.example0003.html
+  commentId: N:SearchAThing.Sci.Lab.example0003
+  fullName: SearchAThing.Sci.Lab.example0003
+  nameWithType: SearchAThing.Sci.Lab.example0003
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl
   name: OpenGlPageControl
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html
-  commentId: T:SearchAThing.Sci.Lab.OpenGlPageControl
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html
+  commentId: T:SearchAThing.Sci.Lab.example0003.OpenGlPageControl
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl
   nameWithType: OpenGlPageControl
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.#ctor
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.#ctor
   name: OpenGlPageControl()
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl__ctor
-  commentId: M:SearchAThing.Sci.Lab.OpenGlPageControl.#ctor
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.OpenGlPageControl()
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl__ctor
+  commentId: M:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.#ctor
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OpenGlPageControl()
   nameWithType: OpenGlPageControl.OpenGlPageControl()
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.#ctor*
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.#ctor*
   name: OpenGlPageControl
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl__ctor_
-  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.#ctor
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl__ctor_
+  commentId: Overload:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.#ctor
   isSpec: "True"
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.OpenGlPageControl
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OpenGlPageControl
   nameWithType: OpenGlPageControl.OpenGlPageControl
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Disco
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Disco
   name: Disco
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_Disco
-  commentId: P:SearchAThing.Sci.Lab.OpenGlPageControl.Disco
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Disco
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_Disco
+  commentId: P:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Disco
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Disco
   nameWithType: OpenGlPageControl.Disco
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Disco*
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Disco*
   name: Disco
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_Disco_
-  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.Disco
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_Disco_
+  commentId: Overload:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Disco
   isSpec: "True"
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Disco
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Disco
   nameWithType: OpenGlPageControl.Disco
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.DiscoProperty
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.DiscoProperty
   name: DiscoProperty
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_DiscoProperty
-  commentId: F:SearchAThing.Sci.Lab.OpenGlPageControl.DiscoProperty
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.DiscoProperty
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_DiscoProperty
+  commentId: F:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.DiscoProperty
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.DiscoProperty
   nameWithType: OpenGlPageControl.DiscoProperty
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Info
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Info
   name: Info
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_Info
-  commentId: P:SearchAThing.Sci.Lab.OpenGlPageControl.Info
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Info
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_Info
+  commentId: P:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Info
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Info
   nameWithType: OpenGlPageControl.Info
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Info*
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Info*
   name: Info
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_Info_
-  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.Info
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_Info_
+  commentId: Overload:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Info
   isSpec: "True"
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Info
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Info
   nameWithType: OpenGlPageControl.Info
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.InfoProperty
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.InfoProperty
   name: InfoProperty
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_InfoProperty
-  commentId: F:SearchAThing.Sci.Lab.OpenGlPageControl.InfoProperty
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.InfoProperty
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_InfoProperty
+  commentId: F:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.InfoProperty
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.InfoProperty
   nameWithType: OpenGlPageControl.InfoProperty
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlDeinit(GlInterface,System.Int32)
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OnOpenGlDeinit(GlInterface,System.Int32)
   name: OnOpenGlDeinit(GlInterface, Int32)
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_OnOpenGlDeinit_GlInterface_System_Int32_
-  commentId: M:SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlDeinit(GlInterface,System.Int32)
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlDeinit(GlInterface, System.Int32)
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_OnOpenGlDeinit_GlInterface_System_Int32_
+  commentId: M:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OnOpenGlDeinit(GlInterface,System.Int32)
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OnOpenGlDeinit(GlInterface, System.Int32)
   nameWithType: OpenGlPageControl.OnOpenGlDeinit(GlInterface, Int32)
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlDeinit*
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OnOpenGlDeinit*
   name: OnOpenGlDeinit
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_OnOpenGlDeinit_
-  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlDeinit
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_OnOpenGlDeinit_
+  commentId: Overload:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OnOpenGlDeinit
   isSpec: "True"
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlDeinit
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OnOpenGlDeinit
   nameWithType: OpenGlPageControl.OnOpenGlDeinit
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlInit(GlInterface,System.Int32)
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OnOpenGlInit(GlInterface,System.Int32)
   name: OnOpenGlInit(GlInterface, Int32)
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_OnOpenGlInit_GlInterface_System_Int32_
-  commentId: M:SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlInit(GlInterface,System.Int32)
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlInit(GlInterface, System.Int32)
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_OnOpenGlInit_GlInterface_System_Int32_
+  commentId: M:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OnOpenGlInit(GlInterface,System.Int32)
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OnOpenGlInit(GlInterface, System.Int32)
   nameWithType: OpenGlPageControl.OnOpenGlInit(GlInterface, Int32)
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlInit*
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OnOpenGlInit*
   name: OnOpenGlInit
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_OnOpenGlInit_
-  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlInit
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_OnOpenGlInit_
+  commentId: Overload:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OnOpenGlInit
   isSpec: "True"
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlInit
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OnOpenGlInit
   nameWithType: OpenGlPageControl.OnOpenGlInit
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlRender(GlInterface,System.Int32)
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OnOpenGlRender(GlInterface,System.Int32)
   name: OnOpenGlRender(GlInterface, Int32)
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_OnOpenGlRender_GlInterface_System_Int32_
-  commentId: M:SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlRender(GlInterface,System.Int32)
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlRender(GlInterface, System.Int32)
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_OnOpenGlRender_GlInterface_System_Int32_
+  commentId: M:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OnOpenGlRender(GlInterface,System.Int32)
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OnOpenGlRender(GlInterface, System.Int32)
   nameWithType: OpenGlPageControl.OnOpenGlRender(GlInterface, Int32)
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlRender*
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OnOpenGlRender*
   name: OnOpenGlRender
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_OnOpenGlRender_
-  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlRender
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_OnOpenGlRender_
+  commentId: Overload:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OnOpenGlRender
   isSpec: "True"
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.OnOpenGlRender
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.OnOpenGlRender
   nameWithType: OpenGlPageControl.OnOpenGlRender
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.PAN_FACTOR
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.PAN_FACTOR
   name: PAN_FACTOR
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_PAN_FACTOR
-  commentId: F:SearchAThing.Sci.Lab.OpenGlPageControl.PAN_FACTOR
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.PAN_FACTOR
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_PAN_FACTOR
+  commentId: F:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.PAN_FACTOR
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.PAN_FACTOR
   nameWithType: OpenGlPageControl.PAN_FACTOR
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Pitch
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Pitch
   name: Pitch
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_Pitch
-  commentId: P:SearchAThing.Sci.Lab.OpenGlPageControl.Pitch
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Pitch
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_Pitch
+  commentId: P:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Pitch
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Pitch
   nameWithType: OpenGlPageControl.Pitch
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Pitch*
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Pitch*
   name: Pitch
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_Pitch_
-  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.Pitch
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_Pitch_
+  commentId: Overload:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Pitch
   isSpec: "True"
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Pitch
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Pitch
   nameWithType: OpenGlPageControl.Pitch
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.PitchProperty
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.PitchProperty
   name: PitchProperty
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_PitchProperty
-  commentId: F:SearchAThing.Sci.Lab.OpenGlPageControl.PitchProperty
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.PitchProperty
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_PitchProperty
+  commentId: F:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.PitchProperty
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.PitchProperty
   nameWithType: OpenGlPageControl.PitchProperty
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Reset
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Reset
   name: Reset()
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_Reset
-  commentId: M:SearchAThing.Sci.Lab.OpenGlPageControl.Reset
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Reset()
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_Reset
+  commentId: M:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Reset
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Reset()
   nameWithType: OpenGlPageControl.Reset()
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Reset*
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Reset*
   name: Reset
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_Reset_
-  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.Reset
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_Reset_
+  commentId: Overload:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Reset
   isSpec: "True"
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Reset
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Reset
   nameWithType: OpenGlPageControl.Reset
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Roll
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Roll
   name: Roll
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_Roll
-  commentId: P:SearchAThing.Sci.Lab.OpenGlPageControl.Roll
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Roll
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_Roll
+  commentId: P:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Roll
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Roll
   nameWithType: OpenGlPageControl.Roll
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Roll*
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Roll*
   name: Roll
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_Roll_
-  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.Roll
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_Roll_
+  commentId: Overload:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Roll
   isSpec: "True"
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Roll
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Roll
   nameWithType: OpenGlPageControl.Roll
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.RollProperty
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.RollProperty
   name: RollProperty
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_RollProperty
-  commentId: F:SearchAThing.Sci.Lab.OpenGlPageControl.RollProperty
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.RollProperty
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_RollProperty
+  commentId: F:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.RollProperty
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.RollProperty
   nameWithType: OpenGlPageControl.RollProperty
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Yaw
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Yaw
   name: Yaw
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_Yaw
-  commentId: P:SearchAThing.Sci.Lab.OpenGlPageControl.Yaw
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Yaw
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_Yaw
+  commentId: P:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Yaw
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Yaw
   nameWithType: OpenGlPageControl.Yaw
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.Yaw*
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Yaw*
   name: Yaw
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_Yaw_
-  commentId: Overload:SearchAThing.Sci.Lab.OpenGlPageControl.Yaw
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_Yaw_
+  commentId: Overload:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Yaw
   isSpec: "True"
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.Yaw
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.Yaw
   nameWithType: OpenGlPageControl.Yaw
-- uid: SearchAThing.Sci.Lab.OpenGlPageControl.YawProperty
+- uid: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.YawProperty
   name: YawProperty
-  href: api/SearchAThing.Sci.Lab.OpenGlPageControl.html#SearchAThing_Sci_Lab_OpenGlPageControl_YawProperty
-  commentId: F:SearchAThing.Sci.Lab.OpenGlPageControl.YawProperty
-  fullName: SearchAThing.Sci.Lab.OpenGlPageControl.YawProperty
+  href: api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0003_OpenGlPageControl_YawProperty
+  commentId: F:SearchAThing.Sci.Lab.example0003.OpenGlPageControl.YawProperty
+  fullName: SearchAThing.Sci.Lab.example0003.OpenGlPageControl.YawProperty
+  nameWithType: OpenGlPageControl.YawProperty
+- uid: SearchAThing.Sci.Lab.example0004
+  name: SearchAThing.Sci.Lab.example0004
+  href: api/SearchAThing.Sci.Lab.example0004.html
+  commentId: N:SearchAThing.Sci.Lab.example0004
+  fullName: SearchAThing.Sci.Lab.example0004
+  nameWithType: SearchAThing.Sci.Lab.example0004
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl
+  name: OpenGlPageControl
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html
+  commentId: T:SearchAThing.Sci.Lab.example0004.OpenGlPageControl
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl
+  nameWithType: OpenGlPageControl
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.#ctor
+  name: OpenGlPageControl()
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl__ctor
+  commentId: M:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.#ctor
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OpenGlPageControl()
+  nameWithType: OpenGlPageControl.OpenGlPageControl()
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.#ctor*
+  name: OpenGlPageControl
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl__ctor_
+  commentId: Overload:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.#ctor
+  isSpec: "True"
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OpenGlPageControl
+  nameWithType: OpenGlPageControl.OpenGlPageControl
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Disco
+  name: Disco
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_Disco
+  commentId: P:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Disco
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Disco
+  nameWithType: OpenGlPageControl.Disco
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Disco*
+  name: Disco
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_Disco_
+  commentId: Overload:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Disco
+  isSpec: "True"
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Disco
+  nameWithType: OpenGlPageControl.Disco
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.DiscoProperty
+  name: DiscoProperty
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_DiscoProperty
+  commentId: F:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.DiscoProperty
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.DiscoProperty
+  nameWithType: OpenGlPageControl.DiscoProperty
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Info
+  name: Info
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_Info
+  commentId: P:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Info
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Info
+  nameWithType: OpenGlPageControl.Info
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Info*
+  name: Info
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_Info_
+  commentId: Overload:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Info
+  isSpec: "True"
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Info
+  nameWithType: OpenGlPageControl.Info
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.InfoProperty
+  name: InfoProperty
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_InfoProperty
+  commentId: F:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.InfoProperty
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.InfoProperty
+  nameWithType: OpenGlPageControl.InfoProperty
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OnOpenGlDeinit(GlInterface,System.Int32)
+  name: OnOpenGlDeinit(GlInterface, Int32)
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_OnOpenGlDeinit_GlInterface_System_Int32_
+  commentId: M:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OnOpenGlDeinit(GlInterface,System.Int32)
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OnOpenGlDeinit(GlInterface, System.Int32)
+  nameWithType: OpenGlPageControl.OnOpenGlDeinit(GlInterface, Int32)
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OnOpenGlDeinit*
+  name: OnOpenGlDeinit
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_OnOpenGlDeinit_
+  commentId: Overload:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OnOpenGlDeinit
+  isSpec: "True"
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OnOpenGlDeinit
+  nameWithType: OpenGlPageControl.OnOpenGlDeinit
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OnOpenGlInit(GlInterface,System.Int32)
+  name: OnOpenGlInit(GlInterface, Int32)
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_OnOpenGlInit_GlInterface_System_Int32_
+  commentId: M:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OnOpenGlInit(GlInterface,System.Int32)
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OnOpenGlInit(GlInterface, System.Int32)
+  nameWithType: OpenGlPageControl.OnOpenGlInit(GlInterface, Int32)
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OnOpenGlInit*
+  name: OnOpenGlInit
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_OnOpenGlInit_
+  commentId: Overload:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OnOpenGlInit
+  isSpec: "True"
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OnOpenGlInit
+  nameWithType: OpenGlPageControl.OnOpenGlInit
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OnOpenGlRender(GlInterface,System.Int32)
+  name: OnOpenGlRender(GlInterface, Int32)
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_OnOpenGlRender_GlInterface_System_Int32_
+  commentId: M:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OnOpenGlRender(GlInterface,System.Int32)
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OnOpenGlRender(GlInterface, System.Int32)
+  nameWithType: OpenGlPageControl.OnOpenGlRender(GlInterface, Int32)
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OnOpenGlRender*
+  name: OnOpenGlRender
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_OnOpenGlRender_
+  commentId: Overload:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OnOpenGlRender
+  isSpec: "True"
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.OnOpenGlRender
+  nameWithType: OpenGlPageControl.OnOpenGlRender
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.PAN_FACTOR
+  name: PAN_FACTOR
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_PAN_FACTOR
+  commentId: F:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.PAN_FACTOR
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.PAN_FACTOR
+  nameWithType: OpenGlPageControl.PAN_FACTOR
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Pitch
+  name: Pitch
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_Pitch
+  commentId: P:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Pitch
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Pitch
+  nameWithType: OpenGlPageControl.Pitch
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Pitch*
+  name: Pitch
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_Pitch_
+  commentId: Overload:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Pitch
+  isSpec: "True"
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Pitch
+  nameWithType: OpenGlPageControl.Pitch
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.PitchProperty
+  name: PitchProperty
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_PitchProperty
+  commentId: F:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.PitchProperty
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.PitchProperty
+  nameWithType: OpenGlPageControl.PitchProperty
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Reset
+  name: Reset()
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_Reset
+  commentId: M:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Reset
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Reset()
+  nameWithType: OpenGlPageControl.Reset()
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Reset*
+  name: Reset
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_Reset_
+  commentId: Overload:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Reset
+  isSpec: "True"
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Reset
+  nameWithType: OpenGlPageControl.Reset
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Roll
+  name: Roll
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_Roll
+  commentId: P:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Roll
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Roll
+  nameWithType: OpenGlPageControl.Roll
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Roll*
+  name: Roll
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_Roll_
+  commentId: Overload:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Roll
+  isSpec: "True"
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Roll
+  nameWithType: OpenGlPageControl.Roll
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.RollProperty
+  name: RollProperty
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_RollProperty
+  commentId: F:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.RollProperty
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.RollProperty
+  nameWithType: OpenGlPageControl.RollProperty
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Yaw
+  name: Yaw
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_Yaw
+  commentId: P:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Yaw
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Yaw
+  nameWithType: OpenGlPageControl.Yaw
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Yaw*
+  name: Yaw
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_Yaw_
+  commentId: Overload:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Yaw
+  isSpec: "True"
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.Yaw
+  nameWithType: OpenGlPageControl.Yaw
+- uid: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.YawProperty
+  name: YawProperty
+  href: api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html#SearchAThing_Sci_Lab_example0004_OpenGlPageControl_YawProperty
+  commentId: F:SearchAThing.Sci.Lab.example0004.OpenGlPageControl.YawProperty
+  fullName: SearchAThing.Sci.Lab.example0004.OpenGlPageControl.YawProperty
   nameWithType: OpenGlPageControl.YawProperty
 - uid: SearchAThing.Sci.Line3D
   name: Line3D
@@ -5615,6 +5811,12 @@ references:
   commentId: M:SearchAThing.Sci.SciExt.ToGLLineVertex(netDxf.Vector3)
   fullName: SearchAThing.Sci.SciExt.ToGLLineVertex(netDxf.Vector3)
   nameWithType: SciExt.ToGLLineVertex(netDxf.Vector3)
+- uid: SearchAThing.Sci.SciExt.ToGLLineVertex(SearchAThing.Sci.Vector3D)
+  name: ToGLLineVertex(Vector3D)
+  href: api/SearchAThing.Sci.SciExt.html#SearchAThing_Sci_SciExt_ToGLLineVertex_SearchAThing_Sci_Vector3D_
+  commentId: M:SearchAThing.Sci.SciExt.ToGLLineVertex(SearchAThing.Sci.Vector3D)
+  fullName: SearchAThing.Sci.SciExt.ToGLLineVertex(SearchAThing.Sci.Vector3D)
+  nameWithType: SciExt.ToGLLineVertex(Vector3D)
 - uid: SearchAThing.Sci.SciExt.ToGLLineVertex*
   name: ToGLLineVertex
   href: api/SearchAThing.Sci.SciExt.html#SearchAThing_Sci_SciExt_ToGLLineVertex_
@@ -5622,6 +5824,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Sci.SciExt.ToGLLineVertex
   nameWithType: SciExt.ToGLLineVertex
+- uid: SearchAThing.Sci.SciExt.ToGLTriangleVertex(SearchAThing.Sci.Vector3D)
+  name: ToGLTriangleVertex(Vector3D)
+  href: api/SearchAThing.Sci.SciExt.html#SearchAThing_Sci_SciExt_ToGLTriangleVertex_SearchAThing_Sci_Vector3D_
+  commentId: M:SearchAThing.Sci.SciExt.ToGLTriangleVertex(SearchAThing.Sci.Vector3D)
+  fullName: SearchAThing.Sci.SciExt.ToGLTriangleVertex(SearchAThing.Sci.Vector3D)
+  nameWithType: SciExt.ToGLTriangleVertex(Vector3D)
+- uid: SearchAThing.Sci.SciExt.ToGLTriangleVertex*
+  name: ToGLTriangleVertex
+  href: api/SearchAThing.Sci.SciExt.html#SearchAThing_Sci_SciExt_ToGLTriangleVertex_
+  commentId: Overload:SearchAThing.Sci.SciExt.ToGLTriangleVertex
+  isSpec: "True"
+  fullName: SearchAThing.Sci.SciExt.ToGLTriangleVertex
+  nameWithType: SciExt.ToGLTriangleVertex
 - uid: SearchAThing.Sci.Transform3D
   name: Transform3D
   href: api/SearchAThing.Sci.Transform3D.html
@@ -6947,13 +7162,13 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.BBox
   nameWithType: SciExt.BBox
-- uid: SearchAThing.SciExt.Boolean(IEnumerable{SearchAThing.Sci.Vector3D},System.Double,IEnumerable{SearchAThing.Sci.Vector3D},ClipperLib.ClipType,System.Boolean)
+- uid: SearchAThing.SciExt.Boolean(IEnumerable{SearchAThing.Sci.Vector3D},System.Double,IEnumerable{SearchAThing.Sci.Vector3D},ClipType,System.Boolean)
   name: Boolean(IEnumerable<Vector3D>, Double, IEnumerable<Vector3D>, ClipType, Boolean)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Boolean_IEnumerable_SearchAThing_Sci_Vector3D__System_Double_IEnumerable_SearchAThing_Sci_Vector3D__ClipperLib_ClipType_System_Boolean_
-  commentId: M:SearchAThing.SciExt.Boolean(IEnumerable{SearchAThing.Sci.Vector3D},System.Double,IEnumerable{SearchAThing.Sci.Vector3D},ClipperLib.ClipType,System.Boolean)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Boolean_IEnumerable_SearchAThing_Sci_Vector3D__System_Double_IEnumerable_SearchAThing_Sci_Vector3D__ClipType_System_Boolean_
+  commentId: M:SearchAThing.SciExt.Boolean(IEnumerable{SearchAThing.Sci.Vector3D},System.Double,IEnumerable{SearchAThing.Sci.Vector3D},ClipType,System.Boolean)
   name.vb: Boolean(IEnumerable(Of Vector3D), Double, IEnumerable(Of Vector3D), ClipType, Boolean)
-  fullName: SearchAThing.SciExt.Boolean(IEnumerable<SearchAThing.Sci.Vector3D>, System.Double, IEnumerable<SearchAThing.Sci.Vector3D>, ClipperLib.ClipType, System.Boolean)
-  fullName.vb: SearchAThing.SciExt.Boolean(IEnumerable(Of SearchAThing.Sci.Vector3D), System.Double, IEnumerable(Of SearchAThing.Sci.Vector3D), ClipperLib.ClipType, System.Boolean)
+  fullName: SearchAThing.SciExt.Boolean(IEnumerable<SearchAThing.Sci.Vector3D>, System.Double, IEnumerable<SearchAThing.Sci.Vector3D>, ClipType, System.Boolean)
+  fullName.vb: SearchAThing.SciExt.Boolean(IEnumerable(Of SearchAThing.Sci.Vector3D), System.Double, IEnumerable(Of SearchAThing.Sci.Vector3D), ClipType, System.Boolean)
   nameWithType: SciExt.Boolean(IEnumerable<Vector3D>, Double, IEnumerable<Vector3D>, ClipType, Boolean)
   nameWithType.vb: SciExt.Boolean(IEnumerable(Of Vector3D), Double, IEnumerable(Of Vector3D), ClipType, Boolean)
 - uid: SearchAThing.SciExt.Boolean*
