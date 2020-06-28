@@ -16,7 +16,7 @@
     <PropertyGroup>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
-    <ItemGroup><!-- <PackageReference Include="Avalonia" Version="0.9.10"/>
+    <ItemGroup><!-- NOT USED UNTIL OpenGlControlBase will pushlied --><!-- <PackageReference Include="Avalonia" Version="0.9.10"/>
         <PackageReference Include="Avalonia.Controls.DataGrid" Version="0.9.10"/>
         <PackageReference Include="Avalonia.Desktop" Version="0.9.10"/>
         <PackageReference Include="Avalonia.Direct2D1" Version="0.9.10"/>
@@ -29,19 +29,24 @@
         <PackageReference Include="Avalonia.Win32.Interoperability" Version="0.9.10"/>
         <PackageReference Include="Avalonia.X11" Version="0.9.10"/>
         <PackageReference Include="Avalonia.Angle.Windows.Natives" Version="2.1.0.2019013001"/> --></ItemGroup>
-    <ItemGroup>        
+    <ItemGroup>
+        <PackageReference Include="com.angusj.Clipper" Version="6.4.2" />
         <PackageReference Include="netcore-psql-util" Version="1.0.3" />
-        <PackageReference Include="netcore-util" Version="1.2.2" />
+        <!-- <PackageReference Include="netcore-util" Version="1.2.2"/> -->
         <PackageReference Include="netDxf.netstandard" Version="2.3.0" />
-    </ItemGroup>
-    <!-- using git built Avalonia local packages -->
+    </ItemGroup><!-- using git built Avalonia local packages -->
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="0.9.999"/>
-        <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.999"/>
-        <PackageReference Include="Avalonia.Diagnostics" Version="0.9.999"/>
-        <PackageReference Include="Avalonia.Desktop" Version="0.9.999"/>
+        <PackageReference Include="Avalonia" Version="0.9.999" />
+        <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.999" />
+        <PackageReference Include="Avalonia.Diagnostics" Version="0.9.999" />
+        <PackageReference Include="Avalonia.Desktop" Version="0.9.999" />
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\thirdy-clipper\thirdy-clipper.csproj" />
+        <!-- <ProjectReference Include="..\thirdy-clipper\thirdy-clipper.csproj" /> -->
+        <ProjectReference Include="..\..\netcore-util\netcore-util\netcore-util.csproj" />
+    </ItemGroup><!-- TEMPORARY LAB FILES -->
+    <ItemGroup>
+        <EmbeddedResource Include="lab/vertexShader.glsl" />
+        <EmbeddedResource Include="lab/fragmentShader.glsl" />
     </ItemGroup>
 </Project>

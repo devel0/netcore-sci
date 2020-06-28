@@ -16,6 +16,8 @@ using static System.Math;
 using Avalonia.Interactivity;
 using SearchAThing.Sci;
 using static SearchAThing.SciExt;
+using System.Reflection;
+using static SearchAThing.UtilExt;
 
 namespace SearchAThing.Sci.Lab
 {
@@ -124,78 +126,11 @@ namespace SearchAThing.Sci.Lab
             return data;
         }
 
+        private string VertexShaderSource => GetShader(false,
+            "netcore-sci.lab.vertexShader.glsl".GetEmbeddedFileContent<SearchAThing.Sci.Lab.OpenGlPageControl>());
 
-        private string VertexShaderSource => GetShader(false, @"
-        attribute vec3 aPos;
-        attribute vec3 aNormal;
-        uniform mat4 uModel;
-        uniform mat4 uProjection;
-        uniform mat4 uView;
-
-        varying vec3 FragPos;
-        varying vec3 VecPos;  
-        varying vec3 Normal;
-        uniform float uTime;
-        uniform float uDisco;
-        void main()
-        {
-            float discoScale = sin(uTime * 10.0) / 10.0;
-            float distortionX = 1.0 + uDisco * cos(uTime * 20.0) / 10.0;
-            
-            float scale = 1.0 + uDisco * discoScale;
-            
-            vec3 scaledPos = aPos;
-            scaledPos.x = scaledPos.x * distortionX;
-            
-            scaledPos *= scale;
-            gl_Position = uProjection * uView * uModel * vec4(scaledPos, 1.0);
-            FragPos = vec3(uModel * vec4(aPos, 1.0));
-            VecPos = aPos;
-            Normal = normalize(vec3(uModel * vec4(aNormal, 1.0)));
-        }
-");
-
-        private string FragmentShaderSource => GetShader(true, @"
-        varying vec3 FragPos; 
-        varying vec3 VecPos; 
-        varying vec3 Normal;
-        uniform float uMaxY;
-        uniform float uMinY;
-        uniform float uTime;
-        uniform float uDisco;
-        //DECLAREGLFRAG
-
-        void main()
-        {
-            float y = (VecPos.y - uMinY) / (uMaxY - uMinY);
-            float c = cos(atan(VecPos.x, VecPos.z) * 20.0 + uTime * 40.0 + y * 50.0);
-            float s = sin(-atan(VecPos.z, VecPos.x) * 20.0 - uTime * 20.0 - y * 30.0);
-
-            vec3 discoColor = vec3(
-                0.5 + abs(0.5 - y) * cos(uTime * 10.0),
-                0.25 + (smoothstep(0.3, 0.8, y) * (0.5 - c / 4.0)),
-                0.25 + abs((smoothstep(0.1, 0.4, y) * (0.5 - s / 4.0))));
-
-            vec3 objectColor = vec3(1,0,0);// vec3((1.0 - y), 0.40 +  y / 4.0, y * 0.75 + 0.25);
-            objectColor = objectColor * (1.0 - uDisco) + discoColor * uDisco;
-
-            float ambientStrength = 0.3;
-            vec3 lightColor = vec3(1.0, 1.0, 1.0);
-            vec3 lightPos = vec3(uMaxY * 2.0, uMaxY * 2.0, uMaxY * 2.0);
-            vec3 ambient = ambientStrength * lightColor;
-
-
-            vec3 norm = normalize(Normal);
-            vec3 lightDir = normalize(lightPos - FragPos);  
-
-            float diff = max(dot(norm, lightDir), 0.0);
-            vec3 diffuse = diff * lightColor;
-
-            vec3 result = (ambient + diffuse) * objectColor;
-            gl_FragColor = vec4(result, 1.0);
-
-        }
-");
+        private string FragmentShaderSource => GetShader(true,
+            "netcore-sci.lab.fragmentShader.glsl".GetEmbeddedFileContent<SearchAThing.Sci.Lab.OpenGlPageControl>());
 
         // [StructLayout(LayoutKind.Sequential, Pack = 4)]
         // private struct Vertex
@@ -218,7 +153,7 @@ namespace SearchAThing.Sci.Lab
         Vector3 startCameraPos;
         Vector3 startCameraTarget;
 
-        netDxf.DxfDocument dxf = null;        
+        netDxf.DxfDocument dxf = null;
 
         public const float PAN_FACTOR = 0.01f;
 
@@ -312,7 +247,7 @@ namespace SearchAThing.Sci.Lab
                 {
                     dxf = new netDxf.DxfDocument();
 
-                    var cube = DxfKit.Cube(new Vector3D(), 1);
+                    var cube = DxfKit.Cube(new Vector3D(), 2);
 
                     dxf.AddEntity(cube);
 
