@@ -3,7 +3,7 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageId>netcore-sci</PackageId>
-        <PackageVersion>1.2.0</PackageVersion>
+        <PackageVersion>1.2.1</PackageVersion>
         <Title>net core scientific</Title>
         <Description></Description>
         <LangVersion>8</LangVersion>
@@ -29,11 +29,11 @@
         <PackageReference Include="Avalonia.Win32.Interoperability" Version="0.9.10"/>
         <PackageReference Include="Avalonia.X11" Version="0.9.10"/>
         <PackageReference Include="Avalonia.Angle.Windows.Natives" Version="2.1.0.2019013001"/> --></ItemGroup>
-    <ItemGroup>
-        <PackageReference Include="com.angusj.Clipper" Version="6.4.2" />
+    <ItemGroup>        
         <PackageReference Include="netcore-psql-util" Version="1.0.3" />
         <PackageReference Include="netcore-util" Version="1.3.0" />
         <PackageReference Include="netDxf.netstandard" Version="2.3.0" />
+        <PackageReference Include="ParagonClipper" Version="6.4.2" />
     </ItemGroup><!-- using git built Avalonia local packages -->
     <ItemGroup>
         <PackageReference Include="Avalonia" Version="0.9.999" />
