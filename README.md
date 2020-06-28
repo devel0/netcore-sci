@@ -131,7 +131,7 @@ dotnet run
 
 #### 0004
 
-( avalonia/opengl example ) : test display of [dxf face3d]() into opengl
+( avalonia/opengl example ) : test display of [dxf face3d](https://github.com/devel0/netcore-sci/blob/a663093ddb074f58041ed7473d755f855d2f3b75/netcore-sci/lab/OpenGlPageControl0004.cs#L237-L288) into opengl
 
 <img src="examples/0004/out.png" width=400>
 
