@@ -7,7 +7,6 @@ using Avalonia.Input;
 using Avalonia.OpenGL;
 using Avalonia.Threading;
 using static Avalonia.OpenGL.GlConsts;
-// ReSharper disable StringLiteralTypo
 using static System.Math;
 using System.Collections.Generic;
 
@@ -155,7 +154,6 @@ namespace SearchAThing.Sci.Lab.example0004
         {
             //var ctl = this.FindControl<Button>("btnReset");
 
-
             this.PointerPressed += (a, b) =>
             {
                 var cp = b.GetCurrentPoint(this);
@@ -205,8 +203,7 @@ namespace SearchAThing.Sci.Lab.example0004
                         cameraTarget.X = startCameraTarget.X - (float)dx * PAN_FACTOR;
                         cameraTarget.Y = startCameraTarget.Y - (float)dy * PAN_FACTOR;
 
-                        Dispatcher.UIThread.Post(InvalidateVisual, DispatcherPriority.Background);
-                        // trackBall.Pan(-dx, -dy);
+                        Dispatcher.UIThread.Post(InvalidateVisual, DispatcherPriority.Background);                        
                     }
                 }
 
@@ -222,8 +219,6 @@ namespace SearchAThing.Sci.Lab.example0004
                 mousePress = null;
             };
 
-            //var name = typeof(OpenGlPage).Assembly.GetManifestResourceNames().First(x => x.Contains("teapot.bin"));
-            //using (var sr = new BinaryReader(typeof(OpenGlPage).Assembly.GetManifestResourceStream(name)))
             {
 
                 if (dxf == null)
@@ -236,18 +231,6 @@ namespace SearchAThing.Sci.Lab.example0004
 
                     //dxf.Save("out.dxf", true);
                 }
-
-
-                // _points = new Vertex[]
-                // {
-                //     new Vertex() { Position = new Vector3( -0.5f, 0, 0 ) },
-                //     new Vertex() { Position = new Vector3( 0.5f, 0, 0 ) },
-                //     new Vertex() { Position = new Vector3( 0, 0.5f, 0 ) },
-                //     new Vertex() { Position = new Vector3( -0.5f, 0, 0 ) },
-                //         // new Vertex() { Position = new Vector3( -0.5f, -0.5f, 0.0f) },
-                //         // new Vertex() { Position= new Vector3(  0.5f, -0.5f, 0.0f) },
-                //         // new Vertex() { Position = new Vector3(     0.0f,  0.5f, 0.0f) }
-                // };
 
                 var TOL = 1e-3;
 
@@ -298,23 +281,10 @@ namespace SearchAThing.Sci.Lab.example0004
                             idxs.Add(i1);
                             idxs.Add(i2);
                             idxs.Add(i3);
-                        }
-                        //vtxs.Add(x.FirstVertex.ToGLLineVertex());
+                        }                        
                     }
 
                     return (points: vtxs.ToArray(), indices: idxs.ToArray());
-
-                    // var _points = new GLLineVertex[]
-                    // {
-                    //     new GLLineVertex() { Position = new System.Numerics.Vector3( -0.5f, 0, 0 ) },
-                    //     new GLLineVertex() { Position = new System.Numerics.Vector3( 0.5f, 0, 0 ) },
-                    //     new GLLineVertex() { Position = new System.Numerics.Vector3( 0, 0.5f, 0 ) },
-                    //     new GLLineVertex() { Position = new System.Numerics.Vector3( -0.5f, 0, 0 ) },
-                    //     // new Vertex() { Position = new Vector3( -0.5f, -0.5f, 0.0f) },
-                    //     // new Vertex() { Position= new Vector3(  0.5f, -0.5f, 0.0f) },
-                    //     // new Vertex() { Position = new Vector3(     0.0f,  0.5f, 0.0f) }
-                    // };
-                    // return _points;
                 }
 
                 var q = GetVertexes(dxf);
@@ -322,25 +292,6 @@ namespace SearchAThing.Sci.Lab.example0004
                 _points = q.points;
                 _indices = q.indices;
 
-                /*
-                    var buf = new byte[sr.ReadInt32()];
-                    sr.Read(buf, 0, buf.Length);
-                    var points = new float[buf.Length / 4];
-                    Buffer.BlockCopy(buf, 0, points, 0, buf.Length);
-                    buf = new byte[sr.ReadInt32()];
-                    sr.Read(buf, 0, buf.Length);
-                    _indices = new ushort[buf.Length / 2];
-                    Buffer.BlockCopy(buf, 0, _indices, 0, buf.Length);
-                    _points = new Vertex[points.Length / 3];
-                    for (var primitive = 0; primitive < points.Length / 3; primitive++)
-                    {
-                        var srci = primitive * 3;
-                        _points[primitive] = new Vertex
-                        {
-                            Position = new Vector3(points[srci], points[srci + 1], points[srci + 2])
-                        };
-                    }
-*/
                 for (int i = 0; i < _indices.Length; i += 3)
                 {
                     Vector3 a = _points[_indices[i]].Position;
