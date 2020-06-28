@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "netcore-sci", "netcore-sci\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "test", "test\test.csproj", "{AF97E38F-CAE8-4DA0-BAC9-1B292CE9A05C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "thirdy-clipper", "thirdy-clipper\thirdy-clipper.csproj", "{6A66A5BD-8096-435F-AEAF-FFFD34011899}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{73E4D409-F95A-4F33-8C7B-F0647E21C0E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0001", "examples\0001\0001.csproj", "{F2603B5D-7BA5-4A0F-9365-51EB9EA5D95A}"

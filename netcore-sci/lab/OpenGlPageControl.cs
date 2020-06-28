@@ -247,7 +247,7 @@ namespace SearchAThing.Sci.Lab
                 {
                     dxf = new netDxf.DxfDocument();
 
-                    var cube = DxfKit.Cube(new Vector3D(), 2);
+                    var cube = DxfKit.Cube(new Vector3D(), 1);
 
                     dxf.AddEntity(cube);
 
