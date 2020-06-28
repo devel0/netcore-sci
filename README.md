@@ -20,7 +20,7 @@
 
 ## Quickstart
 
-From [examples](examples) follow [example_0001](examples/example_0001) can be created following these steps:
+From [examples](examples) follow [example_0001](examples/0001) can be created following these steps:
 
 - create console project
 
