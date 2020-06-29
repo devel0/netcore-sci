@@ -115,7 +115,9 @@ dotnet run
 
 #### 0001
 
-- [result dxf](examples/example_0001/output.dxf)
+create a dxf
+
+[result dxf](examples/example_0001/output.dxf)
 
 <img src="examples/0001/output.png" width=300>
 
@@ -134,6 +136,14 @@ dotnet run
 ( avalonia/opengl example ) : test display of [dxf face3d](https://github.com/devel0/netcore-sci/blob/a663093ddb074f58041ed7473d755f855d2f3b75/netcore-sci/lab/OpenGlPageControl0004.cs#L237-L288) into opengl
 
 <img src="examples/0004/out.png" width=400>
+
+#### 0005
+
+( avalonia/opengl example ) : display DEM from [STL file](examples/0005/map.stl) taken from [map2stl](https://map2stl.com/)
+
+control with mouse buttons rotation, zoom, pan
+
+<img src="examples/0005/out.gif" width=400>
 
 ## Unit tests
 
