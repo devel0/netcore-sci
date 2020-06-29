@@ -142,7 +142,7 @@ matplotlib.use('Agg')
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine($"err [{ex.Details()}]");
+                            Console.WriteLine($"using python[{process.StartInfo.FileName}] err [{ex.Details()}]");
                         }
                     }
                 }
