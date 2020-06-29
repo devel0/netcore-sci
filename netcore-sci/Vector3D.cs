@@ -247,7 +247,7 @@ namespace SearchAThing
             /// <param name="other">vector to compare to this</param>            
             /// <remarks>      
             /// [unit test](../test/Vector3D/Vector3DTest_0012.cs)
-            /// </remarks>
+            /// </remarks>            
             public bool EqualsTol(double tol, Vector3D other)
             {
                 return
@@ -1103,7 +1103,7 @@ namespace SearchAThing
                 return new System.Numerics.Vector3((float)v.X, (float)v.Y, (float)v.Z);
             }
 
-             /// <summary>
+            /// <summary>
             /// Convert given QuantumConcepts.Formats.StereoLithography.Vertex to Vector3D
             /// </summary>
             /// <param name="v">input vector</param>
@@ -1142,8 +1142,8 @@ namespace SearchAThing
             }
 
             public int GetHashCode(Vector3D obj)
-            {
-                return 0;
+            {                
+                return obj.ToString(tol).GetHashCode();
             }
         }
 
