@@ -1082,6 +1082,49 @@ namespace SearchAThing
                 return new Vector3(v.X, v.Y, v.Z);
             }
 
+            /// <summary>
+            /// Convert given System.Numerics.Vector3 to Vector3D
+            /// </summary>
+            /// <param name="v">input vector</param>
+            public static implicit operator Vector3D(System.Numerics.Vector3 v)
+            {
+                return new Vector3D(v.X, v.Y, v.Z);
+            }
+
+            /// <summary>
+            /// Convert given Vector3D to System.Numerics.Vector3            
+            /// </summary>
+            /// <remarks>
+            /// double to float conversion will be done
+            /// </remarks>
+            /// <param name="v">input vector</param>
+            public static implicit operator System.Numerics.Vector3(Vector3D v)
+            {
+                return new System.Numerics.Vector3((float)v.X, (float)v.Y, (float)v.Z);
+            }
+
+             /// <summary>
+            /// Convert given QuantumConcepts.Formats.StereoLithography.Vertex to Vector3D
+            /// </summary>
+            /// <param name="v">input vector</param>
+            public static implicit operator Vector3D(QuantumConcepts.Formats.StereoLithography.Vertex v)
+            {
+                return new Vector3D(v.X, v.Y, v.Z);
+            }
+
+            /// <summary>
+            /// Convert given Vector3D to QuantumConcepts.Formats.StereoLithography.Vertex
+            /// </summary>
+            /// <remarks>
+            /// double to float conversion will be done
+            /// </remarks>
+            /// <param name="v">input vector</param>
+            public static implicit operator QuantumConcepts.Formats.StereoLithography.Vertex(Vector3D v)
+            {
+                return new QuantumConcepts.Formats.StereoLithography.Vertex((float)v.X, (float)v.Y, (float)v.Z);
+            }
+
+
         }
 
         public class Vector3DEqualityComparer : IEqualityComparer<Vector3D>
