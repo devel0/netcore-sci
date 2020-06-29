@@ -203,7 +203,7 @@ namespace SearchAThing.Sci.Lab.example0004
                         cameraTarget.X = startCameraTarget.X - (float)dx * PAN_FACTOR;
                         cameraTarget.Y = startCameraTarget.Y - (float)dy * PAN_FACTOR;
 
-                        Dispatcher.UIThread.Post(InvalidateVisual, DispatcherPriority.Background);                        
+                        Dispatcher.UIThread.Post(InvalidateVisual, DispatcherPriority.Background);
                     }
                 }
 
@@ -221,20 +221,23 @@ namespace SearchAThing.Sci.Lab.example0004
 
             {
 
-                if (dxf == null)
-                {
-                    dxf = new netDxf.DxfDocument();
+                // if (dxf == null)
+                // {
+                //     dxf = new netDxf.DxfDocument();
 
-                    var cube = DxfKit.Cube(new Vector3D(), 1);
+                //     var cube = DxfKit.Cube(new Vector3D(), 1);
 
-                    dxf.AddEntity(cube);
+                //     dxf.AddEntity(cube);
 
-                    //dxf.Save("out.dxf", true);
-                }
+                //     //dxf.Save("out.dxf", true);
+                // }
 
                 var TOL = 1e-3;
 
-                (GLTriangleVertex[] points, uint[] indices) GetVertexes(netDxf.DxfDocument dxf)
+                var sw0 = new Stopwatch();
+                sw0.Start();
+
+                (GLTriangleVertex[] points, uint[] indices) GetVertexes()
                 {
                     var vtxs = new List<GLTriangleVertex>();
                     var idxs = new List<uint>();
@@ -260,34 +263,50 @@ namespace SearchAThing.Sci.Lab.example0004
                         return res;
                     }
 
-                    foreach (var x in dxf.Faces3d)
-                    {
-                        var i1 = GetVertIdx(x.FirstVertex);
-                        var i2 = GetVertIdx(x.SecondVertex);
-                        var i3 = GetVertIdx(x.ThirdVertex);
-                        if (x.FourthVertex != null)
-                        {
-                            var i4 = GetVertIdx(x.FourthVertex);
-                            idxs.Add(i1);
-                            idxs.Add(i2);
-                            idxs.Add(i3);
+                    var boxFaces = DxfKit.Cube(new Vector3D(), 1);
 
-                            idxs.Add(i3);
-                            idxs.Add(i4);
-                            idxs.Add(i1);
-                        }
-                        else
+                    int xCnt = 50;
+                    int yCnt = 50;
+
+                    foreach (var face in boxFaces)
+                    {
+                        for (int xi = 0; xi < xCnt; ++xi)
                         {
-                            idxs.Add(i1);
-                            idxs.Add(i2);
-                            idxs.Add(i3);
-                        }                        
+                            for (int yi = 0; yi < yCnt; ++yi)
+                            {
+                                var delta = new netDxf.Vector3(2 * xi, 2 * yi, 0);
+
+                                var i1 = GetVertIdx(face.FirstVertex + delta);
+                                var i2 = GetVertIdx(face.SecondVertex + delta);
+                                var i3 = GetVertIdx(face.ThirdVertex + delta);
+
+                                if (face.FourthVertex != null)
+                                {
+                                    var i4 = GetVertIdx(face.FourthVertex + delta);
+                                    idxs.Add(i1);
+                                    idxs.Add(i2);
+                                    idxs.Add(i3);
+
+                                    idxs.Add(i3);
+                                    idxs.Add(i4);
+                                    idxs.Add(i1);
+                                }
+                                else
+                                {
+                                    idxs.Add(i1);
+                                    idxs.Add(i2);
+                                    idxs.Add(i3);
+                                }
+                            }
+                        }
                     }
 
                     return (points: vtxs.ToArray(), indices: idxs.ToArray());
                 }
 
-                var q = GetVertexes(dxf);
+                var q = GetVertexes();
+
+                System.Console.WriteLine($"vertex:{q.points.Length} indices:{q.indices.Length} generted in {sw0.Elapsed}");
 
                 _points = q.points;
                 _indices = q.indices;
