@@ -1,6 +1,7 @@
 varying vec3 FragPos;
 varying vec3 VecPos;
 varying vec3 Normal;
+
 uniform vec3 LightPos;
 // DECLAREGLFRAG
 

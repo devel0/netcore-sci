@@ -101,6 +101,19 @@ namespace SearchAThing.Sci.Lab.example0005
             private set => SetAndRaise(Info2Property, ref _info2, value);
         }
 
+        private bool _wireframe;
+        public static readonly DirectProperty<OpenGlPageControl, bool> WireframeProperty =
+            AvaloniaProperty.RegisterDirect<OpenGlPageControl, bool>("Wireframe", o => o.Wireframe, (o, v) => o.Wireframe = v);
+        public bool Wireframe
+        {
+            get => _wireframe;
+            private set
+            {
+                SetAndRaise(WireframeProperty, ref _wireframe, value);
+                InvalidateVisual();
+            }
+        }
+
         public string STLmapPathfilename
         {
             get { return GetValue(STLmapPathfilenameProperty); }
@@ -118,6 +131,7 @@ namespace SearchAThing.Sci.Lab.example0005
             AffectsRender<OpenGlPageControl>(
                 YawProperty, PitchProperty, RollProperty,
                 LightPosXProperty, LightPosYProperty, LightPosZProperty,
+                WireframeProperty,
                 Info2Property);
         }
 
@@ -131,12 +145,9 @@ namespace SearchAThing.Sci.Lab.example0005
 
         private string GetShader(bool fragment, string shader)
         {
-            var version = (GlVersion.Type == GlProfileType.OpenGL ?
-                RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? 150 : 120 :
-                100);
+            var version = (GlVersion.Type == GlProfileType.OpenGL ? RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? 150 : 120 : 100);
             var data = "#version " + version + "\n";
-            if (GlVersion.Type == GlProfileType.OpenGLES)
-                data += "precision mediump float;\n";
+            if (GlVersion.Type == GlProfileType.OpenGLES) data += "precision mediump float;\n";
             if (version >= 150)
             {
                 shader = shader.Replace("attribute", "in");
@@ -340,9 +351,9 @@ namespace SearchAThing.Sci.Lab.example0005
                 sw0.Restart();
                 for (int i = 0; i < _indices.Length; i += 3)
                 {
-                    Vector3 a = _points[_indices[i]].Position;
-                    Vector3 b = _points[_indices[i + 1]].Position;
-                    Vector3 c = _points[_indices[i + 2]].Position;
+                    var a = _points[_indices[i]].Position;
+                    var b = _points[_indices[i + 1]].Position;
+                    var c = _points[_indices[i + 2]].Position;
                     var normal = Vector3.Normalize(Vector3.Cross(c - b, a - b));
 
                     _points[_indices[i]].Normal += normal;
@@ -377,11 +388,13 @@ namespace SearchAThing.Sci.Lab.example0005
         {
             int err;
             while ((err = gl.GetError()) != GL_NO_ERROR)
-                Console.WriteLine(err);
+                Console.WriteLine($"err:" + err);
         }
 
         protected unsafe override void OnOpenGlInit(GlInterface GL, int fb)
         {
+            CheckError(GL);
+
             CHECK_INIT();
 
             CheckError(GL);
@@ -392,10 +405,12 @@ namespace SearchAThing.Sci.Lab.example0005
             // Load the source of the vertex shader and compile it.
             _vertexShader = GL.CreateShader(GL_VERTEX_SHADER);
             Console.WriteLine(GL.CompileShaderAndGetError(_vertexShader, VertexShaderSource));
+            CheckError(GL);
 
             // Load the source of the fragment shader and compile it.
             _fragmentShader = GL.CreateShader(GL_FRAGMENT_SHADER);
             Console.WriteLine(GL.CompileShaderAndGetError(_fragmentShader, FragmentShaderSource));
+            CheckError(GL);
 
             // Create the shader program, attach the vertex and fragment shaders and link the program.
             _shaderProgram = GL.CreateProgram();
@@ -417,6 +432,7 @@ namespace SearchAThing.Sci.Lab.example0005
             fixed (void* pdata = _points)
                 GL.BufferData(GL_ARRAY_BUFFER, new IntPtr(_points.Length * vertexSize),
                     new IntPtr(pdata), GL_STATIC_DRAW);
+            CheckError(GL);
 
             _indexBufferObject = GL.GenBuffer();
             GL.BindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBufferObject);
@@ -432,6 +448,7 @@ namespace SearchAThing.Sci.Lab.example0005
 
             GL.VertexAttribPointer(positionLocation, 3, GL_FLOAT, 0, vertexSize, IntPtr.Zero);
             GL.VertexAttribPointer(normalLocation, 3, GL_FLOAT, 0, vertexSize, new IntPtr(sizeof(Vector3)));
+            CheckError(GL);
 
             GL.EnableVertexAttribArray(positionLocation);
             GL.EnableVertexAttribArray(normalLocation);
@@ -445,6 +462,7 @@ namespace SearchAThing.Sci.Lab.example0005
             GL.BindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
             _glExt.BindVertexArray(0);
             GL.UseProgram(0);
+            CheckError(GL);
 
             // Delete all resources.
             GL.DeleteBuffers(2, new[] { _vertexBufferObject, _indexBufferObject });
@@ -452,6 +470,7 @@ namespace SearchAThing.Sci.Lab.example0005
             GL.DeleteProgram(_shaderProgram);
             GL.DeleteShader(_fragmentShader);
             GL.DeleteShader(_vertexShader);
+            CheckError(GL);
         }
 
         static Stopwatch St = Stopwatch.StartNew();
@@ -473,6 +492,7 @@ namespace SearchAThing.Sci.Lab.example0005
             gl.Enable(GL_DEPTH_TEST);
             gl.Viewport(0, 0, (int)Bounds.Width, (int)Bounds.Height);
             var GL = gl;
+            CheckError(GL);
 
             GL.BindBuffer(GL_ARRAY_BUFFER, _vertexBufferObject);
             GL.BindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBufferObject);
@@ -484,7 +504,10 @@ namespace SearchAThing.Sci.Lab.example0005
             var farPlaneDistance = 1000f;
             var projection = Matrix4x4.CreatePerspectiveFieldOfView((float)(Math.PI / 4), aspectRatio, nearPlaneDistance, farPlaneDistance);
 
-            var view = Matrix4x4.CreateLookAt(cameraPos, cameraTarget, new Vector3(0, -1, 0));
+            var view =
+                // Matrix4x4.CreateTranslation(-(float)bbox.Size.X / 2, -(float)bbox.Size.Y / 2, -(float)bbox.Size.Z)
+                // *
+                Matrix4x4.CreateLookAt(cameraPos, cameraTarget, new Vector3(0, -1, 0));
 
             var model =
                 // Matrix4x4.CreateTranslation(-(float)bbox.Size.X / 2, -(float)bbox.Size.Y / 2, -(float)bbox.Size.Z)
@@ -500,6 +523,12 @@ namespace SearchAThing.Sci.Lab.example0005
             GL.UniformMatrix4fv(viewLoc, 1, false, &view);
             GL.UniformMatrix4fv(projectionLoc, 1, false, &projection);
             GL.Uniform3f(lightPosLoc, LightPosX, LightPosY, LightPosZ);
+            CheckError(GL);
+
+            if (Wireframe)
+                _glExt.PolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+            else
+                _glExt.PolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
             CheckError(GL);
 
@@ -531,6 +560,10 @@ namespace SearchAThing.Sci.Lab.example0005
             public GlExtrasInterface(GlInterface gl) : base(gl.GetProcAddress, gl.ContextInfo)
             {
             }
+
+            public delegate void GlPolygonMode(int face, int mode);
+            [GlEntryPoint("glPolygonMode")]
+            public GlPolygonMode PolygonMode { get; }
 
             public delegate void GlDeleteVertexArrays(int count, int[] buffers);
             [GlMinVersionEntryPoint("glDeleteVertexArrays", 3, 0)]

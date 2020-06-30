@@ -20,9 +20,11 @@
         <TextBlock>LightPosY</TextBlock>
         <Slider Value="{Binding LightPosY, Mode=TwoWay, ElementName=GL}" Minimum="-1000" Maximum="1000"/>
         <TextBlock>LightPosZ</TextBlock>
-        <Slider Value="{Binding LightPosZ, Mode=TwoWay, ElementName=GL}" Minimum="-1000" Maximum="1000"/>
+        <Slider Value="{Binding LightPosZ, Mode=TwoWay, ElementName=GL}" Minimum="-1000" Maximum="1000"/>        
 
         <Button Grid.Row="0" Grid.Column="0" Content="Reset" Click="click_reset"/>
+
+        <CheckBox IsChecked="{Binding #GL.Wireframe, Mode=TwoWay}" Margin="0,10,0,0">Wireframe</CheckBox>
       </StackPanel>
     </Grid>
   </Grid>
