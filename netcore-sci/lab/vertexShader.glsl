@@ -14,7 +14,7 @@ varying vec3 VecPos;
 varying vec3 Normal;
 
 void main() {
-  vec3 mPos = aPos - uBBox / 2;
+  vec3 mPos = aPos - uBBox / 2.0;
   gl_Position = uProjection * uView * uModel * vec4(mPos, 1.0);
 
   FragPos = vec3(uProjection * uView * uModel * vec4(mPos, 1.0));
