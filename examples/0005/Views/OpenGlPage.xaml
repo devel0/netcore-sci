@@ -16,11 +16,13 @@
         <Slider Value="{Binding Roll, Mode=TwoWay, ElementName=GL}" Maximum="10"/>
         
         <TextBlock>LightPosX</TextBlock>
-        <Slider Value="{Binding LightPosX, Mode=TwoWay, ElementName=GL}" Minimum="-1000" Maximum="1000"/>
+        <Slider Value="{Binding LightPosX, Mode=TwoWay, ElementName=GL}" Minimum="-5000" Maximum="5000"/>
         <TextBlock>LightPosY</TextBlock>
-        <Slider Value="{Binding LightPosY, Mode=TwoWay, ElementName=GL}" Minimum="-1000" Maximum="1000"/>
+        <Slider Value="{Binding LightPosY, Mode=TwoWay, ElementName=GL}" Minimum="-5000" Maximum="5000"/>        
         <TextBlock>LightPosZ</TextBlock>
-        <Slider Value="{Binding LightPosZ, Mode=TwoWay, ElementName=GL}" Minimum="-1000" Maximum="1000"/>        
+        <Slider Value="{Binding LightPosZ, Mode=TwoWay, ElementName=GL}" Minimum="-5000" Maximum="5000"/>        
+        <TextBlock>AmbientStrength</TextBlock>
+        <Slider Value="{Binding AmbientStrength, Mode=TwoWay, ElementName=GL}" Minimum="0" Maximum="1"/>        
 
         <Button Grid.Row="0" Grid.Column="0" Content="Reset" Click="click_reset"/>
 

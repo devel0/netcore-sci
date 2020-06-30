@@ -1,25 +1,24 @@
+// variables coming from vertex shader
 varying vec3 FragPos;
 varying vec3 VecPos;
 varying vec3 Normal;
 
+// variables coming from code
+uniform float Amb;
 uniform vec3 LightPos;
+
 // DECLAREGLFRAG
 
-void main() {
-  float y = VecPos.y;
-  // float c = cos(atan(VecPos.x, VecPos.z) * 20.0 + uTime * 40.0 + y * 50.0);
-  // float s = sin(-atan(VecPos.z, VecPos.x) * 20.0 - uTime * 20.0 - y * 30.0);
+void main() {  
+  vec3 objectColor = vec3(1, 0, 0);  
   
-  vec3 objectColor = vec3(1, 0, 0);
-  //objectColor = objectColor * (1.0 - uDisco) + discoColor * uDisco;
+  vec3 lightColor = vec3(1.0, 1.0, 1.0);  
 
-  float ambientStrength = 0.3;
-  vec3 lightColor = vec3(1.0, 1.0, 1.0);
-  vec3 lightPos = LightPos;// vec3(0, 0, 0); //uMaxY * 2.0, uMaxY * 2.0, uMaxY * 2.0);
-  vec3 ambient = ambientStrength * lightColor;
+  //float ambientStrength = 0.2;
+  vec3 ambient = Amb * lightColor;
 
   vec3 norm = normalize(Normal);
-  vec3 lightDir = normalize(lightPos - FragPos);
+  vec3 lightDir = normalize(LightPos - FragPos);
 
   float diff = max(dot(norm, lightDir), 0.0);
   vec3 diffuse = diff * lightColor;

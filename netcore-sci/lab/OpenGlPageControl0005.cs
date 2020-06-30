@@ -47,6 +47,15 @@ namespace SearchAThing.Sci.Lab.example0005
             set => SetAndRaise(LightPosZProperty, ref _lightPosZ, value);
         }
 
+        private float _amb = 0.2f;
+        public static readonly DirectProperty<OpenGlPageControl, float> AmbientStrengthProperty =
+            AvaloniaProperty.RegisterDirect<OpenGlPageControl, float>("AmbientStrength", o => o.AmbientStrength, (o, v) => o.AmbientStrength = v);
+        public float AmbientStrength
+        {
+            get => _amb;
+            set => SetAndRaise(AmbientStrengthProperty, ref _amb, value);
+        }
+
         private float _yaw;
         public static readonly DirectProperty<OpenGlPageControl, float> YawProperty =
             AvaloniaProperty.RegisterDirect<OpenGlPageControl, float>("Yaw", o => o.Yaw, (o, v) => o.Yaw = v);
@@ -73,16 +82,7 @@ namespace SearchAThing.Sci.Lab.example0005
             get => _roll;
             set => SetAndRaise(RollProperty, ref _roll, value);
         }
-
-        private float _disco;
-        public static readonly DirectProperty<OpenGlPageControl, float> DiscoProperty =
-            AvaloniaProperty.RegisterDirect<OpenGlPageControl, float>("Disco", o => o.Disco, (o, v) => o.Disco = v);
-        public float Disco
-        {
-            get => _disco;
-            set => SetAndRaise(DiscoProperty, ref _disco, value);
-        }
-
+        
         private string _info;
         public static readonly DirectProperty<OpenGlPageControl, string> InfoProperty =
             AvaloniaProperty.RegisterDirect<OpenGlPageControl, string>("Info", o => o.Info, (o, v) => o.Info = v);
@@ -132,7 +132,7 @@ namespace SearchAThing.Sci.Lab.example0005
                 YawProperty, PitchProperty, RollProperty,
                 LightPosXProperty, LightPosYProperty, LightPosZProperty,
                 WireframeProperty,
-                Info2Property);
+                Info2Property, AmbientStrengthProperty);
         }
 
         private int _vertexShader;
@@ -505,24 +505,31 @@ namespace SearchAThing.Sci.Lab.example0005
             var projection = Matrix4x4.CreatePerspectiveFieldOfView((float)(Math.PI / 4), aspectRatio, nearPlaneDistance, farPlaneDistance);
 
             var view =
-                // Matrix4x4.CreateTranslation(-(float)bbox.Size.X / 2, -(float)bbox.Size.Y / 2, -(float)bbox.Size.Z)
-                // *
+                //Matrix4x4.CreateTranslation(-(float)bbox.Size.X / 2, -(float)bbox.Size.Y / 2, -(float)bbox.Size.Z / 2)
+                //*
                 Matrix4x4.CreateLookAt(cameraPos, cameraTarget, new Vector3(0, -1, 0));
 
             var model =
-                // Matrix4x4.CreateTranslation(-(float)bbox.Size.X / 2, -(float)bbox.Size.Y / 2, -(float)bbox.Size.Z)
-                // *
+                //Matrix4x4.CreateTranslation(-(float)bbox.Size.X / 2, -(float)bbox.Size.Y / 2, -(float)bbox.Size.Z / 2)
+                //*
                 Matrix4x4.CreateFromYawPitchRoll(_yaw, _pitch, _roll);
 
+            var modelTr =
+                Matrix4x4.CreateTranslation(-(float)bbox.Size.X / 2, -(float)bbox.Size.Y / 2, -(float)bbox.Size.Z / 2);
+
             var modelLoc = GL.GetUniformLocationString(_shaderProgram, "uModel");
+            //var modelTrLoc = GL.GetUniformLocationString(_shaderProgram, "uModelTr");
             var viewLoc = GL.GetUniformLocationString(_shaderProgram, "uView");
             var projectionLoc = GL.GetUniformLocationString(_shaderProgram, "uProjection");
             var lightPosLoc = GL.GetUniformLocationString(_shaderProgram, "LightPos");
+            var ambStrengthLoc = GL.GetUniformLocationString(_shaderProgram, "Amb");
 
             GL.UniformMatrix4fv(modelLoc, 1, false, &model);
+            //GL.UniformMatrix4fv(modelTrLoc, 1, false, &modelTr);
             GL.UniformMatrix4fv(viewLoc, 1, false, &view);
             GL.UniformMatrix4fv(projectionLoc, 1, false, &projection);
             GL.Uniform3f(lightPosLoc, LightPosX, LightPosY, LightPosZ);
+            GL.Uniform1f(ambStrengthLoc, AmbientStrength);
             CheckError(GL);
 
             if (Wireframe)
@@ -537,8 +544,8 @@ namespace SearchAThing.Sci.Lab.example0005
             //GL.DrawArrays(GL_LINE_STRIP, 0, new IntPtr(_points.Length));
 
             CheckError(GL);
-            if (_disco > 0.01)
-                Dispatcher.UIThread.Post(InvalidateVisual, DispatcherPriority.Background);
+            // if (_disco > 0.01)
+            //     Dispatcher.UIThread.Post(InvalidateVisual, DispatcherPriority.Background);
 
             Dispatcher.UIThread.Post(() =>
             {
