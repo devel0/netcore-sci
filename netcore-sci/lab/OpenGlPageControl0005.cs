@@ -20,7 +20,7 @@ namespace SearchAThing.Sci.Lab.example0005
 
     public class OpenGlPageControl : OpenGlControlBase, INotifyPropertyChanged
     {
-        private float _lightPosX;
+        private float _lightPosX = 0.7f;
         public static readonly DirectProperty<OpenGlPageControl, float> LightPosXProperty =
             AvaloniaProperty.RegisterDirect<OpenGlPageControl, float>("LightPosX", o => o.LightPosX, (o, v) => o.LightPosX = v);
         public float LightPosX
@@ -29,7 +29,7 @@ namespace SearchAThing.Sci.Lab.example0005
             set => SetAndRaise(LightPosXProperty, ref _lightPosX, value);
         }
 
-        private float _lightPosY;
+        private float _lightPosY = 5000f;
         public static readonly DirectProperty<OpenGlPageControl, float> LightPosYProperty =
             AvaloniaProperty.RegisterDirect<OpenGlPageControl, float>("LightPosY", o => o.LightPosY, (o, v) => o.LightPosY = v);
         public float LightPosY
@@ -38,7 +38,7 @@ namespace SearchAThing.Sci.Lab.example0005
             set => SetAndRaise(LightPosYProperty, ref _lightPosY, value);
         }
 
-        private float _lightPosZ;
+        private float _lightPosZ = 50f;
         public static readonly DirectProperty<OpenGlPageControl, float> LightPosZProperty =
             AvaloniaProperty.RegisterDirect<OpenGlPageControl, float>("LightPosZ", o => o.LightPosZ, (o, v) => o.LightPosZ = v);
         public float LightPosZ
@@ -502,7 +502,9 @@ namespace SearchAThing.Sci.Lab.example0005
             var aspectRatio = (float)(Bounds.Width / Bounds.Height);
             var nearPlaneDistance = 0.01f;
             var farPlaneDistance = 1000f;
-            var projection = Matrix4x4.CreatePerspectiveFieldOfView((float)(Math.PI / 4), aspectRatio, nearPlaneDistance, farPlaneDistance);
+
+            var projection = 
+                Matrix4x4.CreatePerspectiveFieldOfView((float)(Math.PI / 4), aspectRatio, nearPlaneDistance, farPlaneDistance);
 
             var view =
                 //Matrix4x4.CreateTranslation(-(float)bbox.Size.X / 2, -(float)bbox.Size.Y / 2, -(float)bbox.Size.Z / 2)
@@ -518,14 +520,15 @@ namespace SearchAThing.Sci.Lab.example0005
                 Matrix4x4.CreateTranslation(-(float)bbox.Size.X / 2, -(float)bbox.Size.Y / 2, -(float)bbox.Size.Z / 2);
 
             var modelLoc = GL.GetUniformLocationString(_shaderProgram, "uModel");
-            //var modelTrLoc = GL.GetUniformLocationString(_shaderProgram, "uModelTr");
+            var bboxLoc = GL.GetUniformLocationString(_shaderProgram, "uBBox");
             var viewLoc = GL.GetUniformLocationString(_shaderProgram, "uView");
             var projectionLoc = GL.GetUniformLocationString(_shaderProgram, "uProjection");
             var lightPosLoc = GL.GetUniformLocationString(_shaderProgram, "LightPos");
             var ambStrengthLoc = GL.GetUniformLocationString(_shaderProgram, "Amb");
 
             GL.UniformMatrix4fv(modelLoc, 1, false, &model);
-            //GL.UniformMatrix4fv(modelTrLoc, 1, false, &modelTr);
+            var bboxSize = bbox.Size;
+            GL.Uniform3f(bboxLoc, (float)bboxSize.X, (float)bboxSize.Y, (float)bboxSize.Z);
             GL.UniformMatrix4fv(viewLoc, 1, false, &view);
             GL.UniformMatrix4fv(projectionLoc, 1, false, &projection);
             GL.Uniform3f(lightPosLoc, LightPosX, LightPosY, LightPosZ);

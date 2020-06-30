@@ -9,12 +9,10 @@ uniform vec3 LightPos;
 
 // DECLAREGLFRAG
 
-void main() {  
+void main() {    
   vec3 objectColor = vec3(1, 0, 0);  
-  
   vec3 lightColor = vec3(1.0, 1.0, 1.0);  
-
-  //float ambientStrength = 0.2;
+  
   vec3 ambient = Amb * lightColor;
 
   vec3 norm = normalize(Normal);
