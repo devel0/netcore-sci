@@ -9,8 +9,8 @@
 - [API Documentation](https://devel0.github.io/netcore-sci/api/SearchAThing.html)
 - [Recent changes](#recent-changes)
 - [Notes](#release-notes)
-- [Quickstart](#quickstart)
 - [Examples](#examples)
+- [Quickstart](#quickstart)
 - [Unit tests](#unit-tests)
 - [How this project was built](#how-this-project-was-built)
 
@@ -28,6 +28,40 @@
         - Radeon HD 520 ( mesa ) : OK but some random crash happens
     - Windows
         - GeForce GTX 1050 Ti : currently not working ( empty window )
+
+## Examples
+
+#### 0001
+
+create a dxf
+
+[result dxf](examples/example_0001/output.dxf)
+
+<img src="examples/0001/output.png" width=300>
+
+#### 0002
+
+( avalonia/opengl example ) : basic gl test
+
+#### 0003
+
+( avalonia/opengl example ) : test display of [dxf face3d](https://github.com/devel0/netcore-sci/blob/609ffaacb38821ff1dc2f90eae01ae4a1d442936/netcore-sci/lab/OpenGlPageControl.cs#L334) into opengl
+
+<img src="examples/0003/out.png" width=400>
+
+#### 0004
+
+( avalonia/opengl example ) : test display of [dxf face3d](https://github.com/devel0/netcore-sci/blob/a663093ddb074f58041ed7473d755f855d2f3b75/netcore-sci/lab/OpenGlPageControl0004.cs#L237-L288) into opengl
+
+<img src="examples/0004/out.png" width=400>
+
+#### 0005
+
+( avalonia/opengl example ) : display DEM from [STL file](examples/0005/map.stl) taken from [map2stl](https://map2stl.com/)
+
+control with mouse buttons rotation, zoom, pan
+
+<img src="examples/0005/out.gif" width=600>
 
 ## Quickstart
 
@@ -125,40 +159,6 @@ namespace example_0001
 ```sh
 dotnet run
 ```
-
-## Examples
-
-#### 0001
-
-create a dxf
-
-[result dxf](examples/example_0001/output.dxf)
-
-<img src="examples/0001/output.png" width=300>
-
-#### 0002
-
-( avalonia/opengl example ) : basic gl test
-
-#### 0003
-
-( avalonia/opengl example ) : test display of [dxf face3d](https://github.com/devel0/netcore-sci/blob/609ffaacb38821ff1dc2f90eae01ae4a1d442936/netcore-sci/lab/OpenGlPageControl.cs#L334) into opengl
-
-<img src="examples/0003/out.png" width=400>
-
-#### 0004
-
-( avalonia/opengl example ) : test display of [dxf face3d](https://github.com/devel0/netcore-sci/blob/a663093ddb074f58041ed7473d755f855d2f3b75/netcore-sci/lab/OpenGlPageControl0004.cs#L237-L288) into opengl
-
-<img src="examples/0004/out.png" width=400>
-
-#### 0005
-
-( avalonia/opengl example ) : display DEM from [STL file](examples/0005/map.stl) taken from [map2stl](https://map2stl.com/)
-
-control with mouse buttons rotation, zoom, pan
-
-<img src="examples/0005/out.gif" width=400>
 
 ## Unit tests
 
