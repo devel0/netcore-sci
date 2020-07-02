@@ -8,6 +8,9 @@
 
 - [API Documentation](https://devel0.github.io/netcore-sci/api/SearchAThing.html)
 - [Articles](https://devel0.github.io/netcore-sci/articles/intro.html)
+
+<hr/>
+
 - [Recent changes](#recent-changes)
 - [Notes](#release-notes)
 - [Examples](#examples)
