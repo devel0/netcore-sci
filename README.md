@@ -61,7 +61,7 @@ create a dxf
 
 control with mouse buttons rotation, zoom, pan
 
-<img src="examples/0005/out.gif" width=600>
+<img src="examples/0005/out.gif">
 
 ## Quickstart
 
