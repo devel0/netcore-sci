@@ -6,7 +6,7 @@
 
 .NET core sci
 
-- [API Documentation](https://devel0.github.io/netcore-sci/api/SearchAThing.Sci.html)
+- [API Documentation](https://devel0.github.io/netcore-sci/api/SearchAThing.html)
 - [Recent changes](#recent-changes)
 - [Notes](#release-notes)
 - [Quickstart](#quickstart)
