@@ -7,12 +7,22 @@
 .NET core sci
 
 - [API Documentation](https://devel0.github.io/netcore-sci/api/SearchAThing.Sci.html)
+- [Notes](#release-notes)
 - [Quickstart](#quickstart)
 - [Examples](#examples)
 - [Unit tests](#unit-tests)
 - [How this project was built](#how-this-project-was-built)
 
 <hr/>
+
+## Notes
+
+- avalonia opengl control with nupkg built from git sources available with myget ( see nuget.config ) ; tested on:
+    - Linux
+        - GeForce GTX 1050 Ti : OK
+        - Radeon HD 520 ( mesa ) : OK but some random crash happens
+    - Windows
+        - GeForce GTX 1050 Ti : currently not working ( empty window )
 
 ## Quickstart
 
@@ -33,7 +43,7 @@ cd example_0001
 dotnet add package netcore-sci
 ```
 
-if prefer to link source code directly to stepin with debugger add project reference instead
+**optional** if prefer to link source code directly to stepin with debugger add project reference instead
 
 ```sh
 dotnet add reference ../../netcore-sci/netcore-sci.csproj
