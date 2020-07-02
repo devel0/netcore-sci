@@ -190,7 +190,11 @@ cd ..
 
 dotnet new xunit -n test
 cd test
+dotnet tool install --global dotnet-sonarscanner
 dotnet add reference ../netcore-sci/netcore-sci.csproj
+dotnet add package Microsoft.NET.Test.Sdk --version 16.7.0-preview-20200519-01
+dotnet add package coverlet.collector --version 1.3.0
+dotnet add package coverlet.msbuild --version 2.9.0
 cd ..
 
 dotnet sln netcore-sci.sln add netcore-sci/netcore-sci.csproj
