@@ -170,7 +170,10 @@ dotnet run
 - executing all tests
   - from solution root folder `dotnet test`
 - testing coverage
-  - from vscode run task ( ctrl+shift+p ) `Tasks: Run Task` then `test with coverage` ( `.NET Core Test Explorer` extension required then move to some file eg. Vector3D.cs and click on `Add Watch` from bottom bar )
+  - from vscode run task ( ctrl+shift+p ) `Tasks: Run Task` then `test with coverage` or use provided script `./generate-coverage.sh`
+  - extensions required to watch coverage ( `Coverage Gutters` )
+
+![](data/img/unit-tests-coverage-gutters.png)
 
 ## How this project was built
 
