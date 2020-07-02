@@ -4,15 +4,708 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Arc3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Arc3D.html",
+          "hash": "plP3cE2jYRAGyL+XaHQqOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "ManagedReference",
       "source_relative_path": "api/SearchAThing.Arc3DEqualityComparer.yml",
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.Arc3DEqualityComparer.html",
-          "hash": "upE2N2iIHWF657m69F5PIQ=="
+          "hash": "pxHyYzfX90QFMDjR6VoCFw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.BBox3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.BBox3D.html",
+          "hash": "r1zHR5md/j2UrQMYCbOf6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Circle3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Circle3D.html",
+          "hash": "moPV3fpAigNjqsFsy/FvKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.CoordinateSystem3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.CoordinateSystem3D.html",
+          "hash": "nQ4Qa/ZbokNKk+NJcKmAfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.CoordinateSystem3DAutoEnum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.CoordinateSystem3DAutoEnum.html",
+          "hash": "Zhz43lCwljDqwFAKQf3WPA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.DiscreteSpace-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.DiscreteSpace-1.html",
+          "hash": "gPjVKDcOdmgKMGBqf/vfPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.DiscreteSpaceItem-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.DiscreteSpaceItem-1.html",
+          "hash": "Y1pUWq+XGJggI6aEnwGrGQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.DiscreteSpaceItemComparer-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.DiscreteSpaceItemComparer-1.html",
+          "hash": "tUIj9mGWOh+XYcohp85+5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.DoubleEqualityComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.DoubleEqualityComparer.html",
+          "hash": "hhQXqJjFyMRgvhsSOkVpiA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.GLLineVertex.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.GLLineVertex.html",
+          "hash": "wniSiYgCGTIcaXslPV5m/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.GLTriangleVertex.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.GLTriangleVertex.html",
+          "hash": "ntQbBZMnR7r8vwZ2531tLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Geometry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Geometry.html",
+          "hash": "GTzZvVX0FxE5263eI0G3tA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.GeometryType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.GeometryType.html",
+          "hash": "yDs0FR+d8SBC/DgwhFuU/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.IMUDomain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.IMUDomain.html",
+          "hash": "TL+B75yUS5s4dxA95E0GMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.ISciModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.ISciModel.html",
+          "hash": "HgB1tW2EIrVMyd7Yl9bj3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Int64Map.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Int64Map.html",
+          "hash": "+Tj0KwGiiWLUPPU6ziuZoQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Int64MapExceptionRange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Int64MapExceptionRange.html",
+          "hash": "RLkHuYpYEuT++sHdwD0DVw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Line3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Line3D.html",
+          "hash": "Jr+5OySqn/ijksKBItIwXg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Line3DConstructMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Line3DConstructMode.html",
+          "hash": "jNJVBRXgwQd4OIGR4XVaOg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Line3DEqualityComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Line3DEqualityComparer.html",
+          "hash": "V7TomX0tvi3bzw9ZwXB7iw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Line3DSegmentMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Line3DSegmentMode.html",
+          "hash": "Yi3jtHgtDJgHASHOKURBVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.LineIntersectBehavior.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.LineIntersectBehavior.html",
+          "hash": "dh/cLLaqAd/iwG0NQd/Q0w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.Acceleration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.Acceleration.html",
+          "hash": "xtZcONZCDzDpLAP+ETg1Lg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.Adimensional.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.Adimensional.html",
+          "hash": "RD9W6FTEUwqQIuunt+eamQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.AmountOfSubstance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.AmountOfSubstance.html",
+          "hash": "3ACWG40QL5jxmw30rM/tSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.AngularAcceleration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.AngularAcceleration.html",
+          "hash": "kN85y+vMudKx5JJXZxuXzA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.AngularSpeed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.AngularSpeed.html",
+          "hash": "mdzR3eUTDifH/HmwPYeh7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.BendingMoment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.BendingMoment.html",
+          "hash": "Cw+qeX3WgBS5XHAibDkpbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.ElectricCurrent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.ElectricCurrent.html",
+          "hash": "T2cIovFyU6aft7kCpKcPlw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.ElectricalConductance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.ElectricalConductance.html",
+          "hash": "Nav83rh0E8eOCaZGgp/rmA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.ElectricalConductivity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.ElectricalConductivity.html",
+          "hash": "RpeQuaE/jdU6QarYKy5Ytg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.Energy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.Energy.html",
+          "hash": "z1+b0YEOKLtXVpSy3Qndzg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.Force.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.Force.html",
+          "hash": "S44NynqtOCIL3XHvZ13rTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.Frequency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.Frequency.html",
+          "hash": "zVQRkAVKRJ7Cj4zmeVwMDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.Length.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.Length.html",
+          "hash": "8e+0ZPQSRrZ5N8MRjPeY8A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.Length2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.Length2.html",
+          "hash": "CfP/Rr0ij8xQ3A8RgKHS7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.Length3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.Length3.html",
+          "hash": "mwtWztaTEL/ftHhT0OhivA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.Length4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.Length4.html",
+          "hash": "YvR2/L7HkKRhTZGdD0LZZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.LuminousIntensity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.LuminousIntensity.html",
+          "hash": "Jx0MYydiiCJaa3MJas/S7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.Mass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.Mass.html",
+          "hash": "UwrKNiKvEiQ2yrL187SI7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.PlaneAngle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.PlaneAngle.html",
+          "hash": "p4M2NfiFZ2AkddfqTy9dYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.Power.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.Power.html",
+          "hash": "1c3N8OKxlIFaf6Mnl9h66w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.Pressure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.Pressure.html",
+          "hash": "5eweWomKs7mEtP2NREm0ow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.Speed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.Speed.html",
+          "hash": "g8QWJbxaR5xvbObRDHVrNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.Temperature.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.Temperature.html",
+          "hash": "Pk/KiAewuXhTRlUplkNErQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.Time.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.Time.html",
+          "hash": "rKxnMHdwhDD3Heg+p5E34Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.Turbidity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.Turbidity.html",
+          "hash": "H74B1TnonC3g/xHWT/0w3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.VolumetricFlowRate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.VolumetricFlowRate.html",
+          "hash": "n2Fp671Y95WqMBqUtmsocw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUCollection.html",
+          "hash": "9FbHkiBQ+HyaMaWzB6Dnqw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MUDomain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MUDomain.html",
+          "hash": "0X/voP+le/7tPkbRcAn6qQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Matrix3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Matrix3D.html",
+          "hash": "AMUE0E8csXCNOAA9mTmDog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Measure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Measure.html",
+          "hash": "YaW/GfFrRm8We3NmZcH42w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MeasureJsonConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MeasureJsonConverter.html",
+          "hash": "Deb+7g2G0NMT0WVdP9FlSw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MeasureUnit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MeasureUnit.html",
+          "hash": "kO3G4avrgXUKBN8mHyofrQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MeasureUnitConversionTypeEnum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MeasureUnitConversionTypeEnum.html",
+          "hash": "dOEXYWOIA9OEO1jE3irJOw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MeasureUnitJsonConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MeasureUnitJsonConverter.html",
+          "hash": "DXWLK/hTvSH4YG/c8TkKIw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.MeasureUnitWithDefaultTolerance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.MeasureUnitWithDefaultTolerance.html",
+          "hash": "YwQ0GdG5Ic2hsWLh7Ic4DA=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -21,10 +714,70 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.OrdIdx.html",
-          "hash": "GZ41MS3yn3+jwX36PbQr0Q=="
+          "hash": "AcK2uUVcSkAHJ1AqCYR3mg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.PQCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.PQCollection.html",
+          "hash": "rbQ+i1inea6FVa8jfDgxPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.PhysicalQuantity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.PhysicalQuantity.html",
+          "hash": "8MgvWhEaBAHvKCEhzOFR3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Plane3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Plane3D.html",
+          "hash": "SuDG4NPSi/CeDk1m9uGdUQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Polygon.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Polygon.html",
+          "hash": "24QwxXX1z26Cmrgu8gHrbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Project.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Project.html",
+          "hash": "IqC4Y/KePFeCYvdMF+Jywg=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -33,10 +786,10 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.PythonException.html",
-          "hash": "tmb0yniWVh9nBUkqH8tvsg=="
+          "hash": "MbxU6gL5svtZASm9Xm1WKA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -45,10 +798,10 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.PythonPipe.html",
-          "hash": "TTmw6O0eDgdjXnZNxwuPAw=="
+          "hash": "cGm4pKoqG+5E933tSZhCxQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -56,941 +809,26 @@
         "InvalidFileLink"
       ],
       "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Arc3D.yml",
+      "source_relative_path": "api/SearchAThing.Quaternion.yml",
       "output": {
         ".html": {
-          "relative_path": "api/SearchAThing.Sci.Arc3D.html",
-          "hash": "D48l/se20RXN/tEPN5GAzg=="
+          "relative_path": "api/SearchAThing.Quaternion.html",
+          "hash": "ufiJL0vN+qJpMrg3L7+7iA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.BBox3D.yml",
+      "source_relative_path": "api/SearchAThing.SampleModel.yml",
       "output": {
         ".html": {
-          "relative_path": "api/SearchAThing.Sci.BBox3D.html",
-          "hash": "+Yb6o7+IYAUAUX76LLiB8A=="
+          "relative_path": "api/SearchAThing.SampleModel.html",
+          "hash": "PP0OEC2brhLJOWaoN2yr1g=="
         }
       },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Circle3D.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Circle3D.html",
-          "hash": "sQEIIqIgghtCVwQVjkPxFg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Constants.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Constants.html",
-          "hash": "gPuTmj+RleISQ2AJwaRizA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.CoordinateSystem3D.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.CoordinateSystem3D.html",
-          "hash": "dGbwuvfroP+O0ce+izxZeA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.CoordinateSystem3DAutoEnum.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.CoordinateSystem3DAutoEnum.html",
-          "hash": "2Fwszxham9gVSggk6k0Q9w=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.DiscreteSpace-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.DiscreteSpace-1.html",
-          "hash": "nE2xwlH4ZB/VbE9dpa/CNw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.DiscreteSpaceItem-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.DiscreteSpaceItem-1.html",
-          "hash": "zqgGW7nMd/oENT3KyN5dsQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.DiscreteSpaceItemComparer-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.DiscreteSpaceItemComparer-1.html",
-          "hash": "MxF0VmU1p1cxQSRR7eYfFA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.DoubleEqualityComparer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.DoubleEqualityComparer.html",
-          "hash": "zUVg5wUhS57WT2p4VmfRxA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.DxfKit.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.DxfKit.html",
-          "hash": "mGRjl5Fs3JU3Vh9+o8pJhQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.GLLineVertex.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.GLLineVertex.html",
-          "hash": "1FxJb2Hy0sNGTZx/jl57+A=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.GLTriangleVertex.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.GLTriangleVertex.html",
-          "hash": "AgA3sdMY4OPsSlD/ccM6gw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Geometry.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Geometry.html",
-          "hash": "7Psh6fEKmDnGkMSvucqrWg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.GeometryType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.GeometryType.html",
-          "hash": "m3Dt44JGgVLdwLX2wY8q1Q=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.IMUDomain.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.IMUDomain.html",
-          "hash": "dKkdgQ2M2Bs6OMqI8HyC7g=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.IModel.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.IModel.html",
-          "hash": "8QKJwxE1BwjiToxPiBAarQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Int64Map.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Int64Map.html",
-          "hash": "QOoHnxA1ublzOUpmt5MIBQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Int64MapExceptionRange.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Int64MapExceptionRange.html",
-          "hash": "XbyiHTT63+1dfdnVGwrHvQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Lab.example0003.OpenGlPageControl.html",
-          "hash": "w7tBauGivoaC2U0m7jY5/g=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Lab.example0003.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Lab.example0003.html",
-          "hash": "nle+nGR50TKbAEfY8k4KfA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Lab.example0004.OpenGlPageControl.html",
-          "hash": "/1FB4lqdnCDZbfHUFsxw4g=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Lab.example0004.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Lab.example0004.html",
-          "hash": "MYjoFoNtbjGw2cDL/GCmhg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Line3D.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Line3D.html",
-          "hash": "ehItadG/cVtsCEkUVgjBEg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Line3DConstructMode.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Line3DConstructMode.html",
-          "hash": "MQH0XCe3ldGHycJhjbpRhA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Line3DEqualityComparer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Line3DEqualityComparer.html",
-          "hash": "Bek/J9uhjJfhMkqC0WuNaw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Line3DSegmentMode.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Line3DSegmentMode.html",
-          "hash": "K1sBe9UKSoui/aKeLQsM+g=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.LineIntersectBehavior.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.LineIntersectBehavior.html",
-          "hash": "5tbKlZg6g60QZ+yxGSQqRA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.Acceleration.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.Acceleration.html",
-          "hash": "x576BRiYNsxn2set7M8sqg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.Adimensional.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.Adimensional.html",
-          "hash": "CQppuIhybXICMfZZO4fRlg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.AmountOfSubstance.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.AmountOfSubstance.html",
-          "hash": "Aqfb686P5WTCIMcYGBXzTw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.AngularAcceleration.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.AngularAcceleration.html",
-          "hash": "cCao7JaygqHXl2rVk6QH8w=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.AngularSpeed.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.AngularSpeed.html",
-          "hash": "ISA1cDEnNJ5Odq0qTDMbLA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.BendingMoment.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.BendingMoment.html",
-          "hash": "t6zfKTC9M7XfJ5O3hf3K0A=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.ElectricCurrent.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.ElectricCurrent.html",
-          "hash": "1pijoUoQi4t5k6dgjKc2bw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.ElectricalConductance.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.ElectricalConductance.html",
-          "hash": "iglRhUVZHPN3nnlRJ8KbkA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.ElectricalConductivity.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.ElectricalConductivity.html",
-          "hash": "9taL2PNykmkupTefDDjreg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.Energy.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.Energy.html",
-          "hash": "44TgcUuGE+m1OupTMy77Og=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.Force.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.Force.html",
-          "hash": "yBY/ecAZYPwkmojm1juL0A=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.Frequency.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.Frequency.html",
-          "hash": "l2kBaf9NWUfeErpPyqmpbA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.Length.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.Length.html",
-          "hash": "URs84ahjZjK10JQPHUCKmA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.Length2.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.Length2.html",
-          "hash": "aDEM1+48h/l0e8oESd/VJQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.Length3.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.Length3.html",
-          "hash": "E1KAe5tn1w9X7syaHpxNCw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.Length4.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.Length4.html",
-          "hash": "qxyP5vm89z3HCk7CDsv2MA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.LuminousIntensity.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.LuminousIntensity.html",
-          "hash": "PpRqNbBbPjQg9yxmGirgqA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.Mass.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.Mass.html",
-          "hash": "cE3Irv7Ah5+FsittqpwzJQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.PlaneAngle.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.PlaneAngle.html",
-          "hash": "C4miBWqGAGXjazF3IDqVaQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.Power.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.Power.html",
-          "hash": "Qvah5rrLwm2GNRN5/BPNfA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.Pressure.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.Pressure.html",
-          "hash": "INb/r7BLU3GXCW6EghENug=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.Speed.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.Speed.html",
-          "hash": "oSfGjVMl0R22/u6pZQSgBA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.Temperature.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.Temperature.html",
-          "hash": "c4nLhNOUO33yFrJ0UcheWQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.Time.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.Time.html",
-          "hash": "X0DEuud8L2UCKbFZ5KoaiA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.Turbidity.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.Turbidity.html",
-          "hash": "D/mfsuh2+GLPzkhZaH3X4Q=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.VolumetricFlowRate.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.VolumetricFlowRate.html",
-          "hash": "GFv+twiSNe+t9GKhEzTUxw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUCollection.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUCollection.html",
-          "hash": "2UbbW1ZQXBDDR3mxuQeffw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MUDomain.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MUDomain.html",
-          "hash": "aHtwMfX+0KGZEN5mJyqWTg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Matrix3D.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Matrix3D.html",
-          "hash": "nAsUY6ax5lwlZOPqwIMo+A=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Measure.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Measure.html",
-          "hash": "MS0rADfFEm4N+fOEEI+bfA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MeasureJsonConverter.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MeasureJsonConverter.html",
-          "hash": "PX+2oJQIxby6HexnGb7Urw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MeasureUnit.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MeasureUnit.html",
-          "hash": "n6tND4TpQhrYNJOcbIV84w=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MeasureUnitConversionTypeEnum.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MeasureUnitConversionTypeEnum.html",
-          "hash": "nrRRNOKJL3TKKc4RtCOKgA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MeasureUnitJsonConverter.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MeasureUnitJsonConverter.html",
-          "hash": "SNFC8vgSM8OP3FZEUAw84Q=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.MeasureUnitWithDefaultTolerance.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.MeasureUnitWithDefaultTolerance.html",
-          "hash": "0r0pjAABzGSvvPSvGFqsQg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.PQCollection.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.PQCollection.html",
-          "hash": "TqKUffEgp5/4PGAJ3Ee38g=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.PhysicalQuantity.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.PhysicalQuantity.html",
-          "hash": "xK3dhpZHR4k9NJI5ux1q9w=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Plane3D.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Plane3D.html",
-          "hash": "H+oYoD5Foi8sAlYDqvPbKw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Polygon.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Polygon.html",
-          "hash": "L4MndejZtATXnFUuydP/UA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Project.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Project.html",
-          "hash": "sa6gbYylTkHhk3FxJyw0tQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Quaternion.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Quaternion.html",
-          "hash": "cxoxRhn5VPTNdeE6fm1MRA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.SampleModel.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.SampleModel.html",
-          "hash": "BUoxDfaF3qsdFvj3SJaobg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.SciExt.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.SciExt.html",
-          "hash": "JjTucg3mpBFqV4qPw3jTKg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Transform3D.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Transform3D.html",
-          "hash": "rAv6A1JualpOZIBijuaPjg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Vector3D.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Vector3D.html",
-          "hash": "B6Oryjm5T7tNbwE9CBG0hQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Vector3DEqualityComparer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Vector3DEqualityComparer.html",
-          "hash": "VsUe1HS70cVn4RHzuSSffg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Vector3DWithOrder.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Vector3DWithOrder.html",
-          "hash": "lQqMntCbpiHbjaNtqhnJLg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.Vector3DWithOrderEqualityComparer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.Vector3DWithOrderEqualityComparer.html",
-          "hash": "jTI3/nayNs+VFYeYsejCXQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Sci.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Sci.html",
-          "hash": "UaSuHOS66S+vAIJprlwcqA=="
-        }
-      },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1002,10 +840,88 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.SciExt.html",
-          "hash": "LmcYWwueeOU/dMJIbXGPZg=="
+          "hash": "8fjOxLiS8zJwMEA/5S8lbQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.SciToolkit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.SciToolkit.html",
+          "hash": "35wFqmmKcV5QYn/e9wTJeA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Transform3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Transform3D.html",
+          "hash": "oYoZjlG16vrK2Ms5NWm2Qg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Vector3D.html",
+          "hash": "EVSXDNkVHXTtKzJwj2d/1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Vector3DEqualityComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Vector3DEqualityComparer.html",
+          "hash": "e1yBFl9zdoclW1BlwETIjQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Vector3DWithOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Vector3DWithOrder.html",
+          "hash": "RTJs8wRof8NjY+hf3cfQ9Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Vector3DWithOrderEqualityComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Vector3DWithOrderEqualityComparer.html",
+          "hash": "LCgM1Quwe3709zTExwlWrQ=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1014,10 +930,10 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.html",
-          "hash": "9mCq1dK9Eg44uCByMwVRdg=="
+          "hash": "Xp/N5vInU1LWO/ah4XRZrA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1026,10 +942,10 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "ZiiBT7Q61Mq8H5hvwUyidw=="
+          "hash": "uDqxkFNyUsweljVGp2dvjA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1038,7 +954,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "DL03M8Q+Nx3M+JirZ47KGQ=="
+          "hash": "jTx0ZJwDKDRav3Jr+JfOvA=="
         }
       },
       "is_incremental": false,
@@ -1050,7 +966,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "hnAEDjiUDvATHIkV5RjlSg=="
+          "hash": "JPRmIEhSldoFSF2zdP2AfA=="
         }
       },
       "is_incremental": true,
@@ -1062,7 +978,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/mudomain.html",
-          "hash": "R7rWVcKO8vN+eYfPEWDt3A=="
+          "hash": "BMC7z3m8hkSgnrbEmHc1OQ=="
         }
       },
       "is_incremental": true,
@@ -1089,7 +1005,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "J6mOo45xqZaaOFJcLsmwHg=="
+          "hash": "7QzHHL4OYlRJSuv6NQf18Q=="
         }
       },
       "is_incremental": true,
@@ -1126,8 +1042,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 83,
-          "skipped_file_count": 83
+          "total_file_count": 76,
+          "skipped_file_count": 74
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

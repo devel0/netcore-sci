@@ -1,9 +1,6 @@
 using Xunit;
 using System.Linq;
-using static System.Math;
 using System;
-using SearchAThing.Util;
-using System.Threading;
 
 namespace SearchAThing.Sci.Tests
 {

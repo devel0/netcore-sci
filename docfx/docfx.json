@@ -5,13 +5,14 @@
         {
           "files": [
             "netcore-sci/**.csproj"
-          ],          
+          ],                    
 		      "cwd": ".."
         }
       ],
       "dest": "api",
-      "disableGitFeatures": false,    
-      "filtertmp": "filterConfig.yml"    
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false,
+      "filter": "filterConfig.yml"
     }
   ],
   "build": {

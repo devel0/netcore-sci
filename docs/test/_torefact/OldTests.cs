@@ -4,10 +4,9 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System;
-using System.Globalization;
 using ClipperLib;
-using SearchAThing.Util;
-using static SearchAThing.Sci.MUCollection;
+using static SearchAThing.SciToolkit;
+using static SearchAThing.MUCollection;
 
 namespace SearchAThing.Sci.Tests
 {
@@ -16,7 +15,7 @@ namespace SearchAThing.Sci.Tests
 
         // tests from https://github.com/SearchAThing-old1/SearchAThing.UnitTest
 
-        IModel model = new SampleModel();
+        ISciModel model = new SampleModel();
 
         [Fact(DisplayName = "DoubleEqualityComparer")]
         public void DoubleEqualityComparerTest()
@@ -51,7 +50,7 @@ namespace SearchAThing.Sci.Tests
             Assert.True(new Vector3D(1, 5.9, 4).Length.EqualsTol(tolLen, 7.198));
 
             // normalized
-            Assert.True(new Vector3D(1, 5.9, 4).Normalized().EqualsTol(Constants.NormalizedLengthTolerance, new Vector3D(0.13893, 0.81968, 0.55572)));
+            Assert.True(new Vector3D(1, 5.9, 4).Normalized().EqualsTol(NormalizedLengthTolerance, new Vector3D(0.13893, 0.81968, 0.55572)));
 
             // distance
             Assert.True(new Vector3D(1, 5.9, 4).Distance(new Vector3D(3, 4.3, 1.03)).EqualsTol(tolLen, 3.9218));
@@ -65,7 +64,7 @@ namespace SearchAThing.Sci.Tests
             // angle rad
             Assert.True(new Vector3D(3.48412, 2.06577, 0).AngleRad(tolLen, new Vector3D(1.4325, 2.70248, 0)).EqualsTol(tolRad, 0.548));
             Assert.True(new Vector3D(.231334209442139, .143270492553711)
-                .AngleRad(Constants.NormalizedLengthTolerance, new Vector3D(-.224979639053345, -.153055667877197))
+                .AngleRad(NormalizedLengthTolerance, new Vector3D(-.224979639053345, -.153055667877197))
                 .EqualsTol(tolRad, (177.54306).ToRad()));
 
             // angle rad
@@ -408,8 +407,8 @@ namespace SearchAThing.Sci.Tests
                 Assert.True(circle.Radius.EqualsTol(tol, 129.6516));
                 Assert.True(circle.Area.EqualsTol(tol, 52808.7467));
                 Assert.True(circle.Center.EqualsTol(tol, 170.9181, 132.1797, 27.4052));
-                Assert.True(circle.CS.BaseX.EqualsTol(Constants.NormalizedLengthTolerance, -0.9128, 0.3492, -0.2113));
-                Assert.True(circle.CS.BaseY.EqualsTol(Constants.NormalizedLengthTolerance, 0.3837, 0.9107, -0.1526));
+                Assert.True(circle.CS.BaseX.EqualsTol(NormalizedLengthTolerance, -0.9128, 0.3492, -0.2113));
+                Assert.True(circle.CS.BaseY.EqualsTol(NormalizedLengthTolerance, 0.3837, 0.9107, -0.1526));
             }
 
             {

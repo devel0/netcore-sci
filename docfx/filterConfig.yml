@@ -1,5 +1,3 @@
-- include:
-	uidRegex: SearchAThing.*
+apiRules:
 - exclude:
-	uidRegex: SearchAThing.Sci.Lab.*
-	type: Type
+  uidRegex: ^SearchAThing\.Sci\.Lab
