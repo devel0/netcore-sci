@@ -1,10 +1,14 @@
+// variables coming from vertex shader
 varying vec3 FragPos;
 varying vec3 VecPos;
 varying vec3 Normal;
+
+// variables coming from code
 uniform float uMaxY;
 uniform float uMinY;
 uniform float uTime;
 uniform float uDisco;
+
 // DECLAREGLFRAG
 
 void main() {
@@ -17,8 +21,7 @@ void main() {
            0.25 + (smoothstep(0.3, 0.8, y) * (0.5 - c / 4.0)),
            0.25 + abs((smoothstep(0.1, 0.4, y) * (0.5 - s / 4.0))));
 
-  vec3 objectColor =
-      vec3(1, 0, 0); // vec3((1.0 - y), 0.40 +  y / 4.0, y * 0.75 + 0.25);
+  vec3 objectColor = vec3((1.0 - y), 0.40 + y / 4.0, y * 0.75 + 0.25);
   objectColor = objectColor * (1.0 - uDisco) + discoColor * uDisco;
 
   float ambientStrength = 0.3;

@@ -1,12 +1,9 @@
 using Xunit;
-using System.Linq;
 using static System.Math;
-using System;
-using SearchAThing;
 
 namespace SearchAThing.Sci.Tests
 {
-  public partial class Vector3DTests
+    public partial class Vector3DTests
   {
 
     [Fact]

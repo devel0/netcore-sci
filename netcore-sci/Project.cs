@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-using SearchAThing.Util;
-using System.Runtime.Serialization;
-
-namespace SearchAThing.Sci
+namespace SearchAThing
 {
 
     public class Project

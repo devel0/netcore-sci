@@ -2,32 +2,24 @@ using System;
 using System.Linq;
 using static System.Math;
 using System.Collections.Generic;
-using SearchAThing.Sci;
 using System.Drawing.Drawing2D;
 using netDxf;
-using SearchAThing;
 using ClipperLib;
-using SearchAThing.Util;
 
 namespace SearchAThing
 {
 
-    namespace Sci
+    public static class Polygon
     {
 
-        public static class Polygon
+        public static IEnumerable<Vector3D> EllipseToPolygon2D(Vector3D center, double width, double height, double flatness = .1)
         {
+            var _center = Vector3D.Zero;
 
-            public static IEnumerable<Vector3D> EllipseToPolygon2D(Vector3D center, double width, double height, double flatness = .1)
-            {
-                var _center = Vector3D.Zero;
-
-                var gp = new GraphicsPath();
-                gp.AddEllipse((float)(_center.X - width / 2), (float)(_center.Y - height / 2), (float)width, (float)height);
-                gp.Flatten(new Matrix(), (float)flatness);
-                foreach (var p in gp.PathPoints) yield return new Vector3D(p.X, p.Y, 0) + center;
-            }
-
+            var gp = new GraphicsPath();
+            gp.AddEllipse((float)(_center.X - width / 2), (float)(_center.Y - height / 2), (float)width, (float)height);
+            gp.Flatten(new Matrix(), (float)flatness);
+            foreach (var p in gp.PathPoints) yield return new Vector3D(p.X, p.Y, 0) + center;
         }
 
     }

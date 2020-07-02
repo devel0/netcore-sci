@@ -1,10 +1,7 @@
-using System;
-using System.Linq;
-
-namespace SearchAThing.Sci
+namespace SearchAThing
 {
 
-    public static class Constants
+    public static partial class SciToolkit
     {
 
         public const double NormalizedLengthTolerance = 1e-4;        

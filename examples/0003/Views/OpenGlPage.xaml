@@ -1,7 +1,7 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"             
-             xmlns:v="clr-namespace:SearchAThing.Sci.Lab.example0003;assembly=netcore-sci"    
-             x:Class="Example.Views.OpenGlPage"
+             xmlns:v="clr-namespace:SearchAThing.SciExamples"
+             x:Class="SearchAThing.SciExamples.Views.OpenGlPage"
              >
   <Grid>
     <v:OpenGlPageControl x:Name="GL"/>

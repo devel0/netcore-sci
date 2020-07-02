@@ -2,9 +2,8 @@ using System;
 using System.Linq;
 using static System.Math;
 using System.Collections.Generic;
-using SearchAThing.Util;
 
-namespace SearchAThing.Sci
+namespace SearchAThing
 {
 
     public class DiscreteSpaceItem<T>

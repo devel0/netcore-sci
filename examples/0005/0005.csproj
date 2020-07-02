@@ -19,7 +19,7 @@
     <PackageReference Include="Avalonia.Desktop" Version="0.9.999"/>
   </ItemGroup>
   <ItemGroup>
-    <None Update="map.stl" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="map.stl" CopyToOutputDirectory="PreserveNewest"/>
   </ItemGroup>
   <PropertyGroup>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -28,4 +28,8 @@
     <AssemblyName>example</AssemblyName>
     <noWarn>1591</noWarn>
   </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="vertexShader.glsl"/>
+    <EmbeddedResource Include="fragmentShader.glsl"/>    
+  </ItemGroup>
 </Project>

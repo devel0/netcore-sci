@@ -1,9 +1,7 @@
-using System;
-
-namespace SearchAThing.Sci
+namespace SearchAThing
 {
 
-    public class SampleModel : IModel
+    public class SampleModel : ISciModel
     {
 
         public IMUDomain MUDomain { get; private set; }

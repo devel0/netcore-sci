@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using SearchAThing.Util;
 
-namespace SearchAThing.Sci
+namespace SearchAThing
 {
 
     /// <summary>

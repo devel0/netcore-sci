@@ -1,12 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.Serialization;
-using SearchAThing.Util;
 
-namespace SearchAThing.Sci
+namespace SearchAThing
 {
 
     public enum MeasureUnitConversionTypeEnum

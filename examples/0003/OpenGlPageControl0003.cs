@@ -10,8 +10,9 @@ using static Avalonia.OpenGL.GlConsts;
 // ReSharper disable StringLiteralTypo
 using static System.Math;
 using System.Collections.Generic;
+using static SearchAThing.SciToolkit;
 
-namespace SearchAThing.Sci.Lab.example0003
+namespace SearchAThing.SciExamples
 {
 
     public class OpenGlPageControl : OpenGlControlBase
@@ -117,10 +118,10 @@ namespace SearchAThing.Sci.Lab.example0003
         }
 
         private string VertexShaderSource => GetShader(false,
-            "netcore-sci.lab.vertexShader.glsl".GetEmbeddedFileContent<OpenGlPageControl>());
+            "0003.vertexShader.glsl".GetEmbeddedFileContent<OpenGlPageControl>());
 
         private string FragmentShaderSource => GetShader(true,
-            "netcore-sci.lab.fragmentShader.glsl".GetEmbeddedFileContent<OpenGlPageControl>());
+            "0003.fragmentShader.glsl".GetEmbeddedFileContent<OpenGlPageControl>());
 
         private readonly GLLineVertex[] _points;
         private readonly uint[] _indices;
@@ -230,7 +231,7 @@ namespace SearchAThing.Sci.Lab.example0003
                 {
                     dxf = new netDxf.DxfDocument();
 
-                    var cube = DxfKit.Cube(new Vector3D(), 1);
+                    var cube = Cube(new Vector3D(), 1);
 
                     dxf.AddEntity(cube);
 

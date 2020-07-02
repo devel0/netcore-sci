@@ -25,4 +25,8 @@
     <AssemblyName>example</AssemblyName>
     <noWarn>1591</noWarn>
   </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="vertexShader.glsl"/>
+    <EmbeddedResource Include="fragmentShader.glsl"/>
+  </ItemGroup>
 </Project>

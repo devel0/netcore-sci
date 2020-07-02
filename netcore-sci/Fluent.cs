@@ -1,6 +1,5 @@
 using static System.Math;
 using System.Collections.Generic;
-using SearchAThing.Util;
 
 namespace SearchAThing
 {

@@ -1,43 +1,36 @@
-using SearchAThing.Sci;
 using System.Collections.Generic;
 using System.Linq;
-using SearchAThing.Util;
 
 namespace SearchAThing
 {
 
-    namespace Sci
+    public enum GeometryType
+    {
+        Vector3D,
+        Line3D,
+        Circle3D,
+        Arc3D
+    }
+
+    public abstract class Geometry
     {
 
-        public enum GeometryType
+        public Geometry(GeometryType type) { Type = type; }
+
+        public GeometryType Type { get; protected set; }
+
+        public abstract IEnumerable<Vector3D> Vertexes { get; }
+        public abstract Vector3D GeomFrom { get; }
+        public abstract Vector3D GeomTo { get; }
+        public abstract double Length { get; }
+        public abstract IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false);
+        public abstract BBox3D BBox(double tol_len);
+
+        public abstract netDxf.Entities.EntityObject DxfEntity { get; }
+
+        public static implicit operator netDxf.Entities.EntityObject(Geometry geom)
         {
-            Vector3D,
-            Line3D,
-            Circle3D,
-            Arc3D
-        }
-
-        public abstract class Geometry
-        {
-
-            public Geometry(GeometryType type) { Type = type; }
-
-            public GeometryType Type { get; protected set; }
-
-            public abstract IEnumerable<Vector3D> Vertexes { get; }
-            public abstract Vector3D GeomFrom { get; }
-            public abstract Vector3D GeomTo { get; }
-            public abstract double Length { get; }
-            public abstract IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false);
-            public abstract BBox3D BBox(double tol_len);
-
-            public abstract netDxf.Entities.EntityObject DxfEntity { get; }
-
-            public static implicit operator netDxf.Entities.EntityObject(Geometry geom)
-            {
-                return geom.DxfEntity;
-            }
-
+            return geom.DxfEntity;
         }
 
     }

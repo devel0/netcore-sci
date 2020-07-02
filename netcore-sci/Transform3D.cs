@@ -1,4 +1,4 @@
-namespace SearchAThing.Sci
+namespace SearchAThing
 {
 
     /// <summary>

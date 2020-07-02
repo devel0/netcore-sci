@@ -7,6 +7,7 @@
 .NET core sci
 
 - [API Documentation](https://devel0.github.io/netcore-sci/api/SearchAThing.Sci.html)
+- [Recent changes](#recent-changes)
 - [Notes](#release-notes)
 - [Quickstart](#quickstart)
 - [Examples](#examples)
@@ -14,6 +15,10 @@
 - [How this project was built](#how-this-project-was-built)
 
 <hr/>
+
+## Recent changes
+
+- **1.3.0** : refactored api namespace to have partial static SciToolkit class in SearchAThing namespace
 
 ## Notes
 

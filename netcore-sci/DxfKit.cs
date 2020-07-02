@@ -2,81 +2,74 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using netDxf.Entities;
-using SearchAThing.Sci;
 using netDxf;
 using netDxf.Blocks;
 using netDxf.Tables;
 using System.Text;
 using System.Globalization;
 using SearchAThing;
-using SearchAThing.Util;
-using System.Runtime.InteropServices;
+using static SearchAThing.SciToolkit;
 
 namespace SearchAThing
 {
 
-    namespace Sci
+    public static partial class SciToolkit
     {
 
-        public static partial class DxfKit
+        /// <summary>
+        /// Creates dxf entities for a 3 axis of given length centered in given center point.
+        /// </summary>        
+        public static IEnumerable<Line> Star(Vector3D center, double L)
         {
+            yield return new Line((center - L / 2 * Vector3D.XAxis), (center + L / 2 * Vector3D.XAxis));
+            yield return new Line((center - L / 2 * Vector3D.YAxis), (center + L / 2 * Vector3D.YAxis));
+            yield return new Line((center - L / 2 * Vector3D.ZAxis), (center + L / 2 * Vector3D.ZAxis));
+        }
 
-            /// <summary>
-            /// Creates dxf entities for a 3 axis of given length centered in given center point.
-            /// </summary>        
-            public static IEnumerable<Line> Star(Vector3D center, double L)
+        /// <summary>
+        /// Creates dxf entities for a 6 faces of a cube
+        /// </summary>        
+        public static IEnumerable<Face3d> Cube(Vector3D center, double L)
+        {
+            return Cuboid(center, new Vector3D(L, L, L));
+        }
+
+        /// <summary>
+        /// Creates dxf entities for 6 faces of a cuboid
+        /// </summary>        
+        public static IEnumerable<Face3d> Cuboid(Vector3D center, Vector3D size)
+        {
+            var corner = center - size / 2;
+
+            // is this a cuboid ? :)
+            //
+            //       011------------111
+            //      / .            / |
+            //   001------------101  |      z
+            //    |   .          |   |      |    y
+            //    |   .          |   |      |  /
+            //    |  010.........|. 110     | /
+            //    | .            | /        |/
+            //   000------------100         ---------x
+            //
+            var m = new Vector3[2, 2, 2];
+            for (int xi = 0; xi < 2; ++xi)
             {
-                yield return new Line((center - L / 2 * Vector3D.XAxis), (center + L / 2 * Vector3D.XAxis));
-                yield return new Line((center - L / 2 * Vector3D.YAxis), (center + L / 2 * Vector3D.YAxis));
-                yield return new Line((center - L / 2 * Vector3D.ZAxis), (center + L / 2 * Vector3D.ZAxis));
-            }
-
-            /// <summary>
-            /// Creates dxf entities for a 6 faces of a cube
-            /// </summary>        
-            public static IEnumerable<Face3d> Cube(Vector3D center, double L)
-            {
-                return Cuboid(center, new Vector3D(L, L, L));
-            }
-
-            /// <summary>
-            /// Creates dxf entities for 6 faces of a cuboid
-            /// </summary>        
-            public static IEnumerable<Face3d> Cuboid(Vector3D center, Vector3D size)
-            {
-                var corner = center - size / 2;
-
-                // is this a cuboid ? :)
-                //
-                //       011------------111
-                //      / .            / |
-                //   001------------101  |      z
-                //    |   .          |   |      |    y
-                //    |   .          |   |      |  /
-                //    |  010.........|. 110     | /
-                //    | .            | /        |/
-                //   000------------100         ---------x
-                //
-                var m = new Vector3[2, 2, 2];
-                for (int xi = 0; xi < 2; ++xi)
+                for (int yi = 0; yi < 2; ++yi)
                 {
-                    for (int yi = 0; yi < 2; ++yi)
+                    for (int zi = 0; zi < 2; ++zi)
                     {
-                        for (int zi = 0; zi < 2; ++zi)
-                        {
-                            m[xi, yi, zi] = (corner + size.Scalar(xi, yi, zi));
-                        }
+                        m[xi, yi, zi] = (corner + size.Scalar(xi, yi, zi));
                     }
                 }
-
-                yield return new Face3d(m[0, 0, 0], m[1, 0, 0], m[1, 0, 1], m[0, 0, 1]); // front
-                yield return new Face3d(m[0, 1, 0], m[0, 1, 1], m[1, 1, 1], m[1, 1, 0]); // back
-                yield return new Face3d(m[0, 0, 0], m[0, 0, 1], m[0, 1, 1], m[0, 1, 0]); // left
-                yield return new Face3d(m[1, 0, 0], m[1, 1, 0], m[1, 1, 1], m[1, 0, 1]); // right
-                yield return new Face3d(m[0, 0, 0], m[0, 1, 0], m[1, 1, 0], m[1, 0, 0]); // bottom
-                yield return new Face3d(m[0, 0, 1], m[1, 0, 1], m[1, 1, 1], m[0, 1, 1]); // top
             }
 
+            yield return new Face3d(m[0, 0, 0], m[1, 0, 0], m[1, 0, 1], m[0, 0, 1]); // front
+            yield return new Face3d(m[0, 1, 0], m[0, 1, 1], m[1, 1, 1], m[1, 1, 0]); // back
+            yield return new Face3d(m[0, 0, 0], m[0, 0, 1], m[0, 1, 1], m[0, 1, 0]); // left
+            yield return new Face3d(m[1, 0, 0], m[1, 1, 0], m[1, 1, 1], m[1, 0, 1]); // right
+            yield return new Face3d(m[0, 0, 0], m[0, 1, 0], m[1, 1, 0], m[1, 0, 0]); // bottom
+            yield return new Face3d(m[0, 0, 1], m[1, 0, 1], m[1, 1, 1], m[0, 1, 1]); // top
         }
 
     }
@@ -223,7 +216,7 @@ namespace SearchAThing
             foreach (var _ins in dxf.Inserts)
             {
                 var ins = (Insert)_ins.Clone();//.Clone(blkDict[_ins.Block.Name]);
-                //ins.Position = transform(ins.Position);
+                                               //ins.Position = transform(ins.Position);
                 yield return ins;
             }
         }
@@ -340,7 +333,7 @@ namespace SearchAThing
         /// </summary>        
         public static IEnumerable<EntityObject> DrawStar(this DxfObject dxfObj, Vector3D center, double L, Layer layer = null)
         {
-            var q = DxfKit.Star(center, L).ToList();
+            var q = Star(center, L).ToList();
 
             foreach (var line in q) dxfObj.AddEntity(line, layer);
 
@@ -352,7 +345,7 @@ namespace SearchAThing
         /// </summary>        
         public static IEnumerable<EntityObject> DrawCube(this DxfObject dxfObj, Vector3D center, double L, Layer layer = null)
         {
-            var ents = DxfKit.Cuboid(center, new Vector3D(L, L, L)).ToList();
+            var ents = Cuboid(center, new Vector3D(L, L, L)).ToList();
 
             dxfObj.AddEntities(ents, layer);
 
@@ -364,7 +357,7 @@ namespace SearchAThing
         /// </summary>        
         public static IEnumerable<EntityObject> DrawCuboid(this DxfObject dxfObj, Vector3D center, Vector3D size, Layer layer = null)
         {
-            var ents = DxfKit.Cuboid(center, size).ToList();
+            var ents = Cuboid(center, size).ToList();
 
             dxfObj.AddEntities(ents, layer);
 
@@ -447,7 +440,7 @@ namespace SearchAThing
        hsl.L = 50;
 
        return hsl.ToRgb();
-   }        */
+    }        */
 
         /*
                 /// <summary>

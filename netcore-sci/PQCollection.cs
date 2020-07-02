@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
-using SearchAThing.Util;
 
-namespace SearchAThing.Sci
+namespace SearchAThing
 {
 
     // https://en.wikipedia.org/wiki/List_of_physical_quantities

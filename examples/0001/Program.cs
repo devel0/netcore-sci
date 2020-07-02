@@ -1,5 +1,4 @@
 ﻿using static System.Math;
-using SearchAThing.Sci;
 using SearchAThing;
 
 namespace test

@@ -1,10 +1,7 @@
 using static System.Math;
-using SearchAThing;
 using System.Collections.Generic;
 using System.Linq;
-using SearchAThing.Sci;
-using System;
-using SearchAThing.Util;
+using SearchAThing;
 
 namespace SearchAThing
 {

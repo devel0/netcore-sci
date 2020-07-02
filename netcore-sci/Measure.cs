@@ -1,7 +1,4 @@
-using SearchAThing.Util;
-using System.ComponentModel;
 using System.Globalization;
-using System.Runtime.Serialization;
 using System;
 using static System.FormattableString;
 using static System.Math;
@@ -9,7 +6,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 
-namespace SearchAThing.Sci
+namespace SearchAThing
 {
 
     [JsonConverter(typeof(MeasureJsonConverter))]

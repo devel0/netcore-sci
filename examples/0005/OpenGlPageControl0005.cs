@@ -15,9 +15,9 @@ using Avalonia.Data;
 using System.ComponentModel;
 using Avalonia.Controls;
 
-namespace SearchAThing.Sci.Lab.example0005
+namespace SearchAThing.SciExamples
 {
-
+    
     public class OpenGlPageControl : OpenGlControlBase, INotifyPropertyChanged
     {
         private float _lightPosX = 0.7f;
@@ -82,7 +82,7 @@ namespace SearchAThing.Sci.Lab.example0005
             get => _roll;
             set => SetAndRaise(RollProperty, ref _roll, value);
         }
-        
+
         private string _info;
         public static readonly DirectProperty<OpenGlPageControl, string> InfoProperty =
             AvaloniaProperty.RegisterDirect<OpenGlPageControl, string>("Info", o => o.Info, (o, v) => o.Info = v);
@@ -166,10 +166,10 @@ namespace SearchAThing.Sci.Lab.example0005
         }
 
         private string VertexShaderSource => GetShader(false,
-            "netcore-sci.lab.vertexShader.glsl".GetEmbeddedFileContent<OpenGlPageControl>());
+            "0005.vertexShader.glsl".GetEmbeddedFileContent<OpenGlPageControl>());
 
         private string FragmentShaderSource => GetShader(true,
-            "netcore-sci.lab.fragmentShader0005.glsl".GetEmbeddedFileContent<OpenGlPageControl>());
+            "0005.fragmentShader.glsl".GetEmbeddedFileContent<OpenGlPageControl>());
 
         private GLTriangleVertex[] _points;
         private uint[] _indices;
@@ -403,7 +403,7 @@ namespace SearchAThing.Sci.Lab.example0005
             Info = $"Renderer: {GL.GetString(GL_RENDERER)} Version: {GL.GetString(GL_VERSION)}";
 
             // Load the source of the vertex shader and compile it.
-            _vertexShader = GL.CreateShader(GL_VERTEX_SHADER);
+            _vertexShader = GL.CreateShader(GL_VERTEX_SHADER);            
             Console.WriteLine(GL.CompileShaderAndGetError(_vertexShader, VertexShaderSource));
             CheckError(GL);
 
@@ -503,7 +503,7 @@ namespace SearchAThing.Sci.Lab.example0005
             var nearPlaneDistance = 0.01f;
             var farPlaneDistance = 1000f;
 
-            var projection = 
+            var projection =
                 Matrix4x4.CreatePerspectiveFieldOfView((float)(Math.PI / 4), aspectRatio, nearPlaneDistance, farPlaneDistance);
 
             var view =

@@ -1,8 +1,7 @@
 using System.Numerics;
 using System.Runtime.InteropServices;
-using static System.Math;
 
-namespace SearchAThing.Sci
+namespace SearchAThing
 {
 
 
@@ -48,7 +47,5 @@ namespace SearchAThing.Sci
         }
 
     }
-
-
 
 }

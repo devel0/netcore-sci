@@ -1,6 +1,6 @@
 using static System.Math;
 
-namespace SearchAThing.Sci
+namespace SearchAThing
 {
 
     /// <summary>

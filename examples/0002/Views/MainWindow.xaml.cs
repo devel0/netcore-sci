@@ -5,7 +5,6 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
 using ControlCatalog.Pages;
-using SearchAThing.Sci;
 
 namespace example_avalonia_opengl.Views
 {
@@ -24,9 +23,9 @@ namespace example_avalonia_opengl.Views
 
         private void click1(object sender, RoutedEventArgs e)
         {
-            var ctl = this.FindControl<OpenGlPageControl>("glctl");
+            var ctl = this.FindControl<OpenGlPage>("glctl");
 
-             
+            System.Console.WriteLine($"clicked");
         }
     }
 }

@@ -1,6 +1,4 @@
-using SearchAThing.Util;
-
-namespace SearchAThing.Sci
+namespace SearchAThing
 {
 
     public class Plane3D

@@ -1,8 +1,5 @@
 using Xunit;
 using System.Linq;
-using static System.Math;
-using System;
-using SearchAThing;
 
 namespace SearchAThing.Sci.Tests
 {

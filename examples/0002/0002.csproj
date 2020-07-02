@@ -1,22 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <ProjectReference Include="..\..\netcore-sci\netcore-sci.csproj" />
+    <ProjectReference Include="..\..\netcore-sci\netcore-sci.csproj"/>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="Models\"/>
     <Compile Update="**\*.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
     <AvaloniaResource Include="**\*.xaml">
       <SubType>Designer</SubType>
     </AvaloniaResource>
-    <AvaloniaResource Include="Assets\**" />
-  </ItemGroup>  
+    <AvaloniaResource Include="Assets\**"/>
+  </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.9.999" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.999" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="0.9.999" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.9.999" />    
+    <PackageReference Include="Avalonia" Version="0.9.999"/>
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.999"/>
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.9.999"/>
+    <PackageReference Include="Avalonia.Desktop" Version="0.9.999"/>
   </ItemGroup>
   <PropertyGroup>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -26,10 +26,6 @@
     <noWarn>1591</noWarn>
   </PropertyGroup>
   <ItemGroup>
-    <!-- <EmbeddedResource Include="Assets\Fonts\SourceSansPro-Bold.ttf" />
-    <EmbeddedResource Include="Assets\Fonts\SourceSansPro-BoldItalic.ttf" />
-    <EmbeddedResource Include="Assets\Fonts\SourceSansPro-Italic.ttf" />
-    <EmbeddedResource Include="Assets\Fonts\SourceSansPro-Regular.ttf" /> -->
-    <EmbeddedResource Include="Views\teapot.bin" />
+    <EmbeddedResource Include="Views\teapot.bin"/>
   </ItemGroup>
 </Project>

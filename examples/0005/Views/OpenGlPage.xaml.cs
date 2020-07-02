@@ -1,10 +1,9 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using SearchAThing.Sci.Lab.example0005;
 // ReSharper disable StringLiteralTypo
 
-namespace Example.Views
+namespace SearchAThing.SciExamples.Views
 {
     public class OpenGlPage : UserControl
     {

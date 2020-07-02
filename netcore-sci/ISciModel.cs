@@ -1,7 +1,7 @@
-namespace SearchAThing.Sci
+namespace SearchAThing
 {
 
-    public interface IModel
+    public interface ISciModel
     {
 
         IMUDomain MUDomain { get; }

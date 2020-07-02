@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using SearchAThing.Sci;
 using System.Linq;
 using System.Text;
 using System.Globalization;
-using SearchAThing.Util;
 using SearchAThing.PsqlUtil;
 using Newtonsoft.Json;
 using static System.Math;
@@ -13,1174 +11,1170 @@ using SearchAThing;
 using netDxf.Entities;
 using netDxf;
 using System.Text.RegularExpressions;
+using static SearchAThing.SciToolkit;
 
 namespace SearchAThing
 {
 
-    namespace Sci
+    /// <summary>
+    /// can be used to describe a wcs point or a vector x,y,z components from some reference origin
+    /// </summary>
+    public partial class Vector3D : Geometry
     {
 
         /// <summary>
-        /// can be used to describe a wcs point or a vector x,y,z components from some reference origin
+        /// zero vector (0,0,0)            
+        /// </summary> 
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0001.cs)
+        /// </remarks>           
+        public static readonly Vector3D Zero = new Vector3D(0, 0, 0);
+
+        /// <summary>
+        /// xaxis vector (1,0,0)            
+        /// </summary>   
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0004.cs)
+        /// </remarks>
+        public static readonly Vector3D XAxis = new Vector3D(1, 0, 0);
+
+        /// <summary>
+        /// yaxis vector (0,1,0)            
+        /// </summary>            
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0004.cs)
+        /// </remarks>
+        public static readonly Vector3D YAxis = new Vector3D(0, 1, 0);
+
+        /// <summary>
+        /// zaxis vector (0,0,1)            
+        /// </summary>            
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0004.cs)
+        /// </remarks>
+        public static readonly Vector3D ZAxis = new Vector3D(0, 0, 1);
+
+        /// <summary>
+        /// retrieve wcs axis by given index            
         /// </summary>
-        public partial class Vector3D : Geometry
+        /// <param name="ord">0:(1,0,0) 1:(0,1,0) 2:(0,0,1)</param>                                    
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0004.cs)
+        /// </remarks>
+        public static Vector3D Axis(int ord)
         {
-
-            /// <summary>
-            /// zero vector (0,0,0)            
-            /// </summary> 
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0001.cs)
-            /// </remarks>           
-            public static readonly Vector3D Zero = new Vector3D(0, 0, 0);
-
-            /// <summary>
-            /// xaxis vector (1,0,0)            
-            /// </summary>   
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0004.cs)
-            /// </remarks>
-            public static readonly Vector3D XAxis = new Vector3D(1, 0, 0);
-
-            /// <summary>
-            /// yaxis vector (0,1,0)            
-            /// </summary>            
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0004.cs)
-            /// </remarks>
-            public static readonly Vector3D YAxis = new Vector3D(0, 1, 0);
-
-            /// <summary>
-            /// zaxis vector (0,0,1)            
-            /// </summary>            
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0004.cs)
-            /// </remarks>
-            public static readonly Vector3D ZAxis = new Vector3D(0, 0, 1);
-
-            /// <summary>
-            /// retrieve wcs axis by given index            
-            /// </summary>
-            /// <param name="ord">0:(1,0,0) 1:(0,1,0) 2:(0,0,1)</param>                                    
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0004.cs)
-            /// </remarks>
-            public static Vector3D Axis(int ord)
-            {
-                switch (ord)
-                {
-                    case 0: return XAxis;
-                    case 1: return YAxis;
-                    case 2: return ZAxis;
-                    default: throw new ArgumentException($"invalid ord {ord} must between 0,1,2");
-                }
-            }
-
-            /// <summary>
-            /// retrieve the component (0:X, 1:Y, 2:Z)            
-            /// </summary>        
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0003.cs)
-            /// </remarks>
-            public double GetOrd(int ord)
-            {
-                switch (ord)
-                {
-                    case 0: return X;
-                    case 1: return Y;
-                    case 2: return Z;
-                    default: throw new ArgumentException($"invalid ord {ord}. Must between one of 0,1,2");
-                }
-            }
-
-            /// <summary>
-            /// retrieve the component (0:X, 1:Y, 2:Z)            
-            /// </summary>        
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0003.cs)
-            /// </remarks>
-            public double GetOrd(OrdIdx ord)
-            {
-                switch (ord)
-                {
-                    case OrdIdx.X: return X;
-                    case OrdIdx.Y: return Y;
-                    case OrdIdx.Z: return Z;
-                    default: throw new ArgumentException($"invalid ord {ord}. Must between one of 0,1,2");
-                }
-            }
-
-            /// <summary>
-            /// X vector component            
-            /// </summary>
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0005.cs)
-            /// </remarks>
-            public double X { get; private set; }
-
-            /// <summary>
-            /// Y vector component            
-            /// </summary>            
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0005.cs)
-            /// </remarks>
-            public double Y { get; private set; }
-
-            /// <summary>
-            /// Z vector component            
-            /// </summary>            
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0005.cs)
-            /// </remarks>
-            public double Z { get; private set; }
-
-            /// <summary>
-            /// zero vector            
-            /// </summary>
-            /// <remarks>  
-            /// [unit test](../test/Vector3D/Vector3DTest_0006.cs)
-            /// </remarks>
-            public Vector3D() : base(GeometryType.Vector3D)
-            {
-            }
-
-            /// <summary>
-            /// build a vector (x,y,0) or (x,y,z) from given 2 or 3 doubles            
-            /// </summary>            
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0007.cs)
-            /// </remarks>
-            public Vector3D(double[] arr) : base(GeometryType.Vector3D)
-            {
-                X = arr[0];
-                Y = arr[1];
-                if (arr.Length == 3) Z = arr[2];
-                if (arr.Length > 3) throw new ArgumentException($"too much coordinates to build a vector3d");
-            }
-
-            /// <summary>
-            /// build a vector by given components            
-            /// </summary>            
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0008.cs)
-            /// </remarks>
-            public Vector3D(double x, double y, double z) : base(GeometryType.Vector3D)
-            {
-                X = x; Y = y; Z = z;
-            }
-
-            /// <summary>
-            /// build a vector (x,y,0) by given components            
-            /// </summary>            
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0008.cs)
-            /// </remarks>
-            public Vector3D(double x, double y) : base(GeometryType.Vector3D)
-            {
-                X = x; Y = y;
-            }
-
-            static Regex _cad_id_regex = null;
-            /// <summary>
-            /// static instance of regex to parse cad id string
-            /// https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.0#thread-safety
-            /// </summary>            
-            static Regex cad_id_regex
-            {
-                get
-                {
-                    if (_cad_id_regex == null)
-                        _cad_id_regex = new Regex(@"X\s*=\s*([-]?[\d\.]*)\s*Y\s*=\s*([-]?[\d\.]*)\s*Z\s*=\s*([-]?[\d\.]*)");
-                    return _cad_id_regex;
-                }
-            }
-
-            /// <summary>
-            /// parse cad id string (eg. "X = 4.11641325 Y = 266.06066703 Z = 11.60392802")
-            /// constructing a point            
-            /// </summary>
-            /// <param name="cad_id_string">cad id string</param>
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0009.cs)
-            /// </remarks>
-            public Vector3D(string cad_id_string) : base(GeometryType.Vector3D)
-            {
-                var matches = cad_id_regex.Match(cad_id_string);
-                if (!matches.Success || matches.Groups.Count != 4)
-                    throw new ArgumentException($"unable to parse cad id string [{cad_id_string}]");
-
-                var x = matches.Groups[1].Value.InvDoubleParse();
-                var y = matches.Groups[2].Value.InvDoubleParse();
-                var z = matches.Groups[3].Value.InvDoubleParse();
-
-                X = x; Y = y; Z = z;
-            }
-
-            /// <summary>
-            /// enumerate coordinates            
-            /// </summary>
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0010.cs)
-            /// </remarks>
-            public IEnumerable<double> Coordinates
-            {
-                get
-                {
-                    yield return X;
-                    yield return Y;
-                    yield return Z;
-                }
-            }
-
-            /// <summary>
-            /// states if this is a zero vector            
-            /// </summary>
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0011.cs)
-            /// </remarks>
-            public bool IsZeroLength { get { return (X + Y + Z).EqualsTol(Constants.NormalizedLengthTolerance, 0); } }
-
-            /// <summary>
-            /// checks vector component equality vs other given                       
-            /// </summary>
-            /// <param name="tol">geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</param>
-            /// <param name="other">vector to compare to this</param>            
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0012.cs)
-            /// </remarks>            
-            public bool EqualsTol(double tol, Vector3D other)
-            {
-                return
-                    X.EqualsTol(tol, other.X) &&
-                    Y.EqualsTol(tol, other.Y) &&
-                    Z.EqualsTol(tol, other.Z);
-            }
-
-            /// <summary>
-            /// check if this vector equals the given one component by component using EqualsAutoTol            
-            /// </summary>
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0012.cs)
-            /// </remarks>
-            public bool EqualsAutoTol(Vector3D other)
-            {
-                return
-                    X.EqualsAutoTol(other.X) &&
-                    Y.EqualsAutoTol(other.Y) &&
-                    Z.EqualsAutoTol(other.Z);
-            }
-
-            /// <summary>
-            /// checks only x,y            
-            /// </summary>        
-            /// <param name="tol">geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</param>            
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0012.cs)
-            /// </remarks>
-            public bool EqualsTol(double tol, double x, double y)
-            {
-                return X.EqualsTol(tol, x) && Y.EqualsTol(tol, y);
-            }
-
-            /// <summary>
-            /// checks vector component equality vs other given                        
-            /// </summary>
-            /// <param name="tol">geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</param>            
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0012.cs)
-            /// </remarks>
-            public bool EqualsTol(double tol, double x, double y, double z)
-            {
-                return X.EqualsTol(tol, x) && Y.EqualsTol(tol, y) && Z.EqualsTol(tol, z);
-            }
-
-            /// <summary>
-            /// create a normalized version of this vector            
-            /// </summary>
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0013.cs)
-            /// </remarks>
-            public Vector3D Normalized()
-            {
-                var l = Length;
-                return new Vector3D(X / l, Y / l, Z / l);
-            }
-
-            /// <summary>
-            /// compute distance between this point and the other given                        
-            /// </summary>            
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0014.cs)
-            /// </remarks>
-            public double Distance(Vector3D other)
-            {
-                return (this - other).Length;
-            }
-
-            /// <summary>
-            /// compute perpendicular(min) distance of this point from given line            
-            /// </summary>
-            /// <param name="tol">length tolerance ( used to check if point contained in line )</param>
-            /// <param name="other">line</param>            
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0015.cs)
-            /// ![image](../test/Vector3D/Vector3DTest_0015.png)
-            /// </remarks>
-            public double Distance(double tol, Line3D other)
-            {
-                var q = other.Perpendicular(tol, this);
-                if (q == null) return 0;
-                return q.Length;
-            }
-
-            /// <summary>
-            /// compute distance of this point from the given in 2d ( x,y ) without consider z component            
-            /// </summary>
-            /// <param name="other">other point</param>            
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0016.cs)
-            /// ![image](../test/Vector3D/Vector3DTest_0016.png)
-            /// </remarks>
-            public double Distance2D(Vector3D other)
-            {
-                return Sqrt((X - other.X) * (X - other.X) + (Y - other.Y) * (Y - other.Y));
-            }
-
-            /// <summary>
-            /// compute dot product of this vector for the given one            
-            /// a b = |a| |b| cos(alfa)            
-            /// </summary>
-            /// <param name="other">second vector</param>            
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0017.cs)            
-            /// </remarks>
-            public double DotProduct(Vector3D other)
-            {
-                return X * other.X + Y * other.Y + Z * other.Z;
-            }
-
-            /// <summary>
-            /// states is this vector is perpendicular to the given one            
-            /// </summary>
-            /// <param name="other">other vector</param>
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0018.cs)
-            /// </remarks>
-            public bool IsPerpendicular(Vector3D other)
-            {
-                return Normalized().DotProduct(other.Normalized())
-                    .EqualsTol(Constants.NormalizedLengthTolerance, 0);
-            }
-
-            /// <summary>
-            /// Cross product ( not normalized ) ;            
-            /// a x b = |a| |b| sin(alfa) N ;        
-            /// a x b = |  x  y  z |
-            ///         | ax ay az |
-            ///         | bx by bz |            
-            /// [reference](https://en.wikipedia.org/wiki/Cross_product) ;            
-            /// </summary>               
-            /// <param name="other">other vector</param>            
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0019.cs)
-            /// ![image](../test/Vector3D/Vector3DTest_0019.png)
-            /// </remarks>
-            public Vector3D CrossProduct(Vector3D other)
-            {
-                return new Vector3D(
-                    Y * other.Z - Z * other.Y,
-                    -X * other.Z + Z * other.X,
-                    X * other.Y - Y * other.X);
-            }
-
-            /// <summary>
-            /// angle between this and given vector
-            /// </summary>
-            /// <param name="tolLen">geometric tolerance to test vector equalities ( use Constants.NormalizedLengthTolerance when comparing normalized vectors )</param>
-            /// <param name="to">other vector</param>
-            /// <returns>angle between two vectors (rad)</returns>
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0020.cs)
-            /// ![image](../test/Vector3D/Vector3DTest_0020.png)            
-            /// </remarks>
-            public double AngleRad(double tolLen, Vector3D to)
-            {
-                if (this.EqualsTol(tolLen, to)) return 0;
-
-                // dp = |a| |b| cos(alfa)
-                var dp = this.DotProduct(to);
-
-                // alfa = acos(dp / (|a| |b|))
-                var L2 = Length * to.Length;
-                var w = dp / L2;
-
-                var ang = Acos(w);
-
-                if (double.IsNaN(ang))
-                {
-                    if (dp * L2 < 0)
-                        return PI;
-                    else
-                        return 0;
-                }
-
-                return ang;
-            }
-
-            /// <summary>
-            /// project this vector to the given one
-            /// </summary>
-            /// <param name="to">other vector</param>
-            /// <returns>projected vector ( will be colinear to the given one )</returns>
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0021.cs)
-            /// ![image](../test/Vector3D/Vector3DTest_0021.png)
-            /// </remarks>
-            public Vector3D Project(Vector3D to)
-            {
-                // https://en.wikipedia.org/wiki/Vector_projection
-                // http://math.oregonstate.edu/bridge/papers/dot+cross.pdf (fig.1)
-
-                if (to.Length == 0) throw new Exception($"project on null vector");
-
-                return DotProduct(to) / to.Length * to.Normalized();
-            }
-
-            /// <summary>
-            /// project this point to the given line
-            /// </summary>
-            /// <param name="line">line to project the point onto</param>
-            /// <returns>projected point onto the line ( perpendicularly )</returns>
-            public Vector3D Project(Line3D line)
-            {
-                return (this - line.From).Project(line.V) + line.From;
-            }
-
-            /// <summary>
-            /// create a point copy of this one with component changed
-            /// </summary>
-            /// <param name="ordIdx">component to change ( 0:x 1:y 2:z )</param>
-            /// <param name="value">value to assign to the component</param>
-            /// <returns>new vector with component changed</returns>
-            public Vector3D Set(OrdIdx ordIdx, double value)
-            {
-                var x = X;
-                var y = Y;
-                var z = Z;
-
-                switch (ordIdx)
-                {
-                    case OrdIdx.X: x = value; break;
-                    case OrdIdx.Y: y = value; break;
-                    case OrdIdx.Z: z = value; break;
-                    default: throw new Exception($"invalid ordIdx:{ordIdx}");
-                }
-
-                return new Vector3D(x, y, z);
-            }
-
-            /// <summary>
-            /// create a vector relative to given origin from this point and given origin
-            /// </summary>
-            /// <param name="origin">origin to make this point relative to</param>
-            /// <returns>vector</returns>
-            public Vector3D Rel(Vector3D origin)
-            {
-                return this - origin;
-            }
-
-            /// <summary>
-            /// Note: tol must be Constants.NormalizedLengthTolerance
-            /// if comparing normalized vectors
-            /// </summary>        
-            public bool IsParallelTo(double tol, Vector3D other)
-            {
-                // two vectors a,b are parallel if there is a factor c such that a=cb
-                // but first we need to exclude test over null components
-
-                var nullSum = 0;
-
-                var xNull = false;
-                var yNull = false;
-                var zNull = false;
-
-                if (X.EqualsTol(tol, 0) && other.X.EqualsTol(tol, 0)) { xNull = true; ++nullSum; }
-                if (Y.EqualsTol(tol, 0) && other.Y.EqualsTol(tol, 0)) { yNull = true; ++nullSum; }
-                if (Z.EqualsTol(tol, 0) && other.Z.EqualsTol(tol, 0)) { zNull = true; ++nullSum; }
-
-                if (nullSum == 0) // 3-d
-                {
-                    var c = X / other.X;
-                    return c.EqualsTol(tol, Y / other.Y) && c.EqualsTol(tol, Z / other.Z);
-                }
-                else if (nullSum == 1) // 2-d
-                {
-                    if (xNull) return (Y / other.Y).EqualsTol(tol, Z / other.Z);
-                    if (yNull) return (X / other.X).EqualsTol(tol, Z / other.Z);
-                    if (zNull) return (X / other.X).EqualsTol(tol, Y / other.Y);
-                }
-                else if (nullSum == 2) // 1-d
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            /// <summary>
-            /// states if this vector is colinear to the given one
-            /// </summary>
-            /// <param name="tol">geometric tolerance</param>
-            /// <param name="other">other vector</param>            
-            public bool Colinear(double tol, Vector3D other)
-            {
-                //return this.IsParallelTo(tol, other);
-                return new Line3D(Vector3D.Zero, this).Colinear(tol, new Line3D(Vector3D.Zero, other));
-            }
-
-            /// <summary>
-            /// states if this vector concord to the given one
-            /// 
-            /// **NOTE**: it does not test two vectors are parallels ( precondition must meet )
-            /// </summary>
-            /// <param name="tol">geometric tolerance ( Constants.NormalizedLengthTolerance if comparing normalized vectors )</param>
-            /// <param name="other">other vector</param>            
-            public bool Concordant(double tol, Vector3D other)
-            {
-                return DotProduct(other) > tol;
-            }
-
-            /// <summary>
-            /// statis if this vector is concordant and colinear to the given one
-            /// </summary>
-            /// <param name="tol">geometric tolerance ( Constants.NormalizedLengthTolerance if comparing normalized vectors )</param>
-            /// <param name="other">other vector</param>                        
-            public bool ConcordantColinear(double tol, Vector3D other)
-            {
-                return Concordant(tol, other) && Colinear(tol, other);
-            }
-
-            /// <summary>
-            /// compute angle required to make this point go to the given one
-            /// if rotate right-hand around given reference axis
-            /// </summary>
-            /// <param name="tolLen">geometric tolerance ( use Constants.NormalizedLengthTolerance if working with normalized vectors )</param>
-            /// <param name="to">point toward rotate this one</param>
-            /// <param name="refAxis">reference axis to make right-hand rotation of this point toward given one</param>
-            /// <returns>angle (rad)</returns>
-            public double AngleToward(double tolLen, Vector3D to, Vector3D refAxis)
-            {
-                var c = this.CrossProduct(to);
-
-                if (c.Concordant(tolLen, refAxis))
-                    return this.AngleRad(tolLen, to);
-                else
-                    return 2 * PI - AngleRad(tolLen, to);
-            }
-
-            /// <summary>
-            /// rotate this point around x-axis using quaternion
-            /// </summary>
-            /// <param name="angleRad">angle (rad) of rotation</param>
-            /// <returns>rotated point</returns>
-            public Vector3D RotateAboutXAxis(double angleRad)
-            {
-                var t = new Transform3D();
-                t.RotateAboutXAxis(angleRad);
-                return t.Apply(this);
-            }
-
-            /// <summary>
-            /// rotate this point around y-axis using quaternion
-            /// </summary>
-            /// <param name="angleRad">angle (rad) of rotation</param>
-            /// <returns>rotated point</returns>
-            public Vector3D RotateAboutYAxis(double angleRad)
-            {
-                var t = new Transform3D();
-                t.RotateAboutYAxis(angleRad);
-                return t.Apply(this);
-            }
-
-            /// <summary>
-            /// rotate this point around z-axis using quaternion
-            /// </summary>
-            /// <param name="angleRad">angle (rad) of rotation</param>
-            /// <returns>rotated point</returns>
-            public Vector3D RotateAboutZAxis(double angleRad)
-            {
-                var t = new Transform3D();
-                t.RotateAboutZAxis(angleRad);
-                return t.Apply(this);
-            }
-
-            /// <summary>
-            /// rotate this point right-hand around given axis using quaternion
-            /// </summary>
-            /// <param name="axis">rotation axis</param>
-            /// <param name="angleRad">angle (rad) of rotation</param>
-            /// <returns>rotated point</returns>
-            public Vector3D RotateAboutAxis(Vector3D axis, double angleRad)
-            {
-                var t = new Transform3D();
-                t.RotateAboutAxis(axis.Normalized(), angleRad);
-                return t.Apply(this);
-            }
-
-            /// <summary>
-            /// rotate this point right-hand around given segment using quaternion
-            /// </summary>
-            /// <param name="axisSegment">rotation axis segment</param>
-            /// <param name="angleRad">angle (rad) of rotation</param>
-            /// <returns>rotated point</returns>
-            public Vector3D RotateAboutAxis(Line3D axisSegment, double angleRad)
-            {
-                var vrel = this - axisSegment.From;
-                var vrot = vrel.RotateAboutAxis(axisSegment.V, angleRad);
-                return vrot + axisSegment.From;
-            }
-
-            /// <summary>
-            /// Note: tol must be Constants.NormalizedLengthTolerance
-            /// if comparing normalized vectors
-            /// rotation from-to will be multiplied for given angleFactor ( default 1.0 )
-            /// </summary>      
-
-            /// <summary>
-            /// rotate this point using rotation like point from goes toward point to
-            /// </summary>
-            /// <param name="tol">geometric tolerance ( use Constants.NormalizedLengthTolerance if vectors are normalized )</param>
-            /// <param name="from">point from describing rotation path</param>
-            /// <param name="to">point to describing rotation path</param>
-            /// <param name="angleFactor">optional angle rotation scaler</param>
-            /// <param name="angleAddictionalRad">optional angle (rad) component (added after angleFactor scaler)</param>
-            /// <returns></returns>
-            public Vector3D RotateAs(double tol, Vector3D from, Vector3D to, double angleFactor = 1.0, double angleAddictionalRad = 0)
-            {
-                var angle = from.AngleRad(tol, to) * angleFactor + angleAddictionalRad;
-                var N = from.CrossProduct(to);
-                return this.RotateAboutAxis(N, angle);
-            }
-
-            /// <summary>
-            /// Scale this point about the given origin with the given factor.
-            /// </summary>            
-            public Vector3D ScaleAbout(Vector3D origin, double factor)
-            {
-                var d = this - origin;
-
-                return origin + d * factor;
-            }
-
-            /// <summary>
-            /// Scale this point about the given origin with the given factor as (sx,sy,sz).
-            /// </summary>            
-            public Vector3D ScaleAbout(Vector3D origin, Vector3D factor)
-            {
-                var d = this - origin;
-
-                return origin + d * factor;
-            }
-
-            /// <summary>
-            /// mirror this point about given axis
-            /// </summary>            
-            public Vector3D Mirror(Line3D axis)
-            {
-                return this + 2 * (Project(axis) - this);
-            }
-
-            /// <summary>
-            /// Convert this wcs point to given cs coord
-            /// </summary>
-            /// <param name="cs">dest CS</param>
-            /// <param name="evalCSOrigin">if true CS origin will subtracted before transform</param>            
-            public Vector3D ToUCS(CoordinateSystem3D cs, bool evalCSOrigin = true)
-            {
-                return cs.ToUCS(this, evalCSOrigin);
-            }
-
-            /// <summary>
-            /// Convert this ucs considered vector using given cs to the wcs
-            /// </summary>
-            /// <param name="cs">ucs point</param>
-            /// <param name="evalCSOrigin">if true CS origin will added after transform</param>
-            public Vector3D ToWCS(CoordinateSystem3D cs, bool evalCSOrigin = true)
-            {
-                return cs.ToWCS(this, evalCSOrigin);
-            }
-
-            /// <summary>
-            /// Scalar multiply each components
-            /// </summary>                
-            public Vector3D Scalar(double xs, double ys, double zs)
-            {
-                return new Vector3D(X * xs, Y * ys, Z * zs);
-            }
-
-            /// <summary>
-            /// convert each vector component value from to measure units
-            /// </summary>
-            public Vector3D Convert(MeasureUnit from, MeasureUnit to)
-            {
-                return new Vector3D(X.Convert(from, to), Y.Convert(from, to), Z.Convert(from, to));
-            }
-
-            /// <summary>
-            /// convert each vector component value from to measure units
-            /// to measure unit is given from the correspondent physical quantity measure unit of from mu        
-            /// </summary>
-            public Vector3D Convert(MeasureUnit from, IMUDomain to)
-            {
-                return new Vector3D(X.Convert(from, to), Y.Convert(from, to), Z.Convert(from, to));
-            }
-
-            /// <summary>
-            /// convert each vector component value from to measure units
-            /// from measure unit is given from the correspondent physical quantity measure unit of to mu
-            /// </summary>
-            public Vector3D Convert(IMUDomain from, MeasureUnit to)
-            {
-                return new Vector3D(X.Convert(from, to), Y.Convert(from, to), Z.Convert(from, to));
-            }
-
-            #region operators
-
-            /// <summary>
-            /// indexed vector component
-            /// </summary>        
-            public double this[int index]
-            {
-                get
-                {
-                    if (index == 0) return X;
-                    if (index == 1) return Y;
-                    if (index == 2) return Z;
-                    throw new ArgumentOutOfRangeException("invalid index must between 0-2");
-                }
-            }
-
-            /// <summary>
-            /// sum
-            /// </summary>        
-            public static Vector3D operator +(Vector3D a, Vector3D b)
-            {
-                return new Vector3D(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
-            }
-
-            /// <summary>
-            /// negate
-            /// </summary>        
-            public static Vector3D operator -(Vector3D a)
-            {
-                return -1.0 * a;
-            }
-
-            /// <summary>
-            /// sub
-            /// </summary>        
-            public static Vector3D operator -(Vector3D a, Vector3D b)
-            {
-                return new Vector3D(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
-            }
-
-            /// <summary>
-            /// scalar mul
-            /// </summary>        
-            public static Vector3D operator *(double s, Vector3D v)
-            {
-                return new Vector3D(s * v.X, s * v.Y, s * v.Z);
-            }
-
-            /// <summary>
-            /// scalar mul
-            /// </summary>        
-            public static Vector3D operator *(Vector3D v, double s)
-            {
-                return new Vector3D(s * v.X, s * v.Y, s * v.Z);
-            }
-
-            /// <summary>
-            /// scalar multiply vector components V1 * V2 =
-            /// (V1.x * V2.x, V1.y * V2.y, V1.z * V2.z)
-            /// </summary>        
-            public static Vector3D operator *(Vector3D v1, Vector3D v2)
-            {
-                return v1.Scalar(v2.X, v2.Y, v2.Z);
-            }
-
-            /// <summary>
-            /// scalar div
-            /// </summary>        
-            public static Vector3D operator /(double s, Vector3D v)
-            {
-                return new Vector3D(s / v.X, s / v.Y, s / v.Z);
-            }
-
-            /// <summary>
-            /// scalar div
-            /// </summary>        
-            public static Vector3D operator /(Vector3D v, double s)
-            {
-                return new Vector3D(v.X / s, v.Y / s, v.Z / s);
-            }
-
-            #endregion
-
-            /// <summary>
-            /// Create an array of Vector3D from given list of 2d coords ( eg. { 100, 200, 300, 400 }
-            /// will create follow list of vector3d = { (100,200,0), (300,400,0) }
-            /// </summary>        
-            public static List<Vector3D> From2DCoords(params double[] coords)
-            {
-                var res = new List<Vector3D>();
-
-                for (var i = 0; i < coords.Length; i += 2)
-                    res.Add(new Vector3D(coords[i], coords[i + 1], 0));
-
-                return res;
-            }
-
-            /// <summary>
-            /// Create an array of Vector3D from given list of 3d coords ( eg. { 100, 200, 10, 300, 400, 20 }
-            /// will create follow list of vector3d = { (100,200,10), (300,400,20) }            
-            /// </summary>        
-            public static List<Vector3D> From3DCoords(params double[] coords)
-            {
-                var res = new List<Vector3D>();
-
-                for (var i = 0; i < coords.Length; i += 3)
-                    res.Add(new Vector3D(coords[i], coords[i + 1], coords[i + 2]));
-
-                return res;
-            }
-
-            public static IEnumerable<Vector3D> Random(int N, double L, int seed = 0)
-            {
-                return Random(N, -L / 2, L / 2, -L / 2, L / 2, -L / 2, L / 2, seed);
-            }
-
-            /// <summary>
-            /// Span a set of qty vector3d with random coord between given range.
-            /// Optionally a seed can be specified for rand or Random obj directly ( in latter case seed aren't used )
-            /// </summary>        
-            public static IEnumerable<Vector3D> Random(int qty,
-                double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, int seed = 0, Random random = null)
-            {
-                var dx = xmax - xmin;
-                var dy = ymax - ymin;
-                var dz = zmax - zmin;
-
-                var rnd = (random == null) ? new Random(seed) : random;
-                for (int i = 0; i < qty; ++i)
-                {
-                    yield return new Vector3D(
-                        xmin + dx * rnd.NextDouble(),
-                        ymin + dy * rnd.NextDouble(),
-                        zmin + dz * rnd.NextDouble());
-                }
-            }
-
-            /*public sVector3D ToSystemVector3D()
-            {
-                return new sVector3D((float)X, (float)Y, (float)Z);
-            }*/
-
-            /// <summary>
-            /// parse vector3d from string format "(x y z)" or "(x,y,z)" invariant type
-            /// </summary>            
-            public static Vector3D FromString(string str)
-            {
-                var q = str.Trim().StripBegin("(").StripEnd(")").Split(str.Contains(",") ? ',' : ' ');
-                var x = double.Parse(q[0], CultureInfo.InvariantCulture);
-                var y = double.Parse(q[1], CultureInfo.InvariantCulture);
-                var z = 0d;
-                if (q.Length > 2) z = double.Parse(q[2], CultureInfo.InvariantCulture);
-
-                return new Vector3D(x, y, z);
-            }
-
-            /// <summary>
-            /// parse vector3d from array "(x1,y1,z1);(x2,y2,z2)"
-            /// </summary>            
-            public static IEnumerable<Vector3D> FromStringArray(string str)
-            {
-                return str.Split(";").Where(f => f.Trim().Length > 0).Select(f => FromString(f));
-            }
-
-            /// <summary>
-            /// string invariant representation "(x,y,z)"
-            /// w/3 decimal places
-            /// </summary>            
-            public override string ToString()
-            {
-                return this.ToString(digits: 3);
-            }
-
-            /// <summary>
-            /// string invariant representation "(x,y,z)" w/given digits
-            /// </summary>            
-            public string ToString(int digits = 3)
-            {
-                return Invariant($"({X.ToString(digits)}, {Y.ToString(digits)}, {Z.ToString(digits)})");
-            }
-
-            /// <summary>
-            /// hash string with given tolerance
-            /// </summary>            
-            public string ToString(double tol)
-            {
-                var digits = Math.Max(0, -tol.Magnitude());
-                return Invariant($"({X.MRound(tol).ToString(digits)}, {Y.MRound(tol).ToString(digits)}, {Z.MRound(tol).ToString(digits)})");
-            }
-
-            /// <summary>
-            /// string invariant representation "(x,y,z)"
-            /// </summary>            
-            public string StringRepresentation()
-            {
-                return Invariant($"({X}, {Y}, {Z})");
-            }
-
-            /// <summary>
-            /// cad script for this vector as wcs point
-            /// </summary>
-            public string CadScript
-            {
-                get
-                {
-                    return string.Format(CultureInfo.InvariantCulture, "_POINT {0},{1},{2}\r\n", X, Y, Z);
-                }
-            }
-
-            /// <summary>
-            /// cad script for a line (0,0,0) to this vector
-            /// </summary>
-            public string CadScriptLine => new Line3D(Vector3D.Zero, this).CadScript;
-
-            /// <summary>
-            /// cad script for a line departing from this wcs point
-            /// </summary>
-            public string CadScriptLineFrom
-            {
-                get
-                {
-                    return string.Format(CultureInfo.InvariantCulture, "_LINE {0},{1},{2}\r\n", X, Y, Z);
-                }
-            }
-
-            #region Geometry implementation
-
-            /// <summary>
-            /// This vector.
-            /// ( Geometry GeomFrom implementation )            
-            /// </summary>
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
-            /// </remarks>
-            [JsonIgnore]
-            public override Vector3D GeomFrom => this;
-
-            /// <summary>
-            /// This vector.
-            /// ( Geometry GeomTo implementation)             
-            /// </summary>
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
-            /// </remarks>
-            [JsonIgnore]
-            public override Vector3D GeomTo => this;
-
-            /// <summary>
-            /// Enumerable with only this vector.
-            /// ( Geometry Vertexes implementation )            
-            /// </summary>
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
-            /// </remarks>
-            [JsonIgnore]
-            public override IEnumerable<Vector3D> Vertexes
-            {
-                get
-                {
-                    yield return this;
-                }
-            }
-
-            /// <summary>
-            /// Length of this vector.
-            /// ( Geometry Length implementation )            
-            /// </summary>
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
-            /// </remarks>
-            public override double Length { get { return Sqrt(X * X + Y * Y + Z * Z); } }
-
-            /// <summary>
-            /// Create dxf point entity suitable for netDxf addEntity.
-            /// ( Geometry DxfEntity implementation )            
-            /// </summary>
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
-            /// </remarks>
-            public override netDxf.Entities.EntityObject DxfEntity
-            {
-                get
-                {
-                    return this.ToDxfPoint();
-                }
-            }
-
-            /// <summary>
-            /// Divide this point returning itself.
-            /// ( Geometry Divide implementation )            
-            /// </summary>
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
-            /// </remarks>
-            public override IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false)
-            {
-                return new[] { this };
-            }
-
-            /// <summary>
-            /// Compute bbox of this point.
-            /// ( Geometry BBox implementation ).            
-            /// </summary>
-            /// <param name="tol_len">length tolerance</param>            
-            /// <remarks>      
-            /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
-            /// </remarks>
-            public override BBox3D BBox(double tol_len)
-            {
-                return new BBox3D(new[] { this });
-            }
-
-            #endregion
-
-            /// <summary>
-            /// convert given Vector2 to a Vector3D ( with z=0 )
-            /// </summary>            
-            public static implicit operator Vector3D(Vector2 v)
-            {
-                return new Vector3D(v.X, v.Y, 0);
-            }
-
-            /// <summary>
-            /// Convert given Vector3 to Vector3D
-            /// </summary>            
-            public static implicit operator Vector3D(Vector3 v)
-            {
-                return new Vector3D(v.X, v.Y, v.Z);
-            }
-
-            /// <summary>
-            /// Convert given Vector3D to Vector3
-            /// </summary>            
-            public static implicit operator Vector3(Vector3D v)
-            {
-                return new Vector3(v.X, v.Y, v.Z);
-            }
-
-            /// <summary>
-            /// Convert given System.Numerics.Vector3 to Vector3D
-            /// </summary>
-            /// <param name="v">input vector</param>
-            public static implicit operator Vector3D(System.Numerics.Vector3 v)
-            {
-                return new Vector3D(v.X, v.Y, v.Z);
-            }
-
-            /// <summary>
-            /// Convert given Vector3D to System.Numerics.Vector3            
-            /// </summary>
-            /// <remarks>
-            /// double to float conversion will be done
-            /// </remarks>
-            /// <param name="v">input vector</param>
-            public static implicit operator System.Numerics.Vector3(Vector3D v)
-            {
-                return new System.Numerics.Vector3((float)v.X, (float)v.Y, (float)v.Z);
-            }
-
-            /// <summary>
-            /// Convert given QuantumConcepts.Formats.StereoLithography.Vertex to Vector3D
-            /// </summary>
-            /// <param name="v">input vector</param>
-            public static implicit operator Vector3D(QuantumConcepts.Formats.StereoLithography.Vertex v)
-            {
-                return new Vector3D(v.X, v.Y, v.Z);
-            }
-
-            /// <summary>
-            /// Convert given Vector3D to QuantumConcepts.Formats.StereoLithography.Vertex
-            /// </summary>
-            /// <remarks>
-            /// double to float conversion will be done
-            /// </remarks>
-            /// <param name="v">input vector</param>
-            public static implicit operator QuantumConcepts.Formats.StereoLithography.Vertex(Vector3D v)
-            {
-                return new QuantumConcepts.Formats.StereoLithography.Vertex((float)v.X, (float)v.Y, (float)v.Z);
-            }
-
-
-        }
-
-        public class Vector3DEqualityComparer : IEqualityComparer<Vector3D>
-        {
-            double tol;
-
-            public Vector3DEqualityComparer(double _tol)
-            {
-                tol = _tol;
-            }
-
-            public bool Equals(Vector3D x, Vector3D y)
-            {
-                return x.EqualsTol(tol, y);
-            }
-
-            public int GetHashCode(Vector3D obj)
-            {                
-                return obj.ToString(tol).GetHashCode();
+            switch (ord)
+            {
+                case 0: return XAxis;
+                case 1: return YAxis;
+                case 2: return ZAxis;
+                default: throw new ArgumentException($"invalid ord {ord} must between 0,1,2");
             }
         }
 
         /// <summary>
-        /// support class for DistinctKeepOrder extension
+        /// retrieve the component (0:X, 1:Y, 2:Z)            
+        /// </summary>        
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0003.cs)
+        /// </remarks>
+        public double GetOrd(int ord)
+        {
+            switch (ord)
+            {
+                case 0: return X;
+                case 1: return Y;
+                case 2: return Z;
+                default: throw new ArgumentException($"invalid ord {ord}. Must between one of 0,1,2");
+            }
+        }
+
+        /// <summary>
+        /// retrieve the component (0:X, 1:Y, 2:Z)            
+        /// </summary>        
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0003.cs)
+        /// </remarks>
+        public double GetOrd(OrdIdx ord)
+        {
+            switch (ord)
+            {
+                case OrdIdx.X: return X;
+                case OrdIdx.Y: return Y;
+                case OrdIdx.Z: return Z;
+                default: throw new ArgumentException($"invalid ord {ord}. Must between one of 0,1,2");
+            }
+        }
+
+        /// <summary>
+        /// X vector component            
         /// </summary>
-        public class Vector3DWithOrder
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0005.cs)
+        /// </remarks>
+        public double X { get; private set; }
+
+        /// <summary>
+        /// Y vector component            
+        /// </summary>            
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0005.cs)
+        /// </remarks>
+        public double Y { get; private set; }
+
+        /// <summary>
+        /// Z vector component            
+        /// </summary>            
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0005.cs)
+        /// </remarks>
+        public double Z { get; private set; }
+
+        /// <summary>
+        /// zero vector            
+        /// </summary>
+        /// <remarks>  
+        /// [unit test](../test/Vector3D/Vector3DTest_0006.cs)
+        /// </remarks>
+        public Vector3D() : base(GeometryType.Vector3D)
         {
-            public int Order { get; private set; }
-            public Vector3D Vector { get; private set; }
-            public Vector3DWithOrder(Vector3D v, int order)
+        }
+
+        /// <summary>
+        /// build a vector (x,y,0) or (x,y,z) from given 2 or 3 doubles            
+        /// </summary>            
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0007.cs)
+        /// </remarks>
+        public Vector3D(double[] arr) : base(GeometryType.Vector3D)
+        {
+            X = arr[0];
+            Y = arr[1];
+            if (arr.Length == 3) Z = arr[2];
+            if (arr.Length > 3) throw new ArgumentException($"too much coordinates to build a vector3d");
+        }
+
+        /// <summary>
+        /// build a vector by given components            
+        /// </summary>            
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0008.cs)
+        /// </remarks>
+        public Vector3D(double x, double y, double z) : base(GeometryType.Vector3D)
+        {
+            X = x; Y = y; Z = z;
+        }
+
+        /// <summary>
+        /// build a vector (x,y,0) by given components            
+        /// </summary>            
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0008.cs)
+        /// </remarks>
+        public Vector3D(double x, double y) : base(GeometryType.Vector3D)
+        {
+            X = x; Y = y;
+        }
+
+        static Regex _cad_id_regex = null;
+        /// <summary>
+        /// static instance of regex to parse cad id string
+        /// https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.0#thread-safety
+        /// </summary>            
+        static Regex cad_id_regex
+        {
+            get
             {
-                Vector = v;
-                Order = order;
+                if (_cad_id_regex == null)
+                    _cad_id_regex = new Regex(@"X\s*=\s*([-]?[\d\.]*)\s*Y\s*=\s*([-]?[\d\.]*)\s*Z\s*=\s*([-]?[\d\.]*)");
+                return _cad_id_regex;
             }
         }
 
-        public class Vector3DWithOrderEqualityComparer : IEqualityComparer<Vector3DWithOrder>
+        /// <summary>
+        /// parse cad id string (eg. "X = 4.11641325 Y = 266.06066703 Z = 11.60392802")
+        /// constructing a point            
+        /// </summary>
+        /// <param name="cad_id_string">cad id string</param>
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0009.cs)
+        /// </remarks>
+        public Vector3D(string cad_id_string) : base(GeometryType.Vector3D)
         {
-            Vector3DEqualityComparer cmp;
+            var matches = cad_id_regex.Match(cad_id_string);
+            if (!matches.Success || matches.Groups.Count != 4)
+                throw new ArgumentException($"unable to parse cad id string [{cad_id_string}]");
 
-            public Vector3DWithOrderEqualityComparer(Vector3DEqualityComparer _cmp)
-            {
-                cmp = _cmp;
-            }
+            var x = matches.Groups[1].Value.InvDoubleParse();
+            var y = matches.Groups[2].Value.InvDoubleParse();
+            var z = matches.Groups[3].Value.InvDoubleParse();
 
-            public bool Equals(Vector3DWithOrder x, Vector3DWithOrder y)
-            {
-                return cmp.Equals(x.Vector, y.Vector);
-            }
+            X = x; Y = y; Z = z;
+        }
 
-            public int GetHashCode(Vector3DWithOrder obj)
+        /// <summary>
+        /// enumerate coordinates            
+        /// </summary>
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0010.cs)
+        /// </remarks>
+        public IEnumerable<double> Coordinates
+        {
+            get
             {
-                return cmp.GetHashCode(obj.Vector);
+                yield return X;
+                yield return Y;
+                yield return Z;
             }
         }
 
+        /// <summary>
+        /// states if this is a zero vector            
+        /// </summary>
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0011.cs)
+        /// </remarks>
+        public bool IsZeroLength { get { return (X + Y + Z).EqualsTol(NormalizedLengthTolerance, 0); } }
+
+        /// <summary>
+        /// checks vector component equality vs other given                       
+        /// </summary>
+        /// <param name="tol">geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</param>
+        /// <param name="other">vector to compare to this</param>            
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0012.cs)
+        /// </remarks>            
+        public bool EqualsTol(double tol, Vector3D other)
+        {
+            return
+                X.EqualsTol(tol, other.X) &&
+                Y.EqualsTol(tol, other.Y) &&
+                Z.EqualsTol(tol, other.Z);
+        }
+
+        /// <summary>
+        /// check if this vector equals the given one component by component using EqualsAutoTol            
+        /// </summary>
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0012.cs)
+        /// </remarks>
+        public bool EqualsAutoTol(Vector3D other)
+        {
+            return
+                X.EqualsAutoTol(other.X) &&
+                Y.EqualsAutoTol(other.Y) &&
+                Z.EqualsAutoTol(other.Z);
+        }
+
+        /// <summary>
+        /// checks only x,y            
+        /// </summary>        
+        /// <param name="tol">geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</param>            
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0012.cs)
+        /// </remarks>
+        public bool EqualsTol(double tol, double x, double y)
+        {
+            return X.EqualsTol(tol, x) && Y.EqualsTol(tol, y);
+        }
+
+        /// <summary>
+        /// checks vector component equality vs other given                        
+        /// </summary>
+        /// <param name="tol">geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</param>            
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0012.cs)
+        /// </remarks>
+        public bool EqualsTol(double tol, double x, double y, double z)
+        {
+            return X.EqualsTol(tol, x) && Y.EqualsTol(tol, y) && Z.EqualsTol(tol, z);
+        }
+
+        /// <summary>
+        /// create a normalized version of this vector            
+        /// </summary>
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0013.cs)
+        /// </remarks>
+        public Vector3D Normalized()
+        {
+            var l = Length;
+            return new Vector3D(X / l, Y / l, Z / l);
+        }
+
+        /// <summary>
+        /// compute distance between this point and the other given                        
+        /// </summary>            
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0014.cs)
+        /// </remarks>
+        public double Distance(Vector3D other)
+        {
+            return (this - other).Length;
+        }
+
+        /// <summary>
+        /// compute perpendicular(min) distance of this point from given line            
+        /// </summary>
+        /// <param name="tol">length tolerance ( used to check if point contained in line )</param>
+        /// <param name="other">line</param>            
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0015.cs)
+        /// ![image](../test/Vector3D/Vector3DTest_0015.png)
+        /// </remarks>
+        public double Distance(double tol, Line3D other)
+        {
+            var q = other.Perpendicular(tol, this);
+            if (q == null) return 0;
+            return q.Length;
+        }
+
+        /// <summary>
+        /// compute distance of this point from the given in 2d ( x,y ) without consider z component            
+        /// </summary>
+        /// <param name="other">other point</param>            
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0016.cs)
+        /// ![image](../test/Vector3D/Vector3DTest_0016.png)
+        /// </remarks>
+        public double Distance2D(Vector3D other)
+        {
+            return Sqrt((X - other.X) * (X - other.X) + (Y - other.Y) * (Y - other.Y));
+        }
+
+        /// <summary>
+        /// compute dot product of this vector for the given one            
+        /// a b = |a| |b| cos(alfa)            
+        /// </summary>
+        /// <param name="other">second vector</param>            
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0017.cs)            
+        /// </remarks>
+        public double DotProduct(Vector3D other)
+        {
+            return X * other.X + Y * other.Y + Z * other.Z;
+        }
+
+        /// <summary>
+        /// states is this vector is perpendicular to the given one            
+        /// </summary>
+        /// <param name="other">other vector</param>
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0018.cs)
+        /// </remarks>
+        public bool IsPerpendicular(Vector3D other)
+        {
+            return Normalized().DotProduct(other.Normalized())
+                .EqualsTol(NormalizedLengthTolerance, 0);
+        }
+
+        /// <summary>
+        /// Cross product ( not normalized ) ;            
+        /// a x b = |a| |b| sin(alfa) N ;        
+        /// a x b = |  x  y  z |
+        ///         | ax ay az |
+        ///         | bx by bz |            
+        /// [reference](https://en.wikipedia.org/wiki/Cross_product) ;            
+        /// </summary>               
+        /// <param name="other">other vector</param>            
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0019.cs)
+        /// ![image](../test/Vector3D/Vector3DTest_0019.png)
+        /// </remarks>
+        public Vector3D CrossProduct(Vector3D other)
+        {
+            return new Vector3D(
+                Y * other.Z - Z * other.Y,
+                -X * other.Z + Z * other.X,
+                X * other.Y - Y * other.X);
+        }
+
+        /// <summary>
+        /// angle between this and given vector
+        /// </summary>
+        /// <param name="tolLen">geometric tolerance to test vector equalities ( use Constants.NormalizedLengthTolerance when comparing normalized vectors )</param>
+        /// <param name="to">other vector</param>
+        /// <returns>angle between two vectors (rad)</returns>
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0020.cs)
+        /// ![image](../test/Vector3D/Vector3DTest_0020.png)            
+        /// </remarks>
+        public double AngleRad(double tolLen, Vector3D to)
+        {
+            if (this.EqualsTol(tolLen, to)) return 0;
+
+            // dp = |a| |b| cos(alfa)
+            var dp = this.DotProduct(to);
+
+            // alfa = acos(dp / (|a| |b|))
+            var L2 = Length * to.Length;
+            var w = dp / L2;
+
+            var ang = Acos(w);
+
+            if (double.IsNaN(ang))
+            {
+                if (dp * L2 < 0)
+                    return PI;
+                else
+                    return 0;
+            }
+
+            return ang;
+        }
+
+        /// <summary>
+        /// project this vector to the given one
+        /// </summary>
+        /// <param name="to">other vector</param>
+        /// <returns>projected vector ( will be colinear to the given one )</returns>
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0021.cs)
+        /// ![image](../test/Vector3D/Vector3DTest_0021.png)
+        /// </remarks>
+        public Vector3D Project(Vector3D to)
+        {
+            // https://en.wikipedia.org/wiki/Vector_projection
+            // http://math.oregonstate.edu/bridge/papers/dot+cross.pdf (fig.1)
+
+            if (to.Length == 0) throw new Exception($"project on null vector");
+
+            return DotProduct(to) / to.Length * to.Normalized();
+        }
+
+        /// <summary>
+        /// project this point to the given line
+        /// </summary>
+        /// <param name="line">line to project the point onto</param>
+        /// <returns>projected point onto the line ( perpendicularly )</returns>
+        public Vector3D Project(Line3D line)
+        {
+            return (this - line.From).Project(line.V) + line.From;
+        }
+
+        /// <summary>
+        /// create a point copy of this one with component changed
+        /// </summary>
+        /// <param name="ordIdx">component to change ( 0:x 1:y 2:z )</param>
+        /// <param name="value">value to assign to the component</param>
+        /// <returns>new vector with component changed</returns>
+        public Vector3D Set(OrdIdx ordIdx, double value)
+        {
+            var x = X;
+            var y = Y;
+            var z = Z;
+
+            switch (ordIdx)
+            {
+                case OrdIdx.X: x = value; break;
+                case OrdIdx.Y: y = value; break;
+                case OrdIdx.Z: z = value; break;
+                default: throw new Exception($"invalid ordIdx:{ordIdx}");
+            }
+
+            return new Vector3D(x, y, z);
+        }
+
+        /// <summary>
+        /// create a vector relative to given origin from this point and given origin
+        /// </summary>
+        /// <param name="origin">origin to make this point relative to</param>
+        /// <returns>vector</returns>
+        public Vector3D Rel(Vector3D origin)
+        {
+            return this - origin;
+        }
+
+        /// <summary>
+        /// Note: tol must be Constants.NormalizedLengthTolerance
+        /// if comparing normalized vectors
+        /// </summary>        
+        public bool IsParallelTo(double tol, Vector3D other)
+        {
+            // two vectors a,b are parallel if there is a factor c such that a=cb
+            // but first we need to exclude test over null components
+
+            var nullSum = 0;
+
+            var xNull = false;
+            var yNull = false;
+            var zNull = false;
+
+            if (X.EqualsTol(tol, 0) && other.X.EqualsTol(tol, 0)) { xNull = true; ++nullSum; }
+            if (Y.EqualsTol(tol, 0) && other.Y.EqualsTol(tol, 0)) { yNull = true; ++nullSum; }
+            if (Z.EqualsTol(tol, 0) && other.Z.EqualsTol(tol, 0)) { zNull = true; ++nullSum; }
+
+            if (nullSum == 0) // 3-d
+            {
+                var c = X / other.X;
+                return c.EqualsTol(tol, Y / other.Y) && c.EqualsTol(tol, Z / other.Z);
+            }
+            else if (nullSum == 1) // 2-d
+            {
+                if (xNull) return (Y / other.Y).EqualsTol(tol, Z / other.Z);
+                if (yNull) return (X / other.X).EqualsTol(tol, Z / other.Z);
+                if (zNull) return (X / other.X).EqualsTol(tol, Y / other.Y);
+            }
+            else if (nullSum == 2) // 1-d
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// states if this vector is colinear to the given one
+        /// </summary>
+        /// <param name="tol">geometric tolerance</param>
+        /// <param name="other">other vector</param>            
+        public bool Colinear(double tol, Vector3D other)
+        {
+            //return this.IsParallelTo(tol, other);
+            return new Line3D(Vector3D.Zero, this).Colinear(tol, new Line3D(Vector3D.Zero, other));
+        }
+
+        /// <summary>
+        /// states if this vector concord to the given one
+        /// 
+        /// **NOTE**: it does not test two vectors are parallels ( precondition must meet )
+        /// </summary>
+        /// <param name="tol">geometric tolerance ( Constants.NormalizedLengthTolerance if comparing normalized vectors )</param>
+        /// <param name="other">other vector</param>            
+        public bool Concordant(double tol, Vector3D other)
+        {
+            return DotProduct(other) > tol;
+        }
+
+        /// <summary>
+        /// statis if this vector is concordant and colinear to the given one
+        /// </summary>
+        /// <param name="tol">geometric tolerance ( Constants.NormalizedLengthTolerance if comparing normalized vectors )</param>
+        /// <param name="other">other vector</param>                        
+        public bool ConcordantColinear(double tol, Vector3D other)
+        {
+            return Concordant(tol, other) && Colinear(tol, other);
+        }
+
+        /// <summary>
+        /// compute angle required to make this point go to the given one
+        /// if rotate right-hand around given reference axis
+        /// </summary>
+        /// <param name="tolLen">geometric tolerance ( use Constants.NormalizedLengthTolerance if working with normalized vectors )</param>
+        /// <param name="to">point toward rotate this one</param>
+        /// <param name="refAxis">reference axis to make right-hand rotation of this point toward given one</param>
+        /// <returns>angle (rad)</returns>
+        public double AngleToward(double tolLen, Vector3D to, Vector3D refAxis)
+        {
+            var c = this.CrossProduct(to);
+
+            if (c.Concordant(tolLen, refAxis))
+                return this.AngleRad(tolLen, to);
+            else
+                return 2 * PI - AngleRad(tolLen, to);
+        }
+
+        /// <summary>
+        /// rotate this point around x-axis using quaternion
+        /// </summary>
+        /// <param name="angleRad">angle (rad) of rotation</param>
+        /// <returns>rotated point</returns>
+        public Vector3D RotateAboutXAxis(double angleRad)
+        {
+            var t = new Transform3D();
+            t.RotateAboutXAxis(angleRad);
+            return t.Apply(this);
+        }
+
+        /// <summary>
+        /// rotate this point around y-axis using quaternion
+        /// </summary>
+        /// <param name="angleRad">angle (rad) of rotation</param>
+        /// <returns>rotated point</returns>
+        public Vector3D RotateAboutYAxis(double angleRad)
+        {
+            var t = new Transform3D();
+            t.RotateAboutYAxis(angleRad);
+            return t.Apply(this);
+        }
+
+        /// <summary>
+        /// rotate this point around z-axis using quaternion
+        /// </summary>
+        /// <param name="angleRad">angle (rad) of rotation</param>
+        /// <returns>rotated point</returns>
+        public Vector3D RotateAboutZAxis(double angleRad)
+        {
+            var t = new Transform3D();
+            t.RotateAboutZAxis(angleRad);
+            return t.Apply(this);
+        }
+
+        /// <summary>
+        /// rotate this point right-hand around given axis using quaternion
+        /// </summary>
+        /// <param name="axis">rotation axis</param>
+        /// <param name="angleRad">angle (rad) of rotation</param>
+        /// <returns>rotated point</returns>
+        public Vector3D RotateAboutAxis(Vector3D axis, double angleRad)
+        {
+            var t = new Transform3D();
+            t.RotateAboutAxis(axis.Normalized(), angleRad);
+            return t.Apply(this);
+        }
+
+        /// <summary>
+        /// rotate this point right-hand around given segment using quaternion
+        /// </summary>
+        /// <param name="axisSegment">rotation axis segment</param>
+        /// <param name="angleRad">angle (rad) of rotation</param>
+        /// <returns>rotated point</returns>
+        public Vector3D RotateAboutAxis(Line3D axisSegment, double angleRad)
+        {
+            var vrel = this - axisSegment.From;
+            var vrot = vrel.RotateAboutAxis(axisSegment.V, angleRad);
+            return vrot + axisSegment.From;
+        }
+
+        /// <summary>
+        /// Note: tol must be Constants.NormalizedLengthTolerance
+        /// if comparing normalized vectors
+        /// rotation from-to will be multiplied for given angleFactor ( default 1.0 )
+        /// </summary>      
+
+        /// <summary>
+        /// rotate this point using rotation like point from goes toward point to
+        /// </summary>
+        /// <param name="tol">geometric tolerance ( use Constants.NormalizedLengthTolerance if vectors are normalized )</param>
+        /// <param name="from">point from describing rotation path</param>
+        /// <param name="to">point to describing rotation path</param>
+        /// <param name="angleFactor">optional angle rotation scaler</param>
+        /// <param name="angleAddictionalRad">optional angle (rad) component (added after angleFactor scaler)</param>
+        /// <returns></returns>
+        public Vector3D RotateAs(double tol, Vector3D from, Vector3D to, double angleFactor = 1.0, double angleAddictionalRad = 0)
+        {
+            var angle = from.AngleRad(tol, to) * angleFactor + angleAddictionalRad;
+            var N = from.CrossProduct(to);
+            return this.RotateAboutAxis(N, angle);
+        }
+
+        /// <summary>
+        /// Scale this point about the given origin with the given factor.
+        /// </summary>            
+        public Vector3D ScaleAbout(Vector3D origin, double factor)
+        {
+            var d = this - origin;
+
+            return origin + d * factor;
+        }
+
+        /// <summary>
+        /// Scale this point about the given origin with the given factor as (sx,sy,sz).
+        /// </summary>            
+        public Vector3D ScaleAbout(Vector3D origin, Vector3D factor)
+        {
+            var d = this - origin;
+
+            return origin + d * factor;
+        }
+
+        /// <summary>
+        /// mirror this point about given axis
+        /// </summary>            
+        public Vector3D Mirror(Line3D axis)
+        {
+            return this + 2 * (Project(axis) - this);
+        }
+
+        /// <summary>
+        /// Convert this wcs point to given cs coord
+        /// </summary>
+        /// <param name="cs">dest CS</param>
+        /// <param name="evalCSOrigin">if true CS origin will subtracted before transform</param>            
+        public Vector3D ToUCS(CoordinateSystem3D cs, bool evalCSOrigin = true)
+        {
+            return cs.ToUCS(this, evalCSOrigin);
+        }
+
+        /// <summary>
+        /// Convert this ucs considered vector using given cs to the wcs
+        /// </summary>
+        /// <param name="cs">ucs point</param>
+        /// <param name="evalCSOrigin">if true CS origin will added after transform</param>
+        public Vector3D ToWCS(CoordinateSystem3D cs, bool evalCSOrigin = true)
+        {
+            return cs.ToWCS(this, evalCSOrigin);
+        }
+
+        /// <summary>
+        /// Scalar multiply each components
+        /// </summary>                
+        public Vector3D Scalar(double xs, double ys, double zs)
+        {
+            return new Vector3D(X * xs, Y * ys, Z * zs);
+        }
+
+        /// <summary>
+        /// convert each vector component value from to measure units
+        /// </summary>
+        public Vector3D Convert(MeasureUnit from, MeasureUnit to)
+        {
+            return new Vector3D(X.Convert(from, to), Y.Convert(from, to), Z.Convert(from, to));
+        }
+
+        /// <summary>
+        /// convert each vector component value from to measure units
+        /// to measure unit is given from the correspondent physical quantity measure unit of from mu        
+        /// </summary>
+        public Vector3D Convert(MeasureUnit from, IMUDomain to)
+        {
+            return new Vector3D(X.Convert(from, to), Y.Convert(from, to), Z.Convert(from, to));
+        }
+
+        /// <summary>
+        /// convert each vector component value from to measure units
+        /// from measure unit is given from the correspondent physical quantity measure unit of to mu
+        /// </summary>
+        public Vector3D Convert(IMUDomain from, MeasureUnit to)
+        {
+            return new Vector3D(X.Convert(from, to), Y.Convert(from, to), Z.Convert(from, to));
+        }
+
+        #region operators
+
+        /// <summary>
+        /// indexed vector component
+        /// </summary>        
+        public double this[int index]
+        {
+            get
+            {
+                if (index == 0) return X;
+                if (index == 1) return Y;
+                if (index == 2) return Z;
+                throw new ArgumentOutOfRangeException("invalid index must between 0-2");
+            }
+        }
+
+        /// <summary>
+        /// sum
+        /// </summary>        
+        public static Vector3D operator +(Vector3D a, Vector3D b)
+        {
+            return new Vector3D(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
+        }
+
+        /// <summary>
+        /// negate
+        /// </summary>        
+        public static Vector3D operator -(Vector3D a)
+        {
+            return -1.0 * a;
+        }
+
+        /// <summary>
+        /// sub
+        /// </summary>        
+        public static Vector3D operator -(Vector3D a, Vector3D b)
+        {
+            return new Vector3D(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
+        }
+
+        /// <summary>
+        /// scalar mul
+        /// </summary>        
+        public static Vector3D operator *(double s, Vector3D v)
+        {
+            return new Vector3D(s * v.X, s * v.Y, s * v.Z);
+        }
+
+        /// <summary>
+        /// scalar mul
+        /// </summary>        
+        public static Vector3D operator *(Vector3D v, double s)
+        {
+            return new Vector3D(s * v.X, s * v.Y, s * v.Z);
+        }
+
+        /// <summary>
+        /// scalar multiply vector components V1 * V2 =
+        /// (V1.x * V2.x, V1.y * V2.y, V1.z * V2.z)
+        /// </summary>        
+        public static Vector3D operator *(Vector3D v1, Vector3D v2)
+        {
+            return v1.Scalar(v2.X, v2.Y, v2.Z);
+        }
+
+        /// <summary>
+        /// scalar div
+        /// </summary>        
+        public static Vector3D operator /(double s, Vector3D v)
+        {
+            return new Vector3D(s / v.X, s / v.Y, s / v.Z);
+        }
+
+        /// <summary>
+        /// scalar div
+        /// </summary>        
+        public static Vector3D operator /(Vector3D v, double s)
+        {
+            return new Vector3D(v.X / s, v.Y / s, v.Z / s);
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Create an array of Vector3D from given list of 2d coords ( eg. { 100, 200, 300, 400 }
+        /// will create follow list of vector3d = { (100,200,0), (300,400,0) }
+        /// </summary>        
+        public static List<Vector3D> From2DCoords(params double[] coords)
+        {
+            var res = new List<Vector3D>();
+
+            for (var i = 0; i < coords.Length; i += 2)
+                res.Add(new Vector3D(coords[i], coords[i + 1], 0));
+
+            return res;
+        }
+
+        /// <summary>
+        /// Create an array of Vector3D from given list of 3d coords ( eg. { 100, 200, 10, 300, 400, 20 }
+        /// will create follow list of vector3d = { (100,200,10), (300,400,20) }            
+        /// </summary>        
+        public static List<Vector3D> From3DCoords(params double[] coords)
+        {
+            var res = new List<Vector3D>();
+
+            for (var i = 0; i < coords.Length; i += 3)
+                res.Add(new Vector3D(coords[i], coords[i + 1], coords[i + 2]));
+
+            return res;
+        }
+
+        public static IEnumerable<Vector3D> Random(int N, double L, int seed = 0)
+        {
+            return Random(N, -L / 2, L / 2, -L / 2, L / 2, -L / 2, L / 2, seed);
+        }
+
+        /// <summary>
+        /// Span a set of qty vector3d with random coord between given range.
+        /// Optionally a seed can be specified for rand or Random obj directly ( in latter case seed aren't used )
+        /// </summary>        
+        public static IEnumerable<Vector3D> Random(int qty,
+            double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, int seed = 0, Random random = null)
+        {
+            var dx = xmax - xmin;
+            var dy = ymax - ymin;
+            var dz = zmax - zmin;
+
+            var rnd = (random == null) ? new Random(seed) : random;
+            for (int i = 0; i < qty; ++i)
+            {
+                yield return new Vector3D(
+                    xmin + dx * rnd.NextDouble(),
+                    ymin + dy * rnd.NextDouble(),
+                    zmin + dz * rnd.NextDouble());
+            }
+        }
+
+        /*public sVector3D ToSystemVector3D()
+        {
+            return new sVector3D((float)X, (float)Y, (float)Z);
+        }*/
+
+        /// <summary>
+        /// parse vector3d from string format "(x y z)" or "(x,y,z)" invariant type
+        /// </summary>            
+        public static Vector3D FromString(string str)
+        {
+            var q = str.Trim().StripBegin("(").StripEnd(")").Split(str.Contains(",") ? ',' : ' ');
+            var x = double.Parse(q[0], CultureInfo.InvariantCulture);
+            var y = double.Parse(q[1], CultureInfo.InvariantCulture);
+            var z = 0d;
+            if (q.Length > 2) z = double.Parse(q[2], CultureInfo.InvariantCulture);
+
+            return new Vector3D(x, y, z);
+        }
+
+        /// <summary>
+        /// parse vector3d from array "(x1,y1,z1);(x2,y2,z2)"
+        /// </summary>            
+        public static IEnumerable<Vector3D> FromStringArray(string str)
+        {
+            return str.Split(";").Where(f => f.Trim().Length > 0).Select(f => FromString(f));
+        }
+
+        /// <summary>
+        /// string invariant representation "(x,y,z)"
+        /// w/3 decimal places
+        /// </summary>            
+        public override string ToString()
+        {
+            return this.ToString(digits: 3);
+        }
+
+        /// <summary>
+        /// string invariant representation "(x,y,z)" w/given digits
+        /// </summary>            
+        public string ToString(int digits = 3)
+        {
+            return Invariant($"({X.ToString(digits)}, {Y.ToString(digits)}, {Z.ToString(digits)})");
+        }
+
+        /// <summary>
+        /// hash string with given tolerance
+        /// </summary>            
+        public string ToString(double tol)
+        {
+            var digits = Math.Max(0, -tol.Magnitude());
+            return Invariant($"({X.MRound(tol).ToString(digits)}, {Y.MRound(tol).ToString(digits)}, {Z.MRound(tol).ToString(digits)})");
+        }
+
+        /// <summary>
+        /// string invariant representation "(x,y,z)"
+        /// </summary>            
+        public string StringRepresentation()
+        {
+            return Invariant($"({X}, {Y}, {Z})");
+        }
+
+        /// <summary>
+        /// cad script for this vector as wcs point
+        /// </summary>
+        public string CadScript
+        {
+            get
+            {
+                return string.Format(CultureInfo.InvariantCulture, "_POINT {0},{1},{2}\r\n", X, Y, Z);
+            }
+        }
+
+        /// <summary>
+        /// cad script for a line (0,0,0) to this vector
+        /// </summary>
+        public string CadScriptLine => new Line3D(Vector3D.Zero, this).CadScript;
+
+        /// <summary>
+        /// cad script for a line departing from this wcs point
+        /// </summary>
+        public string CadScriptLineFrom
+        {
+            get
+            {
+                return string.Format(CultureInfo.InvariantCulture, "_LINE {0},{1},{2}\r\n", X, Y, Z);
+            }
+        }
+
+        #region Geometry implementation
+
+        /// <summary>
+        /// This vector.
+        /// ( Geometry GeomFrom implementation )            
+        /// </summary>
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
+        /// </remarks>
+        [JsonIgnore]
+        public override Vector3D GeomFrom => this;
+
+        /// <summary>
+        /// This vector.
+        /// ( Geometry GeomTo implementation)             
+        /// </summary>
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
+        /// </remarks>
+        [JsonIgnore]
+        public override Vector3D GeomTo => this;
+
+        /// <summary>
+        /// Enumerable with only this vector.
+        /// ( Geometry Vertexes implementation )            
+        /// </summary>
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
+        /// </remarks>
+        [JsonIgnore]
+        public override IEnumerable<Vector3D> Vertexes
+        {
+            get
+            {
+                yield return this;
+            }
+        }
+
+        /// <summary>
+        /// Length of this vector.
+        /// ( Geometry Length implementation )            
+        /// </summary>
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
+        /// </remarks>
+        public override double Length { get { return Sqrt(X * X + Y * Y + Z * Z); } }
+
+        /// <summary>
+        /// Create dxf point entity suitable for netDxf addEntity.
+        /// ( Geometry DxfEntity implementation )            
+        /// </summary>
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
+        /// </remarks>
+        public override netDxf.Entities.EntityObject DxfEntity
+        {
+            get
+            {
+                return this.ToDxfPoint();
+            }
+        }
+
+        /// <summary>
+        /// Divide this point returning itself.
+        /// ( Geometry Divide implementation )            
+        /// </summary>
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
+        /// </remarks>
+        public override IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false)
+        {
+            return new[] { this };
+        }
+
+        /// <summary>
+        /// Compute bbox of this point.
+        /// ( Geometry BBox implementation ).            
+        /// </summary>
+        /// <param name="tol_len">length tolerance</param>            
+        /// <remarks>      
+        /// [unit test](../test/Vector3D/Vector3DTest_0002.cs)
+        /// </remarks>
+        public override BBox3D BBox(double tol_len)
+        {
+            return new BBox3D(new[] { this });
+        }
+
+        #endregion
+
+        /// <summary>
+        /// convert given Vector2 to a Vector3D ( with z=0 )
+        /// </summary>            
+        public static implicit operator Vector3D(Vector2 v)
+        {
+            return new Vector3D(v.X, v.Y, 0);
+        }
+
+        /// <summary>
+        /// Convert given Vector3 to Vector3D
+        /// </summary>            
+        public static implicit operator Vector3D(Vector3 v)
+        {
+            return new Vector3D(v.X, v.Y, v.Z);
+        }
+
+        /// <summary>
+        /// Convert given Vector3D to Vector3
+        /// </summary>            
+        public static implicit operator Vector3(Vector3D v)
+        {
+            return new Vector3(v.X, v.Y, v.Z);
+        }
+
+        /// <summary>
+        /// Convert given System.Numerics.Vector3 to Vector3D
+        /// </summary>
+        /// <param name="v">input vector</param>
+        public static implicit operator Vector3D(System.Numerics.Vector3 v)
+        {
+            return new Vector3D(v.X, v.Y, v.Z);
+        }
+
+        /// <summary>
+        /// Convert given Vector3D to System.Numerics.Vector3            
+        /// </summary>
+        /// <remarks>
+        /// double to float conversion will be done
+        /// </remarks>
+        /// <param name="v">input vector</param>
+        public static implicit operator System.Numerics.Vector3(Vector3D v)
+        {
+            return new System.Numerics.Vector3((float)v.X, (float)v.Y, (float)v.Z);
+        }
+
+        /// <summary>
+        /// Convert given QuantumConcepts.Formats.StereoLithography.Vertex to Vector3D
+        /// </summary>
+        /// <param name="v">input vector</param>
+        public static implicit operator Vector3D(QuantumConcepts.Formats.StereoLithography.Vertex v)
+        {
+            return new Vector3D(v.X, v.Y, v.Z);
+        }
+
+        /// <summary>
+        /// Convert given Vector3D to QuantumConcepts.Formats.StereoLithography.Vertex
+        /// </summary>
+        /// <remarks>
+        /// double to float conversion will be done
+        /// </remarks>
+        /// <param name="v">input vector</param>
+        public static implicit operator QuantumConcepts.Formats.StereoLithography.Vertex(Vector3D v)
+        {
+            return new QuantumConcepts.Formats.StereoLithography.Vertex((float)v.X, (float)v.Y, (float)v.Z);
+        }
+
+
+    }
+
+    public class Vector3DEqualityComparer : IEqualityComparer<Vector3D>
+    {
+        double tol;
+
+        public Vector3DEqualityComparer(double _tol)
+        {
+            tol = _tol;
+        }
+
+        public bool Equals(Vector3D x, Vector3D y)
+        {
+            return x.EqualsTol(tol, y);
+        }
+
+        public int GetHashCode(Vector3D obj)
+        {
+            return obj.ToString(tol).GetHashCode();
+        }
+    }
+
+    /// <summary>
+    /// support class for DistinctKeepOrder extension
+    /// </summary>
+    public class Vector3DWithOrder
+    {
+        public int Order { get; private set; }
+        public Vector3D Vector { get; private set; }
+        public Vector3DWithOrder(Vector3D v, int order)
+        {
+            Vector = v;
+            Order = order;
+        }
+    }
+
+    public class Vector3DWithOrderEqualityComparer : IEqualityComparer<Vector3DWithOrder>
+    {
+        Vector3DEqualityComparer cmp;
+
+        public Vector3DWithOrderEqualityComparer(Vector3DEqualityComparer _cmp)
+        {
+            cmp = _cmp;
+        }
+
+        public bool Equals(Vector3DWithOrder x, Vector3DWithOrder y)
+        {
+            return cmp.Equals(x.Vector, y.Vector);
+        }
+
+        public int GetHashCode(Vector3DWithOrder obj)
+        {
+            return cmp.GetHashCode(obj.Vector);
+        }
     }
 
     public enum OrdIdx

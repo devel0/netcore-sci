@@ -1,9 +1,9 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Example.Views;
+using SearchAThing.SciExamples.Views;
 
-namespace Example
+namespace SearchAThing.SciExamples
 {
     public class App : Application
     {

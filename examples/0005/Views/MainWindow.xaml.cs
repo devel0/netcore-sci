@@ -1,7 +1,7 @@
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 
-namespace Example.Views
+namespace SearchAThing.SciExamples.Views
 {
     public class MainWindow : Avalonia.Controls.Window
     {
