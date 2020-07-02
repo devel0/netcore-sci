@@ -185,10 +185,16 @@ dotnet new sln
 dotnet new classlib -n netcore-sci
 
 cd netcore-sci
-dotnet add package netcore-util --version 1.0.2
-dotnet add package netcore-psql-util --version 1.0.3
-dotnet add package netDXF.Standard --version 2.1.1
-dotnet add package com.angusj.Clipper --version 6.4.2
+dotnet add package netcore-util
+dotnet add package netcore-psql-util
+dotnet add package netDXF.Standard
+dotnet add package ParagonClipper
+# follow requires nuget.config with "searchathing-forks" source key enabled
+dotnet add package QuantumConcepts.Formats.STL.netcore
+dotnet add package Avalonia --version 0.9.999
+dotnet add package Avalonia.ReactiveUI --version 0.9.999
+dotnet add package Avalonia.Diagnostics --version 0.9.999
+dotnet add package Avalonia.Desktop --version 0.9.999
 cd ..
 
 dotnet new xunit -n test
