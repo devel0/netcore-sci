@@ -92,10 +92,9 @@ dotnet add reference ../../netcore-sci/netcore-sci.csproj
 
 ```csharp
 using static System.Math;
-using SearchAThing.Sci;
 using SearchAThing;
 
-namespace example_0001
+namespace test
 {
     class Program
     {
@@ -148,7 +147,7 @@ namespace example_0001
             }
 
             dxf.Viewport.ShowGrid = false;
-            dxf.Save("output.dxf");
+            dxf.Save("output.dxf", isBinary: true);
         }
     }
 }
