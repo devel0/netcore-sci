@@ -368,7 +368,7 @@ namespace SearchAThing
 
                 case EntityType.Circle: return ((Circle)eo).ToPolyline(4).BBox(tol_len);
 
-                case EntityType.LwPolyline:
+                case EntityType.LightWeightPolyline:
                     {
                         var lwpoly = (LwPolyline)eo;
 
@@ -448,7 +448,7 @@ namespace SearchAThing
                     }
                     break;
 
-                case EntityType.LwPolyline:
+                case EntityType.LightWeightPolyline:
                     {
                         var lw = (LwPolyline)eo;
                         foreach (var x in lw.Vertexes) yield return x.Position.ToVector3D();

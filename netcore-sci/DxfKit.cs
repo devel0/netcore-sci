@@ -280,7 +280,7 @@ namespace SearchAThing
                         return point;
                     }
 
-                case EntityType.LwPolyline:
+                case EntityType.LightWeightPolyline:
                     {
                         var lw = (LwPolyline)eo.Clone();
                         lw.Vertexes.ForEach(w =>
