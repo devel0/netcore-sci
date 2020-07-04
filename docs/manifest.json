@@ -36,7 +36,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.BBox3D.html",
-          "hash": "r1zHR5md/j2UrQMYCbOf6Q=="
+          "hash": "/dudcGLbsdCSq1H1lrtvAw=="
         }
       },
       "is_incremental": false,
@@ -131,11 +131,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.GLLineVertex.yml",
+      "source_relative_path": "api/SearchAThing.GLVertexManager.yml",
       "output": {
         ".html": {
-          "relative_path": "api/SearchAThing.GLLineVertex.html",
-          "hash": "wniSiYgCGTIcaXslPV5m/g=="
+          "relative_path": "api/SearchAThing.GLVertexManager.html",
+          "hash": "7aTqmPtGZAbgpFY3T38cpQ=="
         }
       },
       "is_incremental": false,
@@ -143,11 +143,23 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.GLTriangleVertex.yml",
+      "source_relative_path": "api/SearchAThing.GLVertexWithNormal.yml",
       "output": {
         ".html": {
-          "relative_path": "api/SearchAThing.GLTriangleVertex.html",
-          "hash": "ntQbBZMnR7r8vwZ2531tLw=="
+          "relative_path": "api/SearchAThing.GLVertexWithNormal.html",
+          "hash": "xiVBUfQ2LZwLixgG5OwtFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.GLVertexWithNormalNfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.GLVertexWithNormalNfo.html",
+          "hash": "AmH67SC9wGuzcc1IwnYkdA=="
         }
       },
       "is_incremental": false,
@@ -840,7 +852,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.SciExt.html",
-          "hash": "8fjOxLiS8zJwMEA/5S8lbQ=="
+          "hash": "9SyQtqjQNLjT2pMMrYbOEw=="
         }
       },
       "is_incremental": false,
@@ -882,7 +894,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.Vector3D.html",
-          "hash": "EVSXDNkVHXTtKzJwj2d/1w=="
+          "hash": "LSz7bW06ZsLExVTU5Rybsw=="
         }
       },
       "is_incremental": false,
@@ -930,7 +942,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.html",
-          "hash": "Xp/N5vInU1LWO/ah4XRZrA=="
+          "hash": "hs8EUYmSN/dcVmUrScYpDA=="
         }
       },
       "is_incremental": false,
@@ -954,7 +966,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "jTx0ZJwDKDRav3Jr+JfOvA=="
+          "hash": "WD5U/zePjbMASkr01kp75A=="
         }
       },
       "is_incremental": false,
@@ -969,7 +981,7 @@
           "hash": "JPRmIEhSldoFSF2zdP2AfA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -981,7 +993,7 @@
           "hash": "BMC7z3m8hkSgnrbEmHc1OQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1008,7 +1020,7 @@
           "hash": "7QzHHL4OYlRJSuv6NQf18Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1027,23 +1039,25 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 4,
-          "skipped_file_count": 4
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 76,
-          "skipped_file_count": 74
+          "total_file_count": 77,
+          "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
@@ -1056,8 +1070,8 @@
     },
     {
       "status": {
-        "can_incremental": true,
-        "details": "Can support incremental post processing.",
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0

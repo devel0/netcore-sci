@@ -1524,36 +1524,218 @@ references:
   commentId: F:SearchAThing.GeometryType.Vector3D
   fullName: SearchAThing.GeometryType.Vector3D
   nameWithType: GeometryType.Vector3D
-- uid: SearchAThing.GLLineVertex
-  name: GLLineVertex
-  href: api/SearchAThing.GLLineVertex.html
-  commentId: T:SearchAThing.GLLineVertex
-  fullName: SearchAThing.GLLineVertex
-  nameWithType: GLLineVertex
-- uid: SearchAThing.GLLineVertex.Position
-  name: Position
-  href: api/SearchAThing.GLLineVertex.html#SearchAThing_GLLineVertex_Position
-  commentId: F:SearchAThing.GLLineVertex.Position
-  fullName: SearchAThing.GLLineVertex.Position
-  nameWithType: GLLineVertex.Position
-- uid: SearchAThing.GLTriangleVertex
-  name: GLTriangleVertex
-  href: api/SearchAThing.GLTriangleVertex.html
-  commentId: T:SearchAThing.GLTriangleVertex
-  fullName: SearchAThing.GLTriangleVertex
-  nameWithType: GLTriangleVertex
-- uid: SearchAThing.GLTriangleVertex.Normal
+- uid: SearchAThing.GLVertexManager
+  name: GLVertexManager
+  href: api/SearchAThing.GLVertexManager.html
+  commentId: T:SearchAThing.GLVertexManager
+  fullName: SearchAThing.GLVertexManager
+  nameWithType: GLVertexManager
+- uid: SearchAThing.GLVertexManager.#ctor(System.Double)
+  name: GLVertexManager(Double)
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager__ctor_System_Double_
+  commentId: M:SearchAThing.GLVertexManager.#ctor(System.Double)
+  fullName: SearchAThing.GLVertexManager.GLVertexManager(System.Double)
+  nameWithType: GLVertexManager.GLVertexManager(Double)
+- uid: SearchAThing.GLVertexManager.#ctor*
+  name: GLVertexManager
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager__ctor_
+  commentId: Overload:SearchAThing.GLVertexManager.#ctor
+  isSpec: "True"
+  fullName: SearchAThing.GLVertexManager.GLVertexManager
+  nameWithType: GLVertexManager.GLVertexManager
+- uid: SearchAThing.GLVertexManager.AddFaces(System.String,IEnumerable{Facet})
+  name: AddFaces(String, IEnumerable<Facet>)
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_AddFaces_System_String_IEnumerable_Facet__
+  commentId: M:SearchAThing.GLVertexManager.AddFaces(System.String,IEnumerable{Facet})
+  name.vb: AddFaces(String, IEnumerable(Of Facet))
+  fullName: SearchAThing.GLVertexManager.AddFaces(System.String, IEnumerable<Facet>)
+  fullName.vb: SearchAThing.GLVertexManager.AddFaces(System.String, IEnumerable(Of Facet))
+  nameWithType: GLVertexManager.AddFaces(String, IEnumerable<Facet>)
+  nameWithType.vb: GLVertexManager.AddFaces(String, IEnumerable(Of Facet))
+- uid: SearchAThing.GLVertexManager.AddFaces*
+  name: AddFaces
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_AddFaces_
+  commentId: Overload:SearchAThing.GLVertexManager.AddFaces
+  isSpec: "True"
+  fullName: SearchAThing.GLVertexManager.AddFaces
+  nameWithType: GLVertexManager.AddFaces
+- uid: SearchAThing.GLVertexManager.AddFigures(System.String,IEnumerable{SearchAThing.Vector3D[]})
+  name: AddFigures(String, IEnumerable<Vector3D[]>)
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_AddFigures_System_String_IEnumerable_SearchAThing_Vector3D____
+  commentId: M:SearchAThing.GLVertexManager.AddFigures(System.String,IEnumerable{SearchAThing.Vector3D[]})
+  name.vb: AddFigures(String, IEnumerable(Of Vector3D()))
+  fullName: SearchAThing.GLVertexManager.AddFigures(System.String, IEnumerable<SearchAThing.Vector3D[]>)
+  fullName.vb: SearchAThing.GLVertexManager.AddFigures(System.String, IEnumerable(Of SearchAThing.Vector3D()))
+  nameWithType: GLVertexManager.AddFigures(String, IEnumerable<Vector3D[]>)
+  nameWithType.vb: GLVertexManager.AddFigures(String, IEnumerable(Of Vector3D()))
+- uid: SearchAThing.GLVertexManager.AddFigures(System.String,SearchAThing.Vector3D[][])
+  name: AddFigures(String, Vector3D[][])
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_AddFigures_System_String_SearchAThing_Vector3D_____
+  commentId: M:SearchAThing.GLVertexManager.AddFigures(System.String,SearchAThing.Vector3D[][])
+  name.vb: AddFigures(String, Vector3D()())
+  fullName: SearchAThing.GLVertexManager.AddFigures(System.String, SearchAThing.Vector3D[][])
+  fullName.vb: SearchAThing.GLVertexManager.AddFigures(System.String, SearchAThing.Vector3D()())
+  nameWithType: GLVertexManager.AddFigures(String, Vector3D[][])
+  nameWithType.vb: GLVertexManager.AddFigures(String, Vector3D()())
+- uid: SearchAThing.GLVertexManager.AddFigures*
+  name: AddFigures
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_AddFigures_
+  commentId: Overload:SearchAThing.GLVertexManager.AddFigures
+  isSpec: "True"
+  fullName: SearchAThing.GLVertexManager.AddFigures
+  nameWithType: GLVertexManager.AddFigures
+- uid: SearchAThing.GLVertexManager.AddPoint(SearchAThing.Vector3D)
+  name: AddPoint(Vector3D)
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_AddPoint_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.GLVertexManager.AddPoint(SearchAThing.Vector3D)
+  fullName: SearchAThing.GLVertexManager.AddPoint(SearchAThing.Vector3D)
+  nameWithType: GLVertexManager.AddPoint(Vector3D)
+- uid: SearchAThing.GLVertexManager.AddPoint*
+  name: AddPoint
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_AddPoint_
+  commentId: Overload:SearchAThing.GLVertexManager.AddPoint
+  isSpec: "True"
+  fullName: SearchAThing.GLVertexManager.AddPoint
+  nameWithType: GLVertexManager.AddPoint
+- uid: SearchAThing.GLVertexManager.AddTriangles(System.String,IEnumerable{SearchAThing.Vector3D[]})
+  name: AddTriangles(String, IEnumerable<Vector3D[]>)
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_AddTriangles_System_String_IEnumerable_SearchAThing_Vector3D____
+  commentId: M:SearchAThing.GLVertexManager.AddTriangles(System.String,IEnumerable{SearchAThing.Vector3D[]})
+  name.vb: AddTriangles(String, IEnumerable(Of Vector3D()))
+  fullName: SearchAThing.GLVertexManager.AddTriangles(System.String, IEnumerable<SearchAThing.Vector3D[]>)
+  fullName.vb: SearchAThing.GLVertexManager.AddTriangles(System.String, IEnumerable(Of SearchAThing.Vector3D()))
+  nameWithType: GLVertexManager.AddTriangles(String, IEnumerable<Vector3D[]>)
+  nameWithType.vb: GLVertexManager.AddTriangles(String, IEnumerable(Of Vector3D()))
+- uid: SearchAThing.GLVertexManager.AddTriangles(System.String,SearchAThing.Vector3D[][])
+  name: AddTriangles(String, Vector3D[][])
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_AddTriangles_System_String_SearchAThing_Vector3D_____
+  commentId: M:SearchAThing.GLVertexManager.AddTriangles(System.String,SearchAThing.Vector3D[][])
+  name.vb: AddTriangles(String, Vector3D()())
+  fullName: SearchAThing.GLVertexManager.AddTriangles(System.String, SearchAThing.Vector3D[][])
+  fullName.vb: SearchAThing.GLVertexManager.AddTriangles(System.String, SearchAThing.Vector3D()())
+  nameWithType: GLVertexManager.AddTriangles(String, Vector3D[][])
+  nameWithType.vb: GLVertexManager.AddTriangles(String, Vector3D()())
+- uid: SearchAThing.GLVertexManager.AddTriangles*
+  name: AddTriangles
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_AddTriangles_
+  commentId: Overload:SearchAThing.GLVertexManager.AddTriangles
+  isSpec: "True"
+  fullName: SearchAThing.GLVertexManager.AddTriangles
+  nameWithType: GLVertexManager.AddTriangles
+- uid: SearchAThing.GLVertexManager.BBox
+  name: BBox
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_BBox
+  commentId: P:SearchAThing.GLVertexManager.BBox
+  fullName: SearchAThing.GLVertexManager.BBox
+  nameWithType: GLVertexManager.BBox
+- uid: SearchAThing.GLVertexManager.BBox*
+  name: BBox
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_BBox_
+  commentId: Overload:SearchAThing.GLVertexManager.BBox
+  isSpec: "True"
+  fullName: SearchAThing.GLVertexManager.BBox
+  nameWithType: GLVertexManager.BBox
+- uid: SearchAThing.GLVertexManager.BuildIdxs(System.String)
+  name: BuildIdxs(String)
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_BuildIdxs_System_String_
+  commentId: M:SearchAThing.GLVertexManager.BuildIdxs(System.String)
+  fullName: SearchAThing.GLVertexManager.BuildIdxs(System.String)
+  nameWithType: GLVertexManager.BuildIdxs(String)
+- uid: SearchAThing.GLVertexManager.BuildIdxs*
+  name: BuildIdxs
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_BuildIdxs_
+  commentId: Overload:SearchAThing.GLVertexManager.BuildIdxs
+  isSpec: "True"
+  fullName: SearchAThing.GLVertexManager.BuildIdxs
+  nameWithType: GLVertexManager.BuildIdxs
+- uid: SearchAThing.GLVertexManager.BuildPoints
+  name: BuildPoints()
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_BuildPoints
+  commentId: M:SearchAThing.GLVertexManager.BuildPoints
+  fullName: SearchAThing.GLVertexManager.BuildPoints()
+  nameWithType: GLVertexManager.BuildPoints()
+- uid: SearchAThing.GLVertexManager.BuildPoints*
+  name: BuildPoints
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_BuildPoints_
+  commentId: Overload:SearchAThing.GLVertexManager.BuildPoints
+  isSpec: "True"
+  fullName: SearchAThing.GLVertexManager.BuildPoints
+  nameWithType: GLVertexManager.BuildPoints
+- uid: SearchAThing.GLVertexManager.Idxs
+  name: Idxs
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_Idxs
+  commentId: P:SearchAThing.GLVertexManager.Idxs
+  fullName: SearchAThing.GLVertexManager.Idxs
+  nameWithType: GLVertexManager.Idxs
+- uid: SearchAThing.GLVertexManager.Idxs*
+  name: Idxs
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_Idxs_
+  commentId: Overload:SearchAThing.GLVertexManager.Idxs
+  isSpec: "True"
+  fullName: SearchAThing.GLVertexManager.Idxs
+  nameWithType: GLVertexManager.Idxs
+- uid: SearchAThing.GLVertexManager.Tol
+  name: Tol
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_Tol
+  commentId: P:SearchAThing.GLVertexManager.Tol
+  fullName: SearchAThing.GLVertexManager.Tol
+  nameWithType: GLVertexManager.Tol
+- uid: SearchAThing.GLVertexManager.Tol*
+  name: Tol
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_Tol_
+  commentId: Overload:SearchAThing.GLVertexManager.Tol
+  isSpec: "True"
+  fullName: SearchAThing.GLVertexManager.Tol
+  nameWithType: GLVertexManager.Tol
+- uid: SearchAThing.GLVertexManager.Vtxs
+  name: Vtxs
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_Vtxs
+  commentId: P:SearchAThing.GLVertexManager.Vtxs
+  fullName: SearchAThing.GLVertexManager.Vtxs
+  nameWithType: GLVertexManager.Vtxs
+- uid: SearchAThing.GLVertexManager.Vtxs*
+  name: Vtxs
+  href: api/SearchAThing.GLVertexManager.html#SearchAThing_GLVertexManager_Vtxs_
+  commentId: Overload:SearchAThing.GLVertexManager.Vtxs
+  isSpec: "True"
+  fullName: SearchAThing.GLVertexManager.Vtxs
+  nameWithType: GLVertexManager.Vtxs
+- uid: SearchAThing.GLVertexWithNormal
+  name: GLVertexWithNormal
+  href: api/SearchAThing.GLVertexWithNormal.html
+  commentId: T:SearchAThing.GLVertexWithNormal
+  fullName: SearchAThing.GLVertexWithNormal
+  nameWithType: GLVertexWithNormal
+- uid: SearchAThing.GLVertexWithNormal.Normal
   name: Normal
-  href: api/SearchAThing.GLTriangleVertex.html#SearchAThing_GLTriangleVertex_Normal
-  commentId: F:SearchAThing.GLTriangleVertex.Normal
-  fullName: SearchAThing.GLTriangleVertex.Normal
-  nameWithType: GLTriangleVertex.Normal
-- uid: SearchAThing.GLTriangleVertex.Position
+  href: api/SearchAThing.GLVertexWithNormal.html#SearchAThing_GLVertexWithNormal_Normal
+  commentId: F:SearchAThing.GLVertexWithNormal.Normal
+  fullName: SearchAThing.GLVertexWithNormal.Normal
+  nameWithType: GLVertexWithNormal.Normal
+- uid: SearchAThing.GLVertexWithNormal.Position
   name: Position
-  href: api/SearchAThing.GLTriangleVertex.html#SearchAThing_GLTriangleVertex_Position
-  commentId: F:SearchAThing.GLTriangleVertex.Position
-  fullName: SearchAThing.GLTriangleVertex.Position
-  nameWithType: GLTriangleVertex.Position
+  href: api/SearchAThing.GLVertexWithNormal.html#SearchAThing_GLVertexWithNormal_Position
+  commentId: F:SearchAThing.GLVertexWithNormal.Position
+  fullName: SearchAThing.GLVertexWithNormal.Position
+  nameWithType: GLVertexWithNormal.Position
+- uid: SearchAThing.GLVertexWithNormalNfo
+  name: GLVertexWithNormalNfo
+  href: api/SearchAThing.GLVertexWithNormalNfo.html
+  commentId: T:SearchAThing.GLVertexWithNormalNfo
+  fullName: SearchAThing.GLVertexWithNormalNfo
+  nameWithType: GLVertexWithNormalNfo
+- uid: SearchAThing.GLVertexWithNormalNfo.Normal
+  name: Normal
+  href: api/SearchAThing.GLVertexWithNormalNfo.html#SearchAThing_GLVertexWithNormalNfo_Normal
+  commentId: F:SearchAThing.GLVertexWithNormalNfo.Normal
+  fullName: SearchAThing.GLVertexWithNormalNfo.Normal
+  nameWithType: GLVertexWithNormalNfo.Normal
+- uid: SearchAThing.GLVertexWithNormalNfo.Position
+  name: Position
+  href: api/SearchAThing.GLVertexWithNormalNfo.html#SearchAThing_GLVertexWithNormalNfo_Position
+  commentId: F:SearchAThing.GLVertexWithNormalNfo.Position
+  fullName: SearchAThing.GLVertexWithNormalNfo.Position
+  nameWithType: GLVertexWithNormalNfo.Position
 - uid: SearchAThing.IMUDomain
   name: IMUDomain
   href: api/SearchAThing.IMUDomain.html
@@ -6549,38 +6731,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.ToGeometryBlock
   nameWithType: SciExt.ToGeometryBlock
-- uid: SearchAThing.SciExt.ToGLLinesVertexes(netDxf.DxfDocument)
-  name: ToGLLinesVertexes(netDxf.DxfDocument)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToGLLinesVertexes_netDxf_DxfDocument_
-  commentId: M:SearchAThing.SciExt.ToGLLinesVertexes(netDxf.DxfDocument)
-  fullName: SearchAThing.SciExt.ToGLLinesVertexes(netDxf.DxfDocument)
-  nameWithType: SciExt.ToGLLinesVertexes(netDxf.DxfDocument)
-- uid: SearchAThing.SciExt.ToGLLinesVertexes*
-  name: ToGLLinesVertexes
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToGLLinesVertexes_
-  commentId: Overload:SearchAThing.SciExt.ToGLLinesVertexes
-  isSpec: "True"
-  fullName: SearchAThing.SciExt.ToGLLinesVertexes
-  nameWithType: SciExt.ToGLLinesVertexes
-- uid: SearchAThing.SciExt.ToGLLineVertex(netDxf.Vector3)
-  name: ToGLLineVertex(netDxf.Vector3)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToGLLineVertex_netDxf_Vector3_
-  commentId: M:SearchAThing.SciExt.ToGLLineVertex(netDxf.Vector3)
-  fullName: SearchAThing.SciExt.ToGLLineVertex(netDxf.Vector3)
-  nameWithType: SciExt.ToGLLineVertex(netDxf.Vector3)
-- uid: SearchAThing.SciExt.ToGLLineVertex(SearchAThing.Vector3D)
-  name: ToGLLineVertex(Vector3D)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToGLLineVertex_SearchAThing_Vector3D_
-  commentId: M:SearchAThing.SciExt.ToGLLineVertex(SearchAThing.Vector3D)
-  fullName: SearchAThing.SciExt.ToGLLineVertex(SearchAThing.Vector3D)
-  nameWithType: SciExt.ToGLLineVertex(Vector3D)
-- uid: SearchAThing.SciExt.ToGLLineVertex*
-  name: ToGLLineVertex
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToGLLineVertex_
-  commentId: Overload:SearchAThing.SciExt.ToGLLineVertex
-  isSpec: "True"
-  fullName: SearchAThing.SciExt.ToGLLineVertex
-  nameWithType: SciExt.ToGLLineVertex
 - uid: SearchAThing.SciExt.ToGLTriangleVertex(SearchAThing.Vector3D)
   name: ToGLTriangleVertex(Vector3D)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToGLTriangleVertex_SearchAThing_Vector3D_
