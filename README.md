@@ -22,6 +22,8 @@
 
 ## Recent changes
 
+- **1.4.0** : GLVertexManager ( see example/0006 )
+
 - **1.3.0** : refactored api namespace to have partial static SciToolkit class in SearchAThing namespace
 
 ## Notes
@@ -47,12 +49,6 @@ create a dxf
 
 ( avalonia/opengl example ) : basic gl test ( [source](https://github.com/AvaloniaUI/Avalonia/blob/842eb75893f484fa4e3956a32737f2e331abc830/samples/ControlCatalog/Pages/OpenGlPage.xaml.cs) from avalonia samples )
 
-#### 0003
-
-( avalonia/opengl example ) : test display of [dxf face3d](https://github.com/devel0/netcore-sci/blob/609ffaacb38821ff1dc2f90eae01ae4a1d442936/netcore-sci/lab/OpenGlPageControl.cs#L334) into opengl
-
-<img src="examples/0003/out.png" width=400>
-
 #### 0004
 
 ( avalonia/opengl example ) : test display of [dxf face3d](https://github.com/devel0/netcore-sci/blob/a663093ddb074f58041ed7473d755f855d2f3b75/netcore-sci/lab/OpenGlPageControl0004.cs#L237-L288) into opengl
@@ -66,6 +62,14 @@ create a dxf
 control with mouse buttons rotation, zoom, pan
 
 <img src="examples/0005/out.gif">
+
+#### 0006
+
+( avalonia/opengl example ) : use of [GLVertexManager](https://github.com/devel0/netcore-sci/blob/bf60c526adad3f60860574bc87ed09e9fae9d2d2/netcore-sci/OpenGL.cs#L24) to draw mesh and some lines ( a simple WCS ) to the same scene ; toggle button for Wireframe mode
+
+<img src="examples/0006/out1.png" width="400"/>
+
+<img src="examples/0006/out2.png" width="400"/>
 
 ## Quickstart
 

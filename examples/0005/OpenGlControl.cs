@@ -171,7 +171,7 @@ namespace SearchAThing.SciExamples
         private string FragmentShaderSource => GetShader(true,
             "0005.fragmentShader.glsl".GetEmbeddedFileContent<OpenGlPageControl>());
 
-        private GLTriangleVertex[] _points;
+        private GLVertexWithNormal[] _points;
         private uint[] _indices;
         BBox3D bbox = new BBox3D();
 
@@ -282,9 +282,9 @@ namespace SearchAThing.SciExamples
             {
                 var TOL = 1e-3;
 
-                (GLTriangleVertex[] points, uint[] indices) GetVertexes(IList<Facet> facets)
+                (GLVertexWithNormal[] points, uint[] indices) GetVertexes(IList<Facet> facets)
                 {
-                    var vtxs = new List<GLTriangleVertex>();
+                    var vtxs = new List<GLVertexWithNormal>();
                     var idxs = new List<uint>();
                     //var cmp = new Vector3DEqualityComparer(TOL);
                     var dictIdx = new Dictionary<string, uint>();
@@ -375,12 +375,7 @@ namespace SearchAThing.SciExamples
         }
 
         public OpenGlPageControl()
-        {
-            if (STLmapPathfilename == null)
-            {
-                STLmapPathfilename = Path.Combine(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "map.stl"));
-            }
-
+        {        
             CHECK_INIT();
         }
 
@@ -428,7 +423,7 @@ namespace SearchAThing.SciExamples
             // Bind the VBO and copy the vertex data into it.
             GL.BindBuffer(GL_ARRAY_BUFFER, _vertexBufferObject);
             CheckError(GL);
-            var vertexSize = Marshal.SizeOf<GLTriangleVertex>();
+            var vertexSize = Marshal.SizeOf<GLVertexWithNormal>();
             fixed (void* pdata = _points)
                 GL.BufferData(GL_ARRAY_BUFFER, new IntPtr(_points.Length * vertexSize),
                     new IntPtr(pdata), GL_STATIC_DRAW);

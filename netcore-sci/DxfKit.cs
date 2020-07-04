@@ -525,38 +525,7 @@ namespace SearchAThing
             }
 
         }
-
-        public static GLLineVertex[] ToGLLinesVertexes(this netDxf.DxfDocument dxf)
-        {
-            var res = new List<GLLineVertex>();
-
-            foreach (var x in dxf.Faces3d)
-            {
-                res.Add(x.FirstVertex.ToGLLineVertex());
-                res.Add(x.SecondVertex.ToGLLineVertex());
-                res.Add(x.ThirdVertex.ToGLLineVertex());
-                if (x.FourthVertex != null)
-                {
-                    res.Add(x.FourthVertex.ToGLLineVertex());
-                }
-                res.Add(x.FirstVertex.ToGLLineVertex());
-            }
-
-            return res.ToArray();
-
-            var _points = new GLLineVertex[]
-            {
-                new GLLineVertex() { Position = new System.Numerics.Vector3( -0.5f, 0, 0 ) },
-                new GLLineVertex() { Position = new System.Numerics.Vector3( 0.5f, 0, 0 ) },
-                new GLLineVertex() { Position = new System.Numerics.Vector3( 0, 0.5f, 0 ) },
-                new GLLineVertex() { Position = new System.Numerics.Vector3( -0.5f, 0, 0 ) },
-                // new Vertex() { Position = new Vector3( -0.5f, -0.5f, 0.0f) },
-                // new Vertex() { Position= new Vector3(  0.5f, -0.5f, 0.0f) },
-                // new Vertex() { Position = new Vector3(     0.0f,  0.5f, 0.0f) }
-            };
-            return _points;
-        }
-
+                
     }
 
 }

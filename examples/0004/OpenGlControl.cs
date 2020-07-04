@@ -122,7 +122,7 @@ namespace SearchAThing.SciExamples
         private string FragmentShaderSource => GetShader(true,
             "0004.fragmentShader.glsl".GetEmbeddedFileContent<OpenGlPageControl>());
 
-        private readonly GLTriangleVertex[] _points;
+        private readonly GLVertexWithNormal[] _points;
         private readonly uint[] _indices;
         private readonly float _minY;
         private readonly float _maxY;
@@ -238,9 +238,9 @@ namespace SearchAThing.SciExamples
                 var sw0 = new Stopwatch();
                 sw0.Start();
 
-                (GLTriangleVertex[] points, uint[] indices) GetVertexes()
+                (GLVertexWithNormal[] points, uint[] indices) GetVertexes()
                 {
-                    var vtxs = new List<GLTriangleVertex>();
+                    var vtxs = new List<GLVertexWithNormal>();
                     var idxs = new List<uint>();
                     var cmp = new Vector3DEqualityComparer(TOL);
                     var dictIdx = new Dictionary<Vector3D, uint>(cmp);
@@ -373,7 +373,7 @@ namespace SearchAThing.SciExamples
             // Bind the VBO and copy the vertex data into it.
             GL.BindBuffer(GL_ARRAY_BUFFER, _vertexBufferObject);
             CheckError(GL);
-            var vertexSize = Marshal.SizeOf<GLTriangleVertex>();
+            var vertexSize = Marshal.SizeOf<GLVertexWithNormal>();
             fixed (void* pdata = _points)
                 GL.BufferData(GL_ARRAY_BUFFER, new IntPtr(_points.Length * vertexSize),
                     new IntPtr(pdata), GL_STATIC_DRAW);

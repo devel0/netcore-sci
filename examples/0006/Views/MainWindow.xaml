@@ -1,0 +1,33 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:SearchAThing.SciExamples" xmlns:ctl="clr-namespace:SearchAThing.SciExamples.Controls" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" x:Class="SearchAThing.SciExamples.Views.MainWindow" Title="GL Control example">
+    <Grid ColumnDefinitions="250,*">
+        <Grid Grid.Column="0" Background="#dedede" Margin="0,0,10,0">
+            <StackPanel Margin="10">
+                <TextBlock Text="{Binding #GL.Info}"/>
+                <TextBlock Text="{Binding #GL.Info2}" Margin="0,10"/>
+                <StackPanel Margin="0,10">
+                    <TextBlock>Yaw</TextBlock>
+                    <Slider Value="{Binding #GL.Yaw, Mode=TwoWay}" Maximum="10"/>
+                    <TextBlock>Pitch</TextBlock>
+                    <Slider Value="{Binding #GL.Pitch, Mode=TwoWay}" Maximum="10"/>
+                    <TextBlock>Roll</TextBlock>
+                    <Slider Value="{Binding #GL.Roll, Mode=TwoWay}" Maximum="10"/>
+                    <TextBlock>LightPosX</TextBlock>
+                    <Slider Value="{Binding #GL.LightPosX, Mode=TwoWay}" Minimum="-5000" Maximum="5000"/>
+                    <TextBlock>LightPosY</TextBlock>
+                    <Slider Value="{Binding #GL.LightPosY, Mode=TwoWay}" Minimum="-5000" Maximum="5000"/>
+                    <TextBlock>LightPosZ</TextBlock>
+                    <Slider Value="{Binding #GL.LightPosZ, Mode=TwoWay}" Minimum="-5000" Maximum="5000"/>
+                    <TextBlock>AmbientStrength</TextBlock>
+                    <Slider Value="{Binding #GL.AmbientStrength, Mode=TwoWay}" Minimum="0" Maximum="1"/>
+                    <Button Grid.Row="0" Grid.Column="0" Content="Reset" Click="click_reset"/>
+                    <CheckBox IsChecked="{Binding #GL.Wireframe, Mode=TwoWay}" Margin="0,10,0,0">Wireframe</CheckBox>
+                    <CheckBox IsChecked="{Binding #GL.ShowModel, Mode=TwoWay}" Margin="0,10,0,0">ShowModel</CheckBox>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <GridSplitter Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="10"/>
+        <Grid Grid.Column="1">
+            <ctl:OpenGlControl x:Name="GL" STLmapPathfilename="../data/examples/map.stl"/>
+        </Grid>
+    </Grid>
+</Window>
