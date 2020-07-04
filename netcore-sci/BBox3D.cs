@@ -7,6 +7,7 @@ using netDxf.Entities;
 using netDxf;
 using netDxf.Tables;
 using static SearchAThing.SciToolkit;
+using System.Runtime.CompilerServices;
 
 namespace SearchAThing
 {
@@ -114,7 +115,7 @@ namespace SearchAThing
         /// <summary>
         /// add given points to current bbox with side effects
         /// </summary>
-        /// <param name="pts">points to add</param>
+        /// <param name="pts">points to add</param>        
         public void ApplyUnion(params Vector3D[] pts)
         {
             ApplyUnion((IEnumerable<Vector3D>)pts);
