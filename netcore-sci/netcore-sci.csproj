@@ -40,8 +40,7 @@
     </ItemGroup>
     <ItemGroup><!-- using git built -->
         <PackageReference Include="Avalonia" Version="0.9.999" />
-        <PackageReference Include="Avalonia.Desktop" Version="0.9.999" />
-        <PackageReference Include="Avalonia.Diagnostics" Version="0.9.999" />
+        <PackageReference Include="Avalonia.Desktop" Version="0.9.999" />        
         <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.999" />
     </ItemGroup>
 </Project>
