@@ -186,6 +186,14 @@ namespace SearchAThing
             return new Line3D(From.ScaleAbout(refpt, factor), To.ScaleAbout(refpt, factor));
         }
 
+        /// <summary>
+        /// scale from,to of this line using given factor and assuming refpt = MidPoint
+        /// </summary>
+        /// <param name="factor">factor to scale this segment</param>
+        /// <returns>scaled segment</returns>
+        /// <remarks>[unit test](../test/Line3D/Line3DTest_0001.cs)</remarks>
+        public Line3D Scale(double factor) => Scale(this.MidPoint, factor);
+
         #region operators
         /// <summary>
         /// multiply Length by given scalar factor
