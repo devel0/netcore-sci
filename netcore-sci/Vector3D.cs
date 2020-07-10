@@ -1295,7 +1295,7 @@ namespace SearchAThing
         public static string CadScriptPolyline(this IEnumerable<Vector3D> points)
         {
             var sb = new StringBuilder();
-            sb.Append("_POLYLINE ");
+            sb.Append("_PLINE ");
             foreach (var p in points)
             {
                 sb.Append(Invariant($"{p.X},{p.Y},{p.Z}\r\n"));
