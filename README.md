@@ -22,6 +22,8 @@
 
 ## Recent changes
 
+- **1.5.0** : use of full gl bindings ; some avalonia GUI controls
+
 - **1.4.0** : GLVertexManager ( see example/0006 )
 
 - **1.3.0** : refactored api namespace to have partial static SciToolkit class in SearchAThing namespace
