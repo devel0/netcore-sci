@@ -9,6 +9,15 @@ namespace SearchAThing
 {
 
     /// <summary>
+    /// contains a vector3
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
+    public struct GLVertex
+    {
+        public Vector3 Position;        
+    }
+
+    /// <summary>
     /// structure used by GLVertexManager when BuildPoints called
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Pack = 4)]
