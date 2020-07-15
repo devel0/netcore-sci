@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace SearchAThing.Sci.Tests
 {
-    public class Line3DTests
+    public partial class Line3DTests
     {
 
         double rad_tol;

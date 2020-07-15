@@ -827,6 +827,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Circle3D.DxfEntity
   nameWithType: Circle3D.DxfEntity
+- uid: SearchAThing.Circle3D.InscribedPolygon(System.Int32)
+  name: InscribedPolygon(Int32)
+  href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_InscribedPolygon_System_Int32_
+  commentId: M:SearchAThing.Circle3D.InscribedPolygon(System.Int32)
+  fullName: SearchAThing.Circle3D.InscribedPolygon(System.Int32)
+  nameWithType: Circle3D.InscribedPolygon(Int32)
+- uid: SearchAThing.Circle3D.InscribedPolygon*
+  name: InscribedPolygon
+  href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_InscribedPolygon_
+  commentId: Overload:SearchAThing.Circle3D.InscribedPolygon
+  isSpec: "True"
+  fullName: SearchAThing.Circle3D.InscribedPolygon
+  nameWithType: Circle3D.InscribedPolygon
 - uid: SearchAThing.Circle3D.Intersect(System.Double,SearchAThing.Line3D,System.Boolean,System.Boolean)
   name: Intersect(Double, Line3D, Boolean, Boolean)
   href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_Intersect_System_Double_SearchAThing_Line3D_System_Boolean_System_Boolean_
@@ -853,19 +866,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Circle3D.Length
   nameWithType: Circle3D.Length
-- uid: SearchAThing.Circle3D.ToPolygon3D(System.Double)
-  name: ToPolygon3D(Double)
-  href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_ToPolygon3D_System_Double_
-  commentId: M:SearchAThing.Circle3D.ToPolygon3D(System.Double)
-  fullName: SearchAThing.Circle3D.ToPolygon3D(System.Double)
-  nameWithType: Circle3D.ToPolygon3D(Double)
-- uid: SearchAThing.Circle3D.ToPolygon3D*
-  name: ToPolygon3D
-  href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_ToPolygon3D_
-  commentId: Overload:SearchAThing.Circle3D.ToPolygon3D
-  isSpec: "True"
-  fullName: SearchAThing.Circle3D.ToPolygon3D
-  nameWithType: Circle3D.ToPolygon3D
 - uid: SearchAThing.CoordinateSystem3D
   name: CoordinateSystem3D
   href: api/SearchAThing.CoordinateSystem3D.html
@@ -1524,6 +1524,18 @@ references:
   commentId: F:SearchAThing.GeometryType.Vector3D
   fullName: SearchAThing.GeometryType.Vector3D
   nameWithType: GeometryType.Vector3D
+- uid: SearchAThing.GLVertex
+  name: GLVertex
+  href: api/SearchAThing.GLVertex.html
+  commentId: T:SearchAThing.GLVertex
+  fullName: SearchAThing.GLVertex
+  nameWithType: GLVertex
+- uid: SearchAThing.GLVertex.Position
+  name: Position
+  href: api/SearchAThing.GLVertex.html#SearchAThing_GLVertex_Position
+  commentId: F:SearchAThing.GLVertex.Position
+  fullName: SearchAThing.GLVertex.Position
+  nameWithType: GLVertex.Position
 - uid: SearchAThing.GLVertexManager
   name: GLVertexManager
   href: api/SearchAThing.GLVertexManager.html
@@ -2703,6 +2715,12 @@ references:
   commentId: M:SearchAThing.Line3D.Scale(SearchAThing.Vector3D,System.Double)
   fullName: SearchAThing.Line3D.Scale(SearchAThing.Vector3D, System.Double)
   nameWithType: Line3D.Scale(Vector3D, Double)
+- uid: SearchAThing.Line3D.Scale(System.Double)
+  name: Scale(Double)
+  href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_Scale_System_Double_
+  commentId: M:SearchAThing.Line3D.Scale(System.Double)
+  fullName: SearchAThing.Line3D.Scale(System.Double)
+  nameWithType: Line3D.Scale(Double)
 - uid: SearchAThing.Line3D.Scale*
   name: Scale
   href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_Scale_
@@ -6142,6 +6160,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Explode
   nameWithType: SciExt.Explode
+- uid: SearchAThing.SciExt.Fmt(Matrix4x4,System.Int32)
+  name: Fmt(Matrix4x4, Int32)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Fmt_Matrix4x4_System_Int32_
+  commentId: M:SearchAThing.SciExt.Fmt(Matrix4x4,System.Int32)
+  fullName: SearchAThing.SciExt.Fmt(Matrix4x4, System.Int32)
+  nameWithType: SciExt.Fmt(Matrix4x4, Int32)
+- uid: SearchAThing.SciExt.Fmt*
+  name: Fmt
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Fmt_
+  commentId: Overload:SearchAThing.SciExt.Fmt
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.Fmt
+  nameWithType: SciExt.Fmt
 - uid: SearchAThing.SciExt.GeomCentroid(IReadOnlyList{SearchAThing.Geometry},System.Double)
   name: GeomCentroid(IReadOnlyList<Geometry>, Double)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_GeomCentroid_IReadOnlyList_SearchAThing_Geometry__System_Double_
@@ -6174,6 +6205,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Intersect
   nameWithType: SciExt.Intersect
+- uid: SearchAThing.SciExt.Inverse(Matrix4x4)
+  name: Inverse(Matrix4x4)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Inverse_Matrix4x4_
+  commentId: M:SearchAThing.SciExt.Inverse(Matrix4x4)
+  fullName: SearchAThing.SciExt.Inverse(Matrix4x4)
+  nameWithType: SciExt.Inverse(Matrix4x4)
+- uid: SearchAThing.SciExt.Inverse*
+  name: Inverse
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Inverse_
+  commentId: Overload:SearchAThing.SciExt.Inverse
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.Inverse
+  nameWithType: SciExt.Inverse
 - uid: SearchAThing.SciExt.IsAClosedPoly(IEnumerable{SearchAThing.Line3D},System.Double)
   name: IsAClosedPoly(IEnumerable<Line3D>, Double)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_IsAClosedPoly_IEnumerable_SearchAThing_Line3D__System_Double_
@@ -6990,6 +7034,38 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciToolkit.Star
   nameWithType: SciToolkit.Star
+- uid: SearchAThing.SmartConverter
+  name: SmartConverter
+  href: api/SearchAThing.SmartConverter.html
+  commentId: T:SearchAThing.SmartConverter
+  fullName: SearchAThing.SmartConverter
+  nameWithType: SmartConverter
+- uid: SearchAThing.SmartConverter.Convert(System.Object,Type,System.Object,CultureInfo)
+  name: Convert(Object, Type, Object, CultureInfo)
+  href: api/SearchAThing.SmartConverter.html#SearchAThing_SmartConverter_Convert_System_Object_Type_System_Object_CultureInfo_
+  commentId: M:SearchAThing.SmartConverter.Convert(System.Object,Type,System.Object,CultureInfo)
+  fullName: SearchAThing.SmartConverter.Convert(System.Object, Type, System.Object, CultureInfo)
+  nameWithType: SmartConverter.Convert(Object, Type, Object, CultureInfo)
+- uid: SearchAThing.SmartConverter.Convert*
+  name: Convert
+  href: api/SearchAThing.SmartConverter.html#SearchAThing_SmartConverter_Convert_
+  commentId: Overload:SearchAThing.SmartConverter.Convert
+  isSpec: "True"
+  fullName: SearchAThing.SmartConverter.Convert
+  nameWithType: SmartConverter.Convert
+- uid: SearchAThing.SmartConverter.ConvertBack(System.Object,Type,System.Object,CultureInfo)
+  name: ConvertBack(Object, Type, Object, CultureInfo)
+  href: api/SearchAThing.SmartConverter.html#SearchAThing_SmartConverter_ConvertBack_System_Object_Type_System_Object_CultureInfo_
+  commentId: M:SearchAThing.SmartConverter.ConvertBack(System.Object,Type,System.Object,CultureInfo)
+  fullName: SearchAThing.SmartConverter.ConvertBack(System.Object, Type, System.Object, CultureInfo)
+  nameWithType: SmartConverter.ConvertBack(Object, Type, Object, CultureInfo)
+- uid: SearchAThing.SmartConverter.ConvertBack*
+  name: ConvertBack
+  href: api/SearchAThing.SmartConverter.html#SearchAThing_SmartConverter_ConvertBack_
+  commentId: Overload:SearchAThing.SmartConverter.ConvertBack
+  isSpec: "True"
+  fullName: SearchAThing.SmartConverter.ConvertBack
+  nameWithType: SmartConverter.ConvertBack
 - uid: SearchAThing.Transform3D
   name: Transform3D
   href: api/SearchAThing.Transform3D.html
@@ -7074,6 +7150,329 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Transform3D.RotateAboutZAxis
   nameWithType: Transform3D.RotateAboutZAxis
+- uid: SearchAThing.Vector3Control
+  name: Vector3Control
+  href: api/SearchAThing.Vector3Control.html
+  commentId: T:SearchAThing.Vector3Control
+  fullName: SearchAThing.Vector3Control
+  nameWithType: Vector3Control
+- uid: SearchAThing.Vector3Control.#ctor
+  name: Vector3Control()
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control__ctor
+  commentId: M:SearchAThing.Vector3Control.#ctor
+  fullName: SearchAThing.Vector3Control.Vector3Control()
+  nameWithType: Vector3Control.Vector3Control()
+- uid: SearchAThing.Vector3Control.#ctor*
+  name: Vector3Control
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control__ctor_
+  commentId: Overload:SearchAThing.Vector3Control.#ctor
+  isSpec: "True"
+  fullName: SearchAThing.Vector3Control.Vector3Control
+  nameWithType: Vector3Control.Vector3Control
+- uid: SearchAThing.Vector3Control.Slider
+  name: Slider
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_Slider
+  commentId: P:SearchAThing.Vector3Control.Slider
+  fullName: SearchAThing.Vector3Control.Slider
+  nameWithType: Vector3Control.Slider
+- uid: SearchAThing.Vector3Control.Slider*
+  name: Slider
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_Slider_
+  commentId: Overload:SearchAThing.Vector3Control.Slider
+  isSpec: "True"
+  fullName: SearchAThing.Vector3Control.Slider
+  nameWithType: Vector3Control.Slider
+- uid: SearchAThing.Vector3Control.SliderProperty
+  name: SliderProperty
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_SliderProperty
+  commentId: F:SearchAThing.Vector3Control.SliderProperty
+  fullName: SearchAThing.Vector3Control.SliderProperty
+  nameWithType: Vector3Control.SliderProperty
+- uid: SearchAThing.Vector3Control.V
+  name: V
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_V
+  commentId: P:SearchAThing.Vector3Control.V
+  fullName: SearchAThing.Vector3Control.V
+  nameWithType: Vector3Control.V
+- uid: SearchAThing.Vector3Control.V*
+  name: V
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_V_
+  commentId: Overload:SearchAThing.Vector3Control.V
+  isSpec: "True"
+  fullName: SearchAThing.Vector3Control.V
+  nameWithType: Vector3Control.V
+- uid: SearchAThing.Vector3Control.VMAX
+  name: VMAX
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMAX
+  commentId: P:SearchAThing.Vector3Control.VMAX
+  fullName: SearchAThing.Vector3Control.VMAX
+  nameWithType: Vector3Control.VMAX
+- uid: SearchAThing.Vector3Control.VMAX*
+  name: VMAX
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMAX_
+  commentId: Overload:SearchAThing.Vector3Control.VMAX
+  isSpec: "True"
+  fullName: SearchAThing.Vector3Control.VMAX
+  nameWithType: Vector3Control.VMAX
+- uid: SearchAThing.Vector3Control.VMAXProperty
+  name: VMAXProperty
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMAXProperty
+  commentId: F:SearchAThing.Vector3Control.VMAXProperty
+  fullName: SearchAThing.Vector3Control.VMAXProperty
+  nameWithType: Vector3Control.VMAXProperty
+- uid: SearchAThing.Vector3Control.VMAXX
+  name: VMAXX
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMAXX
+  commentId: P:SearchAThing.Vector3Control.VMAXX
+  fullName: SearchAThing.Vector3Control.VMAXX
+  nameWithType: Vector3Control.VMAXX
+- uid: SearchAThing.Vector3Control.VMAXX*
+  name: VMAXX
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMAXX_
+  commentId: Overload:SearchAThing.Vector3Control.VMAXX
+  isSpec: "True"
+  fullName: SearchAThing.Vector3Control.VMAXX
+  nameWithType: Vector3Control.VMAXX
+- uid: SearchAThing.Vector3Control.VMAXXProperty
+  name: VMAXXProperty
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMAXXProperty
+  commentId: F:SearchAThing.Vector3Control.VMAXXProperty
+  fullName: SearchAThing.Vector3Control.VMAXXProperty
+  nameWithType: Vector3Control.VMAXXProperty
+- uid: SearchAThing.Vector3Control.VMAXY
+  name: VMAXY
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMAXY
+  commentId: P:SearchAThing.Vector3Control.VMAXY
+  fullName: SearchAThing.Vector3Control.VMAXY
+  nameWithType: Vector3Control.VMAXY
+- uid: SearchAThing.Vector3Control.VMAXY*
+  name: VMAXY
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMAXY_
+  commentId: Overload:SearchAThing.Vector3Control.VMAXY
+  isSpec: "True"
+  fullName: SearchAThing.Vector3Control.VMAXY
+  nameWithType: Vector3Control.VMAXY
+- uid: SearchAThing.Vector3Control.VMAXYProperty
+  name: VMAXYProperty
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMAXYProperty
+  commentId: F:SearchAThing.Vector3Control.VMAXYProperty
+  fullName: SearchAThing.Vector3Control.VMAXYProperty
+  nameWithType: Vector3Control.VMAXYProperty
+- uid: SearchAThing.Vector3Control.VMAXZ
+  name: VMAXZ
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMAXZ
+  commentId: P:SearchAThing.Vector3Control.VMAXZ
+  fullName: SearchAThing.Vector3Control.VMAXZ
+  nameWithType: Vector3Control.VMAXZ
+- uid: SearchAThing.Vector3Control.VMAXZ*
+  name: VMAXZ
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMAXZ_
+  commentId: Overload:SearchAThing.Vector3Control.VMAXZ
+  isSpec: "True"
+  fullName: SearchAThing.Vector3Control.VMAXZ
+  nameWithType: Vector3Control.VMAXZ
+- uid: SearchAThing.Vector3Control.VMAXZProperty
+  name: VMAXZProperty
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMAXZProperty
+  commentId: F:SearchAThing.Vector3Control.VMAXZProperty
+  fullName: SearchAThing.Vector3Control.VMAXZProperty
+  nameWithType: Vector3Control.VMAXZProperty
+- uid: SearchAThing.Vector3Control.VMIN
+  name: VMIN
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMIN
+  commentId: P:SearchAThing.Vector3Control.VMIN
+  fullName: SearchAThing.Vector3Control.VMIN
+  nameWithType: Vector3Control.VMIN
+- uid: SearchAThing.Vector3Control.VMIN*
+  name: VMIN
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMIN_
+  commentId: Overload:SearchAThing.Vector3Control.VMIN
+  isSpec: "True"
+  fullName: SearchAThing.Vector3Control.VMIN
+  nameWithType: Vector3Control.VMIN
+- uid: SearchAThing.Vector3Control.VMINProperty
+  name: VMINProperty
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMINProperty
+  commentId: F:SearchAThing.Vector3Control.VMINProperty
+  fullName: SearchAThing.Vector3Control.VMINProperty
+  nameWithType: Vector3Control.VMINProperty
+- uid: SearchAThing.Vector3Control.VMINX
+  name: VMINX
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMINX
+  commentId: P:SearchAThing.Vector3Control.VMINX
+  fullName: SearchAThing.Vector3Control.VMINX
+  nameWithType: Vector3Control.VMINX
+- uid: SearchAThing.Vector3Control.VMINX*
+  name: VMINX
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMINX_
+  commentId: Overload:SearchAThing.Vector3Control.VMINX
+  isSpec: "True"
+  fullName: SearchAThing.Vector3Control.VMINX
+  nameWithType: Vector3Control.VMINX
+- uid: SearchAThing.Vector3Control.VMINXProperty
+  name: VMINXProperty
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMINXProperty
+  commentId: F:SearchAThing.Vector3Control.VMINXProperty
+  fullName: SearchAThing.Vector3Control.VMINXProperty
+  nameWithType: Vector3Control.VMINXProperty
+- uid: SearchAThing.Vector3Control.VMINY
+  name: VMINY
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMINY
+  commentId: P:SearchAThing.Vector3Control.VMINY
+  fullName: SearchAThing.Vector3Control.VMINY
+  nameWithType: Vector3Control.VMINY
+- uid: SearchAThing.Vector3Control.VMINY*
+  name: VMINY
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMINY_
+  commentId: Overload:SearchAThing.Vector3Control.VMINY
+  isSpec: "True"
+  fullName: SearchAThing.Vector3Control.VMINY
+  nameWithType: Vector3Control.VMINY
+- uid: SearchAThing.Vector3Control.VMINYProperty
+  name: VMINYProperty
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMINYProperty
+  commentId: F:SearchAThing.Vector3Control.VMINYProperty
+  fullName: SearchAThing.Vector3Control.VMINYProperty
+  nameWithType: Vector3Control.VMINYProperty
+- uid: SearchAThing.Vector3Control.VMINZ
+  name: VMINZ
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMINZ
+  commentId: P:SearchAThing.Vector3Control.VMINZ
+  fullName: SearchAThing.Vector3Control.VMINZ
+  nameWithType: Vector3Control.VMINZ
+- uid: SearchAThing.Vector3Control.VMINZ*
+  name: VMINZ
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMINZ_
+  commentId: Overload:SearchAThing.Vector3Control.VMINZ
+  isSpec: "True"
+  fullName: SearchAThing.Vector3Control.VMINZ
+  nameWithType: Vector3Control.VMINZ
+- uid: SearchAThing.Vector3Control.VMINZProperty
+  name: VMINZProperty
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VMINZProperty
+  commentId: F:SearchAThing.Vector3Control.VMINZProperty
+  fullName: SearchAThing.Vector3Control.VMINZProperty
+  nameWithType: Vector3Control.VMINZProperty
+- uid: SearchAThing.Vector3Control.VProperty
+  name: VProperty
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VProperty
+  commentId: F:SearchAThing.Vector3Control.VProperty
+  fullName: SearchAThing.Vector3Control.VProperty
+  nameWithType: Vector3Control.VProperty
+- uid: SearchAThing.Vector3Control.VX
+  name: VX
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VX
+  commentId: P:SearchAThing.Vector3Control.VX
+  fullName: SearchAThing.Vector3Control.VX
+  nameWithType: Vector3Control.VX
+- uid: SearchAThing.Vector3Control.VX*
+  name: VX
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VX_
+  commentId: Overload:SearchAThing.Vector3Control.VX
+  isSpec: "True"
+  fullName: SearchAThing.Vector3Control.VX
+  nameWithType: Vector3Control.VX
+- uid: SearchAThing.Vector3Control.VXProperty
+  name: VXProperty
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VXProperty
+  commentId: F:SearchAThing.Vector3Control.VXProperty
+  fullName: SearchAThing.Vector3Control.VXProperty
+  nameWithType: Vector3Control.VXProperty
+- uid: SearchAThing.Vector3Control.VXTip
+  name: VXTip
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VXTip
+  commentId: P:SearchAThing.Vector3Control.VXTip
+  fullName: SearchAThing.Vector3Control.VXTip
+  nameWithType: Vector3Control.VXTip
+- uid: SearchAThing.Vector3Control.VXTip*
+  name: VXTip
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VXTip_
+  commentId: Overload:SearchAThing.Vector3Control.VXTip
+  isSpec: "True"
+  fullName: SearchAThing.Vector3Control.VXTip
+  nameWithType: Vector3Control.VXTip
+- uid: SearchAThing.Vector3Control.VXTipProperty
+  name: VXTipProperty
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VXTipProperty
+  commentId: F:SearchAThing.Vector3Control.VXTipProperty
+  fullName: SearchAThing.Vector3Control.VXTipProperty
+  nameWithType: Vector3Control.VXTipProperty
+- uid: SearchAThing.Vector3Control.VY
+  name: VY
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VY
+  commentId: P:SearchAThing.Vector3Control.VY
+  fullName: SearchAThing.Vector3Control.VY
+  nameWithType: Vector3Control.VY
+- uid: SearchAThing.Vector3Control.VY*
+  name: VY
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VY_
+  commentId: Overload:SearchAThing.Vector3Control.VY
+  isSpec: "True"
+  fullName: SearchAThing.Vector3Control.VY
+  nameWithType: Vector3Control.VY
+- uid: SearchAThing.Vector3Control.VYProperty
+  name: VYProperty
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VYProperty
+  commentId: F:SearchAThing.Vector3Control.VYProperty
+  fullName: SearchAThing.Vector3Control.VYProperty
+  nameWithType: Vector3Control.VYProperty
+- uid: SearchAThing.Vector3Control.VYTip
+  name: VYTip
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VYTip
+  commentId: P:SearchAThing.Vector3Control.VYTip
+  fullName: SearchAThing.Vector3Control.VYTip
+  nameWithType: Vector3Control.VYTip
+- uid: SearchAThing.Vector3Control.VYTip*
+  name: VYTip
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VYTip_
+  commentId: Overload:SearchAThing.Vector3Control.VYTip
+  isSpec: "True"
+  fullName: SearchAThing.Vector3Control.VYTip
+  nameWithType: Vector3Control.VYTip
+- uid: SearchAThing.Vector3Control.VYTipProperty
+  name: VYTipProperty
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VYTipProperty
+  commentId: F:SearchAThing.Vector3Control.VYTipProperty
+  fullName: SearchAThing.Vector3Control.VYTipProperty
+  nameWithType: Vector3Control.VYTipProperty
+- uid: SearchAThing.Vector3Control.VZ
+  name: VZ
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VZ
+  commentId: P:SearchAThing.Vector3Control.VZ
+  fullName: SearchAThing.Vector3Control.VZ
+  nameWithType: Vector3Control.VZ
+- uid: SearchAThing.Vector3Control.VZ*
+  name: VZ
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VZ_
+  commentId: Overload:SearchAThing.Vector3Control.VZ
+  isSpec: "True"
+  fullName: SearchAThing.Vector3Control.VZ
+  nameWithType: Vector3Control.VZ
+- uid: SearchAThing.Vector3Control.VZProperty
+  name: VZProperty
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VZProperty
+  commentId: F:SearchAThing.Vector3Control.VZProperty
+  fullName: SearchAThing.Vector3Control.VZProperty
+  nameWithType: Vector3Control.VZProperty
+- uid: SearchAThing.Vector3Control.VZTip
+  name: VZTip
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VZTip
+  commentId: P:SearchAThing.Vector3Control.VZTip
+  fullName: SearchAThing.Vector3Control.VZTip
+  nameWithType: Vector3Control.VZTip
+- uid: SearchAThing.Vector3Control.VZTip*
+  name: VZTip
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VZTip_
+  commentId: Overload:SearchAThing.Vector3Control.VZTip
+  isSpec: "True"
+  fullName: SearchAThing.Vector3Control.VZTip
+  nameWithType: Vector3Control.VZTip
+- uid: SearchAThing.Vector3Control.VZTipProperty
+  name: VZTipProperty
+  href: api/SearchAThing.Vector3Control.html#SearchAThing_Vector3Control_VZTipProperty
+  commentId: F:SearchAThing.Vector3Control.VZTipProperty
+  fullName: SearchAThing.Vector3Control.VZTipProperty
+  nameWithType: Vector3Control.VZTipProperty
 - uid: SearchAThing.Vector3D
   name: Vector3D
   href: api/SearchAThing.Vector3D.html
