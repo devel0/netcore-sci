@@ -360,9 +360,9 @@ namespace ControlCatalog.Pages
             var timeLoc = GL.GetUniformLocationString(_shaderProgram, "uTime");
             var discoLoc = GL.GetUniformLocationString(_shaderProgram, "uDisco");
 
-            GL.UniformMatrix4fv_ptr(modelLoc, 1, false, &model);
-            GL.UniformMatrix4fv_ptr(viewLoc, 1, false, &view);
-            GL.UniformMatrix4fv_ptr(projectionLoc, 1, false, &projection);
+            GL.UniformMatrix4fv(modelLoc, 1, false, &model);
+            GL.UniformMatrix4fv(viewLoc, 1, false, &view);
+            GL.UniformMatrix4fv(projectionLoc, 1, false, &projection);
             GL.Uniform1f(maxYLoc, _maxY);
             GL.Uniform1f(minYLoc, _minY);
             GL.Uniform1f(timeLoc, (float)St.Elapsed.TotalSeconds);

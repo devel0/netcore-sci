@@ -155,12 +155,11 @@ namespace SearchAThing.SciExamples.Controls
                 Info2Property, AmbientStrengthProperty);
         }
 
-        private int _vertexShader;
-        private int _fragmentShader;
-        private int _shaderProgram;
-        private int VBO;
-        private int VAO;
-        private GlExtrasInterface _glExt;
+        private uint _vertexShader;
+        private uint _fragmentShader;
+        private uint _shaderProgram;
+        private uint VBO;
+        private uint VAO;
         private GLVertexWithNormal[] _points;
 
         // VERTEX MANAGER
@@ -169,11 +168,11 @@ namespace SearchAThing.SciExamples.Controls
 
         public const string MESH_NAME = "mesh";
         uint[] meshIdxs;
-        private int IBO_mesh;
+        private uint IBO_mesh;
 
         public const string WCS_NAME = "wcs";
         uint[] wcsIdxs;
-        private int IBO_wcs;
+        private uint IBO_wcs;
 
         PointerPoint? mousePress = null;
         float startYaw;
@@ -330,24 +329,23 @@ namespace SearchAThing.SciExamples.Controls
         /// <summary>
         /// GL INIT
         /// </summary>
-        protected unsafe override void OnOpenGlInit(GlInterface GL, int fb)
+        protected unsafe override void OnOpenGlInit(GlInterface GL, uint fb)
         {
             CheckError(GL);
 
             CHECK_INIT();
 
             CheckError(GL);
-            _glExt = new GlExtrasInterface(GL);
 
-            Info = $"Renderer: {GL.GetString(GL_RENDERER)} Version: {GL.GetString(GL_VERSION)}";
+            Info = $"Renderer: {GL.GetString(StringName.GL_RENDERER)} Version: {GL.GetString(StringName.GL_VERSION)}";
 
             // Load the source of the vertex shader and compile it.
-            _vertexShader = GL.CreateShader(GL_VERTEX_SHADER);
+            _vertexShader = GL.CreateShader(ShaderType.GL_VERTEX_SHADER);
             Console.WriteLine(GL.CompileShaderAndGetError(_vertexShader, VertexShaderSource));
             CheckError(GL);
 
             // Load the source of the fragment shader and compile it.
-            _fragmentShader = GL.CreateShader(GL_FRAGMENT_SHADER);
+            _fragmentShader = GL.CreateShader(ShaderType.GL_FRAGMENT_SHADER);
             Console.WriteLine(GL.CompileShaderAndGetError(_fragmentShader, FragmentShaderSource));
             CheckError(GL);
 
@@ -357,7 +355,7 @@ namespace SearchAThing.SciExamples.Controls
             GL.AttachShader(_shaderProgram, _fragmentShader);
             const int positionLocation = 0;
             const int normalLocation = 1;
-            GL.BindAttribLocationString(_shaderProgram, positionLocation, "aPos");
+            GL.BindAttribLocationString((uint)_shaderProgram, positionLocation, "aPos");
             GL.BindAttribLocationString(_shaderProgram, normalLocation, "aNormal");
             Console.WriteLine(GL.LinkProgramAndGetError(_shaderProgram));
             CheckError(GL);
@@ -366,48 +364,48 @@ namespace SearchAThing.SciExamples.Controls
             {
                 VBO = GL.GenBuffer();
                 // Bind the VBO and copy the vertex data into it.
-                GL.BindBuffer(GL_ARRAY_BUFFER, VBO);
+                GL.BindBuffer(BufferTargetARB.GL_ARRAY_BUFFER, VBO);
                 CheckError(GL);
                 fixed (void* pdata = _points)
-                    GL.BufferData(GL_ARRAY_BUFFER, new IntPtr(_points.Length * vertexSize),
-                        new IntPtr(pdata), GL_STATIC_DRAW);
+                    GL.BufferData(BufferTargetARB.GL_ARRAY_BUFFER, new IntPtr(_points.Length * vertexSize),
+                        new IntPtr(pdata), BufferUsageARB.GL_STATIC_DRAW);
                 CheckError(GL);
             }
 
             // create and bind index buffer
             {
                 IBO_mesh = GL.GenBuffer();
-                GL.BindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO_mesh);
+                GL.BindBuffer(BufferTargetARB.GL_ELEMENT_ARRAY_BUFFER, IBO_mesh);
                 CheckError(GL);
                 meshIdxs = vtxMgr.BuildIdxs(MESH_NAME);
                 fixed (void* pdata = meshIdxs)
-                    GL.BufferData(GL_ELEMENT_ARRAY_BUFFER, new IntPtr(meshIdxs.Length * sizeof(uint)),
-                        new IntPtr(pdata), GL_STATIC_DRAW);
+                    GL.BufferData(BufferTargetARB.GL_ELEMENT_ARRAY_BUFFER, new IntPtr(meshIdxs.Length * sizeof(uint)),
+                        new IntPtr(pdata), BufferUsageARB.GL_STATIC_DRAW);
                 CheckError(GL);
             }
 
             // create and bind index buffer
             {
                 IBO_wcs = GL.GenBuffer();
-                GL.BindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO_wcs);
+                GL.BindBuffer(BufferTargetARB.GL_ELEMENT_ARRAY_BUFFER, IBO_wcs);
                 CheckError(GL);
                 wcsIdxs = vtxMgr.BuildIdxs(WCS_NAME);
                 fixed (void* pdata = wcsIdxs)
-                    GL.BufferData(GL_ELEMENT_ARRAY_BUFFER, new IntPtr(wcsIdxs.Length * sizeof(uint)),
-                        new IntPtr(pdata), GL_STATIC_DRAW);
+                    GL.BufferData(BufferTargetARB.GL_ELEMENT_ARRAY_BUFFER, new IntPtr(wcsIdxs.Length * sizeof(uint)),
+                        new IntPtr(pdata), BufferUsageARB.GL_STATIC_DRAW);
                 CheckError(GL);
             }
 
             {
-                var rv = new int[1];
-                _glExt.GenVertexArrays(1, rv);
+                var rv = new uint[1];
+                GL.GenVertexArrays(1, rv);
                 VAO = rv[0];
             }
-            _glExt.BindVertexArray(VAO);
+            GL.BindVertexArray(VAO);
             CheckError(GL);
 
-            GL.VertexAttribPointer(positionLocation, 3, GL_FLOAT, 0, vertexSize, IntPtr.Zero);
-            GL.VertexAttribPointer(normalLocation, 3, GL_FLOAT, 0, vertexSize, new IntPtr(sizeof(Vector3)));
+            GL.VertexAttribPointer(positionLocation, 3, VertexAttribPointerType.GL_FLOAT, false, vertexSize, IntPtr.Zero);
+            GL.VertexAttribPointer(normalLocation, 3, VertexAttribPointerType.GL_FLOAT, false, vertexSize, new IntPtr(sizeof(Vector3)));
             CheckError(GL);
 
             GL.EnableVertexAttribArray(positionLocation);
@@ -418,35 +416,31 @@ namespace SearchAThing.SciExamples.Controls
         /// <summary>
         /// GL DEINIT
         /// </summary>
-        protected override void OnOpenGlDeinit(GlInterface GL, int fb)
+        protected override void OnOpenGlDeinit(GlInterface GL, uint fb)
         {
             // Unbind everything
-            GL.BindBuffer(GL_ARRAY_BUFFER, 0);
-            GL.BindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-            _glExt.BindVertexArray(0);
+            GL.BindBuffer(BufferTargetARB.GL_ARRAY_BUFFER, 0);
+            GL.BindBuffer(BufferTargetARB.GL_ELEMENT_ARRAY_BUFFER, 0);
+            GL.BindVertexArray(0);
             GL.UseProgram(0);
             CheckError(GL);
 
             // Delete all resources.
-            GL.DeleteBuffers(2, new[] {
-                VBO,
-                IBO_mesh,
-                IBO_wcs,
-            });
-            _glExt.DeleteVertexArrays(1, new[] { VAO });
+            GL.DeleteBuffers(2, new[] { VBO, IBO_mesh, IBO_wcs });
+            GL.DeleteVertexArrays(1, new[] { VAO });
             GL.DeleteProgram(_shaderProgram);
             GL.DeleteShader(_fragmentShader);
             GL.DeleteShader(_vertexShader);
             CheckError(GL);
-        }        
+        }
 
         /// <summary>
         /// GL RENDER
         /// </summary>
-        protected override unsafe void OnOpenGlRender(GlInterface gl, int fb)
+        protected override unsafe void OnOpenGlRender(GlInterface gl, uint fb)
         {
             if (firstRender)
-            {                
+            {
                 var modelTr = new Vector3D();
 
                 var cameraTargetInit = bbox.Middle - bbox.Size / 2;
@@ -458,13 +452,13 @@ namespace SearchAThing.SciExamples.Controls
 
             gl.ClearColor(0, 0, 0, 0);
             gl.Clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            gl.Enable(GL_DEPTH_TEST);
+            gl.Enable(EnableCap.GL_DEPTH_TEST);
             gl.Viewport(0, 0, (int)Bounds.Width, (int)Bounds.Height);
             var GL = gl;
             CheckError(GL);
 
-            GL.BindBuffer(GL_ARRAY_BUFFER, VBO);
-            _glExt.BindVertexArray(VAO);
+            GL.BindBuffer(BufferTargetARB.GL_ARRAY_BUFFER, VBO);
+            GL.BindVertexArray(VAO);
 
             GL.UseProgram(_shaderProgram);
             CheckError(GL);
@@ -488,20 +482,20 @@ namespace SearchAThing.SciExamples.Controls
             var objColLoc = GL.GetUniformLocationString(_shaderProgram, "ObjCol");
             var ambStrengthLoc = GL.GetUniformLocationString(_shaderProgram, "Amb");
 
-            GL.UniformMatrix4fv(modelLoc, 1, false, &model);
             var bboxSize = bbox.Size;
-            GL.Uniform3f(bboxLoc, (float)bboxSize.X, (float)bboxSize.Y, (float)bboxSize.Z);
+            GL.UniformMatrix4fv(modelLoc, 1, false, &model);
             GL.UniformMatrix4fv(viewLoc, 1, false, &view);
             GL.UniformMatrix4fv(projectionLoc, 1, false, &projection);
 
+            GL.Uniform3f(bboxLoc, (float)bboxSize.X, (float)bboxSize.Y, (float)bboxSize.Z);
             GL.Uniform3f(lightPosLoc, LightPosX, LightPosY, LightPosZ);
             GL.Uniform1f(ambStrengthLoc, AmbientStrength);
             CheckError(GL);
 
             if (Wireframe)
-                _glExt.PolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+                GL.PolygonMode(MaterialFace.GL_FRONT_AND_BACK, PolygonMode.GL_LINE);
             else
-                _glExt.PolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+                GL.PolygonMode(MaterialFace.GL_FRONT_AND_BACK, PolygonMode.GL_FILL);
 
             CheckError(GL);
 
@@ -510,34 +504,34 @@ namespace SearchAThing.SciExamples.Controls
             //
             if (ShowModel)
             {
-                _glExt.LineWidth(1);
+                GL.LineWidth(1);
                 GL.Uniform3f(objColLoc, 0.305f, 0.485f, 0.668f);
-                GL.BindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO_mesh);
-                GL.DrawElements(GL_TRIANGLES, meshIdxs.Length, GlConsts.GL_UNSIGNED_INT, IntPtr.Zero);
+                GL.BindBuffer(BufferTargetARB.GL_ELEMENT_ARRAY_BUFFER, IBO_mesh);
+                GL.DrawElements(PrimitiveType.GL_TRIANGLES, meshIdxs.Length, DrawElementsType.GL_UNSIGNED_INT, IntPtr.Zero);
             }
 
             //
             // DRAW WCS
             //
-            _glExt.LineWidth(10);
+            GL.LineWidth(10);
             GL.Uniform1f(ambStrengthLoc, 1f);
             {
                 GL.Uniform3f(objColLoc, 1f, 0, 0);
-                GL.BindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO_wcs);
-                GL.DrawElements(GL_LINES, 2, GlConsts.GL_UNSIGNED_INT, IntPtr.Zero);
+                GL.BindBuffer(BufferTargetARB.GL_ELEMENT_ARRAY_BUFFER, IBO_wcs);
+                GL.DrawElements(PrimitiveType.GL_LINES, 2, DrawElementsType.GL_UNSIGNED_INT, IntPtr.Zero);
             }
             {
                 GL.Uniform3f(objColLoc, 0, 1f, 0);
-                GL.BindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO_wcs);
-                GL.DrawElements(GL_LINES, 2, GlConsts.GL_UNSIGNED_INT, new IntPtr(2 * idxSize));
+                GL.BindBuffer(BufferTargetARB.GL_ELEMENT_ARRAY_BUFFER, IBO_wcs);
+                GL.DrawElements(PrimitiveType.GL_LINES, 2, DrawElementsType.GL_UNSIGNED_INT, new IntPtr(2 * idxSize));
             }
             {
                 GL.Uniform3f(objColLoc, 0, 0, 1f);
-                GL.BindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO_wcs);
-                GL.DrawElements(GL_LINES, 2, GlConsts.GL_UNSIGNED_INT, new IntPtr(4 * idxSize));
+                GL.BindBuffer(BufferTargetARB.GL_ELEMENT_ARRAY_BUFFER, IBO_wcs);
+                GL.DrawElements(PrimitiveType.GL_LINES, 2, DrawElementsType.GL_UNSIGNED_INT, new IntPtr(4 * idxSize));
             }
 
-            CheckError(GL);            
+            CheckError(GL);
 
             Dispatcher.UIThread.Post(() =>
             {
@@ -592,40 +586,6 @@ namespace SearchAThing.SciExamples.Controls
 
         private string FragmentShaderSource => GetShader(true,
             "0006.shaders.fragmentShader.glsl".GetEmbeddedFileContent<OpenGlControl>());
-
-        #endregion
-
-        #region GL EXTRAS
-
-        class GlExtrasInterface : GlInterfaceBase<GlInterface.GlContextInfo>
-        {
-            public GlExtrasInterface(GlInterface gl) : base(gl.GetProcAddress, gl.ContextInfo)
-            {
-            }
-
-            public delegate void GlLineWidth(float width);
-            [GlEntryPoint("glLineWidth")]
-            public GlLineWidth LineWidth { get; }
-
-            public delegate void GlPolygonMode(int face, int mode);
-            [GlEntryPoint("glPolygonMode")]
-            public GlPolygonMode PolygonMode { get; }
-
-            public delegate void GlDeleteVertexArrays(int count, int[] buffers);
-            [GlMinVersionEntryPoint("glDeleteVertexArrays", 3, 0)]
-            [GlExtensionEntryPoint("glDeleteVertexArraysOES", "GL_OES_vertex_array_object")]
-            public GlDeleteVertexArrays DeleteVertexArrays { get; }
-
-            public delegate void GlBindVertexArray(int array);
-            [GlMinVersionEntryPoint("glBindVertexArray", 3, 0)]
-            [GlExtensionEntryPoint("glBindVertexArrayOES", "GL_OES_vertex_array_object")]
-            public GlBindVertexArray BindVertexArray { get; }
-            public delegate void GlGenVertexArrays(int n, int[] rv);
-
-            [GlMinVersionEntryPoint("glGenVertexArrays", 3, 0)]
-            [GlExtensionEntryPoint("glGenVertexArraysOES", "GL_OES_vertex_array_object")]
-            public GlGenVertexArrays GenVertexArrays { get; }
-        }
 
         #endregion
 

@@ -83,13 +83,12 @@ namespace SearchAThing.SciExamples
             AffectsRender<OpenGlPageControl>(YawProperty, PitchProperty, RollProperty, DiscoProperty);
         }
 
-        private int _vertexShader;
-        private int _fragmentShader;
-        private int _shaderProgram;
-        private int _vertexBufferObject;
-        private int _indexBufferObject;
-        private int _vertexArrayObject;
-        private GlExtrasInterface _glExt;
+        private uint _vertexShader;
+        private uint _fragmentShader;
+        private uint _shaderProgram;
+        private uint _vertexBufferObject;
+        private uint _indexBufferObject;
+        private uint _vertexArrayObject;
 
         private string GetShader(bool fragment, string shader)
         {
@@ -342,19 +341,18 @@ namespace SearchAThing.SciExamples
                 Console.WriteLine(err);
         }
 
-        protected unsafe override void OnOpenGlInit(GlInterface GL, int fb)
+        protected unsafe override void OnOpenGlInit(GlInterface GL, uint fb)
         {
             CheckError(GL);
-            _glExt = new GlExtrasInterface(GL);
 
-            Info = $"Renderer: {GL.GetString(GL_RENDERER)} Version: {GL.GetString(GL_VERSION)}";
+            Info = $"Renderer: {GL.GetString(StringName.GL_RENDERER)} Version: {GL.GetString(StringName.GL_VERSION)}";
 
             // Load the source of the vertex shader and compile it.
-            _vertexShader = GL.CreateShader(GL_VERTEX_SHADER);
+            _vertexShader = GL.CreateShader(ShaderType.GL_VERTEX_SHADER);
             Console.WriteLine(GL.CompileShaderAndGetError(_vertexShader, VertexShaderSource));
 
             // Load the source of the fragment shader and compile it.
-            _fragmentShader = GL.CreateShader(GL_FRAGMENT_SHADER);
+            _fragmentShader = GL.CreateShader(ShaderType.GL_FRAGMENT_SHADER);
             Console.WriteLine(GL.CompileShaderAndGetError(_fragmentShader, FragmentShaderSource));
 
             // Create the shader program, attach the vertex and fragment shaders and link the program.
@@ -371,44 +369,46 @@ namespace SearchAThing.SciExamples
             // Create the vertex buffer object (VBO) for the vertex data.
             _vertexBufferObject = GL.GenBuffer();
             // Bind the VBO and copy the vertex data into it.
-            GL.BindBuffer(GL_ARRAY_BUFFER, _vertexBufferObject);
+            GL.BindBuffer(BufferTargetARB.GL_ARRAY_BUFFER, _vertexBufferObject);
             CheckError(GL);
             var vertexSize = Marshal.SizeOf<GLVertexWithNormal>();
             fixed (void* pdata = _points)
-                GL.BufferData(GL_ARRAY_BUFFER, new IntPtr(_points.Length * vertexSize),
-                    new IntPtr(pdata), GL_STATIC_DRAW);
+                GL.BufferData(BufferTargetARB.GL_ARRAY_BUFFER, new IntPtr(_points.Length * vertexSize),
+                    new IntPtr(pdata), BufferUsageARB.GL_STATIC_DRAW);
 
             _indexBufferObject = GL.GenBuffer();
-            GL.BindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBufferObject);
+            GL.BindBuffer(BufferTargetARB.GL_ELEMENT_ARRAY_BUFFER, _indexBufferObject);
             CheckError(GL);
             fixed (void* pdata = _indices)
-                GL.BufferData(GL_ELEMENT_ARRAY_BUFFER, new IntPtr(_indices.Length * sizeof(uint)),
-                    new IntPtr(pdata), GL_STATIC_DRAW);
+                GL.BufferData(BufferTargetARB.GL_ELEMENT_ARRAY_BUFFER, new IntPtr(_indices.Length * sizeof(uint)),
+                    new IntPtr(pdata), BufferUsageARB.GL_STATIC_DRAW);
             CheckError(GL);
 
-            _vertexArrayObject = _glExt.GenVertexArray();
-            _glExt.BindVertexArray(_vertexArrayObject);
+            var oneArr = new uint[1];
+            GL.GenVertexArrays(1, oneArr);
+            _vertexArrayObject = oneArr[0];
+            GL.BindVertexArray(_vertexArrayObject);
             CheckError(GL);
 
-            GL.VertexAttribPointer(positionLocation, 3, GL_FLOAT, 0, vertexSize, IntPtr.Zero);
-            GL.VertexAttribPointer(normalLocation, 3, GL_FLOAT, 0, vertexSize, new IntPtr(sizeof(Vector3)));
+            GL.VertexAttribPointer(positionLocation, 3, VertexAttribPointerType.GL_FLOAT, false, vertexSize, IntPtr.Zero);
+            GL.VertexAttribPointer(normalLocation, 3, VertexAttribPointerType.GL_FLOAT, false, vertexSize, new IntPtr(sizeof(Vector3)));
 
             GL.EnableVertexAttribArray(positionLocation);
             GL.EnableVertexAttribArray(normalLocation);
             CheckError(GL);
         }
 
-        protected override void OnOpenGlDeinit(GlInterface GL, int fb)
+        protected override void OnOpenGlDeinit(GlInterface GL, uint fb)
         {
             // Unbind everything
-            GL.BindBuffer(GL_ARRAY_BUFFER, 0);
-            GL.BindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-            _glExt.BindVertexArray(0);
+            GL.BindBuffer(BufferTargetARB.GL_ARRAY_BUFFER, 0);
+            GL.BindBuffer(BufferTargetARB.GL_ELEMENT_ARRAY_BUFFER, 0);
+            GL.BindVertexArray(0);
             GL.UseProgram(0);
 
             // Delete all resources.
             GL.DeleteBuffers(2, new[] { _vertexBufferObject, _indexBufferObject });
-            _glExt.DeleteVertexArrays(1, new[] { _vertexArrayObject });
+            GL.DeleteVertexArrays(1, new[] { _vertexArrayObject });
             GL.DeleteProgram(_shaderProgram);
             GL.DeleteShader(_fragmentShader);
             GL.DeleteShader(_vertexShader);
@@ -416,17 +416,17 @@ namespace SearchAThing.SciExamples
 
         static Stopwatch St = Stopwatch.StartNew();
 
-        protected override unsafe void OnOpenGlRender(GlInterface gl, int fb)
+        protected override unsafe void OnOpenGlRender(GlInterface gl, uint fb)
         {
             gl.ClearColor(0, 0, 0, 0);
             gl.Clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            gl.Enable(GL_DEPTH_TEST);
+            gl.Enable(EnableCap.GL_DEPTH_TEST);
             gl.Viewport(0, 0, (int)Bounds.Width, (int)Bounds.Height);
             var GL = gl;
 
-            GL.BindBuffer(GL_ARRAY_BUFFER, _vertexBufferObject);
-            GL.BindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBufferObject);
-            _glExt.BindVertexArray(_vertexArrayObject);
+            GL.BindBuffer(BufferTargetARB.GL_ARRAY_BUFFER, _vertexBufferObject);
+            GL.BindBuffer(BufferTargetARB.GL_ELEMENT_ARRAY_BUFFER, _indexBufferObject);
+            GL.BindVertexArray(_vertexArrayObject);
             GL.UseProgram(_shaderProgram);
             CheckError(GL);
             var projection = Matrix4x4.CreatePerspectiveFieldOfView((float)(Math.PI / 4), (float)(Bounds.Width / Bounds.Height), 0.01f, 1000);
@@ -441,6 +441,74 @@ namespace SearchAThing.SciExamples
             var minYLoc = GL.GetUniformLocationString(_shaderProgram, "uMinY");
             var timeLoc = GL.GetUniformLocationString(_shaderProgram, "uTime");
             var discoLoc = GL.GetUniformLocationString(_shaderProgram, "uDisco");
+
+            /*
+            
+            EQUIVALENT FORMS:
+            -----------------------------------------------------------------------
+
+            // (1) - float[] with direct array
+            var vals = new[]
+            {
+                m.M11, m.M12, m.M13, m.M14,
+                m.M21, m.M22, m.M23, m.M24,
+                m.M31, m.M32, m.M33, m.M34,
+                m.M41, m.M42, m.M43, m.M44
+            };
+            // if want to use direct array struct fields are taken in byname sort
+            // check with ObjectLayoutInspector utility ( https://github.com/SergeyTeplyakov/ObjectLayoutInspector )
+            //
+            // PrintLayout<Matrix4x4>();
+            //            
+            Type layout for 'Matrix4x4'
+            Size: 64 bytes. Paddings: 0 bytes (%0 of empty space)
+            |=============================|
+            |   0-3: Single M11 (4 bytes) |
+            |-----------------------------|
+            |   4-7: Single M12 (4 bytes) |
+            |-----------------------------|
+            |  8-11: Single M13 (4 bytes) |
+            |-----------------------------|
+            | 12-15: Single M14 (4 bytes) |
+            |-----------------------------|
+            | 16-19: Single M21 (4 bytes) |
+            |-----------------------------|
+            | 20-23: Single M22 (4 bytes) |
+            |-----------------------------|
+            | 24-27: Single M23 (4 bytes) |
+            |-----------------------------|
+            | 28-31: Single M24 (4 bytes) |
+            |-----------------------------|
+            | 32-35: Single M31 (4 bytes) |
+            |-----------------------------|
+            | 36-39: Single M32 (4 bytes) |
+            |-----------------------------|
+            | 40-43: Single M33 (4 bytes) |
+            |-----------------------------|
+            | 44-47: Single M34 (4 bytes) |
+            |-----------------------------|
+            | 48-51: Single M41 (4 bytes) |
+            |-----------------------------|
+            | 52-55: Single M42 (4 bytes) |
+            |-----------------------------|
+            | 56-59: Single M43 (4 bytes) |
+            |-----------------------------|
+            | 60-63: Single M44 (4 bytes) |
+            |=============================|
+            gln.UniformMatrix4fv(modelLoc, 1, false, vals);
+
+            // (2) - void* with object address            
+            gln.UniformMatrix4fv_ptr(modelLoc, 1, false, &qTr.Model);
+
+            // (3) - IntPtr with object address
+            gln.UniformMatrix4fv_intptr(modelLoc, 1, false, new IntPtr(&qTr.Model));
+
+            // (4) - IntPtr with array ptr
+            fixed (void* ptr = vals)
+                gln.UniformMatrix4fv_intptr(modelLoc, 1, false, new IntPtr(ptr));
+            
+            */
+
             GL.UniformMatrix4fv(modelLoc, 1, false, &model);
             GL.UniformMatrix4fv(viewLoc, 1, false, &view);
             GL.UniformMatrix4fv(projectionLoc, 1, false, &projection);
@@ -450,7 +518,7 @@ namespace SearchAThing.SciExamples
             GL.Uniform1f(discoLoc, _disco);
             CheckError(GL);
 
-            GL.DrawElements(GL_TRIANGLES, _indices.Length, GlConsts.GL_UNSIGNED_INT, IntPtr.Zero);
+            GL.DrawElements(PrimitiveType.GL_TRIANGLES, _indices.Length, DrawElementsType.GL_UNSIGNED_INT, IntPtr.Zero);
 
             //GL.DrawArrays(GL_LINE_STRIP, 0, new IntPtr(_points.Length));
 
@@ -459,35 +527,5 @@ namespace SearchAThing.SciExamples
                 Dispatcher.UIThread.Post(InvalidateVisual, DispatcherPriority.Background);
         }
 
-
-
-        class GlExtrasInterface : GlInterfaceBase<GlInterface.GlContextInfo>
-        {
-            public GlExtrasInterface(GlInterface gl) : base(gl.GetProcAddress, gl.ContextInfo)
-            {
-            }
-
-            public delegate void GlDeleteVertexArrays(int count, int[] buffers);
-            [GlMinVersionEntryPoint("glDeleteVertexArrays", 3, 0)]
-            [GlExtensionEntryPoint("glDeleteVertexArraysOES", "GL_OES_vertex_array_object")]
-            public GlDeleteVertexArrays DeleteVertexArrays { get; }
-
-            public delegate void GlBindVertexArray(int array);
-            [GlMinVersionEntryPoint("glBindVertexArray", 3, 0)]
-            [GlExtensionEntryPoint("glBindVertexArrayOES", "GL_OES_vertex_array_object")]
-            public GlBindVertexArray BindVertexArray { get; }
-            public delegate void GlGenVertexArrays(int n, int[] rv);
-
-            [GlMinVersionEntryPoint("glGenVertexArrays", 3, 0)]
-            [GlExtensionEntryPoint("glGenVertexArraysOES", "GL_OES_vertex_array_object")]
-            public GlGenVertexArrays GenVertexArrays { get; }
-
-            public int GenVertexArray()
-            {
-                var rv = new int[1];
-                GenVertexArrays(1, rv);
-                return rv[0];
-            }
-        }
     }
 }
