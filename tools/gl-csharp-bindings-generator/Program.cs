@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Xml;
@@ -27,6 +28,19 @@ namespace gl_csharp_bindings_generator
                 System.Console.WriteLine($"  glrefs    Pathname of OpenGL-Refpages/gl4 folder (can be retrieved cloning https://github.com/KhronosGroup/OpenGL-Refpages.git)");
                 Environment.Exit(1);
             }
+
+            // custom method wraps
+            var customMethodWrap = new Dictionary<string, string>();
+
+            customMethodWrap.Add("GetString", @"
+        public string GetString(StringName name)
+        {
+            var ptr = _GetString(name);
+            if (ptr != IntPtr.Zero)
+                return Marshal.PtrToStringAnsi(ptr);
+
+            return null;
+        }");
 
             //
             // dstfld
@@ -135,32 +149,32 @@ namespace gl_csharp_bindings_generator
                 };
 
                 cmdObj.paramLst = x.Elements("param")
-                        //.Where(z => z.Element("ptype") != null)
-                        .Select(z =>
+                    .Select(z =>
+                    {
+                        var nameel = z.Element("name");
+                        var name = nameel.Value;
+                        var ptypeel = z.Element("ptype");
+
+                        var txtBeforeName = nameel.PreviousNode.NodeType == XmlNodeType.Text ? nameel.PreviousNode.ToString().Trim() : "";
+                        var txtBeforePType = (ptypeel?.PreviousNode?.NodeType == XmlNodeType.Text) ? ptypeel.PreviousNode.ToString().Trim() : "";
+                        var typeName = ptypeel == null ? "" : ptypeel.Value.Trim();
+
+                        var cparam = new GLCommandParam(cmdObj)
                         {
-                            var nameel = z.Element("name");
-                            var name = nameel.Value;
-                            var ptypeel = z.Element("ptype");
+                            group = (string)z.Attribute("group"),
+                            len = (string)z.Attribute("len"),
+                            type = typeName,
+                            name = z.Element("name").Value,
+                            txtBeforeName = txtBeforeName,
+                            txtBeforePType = txtBeforePType
+                        };
 
-                            var txtBeforeName = nameel.PreviousNode.NodeType == XmlNodeType.Text ? nameel.PreviousNode.ToString().Trim() : "";
-                            var txtBeforePType = (ptypeel?.PreviousNode?.NodeType == XmlNodeType.Text) ? ptypeel.PreviousNode.ToString().Trim() : "";
-                            var typeName = ptypeel == null ? "" : ptypeel.Value.Trim();
+                        string wSpc(string s) => s.Length > 0 ? $"{s} " : s;
 
-                            var cparam = new GLCommandParam(cmdObj)
-                            {
-                                group = (string)z.Attribute("group"),
-                                type = typeName,
-                                name = z.Element("name").Value,
-                                txtBeforeName = txtBeforeName,
-                                txtBeforePType = txtBeforePType
-                            };
+                        Console.WriteLine($"[{pname}]: {wSpc(txtBeforePType)}{wSpc(typeName)}{wSpc(txtBeforeName)}{wSpc(name)}=> {cparam.ToString()}");
 
-                            string wSpc(string s) => s.Length > 0 ? $"{s} " : s;
-
-                            Console.WriteLine($"[{pname}]: {wSpc(txtBeforePType)}{wSpc(typeName)}{wSpc(txtBeforeName)}{wSpc(name)}=> {cparam.ToString()}");
-
-                            return cparam;
-                        }).ToList();
+                        return cparam;
+                    }).ToList();
 
                 return cmdObj;
             }).ToList();
@@ -297,8 +311,12 @@ namespace gl_csharp_bindings_generator
                     swDelegates.WriteLine();
                     swDelegates.WriteLine($"{i2}// ---");
 
+                    var alreadyPrototyped = new HashSet<string>();
+
                     foreach (var mode in modes)
                     {
+                        var strCheck = "";
+
                         var suffix = "";
                         switch (mode)
                         {
@@ -306,10 +324,15 @@ namespace gl_csharp_bindings_generator
                             case GLCommandParamMode.intptr: suffix = "_intptr"; break;
                         }
                         var cmdparamsStr = string.Join(", ", cmd.paramLst.Select(w => w.ToString(mode)));
+                        strCheck = $"{cmd.protoPType} _{cmd.protoName}({cmdparamsStr})";
+                        if (alreadyPrototyped.Contains(strCheck)) continue;
+
                         swDelegates.WriteLine();
                         swDelegates.WriteLine($"{i2}delegate {cmd.protoPType} _{cmd.protoName}{suffix}({cmdparamsStr});");
                         swDelegates.WriteLine($"{i2}[GlEntryPoint(\"{cmd.protoName}\")]");
                         swDelegates.WriteLine($"{i2}_{cmd.protoName}{suffix} _{cmd.protoName.StripBegin("gl")}{suffix} {{ get; }}");
+
+                        alreadyPrototyped.Add(strCheck);
 
                         if (!cmd.paramLst.Any(w => w.HasPtr)) break; // skip ptr and intptr suffixes
                     }
@@ -340,6 +363,7 @@ namespace gl_csharp_bindings_generator
                     ");
                 swMethods.WriteLine("using System;");
                 swMethods.WriteLine("using System.Runtime.CompilerServices;");
+                swMethods.WriteLine("using System.Runtime.InteropServices;");
                 swMethods.WriteLine();
                 swMethods.WriteLine("namespace Avalonia.OpenGL");
                 swMethods.WriteLine("{");
@@ -359,7 +383,9 @@ namespace gl_csharp_bindings_generator
                         var modes = new GLCommandParamMode[] { GLCommandParamMode.direct, GLCommandParamMode.ptr, GLCommandParamMode.intptr };
 
                         swMethods.WriteLine($"");
-                        swMethods.WriteLine($"{i2}// ---");                        
+                        swMethods.WriteLine($"{i2}// ---");
+
+                        var alreadyPrototyped = new HashSet<string>();
 
                         foreach (var mode in modes)
                         {
@@ -371,7 +397,7 @@ namespace gl_csharp_bindings_generator
                             }
 
                             var cmdparamsStr = string.Join(", ", cmd.paramLst.Select(w => w.ToString(mode)));
-                            var cmdparamsNames = string.Join(", ", cmd.paramLst.Select(w => w.name.NormalizedName()));
+                            var cmdparamsNamesWithModifier = string.Join(", ", cmd.paramLst.Select(w => (w.isOut ? "out " : "") + w.name.NormalizedName()));
 
                             var cmddescr = "";
                             Dictionary<string, string> paramDoc = new Dictionary<string, string>();
@@ -447,6 +473,10 @@ namespace gl_csharp_bindings_generator
                                 }
                             }
 
+                            var pname = $"{cmd.protoName.StripBegin("gl")}";//{suffix}";
+                            var checkStr = $"{cmd.protoPType} {pname}({cmdparamsStr})";
+                            if (alreadyPrototyped.Contains(checkStr)) continue;
+
                             swMethods.WriteLine();
                             if (cmddescr.Length > 0)
                             {
@@ -460,8 +490,24 @@ namespace gl_csharp_bindings_generator
                                     swMethods.WriteLine($"{i2}/// <param name=\"{p.Key}\">{p.Value}</param>");
                                 }
                             }
-                            swMethods.WriteLine($"{i2}[MethodImpl(MethodImplOptions.AggressiveInlining)]");
-                            swMethods.WriteLine($"{i2}public {cmd.protoPType} {cmd.protoName.StripBegin("gl")}{suffix}({cmdparamsStr}) => _{cmd.protoName.StripBegin("gl")}{suffix}({cmdparamsNames});");
+                            swMethods.Write($"{i2}[MethodImpl(MethodImplOptions.AggressiveInlining)]");
+                            string custom = null;
+
+                            if (customMethodWrap.TryGetValue(pname, out custom))
+                            {
+                                if (!custom.StartsWith("\r\n"))
+                                    swMethods.WriteLine();
+
+                                swMethods.WriteLine(custom);
+                            }
+                            else
+                            {
+                                swMethods.WriteLine();
+
+                                swMethods.WriteLine($"{i2}public {cmd.protoPType} {pname}({cmdparamsStr}) => _{cmd.protoName.StripBegin("gl")}{suffix}({cmdparamsNamesWithModifier});");
+                            }
+
+                            alreadyPrototyped.Add(checkStr);
 
                             if (!cmd.paramLst.Any(w => w.HasPtr)) break; // skip ptr and intptr suffixes
                         }
