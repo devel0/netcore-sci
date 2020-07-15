@@ -47,11 +47,15 @@ namespace SearchAThing
             Contains(tol, pt, inArcAngleRange: false, onlyPerimeter: onlyPerimeter);
 
         /// <summary>
-        /// creates a polygon approximation of this circle with segments of given maxLength
-        /// </summary>            
-        public IEnumerable<Vector3D> ToPolygon3D(double segLenMax)
+        /// creates circle inscribed polygon.        
+        /// </summary>
+        /// <param name="segmentCount">count of inscribed polygon segments ( must at least 3; default is 360 )</param>
+        /// <returns>coordinates of polygon vertices</returns>
+        public IEnumerable<Vector3D> InscribedPolygon(int segmentCount = 360)
         {
-            var alpha_step = segLenMax / Radius;
+            if (segmentCount < 3) throw new Exception($"segmentCount must >= 3");
+
+            var alpha_step = 2 * PI / segmentCount;
             var alpha = 0.0;
             var alpha_stop = 2 * PI;
 
@@ -138,6 +142,10 @@ namespace SearchAThing
         }
 
         public double Area { get { return PI * Radius * Radius; } }
+
+        /// <summary>
+        /// Circle perimeter
+        /// </summary>        
         public override double Length { get { return 2 * PI * Radius; } }
 
     }
