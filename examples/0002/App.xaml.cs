@@ -1,10 +1,8 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using example_avalonia_opengl.ViewModels;
-using example_avalonia_opengl.Views;
 
-namespace example_avalonia_opengl
+namespace SearchAThing.SciExamples
 {
     public class App : Application
     {
@@ -12,18 +10,15 @@ namespace example_avalonia_opengl
         {
             AvaloniaXamlLoader.Load(this);
         }
-
+        
         public override void OnFrameworkInitializationCompleted()
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                desktop.MainWindow = new MainWindow
-                {
-                    DataContext = new MainWindowViewModel(),
-                };
+                desktop.MainWindow = new MainWindow();
             }
 
             base.OnFrameworkInitializationCompleted();
         }
-    }
+   }
 }

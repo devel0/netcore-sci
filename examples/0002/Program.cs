@@ -1,10 +1,7 @@
-﻿using System;
-using Avalonia;
-using Avalonia.Controls.ApplicationLifetimes;
-//using Avalonia.Logging.Serilog;
+﻿using Avalonia;
 using Avalonia.ReactiveUI;
 
-namespace example_avalonia_opengl
+namespace SearchAThing.SciExamples
 {
     class Program
     {
@@ -18,7 +15,7 @@ namespace example_avalonia_opengl
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
-                .LogToDebug()
-                .UseReactiveUI();
+                .UseReactiveUI()
+                .LogToDebug();
     }
 }

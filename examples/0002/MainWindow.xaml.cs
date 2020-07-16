@@ -1,9 +1,11 @@
+using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 
-namespace SearchAThing.SciExamples.Views
+namespace SearchAThing.SciExamples
 {
-    public class MainWindow : Avalonia.Controls.Window
+    public class MainWindow : Window
     {
         public MainWindow()
         {
@@ -13,7 +15,12 @@ namespace SearchAThing.SciExamples.Views
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
-
         }
+
+        private void click_reset(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
     }
 }
