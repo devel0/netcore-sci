@@ -11,8 +11,11 @@ namespace SearchAThing.SciExamples.Views
 
         public MainWindow()
         {
-            InitializeComponent();
-            glCtl = this.FindControl<OpenGlControl>("GL");
+            InitializeComponent();            
+            glCtl = this.FindControl<OpenGlControl>("GL");                        
+            glCtl.PropertyChanged += (a, b) =>
+            {                                
+            };
         }
 
         private void InitializeComponent()

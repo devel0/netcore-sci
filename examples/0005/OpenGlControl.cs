@@ -6,7 +6,7 @@ using Avalonia;
 using Avalonia.Input;
 using Avalonia.OpenGL;
 using Avalonia.Threading;
-using static Avalonia.OpenGL.GlConsts;
+//using static Avalonia.OpenGL.GlConsts;
 using static System.Math;
 using System.Collections.Generic;
 using QuantumConcepts.Formats.StereoLithography;
@@ -14,6 +14,9 @@ using System.IO;
 using Avalonia.Data;
 using System.ComponentModel;
 using Avalonia.Controls;
+using SearchAThing.OpenGL;
+using static SearchAThing.OpenGL.GlConsts;
+using GlInterface = SearchAThing.OpenGL.GlInterface;
 
 namespace SearchAThing.SciExamples
 {
@@ -388,9 +391,13 @@ namespace SearchAThing.SciExamples
 
         const int positionLocation = 0;
         const int normalLocation = 1;
-
-        protected unsafe override void OnOpenGlInit(GlInterface GL, uint fb)
+    
+        SearchAThing.OpenGL.GlInterface GL;
+        
+        protected unsafe override void OnOpenGlInit(Avalonia.OpenGL.GlInterface _GL, int fb)
         {
+            GL = new SearchAThing.OpenGL.GlInterface(_GL);
+
             CheckError(GL);
 
             CHECK_INIT();
@@ -451,10 +458,10 @@ namespace SearchAThing.SciExamples
             VAO = oneArr[0];
             GL.BindVertexArray(VAO);
             CheckError(GL);
-        }
+        }        
 
-        protected override void OnOpenGlDeinit(GlInterface GL, uint fb)
-        {
+        protected override void OnOpenGlDeinit(Avalonia.OpenGL.GlInterface _GL, int fb)
+        {            
             // Unbind everything
             GL.BindBuffer(BufferTargetARB.GL_ARRAY_BUFFER, 0);
             GL.BindBuffer(BufferTargetARB.GL_ELEMENT_ARRAY_BUFFER, 0);
@@ -475,7 +482,7 @@ namespace SearchAThing.SciExamples
 
         bool first_render = true;
 
-        protected override unsafe void OnOpenGlRender(GlInterface GL, uint fb)
+        protected override unsafe void OnOpenGlRender(Avalonia.OpenGL.GlInterface _GL, int fb)
         {
             if (first_render)
             {

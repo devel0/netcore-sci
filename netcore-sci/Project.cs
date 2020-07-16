@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Avalonia.OpenGL;
 
 namespace SearchAThing
 {
@@ -15,7 +16,7 @@ namespace SearchAThing
         }
 
         public void Save(string dstPathfilename, bool binary = true, IEnumerable<Type> knownTypes = null)
-        {
+        {            
             throw new NotImplementedException();
             //this.Serialize(dstPathfilename, binary, knownTypes);
         }

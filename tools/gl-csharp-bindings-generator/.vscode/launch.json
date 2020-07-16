@@ -12,7 +12,7 @@
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/bin/Debug/netcoreapp3.1/gl-csharp-bindings-generator.dll",
             "args": [
-                "/home/devel0/opensource/Avalonia/src/Avalonia.OpenGL",
+                "/home/devel0/opensource/netcore-sci/netcore-sci/GUI",
                 "/home/devel0/opensource/OpenGL-Registry/xml/gl.xml",
                 "/home/devel0/opensource/OpenGL-Refpages/gl4"
             ],

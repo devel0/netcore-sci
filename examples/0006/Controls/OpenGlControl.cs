@@ -6,11 +6,15 @@ using Avalonia;
 using Avalonia.Input;
 using Avalonia.OpenGL;
 using Avalonia.Threading;
-using static Avalonia.OpenGL.GlConsts;
+//using static Avalonia.OpenGL.GlConsts;
 using static System.Math;
 using QuantumConcepts.Formats.StereoLithography;
 using System.IO;
 using System.ComponentModel;
+
+using SearchAThing.OpenGL;
+using static SearchAThing.OpenGL.GlConsts;
+using GlInterface = SearchAThing.OpenGL.GlInterface;
 
 namespace SearchAThing.SciExamples.Controls
 {
@@ -196,7 +200,7 @@ namespace SearchAThing.SciExamples.Controls
         /// </summary>
         void CHECK_INIT()
         {
-            if (_INITIALIZED) return;            
+            if (_INITIALIZED) return;
 
             this.PointerPressed += (a, b) =>
             {
@@ -322,11 +326,15 @@ namespace SearchAThing.SciExamples.Controls
             CHECK_INIT();
         }
 
+        SearchAThing.OpenGL.GlInterface GL;
+
         /// <summary>
         /// GL INIT
         /// </summary>
-        protected unsafe override void OnOpenGlInit(GlInterface GL, uint fb)
+        protected unsafe override void OnOpenGlInit(Avalonia.OpenGL.GlInterface _GL, int fb)
         {
+            GL = new SearchAThing.OpenGL.GlInterface(_GL);
+
             CheckError(GL);
 
             CHECK_INIT();
@@ -412,7 +420,7 @@ namespace SearchAThing.SciExamples.Controls
         /// <summary>
         /// GL DEINIT
         /// </summary>
-        protected override void OnOpenGlDeinit(GlInterface GL, uint fb)
+        protected override void OnOpenGlDeinit(Avalonia.OpenGL.GlInterface _GL, int fb)
         {
             // Unbind everything
             GL.BindBuffer(BufferTargetARB.GL_ARRAY_BUFFER, 0);
@@ -433,7 +441,7 @@ namespace SearchAThing.SciExamples.Controls
         /// <summary>
         /// GL RENDER
         /// </summary>
-        protected override unsafe void OnOpenGlRender(GlInterface gl, uint fb)
+        protected override unsafe void OnOpenGlRender(Avalonia.OpenGL.GlInterface _GL, int fb)
         {
             if (firstRender)
             {
@@ -446,11 +454,11 @@ namespace SearchAThing.SciExamples.Controls
                 cameraTarget = cameraTargetInit;
             }
 
-            gl.ClearColor(0, 0, 0, 0);
-            gl.Clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            gl.Enable(EnableCap.GL_DEPTH_TEST);
-            gl.Viewport(0, 0, (int)Bounds.Width, (int)Bounds.Height);
-            var GL = gl;
+            GL.ClearColor(0, 0, 0, 0);
+            GL.Clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+            GL.Enable(EnableCap.GL_DEPTH_TEST);
+            GL.Viewport(0, 0, (int)Bounds.Width, (int)Bounds.Height);
+
             CheckError(GL);
 
             GL.BindBuffer(BufferTargetARB.GL_ARRAY_BUFFER, VBO);
