@@ -447,6 +447,8 @@ namespace SearchAThing.SciExamples
             EQUIVALENT FORMS:
             -----------------------------------------------------------------------
 
+            
+
             // (1) - float[] with direct array
             var vals = new[]
             {
@@ -498,14 +500,14 @@ namespace SearchAThing.SciExamples
             gln.UniformMatrix4fv(modelLoc, 1, false, vals);
 
             // (2) - void* with object address            
-            gln.UniformMatrix4fv_ptr(modelLoc, 1, false, &qTr.Model);
+            gln.UniformMatrix4fv(modelLoc, 1, false, &qTr.Model);
 
             // (3) - IntPtr with object address
-            gln.UniformMatrix4fv_intptr(modelLoc, 1, false, new IntPtr(&qTr.Model));
+            gln.UniformMatrix4fv(modelLoc, 1, false, new IntPtr(&qTr.Model));
 
             // (4) - IntPtr with array ptr
             fixed (void* ptr = vals)
-                gln.UniformMatrix4fv_intptr(modelLoc, 1, false, new IntPtr(ptr));
+                gln.UniformMatrix4fv(modelLoc, 1, false, new IntPtr(ptr));
             
             */
 
