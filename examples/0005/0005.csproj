@@ -17,7 +17,7 @@
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.999"/>
     <PackageReference Include="Avalonia.Diagnostics" Version="0.9.999"/>
     <PackageReference Include="Avalonia.Desktop" Version="0.9.999"/>
-  </ItemGroup>  
+  </ItemGroup>
   <PropertyGroup>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <OutputType>Exe</OutputType>
@@ -26,7 +26,10 @@
     <noWarn>1591</noWarn>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="../../data/examples/map.stl" CopyToOutputDirectory="PreserveNewest"/>
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="vertexShader.glsl"/>
-    <EmbeddedResource Include="fragmentShader.glsl"/>    
+    <EmbeddedResource Include="fragmentShader.glsl"/>
   </ItemGroup>
 </Project>

@@ -1,21 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <ProjectReference Include="..\..\netcore-sci\netcore-sci.csproj" />
+    <ProjectReference Include="..\..\netcore-sci\netcore-sci.csproj"/>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="Models\"/>
     <Compile Update="**\*.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
     <AvaloniaResource Include="**\*.xaml">
       <SubType>Designer</SubType>
     </AvaloniaResource>
-    <AvaloniaResource Include="Assets\**" />
+    <AvaloniaResource Include="Assets\**"/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.9.999" />    
-    <PackageReference Include="Avalonia.Desktop" Version="0.9.999" />        
-  </ItemGroup>  
+    <PackageReference Include="Avalonia" Version="0.9.999"/>
+    <PackageReference Include="Avalonia.Desktop" Version="0.9.999"/>
+  </ItemGroup>
   <PropertyGroup>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <OutputType>Exe</OutputType>
@@ -24,7 +24,10 @@
     <noWarn>1591</noWarn>
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="shaders/vertexShader.glsl" />
-    <EmbeddedResource Include="shaders/fragmentShader.glsl" />    
+    <None Include="../../data/examples/map.stl" CopyToOutputDirectory="PreserveNewest"/>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="shaders/vertexShader.glsl"/>
+    <EmbeddedResource Include="shaders/fragmentShader.glsl"/>
   </ItemGroup>
 </Project>

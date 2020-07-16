@@ -27,7 +27,7 @@
         </Grid>
         <GridSplitter Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="10"/>
         <Grid Grid.Column="1">
-            <ctl:OpenGlControl x:Name="GL" STLmapPathfilename="../data/examples/map.stl"/>
+            <ctl:OpenGlControl x:Name="GL"/>
         </Grid>
     </Grid>
 </Window>

@@ -1,6 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:v="clr-namespace:SearchAThing.SciExamples" x:Class="SearchAThing.SciExamples.Views.OpenGlPage">
   <Grid>
-    <v:OpenGlPageControl x:Name="GL" STLmapPathfilename="../data/examples/map.stl"/>
+    <v:OpenGlPageControl x:Name="GL"/>
     <Grid ColumnDefinitions="Auto,*,Auto" Margin="20">
       <StackPanel Grid.Column="0">
         <TextBlock Text="{Binding #GL.Info}"/>

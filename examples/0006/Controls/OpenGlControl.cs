@@ -133,17 +133,6 @@ namespace SearchAThing.SciExamples.Controls
             }
         }
 
-        public string STLmapPathfilename
-        {
-            get { return GetValue(STLmapPathfilenameProperty); }
-            set { SetValue(STLmapPathfilenameProperty, value); }
-        }
-        public static readonly AttachedProperty<string> STLmapPathfilenameProperty =
-            AvaloniaProperty.RegisterAttached<OpenGlControl, OpenGlControlBase, string>(
-                nameof(STLmapPathfilename),
-                defaultValue: null,
-                inherits: true);
-
         #endregion
 
         static OpenGlControl()
@@ -207,8 +196,7 @@ namespace SearchAThing.SciExamples.Controls
         /// </summary>
         void CHECK_INIT()
         {
-            if (_INITIALIZED) return;
-            if (STLmapPathfilename == null) return;
+            if (_INITIALIZED) return;            
 
             this.PointerPressed += (a, b) =>
             {
@@ -286,6 +274,14 @@ namespace SearchAThing.SciExamples.Controls
             var sw0 = new Stopwatch();
             {
                 sw0.Start();
+
+                var STLmapPathfilename = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "map.stl");
+
+                if (!File.Exists(STLmapPathfilename))
+                {
+                    System.Console.WriteLine($"can't find [{STLmapPathfilename}]");
+                    Environment.Exit(1);
+                }
 
                 System.Console.WriteLine($"loading from file [{STLmapPathfilename}]");
 
