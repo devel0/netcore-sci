@@ -445,9 +445,12 @@ namespace SearchAThing.SciExamples
             /*
             
             EQUIVALENT FORMS:
-            -----------------------------------------------------------------------
+            -----------------------------------------------------------------------                        
 
-            
+            Overloaded function:
+                public void UniformMatrix4fv(int location, int count, bool transpose, float[] value)
+                public void UniformMatrix4fv(int location, int count, bool transpose, void* value)
+                public void UniformMatrix4fv(int location, int count, bool transpose, IntPtr value)
 
             // (1) - float[] with direct array
             var vals = new[]
