@@ -1,8 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>example</AssemblyName>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="**\*.xaml.cs">
@@ -13,18 +14,18 @@
     </AvaloniaResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="../../data/examples/map.stl" CopyToOutputDirectory="PreserveNewest"/>
+    <None Include="../../data/examples/map.stl" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\netcore-sci\netcore-sci.csproj"/>
+    <ProjectReference Include="..\..\netcore-sci\netcore-sci.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.0-preview1"/>
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview1"/>
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-preview1"/>
+    <PackageReference Include="Avalonia" Version="0.10.0-preview1" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview1" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-preview1" />    
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="shaders/vertexShader.glsl"/>
-    <EmbeddedResource Include="shaders/fragmentShader.glsl"/>
+    <EmbeddedResource Include="shaders/vertexShader.glsl" />
+    <EmbeddedResource Include="shaders/fragmentShader.glsl" />
   </ItemGroup>
 </Project>

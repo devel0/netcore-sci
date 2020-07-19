@@ -22,20 +22,7 @@
 
 ## Recent changes
 
-- **1.5.0** : use of full gl bindings ; some avalonia GUI controls
-
-- **1.4.0** : GLVertexManager ( see example/0006 )
-
-- **1.3.0** : refactored api namespace to have partial static SciToolkit class in SearchAThing namespace
-
-## Notes
-
-- avalonia opengl control with nupkg built from git sources available with myget ( see nuget.config ) ; tested on:
-    - Linux
-        - GeForce GTX 1050 Ti : OK
-        - Radeon HD 520 ( mesa ) : OK but some random crash happens
-    - Windows
-        - GeForce GTX 1050 Ti : currently not working ( empty window )
+- **1.6.0** : reworking gl control using avalonia + silk.net
 
 ## Examples
 
@@ -49,29 +36,7 @@ create a dxf
 
 #### 0002
 
-( avalonia/opengl example ) : basic gl test ( [source](https://github.com/AvaloniaUI/Avalonia/blob/842eb75893f484fa4e3956a32737f2e331abc830/samples/ControlCatalog/Pages/OpenGlPage.xaml.cs) from avalonia samples )
-
-#### 0004
-
-( avalonia/opengl example ) : test display of [dxf face3d](https://github.com/devel0/netcore-sci/blob/a663093ddb074f58041ed7473d755f855d2f3b75/netcore-sci/lab/OpenGlPageControl0004.cs#L237-L288) into opengl
-
-<img src="examples/0004/out.png" width=400>
-
-#### 0005
-
-( avalonia/opengl example ) : display DEM from [STL file](examples/0005/map.stl) taken from [map2stl](https://map2stl.com/)
-
-control with mouse buttons rotation, zoom, pan
-
-<img src="examples/0005/out.gif">
-
-#### 0006
-
-( avalonia/opengl example ) : use of [GLVertexManager](https://github.com/devel0/netcore-sci/blob/bf60c526adad3f60860574bc87ed09e9fae9d2d2/netcore-sci/OpenGL.cs#L24) to draw mesh and some lines ( a simple WCS ) to the same scene ; toggle button for Wireframe mode
-
-<img src="examples/0006/out1.png" width="400"/>
-
-<img src="examples/0006/out2.png" width="400"/>
+testing avalonia + silk.net
 
 ## Quickstart
 
@@ -197,10 +162,6 @@ dotnet add package netDXF.Standard
 dotnet add package ParagonClipper
 # follow requires nuget.config with "searchathing-forks" source key enabled
 dotnet add package QuantumConcepts.Formats.STL.netcore
-dotnet add package Avalonia --version 0.9.999
-dotnet add package Avalonia.ReactiveUI --version 0.9.999
-dotnet add package Avalonia.Diagnostics --version 0.9.999
-dotnet add package Avalonia.Desktop --version 0.9.999
 cd ..
 
 dotnet new xunit -n test
