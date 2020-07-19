@@ -13,12 +13,12 @@ namespace SearchAThing.SciExamples
 
         static SampleGlControl()
         {
-        }        
+        }
 
         public SampleGlControl()
         {
-            AffectsRender<SampleGlControl>(_ObjColorProperty);            
-        }         
+            AffectsRender<SampleGlControl>(_ObjColorProperty);
+        }
 
         private Vector3 _objColor = new Vector3(0f, 1f, 0f);
 
@@ -37,27 +37,12 @@ namespace SearchAThing.SciExamples
         private uint Shader;
 
         //Vertex shaders are run on each vertex.
-        private readonly string VertexShaderSource = @"
-        #version 330 core //Using version GLSL version 3.3
-        layout (location = 0) in vec4 vPos;
-        
-        void main()
-        {
-            gl_Position = vec4(vPos.x, vPos.y, vPos.z, 1.0);
-        }
-        ";
+        private string VertexShaderSource =>
+            "0002.shaders.vertexShader.glsl".GetEmbeddedFileContent<SampleGlControl>();        
 
         //Fragment shaders are run on each fragment/pixel of the geometry.
-        private readonly string FragmentShaderSource = @"
-        #version 330 core
-        uniform vec3 ObjCol;
-        out vec4 FragColor;        
-
-        void main()
-        {
-            FragColor = vec4(ObjCol, 1.0);
-        }
-        ";
+        private string FragmentShaderSource =>
+            "0002.shaders.fragmentShader.glsl".GetEmbeddedFileContent<SampleGlControl>();         
 
         //Vertex data, uploaded to the VBO.
         private readonly float[] Vertices =
@@ -153,7 +138,7 @@ namespace SearchAThing.SciExamples
         }
 
         protected override unsafe void OnOpenGlRender()
-        {            
+        {
             var objColLoc = GL.GetUniformLocation(Shader, "ObjCol");
             GL.Uniform3(objColLoc, ObjColor);
 

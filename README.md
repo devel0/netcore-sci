@@ -36,7 +36,7 @@ create a dxf
 
 #### 0002
 
-testing avalonia + silk.net
+testing avalonia + silk.net with a simple triangle NDC with color from input through gui
 
 ## Quickstart
 
