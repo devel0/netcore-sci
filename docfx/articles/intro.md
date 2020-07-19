@@ -4,4 +4,4 @@ Choose an article from side menu.
 
 ## other resources
 
-- [API](/api/index.html)
+- [API](/netcore-sci/api/index.html)
