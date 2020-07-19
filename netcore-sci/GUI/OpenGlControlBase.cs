@@ -7,6 +7,7 @@ using Avalonia.Media.Imaging;
 using Avalonia.Visuals.Media.Imaging;
 using System;
 using System.Threading;
+using System.Runtime.InteropServices;
 
 namespace SearchAThing
 {
@@ -107,14 +108,21 @@ namespace SearchAThing
                 if (Bounds.Width <= 0 || Bounds.Height <= 0) return;
 
                 var options = WindowOptions.Default;
-                options.Size = new System.Drawing.Size((int)Bounds.Width, (int)Bounds.Height);
-                options.IsVisible = true;
+                options.Size = new System.Drawing.Size((int)Bounds.Width, (int)Bounds.Height);                
 
                 glWindow = Silk.NET.Windowing.Window.Create(options);
-                glWindow.WindowState = Silk.NET.Windowing.Common.WindowState.Minimized;
+                if (System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                {
+                    glWindow.WindowState = Silk.NET.Windowing.Common.WindowState.Minimized;
+                }
                 glWindow.Render += GlRender;
 
                 glWindow.Initialize();
+
+                if (System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    glWindow.IsVisible = false;
+                }
 
                 GL = GL.GetApi(glWindow);
 

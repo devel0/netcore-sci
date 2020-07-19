@@ -17,33 +17,32 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Microsoft.Windows.Compatibility" Version="3.1.0" />
-        <PackageReference Include="netcore-psql-util" Version="1.2.1" />
-        <PackageReference Include="netcore-util" Version="1.5.0" />
-        <PackageReference Include="netDXF.Standard" Version="2.1.1" />
-        <PackageReference Include="ParagonClipper" Version="6.4.2" />
-        <PackageReference Include="Silk.NET" Version="2.0.0-preview" />        
+        <PackageReference Include="Microsoft.Windows.Compatibility" Version="3.1.0"/>
+        <PackageReference Include="netcore-psql-util" Version="1.2.1"/>
+        <PackageReference Include="netcore-util" Version="1.5.0"/>
+        <PackageReference Include="netDXF.Standard" Version="2.1.1"/>
+        <PackageReference Include="ParagonClipper" Version="6.4.2"/>
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="0.10.0-preview1" />
-        <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview1" />
-        <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-preview1" />
+        <PackageReference Include="Avalonia" Version="0.10.0-preview1"/>
+        <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview1"/>
+        <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-preview1"/>
     </ItemGroup>
     <ItemGroup><!-- using git built -->
-        <PackageReference Include="QuantumConcepts.Formats.STL.netcore" Version="1.3.1" />
+        <PackageReference Include="QuantumConcepts.Formats.STL.netcore" Version="1.3.1"/>
     </ItemGroup>
     <ItemGroup>
-        <Folder Include="GUI\Controls\" />
+        <Folder Include="GUI\Controls\"/>
         <Compile Update="**\*.xaml.cs">
             <DependentUpon>%(Filename)</DependentUpon>
         </Compile>
         <AvaloniaResource Include="**\*.xaml">
             <SubType>Designer</SubType>
         </AvaloniaResource>
-        <AvaloniaResource Include="Assets\**" />
+        <AvaloniaResource Include="Assets\**"/>
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\..\..\..\opensource\Silk.NET\src\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
+        <PackageReference Include="Silk.NET" Version="2.0.0-preview"/><!-- <ProjectReference Include="..\..\..\..\opensource\Silk.NET\src\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
       <ProjectReference Include="..\..\..\..\opensource\Silk.NET\src\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj" />
       <ProjectReference Include="..\..\..\..\opensource\Silk.NET\src\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
       <ProjectReference Include="..\..\..\..\opensource\Silk.NET\src\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
@@ -51,6 +50,6 @@
       <ProjectReference Include="..\..\..\..\opensource\Silk.NET\src\Windowing\Silk.NET.GLFW\Silk.NET.GLFW.csproj" />
       <ProjectReference Include="..\..\..\..\opensource\Silk.NET\src\Windowing\Silk.NET.Windowing.Desktop\Silk.NET.Windowing.Desktop.csproj" />
       <ProjectReference Include="..\..\..\..\opensource\Silk.NET\src\Input\Silk.NET.Input.Desktop\Silk.NET.Input.Desktop.csproj" />
-      <ProjectReference Include="..\..\..\..\opensource\Silk.NET\src\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
+      <ProjectReference Include="..\..\..\..\opensource\Silk.NET\src\Input\Silk.NET.Input\Silk.NET.Input.csproj" /> -->
     </ItemGroup>
 </Project>
