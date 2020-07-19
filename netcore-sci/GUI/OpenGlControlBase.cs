@@ -23,6 +23,8 @@ namespace SearchAThing
         public OpenGlControlBase()
         {
             prevBounds = Bounds;
+
+            this.RenderTransform = new ScaleTransform(1, -1);
         }
 
         protected abstract void OnOpenGlInit();
@@ -61,7 +63,7 @@ namespace SearchAThing
             {
                 prevBounds = bounds;
 
-                UpdateViewport();                
+                UpdateViewport();
 
                 if (th == null)
                 {
