@@ -20,6 +20,7 @@ namespace SearchAThing.SciExamples
             AffectsRender<SampleGlControl>(_ObjColorProperty);
         }
 
+        #region ObjColor
         private Vector3 _objColor = new Vector3(0f, 1f, 0f);
 
         public static readonly DirectProperty<SampleGlControl, Vector3> _ObjColorProperty =
@@ -30,6 +31,10 @@ namespace SearchAThing.SciExamples
             get => _objColor;
             set => SetAndRaise(_ObjColorProperty, ref _objColor, value);
         }
+        #endregion
+
+        public Vector3 ObjColorMin => new Vector3(0f, 0, 0);
+        public Vector3 ObjColorMax => new Vector3(1, 1, 1);
 
         private uint Vbo;
         private uint Ebo;
@@ -38,11 +43,11 @@ namespace SearchAThing.SciExamples
 
         //Vertex shaders are run on each vertex.
         private string VertexShaderSource =>
-            "0002.shaders.vertexShader.glsl".GetEmbeddedFileContent<SampleGlControl>();        
+            "0002.shaders.vertexShader.glsl".GetEmbeddedFileContent<SampleGlControl>();
 
         //Fragment shaders are run on each fragment/pixel of the geometry.
         private string FragmentShaderSource =>
-            "0002.shaders.fragmentShader.glsl".GetEmbeddedFileContent<SampleGlControl>();         
+            "0002.shaders.fragmentShader.glsl".GetEmbeddedFileContent<SampleGlControl>();
 
         //Vertex data, uploaded to the VBO.
         private readonly float[] Vertices =

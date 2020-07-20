@@ -1,4 +1,5 @@
-<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="win" xmlns:sci="clr-namespace:SearchAThing;assembly=netcore-sci" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:SearchAThing.SciExamples" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" x:Class="SearchAThing.SciExamples.MainWindow" Title="example">
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+x:Name="win" xmlns:sci="clr-namespace:SearchAThing;assembly=netcore-sci" xmlns:local="clr-namespace:SearchAThing.SciExamples" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" x:Class="SearchAThing.SciExamples.MainWindow" Title="example">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -9,22 +10,11 @@
     <Grid ColumnDefinitions="350,*">
         <Grid Grid.Column="0" Background="#dedede" Margin="0,0,10,0">
             <StackPanel>
-                <TextBlock Grid.Column="2" Text="{Binding #glCtl.ObjColor}"/>
-                <Button Grid.Row="0" Grid.Column="0" Content="random" Click="click_random"/>
-                <Grid ColumnDefinitions="50,*">
-                    <TextBlock TextAlignment="Right" Margin="0,5,5,0">RED</TextBlock>
-                    <Slider Grid.Column="1" Value="{Binding #win.ColRed, Mode=TwoWay}" Minimum="0" Maximum="1"/>
-                </Grid>
-                <Grid ColumnDefinitions="50,*">
-                    <TextBlock TextAlignment="Right" Margin="0,5,5,0">GREEN</TextBlock>
-                    <Slider Grid.Column="1" Value="{Binding #win.ColGreen, Mode=TwoWay}" Minimum="0" Maximum="1"/>
-                </Grid>
-                <Grid ColumnDefinitions="50,*">
-                    <TextBlock TextAlignment="Right" Margin="0,5,5,0">BLUE</TextBlock>
-                    <Slider Grid.Column="1" Value="{Binding #win.ColBlue, Mode=TwoWay}" Minimum="0" Maximum="1"/>
-                </Grid>
-                <!-- <Button Content="Invalidate Visibility" Click="invVisClick"/>
-                <Button Content="Update Viewport" Click="UpdateViewportClick"/> -->
+                <TextBlock Text="{Binding #glCtl.ObjColor}"/>
+                <Button Content="random" Click="click_random"/>
+                <TextBlock Text="RGB"/>
+                <sci:Vector3Control V="{Binding #glCtl.ObjColor, Mode=TwoWay}" VMIN="{Binding #glCtl.ObjColorMin}" VMAX="{Binding #glCtl.ObjColorMax}" Grid.Column="1"/>
+                <Button Content="crash-x11" Click="crash_x11_click"/>
             </StackPanel>
         </Grid>
         <GridSplitter Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="10"/>
