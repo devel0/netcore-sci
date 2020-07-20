@@ -12,10 +12,7 @@
     <AvaloniaResource Include="**\*.xaml">
       <SubType>Designer</SubType>
     </AvaloniaResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="../../data/examples/map.stl" CopyToOutputDirectory="PreserveNewest"/>
-  </ItemGroup>
+  </ItemGroup>  
   <ItemGroup>
     <ProjectReference Include="..\..\netcore-sci\netcore-sci.csproj"/>
   </ItemGroup>
