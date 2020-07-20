@@ -9,15 +9,15 @@
   <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,auto">
     <TextBox x:Name="xTbox" Grid.Row="0" Grid.Column="0" Text="{Binding VX, Mode=TwoWay}" TextAlignment="Right"/>
     <Grid Background="Transparent" x:Name="xSlider" Grid.Row="1" Grid.Column="0">
-      <Slider KeyboardNavigation.TabNavigation="None" Grid.Row="1" Grid.Column="0" IsVisible="{Binding Slider}" Value="{Binding VX, Mode=TwoWay}" Minimum="{Binding VMINX}" Maximum="{Binding VMAXX}"/>
+      <Slider KeyboardNavigation.TabNavigation="None" Grid.Row="1" Grid.Column="0" IsVisible="{Binding Slider}" ToolTip.Tip="{Binding VXTip}" Value="{Binding VX, Mode=TwoWay}" Minimum="{Binding VMINX}" Maximum="{Binding VMAXX}"/>
     </Grid>
     <TextBox x:Name="yTbox" Grid.Row="0" Grid.Column="1" Text="{Binding VY, Mode=TwoWay}" TextAlignment="Right"/>
     <Grid Background="Transparent" x:Name="ySlider" Grid.Row="1" Grid.Column="1">
-      <Slider KeyboardNavigation.TabNavigation="None" Grid.Row="1" Grid.Column="1" IsVisible="{Binding Slider}" Value="{Binding VY, Mode=TwoWay}" Minimum="{Binding VMINY}" Maximum="{Binding VMAXY}"/>
+      <Slider KeyboardNavigation.TabNavigation="None" Grid.Row="1" Grid.Column="1" IsVisible="{Binding Slider}" ToolTip.Tip="{Binding VYTip}" Value="{Binding VY, Mode=TwoWay}" Minimum="{Binding VMINY}" Maximum="{Binding VMAXY}"/>
     </Grid>
     <TextBox x:Name="zTbox" Grid.Row="0" Grid.Column="2" Text="{Binding VZ, Mode=TwoWay}" TextAlignment="Right"/>
     <Grid Background="Transparent" x:Name="zSlider" Grid.Row="1" Grid.Column="2">
-      <Slider KeyboardNavigation.TabNavigation="None" IsVisible="{Binding Slider}" Value="{Binding VZ, Mode=TwoWay}" Minimum="{Binding VMINZ}" Maximum="{Binding VMAXZ}"/>
+      <Slider KeyboardNavigation.TabNavigation="None" IsVisible="{Binding Slider}" ToolTip.Tip="{Binding VZTip}" Value="{Binding VZ, Mode=TwoWay}" Minimum="{Binding VMINZ}" Maximum="{Binding VMAXZ}"/>
     </Grid>
   </Grid>
 </UserControl>

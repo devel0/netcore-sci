@@ -22,6 +22,8 @@
 
 ## Recent changes
 
+- **1.7.0** : fix avalonia X11 crash on Linux when together Silk.NET (use nuget.config pkgs)
+
 - **1.6.0** : reworking gl control using avalonia + silk.net
 
 ## Examples
@@ -37,6 +39,8 @@ create a dxf
 #### 0002
 
 testing avalonia + silk.net with a simple triangle NDC with color from input through gui
+
+![](examples/0002/out.gif)
 
 ## Quickstart
 

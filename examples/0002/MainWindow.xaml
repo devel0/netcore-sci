@@ -13,8 +13,7 @@ x:Name="win" xmlns:sci="clr-namespace:SearchAThing;assembly=netcore-sci" xmlns:l
                 <TextBlock Text="{Binding #glCtl.ObjColor}"/>
                 <Button Content="random" Click="click_random"/>
                 <TextBlock Text="RGB"/>
-                <sci:Vector3Control V="{Binding #glCtl.ObjColor, Mode=TwoWay}" VMIN="{Binding #glCtl.ObjColorMin}" VMAX="{Binding #glCtl.ObjColorMax}" Grid.Column="1"/>
-                <Button Content="crash-x11" Click="crash_x11_click"/>
+                <sci:Vector3Control V="{Binding #glCtl.ObjColor, Mode=TwoWay}" VMIN="{Binding #glCtl.ObjColorMin}" VMAX="{Binding #glCtl.ObjColorMax}" Grid.Column="1"/>                
             </StackPanel>
         </Grid>
         <GridSplitter Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="10"/>

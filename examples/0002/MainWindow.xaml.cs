@@ -34,12 +34,5 @@ namespace SearchAThing.SciExamples
             AvaloniaXamlLoader.Load(this);
         }
 
-        private void crash_x11_click(object sender, RoutedEventArgs e)
-        {
-            var w = new Window() { Width = 320, Height = 200 };
-            w.Content = new TextBlock() { Text = "Close this win to crash on X11" };
-            w.ShowDialog(this);
-        }
-
     }
 }
