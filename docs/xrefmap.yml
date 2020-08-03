@@ -6847,6 +6847,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.ToDxfUCS
   nameWithType: SciExt.ToDxfUCS
+- uid: SearchAThing.SciExt.ToDxfVector2(SearchAThing.Vector3D)
+  name: ToDxfVector2(Vector3D)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToDxfVector2_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.SciExt.ToDxfVector2(SearchAThing.Vector3D)
+  fullName: SearchAThing.SciExt.ToDxfVector2(SearchAThing.Vector3D)
+  nameWithType: SciExt.ToDxfVector2(Vector3D)
+- uid: SearchAThing.SciExt.ToDxfVector2*
+  name: ToDxfVector2
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToDxfVector2_
+  commentId: Overload:SearchAThing.SciExt.ToDxfVector2
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.ToDxfVector2
+  nameWithType: SciExt.ToDxfVector2
 - uid: SearchAThing.SciExt.ToFace3DList(SearchAThing.BBox3D)
   name: ToFace3DList(BBox3D)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToFace3DList_SearchAThing_BBox3D_
@@ -6992,19 +7005,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.ToVector2
   nameWithType: SciExt.ToVector2
-- uid: SearchAThing.SciExt.ToVector3D(netDxf.Vector2)
-  name: ToVector3D(netDxf.Vector2)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToVector3D_netDxf_Vector2_
-  commentId: M:SearchAThing.SciExt.ToVector3D(netDxf.Vector2)
-  fullName: SearchAThing.SciExt.ToVector3D(netDxf.Vector2)
-  nameWithType: SciExt.ToVector3D(netDxf.Vector2)
-- uid: SearchAThing.SciExt.ToVector3D*
-  name: ToVector3D
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToVector3D_
-  commentId: Overload:SearchAThing.SciExt.ToVector3D
-  isSpec: "True"
-  fullName: SearchAThing.SciExt.ToVector3D
-  nameWithType: SciExt.ToVector3D
 - uid: SearchAThing.SciExt.Vector3DCoords(LwPolyline)
   name: Vector3DCoords(LwPolyline)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Vector3DCoords_LwPolyline_
@@ -7833,6 +7833,24 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Vector3D.Division
   nameWithType: Vector3D.Division
+- uid: SearchAThing.Vector3D.op_Implicit(netDxf.Vector2)~SearchAThing.Vector3D
+  name: Implicit(netDxf.Vector2 to Vector3D)
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_op_Implicit_netDxf_Vector2__SearchAThing_Vector3D
+  commentId: M:SearchAThing.Vector3D.op_Implicit(netDxf.Vector2)~SearchAThing.Vector3D
+  name.vb: Widening(netDxf.Vector2 to Vector3D)
+  fullName: SearchAThing.Vector3D.Implicit(netDxf.Vector2 to SearchAThing.Vector3D)
+  fullName.vb: SearchAThing.Vector3D.Widening(netDxf.Vector2 to SearchAThing.Vector3D)
+  nameWithType: Vector3D.Implicit(netDxf.Vector2 to Vector3D)
+  nameWithType.vb: Vector3D.Widening(netDxf.Vector2 to Vector3D)
+- uid: SearchAThing.Vector3D.op_Implicit(netDxf.Vector3)~SearchAThing.Vector3D
+  name: Implicit(netDxf.Vector3 to Vector3D)
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_op_Implicit_netDxf_Vector3__SearchAThing_Vector3D
+  commentId: M:SearchAThing.Vector3D.op_Implicit(netDxf.Vector3)~SearchAThing.Vector3D
+  name.vb: Widening(netDxf.Vector3 to Vector3D)
+  fullName: SearchAThing.Vector3D.Implicit(netDxf.Vector3 to SearchAThing.Vector3D)
+  fullName.vb: SearchAThing.Vector3D.Widening(netDxf.Vector3 to SearchAThing.Vector3D)
+  nameWithType: Vector3D.Implicit(netDxf.Vector3 to Vector3D)
+  nameWithType.vb: Vector3D.Widening(netDxf.Vector3 to Vector3D)
 - uid: SearchAThing.Vector3D.op_Implicit(QuantumConcepts.Formats.StereoLithography.Vertex)~SearchAThing.Vector3D
   name: Implicit(QuantumConcepts.Formats.StereoLithography.Vertex to Vector3D)
   href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_op_Implicit_QuantumConcepts_Formats_StereoLithography_Vertex__SearchAThing_Vector3D
@@ -7842,6 +7860,15 @@ references:
   fullName.vb: SearchAThing.Vector3D.Widening(QuantumConcepts.Formats.StereoLithography.Vertex to SearchAThing.Vector3D)
   nameWithType: Vector3D.Implicit(QuantumConcepts.Formats.StereoLithography.Vertex to Vector3D)
   nameWithType.vb: Vector3D.Widening(QuantumConcepts.Formats.StereoLithography.Vertex to Vector3D)
+- uid: SearchAThing.Vector3D.op_Implicit(SearchAThing.Vector3D)~netDxf.Vector3
+  name: Implicit(Vector3D to netDxf.Vector3)
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_op_Implicit_SearchAThing_Vector3D__netDxf_Vector3
+  commentId: M:SearchAThing.Vector3D.op_Implicit(SearchAThing.Vector3D)~netDxf.Vector3
+  name.vb: Widening(Vector3D to netDxf.Vector3)
+  fullName: SearchAThing.Vector3D.Implicit(SearchAThing.Vector3D to netDxf.Vector3)
+  fullName.vb: SearchAThing.Vector3D.Widening(SearchAThing.Vector3D to netDxf.Vector3)
+  nameWithType: Vector3D.Implicit(Vector3D to netDxf.Vector3)
+  nameWithType.vb: Vector3D.Widening(Vector3D to netDxf.Vector3)
 - uid: SearchAThing.Vector3D.op_Implicit(SearchAThing.Vector3D)~QuantumConcepts.Formats.StereoLithography.Vertex
   name: Implicit(Vector3D to QuantumConcepts.Formats.StereoLithography.Vertex)
   href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_op_Implicit_SearchAThing_Vector3D__QuantumConcepts_Formats_StereoLithography_Vertex
@@ -7860,15 +7887,15 @@ references:
   fullName.vb: SearchAThing.Vector3D.Widening(SearchAThing.Vector3D to System.Numerics.Vector3)
   nameWithType: Vector3D.Implicit(Vector3D to System.Numerics.Vector3)
   nameWithType.vb: Vector3D.Widening(Vector3D to System.Numerics.Vector3)
-- uid: SearchAThing.Vector3D.op_Implicit(SearchAThing.Vector3D)~Vector3
-  name: Implicit(Vector3D to Vector3)
-  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_op_Implicit_SearchAThing_Vector3D__Vector3
-  commentId: M:SearchAThing.Vector3D.op_Implicit(SearchAThing.Vector3D)~Vector3
-  name.vb: Widening(Vector3D to Vector3)
-  fullName: SearchAThing.Vector3D.Implicit(SearchAThing.Vector3D to Vector3)
-  fullName.vb: SearchAThing.Vector3D.Widening(SearchAThing.Vector3D to Vector3)
-  nameWithType: Vector3D.Implicit(Vector3D to Vector3)
-  nameWithType.vb: Vector3D.Widening(Vector3D to Vector3)
+- uid: SearchAThing.Vector3D.op_Implicit(System.Numerics.Vector2)~SearchAThing.Vector3D
+  name: Implicit(System.Numerics.Vector2 to Vector3D)
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_op_Implicit_System_Numerics_Vector2__SearchAThing_Vector3D
+  commentId: M:SearchAThing.Vector3D.op_Implicit(System.Numerics.Vector2)~SearchAThing.Vector3D
+  name.vb: Widening(System.Numerics.Vector2 to Vector3D)
+  fullName: SearchAThing.Vector3D.Implicit(System.Numerics.Vector2 to SearchAThing.Vector3D)
+  fullName.vb: SearchAThing.Vector3D.Widening(System.Numerics.Vector2 to SearchAThing.Vector3D)
+  nameWithType: Vector3D.Implicit(System.Numerics.Vector2 to Vector3D)
+  nameWithType.vb: Vector3D.Widening(System.Numerics.Vector2 to Vector3D)
 - uid: SearchAThing.Vector3D.op_Implicit(System.Numerics.Vector3)~SearchAThing.Vector3D
   name: Implicit(System.Numerics.Vector3 to Vector3D)
   href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_op_Implicit_System_Numerics_Vector3__SearchAThing_Vector3D
@@ -7878,24 +7905,6 @@ references:
   fullName.vb: SearchAThing.Vector3D.Widening(System.Numerics.Vector3 to SearchAThing.Vector3D)
   nameWithType: Vector3D.Implicit(System.Numerics.Vector3 to Vector3D)
   nameWithType.vb: Vector3D.Widening(System.Numerics.Vector3 to Vector3D)
-- uid: SearchAThing.Vector3D.op_Implicit(Vector2)~SearchAThing.Vector3D
-  name: Implicit(Vector2 to Vector3D)
-  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_op_Implicit_Vector2__SearchAThing_Vector3D
-  commentId: M:SearchAThing.Vector3D.op_Implicit(Vector2)~SearchAThing.Vector3D
-  name.vb: Widening(Vector2 to Vector3D)
-  fullName: SearchAThing.Vector3D.Implicit(Vector2 to SearchAThing.Vector3D)
-  fullName.vb: SearchAThing.Vector3D.Widening(Vector2 to SearchAThing.Vector3D)
-  nameWithType: Vector3D.Implicit(Vector2 to Vector3D)
-  nameWithType.vb: Vector3D.Widening(Vector2 to Vector3D)
-- uid: SearchAThing.Vector3D.op_Implicit(Vector3)~SearchAThing.Vector3D
-  name: Implicit(Vector3 to Vector3D)
-  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_op_Implicit_Vector3__SearchAThing_Vector3D
-  commentId: M:SearchAThing.Vector3D.op_Implicit(Vector3)~SearchAThing.Vector3D
-  name.vb: Widening(Vector3 to Vector3D)
-  fullName: SearchAThing.Vector3D.Implicit(Vector3 to SearchAThing.Vector3D)
-  fullName.vb: SearchAThing.Vector3D.Widening(Vector3 to SearchAThing.Vector3D)
-  nameWithType: Vector3D.Implicit(Vector3 to Vector3D)
-  nameWithType.vb: Vector3D.Widening(Vector3 to Vector3D)
 - uid: SearchAThing.Vector3D.op_Implicit*
   name: Implicit
   href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_op_Implicit_
