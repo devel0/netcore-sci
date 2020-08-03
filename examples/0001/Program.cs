@@ -1,12 +1,16 @@
 ﻿using static System.Math;
 using SearchAThing;
+using LinqStatistics;
+using System;
+using System.Linq;
 
 namespace test
 {
     class Program
     {
+       
         static void Main(string[] args)
-        {
+        {            
             var tol = 1e-8;
             var R = 100;
 

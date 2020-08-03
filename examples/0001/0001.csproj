@@ -4,6 +4,10 @@
     <ProjectReference Include="..\..\netcore-sci\netcore-sci.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="LinqStatistics" Version="2.3.0" />
+  </ItemGroup>
+
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>

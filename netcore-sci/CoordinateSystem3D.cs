@@ -1,3 +1,5 @@
+using System;
+using System.Numerics;
 using System.Text;
 using static System.Math;
 using static SearchAThing.SciToolkit;
