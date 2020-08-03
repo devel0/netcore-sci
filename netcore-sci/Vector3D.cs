@@ -12,6 +12,7 @@ using netDxf.Entities;
 using netDxf;
 using System.Text.RegularExpressions;
 using static SearchAThing.SciToolkit;
+using System.Runtime.CompilerServices;
 
 namespace SearchAThing
 {
@@ -740,6 +741,22 @@ namespace SearchAThing
             return new Vector3D(X.Convert(from, to), Y.Convert(from, to), Z.Convert(from, to));
         }
 
+        /// <summary>
+        /// return clamped Vector3D between [min,max] interval
+        /// </summary>
+        /// <param name="v">xyz vector</param>
+        /// <param name="min">min value admissible</param>
+        /// <param name="max">max value admissible</param>
+        /// <returns>given vector with xyz components clamped to corresponding min,max components</returns>        
+        public Vector3D Clamp(Vector3D min, Vector3D max)
+        {
+            var vx = X.Clamp(min.X, max.X);
+            var vy = Y.Clamp(min.Y, max.Y);
+            var vz = Z.Clamp(min.Z, max.Z);
+
+            return new Vector3D(vx, vy, vz);
+        }
+
         #region operators
 
         /// <summary>
@@ -897,8 +914,9 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// parse vector3d from array "(x1,y1,z1);(x2,y2,z2)"
-        /// </summary>            
+        /// parse vector3d from array "(x1,y1,z1);(x2,y2,z2)";
+        /// an appropriate string can be generated with StringRepresentation extension.
+        /// </summary>                    
         public static IEnumerable<Vector3D> FromStringArray(string str)
         {
             return str.Split(";").Where(f => f.Trim().Length > 0).Select(f => FromString(f));
@@ -1026,6 +1044,33 @@ namespace SearchAThing
                 return this.ToDxfPoint();
             }
         }
+
+        /// <summary>
+        /// build Line3D from this to given to
+        /// </summary>
+        /// <param name="to">line3d to point</param>
+        /// <returns>build Line3D from this to given to</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Line3D LineTo(Vector3D to) => new Line3D(this, to);
+
+        /// <summary>
+        /// build Line3D from this to (this+vector)
+        /// </summary>
+        /// <param name="vector">vector to add this to obtain line to</param>
+        /// <returns>Line3D from this to (this+given vector)</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Line3D LineV(Vector3D vector) => new Line3D(this, vector, Line3DConstructMode.PointAndVector);
+
+        /// <summary>
+        /// build Line3D from this to (this+dir*len)
+        /// </summary>
+        /// <param name="dir">direction</param>
+        /// <param name="len">length of the line</param>
+        /// <param name="applyDirNorm">apply normalization to given direction ( default:false )</param>
+        /// <returns>Line3D from this to (this+dir*len)</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Line3D LineDir(Vector3D dir, double len, bool applyDirNorm = false) =>
+            new Line3D(this, (applyDirNorm ? dir.Normalized() : dir) * len, Line3DConstructMode.PointAndVector);
 
         /// <summary>
         /// Divide this point returning itself.
@@ -1202,7 +1247,8 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// array invariant string vector3d representation "(x1,y1,z2);(x2,y2,z2)"
+        /// array invariant string vector3d representation "(x1,y1,z2);(x2,y2,z2)";
+        /// an array of Vector3D can be rebuilt from string using Vector3D.FromStringArray
         /// </summary>        
         public static string StringRepresentation(this IEnumerable<Vector3D> pts)
         {
