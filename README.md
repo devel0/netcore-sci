@@ -38,8 +38,23 @@ create a dxf
 
 <img src="examples/0001/output.png" width=300>
 
-
 ## Quickstart
+
+- [nuget package](https://www.nuget.org/packages/netcore-sci/)
+
+- [extension methods](https://devel0.github.io/netcore-sci/api/SearchAThing.SciExt.html)
+
+```csharp
+using SearchAThing;
+```
+
+- [toolkit methods](https://devel0.github.io/netcore-sci/api/SearchAThing.SciToolkit.html)
+
+```csharp
+using static SearchAThing.SciToolkit;
+```
+
+#### create an example
 
 From [examples](examples) follow [example_0001](examples/0001) can be created following these steps:
 
