@@ -1,3 +1,4 @@
+using System;
 using System.Numerics;
 using System.Text;
 
@@ -6,7 +7,63 @@ namespace SearchAThing
 
     public static partial class SciExt
     {
-       
+
+        /// <summary>
+        /// Retrieve memory contiguous representation of Matrix4x4.
+        /// If want to use direct array struct fields are taken in byname sort
+        /// check with ObjectLayoutInspector utility ( https://github.com/SergeyTeplyakov/ObjectLayoutInspector )
+        ///
+        /// PrintLayout<Matrix4x4>();
+        ///            
+        /// Type layout for 'Matrix4x4'
+        /// Size: 64 bytes. Paddings: 0 bytes (%0 of empty space)
+        /// |=============================|
+        /// |   0-3: Single M11 (4 bytes) |
+        /// |-----------------------------|
+        /// |   4-7: Single M12 (4 bytes) |
+        /// |-----------------------------|
+        /// |  8-11: Single M13 (4 bytes) |
+        /// |-----------------------------|
+        /// | 12-15: Single M14 (4 bytes) |
+        /// |-----------------------------|
+        /// | 16-19: Single M21 (4 bytes) |
+        /// |-----------------------------|
+        /// | 20-23: Single M22 (4 bytes) |
+        /// |-----------------------------|
+        /// | 24-27: Single M23 (4 bytes) |
+        /// |-----------------------------|
+        /// | 28-31: Single M24 (4 bytes) |
+        /// |-----------------------------|
+        /// | 32-35: Single M31 (4 bytes) |
+        /// |-----------------------------|
+        /// | 36-39: Single M32 (4 bytes) |
+        /// |-----------------------------|
+        /// | 40-43: Single M33 (4 bytes) |
+        /// |-----------------------------|
+        /// | 44-47: Single M34 (4 bytes) |
+        /// |-----------------------------|
+        /// | 48-51: Single M41 (4 bytes) |
+        /// |-----------------------------|
+        /// | 52-55: Single M42 (4 bytes) |
+        /// |-----------------------------|
+        /// | 56-59: Single M43 (4 bytes) |
+        /// |-----------------------------|
+        /// | 60-63: Single M44 (4 bytes) |
+        /// |=============================|
+        /// </summary>
+        /// <param name="m">matrix to convert to span</param>
+        /// <returns>linear representation of given matrix</returns>
+        public static Span<float> ToSpan(this Matrix4x4 m)
+        {
+            return new Span<float>(new[]
+            {
+                m.M11, m.M12, m.M13, m.M14,
+                m.M21, m.M22, m.M23, m.M24,
+                m.M31, m.M32, m.M33, m.M34,
+                m.M41, m.M42, m.M43, m.M44
+            });
+        }
+
         /// <summary>
         /// retrieve inverse of given matrix
         /// </summary>
