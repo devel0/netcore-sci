@@ -1100,36 +1100,35 @@ namespace SearchAThing
         #endregion
 
         /// <summary>
-        /// convert given Vector2 to a Vector3D ( with z=0 )
+        /// convert given (netdxf) Vector2 to a Vector3D ( assume z=0 )
         /// </summary>            
-        public static implicit operator Vector3D(Vector2 v)
+        public static implicit operator Vector3D(netDxf.Vector2 v)
         {
             return new Vector3D(v.X, v.Y, 0);
         }
 
         /// <summary>
-        /// Convert given Vector3 to Vector3D
+        /// convert given (System.Numerics) Vector2 to a Vector3D ( with z=0 )
         /// </summary>            
-        public static implicit operator Vector3D(Vector3 v)
+        public static implicit operator Vector3D(System.Numerics.Vector2 v)
+        {
+            return new Vector3D(v.X, v.Y, 0);
+        }
+
+        /// <summary>
+        /// Convert given (netdxf) Vector3 to Vector3D
+        /// </summary>            
+        public static implicit operator Vector3D(netDxf.Vector3 v)
         {
             return new Vector3D(v.X, v.Y, v.Z);
         }
 
         /// <summary>
-        /// Convert given Vector3D to Vector3
+        /// Convert given Vector3D to (netdxf) Vector3
         /// </summary>            
-        public static implicit operator Vector3(Vector3D v)
+        public static implicit operator netDxf.Vector3(Vector3D v)
         {
             return new Vector3(v.X, v.Y, v.Z);
-        }
-
-        /// <summary>
-        /// Convert given System.Numerics.Vector3 to Vector3D
-        /// </summary>
-        /// <param name="v">input vector</param>
-        public static implicit operator Vector3D(System.Numerics.Vector3 v)
-        {
-            return new Vector3D(v.X, v.Y, v.Z);
         }
 
         /// <summary>
@@ -1142,6 +1141,15 @@ namespace SearchAThing
         public static implicit operator System.Numerics.Vector3(Vector3D v)
         {
             return new System.Numerics.Vector3((float)v.X, (float)v.Y, (float)v.Z);
+        }
+
+        /// <summary>
+        /// Convert given System.Numerics.Vector3 to Vector3D
+        /// </summary>
+        /// <param name="v">input vector</param>
+        public static implicit operator Vector3D(System.Numerics.Vector3 v)
+        {
+            return new Vector3D(v.X, v.Y, v.Z);
         }
 
         /// <summary>
@@ -1164,7 +1172,6 @@ namespace SearchAThing
         {
             return new QuantumConcepts.Formats.StereoLithography.Vertex((float)v.X, (float)v.Y, (float)v.Z);
         }
-
 
     }
 
@@ -1416,24 +1423,20 @@ namespace SearchAThing
             return s / n;
         }
 
-        /*public static Vector3D ToVector3D(this sVector3D v)
-        {
-            return new Vector3D(v.X, v.Y, v.Z);
-        }*/
-
-        public static Vector3D ToVector3D(this netDxf.Vector2 v)
-        {
-            return new Vector3D(v.X, v.Y);
-        }
-
-        /* public static netDxf.Vector3 ToVector3(this Vector3D v)
-         {
-             return new netDxf.Vector3(v.X, v.Y, v.Z);
-         }*/
-
-        public static netDxf.Vector2 ToVector2(this Vector3D v)
+        /// <summary>
+        /// convert to (netdxf) discarding z
+        /// </summary>
+        public static netDxf.Vector2 ToDxfVector2(this Vector3D v)
         {
             return new netDxf.Vector2(v.X, v.Y);
+        }
+
+        /// <summary>
+        /// convert to (system.numerics) Vector2 ( casting double to float, discarding z )
+        /// </summary>
+        public static System.Numerics.Vector2 ToVector2(this Vector3D v)
+        {
+            return new System.Numerics.Vector2((float)v.X, (float)v.Y);
         }
 
         /// <summary>

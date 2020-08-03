@@ -550,7 +550,7 @@ namespace SearchAThing
                 case EntityType.LightWeightPolyline:
                     {
                         var lw = (LwPolyline)eo;
-                        foreach (var x in lw.Vertexes) yield return x.Position.ToVector3D();
+                        foreach (var x in lw.Vertexes) yield return x.Position;
                     }
                     break;
 
@@ -600,7 +600,7 @@ namespace SearchAThing
                 case EntityType.Circle:
                     {
                         var circleLw = ((Circle)eo).ToPolyline(4);
-                        foreach (var x in circleLw.Vertexes) yield return x.Position.ToVector3D();
+                        foreach (var x in circleLw.Vertexes) yield return x.Position;
                     }
                     break;
 

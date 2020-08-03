@@ -284,8 +284,8 @@ namespace SearchAThing
                     {
                         var lw = (LwPolyline)eo.Clone();
                         lw.Vertexes.ForEach(w =>
-                        {
-                            w.Position = transform(w.Position.ToVector3D()).ToVector2();
+                        {                            
+                            w.Position = transform(w.Position).ToDxfVector2();
                         });
                         return lw;
                     }

@@ -403,7 +403,7 @@ namespace SearchAThing
                     case GeometryType.Vector3D:
                         {
                             to = geom[i] as Vector3D;
-                            var lwpv = new netDxf.Entities.LwPolylineVertex(to.ToVector2());
+                            var lwpv = new netDxf.Entities.LwPolylineVertex(to.ToDxfVector2());
                             pvtx.Add(lwpv);
                             lastPt = to;
                         }
@@ -417,13 +417,13 @@ namespace SearchAThing
 
                             if (lastPt == null || lastPt.EqualsTol(tolLen, from))
                             {
-                                var lwpv = new netDxf.Entities.LwPolylineVertex(from.ToUCS(cs).ToVector2());
+                                var lwpv = new netDxf.Entities.LwPolylineVertex(from.ToUCS(cs).ToDxfVector2());
                                 pvtx.Add(lwpv);
                                 lastPt = to;
                             }
                             else
                             {
-                                var lwpv = new netDxf.Entities.LwPolylineVertex(to.ToUCS(cs).ToVector2());
+                                var lwpv = new netDxf.Entities.LwPolylineVertex(to.ToUCS(cs).ToDxfVector2());
                                 pvtx.Add(lwpv);
                                 lastPt = from;
                             }
@@ -442,20 +442,20 @@ namespace SearchAThing
                                 {
                                     if (geom[i + 1].GeomFrom.EqualsTol(tolLen, to))
                                     {
-                                        var lwpv = new netDxf.Entities.LwPolylineVertex(from.ToUCS(cs).ToVector2()) { Bulge = bulge };
+                                        var lwpv = new netDxf.Entities.LwPolylineVertex(from.ToUCS(cs).ToDxfVector2()) { Bulge = bulge };
                                         pvtx.Add(lwpv);
                                         lastPt = to;
                                     }
                                     else
                                     {
-                                        var lwpv = new netDxf.Entities.LwPolylineVertex(to.ToUCS(cs).ToVector2()) { Bulge = -bulge };
+                                        var lwpv = new netDxf.Entities.LwPolylineVertex(to.ToUCS(cs).ToDxfVector2()) { Bulge = -bulge };
                                         pvtx.Add(lwpv);
                                         lastPt = from;
                                     }
                                 }
                                 else
                                 {
-                                    var lwpv = new netDxf.Entities.LwPolylineVertex(from.ToUCS(cs).ToVector2()) { Bulge = bulge };
+                                    var lwpv = new netDxf.Entities.LwPolylineVertex(from.ToUCS(cs).ToDxfVector2()) { Bulge = bulge };
                                     pvtx.Add(lwpv);
                                     lastPt = to;
                                 }
@@ -464,13 +464,13 @@ namespace SearchAThing
                             {
                                 if (lastPt.EqualsTol(tolLen, from))
                                 {
-                                    var lwpv = new netDxf.Entities.LwPolylineVertex(from.ToUCS(cs).ToVector2()) { Bulge = bulge };
+                                    var lwpv = new netDxf.Entities.LwPolylineVertex(from.ToUCS(cs).ToDxfVector2()) { Bulge = bulge };
                                     pvtx.Add(lwpv);
                                     lastPt = to;
                                 }
                                 else
                                 {
-                                    var lwpv = new netDxf.Entities.LwPolylineVertex(to.ToUCS(cs).ToVector2()) { Bulge = -bulge };
+                                    var lwpv = new netDxf.Entities.LwPolylineVertex(to.ToUCS(cs).ToDxfVector2()) { Bulge = -bulge };
                                     pvtx.Add(lwpv);
                                     lastPt = from;
                                 }
@@ -484,7 +484,7 @@ namespace SearchAThing
             if (!closed)
             {
                 if (lastPt == null) throw new ArgumentException("can't find last pt");
-                var lwpv = new netDxf.Entities.LwPolylineVertex(lastPt.ToUCS(cs).ToVector2());
+                var lwpv = new netDxf.Entities.LwPolylineVertex(lastPt.ToUCS(cs).ToDxfVector2());
                 pvtx.Add(lwpv);
             }
 
