@@ -88,6 +88,24 @@ namespace SearchAThing
         }
 
         /// <summary>
+        /// construct bbox that contains pt at center and with given radius
+        /// </summary>
+        public BBox3D(Vector3D pt, double radius) :
+            this(new[]
+            {
+                pt - Vector3D.XAxis * radius,
+                pt + Vector3D.XAxis * radius,
+
+                pt - Vector3D.YAxis * radius,
+                pt + Vector3D.YAxis * radius,
+
+                pt - Vector3D.ZAxis * radius,
+                pt + Vector3D.ZAxis * radius,
+            })
+        {
+        }
+
+        /// <summary>
         /// scale all bbox points Min,Max respect to the center
         /// </summary>
         /// <param name="factor">scale factor</param>
@@ -278,8 +296,8 @@ namespace SearchAThing
         {
             return new BBox3D(new Vector3D[]
             {
-                    Min - margin,
-                    Max + margin
+                Min - margin,
+                Max + margin
             });
         }
 
@@ -316,12 +334,92 @@ namespace SearchAThing
         }
 
         /// <summary>
+        /// retrieve ordered set of points for this bbox (0..4) first face (5..7) other face
+        /// - [0] = (Min.X, Min.Y, Min.Z)
+        /// - [1] = (Max.X, Min.Y, Min.Z)
+        /// - [2] = (Max.X, Max.Y, Min.Z)
+        /// - [3] = (Min.X, Max.Y, Min.Z)
+        /// - [4] = (Min.X, Min.Y, Max.Z)
+        /// - [5] = (Max.X, Min.Y, Max.Z)
+        /// - [6] = (Max.X, Max.Y, Max.Z)
+        /// - [7] = (Min.X, Max.Y, Max.Z)
+        /// </summary>
+        public IReadOnlyList<Vector3D> Points => new List<Vector3D>()
+        {
+            new Vector3D(Min.X, Min.Y, Min.Z),
+            new Vector3D(Max.X, Min.Y, Min.Z),
+            new Vector3D(Max.X, Max.Y, Min.Z),
+            new Vector3D(Min.X, Max.Y, Min.Z),
+
+            new Vector3D(Min.X, Min.Y, Max.Z),
+            new Vector3D(Max.X, Min.Y, Max.Z),
+            new Vector3D(Max.X, Max.Y, Max.Z),
+            new Vector3D(Min.X, Max.Y, Max.Z)
+        };
+
+        /// <summary>
+        /// retrieve 6 faces of bbox.
+        /// (see Points property documentation for vertex enumeration), faces are:
+        /// - 0321
+        /// - 4567
+        /// - 0473
+        /// - 1265
+        /// - 0154
+        /// - 2376
+        /// </summary>        
+        public IEnumerable<Plane3DRegion> Faces(double tol)
+        {
+            ///       3---------2
+            ///     / |       / |
+            ///    /  |      /  |
+            ///   7---------6   |
+            ///   |  0------|---1
+            ///   | /       |  /
+            ///   4---------5/
+            /// 
+            var pts = Points;
+            var p0 = pts[0];
+            var p1 = pts[1];
+            var p2 = pts[2];
+            var p3 = pts[3];
+            var p4 = pts[4];
+            var p5 = pts[5];
+            var p6 = pts[6];
+            var p7 = pts[7];
+
+            yield return new Plane3DRegion(tol, new[] { p0, p3, p2, p1 });
+            yield return new Plane3DRegion(tol, new[] { p4, p5, p6, p7 });
+            yield return new Plane3DRegion(tol, new[] { p0, p4, p7, p3 });
+            yield return new Plane3DRegion(tol, new[] { p1, p2, p6, p5 });
+            yield return new Plane3DRegion(tol, new[] { p0, p1, p5, p4 });
+            yield return new Plane3DRegion(tol, new[] { p2, p3, p7, p6 });
+        }
+
+        /// <summary>
+        /// find intersection points of given ray to this bbox faces
+        /// </summary>
+        /// <param name="tol">length tolerance</param>
+        /// <param name="ray">ray to test if intersect one or more of this bbox faces</param>
+        /// <returns>intersection points</returns>
+        public IEnumerable<Vector3D> Intersect(double tol, Line3D ray)
+        {
+            var faces = Faces(tol);
+
+            foreach (var face in faces)
+            {
+                var ip = ray.Intersect(tol, face.Plane);
+                if (ip != null && face.Contains(tol, ip)) yield return ip;
+            }
+        }
+        
+        /// <summary>
         /// stringify bbox as Min-Max
         /// </summary>
         public override string ToString()
         {
             return $"{Min}-{Max}";
         }
+
     }
 
     public static partial class SciExt
