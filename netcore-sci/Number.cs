@@ -2,12 +2,70 @@ using static System.Math;
 using System.Collections.Generic;
 using System.Linq;
 using SearchAThing;
+using System.Runtime.CompilerServices;
+using LinqStatistics;
+using System.Text;
 
 namespace SearchAThing
 {
 
+    /// <summary>
+    /// statistical info about number set
+    /// </summary>
+    public struct NumbersStatNfo
+    {
+        public int Count;
+        public double Average;
+        public double Median;
+        public double? Mode;
+        public double Variance;
+        public double StandardDeviation;
+        public double VarianceP;
+        public double StandardDeviationP;
+        public double Range;
+        public double Similarity;
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+
+            sb.AppendLine($"Count: {Count}");
+            sb.AppendLine($"Average: {Average}");
+            sb.AppendLine($"Median: {Median}");
+            sb.AppendLine($"Mode: {Mode}");
+            sb.AppendLine($"Variance: {Variance}");
+            sb.AppendLine($"StandardDeviation: {StandardDeviation}");
+            sb.AppendLine($"VarianceP: {VarianceP}");
+            sb.AppendLine($"StandardDeviationP: {StandardDeviationP}");
+            sb.AppendLine($"Range: {Range}");
+            sb.AppendLine($"Range: {Similarity}");
+
+            return sb.ToString();
+        }
+    }
+
     public static partial class SciExt
     {
+
+        /// <summary>
+        /// format number with given decimals and total length aligning right
+        /// </summary>
+        /// <param name="n">number to format</param>
+        /// <param name="dec">decimals round</param>
+        /// <param name="size">string size</param>
+        /// <returns>string representing given number formatted with given decimals and total length aligning right</returns>
+        public static string Fmt(this float n, int dec, int size) =>
+            string.Format("{0," + size.ToString() + ":0." + "0".Repeat(dec) + "}", n);
+
+        /// <summary>
+        /// format number with given decimals and total length aligning right
+        /// </summary>
+        /// <param name="n">number to format</param>
+        /// <param name="dec">decimals round</param>
+        /// <param name="size">string size</param>
+        /// <returns>string representing given number formatted with given decimals and total length aligning right</returns>
+        public static string Fmt(this double n, int dec, int size) =>
+            string.Format("{0," + size.ToString() + ":0." + "0".Repeat(dec) + "}", n);
 
         /// <summary>
         /// retrieve angle between from and to given;
@@ -22,7 +80,7 @@ namespace SearchAThing
                 angleFrom = angleFrom.NormalizeAngle2PI(tol_rad);
                 angleTo = angleTo.NormalizeAngle2PI(tol_rad);
             }
-            
+
             if (angleFrom > angleTo)
                 return angleTo + (2 * PI - angleFrom);
             else
@@ -166,6 +224,66 @@ namespace SearchAThing
             for (int i = 0; i < N; ++i) wcnt[i].w_hits /= w_hits_sum;
 
             return wcnt;
+        }
+
+        /// <summary>
+        /// Measure percent difference between given two numbers;
+        /// return double.NaN if only one of two numbers are 0;
+        /// 0 if both two given numbers are 0.
+        /// 
+        /// Given f = PercentDifference(x, y)
+        ///   m = Min(x, y)
+        ///   M = Max(x, y)        
+        ///   a = Min(Abs(x), Abs(y))
+        /// 
+        /// returned value f satisfy follow condition        
+        ///   M(m, a, f) = m + a * f
+        /// </summary>
+
+        /// <summary>
+        /// Test two numbers for similarity; the factor
+        /// of similarity f = (max(x,y)-min(x,y)) / min(abs(x), abs(y)).
+        /// Special cases:
+        /// - if x=y=0 returns 0
+        /// - if x=0 xor y=0 returns max(abs(x),abs(y)))/2
+        /// - if sign(x) != sign(y) returns StDevP(x,y)
+        /// </summary>
+        /// <param name="x">first number</param>
+        /// <param name="y">second number</param>
+        /// <returns>similarity factor</returns>
+        public static double Similarity(this double x, double y)
+        {            
+            if (x == 0 && y == 0) return 0;
+            if ((x == 0 && y != 0) || (x != 0 && y == 0)) return Max(Abs(x), Abs(y)) / 2;
+            if (Sign(x) != Sign(y)) return new[] { x, y }.StandardDeviationP();
+
+            var a = Min(Abs(x), Abs(y));
+            var m = Min(x, y);
+            var M = Max(x, y);
+            var d = M - m;
+            var f = d / a;
+
+            return f;
+        }
+
+        /// <summary>
+        /// Compute some stat info about given number set using [LinqStatistics](https://github.com/dkackman/LinqStatistics)        
+        /// </summary>        
+        /// <returns>a tuple containing stat informations about given number set</returns>
+        public static NumbersStatNfo StatNfos(this IEnumerable<double> numbers)
+        {
+            return new NumbersStatNfo
+            {
+                Count = numbers.Count(),
+                Average = numbers.Average(),
+                Median = numbers.Mean(),
+                Mode = numbers.Mode(),
+                Variance = numbers.Variance(),
+                StandardDeviation = numbers.StandardDeviation(),
+                VarianceP = numbers.VarianceP(),
+                StandardDeviationP = numbers.StandardDeviationP(),
+                Range = numbers.Range()
+            };
         }
 
     }
