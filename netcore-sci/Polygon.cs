@@ -164,11 +164,16 @@ namespace SearchAThing
         }
 
         /// <summary>        
-        /// states if the given polygon contains the test point ( z not considered )
+        /// states if the given polygon XY contains the test point ( z not considered )
         /// https://en.wikipedia.org/wiki/Point_in_polygon
         /// By default check the point contained in the polygon perimeter.
         /// Optionally duplicate points are zapped in comparing.
-        /// </summary>                
+        /// </summary>         
+        /// <param name="_pts">points XY of the polygon</param>
+        /// <param name="tol">length tolerance</param>
+        /// <param name="_pt">point XY to test if inside polygon</param>
+        /// <param name="zapDuplicates">clean duplicates from pts list if any</param>
+        /// <returns>true if given point inside polygon</returns>        
         public static bool ContainsPoint(this IReadOnlyList<Vector3D> _pts, double tol, Vector3D _pt, bool zapDuplicates = false)
         {
             var pt = _pt.Set(OrdIdx.Z, 0);
@@ -197,22 +202,22 @@ namespace SearchAThing
             if (_pts.Any(w => _pt.EqualsTol(tol, w))) return true;
 
             var ray = new Line3D(pt, Vector3D.XAxis, Line3DConstructMode.PointAndVector);
-            var conflictVertex = false;
-            do
-            {
-                conflictVertex = false;
-                foreach (var pp in ptsFiltered)
-                {
-                    if (ray.LineContainsPoint(tol, pp))
-                    {
-                        conflictVertex = true;
-                        // ray intersect vertex, change it
-                        ray = new Line3D(pt, pp + Vector3D.YAxis * tol * 1.1);
-                        break;
-                    }
-                }
-            }
-            while (conflictVertex);
+            // var conflictVertex = false;
+            // do
+            // {
+            //     conflictVertex = false;
+            //     foreach (var pp in ptsFiltered)
+            //     {
+            //         if (ray.LineContainsPoint(tol, pp))
+            //         {
+            //             conflictVertex = true;
+            //             // ray intersect vertex, change it
+            //             ray = new Line3D(pt, pp + Vector3D.YAxis * tol * 1.1);
+            //             break;
+            //         }
+            //     }
+            // }
+            // while (conflictVertex);
 
             var intCnt = 0;
 
