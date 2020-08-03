@@ -53,8 +53,6 @@ dotnet new console -n example_0001
 cd example_0001
 ```
 
-- **from 1.1.34** ensure [nuget.config](nuget.config) in your project in order to locate avalonia 0.9.999 packages because currently there isn't nuget packages for avalonia with OpenGlControlBase used in the project ( see [issue](https://github.com/AvaloniaUI/Avalonia/issues/4148) )
-
 - add reference to netcore-sci ( check latest version [here](https://www.nuget.org/packages/netcore-sci/) )
 
 ```sh
