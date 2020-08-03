@@ -36,11 +36,6 @@ create a dxf
 
 <img src="examples/0001/output.png" width=300>
 
-#### 0002
-
-testing avalonia + silk.net with a simple triangle NDC with color from input through gui
-
-![](examples/0002/out.gif)
 
 ## Quickstart
 

@@ -2,10 +2,10 @@
 
 namespace SearchAThing.Sci.Tests
 {
-    public class NumberTests
+    public class NumberTestsOld
     {
 
-        public NumberTests()
+        public NumberTestsOld()
         {
         }
 
@@ -30,6 +30,8 @@ namespace SearchAThing.Sci.Tests
                 Assert.True(res.EqualsTol(new[] { (1d, .333), (1.667, .167), (2.333, .167), (3, .333) }, 1e-3, 1e-3));
             }
         }
+
+        
 
 
     }

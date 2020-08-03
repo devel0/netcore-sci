@@ -1,0 +1,382 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Plane3DRegion
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Plane3DRegion
+   ">
+    <meta name="generator" content="docfx 2.55.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="SearchAThing.Plane3DRegion">
+  
+  
+  <h1 id="SearchAThing_Plane3DRegion" data-uid="SearchAThing.Plane3DRegion" class="text-break">Class Plane3DRegion
+  </h1>
+  <div class="markdown level0 summary"><p>region of a plane3d delimited by a set of coplanar points</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Plane3DRegion</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="SearchAThing.html">SearchAThing</a></h6>
+  <h6><strong>Assembly</strong>: netcore-sci.dll</h6>
+  <h5 id="SearchAThing_Plane3DRegion_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Plane3DRegion : object</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Plane3DRegion__ctor_System_Double_IReadOnlyList_SearchAThing_Vector3D__.md&amp;value=---%0Auid%3A%20SearchAThing.Plane3DRegion.%23ctor(System.Double%2CIReadOnlyList%7BSearchAThing.Vector3D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Plane3DRegion.cs/#L34">View Source</a>
+  </span>
+  <a id="SearchAThing_Plane3DRegion__ctor_" data-uid="SearchAThing.Plane3DRegion.#ctor*"></a>
+  <h4 id="SearchAThing_Plane3DRegion__ctor_System_Double_IReadOnlyList_SearchAThing_Vector3D__" data-uid="SearchAThing.Plane3DRegion.#ctor(System.Double,IReadOnlyList{SearchAThing.Vector3D})">Plane3DRegion(Double, IReadOnlyList&lt;Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"><p>build plane3d region based upong given list of pts ( at least 3 non colinear points required )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Plane3DRegion(double tol, IReadOnlyList&lt;Vector3D&gt; pts)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td><p>length tolerance</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">pts</span></td>
+        <td><p>region points</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Plane3DRegion_CSPoints.md&amp;value=---%0Auid%3A%20SearchAThing.Plane3DRegion.CSPoints%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Plane3DRegion.cs/#L27">View Source</a>
+  </span>
+  <a id="SearchAThing_Plane3DRegion_CSPoints_" data-uid="SearchAThing.Plane3DRegion.CSPoints*"></a>
+  <h4 id="SearchAThing_Plane3DRegion_CSPoints" data-uid="SearchAThing.Plane3DRegion.CSPoints">CSPoints</h4>
+  <div class="markdown level1 summary"><p>(coplanar) points delimiting region of plane3d in CS coordinates ( Z = 0 )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;Vector3D&gt; CSPoints { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Plane3DRegion_Plane.md&amp;value=---%0Auid%3A%20SearchAThing.Plane3DRegion.Plane%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Plane3DRegion.cs/#L17">View Source</a>
+  </span>
+  <a id="SearchAThing_Plane3DRegion_Plane_" data-uid="SearchAThing.Plane3DRegion.Plane*"></a>
+  <h4 id="SearchAThing_Plane3DRegion_Plane" data-uid="SearchAThing.Plane3DRegion.Plane">Plane</h4>
+  <div class="markdown level1 summary"><p>plane info, contains CS</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Plane3D Plane { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Plane3D.html">Plane3D</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Plane3DRegion_Points.md&amp;value=---%0Auid%3A%20SearchAThing.Plane3DRegion.Points%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Plane3DRegion.cs/#L22">View Source</a>
+  </span>
+  <a id="SearchAThing_Plane3DRegion_Points_" data-uid="SearchAThing.Plane3DRegion.Points*"></a>
+  <h4 id="SearchAThing_Plane3DRegion_Points" data-uid="SearchAThing.Plane3DRegion.Points">Points</h4>
+  <div class="markdown level1 summary"><p>(coplanar) points delimiting region of plane3d in WCS coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;Vector3D&gt; Points { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Plane3DRegion_Contains_System_Double_SearchAThing_Vector3D_.md&amp;value=---%0Auid%3A%20SearchAThing.Plane3DRegion.Contains(System.Double%2CSearchAThing.Vector3D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Plane3DRegion.cs/#L80">View Source</a>
+  </span>
+  <a id="SearchAThing_Plane3DRegion_Contains_" data-uid="SearchAThing.Plane3DRegion.Contains*"></a>
+  <h4 id="SearchAThing_Plane3DRegion_Contains_System_Double_SearchAThing_Vector3D_" data-uid="SearchAThing.Plane3DRegion.Contains(System.Double,SearchAThing.Vector3D)">Contains(Double, Vector3D)</h4>
+  <div class="markdown level1 summary"><p>states if this plane3d region contains given point</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Contains(double tol, Vector3D p)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td><p>length tolerance</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">p</span></td>
+        <td><p>point to check if contained</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if given point is in plane3d region</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Plane3DRegion_Intersect_System_Double_SearchAThing_Line3D_.md&amp;value=---%0Auid%3A%20SearchAThing.Plane3DRegion.Intersect(System.Double%2CSearchAThing.Line3D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Plane3DRegion.cs/#L93">View Source</a>
+  </span>
+  <a id="SearchAThing_Plane3DRegion_Intersect_" data-uid="SearchAThing.Plane3DRegion.Intersect*"></a>
+  <h4 id="SearchAThing_Plane3DRegion_Intersect_System_Double_SearchAThing_Line3D_" data-uid="SearchAThing.Plane3DRegion.Intersect(System.Double,SearchAThing.Line3D)">Intersect(Double, Line3D)</h4>
+  <div class="markdown level1 summary"><p>states if given ray line intersect this plane3d region</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Intersect(double tol, Line3D ray)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td><p>length tolerance</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Line3D.html">Line3D</a></td>
+        <td><span class="parametername">ray</span></td>
+        <td><p>ray to test if intersect plane3d region</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
+        <td><p>intersection point or null if not</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Plane3DRegion.md&amp;value=---%0Auid%3A%20SearchAThing.Plane3DRegion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Plane3DRegion.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

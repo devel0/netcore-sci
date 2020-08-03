@@ -109,12 +109,11 @@
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_DiscreteSpace_1__ctor_System_Double_IEnumerable__0__Func__0_IEnumerable_SearchAThing_Vector3D___System_Int32_.md&amp;value=---%0Auid%3A%20SearchAThing.DiscreteSpace%601.%23ctor(System.Double%2CIEnumerable%7B%600%7D%2CFunc%7B%600%2CIEnumerable%7BSearchAThing.Vector3D%7D%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/DiscreteSpace.cs/#L83">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/DiscreteSpace.cs/#L90">View Source</a>
   </span>
   <a id="SearchAThing_DiscreteSpace_1__ctor_" data-uid="SearchAThing.DiscreteSpace`1.#ctor*"></a>
   <h4 id="SearchAThing_DiscreteSpace_1__ctor_System_Double_IEnumerable__0__Func__0_IEnumerable_SearchAThing_Vector3D___System_Int32_" data-uid="SearchAThing.DiscreteSpace`1.#ctor(System.Double,IEnumerable{`0},Func{`0,IEnumerable{SearchAThing.Vector3D}},System.Int32)">DiscreteSpace(Double, IEnumerable&lt;T&gt;, Func&lt;T, IEnumerable&lt;Vector3D&gt;&gt;, Int32)</h4>
-  <div class="markdown level1 summary"><p>Build a discrete space to search within GetItemsAt.
-spaceDim need to equals 3 when using vector in 3d</p>
+  <div class="markdown level1 summary"><p>Build discrete space</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -134,22 +133,26 @@ spaceDim need to equals 3 when using vector in 3d</p>
       <tr>
         <td><span class="xref">System.Double</span></td>
         <td><span class="parametername">_tol</span></td>
-        <td></td>
+        <td><p>length tolerance</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
         <td><span class="parametername">ents</span></td>
-        <td></td>
+        <td><p>list of entities to discretize</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Func</span>&lt;T, <span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a>&gt;&gt;</td>
         <td><span class="parametername">entPoints</span></td>
-        <td></td>
+        <td><p>function that retrieve relevant points from templated item</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">_spaceDim</span></td>
-        <td></td>
+        <td><p>search space dimension (2=2D 3=3D)</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -158,12 +161,11 @@ spaceDim need to equals 3 when using vector in 3d</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_DiscreteSpace_1__ctor_System_Double_IEnumerable__0__Func__0_SearchAThing_Vector3D__System_Int32_.md&amp;value=---%0Auid%3A%20SearchAThing.DiscreteSpace%601.%23ctor(System.Double%2CIEnumerable%7B%600%7D%2CFunc%7B%600%2CSearchAThing.Vector3D%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/DiscreteSpace.cs/#L92">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/DiscreteSpace.cs/#L105">View Source</a>
   </span>
   <a id="SearchAThing_DiscreteSpace_1__ctor_" data-uid="SearchAThing.DiscreteSpace`1.#ctor*"></a>
   <h4 id="SearchAThing_DiscreteSpace_1__ctor_System_Double_IEnumerable__0__Func__0_SearchAThing_Vector3D__System_Int32_" data-uid="SearchAThing.DiscreteSpace`1.#ctor(System.Double,IEnumerable{`0},Func{`0,SearchAThing.Vector3D},System.Int32)">DiscreteSpace(Double, IEnumerable&lt;T&gt;, Func&lt;T, Vector3D&gt;, Int32)</h4>
-  <div class="markdown level1 summary"><p>Build a discrete space to search within GetItemsAt.
-spaceDim need to equals 3 when using vector in 3d</p>
+  <div class="markdown level1 summary"><p>Build discrete space</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -183,12 +185,14 @@ spaceDim need to equals 3 when using vector in 3d</p>
       <tr>
         <td><span class="xref">System.Double</span></td>
         <td><span class="parametername">_tol</span></td>
-        <td></td>
+        <td><p>length tolerance</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
         <td><span class="parametername">ents</span></td>
-        <td></td>
+        <td><p>list of entities to discretize</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Func</span>&lt;T, <a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a>&gt;</td>
@@ -198,7 +202,8 @@ spaceDim need to equals 3 when using vector in 3d</p>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">_spaceDim</span></td>
-        <td></td>
+        <td><p>search space dimension (2=2D 3=3D)</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -209,7 +214,7 @@ spaceDim need to equals 3 when using vector in 3d</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_DiscreteSpace_1_GetItemsAt_SearchAThing_Vector3D_System_Double_.md&amp;value=---%0Auid%3A%20SearchAThing.DiscreteSpace%601.GetItemsAt(SearchAThing.Vector3D%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/DiscreteSpace.cs/#L126">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/DiscreteSpace.cs/#L268">View Source</a>
   </span>
   <a id="SearchAThing_DiscreteSpace_1_GetItemsAt_" data-uid="SearchAThing.DiscreteSpace`1.GetItemsAt*"></a>
   <h4 id="SearchAThing_DiscreteSpace_1_GetItemsAt_SearchAThing_Vector3D_System_Double_" data-uid="SearchAThing.DiscreteSpace`1.GetItemsAt(SearchAThing.Vector3D,System.Double)">GetItemsAt(Vector3D, Double)</h4>
@@ -233,11 +238,180 @@ spaceDim need to equals 3 when using vector in 3d</p>
       <tr>
         <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
         <td><span class="parametername">pt</span></td>
-        <td></td>
+        <td><p>point to query elements near</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Double</span></td>
         <td><span class="parametername">maxDist</span></td>
+        <td><p>distance from the given pt to include queried items</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
+        <td><p>list of items belonging to sphere centered at pt given radius equals to given maxDist</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_DiscreteSpace_1_GetItemsAtBySubdiv_SearchAThing_Vector3D_SearchAThing_BBox3D_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20SearchAThing.DiscreteSpace%601.GetItemsAtBySubdiv(SearchAThing.Vector3D%2CSearchAThing.BBox3D%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/DiscreteSpace.cs/#L200">View Source</a>
+  </span>
+  <a id="SearchAThing_DiscreteSpace_1_GetItemsAtBySubdiv_" data-uid="SearchAThing.DiscreteSpace`1.GetItemsAtBySubdiv*"></a>
+  <h4 id="SearchAThing_DiscreteSpace_1_GetItemsAtBySubdiv_SearchAThing_Vector3D_SearchAThing_BBox3D_System_Int32_System_Int32_" data-uid="SearchAThing.DiscreteSpace`1.GetItemsAtBySubdiv(SearchAThing.Vector3D,SearchAThing.BBox3D,System.Int32,System.Int32)">GetItemsAtBySubdiv(Vector3D, BBox3D, Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;T&gt; GetItemsAtBySubdiv(Vector3D pt, BBox3D bbox, int maxRes = 1, int subDivs = 100)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">pt</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.BBox3D.html">BBox3D</a></td>
+        <td><span class="parametername">bbox</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxRes</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">subDivs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_DiscreteSpace_1_GetItemsInBBox_SearchAThing_BBox3D_.md&amp;value=---%0Auid%3A%20SearchAThing.DiscreteSpace%601.GetItemsInBBox(SearchAThing.BBox3D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/DiscreteSpace.cs/#L285">View Source</a>
+  </span>
+  <a id="SearchAThing_DiscreteSpace_1_GetItemsInBBox_" data-uid="SearchAThing.DiscreteSpace`1.GetItemsInBBox*"></a>
+  <h4 id="SearchAThing_DiscreteSpace_1_GetItemsInBBox_SearchAThing_BBox3D_" data-uid="SearchAThing.DiscreteSpace`1.GetItemsInBBox(SearchAThing.BBox3D)">GetItemsInBBox(BBox3D)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;T&gt; GetItemsInBBox(BBox3D bbox)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.BBox3D.html">BBox3D</a></td>
+        <td><span class="parametername">bbox</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_DiscreteSpace_1_Search_SearchAThing_Vector3D_SearchAThing_Vector3D_System_Int32_.md&amp;value=---%0Auid%3A%20SearchAThing.DiscreteSpace%601.Search(SearchAThing.Vector3D%2CSearchAThing.Vector3D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/DiscreteSpace.cs/#L160">View Source</a>
+  </span>
+  <a id="SearchAThing_DiscreteSpace_1_Search_" data-uid="SearchAThing.DiscreteSpace`1.Search*"></a>
+  <h4 id="SearchAThing_DiscreteSpace_1_Search_SearchAThing_Vector3D_SearchAThing_Vector3D_System_Int32_" data-uid="SearchAThing.DiscreteSpace`1.Search(SearchAThing.Vector3D,SearchAThing.Vector3D,System.Int32)">Search(Vector3D, Vector3D, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;T&gt; Search(Vector3D from, Vector3D to, int maxCnt = 10)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">from</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">to</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxCnt</span></td>
         <td></td>
       </tr>
     </tbody>
