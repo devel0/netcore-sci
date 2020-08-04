@@ -872,12 +872,12 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Circle3D.DxfEntity
   nameWithType: Circle3D.DxfEntity
-- uid: SearchAThing.Circle3D.InscribedPolygon(System.Int32)
-  name: InscribedPolygon(Int32)
-  href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_InscribedPolygon_System_Int32_
-  commentId: M:SearchAThing.Circle3D.InscribedPolygon(System.Int32)
-  fullName: SearchAThing.Circle3D.InscribedPolygon(System.Int32)
-  nameWithType: Circle3D.InscribedPolygon(Int32)
+- uid: SearchAThing.Circle3D.InscribedPolygon(System.Double,System.Int32)
+  name: InscribedPolygon(Double, Int32)
+  href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_InscribedPolygon_System_Double_System_Int32_
+  commentId: M:SearchAThing.Circle3D.InscribedPolygon(System.Double,System.Int32)
+  fullName: SearchAThing.Circle3D.InscribedPolygon(System.Double, System.Int32)
+  nameWithType: Circle3D.InscribedPolygon(Double, Int32)
 - uid: SearchAThing.Circle3D.InscribedPolygon*
   name: InscribedPolygon
   href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_InscribedPolygon_
