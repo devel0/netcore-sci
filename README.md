@@ -22,11 +22,9 @@
 
 ## Recent changes
 
+- **1.9.1** : netcore-util 1.6.2
 - **1.9.0** : reworked some Vector3D to-from Vector2 ( dxf and system.numerics ) conversion method and implicit operators
-
 - **1.8.0** : moved gui to [netcore-desktop](https://github.com/devel0/netcore-desktop) and [netcore-opengl](https://github.com/devel0/netcore-opengl) separate packages ; added some bbox3d ext methods ; added plane3dregion ; added some method to create line starting from 3dpoint
-
-- **1.7.0** : fix avalonia X11 crash on Linux when together Silk.NET (use nuget.config pkgs)
 
 ## Examples
 

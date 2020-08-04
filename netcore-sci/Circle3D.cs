@@ -47,7 +47,7 @@ namespace SearchAThing
             Contains(tol, pt, inArcAngleRange: false, onlyPerimeter: onlyPerimeter);
 
         /// <summary>
-        /// creates circle inscribed polygon.        
+        /// creates circle inscribed polygon and retrieve vertexes ( it does not check if returned last pt equals to the first one )
         /// </summary>
         /// <param name="segmentCount">count of inscribed polygon segments ( must at least 3; default is 360 )</param>
         /// <returns>coordinates of polygon vertices</returns>
@@ -64,7 +64,7 @@ namespace SearchAThing
 
             yield return origPt.ToWCS(CS);
 
-            alpha += alpha_step;
+            alpha += alpha_step;                        
 
             while (alpha < alpha_stop)
             {

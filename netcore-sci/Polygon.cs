@@ -12,6 +12,14 @@ namespace SearchAThing
     public static class Polygon
     {
 
+        /// <summary>
+        /// create an approximation of ellipse
+        /// </summary>
+        /// <param name="center">center of ellipse</param>
+        /// <param name="width">width of ellipse</param>
+        /// <param name="height">height of ellipse</param>
+        /// <param name="flatness">maximum error of approximation</param>
+        /// <returns>vertexes of approximated ellipse (including last=first)</returns>
         public static IEnumerable<Vector3D> EllipseToPolygon2D(Vector3D center, double width, double height, double flatness = .1)
         {
             var _center = Vector3D.Zero;
