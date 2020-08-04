@@ -47,10 +47,10 @@ namespace SearchAThing
             Contains(tol, pt, inArcAngleRange: false, onlyPerimeter: onlyPerimeter);
 
         /// <summary>
-        /// creates circle inscribed polygon and retrieve vertexes ( it does not check if returned last pt equals to the first one )
+        /// creates circle inscribed polygon and retrieve vertexes ( last != first )
         /// </summary>
         /// <param name="segmentCount">count of inscribed polygon segments ( must at least 3; default is 360 )</param>
-        /// <returns>coordinates of polygon vertices</returns>
+        /// <returns>coordinates of polygon vertices ( last != first )</returns>
         public IEnumerable<Vector3D> InscribedPolygon(int segmentCount = 360)
         {
             if (segmentCount < 3) throw new Exception($"segmentCount must >= 3");
