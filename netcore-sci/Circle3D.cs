@@ -47,11 +47,12 @@ namespace SearchAThing
             Contains(tol, pt, inArcAngleRange: false, onlyPerimeter: onlyPerimeter);
 
         /// <summary>
-        /// creates circle inscribed polygon and retrieve vertexes ( last != first )
+        /// creates circle inscribed polygon and retrieve vertexes ( last == first )
         /// </summary>
+        /// <param name="tolLen">length tolerance</param>
         /// <param name="segmentCount">count of inscribed polygon segments ( must at least 3; default is 360 )</param>
-        /// <returns>coordinates of polygon vertices ( last != first )</returns>
-        public IEnumerable<Vector3D> InscribedPolygon(int segmentCount = 360)
+        /// <returns>coordinates of polygon vertices ( last == first )</returns>
+        public IEnumerable<Vector3D> InscribedPolygon(double tolLen, int segmentCount = 360)
         {
             if (segmentCount < 3) throw new Exception($"segmentCount must >= 3");
 
@@ -61,14 +62,17 @@ namespace SearchAThing
 
             var origPt = new Vector3D(Radius, 0);
             Vector3D prevPt = origPt;
+            Vector3D firstPt = origPt.ToWCS(CS);
 
-            yield return origPt.ToWCS(CS);
+            yield return firstPt;
 
-            alpha += alpha_step;                        
+            alpha += alpha_step;    
+
+            Vector3D nextPt = null;                    
 
             while (alpha < alpha_stop)
             {
-                var nextPt = origPt.RotateAboutZAxis(alpha);
+                nextPt = origPt.RotateAboutZAxis(alpha);
 
                 yield return nextPt.ToWCS(CS);
 
@@ -76,6 +80,8 @@ namespace SearchAThing
 
                 alpha += alpha_step;
             }
+
+            if (!nextPt.EqualsTol(tolLen, origPt)) yield return firstPt;
         }
 
         /// <summary>
