@@ -152,9 +152,9 @@ namespace SearchAThing
 
         /// <summary>
         /// Construct a right-hand coordinate system with the given origin and bases such as:
-        /// BaseX = v1
-        /// BaseZ = v1 x BaseY
-        /// BaseY = BaseZ x BaseX
+        /// BaseX = Normalized(v1)
+        /// BaseZ = Normalized(v1 x BaseY)
+        /// BaseY = Normalized(BaseZ x BaseX)
         /// </summary>        
         public CoordinateSystem3D(Vector3D o, Vector3D v1, Vector3D v2)
         {

@@ -146,9 +146,9 @@ depending on csAutoType one or another arbitrary axis alghoritm will used to bui
   <a id="SearchAThing_CoordinateSystem3D__ctor_" data-uid="SearchAThing.CoordinateSystem3D.#ctor*"></a>
   <h4 id="SearchAThing_CoordinateSystem3D__ctor_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_Vector3D_" data-uid="SearchAThing.CoordinateSystem3D.#ctor(SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.Vector3D)">CoordinateSystem3D(Vector3D, Vector3D, Vector3D)</h4>
   <div class="markdown level1 summary"><p>Construct a right-hand coordinate system with the given origin and bases such as:
-BaseX = v1
-BaseZ = v1 x BaseY
-BaseY = BaseZ x BaseX</p>
+BaseX = Normalized(v1)
+BaseZ = Normalized(v1 x BaseY)
+BaseY = Normalized(BaseZ x BaseX)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
