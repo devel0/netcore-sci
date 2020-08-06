@@ -718,6 +718,12 @@ references:
   isSpec: "True"
   fullName: SearchAThing.BBox3D.Points
   nameWithType: BBox3D.Points
+- uid: SearchAThing.BBox3D.Scale(SearchAThing.Vector3D)
+  name: Scale(Vector3D)
+  href: api/SearchAThing.BBox3D.html#SearchAThing_BBox3D_Scale_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.BBox3D.Scale(SearchAThing.Vector3D)
+  fullName: SearchAThing.BBox3D.Scale(SearchAThing.Vector3D)
+  nameWithType: BBox3D.Scale(Vector3D)
 - uid: SearchAThing.BBox3D.Scale(System.Double)
   name: Scale(Double)
   href: api/SearchAThing.BBox3D.html#SearchAThing_BBox3D_Scale_System_Double_
@@ -6412,19 +6418,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.MinMax
   nameWithType: SciExt.MinMax
-- uid: SearchAThing.SciExt.NormalizeAngle2PI(System.Double,System.Double)
-  name: NormalizeAngle2PI(Double, Double)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_NormalizeAngle2PI_System_Double_System_Double_
-  commentId: M:SearchAThing.SciExt.NormalizeAngle2PI(System.Double,System.Double)
-  fullName: SearchAThing.SciExt.NormalizeAngle2PI(System.Double, System.Double)
-  nameWithType: SciExt.NormalizeAngle2PI(Double, Double)
-- uid: SearchAThing.SciExt.NormalizeAngle2PI*
-  name: NormalizeAngle2PI
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_NormalizeAngle2PI_
-  commentId: Overload:SearchAThing.SciExt.NormalizeAngle2PI
+- uid: SearchAThing.SciExt.NormalizeAngle(System.Double,System.Double,System.Double)
+  name: NormalizeAngle(Double, Double, Double)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_NormalizeAngle_System_Double_System_Double_System_Double_
+  commentId: M:SearchAThing.SciExt.NormalizeAngle(System.Double,System.Double,System.Double)
+  fullName: SearchAThing.SciExt.NormalizeAngle(System.Double, System.Double, System.Double)
+  nameWithType: SciExt.NormalizeAngle(Double, Double, Double)
+- uid: SearchAThing.SciExt.NormalizeAngle*
+  name: NormalizeAngle
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_NormalizeAngle_
+  commentId: Overload:SearchAThing.SciExt.NormalizeAngle
   isSpec: "True"
-  fullName: SearchAThing.SciExt.NormalizeAngle2PI
-  nameWithType: SciExt.NormalizeAngle2PI
+  fullName: SearchAThing.SciExt.NormalizeAngle
+  nameWithType: SciExt.NormalizeAngle
 - uid: SearchAThing.SciExt.Offset(IReadOnlyList{SearchAThing.Vector3D},System.Double,System.Double)
   name: Offset(IReadOnlyList<Vector3D>, Double, Double)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Offset_IReadOnlyList_SearchAThing_Vector3D__System_Double_System_Double_

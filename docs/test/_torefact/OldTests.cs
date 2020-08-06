@@ -841,7 +841,7 @@ namespace SearchAThing.Sci.Tests
         [Fact(DisplayName = "NumberTest")]
         void NumberTest()
         {
-            Assert.True((3.1415926535897931).NormalizeAngle2PI(1e-12) == (3.1415926535897931));
+            Assert.True((3.1415926535897931).NormalizeAngle(1e-12) == (3.1415926535897931));            
         }
 
         [Fact(DisplayName = "PolyBool")]
