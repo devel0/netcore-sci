@@ -2,4 +2,8 @@
   href: articles/
 - name: Api Documentation
   href: api/
+- name: Extension methods
+  href: api/SearchAThing.SciExt.html
+- name: Toolkit methods
+  href: api/SearchAThing.SciToolkit.html
   homepage: api/index.md
