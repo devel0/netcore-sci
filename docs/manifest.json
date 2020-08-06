@@ -15,7 +15,7 @@
           "hash": "FqEqXyWMYoXXmdPLwxp4UQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -51,7 +51,7 @@
           "hash": "WRoW1VL2NEicFO3BKSb5Sw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -834,7 +834,7 @@
           "hash": "gaj22Hp8kdBvQ+tsiMWAng=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1014,7 +1014,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "LuN8CXHL+FegII3zB3wAgg=="
+          "hash": "/1C5Zja+99J87AtyTogAuQ=="
         }
       },
       "is_incremental": false,
@@ -1040,7 +1040,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 76,
-          "skipped_file_count": 74
+          "skipped_file_count": 76
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
