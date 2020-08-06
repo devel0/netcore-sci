@@ -122,6 +122,22 @@ namespace SearchAThing
         }
 
         /// <summary>
+        /// scale all bbox points Min,Max respect to the center
+        /// </summary>
+        /// <param name="factor">scale factor</param>        
+        /// <returns>new bbox scaled</returns>
+        public BBox3D Scale(Vector3D factor)
+        {
+            var center = (Min + Max) / 2;
+
+            return new BBox3D(new Vector3D[]
+            {
+                Min.ScaleAbout(center, factor),
+                Max.ScaleAbout(center, factor)
+            });
+        }
+
+        /// <summary>
         /// construct bbox with given points
         /// </summary>
         /// <param name="pts">points to add to the bbox</param>
@@ -411,7 +427,7 @@ namespace SearchAThing
                 if (ip != null && face.Contains(tol, ip)) yield return ip;
             }
         }
-        
+
         /// <summary>
         /// stringify bbox as Min-Max
         /// </summary>
