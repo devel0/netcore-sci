@@ -41,8 +41,8 @@ namespace SearchAThing
             base(GeometryType.Arc3D)
         {
             tol_rad = tol_len.RadTol(r);
-            AngleStart = angleRadStart.NormalizeAngle2PI(tol_rad);
-            AngleEnd = angleRadEnd.NormalizeAngle2PI(tol_rad);
+            AngleStart = angleRadStart.NormalizeAngle(tol_rad);
+            AngleEnd = angleRadEnd.NormalizeAngle(tol_rad);
             CS = cs;
             Radius = r;
         }
@@ -119,8 +119,8 @@ namespace SearchAThing
             }
 
             tol_rad = tol_len.RadTol(Radius);
-            AngleStart = CS.BaseX.AngleToward(tol_len, p1 - CS.Origin, CS.BaseZ).NormalizeAngle2PI(tol_rad);
-            AngleEnd = CS.BaseX.AngleToward(tol_len, p3 - CS.Origin, CS.BaseZ).NormalizeAngle2PI(tol_rad);
+            AngleStart = CS.BaseX.AngleToward(tol_len, p1 - CS.Origin, CS.BaseZ).NormalizeAngle(tol_rad);
+            AngleEnd = CS.BaseX.AngleToward(tol_len, p3 - CS.Origin, CS.BaseZ).NormalizeAngle(tol_rad);
         }
 
         /// <summary>
@@ -564,7 +564,7 @@ namespace SearchAThing
             foreach (var splitPt in splitPts.Select(pt => PtAngle(tol_len, pt)))
             {
                 if (PtAtAngle(splitPt).EqualsTol(tol_len, From) || PtAtAngle(splitPt).EqualsTol(tol_len, To)) continue;
-                hs_angles_rad.Add(splitPt.NormalizeAngle2PI(tol_rad));
+                hs_angles_rad.Add(splitPt.NormalizeAngle(tol_rad));
             }
 
             var angles_rad = hs_angles_rad.OrderBy(w => w).ToList();
@@ -584,7 +584,7 @@ namespace SearchAThing
     {
 
         /// <summary>
-        /// compute angle rad tolerance by given arc length tolerance
+        /// compute angle rad tolerance by given arc length tolerance as (lenTol / radius)
         /// </summary>
         /// <param name="lenTol">length tolerance on the arc</param>
         /// <param name="radius">radius of the arc</param>
@@ -608,9 +608,9 @@ namespace SearchAThing
         public static bool AngleInRange(this double pt_angle, double tol_rad,
             double angle_from, double angle_to)
         {
-            pt_angle = pt_angle.NormalizeAngle2PI(tol_rad);
-            angle_from = angle_from.NormalizeAngle2PI(tol_rad);
-            angle_to = angle_to.NormalizeAngle2PI(tol_rad);
+            pt_angle = pt_angle.NormalizeAngle(tol_rad);
+            angle_from = angle_from.NormalizeAngle(tol_rad);
+            angle_to = angle_to.NormalizeAngle(tol_rad);
 
             if (angle_from.GreatThanTol(tol_rad, angle_to))
             {

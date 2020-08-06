@@ -212,12 +212,18 @@ namespace SearchAThing.Sci.Tests
             Assert.True(c.AngleStart.ToDeg().EqualsTol(degTol, 0));
             Assert.True(c.AngleEnd.ToDeg().EqualsTol(degTol, 154.14));
 
+            Assert.True(c.Contains(1e-3, p1, onlyPerimeter: true));
+            Assert.True(c.Contains(1e-3, p2, onlyPerimeter: true));
+            Assert.True(c.Contains(1e-3, p3, onlyPerimeter: true));
+
             var moveVector = new Vector3D(-1998.843, -6050.954, -1980.059);
             var cmoved = c.Move(1e-3, moveVector);
 
             var p1moved = p1 + moveVector;
             var p2moved = p2 + moveVector;
             var p3moved = p3 + moveVector;
+
+            
 
             Assert.True(cmoved.Contains(1e-3, p1moved, onlyPerimeter: true));
             Assert.True(cmoved.Contains(1e-3, p2moved, onlyPerimeter: true));
