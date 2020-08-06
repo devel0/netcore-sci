@@ -66,9 +66,9 @@ namespace SearchAThing
 
             yield return firstPt;
 
-            alpha += alpha_step;    
+            alpha += alpha_step;
 
-            Vector3D nextPt = null;                    
+            Vector3D nextPt = null;
 
             while (alpha < alpha_stop)
             {
@@ -80,6 +80,8 @@ namespace SearchAThing
 
                 alpha += alpha_step;
             }
+
+            if (nextPt == null) yield break;
 
             if (!nextPt.EqualsTol(tolLen, origPt)) yield return firstPt;
         }
