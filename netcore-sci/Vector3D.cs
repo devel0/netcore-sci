@@ -1622,7 +1622,7 @@ namespace SearchAThing
         /// </summary>            
         /// <returns>true if given vector are linearly independent</returns>
         /// <remarks>
-        /// [unit test](../test/Vector3D/Vector3DTest_0001.cs)
+        /// [unit test](https://github.com/devel0/netcore-sci/blob/a274851c6a36c26528e27fc6fb8c811a2beabd00/test/Vector3D/Vector3DTest_0001.cs#L13)
         /// </remarks>
         public static bool IsLinearIndependent(this IEnumerable<Vector3D> vectors)
         {
