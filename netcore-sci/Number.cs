@@ -77,8 +77,8 @@ namespace SearchAThing
         {
             if (normalizeAngles)
             {
-                angleFrom = angleFrom.NormalizeAngle2PI(tol_rad);
-                angleTo = angleTo.NormalizeAngle2PI(tol_rad);
+                angleFrom = angleFrom.NormalizeAngle(tol_rad);
+                angleTo = angleTo.NormalizeAngle(tol_rad);
             }
 
             if (angleFrom > angleTo)
@@ -87,16 +87,34 @@ namespace SearchAThing
                 return angleTo - angleFrom;
         }
 
+
         /// <summary>
-        /// ensure given angle in [0,2*PI] range
-        /// </summary>        
-        public static double NormalizeAngle2PI(this double angle_rad, double tol_rad)
+        /// Normalize given angle(rad) into [maxRad-2PI,maxRad) range.
+        /// </summary>
+        /// <param name="angle_rad">angle(rad) to normalize</param>
+        /// <param name="tol_rad">tolerance over rad</param>
+        /// <param name="maxRadExcluded">normalization range (excluded) max value ( minimum will computed as max-2PI )</param>
+        /// <returns>angle normalized</returns>
+        /// <remarks>
+        /// [unit test](../test/Number/NumberTest_0003.cs)
+        /// </remarks>
+        public static double NormalizeAngle(this double angle_rad, double tol_rad, double maxRadExcluded = 2 * PI)
         {
+            if (angle_rad.GreatThanOrEqualsTol(tol_rad, maxRadExcluded - 2 * PI) &&
+                angle_rad.LessThanTol(tol_rad, maxRadExcluded))
+                return angle_rad;
+
             var n = (int)(angle_rad / (2 * PI)).MRound(tol_rad);
 
             var excess = (n != 0) ? (n.Sign() * 2 * PI) : 0;
 
-            return angle_rad - excess;
+            var res = (angle_rad - excess).MRound(tol_rad);
+
+            if (res < 0) res += 2 * PI;
+
+            if (res >= maxRadExcluded) res = -2 * PI + res;
+
+            return res;
         }
 
         /// <summary>
@@ -252,7 +270,7 @@ namespace SearchAThing
         /// <param name="y">second number</param>
         /// <returns>similarity factor</returns>
         public static double Similarity(this double x, double y)
-        {            
+        {
             if (x == 0 && y == 0) return 0;
             if ((x == 0 && y != 0) || (x != 0 && y == 0)) return Max(Abs(x), Abs(y)) / 2;
             if (Sign(x) != Sign(y)) return new[] { x, y }.StandardDeviationP();
