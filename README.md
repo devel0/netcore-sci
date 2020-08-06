@@ -22,9 +22,9 @@
 
 ## Recent changes
 
+- **1.11.0** : renamed NormalizeAngle2PI to NormalizeAngle ; added unit tests ; added bbox3d scale using vector3
 - **1.10.0** : *brk* changed signature of InscribedPolygon
 - **1.9.1** : netcore-util 1.6.2
-- **1.9.0** : reworked some Vector3D to-from Vector2 ( dxf and system.numerics ) conversion method and implicit operators
 
 ## Examples
 
