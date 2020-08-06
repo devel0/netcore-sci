@@ -11,7 +11,7 @@ namespace SearchAThing
     /// - http://www.ncsa.illinois.edu/People/kindr/emtc/quaternions/
     /// </summary>
     /// <remarks>      
-    /// [unit test](../test/Transform3D/Transform3DTest_0001.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Transform3D/Transform3DTest_0001.cs)
     /// </remarks>
     public class Quaternion
     {

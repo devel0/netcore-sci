@@ -191,7 +191,7 @@ namespace SearchAThing
         /// </summary>
         /// <param name="factor">factor to scale this segment</param>
         /// <returns>scaled segment</returns>
-        /// <remarks>[unit test](../test/Line3D/Line3DTest_0001.cs)</remarks>
+        /// <remarks>[unit test](https://github.com/devel0/netcore-sci/tree/master/test/Line3D/Line3DTest_0001.cs)</remarks>
         public Line3D Scale(double factor) => Scale(this.MidPoint, factor);
 
         #region operators
@@ -355,7 +355,7 @@ namespace SearchAThing
         /// </summary>             
         /// <param name="other">other 3d line</param>      
         /// <remarks>      
-        /// [unit test](../test/Line3D/Line3DTest_0001.cs)
+        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Line3D/Line3DTest_0001.cs)
         /// ![image](../test/Line3D/Line3DTest_0001.png)
         /// </remarks>
         public Line3D ApparentIntersect(Line3D other)

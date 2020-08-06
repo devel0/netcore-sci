@@ -96,7 +96,7 @@ namespace SearchAThing
         /// <param name="maxRadExcluded">normalization range (excluded) max value ( minimum will computed as max-2PI )</param>
         /// <returns>angle normalized</returns>
         /// <remarks>
-        /// [unit test](../test/Number/NumberTest_0003.cs)
+        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Number/NumberTest_0003.cs)
         /// </remarks>
         public static double NormalizeAngle(this double angle_rad, double tol_rad, double maxRadExcluded = 2 * PI)
         {

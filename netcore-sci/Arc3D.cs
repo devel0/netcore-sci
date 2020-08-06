@@ -490,7 +490,7 @@ namespace SearchAThing
         /// <param name="only_perimeter">if false it will check in the arc area too, otherwise only on arc perimeter</param>
         /// <returns>sample</returns>
         /// <remarks>            
-        /// [unit test](../test/Arc3D/Arc3DTest_0001.cs)
+        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Arc3D/Arc3DTest_0001.cs)
         /// ![image](../test/Arc3D/Arc3DTest_0001.png)
         /// </remarks>            
         public IEnumerable<Vector3D> Intersect(double tol, CoordinateSystem3D cs,
