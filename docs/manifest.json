@@ -831,10 +831,10 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.SciExt.html",
-          "hash": "gaj22Hp8kdBvQ+tsiMWAng=="
+          "hash": "V5wIq7AQApYk7IaWz1jlXQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -924,7 +924,7 @@
           "hash": "6hAZKKcDCEQMgH3K/6pz7g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -936,7 +936,7 @@
           "hash": "pGOATxJbTm8m32YxF0kEuA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -960,7 +960,7 @@
           "hash": "tjfzX5OqziEPgwYTs3P81Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -999,7 +999,7 @@
           "hash": "9YrFeTgZobxpZll+y7tScA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1031,13 +1031,13 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 4,
-          "skipped_file_count": 2
+          "skipped_file_count": 4
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 76,
-          "skipped_file_count": 76
+          "skipped_file_count": 75
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

@@ -4053,19 +4053,18 @@ if arc found a segment between endpoints returns</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_SciExt_Similarity_System_Double_System_Double_.md&amp;value=---%0Auid%3A%20SearchAThing.SciExt.Similarity(System.Double%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Number.cs/#L272">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Number.cs/#L258">View Source</a>
   </span>
   <a id="SearchAThing_SciExt_Similarity_" data-uid="SearchAThing.SciExt.Similarity*"></a>
   <h4 id="SearchAThing_SciExt_Similarity_System_Double_System_Double_" data-uid="SearchAThing.SciExt.Similarity(System.Double,System.Double)">Similarity(Double, Double)</h4>
-  <div class="markdown level1 summary"><p>Measure percent difference between given two numbers;
-return double.NaN if only one of two numbers are 0;
-0 if both two given numbers are 0.</p>
-<p>Given f = PercentDifference(x, y)
-m = Min(x, y)
-M = Max(x, y)<br>
-a = Min(Abs(x), Abs(y))</p>
-<p>returned value f satisfy follow condition<br>
-M(m, a, f) = m + a * f</p>
+  <div class="markdown level1 summary"><p>Test two numbers for similarity; the factor
+of similarity f = (max(x,y)-min(x,y)) / min(abs(x), abs(y)).
+Special cases:</p>
+<ul>
+<li>if x=y=0 returns 0</li>
+<li>if x=0 xor y=0 returns max(abs(x),abs(y)))/2</li>
+<li>if sign(x) != sign(y) returns StDevP(x,y)</li>
+</ul>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -4310,7 +4309,7 @@ It will not check for segment versus adjancency</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_SciExt_StatNfos_IEnumerable_System_Double__.md&amp;value=---%0Auid%3A%20SearchAThing.SciExt.StatNfos(IEnumerable%7BSystem.Double%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Number.cs/#L291">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Number.cs/#L277">View Source</a>
   </span>
   <a id="SearchAThing_SciExt_StatNfos_" data-uid="SearchAThing.SciExt.StatNfos*"></a>
   <h4 id="SearchAThing_SciExt_StatNfos_IEnumerable_System_Double__" data-uid="SearchAThing.SciExt.StatNfos(IEnumerable{System.Double})">StatNfos(IEnumerable&lt;Double&gt;)</h4>
