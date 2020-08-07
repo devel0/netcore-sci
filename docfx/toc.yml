@@ -6,3 +6,5 @@
   href: api/SearchAThing.SciExt.html
 - name: Toolkit methods
   href: api/SearchAThing.SciToolkit.html
+- name: Sources
+  href: https://github.com/devel0/netcore-sci
