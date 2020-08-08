@@ -1649,6 +1649,20 @@ namespace SearchAThing
             return !m.Determinant().EqualsAutoTol(0);
         }
 
+        /// <summary>
+        /// convert xyz from deg to rad
+        /// </summary>
+        /// <param name="v">xyz deg angles</param>
+        /// <returns>xyz rad angles</returns>
+        public static Vector3D ToRad(this Vector3D v) => new Vector3D(v.X.ToRad(), v.Y.ToRad(), v.Z.ToRad());
+
+        /// <summary>
+        /// convert xyz from rad to deg
+        /// </summary>
+        /// <param name="v">xyz rad angles</param>
+        /// <returns>xyz deg angles</returns>
+        public static Vector3D ToDeg(this Vector3D v) => new Vector3D(v.X.ToDeg(), v.Y.ToDeg(), v.Z.ToDeg());
+
     }
 
 }
