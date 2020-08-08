@@ -1,6 +1,7 @@
 using System;
 using System.Numerics;
 using System.Text;
+using static System.Math;
 
 namespace SearchAThing
 {
@@ -105,6 +106,34 @@ namespace SearchAThing
             sb.AppendFormat(fmt, m.M44); sb.AppendLine();
 
             return sb.ToString();
+        }
+
+        /// <summary>
+        /// extract xyz rotation angles from given rotation matrix.
+        /// Reference: [Extracting Euler Angles from a Rotation Matrix](https://pdfs.semanticscholar.org/6681/37fa4b875d890f446e689eea1e334bcf6bf6.pdf) by Mike Day
+        /// </summary>
+        /// <param name="rotation">rotation matrix</param>
+        /// <returns>Vector3 with rotation angles(rad) around wcs xyz axes</returns>
+        /// <remarks>      
+        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Matrix4x4/Matrix4x4Test_0001.cs)
+        /// </remarks>
+        public static Vector3 ToEulerAngles(this Matrix4x4 rotation)
+        {
+            var m = rotation;
+
+            // xangle
+            var x = (float)Atan2(m.M23, m.M33);
+
+            // yangle
+            var c2 = Sqrt(m.M11 * m.M11 + m.M12 * m.M12);
+            var y = (float)Atan2(-m.M13, c2);
+
+            // zangle
+            var s1 = Sin(x);
+            var c1 = Cos(x);
+            var z = (float)Atan2(s1 * m.M31 - c1 * m.M21, c1 * m.M22 - s1 * m.M32);
+
+            return new Vector3(x, y, z);
         }
 
     }
