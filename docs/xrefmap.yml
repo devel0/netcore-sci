@@ -1454,6 +1454,83 @@ references:
   isSpec: "True"
   fullName: SearchAThing.DoubleEqualityComparer.GetHashCode
   nameWithType: DoubleEqualityComparer.GetHashCode
+- uid: SearchAThing.DQuaternion
+  name: DQuaternion
+  href: api/SearchAThing.DQuaternion.html
+  commentId: T:SearchAThing.DQuaternion
+  fullName: SearchAThing.DQuaternion
+  nameWithType: DQuaternion
+- uid: SearchAThing.DQuaternion.#ctor(SearchAThing.Vector3D,System.Double)
+  name: DQuaternion(Vector3D, Double)
+  href: api/SearchAThing.DQuaternion.html#SearchAThing_DQuaternion__ctor_SearchAThing_Vector3D_System_Double_
+  commentId: M:SearchAThing.DQuaternion.#ctor(SearchAThing.Vector3D,System.Double)
+  fullName: SearchAThing.DQuaternion.DQuaternion(SearchAThing.Vector3D, System.Double)
+  nameWithType: DQuaternion.DQuaternion(Vector3D, Double)
+- uid: SearchAThing.DQuaternion.#ctor(System.Double,SearchAThing.Vector3D)
+  name: DQuaternion(Double, Vector3D)
+  href: api/SearchAThing.DQuaternion.html#SearchAThing_DQuaternion__ctor_System_Double_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.DQuaternion.#ctor(System.Double,SearchAThing.Vector3D)
+  fullName: SearchAThing.DQuaternion.DQuaternion(System.Double, SearchAThing.Vector3D)
+  nameWithType: DQuaternion.DQuaternion(Double, Vector3D)
+- uid: SearchAThing.DQuaternion.#ctor*
+  name: DQuaternion
+  href: api/SearchAThing.DQuaternion.html#SearchAThing_DQuaternion__ctor_
+  commentId: Overload:SearchAThing.DQuaternion.#ctor
+  isSpec: "True"
+  fullName: SearchAThing.DQuaternion.DQuaternion
+  nameWithType: DQuaternion.DQuaternion
+- uid: SearchAThing.DQuaternion.Conjugate
+  name: Conjugate()
+  href: api/SearchAThing.DQuaternion.html#SearchAThing_DQuaternion_Conjugate
+  commentId: M:SearchAThing.DQuaternion.Conjugate
+  fullName: SearchAThing.DQuaternion.Conjugate()
+  nameWithType: DQuaternion.Conjugate()
+- uid: SearchAThing.DQuaternion.Conjugate*
+  name: Conjugate
+  href: api/SearchAThing.DQuaternion.html#SearchAThing_DQuaternion_Conjugate_
+  commentId: Overload:SearchAThing.DQuaternion.Conjugate
+  isSpec: "True"
+  fullName: SearchAThing.DQuaternion.Conjugate
+  nameWithType: DQuaternion.Conjugate
+- uid: SearchAThing.DQuaternion.Identity
+  name: Identity
+  href: api/SearchAThing.DQuaternion.html#SearchAThing_DQuaternion_Identity
+  commentId: P:SearchAThing.DQuaternion.Identity
+  fullName: SearchAThing.DQuaternion.Identity
+  nameWithType: DQuaternion.Identity
+- uid: SearchAThing.DQuaternion.Identity*
+  name: Identity
+  href: api/SearchAThing.DQuaternion.html#SearchAThing_DQuaternion_Identity_
+  commentId: Overload:SearchAThing.DQuaternion.Identity
+  isSpec: "True"
+  fullName: SearchAThing.DQuaternion.Identity
+  nameWithType: DQuaternion.Identity
+- uid: SearchAThing.DQuaternion.op_Multiply(SearchAThing.DQuaternion,SearchAThing.DQuaternion)
+  name: Multiply(DQuaternion, DQuaternion)
+  href: api/SearchAThing.DQuaternion.html#SearchAThing_DQuaternion_op_Multiply_SearchAThing_DQuaternion_SearchAThing_DQuaternion_
+  commentId: M:SearchAThing.DQuaternion.op_Multiply(SearchAThing.DQuaternion,SearchAThing.DQuaternion)
+  fullName: SearchAThing.DQuaternion.Multiply(SearchAThing.DQuaternion, SearchAThing.DQuaternion)
+  nameWithType: DQuaternion.Multiply(DQuaternion, DQuaternion)
+- uid: SearchAThing.DQuaternion.op_Multiply*
+  name: Multiply
+  href: api/SearchAThing.DQuaternion.html#SearchAThing_DQuaternion_op_Multiply_
+  commentId: Overload:SearchAThing.DQuaternion.op_Multiply
+  isSpec: "True"
+  fullName: SearchAThing.DQuaternion.Multiply
+  nameWithType: DQuaternion.Multiply
+- uid: SearchAThing.DQuaternion.v
+  name: v
+  href: api/SearchAThing.DQuaternion.html#SearchAThing_DQuaternion_v
+  commentId: P:SearchAThing.DQuaternion.v
+  fullName: SearchAThing.DQuaternion.v
+  nameWithType: DQuaternion.v
+- uid: SearchAThing.DQuaternion.v*
+  name: v
+  href: api/SearchAThing.DQuaternion.html#SearchAThing_DQuaternion_v_
+  commentId: Overload:SearchAThing.DQuaternion.v
+  isSpec: "True"
+  fullName: SearchAThing.DQuaternion.v
+  nameWithType: DQuaternion.v
 - uid: SearchAThing.Geometry
   name: Geometry
   href: api/SearchAThing.Geometry.html
@@ -5559,83 +5636,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.PythonPipe.Exec
   nameWithType: PythonPipe.Exec
-- uid: SearchAThing.Quaternion
-  name: Quaternion
-  href: api/SearchAThing.Quaternion.html
-  commentId: T:SearchAThing.Quaternion
-  fullName: SearchAThing.Quaternion
-  nameWithType: Quaternion
-- uid: SearchAThing.Quaternion.#ctor(SearchAThing.Vector3D,System.Double)
-  name: Quaternion(Vector3D, Double)
-  href: api/SearchAThing.Quaternion.html#SearchAThing_Quaternion__ctor_SearchAThing_Vector3D_System_Double_
-  commentId: M:SearchAThing.Quaternion.#ctor(SearchAThing.Vector3D,System.Double)
-  fullName: SearchAThing.Quaternion.Quaternion(SearchAThing.Vector3D, System.Double)
-  nameWithType: Quaternion.Quaternion(Vector3D, Double)
-- uid: SearchAThing.Quaternion.#ctor(System.Double,SearchAThing.Vector3D)
-  name: Quaternion(Double, Vector3D)
-  href: api/SearchAThing.Quaternion.html#SearchAThing_Quaternion__ctor_System_Double_SearchAThing_Vector3D_
-  commentId: M:SearchAThing.Quaternion.#ctor(System.Double,SearchAThing.Vector3D)
-  fullName: SearchAThing.Quaternion.Quaternion(System.Double, SearchAThing.Vector3D)
-  nameWithType: Quaternion.Quaternion(Double, Vector3D)
-- uid: SearchAThing.Quaternion.#ctor*
-  name: Quaternion
-  href: api/SearchAThing.Quaternion.html#SearchAThing_Quaternion__ctor_
-  commentId: Overload:SearchAThing.Quaternion.#ctor
-  isSpec: "True"
-  fullName: SearchAThing.Quaternion.Quaternion
-  nameWithType: Quaternion.Quaternion
-- uid: SearchAThing.Quaternion.Conjugate
-  name: Conjugate()
-  href: api/SearchAThing.Quaternion.html#SearchAThing_Quaternion_Conjugate
-  commentId: M:SearchAThing.Quaternion.Conjugate
-  fullName: SearchAThing.Quaternion.Conjugate()
-  nameWithType: Quaternion.Conjugate()
-- uid: SearchAThing.Quaternion.Conjugate*
-  name: Conjugate
-  href: api/SearchAThing.Quaternion.html#SearchAThing_Quaternion_Conjugate_
-  commentId: Overload:SearchAThing.Quaternion.Conjugate
-  isSpec: "True"
-  fullName: SearchAThing.Quaternion.Conjugate
-  nameWithType: Quaternion.Conjugate
-- uid: SearchAThing.Quaternion.Identity
-  name: Identity
-  href: api/SearchAThing.Quaternion.html#SearchAThing_Quaternion_Identity
-  commentId: P:SearchAThing.Quaternion.Identity
-  fullName: SearchAThing.Quaternion.Identity
-  nameWithType: Quaternion.Identity
-- uid: SearchAThing.Quaternion.Identity*
-  name: Identity
-  href: api/SearchAThing.Quaternion.html#SearchAThing_Quaternion_Identity_
-  commentId: Overload:SearchAThing.Quaternion.Identity
-  isSpec: "True"
-  fullName: SearchAThing.Quaternion.Identity
-  nameWithType: Quaternion.Identity
-- uid: SearchAThing.Quaternion.op_Multiply(SearchAThing.Quaternion,SearchAThing.Quaternion)
-  name: Multiply(Quaternion, Quaternion)
-  href: api/SearchAThing.Quaternion.html#SearchAThing_Quaternion_op_Multiply_SearchAThing_Quaternion_SearchAThing_Quaternion_
-  commentId: M:SearchAThing.Quaternion.op_Multiply(SearchAThing.Quaternion,SearchAThing.Quaternion)
-  fullName: SearchAThing.Quaternion.Multiply(SearchAThing.Quaternion, SearchAThing.Quaternion)
-  nameWithType: Quaternion.Multiply(Quaternion, Quaternion)
-- uid: SearchAThing.Quaternion.op_Multiply*
-  name: Multiply
-  href: api/SearchAThing.Quaternion.html#SearchAThing_Quaternion_op_Multiply_
-  commentId: Overload:SearchAThing.Quaternion.op_Multiply
-  isSpec: "True"
-  fullName: SearchAThing.Quaternion.Multiply
-  nameWithType: Quaternion.Multiply
-- uid: SearchAThing.Quaternion.v
-  name: v
-  href: api/SearchAThing.Quaternion.html#SearchAThing_Quaternion_v
-  commentId: P:SearchAThing.Quaternion.v
-  fullName: SearchAThing.Quaternion.v
-  nameWithType: Quaternion.v
-- uid: SearchAThing.Quaternion.v*
-  name: v
-  href: api/SearchAThing.Quaternion.html#SearchAThing_Quaternion_v_
-  commentId: Overload:SearchAThing.Quaternion.v
-  isSpec: "True"
-  fullName: SearchAThing.Quaternion.v
-  nameWithType: Quaternion.v
 - uid: SearchAThing.SampleModel
   name: SampleModel
   href: api/SearchAThing.SampleModel.html
@@ -6827,6 +6827,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.ToCSV
   nameWithType: SciExt.ToCSV
+- uid: SearchAThing.SciExt.ToDeg(SearchAThing.Vector3D)
+  name: ToDeg(Vector3D)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToDeg_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.SciExt.ToDeg(SearchAThing.Vector3D)
+  fullName: SearchAThing.SciExt.ToDeg(SearchAThing.Vector3D)
+  nameWithType: SciExt.ToDeg(Vector3D)
+- uid: SearchAThing.SciExt.ToDeg*
+  name: ToDeg
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToDeg_
+  commentId: Overload:SearchAThing.SciExt.ToDeg
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.ToDeg
+  nameWithType: SciExt.ToDeg
 - uid: SearchAThing.SciExt.ToDxfPoint(SearchAThing.Vector3D)
   name: ToDxfPoint(Vector3D)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToDxfPoint_SearchAThing_Vector3D_
@@ -6866,6 +6879,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.ToDxfVector2
   nameWithType: SciExt.ToDxfVector2
+- uid: SearchAThing.SciExt.ToEulerAngles(Matrix4x4)
+  name: ToEulerAngles(Matrix4x4)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToEulerAngles_Matrix4x4_
+  commentId: M:SearchAThing.SciExt.ToEulerAngles(Matrix4x4)
+  fullName: SearchAThing.SciExt.ToEulerAngles(Matrix4x4)
+  nameWithType: SciExt.ToEulerAngles(Matrix4x4)
+- uid: SearchAThing.SciExt.ToEulerAngles*
+  name: ToEulerAngles
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToEulerAngles_
+  commentId: Overload:SearchAThing.SciExt.ToEulerAngles
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.ToEulerAngles
+  nameWithType: SciExt.ToEulerAngles
 - uid: SearchAThing.SciExt.ToFace3DList(SearchAThing.BBox3D)
   name: ToFace3DList(BBox3D)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToFace3DList_SearchAThing_BBox3D_
@@ -6985,6 +7011,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.ToPsql
   nameWithType: SciExt.ToPsql
+- uid: SearchAThing.SciExt.ToRad(SearchAThing.Vector3D)
+  name: ToRad(Vector3D)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToRad_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.SciExt.ToRad(SearchAThing.Vector3D)
+  fullName: SearchAThing.SciExt.ToRad(SearchAThing.Vector3D)
+  nameWithType: SciExt.ToRad(Vector3D)
+- uid: SearchAThing.SciExt.ToRad*
+  name: ToRad
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToRad_
+  commentId: Overload:SearchAThing.SciExt.ToRad
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.ToRad
+  nameWithType: SciExt.ToRad
 - uid: SearchAThing.SciExt.ToSpan(Matrix4x4)
   name: ToSpan(Matrix4x4)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToSpan_Matrix4x4_

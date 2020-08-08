@@ -22,9 +22,9 @@
 
 ## Recent changes
 
+- **1.12.0** : renamed Quaternion to DQuaternion to avoid clash with System.Numerics.Quaternion (float) ; ToEulerAngles Matrix4x4 extension; Vector3D todeg, torad ext
 - **1.11.0** : renamed NormalizeAngle2PI to NormalizeAngle ; added unit tests ; added bbox3d scale using vector3
 - **1.10.0** : *brk* changed signature of InscribedPolygon
-- **1.9.1** : netcore-util 1.6.2
 
 ## Examples
 
