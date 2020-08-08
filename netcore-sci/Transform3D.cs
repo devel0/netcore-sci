@@ -11,7 +11,7 @@ namespace SearchAThing
     public class Transform3D
     {
 
-        Quaternion q;
+        DQuaternion q;
 
         /// <summary>
         /// instantiate an identity transformation        
@@ -21,7 +21,7 @@ namespace SearchAThing
         /// </remarks>
         public Transform3D()
         {
-            q = Quaternion.Identity;
+            q = DQuaternion.Identity;
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace SearchAThing
             // https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
             // q' = q2 * q1
             var q1 = this.q;
-            var q2 = new Quaternion(Vector3D.XAxis, angleRad);
+            var q2 = new DQuaternion(Vector3D.XAxis, angleRad);
             this.q = q2 * q1;
         }
 
@@ -52,7 +52,7 @@ namespace SearchAThing
             // https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
             // q' = q2 * q1
             var q1 = this.q;
-            var q2 = new Quaternion(Vector3D.YAxis, angleRad);
+            var q2 = new DQuaternion(Vector3D.YAxis, angleRad);
             this.q = q2 * q1;
         }
 
@@ -68,7 +68,7 @@ namespace SearchAThing
             // https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
             // q' = q2 * q1
             var q1 = this.q;
-            var q2 = new Quaternion(Vector3D.ZAxis, angleRad);
+            var q2 = new DQuaternion(Vector3D.ZAxis, angleRad);
             this.q = q2 * q1;
         }
 
@@ -86,7 +86,7 @@ namespace SearchAThing
             // https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
             // q' = q2 * q1            
             var q1 = this.q;
-            var q2 = new Quaternion(axis, angleRad);
+            var q2 = new DQuaternion(axis, angleRad);
             this.q = q2 * q1;
         }
 
@@ -102,7 +102,7 @@ namespace SearchAThing
             // https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
             // p' = qpq^(-1)            
             var q_1 = q.Conjugate();
-            var p = new Quaternion(0, v);
+            var p = new DQuaternion(0, v);
             var p_ = q * p * q_1;
 
             return p_.v;

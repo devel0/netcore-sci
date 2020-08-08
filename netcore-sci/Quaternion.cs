@@ -13,7 +13,7 @@ namespace SearchAThing
     /// <remarks>      
     /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Transform3D/Transform3DTest_0001.cs)
     /// </remarks>
-    public class Quaternion
+    public class DQuaternion
     {
 
         public Vector3D v { get; private set; }
@@ -23,7 +23,7 @@ namespace SearchAThing
         /// <summary>
         /// direct construct quaternion q=[s, v]
         /// </summary>
-        public Quaternion(double s, Vector3D v)
+        public DQuaternion(double s, Vector3D v)
         {
             this.s = s;
             this.v = v;
@@ -33,7 +33,7 @@ namespace SearchAThing
         /// build quaternion from axis and angle.
         /// axis will be subjected to normalization.
         /// </summary>        
-        public Quaternion(Vector3D axis, double alphaRad)
+        public DQuaternion(Vector3D axis, double alphaRad)
         {
             // general form of quaternion:
             // q = [s, v] = [cos(0.5 * alpha), sin(0.5 * alpha) * axis]
@@ -44,20 +44,20 @@ namespace SearchAThing
         /// <summary>
         /// Identity qi = [1, nullvector]
         /// </summary>
-        public static Quaternion Identity => new Quaternion(1, Vector3D.Zero);
+        public static DQuaternion Identity => new DQuaternion(1, Vector3D.Zero);
 
         /// <summary>        
         /// Conjugate
         /// q* = [s, -v]        
         /// </summary>
-        public Quaternion Conjugate() => new Quaternion(s, -v);
+        public DQuaternion Conjugate() => new DQuaternion(s, -v);
 
         /// <summary>
         /// Multiply
         /// [sa, va] * [sb, vb] = [sa * sb - va * vb, va x vb + sa * vb + sb * va]
         /// </summary>
-        public static Quaternion operator *(Quaternion qa, Quaternion qb) =>
-            new Quaternion(
+        public static DQuaternion operator *(DQuaternion qa, DQuaternion qb) =>
+            new DQuaternion(
                 // sa * sb - va * vb
                 qa.s * qb.s - qa.v.DotProduct(qb.v),
                 // va x vb + sa * vb + sb * va
