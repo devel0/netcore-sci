@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using SearchAThing;
 
 namespace SearchAThing
 {
@@ -56,14 +57,14 @@ namespace SearchAThing
                 var ialpha = v1.AngleRad(tol, v2);
                 if (ialpha > alpha)
                 {
-                    b = v2;
+                    b = pts[i];
                     alpha = ialpha;
                 }
                 ++i;
             }
             if (b == null) throw new Exception($"can't find 3 non colinear pts for Plane3DRegion");
 
-            var cs = new CoordinateSystem3D(o, a.CrossProduct(b));
+            var cs = new CoordinateSystem3D(o, v1.CrossProduct(b - o));
             Plane = new Plane3D(cs);
 
             Points = pts;
@@ -81,7 +82,7 @@ namespace SearchAThing
         {
             var cp = p.ToUCS(Plane.CS);
 
-            return CSPoints.ContainsPoint(tol, cp);
+            return cp.Z.EqualsTol(tol, 0) && CSPoints.ContainsPoint(tol, cp);
         }
 
         /// <summary>
