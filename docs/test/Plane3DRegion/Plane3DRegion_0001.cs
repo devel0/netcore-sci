@@ -38,6 +38,13 @@ namespace SearchAThing.Sci.Tests
                 Assert.True(false);
             }
 
+            {
+                var plane = new Plane3DRegion(tol, pts);
+                foreach (var x in plane.CSPoints)
+                {
+                    Assert.True(x.Z.EqualsTol(1e-3, 0));
+                }
+            }
 
         }
 

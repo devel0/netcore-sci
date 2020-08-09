@@ -6102,6 +6102,31 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.CoordTransform
   nameWithType: SciExt.CoordTransform
+- uid: SearchAThing.SciExt.Debug(SearchAThing.Vector3D,System.String)
+  name: Debug(Vector3D, String)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Debug_SearchAThing_Vector3D_System_String_
+  commentId: M:SearchAThing.SciExt.Debug(SearchAThing.Vector3D,System.String)
+  fullName: SearchAThing.SciExt.Debug(SearchAThing.Vector3D, System.String)
+  nameWithType: SciExt.Debug(Vector3D, String)
+- uid: SearchAThing.SciExt.Debug(Vector3,System.String)
+  name: Debug(Vector3, String)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Debug_Vector3_System_String_
+  commentId: M:SearchAThing.SciExt.Debug(Vector3,System.String)
+  fullName: SearchAThing.SciExt.Debug(Vector3, System.String)
+  nameWithType: SciExt.Debug(Vector3, String)
+- uid: SearchAThing.SciExt.Debug(Vector4,System.String)
+  name: Debug(Vector4, String)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Debug_Vector4_System_String_
+  commentId: M:SearchAThing.SciExt.Debug(Vector4,System.String)
+  fullName: SearchAThing.SciExt.Debug(Vector4, System.String)
+  nameWithType: SciExt.Debug(Vector4, String)
+- uid: SearchAThing.SciExt.Debug*
+  name: Debug
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Debug_
+  commentId: Overload:SearchAThing.SciExt.Debug
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.Debug
+  nameWithType: SciExt.Debug
 - uid: SearchAThing.SciExt.DistinctKeepOrder(IEnumerable{SearchAThing.Vector3D},SearchAThing.Vector3DEqualityComparer)
   name: DistinctKeepOrder(IEnumerable<Vector3D>, Vector3DEqualityComparer)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DistinctKeepOrder_IEnumerable_SearchAThing_Vector3D__SearchAThing_Vector3DEqualityComparer_
@@ -6431,6 +6456,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.NormalizeAngle
   nameWithType: SciExt.NormalizeAngle
+- uid: SearchAThing.SciExt.Normalized(Vector4)
+  name: Normalized(Vector4)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Normalized_Vector4_
+  commentId: M:SearchAThing.SciExt.Normalized(Vector4)
+  fullName: SearchAThing.SciExt.Normalized(Vector4)
+  nameWithType: SciExt.Normalized(Vector4)
+- uid: SearchAThing.SciExt.Normalized*
+  name: Normalized
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Normalized_
+  commentId: Overload:SearchAThing.SciExt.Normalized
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.Normalized
+  nameWithType: SciExt.Normalized
 - uid: SearchAThing.SciExt.Offset(IReadOnlyList{SearchAThing.Vector3D},System.Double,System.Double)
   name: Offset(IReadOnlyList<Vector3D>, Double, Double)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Offset_IReadOnlyList_SearchAThing_Vector3D__System_Double_System_Double_
@@ -7050,6 +7088,32 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.ToVector2
   nameWithType: SciExt.ToVector2
+- uid: SearchAThing.SciExt.ToVector3D(Vector4)
+  name: ToVector3D(Vector4)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToVector3D_Vector4_
+  commentId: M:SearchAThing.SciExt.ToVector3D(Vector4)
+  fullName: SearchAThing.SciExt.ToVector3D(Vector4)
+  nameWithType: SciExt.ToVector3D(Vector4)
+- uid: SearchAThing.SciExt.ToVector3D*
+  name: ToVector3D
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToVector3D_
+  commentId: Overload:SearchAThing.SciExt.ToVector3D
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.ToVector3D
+  nameWithType: SciExt.ToVector3D
+- uid: SearchAThing.SciExt.Transform(Vector4,Matrix4x4)
+  name: Transform(Vector4, Matrix4x4)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Transform_Vector4_Matrix4x4_
+  commentId: M:SearchAThing.SciExt.Transform(Vector4,Matrix4x4)
+  fullName: SearchAThing.SciExt.Transform(Vector4, Matrix4x4)
+  nameWithType: SciExt.Transform(Vector4, Matrix4x4)
+- uid: SearchAThing.SciExt.Transform*
+  name: Transform
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Transform_
+  commentId: Overload:SearchAThing.SciExt.Transform
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.Transform
+  nameWithType: SciExt.Transform
 - uid: SearchAThing.SciExt.Vector3DCoords(LwPolyline)
   name: Vector3DCoords(LwPolyline)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Vector3DCoords_LwPolyline_
