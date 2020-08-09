@@ -1345,6 +1345,11 @@ namespace SearchAThing
             return sb.ToString();
         }
 
+        /// <summary>
+        /// create a 3dpolyline cadscript from given set of points
+        /// </summary>
+        /// <param name="points">point set</param>
+        /// <returns>cad script</returns>
         public static string CadScriptPolyline(this IEnumerable<Vector3D> points)
         {
             var sb = new StringBuilder();
@@ -1358,6 +1363,11 @@ namespace SearchAThing
             return sb.ToString();
         }
 
+        /// <summary>
+        /// create script that draw a point foreach of point set
+        /// </summary>
+        /// <param name="points">points</param>
+        /// <returns>cadscript</returns>
         public static string CadScriptPoint(this IEnumerable<Vector3D> points)
         {
             var sb = new StringBuilder();
@@ -1662,6 +1672,18 @@ namespace SearchAThing
         /// <param name="v">xyz rad angles</param>
         /// <returns>xyz deg angles</returns>
         public static Vector3D ToDeg(this Vector3D v) => new Vector3D(v.X.ToDeg(), v.Y.ToDeg(), v.Z.ToDeg());
+
+        /// <summary>
+        /// debug to console with optional prefix
+        /// </summary>
+        /// <param name="v">vector</param>
+        /// <param name="prefix">optional prefix</param>
+        /// <returns>vector</returns>
+        public static Vector3D Debug(this Vector3D v, string prefix = "")
+        {
+            System.Diagnostics.Debug.WriteLine($"{(prefix.Length > 0 ? ($"{prefix}:") : "")}{v}");
+            return v;
+        }
 
     }
 

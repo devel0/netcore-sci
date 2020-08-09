@@ -20,7 +20,19 @@ namespace SearchAThing
             var vz = v.Z.Clamp(min.Z, max.Z);
 
             return new Vector3(vx, vy, vz);
-        }        
+        }
+
+        /// <summary>
+        /// debug to console with optional prefix
+        /// </summary>
+        /// <param name="v">vector</param>
+        /// <param name="prefix">optional prefix</param>
+        /// <returns>vector</returns>
+        public static Vector3 Debug(this Vector3 v, string prefix = "")
+        {
+            System.Diagnostics.Debug.WriteLine($"{(prefix.Length > 0 ? ($"{prefix}:") : "")}{v}");
+            return v;
+        }
 
     }
 
