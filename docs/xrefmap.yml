@@ -6456,6 +6456,12 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.NormalizeAngle
   nameWithType: SciExt.NormalizeAngle
+- uid: SearchAThing.SciExt.Normalized(Vector3)
+  name: Normalized(Vector3)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Normalized_Vector3_
+  commentId: M:SearchAThing.SciExt.Normalized(Vector3)
+  fullName: SearchAThing.SciExt.Normalized(Vector3)
+  nameWithType: SciExt.Normalized(Vector3)
 - uid: SearchAThing.SciExt.Normalized(Vector4)
   name: Normalized(Vector4)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Normalized_Vector4_
@@ -7088,6 +7094,25 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.ToVector2
   nameWithType: SciExt.ToVector2
+- uid: SearchAThing.SciExt.ToVector3(Vector4)
+  name: ToVector3(Vector4)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToVector3_Vector4_
+  commentId: M:SearchAThing.SciExt.ToVector3(Vector4)
+  fullName: SearchAThing.SciExt.ToVector3(Vector4)
+  nameWithType: SciExt.ToVector3(Vector4)
+- uid: SearchAThing.SciExt.ToVector3*
+  name: ToVector3
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToVector3_
+  commentId: Overload:SearchAThing.SciExt.ToVector3
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.ToVector3
+  nameWithType: SciExt.ToVector3
+- uid: SearchAThing.SciExt.ToVector3D(Vector3)
+  name: ToVector3D(Vector3)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToVector3D_Vector3_
+  commentId: M:SearchAThing.SciExt.ToVector3D(Vector3)
+  fullName: SearchAThing.SciExt.ToVector3D(Vector3)
+  nameWithType: SciExt.ToVector3D(Vector3)
 - uid: SearchAThing.SciExt.ToVector3D(Vector4)
   name: ToVector3D(Vector4)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToVector3D_Vector4_
@@ -7101,6 +7126,12 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.ToVector3D
   nameWithType: SciExt.ToVector3D
+- uid: SearchAThing.SciExt.Transform(Vector3,Matrix4x4)
+  name: Transform(Vector3, Matrix4x4)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Transform_Vector3_Matrix4x4_
+  commentId: M:SearchAThing.SciExt.Transform(Vector3,Matrix4x4)
+  fullName: SearchAThing.SciExt.Transform(Vector3, Matrix4x4)
+  nameWithType: SciExt.Transform(Vector3, Matrix4x4)
 - uid: SearchAThing.SciExt.Transform(Vector4,Matrix4x4)
   name: Transform(Vector4, Matrix4x4)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Transform_Vector4_Matrix4x4_
