@@ -1,4 +1,5 @@
 using System.Numerics;
+using System.Runtime.CompilerServices;
 
 namespace SearchAThing
 {
@@ -33,6 +34,26 @@ namespace SearchAThing
             System.Diagnostics.Debug.WriteLine($"{(prefix.Length > 0 ? ($"{prefix}:") : "")}{v}");
             return v;
         }
+
+        /// <summary>
+        /// normalize given vector
+        /// </summary>
+        /// <param name="v">vector</param>
+        /// <returns>normalized vector</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3 Normalized(this Vector3 v) => Vector3.Normalize(v);
+
+        /// <summary>
+        /// convert given vector3 to vector3d
+        /// </summary>
+        /// <param name="v">vector3</param>
+        /// <returns>vector3d</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3D ToVector3D(this Vector3 v) => (Vector3D)v;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3 Transform(this Vector3 v, Matrix4x4 m) =>
+            Vector3.Transform(v, m);
 
     }
 

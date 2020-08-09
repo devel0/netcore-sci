@@ -26,6 +26,14 @@ namespace SearchAThing
         public static Vector3D ToVector3D(this Vector4 v) => new Vector3D(v.X, v.Y, v.Z);
 
         /// <summary>
+        /// create vector3 from vector4 discarding w
+        /// </summary>
+        /// <param name="v">vector4 input</param>
+        /// <returns>vector3</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3 ToVector3(this Vector4 v) => new Vector3(v.X, v.Y, v.Z);
+
+        /// <summary>
         /// debug to console with optional prefix
         /// </summary>
         /// <param name="v">vector</param>
@@ -35,7 +43,7 @@ namespace SearchAThing
         {
             System.Diagnostics.Debug.WriteLine($"{(prefix.Length > 0 ? ($"{prefix}:") : "")}{v}");
             return v;
-        }
+        }        
 
     }
 
