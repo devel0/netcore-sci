@@ -963,7 +963,8 @@ namespace SearchAThing
         {
             get
             {
-                return string.Format(CultureInfo.InvariantCulture, "_POINT {0},{1},{2}\r\n", X, Y, Z);
+                return SciToolkit.PostProcessCadScript(
+                    string.Format(CultureInfo.InvariantCulture, "_POINT {0},{1},{2}\r\n", X, Y, Z));
             }
         }
 
@@ -1360,7 +1361,7 @@ namespace SearchAThing
             }
             sb.AppendLine();
 
-            return sb.ToString();
+            return SciToolkit.PostProcessCadScript(sb.ToString());
         }
 
         /// <summary>
@@ -1378,7 +1379,7 @@ namespace SearchAThing
             }
             sb.AppendLine();
 
-            return sb.ToString();
+            return SciToolkit.PostProcessCadScript(sb.ToString());
         }
 
         /// <summary>

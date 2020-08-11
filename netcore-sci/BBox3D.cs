@@ -345,7 +345,7 @@ namespace SearchAThing
                     sb.Append(q.CadScriptPolyline());
                 }
 
-                return sb.ToString();
+                return PostProcessCadScript(sb.ToString());
             }
         }
 
@@ -533,7 +533,7 @@ namespace SearchAThing
                 sb.AppendLine(x.CadScript());
             }
 
-            return sb.ToString();
+            return PostProcessCadScript(sb.ToString());
         }
 
         public static IEnumerable<Face3d> ToFace3DList(this BBox3D bbox)

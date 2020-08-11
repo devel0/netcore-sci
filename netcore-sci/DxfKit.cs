@@ -16,6 +16,9 @@ namespace SearchAThing
     public static partial class SciToolkit
     {
 
+        public static Func<string, string> PostProcessCadScript = (script) =>
+             script.Replace("\r\n", "\n");
+
         /// <summary>
         /// Creates dxf entities for a 3 axis of given length centered in given center point.
         /// </summary>        
@@ -284,7 +287,7 @@ namespace SearchAThing
                     {
                         var lw = (LwPolyline)eo.Clone();
                         lw.Vertexes.ForEach(w =>
-                        {                            
+                        {
                             w.Position = transform(w.Position).ToDxfVector2();
                         });
                         return lw;
@@ -362,7 +365,7 @@ namespace SearchAThing
             dxfObj.AddEntities(ents, layer);
 
             return ents;
-        }
+        }        
 
         public static string CadScript(this Face3d face)
         {
@@ -378,7 +381,7 @@ namespace SearchAThing
 
             sb.AppendLine();
 
-            return sb.ToString();
+            return PostProcessCadScript(sb.ToString());
         }
 
         /// <summary>
@@ -525,7 +528,7 @@ namespace SearchAThing
             }
 
         }
-                
+
     }
 
 }

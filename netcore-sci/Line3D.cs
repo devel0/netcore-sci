@@ -648,8 +648,8 @@ namespace SearchAThing
         {
             get
             {
-                return string.Format(CultureInfo.InvariantCulture, "_LINE {0},{1},{2} {3},{4},{5}\r\n",
-                    From.X, From.Y, From.Z, To.X, To.Y, To.Z);
+                return SciToolkit.PostProcessCadScript(string.Format(CultureInfo.InvariantCulture, "_LINE {0},{1},{2} {3},{4},{5}\r\n",
+                    From.X, From.Y, From.Z, To.X, To.Y, To.Z));
             }
         }
 
@@ -816,7 +816,7 @@ namespace SearchAThing
                 sb.AppendLine(l.CadScript);
             }
 
-            return sb.ToString();
+            return SciToolkit.PostProcessCadScript(sb.ToString());
         }
 
         public static Line3D ToLine3D(this netDxf.Entities.Line line)

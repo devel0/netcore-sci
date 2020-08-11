@@ -318,7 +318,7 @@ namespace SearchAThing
             sb.Append(new Line3D(Origin, BaseZ * axisLen, Line3DConstructMode.PointAndVector).CadScript);
             sb.Append("\r\n");
 
-            return sb.ToString();
+            return PostProcessCadScript(sb.ToString());
         }
 
         /// <summary>
