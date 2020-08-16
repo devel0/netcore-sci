@@ -980,7 +980,7 @@ namespace SearchAThing
         {
             get
             {
-                return string.Format(CultureInfo.InvariantCulture, "_LINE {0},{1},{2}\r\n", X, Y, Z);
+                return SciToolkit.PostProcessCadScript(string.Format(CultureInfo.InvariantCulture, "_LINE {0},{1},{2}", X, Y, Z));
             }
         }
 
