@@ -929,12 +929,12 @@ references:
   commentId: M:SearchAThing.CoordinateSystem3D.#ctor(SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.CoordinateSystem3DAutoEnum)
   fullName: SearchAThing.CoordinateSystem3D.CoordinateSystem3D(SearchAThing.Vector3D, SearchAThing.Vector3D, SearchAThing.CoordinateSystem3DAutoEnum)
   nameWithType: CoordinateSystem3D.CoordinateSystem3D(Vector3D, Vector3D, CoordinateSystem3DAutoEnum)
-- uid: SearchAThing.CoordinateSystem3D.#ctor(SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.Vector3D)
-  name: CoordinateSystem3D(Vector3D, Vector3D, Vector3D)
-  href: api/SearchAThing.CoordinateSystem3D.html#SearchAThing_CoordinateSystem3D__ctor_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_Vector3D_
-  commentId: M:SearchAThing.CoordinateSystem3D.#ctor(SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.Vector3D)
-  fullName: SearchAThing.CoordinateSystem3D.CoordinateSystem3D(SearchAThing.Vector3D, SearchAThing.Vector3D, SearchAThing.Vector3D)
-  nameWithType: CoordinateSystem3D.CoordinateSystem3D(Vector3D, Vector3D, Vector3D)
+- uid: SearchAThing.CoordinateSystem3D.#ctor(SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.SmartCsMode)
+  name: CoordinateSystem3D(Vector3D, Vector3D, Vector3D, SmartCsMode)
+  href: api/SearchAThing.CoordinateSystem3D.html#SearchAThing_CoordinateSystem3D__ctor_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_SmartCsMode_
+  commentId: M:SearchAThing.CoordinateSystem3D.#ctor(SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.SmartCsMode)
+  fullName: SearchAThing.CoordinateSystem3D.CoordinateSystem3D(SearchAThing.Vector3D, SearchAThing.Vector3D, SearchAThing.Vector3D, SearchAThing.SmartCsMode)
+  nameWithType: CoordinateSystem3D.CoordinateSystem3D(Vector3D, Vector3D, Vector3D, SmartCsMode)
 - uid: SearchAThing.CoordinateSystem3D.#ctor(SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.Vector3D)
   name: CoordinateSystem3D(Vector3D, Vector3D, Vector3D, Vector3D)
   href: api/SearchAThing.CoordinateSystem3D.html#SearchAThing_CoordinateSystem3D__ctor_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_Vector3D_
@@ -6638,6 +6638,45 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.SetLayer
   nameWithType: SciExt.SetLayer
+- uid: SearchAThing.SciExt.SetX(Vector3,System.Single)
+  name: SetX(Vector3, Single)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetX_Vector3_System_Single_
+  commentId: M:SearchAThing.SciExt.SetX(Vector3,System.Single)
+  fullName: SearchAThing.SciExt.SetX(Vector3, System.Single)
+  nameWithType: SciExt.SetX(Vector3, Single)
+- uid: SearchAThing.SciExt.SetX*
+  name: SetX
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetX_
+  commentId: Overload:SearchAThing.SciExt.SetX
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.SetX
+  nameWithType: SciExt.SetX
+- uid: SearchAThing.SciExt.SetY(Vector3,System.Single)
+  name: SetY(Vector3, Single)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetY_Vector3_System_Single_
+  commentId: M:SearchAThing.SciExt.SetY(Vector3,System.Single)
+  fullName: SearchAThing.SciExt.SetY(Vector3, System.Single)
+  nameWithType: SciExt.SetY(Vector3, Single)
+- uid: SearchAThing.SciExt.SetY*
+  name: SetY
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetY_
+  commentId: Overload:SearchAThing.SciExt.SetY
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.SetY
+  nameWithType: SciExt.SetY
+- uid: SearchAThing.SciExt.SetZ(Vector3,System.Single)
+  name: SetZ(Vector3, Single)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetZ_Vector3_System_Single_
+  commentId: M:SearchAThing.SciExt.SetZ(Vector3,System.Single)
+  fullName: SearchAThing.SciExt.SetZ(Vector3, System.Single)
+  nameWithType: SciExt.SetZ(Vector3, Single)
+- uid: SearchAThing.SciExt.SetZ*
+  name: SetZ
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetZ_
+  commentId: Overload:SearchAThing.SciExt.SetZ
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.SetZ
+  nameWithType: SciExt.SetZ
 - uid: SearchAThing.SciExt.Similarity(System.Double,System.Double)
   name: Similarity(Double, Double)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Similarity_System_Double_System_Double_
@@ -7259,6 +7298,12 @@ references:
   commentId: F:SearchAThing.SciToolkit.NormalizedLengthTolerance
   fullName: SearchAThing.SciToolkit.NormalizedLengthTolerance
   nameWithType: SciToolkit.NormalizedLengthTolerance
+- uid: SearchAThing.SciToolkit.PostProcessCadScript
+  name: PostProcessCadScript
+  href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_PostProcessCadScript
+  commentId: F:SearchAThing.SciToolkit.PostProcessCadScript
+  fullName: SearchAThing.SciToolkit.PostProcessCadScript
+  nameWithType: SciToolkit.PostProcessCadScript
 - uid: SearchAThing.SciToolkit.Star(SearchAThing.Vector3D,System.Double)
   name: Star(Vector3D, Double)
   href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_Star_SearchAThing_Vector3D_System_Double_
@@ -7272,6 +7317,30 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciToolkit.Star
   nameWithType: SciToolkit.Star
+- uid: SearchAThing.SmartCsMode
+  name: SmartCsMode
+  href: api/SearchAThing.SmartCsMode.html
+  commentId: T:SearchAThing.SmartCsMode
+  fullName: SearchAThing.SmartCsMode
+  nameWithType: SmartCsMode
+- uid: SearchAThing.SmartCsMode.X_YQ
+  name: X_YQ
+  href: api/SearchAThing.SmartCsMode.html#SearchAThing_SmartCsMode_X_YQ
+  commentId: F:SearchAThing.SmartCsMode.X_YQ
+  fullName: SearchAThing.SmartCsMode.X_YQ
+  nameWithType: SmartCsMode.X_YQ
+- uid: SearchAThing.SmartCsMode.Z_X
+  name: Z_X
+  href: api/SearchAThing.SmartCsMode.html#SearchAThing_SmartCsMode_Z_X
+  commentId: F:SearchAThing.SmartCsMode.Z_X
+  fullName: SearchAThing.SmartCsMode.Z_X
+  nameWithType: SmartCsMode.Z_X
+- uid: SearchAThing.SmartCsMode.Z_Y
+  name: Z_Y
+  href: api/SearchAThing.SmartCsMode.html#SearchAThing_SmartCsMode_Z_Y
+  commentId: F:SearchAThing.SmartCsMode.Z_Y
+  fullName: SearchAThing.SmartCsMode.Z_Y
+  nameWithType: SmartCsMode.Z_Y
 - uid: SearchAThing.Transform3D
   name: Transform3D
   href: api/SearchAThing.Transform3D.html
