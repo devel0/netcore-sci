@@ -21,6 +21,25 @@ namespace SearchAThing
         St7
     }
 
+    public enum SmartCsMode
+    {
+        /// <summary>
+        /// first vector must parallel csXaxis ; second vector must lie on desired csXY plane and not parallel to csXaxis ;
+        /// csZaxis is computed as csXaxis cross second vector
+        /// </summary>
+        X_YQ,
+
+        /// <summary>
+        /// first vector must parallel to csZaxis ; second vector must parallel to csXaxis
+        /// </summary>
+        Z_X,
+
+        /// <summary>
+        /// first vector must parallel to csZaxis ; second vector must parallel to csYaxis
+        /// </summary>
+        Z_Y
+    }
+
     public partial class CoordinateSystem3D
     {
 
@@ -151,17 +170,43 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// Construct a right-hand coordinate system with the given origin and bases such as:
-        /// BaseX = Normalized(v1)
-        /// BaseZ = Normalized(v1 x BaseY)
-        /// BaseY = Normalized(BaseZ x BaseX)
-        /// </summary>        
-        public CoordinateSystem3D(Vector3D o, Vector3D v1, Vector3D v2)
+        /// Construct a right-hand coordinate system with the given origin and two vector
+        /// </summary>
+        /// <param name="o">cs origin</param>
+        /// <param name="v1">first vector</param>
+        /// <param name="v2">second vector</param>
+        /// <param name="mode">specify how to consider first and second vector to build the cs</param>
+        public CoordinateSystem3D(Vector3D o, Vector3D v1, Vector3D v2, SmartCsMode mode = SmartCsMode.X_YQ)
         {
             Origin = o;
-            BaseX = v1.Normalized();
-            BaseZ = v1.CrossProduct(v2).Normalized();
-            BaseY = BaseZ.CrossProduct(BaseX).Normalized();
+
+            switch (mode)
+            {
+                case SmartCsMode.X_YQ:
+                    {
+                        BaseX = v1.Normalized();
+                        BaseZ = v1.CrossProduct(v2).Normalized();
+                        BaseY = BaseZ.CrossProduct(BaseX).Normalized();
+                    }
+                    break;
+
+                case SmartCsMode.Z_X:
+                    {
+                        BaseY = v1.CrossProduct(v2).Normalized();
+                        BaseX = v2.Normalized();
+                        BaseZ = v1.Normalized();
+                    }
+                    break;
+
+                case SmartCsMode.Z_Y:
+                    {
+                        BaseX = v2.CrossProduct(v1).Normalized();
+                        BaseY = v2.Normalized();
+                        BaseZ = v1.Normalized();
+                    }
+                    break;
+
+            }
 
             m = Matrix3D.FromVectorsAsColumns(BaseX, BaseY, BaseZ);
             mInv = m.Inverse();
