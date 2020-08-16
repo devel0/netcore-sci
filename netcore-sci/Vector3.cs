@@ -55,6 +55,33 @@ namespace SearchAThing
         public static Vector3 Transform(this Vector3 v, Matrix4x4 m) =>
             Vector3.Transform(v, m);
 
+        /// <summary>
+        /// create new Vector3 with given x overriden, others yz unchanged
+        /// </summary>
+        /// <param name="v">vector</param>
+        /// <param name="x">x value to set</param>
+        /// <returns>changed vector</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3 SetX(this Vector3 v, float x) => new Vector3(x, v.Y, v.Z);
+
+        /// <summary>
+        /// create new Vector3 with given y overriden, others xz unchanged
+        /// </summary>
+        /// <param name="v">vector</param>
+        /// <param name="y">y value to set</param>
+        /// <returns>changed vector</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3 SetY(this Vector3 v, float y) => new Vector3(v.X, y, v.Z);
+
+        /// <summary>
+        /// create new Vector3 with given z overriden, others xy unchanged
+        /// </summary>
+        /// <param name="v">vector</param>
+        /// <param name="z">z value to set</param>
+        /// <returns>changed vector</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3 SetZ(this Vector3 v, float z) => new Vector3(v.X, v.Y, z);
+
     }
 
 }
