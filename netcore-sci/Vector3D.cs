@@ -21,7 +21,7 @@ namespace SearchAThing
     /// can be used to describe a wcs point or a vector x,y,z components from some reference origin
     /// </summary>
     public partial class Vector3D : Geometry
-    {
+    {        
 
         /// <summary>
         /// zero vector (0,0,0)            
@@ -54,6 +54,11 @@ namespace SearchAThing
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0004.cs)
         /// </remarks>
         public static readonly Vector3D ZAxis = new Vector3D(0, 0, 1);
+
+        /// <summary>
+        /// one vector (1,1,1)            
+        /// </summary>         
+        public static readonly Vector3D One = new Vector3D(1, 1, 1);
 
         /// <summary>
         /// retrieve wcs axis by given index            
