@@ -429,11 +429,11 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// stringify bbox as Min-Max
+        /// stringify bbox as Max-Min=Size
         /// </summary>
         public override string ToString()
         {
-            return $"{Min}-{Max}";
+            return $"{Max}-{Min}={Size}";
         }
 
     }
