@@ -79,11 +79,17 @@ namespace SearchAThing
             return invMat;
         }
 
+        /// <summary>
+        /// matrix4x4 formatted print suitable for monospace font or terminal display
+        /// </summary>
+        /// <param name="m">matrix</param>
+        /// <param name="dec">decimal to display</param>
+        /// <returns>formatted text representation of given matrix</returns>
         public static string Fmt(this Matrix4x4 m, int dec)
         {
             var sb = new StringBuilder();
 
-            var fmt = "{0,10:0." + "0".Repeat(dec) + "}";
+            var fmt = "{0,10: 0." + "0".Repeat(dec) + ";-0." + "0".Repeat(dec) + "}";
 
             sb.AppendFormat(fmt, m.M11); sb.Append(" ");
             sb.AppendFormat(fmt, m.M12); sb.Append(" ");
