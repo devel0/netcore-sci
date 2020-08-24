@@ -82,6 +82,22 @@ namespace SearchAThing
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3 SetZ(this Vector3 v, float z) => new Vector3(v.X, v.Y, z);
 
+        /// <summary>
+        /// convert given vector to degrees
+        /// </summary>
+        /// <param name="v">vector source ( radians )</param>
+        /// <returns>vector ( degrees )</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3 ToDeg(this Vector3 v) => new Vector3(v.X.ToDeg(), v.Y.ToDeg(), v.Z.ToDeg());
+
+        /// <summary>
+        /// convert given vector to radians
+        /// </summary>
+        /// <param name="v">vector source ( degrees )</param>
+        /// <returns>vector ( radians )</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3 ToRad(this Vector3 v) => new Vector3(v.X.ToRad(), v.Y.ToRad(), v.Z.ToRad());
+
     }
 
 }
