@@ -22,9 +22,9 @@
 
 ## Recent changes
 
+- **1.14.0** : vector3d setx/y/z/one ; vector3 todeg/torad ; matrix4x4 decompose/fmt negative number align ; change bbox tostring
 - **1.13.0** : fix Vector3D CadScriptLineFrom newline ; Vector3 SetX/Y/Z ext ; build CoordinateSystem with origin and 2 vector specifying combine mode
 - **1.12.1** : bugfix plane3d region cs construction
-- **1.12.0** : renamed Quaternion to DQuaternion to avoid clash with System.Numerics.Quaternion (float) ; ToEulerAngles Matrix4x4 extension; Vector3D todeg, torad ext
 
 ## Examples
 
