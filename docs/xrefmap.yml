@@ -6127,6 +6127,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Debug
   nameWithType: SciExt.Debug
+- uid: SearchAThing.SciExt.Decompose(Matrix4x4)
+  name: Decompose(Matrix4x4)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Decompose_Matrix4x4_
+  commentId: M:SearchAThing.SciExt.Decompose(Matrix4x4)
+  fullName: SearchAThing.SciExt.Decompose(Matrix4x4)
+  nameWithType: SciExt.Decompose(Matrix4x4)
+- uid: SearchAThing.SciExt.Decompose*
+  name: Decompose
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Decompose_
+  commentId: Overload:SearchAThing.SciExt.Decompose
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.Decompose
+  nameWithType: SciExt.Decompose
 - uid: SearchAThing.SciExt.DistinctKeepOrder(IEnumerable{SearchAThing.Vector3D},SearchAThing.Vector3DEqualityComparer)
   name: DistinctKeepOrder(IEnumerable<Vector3D>, Vector3DEqualityComparer)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DistinctKeepOrder_IEnumerable_SearchAThing_Vector3D__SearchAThing_Vector3DEqualityComparer_
@@ -6916,6 +6929,12 @@ references:
   commentId: M:SearchAThing.SciExt.ToDeg(SearchAThing.Vector3D)
   fullName: SearchAThing.SciExt.ToDeg(SearchAThing.Vector3D)
   nameWithType: SciExt.ToDeg(Vector3D)
+- uid: SearchAThing.SciExt.ToDeg(Vector3)
+  name: ToDeg(Vector3)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToDeg_Vector3_
+  commentId: M:SearchAThing.SciExt.ToDeg(Vector3)
+  fullName: SearchAThing.SciExt.ToDeg(Vector3)
+  nameWithType: SciExt.ToDeg(Vector3)
 - uid: SearchAThing.SciExt.ToDeg*
   name: ToDeg
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToDeg_
@@ -7100,6 +7119,12 @@ references:
   commentId: M:SearchAThing.SciExt.ToRad(SearchAThing.Vector3D)
   fullName: SearchAThing.SciExt.ToRad(SearchAThing.Vector3D)
   nameWithType: SciExt.ToRad(Vector3D)
+- uid: SearchAThing.SciExt.ToRad(Vector3)
+  name: ToRad(Vector3)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToRad_Vector3_
+  commentId: M:SearchAThing.SciExt.ToRad(Vector3)
+  fullName: SearchAThing.SciExt.ToRad(Vector3)
+  nameWithType: SciExt.ToRad(Vector3)
 - uid: SearchAThing.SciExt.ToRad*
   name: ToRad
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToRad_
@@ -8010,6 +8035,12 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Vector3D.Normalized
   nameWithType: Vector3D.Normalized
+- uid: SearchAThing.Vector3D.One
+  name: One
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_One
+  commentId: F:SearchAThing.Vector3D.One
+  fullName: SearchAThing.Vector3D.One
+  nameWithType: Vector3D.One
 - uid: SearchAThing.Vector3D.op_Addition(SearchAThing.Vector3D,SearchAThing.Vector3D)
   name: Addition(Vector3D, Vector3D)
   href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_op_Addition_SearchAThing_Vector3D_SearchAThing_Vector3D_
@@ -8342,6 +8373,45 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Vector3D.Set
   nameWithType: Vector3D.Set
+- uid: SearchAThing.Vector3D.SetX(System.Double)
+  name: SetX(Double)
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_SetX_System_Double_
+  commentId: M:SearchAThing.Vector3D.SetX(System.Double)
+  fullName: SearchAThing.Vector3D.SetX(System.Double)
+  nameWithType: Vector3D.SetX(Double)
+- uid: SearchAThing.Vector3D.SetX*
+  name: SetX
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_SetX_
+  commentId: Overload:SearchAThing.Vector3D.SetX
+  isSpec: "True"
+  fullName: SearchAThing.Vector3D.SetX
+  nameWithType: Vector3D.SetX
+- uid: SearchAThing.Vector3D.SetY(System.Double)
+  name: SetY(Double)
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_SetY_System_Double_
+  commentId: M:SearchAThing.Vector3D.SetY(System.Double)
+  fullName: SearchAThing.Vector3D.SetY(System.Double)
+  nameWithType: Vector3D.SetY(Double)
+- uid: SearchAThing.Vector3D.SetY*
+  name: SetY
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_SetY_
+  commentId: Overload:SearchAThing.Vector3D.SetY
+  isSpec: "True"
+  fullName: SearchAThing.Vector3D.SetY
+  nameWithType: Vector3D.SetY
+- uid: SearchAThing.Vector3D.SetZ(System.Double)
+  name: SetZ(Double)
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_SetZ_System_Double_
+  commentId: M:SearchAThing.Vector3D.SetZ(System.Double)
+  fullName: SearchAThing.Vector3D.SetZ(System.Double)
+  nameWithType: Vector3D.SetZ(Double)
+- uid: SearchAThing.Vector3D.SetZ*
+  name: SetZ
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_SetZ_
+  commentId: Overload:SearchAThing.Vector3D.SetZ
+  isSpec: "True"
+  fullName: SearchAThing.Vector3D.SetZ
+  nameWithType: Vector3D.SetZ
 - uid: SearchAThing.Vector3D.StringRepresentation
   name: StringRepresentation()
   href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_StringRepresentation
