@@ -21,7 +21,7 @@ namespace SearchAThing
     /// can be used to describe a wcs point or a vector x,y,z components from some reference origin
     /// </summary>
     public partial class Vector3D : Geometry
-    {        
+    {
 
         /// <summary>
         /// zero vector (0,0,0)            
@@ -480,6 +480,15 @@ namespace SearchAThing
 
             return new Vector3D(x, y, z);
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Vector3D SetX(double value) => new Vector3D(value, Y, Z);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Vector3D SetY(double value) => new Vector3D(X, value, Z);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Vector3D SetZ(double value) => new Vector3D(X, Y, value);
 
         /// <summary>
         /// create a vector relative to given origin from this point and given origin
