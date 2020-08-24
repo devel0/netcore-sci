@@ -142,6 +142,21 @@ namespace SearchAThing
             return new Vector3(x, y, z);
         }
 
+        /// <summary>
+        /// decompose given 4x4 matrix into scale, rotation, translation
+        /// </summary>        
+        public static (Vector3 scale, Quaternion rotation, Vector3 translation, bool success)
+            Decompose(this Matrix4x4 m)
+        {
+            var scale = new Vector3();
+            var translation = new Vector3();
+            var rotation = new Quaternion();
+
+            var success = Matrix4x4.Decompose(m, out scale, out rotation, out translation);
+
+            return (scale, rotation, translation, success);
+        }
+
     }
 
 }
