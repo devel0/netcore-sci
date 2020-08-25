@@ -7,11 +7,11 @@
 .NET core sci
 
 - [API Documentation](https://devel0.github.io/netcore-sci/api/SearchAThing.html)
+- [Changelog](https://github.com/devel0/netcore-sci/commits/master)
 - [Articles](https://devel0.github.io/netcore-sci/articles/intro.html)
 
 <hr/>
 
-- [Recent changes](#recent-changes)
 - [Notes](#release-notes)
 - [Examples](#examples)
 - [Quickstart](#quickstart)
@@ -19,12 +19,6 @@
 - [How this project was built](#how-this-project-was-built)
 
 <hr/>
-
-## Recent changes
-
-- **1.14.0** : vector3d setx/y/z/one ; vector3 todeg/torad ; matrix4x4 decompose/fmt negative number align ; change bbox tostring
-- **1.13.0** : fix Vector3D CadScriptLineFrom newline ; Vector3 SetX/Y/Z ext ; build CoordinateSystem with origin and 2 vector specifying combine mode
-- **1.12.1** : bugfix plane3d region cs construction
 
 ## Examples
 
