@@ -5,6 +5,7 @@ using SearchAThing;
 using System.Runtime.CompilerServices;
 using LinqStatistics;
 using System.Text;
+using MathNet.Numerics.Interpolation;
 
 namespace SearchAThing
 {
@@ -243,7 +244,7 @@ namespace SearchAThing
 
             return wcnt;
         }
-            
+
         /// <summary>
         /// Test two numbers for similarity; the factor
         /// of similarity f = (max(x,y)-min(x,y)) / min(abs(x), abs(y)).
@@ -290,6 +291,23 @@ namespace SearchAThing
             };
         }
 
+    }
+
+    public static partial class SciToolkit
+    {
+        /// <summary>
+        /// (MathNet.Numerics bookmark function)
+        /// "Create a linear spline interpolation from an unsorted set of (x,y) value pairs."
+        /// then invoke Interpolate with x value to retrieve interpolated y value.
+        /// <para>
+        /// For more interpolator see https://numerics.mathdotnet.com/api/MathNet.Numerics.Interpolation/index.htm
+        /// </para>
+        /// </summary>     
+        /// <remarks>      
+        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Number/NumberTest_0004.cs)        
+        /// </remarks>
+        public static LinearSpline LinearSplineInterpolate(IEnumerable<double> x, IEnumerable<double> y) =>
+            LinearSpline.Interpolate(x, y);
     }
 
 }
