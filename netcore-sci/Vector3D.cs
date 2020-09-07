@@ -1418,6 +1418,11 @@ namespace SearchAThing
             return true;
         }
 
+        /// <summary>
+        /// retrieve the sum of given vector list
+        /// </summary>
+        /// <param name="lst">vector list</param>
+        /// <returns>sum of given vector list</returns>
         public static Vector3D Sum(this IEnumerable<Vector3D> lst)
         {
             var s = Vector3D.Zero;

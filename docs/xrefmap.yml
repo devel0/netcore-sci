@@ -6255,12 +6255,12 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Explode
   nameWithType: SciExt.Explode
-- uid: SearchAThing.SciExt.Fmt(Matrix4x4,System.Int32)
-  name: Fmt(Matrix4x4, Int32)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Fmt_Matrix4x4_System_Int32_
-  commentId: M:SearchAThing.SciExt.Fmt(Matrix4x4,System.Int32)
-  fullName: SearchAThing.SciExt.Fmt(Matrix4x4, System.Int32)
-  nameWithType: SciExt.Fmt(Matrix4x4, Int32)
+- uid: SearchAThing.SciExt.Fmt(Matrix4x4,System.Int32,System.Int32)
+  name: Fmt(Matrix4x4, Int32, Int32)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Fmt_Matrix4x4_System_Int32_System_Int32_
+  commentId: M:SearchAThing.SciExt.Fmt(Matrix4x4,System.Int32,System.Int32)
+  fullName: SearchAThing.SciExt.Fmt(Matrix4x4, System.Int32, System.Int32)
+  nameWithType: SciExt.Fmt(Matrix4x4, Int32, Int32)
 - uid: SearchAThing.SciExt.Fmt(System.Double,System.Int32,System.Int32)
   name: Fmt(Double, Int32, Int32)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Fmt_System_Double_System_Int32_System_Int32_
@@ -7317,6 +7317,22 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciToolkit.Cuboid
   nameWithType: SciToolkit.Cuboid
+- uid: SearchAThing.SciToolkit.LinearSplineInterpolate(IEnumerable{System.Double},IEnumerable{System.Double})
+  name: LinearSplineInterpolate(IEnumerable<Double>, IEnumerable<Double>)
+  href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_LinearSplineInterpolate_IEnumerable_System_Double__IEnumerable_System_Double__
+  commentId: M:SearchAThing.SciToolkit.LinearSplineInterpolate(IEnumerable{System.Double},IEnumerable{System.Double})
+  name.vb: LinearSplineInterpolate(IEnumerable(Of Double), IEnumerable(Of Double))
+  fullName: SearchAThing.SciToolkit.LinearSplineInterpolate(IEnumerable<System.Double>, IEnumerable<System.Double>)
+  fullName.vb: SearchAThing.SciToolkit.LinearSplineInterpolate(IEnumerable(Of System.Double), IEnumerable(Of System.Double))
+  nameWithType: SciToolkit.LinearSplineInterpolate(IEnumerable<Double>, IEnumerable<Double>)
+  nameWithType.vb: SciToolkit.LinearSplineInterpolate(IEnumerable(Of Double), IEnumerable(Of Double))
+- uid: SearchAThing.SciToolkit.LinearSplineInterpolate*
+  name: LinearSplineInterpolate
+  href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_LinearSplineInterpolate_
+  commentId: Overload:SearchAThing.SciToolkit.LinearSplineInterpolate
+  isSpec: "True"
+  fullName: SearchAThing.SciToolkit.LinearSplineInterpolate
+  nameWithType: SciToolkit.LinearSplineInterpolate
 - uid: SearchAThing.SciToolkit.NormalizedLengthTolerance
   name: NormalizedLengthTolerance
   href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_NormalizedLengthTolerance
