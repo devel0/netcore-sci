@@ -1,5 +1,6 @@
 using static System.Math;
 using System.Collections.Generic;
+using System;
 
 namespace SearchAThing
 {
@@ -23,7 +24,7 @@ namespace SearchAThing
             do
             {
                 var y = en.Current;
-                var dst = Abs(y - x);
+                var dst = Math.Abs(y - x);
                 if (dst < min) min = dst;
                 x = y;
             }

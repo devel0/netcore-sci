@@ -131,7 +131,7 @@ namespace SearchAThing
             var x = (float)Atan2(m.M23, m.M33);
 
             // yangle
-            var c2 = Sqrt(m.M11 * m.M11 + m.M12 * m.M12);
+            var c2 = Math.Sqrt(m.M11 * m.M11 + m.M12 * m.M12);
             var y = (float)Atan2(-m.M13, c2);
 
             // zangle

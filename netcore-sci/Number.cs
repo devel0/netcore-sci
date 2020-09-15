@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using LinqStatistics;
 using System.Text;
 using MathNet.Numerics.Interpolation;
+using System;
 
 namespace SearchAThing
 {
@@ -259,10 +260,10 @@ namespace SearchAThing
         public static double Similarity(this double x, double y)
         {
             if (x == 0 && y == 0) return 0;
-            if ((x == 0 && y != 0) || (x != 0 && y == 0)) return Max(Abs(x), Abs(y)) / 2;
-            if (Sign(x) != Sign(y)) return new[] { x, y }.StandardDeviationP();
+            if ((x == 0 && y != 0) || (x != 0 && y == 0)) return Max(Math.Abs(x), Math.Abs(y)) / 2;
+            if (Math.Sign(x) != Math.Sign(y)) return new[] { x, y }.StandardDeviationP();
 
-            var a = Min(Abs(x), Abs(y));
+            var a = Min(Math.Abs(x), Math.Abs(y));
             var m = Min(x, y);
             var M = Max(x, y);
             var d = M - m;
