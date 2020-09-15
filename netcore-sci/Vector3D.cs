@@ -481,12 +481,50 @@ namespace SearchAThing
             return new Vector3D(x, y, z);
         }
 
+        /// <summary>
+        /// create a point copy of this one with component changed
+        /// </summary>
+        /// <param name="ordIdx">component to change ( 0:x 1:y 2:z )</param>
+        /// <param name="value">value to assign to the component</param>
+        /// <returns>new vector with component changed</returns>
+        public Vector3D Set(int ordIdx, double value)
+        {
+            var x = X;
+            var y = Y;
+            var z = Z;
+
+            switch (ordIdx)
+            {
+                case 0: x = value; break;
+                case 1: y = value; break;
+                case 2: z = value; break;
+                default: throw new Exception($"invalid ordIdx:{ordIdx}");
+            }
+
+            return new Vector3D(x, y, z);
+        }
+
+        /// <summary>
+        /// create new vector with X changed
+        /// </summary>
+        /// <param name="value">input vector</param>
+        /// <returns>output vector with X changed</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Vector3D SetX(double value) => new Vector3D(value, Y, Z);
 
+        /// <summary>
+        /// create new vector with Y changed
+        /// </summary>
+        /// <param name="value">input vector</param>
+        /// <returns>output vector with Y changed</returns>        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Vector3D SetY(double value) => new Vector3D(X, value, Z);
 
+        /// <summary>
+        /// create new vector with Z changed
+        /// </summary>
+        /// <param name="value">input vector</param>
+        /// <returns>output vector with Z changed</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Vector3D SetZ(double value) => new Vector3D(X, Y, value);
 
@@ -1684,14 +1722,18 @@ namespace SearchAThing
         /// </summary>
         /// <param name="v">xyz deg angles</param>
         /// <returns>xyz rad angles</returns>
-        public static Vector3D ToRad(this Vector3D v) => new Vector3D(v.X.ToRad(), v.Y.ToRad(), v.Z.ToRad());
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3D ToRad(this Vector3D v) =>
+            new Vector3D(v.X.ToRad(), v.Y.ToRad(), v.Z.ToRad());
 
         /// <summary>
         /// convert xyz from rad to deg
         /// </summary>
         /// <param name="v">xyz rad angles</param>
         /// <returns>xyz deg angles</returns>
-        public static Vector3D ToDeg(this Vector3D v) => new Vector3D(v.X.ToDeg(), v.Y.ToDeg(), v.Z.ToDeg());
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3D ToDeg(this Vector3D v) =>
+            new Vector3D(v.X.ToDeg(), v.Y.ToDeg(), v.Z.ToDeg());
 
         /// <summary>
         /// debug to console with optional prefix
@@ -1705,6 +1747,62 @@ namespace SearchAThing
             return v;
         }
 
+        /// <summary>
+        /// compute (Sqrt(v.x), Sqrt(v.y), Sqrt(v.z))
+        /// </summary>
+        /// <param name="v">input vector</param>
+        /// <returns>sqrt(v)</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3D Sqrt(this Vector3D v) =>
+            new Vector3D(Math.Sqrt(v.X), Math.Sqrt(v.Y), Math.Sqrt(v.Z));
+
+        /// <summary>
+        /// compute (Abs(v.x), Abs(v.y), Abs(v.z))
+        /// </summary>
+        /// <param name="v">input vector</param>
+        /// <returns>abs(v)</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3D Abs(this Vector3D v) =>
+            new Vector3D(Math.Abs(v.X), Math.Abs(v.Y), Math.Abs(v.Z));
+
+        /// <summary>
+        /// compute (Sign(v.x), Sign(v.y), Sign(v.z))
+        /// </summary>
+        /// <param name="v">input vector</param>
+        /// <returns>sign(v)</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3D Sign(this Vector3D v) =>
+            new Vector3D(Math.Sign(v.X), Math.Sign(v.Y), Math.Sign(v.Z));
     }
+
+    public static partial class SciToolkit
+    {
+
+        /// <summary>
+        /// compute (Sqrt(v.x), Sqrt(v.y), Sqrt(v.z))
+        /// </summary>
+        /// <param name="v">input vector</param>
+        /// <returns>sqrt(v)</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3D Sqrt(Vector3D v) => v.Sqrt();
+
+        /// <summary>
+        /// compute (Abs(v.x), Abs(v.y), Abs(v.z))
+        /// </summary>
+        /// <param name="v">input vector</param>
+        /// <returns>abs(v)</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3D Abs(Vector3D v) => v.Abs();
+
+        /// <summary>
+        /// compute (Sign(v.x), Sign(v.y), Sign(v.z))
+        /// </summary>
+        /// <param name="v">input vector</param>
+        /// <returns>sign(v)</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3D Sign(Vector3D v) => v.Sign();
+
+    }
+
 
 }
