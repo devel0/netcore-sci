@@ -284,6 +284,18 @@ namespace SearchAThing
         }
 
         /// <summary>
+        /// create transformed CS by given transformation matrix
+        /// </summary>
+        public CoordinateSystem3D Transform(Matrix4x4 m)
+        {
+            var o = Vector3.Transform(Origin, m);
+            var p1 = Vector3.Transform(Origin + BaseX, m);
+            var p2 = Vector3.Transform(Origin + BaseY, m);
+
+            return new CoordinateSystem3D(o, p1 - o, p2 - o, SmartCsMode.X_YQ);
+        }
+
+        /// <summary>
         /// return another cs rotated respect given axis
         /// </summary>            
         public CoordinateSystem3D Rotate(Line3D axis, double angleRad)
