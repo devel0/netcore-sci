@@ -1206,6 +1206,15 @@ namespace SearchAThing
         }
 
         /// <summary>
+        /// Convert given LibTessDotNet.Vec3 to Vector3D
+        /// </summary>
+        /// <param name="v">input vector</param>
+        public static implicit operator Vector3D(LibTessDotNet.Vec3 v)
+        {
+            return new Vector3D(v.X, v.Y, v.Z);
+        }
+
+        /// <summary>
         /// Convert given QuantumConcepts.Formats.StereoLithography.Vertex to Vector3D
         /// </summary>
         /// <param name="v">input vector</param>
