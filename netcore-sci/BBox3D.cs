@@ -374,14 +374,14 @@ namespace SearchAThing
         };
 
         /// <summary>
-        /// retrieve 6 faces of bbox.
+        /// retrieve 6 faces (bottom, top, left, right, front, back) of bbox.
         /// (see Points property documentation for vertex enumeration), faces are:
-        /// - 0321
-        /// - 4567
-        /// - 0473
-        /// - 1265
-        /// - 0154
-        /// - 2376
+        /// - [0]: 0321 (bottom)
+        /// - [1]: 4567 (top)
+        /// - [2]: 0473 (left)
+        /// - [3]: 1265 (right)
+        /// - [4]: 0154 (front)
+        /// - [5]: 2376 (back)
         /// </summary>        
         public IEnumerable<Plane3DRegion> Faces(double tol)
         {
