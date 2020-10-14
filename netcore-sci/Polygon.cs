@@ -551,6 +551,59 @@ namespace SearchAThing
                 .Select(w => new Vector3D(w.X, w.Y));*/
         }
 
+        /// <summary>
+        /// tessellate given pts list using 1 contour in clockwise ordering
+        /// see used tessellation library ( https://github.com/speps/LibTessDotNet )
+        /// </summary>
+        /// <param name="pts">pts to tessellate in triangles</param>
+        /// <returns>list of triangles</returns>
+        public static IEnumerable<Triangle3D> Tessellate(this IReadOnlyList<Vector3D> pts)
+        {
+            var tess = new LibTessDotNet.Tess();
+
+            var contour = new LibTessDotNet.ContourVertex[pts.Count];
+
+            for (int i = 0; i < pts.Count; ++i)
+            {
+                contour[i].Position = new LibTessDotNet.Vec3((float)pts[i].X, (float)pts[i].Y, (float)pts[i].Z);
+            }
+
+            tess.AddContour(contour, LibTessDotNet.ContourOrientation.Clockwise);
+
+            tess.Tessellate();
+
+            for (int i = 0; i < tess.ElementCount; ++i)
+            {
+                yield return new Triangle3D
+                {
+                    a = tess.Vertices[tess.Elements[i * 3]].Position,
+                    b = tess.Vertices[tess.Elements[i * 3 + 1]].Position,
+                    c = tess.Vertices[tess.Elements[i * 3 + 2]].Position
+                };
+            }
+
+        }
+
+        public static Triangle3D ToTriangle3D(this IEnumerable<Vector3D> pts)
+        {
+            var res = new Triangle3D();
+
+            int idx = 0;
+            foreach (var p in pts)
+            {
+                switch (idx)
+                {
+                    case 0: res.a = p; break;
+                    case 1: res.b = p; break;
+                    case 2: res.c = p; break;
+                    default: throw new ArgumentException($"need exactly 3 pts for triangle");
+                }
+                ++idx;
+            }
+
+            return res;
+        }
+
     }
 
 }
