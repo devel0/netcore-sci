@@ -584,6 +584,17 @@ namespace SearchAThing
                     }
                     break;
 
+                case EntityType.Face3D:
+                    {
+                        var f = (Face3d)eo;
+                        yield return f.FirstVertex;
+                        yield return f.SecondVertex;
+                        yield return f.ThirdVertex;
+                        if (f.FourthVertex != null)
+                            yield return f.FourthVertex;
+                    }
+                    break;
+
                 case EntityType.Point:
                     {
                         var pt = (Point)eo;
