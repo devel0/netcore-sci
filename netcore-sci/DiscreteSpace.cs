@@ -58,6 +58,8 @@ namespace SearchAThing
         List<DiscreteSpaceItem<T>>[] sorted;
         DiscreteSpaceItemComparer<T>[] cmp;
 
+        public IEnumerable<T> Items => sorted.SelectMany(w => w.Select(w => w.Item));
+
         double tol;
         int spaceDim;
 
