@@ -2,6 +2,7 @@
 using System.Linq;
 using static System.Math;
 using System;
+using UnitsNet;
 
 namespace SearchAThing.Sci.Tests
 {
@@ -95,15 +96,7 @@ namespace SearchAThing.Sci.Tests
             Assert.True(v.Concordant(1e-6, v2));
             Assert.True(v.Concordant(1e-6, v3));
             Assert.False(v.Concordant(1e-6, v4));
-        }
-
-        [Fact]
-        public void ConvertTest()
-        {
-            var v = new Vector3D(1, 2, 3);
-            var v2 = v.Convert(MUCollection.Force.kN, MUCollection.Force.N);
-            Assert.True(v2.EqualsTol(1e-6, 1e3, 2e3, 3e3));
-        }
+        }        
 
         [Fact]
         public void CrossProductTest()

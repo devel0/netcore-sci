@@ -11,7 +11,7 @@ namespace SearchAThing.Sci.Tests
         {
             var tol = 1e-8;
             // 1e-6 deg tolerance for angle comparision
-            var radTol = (1e-6 * MUCollection.PlaneAngle.deg).ConvertTo(MUCollection.PlaneAngle.rad).Value;
+            var radTol = 1e-6/180d*PI;
 
             var l1 = new Line3D(
               new Vector3D("X = -77.94731049 Y = 92.20123462 Z = 51.4961973"),

@@ -6,16 +6,13 @@ using System.Diagnostics;
 using System;
 using ClipperLib;
 using static SearchAThing.SciToolkit;
-using static SearchAThing.MUCollection;
 
 namespace SearchAThing.Sci.Tests
 {
     public class OldTests
     {
 
-        // tests from https://github.com/SearchAThing-old1/SearchAThing.UnitTest
-
-        ISciModel model = new SampleModel();
+        // tests from https://github.com/SearchAThing-old1/SearchAThing.UnitTest        
 
         [Fact(DisplayName = "DoubleEqualityComparer")]
         public void DoubleEqualityComparerTest()
@@ -43,8 +40,8 @@ namespace SearchAThing.Sci.Tests
         [Fact(DisplayName = "Vector3D")]
         public void Vector3DTest()
         {
-            var tolLen = model.MUDomain.Length.DefaultTolerance;
-            var tolRad = model.MUDomain.PlaneAngle.DefaultTolerance;
+            var tolLen = 1e-4;
+            var tolRad = 1e-3;
 
             // length
             Assert.True(new Vector3D(1, 5.9, 4).Length.EqualsTol(tolLen, 7.198));
@@ -84,18 +81,18 @@ namespace SearchAThing.Sci.Tests
 
             // angle toward
             Assert.True(new Vector3D(120.317, 42.914, 0).AngleToward(tolLen, new Vector3D(28.549, 63.771, 0), Vector3D.ZAxis)
-                .EqualsTol(MUCollection.PlaneAngle.rad.Tolerance(model), 0.80726));
+                .EqualsTol(tolRad, 0.80726));
 
             Assert.False(new Vector3D(120.317, 42.914, 0).AngleToward(tolLen, new Vector3D(28.549, 63.771, 0), -Vector3D.ZAxis)
-                .EqualsTol(MUCollection.PlaneAngle.rad.Tolerance(model), 0.80726));
+                .EqualsTol(tolRad, 0.80726));
 
             Assert.True(new Vector3D(120.317, 42.914, 0).AngleToward(tolLen, new Vector3D(28.549, 63.771, 0), -Vector3D.ZAxis)
-                .EqualsTol(MUCollection.PlaneAngle.rad.Tolerance(model), 2 * PI - 0.80726));
+                .EqualsTol(tolRad, 2 * PI - 0.80726));
 
             Assert.True(Abs(
                 new Vector3D(-6.95, -5.1725, 0).AngleToward(1e-6, new Vector3D(6.95, 5.1725, 0), new Vector3D(0, 0, 71.89775))
                 - PI)
-                < model.MUDomain.PlaneAngle.DefaultTolerance);
+                < 1e-6);
 
             // z-axis rotation
             Assert.True(new Vector3D(109.452, 38.712, 0).RotateAboutZAxis((50.0).ToRad())
@@ -132,9 +129,7 @@ namespace SearchAThing.Sci.Tests
 
             // vector parallel ( tolerance checks )
             {
-                // ensure mm tolerance 1e-1
-                var tmpModel = new SampleModel();
-
+                // ensure mm tolerance 1e-1                
                 var tmpTolLen = 1e-1;
 
                 // Z component of first vector will be considered zero cause < 1e-1 model tolerance     
@@ -251,7 +246,7 @@ namespace SearchAThing.Sci.Tests
         [Fact(DisplayName = "Line3D")]
         void Line3DTest()
         {
-            var tolLen = model.MUDomain.Length.DefaultTolerance;
+            var tolLen = 1e-4;
 
             // line contains point
             {
@@ -381,7 +376,7 @@ namespace SearchAThing.Sci.Tests
         [Fact(DisplayName = "Plane3D")]
         void Plane3DTest()
         {
-            var tol = model.MUDomain.Length.DefaultTolerance;
+            var tol = 1e-4;
 
             var plane = new Plane3D(new CoordinateSystem3D(Vector3D.Zero, Vector3D.XAxis, Vector3D.YAxis));
 
@@ -396,7 +391,7 @@ namespace SearchAThing.Sci.Tests
         [Fact(DisplayName = "Circle3D")]
         void Circle3DTest()
         {
-            var tol = model.MUDomain.Length.DefaultTolerance;
+            var tol = 1e-4;
 
             {
                 var circle = new Circle3D(
@@ -465,7 +460,7 @@ namespace SearchAThing.Sci.Tests
         void PolygonTest()
         {
             {
-                var tolLen = model.MUDomain.Length.DefaultTolerance;
+                var tolLen = 1e-4;
 
                 var B = 700; var b = 50;
                 var H = 900; var h = 50;
@@ -610,7 +605,7 @@ namespace SearchAThing.Sci.Tests
         [Fact(DisplayName = "SortPolygon")]
         void SortPolygonTest()
         {
-            var tol = model.MUDomain.Length.DefaultTolerance;
+            var tol = 1e-6;
 
             {
                 var p1 = new Vector3D(-19.331, 168.749, 0);
@@ -675,7 +670,7 @@ namespace SearchAThing.Sci.Tests
         [Fact(DisplayName = "BBox3D")]
         void BBox3DTest()
         {
-            var tolLen = model.MUDomain.Length.DefaultTolerance;
+            var tolLen = 1e-4;
 
             var pts = Vector3D.From3DCoords(
                 1, 5, 8,
@@ -691,124 +686,7 @@ namespace SearchAThing.Sci.Tests
             Assert.True(bbox.EqualsTol(tolLen, bbox.Union(bbox2)));
 
             Assert.True(bbox.Contains(tolLen, bbox2));
-        }
-
-        [Fact(DisplayName = "MeasureUnit")]
-        void MeasureUnitTest()
-        {
-            {
-
-                var measure = Measure.TryParse("10mm [Length]");
-                Assert.True(measure != null &&
-                    measure.MU == MUCollection.Length.mm &&
-                    measure.MU.PhysicalQuantity == PQCollection.Length &&
-                    Abs(measure.Value - 10) < 1e-3);
-            }
-
-            var mud = new MUDomain();
-
-            // Length
-            {
-                var tol = mud.Length.DefaultTolerance;
-
-                var mm = MUCollection.Length.mm;
-                var m = MUCollection.Length.m;
-                var km = MUCollection.Length.km;
-                var inch = MUCollection.Length.inch;
-                var ft = MUCollection.Length.ft;
-                var yard = MUCollection.Length.yard;
-                var links = MUCollection.Length.links;
-
-                var a = (212356.435 * mm).ConvertTo(mud).Value;
-
-                Assert.True(a.EqualsTol(tol, (212356.435).Convert(mm, mud)));
-                Assert.True(a.EqualsTol(tol, (212.356435).Convert(m, mud)));
-                Assert.True(a.EqualsTol(tol, (0.212356435).Convert(km, mud)));
-                Assert.True(a.EqualsTol(tol, (8360.489567).Convert(inch, mud)));
-                Assert.True(a.EqualsTol(tol, (696.7074639).Convert(ft, mud)));
-                Assert.True(a.EqualsTol(tol, (232.2358213).Convert(yard, mud)));
-                Assert.True(a.EqualsTol(tol, (1055.6173695617595).Convert(links, mud)));
-            }
-
-            // Temperature
-            {
-                var tol = mud.Temperature.DefaultTolerance;
-
-                var C = MUCollection.Temperature.C;
-                var K = MUCollection.Temperature.K;
-                var F = MUCollection.Temperature.F;
-
-                var C_ = 20.35;
-                var K_ = 293.5;
-                var F_ = 68.63;
-
-                {
-                    var T = (C_ * C);
-
-                    Assert.True(T.ConvertTo(K).Value.EqualsTol(1e-1, K_));
-                    Assert.True(T.ConvertTo(F).Value.EqualsTol(1e-2, F_));
-                }
-
-                {
-                    var T = (K_ * K);
-
-                    Assert.True(T.ConvertTo(C).Value.EqualsTol(1e-2, C_));
-                    Assert.True(T.ConvertTo(F).Value.EqualsTol(1e-2, F_));
-                }
-
-                {
-                    var T = (F_ * F);
-
-                    Assert.True(T.ConvertTo(C).Value.EqualsTol(1e-2, C_));
-                    Assert.True(T.ConvertTo(K).Value.EqualsTol(1e-1, K_));
-                }
-
-            }
-
-            // Linear acceleration
-            {
-                var a = 4.4 * MUCollection.Acceleration.mm_s2;
-                var b = a.ConvertTo(MUCollection.Acceleration.m_s2).Value;
-                Assert.True(b.EqualsTol(1e-4, 0.0044));
-            }
-
-            // Angular speed
-            {
-                var a = (2.5) * MUCollection.AngularSpeed.rad_s;
-                var b = a.ConvertTo(MUCollection.AngularSpeed.deg_s);
-                Assert.True(b.Value.EqualsTol(1e-3, 143.239));
-
-                Assert.False(AngularAcceleration.Auto(MUCollection.PlaneAngle.deg, MUCollection.Time.sec)
-                    .Equals(MUCollection.AngularSpeed.deg_s));
-                Assert.True(AngularSpeed.Auto(MUCollection.PlaneAngle.deg, MUCollection.Time.sec)
-                    .Equals(MUCollection.AngularSpeed.deg_s));
-                Assert.True(AngularSpeed.Auto(MUCollection.PlaneAngle.rad, MUCollection.Time.sec)
-                    .Equals(MUCollection.AngularSpeed.rad_s));
-            }
-
-            // Angular acceleration
-            {
-                var a = (2.5) * MUCollection.AngularAcceleration.rad_s2;
-                var b = a.ConvertTo(MUCollection.AngularAcceleration.deg_s2);
-                Assert.True(b.Value.EqualsTol(1e-3, 143.239));
-
-                Assert.True(AngularAcceleration.Auto(MUCollection.PlaneAngle.deg, MUCollection.Time.sec)
-                    .Equals(MUCollection.AngularAcceleration.deg_s2));
-                Assert.True(AngularAcceleration.Auto(MUCollection.PlaneAngle.rad, MUCollection.Time.sec)
-                    .Equals(MUCollection.AngularAcceleration.rad_s2));
-            }
-
-            // Bending moment
-            {
-                var Nmm = MUCollection.BendingMoment.Auto(MUCollection.Force.N, MUCollection.Length.mm);
-                Assert.True(Nmm.Equals(MUCollection.BendingMoment.Nmm));
-
-                var a = 1.78 * Nmm;
-                var b = a.ConvertTo(MUCollection.BendingMoment.kNm);
-                Assert.True(b.Value.EqualsTol(1e-8, 1.78e-6));
-            }
-
-        }
+        }        
 
         [Fact(DisplayName = "Line3DAutoIntersect")]
         void Line3DAutoIntersect()
@@ -841,7 +719,7 @@ namespace SearchAThing.Sci.Tests
         [Fact(DisplayName = "NumberTest")]
         void NumberTest()
         {
-            Assert.True((3.1415926535897931).NormalizeAngle(1e-12) == (3.1415926535897931));            
+            Assert.True((3.1415926535897931).NormalizeAngle(1e-12) == (3.1415926535897931));
         }
 
         [Fact(DisplayName = "PolyBool")]

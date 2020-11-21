@@ -123,94 +123,6 @@ It can generate a Int64MapExceptionRange.</p>
       <section></section>
       <h4><a class="xref" href="SearchAThing.Matrix3D.html">Matrix3D</a></h4>
       <section></section>
-      <h4><a class="xref" href="SearchAThing.Measure.html">Measure</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MeasureJsonConverter.html">MeasureJsonConverter</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MeasureUnit.html">MeasureUnit</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MeasureUnitJsonConverter.html">MeasureUnitJsonConverter</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MeasureUnitWithDefaultTolerance.html">MeasureUnitWithDefaultTolerance</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.html">MUCollection</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.Acceleration.html">MUCollection.Acceleration</a></h4>
-      <section><p>Linear acceleration</p>
-</section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.Adimensional.html">MUCollection.Adimensional</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.AmountOfSubstance.html">MUCollection.AmountOfSubstance</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.AngularAcceleration.html">MUCollection.AngularAcceleration</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.AngularSpeed.html">MUCollection.AngularSpeed</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.BendingMoment.html">MUCollection.BendingMoment</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.ElectricalConductance.html">MUCollection.ElectricalConductance</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.ElectricalConductivity.html">MUCollection.ElectricalConductivity</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.ElectricCurrent.html">MUCollection.ElectricCurrent</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.Energy.html">MUCollection.Energy</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.Force.html">MUCollection.Force</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.Frequency.html">MUCollection.Frequency</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.Length.html">MUCollection.Length</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.Length2.html">MUCollection.Length2</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.Length3.html">MUCollection.Length3</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.Length4.html">MUCollection.Length4</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.LuminousIntensity.html">MUCollection.LuminousIntensity</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.Mass.html">MUCollection.Mass</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.PlaneAngle.html">MUCollection.PlaneAngle</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.Power.html">MUCollection.Power</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.Pressure.html">MUCollection.Pressure</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.Speed.html">MUCollection.Speed</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.Temperature.html">MUCollection.Temperature</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.Time.html">MUCollection.Time</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.Turbidity.html">MUCollection.Turbidity</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUCollection.VolumetricFlowRate.html">MUCollection.VolumetricFlowRate</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MUDomain.html">MUDomain</a></h4>
-      <section><p><a href="https://en.wikipedia.org/wiki/List_of_physical_quantities">list of physical quantities</a></p>
-<p>Measures here contains information about implicit measure unit
-and value of the tolerance.</p>
-<p>Note that all measure must be dimensionally equivalent.
-For example:
-[length] = m
-[length2] = [length] * [length] = m2
-[time] = s
-[time2] = [time] * [time] = s2
-[speed] = [length] / [time] = m/s
-[acceleration] = [length] / [time2] = m/s2
-[mass] = kg
-[force] = [mass] * [acceleration] = kg * m/s2 = N
-[pressure] = [force] / [length2] = N / m2 = Pa</p>
-<p>This will ensure measure comparision without further conversion, for example
-m1 = 1 [kg]
-a1 = 2 [m/s2]
-f1 = 4 [N]</p>
-<p>test = m1 * a1 &gt; f1</p>
-</section>
-      <h4><a class="xref" href="SearchAThing.PhysicalQuantity.html">PhysicalQuantity</a></h4>
-      <section></section>
       <h4><a class="xref" href="SearchAThing.Plane3D.html">Plane3D</a></h4>
       <section></section>
       <h4><a class="xref" href="SearchAThing.Plane3DRegion.html">Plane3DRegion</a></h4>
@@ -218,15 +130,9 @@ f1 = 4 [N]</p>
 </section>
       <h4><a class="xref" href="SearchAThing.Polygon.html">Polygon</a></h4>
       <section></section>
-      <h4><a class="xref" href="SearchAThing.PQCollection.html">PQCollection</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.Project.html">Project</a></h4>
-      <section></section>
       <h4><a class="xref" href="SearchAThing.PythonException.html">PythonException</a></h4>
       <section></section>
       <h4><a class="xref" href="SearchAThing.PythonPipe.html">PythonPipe</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.SampleModel.html">SampleModel</a></h4>
       <section></section>
       <h4><a class="xref" href="SearchAThing.SciExt.html">SciExt</a></h4>
       <section></section>
@@ -250,11 +156,7 @@ f1 = 4 [N]</p>
       <h4><a class="xref" href="SearchAThing.NumbersStatNfo.html">NumbersStatNfo</a></h4>
       <section><p>statistical info about number set</p>
 </section>
-    <h3 id="interfaces">Interfaces
-  </h3>
-      <h4><a class="xref" href="SearchAThing.IMUDomain.html">IMUDomain</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.ISciModel.html">ISciModel</a></h4>
+      <h4><a class="xref" href="SearchAThing.Triangle3D.html">Triangle3D</a></h4>
       <section></section>
     <h3 id="enums">Enums
   </h3>
@@ -267,8 +169,6 @@ f1 = 4 [N]</p>
       <h4><a class="xref" href="SearchAThing.Line3DSegmentMode.html">Line3DSegmentMode</a></h4>
       <section></section>
       <h4><a class="xref" href="SearchAThing.LineIntersectBehavior.html">LineIntersectBehavior</a></h4>
-      <section></section>
-      <h4><a class="xref" href="SearchAThing.MeasureUnitConversionTypeEnum.html">MeasureUnitConversionTypeEnum</a></h4>
       <section></section>
       <h4><a class="xref" href="SearchAThing.OrdIdx.html">OrdIdx</a></h4>
       <section></section>

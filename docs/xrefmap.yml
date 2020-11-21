@@ -1149,6 +1149,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.CoordinateSystem3D.ToWCS
   nameWithType: CoordinateSystem3D.ToWCS
+- uid: SearchAThing.CoordinateSystem3D.Transform(Matrix4x4)
+  name: Transform(Matrix4x4)
+  href: api/SearchAThing.CoordinateSystem3D.html#SearchAThing_CoordinateSystem3D_Transform_Matrix4x4_
+  commentId: M:SearchAThing.CoordinateSystem3D.Transform(Matrix4x4)
+  fullName: SearchAThing.CoordinateSystem3D.Transform(Matrix4x4)
+  nameWithType: CoordinateSystem3D.Transform(Matrix4x4)
+- uid: SearchAThing.CoordinateSystem3D.Transform*
+  name: Transform
+  href: api/SearchAThing.CoordinateSystem3D.html#SearchAThing_CoordinateSystem3D_Transform_
+  commentId: Overload:SearchAThing.CoordinateSystem3D.Transform
+  isSpec: "True"
+  fullName: SearchAThing.CoordinateSystem3D.Transform
+  nameWithType: CoordinateSystem3D.Transform
 - uid: SearchAThing.CoordinateSystem3D.WCS
   name: WCS
   href: api/SearchAThing.CoordinateSystem3D.html#SearchAThing_CoordinateSystem3D_WCS
@@ -1278,6 +1291,23 @@ references:
   fullName.vb: SearchAThing.DiscreteSpace(Of T).GetItemsInBBox
   nameWithType: DiscreteSpace<T>.GetItemsInBBox
   nameWithType.vb: DiscreteSpace(Of T).GetItemsInBBox
+- uid: SearchAThing.DiscreteSpace`1.Items
+  name: Items
+  href: api/SearchAThing.DiscreteSpace-1.html#SearchAThing_DiscreteSpace_1_Items
+  commentId: P:SearchAThing.DiscreteSpace`1.Items
+  fullName: SearchAThing.DiscreteSpace<T>.Items
+  fullName.vb: SearchAThing.DiscreteSpace(Of T).Items
+  nameWithType: DiscreteSpace<T>.Items
+  nameWithType.vb: DiscreteSpace(Of T).Items
+- uid: SearchAThing.DiscreteSpace`1.Items*
+  name: Items
+  href: api/SearchAThing.DiscreteSpace-1.html#SearchAThing_DiscreteSpace_1_Items_
+  commentId: Overload:SearchAThing.DiscreteSpace`1.Items
+  isSpec: "True"
+  fullName: SearchAThing.DiscreteSpace<T>.Items
+  fullName.vb: SearchAThing.DiscreteSpace(Of T).Items
+  nameWithType: DiscreteSpace<T>.Items
+  nameWithType.vb: DiscreteSpace(Of T).Items
 - uid: SearchAThing.DiscreteSpace`1.Search(SearchAThing.Vector3D,SearchAThing.Vector3D,System.Int32)
   name: Search(Vector3D, Vector3D, Int32)
   href: api/SearchAThing.DiscreteSpace-1.html#SearchAThing_DiscreteSpace_1_Search_SearchAThing_Vector3D_SearchAThing_Vector3D_System_Int32_
@@ -1703,366 +1733,6 @@ references:
   commentId: F:SearchAThing.GeometryType.Vector3D
   fullName: SearchAThing.GeometryType.Vector3D
   nameWithType: GeometryType.Vector3D
-- uid: SearchAThing.IMUDomain
-  name: IMUDomain
-  href: api/SearchAThing.IMUDomain.html
-  commentId: T:SearchAThing.IMUDomain
-  fullName: SearchAThing.IMUDomain
-  nameWithType: IMUDomain
-- uid: SearchAThing.IMUDomain._All
-  name: _All
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain__All
-  commentId: P:SearchAThing.IMUDomain._All
-  fullName: SearchAThing.IMUDomain._All
-  nameWithType: IMUDomain._All
-- uid: SearchAThing.IMUDomain._All*
-  name: _All
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain__All_
-  commentId: Overload:SearchAThing.IMUDomain._All
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain._All
-  nameWithType: IMUDomain._All
-- uid: SearchAThing.IMUDomain.Acceleration
-  name: Acceleration
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Acceleration
-  commentId: P:SearchAThing.IMUDomain.Acceleration
-  fullName: SearchAThing.IMUDomain.Acceleration
-  nameWithType: IMUDomain.Acceleration
-- uid: SearchAThing.IMUDomain.Acceleration*
-  name: Acceleration
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Acceleration_
-  commentId: Overload:SearchAThing.IMUDomain.Acceleration
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.Acceleration
-  nameWithType: IMUDomain.Acceleration
-- uid: SearchAThing.IMUDomain.AmountOfSubstance
-  name: AmountOfSubstance
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_AmountOfSubstance
-  commentId: P:SearchAThing.IMUDomain.AmountOfSubstance
-  fullName: SearchAThing.IMUDomain.AmountOfSubstance
-  nameWithType: IMUDomain.AmountOfSubstance
-- uid: SearchAThing.IMUDomain.AmountOfSubstance*
-  name: AmountOfSubstance
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_AmountOfSubstance_
-  commentId: Overload:SearchAThing.IMUDomain.AmountOfSubstance
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.AmountOfSubstance
-  nameWithType: IMUDomain.AmountOfSubstance
-- uid: SearchAThing.IMUDomain.AngularAcceleration
-  name: AngularAcceleration
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_AngularAcceleration
-  commentId: P:SearchAThing.IMUDomain.AngularAcceleration
-  fullName: SearchAThing.IMUDomain.AngularAcceleration
-  nameWithType: IMUDomain.AngularAcceleration
-- uid: SearchAThing.IMUDomain.AngularAcceleration*
-  name: AngularAcceleration
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_AngularAcceleration_
-  commentId: Overload:SearchAThing.IMUDomain.AngularAcceleration
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.AngularAcceleration
-  nameWithType: IMUDomain.AngularAcceleration
-- uid: SearchAThing.IMUDomain.AngularSpeed
-  name: AngularSpeed
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_AngularSpeed
-  commentId: P:SearchAThing.IMUDomain.AngularSpeed
-  fullName: SearchAThing.IMUDomain.AngularSpeed
-  nameWithType: IMUDomain.AngularSpeed
-- uid: SearchAThing.IMUDomain.AngularSpeed*
-  name: AngularSpeed
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_AngularSpeed_
-  commentId: Overload:SearchAThing.IMUDomain.AngularSpeed
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.AngularSpeed
-  nameWithType: IMUDomain.AngularSpeed
-- uid: SearchAThing.IMUDomain.BendingMoment
-  name: BendingMoment
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_BendingMoment
-  commentId: P:SearchAThing.IMUDomain.BendingMoment
-  fullName: SearchAThing.IMUDomain.BendingMoment
-  nameWithType: IMUDomain.BendingMoment
-- uid: SearchAThing.IMUDomain.BendingMoment*
-  name: BendingMoment
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_BendingMoment_
-  commentId: Overload:SearchAThing.IMUDomain.BendingMoment
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.BendingMoment
-  nameWithType: IMUDomain.BendingMoment
-- uid: SearchAThing.IMUDomain.ElectricalConductance
-  name: ElectricalConductance
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_ElectricalConductance
-  commentId: P:SearchAThing.IMUDomain.ElectricalConductance
-  fullName: SearchAThing.IMUDomain.ElectricalConductance
-  nameWithType: IMUDomain.ElectricalConductance
-- uid: SearchAThing.IMUDomain.ElectricalConductance*
-  name: ElectricalConductance
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_ElectricalConductance_
-  commentId: Overload:SearchAThing.IMUDomain.ElectricalConductance
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.ElectricalConductance
-  nameWithType: IMUDomain.ElectricalConductance
-- uid: SearchAThing.IMUDomain.ElectricalConductivity
-  name: ElectricalConductivity
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_ElectricalConductivity
-  commentId: P:SearchAThing.IMUDomain.ElectricalConductivity
-  fullName: SearchAThing.IMUDomain.ElectricalConductivity
-  nameWithType: IMUDomain.ElectricalConductivity
-- uid: SearchAThing.IMUDomain.ElectricalConductivity*
-  name: ElectricalConductivity
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_ElectricalConductivity_
-  commentId: Overload:SearchAThing.IMUDomain.ElectricalConductivity
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.ElectricalConductivity
-  nameWithType: IMUDomain.ElectricalConductivity
-- uid: SearchAThing.IMUDomain.ElectricCurrent
-  name: ElectricCurrent
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_ElectricCurrent
-  commentId: P:SearchAThing.IMUDomain.ElectricCurrent
-  fullName: SearchAThing.IMUDomain.ElectricCurrent
-  nameWithType: IMUDomain.ElectricCurrent
-- uid: SearchAThing.IMUDomain.ElectricCurrent*
-  name: ElectricCurrent
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_ElectricCurrent_
-  commentId: Overload:SearchAThing.IMUDomain.ElectricCurrent
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.ElectricCurrent
-  nameWithType: IMUDomain.ElectricCurrent
-- uid: SearchAThing.IMUDomain.Energy
-  name: Energy
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Energy
-  commentId: P:SearchAThing.IMUDomain.Energy
-  fullName: SearchAThing.IMUDomain.Energy
-  nameWithType: IMUDomain.Energy
-- uid: SearchAThing.IMUDomain.Energy*
-  name: Energy
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Energy_
-  commentId: Overload:SearchAThing.IMUDomain.Energy
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.Energy
-  nameWithType: IMUDomain.Energy
-- uid: SearchAThing.IMUDomain.Force
-  name: Force
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Force
-  commentId: P:SearchAThing.IMUDomain.Force
-  fullName: SearchAThing.IMUDomain.Force
-  nameWithType: IMUDomain.Force
-- uid: SearchAThing.IMUDomain.Force*
-  name: Force
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Force_
-  commentId: Overload:SearchAThing.IMUDomain.Force
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.Force
-  nameWithType: IMUDomain.Force
-- uid: SearchAThing.IMUDomain.Frequency
-  name: Frequency
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Frequency
-  commentId: P:SearchAThing.IMUDomain.Frequency
-  fullName: SearchAThing.IMUDomain.Frequency
-  nameWithType: IMUDomain.Frequency
-- uid: SearchAThing.IMUDomain.Frequency*
-  name: Frequency
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Frequency_
-  commentId: Overload:SearchAThing.IMUDomain.Frequency
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.Frequency
-  nameWithType: IMUDomain.Frequency
-- uid: SearchAThing.IMUDomain.Length
-  name: Length
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Length
-  commentId: P:SearchAThing.IMUDomain.Length
-  fullName: SearchAThing.IMUDomain.Length
-  nameWithType: IMUDomain.Length
-- uid: SearchAThing.IMUDomain.Length*
-  name: Length
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Length_
-  commentId: Overload:SearchAThing.IMUDomain.Length
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.Length
-  nameWithType: IMUDomain.Length
-- uid: SearchAThing.IMUDomain.Length2
-  name: Length2
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Length2
-  commentId: P:SearchAThing.IMUDomain.Length2
-  fullName: SearchAThing.IMUDomain.Length2
-  nameWithType: IMUDomain.Length2
-- uid: SearchAThing.IMUDomain.Length2*
-  name: Length2
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Length2_
-  commentId: Overload:SearchAThing.IMUDomain.Length2
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.Length2
-  nameWithType: IMUDomain.Length2
-- uid: SearchAThing.IMUDomain.Length3
-  name: Length3
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Length3
-  commentId: P:SearchAThing.IMUDomain.Length3
-  fullName: SearchAThing.IMUDomain.Length3
-  nameWithType: IMUDomain.Length3
-- uid: SearchAThing.IMUDomain.Length3*
-  name: Length3
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Length3_
-  commentId: Overload:SearchAThing.IMUDomain.Length3
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.Length3
-  nameWithType: IMUDomain.Length3
-- uid: SearchAThing.IMUDomain.Length4
-  name: Length4
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Length4
-  commentId: P:SearchAThing.IMUDomain.Length4
-  fullName: SearchAThing.IMUDomain.Length4
-  nameWithType: IMUDomain.Length4
-- uid: SearchAThing.IMUDomain.Length4*
-  name: Length4
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Length4_
-  commentId: Overload:SearchAThing.IMUDomain.Length4
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.Length4
-  nameWithType: IMUDomain.Length4
-- uid: SearchAThing.IMUDomain.LuminousIntensity
-  name: LuminousIntensity
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_LuminousIntensity
-  commentId: P:SearchAThing.IMUDomain.LuminousIntensity
-  fullName: SearchAThing.IMUDomain.LuminousIntensity
-  nameWithType: IMUDomain.LuminousIntensity
-- uid: SearchAThing.IMUDomain.LuminousIntensity*
-  name: LuminousIntensity
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_LuminousIntensity_
-  commentId: Overload:SearchAThing.IMUDomain.LuminousIntensity
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.LuminousIntensity
-  nameWithType: IMUDomain.LuminousIntensity
-- uid: SearchAThing.IMUDomain.Mass
-  name: Mass
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Mass
-  commentId: P:SearchAThing.IMUDomain.Mass
-  fullName: SearchAThing.IMUDomain.Mass
-  nameWithType: IMUDomain.Mass
-- uid: SearchAThing.IMUDomain.Mass*
-  name: Mass
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Mass_
-  commentId: Overload:SearchAThing.IMUDomain.Mass
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.Mass
-  nameWithType: IMUDomain.Mass
-- uid: SearchAThing.IMUDomain.PlaneAngle
-  name: PlaneAngle
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_PlaneAngle
-  commentId: P:SearchAThing.IMUDomain.PlaneAngle
-  fullName: SearchAThing.IMUDomain.PlaneAngle
-  nameWithType: IMUDomain.PlaneAngle
-- uid: SearchAThing.IMUDomain.PlaneAngle*
-  name: PlaneAngle
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_PlaneAngle_
-  commentId: Overload:SearchAThing.IMUDomain.PlaneAngle
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.PlaneAngle
-  nameWithType: IMUDomain.PlaneAngle
-- uid: SearchAThing.IMUDomain.Power
-  name: Power
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Power
-  commentId: P:SearchAThing.IMUDomain.Power
-  fullName: SearchAThing.IMUDomain.Power
-  nameWithType: IMUDomain.Power
-- uid: SearchAThing.IMUDomain.Power*
-  name: Power
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Power_
-  commentId: Overload:SearchAThing.IMUDomain.Power
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.Power
-  nameWithType: IMUDomain.Power
-- uid: SearchAThing.IMUDomain.Pressure
-  name: Pressure
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Pressure
-  commentId: P:SearchAThing.IMUDomain.Pressure
-  fullName: SearchAThing.IMUDomain.Pressure
-  nameWithType: IMUDomain.Pressure
-- uid: SearchAThing.IMUDomain.Pressure*
-  name: Pressure
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Pressure_
-  commentId: Overload:SearchAThing.IMUDomain.Pressure
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.Pressure
-  nameWithType: IMUDomain.Pressure
-- uid: SearchAThing.IMUDomain.SetupItem(System.String,System.String,System.Nullable{System.Double})
-  name: SetupItem(String, String, Nullable<Double>)
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_SetupItem_System_String_System_String_System_Nullable_System_Double__
-  commentId: M:SearchAThing.IMUDomain.SetupItem(System.String,System.String,System.Nullable{System.Double})
-  name.vb: SetupItem(String, String, Nullable(Of Double))
-  fullName: SearchAThing.IMUDomain.SetupItem(System.String, System.String, System.Nullable<System.Double>)
-  fullName.vb: SearchAThing.IMUDomain.SetupItem(System.String, System.String, System.Nullable(Of System.Double))
-  nameWithType: IMUDomain.SetupItem(String, String, Nullable<Double>)
-  nameWithType.vb: IMUDomain.SetupItem(String, String, Nullable(Of Double))
-- uid: SearchAThing.IMUDomain.SetupItem*
-  name: SetupItem
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_SetupItem_
-  commentId: Overload:SearchAThing.IMUDomain.SetupItem
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.SetupItem
-  nameWithType: IMUDomain.SetupItem
-- uid: SearchAThing.IMUDomain.Speed
-  name: Speed
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Speed
-  commentId: P:SearchAThing.IMUDomain.Speed
-  fullName: SearchAThing.IMUDomain.Speed
-  nameWithType: IMUDomain.Speed
-- uid: SearchAThing.IMUDomain.Speed*
-  name: Speed
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Speed_
-  commentId: Overload:SearchAThing.IMUDomain.Speed
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.Speed
-  nameWithType: IMUDomain.Speed
-- uid: SearchAThing.IMUDomain.Temperature
-  name: Temperature
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Temperature
-  commentId: P:SearchAThing.IMUDomain.Temperature
-  fullName: SearchAThing.IMUDomain.Temperature
-  nameWithType: IMUDomain.Temperature
-- uid: SearchAThing.IMUDomain.Temperature*
-  name: Temperature
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Temperature_
-  commentId: Overload:SearchAThing.IMUDomain.Temperature
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.Temperature
-  nameWithType: IMUDomain.Temperature
-- uid: SearchAThing.IMUDomain.Time
-  name: Time
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Time
-  commentId: P:SearchAThing.IMUDomain.Time
-  fullName: SearchAThing.IMUDomain.Time
-  nameWithType: IMUDomain.Time
-- uid: SearchAThing.IMUDomain.Time*
-  name: Time
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Time_
-  commentId: Overload:SearchAThing.IMUDomain.Time
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.Time
-  nameWithType: IMUDomain.Time
-- uid: SearchAThing.IMUDomain.Turbidity
-  name: Turbidity
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Turbidity
-  commentId: P:SearchAThing.IMUDomain.Turbidity
-  fullName: SearchAThing.IMUDomain.Turbidity
-  nameWithType: IMUDomain.Turbidity
-- uid: SearchAThing.IMUDomain.Turbidity*
-  name: Turbidity
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_Turbidity_
-  commentId: Overload:SearchAThing.IMUDomain.Turbidity
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.Turbidity
-  nameWithType: IMUDomain.Turbidity
-- uid: SearchAThing.IMUDomain.VolumetricFlowRate
-  name: VolumetricFlowRate
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_VolumetricFlowRate
-  commentId: P:SearchAThing.IMUDomain.VolumetricFlowRate
-  fullName: SearchAThing.IMUDomain.VolumetricFlowRate
-  nameWithType: IMUDomain.VolumetricFlowRate
-- uid: SearchAThing.IMUDomain.VolumetricFlowRate*
-  name: VolumetricFlowRate
-  href: api/SearchAThing.IMUDomain.html#SearchAThing_IMUDomain_VolumetricFlowRate_
-  commentId: Overload:SearchAThing.IMUDomain.VolumetricFlowRate
-  isSpec: "True"
-  fullName: SearchAThing.IMUDomain.VolumetricFlowRate
-  nameWithType: IMUDomain.VolumetricFlowRate
 - uid: SearchAThing.Int64Map
   name: Int64Map
   href: api/SearchAThing.Int64Map.html
@@ -2156,25 +1826,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Int64MapExceptionRange.Int64MapExceptionRange
   nameWithType: Int64MapExceptionRange.Int64MapExceptionRange
-- uid: SearchAThing.ISciModel
-  name: ISciModel
-  href: api/SearchAThing.ISciModel.html
-  commentId: T:SearchAThing.ISciModel
-  fullName: SearchAThing.ISciModel
-  nameWithType: ISciModel
-- uid: SearchAThing.ISciModel.MUDomain
-  name: MUDomain
-  href: api/SearchAThing.ISciModel.html#SearchAThing_ISciModel_MUDomain
-  commentId: P:SearchAThing.ISciModel.MUDomain
-  fullName: SearchAThing.ISciModel.MUDomain
-  nameWithType: ISciModel.MUDomain
-- uid: SearchAThing.ISciModel.MUDomain*
-  name: MUDomain
-  href: api/SearchAThing.ISciModel.html#SearchAThing_ISciModel_MUDomain_
-  commentId: Overload:SearchAThing.ISciModel.MUDomain
-  isSpec: "True"
-  fullName: SearchAThing.ISciModel.MUDomain
-  nameWithType: ISciModel.MUDomain
 - uid: SearchAThing.Line3D
   name: Line3D
   href: api/SearchAThing.Line3D.html
@@ -3245,1628 +2896,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Matrix3D.Transpose
   nameWithType: Matrix3D.Transpose
-- uid: SearchAThing.Measure
-  name: Measure
-  href: api/SearchAThing.Measure.html
-  commentId: T:SearchAThing.Measure
-  fullName: SearchAThing.Measure
-  nameWithType: Measure
-- uid: SearchAThing.Measure.#ctor(System.Double,SearchAThing.MeasureUnit)
-  name: Measure(Double, MeasureUnit)
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure__ctor_System_Double_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.Measure.#ctor(System.Double,SearchAThing.MeasureUnit)
-  fullName: SearchAThing.Measure.Measure(System.Double, SearchAThing.MeasureUnit)
-  nameWithType: Measure.Measure(Double, MeasureUnit)
-- uid: SearchAThing.Measure.#ctor*
-  name: Measure
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure__ctor_
-  commentId: Overload:SearchAThing.Measure.#ctor
-  isSpec: "True"
-  fullName: SearchAThing.Measure.Measure
-  nameWithType: Measure.Measure
-- uid: SearchAThing.Measure.Convert(System.Double,SearchAThing.IMUDomain,SearchAThing.MeasureUnit)
-  name: Convert(Double, IMUDomain, MeasureUnit)
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_Convert_System_Double_SearchAThing_IMUDomain_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.Measure.Convert(System.Double,SearchAThing.IMUDomain,SearchAThing.MeasureUnit)
-  fullName: SearchAThing.Measure.Convert(System.Double, SearchAThing.IMUDomain, SearchAThing.MeasureUnit)
-  nameWithType: Measure.Convert(Double, IMUDomain, MeasureUnit)
-- uid: SearchAThing.Measure.Convert(System.Double,SearchAThing.MeasureUnit,SearchAThing.IMUDomain)
-  name: Convert(Double, MeasureUnit, IMUDomain)
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_Convert_System_Double_SearchAThing_MeasureUnit_SearchAThing_IMUDomain_
-  commentId: M:SearchAThing.Measure.Convert(System.Double,SearchAThing.MeasureUnit,SearchAThing.IMUDomain)
-  fullName: SearchAThing.Measure.Convert(System.Double, SearchAThing.MeasureUnit, SearchAThing.IMUDomain)
-  nameWithType: Measure.Convert(Double, MeasureUnit, IMUDomain)
-- uid: SearchAThing.Measure.Convert(System.Double,SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  name: Convert(Double, MeasureUnit, MeasureUnit)
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_Convert_System_Double_SearchAThing_MeasureUnit_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.Measure.Convert(System.Double,SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  fullName: SearchAThing.Measure.Convert(System.Double, SearchAThing.MeasureUnit, SearchAThing.MeasureUnit)
-  nameWithType: Measure.Convert(Double, MeasureUnit, MeasureUnit)
-- uid: SearchAThing.Measure.Convert*
-  name: Convert
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_Convert_
-  commentId: Overload:SearchAThing.Measure.Convert
-  isSpec: "True"
-  fullName: SearchAThing.Measure.Convert
-  nameWithType: Measure.Convert
-- uid: SearchAThing.Measure.ConvertTo(SearchAThing.IMUDomain)
-  name: ConvertTo(IMUDomain)
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_ConvertTo_SearchAThing_IMUDomain_
-  commentId: M:SearchAThing.Measure.ConvertTo(SearchAThing.IMUDomain)
-  fullName: SearchAThing.Measure.ConvertTo(SearchAThing.IMUDomain)
-  nameWithType: Measure.ConvertTo(IMUDomain)
-- uid: SearchAThing.Measure.ConvertTo(SearchAThing.MeasureUnit)
-  name: ConvertTo(MeasureUnit)
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_ConvertTo_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.Measure.ConvertTo(SearchAThing.MeasureUnit)
-  fullName: SearchAThing.Measure.ConvertTo(SearchAThing.MeasureUnit)
-  nameWithType: Measure.ConvertTo(MeasureUnit)
-- uid: SearchAThing.Measure.ConvertTo*
-  name: ConvertTo
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_ConvertTo_
-  commentId: Overload:SearchAThing.Measure.ConvertTo
-  isSpec: "True"
-  fullName: SearchAThing.Measure.ConvertTo
-  nameWithType: Measure.ConvertTo
-- uid: SearchAThing.Measure.ExpPref
-  name: ExpPref
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_ExpPref
-  commentId: P:SearchAThing.Measure.ExpPref
-  fullName: SearchAThing.Measure.ExpPref
-  nameWithType: Measure.ExpPref
-- uid: SearchAThing.Measure.ExpPref*
-  name: ExpPref
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_ExpPref_
-  commentId: Overload:SearchAThing.Measure.ExpPref
-  isSpec: "True"
-  fullName: SearchAThing.Measure.ExpPref
-  nameWithType: Measure.ExpPref
-- uid: SearchAThing.Measure.MRound(SearchAThing.Measure)
-  name: MRound(Measure)
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_MRound_SearchAThing_Measure_
-  commentId: M:SearchAThing.Measure.MRound(SearchAThing.Measure)
-  fullName: SearchAThing.Measure.MRound(SearchAThing.Measure)
-  nameWithType: Measure.MRound(Measure)
-- uid: SearchAThing.Measure.MRound*
-  name: MRound
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_MRound_
-  commentId: Overload:SearchAThing.Measure.MRound
-  isSpec: "True"
-  fullName: SearchAThing.Measure.MRound
-  nameWithType: Measure.MRound
-- uid: SearchAThing.Measure.MU
-  name: MU
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_MU
-  commentId: P:SearchAThing.Measure.MU
-  fullName: SearchAThing.Measure.MU
-  nameWithType: Measure.MU
-- uid: SearchAThing.Measure.MU*
-  name: MU
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_MU_
-  commentId: Overload:SearchAThing.Measure.MU
-  isSpec: "True"
-  fullName: SearchAThing.Measure.MU
-  nameWithType: Measure.MU
-- uid: SearchAThing.Measure.op_Division(SearchAThing.Measure,System.Double)
-  name: Division(Measure, Double)
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_op_Division_SearchAThing_Measure_System_Double_
-  commentId: M:SearchAThing.Measure.op_Division(SearchAThing.Measure,System.Double)
-  fullName: SearchAThing.Measure.Division(SearchAThing.Measure, System.Double)
-  nameWithType: Measure.Division(Measure, Double)
-- uid: SearchAThing.Measure.op_Division*
-  name: Division
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_op_Division_
-  commentId: Overload:SearchAThing.Measure.op_Division
-  isSpec: "True"
-  fullName: SearchAThing.Measure.Division
-  nameWithType: Measure.Division
-- uid: SearchAThing.Measure.op_Implicit(System.String)~SearchAThing.Measure
-  name: Implicit(String to Measure)
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_op_Implicit_System_String__SearchAThing_Measure
-  commentId: M:SearchAThing.Measure.op_Implicit(System.String)~SearchAThing.Measure
-  name.vb: Widening(String to Measure)
-  fullName: SearchAThing.Measure.Implicit(System.String to SearchAThing.Measure)
-  fullName.vb: SearchAThing.Measure.Widening(System.String to SearchAThing.Measure)
-  nameWithType: Measure.Implicit(String to Measure)
-  nameWithType.vb: Measure.Widening(String to Measure)
-- uid: SearchAThing.Measure.op_Implicit*
-  name: Implicit
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_op_Implicit_
-  commentId: Overload:SearchAThing.Measure.op_Implicit
-  isSpec: "True"
-  name.vb: Widening
-  fullName: SearchAThing.Measure.Implicit
-  fullName.vb: SearchAThing.Measure.Widening
-  nameWithType: Measure.Implicit
-  nameWithType.vb: Measure.Widening
-- uid: SearchAThing.Measure.op_Multiply(SearchAThing.Measure,System.Double)
-  name: Multiply(Measure, Double)
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_op_Multiply_SearchAThing_Measure_System_Double_
-  commentId: M:SearchAThing.Measure.op_Multiply(SearchAThing.Measure,System.Double)
-  fullName: SearchAThing.Measure.Multiply(SearchAThing.Measure, System.Double)
-  nameWithType: Measure.Multiply(Measure, Double)
-- uid: SearchAThing.Measure.op_Multiply(System.Double,SearchAThing.Measure)
-  name: Multiply(Double, Measure)
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_op_Multiply_System_Double_SearchAThing_Measure_
-  commentId: M:SearchAThing.Measure.op_Multiply(System.Double,SearchAThing.Measure)
-  fullName: SearchAThing.Measure.Multiply(System.Double, SearchAThing.Measure)
-  nameWithType: Measure.Multiply(Double, Measure)
-- uid: SearchAThing.Measure.op_Multiply*
-  name: Multiply
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_op_Multiply_
-  commentId: Overload:SearchAThing.Measure.op_Multiply
-  isSpec: "True"
-  fullName: SearchAThing.Measure.Multiply
-  nameWithType: Measure.Multiply
-- uid: SearchAThing.Measure.op_UnaryNegation(SearchAThing.Measure)
-  name: UnaryNegation(Measure)
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_op_UnaryNegation_SearchAThing_Measure_
-  commentId: M:SearchAThing.Measure.op_UnaryNegation(SearchAThing.Measure)
-  fullName: SearchAThing.Measure.UnaryNegation(SearchAThing.Measure)
-  nameWithType: Measure.UnaryNegation(Measure)
-- uid: SearchAThing.Measure.op_UnaryNegation*
-  name: UnaryNegation
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_op_UnaryNegation_
-  commentId: Overload:SearchAThing.Measure.op_UnaryNegation
-  isSpec: "True"
-  fullName: SearchAThing.Measure.UnaryNegation
-  nameWithType: Measure.UnaryNegation
-- uid: SearchAThing.Measure.ToString
-  name: ToString()
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_ToString
-  commentId: M:SearchAThing.Measure.ToString
-  fullName: SearchAThing.Measure.ToString()
-  nameWithType: Measure.ToString()
-- uid: SearchAThing.Measure.ToString(System.Boolean,System.Nullable{System.Int32},CultureInfo)
-  name: ToString(Boolean, Nullable<Int32>, CultureInfo)
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_ToString_System_Boolean_System_Nullable_System_Int32__CultureInfo_
-  commentId: M:SearchAThing.Measure.ToString(System.Boolean,System.Nullable{System.Int32},CultureInfo)
-  name.vb: ToString(Boolean, Nullable(Of Int32), CultureInfo)
-  fullName: SearchAThing.Measure.ToString(System.Boolean, System.Nullable<System.Int32>, CultureInfo)
-  fullName.vb: SearchAThing.Measure.ToString(System.Boolean, System.Nullable(Of System.Int32), CultureInfo)
-  nameWithType: Measure.ToString(Boolean, Nullable<Int32>, CultureInfo)
-  nameWithType.vb: Measure.ToString(Boolean, Nullable(Of Int32), CultureInfo)
-- uid: SearchAThing.Measure.ToString(System.Int32)
-  name: ToString(Int32)
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_ToString_System_Int32_
-  commentId: M:SearchAThing.Measure.ToString(System.Int32)
-  fullName: SearchAThing.Measure.ToString(System.Int32)
-  nameWithType: Measure.ToString(Int32)
-- uid: SearchAThing.Measure.ToString*
-  name: ToString
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_ToString_
-  commentId: Overload:SearchAThing.Measure.ToString
-  isSpec: "True"
-  fullName: SearchAThing.Measure.ToString
-  nameWithType: Measure.ToString
-- uid: SearchAThing.Measure.TryParse(System.String,SearchAThing.PhysicalQuantity,CultureInfo)
-  name: TryParse(String, PhysicalQuantity, CultureInfo)
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_TryParse_System_String_SearchAThing_PhysicalQuantity_CultureInfo_
-  commentId: M:SearchAThing.Measure.TryParse(System.String,SearchAThing.PhysicalQuantity,CultureInfo)
-  fullName: SearchAThing.Measure.TryParse(System.String, SearchAThing.PhysicalQuantity, CultureInfo)
-  nameWithType: Measure.TryParse(String, PhysicalQuantity, CultureInfo)
-- uid: SearchAThing.Measure.TryParse*
-  name: TryParse
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_TryParse_
-  commentId: Overload:SearchAThing.Measure.TryParse
-  isSpec: "True"
-  fullName: SearchAThing.Measure.TryParse
-  nameWithType: Measure.TryParse
-- uid: SearchAThing.Measure.Value
-  name: Value
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_Value
-  commentId: P:SearchAThing.Measure.Value
-  fullName: SearchAThing.Measure.Value
-  nameWithType: Measure.Value
-- uid: SearchAThing.Measure.Value*
-  name: Value
-  href: api/SearchAThing.Measure.html#SearchAThing_Measure_Value_
-  commentId: Overload:SearchAThing.Measure.Value
-  isSpec: "True"
-  fullName: SearchAThing.Measure.Value
-  nameWithType: Measure.Value
-- uid: SearchAThing.MeasureJsonConverter
-  name: MeasureJsonConverter
-  href: api/SearchAThing.MeasureJsonConverter.html
-  commentId: T:SearchAThing.MeasureJsonConverter
-  fullName: SearchAThing.MeasureJsonConverter
-  nameWithType: MeasureJsonConverter
-- uid: SearchAThing.MeasureJsonConverter.CanConvert(Type)
-  name: CanConvert(Type)
-  href: api/SearchAThing.MeasureJsonConverter.html#SearchAThing_MeasureJsonConverter_CanConvert_Type_
-  commentId: M:SearchAThing.MeasureJsonConverter.CanConvert(Type)
-  fullName: SearchAThing.MeasureJsonConverter.CanConvert(Type)
-  nameWithType: MeasureJsonConverter.CanConvert(Type)
-- uid: SearchAThing.MeasureJsonConverter.CanConvert*
-  name: CanConvert
-  href: api/SearchAThing.MeasureJsonConverter.html#SearchAThing_MeasureJsonConverter_CanConvert_
-  commentId: Overload:SearchAThing.MeasureJsonConverter.CanConvert
-  isSpec: "True"
-  fullName: SearchAThing.MeasureJsonConverter.CanConvert
-  nameWithType: MeasureJsonConverter.CanConvert
-- uid: SearchAThing.MeasureJsonConverter.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
-  name: ReadJson(JsonReader, Type, Object, JsonSerializer)
-  href: api/SearchAThing.MeasureJsonConverter.html#SearchAThing_MeasureJsonConverter_ReadJson_JsonReader_Type_System_Object_JsonSerializer_
-  commentId: M:SearchAThing.MeasureJsonConverter.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
-  fullName: SearchAThing.MeasureJsonConverter.ReadJson(JsonReader, Type, System.Object, JsonSerializer)
-  nameWithType: MeasureJsonConverter.ReadJson(JsonReader, Type, Object, JsonSerializer)
-- uid: SearchAThing.MeasureJsonConverter.ReadJson*
-  name: ReadJson
-  href: api/SearchAThing.MeasureJsonConverter.html#SearchAThing_MeasureJsonConverter_ReadJson_
-  commentId: Overload:SearchAThing.MeasureJsonConverter.ReadJson
-  isSpec: "True"
-  fullName: SearchAThing.MeasureJsonConverter.ReadJson
-  nameWithType: MeasureJsonConverter.ReadJson
-- uid: SearchAThing.MeasureJsonConverter.WriteJson(JsonWriter,System.Object,JsonSerializer)
-  name: WriteJson(JsonWriter, Object, JsonSerializer)
-  href: api/SearchAThing.MeasureJsonConverter.html#SearchAThing_MeasureJsonConverter_WriteJson_JsonWriter_System_Object_JsonSerializer_
-  commentId: M:SearchAThing.MeasureJsonConverter.WriteJson(JsonWriter,System.Object,JsonSerializer)
-  fullName: SearchAThing.MeasureJsonConverter.WriteJson(JsonWriter, System.Object, JsonSerializer)
-  nameWithType: MeasureJsonConverter.WriteJson(JsonWriter, Object, JsonSerializer)
-- uid: SearchAThing.MeasureJsonConverter.WriteJson*
-  name: WriteJson
-  href: api/SearchAThing.MeasureJsonConverter.html#SearchAThing_MeasureJsonConverter_WriteJson_
-  commentId: Overload:SearchAThing.MeasureJsonConverter.WriteJson
-  isSpec: "True"
-  fullName: SearchAThing.MeasureJsonConverter.WriteJson
-  nameWithType: MeasureJsonConverter.WriteJson
-- uid: SearchAThing.MeasureUnit
-  name: MeasureUnit
-  href: api/SearchAThing.MeasureUnit.html
-  commentId: T:SearchAThing.MeasureUnit
-  fullName: SearchAThing.MeasureUnit
-  nameWithType: MeasureUnit
-- uid: SearchAThing.MeasureUnit.#ctor(SearchAThing.PhysicalQuantity,System.String,Func{SearchAThing.MeasureUnit,SearchAThing.MeasureUnit,System.Double,System.Double})
-  name: MeasureUnit(PhysicalQuantity, String, Func<MeasureUnit, MeasureUnit, Double, Double>)
-  href: api/SearchAThing.MeasureUnit.html#SearchAThing_MeasureUnit__ctor_SearchAThing_PhysicalQuantity_System_String_Func_SearchAThing_MeasureUnit_SearchAThing_MeasureUnit_System_Double_System_Double__
-  commentId: M:SearchAThing.MeasureUnit.#ctor(SearchAThing.PhysicalQuantity,System.String,Func{SearchAThing.MeasureUnit,SearchAThing.MeasureUnit,System.Double,System.Double})
-  name.vb: MeasureUnit(PhysicalQuantity, String, Func(Of MeasureUnit, MeasureUnit, Double, Double))
-  fullName: SearchAThing.MeasureUnit.MeasureUnit(SearchAThing.PhysicalQuantity, System.String, Func<SearchAThing.MeasureUnit, SearchAThing.MeasureUnit, System.Double, System.Double>)
-  fullName.vb: SearchAThing.MeasureUnit.MeasureUnit(SearchAThing.PhysicalQuantity, System.String, Func(Of SearchAThing.MeasureUnit, SearchAThing.MeasureUnit, System.Double, System.Double))
-  nameWithType: MeasureUnit.MeasureUnit(PhysicalQuantity, String, Func<MeasureUnit, MeasureUnit, Double, Double>)
-  nameWithType.vb: MeasureUnit.MeasureUnit(PhysicalQuantity, String, Func(Of MeasureUnit, MeasureUnit, Double, Double))
-- uid: SearchAThing.MeasureUnit.#ctor(SearchAThing.PhysicalQuantity,System.String,SearchAThing.MeasureUnit,System.Double)
-  name: MeasureUnit(PhysicalQuantity, String, MeasureUnit, Double)
-  href: api/SearchAThing.MeasureUnit.html#SearchAThing_MeasureUnit__ctor_SearchAThing_PhysicalQuantity_System_String_SearchAThing_MeasureUnit_System_Double_
-  commentId: M:SearchAThing.MeasureUnit.#ctor(SearchAThing.PhysicalQuantity,System.String,SearchAThing.MeasureUnit,System.Double)
-  fullName: SearchAThing.MeasureUnit.MeasureUnit(SearchAThing.PhysicalQuantity, System.String, SearchAThing.MeasureUnit, System.Double)
-  nameWithType: MeasureUnit.MeasureUnit(PhysicalQuantity, String, MeasureUnit, Double)
-- uid: SearchAThing.MeasureUnit.#ctor*
-  name: MeasureUnit
-  href: api/SearchAThing.MeasureUnit.html#SearchAThing_MeasureUnit__ctor_
-  commentId: Overload:SearchAThing.MeasureUnit.#ctor
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnit.MeasureUnit
-  nameWithType: MeasureUnit.MeasureUnit
-- uid: SearchAThing.MeasureUnit.Equals(SearchAThing.MeasureUnit)
-  name: Equals(MeasureUnit)
-  href: api/SearchAThing.MeasureUnit.html#SearchAThing_MeasureUnit_Equals_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.MeasureUnit.Equals(SearchAThing.MeasureUnit)
-  fullName: SearchAThing.MeasureUnit.Equals(SearchAThing.MeasureUnit)
-  nameWithType: MeasureUnit.Equals(MeasureUnit)
-- uid: SearchAThing.MeasureUnit.Equals*
-  name: Equals
-  href: api/SearchAThing.MeasureUnit.html#SearchAThing_MeasureUnit_Equals_
-  commentId: Overload:SearchAThing.MeasureUnit.Equals
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnit.Equals
-  nameWithType: MeasureUnit.Equals
-- uid: SearchAThing.MeasureUnit.Name
-  name: Name
-  href: api/SearchAThing.MeasureUnit.html#SearchAThing_MeasureUnit_Name
-  commentId: P:SearchAThing.MeasureUnit.Name
-  fullName: SearchAThing.MeasureUnit.Name
-  nameWithType: MeasureUnit.Name
-- uid: SearchAThing.MeasureUnit.Name*
-  name: Name
-  href: api/SearchAThing.MeasureUnit.html#SearchAThing_MeasureUnit_Name_
-  commentId: Overload:SearchAThing.MeasureUnit.Name
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnit.Name
-  nameWithType: MeasureUnit.Name
-- uid: SearchAThing.MeasureUnit.op_Multiply(System.Double,SearchAThing.MeasureUnit)
-  name: Multiply(Double, MeasureUnit)
-  href: api/SearchAThing.MeasureUnit.html#SearchAThing_MeasureUnit_op_Multiply_System_Double_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.MeasureUnit.op_Multiply(System.Double,SearchAThing.MeasureUnit)
-  fullName: SearchAThing.MeasureUnit.Multiply(System.Double, SearchAThing.MeasureUnit)
-  nameWithType: MeasureUnit.Multiply(Double, MeasureUnit)
-- uid: SearchAThing.MeasureUnit.op_Multiply(System.Nullable{System.Double},SearchAThing.MeasureUnit)
-  name: Multiply(Nullable<Double>, MeasureUnit)
-  href: api/SearchAThing.MeasureUnit.html#SearchAThing_MeasureUnit_op_Multiply_System_Nullable_System_Double__SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.MeasureUnit.op_Multiply(System.Nullable{System.Double},SearchAThing.MeasureUnit)
-  name.vb: Multiply(Nullable(Of Double), MeasureUnit)
-  fullName: SearchAThing.MeasureUnit.Multiply(System.Nullable<System.Double>, SearchAThing.MeasureUnit)
-  fullName.vb: SearchAThing.MeasureUnit.Multiply(System.Nullable(Of System.Double), SearchAThing.MeasureUnit)
-  nameWithType: MeasureUnit.Multiply(Nullable<Double>, MeasureUnit)
-  nameWithType.vb: MeasureUnit.Multiply(Nullable(Of Double), MeasureUnit)
-- uid: SearchAThing.MeasureUnit.op_Multiply*
-  name: Multiply
-  href: api/SearchAThing.MeasureUnit.html#SearchAThing_MeasureUnit_op_Multiply_
-  commentId: Overload:SearchAThing.MeasureUnit.op_Multiply
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnit.Multiply
-  nameWithType: MeasureUnit.Multiply
-- uid: SearchAThing.MeasureUnit.PhysicalQuantity
-  name: PhysicalQuantity
-  href: api/SearchAThing.MeasureUnit.html#SearchAThing_MeasureUnit_PhysicalQuantity
-  commentId: P:SearchAThing.MeasureUnit.PhysicalQuantity
-  fullName: SearchAThing.MeasureUnit.PhysicalQuantity
-  nameWithType: MeasureUnit.PhysicalQuantity
-- uid: SearchAThing.MeasureUnit.PhysicalQuantity*
-  name: PhysicalQuantity
-  href: api/SearchAThing.MeasureUnit.html#SearchAThing_MeasureUnit_PhysicalQuantity_
-  commentId: Overload:SearchAThing.MeasureUnit.PhysicalQuantity
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnit.PhysicalQuantity
-  nameWithType: MeasureUnit.PhysicalQuantity
-- uid: SearchAThing.MeasureUnit.Related(SearchAThing.MUDomain)
-  name: Related(MUDomain)
-  href: api/SearchAThing.MeasureUnit.html#SearchAThing_MeasureUnit_Related_SearchAThing_MUDomain_
-  commentId: M:SearchAThing.MeasureUnit.Related(SearchAThing.MUDomain)
-  fullName: SearchAThing.MeasureUnit.Related(SearchAThing.MUDomain)
-  nameWithType: MeasureUnit.Related(MUDomain)
-- uid: SearchAThing.MeasureUnit.Related*
-  name: Related
-  href: api/SearchAThing.MeasureUnit.html#SearchAThing_MeasureUnit_Related_
-  commentId: Overload:SearchAThing.MeasureUnit.Related
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnit.Related
-  nameWithType: MeasureUnit.Related
-- uid: SearchAThing.MeasureUnit.Tolerance(SearchAThing.ISciModel)
-  name: Tolerance(ISciModel)
-  href: api/SearchAThing.MeasureUnit.html#SearchAThing_MeasureUnit_Tolerance_SearchAThing_ISciModel_
-  commentId: M:SearchAThing.MeasureUnit.Tolerance(SearchAThing.ISciModel)
-  fullName: SearchAThing.MeasureUnit.Tolerance(SearchAThing.ISciModel)
-  nameWithType: MeasureUnit.Tolerance(ISciModel)
-- uid: SearchAThing.MeasureUnit.Tolerance*
-  name: Tolerance
-  href: api/SearchAThing.MeasureUnit.html#SearchAThing_MeasureUnit_Tolerance_
-  commentId: Overload:SearchAThing.MeasureUnit.Tolerance
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnit.Tolerance
-  nameWithType: MeasureUnit.Tolerance
-- uid: SearchAThing.MeasureUnit.ToString
-  name: ToString()
-  href: api/SearchAThing.MeasureUnit.html#SearchAThing_MeasureUnit_ToString
-  commentId: M:SearchAThing.MeasureUnit.ToString
-  fullName: SearchAThing.MeasureUnit.ToString()
-  nameWithType: MeasureUnit.ToString()
-- uid: SearchAThing.MeasureUnit.ToString*
-  name: ToString
-  href: api/SearchAThing.MeasureUnit.html#SearchAThing_MeasureUnit_ToString_
-  commentId: Overload:SearchAThing.MeasureUnit.ToString
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnit.ToString
-  nameWithType: MeasureUnit.ToString
-- uid: SearchAThing.MeasureUnitConversionTypeEnum
-  name: MeasureUnitConversionTypeEnum
-  href: api/SearchAThing.MeasureUnitConversionTypeEnum.html
-  commentId: T:SearchAThing.MeasureUnitConversionTypeEnum
-  fullName: SearchAThing.MeasureUnitConversionTypeEnum
-  nameWithType: MeasureUnitConversionTypeEnum
-- uid: SearchAThing.MeasureUnitConversionTypeEnum.Linear
-  name: Linear
-  href: api/SearchAThing.MeasureUnitConversionTypeEnum.html#SearchAThing_MeasureUnitConversionTypeEnum_Linear
-  commentId: F:SearchAThing.MeasureUnitConversionTypeEnum.Linear
-  fullName: SearchAThing.MeasureUnitConversionTypeEnum.Linear
-  nameWithType: MeasureUnitConversionTypeEnum.Linear
-- uid: SearchAThing.MeasureUnitConversionTypeEnum.NonLinear
-  name: NonLinear
-  href: api/SearchAThing.MeasureUnitConversionTypeEnum.html#SearchAThing_MeasureUnitConversionTypeEnum_NonLinear
-  commentId: F:SearchAThing.MeasureUnitConversionTypeEnum.NonLinear
-  fullName: SearchAThing.MeasureUnitConversionTypeEnum.NonLinear
-  nameWithType: MeasureUnitConversionTypeEnum.NonLinear
-- uid: SearchAThing.MeasureUnitJsonConverter
-  name: MeasureUnitJsonConverter
-  href: api/SearchAThing.MeasureUnitJsonConverter.html
-  commentId: T:SearchAThing.MeasureUnitJsonConverter
-  fullName: SearchAThing.MeasureUnitJsonConverter
-  nameWithType: MeasureUnitJsonConverter
-- uid: SearchAThing.MeasureUnitJsonConverter.CanConvert(Type)
-  name: CanConvert(Type)
-  href: api/SearchAThing.MeasureUnitJsonConverter.html#SearchAThing_MeasureUnitJsonConverter_CanConvert_Type_
-  commentId: M:SearchAThing.MeasureUnitJsonConverter.CanConvert(Type)
-  fullName: SearchAThing.MeasureUnitJsonConverter.CanConvert(Type)
-  nameWithType: MeasureUnitJsonConverter.CanConvert(Type)
-- uid: SearchAThing.MeasureUnitJsonConverter.CanConvert*
-  name: CanConvert
-  href: api/SearchAThing.MeasureUnitJsonConverter.html#SearchAThing_MeasureUnitJsonConverter_CanConvert_
-  commentId: Overload:SearchAThing.MeasureUnitJsonConverter.CanConvert
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnitJsonConverter.CanConvert
-  nameWithType: MeasureUnitJsonConverter.CanConvert
-- uid: SearchAThing.MeasureUnitJsonConverter.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
-  name: ReadJson(JsonReader, Type, Object, JsonSerializer)
-  href: api/SearchAThing.MeasureUnitJsonConverter.html#SearchAThing_MeasureUnitJsonConverter_ReadJson_JsonReader_Type_System_Object_JsonSerializer_
-  commentId: M:SearchAThing.MeasureUnitJsonConverter.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
-  fullName: SearchAThing.MeasureUnitJsonConverter.ReadJson(JsonReader, Type, System.Object, JsonSerializer)
-  nameWithType: MeasureUnitJsonConverter.ReadJson(JsonReader, Type, Object, JsonSerializer)
-- uid: SearchAThing.MeasureUnitJsonConverter.ReadJson*
-  name: ReadJson
-  href: api/SearchAThing.MeasureUnitJsonConverter.html#SearchAThing_MeasureUnitJsonConverter_ReadJson_
-  commentId: Overload:SearchAThing.MeasureUnitJsonConverter.ReadJson
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnitJsonConverter.ReadJson
-  nameWithType: MeasureUnitJsonConverter.ReadJson
-- uid: SearchAThing.MeasureUnitJsonConverter.WriteJson(JsonWriter,System.Object,JsonSerializer)
-  name: WriteJson(JsonWriter, Object, JsonSerializer)
-  href: api/SearchAThing.MeasureUnitJsonConverter.html#SearchAThing_MeasureUnitJsonConverter_WriteJson_JsonWriter_System_Object_JsonSerializer_
-  commentId: M:SearchAThing.MeasureUnitJsonConverter.WriteJson(JsonWriter,System.Object,JsonSerializer)
-  fullName: SearchAThing.MeasureUnitJsonConverter.WriteJson(JsonWriter, System.Object, JsonSerializer)
-  nameWithType: MeasureUnitJsonConverter.WriteJson(JsonWriter, Object, JsonSerializer)
-- uid: SearchAThing.MeasureUnitJsonConverter.WriteJson*
-  name: WriteJson
-  href: api/SearchAThing.MeasureUnitJsonConverter.html#SearchAThing_MeasureUnitJsonConverter_WriteJson_
-  commentId: Overload:SearchAThing.MeasureUnitJsonConverter.WriteJson
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnitJsonConverter.WriteJson
-  nameWithType: MeasureUnitJsonConverter.WriteJson
-- uid: SearchAThing.MeasureUnitWithDefaultTolerance
-  name: MeasureUnitWithDefaultTolerance
-  href: api/SearchAThing.MeasureUnitWithDefaultTolerance.html
-  commentId: T:SearchAThing.MeasureUnitWithDefaultTolerance
-  fullName: SearchAThing.MeasureUnitWithDefaultTolerance
-  nameWithType: MeasureUnitWithDefaultTolerance
-- uid: SearchAThing.MeasureUnitWithDefaultTolerance.#ctor(System.Double,SearchAThing.MeasureUnit)
-  name: MeasureUnitWithDefaultTolerance(Double, MeasureUnit)
-  href: api/SearchAThing.MeasureUnitWithDefaultTolerance.html#SearchAThing_MeasureUnitWithDefaultTolerance__ctor_System_Double_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.MeasureUnitWithDefaultTolerance.#ctor(System.Double,SearchAThing.MeasureUnit)
-  fullName: SearchAThing.MeasureUnitWithDefaultTolerance.MeasureUnitWithDefaultTolerance(System.Double, SearchAThing.MeasureUnit)
-  nameWithType: MeasureUnitWithDefaultTolerance.MeasureUnitWithDefaultTolerance(Double, MeasureUnit)
-- uid: SearchAThing.MeasureUnitWithDefaultTolerance.#ctor*
-  name: MeasureUnitWithDefaultTolerance
-  href: api/SearchAThing.MeasureUnitWithDefaultTolerance.html#SearchAThing_MeasureUnitWithDefaultTolerance__ctor_
-  commentId: Overload:SearchAThing.MeasureUnitWithDefaultTolerance.#ctor
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnitWithDefaultTolerance.MeasureUnitWithDefaultTolerance
-  nameWithType: MeasureUnitWithDefaultTolerance.MeasureUnitWithDefaultTolerance
-- uid: SearchAThing.MeasureUnitWithDefaultTolerance.ConvertTo(SearchAThing.MeasureUnit)
-  name: ConvertTo(MeasureUnit)
-  href: api/SearchAThing.MeasureUnitWithDefaultTolerance.html#SearchAThing_MeasureUnitWithDefaultTolerance_ConvertTo_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.MeasureUnitWithDefaultTolerance.ConvertTo(SearchAThing.MeasureUnit)
-  fullName: SearchAThing.MeasureUnitWithDefaultTolerance.ConvertTo(SearchAThing.MeasureUnit)
-  nameWithType: MeasureUnitWithDefaultTolerance.ConvertTo(MeasureUnit)
-- uid: SearchAThing.MeasureUnitWithDefaultTolerance.ConvertTo*
-  name: ConvertTo
-  href: api/SearchAThing.MeasureUnitWithDefaultTolerance.html#SearchAThing_MeasureUnitWithDefaultTolerance_ConvertTo_
-  commentId: Overload:SearchAThing.MeasureUnitWithDefaultTolerance.ConvertTo
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnitWithDefaultTolerance.ConvertTo
-  nameWithType: MeasureUnitWithDefaultTolerance.ConvertTo
-- uid: SearchAThing.MeasureUnitWithDefaultTolerance.DefaultTolerance
-  name: DefaultTolerance
-  href: api/SearchAThing.MeasureUnitWithDefaultTolerance.html#SearchAThing_MeasureUnitWithDefaultTolerance_DefaultTolerance
-  commentId: P:SearchAThing.MeasureUnitWithDefaultTolerance.DefaultTolerance
-  fullName: SearchAThing.MeasureUnitWithDefaultTolerance.DefaultTolerance
-  nameWithType: MeasureUnitWithDefaultTolerance.DefaultTolerance
-- uid: SearchAThing.MeasureUnitWithDefaultTolerance.DefaultTolerance*
-  name: DefaultTolerance
-  href: api/SearchAThing.MeasureUnitWithDefaultTolerance.html#SearchAThing_MeasureUnitWithDefaultTolerance_DefaultTolerance_
-  commentId: Overload:SearchAThing.MeasureUnitWithDefaultTolerance.DefaultTolerance
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnitWithDefaultTolerance.DefaultTolerance
-  nameWithType: MeasureUnitWithDefaultTolerance.DefaultTolerance
-- uid: SearchAThing.MeasureUnitWithDefaultTolerance.MU
-  name: MU
-  href: api/SearchAThing.MeasureUnitWithDefaultTolerance.html#SearchAThing_MeasureUnitWithDefaultTolerance_MU
-  commentId: P:SearchAThing.MeasureUnitWithDefaultTolerance.MU
-  fullName: SearchAThing.MeasureUnitWithDefaultTolerance.MU
-  nameWithType: MeasureUnitWithDefaultTolerance.MU
-- uid: SearchAThing.MeasureUnitWithDefaultTolerance.MU*
-  name: MU
-  href: api/SearchAThing.MeasureUnitWithDefaultTolerance.html#SearchAThing_MeasureUnitWithDefaultTolerance_MU_
-  commentId: Overload:SearchAThing.MeasureUnitWithDefaultTolerance.MU
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnitWithDefaultTolerance.MU
-  nameWithType: MeasureUnitWithDefaultTolerance.MU
-- uid: SearchAThing.MeasureUnitWithDefaultTolerance.MUName
-  name: MUName
-  href: api/SearchAThing.MeasureUnitWithDefaultTolerance.html#SearchAThing_MeasureUnitWithDefaultTolerance_MUName
-  commentId: P:SearchAThing.MeasureUnitWithDefaultTolerance.MUName
-  fullName: SearchAThing.MeasureUnitWithDefaultTolerance.MUName
-  nameWithType: MeasureUnitWithDefaultTolerance.MUName
-- uid: SearchAThing.MeasureUnitWithDefaultTolerance.MUName*
-  name: MUName
-  href: api/SearchAThing.MeasureUnitWithDefaultTolerance.html#SearchAThing_MeasureUnitWithDefaultTolerance_MUName_
-  commentId: Overload:SearchAThing.MeasureUnitWithDefaultTolerance.MUName
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnitWithDefaultTolerance.MUName
-  nameWithType: MeasureUnitWithDefaultTolerance.MUName
-- uid: SearchAThing.MeasureUnitWithDefaultTolerance.PQName
-  name: PQName
-  href: api/SearchAThing.MeasureUnitWithDefaultTolerance.html#SearchAThing_MeasureUnitWithDefaultTolerance_PQName
-  commentId: P:SearchAThing.MeasureUnitWithDefaultTolerance.PQName
-  fullName: SearchAThing.MeasureUnitWithDefaultTolerance.PQName
-  nameWithType: MeasureUnitWithDefaultTolerance.PQName
-- uid: SearchAThing.MeasureUnitWithDefaultTolerance.PQName*
-  name: PQName
-  href: api/SearchAThing.MeasureUnitWithDefaultTolerance.html#SearchAThing_MeasureUnitWithDefaultTolerance_PQName_
-  commentId: Overload:SearchAThing.MeasureUnitWithDefaultTolerance.PQName
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnitWithDefaultTolerance.PQName
-  nameWithType: MeasureUnitWithDefaultTolerance.PQName
-- uid: SearchAThing.MeasureUnitWithDefaultTolerance.ToMeasure
-  name: ToMeasure()
-  href: api/SearchAThing.MeasureUnitWithDefaultTolerance.html#SearchAThing_MeasureUnitWithDefaultTolerance_ToMeasure
-  commentId: M:SearchAThing.MeasureUnitWithDefaultTolerance.ToMeasure
-  fullName: SearchAThing.MeasureUnitWithDefaultTolerance.ToMeasure()
-  nameWithType: MeasureUnitWithDefaultTolerance.ToMeasure()
-- uid: SearchAThing.MeasureUnitWithDefaultTolerance.ToMeasure*
-  name: ToMeasure
-  href: api/SearchAThing.MeasureUnitWithDefaultTolerance.html#SearchAThing_MeasureUnitWithDefaultTolerance_ToMeasure_
-  commentId: Overload:SearchAThing.MeasureUnitWithDefaultTolerance.ToMeasure
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnitWithDefaultTolerance.ToMeasure
-  nameWithType: MeasureUnitWithDefaultTolerance.ToMeasure
-- uid: SearchAThing.MeasureUnitWithDefaultTolerance.ToString
-  name: ToString()
-  href: api/SearchAThing.MeasureUnitWithDefaultTolerance.html#SearchAThing_MeasureUnitWithDefaultTolerance_ToString
-  commentId: M:SearchAThing.MeasureUnitWithDefaultTolerance.ToString
-  fullName: SearchAThing.MeasureUnitWithDefaultTolerance.ToString()
-  nameWithType: MeasureUnitWithDefaultTolerance.ToString()
-- uid: SearchAThing.MeasureUnitWithDefaultTolerance.ToString*
-  name: ToString
-  href: api/SearchAThing.MeasureUnitWithDefaultTolerance.html#SearchAThing_MeasureUnitWithDefaultTolerance_ToString_
-  commentId: Overload:SearchAThing.MeasureUnitWithDefaultTolerance.ToString
-  isSpec: "True"
-  fullName: SearchAThing.MeasureUnitWithDefaultTolerance.ToString
-  nameWithType: MeasureUnitWithDefaultTolerance.ToString
-- uid: SearchAThing.MUCollection
-  name: MUCollection
-  href: api/SearchAThing.MUCollection.html
-  commentId: T:SearchAThing.MUCollection
-  fullName: SearchAThing.MUCollection
-  nameWithType: MUCollection
-- uid: SearchAThing.MUCollection.Acceleration
-  name: MUCollection.Acceleration
-  href: api/SearchAThing.MUCollection.Acceleration.html
-  commentId: T:SearchAThing.MUCollection.Acceleration
-  fullName: SearchAThing.MUCollection.Acceleration
-  nameWithType: MUCollection.Acceleration
-- uid: SearchAThing.MUCollection.Acceleration.Auto(SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  name: Auto(MeasureUnit, MeasureUnit)
-  href: api/SearchAThing.MUCollection.Acceleration.html#SearchAThing_MUCollection_Acceleration_Auto_SearchAThing_MeasureUnit_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.MUCollection.Acceleration.Auto(SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  fullName: SearchAThing.MUCollection.Acceleration.Auto(SearchAThing.MeasureUnit, SearchAThing.MeasureUnit)
-  nameWithType: MUCollection.Acceleration.Auto(MeasureUnit, MeasureUnit)
-- uid: SearchAThing.MUCollection.Acceleration.Auto*
-  name: Auto
-  href: api/SearchAThing.MUCollection.Acceleration.html#SearchAThing_MUCollection_Acceleration_Auto_
-  commentId: Overload:SearchAThing.MUCollection.Acceleration.Auto
-  isSpec: "True"
-  fullName: SearchAThing.MUCollection.Acceleration.Auto
-  nameWithType: MUCollection.Acceleration.Auto
-- uid: SearchAThing.MUCollection.Acceleration.m_s2
-  name: m_s2
-  href: api/SearchAThing.MUCollection.Acceleration.html#SearchAThing_MUCollection_Acceleration_m_s2
-  commentId: F:SearchAThing.MUCollection.Acceleration.m_s2
-  fullName: SearchAThing.MUCollection.Acceleration.m_s2
-  nameWithType: MUCollection.Acceleration.m_s2
-- uid: SearchAThing.MUCollection.Acceleration.mm_s2
-  name: mm_s2
-  href: api/SearchAThing.MUCollection.Acceleration.html#SearchAThing_MUCollection_Acceleration_mm_s2
-  commentId: F:SearchAThing.MUCollection.Acceleration.mm_s2
-  fullName: SearchAThing.MUCollection.Acceleration.mm_s2
-  nameWithType: MUCollection.Acceleration.mm_s2
-- uid: SearchAThing.MUCollection.Adimensional
-  name: MUCollection.Adimensional
-  href: api/SearchAThing.MUCollection.Adimensional.html
-  commentId: T:SearchAThing.MUCollection.Adimensional
-  fullName: SearchAThing.MUCollection.Adimensional
-  nameWithType: MUCollection.Adimensional
-- uid: SearchAThing.MUCollection.Adimensional.adim
-  name: adim
-  href: api/SearchAThing.MUCollection.Adimensional.html#SearchAThing_MUCollection_Adimensional_adim
-  commentId: F:SearchAThing.MUCollection.Adimensional.adim
-  fullName: SearchAThing.MUCollection.Adimensional.adim
-  nameWithType: MUCollection.Adimensional.adim
-- uid: SearchAThing.MUCollection.AmountOfSubstance
-  name: MUCollection.AmountOfSubstance
-  href: api/SearchAThing.MUCollection.AmountOfSubstance.html
-  commentId: T:SearchAThing.MUCollection.AmountOfSubstance
-  fullName: SearchAThing.MUCollection.AmountOfSubstance
-  nameWithType: MUCollection.AmountOfSubstance
-- uid: SearchAThing.MUCollection.AmountOfSubstance.mol
-  name: mol
-  href: api/SearchAThing.MUCollection.AmountOfSubstance.html#SearchAThing_MUCollection_AmountOfSubstance_mol
-  commentId: F:SearchAThing.MUCollection.AmountOfSubstance.mol
-  fullName: SearchAThing.MUCollection.AmountOfSubstance.mol
-  nameWithType: MUCollection.AmountOfSubstance.mol
-- uid: SearchAThing.MUCollection.AngularAcceleration
-  name: MUCollection.AngularAcceleration
-  href: api/SearchAThing.MUCollection.AngularAcceleration.html
-  commentId: T:SearchAThing.MUCollection.AngularAcceleration
-  fullName: SearchAThing.MUCollection.AngularAcceleration
-  nameWithType: MUCollection.AngularAcceleration
-- uid: SearchAThing.MUCollection.AngularAcceleration.Auto(SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  name: Auto(MeasureUnit, MeasureUnit)
-  href: api/SearchAThing.MUCollection.AngularAcceleration.html#SearchAThing_MUCollection_AngularAcceleration_Auto_SearchAThing_MeasureUnit_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.MUCollection.AngularAcceleration.Auto(SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  fullName: SearchAThing.MUCollection.AngularAcceleration.Auto(SearchAThing.MeasureUnit, SearchAThing.MeasureUnit)
-  nameWithType: MUCollection.AngularAcceleration.Auto(MeasureUnit, MeasureUnit)
-- uid: SearchAThing.MUCollection.AngularAcceleration.Auto*
-  name: Auto
-  href: api/SearchAThing.MUCollection.AngularAcceleration.html#SearchAThing_MUCollection_AngularAcceleration_Auto_
-  commentId: Overload:SearchAThing.MUCollection.AngularAcceleration.Auto
-  isSpec: "True"
-  fullName: SearchAThing.MUCollection.AngularAcceleration.Auto
-  nameWithType: MUCollection.AngularAcceleration.Auto
-- uid: SearchAThing.MUCollection.AngularAcceleration.deg_s2
-  name: deg_s2
-  href: api/SearchAThing.MUCollection.AngularAcceleration.html#SearchAThing_MUCollection_AngularAcceleration_deg_s2
-  commentId: F:SearchAThing.MUCollection.AngularAcceleration.deg_s2
-  fullName: SearchAThing.MUCollection.AngularAcceleration.deg_s2
-  nameWithType: MUCollection.AngularAcceleration.deg_s2
-- uid: SearchAThing.MUCollection.AngularAcceleration.rad_s2
-  name: rad_s2
-  href: api/SearchAThing.MUCollection.AngularAcceleration.html#SearchAThing_MUCollection_AngularAcceleration_rad_s2
-  commentId: F:SearchAThing.MUCollection.AngularAcceleration.rad_s2
-  fullName: SearchAThing.MUCollection.AngularAcceleration.rad_s2
-  nameWithType: MUCollection.AngularAcceleration.rad_s2
-- uid: SearchAThing.MUCollection.AngularSpeed
-  name: MUCollection.AngularSpeed
-  href: api/SearchAThing.MUCollection.AngularSpeed.html
-  commentId: T:SearchAThing.MUCollection.AngularSpeed
-  fullName: SearchAThing.MUCollection.AngularSpeed
-  nameWithType: MUCollection.AngularSpeed
-- uid: SearchAThing.MUCollection.AngularSpeed.Auto(SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  name: Auto(MeasureUnit, MeasureUnit)
-  href: api/SearchAThing.MUCollection.AngularSpeed.html#SearchAThing_MUCollection_AngularSpeed_Auto_SearchAThing_MeasureUnit_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.MUCollection.AngularSpeed.Auto(SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  fullName: SearchAThing.MUCollection.AngularSpeed.Auto(SearchAThing.MeasureUnit, SearchAThing.MeasureUnit)
-  nameWithType: MUCollection.AngularSpeed.Auto(MeasureUnit, MeasureUnit)
-- uid: SearchAThing.MUCollection.AngularSpeed.Auto*
-  name: Auto
-  href: api/SearchAThing.MUCollection.AngularSpeed.html#SearchAThing_MUCollection_AngularSpeed_Auto_
-  commentId: Overload:SearchAThing.MUCollection.AngularSpeed.Auto
-  isSpec: "True"
-  fullName: SearchAThing.MUCollection.AngularSpeed.Auto
-  nameWithType: MUCollection.AngularSpeed.Auto
-- uid: SearchAThing.MUCollection.AngularSpeed.deg_s
-  name: deg_s
-  href: api/SearchAThing.MUCollection.AngularSpeed.html#SearchAThing_MUCollection_AngularSpeed_deg_s
-  commentId: F:SearchAThing.MUCollection.AngularSpeed.deg_s
-  fullName: SearchAThing.MUCollection.AngularSpeed.deg_s
-  nameWithType: MUCollection.AngularSpeed.deg_s
-- uid: SearchAThing.MUCollection.AngularSpeed.rad_s
-  name: rad_s
-  href: api/SearchAThing.MUCollection.AngularSpeed.html#SearchAThing_MUCollection_AngularSpeed_rad_s
-  commentId: F:SearchAThing.MUCollection.AngularSpeed.rad_s
-  fullName: SearchAThing.MUCollection.AngularSpeed.rad_s
-  nameWithType: MUCollection.AngularSpeed.rad_s
-- uid: SearchAThing.MUCollection.BendingMoment
-  name: MUCollection.BendingMoment
-  href: api/SearchAThing.MUCollection.BendingMoment.html
-  commentId: T:SearchAThing.MUCollection.BendingMoment
-  fullName: SearchAThing.MUCollection.BendingMoment
-  nameWithType: MUCollection.BendingMoment
-- uid: SearchAThing.MUCollection.BendingMoment.Auto(SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  name: Auto(MeasureUnit, MeasureUnit)
-  href: api/SearchAThing.MUCollection.BendingMoment.html#SearchAThing_MUCollection_BendingMoment_Auto_SearchAThing_MeasureUnit_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.MUCollection.BendingMoment.Auto(SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  fullName: SearchAThing.MUCollection.BendingMoment.Auto(SearchAThing.MeasureUnit, SearchAThing.MeasureUnit)
-  nameWithType: MUCollection.BendingMoment.Auto(MeasureUnit, MeasureUnit)
-- uid: SearchAThing.MUCollection.BendingMoment.Auto*
-  name: Auto
-  href: api/SearchAThing.MUCollection.BendingMoment.html#SearchAThing_MUCollection_BendingMoment_Auto_
-  commentId: Overload:SearchAThing.MUCollection.BendingMoment.Auto
-  isSpec: "True"
-  fullName: SearchAThing.MUCollection.BendingMoment.Auto
-  nameWithType: MUCollection.BendingMoment.Auto
-- uid: SearchAThing.MUCollection.BendingMoment.kNm
-  name: kNm
-  href: api/SearchAThing.MUCollection.BendingMoment.html#SearchAThing_MUCollection_BendingMoment_kNm
-  commentId: F:SearchAThing.MUCollection.BendingMoment.kNm
-  fullName: SearchAThing.MUCollection.BendingMoment.kNm
-  nameWithType: MUCollection.BendingMoment.kNm
-- uid: SearchAThing.MUCollection.BendingMoment.Nm
-  name: Nm
-  href: api/SearchAThing.MUCollection.BendingMoment.html#SearchAThing_MUCollection_BendingMoment_Nm
-  commentId: F:SearchAThing.MUCollection.BendingMoment.Nm
-  fullName: SearchAThing.MUCollection.BendingMoment.Nm
-  nameWithType: MUCollection.BendingMoment.Nm
-- uid: SearchAThing.MUCollection.BendingMoment.Nmm
-  name: Nmm
-  href: api/SearchAThing.MUCollection.BendingMoment.html#SearchAThing_MUCollection_BendingMoment_Nmm
-  commentId: F:SearchAThing.MUCollection.BendingMoment.Nmm
-  fullName: SearchAThing.MUCollection.BendingMoment.Nmm
-  nameWithType: MUCollection.BendingMoment.Nmm
-- uid: SearchAThing.MUCollection.ElectricalConductance
-  name: MUCollection.ElectricalConductance
-  href: api/SearchAThing.MUCollection.ElectricalConductance.html
-  commentId: T:SearchAThing.MUCollection.ElectricalConductance
-  fullName: SearchAThing.MUCollection.ElectricalConductance
-  nameWithType: MUCollection.ElectricalConductance
-- uid: SearchAThing.MUCollection.ElectricalConductance.S
-  name: S
-  href: api/SearchAThing.MUCollection.ElectricalConductance.html#SearchAThing_MUCollection_ElectricalConductance_S
-  commentId: F:SearchAThing.MUCollection.ElectricalConductance.S
-  fullName: SearchAThing.MUCollection.ElectricalConductance.S
-  nameWithType: MUCollection.ElectricalConductance.S
-- uid: SearchAThing.MUCollection.ElectricalConductivity
-  name: MUCollection.ElectricalConductivity
-  href: api/SearchAThing.MUCollection.ElectricalConductivity.html
-  commentId: T:SearchAThing.MUCollection.ElectricalConductivity
-  fullName: SearchAThing.MUCollection.ElectricalConductivity
-  nameWithType: MUCollection.ElectricalConductivity
-- uid: SearchAThing.MUCollection.ElectricalConductivity.S_m
-  name: S_m
-  href: api/SearchAThing.MUCollection.ElectricalConductivity.html#SearchAThing_MUCollection_ElectricalConductivity_S_m
-  commentId: F:SearchAThing.MUCollection.ElectricalConductivity.S_m
-  fullName: SearchAThing.MUCollection.ElectricalConductivity.S_m
-  nameWithType: MUCollection.ElectricalConductivity.S_m
-- uid: SearchAThing.MUCollection.ElectricCurrent
-  name: MUCollection.ElectricCurrent
-  href: api/SearchAThing.MUCollection.ElectricCurrent.html
-  commentId: T:SearchAThing.MUCollection.ElectricCurrent
-  fullName: SearchAThing.MUCollection.ElectricCurrent
-  nameWithType: MUCollection.ElectricCurrent
-- uid: SearchAThing.MUCollection.ElectricCurrent.A
-  name: A
-  href: api/SearchAThing.MUCollection.ElectricCurrent.html#SearchAThing_MUCollection_ElectricCurrent_A
-  commentId: F:SearchAThing.MUCollection.ElectricCurrent.A
-  fullName: SearchAThing.MUCollection.ElectricCurrent.A
-  nameWithType: MUCollection.ElectricCurrent.A
-- uid: SearchAThing.MUCollection.Energy
-  name: MUCollection.Energy
-  href: api/SearchAThing.MUCollection.Energy.html
-  commentId: T:SearchAThing.MUCollection.Energy
-  fullName: SearchAThing.MUCollection.Energy
-  nameWithType: MUCollection.Energy
-- uid: SearchAThing.MUCollection.Energy.J
-  name: J
-  href: api/SearchAThing.MUCollection.Energy.html#SearchAThing_MUCollection_Energy_J
-  commentId: F:SearchAThing.MUCollection.Energy.J
-  fullName: SearchAThing.MUCollection.Energy.J
-  nameWithType: MUCollection.Energy.J
-- uid: SearchAThing.MUCollection.Force
-  name: MUCollection.Force
-  href: api/SearchAThing.MUCollection.Force.html
-  commentId: T:SearchAThing.MUCollection.Force
-  fullName: SearchAThing.MUCollection.Force
-  nameWithType: MUCollection.Force
-- uid: SearchAThing.MUCollection.Force.kN
-  name: kN
-  href: api/SearchAThing.MUCollection.Force.html#SearchAThing_MUCollection_Force_kN
-  commentId: F:SearchAThing.MUCollection.Force.kN
-  fullName: SearchAThing.MUCollection.Force.kN
-  nameWithType: MUCollection.Force.kN
-- uid: SearchAThing.MUCollection.Force.N
-  name: N
-  href: api/SearchAThing.MUCollection.Force.html#SearchAThing_MUCollection_Force_N
-  commentId: F:SearchAThing.MUCollection.Force.N
-  fullName: SearchAThing.MUCollection.Force.N
-  nameWithType: MUCollection.Force.N
-- uid: SearchAThing.MUCollection.Frequency
-  name: MUCollection.Frequency
-  href: api/SearchAThing.MUCollection.Frequency.html
-  commentId: T:SearchAThing.MUCollection.Frequency
-  fullName: SearchAThing.MUCollection.Frequency
-  nameWithType: MUCollection.Frequency
-- uid: SearchAThing.MUCollection.Frequency.hz
-  name: hz
-  href: api/SearchAThing.MUCollection.Frequency.html#SearchAThing_MUCollection_Frequency_hz
-  commentId: F:SearchAThing.MUCollection.Frequency.hz
-  fullName: SearchAThing.MUCollection.Frequency.hz
-  nameWithType: MUCollection.Frequency.hz
-- uid: SearchAThing.MUCollection.Length
-  name: MUCollection.Length
-  href: api/SearchAThing.MUCollection.Length.html
-  commentId: T:SearchAThing.MUCollection.Length
-  fullName: SearchAThing.MUCollection.Length
-  nameWithType: MUCollection.Length
-- uid: SearchAThing.MUCollection.Length.cm
-  name: cm
-  href: api/SearchAThing.MUCollection.Length.html#SearchAThing_MUCollection_Length_cm
-  commentId: F:SearchAThing.MUCollection.Length.cm
-  fullName: SearchAThing.MUCollection.Length.cm
-  nameWithType: MUCollection.Length.cm
-- uid: SearchAThing.MUCollection.Length.ft
-  name: ft
-  href: api/SearchAThing.MUCollection.Length.html#SearchAThing_MUCollection_Length_ft
-  commentId: F:SearchAThing.MUCollection.Length.ft
-  fullName: SearchAThing.MUCollection.Length.ft
-  nameWithType: MUCollection.Length.ft
-- uid: SearchAThing.MUCollection.Length.inch
-  name: inch
-  href: api/SearchAThing.MUCollection.Length.html#SearchAThing_MUCollection_Length_inch
-  commentId: F:SearchAThing.MUCollection.Length.inch
-  fullName: SearchAThing.MUCollection.Length.inch
-  nameWithType: MUCollection.Length.inch
-- uid: SearchAThing.MUCollection.Length.km
-  name: km
-  href: api/SearchAThing.MUCollection.Length.html#SearchAThing_MUCollection_Length_km
-  commentId: F:SearchAThing.MUCollection.Length.km
-  fullName: SearchAThing.MUCollection.Length.km
-  nameWithType: MUCollection.Length.km
-- uid: SearchAThing.MUCollection.Length.links
-  name: links
-  href: api/SearchAThing.MUCollection.Length.html#SearchAThing_MUCollection_Length_links
-  commentId: F:SearchAThing.MUCollection.Length.links
-  fullName: SearchAThing.MUCollection.Length.links
-  nameWithType: MUCollection.Length.links
-- uid: SearchAThing.MUCollection.Length.m
-  name: m
-  href: api/SearchAThing.MUCollection.Length.html#SearchAThing_MUCollection_Length_m
-  commentId: F:SearchAThing.MUCollection.Length.m
-  fullName: SearchAThing.MUCollection.Length.m
-  nameWithType: MUCollection.Length.m
-- uid: SearchAThing.MUCollection.Length.mm
-  name: mm
-  href: api/SearchAThing.MUCollection.Length.html#SearchAThing_MUCollection_Length_mm
-  commentId: F:SearchAThing.MUCollection.Length.mm
-  fullName: SearchAThing.MUCollection.Length.mm
-  nameWithType: MUCollection.Length.mm
-- uid: SearchAThing.MUCollection.Length.yard
-  name: yard
-  href: api/SearchAThing.MUCollection.Length.html#SearchAThing_MUCollection_Length_yard
-  commentId: F:SearchAThing.MUCollection.Length.yard
-  fullName: SearchAThing.MUCollection.Length.yard
-  nameWithType: MUCollection.Length.yard
-- uid: SearchAThing.MUCollection.Length2
-  name: MUCollection.Length2
-  href: api/SearchAThing.MUCollection.Length2.html
-  commentId: T:SearchAThing.MUCollection.Length2
-  fullName: SearchAThing.MUCollection.Length2
-  nameWithType: MUCollection.Length2
-- uid: SearchAThing.MUCollection.Length2.Auto(SearchAThing.MeasureUnit)
-  name: Auto(MeasureUnit)
-  href: api/SearchAThing.MUCollection.Length2.html#SearchAThing_MUCollection_Length2_Auto_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.MUCollection.Length2.Auto(SearchAThing.MeasureUnit)
-  fullName: SearchAThing.MUCollection.Length2.Auto(SearchAThing.MeasureUnit)
-  nameWithType: MUCollection.Length2.Auto(MeasureUnit)
-- uid: SearchAThing.MUCollection.Length2.Auto*
-  name: Auto
-  href: api/SearchAThing.MUCollection.Length2.html#SearchAThing_MUCollection_Length2_Auto_
-  commentId: Overload:SearchAThing.MUCollection.Length2.Auto
-  isSpec: "True"
-  fullName: SearchAThing.MUCollection.Length2.Auto
-  nameWithType: MUCollection.Length2.Auto
-- uid: SearchAThing.MUCollection.Length2.cm2
-  name: cm2
-  href: api/SearchAThing.MUCollection.Length2.html#SearchAThing_MUCollection_Length2_cm2
-  commentId: F:SearchAThing.MUCollection.Length2.cm2
-  fullName: SearchAThing.MUCollection.Length2.cm2
-  nameWithType: MUCollection.Length2.cm2
-- uid: SearchAThing.MUCollection.Length2.inch2
-  name: inch2
-  href: api/SearchAThing.MUCollection.Length2.html#SearchAThing_MUCollection_Length2_inch2
-  commentId: F:SearchAThing.MUCollection.Length2.inch2
-  fullName: SearchAThing.MUCollection.Length2.inch2
-  nameWithType: MUCollection.Length2.inch2
-- uid: SearchAThing.MUCollection.Length2.m2
-  name: m2
-  href: api/SearchAThing.MUCollection.Length2.html#SearchAThing_MUCollection_Length2_m2
-  commentId: F:SearchAThing.MUCollection.Length2.m2
-  fullName: SearchAThing.MUCollection.Length2.m2
-  nameWithType: MUCollection.Length2.m2
-- uid: SearchAThing.MUCollection.Length2.mm2
-  name: mm2
-  href: api/SearchAThing.MUCollection.Length2.html#SearchAThing_MUCollection_Length2_mm2
-  commentId: F:SearchAThing.MUCollection.Length2.mm2
-  fullName: SearchAThing.MUCollection.Length2.mm2
-  nameWithType: MUCollection.Length2.mm2
-- uid: SearchAThing.MUCollection.Length3
-  name: MUCollection.Length3
-  href: api/SearchAThing.MUCollection.Length3.html
-  commentId: T:SearchAThing.MUCollection.Length3
-  fullName: SearchAThing.MUCollection.Length3
-  nameWithType: MUCollection.Length3
-- uid: SearchAThing.MUCollection.Length3.Auto(SearchAThing.MeasureUnit)
-  name: Auto(MeasureUnit)
-  href: api/SearchAThing.MUCollection.Length3.html#SearchAThing_MUCollection_Length3_Auto_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.MUCollection.Length3.Auto(SearchAThing.MeasureUnit)
-  fullName: SearchAThing.MUCollection.Length3.Auto(SearchAThing.MeasureUnit)
-  nameWithType: MUCollection.Length3.Auto(MeasureUnit)
-- uid: SearchAThing.MUCollection.Length3.Auto*
-  name: Auto
-  href: api/SearchAThing.MUCollection.Length3.html#SearchAThing_MUCollection_Length3_Auto_
-  commentId: Overload:SearchAThing.MUCollection.Length3.Auto
-  isSpec: "True"
-  fullName: SearchAThing.MUCollection.Length3.Auto
-  nameWithType: MUCollection.Length3.Auto
-- uid: SearchAThing.MUCollection.Length3.cm3
-  name: cm3
-  href: api/SearchAThing.MUCollection.Length3.html#SearchAThing_MUCollection_Length3_cm3
-  commentId: F:SearchAThing.MUCollection.Length3.cm3
-  fullName: SearchAThing.MUCollection.Length3.cm3
-  nameWithType: MUCollection.Length3.cm3
-- uid: SearchAThing.MUCollection.Length3.in3
-  name: in3
-  href: api/SearchAThing.MUCollection.Length3.html#SearchAThing_MUCollection_Length3_in3
-  commentId: F:SearchAThing.MUCollection.Length3.in3
-  fullName: SearchAThing.MUCollection.Length3.in3
-  nameWithType: MUCollection.Length3.in3
-- uid: SearchAThing.MUCollection.Length3.lt
-  name: lt
-  href: api/SearchAThing.MUCollection.Length3.html#SearchAThing_MUCollection_Length3_lt
-  commentId: F:SearchAThing.MUCollection.Length3.lt
-  fullName: SearchAThing.MUCollection.Length3.lt
-  nameWithType: MUCollection.Length3.lt
-- uid: SearchAThing.MUCollection.Length3.m3
-  name: m3
-  href: api/SearchAThing.MUCollection.Length3.html#SearchAThing_MUCollection_Length3_m3
-  commentId: F:SearchAThing.MUCollection.Length3.m3
-  fullName: SearchAThing.MUCollection.Length3.m3
-  nameWithType: MUCollection.Length3.m3
-- uid: SearchAThing.MUCollection.Length3.mm3
-  name: mm3
-  href: api/SearchAThing.MUCollection.Length3.html#SearchAThing_MUCollection_Length3_mm3
-  commentId: F:SearchAThing.MUCollection.Length3.mm3
-  fullName: SearchAThing.MUCollection.Length3.mm3
-  nameWithType: MUCollection.Length3.mm3
-- uid: SearchAThing.MUCollection.Length4
-  name: MUCollection.Length4
-  href: api/SearchAThing.MUCollection.Length4.html
-  commentId: T:SearchAThing.MUCollection.Length4
-  fullName: SearchAThing.MUCollection.Length4
-  nameWithType: MUCollection.Length4
-- uid: SearchAThing.MUCollection.Length4.Auto(SearchAThing.MeasureUnit)
-  name: Auto(MeasureUnit)
-  href: api/SearchAThing.MUCollection.Length4.html#SearchAThing_MUCollection_Length4_Auto_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.MUCollection.Length4.Auto(SearchAThing.MeasureUnit)
-  fullName: SearchAThing.MUCollection.Length4.Auto(SearchAThing.MeasureUnit)
-  nameWithType: MUCollection.Length4.Auto(MeasureUnit)
-- uid: SearchAThing.MUCollection.Length4.Auto*
-  name: Auto
-  href: api/SearchAThing.MUCollection.Length4.html#SearchAThing_MUCollection_Length4_Auto_
-  commentId: Overload:SearchAThing.MUCollection.Length4.Auto
-  isSpec: "True"
-  fullName: SearchAThing.MUCollection.Length4.Auto
-  nameWithType: MUCollection.Length4.Auto
-- uid: SearchAThing.MUCollection.Length4.cm4
-  name: cm4
-  href: api/SearchAThing.MUCollection.Length4.html#SearchAThing_MUCollection_Length4_cm4
-  commentId: F:SearchAThing.MUCollection.Length4.cm4
-  fullName: SearchAThing.MUCollection.Length4.cm4
-  nameWithType: MUCollection.Length4.cm4
-- uid: SearchAThing.MUCollection.Length4.in4
-  name: in4
-  href: api/SearchAThing.MUCollection.Length4.html#SearchAThing_MUCollection_Length4_in4
-  commentId: F:SearchAThing.MUCollection.Length4.in4
-  fullName: SearchAThing.MUCollection.Length4.in4
-  nameWithType: MUCollection.Length4.in4
-- uid: SearchAThing.MUCollection.Length4.m4
-  name: m4
-  href: api/SearchAThing.MUCollection.Length4.html#SearchAThing_MUCollection_Length4_m4
-  commentId: F:SearchAThing.MUCollection.Length4.m4
-  fullName: SearchAThing.MUCollection.Length4.m4
-  nameWithType: MUCollection.Length4.m4
-- uid: SearchAThing.MUCollection.Length4.mm4
-  name: mm4
-  href: api/SearchAThing.MUCollection.Length4.html#SearchAThing_MUCollection_Length4_mm4
-  commentId: F:SearchAThing.MUCollection.Length4.mm4
-  fullName: SearchAThing.MUCollection.Length4.mm4
-  nameWithType: MUCollection.Length4.mm4
-- uid: SearchAThing.MUCollection.LuminousIntensity
-  name: MUCollection.LuminousIntensity
-  href: api/SearchAThing.MUCollection.LuminousIntensity.html
-  commentId: T:SearchAThing.MUCollection.LuminousIntensity
-  fullName: SearchAThing.MUCollection.LuminousIntensity
-  nameWithType: MUCollection.LuminousIntensity
-- uid: SearchAThing.MUCollection.LuminousIntensity.cd
-  name: cd
-  href: api/SearchAThing.MUCollection.LuminousIntensity.html#SearchAThing_MUCollection_LuminousIntensity_cd
-  commentId: F:SearchAThing.MUCollection.LuminousIntensity.cd
-  fullName: SearchAThing.MUCollection.LuminousIntensity.cd
-  nameWithType: MUCollection.LuminousIntensity.cd
-- uid: SearchAThing.MUCollection.Mass
-  name: MUCollection.Mass
-  href: api/SearchAThing.MUCollection.Mass.html
-  commentId: T:SearchAThing.MUCollection.Mass
-  fullName: SearchAThing.MUCollection.Mass
-  nameWithType: MUCollection.Mass
-- uid: SearchAThing.MUCollection.Mass.g
-  name: g
-  href: api/SearchAThing.MUCollection.Mass.html#SearchAThing_MUCollection_Mass_g
-  commentId: F:SearchAThing.MUCollection.Mass.g
-  fullName: SearchAThing.MUCollection.Mass.g
-  nameWithType: MUCollection.Mass.g
-- uid: SearchAThing.MUCollection.Mass.kg
-  name: kg
-  href: api/SearchAThing.MUCollection.Mass.html#SearchAThing_MUCollection_Mass_kg
-  commentId: F:SearchAThing.MUCollection.Mass.kg
-  fullName: SearchAThing.MUCollection.Mass.kg
-  nameWithType: MUCollection.Mass.kg
-- uid: SearchAThing.MUCollection.Mass.T
-  name: T
-  href: api/SearchAThing.MUCollection.Mass.html#SearchAThing_MUCollection_Mass_T
-  commentId: F:SearchAThing.MUCollection.Mass.T
-  fullName: SearchAThing.MUCollection.Mass.T
-  nameWithType: MUCollection.Mass.T
-- uid: SearchAThing.MUCollection.MeasureUnits
-  name: MeasureUnits
-  href: api/SearchAThing.MUCollection.html#SearchAThing_MUCollection_MeasureUnits
-  commentId: P:SearchAThing.MUCollection.MeasureUnits
-  fullName: SearchAThing.MUCollection.MeasureUnits
-  nameWithType: MUCollection.MeasureUnits
-- uid: SearchAThing.MUCollection.MeasureUnits*
-  name: MeasureUnits
-  href: api/SearchAThing.MUCollection.html#SearchAThing_MUCollection_MeasureUnits_
-  commentId: Overload:SearchAThing.MUCollection.MeasureUnits
-  isSpec: "True"
-  fullName: SearchAThing.MUCollection.MeasureUnits
-  nameWithType: MUCollection.MeasureUnits
-- uid: SearchAThing.MUCollection.PlaneAngle
-  name: MUCollection.PlaneAngle
-  href: api/SearchAThing.MUCollection.PlaneAngle.html
-  commentId: T:SearchAThing.MUCollection.PlaneAngle
-  fullName: SearchAThing.MUCollection.PlaneAngle
-  nameWithType: MUCollection.PlaneAngle
-- uid: SearchAThing.MUCollection.PlaneAngle.deg
-  name: deg
-  href: api/SearchAThing.MUCollection.PlaneAngle.html#SearchAThing_MUCollection_PlaneAngle_deg
-  commentId: F:SearchAThing.MUCollection.PlaneAngle.deg
-  fullName: SearchAThing.MUCollection.PlaneAngle.deg
-  nameWithType: MUCollection.PlaneAngle.deg
-- uid: SearchAThing.MUCollection.PlaneAngle.grad
-  name: grad
-  href: api/SearchAThing.MUCollection.PlaneAngle.html#SearchAThing_MUCollection_PlaneAngle_grad
-  commentId: F:SearchAThing.MUCollection.PlaneAngle.grad
-  fullName: SearchAThing.MUCollection.PlaneAngle.grad
-  nameWithType: MUCollection.PlaneAngle.grad
-- uid: SearchAThing.MUCollection.PlaneAngle.rad
-  name: rad
-  href: api/SearchAThing.MUCollection.PlaneAngle.html#SearchAThing_MUCollection_PlaneAngle_rad
-  commentId: F:SearchAThing.MUCollection.PlaneAngle.rad
-  fullName: SearchAThing.MUCollection.PlaneAngle.rad
-  nameWithType: MUCollection.PlaneAngle.rad
-- uid: SearchAThing.MUCollection.Power
-  name: MUCollection.Power
-  href: api/SearchAThing.MUCollection.Power.html
-  commentId: T:SearchAThing.MUCollection.Power
-  fullName: SearchAThing.MUCollection.Power
-  nameWithType: MUCollection.Power
-- uid: SearchAThing.MUCollection.Power.W
-  name: W
-  href: api/SearchAThing.MUCollection.Power.html#SearchAThing_MUCollection_Power_W
-  commentId: F:SearchAThing.MUCollection.Power.W
-  fullName: SearchAThing.MUCollection.Power.W
-  nameWithType: MUCollection.Power.W
-- uid: SearchAThing.MUCollection.Pressure
-  name: MUCollection.Pressure
-  href: api/SearchAThing.MUCollection.Pressure.html
-  commentId: T:SearchAThing.MUCollection.Pressure
-  fullName: SearchAThing.MUCollection.Pressure
-  nameWithType: MUCollection.Pressure
-- uid: SearchAThing.MUCollection.Pressure.Auto(SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  name: Auto(MeasureUnit, MeasureUnit)
-  href: api/SearchAThing.MUCollection.Pressure.html#SearchAThing_MUCollection_Pressure_Auto_SearchAThing_MeasureUnit_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.MUCollection.Pressure.Auto(SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  fullName: SearchAThing.MUCollection.Pressure.Auto(SearchAThing.MeasureUnit, SearchAThing.MeasureUnit)
-  nameWithType: MUCollection.Pressure.Auto(MeasureUnit, MeasureUnit)
-- uid: SearchAThing.MUCollection.Pressure.Auto*
-  name: Auto
-  href: api/SearchAThing.MUCollection.Pressure.html#SearchAThing_MUCollection_Pressure_Auto_
-  commentId: Overload:SearchAThing.MUCollection.Pressure.Auto
-  isSpec: "True"
-  fullName: SearchAThing.MUCollection.Pressure.Auto
-  nameWithType: MUCollection.Pressure.Auto
-- uid: SearchAThing.MUCollection.Pressure.bar
-  name: bar
-  href: api/SearchAThing.MUCollection.Pressure.html#SearchAThing_MUCollection_Pressure_bar
-  commentId: F:SearchAThing.MUCollection.Pressure.bar
-  fullName: SearchAThing.MUCollection.Pressure.bar
-  nameWithType: MUCollection.Pressure.bar
-- uid: SearchAThing.MUCollection.Pressure.GPa
-  name: GPa
-  href: api/SearchAThing.MUCollection.Pressure.html#SearchAThing_MUCollection_Pressure_GPa
-  commentId: F:SearchAThing.MUCollection.Pressure.GPa
-  fullName: SearchAThing.MUCollection.Pressure.GPa
-  nameWithType: MUCollection.Pressure.GPa
-- uid: SearchAThing.MUCollection.Pressure.kPa
-  name: kPa
-  href: api/SearchAThing.MUCollection.Pressure.html#SearchAThing_MUCollection_Pressure_kPa
-  commentId: F:SearchAThing.MUCollection.Pressure.kPa
-  fullName: SearchAThing.MUCollection.Pressure.kPa
-  nameWithType: MUCollection.Pressure.kPa
-- uid: SearchAThing.MUCollection.Pressure.MPa
-  name: MPa
-  href: api/SearchAThing.MUCollection.Pressure.html#SearchAThing_MUCollection_Pressure_MPa
-  commentId: F:SearchAThing.MUCollection.Pressure.MPa
-  fullName: SearchAThing.MUCollection.Pressure.MPa
-  nameWithType: MUCollection.Pressure.MPa
-- uid: SearchAThing.MUCollection.Pressure.Pa
-  name: Pa
-  href: api/SearchAThing.MUCollection.Pressure.html#SearchAThing_MUCollection_Pressure_Pa
-  commentId: F:SearchAThing.MUCollection.Pressure.Pa
-  fullName: SearchAThing.MUCollection.Pressure.Pa
-  nameWithType: MUCollection.Pressure.Pa
-- uid: SearchAThing.MUCollection.Speed
-  name: MUCollection.Speed
-  href: api/SearchAThing.MUCollection.Speed.html
-  commentId: T:SearchAThing.MUCollection.Speed
-  fullName: SearchAThing.MUCollection.Speed
-  nameWithType: MUCollection.Speed
-- uid: SearchAThing.MUCollection.Speed.m_s
-  name: m_s
-  href: api/SearchAThing.MUCollection.Speed.html#SearchAThing_MUCollection_Speed_m_s
-  commentId: F:SearchAThing.MUCollection.Speed.m_s
-  fullName: SearchAThing.MUCollection.Speed.m_s
-  nameWithType: MUCollection.Speed.m_s
-- uid: SearchAThing.MUCollection.Temperature
-  name: MUCollection.Temperature
-  href: api/SearchAThing.MUCollection.Temperature.html
-  commentId: T:SearchAThing.MUCollection.Temperature
-  fullName: SearchAThing.MUCollection.Temperature
-  nameWithType: MUCollection.Temperature
-- uid: SearchAThing.MUCollection.Temperature.C
-  name: C
-  href: api/SearchAThing.MUCollection.Temperature.html#SearchAThing_MUCollection_Temperature_C
-  commentId: F:SearchAThing.MUCollection.Temperature.C
-  fullName: SearchAThing.MUCollection.Temperature.C
-  nameWithType: MUCollection.Temperature.C
-- uid: SearchAThing.MUCollection.Temperature.F
-  name: F
-  href: api/SearchAThing.MUCollection.Temperature.html#SearchAThing_MUCollection_Temperature_F
-  commentId: F:SearchAThing.MUCollection.Temperature.F
-  fullName: SearchAThing.MUCollection.Temperature.F
-  nameWithType: MUCollection.Temperature.F
-- uid: SearchAThing.MUCollection.Temperature.K
-  name: K
-  href: api/SearchAThing.MUCollection.Temperature.html#SearchAThing_MUCollection_Temperature_K
-  commentId: F:SearchAThing.MUCollection.Temperature.K
-  fullName: SearchAThing.MUCollection.Temperature.K
-  nameWithType: MUCollection.Temperature.K
-- uid: SearchAThing.MUCollection.Temperature.NonLinearConvFunctor
-  name: NonLinearConvFunctor
-  href: api/SearchAThing.MUCollection.Temperature.html#SearchAThing_MUCollection_Temperature_NonLinearConvFunctor
-  commentId: P:SearchAThing.MUCollection.Temperature.NonLinearConvFunctor
-  fullName: SearchAThing.MUCollection.Temperature.NonLinearConvFunctor
-  nameWithType: MUCollection.Temperature.NonLinearConvFunctor
-- uid: SearchAThing.MUCollection.Temperature.NonLinearConvFunctor*
-  name: NonLinearConvFunctor
-  href: api/SearchAThing.MUCollection.Temperature.html#SearchAThing_MUCollection_Temperature_NonLinearConvFunctor_
-  commentId: Overload:SearchAThing.MUCollection.Temperature.NonLinearConvFunctor
-  isSpec: "True"
-  fullName: SearchAThing.MUCollection.Temperature.NonLinearConvFunctor
-  nameWithType: MUCollection.Temperature.NonLinearConvFunctor
-- uid: SearchAThing.MUCollection.Time
-  name: MUCollection.Time
-  href: api/SearchAThing.MUCollection.Time.html
-  commentId: T:SearchAThing.MUCollection.Time
-  fullName: SearchAThing.MUCollection.Time
-  nameWithType: MUCollection.Time
-- uid: SearchAThing.MUCollection.Time.hr
-  name: hr
-  href: api/SearchAThing.MUCollection.Time.html#SearchAThing_MUCollection_Time_hr
-  commentId: F:SearchAThing.MUCollection.Time.hr
-  fullName: SearchAThing.MUCollection.Time.hr
-  nameWithType: MUCollection.Time.hr
-- uid: SearchAThing.MUCollection.Time.min
-  name: min
-  href: api/SearchAThing.MUCollection.Time.html#SearchAThing_MUCollection_Time_min
-  commentId: F:SearchAThing.MUCollection.Time.min
-  fullName: SearchAThing.MUCollection.Time.min
-  nameWithType: MUCollection.Time.min
-- uid: SearchAThing.MUCollection.Time.sec
-  name: sec
-  href: api/SearchAThing.MUCollection.Time.html#SearchAThing_MUCollection_Time_sec
-  commentId: F:SearchAThing.MUCollection.Time.sec
-  fullName: SearchAThing.MUCollection.Time.sec
-  nameWithType: MUCollection.Time.sec
-- uid: SearchAThing.MUCollection.Turbidity
-  name: MUCollection.Turbidity
-  href: api/SearchAThing.MUCollection.Turbidity.html
-  commentId: T:SearchAThing.MUCollection.Turbidity
-  fullName: SearchAThing.MUCollection.Turbidity
-  nameWithType: MUCollection.Turbidity
-- uid: SearchAThing.MUCollection.Turbidity.FNU
-  name: FNU
-  href: api/SearchAThing.MUCollection.Turbidity.html#SearchAThing_MUCollection_Turbidity_FNU
-  commentId: F:SearchAThing.MUCollection.Turbidity.FNU
-  fullName: SearchAThing.MUCollection.Turbidity.FNU
-  nameWithType: MUCollection.Turbidity.FNU
-- uid: SearchAThing.MUCollection.VolumetricFlowRate
-  name: MUCollection.VolumetricFlowRate
-  href: api/SearchAThing.MUCollection.VolumetricFlowRate.html
-  commentId: T:SearchAThing.MUCollection.VolumetricFlowRate
-  fullName: SearchAThing.MUCollection.VolumetricFlowRate
-  nameWithType: MUCollection.VolumetricFlowRate
-- uid: SearchAThing.MUCollection.VolumetricFlowRate.lt_min
-  name: lt_min
-  href: api/SearchAThing.MUCollection.VolumetricFlowRate.html#SearchAThing_MUCollection_VolumetricFlowRate_lt_min
-  commentId: F:SearchAThing.MUCollection.VolumetricFlowRate.lt_min
-  fullName: SearchAThing.MUCollection.VolumetricFlowRate.lt_min
-  nameWithType: MUCollection.VolumetricFlowRate.lt_min
-- uid: SearchAThing.MUCollection.VolumetricFlowRate.lt_s
-  name: lt_s
-  href: api/SearchAThing.MUCollection.VolumetricFlowRate.html#SearchAThing_MUCollection_VolumetricFlowRate_lt_s
-  commentId: F:SearchAThing.MUCollection.VolumetricFlowRate.lt_s
-  fullName: SearchAThing.MUCollection.VolumetricFlowRate.lt_s
-  nameWithType: MUCollection.VolumetricFlowRate.lt_s
-- uid: SearchAThing.MUCollection.VolumetricFlowRate.m3_s
-  name: m3_s
-  href: api/SearchAThing.MUCollection.VolumetricFlowRate.html#SearchAThing_MUCollection_VolumetricFlowRate_m3_s
-  commentId: F:SearchAThing.MUCollection.VolumetricFlowRate.m3_s
-  fullName: SearchAThing.MUCollection.VolumetricFlowRate.m3_s
-  nameWithType: MUCollection.VolumetricFlowRate.m3_s
-- uid: SearchAThing.MUDomain
-  name: MUDomain
-  href: api/SearchAThing.MUDomain.html
-  commentId: T:SearchAThing.MUDomain
-  fullName: SearchAThing.MUDomain
-  nameWithType: MUDomain
-- uid: SearchAThing.MUDomain.#ctor
-  name: MUDomain()
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain__ctor
-  commentId: M:SearchAThing.MUDomain.#ctor
-  fullName: SearchAThing.MUDomain.MUDomain()
-  nameWithType: MUDomain.MUDomain()
-- uid: SearchAThing.MUDomain.#ctor*
-  name: MUDomain
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain__ctor_
-  commentId: Overload:SearchAThing.MUDomain.#ctor
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.MUDomain
-  nameWithType: MUDomain.MUDomain
-- uid: SearchAThing.MUDomain._All
-  name: _All
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain__All
-  commentId: P:SearchAThing.MUDomain._All
-  fullName: SearchAThing.MUDomain._All
-  nameWithType: MUDomain._All
-- uid: SearchAThing.MUDomain._All*
-  name: _All
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain__All_
-  commentId: Overload:SearchAThing.MUDomain._All
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain._All
-  nameWithType: MUDomain._All
-- uid: SearchAThing.MUDomain.Acceleration
-  name: Acceleration
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Acceleration
-  commentId: P:SearchAThing.MUDomain.Acceleration
-  fullName: SearchAThing.MUDomain.Acceleration
-  nameWithType: MUDomain.Acceleration
-- uid: SearchAThing.MUDomain.Acceleration*
-  name: Acceleration
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Acceleration_
-  commentId: Overload:SearchAThing.MUDomain.Acceleration
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.Acceleration
-  nameWithType: MUDomain.Acceleration
-- uid: SearchAThing.MUDomain.Adimensional
-  name: Adimensional
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Adimensional
-  commentId: P:SearchAThing.MUDomain.Adimensional
-  fullName: SearchAThing.MUDomain.Adimensional
-  nameWithType: MUDomain.Adimensional
-- uid: SearchAThing.MUDomain.Adimensional*
-  name: Adimensional
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Adimensional_
-  commentId: Overload:SearchAThing.MUDomain.Adimensional
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.Adimensional
-  nameWithType: MUDomain.Adimensional
-- uid: SearchAThing.MUDomain.AmountOfSubstance
-  name: AmountOfSubstance
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_AmountOfSubstance
-  commentId: P:SearchAThing.MUDomain.AmountOfSubstance
-  fullName: SearchAThing.MUDomain.AmountOfSubstance
-  nameWithType: MUDomain.AmountOfSubstance
-- uid: SearchAThing.MUDomain.AmountOfSubstance*
-  name: AmountOfSubstance
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_AmountOfSubstance_
-  commentId: Overload:SearchAThing.MUDomain.AmountOfSubstance
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.AmountOfSubstance
-  nameWithType: MUDomain.AmountOfSubstance
-- uid: SearchAThing.MUDomain.AngularAcceleration
-  name: AngularAcceleration
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_AngularAcceleration
-  commentId: P:SearchAThing.MUDomain.AngularAcceleration
-  fullName: SearchAThing.MUDomain.AngularAcceleration
-  nameWithType: MUDomain.AngularAcceleration
-- uid: SearchAThing.MUDomain.AngularAcceleration*
-  name: AngularAcceleration
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_AngularAcceleration_
-  commentId: Overload:SearchAThing.MUDomain.AngularAcceleration
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.AngularAcceleration
-  nameWithType: MUDomain.AngularAcceleration
-- uid: SearchAThing.MUDomain.AngularSpeed
-  name: AngularSpeed
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_AngularSpeed
-  commentId: P:SearchAThing.MUDomain.AngularSpeed
-  fullName: SearchAThing.MUDomain.AngularSpeed
-  nameWithType: MUDomain.AngularSpeed
-- uid: SearchAThing.MUDomain.AngularSpeed*
-  name: AngularSpeed
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_AngularSpeed_
-  commentId: Overload:SearchAThing.MUDomain.AngularSpeed
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.AngularSpeed
-  nameWithType: MUDomain.AngularSpeed
-- uid: SearchAThing.MUDomain.BendingMoment
-  name: BendingMoment
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_BendingMoment
-  commentId: P:SearchAThing.MUDomain.BendingMoment
-  fullName: SearchAThing.MUDomain.BendingMoment
-  nameWithType: MUDomain.BendingMoment
-- uid: SearchAThing.MUDomain.BendingMoment*
-  name: BendingMoment
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_BendingMoment_
-  commentId: Overload:SearchAThing.MUDomain.BendingMoment
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.BendingMoment
-  nameWithType: MUDomain.BendingMoment
-- uid: SearchAThing.MUDomain.ElectricalConductance
-  name: ElectricalConductance
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_ElectricalConductance
-  commentId: P:SearchAThing.MUDomain.ElectricalConductance
-  fullName: SearchAThing.MUDomain.ElectricalConductance
-  nameWithType: MUDomain.ElectricalConductance
-- uid: SearchAThing.MUDomain.ElectricalConductance*
-  name: ElectricalConductance
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_ElectricalConductance_
-  commentId: Overload:SearchAThing.MUDomain.ElectricalConductance
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.ElectricalConductance
-  nameWithType: MUDomain.ElectricalConductance
-- uid: SearchAThing.MUDomain.ElectricalConductivity
-  name: ElectricalConductivity
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_ElectricalConductivity
-  commentId: P:SearchAThing.MUDomain.ElectricalConductivity
-  fullName: SearchAThing.MUDomain.ElectricalConductivity
-  nameWithType: MUDomain.ElectricalConductivity
-- uid: SearchAThing.MUDomain.ElectricalConductivity*
-  name: ElectricalConductivity
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_ElectricalConductivity_
-  commentId: Overload:SearchAThing.MUDomain.ElectricalConductivity
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.ElectricalConductivity
-  nameWithType: MUDomain.ElectricalConductivity
-- uid: SearchAThing.MUDomain.ElectricCurrent
-  name: ElectricCurrent
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_ElectricCurrent
-  commentId: P:SearchAThing.MUDomain.ElectricCurrent
-  fullName: SearchAThing.MUDomain.ElectricCurrent
-  nameWithType: MUDomain.ElectricCurrent
-- uid: SearchAThing.MUDomain.ElectricCurrent*
-  name: ElectricCurrent
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_ElectricCurrent_
-  commentId: Overload:SearchAThing.MUDomain.ElectricCurrent
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.ElectricCurrent
-  nameWithType: MUDomain.ElectricCurrent
-- uid: SearchAThing.MUDomain.Energy
-  name: Energy
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Energy
-  commentId: P:SearchAThing.MUDomain.Energy
-  fullName: SearchAThing.MUDomain.Energy
-  nameWithType: MUDomain.Energy
-- uid: SearchAThing.MUDomain.Energy*
-  name: Energy
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Energy_
-  commentId: Overload:SearchAThing.MUDomain.Energy
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.Energy
-  nameWithType: MUDomain.Energy
-- uid: SearchAThing.MUDomain.Force
-  name: Force
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Force
-  commentId: P:SearchAThing.MUDomain.Force
-  fullName: SearchAThing.MUDomain.Force
-  nameWithType: MUDomain.Force
-- uid: SearchAThing.MUDomain.Force*
-  name: Force
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Force_
-  commentId: Overload:SearchAThing.MUDomain.Force
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.Force
-  nameWithType: MUDomain.Force
-- uid: SearchAThing.MUDomain.Frequency
-  name: Frequency
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Frequency
-  commentId: P:SearchAThing.MUDomain.Frequency
-  fullName: SearchAThing.MUDomain.Frequency
-  nameWithType: MUDomain.Frequency
-- uid: SearchAThing.MUDomain.Frequency*
-  name: Frequency
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Frequency_
-  commentId: Overload:SearchAThing.MUDomain.Frequency
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.Frequency
-  nameWithType: MUDomain.Frequency
-- uid: SearchAThing.MUDomain.Length
-  name: Length
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Length
-  commentId: P:SearchAThing.MUDomain.Length
-  fullName: SearchAThing.MUDomain.Length
-  nameWithType: MUDomain.Length
-- uid: SearchAThing.MUDomain.Length*
-  name: Length
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Length_
-  commentId: Overload:SearchAThing.MUDomain.Length
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.Length
-  nameWithType: MUDomain.Length
-- uid: SearchAThing.MUDomain.Length2
-  name: Length2
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Length2
-  commentId: P:SearchAThing.MUDomain.Length2
-  fullName: SearchAThing.MUDomain.Length2
-  nameWithType: MUDomain.Length2
-- uid: SearchAThing.MUDomain.Length2*
-  name: Length2
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Length2_
-  commentId: Overload:SearchAThing.MUDomain.Length2
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.Length2
-  nameWithType: MUDomain.Length2
-- uid: SearchAThing.MUDomain.Length3
-  name: Length3
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Length3
-  commentId: P:SearchAThing.MUDomain.Length3
-  fullName: SearchAThing.MUDomain.Length3
-  nameWithType: MUDomain.Length3
-- uid: SearchAThing.MUDomain.Length3*
-  name: Length3
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Length3_
-  commentId: Overload:SearchAThing.MUDomain.Length3
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.Length3
-  nameWithType: MUDomain.Length3
-- uid: SearchAThing.MUDomain.Length4
-  name: Length4
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Length4
-  commentId: P:SearchAThing.MUDomain.Length4
-  fullName: SearchAThing.MUDomain.Length4
-  nameWithType: MUDomain.Length4
-- uid: SearchAThing.MUDomain.Length4*
-  name: Length4
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Length4_
-  commentId: Overload:SearchAThing.MUDomain.Length4
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.Length4
-  nameWithType: MUDomain.Length4
-- uid: SearchAThing.MUDomain.LuminousIntensity
-  name: LuminousIntensity
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_LuminousIntensity
-  commentId: P:SearchAThing.MUDomain.LuminousIntensity
-  fullName: SearchAThing.MUDomain.LuminousIntensity
-  nameWithType: MUDomain.LuminousIntensity
-- uid: SearchAThing.MUDomain.LuminousIntensity*
-  name: LuminousIntensity
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_LuminousIntensity_
-  commentId: Overload:SearchAThing.MUDomain.LuminousIntensity
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.LuminousIntensity
-  nameWithType: MUDomain.LuminousIntensity
-- uid: SearchAThing.MUDomain.Mass
-  name: Mass
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Mass
-  commentId: P:SearchAThing.MUDomain.Mass
-  fullName: SearchAThing.MUDomain.Mass
-  nameWithType: MUDomain.Mass
-- uid: SearchAThing.MUDomain.Mass*
-  name: Mass
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Mass_
-  commentId: Overload:SearchAThing.MUDomain.Mass
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.Mass
-  nameWithType: MUDomain.Mass
-- uid: SearchAThing.MUDomain.PlaneAngle
-  name: PlaneAngle
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_PlaneAngle
-  commentId: P:SearchAThing.MUDomain.PlaneAngle
-  fullName: SearchAThing.MUDomain.PlaneAngle
-  nameWithType: MUDomain.PlaneAngle
-- uid: SearchAThing.MUDomain.PlaneAngle*
-  name: PlaneAngle
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_PlaneAngle_
-  commentId: Overload:SearchAThing.MUDomain.PlaneAngle
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.PlaneAngle
-  nameWithType: MUDomain.PlaneAngle
-- uid: SearchAThing.MUDomain.Power
-  name: Power
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Power
-  commentId: P:SearchAThing.MUDomain.Power
-  fullName: SearchAThing.MUDomain.Power
-  nameWithType: MUDomain.Power
-- uid: SearchAThing.MUDomain.Power*
-  name: Power
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Power_
-  commentId: Overload:SearchAThing.MUDomain.Power
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.Power
-  nameWithType: MUDomain.Power
-- uid: SearchAThing.MUDomain.Pressure
-  name: Pressure
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Pressure
-  commentId: P:SearchAThing.MUDomain.Pressure
-  fullName: SearchAThing.MUDomain.Pressure
-  nameWithType: MUDomain.Pressure
-- uid: SearchAThing.MUDomain.Pressure*
-  name: Pressure
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Pressure_
-  commentId: Overload:SearchAThing.MUDomain.Pressure
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.Pressure
-  nameWithType: MUDomain.Pressure
-- uid: SearchAThing.MUDomain.SetupItem(System.String,System.String,System.Nullable{System.Double})
-  name: SetupItem(String, String, Nullable<Double>)
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_SetupItem_System_String_System_String_System_Nullable_System_Double__
-  commentId: M:SearchAThing.MUDomain.SetupItem(System.String,System.String,System.Nullable{System.Double})
-  name.vb: SetupItem(String, String, Nullable(Of Double))
-  fullName: SearchAThing.MUDomain.SetupItem(System.String, System.String, System.Nullable<System.Double>)
-  fullName.vb: SearchAThing.MUDomain.SetupItem(System.String, System.String, System.Nullable(Of System.Double))
-  nameWithType: MUDomain.SetupItem(String, String, Nullable<Double>)
-  nameWithType.vb: MUDomain.SetupItem(String, String, Nullable(Of Double))
-- uid: SearchAThing.MUDomain.SetupItem*
-  name: SetupItem
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_SetupItem_
-  commentId: Overload:SearchAThing.MUDomain.SetupItem
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.SetupItem
-  nameWithType: MUDomain.SetupItem
-- uid: SearchAThing.MUDomain.Speed
-  name: Speed
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Speed
-  commentId: P:SearchAThing.MUDomain.Speed
-  fullName: SearchAThing.MUDomain.Speed
-  nameWithType: MUDomain.Speed
-- uid: SearchAThing.MUDomain.Speed*
-  name: Speed
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Speed_
-  commentId: Overload:SearchAThing.MUDomain.Speed
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.Speed
-  nameWithType: MUDomain.Speed
-- uid: SearchAThing.MUDomain.Temperature
-  name: Temperature
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Temperature
-  commentId: P:SearchAThing.MUDomain.Temperature
-  fullName: SearchAThing.MUDomain.Temperature
-  nameWithType: MUDomain.Temperature
-- uid: SearchAThing.MUDomain.Temperature*
-  name: Temperature
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Temperature_
-  commentId: Overload:SearchAThing.MUDomain.Temperature
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.Temperature
-  nameWithType: MUDomain.Temperature
-- uid: SearchAThing.MUDomain.Time
-  name: Time
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Time
-  commentId: P:SearchAThing.MUDomain.Time
-  fullName: SearchAThing.MUDomain.Time
-  nameWithType: MUDomain.Time
-- uid: SearchAThing.MUDomain.Time*
-  name: Time
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Time_
-  commentId: Overload:SearchAThing.MUDomain.Time
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.Time
-  nameWithType: MUDomain.Time
-- uid: SearchAThing.MUDomain.Turbidity
-  name: Turbidity
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Turbidity
-  commentId: P:SearchAThing.MUDomain.Turbidity
-  fullName: SearchAThing.MUDomain.Turbidity
-  nameWithType: MUDomain.Turbidity
-- uid: SearchAThing.MUDomain.Turbidity*
-  name: Turbidity
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_Turbidity_
-  commentId: Overload:SearchAThing.MUDomain.Turbidity
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.Turbidity
-  nameWithType: MUDomain.Turbidity
-- uid: SearchAThing.MUDomain.VolumetricFlowRate
-  name: VolumetricFlowRate
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_VolumetricFlowRate
-  commentId: P:SearchAThing.MUDomain.VolumetricFlowRate
-  fullName: SearchAThing.MUDomain.VolumetricFlowRate
-  nameWithType: MUDomain.VolumetricFlowRate
-- uid: SearchAThing.MUDomain.VolumetricFlowRate*
-  name: VolumetricFlowRate
-  href: api/SearchAThing.MUDomain.html#SearchAThing_MUDomain_VolumetricFlowRate_
-  commentId: Overload:SearchAThing.MUDomain.VolumetricFlowRate
-  isSpec: "True"
-  fullName: SearchAThing.MUDomain.VolumetricFlowRate
-  nameWithType: MUDomain.VolumetricFlowRate
 - uid: SearchAThing.NumbersStatNfo
   name: NumbersStatNfo
   href: api/SearchAThing.NumbersStatNfo.html
@@ -4970,129 +2999,6 @@ references:
   commentId: F:SearchAThing.OrdIdx.Z
   fullName: SearchAThing.OrdIdx.Z
   nameWithType: OrdIdx.Z
-- uid: SearchAThing.PhysicalQuantity
-  name: PhysicalQuantity
-  href: api/SearchAThing.PhysicalQuantity.html
-  commentId: T:SearchAThing.PhysicalQuantity
-  fullName: SearchAThing.PhysicalQuantity
-  nameWithType: PhysicalQuantity
-- uid: SearchAThing.PhysicalQuantity.#ctor(System.String,Type,SearchAThing.MeasureUnitConversionTypeEnum)
-  name: PhysicalQuantity(String, Type, MeasureUnitConversionTypeEnum)
-  href: api/SearchAThing.PhysicalQuantity.html#SearchAThing_PhysicalQuantity__ctor_System_String_Type_SearchAThing_MeasureUnitConversionTypeEnum_
-  commentId: M:SearchAThing.PhysicalQuantity.#ctor(System.String,Type,SearchAThing.MeasureUnitConversionTypeEnum)
-  fullName: SearchAThing.PhysicalQuantity.PhysicalQuantity(System.String, Type, SearchAThing.MeasureUnitConversionTypeEnum)
-  nameWithType: PhysicalQuantity.PhysicalQuantity(String, Type, MeasureUnitConversionTypeEnum)
-- uid: SearchAThing.PhysicalQuantity.#ctor*
-  name: PhysicalQuantity
-  href: api/SearchAThing.PhysicalQuantity.html#SearchAThing_PhysicalQuantity__ctor_
-  commentId: Overload:SearchAThing.PhysicalQuantity.#ctor
-  isSpec: "True"
-  fullName: SearchAThing.PhysicalQuantity.PhysicalQuantity
-  nameWithType: PhysicalQuantity.PhysicalQuantity
-- uid: SearchAThing.PhysicalQuantity.ByName(System.String)
-  name: ByName(String)
-  href: api/SearchAThing.PhysicalQuantity.html#SearchAThing_PhysicalQuantity_ByName_System_String_
-  commentId: M:SearchAThing.PhysicalQuantity.ByName(System.String)
-  fullName: SearchAThing.PhysicalQuantity.ByName(System.String)
-  nameWithType: PhysicalQuantity.ByName(String)
-- uid: SearchAThing.PhysicalQuantity.ByName*
-  name: ByName
-  href: api/SearchAThing.PhysicalQuantity.html#SearchAThing_PhysicalQuantity_ByName_
-  commentId: Overload:SearchAThing.PhysicalQuantity.ByName
-  isSpec: "True"
-  fullName: SearchAThing.PhysicalQuantity.ByName
-  nameWithType: PhysicalQuantity.ByName
-- uid: SearchAThing.PhysicalQuantity.ConvertFactor(SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  name: ConvertFactor(MeasureUnit, MeasureUnit)
-  href: api/SearchAThing.PhysicalQuantity.html#SearchAThing_PhysicalQuantity_ConvertFactor_SearchAThing_MeasureUnit_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.PhysicalQuantity.ConvertFactor(SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  fullName: SearchAThing.PhysicalQuantity.ConvertFactor(SearchAThing.MeasureUnit, SearchAThing.MeasureUnit)
-  nameWithType: PhysicalQuantity.ConvertFactor(MeasureUnit, MeasureUnit)
-- uid: SearchAThing.PhysicalQuantity.ConvertFactor*
-  name: ConvertFactor
-  href: api/SearchAThing.PhysicalQuantity.html#SearchAThing_PhysicalQuantity_ConvertFactor_
-  commentId: Overload:SearchAThing.PhysicalQuantity.ConvertFactor
-  isSpec: "True"
-  fullName: SearchAThing.PhysicalQuantity.ConvertFactor
-  nameWithType: PhysicalQuantity.ConvertFactor
-- uid: SearchAThing.PhysicalQuantity.Equals(SearchAThing.PhysicalQuantity)
-  name: Equals(PhysicalQuantity)
-  href: api/SearchAThing.PhysicalQuantity.html#SearchAThing_PhysicalQuantity_Equals_SearchAThing_PhysicalQuantity_
-  commentId: M:SearchAThing.PhysicalQuantity.Equals(SearchAThing.PhysicalQuantity)
-  fullName: SearchAThing.PhysicalQuantity.Equals(SearchAThing.PhysicalQuantity)
-  nameWithType: PhysicalQuantity.Equals(PhysicalQuantity)
-- uid: SearchAThing.PhysicalQuantity.Equals*
-  name: Equals
-  href: api/SearchAThing.PhysicalQuantity.html#SearchAThing_PhysicalQuantity_Equals_
-  commentId: Overload:SearchAThing.PhysicalQuantity.Equals
-  isSpec: "True"
-  fullName: SearchAThing.PhysicalQuantity.Equals
-  nameWithType: PhysicalQuantity.Equals
-- uid: SearchAThing.PhysicalQuantity.LinearConversionRefMU
-  name: LinearConversionRefMU
-  href: api/SearchAThing.PhysicalQuantity.html#SearchAThing_PhysicalQuantity_LinearConversionRefMU
-  commentId: P:SearchAThing.PhysicalQuantity.LinearConversionRefMU
-  fullName: SearchAThing.PhysicalQuantity.LinearConversionRefMU
-  nameWithType: PhysicalQuantity.LinearConversionRefMU
-- uid: SearchAThing.PhysicalQuantity.LinearConversionRefMU*
-  name: LinearConversionRefMU
-  href: api/SearchAThing.PhysicalQuantity.html#SearchAThing_PhysicalQuantity_LinearConversionRefMU_
-  commentId: Overload:SearchAThing.PhysicalQuantity.LinearConversionRefMU
-  isSpec: "True"
-  fullName: SearchAThing.PhysicalQuantity.LinearConversionRefMU
-  nameWithType: PhysicalQuantity.LinearConversionRefMU
-- uid: SearchAThing.PhysicalQuantity.MeasureUnits
-  name: MeasureUnits
-  href: api/SearchAThing.PhysicalQuantity.html#SearchAThing_PhysicalQuantity_MeasureUnits
-  commentId: P:SearchAThing.PhysicalQuantity.MeasureUnits
-  fullName: SearchAThing.PhysicalQuantity.MeasureUnits
-  nameWithType: PhysicalQuantity.MeasureUnits
-- uid: SearchAThing.PhysicalQuantity.MeasureUnits*
-  name: MeasureUnits
-  href: api/SearchAThing.PhysicalQuantity.html#SearchAThing_PhysicalQuantity_MeasureUnits_
-  commentId: Overload:SearchAThing.PhysicalQuantity.MeasureUnits
-  isSpec: "True"
-  fullName: SearchAThing.PhysicalQuantity.MeasureUnits
-  nameWithType: PhysicalQuantity.MeasureUnits
-- uid: SearchAThing.PhysicalQuantity.MUConversionType
-  name: MUConversionType
-  href: api/SearchAThing.PhysicalQuantity.html#SearchAThing_PhysicalQuantity_MUConversionType
-  commentId: P:SearchAThing.PhysicalQuantity.MUConversionType
-  fullName: SearchAThing.PhysicalQuantity.MUConversionType
-  nameWithType: PhysicalQuantity.MUConversionType
-- uid: SearchAThing.PhysicalQuantity.MUConversionType*
-  name: MUConversionType
-  href: api/SearchAThing.PhysicalQuantity.html#SearchAThing_PhysicalQuantity_MUConversionType_
-  commentId: Overload:SearchAThing.PhysicalQuantity.MUConversionType
-  isSpec: "True"
-  fullName: SearchAThing.PhysicalQuantity.MUConversionType
-  nameWithType: PhysicalQuantity.MUConversionType
-- uid: SearchAThing.PhysicalQuantity.Name
-  name: Name
-  href: api/SearchAThing.PhysicalQuantity.html#SearchAThing_PhysicalQuantity_Name
-  commentId: P:SearchAThing.PhysicalQuantity.Name
-  fullName: SearchAThing.PhysicalQuantity.Name
-  nameWithType: PhysicalQuantity.Name
-- uid: SearchAThing.PhysicalQuantity.Name*
-  name: Name
-  href: api/SearchAThing.PhysicalQuantity.html#SearchAThing_PhysicalQuantity_Name_
-  commentId: Overload:SearchAThing.PhysicalQuantity.Name
-  isSpec: "True"
-  fullName: SearchAThing.PhysicalQuantity.Name
-  nameWithType: PhysicalQuantity.Name
-- uid: SearchAThing.PhysicalQuantity.ToString
-  name: ToString()
-  href: api/SearchAThing.PhysicalQuantity.html#SearchAThing_PhysicalQuantity_ToString
-  commentId: M:SearchAThing.PhysicalQuantity.ToString
-  fullName: SearchAThing.PhysicalQuantity.ToString()
-  nameWithType: PhysicalQuantity.ToString()
-- uid: SearchAThing.PhysicalQuantity.ToString*
-  name: ToString
-  href: api/SearchAThing.PhysicalQuantity.html#SearchAThing_PhysicalQuantity_ToString_
-  commentId: Overload:SearchAThing.PhysicalQuantity.ToString
-  isSpec: "True"
-  fullName: SearchAThing.PhysicalQuantity.ToString
-  nameWithType: PhysicalQuantity.ToString
 - uid: SearchAThing.Plane3D
   name: Plane3D
   href: api/SearchAThing.Plane3D.html
@@ -5281,242 +3187,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Polygon.EllipseToPolygon2D
   nameWithType: Polygon.EllipseToPolygon2D
-- uid: SearchAThing.PQCollection
-  name: PQCollection
-  href: api/SearchAThing.PQCollection.html
-  commentId: T:SearchAThing.PQCollection
-  fullName: SearchAThing.PQCollection
-  nameWithType: PQCollection
-- uid: SearchAThing.PQCollection.Acceleration
-  name: Acceleration
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_Acceleration
-  commentId: F:SearchAThing.PQCollection.Acceleration
-  fullName: SearchAThing.PQCollection.Acceleration
-  nameWithType: PQCollection.Acceleration
-- uid: SearchAThing.PQCollection.Adimensional
-  name: Adimensional
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_Adimensional
-  commentId: F:SearchAThing.PQCollection.Adimensional
-  fullName: SearchAThing.PQCollection.Adimensional
-  nameWithType: PQCollection.Adimensional
-- uid: SearchAThing.PQCollection.AmountOfSubstance
-  name: AmountOfSubstance
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_AmountOfSubstance
-  commentId: F:SearchAThing.PQCollection.AmountOfSubstance
-  fullName: SearchAThing.PQCollection.AmountOfSubstance
-  nameWithType: PQCollection.AmountOfSubstance
-- uid: SearchAThing.PQCollection.AngularAcceleration
-  name: AngularAcceleration
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_AngularAcceleration
-  commentId: F:SearchAThing.PQCollection.AngularAcceleration
-  fullName: SearchAThing.PQCollection.AngularAcceleration
-  nameWithType: PQCollection.AngularAcceleration
-- uid: SearchAThing.PQCollection.AngularSpeed
-  name: AngularSpeed
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_AngularSpeed
-  commentId: F:SearchAThing.PQCollection.AngularSpeed
-  fullName: SearchAThing.PQCollection.AngularSpeed
-  nameWithType: PQCollection.AngularSpeed
-- uid: SearchAThing.PQCollection.BendingMoment
-  name: BendingMoment
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_BendingMoment
-  commentId: F:SearchAThing.PQCollection.BendingMoment
-  fullName: SearchAThing.PQCollection.BendingMoment
-  nameWithType: PQCollection.BendingMoment
-- uid: SearchAThing.PQCollection.ByName(System.String)
-  name: ByName(String)
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_ByName_System_String_
-  commentId: M:SearchAThing.PQCollection.ByName(System.String)
-  fullName: SearchAThing.PQCollection.ByName(System.String)
-  nameWithType: PQCollection.ByName(String)
-- uid: SearchAThing.PQCollection.ByName*
-  name: ByName
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_ByName_
-  commentId: Overload:SearchAThing.PQCollection.ByName
-  isSpec: "True"
-  fullName: SearchAThing.PQCollection.ByName
-  nameWithType: PQCollection.ByName
-- uid: SearchAThing.PQCollection.ElectricalConductance
-  name: ElectricalConductance
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_ElectricalConductance
-  commentId: F:SearchAThing.PQCollection.ElectricalConductance
-  fullName: SearchAThing.PQCollection.ElectricalConductance
-  nameWithType: PQCollection.ElectricalConductance
-- uid: SearchAThing.PQCollection.ElectricalConductivity
-  name: ElectricalConductivity
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_ElectricalConductivity
-  commentId: F:SearchAThing.PQCollection.ElectricalConductivity
-  fullName: SearchAThing.PQCollection.ElectricalConductivity
-  nameWithType: PQCollection.ElectricalConductivity
-- uid: SearchAThing.PQCollection.ElectricCurrent
-  name: ElectricCurrent
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_ElectricCurrent
-  commentId: F:SearchAThing.PQCollection.ElectricCurrent
-  fullName: SearchAThing.PQCollection.ElectricCurrent
-  nameWithType: PQCollection.ElectricCurrent
-- uid: SearchAThing.PQCollection.Energy
-  name: Energy
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_Energy
-  commentId: F:SearchAThing.PQCollection.Energy
-  fullName: SearchAThing.PQCollection.Energy
-  nameWithType: PQCollection.Energy
-- uid: SearchAThing.PQCollection.Force
-  name: Force
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_Force
-  commentId: F:SearchAThing.PQCollection.Force
-  fullName: SearchAThing.PQCollection.Force
-  nameWithType: PQCollection.Force
-- uid: SearchAThing.PQCollection.Frequency
-  name: Frequency
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_Frequency
-  commentId: F:SearchAThing.PQCollection.Frequency
-  fullName: SearchAThing.PQCollection.Frequency
-  nameWithType: PQCollection.Frequency
-- uid: SearchAThing.PQCollection.Length
-  name: Length
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_Length
-  commentId: F:SearchAThing.PQCollection.Length
-  fullName: SearchAThing.PQCollection.Length
-  nameWithType: PQCollection.Length
-- uid: SearchAThing.PQCollection.Length2
-  name: Length2
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_Length2
-  commentId: F:SearchAThing.PQCollection.Length2
-  fullName: SearchAThing.PQCollection.Length2
-  nameWithType: PQCollection.Length2
-- uid: SearchAThing.PQCollection.Length3
-  name: Length3
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_Length3
-  commentId: F:SearchAThing.PQCollection.Length3
-  fullName: SearchAThing.PQCollection.Length3
-  nameWithType: PQCollection.Length3
-- uid: SearchAThing.PQCollection.Length4
-  name: Length4
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_Length4
-  commentId: F:SearchAThing.PQCollection.Length4
-  fullName: SearchAThing.PQCollection.Length4
-  nameWithType: PQCollection.Length4
-- uid: SearchAThing.PQCollection.LuminousIntensity
-  name: LuminousIntensity
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_LuminousIntensity
-  commentId: F:SearchAThing.PQCollection.LuminousIntensity
-  fullName: SearchAThing.PQCollection.LuminousIntensity
-  nameWithType: PQCollection.LuminousIntensity
-- uid: SearchAThing.PQCollection.Mass
-  name: Mass
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_Mass
-  commentId: F:SearchAThing.PQCollection.Mass
-  fullName: SearchAThing.PQCollection.Mass
-  nameWithType: PQCollection.Mass
-- uid: SearchAThing.PQCollection.PhysicalQuantities
-  name: PhysicalQuantities
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_PhysicalQuantities
-  commentId: P:SearchAThing.PQCollection.PhysicalQuantities
-  fullName: SearchAThing.PQCollection.PhysicalQuantities
-  nameWithType: PQCollection.PhysicalQuantities
-- uid: SearchAThing.PQCollection.PhysicalQuantities*
-  name: PhysicalQuantities
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_PhysicalQuantities_
-  commentId: Overload:SearchAThing.PQCollection.PhysicalQuantities
-  isSpec: "True"
-  fullName: SearchAThing.PQCollection.PhysicalQuantities
-  nameWithType: PQCollection.PhysicalQuantities
-- uid: SearchAThing.PQCollection.PlaneAngle
-  name: PlaneAngle
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_PlaneAngle
-  commentId: F:SearchAThing.PQCollection.PlaneAngle
-  fullName: SearchAThing.PQCollection.PlaneAngle
-  nameWithType: PQCollection.PlaneAngle
-- uid: SearchAThing.PQCollection.Power
-  name: Power
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_Power
-  commentId: F:SearchAThing.PQCollection.Power
-  fullName: SearchAThing.PQCollection.Power
-  nameWithType: PQCollection.Power
-- uid: SearchAThing.PQCollection.Pressure
-  name: Pressure
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_Pressure
-  commentId: F:SearchAThing.PQCollection.Pressure
-  fullName: SearchAThing.PQCollection.Pressure
-  nameWithType: PQCollection.Pressure
-- uid: SearchAThing.PQCollection.Speed
-  name: Speed
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_Speed
-  commentId: F:SearchAThing.PQCollection.Speed
-  fullName: SearchAThing.PQCollection.Speed
-  nameWithType: PQCollection.Speed
-- uid: SearchAThing.PQCollection.Temperature
-  name: Temperature
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_Temperature
-  commentId: F:SearchAThing.PQCollection.Temperature
-  fullName: SearchAThing.PQCollection.Temperature
-  nameWithType: PQCollection.Temperature
-- uid: SearchAThing.PQCollection.Time
-  name: Time
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_Time
-  commentId: F:SearchAThing.PQCollection.Time
-  fullName: SearchAThing.PQCollection.Time
-  nameWithType: PQCollection.Time
-- uid: SearchAThing.PQCollection.Turbidity
-  name: Turbidity
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_Turbidity
-  commentId: F:SearchAThing.PQCollection.Turbidity
-  fullName: SearchAThing.PQCollection.Turbidity
-  nameWithType: PQCollection.Turbidity
-- uid: SearchAThing.PQCollection.VolumetricFlowRate
-  name: VolumetricFlowRate
-  href: api/SearchAThing.PQCollection.html#SearchAThing_PQCollection_VolumetricFlowRate
-  commentId: F:SearchAThing.PQCollection.VolumetricFlowRate
-  fullName: SearchAThing.PQCollection.VolumetricFlowRate
-  nameWithType: PQCollection.VolumetricFlowRate
-- uid: SearchAThing.Project
-  name: Project
-  href: api/SearchAThing.Project.html
-  commentId: T:SearchAThing.Project
-  fullName: SearchAThing.Project
-  nameWithType: Project
-- uid: SearchAThing.Project.#ctor(SearchAThing.MUDomain)
-  name: Project(MUDomain)
-  href: api/SearchAThing.Project.html#SearchAThing_Project__ctor_SearchAThing_MUDomain_
-  commentId: M:SearchAThing.Project.#ctor(SearchAThing.MUDomain)
-  fullName: SearchAThing.Project.Project(SearchAThing.MUDomain)
-  nameWithType: Project.Project(MUDomain)
-- uid: SearchAThing.Project.#ctor*
-  name: Project
-  href: api/SearchAThing.Project.html#SearchAThing_Project__ctor_
-  commentId: Overload:SearchAThing.Project.#ctor
-  isSpec: "True"
-  fullName: SearchAThing.Project.Project
-  nameWithType: Project.Project
-- uid: SearchAThing.Project.MUDomain
-  name: MUDomain
-  href: api/SearchAThing.Project.html#SearchAThing_Project_MUDomain
-  commentId: P:SearchAThing.Project.MUDomain
-  fullName: SearchAThing.Project.MUDomain
-  nameWithType: Project.MUDomain
-- uid: SearchAThing.Project.MUDomain*
-  name: MUDomain
-  href: api/SearchAThing.Project.html#SearchAThing_Project_MUDomain_
-  commentId: Overload:SearchAThing.Project.MUDomain
-  isSpec: "True"
-  fullName: SearchAThing.Project.MUDomain
-  nameWithType: Project.MUDomain
-- uid: SearchAThing.Project.Save(System.String,System.Boolean,IEnumerable{Type})
-  name: Save(String, Boolean, IEnumerable<Type>)
-  href: api/SearchAThing.Project.html#SearchAThing_Project_Save_System_String_System_Boolean_IEnumerable_Type__
-  commentId: M:SearchAThing.Project.Save(System.String,System.Boolean,IEnumerable{Type})
-  name.vb: Save(String, Boolean, IEnumerable(Of Type))
-  fullName: SearchAThing.Project.Save(System.String, System.Boolean, IEnumerable<Type>)
-  fullName.vb: SearchAThing.Project.Save(System.String, System.Boolean, IEnumerable(Of Type))
-  nameWithType: Project.Save(String, Boolean, IEnumerable<Type>)
-  nameWithType.vb: Project.Save(String, Boolean, IEnumerable(Of Type))
-- uid: SearchAThing.Project.Save*
-  name: Save
-  href: api/SearchAThing.Project.html#SearchAThing_Project_Save_
-  commentId: Overload:SearchAThing.Project.Save
-  isSpec: "True"
-  fullName: SearchAThing.Project.Save
-  nameWithType: Project.Save
 - uid: SearchAThing.PythonException
   name: PythonException
   href: api/SearchAThing.PythonException.html
@@ -5623,11 +3293,11 @@ references:
   isSpec: "True"
   fullName: SearchAThing.PythonPipe.Dispose
   nameWithType: PythonPipe.Dispose
-- uid: SearchAThing.PythonPipe.Exec(StringWrapper,System.Boolean)
+- uid: SearchAThing.PythonPipe.Exec(SearchAThing.StringWrapper,System.Boolean)
   name: Exec(StringWrapper, Boolean)
-  href: api/SearchAThing.PythonPipe.html#SearchAThing_PythonPipe_Exec_StringWrapper_System_Boolean_
-  commentId: M:SearchAThing.PythonPipe.Exec(StringWrapper,System.Boolean)
-  fullName: SearchAThing.PythonPipe.Exec(StringWrapper, System.Boolean)
+  href: api/SearchAThing.PythonPipe.html#SearchAThing_PythonPipe_Exec_SearchAThing_StringWrapper_System_Boolean_
+  commentId: M:SearchAThing.PythonPipe.Exec(SearchAThing.StringWrapper,System.Boolean)
+  fullName: SearchAThing.PythonPipe.Exec(SearchAThing.StringWrapper, System.Boolean)
   nameWithType: PythonPipe.Exec(StringWrapper, Boolean)
 - uid: SearchAThing.PythonPipe.Exec*
   name: Exec
@@ -5636,44 +3306,25 @@ references:
   isSpec: "True"
   fullName: SearchAThing.PythonPipe.Exec
   nameWithType: PythonPipe.Exec
-- uid: SearchAThing.SampleModel
-  name: SampleModel
-  href: api/SearchAThing.SampleModel.html
-  commentId: T:SearchAThing.SampleModel
-  fullName: SearchAThing.SampleModel
-  nameWithType: SampleModel
-- uid: SearchAThing.SampleModel.#ctor
-  name: SampleModel()
-  href: api/SearchAThing.SampleModel.html#SearchAThing_SampleModel__ctor
-  commentId: M:SearchAThing.SampleModel.#ctor
-  fullName: SearchAThing.SampleModel.SampleModel()
-  nameWithType: SampleModel.SampleModel()
-- uid: SearchAThing.SampleModel.#ctor*
-  name: SampleModel
-  href: api/SearchAThing.SampleModel.html#SearchAThing_SampleModel__ctor_
-  commentId: Overload:SearchAThing.SampleModel.#ctor
-  isSpec: "True"
-  fullName: SearchAThing.SampleModel.SampleModel
-  nameWithType: SampleModel.SampleModel
-- uid: SearchAThing.SampleModel.MUDomain
-  name: MUDomain
-  href: api/SearchAThing.SampleModel.html#SearchAThing_SampleModel_MUDomain
-  commentId: P:SearchAThing.SampleModel.MUDomain
-  fullName: SearchAThing.SampleModel.MUDomain
-  nameWithType: SampleModel.MUDomain
-- uid: SearchAThing.SampleModel.MUDomain*
-  name: MUDomain
-  href: api/SearchAThing.SampleModel.html#SearchAThing_SampleModel_MUDomain_
-  commentId: Overload:SearchAThing.SampleModel.MUDomain
-  isSpec: "True"
-  fullName: SearchAThing.SampleModel.MUDomain
-  nameWithType: SampleModel.MUDomain
 - uid: SearchAThing.SciExt
   name: SciExt
   href: api/SearchAThing.SciExt.html
   commentId: T:SearchAThing.SciExt
   fullName: SearchAThing.SciExt
   nameWithType: SciExt
+- uid: SearchAThing.SciExt.Abs(SearchAThing.Vector3D)
+  name: Abs(Vector3D)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Abs_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.SciExt.Abs(SearchAThing.Vector3D)
+  fullName: SearchAThing.SciExt.Abs(SearchAThing.Vector3D)
+  nameWithType: SciExt.Abs(Vector3D)
+- uid: SearchAThing.SciExt.Abs*
+  name: Abs
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Abs_
+  commentId: Overload:SearchAThing.SciExt.Abs
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.Abs
+  nameWithType: SciExt.Abs
 - uid: SearchAThing.SciExt.AddEntities(DxfObject,IEnumerable{EntityObject},Layer)
   name: AddEntities(DxfObject, IEnumerable<EntityObject>, Layer)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_AddEntities_DxfObject_IEnumerable_EntityObject__Layer_
@@ -5830,19 +3481,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Boolean
   nameWithType: SciExt.Boolean
-- uid: SearchAThing.SciExt.ByPhysicalQuantity(SearchAThing.IMUDomain,SearchAThing.PhysicalQuantity)
-  name: ByPhysicalQuantity(IMUDomain, PhysicalQuantity)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ByPhysicalQuantity_SearchAThing_IMUDomain_SearchAThing_PhysicalQuantity_
-  commentId: M:SearchAThing.SciExt.ByPhysicalQuantity(SearchAThing.IMUDomain,SearchAThing.PhysicalQuantity)
-  fullName: SearchAThing.SciExt.ByPhysicalQuantity(SearchAThing.IMUDomain, SearchAThing.PhysicalQuantity)
-  nameWithType: SciExt.ByPhysicalQuantity(IMUDomain, PhysicalQuantity)
-- uid: SearchAThing.SciExt.ByPhysicalQuantity*
-  name: ByPhysicalQuantity
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ByPhysicalQuantity_
-  commentId: Overload:SearchAThing.SciExt.ByPhysicalQuantity
-  isSpec: "True"
-  fullName: SearchAThing.SciExt.ByPhysicalQuantity
-  nameWithType: SciExt.ByPhysicalQuantity
 - uid: SearchAThing.SciExt.CadScript(Face3d)
   name: CadScript(Face3d)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_CadScript_Face3d_
@@ -5996,71 +3634,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.ContainsPoint
   nameWithType: SciExt.ContainsPoint
-- uid: SearchAThing.SciExt.Convert(System.Double,SearchAThing.IMUDomain,SearchAThing.MeasureUnit)
-  name: Convert(Double, IMUDomain, MeasureUnit)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Convert_System_Double_SearchAThing_IMUDomain_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.SciExt.Convert(System.Double,SearchAThing.IMUDomain,SearchAThing.MeasureUnit)
-  fullName: SearchAThing.SciExt.Convert(System.Double, SearchAThing.IMUDomain, SearchAThing.MeasureUnit)
-  nameWithType: SciExt.Convert(Double, IMUDomain, MeasureUnit)
-- uid: SearchAThing.SciExt.Convert(System.Double,SearchAThing.MeasureUnit,SearchAThing.IMUDomain)
-  name: Convert(Double, MeasureUnit, IMUDomain)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Convert_System_Double_SearchAThing_MeasureUnit_SearchAThing_IMUDomain_
-  commentId: M:SearchAThing.SciExt.Convert(System.Double,SearchAThing.MeasureUnit,SearchAThing.IMUDomain)
-  fullName: SearchAThing.SciExt.Convert(System.Double, SearchAThing.MeasureUnit, SearchAThing.IMUDomain)
-  nameWithType: SciExt.Convert(Double, MeasureUnit, IMUDomain)
-- uid: SearchAThing.SciExt.Convert(System.Double,SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  name: Convert(Double, MeasureUnit, MeasureUnit)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Convert_System_Double_SearchAThing_MeasureUnit_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.SciExt.Convert(System.Double,SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  fullName: SearchAThing.SciExt.Convert(System.Double, SearchAThing.MeasureUnit, SearchAThing.MeasureUnit)
-  nameWithType: SciExt.Convert(Double, MeasureUnit, MeasureUnit)
-- uid: SearchAThing.SciExt.Convert(System.Nullable{System.Double},SearchAThing.IMUDomain,SearchAThing.MeasureUnit)
-  name: Convert(Nullable<Double>, IMUDomain, MeasureUnit)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Convert_System_Nullable_System_Double__SearchAThing_IMUDomain_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.SciExt.Convert(System.Nullable{System.Double},SearchAThing.IMUDomain,SearchAThing.MeasureUnit)
-  name.vb: Convert(Nullable(Of Double), IMUDomain, MeasureUnit)
-  fullName: SearchAThing.SciExt.Convert(System.Nullable<System.Double>, SearchAThing.IMUDomain, SearchAThing.MeasureUnit)
-  fullName.vb: SearchAThing.SciExt.Convert(System.Nullable(Of System.Double), SearchAThing.IMUDomain, SearchAThing.MeasureUnit)
-  nameWithType: SciExt.Convert(Nullable<Double>, IMUDomain, MeasureUnit)
-  nameWithType.vb: SciExt.Convert(Nullable(Of Double), IMUDomain, MeasureUnit)
-- uid: SearchAThing.SciExt.Convert(System.Nullable{System.Double},SearchAThing.MeasureUnit,SearchAThing.IMUDomain)
-  name: Convert(Nullable<Double>, MeasureUnit, IMUDomain)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Convert_System_Nullable_System_Double__SearchAThing_MeasureUnit_SearchAThing_IMUDomain_
-  commentId: M:SearchAThing.SciExt.Convert(System.Nullable{System.Double},SearchAThing.MeasureUnit,SearchAThing.IMUDomain)
-  name.vb: Convert(Nullable(Of Double), MeasureUnit, IMUDomain)
-  fullName: SearchAThing.SciExt.Convert(System.Nullable<System.Double>, SearchAThing.MeasureUnit, SearchAThing.IMUDomain)
-  fullName.vb: SearchAThing.SciExt.Convert(System.Nullable(Of System.Double), SearchAThing.MeasureUnit, SearchAThing.IMUDomain)
-  nameWithType: SciExt.Convert(Nullable<Double>, MeasureUnit, IMUDomain)
-  nameWithType.vb: SciExt.Convert(Nullable(Of Double), MeasureUnit, IMUDomain)
-- uid: SearchAThing.SciExt.Convert(System.Nullable{System.Double},SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  name: Convert(Nullable<Double>, MeasureUnit, MeasureUnit)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Convert_System_Nullable_System_Double__SearchAThing_MeasureUnit_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.SciExt.Convert(System.Nullable{System.Double},SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  name.vb: Convert(Nullable(Of Double), MeasureUnit, MeasureUnit)
-  fullName: SearchAThing.SciExt.Convert(System.Nullable<System.Double>, SearchAThing.MeasureUnit, SearchAThing.MeasureUnit)
-  fullName.vb: SearchAThing.SciExt.Convert(System.Nullable(Of System.Double), SearchAThing.MeasureUnit, SearchAThing.MeasureUnit)
-  nameWithType: SciExt.Convert(Nullable<Double>, MeasureUnit, MeasureUnit)
-  nameWithType.vb: SciExt.Convert(Nullable(Of Double), MeasureUnit, MeasureUnit)
-- uid: SearchAThing.SciExt.Convert*
-  name: Convert
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Convert_
-  commentId: Overload:SearchAThing.SciExt.Convert
-  isSpec: "True"
-  fullName: SearchAThing.SciExt.Convert
-  nameWithType: SciExt.Convert
-- uid: SearchAThing.SciExt.ConvertToMeasure(System.Double,SearchAThing.IMUDomain,SearchAThing.MeasureUnit)
-  name: ConvertToMeasure(Double, IMUDomain, MeasureUnit)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ConvertToMeasure_System_Double_SearchAThing_IMUDomain_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.SciExt.ConvertToMeasure(System.Double,SearchAThing.IMUDomain,SearchAThing.MeasureUnit)
-  fullName: SearchAThing.SciExt.ConvertToMeasure(System.Double, SearchAThing.IMUDomain, SearchAThing.MeasureUnit)
-  nameWithType: SciExt.ConvertToMeasure(Double, IMUDomain, MeasureUnit)
-- uid: SearchAThing.SciExt.ConvertToMeasure*
-  name: ConvertToMeasure
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ConvertToMeasure_
-  commentId: Overload:SearchAThing.SciExt.ConvertToMeasure
-  isSpec: "True"
-  fullName: SearchAThing.SciExt.ConvertToMeasure
-  nameWithType: SciExt.ConvertToMeasure
 - uid: SearchAThing.SciExt.ConvexHull2D(IEnumerable{SearchAThing.Vector3D})
   name: ConvexHull2D(IEnumerable<Vector3D>)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ConvexHull2D_IEnumerable_SearchAThing_Vector3D__
@@ -6690,6 +4263,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.SetZ
   nameWithType: SciExt.SetZ
+- uid: SearchAThing.SciExt.Sign(SearchAThing.Vector3D)
+  name: Sign(Vector3D)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Sign_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.SciExt.Sign(SearchAThing.Vector3D)
+  fullName: SearchAThing.SciExt.Sign(SearchAThing.Vector3D)
+  nameWithType: SciExt.Sign(Vector3D)
+- uid: SearchAThing.SciExt.Sign*
+  name: Sign
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Sign_
+  commentId: Overload:SearchAThing.SciExt.Sign
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.Sign
+  nameWithType: SciExt.Sign
 - uid: SearchAThing.SciExt.Similarity(System.Double,System.Double)
   name: Similarity(Double, Double)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Similarity_System_Double_System_Double_
@@ -6737,6 +4323,19 @@ references:
   fullName.vb: SearchAThing.SciExt.SortPoly(Of T)(IEnumerable(Of T), System.Double, Func(Of T, SearchAThing.Vector3D), SearchAThing.Vector3D)
   nameWithType: SciExt.SortPoly<T>(IEnumerable<T>, Double, Func<T, Vector3D>, Vector3D)
   nameWithType.vb: SciExt.SortPoly(Of T)(IEnumerable(Of T), Double, Func(Of T, Vector3D), Vector3D)
+- uid: SearchAThing.SciExt.Sqrt(SearchAThing.Vector3D)
+  name: Sqrt(Vector3D)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Sqrt_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.SciExt.Sqrt(SearchAThing.Vector3D)
+  fullName: SearchAThing.SciExt.Sqrt(SearchAThing.Vector3D)
+  nameWithType: SciExt.Sqrt(Vector3D)
+- uid: SearchAThing.SciExt.Sqrt*
+  name: Sqrt
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Sqrt_
+  commentId: Overload:SearchAThing.SciExt.Sqrt
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.Sqrt
+  nameWithType: SciExt.Sqrt
 - uid: SearchAThing.SciExt.StatNfos(IEnumerable{System.Double})
   name: StatNfos(IEnumerable<Double>)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_StatNfos_IEnumerable_System_Double__
@@ -6801,6 +4400,22 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.TakeUntilAdjacent
   nameWithType: SciExt.TakeUntilAdjacent
+- uid: SearchAThing.SciExt.Tessellate(IReadOnlyList{SearchAThing.Vector3D})
+  name: Tessellate(IReadOnlyList<Vector3D>)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Tessellate_IReadOnlyList_SearchAThing_Vector3D__
+  commentId: M:SearchAThing.SciExt.Tessellate(IReadOnlyList{SearchAThing.Vector3D})
+  name.vb: Tessellate(IReadOnlyList(Of Vector3D))
+  fullName: SearchAThing.SciExt.Tessellate(IReadOnlyList<SearchAThing.Vector3D>)
+  fullName.vb: SearchAThing.SciExt.Tessellate(IReadOnlyList(Of SearchAThing.Vector3D))
+  nameWithType: SciExt.Tessellate(IReadOnlyList<Vector3D>)
+  nameWithType.vb: SciExt.Tessellate(IReadOnlyList(Of Vector3D))
+- uid: SearchAThing.SciExt.Tessellate*
+  name: Tessellate
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Tessellate_
+  commentId: Overload:SearchAThing.SciExt.Tessellate
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.Tessellate
+  nameWithType: SciExt.Tessellate
 - uid: SearchAThing.SciExt.Thin(IEnumerable{System.Double},System.Double,System.Boolean,System.Boolean)
   name: Thin(IEnumerable<Double>, Double, Boolean, Boolean)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Thin_IEnumerable_System_Double__System_Double_System_Boolean_System_Boolean_
@@ -7145,6 +4760,22 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.ToSpan
   nameWithType: SciExt.ToSpan
+- uid: SearchAThing.SciExt.ToTriangle3D(IEnumerable{SearchAThing.Vector3D})
+  name: ToTriangle3D(IEnumerable<Vector3D>)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToTriangle3D_IEnumerable_SearchAThing_Vector3D__
+  commentId: M:SearchAThing.SciExt.ToTriangle3D(IEnumerable{SearchAThing.Vector3D})
+  name.vb: ToTriangle3D(IEnumerable(Of Vector3D))
+  fullName: SearchAThing.SciExt.ToTriangle3D(IEnumerable<SearchAThing.Vector3D>)
+  fullName.vb: SearchAThing.SciExt.ToTriangle3D(IEnumerable(Of SearchAThing.Vector3D))
+  nameWithType: SciExt.ToTriangle3D(IEnumerable<Vector3D>)
+  nameWithType.vb: SciExt.ToTriangle3D(IEnumerable(Of Vector3D))
+- uid: SearchAThing.SciExt.ToTriangle3D*
+  name: ToTriangle3D
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToTriangle3D_
+  commentId: Overload:SearchAThing.SciExt.ToTriangle3D
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.ToTriangle3D
+  nameWithType: SciExt.ToTriangle3D
 - uid: SearchAThing.SciExt.ToVector2(SearchAThing.Vector3D)
   name: ToVector2(Vector3D)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToVector2_SearchAThing_Vector3D_
@@ -7291,6 +4922,19 @@ references:
   commentId: T:SearchAThing.SciToolkit
   fullName: SearchAThing.SciToolkit
   nameWithType: SciToolkit
+- uid: SearchAThing.SciToolkit.Abs(SearchAThing.Vector3D)
+  name: Abs(Vector3D)
+  href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_Abs_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.SciToolkit.Abs(SearchAThing.Vector3D)
+  fullName: SearchAThing.SciToolkit.Abs(SearchAThing.Vector3D)
+  nameWithType: SciToolkit.Abs(Vector3D)
+- uid: SearchAThing.SciToolkit.Abs*
+  name: Abs
+  href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_Abs_
+  commentId: Overload:SearchAThing.SciToolkit.Abs
+  isSpec: "True"
+  fullName: SearchAThing.SciToolkit.Abs
+  nameWithType: SciToolkit.Abs
 - uid: SearchAThing.SciToolkit.Cube(SearchAThing.Vector3D,System.Double)
   name: Cube(Vector3D, Double)
   href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_Cube_SearchAThing_Vector3D_System_Double_
@@ -7345,6 +4989,32 @@ references:
   commentId: F:SearchAThing.SciToolkit.PostProcessCadScript
   fullName: SearchAThing.SciToolkit.PostProcessCadScript
   nameWithType: SciToolkit.PostProcessCadScript
+- uid: SearchAThing.SciToolkit.Sign(SearchAThing.Vector3D)
+  name: Sign(Vector3D)
+  href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_Sign_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.SciToolkit.Sign(SearchAThing.Vector3D)
+  fullName: SearchAThing.SciToolkit.Sign(SearchAThing.Vector3D)
+  nameWithType: SciToolkit.Sign(Vector3D)
+- uid: SearchAThing.SciToolkit.Sign*
+  name: Sign
+  href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_Sign_
+  commentId: Overload:SearchAThing.SciToolkit.Sign
+  isSpec: "True"
+  fullName: SearchAThing.SciToolkit.Sign
+  nameWithType: SciToolkit.Sign
+- uid: SearchAThing.SciToolkit.Sqrt(SearchAThing.Vector3D)
+  name: Sqrt(Vector3D)
+  href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_Sqrt_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.SciToolkit.Sqrt(SearchAThing.Vector3D)
+  fullName: SearchAThing.SciToolkit.Sqrt(SearchAThing.Vector3D)
+  nameWithType: SciToolkit.Sqrt(Vector3D)
+- uid: SearchAThing.SciToolkit.Sqrt*
+  name: Sqrt
+  href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_Sqrt_
+  commentId: Overload:SearchAThing.SciToolkit.Sqrt
+  isSpec: "True"
+  fullName: SearchAThing.SciToolkit.Sqrt
+  nameWithType: SciToolkit.Sqrt
 - uid: SearchAThing.SciToolkit.Star(SearchAThing.Vector3D,System.Double)
   name: Star(Vector3D, Double)
   href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_Star_SearchAThing_Vector3D_System_Double_
@@ -7466,6 +5136,30 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Transform3D.RotateAboutZAxis
   nameWithType: Transform3D.RotateAboutZAxis
+- uid: SearchAThing.Triangle3D
+  name: Triangle3D
+  href: api/SearchAThing.Triangle3D.html
+  commentId: T:SearchAThing.Triangle3D
+  fullName: SearchAThing.Triangle3D
+  nameWithType: Triangle3D
+- uid: SearchAThing.Triangle3D.a
+  name: a
+  href: api/SearchAThing.Triangle3D.html#SearchAThing_Triangle3D_a
+  commentId: F:SearchAThing.Triangle3D.a
+  fullName: SearchAThing.Triangle3D.a
+  nameWithType: Triangle3D.a
+- uid: SearchAThing.Triangle3D.b
+  name: b
+  href: api/SearchAThing.Triangle3D.html#SearchAThing_Triangle3D_b
+  commentId: F:SearchAThing.Triangle3D.b
+  fullName: SearchAThing.Triangle3D.b
+  nameWithType: Triangle3D.b
+- uid: SearchAThing.Triangle3D.c
+  name: c
+  href: api/SearchAThing.Triangle3D.html#SearchAThing_Triangle3D_c
+  commentId: F:SearchAThing.Triangle3D.c
+  fullName: SearchAThing.Triangle3D.c
+  nameWithType: Triangle3D.c
 - uid: SearchAThing.Vector3D
   name: Vector3D
   href: api/SearchAThing.Vector3D.html
@@ -7655,31 +5349,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Vector3D.ConcordantColinear
   nameWithType: Vector3D.ConcordantColinear
-- uid: SearchAThing.Vector3D.Convert(SearchAThing.IMUDomain,SearchAThing.MeasureUnit)
-  name: Convert(IMUDomain, MeasureUnit)
-  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_Convert_SearchAThing_IMUDomain_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.Vector3D.Convert(SearchAThing.IMUDomain,SearchAThing.MeasureUnit)
-  fullName: SearchAThing.Vector3D.Convert(SearchAThing.IMUDomain, SearchAThing.MeasureUnit)
-  nameWithType: Vector3D.Convert(IMUDomain, MeasureUnit)
-- uid: SearchAThing.Vector3D.Convert(SearchAThing.MeasureUnit,SearchAThing.IMUDomain)
-  name: Convert(MeasureUnit, IMUDomain)
-  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_Convert_SearchAThing_MeasureUnit_SearchAThing_IMUDomain_
-  commentId: M:SearchAThing.Vector3D.Convert(SearchAThing.MeasureUnit,SearchAThing.IMUDomain)
-  fullName: SearchAThing.Vector3D.Convert(SearchAThing.MeasureUnit, SearchAThing.IMUDomain)
-  nameWithType: Vector3D.Convert(MeasureUnit, IMUDomain)
-- uid: SearchAThing.Vector3D.Convert(SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  name: Convert(MeasureUnit, MeasureUnit)
-  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_Convert_SearchAThing_MeasureUnit_SearchAThing_MeasureUnit_
-  commentId: M:SearchAThing.Vector3D.Convert(SearchAThing.MeasureUnit,SearchAThing.MeasureUnit)
-  fullName: SearchAThing.Vector3D.Convert(SearchAThing.MeasureUnit, SearchAThing.MeasureUnit)
-  nameWithType: Vector3D.Convert(MeasureUnit, MeasureUnit)
-- uid: SearchAThing.Vector3D.Convert*
-  name: Convert
-  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_Convert_
-  commentId: Overload:SearchAThing.Vector3D.Convert
-  isSpec: "True"
-  fullName: SearchAThing.Vector3D.Convert
-  nameWithType: Vector3D.Convert
 - uid: SearchAThing.Vector3D.Coordinates
   name: Coordinates
   href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_Coordinates
@@ -8089,6 +5758,15 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Vector3D.Division
   nameWithType: Vector3D.Division
+- uid: SearchAThing.Vector3D.op_Implicit(LibTessDotNet.Vec3)~SearchAThing.Vector3D
+  name: Implicit(LibTessDotNet.Vec3 to Vector3D)
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_op_Implicit_LibTessDotNet_Vec3__SearchAThing_Vector3D
+  commentId: M:SearchAThing.Vector3D.op_Implicit(LibTessDotNet.Vec3)~SearchAThing.Vector3D
+  name.vb: Widening(LibTessDotNet.Vec3 to Vector3D)
+  fullName: SearchAThing.Vector3D.Implicit(LibTessDotNet.Vec3 to SearchAThing.Vector3D)
+  fullName.vb: SearchAThing.Vector3D.Widening(LibTessDotNet.Vec3 to SearchAThing.Vector3D)
+  nameWithType: Vector3D.Implicit(LibTessDotNet.Vec3 to Vector3D)
+  nameWithType.vb: Vector3D.Widening(LibTessDotNet.Vec3 to Vector3D)
 - uid: SearchAThing.Vector3D.op_Implicit(netDxf.Vector2)~SearchAThing.Vector3D
   name: Implicit(netDxf.Vector2 to Vector3D)
   href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_op_Implicit_netDxf_Vector2__SearchAThing_Vector3D
@@ -8382,6 +6060,12 @@ references:
   commentId: M:SearchAThing.Vector3D.Set(SearchAThing.OrdIdx,System.Double)
   fullName: SearchAThing.Vector3D.Set(SearchAThing.OrdIdx, System.Double)
   nameWithType: Vector3D.Set(OrdIdx, Double)
+- uid: SearchAThing.Vector3D.Set(System.Int32,System.Double)
+  name: Set(Int32, Double)
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_Set_System_Int32_System_Double_
+  commentId: M:SearchAThing.Vector3D.Set(System.Int32,System.Double)
+  fullName: SearchAThing.Vector3D.Set(System.Int32, System.Double)
+  nameWithType: Vector3D.Set(Int32, Double)
 - uid: SearchAThing.Vector3D.Set*
   name: Set
   href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_Set_
