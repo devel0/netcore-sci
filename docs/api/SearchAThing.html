@@ -109,6 +109,8 @@ references:</p>
 </section>
       <h4><a class="xref" href="SearchAThing.Geometry.html">Geometry</a></h4>
       <section></section>
+      <h4><a class="xref" href="SearchAThing.GuiToolkit.html">GuiToolkit</a></h4>
+      <section></section>
       <h4><a class="xref" href="SearchAThing.Int64Map.html">Int64Map</a></h4>
       <section><p>Scan a given domain of doubles, determine the midpoint ( Origin )
 and using the given tolerance it tests for integrity in conversion between values
@@ -134,6 +136,13 @@ It can generate a Int64MapExceptionRange.</p>
       <section></section>
       <h4><a class="xref" href="SearchAThing.PythonPipe.html">PythonPipe</a></h4>
       <section></section>
+      <h4><a class="xref" href="SearchAThing.QuantityConverter.html">QuantityConverter</a></h4>
+      <section><p>generic UnitsNet converter helper<br><br>
+example:<br>
+var durationConverter = new QuantityConverter((s, c) =&gt; Duration.Parse(s, c));<br>
+var tbox = new TextBox { MinWidth = 100, Margin = new Thickness(10, 0, 0, 0) };<br>
+tbox[!TextBox.TextProperty] = new Binding(propname) { Mode = BindingMode.TwoWay, Converter = cvt };</p>
+</section>
       <h4><a class="xref" href="SearchAThing.SciExt.html">SciExt</a></h4>
       <section></section>
       <h4><a class="xref" href="SearchAThing.SciToolkit.html">SciToolkit</a></h4>
