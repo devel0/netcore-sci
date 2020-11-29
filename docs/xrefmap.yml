@@ -1733,6 +1733,122 @@ references:
   commentId: F:SearchAThing.GeometryType.Vector3D
   fullName: SearchAThing.GeometryType.Vector3D
   nameWithType: GeometryType.Vector3D
+- uid: SearchAThing.Gui
+  name: SearchAThing.Gui
+  href: api/SearchAThing.Gui.html
+  commentId: N:SearchAThing.Gui
+  fullName: SearchAThing.Gui
+  nameWithType: SearchAThing.Gui
+- uid: SearchAThing.Gui.App`1
+  name: App<W>
+  href: api/SearchAThing.Gui.App-1.html
+  commentId: T:SearchAThing.Gui.App`1
+  name.vb: App(Of W)
+  fullName: SearchAThing.Gui.App<W>
+  fullName.vb: SearchAThing.Gui.App(Of W)
+  nameWithType: App<W>
+  nameWithType.vb: App(Of W)
+- uid: SearchAThing.Gui.App`1.#ctor
+  name: App()
+  href: api/SearchAThing.Gui.App-1.html#SearchAThing_Gui_App_1__ctor
+  commentId: M:SearchAThing.Gui.App`1.#ctor
+  fullName: SearchAThing.Gui.App<W>.App()
+  fullName.vb: SearchAThing.Gui.App(Of W).App()
+  nameWithType: App<W>.App()
+  nameWithType.vb: App(Of W).App()
+- uid: SearchAThing.Gui.App`1.#ctor*
+  name: App
+  href: api/SearchAThing.Gui.App-1.html#SearchAThing_Gui_App_1__ctor_
+  commentId: Overload:SearchAThing.Gui.App`1.#ctor
+  isSpec: "True"
+  fullName: SearchAThing.Gui.App<W>.App
+  fullName.vb: SearchAThing.Gui.App(Of W).App
+  nameWithType: App<W>.App
+  nameWithType.vb: App(Of W).App
+- uid: SearchAThing.Gui.App`1.Initialize
+  name: Initialize()
+  href: api/SearchAThing.Gui.App-1.html#SearchAThing_Gui_App_1_Initialize
+  commentId: M:SearchAThing.Gui.App`1.Initialize
+  fullName: SearchAThing.Gui.App<W>.Initialize()
+  fullName.vb: SearchAThing.Gui.App(Of W).Initialize()
+  nameWithType: App<W>.Initialize()
+  nameWithType.vb: App(Of W).Initialize()
+- uid: SearchAThing.Gui.App`1.Initialize*
+  name: Initialize
+  href: api/SearchAThing.Gui.App-1.html#SearchAThing_Gui_App_1_Initialize_
+  commentId: Overload:SearchAThing.Gui.App`1.Initialize
+  isSpec: "True"
+  fullName: SearchAThing.Gui.App<W>.Initialize
+  fullName.vb: SearchAThing.Gui.App(Of W).Initialize
+  nameWithType: App<W>.Initialize
+  nameWithType.vb: App(Of W).Initialize
+- uid: SearchAThing.Gui.App`1.OnFrameworkInitializationCompleted
+  name: OnFrameworkInitializationCompleted()
+  href: api/SearchAThing.Gui.App-1.html#SearchAThing_Gui_App_1_OnFrameworkInitializationCompleted
+  commentId: M:SearchAThing.Gui.App`1.OnFrameworkInitializationCompleted
+  fullName: SearchAThing.Gui.App<W>.OnFrameworkInitializationCompleted()
+  fullName.vb: SearchAThing.Gui.App(Of W).OnFrameworkInitializationCompleted()
+  nameWithType: App<W>.OnFrameworkInitializationCompleted()
+  nameWithType.vb: App(Of W).OnFrameworkInitializationCompleted()
+- uid: SearchAThing.Gui.App`1.OnFrameworkInitializationCompleted*
+  name: OnFrameworkInitializationCompleted
+  href: api/SearchAThing.Gui.App-1.html#SearchAThing_Gui_App_1_OnFrameworkInitializationCompleted_
+  commentId: Overload:SearchAThing.Gui.App`1.OnFrameworkInitializationCompleted
+  isSpec: "True"
+  fullName: SearchAThing.Gui.App<W>.OnFrameworkInitializationCompleted
+  fullName.vb: SearchAThing.Gui.App(Of W).OnFrameworkInitializationCompleted
+  nameWithType: App<W>.OnFrameworkInitializationCompleted
+  nameWithType.vb: App(Of W).OnFrameworkInitializationCompleted
+- uid: SearchAThing.Gui.Win
+  name: Win
+  href: api/SearchAThing.Gui.Win.html
+  commentId: T:SearchAThing.Gui.Win
+  fullName: SearchAThing.Gui.Win
+  nameWithType: Win
+- uid: SearchAThing.Gui.Win.#ctor(IEnumerable{System.String})
+  name: Win(IEnumerable<String>)
+  href: api/SearchAThing.Gui.Win.html#SearchAThing_Gui_Win__ctor_IEnumerable_System_String__
+  commentId: M:SearchAThing.Gui.Win.#ctor(IEnumerable{System.String})
+  name.vb: Win(IEnumerable(Of String))
+  fullName: SearchAThing.Gui.Win.Win(IEnumerable<System.String>)
+  fullName.vb: SearchAThing.Gui.Win.Win(IEnumerable(Of System.String))
+  nameWithType: Win.Win(IEnumerable<String>)
+  nameWithType.vb: Win.Win(IEnumerable(Of String))
+- uid: SearchAThing.Gui.Win.#ctor*
+  name: Win
+  href: api/SearchAThing.Gui.Win.html#SearchAThing_Gui_Win__ctor_
+  commentId: Overload:SearchAThing.Gui.Win.#ctor
+  isSpec: "True"
+  fullName: SearchAThing.Gui.Win.Win
+  nameWithType: Win.Win
+- uid: SearchAThing.Gui.Win.CustomStyleUris
+  name: CustomStyleUris
+  href: api/SearchAThing.Gui.Win.html#SearchAThing_Gui_Win_CustomStyleUris
+  commentId: F:SearchAThing.Gui.Win.CustomStyleUris
+  fullName: SearchAThing.Gui.Win.CustomStyleUris
+  nameWithType: Win.CustomStyleUris
+- uid: SearchAThing.GuiToolkit
+  name: GuiToolkit
+  href: api/SearchAThing.GuiToolkit.html
+  commentId: T:SearchAThing.GuiToolkit
+  fullName: SearchAThing.GuiToolkit
+  nameWithType: GuiToolkit
+- uid: SearchAThing.GuiToolkit.CreateGui*
+  name: CreateGui
+  href: api/SearchAThing.GuiToolkit.html#SearchAThing_GuiToolkit_CreateGui_
+  commentId: Overload:SearchAThing.GuiToolkit.CreateGui
+  isSpec: "True"
+  fullName: SearchAThing.GuiToolkit.CreateGui
+  nameWithType: GuiToolkit.CreateGui
+- uid: SearchAThing.GuiToolkit.CreateGui``1
+  name: CreateGui<W>()
+  href: api/SearchAThing.GuiToolkit.html#SearchAThing_GuiToolkit_CreateGui__1
+  commentId: M:SearchAThing.GuiToolkit.CreateGui``1
+  name.vb: CreateGui(Of W)()
+  fullName: SearchAThing.GuiToolkit.CreateGui<W>()
+  fullName.vb: SearchAThing.GuiToolkit.CreateGui(Of W)()
+  nameWithType: GuiToolkit.CreateGui<W>()
+  nameWithType.vb: GuiToolkit.CreateGui(Of W)()
 - uid: SearchAThing.Int64Map
   name: Int64Map
   href: api/SearchAThing.Int64Map.html
@@ -3306,6 +3422,54 @@ references:
   isSpec: "True"
   fullName: SearchAThing.PythonPipe.Exec
   nameWithType: PythonPipe.Exec
+- uid: SearchAThing.QuantityConverter
+  name: QuantityConverter
+  href: api/SearchAThing.QuantityConverter.html
+  commentId: T:SearchAThing.QuantityConverter
+  fullName: SearchAThing.QuantityConverter
+  nameWithType: QuantityConverter
+- uid: SearchAThing.QuantityConverter.#ctor(Func{System.String,CultureInfo,System.Object})
+  name: QuantityConverter(Func<String, CultureInfo, Object>)
+  href: api/SearchAThing.QuantityConverter.html#SearchAThing_QuantityConverter__ctor_Func_System_String_CultureInfo_System_Object__
+  commentId: M:SearchAThing.QuantityConverter.#ctor(Func{System.String,CultureInfo,System.Object})
+  name.vb: QuantityConverter(Func(Of String, CultureInfo, Object))
+  fullName: SearchAThing.QuantityConverter.QuantityConverter(Func<System.String, CultureInfo, System.Object>)
+  fullName.vb: SearchAThing.QuantityConverter.QuantityConverter(Func(Of System.String, CultureInfo, System.Object))
+  nameWithType: QuantityConverter.QuantityConverter(Func<String, CultureInfo, Object>)
+  nameWithType.vb: QuantityConverter.QuantityConverter(Func(Of String, CultureInfo, Object))
+- uid: SearchAThing.QuantityConverter.#ctor*
+  name: QuantityConverter
+  href: api/SearchAThing.QuantityConverter.html#SearchAThing_QuantityConverter__ctor_
+  commentId: Overload:SearchAThing.QuantityConverter.#ctor
+  isSpec: "True"
+  fullName: SearchAThing.QuantityConverter.QuantityConverter
+  nameWithType: QuantityConverter.QuantityConverter
+- uid: SearchAThing.QuantityConverter.Convert(System.Object,Type,System.Object,CultureInfo)
+  name: Convert(Object, Type, Object, CultureInfo)
+  href: api/SearchAThing.QuantityConverter.html#SearchAThing_QuantityConverter_Convert_System_Object_Type_System_Object_CultureInfo_
+  commentId: M:SearchAThing.QuantityConverter.Convert(System.Object,Type,System.Object,CultureInfo)
+  fullName: SearchAThing.QuantityConverter.Convert(System.Object, Type, System.Object, CultureInfo)
+  nameWithType: QuantityConverter.Convert(Object, Type, Object, CultureInfo)
+- uid: SearchAThing.QuantityConverter.Convert*
+  name: Convert
+  href: api/SearchAThing.QuantityConverter.html#SearchAThing_QuantityConverter_Convert_
+  commentId: Overload:SearchAThing.QuantityConverter.Convert
+  isSpec: "True"
+  fullName: SearchAThing.QuantityConverter.Convert
+  nameWithType: QuantityConverter.Convert
+- uid: SearchAThing.QuantityConverter.ConvertBack(System.Object,Type,System.Object,CultureInfo)
+  name: ConvertBack(Object, Type, Object, CultureInfo)
+  href: api/SearchAThing.QuantityConverter.html#SearchAThing_QuantityConverter_ConvertBack_System_Object_Type_System_Object_CultureInfo_
+  commentId: M:SearchAThing.QuantityConverter.ConvertBack(System.Object,Type,System.Object,CultureInfo)
+  fullName: SearchAThing.QuantityConverter.ConvertBack(System.Object, Type, System.Object, CultureInfo)
+  nameWithType: QuantityConverter.ConvertBack(Object, Type, Object, CultureInfo)
+- uid: SearchAThing.QuantityConverter.ConvertBack*
+  name: ConvertBack
+  href: api/SearchAThing.QuantityConverter.html#SearchAThing_QuantityConverter_ConvertBack_
+  commentId: Overload:SearchAThing.QuantityConverter.ConvertBack
+  isSpec: "True"
+  fullName: SearchAThing.QuantityConverter.ConvertBack
+  nameWithType: QuantityConverter.ConvertBack
 - uid: SearchAThing.SciExt
   name: SciExt
   href: api/SearchAThing.SciExt.html

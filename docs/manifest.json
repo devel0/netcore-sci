@@ -164,6 +164,54 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Gui.App-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Gui.App-1.html",
+          "hash": "M1wwVa09x0tTMGd+yJkPRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Gui.Win.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Gui.Win.html",
+          "hash": "ORPTECvKlrq7b5pMeusWxQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Gui.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Gui.html",
+          "hash": "IwpcuFIJYfZAc4Z5MBRGzg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.GuiToolkit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.GuiToolkit.html",
+          "hash": "xUnSOmBH1eWs230IPQ+HwQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SearchAThing.Int64Map.yml",
       "output": {
         ".html": {
@@ -347,6 +395,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.QuantityConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.QuantityConverter.html",
+          "hash": "q4eWzLOxbSBtqpJwRNqqxA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SearchAThing.SciExt.yml",
       "output": {
         ".html": {
@@ -465,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.html",
-          "hash": "e5eTYQ3GoRSgDMFTYAvmWQ=="
+          "hash": "CG5DkbpaT8zjlqgKxaavOg=="
         }
       },
       "is_incremental": false,
@@ -489,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "W2vcaxFKmtCYcY4wpESnTw=="
+          "hash": "DY3bwk+v1b4648lBpFAKag=="
         }
       },
       "is_incremental": false,
@@ -553,23 +613,25 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 3,
-          "skipped_file_count": 2
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 38,
-          "skipped_file_count": 6
+          "total_file_count": 43,
+          "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
@@ -582,8 +644,8 @@
     },
     {
       "status": {
-        "can_incremental": true,
-        "details": "Can support incremental post processing.",
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0

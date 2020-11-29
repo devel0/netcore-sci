@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFramework>net5.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageId>netcore-sci</PackageId>
-        <PackageVersion>1.16.0</PackageVersion>
+        <PackageVersion>1.17.0</PackageVersion>
         <Title>net core scientific</Title>
         <Description></Description>
         <LangVersion>8</LangVersion>
@@ -14,6 +14,7 @@
         <noWarn>1591</noWarn>
     </PropertyGroup>    
     <ItemGroup>
+        <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview6" />
         <PackageReference Include="LibTessDotNet" Version="1.1.13" />
         <PackageReference Include="LinqStatistics" Version="2.3.0" />
         <PackageReference Include="MathNet.Numerics" Version="4.12.0" />        
@@ -22,7 +23,7 @@
         <PackageReference Include="netDxf.netstandard" Version="2.3.0" />        
         <PackageReference Include="ParagonClipper" Version="6.4.2" />
         <PackageReference Include="QuantumConcepts.Formats.STL.netcore" Version="1.3.1" />
-        <PackageReference Include="UnitsNet" Version="4.74.0" />
+        <PackageReference Include="UnitsNet" Version="4.74.0" />        
     </ItemGroup>    
     <ItemGroup>
       <ProjectReference Include="..\..\netcore-util\netcore-util\netcore-util.csproj" />
