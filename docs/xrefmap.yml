@@ -5153,6 +5153,19 @@ references:
   commentId: F:SearchAThing.SciToolkit.PostProcessCadScript
   fullName: SearchAThing.SciToolkit.PostProcessCadScript
   nameWithType: SciToolkit.PostProcessCadScript
+- uid: SearchAThing.SciToolkit.Range(System.Double,System.Double,System.Double,System.Double,System.Boolean)
+  name: Range(Double, Double, Double, Double, Boolean)
+  href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_Range_System_Double_System_Double_System_Double_System_Double_System_Boolean_
+  commentId: M:SearchAThing.SciToolkit.Range(System.Double,System.Double,System.Double,System.Double,System.Boolean)
+  fullName: SearchAThing.SciToolkit.Range(System.Double, System.Double, System.Double, System.Double, System.Boolean)
+  nameWithType: SciToolkit.Range(Double, Double, Double, Double, Boolean)
+- uid: SearchAThing.SciToolkit.Range*
+  name: Range
+  href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_Range_
+  commentId: Overload:SearchAThing.SciToolkit.Range
+  isSpec: "True"
+  fullName: SearchAThing.SciToolkit.Range
+  nameWithType: SciToolkit.Range
 - uid: SearchAThing.SciToolkit.Sign(SearchAThing.Vector3D)
   name: Sign(Vector3D)
   href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_Sign_SearchAThing_Vector3D_
