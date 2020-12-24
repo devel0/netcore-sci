@@ -15,9 +15,9 @@
 - [netcore-sci](#netcore-sci)
   * [Examples](#examples)
       - [0001](#0001)
+      - [0002](#0002)
   * [Quickstart](#quickstart)
       - [create an example](#create-an-example)
-      - [0002](#0002)
   * [Unit tests](#unit-tests)
   * [How this project was built](#how-this-project-was-built)
 <!-- TOCEND -->
@@ -34,115 +34,6 @@ create a dxf
 
 <img src="examples/0001/output.png" width=300>
 
-## Quickstart
-
-- [nuget package](https://www.nuget.org/packages/netcore-sci/)
-
-- [extension methods](https://devel0.github.io/netcore-sci/api/SearchAThing.SciExt.html)
-
-```csharp
-using SearchAThing;
-```
-
-- [toolkit methods](https://devel0.github.io/netcore-sci/api/SearchAThing.SciToolkit.html)
-
-```csharp
-using static SearchAThing.SciToolkit;
-```
-
-#### create an example
-
-From [examples](examples) follow [example_0001](examples/0001) can be created following these steps:
-
-- create console project
-
-```sh
-dotnet new console -n example_0001
-cd example_0001
-```
-
-- add reference to netcore-sci ( check latest version [here](https://www.nuget.org/packages/netcore-sci/) )
-
-```sh
-dotnet add package netcore-sci
-```
-
-**optional** if prefer to link source code directly to stepin with debugger add project reference instead
-
-```sh
-dotnet add reference ../../netcore-sci/netcore-sci.csproj
-```
-
-- setup example code
-
-```csharp
-using static System.Math;
-using SearchAThing;
-
-namespace test
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            var tol = 1e-8;
-            var R = 100;
-
-            var dxf = new netDxf.DxfDocument();
-            var ang = 0d;
-            var angStep = 10d.ToRad();
-            var angElev = 20d.ToRad();
-
-            var o = Vector3D.Zero;
-            var p = new Vector3D(R, 0, 0);
-
-            Circle3D circ = null;
-
-            while (ang < 2 * PI)
-            {
-                var l = new Line3D(o, p.RotateAboutZAxis(ang));
-                var l_ent = l.DxfEntity;
-                l_ent.Color = netDxf.AciColor.Cyan;
-                dxf.AddEntity(l_ent);
-
-                var arcCS = new CoordinateSystem3D(o, l.V, Vector3D.ZAxis);
-                var arc = new Arc3D(tol, arcCS, R, 0, angElev);
-                var arc_ent = arc.DxfEntity;
-                arc_ent.Color = netDxf.AciColor.Yellow;
-                dxf.AddEntity(arc_ent);
-
-                var arc2CS = new CoordinateSystem3D(l.To - R * Vector3D.ZAxis,
-                    Vector3D.ZAxis, Vector3D.Zero - l.To);
-                var arc2 = new Arc3D(tol, arc2CS, R, 0, PI / 2);
-                var arc2_ent = arc2.DxfEntity;
-                arc2_ent.Color = netDxf.AciColor.Green;
-                dxf.AddEntity(arc2_ent);
-
-                if (circ == null)
-                {
-                    circ = new Circle3D(tol,
-                        CoordinateSystem3D.WCS.Move(Vector3D.ZAxis * arc.To.Z),
-                        arc.To.Distance2D(Vector3D.Zero));
-                    var circ_ent = circ.DxfEntity;
-                    circ_ent.Color = netDxf.AciColor.Yellow;
-                    dxf.AddEntity(circ_ent);
-                }
-
-                ang += angStep;
-            }
-
-            dxf.Viewport.ShowGrid = false;
-            dxf.Save("output.dxf", isBinary: true);
-        }
-    }
-}
-```
-
-- execute
-
-```sh
-dotnet run
-```
 
 #### 0002
 
@@ -253,6 +144,116 @@ namespace test
         }
     }
 }
+```
+
+## Quickstart
+
+- [nuget package](https://www.nuget.org/packages/netcore-sci/)
+
+- [extension methods](https://devel0.github.io/netcore-sci/api/SearchAThing.SciExt.html)
+
+```csharp
+using SearchAThing;
+```
+
+- [toolkit methods](https://devel0.github.io/netcore-sci/api/SearchAThing.SciToolkit.html)
+
+```csharp
+using static SearchAThing.SciToolkit;
+```
+
+#### create an example
+
+From [examples](examples) follow [example_0001](examples/0001) can be created following these steps:
+
+- create console project
+
+```sh
+dotnet new console -n example_0001
+cd example_0001
+```
+
+- add reference to netcore-sci ( check latest version [here](https://www.nuget.org/packages/netcore-sci/) )
+
+```sh
+dotnet add package netcore-sci
+```
+
+**optional** if prefer to link source code directly to stepin with debugger add project reference instead
+
+```sh
+dotnet add reference ../../netcore-sci/netcore-sci.csproj
+```
+
+- setup example code
+
+```csharp
+using static System.Math;
+using SearchAThing;
+
+namespace test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var tol = 1e-8;
+            var R = 100;
+
+            var dxf = new netDxf.DxfDocument();
+            var ang = 0d;
+            var angStep = 10d.ToRad();
+            var angElev = 20d.ToRad();
+
+            var o = Vector3D.Zero;
+            var p = new Vector3D(R, 0, 0);
+
+            Circle3D circ = null;
+
+            while (ang < 2 * PI)
+            {
+                var l = new Line3D(o, p.RotateAboutZAxis(ang));
+                var l_ent = l.DxfEntity;
+                l_ent.Color = netDxf.AciColor.Cyan;
+                dxf.AddEntity(l_ent);
+
+                var arcCS = new CoordinateSystem3D(o, l.V, Vector3D.ZAxis);
+                var arc = new Arc3D(tol, arcCS, R, 0, angElev);
+                var arc_ent = arc.DxfEntity;
+                arc_ent.Color = netDxf.AciColor.Yellow;
+                dxf.AddEntity(arc_ent);
+
+                var arc2CS = new CoordinateSystem3D(l.To - R * Vector3D.ZAxis,
+                    Vector3D.ZAxis, Vector3D.Zero - l.To);
+                var arc2 = new Arc3D(tol, arc2CS, R, 0, PI / 2);
+                var arc2_ent = arc2.DxfEntity;
+                arc2_ent.Color = netDxf.AciColor.Green;
+                dxf.AddEntity(arc2_ent);
+
+                if (circ == null)
+                {
+                    circ = new Circle3D(tol,
+                        CoordinateSystem3D.WCS.Move(Vector3D.ZAxis * arc.To.Z),
+                        arc.To.Distance2D(Vector3D.Zero));
+                    var circ_ent = circ.DxfEntity;
+                    circ_ent.Color = netDxf.AciColor.Yellow;
+                    dxf.AddEntity(circ_ent);
+                }
+
+                ang += angStep;
+            }
+
+            dxf.Viewport.ShowGrid = false;
+            dxf.Save("output.dxf", isBinary: true);
+        }
+    }
+}
+```
+
+- execute
+
+```sh
+dotnet run
 ```
 
 ## Unit tests
