@@ -11,11 +11,16 @@
 
 <hr/>
 
-- [Notes](#release-notes)
-- [Examples](#examples)
-- [Quickstart](#quickstart)
-- [Unit tests](#unit-tests)
-- [How this project was built](#how-this-project-was-built)
+<!-- TOC -->
+- [netcore-sci](#netcore-sci)
+  * [Examples](#examples)
+      - [0001](#0001)
+  * [Quickstart](#quickstart)
+      - [create an example](#create-an-example)
+      - [0002](#0002)
+  * [Unit tests](#unit-tests)
+  * [How this project was built](#how-this-project-was-built)
+<!-- TOCEND -->
 
 <hr/>
 
