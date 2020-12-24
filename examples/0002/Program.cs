@@ -68,7 +68,7 @@ namespace test
                 var f2fc = f2f.Compile("x");
                 var f2 = new OxyPlot.Series.LineSeries()
                 {
-                    Title = "3*sin(x)",
+                    Title = f2f.ToString(),
                     DataFieldX = "x",
                     DataFieldY = "y",
                     ItemsSource = SciToolkit.Range(
