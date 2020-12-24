@@ -8,7 +8,6 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Converters;
 using Avalonia.Markup.Xaml.Styling;
 using SearchAThing.Gui;
-using UnitsNet;
 
 namespace SearchAThing
 {
