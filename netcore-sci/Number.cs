@@ -309,6 +309,34 @@ namespace SearchAThing
         /// </remarks>
         public static LinearSpline LinearSplineInterpolate(IEnumerable<double> x, IEnumerable<double> y) =>
             LinearSpline.Interpolate(x, y);
+
+        /// <summary>
+        /// span a range of doubles from start to end ( optionally included ) stepping with given inc
+        /// </summary>
+        /// <param name="tol">measure tolerance</param>
+        /// <param name="start">start pos</param>
+        /// <param name="end">end pos</param>
+        /// <param name="inc">increment</param>
+        /// <param name="includeEnd">if true end can included in result set</param>
+        /// <returns>enumeration of discrete range items</returns>
+        public static IEnumerable<double> Range(double tol, double start, double end, double inc, bool includeEnd = false)
+        {
+            if (start.LessThanTol(tol, end))
+            {
+                if (inc < 0) throw new ArgumentException($"invalid negative inc when start less than end");
+            }
+            else if (start.GreatThanTol(tol, end))
+            {
+                if (inc > 0) throw new ArgumentException($"invalid positive inc when start less than end");
+            }
+
+            double x = start;
+            while (x.LessThanTol(tol, end) || (includeEnd ? x.EqualsTol(tol, end) : false))
+            {
+                yield return x;
+                x += inc;
+            }
+        }
     }
 
 }
