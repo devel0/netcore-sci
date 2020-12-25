@@ -35,7 +35,7 @@ namespace SearchAThing
 
             public Win(IEnumerable<string> customStyles)
             {
-                CustomStyleUris = customStyles;
+                CustomStyleUris = customStyles;                
             }
         }
 

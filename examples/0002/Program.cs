@@ -78,13 +78,6 @@ namespace test
                 pv.InvalidatePlot();
 
             }
-
-            protected override void OnMeasureInvalidated()
-            {
-                base.OnMeasureInvalidated();
-
-                pv.InvalidatePlot();
-            }
         }
 
         static void Main(string[] args)

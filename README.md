@@ -16,6 +16,7 @@
   * [Examples](#examples)
       - [0001](#0001)
       - [0002](#0002)
+      - [0003](#0003)
   * [Quickstart](#quickstart)
       - [create an example](#create-an-example)
   * [Unit tests](#unit-tests)
@@ -33,7 +34,6 @@ create a dxf
 [result dxf](examples/example_0001/output.dxf)
 
 <img src="examples/0001/output.png" width=300>
-
 
 #### 0002
 
@@ -138,6 +138,12 @@ namespace test
     }
 }
 ```
+
+#### 0003
+
+more elaborated plot [example 0003](examples/0003/Program.cs)
+
+![](data/img/example0003.png)
 
 ## Quickstart
 
