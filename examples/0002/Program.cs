@@ -8,13 +8,6 @@ using OxyPlot;
 using OxyPlot.Avalonia;
 using static AngouriMath.Extensions.AngouriMathExtensions;
 
-// assemblies added to this example:
-//
-// dotnet add package OxyPlot.Avalonia --version 2.1.0-20201211.2
-// dotnet add package Avalonia.Desktop --version 0.10.0-rc1
-// dotnet add package Avalonia --version 0.10.0-rc1
-// dotnet add package AngouriMath --version 1.2.0-preview.5
-
 namespace test
 {
     class Program
