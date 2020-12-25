@@ -143,7 +143,7 @@ namespace test
 
 more elaborated plot [example 0003](examples/0003/Program.cs)
 
-![](data/img/example0003.png)
+<img src="data/img/example0003.png" width=450/>
 
 ## Quickstart
 
