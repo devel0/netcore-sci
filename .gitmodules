@@ -1,0 +1,4 @@
+[submodule "thirdy/CSharpMath"]
+	path = thirdy/CSharpMath
+	url = https://github.com/SearchAThing-forks/CSharpMath.git
+	branch = avalonia-pkg-upgrade
