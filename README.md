@@ -13,6 +13,7 @@
 
 <!-- TOC -->
 - [netcore-sci](#netcore-sci)
+  * [Build](#build)
   * [Examples](#examples)
       - [0001](#0001)
       - [0002](#0002)
