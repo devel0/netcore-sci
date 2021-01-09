@@ -1,21 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\netcore-sci\netcore-sci.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="AngouriMath" Version="1.2.0-preview.5" />    
-    <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
-    <PackageReference Include="CSharpMath.Avalonia" Version="$(CSharpMathVersion)" />
-    <PackageReference Include="LinqStatistics" Version="2.3.0" />
-    <PackageReference Include="OxyPlot.Avalonia" Version="$(OxyPlotVersion)" />
-  </ItemGroup>
-
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>example</AssemblyName>
   </PropertyGroup>
-
+  <ItemGroup>
+    <PackageReference Include="AngouriMath" Version="1.2.0-preview.5"/>
+    <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)"/><!-- <PackageReference Include="CSharpMath.Avalonia" Version="$(CSharpMathVersion)" /> -->
+    <PackageReference Include="LinqStatistics" Version="2.3.0"/>
+    <PackageReference Include="OxyPlot.Avalonia" Version="$(OxyPlotVersion)"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\netcore-sci\netcore-sci.csproj"/>
+    <ProjectReference Include="..\..\thirdy\CSharpMath\CSharpMath.Avalonia\CSharpMath.Avalonia.csproj"/>
+  </ItemGroup>
 </Project>
