@@ -12,16 +12,15 @@
 <hr/>
 
 <!-- TOC -->
-- [netcore-sci](#netcore-sci)
-  * [Build](#build)
-  * [Examples](#examples)
-      - [0001](#0001)
-      - [0002](#0002)
-      - [0003](#0003)
-  * [Quickstart](#quickstart)
-      - [create an example](#create-an-example)
-  * [Unit tests](#unit-tests)
-  * [How this project was built](#how-this-project-was-built)
+* [Build](#build)
+* [Examples](#examples)
+    - [0001](#0001)
+    - [0002](#0002)
+    - [0003](#0003)
+* [Quickstart](#quickstart)
+    - [create an example](#create-an-example)
+* [Unit tests](#unit-tests)
+* [How this project was built](#how-this-project-was-built)
 <!-- TOCEND -->
 
 <hr/>
