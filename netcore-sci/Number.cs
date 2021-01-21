@@ -307,8 +307,8 @@ namespace SearchAThing
         /// <remarks>      
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Number/NumberTest_0004.cs)        
         /// </remarks>
-        public static LinearSpline LinearSplineInterpolate(IEnumerable<double> x, IEnumerable<double> y) =>
-            LinearSpline.Interpolate(x, y);
+        public static IInterpolation LinearSplineInterpolate(IEnumerable<double> x, IEnumerable<double> y) =>
+            LinearSpline.Interpolate(x, y);              
 
         /// <summary>
         /// span a range of doubles from start to end ( optionally included ) stepping with given inc
