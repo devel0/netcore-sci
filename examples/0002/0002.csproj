@@ -7,10 +7,10 @@
   <ItemGroup>
     <PackageReference Include="AngouriMath" Version="1.2.0-preview.5"/>
     <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)"/>
-    <PackageReference Include="LinqStatistics" Version="2.3.0"/>
-    <PackageReference Include="OxyPlot.Avalonia" Version="$(OxyPlotVersion)"/>
+    <PackageReference Include="LinqStatistics" Version="2.3.0"/>    
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\netcore-sci\netcore-sci.csproj"/>
+    <ProjectReference Include="..\..\thirdy\oxyplot-avalonia\Source\OxyPlot.Avalonia/OxyPlot.Avalonia.csproj" />
   </ItemGroup>
 </Project>
