@@ -2,3 +2,7 @@
 	path = thirdy/CSharpMath
 	url = https://github.com/SearchAThing-forks/CSharpMath.git
 	branch = avalonia-pkg-upgrade
+[submodule "thirdy/oxyplot-avalonia"]
+	path = thirdy/oxyplot-avalonia
+	url = https://github.com/SearchAThing-forks/oxyplot-avalonia.git
+	branch = avalonia-pkg-upgrade
