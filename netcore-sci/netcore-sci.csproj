@@ -3,7 +3,7 @@
         <TargetFramework>net5.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageId>netcore-sci</PackageId>
-        <PackageVersion>1.22.0</PackageVersion>
+        <PackageVersion>1.22.1</PackageVersion>
         <Title>net core scientific</Title>
         <Description></Description>
         <LangVersion>8</LangVersion>
@@ -15,7 +15,7 @@
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="netcore-util" Version="$(NetcoreUtilVersion)"/>
-        <PackageReference Include="netcore-psql-util" Version="$(NetcorePsqlUtil)"/>
+        <PackageReference Include="netcore-psql-util" Version="$(NetcorePsqlUtilVersion)"/>
         <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)"/>
         <PackageReference Include="LibTessDotNet" Version="$(LibTessDotNetVersion)"/>
         <PackageReference Include="LinqStatistics" Version="$(LinqStatisticsVersion)"/>
