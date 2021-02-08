@@ -5,9 +5,9 @@
     <AssemblyName>example</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AngouriMath" Version="1.2.0-preview.5"/>
-    <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)"/><!-- <PackageReference Include="CSharpMath.Avalonia" Version="$(CSharpMathVersion)" /> -->
-    <PackageReference Include="LinqStatistics" Version="2.3.0"/>
+    <PackageReference Include="AngouriMath" Version="$(AngouriMathVersion)"/>
+    <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)"/>
+    <PackageReference Include="LinqStatistics" Version="$(LinqStatisticsVersion)"/>
     <PackageReference Include="OxyPlot.Avalonia" Version="$(OxyPlotVersion)"/>
   </ItemGroup>
   <ItemGroup>

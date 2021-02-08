@@ -5,9 +5,9 @@
     <AssemblyName>example</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AngouriMath" Version="1.2.0-preview.5"/>
+    <PackageReference Include="AngouriMath" Version="$(AngouriMathVersion)"/>
     <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)"/>
-    <PackageReference Include="LinqStatistics" Version="2.3.0"/>    
+    <PackageReference Include="LinqStatistics" Version="$(LinqStatisticsVersion)"/>    
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\netcore-sci\netcore-sci.csproj"/>

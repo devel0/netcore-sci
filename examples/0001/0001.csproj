@@ -5,7 +5,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="LinqStatistics" Version="2.3.0" />
+    <PackageReference Include="LinqStatistics" Version="$(LinqStatisticsVersion)" />
   </ItemGroup>
 
   <PropertyGroup>

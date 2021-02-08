@@ -3,7 +3,6 @@ using System.Text;
 using System.Threading;
 using System.Diagnostics;
 using System.IO;
-using static SearchAThing.UtilToolkit;
 
 namespace SearchAThing
 {

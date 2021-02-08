@@ -5,12 +5,12 @@
     <AssemblyName>example</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AngouriMath" Version="1.2.0-preview.5" />
-    <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
-    <PackageReference Include="ClosedXML" Version="0.95.4" />
-    <PackageReference Include="LinqStatistics" Version="2.3.0" />
-    <PackageReference Include="MessageBox.Avalonia" Version="0.10.7-rc1" />
-    <PackageReference Include="OxyPlot.Avalonia" Version="$(OxyPlotVersion)" />
+  <PackageReference Include="AngouriMath" Version="$(AngouriMathVersion)"/>
+    <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)"/>
+    <PackageReference Include="LinqStatistics" Version="$(LinqStatisticsVersion)"/>
+    <PackageReference Include="OxyPlot.Avalonia" Version="$(OxyPlotVersion)"/>
+    <PackageReference Include="ClosedXML" Version="$(ClosedXMLVersion)" />
+    <PackageReference Include="MessageBox.Avalonia" Version="$(MessageBoxAvaloniaVersion)" />    
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\netcore-sci\netcore-sci.csproj" />
