@@ -917,6 +917,151 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Circle3D.Length
   nameWithType: Circle3D.Length
+- uid: SearchAThing.ComputationQueue`1
+  name: ComputationQueue<T>
+  href: api/SearchAThing.ComputationQueue-1.html
+  commentId: T:SearchAThing.ComputationQueue`1
+  name.vb: ComputationQueue(Of T)
+  fullName: SearchAThing.ComputationQueue<T>
+  fullName.vb: SearchAThing.ComputationQueue(Of T)
+  nameWithType: ComputationQueue<T>
+  nameWithType.vb: ComputationQueue(Of T)
+- uid: SearchAThing.ComputationQueue`1.#ctor(System.Int32)
+  name: ComputationQueue(Int32)
+  href: api/SearchAThing.ComputationQueue-1.html#SearchAThing_ComputationQueue_1__ctor_System_Int32_
+  commentId: M:SearchAThing.ComputationQueue`1.#ctor(System.Int32)
+  fullName: SearchAThing.ComputationQueue<T>.ComputationQueue(System.Int32)
+  fullName.vb: SearchAThing.ComputationQueue(Of T).ComputationQueue(System.Int32)
+  nameWithType: ComputationQueue<T>.ComputationQueue(Int32)
+  nameWithType.vb: ComputationQueue(Of T).ComputationQueue(Int32)
+- uid: SearchAThing.ComputationQueue`1.#ctor*
+  name: ComputationQueue
+  href: api/SearchAThing.ComputationQueue-1.html#SearchAThing_ComputationQueue_1__ctor_
+  commentId: Overload:SearchAThing.ComputationQueue`1.#ctor
+  isSpec: "True"
+  fullName: SearchAThing.ComputationQueue<T>.ComputationQueue
+  fullName.vb: SearchAThing.ComputationQueue(Of T).ComputationQueue
+  nameWithType: ComputationQueue<T>.ComputationQueue
+  nameWithType.vb: ComputationQueue(Of T).ComputationQueue
+- uid: SearchAThing.ComputationQueue`1.Count
+  name: Count
+  href: api/SearchAThing.ComputationQueue-1.html#SearchAThing_ComputationQueue_1_Count
+  commentId: P:SearchAThing.ComputationQueue`1.Count
+  fullName: SearchAThing.ComputationQueue<T>.Count
+  fullName.vb: SearchAThing.ComputationQueue(Of T).Count
+  nameWithType: ComputationQueue<T>.Count
+  nameWithType.vb: ComputationQueue(Of T).Count
+- uid: SearchAThing.ComputationQueue`1.Count*
+  name: Count
+  href: api/SearchAThing.ComputationQueue-1.html#SearchAThing_ComputationQueue_1_Count_
+  commentId: Overload:SearchAThing.ComputationQueue`1.Count
+  isSpec: "True"
+  fullName: SearchAThing.ComputationQueue<T>.Count
+  fullName.vb: SearchAThing.ComputationQueue(Of T).Count
+  nameWithType: ComputationQueue<T>.Count
+  nameWithType.vb: ComputationQueue(Of T).Count
+- uid: SearchAThing.ComputationQueue`1.Current
+  name: Current
+  href: api/SearchAThing.ComputationQueue-1.html#SearchAThing_ComputationQueue_1_Current
+  commentId: P:SearchAThing.ComputationQueue`1.Current
+  fullName: SearchAThing.ComputationQueue<T>.Current
+  fullName.vb: SearchAThing.ComputationQueue(Of T).Current
+  nameWithType: ComputationQueue<T>.Current
+  nameWithType.vb: ComputationQueue(Of T).Current
+- uid: SearchAThing.ComputationQueue`1.Current*
+  name: Current
+  href: api/SearchAThing.ComputationQueue-1.html#SearchAThing_ComputationQueue_1_Current_
+  commentId: Overload:SearchAThing.ComputationQueue`1.Current
+  isSpec: "True"
+  fullName: SearchAThing.ComputationQueue<T>.Current
+  fullName.vb: SearchAThing.ComputationQueue(Of T).Current
+  nameWithType: ComputationQueue<T>.Current
+  nameWithType.vb: ComputationQueue(Of T).Current
+- uid: SearchAThing.ComputationQueue`1.Enq(`0)
+  name: Enq(T)
+  href: api/SearchAThing.ComputationQueue-1.html#SearchAThing_ComputationQueue_1_Enq__0_
+  commentId: M:SearchAThing.ComputationQueue`1.Enq(`0)
+  fullName: SearchAThing.ComputationQueue<T>.Enq(T)
+  fullName.vb: SearchAThing.ComputationQueue(Of T).Enq(T)
+  nameWithType: ComputationQueue<T>.Enq(T)
+  nameWithType.vb: ComputationQueue(Of T).Enq(T)
+- uid: SearchAThing.ComputationQueue`1.Enq*
+  name: Enq
+  href: api/SearchAThing.ComputationQueue-1.html#SearchAThing_ComputationQueue_1_Enq_
+  commentId: Overload:SearchAThing.ComputationQueue`1.Enq
+  isSpec: "True"
+  fullName: SearchAThing.ComputationQueue<T>.Enq
+  fullName.vb: SearchAThing.ComputationQueue(Of T).Enq
+  nameWithType: ComputationQueue<T>.Enq
+  nameWithType.vb: ComputationQueue(Of T).Enq
+- uid: SearchAThing.ComputationQueue`1.GetItem(System.Int32)
+  name: GetItem(Int32)
+  href: api/SearchAThing.ComputationQueue-1.html#SearchAThing_ComputationQueue_1_GetItem_System_Int32_
+  commentId: M:SearchAThing.ComputationQueue`1.GetItem(System.Int32)
+  fullName: SearchAThing.ComputationQueue<T>.GetItem(System.Int32)
+  fullName.vb: SearchAThing.ComputationQueue(Of T).GetItem(System.Int32)
+  nameWithType: ComputationQueue<T>.GetItem(Int32)
+  nameWithType.vb: ComputationQueue(Of T).GetItem(Int32)
+- uid: SearchAThing.ComputationQueue`1.GetItem*
+  name: GetItem
+  href: api/SearchAThing.ComputationQueue-1.html#SearchAThing_ComputationQueue_1_GetItem_
+  commentId: Overload:SearchAThing.ComputationQueue`1.GetItem
+  isSpec: "True"
+  fullName: SearchAThing.ComputationQueue<T>.GetItem
+  fullName.vb: SearchAThing.ComputationQueue(Of T).GetItem
+  nameWithType: ComputationQueue<T>.GetItem
+  nameWithType.vb: ComputationQueue(Of T).GetItem
+- uid: SearchAThing.ComputationQueue`1.MaxSize
+  name: MaxSize
+  href: api/SearchAThing.ComputationQueue-1.html#SearchAThing_ComputationQueue_1_MaxSize
+  commentId: P:SearchAThing.ComputationQueue`1.MaxSize
+  fullName: SearchAThing.ComputationQueue<T>.MaxSize
+  fullName.vb: SearchAThing.ComputationQueue(Of T).MaxSize
+  nameWithType: ComputationQueue<T>.MaxSize
+  nameWithType.vb: ComputationQueue(Of T).MaxSize
+- uid: SearchAThing.ComputationQueue`1.MaxSize*
+  name: MaxSize
+  href: api/SearchAThing.ComputationQueue-1.html#SearchAThing_ComputationQueue_1_MaxSize_
+  commentId: Overload:SearchAThing.ComputationQueue`1.MaxSize
+  isSpec: "True"
+  fullName: SearchAThing.ComputationQueue<T>.MaxSize
+  fullName.vb: SearchAThing.ComputationQueue(Of T).MaxSize
+  nameWithType: ComputationQueue<T>.MaxSize
+  nameWithType.vb: ComputationQueue(Of T).MaxSize
+- uid: SearchAThing.ComputationQueue`1.Prev
+  name: Prev
+  href: api/SearchAThing.ComputationQueue-1.html#SearchAThing_ComputationQueue_1_Prev
+  commentId: P:SearchAThing.ComputationQueue`1.Prev
+  fullName: SearchAThing.ComputationQueue<T>.Prev
+  fullName.vb: SearchAThing.ComputationQueue(Of T).Prev
+  nameWithType: ComputationQueue<T>.Prev
+  nameWithType.vb: ComputationQueue(Of T).Prev
+- uid: SearchAThing.ComputationQueue`1.Prev*
+  name: Prev
+  href: api/SearchAThing.ComputationQueue-1.html#SearchAThing_ComputationQueue_1_Prev_
+  commentId: Overload:SearchAThing.ComputationQueue`1.Prev
+  isSpec: "True"
+  fullName: SearchAThing.ComputationQueue<T>.Prev
+  fullName.vb: SearchAThing.ComputationQueue(Of T).Prev
+  nameWithType: ComputationQueue<T>.Prev
+  nameWithType.vb: ComputationQueue(Of T).Prev
+- uid: SearchAThing.ComputationQueue`1.PrevPrev
+  name: PrevPrev
+  href: api/SearchAThing.ComputationQueue-1.html#SearchAThing_ComputationQueue_1_PrevPrev
+  commentId: P:SearchAThing.ComputationQueue`1.PrevPrev
+  fullName: SearchAThing.ComputationQueue<T>.PrevPrev
+  fullName.vb: SearchAThing.ComputationQueue(Of T).PrevPrev
+  nameWithType: ComputationQueue<T>.PrevPrev
+  nameWithType.vb: ComputationQueue(Of T).PrevPrev
+- uid: SearchAThing.ComputationQueue`1.PrevPrev*
+  name: PrevPrev
+  href: api/SearchAThing.ComputationQueue-1.html#SearchAThing_ComputationQueue_1_PrevPrev_
+  commentId: Overload:SearchAThing.ComputationQueue`1.PrevPrev
+  isSpec: "True"
+  fullName: SearchAThing.ComputationQueue<T>.PrevPrev
+  fullName.vb: SearchAThing.ComputationQueue(Of T).PrevPrev
+  nameWithType: ComputationQueue<T>.PrevPrev
+  nameWithType.vb: ComputationQueue(Of T).PrevPrev
 - uid: SearchAThing.CoordinateSystem3D
   name: CoordinateSystem3D
   href: api/SearchAThing.CoordinateSystem3D.html
@@ -2717,6 +2862,158 @@ references:
   commentId: F:SearchAThing.LineIntersectBehavior.PointOnThis
   fullName: SearchAThing.LineIntersectBehavior.PointOnThis
   nameWithType: LineIntersectBehavior.PointOnThis
+- uid: SearchAThing.LUT
+  name: LUT
+  href: api/SearchAThing.LUT.html
+  commentId: T:SearchAThing.LUT
+  fullName: SearchAThing.LUT
+  nameWithType: LUT
+- uid: SearchAThing.LUT.#ctor(Func{System.Double,System.Double},System.Double,System.Double,System.Int32)
+  name: LUT(Func<Double, Double>, Double, Double, Int32)
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT__ctor_Func_System_Double_System_Double__System_Double_System_Double_System_Int32_
+  commentId: M:SearchAThing.LUT.#ctor(Func{System.Double,System.Double},System.Double,System.Double,System.Int32)
+  name.vb: LUT(Func(Of Double, Double), Double, Double, Int32)
+  fullName: SearchAThing.LUT.LUT(Func<System.Double, System.Double>, System.Double, System.Double, System.Int32)
+  fullName.vb: SearchAThing.LUT.LUT(Func(Of System.Double, System.Double), System.Double, System.Double, System.Int32)
+  nameWithType: LUT.LUT(Func<Double, Double>, Double, Double, Int32)
+  nameWithType.vb: LUT.LUT(Func(Of Double, Double), Double, Double, Int32)
+- uid: SearchAThing.LUT.#ctor*
+  name: LUT
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT__ctor_
+  commentId: Overload:SearchAThing.LUT.#ctor
+  isSpec: "True"
+  fullName: SearchAThing.LUT.LUT
+  nameWithType: LUT.LUT
+- uid: SearchAThing.LUT.ComputeX(System.Double)
+  name: ComputeX(Double)
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_ComputeX_System_Double_
+  commentId: M:SearchAThing.LUT.ComputeX(System.Double)
+  fullName: SearchAThing.LUT.ComputeX(System.Double)
+  nameWithType: LUT.ComputeX(Double)
+- uid: SearchAThing.LUT.ComputeX*
+  name: ComputeX
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_ComputeX_
+  commentId: Overload:SearchAThing.LUT.ComputeX
+  isSpec: "True"
+  fullName: SearchAThing.LUT.ComputeX
+  nameWithType: LUT.ComputeX
+- uid: SearchAThing.LUT.Fx
+  name: Fx
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_Fx
+  commentId: P:SearchAThing.LUT.Fx
+  fullName: SearchAThing.LUT.Fx
+  nameWithType: LUT.Fx
+- uid: SearchAThing.LUT.Fx*
+  name: Fx
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_Fx_
+  commentId: Overload:SearchAThing.LUT.Fx
+  isSpec: "True"
+  fullName: SearchAThing.LUT.Fx
+  nameWithType: LUT.Fx
+- uid: SearchAThing.LUT.LUTSize
+  name: LUTSize
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_LUTSize
+  commentId: P:SearchAThing.LUT.LUTSize
+  fullName: SearchAThing.LUT.LUTSize
+  nameWithType: LUT.LUTSize
+- uid: SearchAThing.LUT.LUTSize*
+  name: LUTSize
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_LUTSize_
+  commentId: Overload:SearchAThing.LUT.LUTSize
+  isSpec: "True"
+  fullName: SearchAThing.LUT.LUTSize
+  nameWithType: LUT.LUTSize
+- uid: SearchAThing.LUT.XFrom
+  name: XFrom
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_XFrom
+  commentId: P:SearchAThing.LUT.XFrom
+  fullName: SearchAThing.LUT.XFrom
+  nameWithType: LUT.XFrom
+- uid: SearchAThing.LUT.XFrom*
+  name: XFrom
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_XFrom_
+  commentId: Overload:SearchAThing.LUT.XFrom
+  isSpec: "True"
+  fullName: SearchAThing.LUT.XFrom
+  nameWithType: LUT.XFrom
+- uid: SearchAThing.LUT.XStep
+  name: XStep
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_XStep
+  commentId: P:SearchAThing.LUT.XStep
+  fullName: SearchAThing.LUT.XStep
+  nameWithType: LUT.XStep
+- uid: SearchAThing.LUT.XStep*
+  name: XStep
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_XStep_
+  commentId: Overload:SearchAThing.LUT.XStep
+  isSpec: "True"
+  fullName: SearchAThing.LUT.XStep
+  nameWithType: LUT.XStep
+- uid: SearchAThing.LUT.XTo
+  name: XTo
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_XTo
+  commentId: P:SearchAThing.LUT.XTo
+  fullName: SearchAThing.LUT.XTo
+  nameWithType: LUT.XTo
+- uid: SearchAThing.LUT.XTo*
+  name: XTo
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_XTo_
+  commentId: Overload:SearchAThing.LUT.XTo
+  isSpec: "True"
+  fullName: SearchAThing.LUT.XTo
+  nameWithType: LUT.XTo
+- uid: SearchAThing.LUT.YFrom
+  name: YFrom
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_YFrom
+  commentId: P:SearchAThing.LUT.YFrom
+  fullName: SearchAThing.LUT.YFrom
+  nameWithType: LUT.YFrom
+- uid: SearchAThing.LUT.YFrom*
+  name: YFrom
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_YFrom_
+  commentId: Overload:SearchAThing.LUT.YFrom
+  isSpec: "True"
+  fullName: SearchAThing.LUT.YFrom
+  nameWithType: LUT.YFrom
+- uid: SearchAThing.LUT.YStep
+  name: YStep
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_YStep
+  commentId: P:SearchAThing.LUT.YStep
+  fullName: SearchAThing.LUT.YStep
+  nameWithType: LUT.YStep
+- uid: SearchAThing.LUT.YStep*
+  name: YStep
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_YStep_
+  commentId: Overload:SearchAThing.LUT.YStep
+  isSpec: "True"
+  fullName: SearchAThing.LUT.YStep
+  nameWithType: LUT.YStep
+- uid: SearchAThing.LUT.YTo
+  name: YTo
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_YTo
+  commentId: P:SearchAThing.LUT.YTo
+  fullName: SearchAThing.LUT.YTo
+  nameWithType: LUT.YTo
+- uid: SearchAThing.LUT.YTo*
+  name: YTo
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_YTo_
+  commentId: Overload:SearchAThing.LUT.YTo
+  isSpec: "True"
+  fullName: SearchAThing.LUT.YTo
+  nameWithType: LUT.YTo
+- uid: SearchAThing.LUT.YXTable
+  name: YXTable
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_YXTable
+  commentId: P:SearchAThing.LUT.YXTable
+  fullName: SearchAThing.LUT.YXTable
+  nameWithType: LUT.YXTable
+- uid: SearchAThing.LUT.YXTable*
+  name: YXTable
+  href: api/SearchAThing.LUT.html#SearchAThing_LUT_YXTable_
+  commentId: Overload:SearchAThing.LUT.YXTable
+  isSpec: "True"
+  fullName: SearchAThing.LUT.YXTable
+  nameWithType: LUT.YXTable
 - uid: SearchAThing.Matrix3D
   name: Matrix3D
   href: api/SearchAThing.Matrix3D.html
