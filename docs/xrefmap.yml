@@ -3706,11 +3706,11 @@ references:
   isSpec: "True"
   fullName: SearchAThing.PythonPipe.Dispose
   nameWithType: PythonPipe.Dispose
-- uid: SearchAThing.PythonPipe.Exec(SearchAThing.StringWrapper,System.Boolean)
+- uid: SearchAThing.PythonPipe.Exec(StringWrapper,System.Boolean)
   name: Exec(StringWrapper, Boolean)
-  href: api/SearchAThing.PythonPipe.html#SearchAThing_PythonPipe_Exec_SearchAThing_StringWrapper_System_Boolean_
-  commentId: M:SearchAThing.PythonPipe.Exec(SearchAThing.StringWrapper,System.Boolean)
-  fullName: SearchAThing.PythonPipe.Exec(SearchAThing.StringWrapper, System.Boolean)
+  href: api/SearchAThing.PythonPipe.html#SearchAThing_PythonPipe_Exec_StringWrapper_System_Boolean_
+  commentId: M:SearchAThing.PythonPipe.Exec(StringWrapper,System.Boolean)
+  fullName: SearchAThing.PythonPipe.Exec(StringWrapper, System.Boolean)
   nameWithType: PythonPipe.Exec(StringWrapper, Boolean)
 - uid: SearchAThing.PythonPipe.Exec*
   name: Exec
@@ -4750,6 +4750,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Similarity
   nameWithType: SciExt.Similarity
+- uid: SearchAThing.SciExt.SmartSimplify(Entity)
+  name: SmartSimplify(Entity)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SmartSimplify_Entity_
+  commentId: M:SearchAThing.SciExt.SmartSimplify(Entity)
+  fullName: SearchAThing.SciExt.SmartSimplify(Entity)
+  nameWithType: SciExt.SmartSimplify(Entity)
+- uid: SearchAThing.SciExt.SmartSimplify*
+  name: SmartSimplify
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SmartSimplify_
+  commentId: Overload:SearchAThing.SciExt.SmartSimplify
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.SmartSimplify
+  nameWithType: SciExt.SmartSimplify
 - uid: SearchAThing.SciExt.SortPoly(IEnumerable{SearchAThing.Line3D},System.Double,SearchAThing.Vector3D)
   name: SortPoly(IEnumerable<Line3D>, Double, Vector3D)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SortPoly_IEnumerable_SearchAThing_Line3D__System_Double_SearchAThing_Vector3D_
@@ -5336,6 +5349,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Vertexes
   nameWithType: SciExt.Vertexes
+- uid: SearchAThing.SciExt.VeryExpensiveSimplify(Entity,System.Int32)
+  name: VeryExpensiveSimplify(Entity, Int32)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_VeryExpensiveSimplify_Entity_System_Int32_
+  commentId: M:SearchAThing.SciExt.VeryExpensiveSimplify(Entity,System.Int32)
+  fullName: SearchAThing.SciExt.VeryExpensiveSimplify(Entity, System.Int32)
+  nameWithType: SciExt.VeryExpensiveSimplify(Entity, Int32)
+- uid: SearchAThing.SciExt.VeryExpensiveSimplify*
+  name: VeryExpensiveSimplify
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_VeryExpensiveSimplify_
+  commentId: Overload:SearchAThing.SciExt.VeryExpensiveSimplify
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.VeryExpensiveSimplify
+  nameWithType: SciExt.VeryExpensiveSimplify
 - uid: SearchAThing.SciExt.WeightedDistribution(IEnumerable{System.Double},System.Int32)
   name: WeightedDistribution(IEnumerable<Double>, Int32)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_WeightedDistribution_IEnumerable_System_Double__System_Int32_
