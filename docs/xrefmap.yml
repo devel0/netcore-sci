@@ -1706,6 +1706,127 @@ references:
   isSpec: "True"
   fullName: SearchAThing.DQuaternion.v
   nameWithType: DQuaternion.v
+- uid: SearchAThing.FinalizeWorksheetInput
+  name: FinalizeWorksheetInput
+  href: api/SearchAThing.FinalizeWorksheetInput.html
+  commentId: T:SearchAThing.FinalizeWorksheetInput
+  fullName: SearchAThing.FinalizeWorksheetInput
+  nameWithType: FinalizeWorksheetInput
+- uid: SearchAThing.FinalizeWorksheetInput.AdjustContents
+  name: AdjustContents
+  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_AdjustContents
+  commentId: P:SearchAThing.FinalizeWorksheetInput.AdjustContents
+  fullName: SearchAThing.FinalizeWorksheetInput.AdjustContents
+  nameWithType: FinalizeWorksheetInput.AdjustContents
+- uid: SearchAThing.FinalizeWorksheetInput.AdjustContents*
+  name: AdjustContents
+  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_AdjustContents_
+  commentId: Overload:SearchAThing.FinalizeWorksheetInput.AdjustContents
+  isSpec: "True"
+  fullName: SearchAThing.FinalizeWorksheetInput.AdjustContents
+  nameWithType: FinalizeWorksheetInput.AdjustContents
+- uid: SearchAThing.FinalizeWorksheetInput.AutoFilterFirstCol
+  name: AutoFilterFirstCol
+  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_AutoFilterFirstCol
+  commentId: P:SearchAThing.FinalizeWorksheetInput.AutoFilterFirstCol
+  fullName: SearchAThing.FinalizeWorksheetInput.AutoFilterFirstCol
+  nameWithType: FinalizeWorksheetInput.AutoFilterFirstCol
+- uid: SearchAThing.FinalizeWorksheetInput.AutoFilterFirstCol*
+  name: AutoFilterFirstCol
+  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_AutoFilterFirstCol_
+  commentId: Overload:SearchAThing.FinalizeWorksheetInput.AutoFilterFirstCol
+  isSpec: "True"
+  fullName: SearchAThing.FinalizeWorksheetInput.AutoFilterFirstCol
+  nameWithType: FinalizeWorksheetInput.AutoFilterFirstCol
+- uid: SearchAThing.FinalizeWorksheetInput.AutoFilterHeaderRow
+  name: AutoFilterHeaderRow
+  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_AutoFilterHeaderRow
+  commentId: P:SearchAThing.FinalizeWorksheetInput.AutoFilterHeaderRow
+  fullName: SearchAThing.FinalizeWorksheetInput.AutoFilterHeaderRow
+  nameWithType: FinalizeWorksheetInput.AutoFilterHeaderRow
+- uid: SearchAThing.FinalizeWorksheetInput.AutoFilterHeaderRow*
+  name: AutoFilterHeaderRow
+  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_AutoFilterHeaderRow_
+  commentId: Overload:SearchAThing.FinalizeWorksheetInput.AutoFilterHeaderRow
+  isSpec: "True"
+  fullName: SearchAThing.FinalizeWorksheetInput.AutoFilterHeaderRow
+  nameWithType: FinalizeWorksheetInput.AutoFilterHeaderRow
+- uid: SearchAThing.FinalizeWorksheetInput.FreezeCol
+  name: FreezeCol
+  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_FreezeCol
+  commentId: F:SearchAThing.FinalizeWorksheetInput.FreezeCol
+  fullName: SearchAThing.FinalizeWorksheetInput.FreezeCol
+  nameWithType: FinalizeWorksheetInput.FreezeCol
+- uid: SearchAThing.FinalizeWorksheetInput.FreezeRow
+  name: FreezeRow
+  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_FreezeRow
+  commentId: F:SearchAThing.FinalizeWorksheetInput.FreezeRow
+  fullName: SearchAThing.FinalizeWorksheetInput.FreezeRow
+  nameWithType: FinalizeWorksheetInput.FreezeRow
+- uid: SearchAThing.FinalizeWorksheetInput.SetDefaultColWidth
+  name: SetDefaultColWidth
+  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_SetDefaultColWidth
+  commentId: P:SearchAThing.FinalizeWorksheetInput.SetDefaultColWidth
+  fullName: SearchAThing.FinalizeWorksheetInput.SetDefaultColWidth
+  nameWithType: FinalizeWorksheetInput.SetDefaultColWidth
+- uid: SearchAThing.FinalizeWorksheetInput.SetDefaultColWidth*
+  name: SetDefaultColWidth
+  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_SetDefaultColWidth_
+  commentId: Overload:SearchAThing.FinalizeWorksheetInput.SetDefaultColWidth
+  isSpec: "True"
+  fullName: SearchAThing.FinalizeWorksheetInput.SetDefaultColWidth
+  nameWithType: FinalizeWorksheetInput.SetDefaultColWidth
+- uid: SearchAThing.FinalizeWorksheetInput.ZoomScale
+  name: ZoomScale
+  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_ZoomScale
+  commentId: F:SearchAThing.FinalizeWorksheetInput.ZoomScale
+  fullName: SearchAThing.FinalizeWorksheetInput.ZoomScale
+  nameWithType: FinalizeWorksheetInput.ZoomScale
+- uid: SearchAThing.FinalizeWorksheetOutput
+  name: FinalizeWorksheetOutput
+  href: api/SearchAThing.FinalizeWorksheetOutput.html
+  commentId: T:SearchAThing.FinalizeWorksheetOutput
+  fullName: SearchAThing.FinalizeWorksheetOutput
+  nameWithType: FinalizeWorksheetOutput
+- uid: SearchAThing.FinalizeWorksheetOutput.ColumnCount
+  name: ColumnCount
+  href: api/SearchAThing.FinalizeWorksheetOutput.html#SearchAThing_FinalizeWorksheetOutput_ColumnCount
+  commentId: P:SearchAThing.FinalizeWorksheetOutput.ColumnCount
+  fullName: SearchAThing.FinalizeWorksheetOutput.ColumnCount
+  nameWithType: FinalizeWorksheetOutput.ColumnCount
+- uid: SearchAThing.FinalizeWorksheetOutput.ColumnCount*
+  name: ColumnCount
+  href: api/SearchAThing.FinalizeWorksheetOutput.html#SearchAThing_FinalizeWorksheetOutput_ColumnCount_
+  commentId: Overload:SearchAThing.FinalizeWorksheetOutput.ColumnCount
+  isSpec: "True"
+  fullName: SearchAThing.FinalizeWorksheetOutput.ColumnCount
+  nameWithType: FinalizeWorksheetOutput.ColumnCount
+- uid: SearchAThing.FinalizeWorksheetOutput.RangeUsed
+  name: RangeUsed
+  href: api/SearchAThing.FinalizeWorksheetOutput.html#SearchAThing_FinalizeWorksheetOutput_RangeUsed
+  commentId: P:SearchAThing.FinalizeWorksheetOutput.RangeUsed
+  fullName: SearchAThing.FinalizeWorksheetOutput.RangeUsed
+  nameWithType: FinalizeWorksheetOutput.RangeUsed
+- uid: SearchAThing.FinalizeWorksheetOutput.RangeUsed*
+  name: RangeUsed
+  href: api/SearchAThing.FinalizeWorksheetOutput.html#SearchAThing_FinalizeWorksheetOutput_RangeUsed_
+  commentId: Overload:SearchAThing.FinalizeWorksheetOutput.RangeUsed
+  isSpec: "True"
+  fullName: SearchAThing.FinalizeWorksheetOutput.RangeUsed
+  nameWithType: FinalizeWorksheetOutput.RangeUsed
+- uid: SearchAThing.FinalizeWorksheetOutput.RowCount
+  name: RowCount
+  href: api/SearchAThing.FinalizeWorksheetOutput.html#SearchAThing_FinalizeWorksheetOutput_RowCount
+  commentId: P:SearchAThing.FinalizeWorksheetOutput.RowCount
+  fullName: SearchAThing.FinalizeWorksheetOutput.RowCount
+  nameWithType: FinalizeWorksheetOutput.RowCount
+- uid: SearchAThing.FinalizeWorksheetOutput.RowCount*
+  name: RowCount
+  href: api/SearchAThing.FinalizeWorksheetOutput.html#SearchAThing_FinalizeWorksheetOutput_RowCount_
+  commentId: Overload:SearchAThing.FinalizeWorksheetOutput.RowCount
+  isSpec: "True"
+  fullName: SearchAThing.FinalizeWorksheetOutput.RowCount
+  nameWithType: FinalizeWorksheetOutput.RowCount
 - uid: SearchAThing.Geometry
   name: Geometry
   href: api/SearchAThing.Geometry.html
@@ -4289,6 +4410,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Explode
   nameWithType: SciExt.Explode
+- uid: SearchAThing.SciExt.FinalizeWorksheet(IXLWorksheet,SearchAThing.FinalizeWorksheetInput)
+  name: FinalizeWorksheet(IXLWorksheet, FinalizeWorksheetInput)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_FinalizeWorksheet_IXLWorksheet_SearchAThing_FinalizeWorksheetInput_
+  commentId: M:SearchAThing.SciExt.FinalizeWorksheet(IXLWorksheet,SearchAThing.FinalizeWorksheetInput)
+  fullName: SearchAThing.SciExt.FinalizeWorksheet(IXLWorksheet, SearchAThing.FinalizeWorksheetInput)
+  nameWithType: SciExt.FinalizeWorksheet(IXLWorksheet, FinalizeWorksheetInput)
+- uid: SearchAThing.SciExt.FinalizeWorksheet*
+  name: FinalizeWorksheet
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_FinalizeWorksheet_
+  commentId: Overload:SearchAThing.SciExt.FinalizeWorksheet
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.FinalizeWorksheet
+  nameWithType: SciExt.FinalizeWorksheet
 - uid: SearchAThing.SciExt.Fmt(Matrix4x4,System.Int32,System.Int32)
   name: Fmt(Matrix4x4, Int32, Int32)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Fmt_Matrix4x4_System_Int32_System_Int32_

@@ -152,6 +152,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.FinalizeWorksheetInput.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.FinalizeWorksheetInput.html",
+          "hash": "++TAcwvBFDwEz8K7AZJa8Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.FinalizeWorksheetOutput.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.FinalizeWorksheetOutput.html",
+          "hash": "DQvE2R6MT460iJ3bLBwBxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SearchAThing.Geometry.yml",
       "output": {
         ".html": {
@@ -435,7 +459,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.SciExt.html",
-          "hash": "dSj8qxwt4yceMsOzL59w8w=="
+          "hash": "8KrSYuEBOC1zQoUy/HHbNg=="
         }
       },
       "is_incremental": false,
@@ -549,7 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.html",
-          "hash": "196K0LSjfwRrP9QBbdis+A=="
+          "hash": "z07P06TbzT8S6MI2UtURVw=="
         }
       },
       "is_incremental": false,
@@ -573,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "oQ24ezcIM6Dst/vHs41ecg=="
+          "hash": "0BnW9c6igBBL/KdWPvf4uw=="
         }
       },
       "is_incremental": false,
@@ -588,7 +612,7 @@
           "hash": "eTiPgaui8AQ9Pn87ATc2+g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -615,7 +639,7 @@
           "hash": "HZgG/iEznEZJxeF6AAE81w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -637,25 +661,23 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
+        "can_incremental": true,
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "NoAvailableBuildCache"
+        "skipped_file_count": 0
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 3,
-          "skipped_file_count": 0
+          "skipped_file_count": 3
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 45,
-          "skipped_file_count": 0
+          "total_file_count": 47,
+          "skipped_file_count": 42
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
@@ -668,8 +690,8 @@
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0
