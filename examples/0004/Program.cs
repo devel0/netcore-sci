@@ -8,34 +8,11 @@ using OxyPlot.Avalonia;
 using static AngouriMath.Extensions.AngouriMathExtensions;
 using System;
 using AngouriMath;
-using Exts;
 using ClosedXML.Excel;
 using System.IO;
 using System.Diagnostics;
 using static System.FormattableString;
 using static System.Math;
-
-namespace Exts
-{
-
-    public static class Ext
-    {
-
-        public static Entity VeryExpensiveSimplify(this Entity expr, int level)
-        {
-            Entity ExpensiveSimplify(Entity expr)
-            {
-                return expr.Replace(x => x.Simplify());
-            }
-
-            if (level <= 0)
-                return expr;
-            return VeryExpensiveSimplify(ExpensiveSimplify(expr), level - 1);
-        }
-
-    }
-
-}
 
 namespace analysis
 {
@@ -46,23 +23,6 @@ namespace analysis
             public PlotData(double x, double y) { this.x = x; this.y = y; }
             public double x { get; set; }
             public double y { get; set; }
-        }
-
-        static (IXLRange rng_used, int col_cnt, int row_cnt) FinalizeWorksheet(IXLWorksheet ws)
-        {
-            var rng_used = ws.RangeUsed();
-            var col_cnt = rng_used.ColumnCount();
-            var row_cnt = rng_used.RowCount();
-
-            (IXLRange rng_used, int row_cnt, int col_cnt) res = (rng_used, row_cnt, col_cnt);
-
-            //ws.Range(1, 1, row_cnt, col_cnt).SetAutoFilter();
-            //for (int c = 1; c <= col_cnt; c++) ws.Column(c).AdjustToContents();
-            for (int c = 1; c <= col_cnt; c++) ws.Column(c).Width = 25;
-
-            //ws.SheetView.Freeze(1, 0);
-
-            return res;
         }
 
         public class MainWindow : Win
@@ -232,9 +192,13 @@ namespace analysis
                         ++row;
                     }
 
-                    FinalizeWorksheet(ws);
-                    ws.SheetView.Freeze(1, 0);
-                    ws.SheetView.ZoomScale = 150;
+                    ws.FinalizeWorksheet(new FinalizeWorksheetInput
+                    {
+                        SetDefaultColWidth = 25,
+                        FreezeRow = 1,
+                        FreezeCol = 0,
+                        ZoomScale = 150
+                    });                    
 
                     var pathfilename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "lut.xlsx");
                     wb.SaveAs(pathfilename);
