@@ -3,7 +3,7 @@
         <TargetFramework>net5.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageId>netcore-sci</PackageId>
-        <PackageVersion>1.22.1</PackageVersion>
+        <PackageVersion>1.23.0</PackageVersion>
         <Title>net core scientific</Title>
         <Description></Description>
         <LangVersion>8</LangVersion>
@@ -22,6 +22,7 @@
         <PackageReference Include="MathNet.Numerics" Version="$(MathNetNumericsVersion)"/>
         <PackageReference Include="netDxf.netstandard" Version="$(NetDxfNetStandardVersion)"/>
         <PackageReference Include="ParagonClipper" Version="$(ParagonClipperVersion)"/>
+        <PackageReference Include="AngouriMath" Version="$(AngouriMathVersion)"/>
         <PackageReference Include="QuantumConcepts.Formats.STL.netcore" Version="$(STLNetCoreVersion)"/>
     </ItemGroup>    
     <ItemGroup><!-- <ProjectReference Include="..\..\netcore-util\netcore-util\netcore-util.csproj"/> --></ItemGroup>
