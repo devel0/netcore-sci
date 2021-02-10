@@ -3,6 +3,66 @@ using ClosedXML.Excel;
 namespace SearchAThing
 {
 
+    public static partial class SciExt
+    {
+
+        /// <summary>
+        /// set (row,col) to given value
+        /// </summary>
+        /// <param name="ws">worksheet to set cell</param>
+        /// <param name="row">cell row number</param>
+        /// <param name="col">cell col number</param>
+        /// <param name="val">cell value</param>
+        /// <returns>(row,col) cell updated</returns>
+        public static IXLCell SetCell(this IXLWorksheet ws, int row, int col, object val)
+        {
+            var cell = ws.Cell(row, col);
+
+            cell.Value = val;
+
+            return cell;
+        }
+
+        /// <summary>
+        /// set bold on given cell
+        /// </summary>    
+        /// <returns>given cell updated</returns>
+        public static IXLCell SetBold(this IXLCell cell)
+        {
+            cell.Style.Font.SetBold();
+            return cell;
+        }
+
+        /// <summary>
+        /// set (row,col) to given value and set bold
+        /// </summary>
+        /// <param name="ws">worksheet to set cell</param>
+        /// <param name="row">cell row number</param>
+        /// <param name="col">cell col number</param>
+        /// <param name="val">cell value</param>
+        /// <returns>(row,col) cell updated</returns>
+        public static IXLCell SetCellBold(this IXLWorksheet ws, int row, int col, object val) =>
+            ws.SetCell(row, col, val).SetBold();
+
+        /// <summary>
+        /// set (row,col) with given R1C1 formula
+        /// </summary>
+        /// <param name="ws">worksheet to set cell</param>
+        /// <param name="row">cell row number</param>
+        /// <param name="col">cell col number</param>
+        /// <param name="formulaR1C1">r1c1 formula ( eg. "RC[-1]*2" double the cell with at same row and previous column )</param>
+        /// <returns>(row,col) cell updated</returns>
+        public static IXLCell SetCellFormulaR1C1(this IXLWorksheet ws, int row, int col, string formulaR1C1)
+        {
+            var cell = ws.Cell(row, col);
+
+            cell.FormulaR1C1 = formulaR1C1;
+
+            return cell;
+        }
+
+    }
+
     /// <summary>
     /// worksheet finalization input variables
     /// </summary>
