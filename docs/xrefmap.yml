@@ -4784,6 +4784,58 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Segments
   nameWithType: SciExt.Segments
+- uid: SearchAThing.SciExt.SetBold(IXLCell)
+  name: SetBold(IXLCell)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetBold_IXLCell_
+  commentId: M:SearchAThing.SciExt.SetBold(IXLCell)
+  fullName: SearchAThing.SciExt.SetBold(IXLCell)
+  nameWithType: SciExt.SetBold(IXLCell)
+- uid: SearchAThing.SciExt.SetBold*
+  name: SetBold
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetBold_
+  commentId: Overload:SearchAThing.SciExt.SetBold
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.SetBold
+  nameWithType: SciExt.SetBold
+- uid: SearchAThing.SciExt.SetCell(IXLWorksheet,System.Int32,System.Int32,System.Object)
+  name: SetCell(IXLWorksheet, Int32, Int32, Object)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetCell_IXLWorksheet_System_Int32_System_Int32_System_Object_
+  commentId: M:SearchAThing.SciExt.SetCell(IXLWorksheet,System.Int32,System.Int32,System.Object)
+  fullName: SearchAThing.SciExt.SetCell(IXLWorksheet, System.Int32, System.Int32, System.Object)
+  nameWithType: SciExt.SetCell(IXLWorksheet, Int32, Int32, Object)
+- uid: SearchAThing.SciExt.SetCell*
+  name: SetCell
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetCell_
+  commentId: Overload:SearchAThing.SciExt.SetCell
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.SetCell
+  nameWithType: SciExt.SetCell
+- uid: SearchAThing.SciExt.SetCellBold(IXLWorksheet,System.Int32,System.Int32,System.Object)
+  name: SetCellBold(IXLWorksheet, Int32, Int32, Object)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetCellBold_IXLWorksheet_System_Int32_System_Int32_System_Object_
+  commentId: M:SearchAThing.SciExt.SetCellBold(IXLWorksheet,System.Int32,System.Int32,System.Object)
+  fullName: SearchAThing.SciExt.SetCellBold(IXLWorksheet, System.Int32, System.Int32, System.Object)
+  nameWithType: SciExt.SetCellBold(IXLWorksheet, Int32, Int32, Object)
+- uid: SearchAThing.SciExt.SetCellBold*
+  name: SetCellBold
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetCellBold_
+  commentId: Overload:SearchAThing.SciExt.SetCellBold
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.SetCellBold
+  nameWithType: SciExt.SetCellBold
+- uid: SearchAThing.SciExt.SetCellFormulaR1C1(IXLWorksheet,System.Int32,System.Int32,System.String)
+  name: SetCellFormulaR1C1(IXLWorksheet, Int32, Int32, String)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetCellFormulaR1C1_IXLWorksheet_System_Int32_System_Int32_System_String_
+  commentId: M:SearchAThing.SciExt.SetCellFormulaR1C1(IXLWorksheet,System.Int32,System.Int32,System.String)
+  fullName: SearchAThing.SciExt.SetCellFormulaR1C1(IXLWorksheet, System.Int32, System.Int32, System.String)
+  nameWithType: SciExt.SetCellFormulaR1C1(IXLWorksheet, Int32, Int32, String)
+- uid: SearchAThing.SciExt.SetCellFormulaR1C1*
+  name: SetCellFormulaR1C1
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetCellFormulaR1C1_
+  commentId: Overload:SearchAThing.SciExt.SetCellFormulaR1C1
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.SetCellFormulaR1C1
+  nameWithType: SciExt.SetCellFormulaR1C1
 - uid: SearchAThing.SciExt.SetColor(EntityObject,AciColor)
   name: SetColor(EntityObject, AciColor)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetColor_EntityObject_AciColor_

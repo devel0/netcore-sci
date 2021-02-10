@@ -156,10 +156,10 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.FinalizeWorksheetInput.html",
-          "hash": "++TAcwvBFDwEz8K7AZJa8Q=="
+          "hash": "JDVbzNju07GDIFT9rdmRqg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -168,10 +168,10 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.FinalizeWorksheetOutput.html",
-          "hash": "DQvE2R6MT460iJ3bLBwBxw=="
+          "hash": "lEmPslotbGtPzJorzUFGBA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -459,10 +459,10 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.SciExt.html",
-          "hash": "8KrSYuEBOC1zQoUy/HHbNg=="
+          "hash": "mSzRuyMiTSnnN5t0XHVqsQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -576,7 +576,7 @@
           "hash": "z07P06TbzT8S6MI2UtURVw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -677,7 +677,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 47,
-          "skipped_file_count": 47
+          "skipped_file_count": 44
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

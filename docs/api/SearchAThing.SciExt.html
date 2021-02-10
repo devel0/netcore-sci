@@ -2346,7 +2346,7 @@ Optionally duplicate points are zapped in comparing.</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_SciExt_FinalizeWorksheet_IXLWorksheet_SearchAThing_FinalizeWorksheetInput_.md&amp;value=---%0Auid%3A%20SearchAThing.SciExt.FinalizeWorksheet(IXLWorksheet%2CSearchAThing.FinalizeWorksheetInput)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Worksheet.cs/#L82">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Worksheet.cs/#L142">View Source</a>
   </span>
   <a id="SearchAThing_SciExt_FinalizeWorksheet_" data-uid="SearchAThing.SciExt.FinalizeWorksheet*"></a>
   <h4 id="SearchAThing_SciExt_FinalizeWorksheet_IXLWorksheet_SearchAThing_FinalizeWorksheetInput_" data-uid="SearchAThing.SciExt.FinalizeWorksheet(IXLWorksheet,SearchAThing.FinalizeWorksheetInput)">FinalizeWorksheet(IXLWorksheet, FinalizeWorksheetInput)</h4>
@@ -3861,6 +3861,259 @@ if arc found a segment between endpoints returns</p>
       <tr>
         <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Line3D.html">Line3D</a>&gt;</td>
         <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_SciExt_SetBold_IXLCell_.md&amp;value=---%0Auid%3A%20SearchAThing.SciExt.SetBold(IXLCell)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Worksheet.cs/#L30">View Source</a>
+  </span>
+  <a id="SearchAThing_SciExt_SetBold_" data-uid="SearchAThing.SciExt.SetBold*"></a>
+  <h4 id="SearchAThing_SciExt_SetBold_IXLCell_" data-uid="SearchAThing.SciExt.SetBold(IXLCell)">SetBold(IXLCell)</h4>
+  <div class="markdown level1 summary"><p>set bold on given cell</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IXLCell SetBold(this IXLCell cell)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IXLCell</span></td>
+        <td><span class="parametername">cell</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IXLCell</span></td>
+        <td><p>given cell updated</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_SciExt_SetCell_IXLWorksheet_System_Int32_System_Int32_System_Object_.md&amp;value=---%0Auid%3A%20SearchAThing.SciExt.SetCell(IXLWorksheet%2CSystem.Int32%2CSystem.Int32%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Worksheet.cs/#L17">View Source</a>
+  </span>
+  <a id="SearchAThing_SciExt_SetCell_" data-uid="SearchAThing.SciExt.SetCell*"></a>
+  <h4 id="SearchAThing_SciExt_SetCell_IXLWorksheet_System_Int32_System_Int32_System_Object_" data-uid="SearchAThing.SciExt.SetCell(IXLWorksheet,System.Int32,System.Int32,System.Object)">SetCell(IXLWorksheet, Int32, Int32, Object)</h4>
+  <div class="markdown level1 summary"><p>set (row,col) to given value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IXLCell SetCell(this IXLWorksheet ws, int row, int col, object val)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IXLWorksheet</span></td>
+        <td><span class="parametername">ws</span></td>
+        <td><p>worksheet to set cell</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">row</span></td>
+        <td><p>cell row number</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">col</span></td>
+        <td><p>cell col number</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">val</span></td>
+        <td><p>cell value</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IXLCell</span></td>
+        <td><p>(row,col) cell updated</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_SciExt_SetCellBold_IXLWorksheet_System_Int32_System_Int32_System_Object_.md&amp;value=---%0Auid%3A%20SearchAThing.SciExt.SetCellBold(IXLWorksheet%2CSystem.Int32%2CSystem.Int32%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Worksheet.cs/#L44">View Source</a>
+  </span>
+  <a id="SearchAThing_SciExt_SetCellBold_" data-uid="SearchAThing.SciExt.SetCellBold*"></a>
+  <h4 id="SearchAThing_SciExt_SetCellBold_IXLWorksheet_System_Int32_System_Int32_System_Object_" data-uid="SearchAThing.SciExt.SetCellBold(IXLWorksheet,System.Int32,System.Int32,System.Object)">SetCellBold(IXLWorksheet, Int32, Int32, Object)</h4>
+  <div class="markdown level1 summary"><p>set (row,col) to given value and set bold</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IXLCell SetCellBold(this IXLWorksheet ws, int row, int col, object val)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IXLWorksheet</span></td>
+        <td><span class="parametername">ws</span></td>
+        <td><p>worksheet to set cell</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">row</span></td>
+        <td><p>cell row number</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">col</span></td>
+        <td><p>cell col number</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">val</span></td>
+        <td><p>cell value</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IXLCell</span></td>
+        <td><p>(row,col) cell updated</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_SciExt_SetCellFormulaR1C1_IXLWorksheet_System_Int32_System_Int32_System_String_.md&amp;value=---%0Auid%3A%20SearchAThing.SciExt.SetCellFormulaR1C1(IXLWorksheet%2CSystem.Int32%2CSystem.Int32%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Worksheet.cs/#L55">View Source</a>
+  </span>
+  <a id="SearchAThing_SciExt_SetCellFormulaR1C1_" data-uid="SearchAThing.SciExt.SetCellFormulaR1C1*"></a>
+  <h4 id="SearchAThing_SciExt_SetCellFormulaR1C1_IXLWorksheet_System_Int32_System_Int32_System_String_" data-uid="SearchAThing.SciExt.SetCellFormulaR1C1(IXLWorksheet,System.Int32,System.Int32,System.String)">SetCellFormulaR1C1(IXLWorksheet, Int32, Int32, String)</h4>
+  <div class="markdown level1 summary"><p>set (row,col) with given R1C1 formula</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IXLCell SetCellFormulaR1C1(this IXLWorksheet ws, int row, int col, string formulaR1C1)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IXLWorksheet</span></td>
+        <td><span class="parametername">ws</span></td>
+        <td><p>worksheet to set cell</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">row</span></td>
+        <td><p>cell row number</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">col</span></td>
+        <td><p>cell col number</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">formulaR1C1</span></td>
+        <td><p>r1c1 formula ( eg. &quot;RC[-1]*2&quot; double the cell with at same row and previous column )</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IXLCell</span></td>
+        <td><p>(row,col) cell updated</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -6895,7 +7148,7 @@ use the other overloaded method if already have a vector 3d equality comparer</p
                     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_SciExt.md&amp;value=---%0Auid%3A%20SearchAThing.SciExt%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Worksheet.cs/#L73" class="contribution-link">View Source</a>
+                    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Worksheet.cs/#L133" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
