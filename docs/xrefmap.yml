@@ -4784,6 +4784,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Segments
   nameWithType: SciExt.Segments
+- uid: SearchAThing.SciExt.SetBgColor(IXLCell,XLColor)
+  name: SetBgColor(IXLCell, XLColor)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetBgColor_IXLCell_XLColor_
+  commentId: M:SearchAThing.SciExt.SetBgColor(IXLCell,XLColor)
+  fullName: SearchAThing.SciExt.SetBgColor(IXLCell, XLColor)
+  nameWithType: SciExt.SetBgColor(IXLCell, XLColor)
+- uid: SearchAThing.SciExt.SetBgColor*
+  name: SetBgColor
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetBgColor_
+  commentId: Overload:SearchAThing.SciExt.SetBgColor
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.SetBgColor
+  nameWithType: SciExt.SetBgColor
 - uid: SearchAThing.SciExt.SetBold(IXLCell)
   name: SetBold(IXLCell)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetBold_IXLCell_
@@ -4849,6 +4862,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.SetColor
   nameWithType: SciExt.SetColor
+- uid: SearchAThing.SciExt.SetFontColor(IXLCell,XLColor)
+  name: SetFontColor(IXLCell, XLColor)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetFontColor_IXLCell_XLColor_
+  commentId: M:SearchAThing.SciExt.SetFontColor(IXLCell,XLColor)
+  fullName: SearchAThing.SciExt.SetFontColor(IXLCell, XLColor)
+  nameWithType: SciExt.SetFontColor(IXLCell, XLColor)
+- uid: SearchAThing.SciExt.SetFontColor*
+  name: SetFontColor
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetFontColor_
+  commentId: Overload:SearchAThing.SciExt.SetFontColor
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.SetFontColor
+  nameWithType: SciExt.SetFontColor
 - uid: SearchAThing.SciExt.SetLayer(EntityObject,Layer)
   name: SetLayer(EntityObject, Layer)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetLayer_EntityObject_Layer_
