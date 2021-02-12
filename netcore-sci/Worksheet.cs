@@ -24,8 +24,35 @@ namespace SearchAThing
         }
 
         /// <summary>
+        /// set cell font color
+        /// </summary>
+        /// <param name="cell">cell</param>
+        /// <param name="foreground">font color</param>        
+        /// <returns>given cell updated</returns>
+        public static IXLCell SetFontColor(this IXLCell cell, XLColor foreground)
+        {
+            cell.Style.Font.SetFontColor(foreground);
+
+            return cell;
+        }
+
+        /// <summary>
+        /// set cell background color
+        /// </summary>
+        /// <param name="cell">cell</param>
+        /// <param name="background">background color</param>        
+        /// <returns>given cell updated</returns>
+        public static IXLCell SetBgColor(this IXLCell cell, XLColor background)
+        {
+            cell.Style.Fill.SetBackgroundColor(background);
+
+            return cell;
+        }
+
+        /// <summary>
         /// set bold on given cell
-        /// </summary>    
+        /// </summary>
+        /// <param name="cell">cell</param>
         /// <returns>given cell updated</returns>
         public static IXLCell SetBold(this IXLCell cell)
         {
