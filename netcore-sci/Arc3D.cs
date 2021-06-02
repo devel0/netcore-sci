@@ -426,6 +426,7 @@ namespace SearchAThing
         /// <param name="tol">arc tolerance</param>
         /// <param name="l">line to test intersect</param>
         /// <param name="segment_mode">if true line treat as segment instead of infinite</param>            
+        /// <param name="only_perimeter">check intersection only along perimeter; if false it will check intersection along arc area shape border too</param>
         /// <param name="circle_mode">if true arc treat as circle</param>            
         protected IEnumerable<Vector3D> Intersect(double tol, Line3D l,
             bool only_perimeter,
