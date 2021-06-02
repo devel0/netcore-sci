@@ -293,7 +293,7 @@ namespace SearchAThing
             {
                 for (int c = 0; c < 3; ++c)
                 {
-                    res.data[r, c] = m.data[r, c] * s;
+                    res.data[r, c] = s / m.data[r, c];
                 }
             }
 
