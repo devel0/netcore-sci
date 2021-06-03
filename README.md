@@ -312,3 +312,7 @@ dotnet restore
 dotnet build
 dotnet test test/test.csproj
 ```
+
+## IOT
+
+[iot-sci](https://github.com/devel0/iot-sci) is a c++ port of this library.
