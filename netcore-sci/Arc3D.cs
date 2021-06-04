@@ -127,7 +127,7 @@ namespace SearchAThing
         /// create an arc copy with origin moved
         /// </summary>
         /// <param name="delta">new arc origin delta</param>
-        public Arc3D Move(double tol_len, Vector3D delta)
+        public virtual Arc3D Move(double tol_len, Vector3D delta)
         {
             return new Arc3D(tol_len, CS.Move(delta), Radius, AngleStart, AngleEnd);
         }

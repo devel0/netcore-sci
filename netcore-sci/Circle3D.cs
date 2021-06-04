@@ -33,6 +33,15 @@ namespace SearchAThing
             Type = GeometryType.Circle3D;
         }
 
+        /// <summary>
+        /// create a circle copy with origin moved
+        /// </summary>
+        /// <param name="delta">new circle origin delta</param>
+        public override Circle3D Move(double tol_len, Vector3D delta)
+        {
+            return new Circle3D(tol_len, CS.Move(delta), Radius);
+        }
+
         public override EntityObject DxfEntity
         {
             get

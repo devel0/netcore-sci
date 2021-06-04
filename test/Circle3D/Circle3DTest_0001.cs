@@ -76,7 +76,7 @@ namespace SearchAThing.Sci.Tests
                             new Vector3D(
                                 250.21546070748141,
                                 -926.81833345210805)
-                        ), 125);
+                        ), 125).Move(1e-3, Vector3D.Zero); // move0 to verify arc convert
 
                 var l = new Line3D(
                     new Vector3D(0, -960), new Vector3D(1, 0, 0),
