@@ -32,6 +32,9 @@ namespace analysis
                 "resm:OxyPlot.Avalonia.Themes.Default.xaml?assembly=OxyPlot.Avalonia"
             })
             {
+                
+
+                //
                 Width = 600;
                 Height = 700;
 
@@ -198,7 +201,7 @@ namespace analysis
                         FreezeRow = 1,
                         FreezeCol = 0,
                         ZoomScale = 150
-                    });                    
+                    });
 
                     var pathfilename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "lut.xlsx");
                     wb.SaveAs(pathfilename);
@@ -260,7 +263,7 @@ namespace analysis
                     tolAvg /= renderSize - 1;
 
                     sw.WriteLine($"// y={fxTBox.Text}");
-                    sw.WriteLine($"// tolerance   min:{tolMin}   max:{tolMax}   avg:{tolAvg}");                    
+                    sw.WriteLine($"// tolerance   min:{tolMin}   max:{tolMax}   avg:{tolAvg}");
                     sw.WriteLine($"const double LUT_Y_FROM = {lut.YFrom};");
                     sw.WriteLine($"const double LUT_Y_TO = {lut.YTo};");
                     sw.WriteLine($"const double LUT_Y_STEP = {yStep};");

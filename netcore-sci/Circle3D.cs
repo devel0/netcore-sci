@@ -149,6 +149,88 @@ namespace SearchAThing
             return base.Intersect(tol, l, only_perimeter, segment_mode, circle_mode: true);
         }
 
+        /// <summary>
+        /// intersect this circle with given other;
+        /// pre-requisite: circles are not the same one
+        /// ; actually implemented only for coplanar circles
+        /// </summary>
+        /// <param name="tol">len tolerance</param>
+        /// <param name="other">other circle</param>
+        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Circle3D/Circle3DTest_0001.cs)
+        /// <returns></returns>
+        public IEnumerable<Vector3D> Intersect(double tol, Circle3D other)
+        {
+            if (this.EqualsTol(tol, other))
+                throw new ArgumentException("circles are same");
+
+            if (this.CS.IsParallelTo(tol, other.CS))
+            {
+                var centersDst = Center.Distance(other.Center);
+                var rsum = Radius + other.Radius;
+
+                // check if circles couldn't intersect
+                if (centersDst.GreatThanTol(tol, rsum))
+                    yield break;
+
+                if (centersDst.EqualsTol(tol, rsum))
+                {
+                    var q = Intersect(tol, Center.LineTo(other.Center)).First();
+                    yield return q;
+                    yield break;
+                }
+
+                // http://www.ambrsoft.com/TrigoCalc/Circles2/circle2intersection/CircleCircleIntersection.htm
+
+                var _center = Center.ToUCS(CS);
+                var _otherCenter = other.Center.ToUCS(CS);
+
+                var c1_a = _center.X;
+                var c1_b = _center.Y;
+                var c2_a = _otherCenter.X;
+                var c2_b = _otherCenter.Y;
+                var c1_r = Radius;
+                var c2_r = other.Radius;
+                var D = centersDst;
+
+                var a1 = D + c1_r + c2_r;
+                var a2 = D + c1_r - c2_r;
+                var a3 = D - c1_r + c2_r;
+                var a4 = -D + c1_r + c2_r;
+
+                var area = Sqrt(a1 * a2 * a3 * a4) / 4;
+
+                var val1 = (c1_a + c2_a) / 2 + (c2_a - c1_a) * (c1_r * c1_r - c2_r * c2_r) / (2 * D * D);
+                var val2 = 2 * (c1_b - c2_b) * area / (D * D);
+
+                var x1 = val1 + val2;
+                var x2 = val1 - val2;
+
+                val1 = (c1_b + c2_b) / 2 + (c2_b - c1_b) * (c1_r * c1_r - c2_r * c2_r) / (2 * D * D);
+                val2 = 2 * (c1_a - c2_a) * area / (D * D);
+
+                var y1 = val1 - val2;
+                var y2 = val1 + val2;
+
+                var test = Abs((x1 - c1_a) * (x1 - c1_a) + (y1 - c1_b) * (y1 - c1_b) - c1_r * c1_r);
+                if (test > tol)
+                {
+                    var tmp = y1;
+                    y1 = y2;
+                    y2 = tmp;
+                }
+
+                var P1 = new Vector3D(x1, y1).ToWCS(CS);
+                var P2 = new Vector3D(x2, y2).ToWCS(CS);
+
+                yield return P1;
+                yield return P2;
+            }
+            else
+            {
+                throw new NotImplementedException("not coplanar 3d circles not implemented yet");
+            }
+        }
+
         public double Area { get { return PI * Radius * Radius; } }
 
         /// <summary>
