@@ -891,6 +891,12 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Circle3D.InscribedPolygon
   nameWithType: Circle3D.InscribedPolygon
+- uid: SearchAThing.Circle3D.Intersect(System.Double,SearchAThing.Circle3D)
+  name: Intersect(Double, Circle3D)
+  href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_Intersect_System_Double_SearchAThing_Circle3D_
+  commentId: M:SearchAThing.Circle3D.Intersect(System.Double,SearchAThing.Circle3D)
+  fullName: SearchAThing.Circle3D.Intersect(System.Double, SearchAThing.Circle3D)
+  nameWithType: Circle3D.Intersect(Double, Circle3D)
 - uid: SearchAThing.Circle3D.Intersect(System.Double,SearchAThing.Line3D,System.Boolean,System.Boolean)
   name: Intersect(Double, Line3D, Boolean, Boolean)
   href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_Intersect_System_Double_SearchAThing_Line3D_System_Boolean_System_Boolean_
@@ -3827,11 +3833,11 @@ references:
   isSpec: "True"
   fullName: SearchAThing.PythonPipe.Dispose
   nameWithType: PythonPipe.Dispose
-- uid: SearchAThing.PythonPipe.Exec(StringWrapper,System.Boolean)
+- uid: SearchAThing.PythonPipe.Exec(SearchAThing.StringWrapper,System.Boolean)
   name: Exec(StringWrapper, Boolean)
-  href: api/SearchAThing.PythonPipe.html#SearchAThing_PythonPipe_Exec_StringWrapper_System_Boolean_
-  commentId: M:SearchAThing.PythonPipe.Exec(StringWrapper,System.Boolean)
-  fullName: SearchAThing.PythonPipe.Exec(StringWrapper, System.Boolean)
+  href: api/SearchAThing.PythonPipe.html#SearchAThing_PythonPipe_Exec_SearchAThing_StringWrapper_System_Boolean_
+  commentId: M:SearchAThing.PythonPipe.Exec(SearchAThing.StringWrapper,System.Boolean)
+  fullName: SearchAThing.PythonPipe.Exec(SearchAThing.StringWrapper, System.Boolean)
   nameWithType: PythonPipe.Exec(StringWrapper, Boolean)
 - uid: SearchAThing.PythonPipe.Exec*
   name: Exec
