@@ -188,48 +188,38 @@ namespace SearchAThing
                     yield break;
                 }
 
-                // http://www.ambrsoft.com/TrigoCalc/Circles2/circle2intersection/CircleCircleIntersection.htm
-
-                var _center = Center.ToUCS(CS);
-                var _otherCenter = other.Center.ToUCS(CS);
-
-                var c1_a = _center.X;
-                var c1_b = _center.Y;
-                var c2_a = _otherCenter.X;
-                var c2_b = _otherCenter.Y;
-                var c1_r = Radius;
-                var c2_r = other.Radius;
-                var D = centersDst;
-
-                var a1 = D + c1_r + c2_r;
-                var a2 = D + c1_r - c2_r;
-                var a3 = D - c1_r + c2_r;
-                var a4 = -D + c1_r + c2_r;
-
-                var area = Sqrt(a1 * a2 * a3 * a4) / 4;
-
-                var val1 = (c1_a + c2_a) / 2 + (c2_a - c1_a) * (c1_r * c1_r - c2_r * c2_r) / (2 * D * D);
-                var val2 = 2 * (c1_b - c2_b) * area / (D * D);
-
-                var x1 = val1 + val2;
-                var x2 = val1 - val2;
-
-                val1 = (c1_b + c2_b) / 2 + (c2_b - c1_b) * (c1_r * c1_r - c2_r * c2_r) / (2 * D * D);
-                val2 = 2 * (c1_a - c2_a) * area / (D * D);
-
-                var y1 = val1 - val2;
-                var y2 = val1 + val2;
-
-                var test = Abs((x1 - c1_a) * (x1 - c1_a) + (y1 - c1_b) * (y1 - c1_b) - c1_r * c1_r);
-                if (test > tol)
+                Vector3D P1, P2;
                 {
-                    var tmp = y1;
-                    y1 = y2;
-                    y2 = tmp;
-                }
+                    // https://math.stackexchange.com/a/1367732/688020
 
-                var P1 = new Vector3D(x1, y1).ToWCS(CS);
-                var P2 = new Vector3D(x2, y2).ToWCS(CS);
+                    var _center = Center.ToUCS(CS);
+                    var _otherCenter = other.Center.ToUCS(CS);
+
+                    var r1 = Radius;
+                    var r2 = other.Radius;
+                    var x1 = _center.X;
+                    var y1 = _center.Y;
+                    var x2 = _otherCenter.X;
+                    var y2 = _otherCenter.Y;
+                    var dx = x2 - x1;
+                    var dy = y2 - y1;
+                    var R = Sqrt(dx * dx + dy * dy);
+                    var R2 = R * R;
+                    var R4 = R2 * R2;
+                    var r1pow2 = r1 * r1;
+                    var r2pow2 = r2 * r2;
+                    var r12pow2diff = r1pow2 - r2pow2;
+                    var r12pow2sum = r1pow2 + r2pow2;
+                    var a = r12pow2diff / (2 * R2);
+                    var c = Sqrt(2 * r12pow2sum / R2 - (r12pow2diff * r12pow2diff) / R4 - 1);
+                    var fx = (x1 + x2) / 2 + a * (x2 - x1);
+                    var gx = c * (y2 - y1) / 2;
+                    var fy = (y1 + y2) / 2 + a * (y2 - y1);
+                    var gy = c * (x1 - x2) / 2;
+
+                    P1 = new Vector3D(fx + gx, fy + gy).ToWCS(CS);
+                    P2 = new Vector3D(fx - gx, fy - gy).ToWCS(CS);                    
+                }
 
                 yield return P1;
                 yield return P2;
