@@ -923,6 +923,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Circle3D.Length
   nameWithType: Circle3D.Length
+- uid: SearchAThing.Circle3D.Move(System.Double,SearchAThing.Vector3D)
+  name: Move(Double, Vector3D)
+  href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_Move_System_Double_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.Circle3D.Move(System.Double,SearchAThing.Vector3D)
+  fullName: SearchAThing.Circle3D.Move(System.Double, SearchAThing.Vector3D)
+  nameWithType: Circle3D.Move(Double, Vector3D)
+- uid: SearchAThing.Circle3D.Move*
+  name: Move
+  href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_Move_
+  commentId: Overload:SearchAThing.Circle3D.Move
+  isSpec: "True"
+  fullName: SearchAThing.Circle3D.Move
+  nameWithType: Circle3D.Move
 - uid: SearchAThing.ComputationQueue`1
   name: ComputationQueue<T>
   href: api/SearchAThing.ComputationQueue-1.html
