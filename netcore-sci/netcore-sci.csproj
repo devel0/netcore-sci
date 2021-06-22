@@ -13,7 +13,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <noWarn>1591</noWarn>
     </PropertyGroup>
-    <ItemGroup><!-- <PackageReference Include="netcore-util" Version="$(NetcoreUtilVersion)"/> -->
+    <ItemGroup>
         <PackageReference Include="netcore-psql-util" Version="$(NetcorePsqlUtilVersion)"/>
         <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)"/>
         <PackageReference Include="LibTessDotNet" Version="$(LibTessDotNetVersion)"/>
@@ -23,7 +23,9 @@
         <PackageReference Include="netDxf.netstandard" Version="$(NetDxfNetStandardVersion)"/>
         <PackageReference Include="ParagonClipper" Version="$(ParagonClipperVersion)"/>
         <PackageReference Include="AngouriMath" Version="$(AngouriMathVersion)"/>
-        <PackageReference Include="QuantumConcepts.Formats.STL.netcore" Version="$(STLNetCoreVersion)"/>
+        <PackageReference Include="QuantumConcepts.Formats.STL.netcore" Version="$(STLNetCoreVersion)"/>        
+        <PackageReference Include="Newtonsoft.Json" Version="$(NewtonsoftJsonVersion)"/>
+        <PackageReference Include="UnitsNet" Version="$(UnitsNetVersion)"/>
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\..\netcore-util\netcore-util\netcore-util.csproj"/>
