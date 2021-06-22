@@ -2,8 +2,8 @@
 <Project>
     <PropertyGroup>
         <NetcoreUtilVersion>1.9.1</NetcoreUtilVersion>
-        <NetcorePsqlUtilVersion>1.2.1</NetcorePsqlUtilVersion>
-        <AvaloniaVersion>0.10.0</AvaloniaVersion>        
+        <NetcorePsqlUtilVersion>1.2.1</NetcorePsqlUtilVersion>        
+        <AvaloniaVersion>0.10.6</AvaloniaVersion>        
         <OxyPlotVersion>2.1.0-20201211.2</OxyPlotVersion>        
         <MathNetNumericsVersion>4.12.0</MathNetNumericsVersion>
         <LinqStatisticsVersion>2.3.0</LinqStatisticsVersion>
