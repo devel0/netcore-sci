@@ -1,20 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>example</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
-  <PackageReference Include="AngouriMath" Version="$(AngouriMathVersion)"/>
-    <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)"/>
-    <PackageReference Include="LinqStatistics" Version="$(LinqStatisticsVersion)"/>
-    <PackageReference Include="OxyPlot.Avalonia" Version="$(OxyPlotVersion)"/>
+  <PackageReference Include="AngouriMath" Version="$(AngouriMathVersion)" />
+    <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />    
+    <PackageReference Include="LinqStatistics" Version="$(LinqStatisticsVersion)" />
+    <PackageReference Include="OxyPlot.Avalonia" Version="$(OxyPlotVersion)" />
     <PackageReference Include="ClosedXML" Version="$(ClosedXMLVersion)" />
     <PackageReference Include="MessageBox.Avalonia" Version="$(MessageBoxAvaloniaVersion)" />    
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\netcore-sci\netcore-sci.csproj" />
-    <ProjectReference Include="..\..\thirdy\CSharpMath\CSharpMath.Avalonia\CSharpMath.Avalonia.csproj" />
-    <ProjectReference Include="..\..\thirdy\oxyplot-avalonia\Source\OxyPlot.Avalonia/OxyPlot.Avalonia.csproj" />
+    <!-- <ProjectReference Include="..\..\thirdy\CSharpMath\CSharpMath.Avalonia\CSharpMath.Avalonia.csproj" />
+    <ProjectReference Include="..\..\thirdy\oxyplot-avalonia\Source\OxyPlot.Avalonia/OxyPlot.Avalonia.csproj" /> -->
   </ItemGroup>
 </Project>

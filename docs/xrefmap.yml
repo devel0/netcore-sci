@@ -3846,11 +3846,11 @@ references:
   isSpec: "True"
   fullName: SearchAThing.PythonPipe.Dispose
   nameWithType: PythonPipe.Dispose
-- uid: SearchAThing.PythonPipe.Exec(SearchAThing.StringWrapper,System.Boolean)
+- uid: SearchAThing.PythonPipe.Exec(StringWrapper,System.Boolean)
   name: Exec(StringWrapper, Boolean)
-  href: api/SearchAThing.PythonPipe.html#SearchAThing_PythonPipe_Exec_SearchAThing_StringWrapper_System_Boolean_
-  commentId: M:SearchAThing.PythonPipe.Exec(SearchAThing.StringWrapper,System.Boolean)
-  fullName: SearchAThing.PythonPipe.Exec(SearchAThing.StringWrapper, System.Boolean)
+  href: api/SearchAThing.PythonPipe.html#SearchAThing_PythonPipe_Exec_StringWrapper_System_Boolean_
+  commentId: M:SearchAThing.PythonPipe.Exec(StringWrapper,System.Boolean)
+  fullName: SearchAThing.PythonPipe.Exec(StringWrapper, System.Boolean)
   nameWithType: PythonPipe.Exec(StringWrapper, Boolean)
 - uid: SearchAThing.PythonPipe.Exec*
   name: Exec
