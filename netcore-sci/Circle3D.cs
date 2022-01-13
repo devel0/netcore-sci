@@ -33,14 +33,17 @@ namespace SearchAThing
             Type = GeometryType.Circle3D;
         }
 
+        //
+        // c# 9 required for covariant returns
+        //
         /// <summary>
         /// create a circle copy with origin moved
         /// </summary>
         /// <param name="delta">new circle origin delta</param>
-        public override Circle3D Move(double tol_len, Vector3D delta)
-        {
-            return new Circle3D(tol_len, CS.Move(delta), Radius);
-        }
+        // public override Circle3D Move(double tol_len, Vector3D delta)
+        // {
+        //     return new Circle3D(tol_len, CS.Move(delta), Radius);
+        // }        
 
         public override EntityObject DxfEntity
         {
@@ -218,7 +221,7 @@ namespace SearchAThing
                     var gy = c * (x1 - x2) / 2;
 
                     P1 = new Vector3D(fx + gx, fy + gy).ToWCS(CS);
-                    P2 = new Vector3D(fx - gx, fy - gy).ToWCS(CS);                    
+                    P2 = new Vector3D(fx - gx, fy - gy).ToWCS(CS);
                 }
 
                 yield return P1;

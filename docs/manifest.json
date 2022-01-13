@@ -48,7 +48,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.Circle3D.html",
-          "hash": "kDO/2cITUKt2kOMsBlYuqw=="
+          "hash": "KYL9ypPowgH8gRkGl/+Hlg=="
         }
       },
       "is_incremental": false,
@@ -152,30 +152,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.FinalizeWorksheetInput.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.FinalizeWorksheetInput.html",
-          "hash": "ir9PFjwD08S9jYRG0blHyg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.FinalizeWorksheetOutput.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.FinalizeWorksheetOutput.html",
-          "hash": "GQpT8S7iRWj+OUoqlP/TIw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/SearchAThing.Geometry.yml",
       "output": {
         ".html": {
@@ -193,54 +169,6 @@
         ".html": {
           "relative_path": "api/SearchAThing.GeometryType.html",
           "hash": "+PJuaNTm5FGZRiUZbzrifQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Gui.App-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Gui.App-1.html",
-          "hash": "r1SNq2ehOfs8fdkBoFp5eQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Gui.Win.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Gui.Win.html",
-          "hash": "qcHX8W2zu2Is73QTdQgVfQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.Gui.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.Gui.html",
-          "hash": "kaGpURupEiqc5VZcTMKA3Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.GuiToolkit.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.GuiToolkit.html",
-          "hash": "geElTBEU0Y+0HAoGJ0L7fQ=="
         }
       },
       "is_incremental": false,
@@ -375,7 +303,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.OrdIdx.html",
-          "hash": "B28KwzPWKIRfo7dNiHH9JQ=="
+          "hash": "9vEQaXwYWI1Ga6sN7re3PA=="
         }
       },
       "is_incremental": false,
@@ -443,23 +371,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/SearchAThing.QuantityConverter.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/SearchAThing.QuantityConverter.html",
-          "hash": "LFUeEHXtQx8nj0+TrsatPg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/SearchAThing.SciExt.yml",
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.SciExt.html",
-          "hash": "D6POeezDHnXutyveXnGOIQ=="
+          "hash": "U5897ZCjhxkhU8EOVYHCoA=="
         }
       },
       "is_incremental": false,
@@ -471,7 +387,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.SciToolkit.html",
-          "hash": "jMwkgwbA55kPE/a7fx3esA=="
+          "hash": "pS/rvIhSlsd8B4JMnZnbJQ=="
         }
       },
       "is_incremental": false,
@@ -525,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.Vector3D.html",
-          "hash": "ib5Q51fhRGh6GdN1H/UK6w=="
+          "hash": "Fa/vB2KDkF42FuYc90QakQ=="
         }
       },
       "is_incremental": false,
@@ -537,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.Vector3DEqualityComparer.html",
-          "hash": "1iXO2allYWDHDZL99zxwvw=="
+          "hash": "r1ClkfCN/vMbfHeg3nhYmw=="
         }
       },
       "is_incremental": false,
@@ -549,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.Vector3DWithOrder.html",
-          "hash": "WeScl13y4X4p2Elf85Afeg=="
+          "hash": "3DGzDYjrHUVDUZDJgug3Lg=="
         }
       },
       "is_incremental": false,
@@ -561,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.Vector3DWithOrderEqualityComparer.html",
-          "hash": "GOaRModUw30GSh7g43IUrg=="
+          "hash": "qTXXrhs5ub7UCrtRbdodiw=="
         }
       },
       "is_incremental": false,
@@ -573,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.html",
-          "hash": "z07P06TbzT8S6MI2UtURVw=="
+          "hash": "T0PrLHSK0if+M6bRw+pe2A=="
         }
       },
       "is_incremental": false,
@@ -597,7 +513,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "0BnW9c6igBBL/KdWPvf4uw=="
+          "hash": "wpbaAjqmbWY7k4Yk+H1Pkw=="
         }
       },
       "is_incremental": false,
@@ -612,7 +528,7 @@
           "hash": "eTiPgaui8AQ9Pn87ATc2+g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -639,7 +555,7 @@
           "hash": "HZgG/iEznEZJxeF6AAE81w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -661,25 +577,23 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
+        "can_incremental": true,
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "NoAvailableBuildCache"
+        "skipped_file_count": 0
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 3,
-          "skipped_file_count": 0
+          "skipped_file_count": 3
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 47,
-          "skipped_file_count": 0
+          "total_file_count": 40,
+          "skipped_file_count": 7
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
@@ -692,8 +606,8 @@
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0

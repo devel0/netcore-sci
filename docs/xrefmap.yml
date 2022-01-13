@@ -923,19 +923,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Circle3D.Length
   nameWithType: Circle3D.Length
-- uid: SearchAThing.Circle3D.Move(System.Double,SearchAThing.Vector3D)
-  name: Move(Double, Vector3D)
-  href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_Move_System_Double_SearchAThing_Vector3D_
-  commentId: M:SearchAThing.Circle3D.Move(System.Double,SearchAThing.Vector3D)
-  fullName: SearchAThing.Circle3D.Move(System.Double, SearchAThing.Vector3D)
-  nameWithType: Circle3D.Move(Double, Vector3D)
-- uid: SearchAThing.Circle3D.Move*
-  name: Move
-  href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_Move_
-  commentId: Overload:SearchAThing.Circle3D.Move
-  isSpec: "True"
-  fullName: SearchAThing.Circle3D.Move
-  nameWithType: Circle3D.Move
 - uid: SearchAThing.ComputationQueue`1
   name: ComputationQueue<T>
   href: api/SearchAThing.ComputationQueue-1.html
@@ -1725,127 +1712,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.DQuaternion.v
   nameWithType: DQuaternion.v
-- uid: SearchAThing.FinalizeWorksheetInput
-  name: FinalizeWorksheetInput
-  href: api/SearchAThing.FinalizeWorksheetInput.html
-  commentId: T:SearchAThing.FinalizeWorksheetInput
-  fullName: SearchAThing.FinalizeWorksheetInput
-  nameWithType: FinalizeWorksheetInput
-- uid: SearchAThing.FinalizeWorksheetInput.AdjustContents
-  name: AdjustContents
-  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_AdjustContents
-  commentId: P:SearchAThing.FinalizeWorksheetInput.AdjustContents
-  fullName: SearchAThing.FinalizeWorksheetInput.AdjustContents
-  nameWithType: FinalizeWorksheetInput.AdjustContents
-- uid: SearchAThing.FinalizeWorksheetInput.AdjustContents*
-  name: AdjustContents
-  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_AdjustContents_
-  commentId: Overload:SearchAThing.FinalizeWorksheetInput.AdjustContents
-  isSpec: "True"
-  fullName: SearchAThing.FinalizeWorksheetInput.AdjustContents
-  nameWithType: FinalizeWorksheetInput.AdjustContents
-- uid: SearchAThing.FinalizeWorksheetInput.AutoFilterFirstCol
-  name: AutoFilterFirstCol
-  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_AutoFilterFirstCol
-  commentId: P:SearchAThing.FinalizeWorksheetInput.AutoFilterFirstCol
-  fullName: SearchAThing.FinalizeWorksheetInput.AutoFilterFirstCol
-  nameWithType: FinalizeWorksheetInput.AutoFilterFirstCol
-- uid: SearchAThing.FinalizeWorksheetInput.AutoFilterFirstCol*
-  name: AutoFilterFirstCol
-  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_AutoFilterFirstCol_
-  commentId: Overload:SearchAThing.FinalizeWorksheetInput.AutoFilterFirstCol
-  isSpec: "True"
-  fullName: SearchAThing.FinalizeWorksheetInput.AutoFilterFirstCol
-  nameWithType: FinalizeWorksheetInput.AutoFilterFirstCol
-- uid: SearchAThing.FinalizeWorksheetInput.AutoFilterHeaderRow
-  name: AutoFilterHeaderRow
-  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_AutoFilterHeaderRow
-  commentId: P:SearchAThing.FinalizeWorksheetInput.AutoFilterHeaderRow
-  fullName: SearchAThing.FinalizeWorksheetInput.AutoFilterHeaderRow
-  nameWithType: FinalizeWorksheetInput.AutoFilterHeaderRow
-- uid: SearchAThing.FinalizeWorksheetInput.AutoFilterHeaderRow*
-  name: AutoFilterHeaderRow
-  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_AutoFilterHeaderRow_
-  commentId: Overload:SearchAThing.FinalizeWorksheetInput.AutoFilterHeaderRow
-  isSpec: "True"
-  fullName: SearchAThing.FinalizeWorksheetInput.AutoFilterHeaderRow
-  nameWithType: FinalizeWorksheetInput.AutoFilterHeaderRow
-- uid: SearchAThing.FinalizeWorksheetInput.FreezeCol
-  name: FreezeCol
-  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_FreezeCol
-  commentId: F:SearchAThing.FinalizeWorksheetInput.FreezeCol
-  fullName: SearchAThing.FinalizeWorksheetInput.FreezeCol
-  nameWithType: FinalizeWorksheetInput.FreezeCol
-- uid: SearchAThing.FinalizeWorksheetInput.FreezeRow
-  name: FreezeRow
-  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_FreezeRow
-  commentId: F:SearchAThing.FinalizeWorksheetInput.FreezeRow
-  fullName: SearchAThing.FinalizeWorksheetInput.FreezeRow
-  nameWithType: FinalizeWorksheetInput.FreezeRow
-- uid: SearchAThing.FinalizeWorksheetInput.SetDefaultColWidth
-  name: SetDefaultColWidth
-  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_SetDefaultColWidth
-  commentId: P:SearchAThing.FinalizeWorksheetInput.SetDefaultColWidth
-  fullName: SearchAThing.FinalizeWorksheetInput.SetDefaultColWidth
-  nameWithType: FinalizeWorksheetInput.SetDefaultColWidth
-- uid: SearchAThing.FinalizeWorksheetInput.SetDefaultColWidth*
-  name: SetDefaultColWidth
-  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_SetDefaultColWidth_
-  commentId: Overload:SearchAThing.FinalizeWorksheetInput.SetDefaultColWidth
-  isSpec: "True"
-  fullName: SearchAThing.FinalizeWorksheetInput.SetDefaultColWidth
-  nameWithType: FinalizeWorksheetInput.SetDefaultColWidth
-- uid: SearchAThing.FinalizeWorksheetInput.ZoomScale
-  name: ZoomScale
-  href: api/SearchAThing.FinalizeWorksheetInput.html#SearchAThing_FinalizeWorksheetInput_ZoomScale
-  commentId: F:SearchAThing.FinalizeWorksheetInput.ZoomScale
-  fullName: SearchAThing.FinalizeWorksheetInput.ZoomScale
-  nameWithType: FinalizeWorksheetInput.ZoomScale
-- uid: SearchAThing.FinalizeWorksheetOutput
-  name: FinalizeWorksheetOutput
-  href: api/SearchAThing.FinalizeWorksheetOutput.html
-  commentId: T:SearchAThing.FinalizeWorksheetOutput
-  fullName: SearchAThing.FinalizeWorksheetOutput
-  nameWithType: FinalizeWorksheetOutput
-- uid: SearchAThing.FinalizeWorksheetOutput.ColumnCount
-  name: ColumnCount
-  href: api/SearchAThing.FinalizeWorksheetOutput.html#SearchAThing_FinalizeWorksheetOutput_ColumnCount
-  commentId: P:SearchAThing.FinalizeWorksheetOutput.ColumnCount
-  fullName: SearchAThing.FinalizeWorksheetOutput.ColumnCount
-  nameWithType: FinalizeWorksheetOutput.ColumnCount
-- uid: SearchAThing.FinalizeWorksheetOutput.ColumnCount*
-  name: ColumnCount
-  href: api/SearchAThing.FinalizeWorksheetOutput.html#SearchAThing_FinalizeWorksheetOutput_ColumnCount_
-  commentId: Overload:SearchAThing.FinalizeWorksheetOutput.ColumnCount
-  isSpec: "True"
-  fullName: SearchAThing.FinalizeWorksheetOutput.ColumnCount
-  nameWithType: FinalizeWorksheetOutput.ColumnCount
-- uid: SearchAThing.FinalizeWorksheetOutput.RangeUsed
-  name: RangeUsed
-  href: api/SearchAThing.FinalizeWorksheetOutput.html#SearchAThing_FinalizeWorksheetOutput_RangeUsed
-  commentId: P:SearchAThing.FinalizeWorksheetOutput.RangeUsed
-  fullName: SearchAThing.FinalizeWorksheetOutput.RangeUsed
-  nameWithType: FinalizeWorksheetOutput.RangeUsed
-- uid: SearchAThing.FinalizeWorksheetOutput.RangeUsed*
-  name: RangeUsed
-  href: api/SearchAThing.FinalizeWorksheetOutput.html#SearchAThing_FinalizeWorksheetOutput_RangeUsed_
-  commentId: Overload:SearchAThing.FinalizeWorksheetOutput.RangeUsed
-  isSpec: "True"
-  fullName: SearchAThing.FinalizeWorksheetOutput.RangeUsed
-  nameWithType: FinalizeWorksheetOutput.RangeUsed
-- uid: SearchAThing.FinalizeWorksheetOutput.RowCount
-  name: RowCount
-  href: api/SearchAThing.FinalizeWorksheetOutput.html#SearchAThing_FinalizeWorksheetOutput_RowCount
-  commentId: P:SearchAThing.FinalizeWorksheetOutput.RowCount
-  fullName: SearchAThing.FinalizeWorksheetOutput.RowCount
-  nameWithType: FinalizeWorksheetOutput.RowCount
-- uid: SearchAThing.FinalizeWorksheetOutput.RowCount*
-  name: RowCount
-  href: api/SearchAThing.FinalizeWorksheetOutput.html#SearchAThing_FinalizeWorksheetOutput_RowCount_
-  commentId: Overload:SearchAThing.FinalizeWorksheetOutput.RowCount
-  isSpec: "True"
-  fullName: SearchAThing.FinalizeWorksheetOutput.RowCount
-  nameWithType: FinalizeWorksheetOutput.RowCount
 - uid: SearchAThing.Geometry
   name: Geometry
   href: api/SearchAThing.Geometry.html
@@ -2018,122 +1884,6 @@ references:
   commentId: F:SearchAThing.GeometryType.Vector3D
   fullName: SearchAThing.GeometryType.Vector3D
   nameWithType: GeometryType.Vector3D
-- uid: SearchAThing.Gui
-  name: SearchAThing.Gui
-  href: api/SearchAThing.Gui.html
-  commentId: N:SearchAThing.Gui
-  fullName: SearchAThing.Gui
-  nameWithType: SearchAThing.Gui
-- uid: SearchAThing.Gui.App`1
-  name: App<W>
-  href: api/SearchAThing.Gui.App-1.html
-  commentId: T:SearchAThing.Gui.App`1
-  name.vb: App(Of W)
-  fullName: SearchAThing.Gui.App<W>
-  fullName.vb: SearchAThing.Gui.App(Of W)
-  nameWithType: App<W>
-  nameWithType.vb: App(Of W)
-- uid: SearchAThing.Gui.App`1.#ctor
-  name: App()
-  href: api/SearchAThing.Gui.App-1.html#SearchAThing_Gui_App_1__ctor
-  commentId: M:SearchAThing.Gui.App`1.#ctor
-  fullName: SearchAThing.Gui.App<W>.App()
-  fullName.vb: SearchAThing.Gui.App(Of W).App()
-  nameWithType: App<W>.App()
-  nameWithType.vb: App(Of W).App()
-- uid: SearchAThing.Gui.App`1.#ctor*
-  name: App
-  href: api/SearchAThing.Gui.App-1.html#SearchAThing_Gui_App_1__ctor_
-  commentId: Overload:SearchAThing.Gui.App`1.#ctor
-  isSpec: "True"
-  fullName: SearchAThing.Gui.App<W>.App
-  fullName.vb: SearchAThing.Gui.App(Of W).App
-  nameWithType: App<W>.App
-  nameWithType.vb: App(Of W).App
-- uid: SearchAThing.Gui.App`1.Initialize
-  name: Initialize()
-  href: api/SearchAThing.Gui.App-1.html#SearchAThing_Gui_App_1_Initialize
-  commentId: M:SearchAThing.Gui.App`1.Initialize
-  fullName: SearchAThing.Gui.App<W>.Initialize()
-  fullName.vb: SearchAThing.Gui.App(Of W).Initialize()
-  nameWithType: App<W>.Initialize()
-  nameWithType.vb: App(Of W).Initialize()
-- uid: SearchAThing.Gui.App`1.Initialize*
-  name: Initialize
-  href: api/SearchAThing.Gui.App-1.html#SearchAThing_Gui_App_1_Initialize_
-  commentId: Overload:SearchAThing.Gui.App`1.Initialize
-  isSpec: "True"
-  fullName: SearchAThing.Gui.App<W>.Initialize
-  fullName.vb: SearchAThing.Gui.App(Of W).Initialize
-  nameWithType: App<W>.Initialize
-  nameWithType.vb: App(Of W).Initialize
-- uid: SearchAThing.Gui.App`1.OnFrameworkInitializationCompleted
-  name: OnFrameworkInitializationCompleted()
-  href: api/SearchAThing.Gui.App-1.html#SearchAThing_Gui_App_1_OnFrameworkInitializationCompleted
-  commentId: M:SearchAThing.Gui.App`1.OnFrameworkInitializationCompleted
-  fullName: SearchAThing.Gui.App<W>.OnFrameworkInitializationCompleted()
-  fullName.vb: SearchAThing.Gui.App(Of W).OnFrameworkInitializationCompleted()
-  nameWithType: App<W>.OnFrameworkInitializationCompleted()
-  nameWithType.vb: App(Of W).OnFrameworkInitializationCompleted()
-- uid: SearchAThing.Gui.App`1.OnFrameworkInitializationCompleted*
-  name: OnFrameworkInitializationCompleted
-  href: api/SearchAThing.Gui.App-1.html#SearchAThing_Gui_App_1_OnFrameworkInitializationCompleted_
-  commentId: Overload:SearchAThing.Gui.App`1.OnFrameworkInitializationCompleted
-  isSpec: "True"
-  fullName: SearchAThing.Gui.App<W>.OnFrameworkInitializationCompleted
-  fullName.vb: SearchAThing.Gui.App(Of W).OnFrameworkInitializationCompleted
-  nameWithType: App<W>.OnFrameworkInitializationCompleted
-  nameWithType.vb: App(Of W).OnFrameworkInitializationCompleted
-- uid: SearchAThing.Gui.Win
-  name: Win
-  href: api/SearchAThing.Gui.Win.html
-  commentId: T:SearchAThing.Gui.Win
-  fullName: SearchAThing.Gui.Win
-  nameWithType: Win
-- uid: SearchAThing.Gui.Win.#ctor(IEnumerable{System.String})
-  name: Win(IEnumerable<String>)
-  href: api/SearchAThing.Gui.Win.html#SearchAThing_Gui_Win__ctor_IEnumerable_System_String__
-  commentId: M:SearchAThing.Gui.Win.#ctor(IEnumerable{System.String})
-  name.vb: Win(IEnumerable(Of String))
-  fullName: SearchAThing.Gui.Win.Win(IEnumerable<System.String>)
-  fullName.vb: SearchAThing.Gui.Win.Win(IEnumerable(Of System.String))
-  nameWithType: Win.Win(IEnumerable<String>)
-  nameWithType.vb: Win.Win(IEnumerable(Of String))
-- uid: SearchAThing.Gui.Win.#ctor*
-  name: Win
-  href: api/SearchAThing.Gui.Win.html#SearchAThing_Gui_Win__ctor_
-  commentId: Overload:SearchAThing.Gui.Win.#ctor
-  isSpec: "True"
-  fullName: SearchAThing.Gui.Win.Win
-  nameWithType: Win.Win
-- uid: SearchAThing.Gui.Win.CustomStyleUris
-  name: CustomStyleUris
-  href: api/SearchAThing.Gui.Win.html#SearchAThing_Gui_Win_CustomStyleUris
-  commentId: F:SearchAThing.Gui.Win.CustomStyleUris
-  fullName: SearchAThing.Gui.Win.CustomStyleUris
-  nameWithType: Win.CustomStyleUris
-- uid: SearchAThing.GuiToolkit
-  name: GuiToolkit
-  href: api/SearchAThing.GuiToolkit.html
-  commentId: T:SearchAThing.GuiToolkit
-  fullName: SearchAThing.GuiToolkit
-  nameWithType: GuiToolkit
-- uid: SearchAThing.GuiToolkit.CreateGui*
-  name: CreateGui
-  href: api/SearchAThing.GuiToolkit.html#SearchAThing_GuiToolkit_CreateGui_
-  commentId: Overload:SearchAThing.GuiToolkit.CreateGui
-  isSpec: "True"
-  fullName: SearchAThing.GuiToolkit.CreateGui
-  nameWithType: GuiToolkit.CreateGui
-- uid: SearchAThing.GuiToolkit.CreateGui``1
-  name: CreateGui<W>()
-  href: api/SearchAThing.GuiToolkit.html#SearchAThing_GuiToolkit_CreateGui__1
-  commentId: M:SearchAThing.GuiToolkit.CreateGui``1
-  name.vb: CreateGui(Of W)()
-  fullName: SearchAThing.GuiToolkit.CreateGui<W>()
-  fullName.vb: SearchAThing.GuiToolkit.CreateGui(Of W)()
-  nameWithType: GuiToolkit.CreateGui<W>()
-  nameWithType.vb: GuiToolkit.CreateGui(Of W)()
 - uid: SearchAThing.Int64Map
   name: Int64Map
   href: api/SearchAThing.Int64Map.html
@@ -3859,54 +3609,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.PythonPipe.Exec
   nameWithType: PythonPipe.Exec
-- uid: SearchAThing.QuantityConverter
-  name: QuantityConverter
-  href: api/SearchAThing.QuantityConverter.html
-  commentId: T:SearchAThing.QuantityConverter
-  fullName: SearchAThing.QuantityConverter
-  nameWithType: QuantityConverter
-- uid: SearchAThing.QuantityConverter.#ctor(Func{System.String,CultureInfo,System.Object})
-  name: QuantityConverter(Func<String, CultureInfo, Object>)
-  href: api/SearchAThing.QuantityConverter.html#SearchAThing_QuantityConverter__ctor_Func_System_String_CultureInfo_System_Object__
-  commentId: M:SearchAThing.QuantityConverter.#ctor(Func{System.String,CultureInfo,System.Object})
-  name.vb: QuantityConverter(Func(Of String, CultureInfo, Object))
-  fullName: SearchAThing.QuantityConverter.QuantityConverter(Func<System.String, CultureInfo, System.Object>)
-  fullName.vb: SearchAThing.QuantityConverter.QuantityConverter(Func(Of System.String, CultureInfo, System.Object))
-  nameWithType: QuantityConverter.QuantityConverter(Func<String, CultureInfo, Object>)
-  nameWithType.vb: QuantityConverter.QuantityConverter(Func(Of String, CultureInfo, Object))
-- uid: SearchAThing.QuantityConverter.#ctor*
-  name: QuantityConverter
-  href: api/SearchAThing.QuantityConverter.html#SearchAThing_QuantityConverter__ctor_
-  commentId: Overload:SearchAThing.QuantityConverter.#ctor
-  isSpec: "True"
-  fullName: SearchAThing.QuantityConverter.QuantityConverter
-  nameWithType: QuantityConverter.QuantityConverter
-- uid: SearchAThing.QuantityConverter.Convert(System.Object,Type,System.Object,CultureInfo)
-  name: Convert(Object, Type, Object, CultureInfo)
-  href: api/SearchAThing.QuantityConverter.html#SearchAThing_QuantityConverter_Convert_System_Object_Type_System_Object_CultureInfo_
-  commentId: M:SearchAThing.QuantityConverter.Convert(System.Object,Type,System.Object,CultureInfo)
-  fullName: SearchAThing.QuantityConverter.Convert(System.Object, Type, System.Object, CultureInfo)
-  nameWithType: QuantityConverter.Convert(Object, Type, Object, CultureInfo)
-- uid: SearchAThing.QuantityConverter.Convert*
-  name: Convert
-  href: api/SearchAThing.QuantityConverter.html#SearchAThing_QuantityConverter_Convert_
-  commentId: Overload:SearchAThing.QuantityConverter.Convert
-  isSpec: "True"
-  fullName: SearchAThing.QuantityConverter.Convert
-  nameWithType: QuantityConverter.Convert
-- uid: SearchAThing.QuantityConverter.ConvertBack(System.Object,Type,System.Object,CultureInfo)
-  name: ConvertBack(Object, Type, Object, CultureInfo)
-  href: api/SearchAThing.QuantityConverter.html#SearchAThing_QuantityConverter_ConvertBack_System_Object_Type_System_Object_CultureInfo_
-  commentId: M:SearchAThing.QuantityConverter.ConvertBack(System.Object,Type,System.Object,CultureInfo)
-  fullName: SearchAThing.QuantityConverter.ConvertBack(System.Object, Type, System.Object, CultureInfo)
-  nameWithType: QuantityConverter.ConvertBack(Object, Type, Object, CultureInfo)
-- uid: SearchAThing.QuantityConverter.ConvertBack*
-  name: ConvertBack
-  href: api/SearchAThing.QuantityConverter.html#SearchAThing_QuantityConverter_ConvertBack_
-  commentId: Overload:SearchAThing.QuantityConverter.ConvertBack
-  isSpec: "True"
-  fullName: SearchAThing.QuantityConverter.ConvertBack
-  nameWithType: QuantityConverter.ConvertBack
 - uid: SearchAThing.SciExt
   name: SciExt
   href: api/SearchAThing.SciExt.html
@@ -4429,19 +4131,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Explode
   nameWithType: SciExt.Explode
-- uid: SearchAThing.SciExt.FinalizeWorksheet(IXLWorksheet,SearchAThing.FinalizeWorksheetInput)
-  name: FinalizeWorksheet(IXLWorksheet, FinalizeWorksheetInput)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_FinalizeWorksheet_IXLWorksheet_SearchAThing_FinalizeWorksheetInput_
-  commentId: M:SearchAThing.SciExt.FinalizeWorksheet(IXLWorksheet,SearchAThing.FinalizeWorksheetInput)
-  fullName: SearchAThing.SciExt.FinalizeWorksheet(IXLWorksheet, SearchAThing.FinalizeWorksheetInput)
-  nameWithType: SciExt.FinalizeWorksheet(IXLWorksheet, FinalizeWorksheetInput)
-- uid: SearchAThing.SciExt.FinalizeWorksheet*
-  name: FinalizeWorksheet
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_FinalizeWorksheet_
-  commentId: Overload:SearchAThing.SciExt.FinalizeWorksheet
-  isSpec: "True"
-  fullName: SearchAThing.SciExt.FinalizeWorksheet
-  nameWithType: SciExt.FinalizeWorksheet
 - uid: SearchAThing.SciExt.Fmt(Matrix4x4,System.Int32,System.Int32)
   name: Fmt(Matrix4x4, Int32, Int32)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Fmt_Matrix4x4_System_Int32_System_Int32_
@@ -4803,71 +4492,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Segments
   nameWithType: SciExt.Segments
-- uid: SearchAThing.SciExt.SetBgColor(IXLCell,XLColor)
-  name: SetBgColor(IXLCell, XLColor)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetBgColor_IXLCell_XLColor_
-  commentId: M:SearchAThing.SciExt.SetBgColor(IXLCell,XLColor)
-  fullName: SearchAThing.SciExt.SetBgColor(IXLCell, XLColor)
-  nameWithType: SciExt.SetBgColor(IXLCell, XLColor)
-- uid: SearchAThing.SciExt.SetBgColor*
-  name: SetBgColor
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetBgColor_
-  commentId: Overload:SearchAThing.SciExt.SetBgColor
-  isSpec: "True"
-  fullName: SearchAThing.SciExt.SetBgColor
-  nameWithType: SciExt.SetBgColor
-- uid: SearchAThing.SciExt.SetBold(IXLCell)
-  name: SetBold(IXLCell)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetBold_IXLCell_
-  commentId: M:SearchAThing.SciExt.SetBold(IXLCell)
-  fullName: SearchAThing.SciExt.SetBold(IXLCell)
-  nameWithType: SciExt.SetBold(IXLCell)
-- uid: SearchAThing.SciExt.SetBold*
-  name: SetBold
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetBold_
-  commentId: Overload:SearchAThing.SciExt.SetBold
-  isSpec: "True"
-  fullName: SearchAThing.SciExt.SetBold
-  nameWithType: SciExt.SetBold
-- uid: SearchAThing.SciExt.SetCell(IXLWorksheet,System.Int32,System.Int32,System.Object)
-  name: SetCell(IXLWorksheet, Int32, Int32, Object)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetCell_IXLWorksheet_System_Int32_System_Int32_System_Object_
-  commentId: M:SearchAThing.SciExt.SetCell(IXLWorksheet,System.Int32,System.Int32,System.Object)
-  fullName: SearchAThing.SciExt.SetCell(IXLWorksheet, System.Int32, System.Int32, System.Object)
-  nameWithType: SciExt.SetCell(IXLWorksheet, Int32, Int32, Object)
-- uid: SearchAThing.SciExt.SetCell*
-  name: SetCell
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetCell_
-  commentId: Overload:SearchAThing.SciExt.SetCell
-  isSpec: "True"
-  fullName: SearchAThing.SciExt.SetCell
-  nameWithType: SciExt.SetCell
-- uid: SearchAThing.SciExt.SetCellBold(IXLWorksheet,System.Int32,System.Int32,System.Object)
-  name: SetCellBold(IXLWorksheet, Int32, Int32, Object)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetCellBold_IXLWorksheet_System_Int32_System_Int32_System_Object_
-  commentId: M:SearchAThing.SciExt.SetCellBold(IXLWorksheet,System.Int32,System.Int32,System.Object)
-  fullName: SearchAThing.SciExt.SetCellBold(IXLWorksheet, System.Int32, System.Int32, System.Object)
-  nameWithType: SciExt.SetCellBold(IXLWorksheet, Int32, Int32, Object)
-- uid: SearchAThing.SciExt.SetCellBold*
-  name: SetCellBold
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetCellBold_
-  commentId: Overload:SearchAThing.SciExt.SetCellBold
-  isSpec: "True"
-  fullName: SearchAThing.SciExt.SetCellBold
-  nameWithType: SciExt.SetCellBold
-- uid: SearchAThing.SciExt.SetCellFormulaR1C1(IXLWorksheet,System.Int32,System.Int32,System.String)
-  name: SetCellFormulaR1C1(IXLWorksheet, Int32, Int32, String)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetCellFormulaR1C1_IXLWorksheet_System_Int32_System_Int32_System_String_
-  commentId: M:SearchAThing.SciExt.SetCellFormulaR1C1(IXLWorksheet,System.Int32,System.Int32,System.String)
-  fullName: SearchAThing.SciExt.SetCellFormulaR1C1(IXLWorksheet, System.Int32, System.Int32, System.String)
-  nameWithType: SciExt.SetCellFormulaR1C1(IXLWorksheet, Int32, Int32, String)
-- uid: SearchAThing.SciExt.SetCellFormulaR1C1*
-  name: SetCellFormulaR1C1
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetCellFormulaR1C1_
-  commentId: Overload:SearchAThing.SciExt.SetCellFormulaR1C1
-  isSpec: "True"
-  fullName: SearchAThing.SciExt.SetCellFormulaR1C1
-  nameWithType: SciExt.SetCellFormulaR1C1
 - uid: SearchAThing.SciExt.SetColor(EntityObject,AciColor)
   name: SetColor(EntityObject, AciColor)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetColor_EntityObject_AciColor_
@@ -4881,19 +4505,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.SetColor
   nameWithType: SciExt.SetColor
-- uid: SearchAThing.SciExt.SetFontColor(IXLCell,XLColor)
-  name: SetFontColor(IXLCell, XLColor)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetFontColor_IXLCell_XLColor_
-  commentId: M:SearchAThing.SciExt.SetFontColor(IXLCell,XLColor)
-  fullName: SearchAThing.SciExt.SetFontColor(IXLCell, XLColor)
-  nameWithType: SciExt.SetFontColor(IXLCell, XLColor)
-- uid: SearchAThing.SciExt.SetFontColor*
-  name: SetFontColor
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetFontColor_
-  commentId: Overload:SearchAThing.SciExt.SetFontColor
-  isSpec: "True"
-  fullName: SearchAThing.SciExt.SetFontColor
-  nameWithType: SciExt.SetFontColor
 - uid: SearchAThing.SciExt.SetLayer(EntityObject,Layer)
   name: SetLayer(EntityObject, Layer)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SetLayer_EntityObject_Layer_
@@ -4981,19 +4592,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Similarity
   nameWithType: SciExt.Similarity
-- uid: SearchAThing.SciExt.SmartSimplify(Entity)
-  name: SmartSimplify(Entity)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SmartSimplify_Entity_
-  commentId: M:SearchAThing.SciExt.SmartSimplify(Entity)
-  fullName: SearchAThing.SciExt.SmartSimplify(Entity)
-  nameWithType: SciExt.SmartSimplify(Entity)
-- uid: SearchAThing.SciExt.SmartSimplify*
-  name: SmartSimplify
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SmartSimplify_
-  commentId: Overload:SearchAThing.SciExt.SmartSimplify
-  isSpec: "True"
-  fullName: SearchAThing.SciExt.SmartSimplify
-  nameWithType: SciExt.SmartSimplify
 - uid: SearchAThing.SciExt.SortPoly(IEnumerable{SearchAThing.Line3D},System.Double,SearchAThing.Vector3D)
   name: SortPoly(IEnumerable<Line3D>, Double, Vector3D)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SortPoly_IEnumerable_SearchAThing_Line3D__System_Double_SearchAThing_Vector3D_
@@ -5411,28 +5009,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.ToPolyline
   nameWithType: SciExt.ToPolyline
-- uid: SearchAThing.SciExt.ToPsql(IEnumerable{SearchAThing.Vector3D})
-  name: ToPsql(IEnumerable<Vector3D>)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToPsql_IEnumerable_SearchAThing_Vector3D__
-  commentId: M:SearchAThing.SciExt.ToPsql(IEnumerable{SearchAThing.Vector3D})
-  name.vb: ToPsql(IEnumerable(Of Vector3D))
-  fullName: SearchAThing.SciExt.ToPsql(IEnumerable<SearchAThing.Vector3D>)
-  fullName.vb: SearchAThing.SciExt.ToPsql(IEnumerable(Of SearchAThing.Vector3D))
-  nameWithType: SciExt.ToPsql(IEnumerable<Vector3D>)
-  nameWithType.vb: SciExt.ToPsql(IEnumerable(Of Vector3D))
-- uid: SearchAThing.SciExt.ToPsql(SearchAThing.Vector3D)
-  name: ToPsql(Vector3D)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToPsql_SearchAThing_Vector3D_
-  commentId: M:SearchAThing.SciExt.ToPsql(SearchAThing.Vector3D)
-  fullName: SearchAThing.SciExt.ToPsql(SearchAThing.Vector3D)
-  nameWithType: SciExt.ToPsql(Vector3D)
-- uid: SearchAThing.SciExt.ToPsql*
-  name: ToPsql
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToPsql_
-  commentId: Overload:SearchAThing.SciExt.ToPsql
-  isSpec: "True"
-  fullName: SearchAThing.SciExt.ToPsql
-  nameWithType: SciExt.ToPsql
 - uid: SearchAThing.SciExt.ToRad(SearchAThing.Vector3D)
   name: ToRad(Vector3D)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToRad_SearchAThing_Vector3D_
@@ -5580,19 +5156,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Vertexes
   nameWithType: SciExt.Vertexes
-- uid: SearchAThing.SciExt.VeryExpensiveSimplify(Entity,System.Int32)
-  name: VeryExpensiveSimplify(Entity, Int32)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_VeryExpensiveSimplify_Entity_System_Int32_
-  commentId: M:SearchAThing.SciExt.VeryExpensiveSimplify(Entity,System.Int32)
-  fullName: SearchAThing.SciExt.VeryExpensiveSimplify(Entity, System.Int32)
-  nameWithType: SciExt.VeryExpensiveSimplify(Entity, Int32)
-- uid: SearchAThing.SciExt.VeryExpensiveSimplify*
-  name: VeryExpensiveSimplify
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_VeryExpensiveSimplify_
-  commentId: Overload:SearchAThing.SciExt.VeryExpensiveSimplify
-  isSpec: "True"
-  fullName: SearchAThing.SciExt.VeryExpensiveSimplify
-  nameWithType: SciExt.VeryExpensiveSimplify
 - uid: SearchAThing.SciExt.WeightedDistribution(IEnumerable{System.Double},System.Int32)
   name: WeightedDistribution(IEnumerable<Double>, Int32)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_WeightedDistribution_IEnumerable_System_Double__System_Int32_

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Globalization;
-using SearchAThing.PsqlUtil;
 using Newtonsoft.Json;
 using static System.Math;
 using static System.FormattableString;
@@ -1496,22 +1495,6 @@ namespace SearchAThing
         public static Point ToPoint(this Vector3D v)
         {
             return new Point(v.X, v.Y, 0);
-        }
-
-        /// <summary>
-        /// creates a psql double[] string
-        /// </summary>
-        public static string ToPsql(this Vector3D v)
-        {
-            return v.Coordinates.ToPsql();
-        }
-
-        /// <summary>
-        /// create a psql representation of double[] coord sequence x1,y1,z1,x2,y2,z2, ... of given points
-        /// </summary>        
-        public static string ToPsql(this IEnumerable<Vector3D> pts)
-        {
-            return pts.ToCoordSequence().ToPsql();
         }
 
         /// <summary>

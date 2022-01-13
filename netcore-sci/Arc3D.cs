@@ -292,6 +292,8 @@ namespace SearchAThing
 
         public Vector3D Center { get { return CS.Origin; } }
 
+        public Circle3D ToCircle3D(double tol_len) => new Circle3D(tol_len, CS, Radius);
+
         /// <summary>
         /// centre of mass of circular segment
         /// </summary>            
