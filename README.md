@@ -9,6 +9,8 @@
 - [API Documentation](https://devel0.github.io/netcore-sci/api/SearchAThing.html)
 - [Changelog](https://github.com/devel0/netcore-sci/commits/master)
 
+**note** : from v2.0.0 some tk parts were removed ( look at [v1.30](https://github.com/devel0/netcore-sci/tree/980868dd4c6b64bcccd108df90d99bb77a0cf076) for these )
+
 <hr/>
 
 <!-- TOC -->
