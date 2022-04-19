@@ -394,6 +394,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Arc3D.To
   nameWithType: Arc3D.To
+- uid: SearchAThing.Arc3D.ToCircle3D(System.Double)
+  name: ToCircle3D(Double)
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_ToCircle3D_System_Double_
+  commentId: M:SearchAThing.Arc3D.ToCircle3D(System.Double)
+  fullName: SearchAThing.Arc3D.ToCircle3D(System.Double)
+  nameWithType: Arc3D.ToCircle3D(Double)
+- uid: SearchAThing.Arc3D.ToCircle3D*
+  name: ToCircle3D
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_ToCircle3D_
+  commentId: Overload:SearchAThing.Arc3D.ToCircle3D
+  isSpec: "True"
+  fullName: SearchAThing.Arc3D.ToCircle3D
+  nameWithType: Arc3D.ToCircle3D
 - uid: SearchAThing.Arc3D.ToString
   name: ToString()
   href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_ToString
@@ -923,6 +936,36 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Circle3D.Length
   nameWithType: Circle3D.Length
+- uid: SearchAThing.CirclesOuterTangentResult
+  name: CirclesOuterTangentResult
+  href: api/SearchAThing.CirclesOuterTangentResult.html
+  commentId: T:SearchAThing.CirclesOuterTangentResult
+  fullName: SearchAThing.CirclesOuterTangentResult
+  nameWithType: CirclesOuterTangentResult
+- uid: SearchAThing.CirclesOuterTangentResult.pa1
+  name: pa1
+  href: api/SearchAThing.CirclesOuterTangentResult.html#SearchAThing_CirclesOuterTangentResult_pa1
+  commentId: F:SearchAThing.CirclesOuterTangentResult.pa1
+  fullName: SearchAThing.CirclesOuterTangentResult.pa1
+  nameWithType: CirclesOuterTangentResult.pa1
+- uid: SearchAThing.CirclesOuterTangentResult.pa2
+  name: pa2
+  href: api/SearchAThing.CirclesOuterTangentResult.html#SearchAThing_CirclesOuterTangentResult_pa2
+  commentId: F:SearchAThing.CirclesOuterTangentResult.pa2
+  fullName: SearchAThing.CirclesOuterTangentResult.pa2
+  nameWithType: CirclesOuterTangentResult.pa2
+- uid: SearchAThing.CirclesOuterTangentResult.pb1
+  name: pb1
+  href: api/SearchAThing.CirclesOuterTangentResult.html#SearchAThing_CirclesOuterTangentResult_pb1
+  commentId: F:SearchAThing.CirclesOuterTangentResult.pb1
+  fullName: SearchAThing.CirclesOuterTangentResult.pb1
+  nameWithType: CirclesOuterTangentResult.pb1
+- uid: SearchAThing.CirclesOuterTangentResult.pb2
+  name: pb2
+  href: api/SearchAThing.CirclesOuterTangentResult.html#SearchAThing_CirclesOuterTangentResult_pb2
+  commentId: F:SearchAThing.CirclesOuterTangentResult.pb2
+  fullName: SearchAThing.CirclesOuterTangentResult.pb2
+  nameWithType: CirclesOuterTangentResult.pb2
 - uid: SearchAThing.ComputationQueue`1
   name: ComputationQueue<T>
   href: api/SearchAThing.ComputationQueue-1.html
@@ -5216,6 +5259,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciToolkit.Abs
   nameWithType: SciToolkit.Abs
+- uid: SearchAThing.SciToolkit.CirclesOuterTangent(System.Double,SearchAThing.Vector3D,System.Double,SearchAThing.Vector3D,System.Double)
+  name: CirclesOuterTangent(Double, Vector3D, Double, Vector3D, Double)
+  href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_CirclesOuterTangent_System_Double_SearchAThing_Vector3D_System_Double_SearchAThing_Vector3D_System_Double_
+  commentId: M:SearchAThing.SciToolkit.CirclesOuterTangent(System.Double,SearchAThing.Vector3D,System.Double,SearchAThing.Vector3D,System.Double)
+  fullName: SearchAThing.SciToolkit.CirclesOuterTangent(System.Double, SearchAThing.Vector3D, System.Double, SearchAThing.Vector3D, System.Double)
+  nameWithType: SciToolkit.CirclesOuterTangent(Double, Vector3D, Double, Vector3D, Double)
+- uid: SearchAThing.SciToolkit.CirclesOuterTangent*
+  name: CirclesOuterTangent
+  href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_CirclesOuterTangent_
+  commentId: Overload:SearchAThing.SciToolkit.CirclesOuterTangent
+  isSpec: "True"
+  fullName: SearchAThing.SciToolkit.CirclesOuterTangent
+  nameWithType: SciToolkit.CirclesOuterTangent
 - uid: SearchAThing.SciToolkit.Cube(SearchAThing.Vector3D,System.Double)
   name: Cube(Vector3D, Double)
   href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_Cube_SearchAThing_Vector3D_System_Double_

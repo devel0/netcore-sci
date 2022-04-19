@@ -12,7 +12,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.Arc3D.html",
-          "hash": "PtoxMbLIJQ5hxwa3HaPM+A=="
+          "hash": "4PfQollzN/D+iEaeKW2yNw=="
         }
       },
       "is_incremental": false,
@@ -24,7 +24,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.Arc3DEqualityComparer.html",
-          "hash": "/oG7FWiCra9UBO2l97qaWw=="
+          "hash": "vPt10G9fFH8+Z3VsIL/RIw=="
         }
       },
       "is_incremental": false,
@@ -48,7 +48,19 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.Circle3D.html",
-          "hash": "KYL9ypPowgH8gRkGl/+Hlg=="
+          "hash": "aOKcpugRBk2dBmAtA4o7rw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.CirclesOuterTangentResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.CirclesOuterTangentResult.html",
+          "hash": "c+L44A+vLLcY1lm+8uCZhw=="
         }
       },
       "is_incremental": false,
@@ -375,7 +387,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.SciExt.html",
-          "hash": "U5897ZCjhxkhU8EOVYHCoA=="
+          "hash": "z4Rzodwb0zxwzsb/+KFAAA=="
         }
       },
       "is_incremental": false,
@@ -387,7 +399,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.SciToolkit.html",
-          "hash": "pS/rvIhSlsd8B4JMnZnbJQ=="
+          "hash": "Crs7a/cPQnA9Wra643qgEg=="
         }
       },
       "is_incremental": false,
@@ -489,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.html",
-          "hash": "T0PrLHSK0if+M6bRw+pe2A=="
+          "hash": "alrSPRmrEFq75W5UceJ1Dg=="
         }
       },
       "is_incremental": false,
@@ -513,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "wpbaAjqmbWY7k4Yk+H1Pkw=="
+          "hash": "sInbdOrRrKc0dedjVUPWFg=="
         }
       },
       "is_incremental": false,
@@ -592,8 +604,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 40,
-          "skipped_file_count": 7
+          "total_file_count": 41,
+          "skipped_file_count": 34
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
