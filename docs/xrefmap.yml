@@ -936,36 +936,24 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Circle3D.Length
   nameWithType: Circle3D.Length
-- uid: SearchAThing.CirclesOuterTangentResult
-  name: CirclesOuterTangentResult
-  href: api/SearchAThing.CirclesOuterTangentResult.html
-  commentId: T:SearchAThing.CirclesOuterTangentResult
-  fullName: SearchAThing.CirclesOuterTangentResult
-  nameWithType: CirclesOuterTangentResult
-- uid: SearchAThing.CirclesOuterTangentResult.pa1
-  name: pa1
-  href: api/SearchAThing.CirclesOuterTangentResult.html#SearchAThing_CirclesOuterTangentResult_pa1
-  commentId: F:SearchAThing.CirclesOuterTangentResult.pa1
-  fullName: SearchAThing.CirclesOuterTangentResult.pa1
-  nameWithType: CirclesOuterTangentResult.pa1
-- uid: SearchAThing.CirclesOuterTangentResult.pa2
-  name: pa2
-  href: api/SearchAThing.CirclesOuterTangentResult.html#SearchAThing_CirclesOuterTangentResult_pa2
-  commentId: F:SearchAThing.CirclesOuterTangentResult.pa2
-  fullName: SearchAThing.CirclesOuterTangentResult.pa2
-  nameWithType: CirclesOuterTangentResult.pa2
-- uid: SearchAThing.CirclesOuterTangentResult.pb1
-  name: pb1
-  href: api/SearchAThing.CirclesOuterTangentResult.html#SearchAThing_CirclesOuterTangentResult_pb1
-  commentId: F:SearchAThing.CirclesOuterTangentResult.pb1
-  fullName: SearchAThing.CirclesOuterTangentResult.pb1
-  nameWithType: CirclesOuterTangentResult.pb1
-- uid: SearchAThing.CirclesOuterTangentResult.pb2
-  name: pb2
-  href: api/SearchAThing.CirclesOuterTangentResult.html#SearchAThing_CirclesOuterTangentResult_pb2
-  commentId: F:SearchAThing.CirclesOuterTangentResult.pb2
-  fullName: SearchAThing.CirclesOuterTangentResult.pb2
-  nameWithType: CirclesOuterTangentResult.pb2
+- uid: SearchAThing.CircleTangentType
+  name: CircleTangentType
+  href: api/SearchAThing.CircleTangentType.html
+  commentId: T:SearchAThing.CircleTangentType
+  fullName: SearchAThing.CircleTangentType
+  nameWithType: CircleTangentType
+- uid: SearchAThing.CircleTangentType.Exterior
+  name: Exterior
+  href: api/SearchAThing.CircleTangentType.html#SearchAThing_CircleTangentType_Exterior
+  commentId: F:SearchAThing.CircleTangentType.Exterior
+  fullName: SearchAThing.CircleTangentType.Exterior
+  nameWithType: CircleTangentType.Exterior
+- uid: SearchAThing.CircleTangentType.Interior
+  name: Interior
+  href: api/SearchAThing.CircleTangentType.html#SearchAThing_CircleTangentType_Interior
+  commentId: F:SearchAThing.CircleTangentType.Interior
+  fullName: SearchAThing.CircleTangentType.Interior
+  nameWithType: CircleTangentType.Interior
 - uid: SearchAThing.ComputationQueue`1
   name: ComputationQueue<T>
   href: api/SearchAThing.ComputationQueue-1.html
@@ -2483,6 +2471,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Line3D.Points
   nameWithType: Line3D.Points
+- uid: SearchAThing.Line3D.QCadScript
+  name: QCadScript
+  href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_QCadScript
+  commentId: P:SearchAThing.Line3D.QCadScript
+  fullName: SearchAThing.Line3D.QCadScript
+  nameWithType: Line3D.QCadScript
+- uid: SearchAThing.Line3D.QCadScript*
+  name: QCadScript
+  href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_QCadScript_
+  commentId: Overload:SearchAThing.Line3D.QCadScript
+  isSpec: "True"
+  fullName: SearchAThing.Line3D.QCadScript
+  nameWithType: Line3D.QCadScript
 - uid: SearchAThing.Line3D.Reverse
   name: Reverse()
   href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_Reverse
@@ -5259,12 +5260,12 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciToolkit.Abs
   nameWithType: SciToolkit.Abs
-- uid: SearchAThing.SciToolkit.CirclesOuterTangent(System.Double,SearchAThing.Vector3D,System.Double,SearchAThing.Vector3D,System.Double)
-  name: CirclesOuterTangent(Double, Vector3D, Double, Vector3D, Double)
-  href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_CirclesOuterTangent_System_Double_SearchAThing_Vector3D_System_Double_SearchAThing_Vector3D_System_Double_
-  commentId: M:SearchAThing.SciToolkit.CirclesOuterTangent(System.Double,SearchAThing.Vector3D,System.Double,SearchAThing.Vector3D,System.Double)
-  fullName: SearchAThing.SciToolkit.CirclesOuterTangent(System.Double, SearchAThing.Vector3D, System.Double, SearchAThing.Vector3D, System.Double)
-  nameWithType: SciToolkit.CirclesOuterTangent(Double, Vector3D, Double, Vector3D, Double)
+- uid: SearchAThing.SciToolkit.CirclesOuterTangent(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)
+  name: CirclesOuterTangent(Double, Double, Double, Double, Double, Double)
+  href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_CirclesOuterTangent_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_
+  commentId: M:SearchAThing.SciToolkit.CirclesOuterTangent(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)
+  fullName: SearchAThing.SciToolkit.CirclesOuterTangent(System.Double, System.Double, System.Double, System.Double, System.Double, System.Double)
+  nameWithType: SciToolkit.CirclesOuterTangent(Double, Double, Double, Double, Double, Double)
 - uid: SearchAThing.SciToolkit.CirclesOuterTangent*
   name: CirclesOuterTangent
   href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_CirclesOuterTangent_

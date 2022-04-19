@@ -200,19 +200,23 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_SciToolkit_CirclesOuterTangent_System_Double_SearchAThing_Vector3D_System_Double_SearchAThing_Vector3D_System_Double_.md&amp;value=---%0Auid%3A%20SearchAThing.SciToolkit.CirclesOuterTangent(System.Double%2CSearchAThing.Vector3D%2CSystem.Double%2CSearchAThing.Vector3D%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_SciToolkit_CirclesOuterTangent_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_.md&amp;value=---%0Auid%3A%20SearchAThing.SciToolkit.CirclesOuterTangent(System.Double%2CSystem.Double%2CSystem.Double%2CSystem.Double%2CSystem.Double%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Circle2D.cs/#L31">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Circle2D.cs/#L24">View Source</a>
   </span>
   <a id="SearchAThing_SciToolkit_CirclesOuterTangent_" data-uid="SearchAThing.SciToolkit.CirclesOuterTangent*"></a>
-  <h4 id="SearchAThing_SciToolkit_CirclesOuterTangent_System_Double_SearchAThing_Vector3D_System_Double_SearchAThing_Vector3D_System_Double_" data-uid="SearchAThing.SciToolkit.CirclesOuterTangent(System.Double,SearchAThing.Vector3D,System.Double,SearchAThing.Vector3D,System.Double)">CirclesOuterTangent(Double, Vector3D, Double, Vector3D, Double)</h4>
-  <div class="markdown level1 summary"><p>retrieve outer tangent points for two 2d circles</p>
+  <h4 id="SearchAThing_SciToolkit_CirclesOuterTangent_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_" data-uid="SearchAThing.SciToolkit.CirclesOuterTangent(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">CirclesOuterTangent(Double, Double, Double, Double, Double, Double)</h4>
+  <div class="markdown level1 summary"><p>Finds tangent segments between two given circles.</p>
+<p>returns empty,
+or 2 tuple (exterior tangents)
+or 4 tuple (two exterior tangents and two interior tangents)</p>
+<p>ref: <a href="https://gieseanw.wordpress.com/2012/09/12/finding-external-tangent-points-for-two-circles/">https://gieseanw.wordpress.com/2012/09/12/finding-external-tangent-points-for-two-circles/</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static CirclesOuterTangentResult CirclesOuterTangent(double tol, Vector3D center_a, double radius_a, Vector3D center_b, double radius_b)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(CircleTangentType type, Vector3D pa, Vector3D pb)&gt; CirclesOuterTangent(double x1, double y1, double r1, double x2, double y2, double r2)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -226,32 +230,33 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">tol</span></td>
+        <td><span class="parametername">x1</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
-        <td><span class="parametername">center_a</span></td>
-        <td><p>center of circle A</p>
-</td>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">y1</span></td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">radius_a</span></td>
-        <td><p>radius of circle A</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
-        <td><span class="parametername">center_b</span></td>
-        <td><p>center of circle B</p>
-</td>
+        <td><span class="parametername">r1</span></td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">radius_b</span></td>
-        <td><p>radius of circle B</p>
-</td>
+        <td><span class="parametername">x2</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">y2</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">r2</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -265,9 +270,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="SearchAThing.CirclesOuterTangentResult.html">CirclesOuterTangentResult</a></td>
-        <td><p>null if invalid</p>
-</td>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="SearchAThing.CircleTangentType.html">CircleTangentType</a>, <a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a>, <a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a>&gt;&gt;</td>
+        <td></td>
       </tr>
     </tbody>
   </table>

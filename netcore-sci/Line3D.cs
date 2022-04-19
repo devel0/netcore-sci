@@ -5,7 +5,7 @@ using System.Linq;
 using static System.Math;
 using netDxf.Entities;
 using Newtonsoft.Json;
-
+using static System.FormattableString;
 namespace SearchAThing
 {
 
@@ -650,6 +650,17 @@ namespace SearchAThing
             {
                 return SciToolkit.PostProcessCadScript(string.Format(CultureInfo.InvariantCulture, "_LINE {0},{1},{2} {3},{4},{5}\r\n",
                     From.X, From.Y, From.Z, To.X, To.Y, To.Z));
+            }
+        }
+
+        /// <summary>
+        /// 2d qcad script representation ( vscode watch using var,nq )
+        /// </summary>
+        public string QCadScript
+        {
+            get
+            {
+                return Invariant($"LINE\n{From.X},{From.Y}\n{To.X},{To.Y}\n");
             }
         }
 
