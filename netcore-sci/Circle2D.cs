@@ -19,7 +19,7 @@ namespace SearchAThing
         /// or 2 tuple (exterior tangents)
         /// or 4 tuple (two exterior tangents and two interior tangents)
         ///
-        /// ref: https://gieseanw.wordpress.com/2012/09/12/finding-external-tangent-points-for-two-circles/        
+        /// ref: https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Tangents_between_two_circles
         /// </summary>        
         public static IEnumerable<(CircleTangentType type, Vector3D pa, Vector3D pb)>
             CirclesOuterTangent(
