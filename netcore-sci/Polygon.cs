@@ -36,10 +36,10 @@ namespace SearchAThing
     {
 
         /// <summary>
-        /// Area of a polygon (does not consider z)
+        /// (signed) Area of a polygon (does not consider z)
         /// https://en.wikipedia.org/wiki/Centroid        
         /// </summary>        
-        public static double Area(this IReadOnlyList<Vector3D> pts, double tol)
+        public static double SignedArea(this IReadOnlyList<Vector3D> pts, double tol)
         {
             var lastEqualsFirst = pts[pts.Count - 1].EqualsTol(tol, pts[0]);
             double a = 0;
@@ -50,27 +50,31 @@ namespace SearchAThing
             if (!lastEqualsFirst)
                 a += pts[pts.Count - 1].X * pts[0].Y - pts[0].X * pts[pts.Count - 1].Y;
 
-            return Math.Abs(a / 2);
+            return a / 2;
         }
 
         /// <summary>
-        /// Centroid of a polygon (does not consider z)
-        /// note: points must ordered anticlockwise
+        /// (abs) Area of a polygon (does not consider z)
+        /// https://en.wikipedia.org/wiki/Centroid        
+        /// </summary>        
+        public static double Area(this IReadOnlyList<Vector3D> pts, double tol) => Math.Abs(SignedArea(pts, tol));
+
+        /// <summary>
+        /// Centroid of a polygon (does not consider z)    
         /// ( if have area specify the parameter to avoid recomputation )
         /// https://en.wikipedia.org/wiki/Centroid        
         /// </summary>        
         public static Vector3D Centroid(this IReadOnlyList<Vector3D> pts, double tol)
         {
-            var area = pts.Area(tol);
-            return pts.Centroid(tol, area);
+            var signed_area = pts.SignedArea(tol);
+            return pts.Centroid(tol, signed_area);
         }
 
         /// <summary>
-        /// Centroid of a polygon (does not consider z)
-        /// note: points must ordered anticlockwise
+        /// Centroid of a polygon (does not consider z)        
         /// https://en.wikipedia.org/wiki/Centroid        
         /// </summary>        
-        public static Vector3D Centroid(this IReadOnlyList<Vector3D> pts, double tol, double area)
+        public static Vector3D Centroid(this IReadOnlyList<Vector3D> pts, double tol, double signed_area)
         {
             var lastEqualsFirst = pts[pts.Count - 1].EqualsTol(tol, pts[0]);
             double x = 0;
@@ -88,7 +92,7 @@ namespace SearchAThing
                 y += (pts[pts.Count - 1].Y + pts[0].Y) * (pts[pts.Count - 1].X * pts[0].Y - pts[0].X * pts[pts.Count - 1].Y);
             }
 
-            return new Vector3D(x / (6 * area), y / (6 * area), 0);
+            return new Vector3D(x / (6 * signed_area), y / (6 * signed_area), 0);
         }
 
         /// <summary>

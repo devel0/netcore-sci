@@ -4520,6 +4520,31 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.RepeatFirstAtEnd
   nameWithType: SciExt.RepeatFirstAtEnd
+- uid: SearchAThing.SciExt.Reversed(IEnumerable{SearchAThing.Vector3D})
+  name: Reversed(IEnumerable<Vector3D>)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Reversed_IEnumerable_SearchAThing_Vector3D__
+  commentId: M:SearchAThing.SciExt.Reversed(IEnumerable{SearchAThing.Vector3D})
+  name.vb: Reversed(IEnumerable(Of Vector3D))
+  fullName: SearchAThing.SciExt.Reversed(IEnumerable<SearchAThing.Vector3D>)
+  fullName.vb: SearchAThing.SciExt.Reversed(IEnumerable(Of SearchAThing.Vector3D))
+  nameWithType: SciExt.Reversed(IEnumerable<Vector3D>)
+  nameWithType.vb: SciExt.Reversed(IEnumerable(Of Vector3D))
+- uid: SearchAThing.SciExt.Reversed(IList{SearchAThing.Vector3D})
+  name: Reversed(IList<Vector3D>)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Reversed_IList_SearchAThing_Vector3D__
+  commentId: M:SearchAThing.SciExt.Reversed(IList{SearchAThing.Vector3D})
+  name.vb: Reversed(IList(Of Vector3D))
+  fullName: SearchAThing.SciExt.Reversed(IList<SearchAThing.Vector3D>)
+  fullName.vb: SearchAThing.SciExt.Reversed(IList(Of SearchAThing.Vector3D))
+  nameWithType: SciExt.Reversed(IList<Vector3D>)
+  nameWithType.vb: SciExt.Reversed(IList(Of Vector3D))
+- uid: SearchAThing.SciExt.Reversed*
+  name: Reversed
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Reversed_
+  commentId: Overload:SearchAThing.SciExt.Reversed
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.Reversed
+  nameWithType: SciExt.Reversed
 - uid: SearchAThing.SciExt.Segments(IEnumerable{SearchAThing.Geometry},System.Double)
   name: Segments(IEnumerable<Geometry>, Double)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Segments_IEnumerable_SearchAThing_Geometry__System_Double_
@@ -4623,6 +4648,22 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Sign
   nameWithType: SciExt.Sign
+- uid: SearchAThing.SciExt.SignedArea(IReadOnlyList{SearchAThing.Vector3D},System.Double)
+  name: SignedArea(IReadOnlyList<Vector3D>, Double)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SignedArea_IReadOnlyList_SearchAThing_Vector3D__System_Double_
+  commentId: M:SearchAThing.SciExt.SignedArea(IReadOnlyList{SearchAThing.Vector3D},System.Double)
+  name.vb: SignedArea(IReadOnlyList(Of Vector3D), Double)
+  fullName: SearchAThing.SciExt.SignedArea(IReadOnlyList<SearchAThing.Vector3D>, System.Double)
+  fullName.vb: SearchAThing.SciExt.SignedArea(IReadOnlyList(Of SearchAThing.Vector3D), System.Double)
+  nameWithType: SciExt.SignedArea(IReadOnlyList<Vector3D>, Double)
+  nameWithType.vb: SciExt.SignedArea(IReadOnlyList(Of Vector3D), Double)
+- uid: SearchAThing.SciExt.SignedArea*
+  name: SignedArea
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_SignedArea_
+  commentId: Overload:SearchAThing.SciExt.SignedArea
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.SignedArea
+  nameWithType: SciExt.SignedArea
 - uid: SearchAThing.SciExt.Similarity(System.Double,System.Double)
   name: Similarity(Double, Double)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Similarity_System_Double_System_Double_
