@@ -3640,11 +3640,11 @@ references:
   isSpec: "True"
   fullName: SearchAThing.PythonPipe.Dispose
   nameWithType: PythonPipe.Dispose
-- uid: SearchAThing.PythonPipe.Exec(StringWrapper,System.Boolean)
+- uid: SearchAThing.PythonPipe.Exec(SearchAThing.StringWrapper,System.Boolean)
   name: Exec(StringWrapper, Boolean)
-  href: api/SearchAThing.PythonPipe.html#SearchAThing_PythonPipe_Exec_StringWrapper_System_Boolean_
-  commentId: M:SearchAThing.PythonPipe.Exec(StringWrapper,System.Boolean)
-  fullName: SearchAThing.PythonPipe.Exec(StringWrapper, System.Boolean)
+  href: api/SearchAThing.PythonPipe.html#SearchAThing_PythonPipe_Exec_SearchAThing_StringWrapper_System_Boolean_
+  commentId: M:SearchAThing.PythonPipe.Exec(SearchAThing.StringWrapper,System.Boolean)
+  fullName: SearchAThing.PythonPipe.Exec(SearchAThing.StringWrapper, System.Boolean)
   nameWithType: PythonPipe.Exec(StringWrapper, Boolean)
 - uid: SearchAThing.PythonPipe.Exec*
   name: Exec
@@ -4125,11 +4125,11 @@ references:
   name: DrawTimeline(DxfObject, List<(DateTime from, DateTime to)>, Double, Double, Double, Double, Func<DateTime, String>)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DrawTimeline_DxfObject_List_System_ValueTuple_DateTime_DateTime___System_Double_System_Double_System_Double_System_Double_Func_DateTime_System_String__
   commentId: M:SearchAThing.SciExt.DrawTimeline(DxfObject,List{System.ValueTuple{DateTime,DateTime}},System.Double,System.Double,System.Double,System.Double,Func{DateTime,System.String})
-  name.vb: DrawTimeline(DxfObject, List(Of (from As DateTime, to As DateTime)), Double, Double, Double, Double, Func(Of DateTime, String))
+  name.vb: DrawTimeline(DxfObject, List(Of (from As DateTime, to As DateTime)(Of DateTime, DateTime)), Double, Double, Double, Double, Func(Of DateTime, String))
   fullName: SearchAThing.SciExt.DrawTimeline(DxfObject, List<System.ValueTuple<DateTime, DateTime>>, System.Double, System.Double, System.Double, System.Double, Func<DateTime, System.String>)
   fullName.vb: SearchAThing.SciExt.DrawTimeline(DxfObject, List(Of System.ValueTuple(Of DateTime, DateTime)), System.Double, System.Double, System.Double, System.Double, Func(Of DateTime, System.String))
   nameWithType: SciExt.DrawTimeline(DxfObject, List<(DateTime from, DateTime to)>, Double, Double, Double, Double, Func<DateTime, String>)
-  nameWithType.vb: SciExt.DrawTimeline(DxfObject, List(Of (from As DateTime, to As DateTime)), Double, Double, Double, Double, Func(Of DateTime, String))
+  nameWithType.vb: SciExt.DrawTimeline(DxfObject, List(Of (from As DateTime, to As DateTime)(Of DateTime, DateTime)), Double, Double, Double, Double, Func(Of DateTime, String))
 - uid: SearchAThing.SciExt.DrawTimeline*
   name: DrawTimeline
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DrawTimeline_
@@ -4150,11 +4150,11 @@ references:
   name: EqualsTol(IEnumerable<(Double, Double)>, IEnumerable<(Double, Double)>, Double, Double)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_EqualsTol_IEnumerable_System_ValueTuple_System_Double_System_Double___IEnumerable_System_ValueTuple_System_Double_System_Double___System_Double_System_Double_
   commentId: M:SearchAThing.SciExt.EqualsTol(IEnumerable{System.ValueTuple{System.Double,System.Double}},IEnumerable{System.ValueTuple{System.Double,System.Double}},System.Double,System.Double)
-  name.vb: EqualsTol(IEnumerable(Of (Double, Double)), IEnumerable(Of (Double, Double)), Double, Double)
+  name.vb: EqualsTol(IEnumerable(Of (Double, Double)(Of Double, Double)), IEnumerable(Of (Double, Double)(Of Double, Double)), Double, Double)
   fullName: SearchAThing.SciExt.EqualsTol(IEnumerable<System.ValueTuple<System.Double, System.Double>>, IEnumerable<System.ValueTuple<System.Double, System.Double>>, System.Double, System.Double)
   fullName.vb: SearchAThing.SciExt.EqualsTol(IEnumerable(Of System.ValueTuple(Of System.Double, System.Double)), IEnumerable(Of System.ValueTuple(Of System.Double, System.Double)), System.Double, System.Double)
   nameWithType: SciExt.EqualsTol(IEnumerable<(Double, Double)>, IEnumerable<(Double, Double)>, Double, Double)
-  nameWithType.vb: SciExt.EqualsTol(IEnumerable(Of (Double, Double)), IEnumerable(Of (Double, Double)), Double, Double)
+  nameWithType.vb: SciExt.EqualsTol(IEnumerable(Of (Double, Double)(Of Double, Double)), IEnumerable(Of (Double, Double)(Of Double, Double)), Double, Double)
 - uid: SearchAThing.SciExt.EqualsTol*
   name: EqualsTol
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_EqualsTol_

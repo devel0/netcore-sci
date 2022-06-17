@@ -26,13 +26,15 @@
 
 ## Build
 
+*Note*: To make netcore-util debuggable as code comment `PackageReference` and uncomment `ProjectReference` for corresponding netcore-util reference.
+
 ```sh
 mkdir ~/opensource
 git clone https://github.com/devel0/netcore-util.git
 git clone https://github.com/devel0/netcore-sci.git
 
 cd netcore-sci
-git submodule update --init --recursive
+#git submodule update --init --recursive
 dotnet build
 ```
 
