@@ -45,9 +45,9 @@ namespace SearchAThing
                 }
             }
         }
-        
-        public Int64 ToInt64(double x) { return (Int64)((x - Origin) / Tolerance); }
-        public double FromInt64(Int64 x) { return (((double)x) * Tolerance) + Origin; }
+
+        public Int64 ToInt64(double x) => (Int64)((x - Origin) / Tolerance);
+        public double FromInt64(Int64 x) => (((double)x) * Tolerance) + Origin;
 
     }
 

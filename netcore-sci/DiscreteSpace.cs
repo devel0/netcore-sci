@@ -11,7 +11,7 @@ namespace SearchAThing
 
         public Vector3D Mean { get; private set; }
 
-        public T Item { get; private set; }
+        public T? Item { get; private set; }
 
         internal DiscreteSpaceItem(Vector3D pt)
         {
@@ -43,8 +43,10 @@ namespace SearchAThing
             ord = _ord;
         }
 
-        public int Compare(DiscreteSpaceItem<T> x, DiscreteSpaceItem<T> y)
+        public int Compare(DiscreteSpaceItem<T>? x, DiscreteSpaceItem<T>? y)
         {
+            if (x == null || y == null) return -1;
+
             return x.Mean.GetOrd(ord).CompareTol(tol, y.Mean.GetOrd(ord));
         }
     }
@@ -58,7 +60,8 @@ namespace SearchAThing
         List<DiscreteSpaceItem<T>>[] sorted;
         DiscreteSpaceItemComparer<T>[] cmp;
 
-        public IEnumerable<T> Items => sorted.SelectMany(w => w.Select(w => w.Item));
+        public IEnumerable<T> Items => sorted.SelectMany(w => w.Select(w => w.Item))
+            .Where(r => r != null).Select(w => w!);
 
         double tol;
         int spaceDim;
@@ -78,7 +81,7 @@ namespace SearchAThing
             }
         }
 
-        Func<T, Vector3D> entGetPoint;
+        Func<T, Vector3D>? entGetPoint;
 
         /// <summary>
         /// Build discrete space
@@ -100,7 +103,7 @@ namespace SearchAThing
         /// </summary>
         /// <param name="_tol">length tolerance</param>
         /// <param name="ents">list of entities to discretize</param>
-        /// <param name="entPoints">function that retrieve relevant point from templated item</param>
+        /// <param name="entPoint">function that retrieve relevant point from templated item</param>
         /// <param name="_spaceDim">search space dimension (2=2D 3=3D)</param>
         /// <typeparam name="T">type of the items to discretize</typeparam>
         /// <returns>discrete space object</returns>     
@@ -124,15 +127,21 @@ namespace SearchAThing
             else
                 idx = bsr;
 
-            DiscreteSpaceItem<T> dsi = null;
+            DiscreteSpaceItem<T>? dsi = null;
 
             // right search
             for (int i = idx; i < sorted[ord].Count && Abs((dsi = sorted[ord][i]).Mean.GetOrd(ord) - off) <= maxDist; ++i)
-                yield return dsi.Item;
+            {
+                if (dsi.Item != null)
+                    yield return dsi.Item;
+            }
 
             // left search
             for (int i = idx - 1; i >= 0 && Abs((dsi = sorted[ord][i]).Mean.GetOrd(ord) - off) <= maxDist; --i)
-                yield return dsi.Item;
+            {
+                if (dsi.Item != null)
+                    yield return dsi.Item;
+            }
 
         }
 
@@ -150,11 +159,14 @@ namespace SearchAThing
             else
                 idx = bsr;
 
-            DiscreteSpaceItem<T> dsi = null;
+            DiscreteSpaceItem<T>? dsi = null;
 
             // right search
             for (int i = idx; i < sorted[ord].Count && (dsi = sorted[ord][i]).Mean.GetOrd(ord) <= offMax; ++i)
-                yield return dsi.Item;
+            {
+                if (dsi.Item != null)
+                    yield return dsi.Item;
+            }
         }
 
         enum SearchDir { none, reduce, increase };
@@ -245,6 +257,8 @@ namespace SearchAThing
 
                     if (!qs.Any()) // cannot recurse with smaller because will get none
                     {
+                        if (entGetPoint == null) throw new Exception($"entGetPoint undefined");
+
                         foreach (var x in q.OrderBy(u => (entGetPoint(u) - pt).Length).Take(maxRes))
                         {
                             yield return x;
@@ -269,7 +283,9 @@ namespace SearchAThing
         /// <returns>list of items belonging to sphere centered at pt given radius equals to given maxDist</returns>
         public IEnumerable<T> GetItemsAt(Vector3D pt, double maxDist)
         {
-            IEnumerable<T> set = null;
+            IEnumerable<T>? set = null;
+
+            if (spaceDim <= 0) throw new Exception($"invalid spacedim {spaceDim}");
 
             for (int dim = 0; dim < spaceDim; ++dim)
             {
@@ -278,15 +294,17 @@ namespace SearchAThing
                 if (dim == 0)
                     set = thisDimSet;
                 else
-                    set = set.Intersect(thisDimSet);
+                    set = set!.Intersect(thisDimSet);
             }
 
-            return set;
+            return set!;
         }
 
         public IEnumerable<T> GetItemsInBBox(BBox3D bbox)
         {
-            IEnumerable<T> set = null;
+            IEnumerable<T>? set = null;
+
+            if (spaceDim <= 0) throw new Exception($"invalid spacedim {spaceDim}");
 
             for (int dim = 0; dim < spaceDim; ++dim)
             {
@@ -295,10 +313,10 @@ namespace SearchAThing
                 if (dim == 0)
                     set = thisDimSet;
                 else
-                    set = set.Intersect(thisDimSet);
+                    set = set!.Intersect(thisDimSet);
             }
 
-            return set;
+            return set!;
         }
 
     }

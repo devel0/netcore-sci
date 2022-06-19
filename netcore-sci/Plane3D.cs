@@ -32,25 +32,19 @@ namespace SearchAThing
         /// <summary>
         /// states if given wcs point is contained in this plane
         /// </summary>
-        public bool Contains(double tol, Vector3D pt)
-        {
-            return pt.ToUCS(CS).Z.EqualsTol(tol, 0);
-        }
+        public bool Contains(double tol, Vector3D pt) => pt.ToUCS(CS).Z.EqualsTol(tol, 0);        
 
         /// <summary>
         /// states if given wcs segment is contained in this plane
         /// </summary>
-        public bool Contains(double tol, Line3D line)
-        {
-            return Contains(tol, line.From) && Contains(tol, line.To);
-        }
+        public bool Contains(double tol, Line3D line) => Contains(tol, line.From) && Contains(tol, line.To);        
 
         /// <summary>
         /// return intersection line between two planes or null if they parallels
         /// </summary>
         /// <param name="tol_len">len tolerance</param>
         /// <param name="other">other plane</param>        
-        public Line3D Intersect(double tol_len, Plane3D other) => CS.Intersect(tol_len, other.CS);
+        public Line3D? Intersect(double tol_len, Plane3D other) => CS.Intersect(tol_len, other.CS);
 
     }
 

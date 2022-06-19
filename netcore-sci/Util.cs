@@ -48,22 +48,22 @@ namespace SearchAThing
                 foreach (var x in qT.GetProperties())
                 {
                     if (x.PropertyType == typeof(string))
-                    {
-                        var s = (string)x.GetMethod.Invoke(o, null);
+                    {                        
+                        var s = (string?)x.GetMethod?.Invoke(o, null);
 
                         if (sbLine.Length > 0) sbLine.Append('\t');
                         sbLine.Append($"{s}");
                     }
                     else if (x.PropertyType == typeof(double))
                     {
-                        var d = (double)x.GetMethod.Invoke(o, null);
+                        var d = (double?)x.GetMethod?.Invoke(o, null);
 
                         if (sbLine.Length > 0) sbLine.Append('\t');
                         sbLine.Append($"{d}");
                     }
                     else if (x.PropertyType == typeof(Vector3D))
                     {
-                        var v = (Vector3D)x.GetMethod.Invoke(o, null);
+                        var v = (Vector3D?)x.GetMethod?.Invoke(o, null);
 
                         foreach (var c in v.Coordinates)
                         {
@@ -73,7 +73,7 @@ namespace SearchAThing
                     }
                     else
                     {
-                        var s = (object)x.GetMethod.Invoke(o, null);
+                        var s = (object?)x.GetMethod?.Invoke(o, null);
 
                         if (sbLine.Length > 0) sbLine.Append('\t');
                         sbLine.Append($"{s.ToString()}");

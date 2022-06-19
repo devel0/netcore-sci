@@ -16,30 +16,55 @@ namespace SearchAThing
     {
 
         /// <summary>
-        /// states if bbox empty ( Min == Max == null )
+        /// states if bbox empty
         /// </summary>            
-        public bool IsEmpty { get { return Min == null; } }
+        public bool IsEmpty => _Min == null;
 
+        Vector3D? _Min = null;
         /// <summary>
         /// Min coord of bbox resulting by all inserted points
         /// </summary>            
-        public Vector3D Min { get; private set; }
+        public Vector3D Min
+        {
+            get
+            {
+                if (_Min == null) throw new Exception($"empty bbox");
+                return _Min;
+            }
+            private set
+            {
+                _Min = value;
+            }
+        }
 
+        Vector3D? _Max = null;
         /// <summary>
-        /// Max coord of bbox resulting by all inserted points
+        /// Man coord of bbox resulting by all inserted points
         /// </summary>            
-        public Vector3D Max { get; private set; }
+        public Vector3D Max
+        {
+            get
+            {
+                if (_Max == null) throw new Exception($"empty bbox");
+                return _Max;
+            }
+            private set
+            {
+                _Max = value;
+            }
+        }
+
 
         /// <summary>
-        /// middle point of bbox = (Min+Max)/2
+        /// middle point of bbox = (Min+Max)/2 ( Zero if empty )
         /// </summary>
         /// <returns>middle point of bbox</returns>
         public Vector3D Middle => (Min + Max) / 2;
 
         /// <summary>
-        /// Size of bbox as Max-Min point distance
+        /// Size of bbox as Max-Min point distance ( Zero if empty)
         /// </summary>            
-        public Vector3D Size { get { return Max - Min; } }
+        public Vector3D Size => Max - Min;
 
         /// <summary>
         /// build a 4 point bbox coords for 2D using Z=Min.Z
@@ -116,8 +141,8 @@ namespace SearchAThing
 
             return new BBox3D(new Vector3D[]
             {
-                    Min.ScaleAbout(center, factor),
-                    Max.ScaleAbout(center, factor)
+                Min.ScaleAbout(center, factor),
+                Max.ScaleAbout(center, factor)
             });
         }
 
@@ -207,8 +232,11 @@ namespace SearchAThing
         /// <param name="other">source bbox</param>
         public BBox3D(BBox3D other)
         {
-            Min = other.Min;
-            Max = other.Max;
+            if (!other.IsEmpty)
+            {
+                Min = other.Min;
+                Max = other.Max;
+            }
         }
 
         /// <summary>
@@ -234,6 +262,7 @@ namespace SearchAThing
         {
             if (IsEmpty) return other;
             if (other.IsEmpty) return this;
+
             return this.Union(other.Min).Union(other.Max);
         }
 
@@ -275,18 +304,14 @@ namespace SearchAThing
         /// <param name="tol">tolerance against Min, Max comparision</param>
         /// <param name="p">point to check if contained in this bbox</param>
         /// <returns>true if given point contained in this bbox</returns>
-        public bool Contains(double tol, Vector3D p)
-        {
-            if (IsEmpty) return false;
-
-            return
-                p.X.GreatThanOrEqualsTol(tol, Min.X) &&
-                p.Y.GreatThanOrEqualsTol(tol, Min.Y) &&
-                p.Z.GreatThanOrEqualsTol(tol, Min.Z) &&
-                p.X.LessThanOrEqualsTol(tol, Max.X) &&
-                p.Y.LessThanOrEqualsTol(tol, Max.Y) &&
-                p.Z.LessThanOrEqualsTol(tol, Max.Z);
-        }
+        public bool Contains(double tol, Vector3D p) =>
+            !IsEmpty &&
+            p.X.GreatThanOrEqualsTol(tol, Min.X) &&
+            p.Y.GreatThanOrEqualsTol(tol, Min.Y) &&
+            p.Z.GreatThanOrEqualsTol(tol, Min.Z) &&
+            p.X.LessThanOrEqualsTol(tol, Max.X) &&
+            p.Y.LessThanOrEqualsTol(tol, Max.Y) &&
+            p.Z.LessThanOrEqualsTol(tol, Max.Z);
 
         /// <summary>
         /// states if given point is contained in this bbox excluding Z evaluation
@@ -294,28 +319,22 @@ namespace SearchAThing
         /// <param name="tol">tolerance against Min, Max comparision</param>
         /// <param name="p">point to check if contained in this bbox (Z ignored)</param>
         /// <returns>true if given point (Z ignored) contained in this bbox</returns>
-        public bool Contains2D(double tol, Vector3D p)
-        {
-            if (IsEmpty) return false;
-
-            return
-                p.X.GreatThanOrEqualsTol(tol, Min.X) &&
-                p.Y.GreatThanOrEqualsTol(tol, Min.Y) &&
-                p.X.LessThanOrEqualsTol(tol, Max.X) &&
-                p.Y.LessThanOrEqualsTol(tol, Max.Y);
-        }
+        public bool Contains2D(double tol, Vector3D p) =>
+            !IsEmpty &&
+            p.X.GreatThanOrEqualsTol(tol, Min.X) &&
+            p.Y.GreatThanOrEqualsTol(tol, Min.Y) &&
+            p.X.LessThanOrEqualsTol(tol, Max.X) &&
+            p.Y.LessThanOrEqualsTol(tol, Max.Y);
 
         /// <summary>
         /// create new bbox extending by subtract margin to Min and by add to Max
         /// </summary>            
-        public BBox3D AddMargin(Vector3D margin)
-        {
-            return new BBox3D(new Vector3D[]
+        public BBox3D AddMargin(Vector3D margin) =>
+            new BBox3D(new Vector3D[]
             {
                 Min - margin,
                 Max + margin
             });
-        }
 
         /// <summary>
         /// script to paste in cad to draw bbox
@@ -431,10 +450,7 @@ namespace SearchAThing
         /// <summary>
         /// stringify bbox as Max-Min=Size
         /// </summary>
-        public override string ToString()
-        {
-            return $"{Max}-{Min}={Size}";
-        }
+        public override string ToString() => $"{Max}-{Min}={Size}";
 
     }
 
@@ -467,10 +483,7 @@ namespace SearchAThing
         /// </summary>
         /// <param name="pts">points to build bbox</param>
         /// <returns>bbox from given enumerable set of points</returns>
-        public static BBox3D BBox(this IEnumerable<Vector3D> pts)
-        {
-            return new BBox3D(pts);
-        }
+        public static BBox3D BBox(this IEnumerable<Vector3D> pts) => new BBox3D(pts);
 
         /// <summary>
         /// construct a bbox from given dxf EntityObject        
@@ -498,7 +511,7 @@ namespace SearchAThing
 
                 case EntityType.Arc:
                     {
-                        var arc = (eo as Arc).ToArc3D(tol_len);
+                        var arc = ((Arc)eo).ToArc3D(tol_len);
                         return new BBox3D(new[] { arc.From, arc.To, arc.MidPoint });
                     }
 

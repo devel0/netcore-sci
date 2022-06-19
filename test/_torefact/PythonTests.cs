@@ -55,7 +55,7 @@ namespace SearchAThing.Sci.Tests
 
         [SkippableFact]
         public void Test2()
-        {            
+        {
             Skip.IfNot(has_sympy_library);
 
             var strwr = new StringWrapper();

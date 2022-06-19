@@ -22,6 +22,88 @@ namespace SearchAThing
     public partial class Vector3D : Geometry
     {
 
+        #region Geometry
+
+        /// <summary>
+        /// Enumerable with only this vector.
+        /// ( Geometry Vertexes implementation )            
+        /// </summary>
+        /// <remarks>      
+        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
+        /// </remarks>
+        [JsonIgnore]
+        public override IEnumerable<Vector3D> Vertexes
+        {
+            get
+            {
+                yield return this;
+            }
+        }
+
+        /// <summary>
+        /// This vector.
+        /// ( Geometry GeomFrom implementation )            
+        /// </summary>
+        /// <remarks>      
+        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
+        /// </remarks>
+        [JsonIgnore]
+        public override Vector3D GeomFrom => this;
+
+        /// <summary>
+        /// This vector.
+        /// ( Geometry GeomTo implementation)             
+        /// </summary>
+        /// <remarks>      
+        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
+        /// </remarks>
+        [JsonIgnore]
+        public override Vector3D GeomTo => this;
+
+        /// <summary>
+        /// Length of this vector.
+        /// ( Geometry Length implementation )            
+        /// </summary>
+        /// <remarks>      
+        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
+        /// </remarks>
+        public override double Length => Sqrt(X * X + Y * Y + Z * Z);
+
+        /// <summary>
+        /// Divide this point returning itself.
+        /// ( Geometry Divide implementation )            
+        /// </summary>
+        /// <remarks>      
+        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
+        /// </remarks>
+        public override IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false) => new[] { this };
+
+        /// <summary>
+        /// Compute bbox of this point.
+        /// ( Geometry BBox implementation ).            
+        /// </summary>
+        /// <param name="tol_len">length tolerance</param>            
+        /// <remarks>      
+        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
+        /// </remarks>
+        public override BBox3D BBox(double tol_len) => new BBox3D(new[] { this });
+
+        public override IEnumerable<Geometry> Intersect(double tol_len, Geometry other)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Create dxf point entity suitable for netDxf addEntity.
+        /// ( Geometry DxfEntity implementation )            
+        /// </summary>
+        /// <remarks>      
+        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
+        /// </remarks>
+        public override netDxf.Entities.EntityObject DxfEntity => this.ToDxfPoint();
+
+        #endregion
+
         /// <summary>
         /// zero vector (0,0,0)            
         /// </summary> 
@@ -181,7 +263,7 @@ namespace SearchAThing
             X = x; Y = y;
         }
 
-        static Regex _cad_id_regex = null;
+        static Regex? _cad_id_regex = null;
         /// <summary>
         /// static instance of regex to parse cad id string
         /// https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.0#thread-safety
@@ -239,7 +321,7 @@ namespace SearchAThing
         /// <remarks>      
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0011.cs)
         /// </remarks>
-        public bool IsZeroLength { get { return (X + Y + Z).EqualsTol(NormalizedLengthTolerance, 0); } }
+        public bool IsZeroLength => (X + Y + Z).EqualsTol(NormalizedLengthTolerance, 0);
 
         /// <summary>
         /// checks vector component equality vs other given                       
@@ -249,8 +331,10 @@ namespace SearchAThing
         /// <remarks>      
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0012.cs)
         /// </remarks>            
-        public bool EqualsTol(double tol, Vector3D other)
+        public bool EqualsTol(double tol, Vector3D? other)
         {
+            if (other == null) return false;
+
             return
                 X.EqualsTol(tol, other.X) &&
                 Y.EqualsTol(tol, other.Y) &&
@@ -278,10 +362,8 @@ namespace SearchAThing
         /// <remarks>      
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0012.cs)
         /// </remarks>
-        public bool EqualsTol(double tol, double x, double y)
-        {
-            return X.EqualsTol(tol, x) && Y.EqualsTol(tol, y);
-        }
+        public bool EqualsTol(double tol, double x, double y) =>
+            X.EqualsTol(tol, x) && Y.EqualsTol(tol, y);
 
         /// <summary>
         /// checks vector component equality vs other given                        
@@ -290,10 +372,8 @@ namespace SearchAThing
         /// <remarks>      
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0012.cs)
         /// </remarks>
-        public bool EqualsTol(double tol, double x, double y, double z)
-        {
-            return X.EqualsTol(tol, x) && Y.EqualsTol(tol, y) && Z.EqualsTol(tol, z);
-        }
+        public bool EqualsTol(double tol, double x, double y, double z) =>
+            X.EqualsTol(tol, x) && Y.EqualsTol(tol, y) && Z.EqualsTol(tol, z);
 
         /// <summary>
         /// create a normalized version of this vector            
@@ -313,9 +393,20 @@ namespace SearchAThing
         /// <remarks>      
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0014.cs)
         /// </remarks>
-        public double Distance(Vector3D other)
+        public double Distance(Vector3D other) => (this - other).Length;
+
+        /// <summary>
+        /// retrieve signed offset of this point respect given origin point in the given normalized direction v.
+        /// precondition: vector v must colinear to (this-origin) and must already normalized
+        /// </summary>        
+        public double ColinearScalarOffset(double tol_len, Vector3D origin, Vector3D v)
         {
-            return (this - other).Length;
+            var dst = (this - origin).Length;
+
+            if ((origin + dst * v).EqualsTol(tol_len, this))
+                return dst;
+            else
+                return -dst;
         }
 
         /// <summary>
@@ -342,10 +433,7 @@ namespace SearchAThing
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0016.cs)
         /// ![image](../test/Vector3D/Vector3DTest_0016.png)
         /// </remarks>
-        public double Distance2D(Vector3D other)
-        {
-            return Sqrt((X - other.X) * (X - other.X) + (Y - other.Y) * (Y - other.Y));
-        }
+        public double Distance2D(Vector3D other) => Sqrt((X - other.X) * (X - other.X) + (Y - other.Y) * (Y - other.Y));
 
         /// <summary>
         /// compute dot product of this vector for the given one            
@@ -355,10 +443,7 @@ namespace SearchAThing
         /// <remarks>      
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0017.cs)            
         /// </remarks>
-        public double DotProduct(Vector3D other)
-        {
-            return X * other.X + Y * other.Y + Z * other.Z;
-        }
+        public double DotProduct(Vector3D other) => X * other.X + Y * other.Y + Z * other.Z;
 
         /// <summary>
         /// states is this vector is perpendicular to the given one            
@@ -367,11 +452,8 @@ namespace SearchAThing
         /// <remarks>      
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0018.cs)
         /// </remarks>
-        public bool IsPerpendicular(Vector3D other)
-        {
-            return Normalized().DotProduct(other.Normalized())
-                .EqualsTol(NormalizedLengthTolerance, 0);
-        }
+        public bool IsPerpendicular(Vector3D other) =>
+            Normalized().DotProduct(other.Normalized()).EqualsTol(NormalizedLengthTolerance, 0);
 
         /// <summary>
         /// Cross product ( not normalized ) ;            
@@ -386,13 +468,8 @@ namespace SearchAThing
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0019.cs)
         /// ![image](../test/Vector3D/Vector3DTest_0019.png)
         /// </remarks>
-        public Vector3D CrossProduct(Vector3D other)
-        {
-            return new Vector3D(
-                Y * other.Z - Z * other.Y,
-                -X * other.Z + Z * other.X,
-                X * other.Y - Y * other.X);
-        }
+        public Vector3D CrossProduct(Vector3D other) =>
+            new Vector3D(Y * other.Z - Z * other.Y, -X * other.Z + Z * other.X, X * other.Y - Y * other.X);
 
         /// <summary>
         /// angle between this and given vector
@@ -452,10 +529,7 @@ namespace SearchAThing
         /// </summary>
         /// <param name="line">line to project the point onto</param>
         /// <returns>projected point onto the line ( perpendicularly )</returns>
-        public Vector3D Project(Line3D line)
-        {
-            return (this - line.From).Project(line.V) + line.From;
-        }
+        public Vector3D Project(Line3D line) => (this - line.From).Project(line.V) + line.From;
 
         /// <summary>
         /// create a point copy of this one with component changed
@@ -532,10 +606,7 @@ namespace SearchAThing
         /// </summary>
         /// <param name="origin">origin to make this point relative to</param>
         /// <returns>vector</returns>
-        public Vector3D Rel(Vector3D origin)
-        {
-            return this - origin;
-        }
+        public Vector3D Rel(Vector3D origin) => this - origin;
 
         /// <summary>
         /// Note: tol must be Constants.NormalizedLengthTolerance
@@ -580,11 +651,8 @@ namespace SearchAThing
         /// </summary>
         /// <param name="tol">geometric tolerance</param>
         /// <param name="other">other vector</param>            
-        public bool Colinear(double tol, Vector3D other)
-        {
-            //return this.IsParallelTo(tol, other);
-            return new Line3D(Vector3D.Zero, this).Colinear(tol, new Line3D(Vector3D.Zero, other));
-        }
+        public bool Colinear(double tol, Vector3D other) =>
+            new Line3D(Vector3D.Zero, this).Colinear(tol, new Line3D(Vector3D.Zero, other));
 
         /// <summary>
         /// states if this vector concord to the given one
@@ -593,20 +661,14 @@ namespace SearchAThing
         /// </summary>
         /// <param name="tol">geometric tolerance ( Constants.NormalizedLengthTolerance if comparing normalized vectors )</param>
         /// <param name="other">other vector</param>            
-        public bool Concordant(double tol, Vector3D other)
-        {
-            return DotProduct(other) > tol;
-        }
+        public bool Concordant(double tol, Vector3D other) => DotProduct(other) > tol;
 
         /// <summary>
         /// statis if this vector is concordant and colinear to the given one
         /// </summary>
         /// <param name="tol">geometric tolerance ( Constants.NormalizedLengthTolerance if comparing normalized vectors )</param>
         /// <param name="other">other vector</param>                        
-        public bool ConcordantColinear(double tol, Vector3D other)
-        {
-            return Concordant(tol, other) && Colinear(tol, other);
-        }
+        public bool ConcordantColinear(double tol, Vector3D other) => Concordant(tol, other) && Colinear(tol, other);
 
         /// <summary>
         /// compute angle required to make this point go to the given one
@@ -733,43 +795,30 @@ namespace SearchAThing
         /// <summary>
         /// mirror this point about given axis
         /// </summary>            
-        public Vector3D Mirror(Line3D axis)
-        {
-            return this + 2 * (Project(axis) - this);
-        }
+        public Vector3D Mirror(Line3D axis) => this + 2 * (Project(axis) - this);
 
         /// <summary>
         /// Convert this wcs point to given cs coord
         /// </summary>
         /// <param name="cs">dest CS</param>
         /// <param name="evalCSOrigin">if true CS origin will subtracted before transform</param>            
-        public Vector3D ToUCS(CoordinateSystem3D cs, bool evalCSOrigin = true)
-        {
-            return cs.ToUCS(this, evalCSOrigin);
-        }
+        public Vector3D ToUCS(CoordinateSystem3D cs, bool evalCSOrigin = true) => cs.ToUCS(this, evalCSOrigin);
 
         /// <summary>
         /// Convert this ucs considered vector using given cs to the wcs
         /// </summary>
         /// <param name="cs">ucs point</param>
         /// <param name="evalCSOrigin">if true CS origin will added after transform</param>
-        public Vector3D ToWCS(CoordinateSystem3D cs, bool evalCSOrigin = true)
-        {
-            return cs.ToWCS(this, evalCSOrigin);
-        }
+        public Vector3D ToWCS(CoordinateSystem3D cs, bool evalCSOrigin = true) => cs.ToWCS(this, evalCSOrigin);
 
         /// <summary>
         /// Scalar multiply each components
         /// </summary>                
-        public Vector3D Scalar(double xs, double ys, double zs)
-        {
-            return new Vector3D(X * xs, Y * ys, Z * zs);
-        }
-        
+        public Vector3D Scalar(double xs, double ys, double zs) => new Vector3D(X * xs, Y * ys, Z * zs);
+
         /// <summary>
         /// return clamped Vector3D between [min,max] interval
-        /// </summary>
-        /// <param name="v">xyz vector</param>
+        /// </summary>        
         /// <param name="min">min value admissible</param>
         /// <param name="max">max value admissible</param>
         /// <returns>given vector with xyz components clamped to corresponding min,max components</returns>        
@@ -801,67 +850,43 @@ namespace SearchAThing
         /// <summary>
         /// sum
         /// </summary>        
-        public static Vector3D operator +(Vector3D a, Vector3D b)
-        {
-            return new Vector3D(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
-        }
+        public static Vector3D operator +(Vector3D a, Vector3D b) => new Vector3D(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
 
         /// <summary>
         /// negate
         /// </summary>        
-        public static Vector3D operator -(Vector3D a)
-        {
-            return -1.0 * a;
-        }
+        public static Vector3D operator -(Vector3D a) => -1d * a;
 
         /// <summary>
         /// sub
         /// </summary>        
-        public static Vector3D operator -(Vector3D a, Vector3D b)
-        {
-            return new Vector3D(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
-        }
+        public static Vector3D operator -(Vector3D a, Vector3D b) => new Vector3D(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
 
         /// <summary>
         /// scalar mul
         /// </summary>        
-        public static Vector3D operator *(double s, Vector3D v)
-        {
-            return new Vector3D(s * v.X, s * v.Y, s * v.Z);
-        }
+        public static Vector3D operator *(double s, Vector3D v) => new Vector3D(s * v.X, s * v.Y, s * v.Z);
 
         /// <summary>
         /// scalar mul
         /// </summary>        
-        public static Vector3D operator *(Vector3D v, double s)
-        {
-            return new Vector3D(s * v.X, s * v.Y, s * v.Z);
-        }
+        public static Vector3D operator *(Vector3D v, double s) => new Vector3D(s * v.X, s * v.Y, s * v.Z);
 
         /// <summary>
         /// scalar multiply vector components V1 * V2 =
         /// (V1.x * V2.x, V1.y * V2.y, V1.z * V2.z)
         /// </summary>        
-        public static Vector3D operator *(Vector3D v1, Vector3D v2)
-        {
-            return v1.Scalar(v2.X, v2.Y, v2.Z);
-        }
+        public static Vector3D operator *(Vector3D v1, Vector3D v2) => v1.Scalar(v2.X, v2.Y, v2.Z);
 
         /// <summary>
         /// scalar div
         /// </summary>        
-        public static Vector3D operator /(double s, Vector3D v)
-        {
-            return new Vector3D(s / v.X, s / v.Y, s / v.Z);
-        }
+        public static Vector3D operator /(double s, Vector3D v) => new Vector3D(s / v.X, s / v.Y, s / v.Z);
 
         /// <summary>
         /// scalar div
         /// </summary>        
-        public static Vector3D operator /(Vector3D v, double s)
-        {
-            return new Vector3D(v.X / s, v.Y / s, v.Z / s);
-        }
+        public static Vector3D operator /(Vector3D v, double s) => new Vector3D(v.X / s, v.Y / s, v.Z / s);
 
         #endregion
 
@@ -893,17 +918,15 @@ namespace SearchAThing
             return res;
         }
 
-        public static IEnumerable<Vector3D> Random(int N, double L, int seed = 0)
-        {
-            return Random(N, -L / 2, L / 2, -L / 2, L / 2, -L / 2, L / 2, seed);
-        }
+        public static IEnumerable<Vector3D> Random(int N, double L, int seed = 0) =>
+            Random(N, -L / 2, L / 2, -L / 2, L / 2, -L / 2, L / 2, seed);
 
         /// <summary>
         /// Span a set of qty vector3d with random coord between given range.
         /// Optionally a seed can be specified for rand or Random obj directly ( in latter case seed aren't used )
         /// </summary>        
         public static IEnumerable<Vector3D> Random(int qty,
-            double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, int seed = 0, Random random = null)
+            double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, int seed = 0, Random? random = null)
         {
             var dx = xmax - xmin;
             var dy = ymax - ymin;
@@ -942,27 +965,19 @@ namespace SearchAThing
         /// parse vector3d from array "(x1,y1,z1);(x2,y2,z2)";
         /// an appropriate string can be generated with StringRepresentation extension.
         /// </summary>                    
-        public static IEnumerable<Vector3D> FromStringArray(string str)
-        {
-            return str.Split(";").Where(f => f.Trim().Length > 0).Select(f => FromString(f));
-        }
+        public static IEnumerable<Vector3D> FromStringArray(string str) =>
+            str.Split(";").Where(f => f.Trim().Length > 0).Select(f => FromString(f));
 
         /// <summary>
         /// string invariant representation "(x,y,z)"
         /// w/3 decimal places
         /// </summary>            
-        public override string ToString()
-        {
-            return this.ToString(digits: 3);
-        }
+        public override string ToString() => this.ToString(digits: 3);
 
         /// <summary>
         /// string invariant representation "(x,y,z)" w/given digits
         /// </summary>            
-        public string ToString(int digits = 3)
-        {
-            return Invariant($"({X.ToString(digits)}, {Y.ToString(digits)}, {Z.ToString(digits)})");
-        }
+        public string ToString(int digits = 3) => Invariant($"({X.ToString(digits)}, {Y.ToString(digits)}, {Z.ToString(digits)})");
 
         /// <summary>
         /// hash string with given tolerance
@@ -976,22 +991,13 @@ namespace SearchAThing
         /// <summary>
         /// string invariant representation "(x,y,z)"
         /// </summary>            
-        public string StringRepresentation()
-        {
-            return Invariant($"({X}, {Y}, {Z})");
-        }
+        public string StringRepresentation() => Invariant($"({X}, {Y}, {Z})");
 
         /// <summary>
         /// cad script for this vector as wcs point
         /// </summary>
-        public string CadScript
-        {
-            get
-            {
-                return SciToolkit.PostProcessCadScript(
-                    string.Format(CultureInfo.InvariantCulture, "_POINT {0},{1},{2}\r\n", X, Y, Z));
-            }
-        }
+        public string CadScript => SciToolkit.PostProcessCadScript(
+            string.Format(CultureInfo.InvariantCulture, "_POINT {0},{1},{2}\r\n", X, Y, Z));
 
         /// <summary>
         /// cad script for a line (0,0,0) to this vector
@@ -1001,75 +1007,7 @@ namespace SearchAThing
         /// <summary>
         /// cad script for a line departing from this wcs point
         /// </summary>
-        public string CadScriptLineFrom
-        {
-            get
-            {
-                return SciToolkit.PostProcessCadScript(string.Format(CultureInfo.InvariantCulture, "_LINE {0},{1},{2}", X, Y, Z));
-            }
-        }
-
-        #region Geometry implementation
-
-        /// <summary>
-        /// This vector.
-        /// ( Geometry GeomFrom implementation )            
-        /// </summary>
-        /// <remarks>      
-        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
-        /// </remarks>
-        [JsonIgnore]
-        public override Vector3D GeomFrom => this;
-
-        /// <summary>
-        /// This vector.
-        /// ( Geometry GeomTo implementation)             
-        /// </summary>
-        /// <remarks>      
-        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
-        /// </remarks>
-        [JsonIgnore]
-        public override Vector3D GeomTo => this;
-
-        /// <summary>
-        /// Enumerable with only this vector.
-        /// ( Geometry Vertexes implementation )            
-        /// </summary>
-        /// <remarks>      
-        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
-        /// </remarks>
-        [JsonIgnore]
-        public override IEnumerable<Vector3D> Vertexes
-        {
-            get
-            {
-                yield return this;
-            }
-        }
-
-        /// <summary>
-        /// Length of this vector.
-        /// ( Geometry Length implementation )            
-        /// </summary>
-        /// <remarks>      
-        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
-        /// </remarks>
-        public override double Length { get { return Sqrt(X * X + Y * Y + Z * Z); } }
-
-        /// <summary>
-        /// Create dxf point entity suitable for netDxf addEntity.
-        /// ( Geometry DxfEntity implementation )            
-        /// </summary>
-        /// <remarks>      
-        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
-        /// </remarks>
-        public override netDxf.Entities.EntityObject DxfEntity
-        {
-            get
-            {
-                return this.ToDxfPoint();
-            }
-        }
+        public string CadScriptLineFrom => SciToolkit.PostProcessCadScript(string.Format(CultureInfo.InvariantCulture, "_LINE {0},{1},{2}", X, Y, Z));
 
         /// <summary>
         /// build Line3D from this to given to
@@ -1099,63 +1037,24 @@ namespace SearchAThing
             new Line3D(this, (applyDirNorm ? dir.Normalized() : dir) * len, Line3DConstructMode.PointAndVector);
 
         /// <summary>
-        /// Divide this point returning itself.
-        /// ( Geometry Divide implementation )            
-        /// </summary>
-        /// <remarks>      
-        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
-        /// </remarks>
-        public override IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false)
-        {
-            return new[] { this };
-        }
-
-        /// <summary>
-        /// Compute bbox of this point.
-        /// ( Geometry BBox implementation ).            
-        /// </summary>
-        /// <param name="tol_len">length tolerance</param>            
-        /// <remarks>      
-        /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
-        /// </remarks>
-        public override BBox3D BBox(double tol_len)
-        {
-            return new BBox3D(new[] { this });
-        }
-
-        #endregion
-
-        /// <summary>
         /// convert given (netdxf) Vector2 to a Vector3D ( assume z=0 )
         /// </summary>            
-        public static implicit operator Vector3D(netDxf.Vector2 v)
-        {
-            return new Vector3D(v.X, v.Y, 0);
-        }
+        public static implicit operator Vector3D(netDxf.Vector2 v) => new Vector3D(v.X, v.Y, 0);
 
         /// <summary>
         /// convert given (System.Numerics) Vector2 to a Vector3D ( with z=0 )
         /// </summary>            
-        public static implicit operator Vector3D(System.Numerics.Vector2 v)
-        {
-            return new Vector3D(v.X, v.Y, 0);
-        }
+        public static implicit operator Vector3D(System.Numerics.Vector2 v) => new Vector3D(v.X, v.Y, 0);
 
         /// <summary>
         /// Convert given (netdxf) Vector3 to Vector3D
         /// </summary>            
-        public static implicit operator Vector3D(netDxf.Vector3 v)
-        {
-            return new Vector3D(v.X, v.Y, v.Z);
-        }
+        public static implicit operator Vector3D(netDxf.Vector3 v) => new Vector3D(v.X, v.Y, v.Z);
 
         /// <summary>
         /// Convert given Vector3D to (netdxf) Vector3
         /// </summary>            
-        public static implicit operator netDxf.Vector3(Vector3D v)
-        {
-            return new Vector3(v.X, v.Y, v.Z);
-        }
+        public static implicit operator netDxf.Vector3(Vector3D v) => new Vector3(v.X, v.Y, v.Z);
 
         /// <summary>
         /// Convert given Vector3D to System.Numerics.Vector3            
@@ -1164,37 +1063,27 @@ namespace SearchAThing
         /// double to float conversion will be done
         /// </remarks>
         /// <param name="v">input vector</param>
-        public static implicit operator System.Numerics.Vector3(Vector3D v)
-        {
-            return new System.Numerics.Vector3((float)v.X, (float)v.Y, (float)v.Z);
-        }
+        public static implicit operator System.Numerics.Vector3(Vector3D v) =>
+            new System.Numerics.Vector3((float)v.X, (float)v.Y, (float)v.Z);
 
         /// <summary>
         /// Convert given System.Numerics.Vector3 to Vector3D
         /// </summary>
         /// <param name="v">input vector</param>
-        public static implicit operator Vector3D(System.Numerics.Vector3 v)
-        {
-            return new Vector3D(v.X, v.Y, v.Z);
-        }
+        public static implicit operator Vector3D(System.Numerics.Vector3 v) => new Vector3D(v.X, v.Y, v.Z);
 
         /// <summary>
         /// Convert given LibTessDotNet.Vec3 to Vector3D
         /// </summary>
         /// <param name="v">input vector</param>
-        public static implicit operator Vector3D(LibTessDotNet.Vec3 v)
-        {
-            return new Vector3D(v.X, v.Y, v.Z);
-        }
+        public static implicit operator Vector3D(LibTessDotNet.Vec3 v) => new Vector3D(v.X, v.Y, v.Z);
 
         /// <summary>
         /// Convert given QuantumConcepts.Formats.StereoLithography.Vertex to Vector3D
         /// </summary>
         /// <param name="v">input vector</param>
-        public static implicit operator Vector3D(QuantumConcepts.Formats.StereoLithography.Vertex v)
-        {
-            return new Vector3D(v.X, v.Y, v.Z);
-        }
+        public static implicit operator Vector3D(QuantumConcepts.Formats.StereoLithography.Vertex v) =>
+            new Vector3D(v.X, v.Y, v.Z);
 
         /// <summary>
         /// Convert given Vector3D to QuantumConcepts.Formats.StereoLithography.Vertex
@@ -1203,10 +1092,8 @@ namespace SearchAThing
         /// double to float conversion will be done
         /// </remarks>
         /// <param name="v">input vector</param>
-        public static implicit operator QuantumConcepts.Formats.StereoLithography.Vertex(Vector3D v)
-        {
-            return new QuantumConcepts.Formats.StereoLithography.Vertex((float)v.X, (float)v.Y, (float)v.Z);
-        }
+        public static implicit operator QuantumConcepts.Formats.StereoLithography.Vertex(Vector3D v) =>
+            new QuantumConcepts.Formats.StereoLithography.Vertex((float)v.X, (float)v.Y, (float)v.Z);
 
     }
 
@@ -1219,15 +1106,9 @@ namespace SearchAThing
             tol = _tol;
         }
 
-        public bool Equals(Vector3D x, Vector3D y)
-        {
-            return x.EqualsTol(tol, y);
-        }
+        public bool Equals(Vector3D? x, Vector3D? y) => x != null && y != null && x.EqualsTol(tol, y);
 
-        public int GetHashCode(Vector3D obj)
-        {
-            return obj.ToString(tol).GetHashCode();
-        }
+        public int GetHashCode(Vector3D obj) => obj.ToString(tol).GetHashCode();
     }
 
     /// <summary>
@@ -1253,15 +1134,10 @@ namespace SearchAThing
             cmp = _cmp;
         }
 
-        public bool Equals(Vector3DWithOrder x, Vector3DWithOrder y)
-        {
-            return cmp.Equals(x.Vector, y.Vector);
-        }
+        public bool Equals(Vector3DWithOrder? x, Vector3DWithOrder? y) =>
+            x != null && y != null && cmp.Equals(x.Vector, y.Vector);
 
-        public int GetHashCode(Vector3DWithOrder obj)
-        {
-            return cmp.GetHashCode(obj.Vector);
-        }
+        public int GetHashCode(Vector3DWithOrder obj) => cmp.GetHashCode(obj.Vector);
     }
 
     public enum OrdIdx
@@ -1292,10 +1168,8 @@ namespace SearchAThing
         /// array invariant string vector3d representation "(x1,y1,z2);(x2,y2,z2)";
         /// an array of Vector3D can be rebuilt from string using Vector3D.FromStringArray
         /// </summary>        
-        public static string StringRepresentation(this IEnumerable<Vector3D> pts)
-        {
-            return string.Join(";", pts.Select(g => g.StringRepresentation()));
-        }
+        public static string StringRepresentation(this IEnumerable<Vector3D> pts) =>
+            string.Join(";", pts.Select(g => g.StringRepresentation()));
 
         /// <summary>
         /// compute length of polyline from given seq_pts
@@ -1304,7 +1178,7 @@ namespace SearchAThing
         {
             var l = 0.0;
 
-            Vector3D prev = null;
+            Vector3D? prev = null;
             var en = seq_pts.GetEnumerator();
             while (en.MoveNext())
             {
@@ -1455,10 +1329,7 @@ namespace SearchAThing
         /// Same as mean
         /// </summary>
         [Obsolete("use Mean instead")]
-        public static Vector3D Center(this IEnumerable<Vector3D> lst)
-        {
-            return lst.Mean();
-        }
+        public static Vector3D Center(this IEnumerable<Vector3D> lst) => lst.Mean();
 
         /// <summary>
         /// mean of given vetor3d list
@@ -1476,35 +1347,24 @@ namespace SearchAThing
         /// <summary>
         /// convert to (netdxf) discarding z
         /// </summary>
-        public static netDxf.Vector2 ToDxfVector2(this Vector3D v)
-        {
-            return new netDxf.Vector2(v.X, v.Y);
-        }
+        public static netDxf.Vector2 ToDxfVector2(this Vector3D v) => new netDxf.Vector2(v.X, v.Y);
 
         /// <summary>
         /// convert to (system.numerics) Vector2 ( casting double to float, discarding z )
         /// </summary>
-        public static System.Numerics.Vector2 ToVector2(this Vector3D v)
-        {
-            return new System.Numerics.Vector2((float)v.X, (float)v.Y);
-        }
+        public static System.Numerics.Vector2 ToVector2(this Vector3D v) => new System.Numerics.Vector2((float)v.X, (float)v.Y);
 
         /// <summary>
         /// To point (double x, double y)
         /// </summary>        
-        public static Point ToPoint(this Vector3D v)
-        {
-            return new Point(v.X, v.Y, 0);
-        }
+        public static Point ToPoint(this Vector3D v) => new Point(v.X, v.Y, 0);
 
         /// <summary>
         /// return pts (maintaining order) w/out duplicates
         /// use the other overloaded method if already have a vector 3d equality comparer
         /// </summary>        
-        public static IEnumerable<Vector3D> ZapDuplicates(this IEnumerable<Vector3D> pts, double tol)
-        {
-            return pts.ZapDuplicates(new Vector3DEqualityComparer(tol));
-        }
+        public static IEnumerable<Vector3D> ZapDuplicates(this IEnumerable<Vector3D> pts, double tol) =>
+            pts.ZapDuplicates(new Vector3DEqualityComparer(tol));
 
         /// <summary>
         /// return pts (maintaining order) w/out duplicates
@@ -1552,18 +1412,19 @@ namespace SearchAThing
                 var rotDir = 1.0; // 1=+Z, -1=-Z
                 while (true)
                 {
-                    List<Line3D> segsNext = null;
+                    List<Line3D>? segsNext = null;
                     {
                         var hs = new HashSet<Line3D>(lcmp);
                         {
-                            List<Line3D> tmp = null;
-                            if (segsFromDict.TryGetValue(seg.To, out tmp)) foreach (var x in tmp.Where(r => !r.EqualsTol(tolLen, seg))) hs.Add(x);
-                            if (segsToDict.TryGetValue(seg.To, out tmp)) foreach (var x in tmp.Where(r => !r.EqualsTol(tolLen, seg))) hs.Add(x);
+                            if (segsFromDict.TryGetValue(seg.To, out var tmp)) foreach (var x in tmp.Where(r => !r.EqualsTol(tolLen, seg))) hs.Add(x);
+                        }
+                        {
+                            if (segsToDict.TryGetValue(seg.To, out var tmp)) foreach (var x in tmp.Where(r => !r.EqualsTol(tolLen, seg))) hs.Add(x);
                         }
                         segsNext = hs.Select(w => w.EnsureFrom(tolLen, seg.To)).ToList();
                     }
 
-                    Line3D segNext = null;
+                    Line3D? segNext = null;
                     var force_close_poly = false;
 
                     if (polyMaxPoints > 0 && poly.Count > polyMaxPoints)
@@ -1616,11 +1477,11 @@ namespace SearchAThing
 
                     if (force_close_poly) break;
 
-                    segsLeft.Remove(segNext);
-                    if (segNext.To.EqualsTol(tolLen, poly[0])) break;
+                    segsLeft.Remove(segNext!);
+                    if (segNext!.To.EqualsTol(tolLen, poly[0])) break;
                     poly.Add(segNext.To);
 
-                    seg = segNext;
+                    seg = segNext!;
                 }
 
                 if (poly.Count > 2)
@@ -1646,10 +1507,8 @@ namespace SearchAThing
         /// <summary>
         /// create dxf point from given vector3d
         /// </summary>        
-        public static netDxf.Entities.Point ToDxfPoint(this Vector3D pt)
-        {
-            return new netDxf.Entities.Point(new Vector3(pt.X, pt.Y, pt.Z));
-        }
+        public static netDxf.Entities.Point ToDxfPoint(this Vector3D pt) =>
+            new netDxf.Entities.Point(new Vector3(pt.X, pt.Y, pt.Z));
 
         /// <summary>
         /// states if given 3 vectors are linearly independent        
@@ -1689,8 +1548,7 @@ namespace SearchAThing
         /// <param name="v">xyz deg angles</param>
         /// <returns>xyz rad angles</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector3D ToRad(this Vector3D v) =>
-            new Vector3D(v.X.ToRad(), v.Y.ToRad(), v.Z.ToRad());
+        public static Vector3D ToRad(this Vector3D v) => new Vector3D(v.X.ToRad(), v.Y.ToRad(), v.Z.ToRad());
 
         /// <summary>
         /// convert xyz from rad to deg
@@ -1698,8 +1556,7 @@ namespace SearchAThing
         /// <param name="v">xyz rad angles</param>
         /// <returns>xyz deg angles</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector3D ToDeg(this Vector3D v) =>
-            new Vector3D(v.X.ToDeg(), v.Y.ToDeg(), v.Z.ToDeg());
+        public static Vector3D ToDeg(this Vector3D v) => new Vector3D(v.X.ToDeg(), v.Y.ToDeg(), v.Z.ToDeg());
 
         /// <summary>
         /// debug to console with optional prefix
@@ -1719,8 +1576,7 @@ namespace SearchAThing
         /// <param name="v">input vector</param>
         /// <returns>sqrt(v)</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector3D Sqrt(this Vector3D v) =>
-            new Vector3D(Math.Sqrt(v.X), Math.Sqrt(v.Y), Math.Sqrt(v.Z));
+        public static Vector3D Sqrt(this Vector3D v) => new Vector3D(Math.Sqrt(v.X), Math.Sqrt(v.Y), Math.Sqrt(v.Z));
 
         /// <summary>
         /// compute (Abs(v.x), Abs(v.y), Abs(v.z))
@@ -1728,8 +1584,7 @@ namespace SearchAThing
         /// <param name="v">input vector</param>
         /// <returns>abs(v)</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector3D Abs(this Vector3D v) =>
-            new Vector3D(Math.Abs(v.X), Math.Abs(v.Y), Math.Abs(v.Z));
+        public static Vector3D Abs(this Vector3D v) => new Vector3D(Math.Abs(v.X), Math.Abs(v.Y), Math.Abs(v.Z));
 
         /// <summary>
         /// compute (Sign(v.x), Sign(v.y), Sign(v.z))
@@ -1737,8 +1592,7 @@ namespace SearchAThing
         /// <param name="v">input vector</param>
         /// <returns>sign(v)</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector3D Sign(this Vector3D v) =>
-            new Vector3D(Math.Sign(v.X), Math.Sign(v.Y), Math.Sign(v.Z));
+        public static Vector3D Sign(this Vector3D v) => new Vector3D(Math.Sign(v.X), Math.Sign(v.Y), Math.Sign(v.Z));
     }
 
     public static partial class SciToolkit
@@ -1769,6 +1623,5 @@ namespace SearchAThing
         public static Vector3D Sign(Vector3D v) => v.Sign();
 
     }
-
 
 }

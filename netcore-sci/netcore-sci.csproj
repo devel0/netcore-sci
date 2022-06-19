@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
+        <LangVersion>10</LangVersion>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageId>netcore-sci</PackageId>
-        <PackageVersion>2.1.2</PackageVersion>
+        <PackageVersion>2.2.0</PackageVersion>
         <Nullable>enable</Nullable>
         <Title>net core scientific</Title>
-        <Description></Description>
-        <LangVersion>9</LangVersion>
+        <Description></Description>        
         <Authors>Lorenzo Delana</Authors>
         <PackageTags>netcore scientific linear-algebra measure units-of-measure 3d polygon dxf quaternion</PackageTags>
         <PackageProjectUrl>https://github.com/devel0/netcore-sci#netcore-sci</PackageProjectUrl>

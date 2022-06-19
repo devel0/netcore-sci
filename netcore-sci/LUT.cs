@@ -24,14 +24,24 @@ namespace SearchAThing
         public double YTo { get; private set; }
         public double YStep { get; private set; }
 
-        List<double> lut = null;
-        public IReadOnlyList<double> YXTable => lut;
-        MathNet.Numerics.Interpolation.IInterpolation invInterp = null;
+        List<double>? lut = null;
+        public IReadOnlyList<double> YXTable
+        {
+            get
+            {
+                if (lut == null) throw new Exception($"lut not defined");
+                return lut;
+            }
+        }
+        MathNet.Numerics.Interpolation.IInterpolation? invInterp = null;
 
         public double ComputeX(double y)
         {
             if (y.EqualsTol(Abs(YStep / 2), YFrom)) return XFrom;
             if (y.EqualsTol(Abs(YStep / 2), YTo)) return XTo;
+
+            if (invInterp == null) throw new Exception($"invInterp not defined");
+
             return invInterp.Interpolate(y);
         }
 

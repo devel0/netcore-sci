@@ -4,7 +4,7 @@ namespace SearchAThing
     public class Matrix3D
     {
 
-        double[,] data = null;
+        double[,] data;
 
         /// <summary>
         /// empty matrix
@@ -157,38 +157,26 @@ namespace SearchAThing
         /// Adjoint matrix
         /// http://www.mathsisfun.com/algebra/matrix-inverse-minors-cofactors-adjugate.html
         /// </summary>        
-        public Matrix3D Adjoint()
-        {
-            return Cofactor().Transpose();
-        }
+        public Matrix3D Adjoint() => Cofactor().Transpose();
 
         /// <summary>
         /// Inverse matrix
         /// http://www.mathsisfun.com/algebra/matrix-inverse-minors-cofactors-adjugate.html
         /// </summary>        
-        public Matrix3D Inverse()
-        {
-            return Adjoint() / Determinant();
-        }
+        public Matrix3D Inverse() => Adjoint() / Determinant();
 
         /// <summary>
         /// Solve linear system of eq represented by this matrix
         /// defined (a,b,c) known terms.        
         /// </summary>        
-        public Vector3D Solve(double a, double b, double c)
-        {
-            return Solve(new Vector3D(a, b, c));
-        }
+        public Vector3D Solve(double a, double b, double c) => Solve(new Vector3D(a, b, c));
 
         /// <summary>
         /// Solve linear system of eq represented by this matrix
         /// defined n known term.
+        /// Ax = B -> x = A^(-1)B
         /// </summary>
-        public Vector3D Solve(Vector3D n)
-        {
-            // Ax = B -> x = A^(-1)B
-            return Inverse() * n;
-        }
+        public Vector3D Solve(Vector3D n) => Inverse() * n;
 
         #region operators
 
@@ -321,13 +309,7 @@ namespace SearchAThing
         /// <summary>
         /// indexed matrix component [row,col]
         /// </summary>        
-        public double this[int r, int c]
-        {
-            get
-            {
-                return data[r, c];
-            }
-        }
+        public double this[int r, int c] => data[r, c];
 
         /// <summary>
         /// matrix * vector as column -> vector

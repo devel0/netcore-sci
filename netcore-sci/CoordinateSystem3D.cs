@@ -95,7 +95,7 @@ namespace SearchAThing
         /// <summary>
         /// constant used for arbitrary axis alghoritm cs construction
         /// </summary>
-        const double aaaSmall = 1.0 / 64;
+        const double aaaSmall = 1d / 64;
 
         /// <summary>
         /// build coordinate system with given origin and given BaseZ on given vector normal;
@@ -113,7 +113,7 @@ namespace SearchAThing
             {
                 case CoordinateSystem3DAutoEnum.AAA:
                     {
-                        Vector3D Ax = null;
+                        Vector3D Ax;
 
                         normal = normal.Normalized();
 
@@ -144,6 +144,9 @@ namespace SearchAThing
                         BaseX = BaseY.CrossProduct(BaseZ).Normalized();
                     }
                     break;
+
+                default:
+                    throw new Exception($"unknown cs {csAutoType}");
             }
 
             m = Matrix3D.FromVectorsAsColumns(BaseX, BaseY, BaseZ);
@@ -206,6 +209,8 @@ namespace SearchAThing
                     }
                     break;
 
+                default:
+                    throw new Exception($"unknown cs mode {mode}");
             }
 
             m = Matrix3D.FromVectorsAsColumns(BaseX, BaseY, BaseZ);
@@ -217,26 +222,24 @@ namespace SearchAThing
         /// </summary>
         /// <param name="p">wcs point</param>
         /// <param name="evalCSOrigin">if true CS origin will subtracted from wcs point before transform</param>            
-        public Vector3D ToUCS(Vector3D p, bool evalCSOrigin = true)
-        {
-            if (evalCSOrigin)
-                return mInv * (p - Origin);
-            else
-                return mInv * p;
-        }
+        public Vector3D ToUCS(Vector3D p, bool evalCSOrigin = true) =>
+            evalCSOrigin
+            ?
+            mInv * (p - Origin)
+            :
+            mInv * p;
 
         /// <summary>
         /// transform ucs point to wcs
         /// </summary>
         /// <param name="p">ucs point</param>
         /// <param name="evalCSOrigin">if true CS origin will added after transform</param>            
-        public Vector3D ToWCS(Vector3D p, bool evalCSOrigin = true)
-        {
-            if (evalCSOrigin)
-                return m * p + Origin;
-            else
-                return m * p;
-        }
+        public Vector3D ToWCS(Vector3D p, bool evalCSOrigin = true) =>
+            evalCSOrigin
+            ?
+            m * p + Origin
+            :
+            m * p;
 
         /// <summary>
         /// verify if this cs XY plane contains given wcs point
@@ -245,10 +248,8 @@ namespace SearchAThing
         /// <param name="point">point to verify</param>
         /// <param name="evalCSOrigin">if true CS origin will subtracted before transform test</param>
         /// <returns>true if point contained in cs, else otherwise</returns>
-        public bool Contains(double tol, Vector3D point, bool evalCSOrigin = true)
-        {
-            return point.ToUCS(this, evalCSOrigin).Z.EqualsTol(tol, 0);
-        }
+        public bool Contains(double tol, Vector3D point, bool evalCSOrigin = true) =>
+            point.ToUCS(this, evalCSOrigin).Z.EqualsTol(tol, 0);
 
         /// <summary>
         /// verify is this cs is equals to otherByLayer ( same origin, x, y, z base vectors )            
@@ -259,29 +260,22 @@ namespace SearchAThing
         /// <remarks>      
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0001.cs)
         /// </remarks>
-        public bool Equals(double tol, CoordinateSystem3D other)
-        {
-            return Origin.EqualsTol(tol, other.Origin) &&
-                BaseX.EqualsTol(tol, other.BaseX) &&
-                BaseY.EqualsTol(tol, other.BaseY) &&
-                BaseZ.EqualsTol(tol, other.BaseZ);
-        }
+        public bool Equals(double tol, CoordinateSystem3D other) =>
+            Origin.EqualsTol(tol, other.Origin) &&
+            BaseX.EqualsTol(tol, other.BaseX) &&
+            BaseY.EqualsTol(tol, other.BaseY) &&
+            BaseZ.EqualsTol(tol, other.BaseZ);
 
         /// <summary>
         /// states if this cs have Z base parallel to the other given cs
         /// </summary>            
-        public bool IsParallelTo(double tol, CoordinateSystem3D other)
-        {
-            return BaseZ.IsParallelTo(tol, other.BaseZ);
-        }
+        public bool IsParallelTo(double tol, CoordinateSystem3D other) => BaseZ.IsParallelTo(tol, other.BaseZ);
 
         /// <summary>
         /// return another cs with origin translated
         /// </summary>            
-        public CoordinateSystem3D Move(Vector3D delta)
-        {
-            return new CoordinateSystem3D(Origin + delta, BaseX, BaseY, BaseZ);
-        }
+        public CoordinateSystem3D Move(Vector3D delta) =>
+            new CoordinateSystem3D(Origin + delta, BaseX, BaseY, BaseZ);
 
         /// <summary>
         /// create transformed CS by given transformation matrix
@@ -314,14 +308,12 @@ namespace SearchAThing
         /// <summary>
         /// return another cs with same origin and base vector rotated about given vector            
         /// </summary>            
-        public CoordinateSystem3D Rotate(Vector3D vectorAxis, double angleRad)
-        {
-            return new CoordinateSystem3D(
+        public CoordinateSystem3D Rotate(Vector3D vectorAxis, double angleRad) =>
+            new CoordinateSystem3D(
                 Origin,
                 BaseX.RotateAboutAxis(vectorAxis, angleRad),
                 BaseY.RotateAboutAxis(vectorAxis, angleRad),
                 BaseZ.RotateAboutAxis(vectorAxis, angleRad));
-        }
 
         /// <summary>
         /// return intersect line between two cs xy planes
@@ -329,7 +321,7 @@ namespace SearchAThing
         /// <param name="tol_len">len tolernace</param>
         /// <param name="other">other cs</param>
         /// <returns>null if cs parallel to the given other</returns>
-        public Line3D Intersect(double tol_len, CoordinateSystem3D other)
+        public Line3D? Intersect(double tol_len, CoordinateSystem3D other)
         {
             if (this.IsParallelTo(tol_len, other)) return null;
 
@@ -349,10 +341,7 @@ namespace SearchAThing
         /// debug string
         /// </summary>
         /// <returns>formatted representation of cs origin, x, y, z</returns>
-        public override string ToString()
-        {
-            return $"O:{Origin} X:{BaseX} Y:{BaseY} Z:{BaseZ}";
-        }
+        public override string ToString() => $"O:{Origin} X:{BaseX} Y:{BaseY} Z:{BaseZ}";
 
         /// <summary>
         /// script to paste in cad to draw cs rgb mode ( x=red, y=green, z=blue )
@@ -381,13 +370,7 @@ namespace SearchAThing
         /// <summary>
         /// script to paste in cad ( axis length = 1 )
         /// </summary>
-        public string CadScript
-        {
-            get
-            {
-                return ToCadString(1.0);
-            }
-        }
+        public string CadScript => ToCadString(1.0);
 
     }
 
@@ -400,10 +383,8 @@ namespace SearchAThing
         /// <param name="v">wcs point</param>
         /// <param name="cs">cs to project</param>
         /// <param name="evalCSOrigin">if true cs origin will subtracted before transform, then readded to obtain wcs point</param>                        
-        public static Vector3D Project(this Vector3D v, CoordinateSystem3D cs, bool evalCSOrigin = true)
-        {
-            return v.ToUCS(cs, evalCSOrigin).Set(OrdIdx.Z, 0).ToWCS(cs, evalCSOrigin);
-        }
+        public static Vector3D Project(this Vector3D v, CoordinateSystem3D cs, bool evalCSOrigin = true) =>
+            v.ToUCS(cs, evalCSOrigin).Set(OrdIdx.Z, 0).ToWCS(cs, evalCSOrigin);
 
     }
 

@@ -80,7 +80,7 @@ namespace SearchAThing
 
             alpha += alpha_step;
 
-            Vector3D nextPt = null;
+            Vector3D? nextPt = null;
 
             while (alpha < alpha_stop)
             {
@@ -109,11 +109,13 @@ namespace SearchAThing
             foreach (var da in new double[] { 0, PI / 2 })
             {
                 var ip = t1.Intersect(tol_len, t2);
+                if (ip == null) throw new Exception($"null intersect");
+
                 var angle = t1.V.AngleRad(tol_len, t2.V);
                 var t3 = new Line3D(ip, t1.V.RotateAs(tol_len, t1.V, t2.V, .5, da), Line3DConstructMode.PointAndVector);
 
-                Line3D lp = null;
-                Line3D lNp = null;
+                Line3D? lp = null;
+                Line3D? lNp = null;
                 if (t1.LineContainsPoint(tol_len, p)) { lp = t1; lNp = t2; }
                 else if (t2.LineContainsPoint(tol_len, p)) { lp = t2; lNp = t1; }
                 else throw new Exception($"circle 2 tan 1 point : pt must contained in one of given tan");
@@ -156,10 +158,7 @@ namespace SearchAThing
         /// </summary>            
         public override IEnumerable<Vector3D> Intersect(double tol, Line3D l,
             bool only_perimeter = true,
-            bool segment_mode = false)
-        {
-            return base.Intersect(tol, l, only_perimeter, segment_mode, circle_mode: true);
-        }
+            bool segment_mode = false) => base.Intersect(tol, l, only_perimeter, segment_mode, circle_mode: true);
 
         /// <summary>
         /// intersect this circle with given other;
@@ -233,12 +232,15 @@ namespace SearchAThing
             }
         }
 
-        public double Area { get { return PI * Radius * Radius; } }
+        /// <summary>
+        /// Circle area
+        /// </summary>
+        public double Area => PI * Radius * Radius;
 
         /// <summary>
         /// Circle perimeter
         /// </summary>        
-        public override double Length { get { return 2 * PI * Radius; } }
+        public override double Length => 2 * PI * Radius;
 
     }
 
@@ -253,10 +255,10 @@ namespace SearchAThing
             return new Circle3D(pts[0], pts[1], pts[2]);
         }
 
-        public static Circle3D ToCircle3D(this netDxf.Entities.Circle dxf_circle, double tol_len)
-        {
-            return new Circle3D(tol_len, new CoordinateSystem3D(dxf_circle.Center, dxf_circle.Normal, CoordinateSystem3DAutoEnum.AAA), dxf_circle.Radius);
-        }
+        public static Circle3D ToCircle3D(this netDxf.Entities.Circle dxf_circle, double tol_len) =>
+            new Circle3D(tol_len,
+                new CoordinateSystem3D(dxf_circle.Center, dxf_circle.Normal, CoordinateSystem3DAutoEnum.AAA),
+                dxf_circle.Radius);
 
     }
 

@@ -9,7 +9,8 @@ namespace SearchAThing
         Vector3D,
         Line3D,
         Circle3D,
-        Arc3D
+        Arc3D,
+        Loop
     }
 
     public abstract class Geometry
@@ -25,6 +26,7 @@ namespace SearchAThing
         public abstract double Length { get; }
         public abstract IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false);
         public abstract BBox3D BBox(double tol_len);
+        public abstract IEnumerable<Geometry> Intersect(double tol_len, Geometry other);
 
         public abstract netDxf.Entities.EntityObject DxfEntity { get; }
 
@@ -38,6 +40,9 @@ namespace SearchAThing
     public static partial class SciExt
     {
 
+        /// <summary>
+        /// extracs Arc3D, Line3D from given lwpolyline
+        /// </summary>        
         public static IEnumerable<Geometry> ToGeometryBlock(this netDxf.Entities.LwPolyline lwpolyline,
             double tolLen)
         {
@@ -49,17 +54,22 @@ namespace SearchAThing
             {
                 if (el.Type == netDxf.Entities.EntityType.Arc)
                 {
-                    yield return (el as netDxf.Entities.Arc).ToArc3D(tolLen);
+                    yield return ((netDxf.Entities.Arc)el).ToArc3D(tolLen);
                 }
                 else if (el.Type == netDxf.Entities.EntityType.Line)
                 {
-                    var line = (el as netDxf.Entities.Line);
+                    var line = (netDxf.Entities.Line)el;
                     if (((Vector3D)line.StartPoint).EqualsTol(tolLen, line.EndPoint)) continue;
 
                     yield return line.ToLine3D();
                 }
             }
         }
+
+        // public static Loop ToLoop(this netDxf.Entities.LwPolyline lwpolyline, double tol)
+        // {
+        //     lwpolyline.ToGeometryBlock(tol);
+        // }
 
         /// <summary>
         /// segments representation of given geometries
@@ -69,7 +79,7 @@ namespace SearchAThing
         {
             var en = geometry_block.GetEnumerator();
 
-            Vector3D prev = null;
+            Vector3D? prev = null;
 
             while (en.MoveNext())
             {
@@ -79,7 +89,7 @@ namespace SearchAThing
                 {
                     case GeometryType.Vector3D:
                         {
-                            var cur = geom as Vector3D;
+                            var cur = (Vector3D)geom;
                             if (prev != null) yield return new Line3D(prev, cur);
                             prev = cur;
                         }
@@ -87,7 +97,7 @@ namespace SearchAThing
 
                     case GeometryType.Line3D:
                         {
-                            var cur = geom as Line3D;
+                            var cur = (Line3D)geom;
                             if (prev == null)
                             {
                                 yield return cur;
@@ -111,7 +121,7 @@ namespace SearchAThing
 
                     case GeometryType.Arc3D:
                         {
-                            var cur = geom as Arc3D;
+                            var cur = (Arc3D)geom;
                             if (prev == null)
                             {
                                 yield return cur.Segment;
@@ -140,7 +150,7 @@ namespace SearchAThing
 
         public static IEnumerable<Vector3D> Vertexes(this IReadOnlyList<Geometry> geometry_block, double tolLen)
         {
-            Vector3D last = null;
+            Vector3D? last = null;
             for (int i = 0; i < geometry_block.Count; ++i)
             {
                 var geom = geometry_block[i];
@@ -204,6 +214,26 @@ namespace SearchAThing
                 */
 
                 return centroid;
+            }
+        }
+
+        public static IEnumerable<Geometry> Intersect(this IEnumerable<Geometry> _geom1, double tol_len,
+            IEnumerable<Geometry> _geom2)
+        {
+            var geom1 = _geom1.ToList();
+            var geom2 = _geom2.ToList();
+
+            var res = new List<Geometry>();
+
+            foreach (var g1 in geom1)
+            {
+                foreach (var g2 in geom2)
+                {
+                    var g1g2_intersection = g1.Intersect(tol_len, g2);
+
+                    if (g1g2_intersection != null)
+                        foreach (var geom in g1g2_intersection) yield return geom;
+                }
             }
         }
 

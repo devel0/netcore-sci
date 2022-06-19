@@ -36,7 +36,7 @@ namespace SearchAThing
         {
             if (pts.Count < 3) throw new Exception($"at least 3 pts required for Plane3DRegion");
             var o = pts[0];
-            Vector3D a = null, b = null;
+            Vector3D? a = null, b = null;
             int i = 1;
             while (i < pts.Count)
             {
@@ -91,7 +91,7 @@ namespace SearchAThing
         /// <param name="tol">length tolerance</param>
         /// <param name="ray">ray to test if intersect plane3d region</param>
         /// <returns>intersection point or null if not</returns>
-        public Vector3D Intersect(double tol, Line3D ray)
+        public Vector3D? Intersect(double tol, Line3D ray)
         {
             var ip = ray.Intersect(tol, Plane);
             if (ip == null || !Contains(tol, ip)) return null;
@@ -99,8 +99,6 @@ namespace SearchAThing
             return ip;
         }
 
-
     }
-
 
 }

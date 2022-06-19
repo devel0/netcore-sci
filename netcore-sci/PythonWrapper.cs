@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Text;
+using System.Linq;
 using System.Threading;
 using System.Diagnostics;
 using System.IO;
+using System.Collections.Generic;
 
 namespace SearchAThing
 {
@@ -12,7 +14,7 @@ namespace SearchAThing
     {
 
         #region python path
-        static string _PythonExePathfilename;
+        static string? _PythonExePathfilename = null;
 
         internal static string PythonExePathfilename
         {
@@ -20,16 +22,38 @@ namespace SearchAThing
             {
                 if (_PythonExePathfilename == null)
                 {
-                    var searchFor =
-                        (
-                        Environment.OSVersion.Platform == PlatformID.Unix
-                        ||
-                        Environment.OSVersion.Platform == PlatformID.MacOSX
-                        )
-                        ? "python" : "python.exe";
+                    var searchFor = new List<string>();
 
-                    _PythonExePathfilename = searchFor.SearchInPath();
-                    if (_PythonExePathfilename == null) _PythonExePathfilename = "";
+                    switch (Environment.OSVersion.Platform)
+                    {
+                        case PlatformID.Unix:
+                        case PlatformID.MacOSX:
+                            {
+                                searchFor = new List<string>() { "python", "python3" };
+                            }
+                            break;
+
+                        default:
+                            {
+                                searchFor = new List<string>() { "python.exe" };
+                            }
+                            break;
+                    }
+
+                    foreach (var fname in searchFor)
+                    {
+                        var q = fname.SearchInPath();
+                        if (q != null)
+                        {
+                            _PythonExePathfilename = q;
+                            break;
+                        }
+                    }
+
+                    if (_PythonExePathfilename == null)
+                    {
+                        _PythonExePathfilename = "";
+                    }
                 }
                 return _PythonExePathfilename;
             }
@@ -37,13 +61,13 @@ namespace SearchAThing
         #endregion
 
         object wrapper_initialized = new object();
-        Action<string> debug = null;
+        Action<string>? debug = null;
 
-        Process process = null;
+        Process? process = null;
         StringBuilder sberr = new StringBuilder();
         StringBuilder sbout = new StringBuilder();
 
-        string TempFolder = null;
+        string? TempFolder = null;
         public bool DeleteTmpFiles { get; set; }
 
         const string initial_imports_default = @"
@@ -51,14 +75,14 @@ import matplotlib
 matplotlib.use('Agg')
 ";
 
-
         bool startup_error = false;
-        string custom_python_executable = null;
-        string custom_python_args = null;
+        string? custom_python_executable = null;
+        string? custom_python_args = null;
         string initial_imports = "";
 
-        public PythonPipe(string _initial_imports = "", Action<string> _debug = null, string tempFolder = null, bool delete_tmp_files = true,
-            string _custom_python_executable = null, string _custom_python_args = null)
+        public PythonPipe(string _initial_imports = "", Action<string>? _debug = null,
+            string? tempFolder = null, bool delete_tmp_files = true,
+            string? _custom_python_executable = null, string? _custom_python_args = null)
         {
             custom_python_executable = _custom_python_executable;
             custom_python_args = _custom_python_args;
@@ -71,9 +95,10 @@ matplotlib.use('Agg')
             ThreadPool.QueueUserWorkItem(new WaitCallback(ThFunction), cts.Token);
         }
 
-        void ThFunction(object obj)
+        void ThFunction(object? obj)
         {
-            var token = (CancellationToken)obj;
+            CancellationToken? token = null;
+            if (obj is CancellationToken ct) token = ct;
 
             debug?.Invoke("initializing python");
             lock (wrapper_initialized)
@@ -129,7 +154,7 @@ matplotlib.use('Agg')
 
                         process.StandardInput.Flush();
 
-                        while (!initialized && !token.IsCancellationRequested)
+                        while (!initialized && (token == null || !token.Value.IsCancellationRequested))
                         {
                             Thread.Sleep(250);
                         }
@@ -149,7 +174,7 @@ matplotlib.use('Agg')
         }
 
         bool initialized = false;
-        string guid = null;
+        string? guid = null;
 
         private void Process_OutputDataReceived(object sender, DataReceivedEventArgs e)
         {
@@ -157,11 +182,13 @@ matplotlib.use('Agg')
             if (finished) return;
 
             debug?.Invoke($"output received [{e.Data}]");
-
+            
             if (!initialized)
                 initialized = true;
             else
             {
+                if (guid == null) throw new Exception($"guid not initialized in Exec");
+
                 var str = e.Data;
 
                 if (str == guid) finished = true;
@@ -207,7 +234,7 @@ matplotlib.use('Agg')
         /// </summary>        
         public StringWrapper Exec(StringWrapper code, bool remove_tmp_file = true)
         {
-            string tmp_pathfilename = null;
+            string? tmp_pathfilename = null;
             if (TempFolder == null)
                 tmp_pathfilename = System.IO.Path.GetTempFileName() + ".py";
             else
@@ -248,6 +275,8 @@ matplotlib.use('Agg')
                 if (startup_error) throw new Exception($"startup error [{sberr.ToString()}]");
                 Thread.Sleep(25);
             }
+
+            if (process == null) throw new Exception($"process not initialized");
 
             lock (wrapper_initialized)
             {
@@ -326,10 +355,7 @@ matplotlib.use('Agg')
         /// </summary>
         public string Output { get; private set; }
 
-        public override string ToString()
-        {
-            return $"output [{Output}] error [{Error}]";
-        }
+        public override string ToString() => $"output [{Output}] error [{Error}]";
 
     }
 

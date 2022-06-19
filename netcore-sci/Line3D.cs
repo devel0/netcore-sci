@@ -6,6 +6,8 @@ using static System.Math;
 using netDxf.Entities;
 using Newtonsoft.Json;
 using static System.FormattableString;
+using System;
+
 namespace SearchAThing
 {
 
@@ -43,6 +45,81 @@ namespace SearchAThing
 
     public class Line3D : Geometry
     {
+        #region Geometry
+
+        [JsonIgnore]
+        public override IEnumerable<Vector3D> Vertexes
+        {
+            get
+            {
+                yield return From;
+                yield return To;
+            }
+        }
+
+        [JsonIgnore]
+        public override Vector3D GeomFrom => From;
+
+        [JsonIgnore]
+        public override Vector3D GeomTo => To;
+
+        public override double Length => V.Length;
+
+        public override IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false)
+        {
+            var step = Length / cnt * V.Normalized();
+            var p = GeomFrom;
+            if (include_endpoints) yield return p;
+            --cnt;
+            while (cnt > 0)
+            {
+                p = p + step;
+                yield return p;
+                --cnt;
+            }
+            if (include_endpoints) yield return GeomTo;
+        }
+
+        public override BBox3D BBox(double tol_len) => new BBox3D(new[] { From, To });
+
+        public override IEnumerable<Geometry> Intersect(double tol_len, Geometry _other)
+        {
+            switch (_other.Type)
+            {
+                case GeometryType.Line3D:
+                    {
+                        var other = (Line3D)_other;
+                        if (this.Colinear(tol_len, other))
+                        {
+                            var N = V.Normalized();
+
+                            var lst = new[]
+                            {
+                                new { type = 0, off = From.ColinearScalarOffset(tol_len, From, N) },
+                                new { type = 0, off = To.ColinearScalarOffset(tol_len, From, N) },
+
+                                new { type = 1, off = other.From.ColinearScalarOffset(tol_len, From, N) },
+                                new { type = 1, off = other.To.ColinearScalarOffset(tol_len, From, N) },
+                            };
+
+                            throw new NotImplementedException();
+                        }
+                        else
+                        {
+                            var pt = this.Intersect(tol_len, other, true, true);
+
+                            if (pt != null)
+                                yield return pt;
+                        }
+                    }
+                    break;
+            }
+        }
+
+        public override EntityObject DxfEntity => this.ToLine();
+
+        #endregion
+
         public static readonly Line3D XAxisLine = new Line3D(Vector3D.Zero, Vector3D.XAxis);
         public static readonly Line3D YAxisLine = new Line3D(Vector3D.Zero, Vector3D.YAxis);
         public static readonly Line3D ZAxisLine = new Line3D(Vector3D.Zero, Vector3D.ZAxis);
@@ -60,28 +137,12 @@ namespace SearchAThing
         /// <summary>
         /// From + V
         /// </summary>            
-        public Vector3D To { get { return From + V; } }
+        public Vector3D To => From + V;
 
         /// <summary>
         /// V normalized
         /// </summary>            
-        public Vector3D Dir { get { return V.Normalized(); } }
-
-        [JsonIgnore]
-        public override Vector3D GeomFrom => From;
-
-        [JsonIgnore]
-        public override Vector3D GeomTo => To;
-
-        [JsonIgnore]
-        public override IEnumerable<Vector3D> Vertexes
-        {
-            get
-            {
-                yield return From;
-                yield return To;
-            }
-        }
+        public Vector3D Dir => V.Normalized();
 
         /// <summary>
         /// retrieve a unique endpoint representation of this line3d segment (regardless its from-to or to-from order)
@@ -146,23 +207,18 @@ namespace SearchAThing
             V = v;
         }
 
-        public override double Length { get { return V.Length; } }
-
         /// <summary>
         /// Checks if two lines are equals ( it checks agains swapped from-to too )
         /// </summary>        
-        public bool EqualsTol(double tol, Line3D other)
-        {
-            return
-                (From.EqualsTol(tol, other.From) && To.EqualsTol(tol, other.To))
-                ||
-                (From.EqualsTol(tol, other.To) && To.EqualsTol(tol, other.From));
-        }
+        public bool EqualsTol(double tol, Line3D other) =>
+            (From.EqualsTol(tol, other.From) && To.EqualsTol(tol, other.To))
+            ||
+            (From.EqualsTol(tol, other.To) && To.EqualsTol(tol, other.From));
 
         /// <summary>
         /// returns the common point from,to between two lines or null if not consecutives
         /// </summary>        
-        public Vector3D CommonPoint(double tol, Line3D other)
+        public Vector3D? CommonPoint(double tol, Line3D other)
         {
             if (From.EqualsTol(tol, other.From) || From.EqualsTol(tol, other.To)) return From;
             if (To.EqualsTol(tol, other.From) || To.EqualsTol(tol, other.To)) return To;
@@ -173,18 +229,13 @@ namespace SearchAThing
         /// <summary>
         /// return the segment with swapped from,to
         /// </summary>            
-        public Line3D Reverse()
-        {
-            return new Line3D(To, From);
-        }
+        public Line3D Reverse() => new Line3D(To, From);
 
         /// <summary>
         /// scale from,to of this line using given refpt and factor
         /// </summary>            
-        public Line3D Scale(Vector3D refpt, double factor)
-        {
-            return new Line3D(From.ScaleAbout(refpt, factor), To.ScaleAbout(refpt, factor));
-        }
+        public Line3D Scale(Vector3D refpt, double factor) =>
+            new Line3D(From.ScaleAbout(refpt, factor), To.ScaleAbout(refpt, factor));
 
         /// <summary>
         /// scale from,to of this line using given factor and assuming refpt = MidPoint
@@ -199,35 +250,28 @@ namespace SearchAThing
         /// multiply Length by given scalar factor
         /// Note : this will change To
         /// </summary>        
-        public static Line3D operator *(double s, Line3D l)
-        {
-            return new Line3D(l.From, l.V * s, Line3DConstructMode.PointAndVector);
-        }
+        public static Line3D operator *(double s, Line3D l) =>
+            new Line3D(l.From, l.V * s, Line3DConstructMode.PointAndVector);
 
         /// <summary>
         /// multiply Length by given scalar factor
         /// Note : this will change To
         /// </summary>        
-        public static Line3D operator *(Line3D l, double s)
-        {
-            return new Line3D(l.From, l.V * s, Line3DConstructMode.PointAndVector);
-        }
+        public static Line3D operator *(Line3D l, double s) =>
+            new Line3D(l.From, l.V * s, Line3DConstructMode.PointAndVector);
 
         /// <summary>
         /// Move this line of given delta adding value either at From, To
         /// </summary>            
-        public static Line3D operator +(Line3D l, Vector3D delta)
-        {
-            return new Line3D(l.From + delta, l.V, Line3DConstructMode.PointAndVector);
-        }
+        public static Line3D operator +(Line3D l, Vector3D delta) =>
+            new Line3D(l.From + delta, l.V, Line3DConstructMode.PointAndVector);
 
         /// <summary>
         /// Move this line of given delta subtracting value either at From, To
         /// </summary>            
-        public static Line3D operator -(Line3D l, Vector3D delta)
-        {
-            return new Line3D(l.From - delta, l.V, Line3DConstructMode.PointAndVector);
-        }
+        public static Line3D operator -(Line3D l, Vector3D delta) =>
+            new Line3D(l.From - delta, l.V, Line3DConstructMode.PointAndVector);
+
         #endregion
 
         /// <summary>
@@ -235,10 +279,8 @@ namespace SearchAThing
         /// Note: tol must be Constant.NormalizedLengthTolerance
         /// if comparing normalized vectors
         /// </summary>        
-        public bool LineContainsPoint(double tol, double x, double y, double z, bool segmentMode = false)
-        {
-            return LineContainsPoint(tol, new Vector3D(x, y, z), segmentMode);
-        }
+        public bool LineContainsPoint(double tol, double x, double y, double z, bool segmentMode = false) =>
+            LineContainsPoint(tol, new Vector3D(x, y, z), segmentMode);
 
         /// <summary>
         /// Infinite line contains point.            
@@ -297,30 +339,24 @@ namespace SearchAThing
         /// Note: tol must be Constant.NormalizedLengthTolerance
         /// if comparing normalized vectors
         /// </summary>        
-        public bool SegmentContainsPoint(double tol, Vector3D p, bool excludeExtreme = false)
-        {
-            return LineContainsPoint(tol, p, segmentMode: true, excludeExtreme: excludeExtreme);
-        }
+        public bool SegmentContainsPoint(double tol, Vector3D p, bool excludeExtreme = false) =>
+            LineContainsPoint(tol, p, segmentMode: true, excludeExtreme: excludeExtreme);
 
         /// <summary>
         /// Finite segment contains point.
         /// Note: tol must be Constant.NormalizedLengthTolerance
         /// if comparing normalized vectors
         /// </summary>        
-        public bool SegmentContainsPoint(double tol, double x, double y, double z)
-        {
-            return LineContainsPoint(tol, x, y, z, segmentMode: true);
-        }
+        public bool SegmentContainsPoint(double tol, double x, double y, double z) =>
+            LineContainsPoint(tol, x, y, z, segmentMode: true);
 
         /// <summary>
         /// states if semiline From-To(inf) contains given point
         /// </summary>
         /// <param name="tol">len tolerance</param>
         /// <param name="p">point to verify is it on semiline</param>
-        public bool SemiLineContainsPoints(double tol, Vector3D p)
-        {
-            return LineContainsPoint(tol, p) && (p - From).Concordant(tol, To - From);
-        }
+        public bool SemiLineContainsPoints(double tol, Vector3D p) =>
+            LineContainsPoint(tol, p) && (p - From).Concordant(tol, To - From);
 
         /// <summary>
         /// Find intersection point between this and other line using given tolerance.
@@ -328,7 +364,7 @@ namespace SearchAThing
         /// the shortest segment ( the one that's perpendicular to either lines )
         /// based on given behavior ( default midpoint ).      
         /// </summary>            
-        public Vector3D Intersect(double tol, Line3D other,
+        public Vector3D? Intersect(double tol, Line3D other,
             LineIntersectBehavior behavior = LineIntersectBehavior.MidPoint)
         {
             var perpSeg = ApparentIntersect(other);
@@ -358,7 +394,7 @@ namespace SearchAThing
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Line3D/Line3DTest_0001.cs)
         /// ![image](../test/Line3D/Line3DTest_0001.png)
         /// </remarks>
-        public Line3D ApparentIntersect(Line3D other)
+        public Line3D? ApparentIntersect(Line3D other)
         {
             // this  : t = tf + tu * tv
             // other : o = of + ou * ov                
@@ -463,7 +499,7 @@ namespace SearchAThing
         /// <summary>
         /// Intersects two lines with arbitrary segment mode for each.
         /// </summary>        
-        public Vector3D Intersect(double tol, Line3D other, bool thisSegment, bool otherSegment)
+        public Vector3D? Intersect(double tol, Line3D other, bool thisSegment, bool otherSegment)
         {
             var i = Intersect(tol, other);
             if (i == null) return null;
@@ -477,7 +513,7 @@ namespace SearchAThing
         /// <summary>
         /// Build a perpendicular vector to this one starting from the given point p.
         /// </summary>        
-        public Line3D Perpendicular(double tol, Vector3D p)
+        public Line3D? Perpendicular(double tol, Vector3D p)
         {
             if (LineContainsPoint(tol, p)) return null;
 
@@ -486,13 +522,10 @@ namespace SearchAThing
             return new Line3D(p, From + pRelVProj);
         }
 
-        public bool Colinear(double tol, Line3D other)
-        {
-            return
-                (LineContainsPoint(tol, other.From) && LineContainsPoint(tol, other.To))
-                ||
-                (other.LineContainsPoint(tol, From) && other.LineContainsPoint(tol, To));
-        }
+        public bool Colinear(double tol, Line3D other) =>
+            (LineContainsPoint(tol, other.From) && LineContainsPoint(tol, other.To))
+            ||
+            (other.LineContainsPoint(tol, From) && other.LineContainsPoint(tol, To));
 
         public bool IsParallelTo(double tol, CoordinateSystem3D cs)
         {
@@ -508,7 +541,7 @@ namespace SearchAThing
         /// returns null if this line is parallel to the cs xy plane,
         /// the intersection point otherwise
         /// </summary>        
-        public Vector3D Intersect(double tol, CoordinateSystem3D cs)
+        public Vector3D? Intersect(double tol, CoordinateSystem3D cs)
         {
             if (IsParallelTo(tol, cs)) return null;
 
@@ -530,33 +563,26 @@ namespace SearchAThing
         /// returns null if this line is parallel to the plane,
         /// the intersection point otherwise
         /// </summary>        
-        public Vector3D Intersect(double tol, Plane3D plane) => Intersect(tol, plane.CS);
+        public Vector3D? Intersect(double tol, Plane3D plane) => Intersect(tol, plane.CS);
 
-        public Vector3D MidPoint { get { return (From + To) / 2; } }
+        public Vector3D MidPoint => (From + To) / 2;
 
         /// <summary>
         /// rotate this segment about given axis
         /// </summary>            
-        public Line3D RotateAboutAxis(Line3D axisSegment, double angleRad)
-        {
-            return new Line3D(From.RotateAboutAxis(axisSegment, angleRad), To.RotateAboutAxis(axisSegment, angleRad));
-        }
+        public Line3D RotateAboutAxis(Line3D axisSegment, double angleRad) =>
+            new Line3D(From.RotateAboutAxis(axisSegment, angleRad), To.RotateAboutAxis(axisSegment, angleRad));
 
         /// <summary>
         /// resize this segment to a new one with same From
         /// </summary>            
-        public Line3D SetLength(double len)
-        {
-            return new Line3D(From, V.Normalized() * len, Line3DConstructMode.PointAndVector);
-        }
+        public Line3D SetLength(double len) =>
+            new Line3D(From, V.Normalized() * len, Line3DConstructMode.PointAndVector);
 
         /// <summary>
         /// move this segment of given delta
         /// </summary>            
-        public Line3D Move(Vector3D delta)
-        {
-            return new Line3D(From + delta, To + delta);
-        }
+        public Line3D Move(Vector3D delta) => new Line3D(From + delta, To + delta);
 
         /// <summary>
         /// Move this segment midpoint to the given coord
@@ -582,7 +608,7 @@ namespace SearchAThing
 
             while (splitPtIdx < splitPts.Count)
             {
-                List<Line3D> repl = null;
+                List<Line3D>? repl = null;
 
                 for (int i = 0; i < res.Count; ++i)
                 {
@@ -637,6 +663,8 @@ namespace SearchAThing
         {
             var perp = this.Perpendicular(tol, refPt);
 
+            if (perp == null) throw new Exception($"can't find perp vector");
+
             var voff = (-perp.V).Normalized() * offset;
 
             var res = new Line3D(From + voff, To + voff);
@@ -644,33 +672,13 @@ namespace SearchAThing
             return res;
         }
 
-        public string CadScript
-        {
-            get
-            {
-                return SciToolkit.PostProcessCadScript(string.Format(CultureInfo.InvariantCulture, "_LINE {0},{1},{2} {3},{4},{5}\r\n",
-                    From.X, From.Y, From.Z, To.X, To.Y, To.Z));
-            }
-        }
+        public string CadScript =>
+            SciToolkit.PostProcessCadScript(Invariant($"_LINE {From.X},{From.Y},{From.Z} {To.X},{To.Y},{To.Z}\r\n"));
 
         /// <summary>
         /// 2d qcad script representation ( vscode watch using var,nq )
         /// </summary>
-        public string QCadScript
-        {
-            get
-            {
-                return Invariant($"LINE\n{From.X},{From.Y}\n{To.X},{To.Y}\n");
-            }
-        }
-
-        public override EntityObject DxfEntity
-        {
-            get
-            {
-                return this.ToLine();
-            }
-        }
+        public string QCadScript => Invariant($"LINE\n{From.X},{From.Y}\n{To.X},{To.Y}\n");
 
         /// <summary>
         /// hash string with given tolerance
@@ -695,69 +703,29 @@ namespace SearchAThing
         /// build an invariant string representation w/3 digits
         /// (f.x, f.y, f.z)-(t.x, t.y, t.z) L=len Δ=(v.x, v.y, v.z)
         /// </summary>            
-        public override string ToString()
-        {
-            return this.ToString(digits: 3);
-        }
+        public override string ToString() => this.ToString(digits: 3);
 
         /// <summary>
         /// build an invariant string representation w/given digits
         /// (f.x, f.y, f.z)-(t.x, t.y, t.z) L=len Δ=(v.x, v.y, v.z)
         /// </summary>      
-        public string ToString(int digits = 3)
-        {
-            return $"{From.ToString(digits)}-{To.ToString(digits)} L={Length.ToString(digits)} Δ={(To - From).ToString(digits)}";
-        }
-
-        public override IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false)
-        {
-            var step = Length / cnt * V.Normalized();
-            var p = GeomFrom;
-            if (include_endpoints) yield return p;
-            --cnt;
-            while (cnt > 0)
-            {
-                p = p + step;
-                yield return p;
-                --cnt;
-            }
-            if (include_endpoints) yield return GeomTo;
-        }
+        public string ToString(int digits = 3) =>
+            $"{From.ToString(digits)}-{To.ToString(digits)} L={Length.ToString(digits)} Δ={(To - From).ToString(digits)}";
 
         /// <summary>
         /// build a segment with same from and vector normalized
         /// </summary>            
-        public Line3D Normalized()
-        {
-            return new Line3D(From, V.Normalized(), Line3DConstructMode.PointAndVector);
-        }
+        public Line3D Normalized() => new Line3D(From, V.Normalized(), Line3DConstructMode.PointAndVector);
 
         /// <summary>
         /// return segment with swapped from,to
         /// </summary>
-        public Line3D Swapped
-        {
-            get
-            {
-                return new Line3D(To, From);
-            }
-        }
+        public Line3D Swapped => new Line3D(To, From);
 
         /// <summary>
         /// return inverted segment
         /// </summary>
-        public Line3D Inverted
-        {
-            get
-            {
-                return new Line3D(From, -V, Line3DConstructMode.PointAndVector);
-            }
-        }
-
-        public override BBox3D BBox(double tol_len)
-        {
-            return new BBox3D(new[] { From, To });
-        }
+        public Line3D Inverted => new Line3D(From, -V, Line3DConstructMode.PointAndVector);
 
         /// <summary>
         /// returns bisect of two given segment/lines
@@ -767,7 +735,7 @@ namespace SearchAThing
         /// if two given lines are parallel and parallelRotationAxis is given then
         /// bisect results as this segment rotated PI/2 about given axis using To as rotcenter
         /// </summary>            
-        public Line3D Bisect(double tol_len, Line3D other, Vector3D parallelRotationAxis = null)
+        public Line3D? Bisect(double tol_len, Line3D other, Vector3D? parallelRotationAxis = null)
         {
             if (V.IsParallelTo(tol_len, other.V))
             {
@@ -803,15 +771,9 @@ namespace SearchAThing
             tol = _tol;
         }
 
-        public bool Equals(Line3D x, Line3D y)
-        {
-            return x.EqualsTol(tol, y);
-        }
+        public bool Equals(Line3D? x, Line3D? y) => x != null && y != null && x.EqualsTol(tol, y);
 
-        public int GetHashCode(Line3D obj)
-        {
-            return 0;
-        }
+        public int GetHashCode(Line3D obj) => 0;
 
     }
 
@@ -830,10 +792,7 @@ namespace SearchAThing
             return SciToolkit.PostProcessCadScript(sb.ToString());
         }
 
-        public static Line3D ToLine3D(this netDxf.Entities.Line line)
-        {
-            return new Line3D(line.StartPoint, line.EndPoint);
-        }
+        public static Line3D ToLine3D(this netDxf.Entities.Line line) => new Line3D(line.StartPoint, line.EndPoint);        
 
         /// <summary>
         /// retrieve s[0].from, s[1].from, ... s[n-1].from, s[n-1].to points
@@ -842,7 +801,7 @@ namespace SearchAThing
         {
             var en = segs.GetEnumerator();
 
-            Line3D seg = null;
+            Line3D? seg = null;
 
             while (en.MoveNext())
             {
@@ -935,7 +894,7 @@ namespace SearchAThing
         /// TODO: dummy function, optimize
         /// </summary>       
         public static IReadOnlyList<Line3D> AutoIntersect(this IReadOnlyList<Line3D> segs, double tolLen,
-        bool mergeColinearSegments = true, IEnumerable<Vector3D> addictionalSplitPoints = null)
+        bool mergeColinearSegments = true, IEnumerable<Vector3D>? addictionalSplitPoints = null)
         {
             segs = segs.MergeColinearSegments(tolLen).ToList();
 
@@ -958,8 +917,8 @@ namespace SearchAThing
                     var q = seg_i.Intersect(tolLen, seg_j, true, true);
                     if (q != null)
                     {
-                        HashSet<Vector3D> i_hs = null;
-                        HashSet<Vector3D> j_hs = null;
+                        HashSet<Vector3D>? i_hs = null;
+                        HashSet<Vector3D>? j_hs = null;
 
                         if (!q.EqualsTol(tolLen, seg_i.From) && !q.EqualsTol(tolLen, seg_i.To))
                         {
@@ -993,7 +952,7 @@ namespace SearchAThing
                     {
                         if (seg.SegmentContainsPoint(tolLen, pt, excludeExtreme: true))
                         {
-                            HashSet<Vector3D> hs = null;
+                            HashSet<Vector3D>? hs = null;
                             if (!splitPts.TryGetValue(seg, out hs))
                             {
                                 hs = new HashSet<Vector3D>(vecCmp);
@@ -1008,7 +967,7 @@ namespace SearchAThing
             // split segment by split points and rebuild res list
             if (splitPts.Count > 0)
             {
-                HashSet<Vector3D> qSplitPts = null;
+                HashSet<Vector3D>? qSplitPts = null;
                 var res = new List<Line3D>();
                 for (int i = 0; i < segs.Count; ++i)
                 {

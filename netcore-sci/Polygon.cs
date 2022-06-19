@@ -5,29 +5,46 @@ using System.Collections.Generic;
 using System.Drawing.Drawing2D;
 using netDxf;
 using ClipperLib;
+using netDxf.Entities;
 
 namespace SearchAThing
 {
 
-    public static class Polygon
+    public class Loop : Geometry
     {
 
-        /// <summary>
-        /// create an approximation of ellipse
-        /// </summary>
-        /// <param name="center">center of ellipse</param>
-        /// <param name="width">width of ellipse</param>
-        /// <param name="height">height of ellipse</param>
-        /// <param name="flatness">maximum error of approximation</param>
-        /// <returns>vertexes of approximated ellipse (including last=first)</returns>
-        public static IEnumerable<Vector3D> EllipseToPolygon2D(Vector3D center, double width, double height, double flatness = .1)
-        {
-            var _center = Vector3D.Zero;
+        #region Geometry
 
-            var gp = new GraphicsPath();
-            gp.AddEllipse((float)(_center.X - width / 2), (float)(_center.Y - height / 2), (float)width, (float)height);
-            gp.Flatten(new Matrix(), (float)flatness);
-            foreach (var p in gp.PathPoints) yield return new Vector3D(p.X, p.Y, 0) + center;
+        public override IEnumerable<Vector3D> Vertexes => throw new NotImplementedException();
+
+        public override Vector3D GeomFrom => throw new NotImplementedException();
+
+        public override Vector3D GeomTo => throw new NotImplementedException();
+
+        public override double Length => throw new NotImplementedException();
+
+        public override EntityObject DxfEntity => throw new NotImplementedException();
+
+        public override BBox3D BBox(double tol_len)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override IEnumerable<Geometry> Intersect(double tol_len, Geometry other)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        public Loop() : base(GeometryType.Loop)
+        {
+            
         }
 
     }
@@ -124,9 +141,9 @@ namespace SearchAThing
         /// </summary>        
         public static IEnumerable<Vector3D> PolyPoints(this IEnumerable<Vector3D> pts, double tol, bool makeClosed = false)
         {
-            Vector3D first = null;
+            Vector3D? first = null;
 
-            var foundFirstAtend = false;
+            var foundFirstAtend = false;            
 
             foreach (var p in pts)
             {
@@ -143,6 +160,8 @@ namespace SearchAThing
                 yield return p;
             }
 
+            if (first == null) throw new Exception($"empty pts input set");
+
             if (!foundFirstAtend && makeClosed)
                 yield return first;
         }
@@ -153,8 +172,8 @@ namespace SearchAThing
         /// </summary>       
         public static IEnumerable<Line3D> PolygonSegments(this IEnumerable<Vector3D> pts, double tol)
         {
-            Vector3D first = null;
-            Vector3D prev = null;
+            Vector3D? first = null;
+            Vector3D? prev = null;
 
             foreach (var p in pts)
             {
@@ -164,13 +183,15 @@ namespace SearchAThing
                     continue;
                 }
 
-                var seg = new Line3D(prev, p);
+                var seg = new Line3D(prev!, p);
                 prev = p;
 
                 yield return seg;
             }
 
             if (prev == null) yield break;
+
+            if (first == null) throw new Exception($"empty pts input set");
 
             if (!prev.EqualsTol(tol, first)) yield return new Line3D(prev, first);
         }
@@ -237,7 +258,7 @@ namespace SearchAThing
             {
                 if (seg.SegmentContainsPoint(tol, pt)) return true;
 
-                Vector3D ip = null;
+                Vector3D? ip = null;
 
                 ip = ray.Intersect(tol, seg);
                 if (ip != null && seg.SegmentContainsPoint(tol, ip))
@@ -250,21 +271,17 @@ namespace SearchAThing
             return intCnt % 2 != 0;
         }
 
-        public static IEnumerable<Vector3D> SortPoly(this IEnumerable<Vector3D> pts, double tol, Vector3D refAxis = null)
-        {
-            return pts.SortPoly(tol, (p) => p, refAxis);
-        }
+        public static IEnumerable<Vector3D> SortPoly(this IEnumerable<Vector3D> pts, double tol, Vector3D? refAxis = null) => 
+            pts.SortPoly(tol, (p) => p, refAxis);
 
         /// <summary>
         /// Sort polygon segments so that they can form a polygon ( if they really form one ).
         /// It will not check for segment versus adjancency
         /// </summary>        
-        public static IEnumerable<Line3D> SortPoly(this IEnumerable<Line3D> segs, double tol, Vector3D refAxis = null)
-        {
-            return segs.SortPoly(tol, (s) => s.MidPoint, refAxis);
-        }
+        public static IEnumerable<Line3D> SortPoly(this IEnumerable<Line3D> segs, double tol, Vector3D? refAxis = null) => 
+            segs.SortPoly(tol, (s) => s.MidPoint, refAxis);
 
-        public static IEnumerable<T> SortPoly<T>(this IEnumerable<T> pts, double tol, Func<T, Vector3D> getPoint, Vector3D refAxis = null)
+        public static IEnumerable<T> SortPoly<T>(this IEnumerable<T> pts, double tol, Func<T, Vector3D> getPoint, Vector3D? refAxis = null)
         {
             if (pts.Count() == 1) return pts;
 
@@ -273,7 +290,7 @@ namespace SearchAThing
             var r = getPoint(pts.First()) - c;
 
             // search non-null ref axis
-            Vector3D N = null;
+            Vector3D? N = null;
             if (refAxis != null)
                 N = refAxis;
             else
@@ -284,6 +301,8 @@ namespace SearchAThing
                     if (!N.Length.EqualsTol(tol, 0)) break;
                 }
             }
+
+            if (N == null) throw new Exception($"can't state normal from pts input set");
 
             var q = pts.Select(p => new
             {
@@ -354,7 +373,7 @@ namespace SearchAThing
         /// Preprocess segs with SortPoly if needed.
         /// Return the ordered segments poly or null if not a closed poly.
         /// </summary>        
-        public static IEnumerable<Line3D> IsAClosedPoly(this IEnumerable<Line3D> segs, double tol)
+        public static IEnumerable<Line3D>? IsAClosedPoly(this IEnumerable<Line3D> segs, double tol)
         {
             var sply = segs.SortPoly(tol).TakeUntilAdjacent(tol).ToList();
 
@@ -403,18 +422,18 @@ namespace SearchAThing
 
             var pvtx = new List<netDxf.Entities.LwPolylineVertex>();
 
-            Vector3D lastPt = null;
+            Vector3D? lastPt = null;
 
             for (int i = 0; i < geom.Count; ++i)
             {
-                Vector3D from = null;
-                Vector3D to = null;
+                Vector3D? from = null;
+                Vector3D? to = null;
 
                 switch (geom[i].Type)
                 {
                     case GeometryType.Vector3D:
                         {
-                            to = geom[i] as Vector3D;
+                            to = (Vector3D)geom[i];
                             var lwpv = new netDxf.Entities.LwPolylineVertex(to.ToDxfVector2());
                             pvtx.Add(lwpv);
                             lastPt = to;
@@ -423,7 +442,7 @@ namespace SearchAThing
 
                     case GeometryType.Line3D:
                         {
-                            var seg = geom[i] as Line3D;
+                            var seg = (Line3D)geom[i];
                             from = seg.From;
                             to = seg.To;
 
@@ -443,7 +462,7 @@ namespace SearchAThing
                         break;
                     case GeometryType.Arc3D:
                         {
-                            var arc = geom[i] as Arc3D;
+                            var arc = (Arc3D)geom[i];
                             from = arc.From;
                             to = arc.To;
                             var bulge = arc.Bulge(tolLen, arc.From, arc.To, N);
@@ -511,10 +530,8 @@ namespace SearchAThing
         /// build 3d dxf polyline
         /// note: use RepeatFirstAtEnd extension to build a closed polyline
         /// </summary>        
-        public static netDxf.Entities.Polyline ToPolyline(this IEnumerable<Vector3D> pts, bool isClosed = true)
-        {
-            return new netDxf.Entities.Polyline(pts.Select(r => (Vector3)r).ToList(), isClosed);
-        }
+        public static netDxf.Entities.Polyline ToPolyline(this IEnumerable<Vector3D> pts, bool isClosed = true) => 
+            new netDxf.Entities.Polyline(pts.Select(r => (Vector3)r).ToList(), isClosed);            
 
         /// <summary>
         /// can generate a Int64MapExceptionRange exception if double values can't fit into a In64 representation.
@@ -606,6 +623,29 @@ namespace SearchAThing
             }
 
             return res;
+        }
+
+    }
+
+    public static partial class SciToolkit
+    {
+        
+        /// <summary>
+        /// create an approximation of ellipse
+        /// </summary>
+        /// <param name="center">center of ellipse</param>
+        /// <param name="width">width of ellipse</param>
+        /// <param name="height">height of ellipse</param>
+        /// <param name="flatness">maximum error of approximation</param>
+        /// <returns>vertexes of approximated ellipse (including last=first)</returns>
+        public static IEnumerable<Vector3D> EllipseToPolygon2D(Vector3D center, double width, double height, double flatness = .1)
+        {
+            var _center = Vector3D.Zero;
+
+            var gp = new GraphicsPath();
+            gp.AddEllipse((float)(_center.X - width / 2), (float)(_center.Y - height / 2), (float)width, (float)height);
+            gp.Flatten(new Matrix(), (float)flatness);
+            foreach (var p in gp.PathPoints) yield return new Vector3D(p.X, p.Y, 0) + center;
         }
 
     }

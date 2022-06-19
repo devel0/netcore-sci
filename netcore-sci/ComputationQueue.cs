@@ -30,7 +30,7 @@ namespace SearchAThing
         /// </summary>
         /// <param name="prevCnt">0 for last inserted, 1 for prev, 2 for prevPrev, ...</param>
         /// <returns>prev-th item in the queue</returns>
-        public T GetItem(int prevCnt)
+        public T? GetItem(int prevCnt)
         {
             if (prevCnt < 0) throw new ArgumentException("specify positive argument to locate previous items in the queue");
 
@@ -44,17 +44,17 @@ namespace SearchAThing
         /// <summary>
         /// last inserted item
         /// </summary>        
-        public T Current => GetItem(0);
+        public T? Current => GetItem(0);
 
         /// <summary>
         /// previous inserted item ( penultimate )
         /// </summary>        
-        public T Prev => GetItem(1);
+        public T? Prev => GetItem(1);
 
         /// <summary>
         /// previous previous inserted item ( antepeunltimate )
         /// </summary>    
-        public T PrevPrev => GetItem(2);
+        public T? PrevPrev => GetItem(2);
 
         /// <summary>
         /// construct a computation queue with given size.

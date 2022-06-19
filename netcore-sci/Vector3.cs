@@ -52,8 +52,7 @@ namespace SearchAThing
         public static Vector3D ToVector3D(this Vector3 v) => (Vector3D)v;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector3 Transform(this Vector3 v, Matrix4x4 m) =>
-            Vector3.Transform(v, m);
+        public static Vector3 Transform(this Vector3 v, Matrix4x4 m) => Vector3.Transform(v, m);
 
         /// <summary>
         /// create new Vector3 with given x overriden, others yz unchanged

@@ -32,10 +32,7 @@ namespace SearchAThing
         /// <summary>
         /// Creates dxf entities for a 6 faces of a cube
         /// </summary>        
-        public static IEnumerable<Face3d> Cube(Vector3D center, double L)
-        {
-            return Cuboid(center, new Vector3D(L, L, L));
-        }
+        public static IEnumerable<Face3d> Cube(Vector3D center, double L) => Cuboid(center, new Vector3D(L, L, L));
 
         /// <summary>
         /// Creates dxf entities for 6 faces of a cuboid
@@ -90,10 +87,10 @@ namespace SearchAThing
         /// get the midpoint of the 3d polyline
         /// distance is computed over all segments
         /// </summary>        
-        public static Vector3D MidPoint(this Polyline poly)
+        public static Vector3D? MidPoint(this Polyline poly)
         {
             var mid_len = poly.Vector3DCoords().Length() / 2;
-            Vector3D prev = null;
+            Vector3D? prev = null;
             var pos = 0.0;
             var en = poly.Vector3DCoords().GetEnumerator();
             while (en.MoveNext())
@@ -148,10 +145,8 @@ namespace SearchAThing
         /// <summary>
         /// enumerate as Vector3D given dxf polyline vertexes
         /// </summary>        
-        public static IEnumerable<Vector3D> Vector3DCoords(this Polyline pl)
-        {
-            return pl.Vertexes.Select(w => (Vector3D)w.Position);
-        }
+        public static IEnumerable<Vector3D> Vector3DCoords(this Polyline pl) =>
+            pl.Vertexes.Select(w => (Vector3D)w.Position);
 
         /// <summary>
         /// enumerate as Vector3D given dxf lwpolyline vertexes
@@ -175,8 +170,8 @@ namespace SearchAThing
         /// </summary>        
         public static IEnumerable<Vector3D> RepeatFirstAtEnd(this IEnumerable<Vector3D> pts, double tol)
         {
-            Vector3D first = null;
-            Vector3D last = null;
+            Vector3D? first = null;
+            Vector3D? last = null;
             foreach (var x in pts)
             {
                 if (first == null) first = x;
@@ -186,7 +181,7 @@ namespace SearchAThing
 
             if (last == null) yield break;
 
-            if (!last.EqualsTol(tol, first)) yield return first;
+            if (first != null && !last.EqualsTol(tol, first)) yield return first;
         }
 
         public static IEnumerable<EntityObject> CoordTransform(this DxfDocument dxf, Func<Vector3D, Vector3D> transform)
@@ -198,7 +193,6 @@ namespace SearchAThing
             foreach (var circle in dxf.Circles) yield return circle.CoordTransform(transform);
             foreach (var text in dxf.Texts) yield return text.CoordTransform(transform);
             foreach (var mtext in dxf.MTexts) yield return mtext.CoordTransform(transform);
-
 
             var origin = transform(Vector3D.Zero);
             var insBlocks = dxf.Inserts.Select(w => w.Block).Distinct();
@@ -227,7 +221,7 @@ namespace SearchAThing
         /// <summary>
         /// build a clone of the given entity with coord transformed accordingly given function.
         /// </summary>        
-        public static EntityObject CoordTransform(this EntityObject eo, Func<Vector3D, Vector3D> transform, Vector3D origin = null)
+        public static EntityObject CoordTransform(this EntityObject eo, Func<Vector3D, Vector3D> transform, Vector3D? origin = null)
         {
             switch (eo.Type)
             {
@@ -301,11 +295,11 @@ namespace SearchAThing
         /// add entity to the given dxf object ( it can be Dxfdocument or Block )
         /// optionally set layer
         /// </summary>        
-        public static EntityObject AddEntity(this DxfObject dxfObj, EntityObject eo, Layer layer = null)
+        public static EntityObject AddEntity(this DxfObject dxfObj, EntityObject eo, Layer? layer = null)
         {
-            if (dxfObj is DxfDocument) (dxfObj as DxfDocument).AddEntity(eo);
-            else if (dxfObj is Block) (dxfObj as Block).Entities.Add(eo);
-            else if (dxfObj is netDxf.Objects.Group) (dxfObj as netDxf.Objects.Group).Entities.Add(eo);
+            if (dxfObj is DxfDocument dxfDoc) dxfDoc.AddEntity(eo);
+            else if (dxfObj is Block dxfBlock) dxfBlock.Entities.Add(eo);
+            else if (dxfObj is netDxf.Objects.Group dxfGroup) dxfGroup.Entities.Add(eo);
             else throw new ArgumentException($"dxfObj must DxfDocument or Block");
 
             if (layer != null) eo.Layer = layer;
@@ -317,7 +311,7 @@ namespace SearchAThing
         /// add entity to the given dxf object ( it can be Dxfdocument or Block )
         /// optionally set layer
         /// </summary>        
-        public static void AddEntities(this DxfObject dxfObj, IEnumerable<EntityObject> ents, Layer layer = null)
+        public static void AddEntities(this DxfObject dxfObj, IEnumerable<EntityObject> ents, Layer? layer = null)
         {
             foreach (var ent in ents) dxfObj.AddEntity(ent, layer);
         }
@@ -334,7 +328,7 @@ namespace SearchAThing
         /// <summary>
         /// Creates and add dxf entities for a 3 axis of given length centered in given center point.
         /// </summary>        
-        public static IEnumerable<EntityObject> DrawStar(this DxfObject dxfObj, Vector3D center, double L, Layer layer = null)
+        public static IEnumerable<EntityObject> DrawStar(this DxfObject dxfObj, Vector3D center, double L, Layer? layer = null)
         {
             var q = Star(center, L).ToList();
 
@@ -346,7 +340,7 @@ namespace SearchAThing
         /// <summary>
         /// Creates and add dxf entities for a 6 faces of a cube
         /// </summary>        
-        public static IEnumerable<EntityObject> DrawCube(this DxfObject dxfObj, Vector3D center, double L, Layer layer = null)
+        public static IEnumerable<EntityObject> DrawCube(this DxfObject dxfObj, Vector3D center, double L, Layer? layer = null)
         {
             var ents = Cuboid(center, new Vector3D(L, L, L)).ToList();
 
@@ -358,14 +352,14 @@ namespace SearchAThing
         /// <summary>
         /// Creates and add dxf entities for 6 faces of a cuboid
         /// </summary>        
-        public static IEnumerable<EntityObject> DrawCuboid(this DxfObject dxfObj, Vector3D center, Vector3D size, Layer layer = null)
+        public static IEnumerable<EntityObject> DrawCuboid(this DxfObject dxfObj, Vector3D center, Vector3D size, Layer? layer = null)
         {
             var ents = Cuboid(center, size).ToList();
 
             dxfObj.AddEntities(ents, layer);
 
             return ents;
-        }        
+        }
 
         public static string CadScript(this Face3d face)
         {
@@ -376,7 +370,7 @@ namespace SearchAThing
                 face.SecondVertex.X, face.SecondVertex.Y, face.SecondVertex.Z,
                 face.ThirdVertex.X, face.ThirdVertex.Y, face.ThirdVertex.Z));
 
-            if (face.FourthVertex != null) sb.Append(string.Format(CultureInfo.InvariantCulture, " {0},{1},{2}",
+            if ((Vector3?)face.FourthVertex != null) sb.Append(string.Format(CultureInfo.InvariantCulture, " {0},{1},{2}",
                 face.FourthVertex.X, face.FourthVertex.Y, face.FourthVertex.Z));
 
             sb.AppendLine();
@@ -395,10 +389,7 @@ namespace SearchAThing
             dxf.Viewport.ViewAspectRatio = bbox_size.X / (bbox_size.Y * 2);
         }
 
-        public static Line ToLine(this Line3D line)
-        {
-            return new Line(line.From, line.To);
-        }
+        public static Line ToLine(this Line3D line) => new Line(line.From, line.To);
 
         public static EntityObject SetColor(this EntityObject eo, AciColor color)
         {
@@ -458,10 +449,7 @@ namespace SearchAThing
                     return netDxf.AciColor.FromTrueColor((r << 16) + (g << 8) + b);
                 }*/
 
-        public static UCS ToDxfUCS(this CoordinateSystem3D cs, string name)
-        {
-            return new UCS(name, cs.Origin, cs.BaseX, cs.BaseY);
-        }
+        public static UCS ToDxfUCS(this CoordinateSystem3D cs, string name) => new UCS(name, cs.Origin, cs.BaseX, cs.BaseY);
 
         public static IEnumerable<EntityObject> DrawTimeline(this DxfObject dxf, List<(DateTime from, DateTime to)> timeline,
         double textHeight = 2, double circleRadius = 1.5, double maxWidth = 180, double stopDays = 60, Func<DateTime, string> dtStr = null)

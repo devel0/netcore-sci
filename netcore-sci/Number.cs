@@ -75,6 +75,8 @@ namespace SearchAThing
         /// </summary>
         /// <param name="angleFrom">angle from</param>
         /// <param name="angleTo">angle to</param>
+        /// <param name="tol_rad">angle tolerance (rad)</param>
+        /// <param name="normalizeAngles">actuate [0,2PI) angle normalization</param>
         public static double Angle(this double angleFrom, double tol_rad, double angleTo, bool normalizeAngles = true)
         {
             if (normalizeAngles)
@@ -88,7 +90,6 @@ namespace SearchAThing
             else
                 return angleTo - angleFrom;
         }
-
 
         /// <summary>
         /// Normalize given angle(rad) into [maxRad-2PI,maxRad) range.
@@ -133,7 +134,9 @@ namespace SearchAThing
                 if (_max.HasValue) _max = Max(_max.Value, x); else _max = x;
             }
 
-            return (_min.Value, _max.Value);
+            if (_min == null) throw new Exception($"empty input set");
+
+            return (_min!.Value, _max!.Value);
         }
 
         /// <summary>
@@ -276,9 +279,8 @@ namespace SearchAThing
         /// Compute some stat info about given number set using [LinqStatistics](https://github.com/dkackman/LinqStatistics)        
         /// </summary>        
         /// <returns>a tuple containing stat informations about given number set</returns>
-        public static NumbersStatNfo StatNfos(this IEnumerable<double> numbers)
-        {
-            return new NumbersStatNfo
+        public static NumbersStatNfo StatNfos(this IEnumerable<double> numbers) =>
+            new NumbersStatNfo
             {
                 Count = numbers.Count(),
                 Average = numbers.Average(),
@@ -290,7 +292,6 @@ namespace SearchAThing
                 StandardDeviationP = numbers.StandardDeviationP(),
                 Range = numbers.Range()
             };
-        }
 
     }
 
@@ -307,8 +308,8 @@ namespace SearchAThing
         /// <remarks>      
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Number/NumberTest_0004.cs)        
         /// </remarks>
-        public static IInterpolation LinearSplineInterpolate(IEnumerable<double> x, IEnumerable<double> y) =>                    
-            LinearSpline.Interpolate(x, y);              
+        public static IInterpolation LinearSplineInterpolate(IEnumerable<double> x, IEnumerable<double> y) =>
+            LinearSpline.Interpolate(x, y);
 
         /// <summary>
         /// span a range of doubles from start to end ( optionally included ) stepping with given inc

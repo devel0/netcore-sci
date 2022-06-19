@@ -13,15 +13,9 @@ namespace SearchAThing
             tol = _tol;
         }
 
-        public bool Equals(double x, double y)
-        {
-            return x.EqualsTol(tol, y);
-        }
+        public bool Equals(double x, double y) => x.EqualsTol(tol, y);        
 
-        public int GetHashCode(double obj)
-        {
-            return 0;
-        }
+        public int GetHashCode(double obj) => 0;
     }
 
     public static partial class SciExt

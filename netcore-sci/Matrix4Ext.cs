@@ -14,7 +14,7 @@ namespace SearchAThing
         /// If want to use direct array struct fields are taken in byname sort
         /// check with ObjectLayoutInspector utility ( https://github.com/SergeyTeplyakov/ObjectLayoutInspector )
         ///
-        /// PrintLayout<Matrix4x4>();
+        /// PrintLayout&lt;Matrix4x4&gt;();
         ///            
         /// Type layout for 'Matrix4x4'
         /// Size: 64 bytes. Paddings: 0 bytes (%0 of empty space)
@@ -84,6 +84,7 @@ namespace SearchAThing
         /// </summary>
         /// <param name="m">matrix</param>
         /// <param name="dec">decimal to display</param>
+        /// <param name="width">column width</param>
         /// <returns>formatted text representation of given matrix</returns>
         public static string Fmt(this Matrix4x4 m, int dec, int width = 10)
         {
