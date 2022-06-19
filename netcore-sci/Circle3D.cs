@@ -7,12 +7,18 @@ using netDxf.Entities;
 namespace SearchAThing
 {
 
-    public class Circle3D : Arc3D
+    public class Circle3D : Arc3D, IEdge
     {
+
+        #region IEdge
+
+        public new EdgeType EdgeType => EdgeType.Circle3D;
+
+        #endregion
 
         public Circle3D(double tol_len, CoordinateSystem3D cs, double r) : base(tol_len, cs, r, 0, 2 * PI)
         {
-            Type = GeometryType.Circle3D;
+            GeomType = GeometryType.Circle3D;
         }
 
         /// <summary>
@@ -21,7 +27,7 @@ namespace SearchAThing
         /// <param name="arc">arc used to build circle</param>
         public Circle3D(Arc3D arc) : base(arc.From, arc.MidPoint, arc.To)
         {
-            Type = GeometryType.Circle3D;
+            GeomType = GeometryType.Circle3D;
         }
 
         /// <summary>
@@ -30,7 +36,7 @@ namespace SearchAThing
         /// </summary>        
         public Circle3D(Vector3D p1, Vector3D p2, Vector3D p3) : base(p1, p2, p3)
         {
-            Type = GeometryType.Circle3D;
+            GeomType = GeometryType.Circle3D;
         }
 
         //

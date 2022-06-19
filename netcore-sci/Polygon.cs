@@ -8,46 +8,7 @@ using ClipperLib;
 using netDxf.Entities;
 
 namespace SearchAThing
-{
-
-    public class Loop : Geometry
-    {
-
-        #region Geometry
-
-        public override IEnumerable<Vector3D> Vertexes => throw new NotImplementedException();
-
-        public override Vector3D GeomFrom => throw new NotImplementedException();
-
-        public override Vector3D GeomTo => throw new NotImplementedException();
-
-        public override double Length => throw new NotImplementedException();
-
-        public override EntityObject DxfEntity => throw new NotImplementedException();
-
-        public override BBox3D BBox(double tol_len)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override IEnumerable<Geometry> Intersect(double tol_len, Geometry other)
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
-
-        public Loop() : base(GeometryType.Loop)
-        {
-            
-        }
-
-    }
+{   
 
     public static partial class SciExt
     {
@@ -429,7 +390,7 @@ namespace SearchAThing
                 Vector3D? from = null;
                 Vector3D? to = null;
 
-                switch (geom[i].Type)
+                switch (geom[i].GeomType)
                 {
                     case GeometryType.Vector3D:
                         {

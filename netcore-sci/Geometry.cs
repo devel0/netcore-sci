@@ -9,16 +9,15 @@ namespace SearchAThing
         Vector3D,
         Line3D,
         Circle3D,
-        Arc3D,
-        Loop
+        Arc3D
     }
 
     public abstract class Geometry
     {
 
-        public Geometry(GeometryType type) { Type = type; }
+        public Geometry(GeometryType type) { GeomType = type; }
 
-        public GeometryType Type { get; protected set; }
+        public GeometryType GeomType { get; protected set; }
 
         public abstract IEnumerable<Vector3D> Vertexes { get; }
         public abstract Vector3D GeomFrom { get; }
@@ -43,7 +42,7 @@ namespace SearchAThing
         /// <summary>
         /// extracs Arc3D, Line3D from given lwpolyline
         /// </summary>        
-        public static IEnumerable<Geometry> ToGeometryBlock(this netDxf.Entities.LwPolyline lwpolyline,
+        public static IEnumerable<Geometry> ToGeometries(this netDxf.Entities.LwPolyline lwpolyline,
             double tolLen)
         {
             var geoms = new List<Geometry>();
@@ -66,10 +65,8 @@ namespace SearchAThing
             }
         }
 
-        // public static Loop ToLoop(this netDxf.Entities.LwPolyline lwpolyline, double tol)
-        // {
-        //     lwpolyline.ToGeometryBlock(tol);
-        // }
+        public static Loop ToLoop(this netDxf.Entities.LwPolyline lwpolyline, double tol) =>
+            new Loop(tol, lwpolyline);
 
         /// <summary>
         /// segments representation of given geometries
@@ -85,7 +82,7 @@ namespace SearchAThing
             {
                 var geom = en.Current;
 
-                switch (geom.Type)
+                switch (geom.GeomType)
                 {
                     case GeometryType.Vector3D:
                         {
@@ -143,7 +140,7 @@ namespace SearchAThing
                         }
                         break;
 
-                    default: throw new System.Exception($"unsupported type [{geom.Type}] on Segments function");
+                    default: throw new System.Exception($"unsupported type [{geom.GeomType}] on Segments function");
                 }
             }
         }
@@ -183,9 +180,9 @@ namespace SearchAThing
 
             // TODO centroid with polyline and arcs
 
-            if (geometry_block.Count(r => r.Type == GeometryType.Arc3D) > 1)
+            if (geometry_block.Count(r => r.GeomType == GeometryType.Arc3D) > 1)
             {
-                var arcs = geometry_block.Where(r => r.Type == GeometryType.Arc3D).Take(2).Cast<Arc3D>().ToList();
+                var arcs = geometry_block.Where(r => r.GeomType == GeometryType.Arc3D).Take(2).Cast<Arc3D>().ToList();
                 return (arcs[0].MidPoint + arcs[1].MidPoint) / 2;
             }
             else

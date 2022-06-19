@@ -24,19 +24,19 @@ namespace test
             var lw1 = polys[0];
             var lw2 = polys[1];
 
-            var geom1 = lw1.ToGeometryBlock(tol);
-            var geom2 = lw2.ToGeometryBlock(tol);
+            var loop1 = lw1.ToLoop(tol);
+            var loop2 = lw2.ToLoop(tol);
 
-            var igeoms = geom1.Intersect(tol, geom2).ToList();
+            var igeoms = loop1.Intersect(tol, loop2).ToList();
 
             var outputPathfilename = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "output.dxf");
             var outDxf = new netDxf.DxfDocument();
             outDxf.AddEntities(new[] { (EntityObject)lw1.Clone(), (EntityObject)lw2.Clone() });
             foreach (var geom in igeoms)
             {
-                var ent = geom.DxfEntity;
-                ent.Color = AciColor.Red;
-                outDxf.AddEntity(ent);
+                // var ent = geom.DxfEntity;
+                // ent.Color = AciColor.Red;
+                // outDxf.AddEntity(ent);
             }
             outDxf.Viewport.ShowGrid = false;
             outDxf.Save(outputPathfilename);

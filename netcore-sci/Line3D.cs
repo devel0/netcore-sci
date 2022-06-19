@@ -43,8 +43,14 @@ namespace SearchAThing
         PointOnOther
     }
 
-    public class Line3D : Geometry
+    public class Line3D : Geometry, IEdge
     {
+        #region IEdge
+
+        public EdgeType EdgeType => EdgeType.Line3D;
+
+        #endregion
+
         #region Geometry
 
         [JsonIgnore]
@@ -84,7 +90,7 @@ namespace SearchAThing
 
         public override IEnumerable<Geometry> Intersect(double tol_len, Geometry _other)
         {
-            switch (_other.Type)
+            switch (_other.GeomType)
             {
                 case GeometryType.Line3D:
                     {
@@ -792,7 +798,7 @@ namespace SearchAThing
             return SciToolkit.PostProcessCadScript(sb.ToString());
         }
 
-        public static Line3D ToLine3D(this netDxf.Entities.Line line) => new Line3D(line.StartPoint, line.EndPoint);        
+        public static Line3D ToLine3D(this netDxf.Entities.Line line) => new Line3D(line.StartPoint, line.EndPoint);
 
         /// <summary>
         /// retrieve s[0].from, s[1].from, ... s[n-1].from, s[n-1].to points

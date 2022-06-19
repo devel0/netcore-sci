@@ -12,8 +12,14 @@ namespace SearchAThing
     /// <summary>
     /// base geometry for arc 3d entities
     /// </summary>
-    public class Arc3D : Geometry
+    public class Arc3D : Geometry, IEdge
     {
+
+        #region IEdge
+
+        public EdgeType EdgeType => EdgeType.Arc3D;
+
+        #endregion
 
         #region Geometry
 
@@ -81,7 +87,7 @@ namespace SearchAThing
 
         public override IEnumerable<Geometry> Intersect(double tol, Geometry _other)
         {
-            switch (_other.Type)
+            switch (_other.GeomType)
             {
                 case GeometryType.Line3D:
                     {
@@ -183,7 +189,7 @@ namespace SearchAThing
         internal Arc3D(Vector3D p1, Vector3D p2, Vector3D p3) :
             base(GeometryType.Arc3D)
         {
-            Type = GeometryType.Arc3D;
+            GeomType = GeometryType.Arc3D;
 
             var nfo = Arc3D.CircleBy3Points(p1, p2, p3);
 
@@ -201,7 +207,7 @@ namespace SearchAThing
         public Arc3D(double tol, Vector3D p1, Vector3D p2, Vector3D p3, Vector3D? normal = null) :
             base(GeometryType.Arc3D)
         {
-            Type = GeometryType.Arc3D;
+            GeomType = GeometryType.Arc3D;
 
             var nfo = Arc3D.CircleBy3Points(p1, p2, p3);
 
