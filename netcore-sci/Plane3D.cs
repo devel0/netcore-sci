@@ -42,9 +42,9 @@ namespace SearchAThing
         /// <summary>
         /// return intersection line between two planes or null if they parallels
         /// </summary>
-        /// <param name="tol_len">len tolerance</param>
+        /// <param name="tol">len tolerance</param>
         /// <param name="other">other plane</param>        
-        public Line3D? Intersect(double tol_len, Plane3D other) => CS.Intersect(tol_len, other.CS);
+        public Line3D? Intersect(double tol, Plane3D other) => CS.Intersect(tol, other.CS);
 
     }
 

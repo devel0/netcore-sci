@@ -494,9 +494,9 @@ namespace SearchAThing
         /// Circle is considered only 4 points on circumference.
         /// </remarks>
         /// <param name="eo">dxf entity object</param>
-        /// <param name="tol_len">tolerance for comparision length tests</param>
+        /// <param name="tol">tolerance for comparision length tests</param>
         /// <returns>new bbox that contains given dxf entity object</returns>
-        public static BBox3D BBox(this EntityObject eo, double tol_len)
+        public static BBox3D BBox(this EntityObject eo, double tol)
         {
             switch (eo.Type)
             {
@@ -511,11 +511,11 @@ namespace SearchAThing
 
                 case EntityType.Arc:
                     {
-                        var arc = ((Arc)eo).ToArc3D(tol_len);
+                        var arc = ((Arc)eo).ToArc3D(tol);
                         return new BBox3D(new[] { arc.From, arc.To, arc.MidPoint });
                     }
 
-                case EntityType.Circle: return ((Circle)eo).ToPolyline(4).BBox(tol_len);
+                case EntityType.Circle: return ((Circle)eo).ToPolyline(4).BBox(tol);
 
                 case EntityType.LwPolyline:
                     {
@@ -539,15 +539,15 @@ namespace SearchAThing
         /// construct a bbox from given set of dxf entity objects
         /// </summary>
         /// <param name="ents">enumerable of dxf entity object</param>
-        /// <param name="tol_len">tolerance for comparision length tests</param>
+        /// <param name="tol">tolerance for comparision length tests</param>
         /// <returns>new bbox containing given set of dxf entity objects</returns>        
-        public static BBox3D BBox(this IEnumerable<EntityObject> ents, double tol_len)
+        public static BBox3D BBox(this IEnumerable<EntityObject> ents, double tol)
         {
             var bbox = new BBox3D();
 
             foreach (var x in ents)
             {
-                bbox = bbox.Union(x.BBox(tol_len));
+                bbox = bbox.Union(x.BBox(tol));
             }
 
             return bbox;

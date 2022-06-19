@@ -372,8 +372,12 @@ namespace SearchAThing
         /// <summary>
         /// build 2d dxf polyline.
         /// note: use RepeatFirstAtEnd extension to build a closed polyline
-        /// </summary>        
-        public static netDxf.Entities.LwPolyline ToLwPolyline(this IEnumerable<Geometry> _geom, double tolLen, bool closed = true)
+        /// </summary>
+        /// <param name="_geom"></param>
+        /// <param name="tol">length tolerance</param>
+        /// <param name="closed"></param>
+        /// <returns></returns>
+        public static netDxf.Entities.LwPolyline ToLwPolyline(this IEnumerable<Geometry> _geom, double tol, bool closed = true)
         {
             var geom = _geom.ToList();
 
@@ -407,7 +411,7 @@ namespace SearchAThing
                             from = seg.From;
                             to = seg.To;
 
-                            if (lastPt == null || lastPt.EqualsTol(tolLen, from))
+                            if (lastPt == null || lastPt.EqualsTol(tol, from))
                             {
                                 var lwpv = new netDxf.Entities.LwPolylineVertex(from.ToUCS(cs).ToDxfVector2());
                                 pvtx.Add(lwpv);
@@ -426,13 +430,13 @@ namespace SearchAThing
                             var arc = (Arc3D)geom[i];
                             from = arc.From;
                             to = arc.To;
-                            var bulge = arc.Bulge(tolLen, arc.From, arc.To, N);
+                            var bulge = arc.Bulge(tol, arc.From, arc.To, N);
 
                             if (lastPt == null)
                             {
                                 if (i < geom.Count - 1)
                                 {
-                                    if (geom[i + 1].GeomFrom.EqualsTol(tolLen, to))
+                                    if (geom[i + 1].GeomFrom.EqualsTol(tol, to))
                                     {
                                         var lwpv = new netDxf.Entities.LwPolylineVertex(from.ToUCS(cs).ToDxfVector2()) { Bulge = bulge };
                                         pvtx.Add(lwpv);
@@ -454,7 +458,7 @@ namespace SearchAThing
                             }
                             else
                             {
-                                if (lastPt.EqualsTol(tolLen, from))
+                                if (lastPt.EqualsTol(tol, from))
                                 {
                                     var lwpv = new netDxf.Entities.LwPolylineVertex(from.ToUCS(cs).ToDxfVector2()) { Bulge = bulge };
                                     pvtx.Add(lwpv);

@@ -82,13 +82,13 @@ namespace SearchAThing
         /// Compute bbox of this point.
         /// ( Geometry BBox implementation ).            
         /// </summary>
-        /// <param name="tol_len">length tolerance</param>            
+        /// <param name="tol">length tolerance</param>            
         /// <remarks>      
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
         /// </remarks>
-        public override BBox3D BBox(double tol_len) => new BBox3D(new[] { this });
+        public override BBox3D BBox(double tol) => new BBox3D(new[] { this });
 
-        public override IEnumerable<Geometry> Intersect(double tol_len, Geometry other)
+        public override IEnumerable<Geometry> Intersect(double tol, Geometry other)
         {
             throw new NotImplementedException();
         }
@@ -399,11 +399,11 @@ namespace SearchAThing
         /// retrieve signed offset of this point respect given origin point in the given normalized direction v.
         /// precondition: vector v must colinear to (this-origin) and must already normalized
         /// </summary>        
-        public double ColinearScalarOffset(double tol_len, Vector3D origin, Vector3D v)
+        public double ColinearScalarOffset(double tol, Vector3D origin, Vector3D v)
         {
             var dst = (this - origin).Length;
 
-            if ((origin + dst * v).EqualsTol(tol_len, this))
+            if ((origin + dst * v).EqualsTol(tol, this))
                 return dst;
             else
                 return -dst;
@@ -474,16 +474,16 @@ namespace SearchAThing
         /// <summary>
         /// angle between this and given vector
         /// </summary>
-        /// <param name="tolLen">geometric tolerance to test vector equalities ( use Constants.NormalizedLengthTolerance when comparing normalized vectors )</param>
+        /// <param name="tol">geometric tolerance to test vector equalities ( use Constants.NormalizedLengthTolerance when comparing normalized vectors )</param>
         /// <param name="to">other vector</param>
         /// <returns>angle between two vectors (rad)</returns>
         /// <remarks>      
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0020.cs)
         /// ![image](../test/Vector3D/Vector3DTest_0020.png)            
         /// </remarks>
-        public double AngleRad(double tolLen, Vector3D to)
+        public double AngleRad(double tol, Vector3D to)
         {
-            if (this.EqualsTol(tolLen, to)) return 0;
+            if (this.EqualsTol(tol, to)) return 0;
 
             // dp = |a| |b| cos(alfa)
             var dp = this.DotProduct(to);
@@ -674,18 +674,18 @@ namespace SearchAThing
         /// compute angle required to make this point go to the given one
         /// if rotate right-hand around given reference axis
         /// </summary>
-        /// <param name="tolLen">geometric tolerance ( use Constants.NormalizedLengthTolerance if working with normalized vectors )</param>
+        /// <param name="tol">geometric tolerance ( use Constants.NormalizedLengthTolerance if working with normalized vectors )</param>
         /// <param name="to">point toward rotate this one</param>
         /// <param name="refAxis">reference axis to make right-hand rotation of this point toward given one</param>
         /// <returns>angle (rad)</returns>
-        public double AngleToward(double tolLen, Vector3D to, Vector3D refAxis)
+        public double AngleToward(double tol, Vector3D to, Vector3D refAxis)
         {
             var c = this.CrossProduct(to);
 
-            if (c.Concordant(tolLen, refAxis))
-                return this.AngleRad(tolLen, to);
+            if (c.Concordant(tol, refAxis))
+                return this.AngleRad(tol, to);
             else
-                return 2 * PI - AngleRad(tolLen, to);
+                return 2 * PI - AngleRad(tol, to);
         }
 
         /// <summary>
@@ -1387,14 +1387,14 @@ namespace SearchAThing
         /// if want to represent arcs, add them as dummy lines to segs
         /// polys returned are ordered anticlockwise
         /// </summary>        
-        public static IEnumerable<IReadOnlyList<Vector3D>> ClosedPolys2D(this IEnumerable<Line3D> segs, double tolLen,
+        public static IEnumerable<IReadOnlyList<Vector3D>> ClosedPolys2D(this IEnumerable<Line3D> segs, double tol,
             int polyMaxPoints = 0)
         {
             var minCoord = new BBox3D(segs.SelectMany(r => new[] { r.From, r.To })).Min;
 
-            var vcmp = new Vector3DEqualityComparer(tolLen);
-            var lcmp = new Line3DEqualityComparer(tolLen);
-            var segsDict = segs.ToDictionary(k => k.ToString(tolLen), v => v);
+            var vcmp = new Vector3DEqualityComparer(tol);
+            var lcmp = new Line3DEqualityComparer(tol);
+            var segsDict = segs.ToDictionary(k => k.ToString(tol), v => v);
             var segsFromDict = segs.GroupBy(g => g.From, v => v, vcmp).ToDictionary(k => k.Key, v => v.ToList(), vcmp);
             var segsToDict = segs.GroupBy(g => g.To, v => v, vcmp).ToDictionary(k => k.Key, v => v.ToList(), vcmp);
 
@@ -1416,19 +1416,19 @@ namespace SearchAThing
                     {
                         var hs = new HashSet<Line3D>(lcmp);
                         {
-                            if (segsFromDict.TryGetValue(seg.To, out var tmp)) foreach (var x in tmp.Where(r => !r.EqualsTol(tolLen, seg))) hs.Add(x);
+                            if (segsFromDict.TryGetValue(seg.To, out var tmp)) foreach (var x in tmp.Where(r => !r.EqualsTol(tol, seg))) hs.Add(x);
                         }
                         {
-                            if (segsToDict.TryGetValue(seg.To, out var tmp)) foreach (var x in tmp.Where(r => !r.EqualsTol(tolLen, seg))) hs.Add(x);
+                            if (segsToDict.TryGetValue(seg.To, out var tmp)) foreach (var x in tmp.Where(r => !r.EqualsTol(tol, seg))) hs.Add(x);
                         }
-                        segsNext = hs.Select(w => w.EnsureFrom(tolLen, seg.To)).ToList();
+                        segsNext = hs.Select(w => w.EnsureFrom(tol, seg.To)).ToList();
                     }
 
                     Line3D? segNext = null;
                     var force_close_poly = false;
 
                     if (polyMaxPoints > 0 && poly.Count > polyMaxPoints)
-                        throw new Exception($"polygon [{poly.PolygonSegments(tolLen).ToCadScript()}] max point exceeded");
+                        throw new Exception($"polygon [{poly.PolygonSegments(tol).ToCadScript()}] max point exceeded");
 
                     //#if DEBUG
 
@@ -1448,7 +1448,7 @@ namespace SearchAThing
                         }
 
                         segNext = segsNext
-                            .OrderBy(w => (-seg.V).AngleRad(tolLen, w.V))
+                            .OrderBy(w => (-seg.V).AngleRad(tol, w.V))
                             .First();
                         rotDir = seg.V.CrossProduct(segNext.V).Z > 0 ? 1 : -1;
                     }
@@ -1457,7 +1457,7 @@ namespace SearchAThing
                         var qSegsNext = segsNext
                             .Select(w => new
                             {
-                                arad = (seg.V).AngleToward(tolLen, w.V, Vector3D.ZAxis * rotDir),
+                                arad = (seg.V).AngleToward(tol, w.V, Vector3D.ZAxis * rotDir),
                                 seg = w
                             })
                             .Where(r => r.arad <= PI).ToList();
@@ -1478,7 +1478,7 @@ namespace SearchAThing
                     if (force_close_poly) break;
 
                     segsLeft.Remove(segNext!);
-                    if (segNext!.To.EqualsTol(tolLen, poly[0])) break;
+                    if (segNext!.To.EqualsTol(tol, poly[0])) break;
                     poly.Add(segNext.To);
 
                     seg = segNext!;
@@ -1486,9 +1486,9 @@ namespace SearchAThing
 
                 if (poly.Count > 2)
                 {
-                    poly = poly.SortPoly(tolLen, Vector3D.ZAxis).ToList();
+                    poly = poly.SortPoly(tol, Vector3D.ZAxis).ToList();
 
-                    var polyCentroid = poly.Centroid(tolLen);
+                    var polyCentroid = poly.Centroid(tol);
                     if (!polyCentroidDone.Contains(polyCentroid))
                     {
                         polys.Add(poly);

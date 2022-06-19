@@ -318,18 +318,18 @@ namespace SearchAThing
         /// <summary>
         /// return intersect line between two cs xy planes
         /// </summary>
-        /// <param name="tol_len">len tolernace</param>
+        /// <param name="tol">len tolernace</param>
         /// <param name="other">other cs</param>
         /// <returns>null if cs parallel to the given other</returns>
-        public Line3D? Intersect(double tol_len, CoordinateSystem3D other)
+        public Line3D? Intersect(double tol, CoordinateSystem3D other)
         {
-            if (this.IsParallelTo(tol_len, other)) return null;
+            if (this.IsParallelTo(tol, other)) return null;
 
             var l1 = new Line3D(other.Origin, other.BaseX, Line3DConstructMode.PointAndVector);
             var l2 = new Line3D(other.Origin, other.BaseY, Line3DConstructMode.PointAndVector);
 
-            var i1 = l1.Intersect(tol_len, this);
-            var i2 = l2.Intersect(tol_len, this);
+            var i1 = l1.Intersect(tol, this);
+            var i2 = l2.Intersect(tol, this);
 
             if (i1 == null) i1 = i2 + l1.V;
             else if (i2 == null) i2 = i1 + l2.V;

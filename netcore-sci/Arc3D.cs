@@ -152,6 +152,15 @@ namespace SearchAThing
             Radius = r;
         }
 
+        protected Arc3D(CoordinateSystem3D cs, double r, double normalizedAngleRadStart, double normalizedAngleRadEnd) :
+            base(GeometryType.Arc3D)
+        {
+            AngleStart = normalizedAngleRadStart;
+            AngleEnd = normalizedAngleRadEnd;
+            CS = cs;
+            Radius = r;
+        }
+
         /// <summary>
         /// helper to build circle by given 3 points
         /// </summary>
@@ -159,7 +168,7 @@ namespace SearchAThing
         /// <param name="p2">second constraint point</param>            
         /// <param name="p3">third constraint point</param>            
         /// <returns>cs and radius that describe a 3d circle</returns>
-        public static (CoordinateSystem3D CS, double Radius) CircleBy3Points(Vector3D p1, Vector3D p2, Vector3D p3)
+        static (CoordinateSystem3D CS, double Radius) CircleBy3Points(Vector3D p1, Vector3D p2, Vector3D p3)
         {
             // https://en.wikipedia.org/wiki/Circumscribed_circle
             // Cartesian coordinates from cross- and dot-products
@@ -180,13 +189,13 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// build 3d arc by given 3 points
+        /// build 3d arc by given 3 points (angles 0,2pi)
         /// </summary>
         /// <param name="p1">first constraint point</param>
         /// <param name="p2">second constraint point</param>
         /// <param name="p3">third constraint point</param>
         /// <returns>3d arc passing for given points with angles 0-2pi</returns>
-        internal Arc3D(Vector3D p1, Vector3D p2, Vector3D p3) :
+        public Arc3D(Vector3D p1, Vector3D p2, Vector3D p3) :
             base(GeometryType.Arc3D)
         {
             GeomType = GeometryType.Arc3D;
@@ -267,16 +276,18 @@ namespace SearchAThing
         /// </summary>
         public Vector3D MidPoint => PtAtAngle(AngleStart + Angle / 2);
 
-        /// <summary>            
+        /// <summary>
         /// return the angle (rad) of the point respect cs x axis rotating around cs z axis
         /// to reach given point angle alignment
-        /// </summary>            
-        public double PtAngle(double tolLen, Vector3D pt)
+        /// </summary>
+        /// <param name="tol">length tolerance</param>
+        /// <param name="pt">point to query angle respect csx axis for</param>        
+        public double PtAngle(double tol, Vector3D pt)
         {
             var v_x = CS.BaseX;
             var v_pt = pt - CS.Origin;
 
-            return v_x.AngleToward(tolLen, v_pt, CS.BaseZ);
+            return v_x.AngleToward(tol, v_pt, CS.BaseZ);
         }
 
         /// <summary>
@@ -367,7 +378,7 @@ namespace SearchAThing
 
         public Vector3D Center => CS.Origin;
 
-        public Circle3D ToCircle3D(double tol_len) => new Circle3D(tol_len, CS, Radius);
+        public Circle3D ToCircle3D(double tol) => new Circle3D(CS, Radius);
 
         /// <summary>
         /// centre of mass of circular segment
@@ -615,8 +626,13 @@ namespace SearchAThing
         /// <param name="radius">radius of the arc</param>
         public static double RadTol(this double lenTol, double radius) => lenTol / radius;
 
-        public static Arc3D ToArc3D(this netDxf.Entities.Arc dxf_arc, double tolLen) =>
-            new Arc3D(tolLen,
+        /// <summary>
+        /// construct arc3 from given dxf arc
+        /// </summary>
+        /// <param name="dxf_arc"></param>
+        /// <param name="tol">length tolerance</param>        
+        public static Arc3D ToArc3D(this netDxf.Entities.Arc dxf_arc, double tol) =>
+            new Arc3D(tol,
                 new CoordinateSystem3D(dxf_arc.Center, dxf_arc.Normal, CoordinateSystem3DAutoEnum.AAA), dxf_arc.Radius,
                 dxf_arc.StartAngle.ToRad(), dxf_arc.EndAngle.ToRad());
 
@@ -658,24 +674,28 @@ namespace SearchAThing
     /// </summary>
     public class Arc3DEqualityComparer : IEqualityComparer<Arc3D>
     {
-        double tolLen;
+        /// <summary>
+        /// length tolerance
+        /// </summary>
+        double tol;
 
-        public Arc3DEqualityComparer(double _tolLen)
+        /// <summary>
+        /// arc 3d eq comparer
+        /// </summary>
+        /// <param name="_tol">length tolerance</param>
+        public Arc3DEqualityComparer(double _tol)
         {
-            tolLen = _tolLen;
+            tol = _tol;
         }
 
         public bool Equals(Arc3D? x, Arc3D? y)
         {
             if (x == null || y == null) return false;
 
-            return x.EqualsTol(tolLen, y);
+            return x.EqualsTol(tol, y);
         }
 
-        public int GetHashCode(Arc3D obj)
-        {
-            return 0;
-        }
+        public int GetHashCode(Arc3D obj) => 0;        
 
     }
 

@@ -8,9 +8,9 @@ namespace test
 {
     class Program
     {
-       
+
         static void Main(string[] args)
-        {            
+        {
             var tol = 1e-8;
             var R = 100;
 
@@ -46,7 +46,7 @@ namespace test
 
                 if (circ == null)
                 {
-                    circ = new Circle3D(tol,
+                    circ = new Circle3D(
                         CoordinateSystem3D.WCS.Move(Vector3D.ZAxis * arc.To.Z),
                         arc.To.Distance2D(Vector3D.Zero));
                     var circ_ent = circ.DxfEntity;

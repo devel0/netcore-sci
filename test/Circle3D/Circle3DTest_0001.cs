@@ -34,13 +34,11 @@ namespace SearchAThing.Sci.Tests
             {
                 var tol = 1e-4;
 
-                var c1 = new Circle3D(
-                    tol,
+                var c1 = new Circle3D(                    
                     CoordinateSystem3D.WCS.Move(new Vector3D(12397.5233, 112.1186)),
                     960);
 
-                var c2 = new Circle3D(
-                    tol,
+                var c2 = new Circle3D(                    
                     CoordinateSystem3D.WCS.Move(new Vector3D(13535.4631, -465.6793)),
                     316.22776602);
 
@@ -54,13 +52,11 @@ namespace SearchAThing.Sci.Tests
             {
                 var tol = 1e-4;
 
-                var c1 = new Circle3D(
-                    tol,
+                var c1 = new Circle3D(                    
                     CoordinateSystem3D.WCS.Move(new Vector3D(12397.5233, 112.1186)),
                     960);
 
-                var c2 = new Circle3D(
-                    tol,
+                var c2 = new Circle3D(                    
                     CoordinateSystem3D.WCS.Move(new Vector3D(13535.4631 + 1, -465.6793)),
                     316.22776602);
 
@@ -71,7 +67,7 @@ namespace SearchAThing.Sci.Tests
 
             // 
             {
-                var c = new Circle3D(1e-3,
+                var c = new Circle3D(
                         CoordinateSystem3D.WCS.Move(
                             new Vector3D(
                                 250.21546070748141,

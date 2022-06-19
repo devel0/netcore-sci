@@ -86,33 +86,33 @@ namespace SearchAThing
             if (include_endpoints) yield return GeomTo;
         }
 
-        public override BBox3D BBox(double tol_len) => new BBox3D(new[] { From, To });
+        public override BBox3D BBox(double tol) => new BBox3D(new[] { From, To });
 
-        public override IEnumerable<Geometry> Intersect(double tol_len, Geometry _other)
+        public override IEnumerable<Geometry> Intersect(double tol, Geometry _other)
         {
             switch (_other.GeomType)
             {
                 case GeometryType.Line3D:
                     {
                         var other = (Line3D)_other;
-                        if (this.Colinear(tol_len, other))
+                        if (this.Colinear(tol, other))
                         {
                             var N = V.Normalized();
 
                             var lst = new[]
                             {
-                                new { type = 0, off = From.ColinearScalarOffset(tol_len, From, N) },
-                                new { type = 0, off = To.ColinearScalarOffset(tol_len, From, N) },
+                                new { type = 0, off = From.ColinearScalarOffset(tol, From, N) },
+                                new { type = 0, off = To.ColinearScalarOffset(tol, From, N) },
 
-                                new { type = 1, off = other.From.ColinearScalarOffset(tol_len, From, N) },
-                                new { type = 1, off = other.To.ColinearScalarOffset(tol_len, From, N) },
+                                new { type = 1, off = other.From.ColinearScalarOffset(tol, From, N) },
+                                new { type = 1, off = other.To.ColinearScalarOffset(tol, From, N) },
                             };
 
                             throw new NotImplementedException();
                         }
                         else
                         {
-                            var pt = this.Intersect(tol_len, other, true, true);
+                            var pt = this.Intersect(tol, other, true, true);
 
                             if (pt != null)
                                 yield return pt;
@@ -604,7 +604,7 @@ namespace SearchAThing
         /// splitted segments start from begin of line
         /// TODO : not optimized
         /// </summary>            
-        public IReadOnlyList<Line3D> Split(double tolLen, IReadOnlyList<Vector3D> splitPts)
+        public IReadOnlyList<Line3D> Split(double tol, IReadOnlyList<Vector3D> splitPts)
         {
             var res = new List<Line3D>() { this };
 
@@ -619,7 +619,7 @@ namespace SearchAThing
                 for (int i = 0; i < res.Count; ++i)
                 {
                     var spnt = splitPts[splitPtIdx];
-                    if (res[i].SegmentContainsPoint(tolLen, spnt, excludeExtreme: true))
+                    if (res[i].SegmentContainsPoint(tol, spnt, excludeExtreme: true))
                     {
                         repl = new List<Line3D>();
                         for (int h = 0; h < res.Count; ++h)
@@ -654,12 +654,14 @@ namespace SearchAThing
         /// if this segment from matches the given point returns this;
         /// if this segment to matches the given point return this with from,to swapped;
         /// precondition: this segment must have from or to equals given from
-        /// </summary>            
-        public Line3D EnsureFrom(double tolLen, Vector3D pt)
+        /// </summary>
+        /// <param name="tol">length tolerance</param>
+        /// <param name="ptFromDesired"></param>        
+        public Line3D EnsureFrom(double tol, Vector3D ptFromDesired)
         {
-            if (From.EqualsTol(tolLen, pt)) return this;
-            if (To.EqualsTol(tolLen, pt)) return Reverse();
-            throw new System.Exception($"not found valuable from-to in seg [{this}] that can satisfy from or to equals [{pt}]");
+            if (From.EqualsTol(tol, ptFromDesired)) return this;
+            if (To.EqualsTol(tol, ptFromDesired)) return Reverse();
+            throw new System.Exception($"not found valuable from-to in seg [{this}] that can satisfy from or to equals [{ptFromDesired}]");
         }
 
         /// <summary>
@@ -689,7 +691,7 @@ namespace SearchAThing
         /// <summary>
         /// hash string with given tolerance
         /// </summary>            
-        public string ToString(double tolLen)
+        public string ToString(double tol)
         {
             var pts_en = DisambiguatedPoints.GetEnumerator();
 
@@ -699,7 +701,7 @@ namespace SearchAThing
             {
                 if (res.Length > 0) res += "_";
 
-                res += pts_en.Current.ToString(tolLen);
+                res += pts_en.Current.ToString(tol);
             }
 
             return res;
@@ -740,28 +742,31 @@ namespace SearchAThing
         /// 
         /// if two given lines are parallel and parallelRotationAxis is given then
         /// bisect results as this segment rotated PI/2 about given axis using To as rotcenter
-        /// </summary>            
-        public Line3D? Bisect(double tol_len, Line3D other, Vector3D? parallelRotationAxis = null)
+        /// </summary>
+        /// <param name="tol">length tolerance</param>
+        /// <param name="other"></param>
+        /// <param name="parallelRotationAxis"></param>        
+        public Line3D? Bisect(double tol, Line3D other, Vector3D? parallelRotationAxis = null)
         {
-            if (V.IsParallelTo(tol_len, other.V))
+            if (V.IsParallelTo(tol, other.V))
             {
                 if (parallelRotationAxis == null) return null;
 
                 var p = From;
 
-                if (To.EqualsTol(tol_len, other.From) || To.EqualsTol(tol_len, other.To))
+                if (To.EqualsTol(tol, other.From) || To.EqualsTol(tol, other.To))
                     p = To;
 
                 return new Line3D(p, V.RotateAboutAxis(parallelRotationAxis, PI / 2), Line3DConstructMode.PointAndVector);
             }
 
-            var ip = this.Intersect(tol_len, other);
+            var ip = this.Intersect(tol, other);
             if (ip == null) return null;
 
-            var k = From.EqualsTol(tol_len, ip) ? To : From;
-            var k2 = other.From.EqualsTol(tol_len, ip) ? other.To : other.From;
+            var k = From.EqualsTol(tol, ip) ? To : From;
+            var k2 = other.From.EqualsTol(tol, ip) ? other.To : other.From;
 
-            var c = (k - ip).RotateAs(tol_len, (k - ip), (k2 - ip), angleFactor: .5);
+            var c = (k - ip).RotateAs(tol, (k - ip), (k2 - ip), angleFactor: .5);
 
             return new Line3D(ip, c, Line3DConstructMode.PointAndVector);
         }
@@ -825,7 +830,7 @@ namespace SearchAThing
         /// result segments direction and order is not ensured
         /// pre: segs must colinear
         /// </summary>        
-        public static IEnumerable<Line3D> MergeColinearSegments(this IEnumerable<Line3D> _segs, double tol_len)
+        public static IEnumerable<Line3D> MergeColinearSegments(this IEnumerable<Line3D> _segs, double tol)
         {
             var segs = new List<Line3D>(_segs);
 
@@ -842,10 +847,10 @@ namespace SearchAThing
                     {
                         if (i == j) continue;
 
-                        var i_contains_j_from = segs[i].SegmentContainsPoint(tol_len, segs[j].From);
-                        var i_contains_j_to = segs[i].SegmentContainsPoint(tol_len, segs[j].To);
+                        var i_contains_j_from = segs[i].SegmentContainsPoint(tol, segs[j].From);
+                        var i_contains_j_to = segs[i].SegmentContainsPoint(tol, segs[j].To);
 
-                        if (!segs[i].Colinear(tol_len, segs[j])) continue;
+                        if (!segs[i].Colinear(tol, segs[j])) continue;
 
                         // i contains j entirely
                         if (i_contains_j_from && i_contains_j_to)
@@ -860,7 +865,7 @@ namespace SearchAThing
                         {
                             to_remove.Add(segs[i]);
                             to_remove.Add(segs[j]);
-                            if (segs[i].V.Concordant(tol_len, segs[j].V))
+                            if (segs[i].V.Concordant(tol, segs[j].V))
                                 to_add.Add(new Line3D(segs[i].From, segs[j].To));
                             else
                                 to_add.Add(new Line3D(segs[i].To, segs[j].To));
@@ -874,7 +879,7 @@ namespace SearchAThing
                         {
                             to_remove.Add(segs[i]);
                             to_remove.Add(segs[j]);
-                            if (segs[i].V.Concordant(tol_len, segs[j].V))
+                            if (segs[i].V.Concordant(tol, segs[j].V))
                                 to_add.Add(new Line3D(segs[j].From, segs[i].To));
                             else
                                 to_add.Add(new Line3D(segs[i].From, segs[j].From));
@@ -899,13 +904,13 @@ namespace SearchAThing
         /// 
         /// TODO: dummy function, optimize
         /// </summary>       
-        public static IReadOnlyList<Line3D> AutoIntersect(this IReadOnlyList<Line3D> segs, double tolLen,
+        public static IReadOnlyList<Line3D> AutoIntersect(this IReadOnlyList<Line3D> segs, double tol,
         bool mergeColinearSegments = true, IEnumerable<Vector3D>? addictionalSplitPoints = null)
         {
-            segs = segs.MergeColinearSegments(tolLen).ToList();
+            segs = segs.MergeColinearSegments(tol).ToList();
 
-            var segCmp = new Line3DEqualityComparer(tolLen);
-            var vecCmp = new Vector3DEqualityComparer(tolLen);
+            var segCmp = new Line3DEqualityComparer(tol);
+            var vecCmp = new Vector3DEqualityComparer(tol);
 
             // line_hs -> split points
             var splitPts = new Dictionary<Line3D, HashSet<Vector3D>>(segCmp);
@@ -920,13 +925,13 @@ namespace SearchAThing
                     var seg_i = segs[i];
                     var seg_j = segs[j];
 
-                    var q = seg_i.Intersect(tolLen, seg_j, true, true);
+                    var q = seg_i.Intersect(tol, seg_j, true, true);
                     if (q != null)
                     {
                         HashSet<Vector3D>? i_hs = null;
                         HashSet<Vector3D>? j_hs = null;
 
-                        if (!q.EqualsTol(tolLen, seg_i.From) && !q.EqualsTol(tolLen, seg_i.To))
+                        if (!q.EqualsTol(tol, seg_i.From) && !q.EqualsTol(tol, seg_i.To))
                         {
                             if (!splitPts.TryGetValue(seg_i, out i_hs))
                             {
@@ -936,7 +941,7 @@ namespace SearchAThing
                             i_hs.Add(q);
                         }
 
-                        if (!q.EqualsTol(tolLen, seg_j.From) && !q.EqualsTol(tolLen, seg_j.To))
+                        if (!q.EqualsTol(tol, seg_j.From) && !q.EqualsTol(tol, seg_j.To))
                         {
                             if (!splitPts.TryGetValue(seg_j, out j_hs))
                             {
@@ -956,7 +961,7 @@ namespace SearchAThing
                 {
                     foreach (var seg in segs)
                     {
-                        if (seg.SegmentContainsPoint(tolLen, pt, excludeExtreme: true))
+                        if (seg.SegmentContainsPoint(tol, pt, excludeExtreme: true))
                         {
                             HashSet<Vector3D>? hs = null;
                             if (!splitPts.TryGetValue(seg, out hs))
@@ -978,7 +983,7 @@ namespace SearchAThing
                 for (int i = 0; i < segs.Count; ++i)
                 {
                     if (splitPts.TryGetValue(segs[i], out qSplitPts))
-                        res.AddRange(segs[i].Split(tolLen, qSplitPts.ToList()));
+                        res.AddRange(segs[i].Split(tol, qSplitPts.ToList()));
                     else
                         res.Add(segs[i]);
                 }

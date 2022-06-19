@@ -118,7 +118,7 @@ namespace SearchAThing.Sci.Tests
             var p2 = new Vector3D(1.799, 231.586, -18.134);
             var p3 = new Vector3D(262.377, 302.118, 132.195);
 
-            var c = Arc3D.CircleBy3Points(p1, p2, p3);
+            var c = new Arc3D(p1, p2, p3);
             var cs = c.CS;
 
             // verify points contained in arc plane
@@ -154,7 +154,7 @@ namespace SearchAThing.Sci.Tests
             var p2 = new Vector3D(1.799, 231.586, -18.134);
             var p3 = new Vector3D(262.377, 302.118, 132.195);
 
-            var c = Arc3D.CircleBy3Points(p1, p2, p3);
+            var c = new Arc3D(p1, p2, p3);
             var cs = c.CS;
 
             var arc = new Arc3D(1e-3, p1, p2, p3, -cs.BaseZ);
@@ -178,8 +178,8 @@ namespace SearchAThing.Sci.Tests
             var p2 = new Vector3D(1.799, 231.586, -18.134);
             var p3 = new Vector3D(262.377, 302.118, 132.195);
 
-            var c = Arc3D.CircleBy3Points(p1, p2, p3);
-            var cs = c.CS;
+            var c = new Arc3D(p1, p2, p3);
+            var cs = c.CS;            
 
             var wrongNormal = new Vector3D(9.998, .175, 0);
             var csok = new Arc3D(1e-3, p1, p2, p3, cs.BaseZ);
@@ -219,11 +219,11 @@ namespace SearchAThing.Sci.Tests
             var moveVector = new Vector3D(-1998.843, -6050.954, -1980.059);
             var cmoved = c.Move(1e-3, moveVector);
 
+            Assert.True(cmoved is Arc3D);
+
             var p1moved = p1 + moveVector;
             var p2moved = p2 + moveVector;
             var p3moved = p3 + moveVector;
-
-            
 
             Assert.True(cmoved.Contains(1e-3, p1moved, onlyPerimeter: true));
             Assert.True(cmoved.Contains(1e-3, p2moved, onlyPerimeter: true));

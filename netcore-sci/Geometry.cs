@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -15,24 +16,60 @@ namespace SearchAThing
     public abstract class Geometry
     {
 
-        public Geometry(GeometryType type) { GeomType = type; }
+        protected Geometry(GeometryType type) { GeomType = type; }
 
+        /// <summary>
+        /// type of geometry
+        /// </summary>
         public GeometryType GeomType { get; protected set; }
 
+        /// <summary>
+        /// vertexes of this geom ( can be 1 for points, 2 for line/arc/circles )
+        /// </summary>        
         public abstract IEnumerable<Vector3D> Vertexes { get; }
-        public abstract Vector3D GeomFrom { get; }
-        public abstract Vector3D GeomTo { get; }
-        public abstract double Length { get; }
-        public abstract IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false);
-        public abstract BBox3D BBox(double tol_len);
-        public abstract IEnumerable<Geometry> Intersect(double tol_len, Geometry other);
 
+        /// <summary>
+        /// start point
+        /// </summary>        
+        public abstract Vector3D GeomFrom { get; }
+
+        /// <summary>
+        /// end point
+        /// </summary>        
+        public abstract Vector3D GeomTo { get; }
+
+        /// <summary>
+        /// geometry length ( 0 for point, line length for lines, perimeter for arc/circles )
+        /// </summary>    
+        public abstract double Length { get; }
+
+        /// <summary>
+        /// find split points for this geometry splitter int cnt parts
+        /// </summary>
+        /// <param name="cnt"></param>
+        /// <param name="include_endpoints">if true GeomFrom and GeomTo will added</param>        
+        public abstract IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false);
+
+        /// <summary>
+        /// bbox of this geom
+        /// </summary>        
+        public abstract BBox3D BBox(double tol);
+
+        /// <summary>
+        /// find intersections between this and another geometry resulting in zero or more geometries
+        /// </summary>        
+        public abstract IEnumerable<Geometry> Intersect(double tol, Geometry other);
+
+        /// <summary>
+        /// dxf entity representing this geom
+        /// </summary>        
         public abstract netDxf.Entities.EntityObject DxfEntity { get; }
 
-        public static implicit operator netDxf.Entities.EntityObject(Geometry geom)
-        {
-            return geom.DxfEntity;
-        }
+        /// <summary>
+        /// convert to dxf entity
+        /// </summary>
+        /// <param name="geom"></param>
+        public static implicit operator netDxf.Entities.EntityObject(Geometry geom) => geom.DxfEntity;
 
     }
 
@@ -41,9 +78,11 @@ namespace SearchAThing
 
         /// <summary>
         /// extracs Arc3D, Line3D from given lwpolyline
-        /// </summary>        
+        /// </summary>
+        /// <param name="lwpolyline"></param>
+        /// <param name="tol">length tolerance</param>        
         public static IEnumerable<Geometry> ToGeometries(this netDxf.Entities.LwPolyline lwpolyline,
-            double tolLen)
+            double tol)
         {
             var geoms = new List<Geometry>();
 
@@ -53,12 +92,12 @@ namespace SearchAThing
             {
                 if (el.Type == netDxf.Entities.EntityType.Arc)
                 {
-                    yield return ((netDxf.Entities.Arc)el).ToArc3D(tolLen);
+                    yield return ((netDxf.Entities.Arc)el).ToArc3D(tol);
                 }
                 else if (el.Type == netDxf.Entities.EntityType.Line)
                 {
                     var line = (netDxf.Entities.Line)el;
-                    if (((Vector3D)line.StartPoint).EqualsTol(tolLen, line.EndPoint)) continue;
+                    if (((Vector3D)line.StartPoint).EqualsTol(tol, line.EndPoint)) continue;
 
                     yield return line.ToLine3D();
                 }
@@ -71,8 +110,10 @@ namespace SearchAThing
         /// <summary>
         /// segments representation of given geometries
         /// if arc found a segment between endpoints returns
-        /// </summary>        
-        public static IEnumerable<Line3D> Segments(this IEnumerable<Geometry> geometry_block, double tol_len)
+        /// </summary>
+        /// <param name="geometry_block"></param>
+        /// <param name="tol">length tolerance</param>        
+        public static IEnumerable<Line3D> Segments(this IEnumerable<Geometry> geometry_block, double tol)
         {
             var en = geometry_block.GetEnumerator();
 
@@ -102,7 +143,7 @@ namespace SearchAThing
                             }
                             else
                             {
-                                if (cur.From.EqualsTol(tol_len, prev))
+                                if (cur.From.EqualsTol(tol, prev))
                                 {
                                     yield return cur;
                                     prev = cur.To;
@@ -126,7 +167,7 @@ namespace SearchAThing
                             }
                             else
                             {
-                                if (cur.From.EqualsTol(tol_len, prev))
+                                if (cur.From.EqualsTol(tol, prev))
                                 {
                                     yield return cur.Segment;
                                     prev = cur.To;
@@ -145,7 +186,12 @@ namespace SearchAThing
             }
         }
 
-        public static IEnumerable<Vector3D> Vertexes(this IReadOnlyList<Geometry> geometry_block, double tolLen)
+        /// <summary>
+        /// vertexes from given set of geometries
+        /// </summary>
+        /// <param name="geometry_block"></param>
+        /// <param name="tol">length tolerance</param>        
+        public static IEnumerable<Vector3D> Vertexes(this IReadOnlyList<Geometry> geometry_block, double tol)
         {
             Vector3D? last = null;
             for (int i = 0; i < geometry_block.Count; ++i)
@@ -155,7 +201,7 @@ namespace SearchAThing
 
                 if (last != null)
                 {
-                    if (last.EqualsTol(tolLen, from))
+                    if (last.EqualsTol(tol, from))
                     {
                         last = geom.GeomTo;
                         yield return from;
@@ -174,9 +220,14 @@ namespace SearchAThing
             }
         }
 
-        public static Vector3D GeomCentroid(this IReadOnlyList<Geometry> geometry_block, double tolLen)
+        /// <summary>
+        /// centroid of given geometries (not fully implemented)
+        /// </summary>
+        /// <param name="geometry_block"></param>
+        /// <param name="tol"length tolerance></param>        
+        public static Vector3D GeomCentroid(this IReadOnlyList<Geometry> geometry_block, double tol)
         {
-            var segs = geometry_block.Vertexes(tolLen).ToList();
+            var segs = geometry_block.Vertexes(tol).ToList();
 
             // TODO centroid with polyline and arcs
 
@@ -187,8 +238,8 @@ namespace SearchAThing
             }
             else
             {
-                var A = Area(segs, tolLen);
-                var centroid = Centroid(segs, tolLen, A);
+                var A = Area(segs, tol);
+                var centroid = Centroid(segs, tol, A);
 
                 /*
                 // search for arcs
@@ -210,12 +261,20 @@ namespace SearchAThing
                 }
                 */
 
+                throw new NotImplementedException();
+
                 return centroid;
             }
         }
 
-        public static IEnumerable<Geometry> Intersect(this IEnumerable<Geometry> _geom1, double tol_len,
-            IEnumerable<Geometry> _geom2)
+        /// <summary>
+        /// find intersection geometries resulting from all this geometries with all given geom2
+        /// </summary>
+        /// <param name="_geom1"></param>
+        /// <param name="tol">length tolerance</param>
+        /// <param name="_geom2"></param>        
+        public static IEnumerable<Geometry> Intersect(this IEnumerable<Geometry> _geom1,
+            double tol, IEnumerable<Geometry> _geom2)
         {
             var geom1 = _geom1.ToList();
             var geom2 = _geom2.ToList();
@@ -226,7 +285,7 @@ namespace SearchAThing
             {
                 foreach (var g2 in geom2)
                 {
-                    var g1g2_intersection = g1.Intersect(tol_len, g2);
+                    var g1g2_intersection = g1.Intersect(tol, g2);
 
                     if (g1g2_intersection != null)
                         foreach (var geom in g1g2_intersection) yield return geom;
@@ -234,11 +293,16 @@ namespace SearchAThing
             }
         }
 
-        public static BBox3D BBox(this IEnumerable<Geometry> geometry_block, double tol_len)
+        /// <summary>
+        /// bbox that cover all given geometries
+        /// </summary>
+        /// <param name="geometry_block"></param>
+        /// <param name="tol">length tolerance</param>        
+        public static BBox3D BBox(this IEnumerable<Geometry> geometry_block, double tol)
         {
             var bbox = new BBox3D();
 
-            foreach (var x in geometry_block) bbox = bbox.Union(x.BBox(tol_len));
+            foreach (var x in geometry_block) bbox = bbox.Union(x.BBox(tol));
 
             return bbox;
         }
