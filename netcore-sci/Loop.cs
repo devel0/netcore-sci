@@ -23,16 +23,54 @@ namespace SearchAThing
 
         public List<IEdge> Edges { get; private set; }
 
+        public double Tol { get; private set; }
+
         public Loop(double tol, IEnumerable<IEdge> edges, bool checkSense = true)
         {
+            Tol = tol;
             Edges = checkSense ? edges.CheckSense(tol).ToList() : edges.ToList();
             Plane = Edges.DetectPlane(tol);
         }
 
         public Loop(double tol, LwPolyline lwPolyline)
         {
+            Tol = tol;
             Edges = lwPolyline.ToGeometries(tol).Cast<IEdge>().CheckSense(tol).ToList();
             Plane = Edges.DetectPlane(tol);
+        }
+
+        double? _Area = null;
+
+        /// <summary>
+        /// area of the loop ( segment and arc are evaluated )
+        /// </summary>        
+        public double Area
+        {
+            get
+            {
+                if (_Area == null) _Area = ComputeArea(Tol);
+
+                return _Area.Value;
+            }
+        }
+
+        double ComputeArea(double tol)
+        {
+            var polysegs = Edges.Select(w => w.SGeomFrom).ToList();
+            var res = polysegs.Area(tol);
+
+            foreach (var edge in Edges.Where(r => r.EdgeType == EdgeType.Arc3D))
+            {
+                var arc = (Arc3D)edge;
+
+                var midpt = edge.MidPoint;
+                if (polysegs.ContainsPoint(tol, midpt))
+                    res -= arc.SegmentArea;
+                else
+                    res += arc.SegmentArea;
+            }
+
+            return res;
         }
 
         public bool ContainsPoint(double tol, Vector3D pt)

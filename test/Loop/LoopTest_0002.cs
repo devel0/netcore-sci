@@ -1,6 +1,7 @@
 using Xunit;
 using System.Linq;
 using System;
+using netDxf;
 
 namespace SearchAThing.Sci.Tests
 {
@@ -43,8 +44,21 @@ namespace SearchAThing.Sci.Tests
             Assert.True(loopBlue.Intersect(tol, loopGreen).Count() == 0);
 
             {
-                var q = loopCyan.Intersect(tol, loopGreen);
-                ;
+                var loops = loopCyan.Intersect(tol, loopGreen).ToList();
+
+                var outtmp = new DxfDocument();
+                foreach (var loop in loops)
+                {
+                    var lw = loop.ToLwPolyline(tol);
+                    outtmp.AddEntity(lw);
+                }
+
+                // outtmp.DrawingVariables.PdMode = netDxf.Header.PointShape.CircleCross;
+                // outtmp.Viewport.ShowGrid = false;
+                // outtmp.Save("/home/devel0/Desktop/out.dxf");
+
+                Assert.True(loops[0].Area.EqualsTol(tol, 56.42492663));
+                Assert.True(loops[1].Area.EqualsTol(tol, 360.04194237));                
             }
 
         }
