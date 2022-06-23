@@ -486,6 +486,21 @@ namespace SearchAThing
         public Circle3D ToCircle3D(double tol) => new Circle3D(CS, Radius);
 
         /// <summary>
+        /// Area of circular sector
+        /// </summary>
+        public double CircularSectorArea => PI * Pow(Radius, 2) * Angle / (2 * PI);
+
+        /// <summary>
+        /// Area of chord triangle
+        /// </summary>        
+        public double ChordTriangleArea => .5 * Pow(Radius, 2) * Sin(Angle);
+
+        /// <summary>
+        /// Segment area ( CircularSectorArea - ChordTriangleArea )
+        /// </summary>
+        public double SegmentArea => CircularSectorArea - ChordTriangleArea;
+
+        /// <summary>
         /// centre of mass of circular segment
         /// </summary>
         /// <param name="A">arc area</param>
