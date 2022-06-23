@@ -3,10 +3,10 @@ using System.Linq;
 
 namespace SearchAThing.Sci.Tests
 {
-    public class ToleranceTests
+    public class ToleranceTests_torefact
     {
 
-        public ToleranceTests()
+        public ToleranceTests_torefact()
         {
         }
 

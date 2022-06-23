@@ -6,10 +6,10 @@ using System.Collections.Generic;
 
 namespace SearchAThing.Sci.Tests
 {
-    public partial class Arc3DTests
+    public partial class Arc3DTests_torefact
     {
 
-        public Arc3DTests()
+        public Arc3DTests_torefact()
         {
         }
 

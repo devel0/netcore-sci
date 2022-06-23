@@ -3,12 +3,12 @@ using System.Linq;
 
 namespace SearchAThing.Sci.Tests
 {
-    public partial class Line3DTests
+    public partial class Line3DTests_torefact
     {
 
         double rad_tol;
 
-        public Line3DTests()
+        public Line3DTests_torefact()
         {
             rad_tol = (1e-1).ToRad();
         }
