@@ -411,7 +411,7 @@ namespace SearchAThing.Sci.Tests
 
                 var center = new Vector3D(22.51209044, 14.12016062, 6.80146259);
                 var N = new Vector3D(3.42020143, 2.43210347, -9.07673371);
-                var c = new Circle3D(tol, new CoordinateSystem3D(center, N), 6.39114677);
+                var c = new Circle3D(new CoordinateSystem3D(center, N), 6.39114677);
 
                 var ltangent = new Line3D(
                     new Vector3D(12.87708949, 20.20572433, 4.80152252),

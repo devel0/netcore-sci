@@ -20,10 +20,25 @@ namespace SearchAThing
     public interface IEdge
     {
         EdgeType EdgeType { get; }
+        
+        /// <summary>
+        /// allow to store info about sense; when false SGeomFrom = GeomTo and SGeomTo = GeomFrom
+        /// </summary>        
+        bool Sense { get; }
 
-        Vector3D GeomFrom { get; }
+        void ToggleSense();
 
-        Vector3D GeomTo { get; }
+        Vector3D SGeomFrom { get; }
+
+        Vector3D SGeomTo { get; }
+
+        Vector3D MidPoint { get; }
+
+        bool EdgeContainsPoint(double tol, Vector3D pt);
+
+        IEnumerable<Geometry> Split(double tol, IEnumerable<Vector3D> breaks);
+
+        netDxf.Entities.EntityObject DxfEntity { get; }
 
     }
 

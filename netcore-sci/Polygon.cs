@@ -8,7 +8,7 @@ using ClipperLib;
 using netDxf.Entities;
 
 namespace SearchAThing
-{   
+{
 
     public static partial class SciExt
     {
@@ -104,7 +104,7 @@ namespace SearchAThing
         {
             Vector3D? first = null;
 
-            var foundFirstAtend = false;            
+            var foundFirstAtend = false;
 
             foreach (var p in pts)
             {
@@ -168,7 +168,8 @@ namespace SearchAThing
         /// <param name="_pt">point XY to test if inside polygon</param>
         /// <param name="zapDuplicates">clean duplicates from pts list if any</param>
         /// <returns>true if given point inside polygon</returns>        
-        public static bool ContainsPoint(this IReadOnlyList<Vector3D> _pts, double tol, Vector3D _pt, bool zapDuplicates = false)
+        public static bool ContainsPoint(this IReadOnlyList<Vector3D> _pts, double tol, Vector3D _pt,
+            bool zapDuplicates = false)
         {
             var pt = _pt.Set(OrdIdx.Z, 0);
             var pts = _pts.Select(w => w.Set(OrdIdx.Z, 0));
@@ -177,6 +178,8 @@ namespace SearchAThing
 
             var pts_bbox = _pts.BBox();
             if (!pts_bbox.Contains2D(tol, _pt)) return false;
+
+            if (_pts.Any(w => _pt.EqualsTol(tol, w))) return true;
 
             if (zapDuplicates)
             {
@@ -193,25 +196,7 @@ namespace SearchAThing
             }
             var segs = ptsFiltered.PolygonSegments(tol);
 
-            if (_pts.Any(w => _pt.EqualsTol(tol, w))) return true;
-
             var ray = new Line3D(pt, Vector3D.XAxis, Line3DConstructMode.PointAndVector);
-            // var conflictVertex = false;
-            // do
-            // {
-            //     conflictVertex = false;
-            //     foreach (var pp in ptsFiltered)
-            //     {
-            //         if (ray.LineContainsPoint(tol, pp))
-            //         {
-            //             conflictVertex = true;
-            //             // ray intersect vertex, change it
-            //             ray = new Line3D(pt, pp + Vector3D.YAxis * tol * 1.1);
-            //             break;
-            //         }
-            //     }
-            // }
-            // while (conflictVertex);
 
             var intCnt = 0;
 
@@ -232,14 +217,14 @@ namespace SearchAThing
             return intCnt % 2 != 0;
         }
 
-        public static IEnumerable<Vector3D> SortPoly(this IEnumerable<Vector3D> pts, double tol, Vector3D? refAxis = null) => 
+        public static IEnumerable<Vector3D> SortPoly(this IEnumerable<Vector3D> pts, double tol, Vector3D? refAxis = null) =>
             pts.SortPoly(tol, (p) => p, refAxis);
 
         /// <summary>
         /// Sort polygon segments so that they can form a polygon ( if they really form one ).
         /// It will not check for segment versus adjancency
         /// </summary>        
-        public static IEnumerable<Line3D> SortPoly(this IEnumerable<Line3D> segs, double tol, Vector3D? refAxis = null) => 
+        public static IEnumerable<Line3D> SortPoly(this IEnumerable<Line3D> segs, double tol, Vector3D? refAxis = null) =>
             segs.SortPoly(tol, (s) => s.MidPoint, refAxis);
 
         public static IEnumerable<T> SortPoly<T>(this IEnumerable<T> pts, double tol, Func<T, Vector3D> getPoint, Vector3D? refAxis = null)
@@ -369,6 +354,10 @@ namespace SearchAThing
             yield break;
         }
 
+        public static netDxf.Entities.Hatch ToHatch(this IEnumerable<Geometry> _geom, double tol,
+            HatchPattern pattern, bool associative = true) =>
+            new netDxf.Entities.Hatch(pattern, new[] { new HatchBoundaryPath(_geom.Select(w => w.DxfEntity)) }, associative);
+
         /// <summary>
         /// build 2d dxf polyline.
         /// note: use RepeatFirstAtEnd extension to build a closed polyline
@@ -408,8 +397,8 @@ namespace SearchAThing
                     case GeometryType.Line3D:
                         {
                             var seg = (Line3D)geom[i];
-                            from = seg.From;
-                            to = seg.To;
+                            from = seg.SGeomFrom;
+                            to = seg.SGeomTo;
 
                             if (lastPt == null || lastPt.EqualsTol(tol, from))
                             {
@@ -495,8 +484,8 @@ namespace SearchAThing
         /// build 3d dxf polyline
         /// note: use RepeatFirstAtEnd extension to build a closed polyline
         /// </summary>        
-        public static netDxf.Entities.Polyline ToPolyline(this IEnumerable<Vector3D> pts, bool isClosed = true) => 
-            new netDxf.Entities.Polyline(pts.Select(r => (Vector3)r).ToList(), isClosed);            
+        public static netDxf.Entities.Polyline ToPolyline(this IEnumerable<Vector3D> pts, bool isClosed = true) =>
+            new netDxf.Entities.Polyline(pts.Select(r => (Vector3)r).ToList(), isClosed);
 
         /// <summary>
         /// can generate a Int64MapExceptionRange exception if double values can't fit into a In64 representation.
@@ -594,7 +583,7 @@ namespace SearchAThing
 
     public static partial class SciToolkit
     {
-        
+
         /// <summary>
         /// create an approximation of ellipse
         /// </summary>

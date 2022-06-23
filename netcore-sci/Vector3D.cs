@@ -69,6 +69,8 @@ namespace SearchAThing
         /// </remarks>
         public override double Length => Sqrt(X * X + Y * Y + Z * Z);
 
+        public override Vector3D MidPoint => this;
+
         /// <summary>
         /// Divide this point returning itself.
         /// ( Geometry Divide implementation )            
@@ -77,6 +79,11 @@ namespace SearchAThing
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
         /// </remarks>
         public override IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false) => new[] { this };
+
+        public override IEnumerable<Geometry> Split(double tol, IEnumerable<Vector3D> breaks)
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Compute bbox of this point.
@@ -88,7 +95,7 @@ namespace SearchAThing
         /// </remarks>
         public override BBox3D BBox(double tol) => new BBox3D(new[] { this });
 
-        public override IEnumerable<Geometry> Intersect(double tol, Geometry other)
+        public override IEnumerable<Geometry> GeomIntersect(double tol, Geometry other, bool segmentMode)
         {
             throw new NotImplementedException();
         }
@@ -1593,6 +1600,65 @@ namespace SearchAThing
         /// <returns>sign(v)</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3D Sign(this Vector3D v) => new Vector3D(Math.Sign(v.X), Math.Sign(v.Y), Math.Sign(v.Z));
+
+        /// <summary>
+        /// detect best fitting plane for given set of coplanar points
+        /// </summary>        
+        public static Plane3D BestFittingPlane(this IEnumerable<Vector3D> pts, double tol)
+        {
+            Vector3D? firstPt = null;
+            double distantPtDst = 0;
+            Vector3D? distantPt = null;
+            foreach (var ptItem in pts.WithIndex())
+            {
+                var pt = ptItem.item;
+                if (ptItem.idx == 0)
+                    firstPt = pt;
+                else
+                {
+                    var dst = pt.Distance(firstPt!);
+                    if (distantPt == null || dst > distantPtDst)
+                    {
+                        distantPt = pt;
+                        distantPtDst = dst;
+                    }
+                }
+            }
+
+            if (firstPt == null || distantPt == null)
+                throw new Exception($"can't find two distant points");
+
+            var dLine = new Line3D(firstPt!, distantPt!);
+            Line3D? perpLine = null;
+            Vector3D? perpDistantPt = null;
+            double perpDistance = 0;
+            foreach (var pt in pts)
+            {
+                if (pt == firstPt || pt == distantPt) continue;
+
+                var pLine = dLine.Perpendicular(tol, pt);
+                if (pLine != null)
+                {
+                    var pdst = pLine.Length;
+
+                    if (perpDistantPt == null || pdst > perpDistance)
+                    {
+                        perpLine = pLine;
+                        perpDistantPt = pt;
+                        perpDistance = pdst;
+                    }
+                }
+            }
+
+            if (perpLine == null) throw new Exception($"can't find perp line");
+
+            var origin = firstPt;
+            var v1 = dLine.V;
+            var v2 = perpLine.V;
+
+            return new Plane3D(new CoordinateSystem3D(origin, v1, v2));
+        }
+
     }
 
     public static partial class SciToolkit

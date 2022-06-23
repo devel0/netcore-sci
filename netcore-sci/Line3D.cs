@@ -49,6 +49,46 @@ namespace SearchAThing
 
         public EdgeType EdgeType => EdgeType.Line3D;
 
+        public bool EdgeContainsPoint(double tol, Vector3D pt) => this.SegmentContainsPoint(tol, pt);                
+
+        public override IEnumerable<Geometry> Split(double tol, IEnumerable<Vector3D> breaks)
+        {
+            var Vnorm = V.Normalized();
+
+            var bpts = breaks
+                .Select(pt => new
+                {
+                    pt,
+                    off = pt.ColinearScalarOffset(tol, From, Vnorm)
+                })
+                .OrderBy(w => w.off)
+                .Select(w => w.pt)
+                .ToList();
+
+            if (bpts.Count == 0)
+                yield return this;
+            else
+            {
+                var addStart = !bpts[0].EqualsTol(tol, From);
+                var addEnd = !bpts[bpts.Count - 1].EqualsTol(tol, To);
+
+                foreach (var bitem in bpts.WithNext())
+                {
+                    if (bitem.itemIdx == 0 && addStart)
+                        yield return new Line3D(From, bitem.item);
+
+                    if (bitem.next != null)
+                        yield return new Line3D(bitem.item, bitem.next);
+
+                    else if (bitem.isLast && addEnd)
+                        yield return new Line3D(bitem.item, To);
+
+                }
+            }
+        }
+
+        public override Vector3D MidPoint => (From + To) / 2;
+
         #endregion
 
         #region Geometry
@@ -69,7 +109,7 @@ namespace SearchAThing
         [JsonIgnore]
         public override Vector3D GeomTo => To;
 
-        public override double Length => V.Length;
+        public override double Length => V.Length;        
 
         public override IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false)
         {
@@ -88,7 +128,7 @@ namespace SearchAThing
 
         public override BBox3D BBox(double tol) => new BBox3D(new[] { From, To });
 
-        public override IEnumerable<Geometry> Intersect(double tol, Geometry _other)
+        public override IEnumerable<Geometry> GeomIntersect(double tol, Geometry _other, bool segmentMode)
         {
             switch (_other.GeomType)
             {
@@ -112,13 +152,29 @@ namespace SearchAThing
                         }
                         else
                         {
-                            var pt = this.Intersect(tol, other, true, true);
+                            var pt = this.Intersect(tol, other, thisSegment: true, otherSegment: segmentMode);
 
                             if (pt != null)
                                 yield return pt;
                         }
                     }
                     break;
+
+                case GeometryType.Arc3D:
+                    {
+                        var other = (Arc3D)_other;
+
+                        var pts = other.Intersect(tol, this,
+                            only_perimeter: true,
+                            segment_mode: segmentMode);
+
+                        if (pts != null) 
+                            foreach (var pt in pts) yield return pt;
+                    }
+                    break;
+
+                default:
+                    throw new NotImplementedException();
             }
         }
 
@@ -571,8 +627,6 @@ namespace SearchAThing
         /// </summary>        
         public Vector3D? Intersect(double tol, Plane3D plane) => Intersect(tol, plane.CS);
 
-        public Vector3D MidPoint => (From + To) / 2;
-
         /// <summary>
         /// rotate this segment about given axis
         /// </summary>            
@@ -718,7 +772,7 @@ namespace SearchAThing
         /// (f.x, f.y, f.z)-(t.x, t.y, t.z) L=len Δ=(v.x, v.y, v.z)
         /// </summary>      
         public string ToString(int digits = 3) =>
-            $"{From.ToString(digits)}-{To.ToString(digits)} L={Length.ToString(digits)} Δ={(To - From).ToString(digits)}";
+            $"[{GetType().Name}]{((!Sense) ? " !S" : "")} SFROM[{SGeomFrom.ToString(digits)}] STO[{SGeomTo.ToString(digits)}] L={Length.ToString(digits)} Δ={(To - From).ToString(digits)}";
 
         /// <summary>
         /// build a segment with same from and vector normalized
@@ -992,6 +1046,13 @@ namespace SearchAThing
 
             return segs;
         }
+
+        /// <summary>
+        /// detect best fitting plane from the set of given lines.
+        /// precondition: lines must coplanar
+        /// </summary>        
+        public static Plane3D BestFittingPlane(this IEnumerable<Line3D> lines, double tol) =>
+            lines.SelectMany(l => new[] { l.From, l.To }).BestFittingPlane(tol);
 
     }
 

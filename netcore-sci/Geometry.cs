@@ -16,6 +16,18 @@ namespace SearchAThing
     public abstract class Geometry
     {
 
+        #region IEdge related
+
+        public bool Sense { get; private set; } = true;
+
+        public Vector3D SGeomFrom => Sense ? GeomFrom : GeomTo;
+
+        public Vector3D SGeomTo => Sense ? GeomTo : GeomFrom;
+
+        public void ToggleSense() => Sense = !Sense;
+
+        #endregion
+
         protected Geometry(GeometryType type) { GeomType = type; }
 
         /// <summary>
@@ -43,12 +55,16 @@ namespace SearchAThing
         /// </summary>    
         public abstract double Length { get; }
 
+        public abstract Vector3D MidPoint { get; }
+
         /// <summary>
         /// find split points for this geometry splitter int cnt parts
         /// </summary>
         /// <param name="cnt"></param>
         /// <param name="include_endpoints">if true GeomFrom and GeomTo will added</param>        
         public abstract IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false);
+
+        public abstract IEnumerable<Geometry> Split(double tol, IEnumerable<Vector3D> breaks);
 
         /// <summary>
         /// bbox of this geom
@@ -57,8 +73,12 @@ namespace SearchAThing
 
         /// <summary>
         /// find intersections between this and another geometry resulting in zero or more geometries
-        /// </summary>        
-        public abstract IEnumerable<Geometry> Intersect(double tol, Geometry other);
+        /// </summary>
+        /// <param name="tol"></param>
+        /// <param name="other"></param>
+        /// <param name="segmentMode">when other is Line3D specifies how to consider intersection test, if true other is considered as infinite line otherwise is considered as a segment</param>
+        /// <returns></returns>
+        public abstract IEnumerable<Geometry> GeomIntersect(double tol, Geometry other, bool segmentMode = true);
 
         /// <summary>
         /// dxf entity representing this geom
@@ -285,7 +305,7 @@ namespace SearchAThing
             {
                 foreach (var g2 in geom2)
                 {
-                    var g1g2_intersection = g1.Intersect(tol, g2);
+                    var g1g2_intersection = g1.GeomIntersect(tol, g2, segmentMode: false);
 
                     if (g1g2_intersection != null)
                         foreach (var geom in g1g2_intersection) yield return geom;

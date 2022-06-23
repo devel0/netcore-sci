@@ -449,7 +449,8 @@ namespace SearchAThing
                     return netDxf.AciColor.FromTrueColor((r << 16) + (g << 8) + b);
                 }*/
 
-        public static UCS ToDxfUCS(this CoordinateSystem3D cs, string name) => new UCS(name, cs.Origin, cs.BaseX, cs.BaseY);
+        public static UCS ToDxfUCS(this CoordinateSystem3D cs, string name) =>
+            new UCS(name, cs.Origin, cs.BaseX, cs.BaseY);
 
         public static IEnumerable<EntityObject> DrawTimeline(this DxfObject dxf, List<(DateTime from, DateTime to)> timeline,
         double textHeight = 2, double circleRadius = 1.5, double maxWidth = 180, double stopDays = 60, Func<DateTime, string> dtStr = null)

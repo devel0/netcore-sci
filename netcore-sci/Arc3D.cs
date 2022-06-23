@@ -10,6 +10,55 @@ namespace SearchAThing
 {
 
     /// <summary>
+    /// comparer to sort angles so that they follow runs from Start and End given.
+    /// for example giving start=5/4PI, end=PI/2 then the set PI/4 and 3/4PI will sorted as 3/4PI and PI/4.
+    /// Precondition: at constructor and as input elements angles must already normalized [0,2PI) and
+    /// satisfy they in normalized range between given start, end angles
+    /// </summary>
+    public class NormalizedAngleComparer : IComparer<double>
+    {
+        public double NormalizedStartAngleRad { get; private set; }
+        public double NormalizedEndAngleRad { get; private set; }
+        public double RadTol { get; private set; }
+
+        bool StartGtEnd;
+
+        public NormalizedAngleComparer(double radTol, double normalizedStartAngleRad, double normalizedEndAngleRad)
+        {
+            RadTol = radTol;
+            NormalizedStartAngleRad = normalizedStartAngleRad;
+            NormalizedEndAngleRad = normalizedEndAngleRad;
+
+            StartGtEnd = NormalizedStartAngleRad > NormalizedEndAngleRad;
+        }
+
+        public int Compare(double xAngleRad, double yAngleRad)
+        {
+            if (StartGtEnd)
+            {
+                var xLtEqEnd = xAngleRad.LessThanOrEqualsTol(RadTol, NormalizedEndAngleRad);
+                var yLtEqEnd = yAngleRad.LessThanOrEqualsTol(RadTol, NormalizedEndAngleRad);
+
+                if (xLtEqEnd && yLtEqEnd) return xAngleRad.CompareToTol(RadTol, yAngleRad);
+
+                var xGtEqStart = xAngleRad.GreatThanOrEqualsTol(RadTol, NormalizedStartAngleRad);
+                var yGtEqStart = yAngleRad.GreatThanOrEqualsTol(RadTol, NormalizedStartAngleRad);
+
+                if (xGtEqStart && yGtEqStart) return xAngleRad.CompareToTol(RadTol, yAngleRad);
+
+                // because of precondition x, y in start, end normalized range...
+
+                if (xLtEqEnd) // then yGtEqStart
+                    return 1;
+                else // yLtEqEnd && xGtEqStart
+                    return -1;
+            }
+            else
+                return xAngleRad.CompareToTol(RadTol, yAngleRad);
+        }
+    }
+
+    /// <summary>
     /// base geometry for arc 3d entities
     /// </summary>
     public class Arc3D : Geometry, IEdge
@@ -18,6 +67,67 @@ namespace SearchAThing
         #region IEdge
 
         public EdgeType EdgeType => EdgeType.Arc3D;
+
+        public bool EdgeContainsPoint(double tol, Vector3D pt) =>
+            this.Contains(tol, pt, inArcAngleRange: true, onlyPerimeter: true);
+
+        /// <summary>
+        /// returns this arc splitted by break points maintaining order from, to as this Start, End angle
+        /// </summary>
+        /// <param name="tol">length tolerance</param>
+        /// <param name="breaks"></param>
+        /// <returns></returns>
+        public override IEnumerable<Geometry> Split(double tol, IEnumerable<Vector3D> breaks)
+        {
+            var rad_tol = tol.RadTol(Radius);
+
+            var nAngleComparer = new NormalizedAngleComparer(rad_tol, this.AngleStart, this.AngleEnd);
+
+            var bangles = breaks
+                .Select(b => this.PtAngle(tol, b).NormalizeAngle(rad_tol))
+                .OrderBy(w => w, nAngleComparer)
+                .ToList();
+
+            if (bangles.Count == 0)
+            {
+                yield return this;
+            }
+
+            var addStart = !bangles[0].EqualsTol(rad_tol, this.AngleStart);
+            var addEnd = !bangles[bangles.Count - 1].EqualsTol(tol_rad, this.AngleEnd);
+
+            var res = new List<Geometry>();
+
+            foreach (var bitem in bangles.WithNextPrimitive())
+            {
+                if (bitem.itemIdx == 0 && addStart)
+                    res.Add(new Arc3D(CS, Radius, this.AngleStart, bitem.item));
+
+                if (bitem.next.HasValue)
+                    res.Add(new Arc3D(CS, Radius, bitem.item, bitem.next.Value));
+
+                else if (bitem.isLast && addEnd)
+                    res.Add(new Arc3D(CS, Radius, bitem.item, this.AngleEnd));
+            }
+
+            if (!this.Sense)
+            {
+                res.Reverse();
+                foreach (var x in res) x.ToggleSense();
+            }
+
+            // if (res.Count > 0 && !res[0].SGeomFrom.EqualsTol(tol, this.SGeomFrom))
+            // {
+            //     res[0].ToggleSense();
+            // }
+
+            foreach (var x in res.Cast<IEdge>().CheckSense(tol)) yield return (Geometry)x;
+        }
+
+        /// <summary>
+        /// mid point eval as arc point at angle start + arc angle/2
+        /// </summary>
+        public override Vector3D MidPoint => PtAtAngle(AngleStart + Angle / 2);
 
         #endregion
 
@@ -85,7 +195,7 @@ namespace SearchAThing
                 });
         }
 
-        public override IEnumerable<Geometry> Intersect(double tol, Geometry _other)
+        public override IEnumerable<Geometry> GeomIntersect(double tol, Geometry _other, bool segmentMode)
         {
             switch (_other.GeomType)
             {
@@ -93,7 +203,7 @@ namespace SearchAThing
                     {
                         var other = (Line3D)_other;
 
-                        var pts = this.Intersect(tol, other, true, true);
+                        var pts = this.Intersect(tol, other, true, segment_mode: segmentMode);
 
                         if (pts != null)
                         {
@@ -270,11 +380,6 @@ namespace SearchAThing
         /// note: it start
         /// </summary>
         public Vector3D PtAtAngle(double angleRad) => (Vector3D.XAxis * Radius).RotateAboutZAxis(angleRad).ToWCS(CS);
-
-        /// <summary>
-        /// mid point eval as arc point at angle start + arc angle/2
-        /// </summary>
-        public Vector3D MidPoint => PtAtAngle(AngleStart + Angle / 2);
 
         /// <summary>
         /// return the angle (rad) of the point respect cs x axis rotating around cs z axis
@@ -574,7 +679,7 @@ namespace SearchAThing
 
         [ExcludeFromCodeCoverage]
         public override string ToString() =>
-            $"C:{Center} r:{Round(Radius, 3)} ANGLE:{Round(Angle.ToDeg(), 1)}deg FROM[{From} {Round(AngleStart.ToDeg(), 1)} deg] TO[{To} {Round(AngleEnd.ToDeg(), 1)} deg]";
+            $"[{GetType().Name}]{((!Sense) ? " !S" : "")} L:{Round(Length, 2)} SFROM[{SGeomFrom}] STO[{SGeomTo}] C:{Center} r:{Round(Radius, 3)} ANGLE:{Round(Angle.ToDeg(), 1)}deg ({Round(AngleStart.ToDeg(), 1)}->{Round(AngleEnd.ToDeg(), 1)})";
 
         /// <summary>
         /// create a set of subarc from this by splitting through given split points
@@ -695,7 +800,7 @@ namespace SearchAThing
             return x.EqualsTol(tol, y);
         }
 
-        public int GetHashCode(Arc3D obj) => 0;        
+        public int GetHashCode(Arc3D obj) => 0;
 
     }
 

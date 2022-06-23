@@ -121,6 +121,23 @@ namespace SearchAThing
         }
 
         /// <summary>
+        /// compare a, b using given tol
+        /// </summary>
+        /// <param name="a">first term</param>
+        /// <param name="tol">equals tolerance</param>
+        /// <param name="b">second term</param>
+        /// <returns>-1 if a less than b ; 0 if a equals tol b ; +1 if a greather than b</returns>
+        public static int CompareToTol(this double a, double tol, double b)
+        {
+            if (a.EqualsTol(tol, b)) return 0;
+            
+            if (a < b) return -1;
+
+            // a > b
+            return +1;
+        }
+
+        /// <summary>
         /// retrieve min,max w/single sweep
         /// </summary>        
         public static (double min, double max) MinMax(this IEnumerable<double> input)

@@ -83,26 +83,135 @@
     <div class="level2"><span class="xref">Arc3D</span></div>
       <div class="level3"><a class="xref" href="SearchAThing.Circle3D.html">Circle3D</a></div>
   </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="SearchAThing.IEdge.html">IEdge</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="SearchAThing.Geometry.html#SearchAThing_Geometry_Type">Geometry.Type</a>
+      <a class="xref" href="SearchAThing.Geometry.html#SearchAThing_Geometry_Sense">Geometry.Sense</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Geometry.html#SearchAThing_Geometry_SGeomFrom">Geometry.SGeomFrom</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Geometry.html#SearchAThing_Geometry_SGeomTo">Geometry.SGeomTo</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Geometry.html#SearchAThing_Geometry_ToggleSense">Geometry.ToggleSense()</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Geometry.html#SearchAThing_Geometry_GeomType">Geometry.GeomType</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="SearchAThing.html">SearchAThing</a></h6>
   <h6><strong>Assembly</strong>: netcore-sci.dll</h6>
   <h5 id="SearchAThing_Arc3D_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Arc3D : Geometry</code></pre>
+    <pre><code class="lang-csharp hljs">public class Arc3D : Geometry, IEdge</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D__ctor_SearchAThing_CoordinateSystem3D_System_Double_System_Double_System_Double_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.%23ctor(SearchAThing.CoordinateSystem3D%2CSystem.Double%2CSystem.Double%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L265">View Source</a>
+  </span>
+  <a id="SearchAThing_Arc3D__ctor_" data-uid="SearchAThing.Arc3D.#ctor*"></a>
+  <h4 id="SearchAThing_Arc3D__ctor_SearchAThing_CoordinateSystem3D_System_Double_System_Double_System_Double_" data-uid="SearchAThing.Arc3D.#ctor(SearchAThing.CoordinateSystem3D,System.Double,System.Double,System.Double)">Arc3D(CoordinateSystem3D, Double, Double, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Arc3D(CoordinateSystem3D cs, double r, double normalizedAngleRadStart, double normalizedAngleRadEnd)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.CoordinateSystem3D.html">CoordinateSystem3D</a></td>
+        <td><span class="parametername">cs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">r</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">normalizedAngleRadStart</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">normalizedAngleRadEnd</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D__ctor_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_Vector3D_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.%23ctor(SearchAThing.Vector3D%2CSearchAThing.Vector3D%2CSearchAThing.Vector3D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L308">View Source</a>
+  </span>
+  <a id="SearchAThing_Arc3D__ctor_" data-uid="SearchAThing.Arc3D.#ctor*"></a>
+  <h4 id="SearchAThing_Arc3D__ctor_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_Vector3D_" data-uid="SearchAThing.Arc3D.#ctor(SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.Vector3D)">Arc3D(Vector3D, Vector3D, Vector3D)</h4>
+  <div class="markdown level1 summary"><p>build 3d arc by given 3 points (angles 0,2pi)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Arc3D(Vector3D p1, Vector3D p2, Vector3D p3)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">p1</span></td>
+        <td><p>first constraint point</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">p2</span></td>
+        <td><p>second constraint point</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">p3</span></td>
+        <td><p>third constraint point</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D__ctor_System_Double_SearchAThing_CoordinateSystem3D_System_Double_System_Double_System_Double_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.%23ctor(System.Double%2CSearchAThing.CoordinateSystem3D%2CSystem.Double%2CSystem.Double%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L40">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L255">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D__ctor_" data-uid="SearchAThing.Arc3D.#ctor*"></a>
   <h4 id="SearchAThing_Arc3D__ctor_System_Double_SearchAThing_CoordinateSystem3D_System_Double_System_Double_System_Double_" data-uid="SearchAThing.Arc3D.#ctor(System.Double,SearchAThing.CoordinateSystem3D,System.Double,System.Double,System.Double)">Arc3D(Double, CoordinateSystem3D, Double, Double, Double)</h4>
@@ -111,7 +220,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Arc3D(double tol_len, CoordinateSystem3D cs, double r, double angleRadStart, double angleRadEnd)</code></pre>
+    <pre><code class="lang-csharp hljs">public Arc3D(double tol, CoordinateSystem3D cs, double r, double angleRadStart, double angleRadEnd)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -125,8 +234,9 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">tol_len</span></td>
-        <td></td>
+        <td><span class="parametername">tol</span></td>
+        <td><p>length tolerance</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="SearchAThing.CoordinateSystem3D.html">CoordinateSystem3D</a></td>
@@ -159,7 +269,7 @@
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D__ctor_System_Double_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_Vector3D_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.%23ctor(System.Double%2CSearchAThing.Vector3D%2CSearchAThing.Vector3D%2CSearchAThing.Vector3D%2CSearchAThing.Vector3D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L102">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L326">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D__ctor_" data-uid="SearchAThing.Arc3D.#ctor*"></a>
   <h4 id="SearchAThing_Arc3D__ctor_System_Double_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_Vector3D_" data-uid="SearchAThing.Arc3D.#ctor(System.Double,SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.Vector3D)">Arc3D(Double, Vector3D, Vector3D, Vector3D, Vector3D)</h4>
@@ -169,7 +279,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Arc3D(double tol_len, Vector3D p1, Vector3D p2, Vector3D p3, Vector3D normal = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public Arc3D(double tol, Vector3D p1, Vector3D p2, Vector3D p3, Vector3D normal = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -183,7 +293,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">tol_len</span></td>
+        <td><span class="parametername">tol</span></td>
         <td></td>
       </tr>
       <tr>
@@ -215,7 +325,7 @@
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_Angle.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.Angle%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L151">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L376">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_Angle_" data-uid="SearchAThing.Arc3D.Angle*"></a>
   <h4 id="SearchAThing_Arc3D_Angle" data-uid="SearchAThing.Arc3D.Angle">Angle</h4>
@@ -247,7 +357,7 @@ angle between start-end or end-start depending on what start is less than end or
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_AngleEnd.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.AngleEnd%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L145">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L370">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_AngleEnd_" data-uid="SearchAThing.Arc3D.AngleEnd*"></a>
   <h4 id="SearchAThing_Arc3D_AngleEnd" data-uid="SearchAThing.Arc3D.AngleEnd">AngleEnd</h4>
@@ -279,7 +389,7 @@ note that start angle can be greather than end angle</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_AngleStart.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.AngleStart%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L139">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L364">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_AngleStart_" data-uid="SearchAThing.Arc3D.AngleStart*"></a>
   <h4 id="SearchAThing_Arc3D_AngleStart" data-uid="SearchAThing.Arc3D.AngleStart">AngleStart</h4>
@@ -311,7 +421,7 @@ note that start angle can be greather than end angle</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_Center.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.Center%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L293">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L484">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_Center_" data-uid="SearchAThing.Arc3D.Center*"></a>
   <h4 id="SearchAThing_Arc3D_Center" data-uid="SearchAThing.Arc3D.Center">Center</h4>
@@ -341,7 +451,7 @@ note that start angle can be greather than end angle</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_CS.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.CS%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L23">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L237">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_CS_" data-uid="SearchAThing.Arc3D.CS*"></a>
   <h4 id="SearchAThing_Arc3D_CS" data-uid="SearchAThing.Arc3D.CS">CS</h4>
@@ -374,7 +484,7 @@ angle increase rotating right-hand on Z axis</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_DxfEntity.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.DxfEntity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L312">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L217">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_DxfEntity_" data-uid="SearchAThing.Arc3D.DxfEntity*"></a>
   <h4 id="SearchAThing_Arc3D_DxfEntity" data-uid="SearchAThing.Arc3D.DxfEntity">DxfEntity</h4>
@@ -403,10 +513,40 @@ angle increase rotating right-hand on Z axis</p>
   <div><a class="xref" href="SearchAThing.Geometry.html#SearchAThing_Geometry_DxfEntity">Geometry.DxfEntity</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_EdgeType.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.EdgeType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L69">View Source</a>
+  </span>
+  <a id="SearchAThing_Arc3D_EdgeType_" data-uid="SearchAThing.Arc3D.EdgeType*"></a>
+  <h4 id="SearchAThing_Arc3D_EdgeType" data-uid="SearchAThing.Arc3D.EdgeType">EdgeType</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EdgeType EdgeType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="SearchAThing.EdgeType.html">EdgeType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_From.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.From%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L209">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L401">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_From_" data-uid="SearchAThing.Arc3D.From*"></a>
   <h4 id="SearchAThing_Arc3D_From" data-uid="SearchAThing.Arc3D.From">From</h4>
@@ -437,7 +577,7 @@ angle increase rotating right-hand on Z axis</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_GeomFrom.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.GeomFrom%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L170">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L145">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_GeomFrom_" data-uid="SearchAThing.Arc3D.GeomFrom*"></a>
   <h4 id="SearchAThing_Arc3D_GeomFrom" data-uid="SearchAThing.Arc3D.GeomFrom">GeomFrom</h4>
@@ -469,7 +609,7 @@ angle increase rotating right-hand on Z axis</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_GeomTo.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.GeomTo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L172">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L147">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_GeomTo_" data-uid="SearchAThing.Arc3D.GeomTo*"></a>
   <h4 id="SearchAThing_Arc3D_GeomTo" data-uid="SearchAThing.Arc3D.GeomTo">GeomTo</h4>
@@ -501,7 +641,7 @@ angle increase rotating right-hand on Z axis</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_Length.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.Length%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L162">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L152">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_Length_" data-uid="SearchAThing.Arc3D.Length*"></a>
   <h4 id="SearchAThing_Arc3D_Length" data-uid="SearchAThing.Arc3D.Length">Length</h4>
@@ -534,7 +674,7 @@ angle increase rotating right-hand on Z axis</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_MidPoint.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.MidPoint%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L186">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L130">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_MidPoint_" data-uid="SearchAThing.Arc3D.MidPoint*"></a>
   <h4 id="SearchAThing_Arc3D_MidPoint" data-uid="SearchAThing.Arc3D.MidPoint">MidPoint</h4>
@@ -543,7 +683,7 @@ angle increase rotating right-hand on Z axis</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector3D MidPoint { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public override Vector3D MidPoint { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -560,12 +700,14 @@ angle increase rotating right-hand on Z axis</p>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="SearchAThing.Geometry.html#SearchAThing_Geometry_MidPoint">Geometry.MidPoint</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_Radius.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.Radius%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L28">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L242">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_Radius_" data-uid="SearchAThing.Arc3D.Radius*"></a>
   <h4 id="SearchAThing_Arc3D_Radius" data-uid="SearchAThing.Arc3D.Radius">Radius</h4>
@@ -596,7 +738,7 @@ angle increase rotating right-hand on Z axis</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_Segment.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.Segment%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L219">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L411">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_Segment_" data-uid="SearchAThing.Arc3D.Segment*"></a>
   <h4 id="SearchAThing_Arc3D_Segment" data-uid="SearchAThing.Arc3D.Segment">Segment</h4>
@@ -627,7 +769,7 @@ angle increase rotating right-hand on Z axis</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_To.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.To%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L214">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L406">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_To_" data-uid="SearchAThing.Arc3D.To*"></a>
   <h4 id="SearchAThing_Arc3D_To" data-uid="SearchAThing.Arc3D.To">To</h4>
@@ -658,7 +800,7 @@ angle increase rotating right-hand on Z axis</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_Vertexes.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.Vertexes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L221">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L136">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_Vertexes_" data-uid="SearchAThing.Arc3D.Vertexes*"></a>
   <h4 id="SearchAThing_Arc3D_Vertexes" data-uid="SearchAThing.Arc3D.Vertexes">Vertexes</h4>
@@ -692,7 +834,7 @@ angle increase rotating right-hand on Z axis</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_BBox_System_Double_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.BBox(System.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L364">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L184">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_BBox_" data-uid="SearchAThing.Arc3D.BBox*"></a>
   <h4 id="SearchAThing_Arc3D_BBox_System_Double_" data-uid="SearchAThing.Arc3D.BBox(System.Double)">BBox(Double)</h4>
@@ -701,7 +843,7 @@ angle increase rotating right-hand on Z axis</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override BBox3D BBox(double tol_len)</code></pre>
+    <pre><code class="lang-csharp hljs">public override BBox3D BBox(double tol)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -715,7 +857,7 @@ angle increase rotating right-hand on Z axis</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">tol_len</span></td>
+        <td><span class="parametername">tol</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -742,7 +884,7 @@ angle increase rotating right-hand on Z axis</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_Bulge_System_Double_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_Vector3D_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.Bulge(System.Double%2CSearchAThing.Vector3D%2CSearchAThing.Vector3D%2CSearchAThing.Vector3D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L244">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L435">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_Bulge_" data-uid="SearchAThing.Arc3D.Bulge*"></a>
   <h4 id="SearchAThing_Arc3D_Bulge_System_Double_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_Vector3D_" data-uid="SearchAThing.Arc3D.Bulge(System.Double,SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.Vector3D)">Bulge(Double, Vector3D, Vector3D, Vector3D)</h4>
@@ -751,7 +893,7 @@ angle increase rotating right-hand on Z axis</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public double Bulge(double tolLen, Vector3D from, Vector3D to, Vector3D N)</code></pre>
+    <pre><code class="lang-csharp hljs">public double Bulge(double tol, Vector3D from, Vector3D to, Vector3D N)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -765,23 +907,27 @@ angle increase rotating right-hand on Z axis</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">tolLen</span></td>
-        <td></td>
+        <td><span class="parametername">tol</span></td>
+        <td><p>length tolerance</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
         <td><span class="parametername">from</span></td>
-        <td></td>
+        <td><p>buldge from pt</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
         <td><span class="parametername">to</span></td>
-        <td></td>
+        <td><p>buldge to pt</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
         <td><span class="parametername">N</span></td>
-        <td></td>
+        <td><p>arc normal</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -796,7 +942,8 @@ angle increase rotating right-hand on Z axis</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Double</span></td>
-        <td></td>
+        <td><p>arc buldge value</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -805,7 +952,7 @@ angle increase rotating right-hand on Z axis</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_CentreOfMass_System_Double__.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.CentreOfMass(System.Double%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L300">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L493">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_CentreOfMass_" data-uid="SearchAThing.Arc3D.CentreOfMass*"></a>
   <h4 id="SearchAThing_Arc3D_CentreOfMass_System_Double__" data-uid="SearchAThing.Arc3D.CentreOfMass(System.Double@)">CentreOfMass(out Double)</h4>
@@ -829,67 +976,7 @@ angle increase rotating right-hand on Z axis</p>
       <tr>
         <td><span class="xref">System.Double</span></td>
         <td><span class="parametername">A</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_CircleBy3Points_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_Vector3D_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.CircleBy3Points(SearchAThing.Vector3D%2CSearchAThing.Vector3D%2CSearchAThing.Vector3D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L57">View Source</a>
-  </span>
-  <a id="SearchAThing_Arc3D_CircleBy3Points_" data-uid="SearchAThing.Arc3D.CircleBy3Points*"></a>
-  <h4 id="SearchAThing_Arc3D_CircleBy3Points_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_Vector3D_" data-uid="SearchAThing.Arc3D.CircleBy3Points(SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.Vector3D)">CircleBy3Points(Vector3D, Vector3D, Vector3D)</h4>
-  <div class="markdown level1 summary"><p>helper to build circle by given 3 points</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static (CoordinateSystem3D CS, double Radius) CircleBy3Points(Vector3D p1, Vector3D p2, Vector3D p3)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
-        <td><span class="parametername">p1</span></td>
-        <td><p>first constraint point</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
-        <td><span class="parametername">p2</span></td>
-        <td><p>second constraint point</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
-        <td><span class="parametername">p3</span></td>
-        <td><p>third constraint point</p>
+        <td><p>arc area</p>
 </td>
       </tr>
     </tbody>
@@ -904,8 +991,8 @@ angle increase rotating right-hand on Z axis</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="SearchAThing.CoordinateSystem3D.html">CoordinateSystem3D</a>, <span class="xref">System.Double</span>&gt;</td>
-        <td><p>cs and radius that describe a 3d circle</p>
+        <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
+        <td><p>location of arc centre of mass</p>
 </td>
       </tr>
     </tbody>
@@ -915,7 +1002,7 @@ angle increase rotating right-hand on Z axis</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_Contains_System_Double_SearchAThing_Vector3D_System_Boolean_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.Contains(System.Double%2CSearchAThing.Vector3D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L290">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L481">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_Contains_" data-uid="SearchAThing.Arc3D.Contains*"></a>
   <h4 id="SearchAThing_Arc3D_Contains_System_Double_SearchAThing_Vector3D_System_Boolean_" data-uid="SearchAThing.Arc3D.Contains(System.Double,SearchAThing.Vector3D,System.Boolean)">Contains(Double, Vector3D, Boolean)</h4>
@@ -976,7 +1063,7 @@ angle increase rotating right-hand on Z axis</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_Contains_System_Double_SearchAThing_Vector3D_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.Contains(System.Double%2CSearchAThing.Vector3D%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L264">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L455">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_Contains_" data-uid="SearchAThing.Arc3D.Contains*"></a>
   <h4 id="SearchAThing_Arc3D_Contains_System_Double_SearchAThing_Vector3D_System_Boolean_System_Boolean_" data-uid="SearchAThing.Arc3D.Contains(System.Double,SearchAThing.Vector3D,System.Boolean,System.Boolean)">Contains(Double, Vector3D, Boolean, Boolean)</h4>
@@ -985,7 +1072,7 @@ angle increase rotating right-hand on Z axis</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected bool Contains(double tol_len, Vector3D pt, bool inArcAngleRange, bool onlyPerimeter)</code></pre>
+    <pre><code class="lang-csharp hljs">protected bool Contains(double tol, Vector3D pt, bool inArcAngleRange, bool onlyPerimeter)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -999,7 +1086,7 @@ angle increase rotating right-hand on Z axis</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">tol_len</span></td>
+        <td><span class="parametername">tol</span></td>
         <td><p>len tolerance</p>
 </td>
       </tr>
@@ -1034,7 +1121,8 @@ angle increase rotating right-hand on Z axis</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p>true if arc contains given pt</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1043,11 +1131,12 @@ angle increase rotating right-hand on Z axis</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_Divide_System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.Divide(System.Int32%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L524">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L159">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_Divide_" data-uid="SearchAThing.Arc3D.Divide*"></a>
   <h4 id="SearchAThing_Arc3D_Divide_System_Int32_System_Boolean_" data-uid="SearchAThing.Arc3D.Divide(System.Int32,System.Boolean)">Divide(Int32, Boolean)</h4>
-  <div class="markdown level1 summary"><p>split arc into pieces and retrieve split points</p>
+  <div class="markdown level1 summary"><p>split arc into pieces and retrieve split points
+///</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1097,19 +1186,18 @@ angle increase rotating right-hand on Z axis</p>
   <div><a class="xref" href="SearchAThing.Geometry.html#SearchAThing_Geometry_Divide_System_Int32_System_Boolean_">Geometry.Divide(Int32, Boolean)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_EqualsTol_System_Double_SearchAThing_Arc3D_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.EqualsTol(System.Double%2CSearchAThing.Arc3D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_EdgeContainsPoint_System_Double_SearchAThing_Vector3D_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.EdgeContainsPoint(System.Double%2CSearchAThing.Vector3D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L233">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L71">View Source</a>
   </span>
-  <a id="SearchAThing_Arc3D_EqualsTol_" data-uid="SearchAThing.Arc3D.EqualsTol*"></a>
-  <h4 id="SearchAThing_Arc3D_EqualsTol_System_Double_SearchAThing_Arc3D_" data-uid="SearchAThing.Arc3D.EqualsTol(System.Double,SearchAThing.Arc3D)">EqualsTol(Double, Arc3D)</h4>
-  <div class="markdown level1 summary"><p>Checks if two arcs are equals ( it checks agains swapped from-to too )</p>
-</div>
+  <a id="SearchAThing_Arc3D_EdgeContainsPoint_" data-uid="SearchAThing.Arc3D.EdgeContainsPoint*"></a>
+  <h4 id="SearchAThing_Arc3D_EdgeContainsPoint_System_Double_SearchAThing_Vector3D_" data-uid="SearchAThing.Arc3D.EdgeContainsPoint(System.Double,SearchAThing.Vector3D)">EdgeContainsPoint(Double, Vector3D)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool EqualsTol(double tolLen, Arc3D other)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool EdgeContainsPoint(double tol, Vector3D pt)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1123,12 +1211,12 @@ angle increase rotating right-hand on Z axis</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">tolLen</span></td>
+        <td><span class="parametername">tol</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="SearchAThing.Arc3D.html">Arc3D</a></td>
-        <td><span class="parametername">other</span></td>
+        <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
+        <td><span class="parametername">pt</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -1150,10 +1238,125 @@ angle increase rotating right-hand on Z axis</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_EqualsTol_System_Double_SearchAThing_Arc3D_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.EqualsTol(System.Double%2CSearchAThing.Arc3D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L419">View Source</a>
+  </span>
+  <a id="SearchAThing_Arc3D_EqualsTol_" data-uid="SearchAThing.Arc3D.EqualsTol*"></a>
+  <h4 id="SearchAThing_Arc3D_EqualsTol_System_Double_SearchAThing_Arc3D_" data-uid="SearchAThing.Arc3D.EqualsTol(System.Double,SearchAThing.Arc3D)">EqualsTol(Double, Arc3D)</h4>
+  <div class="markdown level1 summary"><p>Checks if two arcs are equals ( it checks agains swapped from-to too )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EqualsTol(double tol, Arc3D other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td><p>length tolerance</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Arc3D.html">Arc3D</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>other arc</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>trus if two arcs equals</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_GeomIntersect_System_Double_SearchAThing_Geometry_System_Boolean_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.GeomIntersect(System.Double%2CSearchAThing.Geometry%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L198">View Source</a>
+  </span>
+  <a id="SearchAThing_Arc3D_GeomIntersect_" data-uid="SearchAThing.Arc3D.GeomIntersect*"></a>
+  <h4 id="SearchAThing_Arc3D_GeomIntersect_System_Double_SearchAThing_Geometry_System_Boolean_" data-uid="SearchAThing.Arc3D.GeomIntersect(System.Double,SearchAThing.Geometry,System.Boolean)">GeomIntersect(Double, Geometry, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Geometry&gt; GeomIntersect(double tol, Geometry _other, bool segmentMode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="SearchAThing.Geometry.html">Geometry</a></td>
+        <td><span class="parametername">_other</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">segmentMode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Geometry.html">Geometry</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="SearchAThing.Geometry.html#SearchAThing_Geometry_GeomIntersect_System_Double_SearchAThing_Geometry_System_Boolean_">Geometry.GeomIntersect(Double, Geometry, Boolean)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_Intersect_System_Double_SearchAThing_CoordinateSystem3D_System_Boolean_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.Intersect(System.Double%2CSearchAThing.CoordinateSystem3D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L499">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L666">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_Intersect_" data-uid="SearchAThing.Arc3D.Intersect*"></a>
   <h4 id="SearchAThing_Arc3D_Intersect_System_Double_SearchAThing_CoordinateSystem3D_System_Boolean_" data-uid="SearchAThing.Arc3D.Intersect(System.Double,SearchAThing.CoordinateSystem3D,System.Boolean)">Intersect(Double, CoordinateSystem3D, Boolean)</h4>
@@ -1220,7 +1423,7 @@ return empty set if arc cs plane parallel to other given cs</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_Intersect_System_Double_SearchAThing_Line3D_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.Intersect(System.Double%2CSearchAThing.Line3D%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L478">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L648">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_Intersect_" data-uid="SearchAThing.Arc3D.Intersect*"></a>
   <h4 id="SearchAThing_Arc3D_Intersect_System_Double_SearchAThing_Line3D_System_Boolean_System_Boolean_" data-uid="SearchAThing.Arc3D.Intersect(System.Double,SearchAThing.Line3D,System.Boolean,System.Boolean)">Intersect(Double, Line3D, Boolean, Boolean)</h4>
@@ -1288,7 +1491,7 @@ return empty set if arc cs plane parallel to other given cs</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_Intersect_System_Double_SearchAThing_Line3D_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.Intersect(System.Double%2CSearchAThing.Line3D%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L433">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L603">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_Intersect_" data-uid="SearchAThing.Arc3D.Intersect*"></a>
   <h4 id="SearchAThing_Arc3D_Intersect_System_Double_SearchAThing_Line3D_System_Boolean_System_Boolean_System_Boolean_" data-uid="SearchAThing.Arc3D.Intersect(System.Double,SearchAThing.Line3D,System.Boolean,System.Boolean,System.Boolean)">Intersect(Double, Line3D, Boolean, Boolean, Boolean)</h4>
@@ -1361,7 +1564,7 @@ return empty set if arc cs plane parallel to other given cs</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_Move_System_Double_SearchAThing_Vector3D_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.Move(System.Double%2CSearchAThing.Vector3D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L130">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L355">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_Move_" data-uid="SearchAThing.Arc3D.Move*"></a>
   <h4 id="SearchAThing_Arc3D_Move_System_Double_SearchAThing_Vector3D_" data-uid="SearchAThing.Arc3D.Move(System.Double,SearchAThing.Vector3D)">Move(Double, Vector3D)</h4>
@@ -1370,7 +1573,7 @@ return empty set if arc cs plane parallel to other given cs</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual Arc3D Move(double tol_len, Vector3D delta)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Arc3D Move(double tol, Vector3D delta)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1384,8 +1587,9 @@ return empty set if arc cs plane parallel to other given cs</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">tol_len</span></td>
-        <td></td>
+        <td><span class="parametername">tol</span></td>
+        <td><p>length tolerance</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
@@ -1415,7 +1619,7 @@ return empty set if arc cs plane parallel to other given cs</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_PtAngle_System_Double_SearchAThing_Vector3D_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.PtAngle(System.Double%2CSearchAThing.Vector3D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L198">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L390">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_PtAngle_" data-uid="SearchAThing.Arc3D.PtAngle*"></a>
   <h4 id="SearchAThing_Arc3D_PtAngle_System_Double_SearchAThing_Vector3D_" data-uid="SearchAThing.Arc3D.PtAngle(System.Double,SearchAThing.Vector3D)">PtAngle(Double, Vector3D)</h4>
@@ -1425,7 +1629,7 @@ to reach given point angle alignment</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public double PtAngle(double tolLen, Vector3D pt)</code></pre>
+    <pre><code class="lang-csharp hljs">public double PtAngle(double tol, Vector3D pt)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1439,13 +1643,15 @@ to reach given point angle alignment</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">tolLen</span></td>
-        <td></td>
+        <td><span class="parametername">tol</span></td>
+        <td><p>length tolerance</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a></td>
         <td><span class="parametername">pt</span></td>
-        <td></td>
+        <td><p>point to query angle respect csx axis for</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1469,7 +1675,7 @@ to reach given point angle alignment</p>
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_PtAtAngle_System_Double_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.PtAtAngle(System.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L178">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L382">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_PtAtAngle_" data-uid="SearchAThing.Arc3D.PtAtAngle*"></a>
   <h4 id="SearchAThing_Arc3D_PtAtAngle_System_Double_" data-uid="SearchAThing.Arc3D.PtAtAngle(System.Double)">PtAtAngle(Double)</h4>
@@ -1515,21 +1721,19 @@ note: it start</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_Split_System_Double_IEnumerable_SearchAThing_Vector3D__System_Boolean_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.Split(System.Double%2CIEnumerable%7BSearchAThing.Vector3D%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_Split_System_Double_IEnumerable_SearchAThing_Vector3D__.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.Split(System.Double%2CIEnumerable%7BSearchAThing.Vector3D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L554">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L80">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_Split_" data-uid="SearchAThing.Arc3D.Split*"></a>
-  <h4 id="SearchAThing_Arc3D_Split_System_Double_IEnumerable_SearchAThing_Vector3D__System_Boolean_" data-uid="SearchAThing.Arc3D.Split(System.Double,IEnumerable{SearchAThing.Vector3D},System.Boolean)">Split(Double, IEnumerable&lt;Vector3D&gt;, Boolean)</h4>
-  <div class="markdown level1 summary"><p>create a set of subarc from this by splitting through given split points
-split point are not required to be on perimeter of the arc ( a center arc to point line will split )
-generated subarcs will start from this arc angleFrom and contiguosly end to angleTo</p>
+  <h4 id="SearchAThing_Arc3D_Split_System_Double_IEnumerable_SearchAThing_Vector3D__" data-uid="SearchAThing.Arc3D.Split(System.Double,IEnumerable{SearchAThing.Vector3D})">Split(Double, IEnumerable&lt;Vector3D&gt;)</h4>
+  <div class="markdown level1 summary"><p>returns this arc splitted by break points maintaining order from, to as this Start, End angle</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Arc3D&gt; Split(double tol_len, IEnumerable&lt;Vector3D&gt; _splitPts, bool validate_pts = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Geometry&gt; Split(double tol, IEnumerable&lt;Vector3D&gt; breaks)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1543,7 +1747,65 @@ generated subarcs will start from this arc angleFrom and contiguosly end to angl
     <tbody>
       <tr>
         <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">tol_len</span></td>
+        <td><span class="parametername">tol</span></td>
+        <td><p>length tolerance</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Vector3D.html">Vector3D</a>&gt;</td>
+        <td><span class="parametername">breaks</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="SearchAThing.Geometry.html">Geometry</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="SearchAThing.Geometry.html#SearchAThing_Geometry_Split_System_Double_IEnumerable_SearchAThing_Vector3D__">Geometry.Split(Double, IEnumerable&lt;Vector3D&gt;)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_Split_System_Double_IEnumerable_SearchAThing_Vector3D__System_Boolean_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.Split(System.Double%2CIEnumerable%7BSearchAThing.Vector3D%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L692">View Source</a>
+  </span>
+  <a id="SearchAThing_Arc3D_Split_" data-uid="SearchAThing.Arc3D.Split*"></a>
+  <h4 id="SearchAThing_Arc3D_Split_System_Double_IEnumerable_SearchAThing_Vector3D__System_Boolean_" data-uid="SearchAThing.Arc3D.Split(System.Double,IEnumerable{SearchAThing.Vector3D},System.Boolean)">Split(Double, IEnumerable&lt;Vector3D&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>create a set of subarc from this by splitting through given split points
+split point are not required to be on perimeter of the arc ( a center arc to point line will split )
+generated subarcs will start from this arc angleFrom and contiguosly end to angleTo</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Arc3D&gt; Split(double tol, IEnumerable&lt;Vector3D&gt; _splitPts, bool validate_pts = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">tol</span></td>
         <td><p>arc length tolerance</p>
 </td>
       </tr>
@@ -1581,7 +1843,7 @@ generated subarcs will start from this arc angleFrom and contiguosly end to angl
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_ToCircle3D_System_Double_.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.ToCircle3D(System.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L295">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L486">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_ToCircle3D_" data-uid="SearchAThing.Arc3D.ToCircle3D*"></a>
   <h4 id="SearchAThing_Arc3D_ToCircle3D_System_Double_" data-uid="SearchAThing.Arc3D.ToCircle3D(System.Double)">ToCircle3D(Double)</h4>
@@ -1589,7 +1851,7 @@ generated subarcs will start from this arc angleFrom and contiguosly end to angl
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Circle3D ToCircle3D(double tol_len)</code></pre>
+    <pre><code class="lang-csharp hljs">public Circle3D ToCircle3D(double tol)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1603,7 +1865,7 @@ generated subarcs will start from this arc angleFrom and contiguosly end to angl
     <tbody>
       <tr>
         <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">tol_len</span></td>
+        <td><span class="parametername">tol</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -1628,7 +1890,7 @@ generated subarcs will start from this arc angleFrom and contiguosly end to angl
     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D_ToString.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L513">View Source</a>
+    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L680">View Source</a>
   </span>
   <a id="SearchAThing_Arc3D_ToString_" data-uid="SearchAThing.Arc3D.ToString*"></a>
   <h4 id="SearchAThing_Arc3D_ToString" data-uid="SearchAThing.Arc3D.ToString">ToString()</h4>
@@ -1653,6 +1915,10 @@ generated subarcs will start from this arc angleFrom and contiguosly end to angl
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="SearchAThing.IEdge.html">IEdge</a>
+  </div>
 </article>
           </div>
           
@@ -1664,7 +1930,7 @@ generated subarcs will start from this arc angleFrom and contiguosly end to angl
                     <a href="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Arc3D.md&amp;value=---%0Auid%3A%20SearchAThing.Arc3D%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L15" class="contribution-link">View Source</a>
+                    <a href="https://github.com/devel0/netcore-sci/blob/master/netcore-sci/Arc3D.cs/#L64" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

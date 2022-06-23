@@ -27,16 +27,27 @@ namespace test
             var loop1 = lw1.ToLoop(tol);
             var loop2 = lw2.ToLoop(tol);
 
-            var igeoms = loop1.Intersect(tol, loop2).ToList();
+            var iloops = loop1.Intersect(tol, loop2).ToList();
 
             var outputPathfilename = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "output.dxf");
             var outDxf = new netDxf.DxfDocument();
             outDxf.AddEntities(new[] { (EntityObject)lw1.Clone(), (EntityObject)lw2.Clone() });
-            foreach (var geom in igeoms)
+            foreach (var loop in iloops)
             {
-                // var ent = geom.DxfEntity;
-                // ent.Color = AciColor.Red;
-                // outDxf.AddEntity(ent);
+                var ent = loop.ToLwPolyline(tol);
+                ent.Color = AciColor.Red;
+                outDxf.AddEntity(ent);
+
+                var hatch = loop.ToHatch(tol,
+                    HatchPattern.Line.Clone().Eval(o =>
+                    {
+                        HatchPattern h = (HatchPattern)o;
+                        h.Angle = 45;
+                        return h;
+                    }));
+                hatch.Color = AciColor.Yellow;
+                outDxf.AddEntity(hatch);
+
             }
             outDxf.Viewport.ShowGrid = false;
             outDxf.Save(outputPathfilename);

@@ -13,6 +13,18 @@ references:
   commentId: T:SearchAThing.Arc3D
   fullName: SearchAThing.Arc3D
   nameWithType: Arc3D
+- uid: SearchAThing.Arc3D.#ctor(SearchAThing.CoordinateSystem3D,System.Double,System.Double,System.Double)
+  name: Arc3D(CoordinateSystem3D, Double, Double, Double)
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D__ctor_SearchAThing_CoordinateSystem3D_System_Double_System_Double_System_Double_
+  commentId: M:SearchAThing.Arc3D.#ctor(SearchAThing.CoordinateSystem3D,System.Double,System.Double,System.Double)
+  fullName: SearchAThing.Arc3D.Arc3D(SearchAThing.CoordinateSystem3D, System.Double, System.Double, System.Double)
+  nameWithType: Arc3D.Arc3D(CoordinateSystem3D, Double, Double, Double)
+- uid: SearchAThing.Arc3D.#ctor(SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.Vector3D)
+  name: Arc3D(Vector3D, Vector3D, Vector3D)
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D__ctor_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.Arc3D.#ctor(SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.Vector3D)
+  fullName: SearchAThing.Arc3D.Arc3D(SearchAThing.Vector3D, SearchAThing.Vector3D, SearchAThing.Vector3D)
+  nameWithType: Arc3D.Arc3D(Vector3D, Vector3D, Vector3D)
 - uid: SearchAThing.Arc3D.#ctor(System.Double,SearchAThing.CoordinateSystem3D,System.Double,System.Double,System.Double)
   name: Arc3D(Double, CoordinateSystem3D, Double, Double, Double)
   href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D__ctor_System_Double_SearchAThing_CoordinateSystem3D_System_Double_System_Double_System_Double_
@@ -126,19 +138,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Arc3D.CentreOfMass
   nameWithType: Arc3D.CentreOfMass
-- uid: SearchAThing.Arc3D.CircleBy3Points(SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.Vector3D)
-  name: CircleBy3Points(Vector3D, Vector3D, Vector3D)
-  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_CircleBy3Points_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_Vector3D_
-  commentId: M:SearchAThing.Arc3D.CircleBy3Points(SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.Vector3D)
-  fullName: SearchAThing.Arc3D.CircleBy3Points(SearchAThing.Vector3D, SearchAThing.Vector3D, SearchAThing.Vector3D)
-  nameWithType: Arc3D.CircleBy3Points(Vector3D, Vector3D, Vector3D)
-- uid: SearchAThing.Arc3D.CircleBy3Points*
-  name: CircleBy3Points
-  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_CircleBy3Points_
-  commentId: Overload:SearchAThing.Arc3D.CircleBy3Points
-  isSpec: "True"
-  fullName: SearchAThing.Arc3D.CircleBy3Points
-  nameWithType: Arc3D.CircleBy3Points
 - uid: SearchAThing.Arc3D.Contains(System.Double,SearchAThing.Vector3D,System.Boolean)
   name: Contains(Double, Vector3D, Boolean)
   href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_Contains_System_Double_SearchAThing_Vector3D_System_Boolean_
@@ -197,6 +196,32 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Arc3D.DxfEntity
   nameWithType: Arc3D.DxfEntity
+- uid: SearchAThing.Arc3D.EdgeContainsPoint(System.Double,SearchAThing.Vector3D)
+  name: EdgeContainsPoint(Double, Vector3D)
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_EdgeContainsPoint_System_Double_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.Arc3D.EdgeContainsPoint(System.Double,SearchAThing.Vector3D)
+  fullName: SearchAThing.Arc3D.EdgeContainsPoint(System.Double, SearchAThing.Vector3D)
+  nameWithType: Arc3D.EdgeContainsPoint(Double, Vector3D)
+- uid: SearchAThing.Arc3D.EdgeContainsPoint*
+  name: EdgeContainsPoint
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_EdgeContainsPoint_
+  commentId: Overload:SearchAThing.Arc3D.EdgeContainsPoint
+  isSpec: "True"
+  fullName: SearchAThing.Arc3D.EdgeContainsPoint
+  nameWithType: Arc3D.EdgeContainsPoint
+- uid: SearchAThing.Arc3D.EdgeType
+  name: EdgeType
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_EdgeType
+  commentId: P:SearchAThing.Arc3D.EdgeType
+  fullName: SearchAThing.Arc3D.EdgeType
+  nameWithType: Arc3D.EdgeType
+- uid: SearchAThing.Arc3D.EdgeType*
+  name: EdgeType
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_EdgeType_
+  commentId: Overload:SearchAThing.Arc3D.EdgeType
+  isSpec: "True"
+  fullName: SearchAThing.Arc3D.EdgeType
+  nameWithType: Arc3D.EdgeType
 - uid: SearchAThing.Arc3D.EqualsTol(System.Double,SearchAThing.Arc3D)
   name: EqualsTol(Double, Arc3D)
   href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_EqualsTol_System_Double_SearchAThing_Arc3D_
@@ -236,6 +261,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Arc3D.GeomFrom
   nameWithType: Arc3D.GeomFrom
+- uid: SearchAThing.Arc3D.GeomIntersect(System.Double,SearchAThing.Geometry,System.Boolean)
+  name: GeomIntersect(Double, Geometry, Boolean)
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_GeomIntersect_System_Double_SearchAThing_Geometry_System_Boolean_
+  commentId: M:SearchAThing.Arc3D.GeomIntersect(System.Double,SearchAThing.Geometry,System.Boolean)
+  fullName: SearchAThing.Arc3D.GeomIntersect(System.Double, SearchAThing.Geometry, System.Boolean)
+  nameWithType: Arc3D.GeomIntersect(Double, Geometry, Boolean)
+- uid: SearchAThing.Arc3D.GeomIntersect*
+  name: GeomIntersect
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_GeomIntersect_
+  commentId: Overload:SearchAThing.Arc3D.GeomIntersect
+  isSpec: "True"
+  fullName: SearchAThing.Arc3D.GeomIntersect
+  nameWithType: Arc3D.GeomIntersect
 - uid: SearchAThing.Arc3D.GeomTo
   name: GeomTo
   href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_GeomTo
@@ -365,6 +403,15 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Arc3D.Segment
   nameWithType: Arc3D.Segment
+- uid: SearchAThing.Arc3D.Split(System.Double,IEnumerable{SearchAThing.Vector3D})
+  name: Split(Double, IEnumerable<Vector3D>)
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_Split_System_Double_IEnumerable_SearchAThing_Vector3D__
+  commentId: M:SearchAThing.Arc3D.Split(System.Double,IEnumerable{SearchAThing.Vector3D})
+  name.vb: Split(Double, IEnumerable(Of Vector3D))
+  fullName: SearchAThing.Arc3D.Split(System.Double, IEnumerable<SearchAThing.Vector3D>)
+  fullName.vb: SearchAThing.Arc3D.Split(System.Double, IEnumerable(Of SearchAThing.Vector3D))
+  nameWithType: Arc3D.Split(Double, IEnumerable<Vector3D>)
+  nameWithType.vb: Arc3D.Split(Double, IEnumerable(Of Vector3D))
 - uid: SearchAThing.Arc3D.Split(System.Double,IEnumerable{SearchAThing.Vector3D},System.Boolean)
   name: Split(Double, IEnumerable<Vector3D>, Boolean)
   href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_Split_System_Double_IEnumerable_SearchAThing_Vector3D__System_Boolean_
@@ -807,18 +854,18 @@ references:
   commentId: M:SearchAThing.Circle3D.#ctor(SearchAThing.Arc3D)
   fullName: SearchAThing.Circle3D.Circle3D(SearchAThing.Arc3D)
   nameWithType: Circle3D.Circle3D(Arc3D)
+- uid: SearchAThing.Circle3D.#ctor(SearchAThing.CoordinateSystem3D,System.Double)
+  name: Circle3D(CoordinateSystem3D, Double)
+  href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D__ctor_SearchAThing_CoordinateSystem3D_System_Double_
+  commentId: M:SearchAThing.Circle3D.#ctor(SearchAThing.CoordinateSystem3D,System.Double)
+  fullName: SearchAThing.Circle3D.Circle3D(SearchAThing.CoordinateSystem3D, System.Double)
+  nameWithType: Circle3D.Circle3D(CoordinateSystem3D, Double)
 - uid: SearchAThing.Circle3D.#ctor(SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.Vector3D)
   name: Circle3D(Vector3D, Vector3D, Vector3D)
   href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D__ctor_SearchAThing_Vector3D_SearchAThing_Vector3D_SearchAThing_Vector3D_
   commentId: M:SearchAThing.Circle3D.#ctor(SearchAThing.Vector3D,SearchAThing.Vector3D,SearchAThing.Vector3D)
   fullName: SearchAThing.Circle3D.Circle3D(SearchAThing.Vector3D, SearchAThing.Vector3D, SearchAThing.Vector3D)
   nameWithType: Circle3D.Circle3D(Vector3D, Vector3D, Vector3D)
-- uid: SearchAThing.Circle3D.#ctor(System.Double,SearchAThing.CoordinateSystem3D,System.Double)
-  name: Circle3D(Double, CoordinateSystem3D, Double)
-  href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D__ctor_System_Double_SearchAThing_CoordinateSystem3D_System_Double_
-  commentId: M:SearchAThing.Circle3D.#ctor(System.Double,SearchAThing.CoordinateSystem3D,System.Double)
-  fullName: SearchAThing.Circle3D.Circle3D(System.Double, SearchAThing.CoordinateSystem3D, System.Double)
-  nameWithType: Circle3D.Circle3D(Double, CoordinateSystem3D, Double)
 - uid: SearchAThing.Circle3D.#ctor*
   name: Circle3D
   href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D__ctor_
@@ -891,6 +938,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Circle3D.DxfEntity
   nameWithType: Circle3D.DxfEntity
+- uid: SearchAThing.Circle3D.EdgeType
+  name: EdgeType
+  href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_EdgeType
+  commentId: P:SearchAThing.Circle3D.EdgeType
+  fullName: SearchAThing.Circle3D.EdgeType
+  nameWithType: Circle3D.EdgeType
+- uid: SearchAThing.Circle3D.EdgeType*
+  name: EdgeType
+  href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_EdgeType_
+  commentId: Overload:SearchAThing.Circle3D.EdgeType
+  isSpec: "True"
+  fullName: SearchAThing.Circle3D.EdgeType
+  nameWithType: Circle3D.EdgeType
 - uid: SearchAThing.Circle3D.InscribedPolygon(System.Double,System.Int32)
   name: InscribedPolygon(Double, Int32)
   href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_InscribedPolygon_System_Double_System_Int32_
@@ -936,6 +996,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Circle3D.Length
   nameWithType: Circle3D.Length
+- uid: SearchAThing.Circle3D.Move(SearchAThing.Vector3D)
+  name: Move(Vector3D)
+  href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_Move_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.Circle3D.Move(SearchAThing.Vector3D)
+  fullName: SearchAThing.Circle3D.Move(SearchAThing.Vector3D)
+  nameWithType: Circle3D.Move(Vector3D)
+- uid: SearchAThing.Circle3D.Move*
+  name: Move
+  href: api/SearchAThing.Circle3D.html#SearchAThing_Circle3D_Move_
+  commentId: Overload:SearchAThing.Circle3D.Move
+  isSpec: "True"
+  fullName: SearchAThing.Circle3D.Move
+  nameWithType: Circle3D.Move
 - uid: SearchAThing.CircleTangentType
   name: CircleTangentType
   href: api/SearchAThing.CircleTangentType.html
@@ -1743,6 +1816,30 @@ references:
   isSpec: "True"
   fullName: SearchAThing.DQuaternion.v
   nameWithType: DQuaternion.v
+- uid: SearchAThing.EdgeType
+  name: EdgeType
+  href: api/SearchAThing.EdgeType.html
+  commentId: T:SearchAThing.EdgeType
+  fullName: SearchAThing.EdgeType
+  nameWithType: EdgeType
+- uid: SearchAThing.EdgeType.Arc3D
+  name: Arc3D
+  href: api/SearchAThing.EdgeType.html#SearchAThing_EdgeType_Arc3D
+  commentId: F:SearchAThing.EdgeType.Arc3D
+  fullName: SearchAThing.EdgeType.Arc3D
+  nameWithType: EdgeType.Arc3D
+- uid: SearchAThing.EdgeType.Circle3D
+  name: Circle3D
+  href: api/SearchAThing.EdgeType.html#SearchAThing_EdgeType_Circle3D
+  commentId: F:SearchAThing.EdgeType.Circle3D
+  fullName: SearchAThing.EdgeType.Circle3D
+  nameWithType: EdgeType.Circle3D
+- uid: SearchAThing.EdgeType.Line3D
+  name: Line3D
+  href: api/SearchAThing.EdgeType.html#SearchAThing_EdgeType_Line3D
+  commentId: F:SearchAThing.EdgeType.Line3D
+  fullName: SearchAThing.EdgeType.Line3D
+  nameWithType: EdgeType.Line3D
 - uid: SearchAThing.Geometry
   name: Geometry
   href: api/SearchAThing.Geometry.html
@@ -1814,6 +1911,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Geometry.GeomFrom
   nameWithType: Geometry.GeomFrom
+- uid: SearchAThing.Geometry.GeomIntersect(System.Double,SearchAThing.Geometry,System.Boolean)
+  name: GeomIntersect(Double, Geometry, Boolean)
+  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_GeomIntersect_System_Double_SearchAThing_Geometry_System_Boolean_
+  commentId: M:SearchAThing.Geometry.GeomIntersect(System.Double,SearchAThing.Geometry,System.Boolean)
+  fullName: SearchAThing.Geometry.GeomIntersect(System.Double, SearchAThing.Geometry, System.Boolean)
+  nameWithType: Geometry.GeomIntersect(Double, Geometry, Boolean)
+- uid: SearchAThing.Geometry.GeomIntersect*
+  name: GeomIntersect
+  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_GeomIntersect_
+  commentId: Overload:SearchAThing.Geometry.GeomIntersect
+  isSpec: "True"
+  fullName: SearchAThing.Geometry.GeomIntersect
+  nameWithType: Geometry.GeomIntersect
 - uid: SearchAThing.Geometry.GeomTo
   name: GeomTo
   href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_GeomTo
@@ -1827,6 +1937,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Geometry.GeomTo
   nameWithType: Geometry.GeomTo
+- uid: SearchAThing.Geometry.GeomType
+  name: GeomType
+  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_GeomType
+  commentId: P:SearchAThing.Geometry.GeomType
+  fullName: SearchAThing.Geometry.GeomType
+  nameWithType: Geometry.GeomType
+- uid: SearchAThing.Geometry.GeomType*
+  name: GeomType
+  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_GeomType_
+  commentId: Overload:SearchAThing.Geometry.GeomType
+  isSpec: "True"
+  fullName: SearchAThing.Geometry.GeomType
+  nameWithType: Geometry.GeomType
 - uid: SearchAThing.Geometry.Length
   name: Length
   href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_Length
@@ -1840,6 +1963,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Geometry.Length
   nameWithType: Geometry.Length
+- uid: SearchAThing.Geometry.MidPoint
+  name: MidPoint
+  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_MidPoint
+  commentId: P:SearchAThing.Geometry.MidPoint
+  fullName: SearchAThing.Geometry.MidPoint
+  nameWithType: Geometry.MidPoint
+- uid: SearchAThing.Geometry.MidPoint*
+  name: MidPoint
+  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_MidPoint_
+  commentId: Overload:SearchAThing.Geometry.MidPoint
+  isSpec: "True"
+  fullName: SearchAThing.Geometry.MidPoint
+  nameWithType: Geometry.MidPoint
 - uid: SearchAThing.Geometry.op_Implicit(SearchAThing.Geometry)~netDxf.Entities.EntityObject
   name: Implicit(Geometry to netDxf.Entities.EntityObject)
   href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_op_Implicit_SearchAThing_Geometry__netDxf_Entities_EntityObject
@@ -1859,19 +1995,74 @@ references:
   fullName.vb: SearchAThing.Geometry.Widening
   nameWithType: Geometry.Implicit
   nameWithType.vb: Geometry.Widening
-- uid: SearchAThing.Geometry.Type
-  name: Type
-  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_Type
-  commentId: P:SearchAThing.Geometry.Type
-  fullName: SearchAThing.Geometry.Type
-  nameWithType: Geometry.Type
-- uid: SearchAThing.Geometry.Type*
-  name: Type
-  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_Type_
-  commentId: Overload:SearchAThing.Geometry.Type
+- uid: SearchAThing.Geometry.Sense
+  name: Sense
+  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_Sense
+  commentId: P:SearchAThing.Geometry.Sense
+  fullName: SearchAThing.Geometry.Sense
+  nameWithType: Geometry.Sense
+- uid: SearchAThing.Geometry.Sense*
+  name: Sense
+  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_Sense_
+  commentId: Overload:SearchAThing.Geometry.Sense
   isSpec: "True"
-  fullName: SearchAThing.Geometry.Type
-  nameWithType: Geometry.Type
+  fullName: SearchAThing.Geometry.Sense
+  nameWithType: Geometry.Sense
+- uid: SearchAThing.Geometry.SGeomFrom
+  name: SGeomFrom
+  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_SGeomFrom
+  commentId: P:SearchAThing.Geometry.SGeomFrom
+  fullName: SearchAThing.Geometry.SGeomFrom
+  nameWithType: Geometry.SGeomFrom
+- uid: SearchAThing.Geometry.SGeomFrom*
+  name: SGeomFrom
+  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_SGeomFrom_
+  commentId: Overload:SearchAThing.Geometry.SGeomFrom
+  isSpec: "True"
+  fullName: SearchAThing.Geometry.SGeomFrom
+  nameWithType: Geometry.SGeomFrom
+- uid: SearchAThing.Geometry.SGeomTo
+  name: SGeomTo
+  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_SGeomTo
+  commentId: P:SearchAThing.Geometry.SGeomTo
+  fullName: SearchAThing.Geometry.SGeomTo
+  nameWithType: Geometry.SGeomTo
+- uid: SearchAThing.Geometry.SGeomTo*
+  name: SGeomTo
+  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_SGeomTo_
+  commentId: Overload:SearchAThing.Geometry.SGeomTo
+  isSpec: "True"
+  fullName: SearchAThing.Geometry.SGeomTo
+  nameWithType: Geometry.SGeomTo
+- uid: SearchAThing.Geometry.Split(System.Double,IEnumerable{SearchAThing.Vector3D})
+  name: Split(Double, IEnumerable<Vector3D>)
+  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_Split_System_Double_IEnumerable_SearchAThing_Vector3D__
+  commentId: M:SearchAThing.Geometry.Split(System.Double,IEnumerable{SearchAThing.Vector3D})
+  name.vb: Split(Double, IEnumerable(Of Vector3D))
+  fullName: SearchAThing.Geometry.Split(System.Double, IEnumerable<SearchAThing.Vector3D>)
+  fullName.vb: SearchAThing.Geometry.Split(System.Double, IEnumerable(Of SearchAThing.Vector3D))
+  nameWithType: Geometry.Split(Double, IEnumerable<Vector3D>)
+  nameWithType.vb: Geometry.Split(Double, IEnumerable(Of Vector3D))
+- uid: SearchAThing.Geometry.Split*
+  name: Split
+  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_Split_
+  commentId: Overload:SearchAThing.Geometry.Split
+  isSpec: "True"
+  fullName: SearchAThing.Geometry.Split
+  nameWithType: Geometry.Split
+- uid: SearchAThing.Geometry.ToggleSense
+  name: ToggleSense()
+  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_ToggleSense
+  commentId: M:SearchAThing.Geometry.ToggleSense
+  fullName: SearchAThing.Geometry.ToggleSense()
+  nameWithType: Geometry.ToggleSense()
+- uid: SearchAThing.Geometry.ToggleSense*
+  name: ToggleSense
+  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_ToggleSense_
+  commentId: Overload:SearchAThing.Geometry.ToggleSense
+  isSpec: "True"
+  fullName: SearchAThing.Geometry.ToggleSense
+  nameWithType: Geometry.ToggleSense
 - uid: SearchAThing.Geometry.Vertexes
   name: Vertexes
   href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_Vertexes
@@ -1915,6 +2106,132 @@ references:
   commentId: F:SearchAThing.GeometryType.Vector3D
   fullName: SearchAThing.GeometryType.Vector3D
   nameWithType: GeometryType.Vector3D
+- uid: SearchAThing.IEdge
+  name: IEdge
+  href: api/SearchAThing.IEdge.html
+  commentId: T:SearchAThing.IEdge
+  fullName: SearchAThing.IEdge
+  nameWithType: IEdge
+- uid: SearchAThing.IEdge.DxfEntity
+  name: DxfEntity
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_DxfEntity
+  commentId: P:SearchAThing.IEdge.DxfEntity
+  fullName: SearchAThing.IEdge.DxfEntity
+  nameWithType: IEdge.DxfEntity
+- uid: SearchAThing.IEdge.DxfEntity*
+  name: DxfEntity
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_DxfEntity_
+  commentId: Overload:SearchAThing.IEdge.DxfEntity
+  isSpec: "True"
+  fullName: SearchAThing.IEdge.DxfEntity
+  nameWithType: IEdge.DxfEntity
+- uid: SearchAThing.IEdge.EdgeContainsPoint(System.Double,SearchAThing.Vector3D)
+  name: EdgeContainsPoint(Double, Vector3D)
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_EdgeContainsPoint_System_Double_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.IEdge.EdgeContainsPoint(System.Double,SearchAThing.Vector3D)
+  fullName: SearchAThing.IEdge.EdgeContainsPoint(System.Double, SearchAThing.Vector3D)
+  nameWithType: IEdge.EdgeContainsPoint(Double, Vector3D)
+- uid: SearchAThing.IEdge.EdgeContainsPoint*
+  name: EdgeContainsPoint
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_EdgeContainsPoint_
+  commentId: Overload:SearchAThing.IEdge.EdgeContainsPoint
+  isSpec: "True"
+  fullName: SearchAThing.IEdge.EdgeContainsPoint
+  nameWithType: IEdge.EdgeContainsPoint
+- uid: SearchAThing.IEdge.EdgeType
+  name: EdgeType
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_EdgeType
+  commentId: P:SearchAThing.IEdge.EdgeType
+  fullName: SearchAThing.IEdge.EdgeType
+  nameWithType: IEdge.EdgeType
+- uid: SearchAThing.IEdge.EdgeType*
+  name: EdgeType
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_EdgeType_
+  commentId: Overload:SearchAThing.IEdge.EdgeType
+  isSpec: "True"
+  fullName: SearchAThing.IEdge.EdgeType
+  nameWithType: IEdge.EdgeType
+- uid: SearchAThing.IEdge.MidPoint
+  name: MidPoint
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_MidPoint
+  commentId: P:SearchAThing.IEdge.MidPoint
+  fullName: SearchAThing.IEdge.MidPoint
+  nameWithType: IEdge.MidPoint
+- uid: SearchAThing.IEdge.MidPoint*
+  name: MidPoint
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_MidPoint_
+  commentId: Overload:SearchAThing.IEdge.MidPoint
+  isSpec: "True"
+  fullName: SearchAThing.IEdge.MidPoint
+  nameWithType: IEdge.MidPoint
+- uid: SearchAThing.IEdge.Sense
+  name: Sense
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_Sense
+  commentId: P:SearchAThing.IEdge.Sense
+  fullName: SearchAThing.IEdge.Sense
+  nameWithType: IEdge.Sense
+- uid: SearchAThing.IEdge.Sense*
+  name: Sense
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_Sense_
+  commentId: Overload:SearchAThing.IEdge.Sense
+  isSpec: "True"
+  fullName: SearchAThing.IEdge.Sense
+  nameWithType: IEdge.Sense
+- uid: SearchAThing.IEdge.SGeomFrom
+  name: SGeomFrom
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_SGeomFrom
+  commentId: P:SearchAThing.IEdge.SGeomFrom
+  fullName: SearchAThing.IEdge.SGeomFrom
+  nameWithType: IEdge.SGeomFrom
+- uid: SearchAThing.IEdge.SGeomFrom*
+  name: SGeomFrom
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_SGeomFrom_
+  commentId: Overload:SearchAThing.IEdge.SGeomFrom
+  isSpec: "True"
+  fullName: SearchAThing.IEdge.SGeomFrom
+  nameWithType: IEdge.SGeomFrom
+- uid: SearchAThing.IEdge.SGeomTo
+  name: SGeomTo
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_SGeomTo
+  commentId: P:SearchAThing.IEdge.SGeomTo
+  fullName: SearchAThing.IEdge.SGeomTo
+  nameWithType: IEdge.SGeomTo
+- uid: SearchAThing.IEdge.SGeomTo*
+  name: SGeomTo
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_SGeomTo_
+  commentId: Overload:SearchAThing.IEdge.SGeomTo
+  isSpec: "True"
+  fullName: SearchAThing.IEdge.SGeomTo
+  nameWithType: IEdge.SGeomTo
+- uid: SearchAThing.IEdge.Split(System.Double,IEnumerable{SearchAThing.Vector3D})
+  name: Split(Double, IEnumerable<Vector3D>)
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_Split_System_Double_IEnumerable_SearchAThing_Vector3D__
+  commentId: M:SearchAThing.IEdge.Split(System.Double,IEnumerable{SearchAThing.Vector3D})
+  name.vb: Split(Double, IEnumerable(Of Vector3D))
+  fullName: SearchAThing.IEdge.Split(System.Double, IEnumerable<SearchAThing.Vector3D>)
+  fullName.vb: SearchAThing.IEdge.Split(System.Double, IEnumerable(Of SearchAThing.Vector3D))
+  nameWithType: IEdge.Split(Double, IEnumerable<Vector3D>)
+  nameWithType.vb: IEdge.Split(Double, IEnumerable(Of Vector3D))
+- uid: SearchAThing.IEdge.Split*
+  name: Split
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_Split_
+  commentId: Overload:SearchAThing.IEdge.Split
+  isSpec: "True"
+  fullName: SearchAThing.IEdge.Split
+  nameWithType: IEdge.Split
+- uid: SearchAThing.IEdge.ToggleSense
+  name: ToggleSense()
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_ToggleSense
+  commentId: M:SearchAThing.IEdge.ToggleSense
+  fullName: SearchAThing.IEdge.ToggleSense()
+  nameWithType: IEdge.ToggleSense()
+- uid: SearchAThing.IEdge.ToggleSense*
+  name: ToggleSense
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_ToggleSense_
+  commentId: Overload:SearchAThing.IEdge.ToggleSense
+  isSpec: "True"
+  fullName: SearchAThing.IEdge.ToggleSense
+  nameWithType: IEdge.ToggleSense
 - uid: SearchAThing.Int64Map
   name: Int64Map
   href: api/SearchAThing.Int64Map.html
@@ -2175,6 +2492,32 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Line3D.DxfEntity
   nameWithType: Line3D.DxfEntity
+- uid: SearchAThing.Line3D.EdgeContainsPoint(System.Double,SearchAThing.Vector3D)
+  name: EdgeContainsPoint(Double, Vector3D)
+  href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_EdgeContainsPoint_System_Double_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.Line3D.EdgeContainsPoint(System.Double,SearchAThing.Vector3D)
+  fullName: SearchAThing.Line3D.EdgeContainsPoint(System.Double, SearchAThing.Vector3D)
+  nameWithType: Line3D.EdgeContainsPoint(Double, Vector3D)
+- uid: SearchAThing.Line3D.EdgeContainsPoint*
+  name: EdgeContainsPoint
+  href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_EdgeContainsPoint_
+  commentId: Overload:SearchAThing.Line3D.EdgeContainsPoint
+  isSpec: "True"
+  fullName: SearchAThing.Line3D.EdgeContainsPoint
+  nameWithType: Line3D.EdgeContainsPoint
+- uid: SearchAThing.Line3D.EdgeType
+  name: EdgeType
+  href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_EdgeType
+  commentId: P:SearchAThing.Line3D.EdgeType
+  fullName: SearchAThing.Line3D.EdgeType
+  nameWithType: Line3D.EdgeType
+- uid: SearchAThing.Line3D.EdgeType*
+  name: EdgeType
+  href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_EdgeType_
+  commentId: Overload:SearchAThing.Line3D.EdgeType
+  isSpec: "True"
+  fullName: SearchAThing.Line3D.EdgeType
+  nameWithType: Line3D.EdgeType
 - uid: SearchAThing.Line3D.EnsureFrom(System.Double,SearchAThing.Vector3D)
   name: EnsureFrom(Double, Vector3D)
   href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_EnsureFrom_System_Double_SearchAThing_Vector3D_
@@ -2227,6 +2570,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Line3D.GeomFrom
   nameWithType: Line3D.GeomFrom
+- uid: SearchAThing.Line3D.GeomIntersect(System.Double,SearchAThing.Geometry,System.Boolean)
+  name: GeomIntersect(Double, Geometry, Boolean)
+  href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_GeomIntersect_System_Double_SearchAThing_Geometry_System_Boolean_
+  commentId: M:SearchAThing.Line3D.GeomIntersect(System.Double,SearchAThing.Geometry,System.Boolean)
+  fullName: SearchAThing.Line3D.GeomIntersect(System.Double, SearchAThing.Geometry, System.Boolean)
+  nameWithType: Line3D.GeomIntersect(Double, Geometry, Boolean)
+- uid: SearchAThing.Line3D.GeomIntersect*
+  name: GeomIntersect
+  href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_GeomIntersect_
+  commentId: Overload:SearchAThing.Line3D.GeomIntersect
+  isSpec: "True"
+  fullName: SearchAThing.Line3D.GeomIntersect
+  nameWithType: Line3D.GeomIntersect
 - uid: SearchAThing.Line3D.GeomTo
   name: GeomTo
   href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_GeomTo
@@ -2574,6 +2930,15 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Line3D.SetLength
   nameWithType: Line3D.SetLength
+- uid: SearchAThing.Line3D.Split(System.Double,IEnumerable{SearchAThing.Vector3D})
+  name: Split(Double, IEnumerable<Vector3D>)
+  href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_Split_System_Double_IEnumerable_SearchAThing_Vector3D__
+  commentId: M:SearchAThing.Line3D.Split(System.Double,IEnumerable{SearchAThing.Vector3D})
+  name.vb: Split(Double, IEnumerable(Of Vector3D))
+  fullName: SearchAThing.Line3D.Split(System.Double, IEnumerable<SearchAThing.Vector3D>)
+  fullName.vb: SearchAThing.Line3D.Split(System.Double, IEnumerable(Of SearchAThing.Vector3D))
+  nameWithType: Line3D.Split(Double, IEnumerable<Vector3D>)
+  nameWithType.vb: Line3D.Split(Double, IEnumerable(Of Vector3D))
 - uid: SearchAThing.Line3D.Split(System.Double,IReadOnlyList{SearchAThing.Vector3D})
   name: Split(Double, IReadOnlyList<Vector3D>)
   href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_Split_System_Double_IReadOnlyList_SearchAThing_Vector3D__
@@ -2796,6 +3161,86 @@ references:
   commentId: F:SearchAThing.LineIntersectBehavior.PointOnThis
   fullName: SearchAThing.LineIntersectBehavior.PointOnThis
   nameWithType: LineIntersectBehavior.PointOnThis
+- uid: SearchAThing.Loop
+  name: Loop
+  href: api/SearchAThing.Loop.html
+  commentId: T:SearchAThing.Loop
+  fullName: SearchAThing.Loop
+  nameWithType: Loop
+- uid: SearchAThing.Loop.#ctor(System.Double,IEnumerable{SearchAThing.IEdge},System.Boolean)
+  name: Loop(Double, IEnumerable<IEdge>, Boolean)
+  href: api/SearchAThing.Loop.html#SearchAThing_Loop__ctor_System_Double_IEnumerable_SearchAThing_IEdge__System_Boolean_
+  commentId: M:SearchAThing.Loop.#ctor(System.Double,IEnumerable{SearchAThing.IEdge},System.Boolean)
+  name.vb: Loop(Double, IEnumerable(Of IEdge), Boolean)
+  fullName: SearchAThing.Loop.Loop(System.Double, IEnumerable<SearchAThing.IEdge>, System.Boolean)
+  fullName.vb: SearchAThing.Loop.Loop(System.Double, IEnumerable(Of SearchAThing.IEdge), System.Boolean)
+  nameWithType: Loop.Loop(Double, IEnumerable<IEdge>, Boolean)
+  nameWithType.vb: Loop.Loop(Double, IEnumerable(Of IEdge), Boolean)
+- uid: SearchAThing.Loop.#ctor(System.Double,LwPolyline)
+  name: Loop(Double, LwPolyline)
+  href: api/SearchAThing.Loop.html#SearchAThing_Loop__ctor_System_Double_LwPolyline_
+  commentId: M:SearchAThing.Loop.#ctor(System.Double,LwPolyline)
+  fullName: SearchAThing.Loop.Loop(System.Double, LwPolyline)
+  nameWithType: Loop.Loop(Double, LwPolyline)
+- uid: SearchAThing.Loop.#ctor*
+  name: Loop
+  href: api/SearchAThing.Loop.html#SearchAThing_Loop__ctor_
+  commentId: Overload:SearchAThing.Loop.#ctor
+  isSpec: "True"
+  fullName: SearchAThing.Loop.Loop
+  nameWithType: Loop.Loop
+- uid: SearchAThing.Loop.ContainsPoint(System.Double,SearchAThing.Vector3D)
+  name: ContainsPoint(Double, Vector3D)
+  href: api/SearchAThing.Loop.html#SearchAThing_Loop_ContainsPoint_System_Double_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.Loop.ContainsPoint(System.Double,SearchAThing.Vector3D)
+  fullName: SearchAThing.Loop.ContainsPoint(System.Double, SearchAThing.Vector3D)
+  nameWithType: Loop.ContainsPoint(Double, Vector3D)
+- uid: SearchAThing.Loop.ContainsPoint*
+  name: ContainsPoint
+  href: api/SearchAThing.Loop.html#SearchAThing_Loop_ContainsPoint_
+  commentId: Overload:SearchAThing.Loop.ContainsPoint
+  isSpec: "True"
+  fullName: SearchAThing.Loop.ContainsPoint
+  nameWithType: Loop.ContainsPoint
+- uid: SearchAThing.Loop.Edges
+  name: Edges
+  href: api/SearchAThing.Loop.html#SearchAThing_Loop_Edges
+  commentId: P:SearchAThing.Loop.Edges
+  fullName: SearchAThing.Loop.Edges
+  nameWithType: Loop.Edges
+- uid: SearchAThing.Loop.Edges*
+  name: Edges
+  href: api/SearchAThing.Loop.html#SearchAThing_Loop_Edges_
+  commentId: Overload:SearchAThing.Loop.Edges
+  isSpec: "True"
+  fullName: SearchAThing.Loop.Edges
+  nameWithType: Loop.Edges
+- uid: SearchAThing.Loop.Intersect(System.Double,SearchAThing.Loop)
+  name: Intersect(Double, Loop)
+  href: api/SearchAThing.Loop.html#SearchAThing_Loop_Intersect_System_Double_SearchAThing_Loop_
+  commentId: M:SearchAThing.Loop.Intersect(System.Double,SearchAThing.Loop)
+  fullName: SearchAThing.Loop.Intersect(System.Double, SearchAThing.Loop)
+  nameWithType: Loop.Intersect(Double, Loop)
+- uid: SearchAThing.Loop.Intersect*
+  name: Intersect
+  href: api/SearchAThing.Loop.html#SearchAThing_Loop_Intersect_
+  commentId: Overload:SearchAThing.Loop.Intersect
+  isSpec: "True"
+  fullName: SearchAThing.Loop.Intersect
+  nameWithType: Loop.Intersect
+- uid: SearchAThing.Loop.Plane
+  name: Plane
+  href: api/SearchAThing.Loop.html#SearchAThing_Loop_Plane
+  commentId: P:SearchAThing.Loop.Plane
+  fullName: SearchAThing.Loop.Plane
+  nameWithType: Loop.Plane
+- uid: SearchAThing.Loop.Plane*
+  name: Plane
+  href: api/SearchAThing.Loop.html#SearchAThing_Loop_Plane_
+  commentId: Overload:SearchAThing.Loop.Plane
+  isSpec: "True"
+  fullName: SearchAThing.Loop.Plane
+  nameWithType: Loop.Plane
 - uid: SearchAThing.LUT
   name: LUT
   href: api/SearchAThing.LUT.html
@@ -3243,6 +3688,77 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Matrix3D.Transpose
   nameWithType: Matrix3D.Transpose
+- uid: SearchAThing.NormalizedAngleComparer
+  name: NormalizedAngleComparer
+  href: api/SearchAThing.NormalizedAngleComparer.html
+  commentId: T:SearchAThing.NormalizedAngleComparer
+  fullName: SearchAThing.NormalizedAngleComparer
+  nameWithType: NormalizedAngleComparer
+- uid: SearchAThing.NormalizedAngleComparer.#ctor(System.Double,System.Double,System.Double)
+  name: NormalizedAngleComparer(Double, Double, Double)
+  href: api/SearchAThing.NormalizedAngleComparer.html#SearchAThing_NormalizedAngleComparer__ctor_System_Double_System_Double_System_Double_
+  commentId: M:SearchAThing.NormalizedAngleComparer.#ctor(System.Double,System.Double,System.Double)
+  fullName: SearchAThing.NormalizedAngleComparer.NormalizedAngleComparer(System.Double, System.Double, System.Double)
+  nameWithType: NormalizedAngleComparer.NormalizedAngleComparer(Double, Double, Double)
+- uid: SearchAThing.NormalizedAngleComparer.#ctor*
+  name: NormalizedAngleComparer
+  href: api/SearchAThing.NormalizedAngleComparer.html#SearchAThing_NormalizedAngleComparer__ctor_
+  commentId: Overload:SearchAThing.NormalizedAngleComparer.#ctor
+  isSpec: "True"
+  fullName: SearchAThing.NormalizedAngleComparer.NormalizedAngleComparer
+  nameWithType: NormalizedAngleComparer.NormalizedAngleComparer
+- uid: SearchAThing.NormalizedAngleComparer.Compare(System.Double,System.Double)
+  name: Compare(Double, Double)
+  href: api/SearchAThing.NormalizedAngleComparer.html#SearchAThing_NormalizedAngleComparer_Compare_System_Double_System_Double_
+  commentId: M:SearchAThing.NormalizedAngleComparer.Compare(System.Double,System.Double)
+  fullName: SearchAThing.NormalizedAngleComparer.Compare(System.Double, System.Double)
+  nameWithType: NormalizedAngleComparer.Compare(Double, Double)
+- uid: SearchAThing.NormalizedAngleComparer.Compare*
+  name: Compare
+  href: api/SearchAThing.NormalizedAngleComparer.html#SearchAThing_NormalizedAngleComparer_Compare_
+  commentId: Overload:SearchAThing.NormalizedAngleComparer.Compare
+  isSpec: "True"
+  fullName: SearchAThing.NormalizedAngleComparer.Compare
+  nameWithType: NormalizedAngleComparer.Compare
+- uid: SearchAThing.NormalizedAngleComparer.NormalizedEndAngleRad
+  name: NormalizedEndAngleRad
+  href: api/SearchAThing.NormalizedAngleComparer.html#SearchAThing_NormalizedAngleComparer_NormalizedEndAngleRad
+  commentId: P:SearchAThing.NormalizedAngleComparer.NormalizedEndAngleRad
+  fullName: SearchAThing.NormalizedAngleComparer.NormalizedEndAngleRad
+  nameWithType: NormalizedAngleComparer.NormalizedEndAngleRad
+- uid: SearchAThing.NormalizedAngleComparer.NormalizedEndAngleRad*
+  name: NormalizedEndAngleRad
+  href: api/SearchAThing.NormalizedAngleComparer.html#SearchAThing_NormalizedAngleComparer_NormalizedEndAngleRad_
+  commentId: Overload:SearchAThing.NormalizedAngleComparer.NormalizedEndAngleRad
+  isSpec: "True"
+  fullName: SearchAThing.NormalizedAngleComparer.NormalizedEndAngleRad
+  nameWithType: NormalizedAngleComparer.NormalizedEndAngleRad
+- uid: SearchAThing.NormalizedAngleComparer.NormalizedStartAngleRad
+  name: NormalizedStartAngleRad
+  href: api/SearchAThing.NormalizedAngleComparer.html#SearchAThing_NormalizedAngleComparer_NormalizedStartAngleRad
+  commentId: P:SearchAThing.NormalizedAngleComparer.NormalizedStartAngleRad
+  fullName: SearchAThing.NormalizedAngleComparer.NormalizedStartAngleRad
+  nameWithType: NormalizedAngleComparer.NormalizedStartAngleRad
+- uid: SearchAThing.NormalizedAngleComparer.NormalizedStartAngleRad*
+  name: NormalizedStartAngleRad
+  href: api/SearchAThing.NormalizedAngleComparer.html#SearchAThing_NormalizedAngleComparer_NormalizedStartAngleRad_
+  commentId: Overload:SearchAThing.NormalizedAngleComparer.NormalizedStartAngleRad
+  isSpec: "True"
+  fullName: SearchAThing.NormalizedAngleComparer.NormalizedStartAngleRad
+  nameWithType: NormalizedAngleComparer.NormalizedStartAngleRad
+- uid: SearchAThing.NormalizedAngleComparer.RadTol
+  name: RadTol
+  href: api/SearchAThing.NormalizedAngleComparer.html#SearchAThing_NormalizedAngleComparer_RadTol
+  commentId: P:SearchAThing.NormalizedAngleComparer.RadTol
+  fullName: SearchAThing.NormalizedAngleComparer.RadTol
+  nameWithType: NormalizedAngleComparer.RadTol
+- uid: SearchAThing.NormalizedAngleComparer.RadTol*
+  name: RadTol
+  href: api/SearchAThing.NormalizedAngleComparer.html#SearchAThing_NormalizedAngleComparer_RadTol_
+  commentId: Overload:SearchAThing.NormalizedAngleComparer.RadTol
+  isSpec: "True"
+  fullName: SearchAThing.NormalizedAngleComparer.RadTol
+  nameWithType: NormalizedAngleComparer.RadTol
 - uid: SearchAThing.NumbersStatNfo
   name: NumbersStatNfo
   href: api/SearchAThing.NumbersStatNfo.html
@@ -3515,25 +4031,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Plane3DRegion.Points
   nameWithType: Plane3DRegion.Points
-- uid: SearchAThing.Polygon
-  name: Polygon
-  href: api/SearchAThing.Polygon.html
-  commentId: T:SearchAThing.Polygon
-  fullName: SearchAThing.Polygon
-  nameWithType: Polygon
-- uid: SearchAThing.Polygon.EllipseToPolygon2D(SearchAThing.Vector3D,System.Double,System.Double,System.Double)
-  name: EllipseToPolygon2D(Vector3D, Double, Double, Double)
-  href: api/SearchAThing.Polygon.html#SearchAThing_Polygon_EllipseToPolygon2D_SearchAThing_Vector3D_System_Double_System_Double_System_Double_
-  commentId: M:SearchAThing.Polygon.EllipseToPolygon2D(SearchAThing.Vector3D,System.Double,System.Double,System.Double)
-  fullName: SearchAThing.Polygon.EllipseToPolygon2D(SearchAThing.Vector3D, System.Double, System.Double, System.Double)
-  nameWithType: Polygon.EllipseToPolygon2D(Vector3D, Double, Double, Double)
-- uid: SearchAThing.Polygon.EllipseToPolygon2D*
-  name: EllipseToPolygon2D
-  href: api/SearchAThing.Polygon.html#SearchAThing_Polygon_EllipseToPolygon2D_
-  commentId: Overload:SearchAThing.Polygon.EllipseToPolygon2D
-  isSpec: "True"
-  fullName: SearchAThing.Polygon.EllipseToPolygon2D
-  nameWithType: Polygon.EllipseToPolygon2D
 - uid: SearchAThing.PythonException
   name: PythonException
   href: api/SearchAThing.PythonException.html
@@ -3598,15 +4095,15 @@ references:
   commentId: T:SearchAThing.PythonPipe
   fullName: SearchAThing.PythonPipe
   nameWithType: PythonPipe
-- uid: SearchAThing.PythonPipe.#ctor(System.String,Action{System.String},System.String,System.Boolean,System.String,System.String)
-  name: PythonPipe(String, Action<String>, String, Boolean, String, String)
-  href: api/SearchAThing.PythonPipe.html#SearchAThing_PythonPipe__ctor_System_String_Action_System_String__System_String_System_Boolean_System_String_System_String_
-  commentId: M:SearchAThing.PythonPipe.#ctor(System.String,Action{System.String},System.String,System.Boolean,System.String,System.String)
-  name.vb: PythonPipe(String, Action(Of String), String, Boolean, String, String)
-  fullName: SearchAThing.PythonPipe.PythonPipe(System.String, Action<System.String>, System.String, System.Boolean, System.String, System.String)
-  fullName.vb: SearchAThing.PythonPipe.PythonPipe(System.String, Action(Of System.String), System.String, System.Boolean, System.String, System.String)
-  nameWithType: PythonPipe.PythonPipe(String, Action<String>, String, Boolean, String, String)
-  nameWithType.vb: PythonPipe.PythonPipe(String, Action(Of String), String, Boolean, String, String)
+- uid: SearchAThing.PythonPipe.#ctor(System.String,System.Nullable{Action{System.String}},System.Nullable{System.String},System.Boolean,System.Nullable{System.String},System.Nullable{System.String})
+  name: PythonPipe(String, Nullable<Action<String>>, Nullable<String>, Boolean, Nullable<String>, Nullable<String>)
+  href: api/SearchAThing.PythonPipe.html#SearchAThing_PythonPipe__ctor_System_String_System_Nullable_Action_System_String___System_Nullable_System_String__System_Boolean_System_Nullable_System_String__System_Nullable_System_String__
+  commentId: M:SearchAThing.PythonPipe.#ctor(System.String,System.Nullable{Action{System.String}},System.Nullable{System.String},System.Boolean,System.Nullable{System.String},System.Nullable{System.String})
+  name.vb: PythonPipe(String, Nullable(Of Action(Of String)), Nullable(Of String), Boolean, Nullable(Of String), Nullable(Of String))
+  fullName: SearchAThing.PythonPipe.PythonPipe(System.String, System.Nullable<Action<System.String>>, System.Nullable<System.String>, System.Boolean, System.Nullable<System.String>, System.Nullable<System.String>)
+  fullName.vb: SearchAThing.PythonPipe.PythonPipe(System.String, System.Nullable(Of Action(Of System.String)), System.Nullable(Of System.String), System.Boolean, System.Nullable(Of System.String), System.Nullable(Of System.String))
+  nameWithType: PythonPipe.PythonPipe(String, Nullable<Action<String>>, Nullable<String>, Boolean, Nullable<String>, Nullable<String>)
+  nameWithType.vb: PythonPipe.PythonPipe(String, Nullable(Of Action(Of String)), Nullable(Of String), Boolean, Nullable(Of String), Nullable(Of String))
 - uid: SearchAThing.PythonPipe.#ctor*
   name: PythonPipe
   href: api/SearchAThing.PythonPipe.html#SearchAThing_PythonPipe__ctor_
@@ -3672,15 +4169,15 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Abs
   nameWithType: SciExt.Abs
-- uid: SearchAThing.SciExt.AddEntities(DxfObject,IEnumerable{EntityObject},Layer)
-  name: AddEntities(DxfObject, IEnumerable<EntityObject>, Layer)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_AddEntities_DxfObject_IEnumerable_EntityObject__Layer_
-  commentId: M:SearchAThing.SciExt.AddEntities(DxfObject,IEnumerable{EntityObject},Layer)
-  name.vb: AddEntities(DxfObject, IEnumerable(Of EntityObject), Layer)
-  fullName: SearchAThing.SciExt.AddEntities(DxfObject, IEnumerable<EntityObject>, Layer)
-  fullName.vb: SearchAThing.SciExt.AddEntities(DxfObject, IEnumerable(Of EntityObject), Layer)
-  nameWithType: SciExt.AddEntities(DxfObject, IEnumerable<EntityObject>, Layer)
-  nameWithType.vb: SciExt.AddEntities(DxfObject, IEnumerable(Of EntityObject), Layer)
+- uid: SearchAThing.SciExt.AddEntities(DxfObject,IEnumerable{EntityObject},System.Nullable{Layer})
+  name: AddEntities(DxfObject, IEnumerable<EntityObject>, Nullable<Layer>)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_AddEntities_DxfObject_IEnumerable_EntityObject__System_Nullable_Layer__
+  commentId: M:SearchAThing.SciExt.AddEntities(DxfObject,IEnumerable{EntityObject},System.Nullable{Layer})
+  name.vb: AddEntities(DxfObject, IEnumerable(Of EntityObject), Nullable(Of Layer))
+  fullName: SearchAThing.SciExt.AddEntities(DxfObject, IEnumerable<EntityObject>, System.Nullable<Layer>)
+  fullName.vb: SearchAThing.SciExt.AddEntities(DxfObject, IEnumerable(Of EntityObject), System.Nullable(Of Layer))
+  nameWithType: SciExt.AddEntities(DxfObject, IEnumerable<EntityObject>, Nullable<Layer>)
+  nameWithType.vb: SciExt.AddEntities(DxfObject, IEnumerable(Of EntityObject), Nullable(Of Layer))
 - uid: SearchAThing.SciExt.AddEntities*
   name: AddEntities
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_AddEntities_
@@ -3688,12 +4185,15 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.AddEntities
   nameWithType: SciExt.AddEntities
-- uid: SearchAThing.SciExt.AddEntity(DxfObject,EntityObject,Layer)
-  name: AddEntity(DxfObject, EntityObject, Layer)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_AddEntity_DxfObject_EntityObject_Layer_
-  commentId: M:SearchAThing.SciExt.AddEntity(DxfObject,EntityObject,Layer)
-  fullName: SearchAThing.SciExt.AddEntity(DxfObject, EntityObject, Layer)
-  nameWithType: SciExt.AddEntity(DxfObject, EntityObject, Layer)
+- uid: SearchAThing.SciExt.AddEntity(DxfObject,EntityObject,System.Nullable{Layer})
+  name: AddEntity(DxfObject, EntityObject, Nullable<Layer>)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_AddEntity_DxfObject_EntityObject_System_Nullable_Layer__
+  commentId: M:SearchAThing.SciExt.AddEntity(DxfObject,EntityObject,System.Nullable{Layer})
+  name.vb: AddEntity(DxfObject, EntityObject, Nullable(Of Layer))
+  fullName: SearchAThing.SciExt.AddEntity(DxfObject, EntityObject, System.Nullable<Layer>)
+  fullName.vb: SearchAThing.SciExt.AddEntity(DxfObject, EntityObject, System.Nullable(Of Layer))
+  nameWithType: SciExt.AddEntity(DxfObject, EntityObject, Nullable<Layer>)
+  nameWithType.vb: SciExt.AddEntity(DxfObject, EntityObject, Nullable(Of Layer))
 - uid: SearchAThing.SciExt.AddEntity*
   name: AddEntity
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_AddEntity_
@@ -3743,15 +4243,15 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Area
   nameWithType: SciExt.Area
-- uid: SearchAThing.SciExt.AutoIntersect(IReadOnlyList{SearchAThing.Line3D},System.Double,System.Boolean,IEnumerable{SearchAThing.Vector3D})
-  name: AutoIntersect(IReadOnlyList<Line3D>, Double, Boolean, IEnumerable<Vector3D>)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_AutoIntersect_IReadOnlyList_SearchAThing_Line3D__System_Double_System_Boolean_IEnumerable_SearchAThing_Vector3D__
-  commentId: M:SearchAThing.SciExt.AutoIntersect(IReadOnlyList{SearchAThing.Line3D},System.Double,System.Boolean,IEnumerable{SearchAThing.Vector3D})
-  name.vb: AutoIntersect(IReadOnlyList(Of Line3D), Double, Boolean, IEnumerable(Of Vector3D))
-  fullName: SearchAThing.SciExt.AutoIntersect(IReadOnlyList<SearchAThing.Line3D>, System.Double, System.Boolean, IEnumerable<SearchAThing.Vector3D>)
-  fullName.vb: SearchAThing.SciExt.AutoIntersect(IReadOnlyList(Of SearchAThing.Line3D), System.Double, System.Boolean, IEnumerable(Of SearchAThing.Vector3D))
-  nameWithType: SciExt.AutoIntersect(IReadOnlyList<Line3D>, Double, Boolean, IEnumerable<Vector3D>)
-  nameWithType.vb: SciExt.AutoIntersect(IReadOnlyList(Of Line3D), Double, Boolean, IEnumerable(Of Vector3D))
+- uid: SearchAThing.SciExt.AutoIntersect(IReadOnlyList{SearchAThing.Line3D},System.Double,System.Boolean,System.Nullable{IEnumerable{SearchAThing.Vector3D}})
+  name: AutoIntersect(IReadOnlyList<Line3D>, Double, Boolean, Nullable<IEnumerable<Vector3D>>)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_AutoIntersect_IReadOnlyList_SearchAThing_Line3D__System_Double_System_Boolean_System_Nullable_IEnumerable_SearchAThing_Vector3D___
+  commentId: M:SearchAThing.SciExt.AutoIntersect(IReadOnlyList{SearchAThing.Line3D},System.Double,System.Boolean,System.Nullable{IEnumerable{SearchAThing.Vector3D}})
+  name.vb: AutoIntersect(IReadOnlyList(Of Line3D), Double, Boolean, Nullable(Of IEnumerable(Of Vector3D)))
+  fullName: SearchAThing.SciExt.AutoIntersect(IReadOnlyList<SearchAThing.Line3D>, System.Double, System.Boolean, System.Nullable<IEnumerable<SearchAThing.Vector3D>>)
+  fullName.vb: SearchAThing.SciExt.AutoIntersect(IReadOnlyList(Of SearchAThing.Line3D), System.Double, System.Boolean, System.Nullable(Of IEnumerable(Of SearchAThing.Vector3D)))
+  nameWithType: SciExt.AutoIntersect(IReadOnlyList<Line3D>, Double, Boolean, Nullable<IEnumerable<Vector3D>>)
+  nameWithType.vb: SciExt.AutoIntersect(IReadOnlyList(Of Line3D), Double, Boolean, Nullable(Of IEnumerable(Of Vector3D)))
 - uid: SearchAThing.SciExt.AutoIntersect*
   name: AutoIntersect
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_AutoIntersect_
@@ -3812,6 +4312,31 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.BBox
   nameWithType: SciExt.BBox
+- uid: SearchAThing.SciExt.BestFittingPlane(IEnumerable{SearchAThing.Line3D},System.Double)
+  name: BestFittingPlane(IEnumerable<Line3D>, Double)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_BestFittingPlane_IEnumerable_SearchAThing_Line3D__System_Double_
+  commentId: M:SearchAThing.SciExt.BestFittingPlane(IEnumerable{SearchAThing.Line3D},System.Double)
+  name.vb: BestFittingPlane(IEnumerable(Of Line3D), Double)
+  fullName: SearchAThing.SciExt.BestFittingPlane(IEnumerable<SearchAThing.Line3D>, System.Double)
+  fullName.vb: SearchAThing.SciExt.BestFittingPlane(IEnumerable(Of SearchAThing.Line3D), System.Double)
+  nameWithType: SciExt.BestFittingPlane(IEnumerable<Line3D>, Double)
+  nameWithType.vb: SciExt.BestFittingPlane(IEnumerable(Of Line3D), Double)
+- uid: SearchAThing.SciExt.BestFittingPlane(IEnumerable{SearchAThing.Vector3D},System.Double)
+  name: BestFittingPlane(IEnumerable<Vector3D>, Double)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_BestFittingPlane_IEnumerable_SearchAThing_Vector3D__System_Double_
+  commentId: M:SearchAThing.SciExt.BestFittingPlane(IEnumerable{SearchAThing.Vector3D},System.Double)
+  name.vb: BestFittingPlane(IEnumerable(Of Vector3D), Double)
+  fullName: SearchAThing.SciExt.BestFittingPlane(IEnumerable<SearchAThing.Vector3D>, System.Double)
+  fullName.vb: SearchAThing.SciExt.BestFittingPlane(IEnumerable(Of SearchAThing.Vector3D), System.Double)
+  nameWithType: SciExt.BestFittingPlane(IEnumerable<Vector3D>, Double)
+  nameWithType.vb: SciExt.BestFittingPlane(IEnumerable(Of Vector3D), Double)
+- uid: SearchAThing.SciExt.BestFittingPlane*
+  name: BestFittingPlane
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_BestFittingPlane_
+  commentId: Overload:SearchAThing.SciExt.BestFittingPlane
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.BestFittingPlane
+  nameWithType: SciExt.BestFittingPlane
 - uid: SearchAThing.SciExt.Boolean(IEnumerable{SearchAThing.Vector3D},System.Double,IEnumerable{SearchAThing.Vector3D},ClipType,System.Boolean)
   name: Boolean(IEnumerable<Vector3D>, Double, IEnumerable<Vector3D>, ClipType, Boolean)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Boolean_IEnumerable_SearchAThing_Vector3D__System_Double_IEnumerable_SearchAThing_Vector3D__ClipType_System_Boolean_
@@ -3920,6 +4445,22 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Centroid
   nameWithType: SciExt.Centroid
+- uid: SearchAThing.SciExt.CheckSense(IEnumerable{SearchAThing.IEdge},System.Double)
+  name: CheckSense(IEnumerable<IEdge>, Double)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_CheckSense_IEnumerable_SearchAThing_IEdge__System_Double_
+  commentId: M:SearchAThing.SciExt.CheckSense(IEnumerable{SearchAThing.IEdge},System.Double)
+  name.vb: CheckSense(IEnumerable(Of IEdge), Double)
+  fullName: SearchAThing.SciExt.CheckSense(IEnumerable<SearchAThing.IEdge>, System.Double)
+  fullName.vb: SearchAThing.SciExt.CheckSense(IEnumerable(Of SearchAThing.IEdge), System.Double)
+  nameWithType: SciExt.CheckSense(IEnumerable<IEdge>, Double)
+  nameWithType.vb: SciExt.CheckSense(IEnumerable(Of IEdge), Double)
+- uid: SearchAThing.SciExt.CheckSense*
+  name: CheckSense
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_CheckSense_
+  commentId: Overload:SearchAThing.SciExt.CheckSense
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.CheckSense
+  nameWithType: SciExt.CheckSense
 - uid: SearchAThing.SciExt.CircleBy3Points(IEnumerable{SearchAThing.Vector3D})
   name: CircleBy3Points(IEnumerable<Vector3D>)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_CircleBy3Points_IEnumerable_SearchAThing_Vector3D__
@@ -3965,6 +4506,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.ClosedPolys2D
   nameWithType: SciExt.ClosedPolys2D
+- uid: SearchAThing.SciExt.CompareToTol(System.Double,System.Double,System.Double)
+  name: CompareToTol(Double, Double, Double)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_CompareToTol_System_Double_System_Double_System_Double_
+  commentId: M:SearchAThing.SciExt.CompareToTol(System.Double,System.Double,System.Double)
+  fullName: SearchAThing.SciExt.CompareToTol(System.Double, System.Double, System.Double)
+  nameWithType: SciExt.CompareToTol(Double, Double, Double)
+- uid: SearchAThing.SciExt.CompareToTol*
+  name: CompareToTol
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_CompareToTol_
+  commentId: Overload:SearchAThing.SciExt.CompareToTol
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.CompareToTol
+  nameWithType: SciExt.CompareToTol
 - uid: SearchAThing.SciExt.ContainsPoint(IReadOnlyList{SearchAThing.Vector3D},System.Double,SearchAThing.Vector3D,System.Boolean)
   name: ContainsPoint(IReadOnlyList<Vector3D>, Double, Vector3D, Boolean)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ContainsPoint_IReadOnlyList_SearchAThing_Vector3D__System_Double_SearchAThing_Vector3D_System_Boolean_
@@ -4060,6 +4614,22 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.Decompose
   nameWithType: SciExt.Decompose
+- uid: SearchAThing.SciExt.DetectPlane(IEnumerable{SearchAThing.IEdge},System.Double)
+  name: DetectPlane(IEnumerable<IEdge>, Double)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DetectPlane_IEnumerable_SearchAThing_IEdge__System_Double_
+  commentId: M:SearchAThing.SciExt.DetectPlane(IEnumerable{SearchAThing.IEdge},System.Double)
+  name.vb: DetectPlane(IEnumerable(Of IEdge), Double)
+  fullName: SearchAThing.SciExt.DetectPlane(IEnumerable<SearchAThing.IEdge>, System.Double)
+  fullName.vb: SearchAThing.SciExt.DetectPlane(IEnumerable(Of SearchAThing.IEdge), System.Double)
+  nameWithType: SciExt.DetectPlane(IEnumerable<IEdge>, Double)
+  nameWithType.vb: SciExt.DetectPlane(IEnumerable(Of IEdge), Double)
+- uid: SearchAThing.SciExt.DetectPlane*
+  name: DetectPlane
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DetectPlane_
+  commentId: Overload:SearchAThing.SciExt.DetectPlane
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.DetectPlane
+  nameWithType: SciExt.DetectPlane
 - uid: SearchAThing.SciExt.DistinctKeepOrder(IEnumerable{SearchAThing.Vector3D},SearchAThing.Vector3DEqualityComparer)
   name: DistinctKeepOrder(IEnumerable<Vector3D>, Vector3DEqualityComparer)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DistinctKeepOrder_IEnumerable_SearchAThing_Vector3D__SearchAThing_Vector3DEqualityComparer_
@@ -4076,12 +4646,15 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.DistinctKeepOrder
   nameWithType: SciExt.DistinctKeepOrder
-- uid: SearchAThing.SciExt.DrawCube(DxfObject,SearchAThing.Vector3D,System.Double,Layer)
-  name: DrawCube(DxfObject, Vector3D, Double, Layer)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DrawCube_DxfObject_SearchAThing_Vector3D_System_Double_Layer_
-  commentId: M:SearchAThing.SciExt.DrawCube(DxfObject,SearchAThing.Vector3D,System.Double,Layer)
-  fullName: SearchAThing.SciExt.DrawCube(DxfObject, SearchAThing.Vector3D, System.Double, Layer)
-  nameWithType: SciExt.DrawCube(DxfObject, Vector3D, Double, Layer)
+- uid: SearchAThing.SciExt.DrawCube(DxfObject,SearchAThing.Vector3D,System.Double,System.Nullable{Layer})
+  name: DrawCube(DxfObject, Vector3D, Double, Nullable<Layer>)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DrawCube_DxfObject_SearchAThing_Vector3D_System_Double_System_Nullable_Layer__
+  commentId: M:SearchAThing.SciExt.DrawCube(DxfObject,SearchAThing.Vector3D,System.Double,System.Nullable{Layer})
+  name.vb: DrawCube(DxfObject, Vector3D, Double, Nullable(Of Layer))
+  fullName: SearchAThing.SciExt.DrawCube(DxfObject, SearchAThing.Vector3D, System.Double, System.Nullable<Layer>)
+  fullName.vb: SearchAThing.SciExt.DrawCube(DxfObject, SearchAThing.Vector3D, System.Double, System.Nullable(Of Layer))
+  nameWithType: SciExt.DrawCube(DxfObject, Vector3D, Double, Nullable<Layer>)
+  nameWithType.vb: SciExt.DrawCube(DxfObject, Vector3D, Double, Nullable(Of Layer))
 - uid: SearchAThing.SciExt.DrawCube*
   name: DrawCube
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DrawCube_
@@ -4089,12 +4662,15 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.DrawCube
   nameWithType: SciExt.DrawCube
-- uid: SearchAThing.SciExt.DrawCuboid(DxfObject,SearchAThing.Vector3D,SearchAThing.Vector3D,Layer)
-  name: DrawCuboid(DxfObject, Vector3D, Vector3D, Layer)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DrawCuboid_DxfObject_SearchAThing_Vector3D_SearchAThing_Vector3D_Layer_
-  commentId: M:SearchAThing.SciExt.DrawCuboid(DxfObject,SearchAThing.Vector3D,SearchAThing.Vector3D,Layer)
-  fullName: SearchAThing.SciExt.DrawCuboid(DxfObject, SearchAThing.Vector3D, SearchAThing.Vector3D, Layer)
-  nameWithType: SciExt.DrawCuboid(DxfObject, Vector3D, Vector3D, Layer)
+- uid: SearchAThing.SciExt.DrawCuboid(DxfObject,SearchAThing.Vector3D,SearchAThing.Vector3D,System.Nullable{Layer})
+  name: DrawCuboid(DxfObject, Vector3D, Vector3D, Nullable<Layer>)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DrawCuboid_DxfObject_SearchAThing_Vector3D_SearchAThing_Vector3D_System_Nullable_Layer__
+  commentId: M:SearchAThing.SciExt.DrawCuboid(DxfObject,SearchAThing.Vector3D,SearchAThing.Vector3D,System.Nullable{Layer})
+  name.vb: DrawCuboid(DxfObject, Vector3D, Vector3D, Nullable(Of Layer))
+  fullName: SearchAThing.SciExt.DrawCuboid(DxfObject, SearchAThing.Vector3D, SearchAThing.Vector3D, System.Nullable<Layer>)
+  fullName.vb: SearchAThing.SciExt.DrawCuboid(DxfObject, SearchAThing.Vector3D, SearchAThing.Vector3D, System.Nullable(Of Layer))
+  nameWithType: SciExt.DrawCuboid(DxfObject, Vector3D, Vector3D, Nullable<Layer>)
+  nameWithType.vb: SciExt.DrawCuboid(DxfObject, Vector3D, Vector3D, Nullable(Of Layer))
 - uid: SearchAThing.SciExt.DrawCuboid(SearchAThing.BBox3D,DxfObject,Layer)
   name: DrawCuboid(BBox3D, DxfObject, Layer)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DrawCuboid_SearchAThing_BBox3D_DxfObject_Layer_
@@ -4108,12 +4684,15 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.DrawCuboid
   nameWithType: SciExt.DrawCuboid
-- uid: SearchAThing.SciExt.DrawStar(DxfObject,SearchAThing.Vector3D,System.Double,Layer)
-  name: DrawStar(DxfObject, Vector3D, Double, Layer)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DrawStar_DxfObject_SearchAThing_Vector3D_System_Double_Layer_
-  commentId: M:SearchAThing.SciExt.DrawStar(DxfObject,SearchAThing.Vector3D,System.Double,Layer)
-  fullName: SearchAThing.SciExt.DrawStar(DxfObject, SearchAThing.Vector3D, System.Double, Layer)
-  nameWithType: SciExt.DrawStar(DxfObject, Vector3D, Double, Layer)
+- uid: SearchAThing.SciExt.DrawStar(DxfObject,SearchAThing.Vector3D,System.Double,System.Nullable{Layer})
+  name: DrawStar(DxfObject, Vector3D, Double, Nullable<Layer>)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DrawStar_DxfObject_SearchAThing_Vector3D_System_Double_System_Nullable_Layer__
+  commentId: M:SearchAThing.SciExt.DrawStar(DxfObject,SearchAThing.Vector3D,System.Double,System.Nullable{Layer})
+  name.vb: DrawStar(DxfObject, Vector3D, Double, Nullable(Of Layer))
+  fullName: SearchAThing.SciExt.DrawStar(DxfObject, SearchAThing.Vector3D, System.Double, System.Nullable<Layer>)
+  fullName.vb: SearchAThing.SciExt.DrawStar(DxfObject, SearchAThing.Vector3D, System.Double, System.Nullable(Of Layer))
+  nameWithType: SciExt.DrawStar(DxfObject, Vector3D, Double, Nullable<Layer>)
+  nameWithType.vb: SciExt.DrawStar(DxfObject, Vector3D, Double, Nullable(Of Layer))
 - uid: SearchAThing.SciExt.DrawStar*
   name: DrawStar
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DrawStar_
@@ -4216,6 +4795,15 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.GeomCentroid
   nameWithType: SciExt.GeomCentroid
+- uid: SearchAThing.SciExt.Intersect(IEnumerable{SearchAThing.Geometry},System.Double,IEnumerable{SearchAThing.Geometry})
+  name: Intersect(IEnumerable<Geometry>, Double, IEnumerable<Geometry>)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Intersect_IEnumerable_SearchAThing_Geometry__System_Double_IEnumerable_SearchAThing_Geometry__
+  commentId: M:SearchAThing.SciExt.Intersect(IEnumerable{SearchAThing.Geometry},System.Double,IEnumerable{SearchAThing.Geometry})
+  name.vb: Intersect(IEnumerable(Of Geometry), Double, IEnumerable(Of Geometry))
+  fullName: SearchAThing.SciExt.Intersect(IEnumerable<SearchAThing.Geometry>, System.Double, IEnumerable<SearchAThing.Geometry>)
+  fullName.vb: SearchAThing.SciExt.Intersect(IEnumerable(Of SearchAThing.Geometry), System.Double, IEnumerable(Of SearchAThing.Geometry))
+  nameWithType: SciExt.Intersect(IEnumerable<Geometry>, Double, IEnumerable<Geometry>)
+  nameWithType.vb: SciExt.Intersect(IEnumerable(Of Geometry), Double, IEnumerable(Of Geometry))
 - uid: SearchAThing.SciExt.Intersect(IEnumerable{SearchAThing.Line3D},System.Double,SearchAThing.Line3D,SearchAThing.Line3DSegmentMode)
   name: Intersect(IEnumerable<Line3D>, Double, Line3D, Line3DSegmentMode)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Intersect_IEnumerable_SearchAThing_Line3D__System_Double_SearchAThing_Line3D_SearchAThing_Line3DSegmentMode_
@@ -4849,12 +5437,12 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.ToCadScript
   nameWithType: SciExt.ToCadScript
-- uid: SearchAThing.SciExt.ToCircle3D(netDxf.Entities.Circle,System.Double)
-  name: ToCircle3D(netDxf.Entities.Circle, Double)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToCircle3D_netDxf_Entities_Circle_System_Double_
-  commentId: M:SearchAThing.SciExt.ToCircle3D(netDxf.Entities.Circle,System.Double)
-  fullName: SearchAThing.SciExt.ToCircle3D(netDxf.Entities.Circle, System.Double)
-  nameWithType: SciExt.ToCircle3D(netDxf.Entities.Circle, Double)
+- uid: SearchAThing.SciExt.ToCircle3D(netDxf.Entities.Circle)
+  name: ToCircle3D(netDxf.Entities.Circle)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToCircle3D_netDxf_Entities_Circle_
+  commentId: M:SearchAThing.SciExt.ToCircle3D(netDxf.Entities.Circle)
+  fullName: SearchAThing.SciExt.ToCircle3D(netDxf.Entities.Circle)
+  nameWithType: SciExt.ToCircle3D(netDxf.Entities.Circle)
 - uid: SearchAThing.SciExt.ToCircle3D*
   name: ToCircle3D
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToCircle3D_
@@ -5010,19 +5598,41 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.ToFace3DList
   nameWithType: SciExt.ToFace3DList
-- uid: SearchAThing.SciExt.ToGeometryBlock(netDxf.Entities.LwPolyline,System.Double)
-  name: ToGeometryBlock(netDxf.Entities.LwPolyline, Double)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToGeometryBlock_netDxf_Entities_LwPolyline_System_Double_
-  commentId: M:SearchAThing.SciExt.ToGeometryBlock(netDxf.Entities.LwPolyline,System.Double)
-  fullName: SearchAThing.SciExt.ToGeometryBlock(netDxf.Entities.LwPolyline, System.Double)
-  nameWithType: SciExt.ToGeometryBlock(netDxf.Entities.LwPolyline, Double)
-- uid: SearchAThing.SciExt.ToGeometryBlock*
-  name: ToGeometryBlock
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToGeometryBlock_
-  commentId: Overload:SearchAThing.SciExt.ToGeometryBlock
+- uid: SearchAThing.SciExt.ToGeometries(netDxf.Entities.LwPolyline,System.Double)
+  name: ToGeometries(netDxf.Entities.LwPolyline, Double)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToGeometries_netDxf_Entities_LwPolyline_System_Double_
+  commentId: M:SearchAThing.SciExt.ToGeometries(netDxf.Entities.LwPolyline,System.Double)
+  fullName: SearchAThing.SciExt.ToGeometries(netDxf.Entities.LwPolyline, System.Double)
+  nameWithType: SciExt.ToGeometries(netDxf.Entities.LwPolyline, Double)
+- uid: SearchAThing.SciExt.ToGeometries*
+  name: ToGeometries
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToGeometries_
+  commentId: Overload:SearchAThing.SciExt.ToGeometries
   isSpec: "True"
-  fullName: SearchAThing.SciExt.ToGeometryBlock
-  nameWithType: SciExt.ToGeometryBlock
+  fullName: SearchAThing.SciExt.ToGeometries
+  nameWithType: SciExt.ToGeometries
+- uid: SearchAThing.SciExt.ToHatch(IEnumerable{SearchAThing.Geometry},System.Double,HatchPattern,System.Boolean)
+  name: ToHatch(IEnumerable<Geometry>, Double, HatchPattern, Boolean)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToHatch_IEnumerable_SearchAThing_Geometry__System_Double_HatchPattern_System_Boolean_
+  commentId: M:SearchAThing.SciExt.ToHatch(IEnumerable{SearchAThing.Geometry},System.Double,HatchPattern,System.Boolean)
+  name.vb: ToHatch(IEnumerable(Of Geometry), Double, HatchPattern, Boolean)
+  fullName: SearchAThing.SciExt.ToHatch(IEnumerable<SearchAThing.Geometry>, System.Double, HatchPattern, System.Boolean)
+  fullName.vb: SearchAThing.SciExt.ToHatch(IEnumerable(Of SearchAThing.Geometry), System.Double, HatchPattern, System.Boolean)
+  nameWithType: SciExt.ToHatch(IEnumerable<Geometry>, Double, HatchPattern, Boolean)
+  nameWithType.vb: SciExt.ToHatch(IEnumerable(Of Geometry), Double, HatchPattern, Boolean)
+- uid: SearchAThing.SciExt.ToHatch(SearchAThing.Loop,System.Double,HatchPattern,System.Boolean)
+  name: ToHatch(Loop, Double, HatchPattern, Boolean)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToHatch_SearchAThing_Loop_System_Double_HatchPattern_System_Boolean_
+  commentId: M:SearchAThing.SciExt.ToHatch(SearchAThing.Loop,System.Double,HatchPattern,System.Boolean)
+  fullName: SearchAThing.SciExt.ToHatch(SearchAThing.Loop, System.Double, HatchPattern, System.Boolean)
+  nameWithType: SciExt.ToHatch(Loop, Double, HatchPattern, Boolean)
+- uid: SearchAThing.SciExt.ToHatch*
+  name: ToHatch
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToHatch_
+  commentId: Overload:SearchAThing.SciExt.ToHatch
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.ToHatch
+  nameWithType: SciExt.ToHatch
 - uid: SearchAThing.SciExt.ToLine(SearchAThing.Line3D)
   name: ToLine(Line3D)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToLine_SearchAThing_Line3D_
@@ -5049,6 +5659,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.ToLine3D
   nameWithType: SciExt.ToLine3D
+- uid: SearchAThing.SciExt.ToLoop(netDxf.Entities.LwPolyline,System.Double)
+  name: ToLoop(netDxf.Entities.LwPolyline, Double)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToLoop_netDxf_Entities_LwPolyline_System_Double_
+  commentId: M:SearchAThing.SciExt.ToLoop(netDxf.Entities.LwPolyline,System.Double)
+  fullName: SearchAThing.SciExt.ToLoop(netDxf.Entities.LwPolyline, System.Double)
+  nameWithType: SciExt.ToLoop(netDxf.Entities.LwPolyline, Double)
+- uid: SearchAThing.SciExt.ToLoop*
+  name: ToLoop
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToLoop_
+  commentId: Overload:SearchAThing.SciExt.ToLoop
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.ToLoop
+  nameWithType: SciExt.ToLoop
 - uid: SearchAThing.SciExt.ToLwPolyline(IEnumerable{SearchAThing.Geometry},System.Double,System.Boolean)
   name: ToLwPolyline(IEnumerable<Geometry>, Double, Boolean)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToLwPolyline_IEnumerable_SearchAThing_Geometry__System_Double_System_Boolean_
@@ -5058,6 +5681,12 @@ references:
   fullName.vb: SearchAThing.SciExt.ToLwPolyline(IEnumerable(Of SearchAThing.Geometry), System.Double, System.Boolean)
   nameWithType: SciExt.ToLwPolyline(IEnumerable<Geometry>, Double, Boolean)
   nameWithType.vb: SciExt.ToLwPolyline(IEnumerable(Of Geometry), Double, Boolean)
+- uid: SearchAThing.SciExt.ToLwPolyline(SearchAThing.Loop,System.Double)
+  name: ToLwPolyline(Loop, Double)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToLwPolyline_SearchAThing_Loop_System_Double_
+  commentId: M:SearchAThing.SciExt.ToLwPolyline(SearchAThing.Loop,System.Double)
+  fullName: SearchAThing.SciExt.ToLwPolyline(SearchAThing.Loop, System.Double)
+  nameWithType: SciExt.ToLwPolyline(Loop, Double)
 - uid: SearchAThing.SciExt.ToLwPolyline*
   name: ToLwPolyline
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_ToLwPolyline_
@@ -5340,6 +5969,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciToolkit.Cuboid
   nameWithType: SciToolkit.Cuboid
+- uid: SearchAThing.SciToolkit.EllipseToPolygon2D(SearchAThing.Vector3D,System.Double,System.Double,System.Double)
+  name: EllipseToPolygon2D(Vector3D, Double, Double, Double)
+  href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_EllipseToPolygon2D_SearchAThing_Vector3D_System_Double_System_Double_System_Double_
+  commentId: M:SearchAThing.SciToolkit.EllipseToPolygon2D(SearchAThing.Vector3D,System.Double,System.Double,System.Double)
+  fullName: SearchAThing.SciToolkit.EllipseToPolygon2D(SearchAThing.Vector3D, System.Double, System.Double, System.Double)
+  nameWithType: SciToolkit.EllipseToPolygon2D(Vector3D, Double, Double, Double)
+- uid: SearchAThing.SciToolkit.EllipseToPolygon2D*
+  name: EllipseToPolygon2D
+  href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_EllipseToPolygon2D_
+  commentId: Overload:SearchAThing.SciToolkit.EllipseToPolygon2D
+  isSpec: "True"
+  fullName: SearchAThing.SciToolkit.EllipseToPolygon2D
+  nameWithType: SciToolkit.EllipseToPolygon2D
 - uid: SearchAThing.SciToolkit.LinearSplineInterpolate(IEnumerable{System.Double},IEnumerable{System.Double})
   name: LinearSplineInterpolate(IEnumerable<Double>, IEnumerable<Double>)
   href: api/SearchAThing.SciToolkit.html#SearchAThing_SciToolkit_LinearSplineInterpolate_IEnumerable_System_Double__IEnumerable_System_Double__
@@ -5715,6 +6357,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Vector3D.Colinear
   nameWithType: Vector3D.Colinear
+- uid: SearchAThing.Vector3D.ColinearScalarOffset(System.Double,SearchAThing.Vector3D,SearchAThing.Vector3D)
+  name: ColinearScalarOffset(Double, Vector3D, Vector3D)
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_ColinearScalarOffset_System_Double_SearchAThing_Vector3D_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.Vector3D.ColinearScalarOffset(System.Double,SearchAThing.Vector3D,SearchAThing.Vector3D)
+  fullName: SearchAThing.Vector3D.ColinearScalarOffset(System.Double, SearchAThing.Vector3D, SearchAThing.Vector3D)
+  nameWithType: Vector3D.ColinearScalarOffset(Double, Vector3D, Vector3D)
+- uid: SearchAThing.Vector3D.ColinearScalarOffset*
+  name: ColinearScalarOffset
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_ColinearScalarOffset_
+  commentId: Overload:SearchAThing.Vector3D.ColinearScalarOffset
+  isSpec: "True"
+  fullName: SearchAThing.Vector3D.ColinearScalarOffset
+  nameWithType: Vector3D.ColinearScalarOffset
 - uid: SearchAThing.Vector3D.Concordant(System.Double,SearchAThing.Vector3D)
   name: Concordant(Double, Vector3D)
   href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_Concordant_System_Double_SearchAThing_Vector3D_
@@ -5947,6 +6602,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Vector3D.GeomFrom
   nameWithType: Vector3D.GeomFrom
+- uid: SearchAThing.Vector3D.GeomIntersect(System.Double,SearchAThing.Geometry,System.Boolean)
+  name: GeomIntersect(Double, Geometry, Boolean)
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_GeomIntersect_System_Double_SearchAThing_Geometry_System_Boolean_
+  commentId: M:SearchAThing.Vector3D.GeomIntersect(System.Double,SearchAThing.Geometry,System.Boolean)
+  fullName: SearchAThing.Vector3D.GeomIntersect(System.Double, SearchAThing.Geometry, System.Boolean)
+  nameWithType: Vector3D.GeomIntersect(Double, Geometry, Boolean)
+- uid: SearchAThing.Vector3D.GeomIntersect*
+  name: GeomIntersect
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_GeomIntersect_
+  commentId: Overload:SearchAThing.Vector3D.GeomIntersect
+  isSpec: "True"
+  fullName: SearchAThing.Vector3D.GeomIntersect
+  nameWithType: Vector3D.GeomIntersect
 - uid: SearchAThing.Vector3D.GeomTo
   name: GeomTo
   href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_GeomTo
@@ -6086,6 +6754,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Vector3D.LineV
   nameWithType: Vector3D.LineV
+- uid: SearchAThing.Vector3D.MidPoint
+  name: MidPoint
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_MidPoint
+  commentId: P:SearchAThing.Vector3D.MidPoint
+  fullName: SearchAThing.Vector3D.MidPoint
+  nameWithType: Vector3D.MidPoint
+- uid: SearchAThing.Vector3D.MidPoint*
+  name: MidPoint
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_MidPoint_
+  commentId: Overload:SearchAThing.Vector3D.MidPoint
+  isSpec: "True"
+  fullName: SearchAThing.Vector3D.MidPoint
+  nameWithType: Vector3D.MidPoint
 - uid: SearchAThing.Vector3D.Mirror(SearchAThing.Line3D)
   name: Mirror(Line3D)
   href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_Mirror_SearchAThing_Line3D_
@@ -6311,12 +6992,15 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Vector3D.Project
   nameWithType: Vector3D.Project
-- uid: SearchAThing.Vector3D.Random(System.Int32,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,Random)
-  name: Random(Int32, Double, Double, Double, Double, Double, Double, Int32, Random)
-  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_Random_System_Int32_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Int32_Random_
-  commentId: M:SearchAThing.Vector3D.Random(System.Int32,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,Random)
-  fullName: SearchAThing.Vector3D.Random(System.Int32, System.Double, System.Double, System.Double, System.Double, System.Double, System.Double, System.Int32, Random)
-  nameWithType: Vector3D.Random(Int32, Double, Double, Double, Double, Double, Double, Int32, Random)
+- uid: SearchAThing.Vector3D.Random(System.Int32,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Nullable{Random})
+  name: Random(Int32, Double, Double, Double, Double, Double, Double, Int32, Nullable<Random>)
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_Random_System_Int32_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Int32_System_Nullable_Random__
+  commentId: M:SearchAThing.Vector3D.Random(System.Int32,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Nullable{Random})
+  name.vb: Random(Int32, Double, Double, Double, Double, Double, Double, Int32, Nullable(Of Random))
+  fullName: SearchAThing.Vector3D.Random(System.Int32, System.Double, System.Double, System.Double, System.Double, System.Double, System.Double, System.Int32, System.Nullable<Random>)
+  fullName.vb: SearchAThing.Vector3D.Random(System.Int32, System.Double, System.Double, System.Double, System.Double, System.Double, System.Double, System.Int32, System.Nullable(Of Random))
+  nameWithType: Vector3D.Random(Int32, Double, Double, Double, Double, Double, Double, Int32, Nullable<Random>)
+  nameWithType.vb: Vector3D.Random(Int32, Double, Double, Double, Double, Double, Double, Int32, Nullable(Of Random))
 - uid: SearchAThing.Vector3D.Random(System.Int32,System.Double,System.Int32)
   name: Random(Int32, Double, Int32)
   href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_Random_System_Int32_System_Double_System_Int32_
@@ -6504,6 +7188,22 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Vector3D.SetZ
   nameWithType: Vector3D.SetZ
+- uid: SearchAThing.Vector3D.Split(System.Double,IEnumerable{SearchAThing.Vector3D})
+  name: Split(Double, IEnumerable<Vector3D>)
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_Split_System_Double_IEnumerable_SearchAThing_Vector3D__
+  commentId: M:SearchAThing.Vector3D.Split(System.Double,IEnumerable{SearchAThing.Vector3D})
+  name.vb: Split(Double, IEnumerable(Of Vector3D))
+  fullName: SearchAThing.Vector3D.Split(System.Double, IEnumerable<SearchAThing.Vector3D>)
+  fullName.vb: SearchAThing.Vector3D.Split(System.Double, IEnumerable(Of SearchAThing.Vector3D))
+  nameWithType: Vector3D.Split(Double, IEnumerable<Vector3D>)
+  nameWithType.vb: Vector3D.Split(Double, IEnumerable(Of Vector3D))
+- uid: SearchAThing.Vector3D.Split*
+  name: Split
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_Split_
+  commentId: Overload:SearchAThing.Vector3D.Split
+  isSpec: "True"
+  fullName: SearchAThing.Vector3D.Split
+  nameWithType: Vector3D.Split
 - uid: SearchAThing.Vector3D.StringRepresentation
   name: StringRepresentation()
   href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_StringRepresentation

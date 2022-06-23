@@ -14,7 +14,8 @@
 <!-- TOC -->
 * [Build](#build)
 * [Examples](#examples)
-    - [0001](#0001)    
+    - [0001](#0001)
+    - [0002](#0002)
 * [Quickstart](#quickstart)
     - [create an example](#create-an-example)
 * [Unit tests](#unit-tests)
@@ -47,6 +48,14 @@ create a dxf
 [result dxf](examples/example_0001/output.dxf)
 
 <img src="examples/0001/output.png" width=300>
+
+#### 0002
+
+detect polygons ( line, arcs ) intersection loops
+
+[result dxf](examples/example_0002/output.dxf)
+
+<img src="examples/0002/output.png" width=300>
 
 ## Quickstart
 
