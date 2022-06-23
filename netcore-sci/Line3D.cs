@@ -772,7 +772,7 @@ namespace SearchAThing
         /// (f.x, f.y, f.z)-(t.x, t.y, t.z) L=len Δ=(v.x, v.y, v.z)
         /// </summary>      
         public string ToString(int digits = 3) =>
-            $"[{GetType().Name}]{((!Sense) ? " !S" : "")} SFROM[{SGeomFrom.ToString(digits)}] STO[{SGeomTo.ToString(digits)}] L={Length.ToString(digits)} Δ={(To - From).ToString(digits)}";
+            $"[{GetType().Name}]{((!Sense) ? " !S" : "")} SFROM[{SGeomFrom.ToString(digits)}] STO[{SGeomTo.ToString(digits)}] L={Length.ToString(digits)} Δ={(SGeomTo - SGeomFrom).ToString(digits)}";
 
         /// <summary>
         /// build a segment with same from and vector normalized
