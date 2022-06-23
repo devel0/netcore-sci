@@ -4,14 +4,14 @@ using System;
 
 namespace SearchAThing.Sci.Tests
 {
-    public class PythonTests : IDisposable
+    public class PythonTests_torefact : IDisposable
     {
         PythonPipe pipe = null;
         PythonPipe sympyPipe = null;
 
         bool has_sympy_library = true;
 
-        public PythonTests()
+        public PythonTests_torefact()
         {
             pipe = new PythonPipe();
             sympyPipe = new PythonPipe("from sympy import *", (s) => System.Diagnostics.Debug.WriteLine(s));

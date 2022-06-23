@@ -2,10 +2,10 @@
 
 namespace SearchAThing.Sci.Tests
 {
-    public class NumberTestsOld
+    public class NumberTests_torefact
     {
 
-        public NumberTestsOld()
+        public NumberTests_torefact()
         {
         }
 

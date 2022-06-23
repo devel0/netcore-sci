@@ -6,12 +6,12 @@ using UnitsNet;
 
 namespace SearchAThing.Sci.Tests
 {
-    public partial class Vector3DTests
+    public partial class Vector3DTests_torefact
     {
 
         double rad_tol;
 
-        public Vector3DTests()
+        public Vector3DTests_torefact()
         {
             rad_tol = (1e-1).ToRad();
         }

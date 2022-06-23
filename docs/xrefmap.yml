@@ -138,6 +138,32 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Arc3D.CentreOfMass
   nameWithType: Arc3D.CentreOfMass
+- uid: SearchAThing.Arc3D.ChordTriangleArea
+  name: ChordTriangleArea
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_ChordTriangleArea
+  commentId: P:SearchAThing.Arc3D.ChordTriangleArea
+  fullName: SearchAThing.Arc3D.ChordTriangleArea
+  nameWithType: Arc3D.ChordTriangleArea
+- uid: SearchAThing.Arc3D.ChordTriangleArea*
+  name: ChordTriangleArea
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_ChordTriangleArea_
+  commentId: Overload:SearchAThing.Arc3D.ChordTriangleArea
+  isSpec: "True"
+  fullName: SearchAThing.Arc3D.ChordTriangleArea
+  nameWithType: Arc3D.ChordTriangleArea
+- uid: SearchAThing.Arc3D.CircularSectorArea
+  name: CircularSectorArea
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_CircularSectorArea
+  commentId: P:SearchAThing.Arc3D.CircularSectorArea
+  fullName: SearchAThing.Arc3D.CircularSectorArea
+  nameWithType: Arc3D.CircularSectorArea
+- uid: SearchAThing.Arc3D.CircularSectorArea*
+  name: CircularSectorArea
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_CircularSectorArea_
+  commentId: Overload:SearchAThing.Arc3D.CircularSectorArea
+  isSpec: "True"
+  fullName: SearchAThing.Arc3D.CircularSectorArea
+  nameWithType: Arc3D.CircularSectorArea
 - uid: SearchAThing.Arc3D.Contains(System.Double,SearchAThing.Vector3D,System.Boolean)
   name: Contains(Double, Vector3D, Boolean)
   href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_Contains_System_Double_SearchAThing_Vector3D_System_Boolean_
@@ -403,6 +429,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Arc3D.Segment
   nameWithType: Arc3D.Segment
+- uid: SearchAThing.Arc3D.SegmentArea
+  name: SegmentArea
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_SegmentArea
+  commentId: P:SearchAThing.Arc3D.SegmentArea
+  fullName: SearchAThing.Arc3D.SegmentArea
+  nameWithType: Arc3D.SegmentArea
+- uid: SearchAThing.Arc3D.SegmentArea*
+  name: SegmentArea
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_SegmentArea_
+  commentId: Overload:SearchAThing.Arc3D.SegmentArea
+  isSpec: "True"
+  fullName: SearchAThing.Arc3D.SegmentArea
+  nameWithType: Arc3D.SegmentArea
 - uid: SearchAThing.Arc3D.Split(System.Double,IEnumerable{SearchAThing.Vector3D})
   name: Split(Double, IEnumerable<Vector3D>)
   href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_Split_System_Double_IEnumerable_SearchAThing_Vector3D__
@@ -3189,6 +3228,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Loop.Loop
   nameWithType: Loop.Loop
+- uid: SearchAThing.Loop.Area
+  name: Area
+  href: api/SearchAThing.Loop.html#SearchAThing_Loop_Area
+  commentId: P:SearchAThing.Loop.Area
+  fullName: SearchAThing.Loop.Area
+  nameWithType: Loop.Area
+- uid: SearchAThing.Loop.Area*
+  name: Area
+  href: api/SearchAThing.Loop.html#SearchAThing_Loop_Area_
+  commentId: Overload:SearchAThing.Loop.Area
+  isSpec: "True"
+  fullName: SearchAThing.Loop.Area
+  nameWithType: Loop.Area
 - uid: SearchAThing.Loop.ContainsPoint(System.Double,SearchAThing.Vector3D)
   name: ContainsPoint(Double, Vector3D)
   href: api/SearchAThing.Loop.html#SearchAThing_Loop_ContainsPoint_System_Double_SearchAThing_Vector3D_
@@ -3241,6 +3293,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Loop.Plane
   nameWithType: Loop.Plane
+- uid: SearchAThing.Loop.Tol
+  name: Tol
+  href: api/SearchAThing.Loop.html#SearchAThing_Loop_Tol
+  commentId: P:SearchAThing.Loop.Tol
+  fullName: SearchAThing.Loop.Tol
+  nameWithType: Loop.Tol
+- uid: SearchAThing.Loop.Tol*
+  name: Tol
+  href: api/SearchAThing.Loop.html#SearchAThing_Loop_Tol_
+  commentId: Overload:SearchAThing.Loop.Tol
+  isSpec: "True"
+  fullName: SearchAThing.Loop.Tol
+  nameWithType: Loop.Tol
 - uid: SearchAThing.LUT
   name: LUT
   href: api/SearchAThing.LUT.html
@@ -4137,11 +4202,11 @@ references:
   isSpec: "True"
   fullName: SearchAThing.PythonPipe.Dispose
   nameWithType: PythonPipe.Dispose
-- uid: SearchAThing.PythonPipe.Exec(SearchAThing.StringWrapper,System.Boolean)
+- uid: SearchAThing.PythonPipe.Exec(StringWrapper,System.Boolean)
   name: Exec(StringWrapper, Boolean)
-  href: api/SearchAThing.PythonPipe.html#SearchAThing_PythonPipe_Exec_SearchAThing_StringWrapper_System_Boolean_
-  commentId: M:SearchAThing.PythonPipe.Exec(SearchAThing.StringWrapper,System.Boolean)
-  fullName: SearchAThing.PythonPipe.Exec(SearchAThing.StringWrapper, System.Boolean)
+  href: api/SearchAThing.PythonPipe.html#SearchAThing_PythonPipe_Exec_StringWrapper_System_Boolean_
+  commentId: M:SearchAThing.PythonPipe.Exec(StringWrapper,System.Boolean)
+  fullName: SearchAThing.PythonPipe.Exec(StringWrapper, System.Boolean)
   nameWithType: PythonPipe.Exec(StringWrapper, Boolean)
 - uid: SearchAThing.PythonPipe.Exec*
   name: Exec

@@ -3,12 +3,12 @@ using System.Linq;
 
 namespace SearchAThing.Sci.Tests
 {
-    public partial class Line3DTests
+    public partial class Line3DTests_torefact
     {
 
         double rad_tol;
 
-        public Line3DTests()
+        public Line3DTests_torefact()
         {
             rad_tol = (1e-1).ToRad();
         }
@@ -398,11 +398,16 @@ namespace SearchAThing.Sci.Tests
             var l = new Line3D(1, 1, 1, 1.12, 2.23, 3.391);
             // 3 digits default
             var s = l.ToString();
-            Assert.True(s == "[Line3D] (1, 1, 1)-(1.12, 2.23, 3.391) L=2.692 Δ=(0.12, 1.23, 2.391)");
+            Assert.True(s == "[Line3D] SFROM[(1, 1, 1)] STO[(1.12, 2.23, 3.391)] L=2.692 Δ=(0.12, 1.23, 2.391)");            
 
             // 1 digits explicit
             var s2 = l.ToString(1);
-            Assert.True(s2 == "[Line3D] (1, 1, 1)-(1.1, 2.2, 3.4) L=2.7 Δ=(0.1, 1.2, 2.4)");
+            Assert.True(s2 == "[Line3D] SFROM[(1, 1, 1)] STO[(1.1, 2.2, 3.4)] L=2.7 Δ=(0.1, 1.2, 2.4)");
+
+            l.ToggleSense();
+
+            var s_s2 = l.ToString(1);
+            Assert.True(s_s2 == "[Line3D] !S SFROM[(1.1, 2.2, 3.4)] STO[(1, 1, 1)] L=2.7 Δ=(-0.1, -1.2, -2.4)");
         }
 
         [Fact]

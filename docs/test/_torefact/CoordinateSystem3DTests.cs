@@ -2,10 +2,10 @@ using Xunit;
 
 namespace SearchAThing.Sci.Tests
 {
-    public class CoordinateSystem3DTests
+    public class CoordinateSystem3DTests_torefact
     {
 
-        public CoordinateSystem3DTests()
+        public CoordinateSystem3DTests_torefact()
         {
         }
 
