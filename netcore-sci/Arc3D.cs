@@ -129,6 +129,32 @@ namespace SearchAThing
         /// </summary>
         public override Vector3D MidPoint => PtAtAngle(AngleStart + Angle / 2);
 
+        public bool Equals(double tol, IEdge other, bool includeSense = false)
+        {
+            if (this.EdgeType != other.EdgeType) return false;
+
+            var oarc = (Arc3D)other;            
+
+            if (!Length.EqualsTol(tol, oarc.Length)) return false;
+
+            if (!Radius.EqualsTol(tol, oarc.Radius)) return false;
+
+            if (!Center.EqualsTol(tol, oarc.Center)) return false;
+
+            if (!CS.BaseZ.EqualsTol(NormalizedLengthTolerance, oarc.Center)) return false;
+
+            if (includeSense)
+                return
+                    this.SGeomFrom.EqualsTol(tol, other.SGeomFrom)
+                    &&
+                    this.SGeomTo.EqualsTol(tol, other.SGeomTo);
+
+            return
+                (this.From.EqualsTol(tol, oarc.From) && this.To.EqualsTol(tol, oarc.To))
+                ||
+                (this.From.EqualsTol(tol, oarc.To) && this.From.EqualsTol(tol, oarc.From));
+        }
+
         #endregion
 
         #region Geometry
@@ -146,10 +172,19 @@ namespace SearchAThing
 
         public override Vector3D GeomTo => To;
 
+        double? _Length = null;
+
         /// <summary>
         /// Length of Arc from start to end
         /// </summary>
-        public override double Length => Angle * Radius;
+        public override double Length
+        {
+            get
+            {
+                if (_Length == null) _Length = Angle * Radius;
+                return _Length.Value;
+            }
+        }
 
         /// <summary>
         /// split arc into pieces and retrieve split points

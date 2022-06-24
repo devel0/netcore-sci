@@ -66,6 +66,26 @@ namespace SearchAThing
 
         public override Vector3D MidPoint => (From + To) / 2;
 
+        public bool Equals(double tol, IEdge other, bool includeSense = false)
+        {
+            if (this.EdgeType != other.EdgeType) return false;
+
+            var oline = (Line3D)other;
+
+            if (!Length.EqualsTol(tol, oline.Length)) return false;
+
+            if (includeSense)
+                return
+                    this.SGeomFrom.EqualsTol(tol, other.SGeomFrom)
+                    &&
+                    this.SGeomTo.EqualsTol(tol, other.SGeomTo);
+
+            return
+                (this.From.EqualsTol(tol, oline.From) && this.To.EqualsTol(tol, oline.To))
+                ||
+                (this.From.EqualsTol(tol, oline.To) && this.From.EqualsTol(tol, oline.From));
+        }
+
         #endregion
 
         #region Geometry
@@ -220,22 +240,7 @@ namespace SearchAThing
         /// retrieve a unique endpoint representation of this line3d segment (regardless its from-to or to-from order)
         /// such that From.Distance(Vector3D.Zero) less than To.Distance(Vector3D.Zero)
         /// </summary>
-        public IEnumerable<Vector3D> DisambiguatedPoints
-        {
-            get
-            {
-                if (From.Distance(Vector3D.Zero) < To.Distance(Vector3D.Zero))
-                {
-                    yield return From;
-                    yield return To;
-                }
-                else
-                {
-                    yield return To;
-                    yield return From;
-                }
-            }
-        }
+        public IEnumerable<Vector3D> DisambiguatedPoints => From.DisambiguatedPoints(double.Epsilon, To);
 
         public IEnumerable<Vector3D> Points
         {

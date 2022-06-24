@@ -60,6 +60,7 @@ namespace SearchAThing
         [JsonIgnore]
         public override Vector3D GeomTo => this;
 
+        double? _Length = null;
         /// <summary>
         /// Length of this vector.
         /// ( Geometry Length implementation )            
@@ -67,7 +68,16 @@ namespace SearchAThing
         /// <remarks>      
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
         /// </remarks>
-        public override double Length => Sqrt(X * X + Y * Y + Z * Z);
+        public override double Length
+        {
+            get
+            {
+                if (_Length == null)
+                    _Length = Sqrt(X * X + Y * Y + Z * Z);
+
+                return _Length.Value;
+            }
+        }
 
         public override Vector3D MidPoint => this;
 
@@ -1658,6 +1668,25 @@ namespace SearchAThing
             var v2 = perpLine.V;
 
             return new Plane3D(new CoordinateSystem3D(origin, v1, v2));
+        }
+
+        /// <summary>
+        /// returns p1 and p2 if one of the p1 coords are less than corresponding p2 coords ;
+        /// elsewhere returns p2 and p1.
+        /// Useful to obtain the same sequence order independant from order of operands.
+        /// </summary>        
+        public static IEnumerable<Vector3D> DisambiguatedPoints(this Vector3D p1, double tol, Vector3D p2)
+        {
+            if (p1.X.LessThanTol(tol, p2.X) || p1.Y.LessThanTol(tol, p2.Y) || p1.Z.LessThanTol(tol, p2.Z))
+            {
+                yield return p1;
+                yield return p2;
+            }
+            else
+            {
+                yield return p2;
+                yield return p1;
+            }
         }
 
     }
