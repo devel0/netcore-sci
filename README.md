@@ -16,6 +16,7 @@
 * [Examples](#examples)
     - [0001](#0001)
     - [0002](#0002)
+    - [0003](#0003)
 * [Quickstart](#quickstart)
     - [create an example](#create-an-example)
 * [Unit tests](#unit-tests)
@@ -45,7 +46,7 @@ dotnet build
 
 create a dxf
 
-[result dxf](examples/example_0001/output.dxf)
+[result dxf](examples/0001/output.dxf)
 
 <img src="examples/0001/output.png" width=300>
 
@@ -53,7 +54,7 @@ create a dxf
 
 detect polygons ( line, arcs ) intersection loops
 
-[result dxf](examples/example_0002/output.dxf)
+[result dxf](examples/0002/output.dxf)
 
 <img src="examples/0002/output.png" width=300>
 
@@ -61,7 +62,7 @@ detect polygons ( line, arcs ) intersection loops
 
 detect polygons ( line, arcs ) intersection loops when edges overlaps
 
-[result dxf](examples/example_0003/output.dxf)
+[result dxf](examples/0003/output.dxf)
 
 <img src="examples/0003/output.png" width=300>
 
