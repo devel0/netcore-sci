@@ -46,7 +46,7 @@ dotnet build
 
 create a dxf
 
-[result dxf](examples/0001/output.dxf)
+[result dxf](https://raw.githubusercontent.com/devel0/netcore-sci/master/examples/0001/output.dxf)
 
 <img src="examples/0001/output.png" width=300>
 
@@ -54,7 +54,7 @@ create a dxf
 
 detect polygons ( line, arcs ) intersection loops
 
-[result dxf](examples/0002/output.dxf)
+[result dxf](https://raw.githubusercontent.com/devel0/netcore-sci/master/examples/0002/output.dxf)
 
 <img src="examples/0002/output.png" width=300>
 
@@ -62,7 +62,7 @@ detect polygons ( line, arcs ) intersection loops
 
 detect polygons ( line, arcs ) intersection loops when edges overlaps
 
-[result dxf](examples/0003/output.dxf)
+[result dxf](https://raw.githubusercontent.com/devel0/netcore-sci/master/examples/0003/output.dxf)
 
 <img src="examples/0003/output.png" width=300>
 
