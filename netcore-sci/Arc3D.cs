@@ -195,7 +195,8 @@ namespace SearchAThing
                 });
         }
 
-        public override IEnumerable<Geometry> GeomIntersect(double tol, Geometry _other, bool segmentMode)
+        public override IEnumerable<Geometry> GeomIntersect(double tol, Geometry _other,
+            GeomSegmentMode thisSegmentMode, GeomSegmentMode otherSegmentMode)
         {
             switch (_other.GeomType)
             {
@@ -203,7 +204,8 @@ namespace SearchAThing
                     {
                         var other = (Line3D)_other;
 
-                        var pts = this.Intersect(tol, other, true, segment_mode: segmentMode);
+                        var pts = this.Intersect(tol, other, only_perimeter: true,
+                            segment_mode: otherSegmentMode == GeomSegmentMode.FromTo);
 
                         if (pts != null)
                         {

@@ -95,7 +95,8 @@ namespace SearchAThing
         /// </remarks>
         public override BBox3D BBox(double tol) => new BBox3D(new[] { this });
 
-        public override IEnumerable<Geometry> GeomIntersect(double tol, Geometry other, bool segmentMode)
+        public override IEnumerable<Geometry> GeomIntersect(double tol, Geometry other,
+            GeomSegmentMode thisSegmentMode, GeomSegmentMode otherSegmentMode)
         {
             throw new NotImplementedException();
         }

@@ -13,29 +13,6 @@ namespace SearchAThing
 
     public enum Line3DConstructMode { PointAndVector };
 
-    public enum Line3DSegmentMode
-    {
-        /// <summary>
-        /// infinite line
-        /// </summary>
-        None,
-
-        /// <summary>
-        /// Semi-line start at From
-        /// </summary>
-        From,
-
-        /// <summary>
-        /// Semi-line ending at To
-        /// </summary>
-        To,
-
-        /// <summary>
-        /// Segment from-to
-        /// </summary>
-        FromTo
-    };
-
     public enum LineIntersectBehavior
     {
         MidPoint,
@@ -49,7 +26,7 @@ namespace SearchAThing
 
         public EdgeType EdgeType => EdgeType.Line3D;
 
-        public bool EdgeContainsPoint(double tol, Vector3D pt) => this.SegmentContainsPoint(tol, pt);                
+        public bool EdgeContainsPoint(double tol, Vector3D pt) => this.SegmentContainsPoint(tol, pt);
 
         public override IEnumerable<Geometry> Split(double tol, IEnumerable<Vector3D> breaks)
         {
@@ -109,7 +86,7 @@ namespace SearchAThing
         [JsonIgnore]
         public override Vector3D GeomTo => To;
 
-        public override double Length => V.Length;        
+        public override double Length => V.Length;
 
         public override IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false)
         {
@@ -128,7 +105,9 @@ namespace SearchAThing
 
         public override BBox3D BBox(double tol) => new BBox3D(new[] { From, To });
 
-        public override IEnumerable<Geometry> GeomIntersect(double tol, Geometry _other, bool segmentMode)
+        public override IEnumerable<Geometry> GeomIntersect(double tol, Geometry _other,
+            GeomSegmentMode thisSegmentMode = GeomSegmentMode.FromTo,
+            GeomSegmentMode otherSegmentMode = GeomSegmentMode.FromTo)
         {
             switch (_other.GeomType)
             {
@@ -137,22 +116,50 @@ namespace SearchAThing
                         var other = (Line3D)_other;
                         if (this.Colinear(tol, other))
                         {
-                            var N = V.Normalized();
+                            if (thisSegmentMode == GeomSegmentMode.Infinite)
+                                yield return this;
 
-                            var lst = new[]
+                            else if (otherSegmentMode == GeomSegmentMode.Infinite)
+                                yield return other;
+
+                            else if (thisSegmentMode == GeomSegmentMode.FromTo && otherSegmentMode == GeomSegmentMode.FromTo)
                             {
-                                new { type = 0, off = From.ColinearScalarOffset(tol, From, N) },
-                                new { type = 0, off = To.ColinearScalarOffset(tol, From, N) },
+                                var N = V.Normalized();
 
-                                new { type = 1, off = other.From.ColinearScalarOffset(tol, From, N) },
-                                new { type = 1, off = other.To.ColinearScalarOffset(tol, From, N) },
-                            };
+                                var lst = new[]
+                                {
+                                    new { type = 0, pt = From, off = From.ColinearScalarOffset(tol, From, N) },
+                                    new { type = 0, pt = To, off = To.ColinearScalarOffset(tol, From, N) },
 
-                            throw new NotImplementedException();
+                                    new { type = 1, pt = other.From, off = other.From.ColinearScalarOffset(tol, From, N) },
+                                    new { type = 1, pt = other.To, off = other.To.ColinearScalarOffset(tol, From, N) },
+                                };
+
+                                var q = lst.OrderBy(w => w.off).ToList();
+
+                                if (q[0].type == q[1].type)
+                                {
+                                    // disjoint ( intersect empty )
+                                    if (q[2].off.GreatThanTol(tol, q[1].off))
+                                        yield break;
+
+                                    // consecutive ( intersect is a point )
+                                    if (q[1].off.EqualsTol(tol, q[2].off))
+                                        yield return q[1].pt;
+                                }
+                                else // overlap
+                                    yield return q[1].pt.LineTo(q[2].pt);
+
+                            }
+
+                            else
+                                throw new NotImplementedException();
                         }
                         else
                         {
-                            var pt = this.Intersect(tol, other, thisSegment: true, otherSegment: segmentMode);
+                            var pt = this.Intersect(tol, other,
+                                thisSegment: thisSegmentMode == GeomSegmentMode.FromTo,
+                                otherSegment: otherSegmentMode == GeomSegmentMode.FromTo);
 
                             if (pt != null)
                                 yield return pt;
@@ -164,11 +171,9 @@ namespace SearchAThing
                     {
                         var other = (Arc3D)_other;
 
-                        var pts = other.Intersect(tol, this,
-                            only_perimeter: true,
-                            segment_mode: segmentMode);
+                        var pts = other.Intersect(tol, this, only_perimeter: true, segment_mode: true);
 
-                        if (pts != null) 
+                        if (pts != null)
                             foreach (var pt in pts) yield return pt;
                     }
                     break;
@@ -181,6 +186,11 @@ namespace SearchAThing
         public override EntityObject DxfEntity => this.ToLine();
 
         #endregion
+
+        /// <summary>
+        /// Specify how to consider this Line3D when used in Geometry abstract class operations
+        /// </summary>        
+        public GeomSegmentMode GeomSegmentMode { get; set; }
 
         public static readonly Line3D XAxisLine = new Line3D(Vector3D.Zero, Vector3D.XAxis);
         public static readonly Line3D YAxisLine = new Line3D(Vector3D.Zero, Vector3D.YAxis);

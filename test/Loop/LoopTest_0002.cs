@@ -16,11 +16,12 @@ namespace SearchAThing.Sci.Tests
 
             var tol = 1e-8;
 
-            var loopGreen = dxf.LwPolylines.First(w => w.Color.Index == netDxf.AciColor.Green.Index).ToLoop(tol);
-            var loopRed = dxf.LwPolylines.First(w => w.Color.Index == netDxf.AciColor.Red.Index).ToLoop(tol);
-            var loopMagenta = dxf.LwPolylines.First(w => w.Color.Index == netDxf.AciColor.Magenta.Index).ToLoop(tol);
-            var loopCyan = dxf.LwPolylines.First(w => w.Color.Index == netDxf.AciColor.Cyan.Index).ToLoop(tol);
-            var loopBlue = dxf.LwPolylines.First(w => w.Color.Index == netDxf.AciColor.Blue.Index).ToLoop(tol);
+            var loopGreen = dxf.LwPolylines.First(w => w.Layer.Name == "green").ToLoop(tol);
+            var loopRed = dxf.LwPolylines.First(w => w.Layer.Name == "red").ToLoop(tol);
+            var loopMagenta = dxf.LwPolylines.First(w => w.Layer.Name == "magenta").ToLoop(tol);
+            var loopCyan = dxf.LwPolylines.First(w => w.Layer.Name == "cyan").ToLoop(tol);
+            var loopBlue = dxf.LwPolylines.First(w => w.Layer.Name == "blue").ToLoop(tol);
+            var loopYellow = dxf.LwPolylines.First(w => w.Layer.Name == "yellow").ToLoop(tol);
 
             // check green fully contained into magenta
             {
@@ -46,20 +47,36 @@ namespace SearchAThing.Sci.Tests
             {
                 var loops = loopCyan.Intersect(tol, loopGreen).ToList();
 
-                var outtmp = new DxfDocument();
-                foreach (var loop in loops)
-                {
-                    var lw = loop.ToLwPolyline(tol);
-                    outtmp.AddEntity(lw);
-                }
-
-                // outtmp.DrawingVariables.PdMode = netDxf.Header.PointShape.CircleCross;
-                // outtmp.Viewport.ShowGrid = false;
-                // outtmp.Save("/home/devel0/Desktop/out.dxf");
-
+                Assert.True(loops.Count == 2);
                 Assert.True(loops[0].Area.EqualsTol(tol, 56.42492663));
-                Assert.True(loops[1].Area.EqualsTol(tol, 360.04194237));                
+                Assert.True(loops[1].Area.EqualsTol(tol, 360.04194237));
+
+                //
+
+                loops = loopGreen.Intersect(tol, loopCyan).ToList();
+
+                Assert.True(loops.Count == 2);
+                Assert.True(loops[0].Area.EqualsTol(tol, 56.42492663));
+                Assert.True(loops[1].Area.EqualsTol(tol, 360.04194237));
             }
+
+            {
+                var loops = loopGreen.Intersect(tol, loopYellow).ToList();
+
+                Assert.True(loops.Count == 1);
+                Assert.True(loops[0].Area.EqualsTol(tol, 563.78939052));
+
+                //
+
+                // var loops = loopYellow.Intersect(tol, loopGreen).ToList();
+
+                // Assert.True(loops.Count == 1);
+                // Assert.True(loops[0].Area.EqualsTol(tol, 563.78939052));
+            }
+
+            // outtmp.DrawingVariables.PdMode = netDxf.Header.PointShape.CircleCross;
+            // outtmp.Viewport.ShowGrid = false;
+            // outtmp.Save("/home/devel0/Desktop/out.dxf");
 
         }
 

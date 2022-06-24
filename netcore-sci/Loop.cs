@@ -79,7 +79,9 @@ namespace SearchAThing
 
             var ray = pt.LineV(Plane.CS.BaseX);
 
-            var qits = this.Edges.Cast<Geometry>().Intersect(tol, new[] { ray }).ToList();
+            var qits = this.Edges.Cast<Geometry>()
+                .Intersect(tol, new[] { ray }, GeomSegmentMode.FromTo, GeomSegmentMode.Infinite)
+                .ToList();
 
             if (qits.Count == 0) return false;
 
@@ -115,6 +117,8 @@ namespace SearchAThing
             List<GeomNfo>? otherBrokenGeoms = null;
             List<Vector3D>? ipts = null;
 
+            var ptCmp = new Vector3DEqualityComparer(tol);
+
             {
                 var thisGeoms = Edges.ToList();
                 var otherGeoms = other.Edges.ToList();
@@ -125,15 +129,33 @@ namespace SearchAThing
 
                 var iptsNfos = combs.SelectMany(comb =>
                     ((Geometry)comb.tg).GeomIntersect(tol, (Geometry)comb.og)
-                    .Select(x => x.GeomType == GeometryType.Vector3D ? x :
-                        throw new NotImplementedException($"intersect implements only pts, but got {x.GeomType}"))
+                    .Where(x => x.GeomType == GeometryType.Vector3D)
+                    // .Select(x => x.GeomType == GeometryType.Vector3D ? x :
+                    //     throw new NotImplementedException($"intersect implements only pts, but got {x.GeomType}"))
                     .Select(i_nfo => new
                     {
-                        igeom = i_nfo,
+                        ipt = (Vector3D)i_nfo,
                         tent = comb.tg,
                         oent = comb.og
                     })
-                ).ToList();
+                )
+                .ToList()
+                // filter pt duplicates                
+                .GroupBy(w => w.ipt, ptCmp)
+                .Select(w => w.First())
+                .ToList();
+
+                var outtmp = new DxfDocument();
+
+                var tmplay = new netDxf.Tables.Layer("tmp");
+                foreach (var x in iptsNfos)
+                {
+                    var ent = x.ipt.DxfEntity;
+                    ent.Layer = tmplay;
+                    outtmp.AddEntity(ent);
+                }
+
+                outtmp.Save("/home/devel0/Desktop/out2.dxf");
 
                 if (iptsNfos.Count == 0)
                 {
@@ -150,12 +172,12 @@ namespace SearchAThing
 
                 var tgeomsBreaks = iptsNfos
                     .GroupBy(w => w.tent)
-                    .Select(w => new { ent = w.Key, breaks = w.Select(u => (Vector3D)u.igeom).ToList() })
+                    .Select(w => new { ent = w.Key, breaks = w.Select(u => (Vector3D)u.ipt).ToList() })
                     .ToDictionary(k => k.ent, v => v.breaks);
 
                 var ogeomsBreaks = iptsNfos
                     .GroupBy(w => w.oent)
-                    .Select(w => new { ent = w.Key, breaks = w.Select(u => (Vector3D)u.igeom).ToList() })
+                    .Select(w => new { ent = w.Key, breaks = w.Select(u => (Vector3D)u.ipt).ToList() })
                     .ToDictionary(k => k.ent, v => v.breaks);
 
                 thisBrokenGeoms = thisGeoms.SelectMany(tgeom =>
@@ -189,10 +211,10 @@ namespace SearchAThing
                 })
                 .ToList();
 
-                ipts = iptsNfos.Select(w => (Vector3D)w.igeom).ToList();
+                ipts = iptsNfos.Select(w => (Vector3D)w.ipt).ToList();
             }
 
-            var ptCmp = new Vector3DEqualityComparer(tol);
+
             var iptsHs = ipts.ToHashSet(ptCmp);
 
             var ipToThisBrokenGeoms = new Dictionary<Vector3D, GeomWithIdx>(ptCmp);
@@ -203,10 +225,16 @@ namespace SearchAThing
                 if (nfo.item.inside)
                 {
                     if (containsFrom)
-                        ipToThisBrokenGeoms.Add(nfo.item.geom.SGeomFrom, new GeomWithIdx(nfo.item.geom, nfo.idx));
+                    {
+                        if (!ipToThisBrokenGeoms.ContainsKey(nfo.item.geom.SGeomFrom))
+                            ipToThisBrokenGeoms.Add(nfo.item.geom.SGeomFrom, new GeomWithIdx(nfo.item.geom, nfo.idx));
+                    }
 
                     if (containsTo)
-                        ipToThisBrokenGeoms.Add(nfo.item.geom.SGeomTo, new GeomWithIdx(nfo.item.geom, nfo.idx));
+                    {
+                        if (!ipToThisBrokenGeoms.ContainsKey(nfo.item.geom.SGeomTo))
+                            ipToThisBrokenGeoms.Add(nfo.item.geom.SGeomTo, new GeomWithIdx(nfo.item.geom, nfo.idx));
+                    }
                 }
             }
 
@@ -218,10 +246,16 @@ namespace SearchAThing
                 if (nfo.item.inside)
                 {
                     if (containsFrom)
-                        ipToOtherBrokenGeoms.Add(nfo.item.geom.SGeomFrom, new GeomWithIdx(nfo.item.geom, nfo.idx));
+                    {
+                        if (!ipToOtherBrokenGeoms.ContainsKey(nfo.item.geom.SGeomFrom))
+                            ipToOtherBrokenGeoms.Add(nfo.item.geom.SGeomFrom, new GeomWithIdx(nfo.item.geom, nfo.idx));
+                    }
 
                     if (containsTo)
-                        ipToOtherBrokenGeoms.Add(nfo.item.geom.SGeomTo, new GeomWithIdx(nfo.item.geom, nfo.idx));
+                    {
+                        if (!ipToOtherBrokenGeoms.ContainsKey(nfo.item.geom.SGeomTo))
+                            ipToOtherBrokenGeoms.Add(nfo.item.geom.SGeomTo, new GeomWithIdx(nfo.item.geom, nfo.idx));
+                    }
                 }
             }
 
@@ -335,20 +369,32 @@ namespace SearchAThing
                     cur = next;
 
                     if (gLoopHs.Contains(cur.geom)) break;
+                    if (
+                        visitedVertexes.Contains(cur.geom.SGeomFrom, ptCmp) &&
+                        visitedVertexes.Contains(cur.geom.SGeomTo, ptCmp))
+                        break;
 
                     gLoop.Add(cur.geom);
                     gLoopHs.Add(cur.geom);
+
+                    visitedVertexes.Add(cur.geom.SGeomFrom);
+                    visitedVertexes.Add(cur.geom.SGeomTo);
                 }
 
-                foreach (var geom in gLoop)
-                {
-                    visitedVertexes.Add(geom.SGeomFrom);
-                    visitedVertexes.Add(geom.SGeomTo);
-                }
+                // foreach (var geom in gLoop)
+                // {
+                //     visitedVertexes.Add(geom.SGeomFrom);
+                //     visitedVertexes.Add(geom.SGeomTo);
+                // }
 
                 yield return new Loop(tol, gLoop, checkSense: true);
             }
 
+        }
+
+        public override string ToString()
+        {
+            return $"Edges:{Edges.Count}";
         }
 
     }

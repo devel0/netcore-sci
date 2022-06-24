@@ -335,7 +335,7 @@ namespace SearchAThing
         /// TODO unit test
         /// </summary>        
         public static IEnumerable<Vector3D> Intersect(this IEnumerable<Line3D> polygonSegments,
-            double tol, Line3D line, Line3DSegmentMode segmentMode)
+            double tol, Line3D line, GeomSegmentMode segmentMode)
         {
             var lineDir = line.To - line.From;
             foreach (var s in polygonSegments)
@@ -344,10 +344,10 @@ namespace SearchAThing
                 if (i == null) continue;
                 switch (segmentMode)
                 {
-                    case Line3DSegmentMode.None: yield return i; break;
-                    case Line3DSegmentMode.From: if ((i - line.From).Concordant(tol, lineDir)) yield return i; break;
-                    case Line3DSegmentMode.To: if (!(i - line.To).Concordant(tol, lineDir)) yield return i; break;
-                    case Line3DSegmentMode.FromTo: if (line.SegmentContainsPoint(tol, i)) yield return i; break;
+                    case GeomSegmentMode.Infinite: yield return i; break;
+                    case GeomSegmentMode.From: if ((i - line.From).Concordant(tol, lineDir)) yield return i; break;
+                    case GeomSegmentMode.To: if (!(i - line.To).Concordant(tol, lineDir)) yield return i; break;
+                    case GeomSegmentMode.FromTo: if (line.SegmentContainsPoint(tol, i)) yield return i; break;
                 }
             }
 

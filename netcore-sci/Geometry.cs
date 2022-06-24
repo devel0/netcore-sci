@@ -13,6 +13,29 @@ namespace SearchAThing
         Arc3D
     }
 
+    public enum GeomSegmentMode
+    {
+        /// <summary>
+        /// infinite line
+        /// </summary>
+        Infinite,
+
+        /// <summary>
+        /// Semi-line start at From
+        /// </summary>
+        From,
+
+        /// <summary>
+        /// Semi-line ending at To
+        /// </summary>
+        To,
+
+        /// <summary>
+        /// Segment from-to
+        /// </summary>
+        FromTo
+    };
+
     public abstract class Geometry
     {
 
@@ -72,13 +95,16 @@ namespace SearchAThing
         public abstract BBox3D BBox(double tol);
 
         /// <summary>
-        /// find intersections between this and another geometry resulting in zero or more geometries
+        /// find intersections between this and another geometry resulting in zero or more geometries.        
         /// </summary>
         /// <param name="tol"></param>
         /// <param name="other"></param>
-        /// <param name="segmentMode">when other is Line3D specifies how to consider intersection test, if true other is considered as infinite line otherwise is considered as a segment</param>
+        /// <param name="thisSegmentMode">if this is Line3D specifies how to consider</param>
+        /// <param name="otherSegmentMode">if other is Line3D specifies how to consider</param>
         /// <returns></returns>
-        public abstract IEnumerable<Geometry> GeomIntersect(double tol, Geometry other, bool segmentMode = true);
+        public abstract IEnumerable<Geometry> GeomIntersect(double tol, Geometry other,
+            GeomSegmentMode thisSegmentMode = GeomSegmentMode.FromTo,
+            GeomSegmentMode otherSegmentMode = GeomSegmentMode.FromTo);
 
         /// <summary>
         /// dxf entity representing this geom
@@ -293,8 +319,12 @@ namespace SearchAThing
         /// <param name="_geom1"></param>
         /// <param name="tol">length tolerance</param>
         /// <param name="_geom2"></param>        
+        /// <param name="geom1SegmentMode">if geom1 item is Line3D specifies how to consider it</param>        
+        /// <param name="geom2SegmentMode">if geom2 item is Line3D specifies how to consider it</param>        
         public static IEnumerable<Geometry> Intersect(this IEnumerable<Geometry> _geom1,
-            double tol, IEnumerable<Geometry> _geom2)
+            double tol, IEnumerable<Geometry> _geom2,
+            GeomSegmentMode geom1SegmentMode = GeomSegmentMode.FromTo,
+            GeomSegmentMode geom2SegmentMode = GeomSegmentMode.FromTo)
         {
             var geom1 = _geom1.ToList();
             var geom2 = _geom2.ToList();
@@ -305,7 +335,7 @@ namespace SearchAThing
             {
                 foreach (var g2 in geom2)
                 {
-                    var g1g2_intersection = g1.GeomIntersect(tol, g2, segmentMode: false);
+                    var g1g2_intersection = g1.GeomIntersect(tol, g2, geom1SegmentMode, geom2SegmentMode);
 
                     if (g1g2_intersection != null)
                         foreach (var geom in g1g2_intersection) yield return geom;
