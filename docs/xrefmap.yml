@@ -248,6 +248,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Arc3D.EdgeType
   nameWithType: Arc3D.EdgeType
+- uid: SearchAThing.Arc3D.Equals(System.Double,SearchAThing.IEdge,System.Boolean)
+  name: Equals(Double, IEdge, Boolean)
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_Equals_System_Double_SearchAThing_IEdge_System_Boolean_
+  commentId: M:SearchAThing.Arc3D.Equals(System.Double,SearchAThing.IEdge,System.Boolean)
+  fullName: SearchAThing.Arc3D.Equals(System.Double, SearchAThing.IEdge, System.Boolean)
+  nameWithType: Arc3D.Equals(Double, IEdge, Boolean)
+- uid: SearchAThing.Arc3D.Equals*
+  name: Equals
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_Equals_
+  commentId: Overload:SearchAThing.Arc3D.Equals
+  isSpec: "True"
+  fullName: SearchAThing.Arc3D.Equals
+  nameWithType: Arc3D.Equals
 - uid: SearchAThing.Arc3D.EqualsTol(System.Double,SearchAThing.Arc3D)
   name: EqualsTol(Double, Arc3D)
   href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_EqualsTol_System_Double_SearchAThing_Arc3D_
@@ -287,12 +300,12 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Arc3D.GeomFrom
   nameWithType: Arc3D.GeomFrom
-- uid: SearchAThing.Arc3D.GeomIntersect(System.Double,SearchAThing.Geometry,System.Boolean)
-  name: GeomIntersect(Double, Geometry, Boolean)
-  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_GeomIntersect_System_Double_SearchAThing_Geometry_System_Boolean_
-  commentId: M:SearchAThing.Arc3D.GeomIntersect(System.Double,SearchAThing.Geometry,System.Boolean)
-  fullName: SearchAThing.Arc3D.GeomIntersect(System.Double, SearchAThing.Geometry, System.Boolean)
-  nameWithType: Arc3D.GeomIntersect(Double, Geometry, Boolean)
+- uid: SearchAThing.Arc3D.GeomIntersect(System.Double,SearchAThing.Geometry,SearchAThing.GeomSegmentMode,SearchAThing.GeomSegmentMode)
+  name: GeomIntersect(Double, Geometry, GeomSegmentMode, GeomSegmentMode)
+  href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_GeomIntersect_System_Double_SearchAThing_Geometry_SearchAThing_GeomSegmentMode_SearchAThing_GeomSegmentMode_
+  commentId: M:SearchAThing.Arc3D.GeomIntersect(System.Double,SearchAThing.Geometry,SearchAThing.GeomSegmentMode,SearchAThing.GeomSegmentMode)
+  fullName: SearchAThing.Arc3D.GeomIntersect(System.Double, SearchAThing.Geometry, SearchAThing.GeomSegmentMode, SearchAThing.GeomSegmentMode)
+  nameWithType: Arc3D.GeomIntersect(Double, Geometry, GeomSegmentMode, GeomSegmentMode)
 - uid: SearchAThing.Arc3D.GeomIntersect*
   name: GeomIntersect
   href: api/SearchAThing.Arc3D.html#SearchAThing_Arc3D_GeomIntersect_
@@ -1950,12 +1963,12 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Geometry.GeomFrom
   nameWithType: Geometry.GeomFrom
-- uid: SearchAThing.Geometry.GeomIntersect(System.Double,SearchAThing.Geometry,System.Boolean)
-  name: GeomIntersect(Double, Geometry, Boolean)
-  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_GeomIntersect_System_Double_SearchAThing_Geometry_System_Boolean_
-  commentId: M:SearchAThing.Geometry.GeomIntersect(System.Double,SearchAThing.Geometry,System.Boolean)
-  fullName: SearchAThing.Geometry.GeomIntersect(System.Double, SearchAThing.Geometry, System.Boolean)
-  nameWithType: Geometry.GeomIntersect(Double, Geometry, Boolean)
+- uid: SearchAThing.Geometry.GeomIntersect(System.Double,SearchAThing.Geometry,SearchAThing.GeomSegmentMode,SearchAThing.GeomSegmentMode)
+  name: GeomIntersect(Double, Geometry, GeomSegmentMode, GeomSegmentMode)
+  href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_GeomIntersect_System_Double_SearchAThing_Geometry_SearchAThing_GeomSegmentMode_SearchAThing_GeomSegmentMode_
+  commentId: M:SearchAThing.Geometry.GeomIntersect(System.Double,SearchAThing.Geometry,SearchAThing.GeomSegmentMode,SearchAThing.GeomSegmentMode)
+  fullName: SearchAThing.Geometry.GeomIntersect(System.Double, SearchAThing.Geometry, SearchAThing.GeomSegmentMode, SearchAThing.GeomSegmentMode)
+  nameWithType: Geometry.GeomIntersect(Double, Geometry, GeomSegmentMode, GeomSegmentMode)
 - uid: SearchAThing.Geometry.GeomIntersect*
   name: GeomIntersect
   href: api/SearchAThing.Geometry.html#SearchAThing_Geometry_GeomIntersect_
@@ -2145,6 +2158,36 @@ references:
   commentId: F:SearchAThing.GeometryType.Vector3D
   fullName: SearchAThing.GeometryType.Vector3D
   nameWithType: GeometryType.Vector3D
+- uid: SearchAThing.GeomSegmentMode
+  name: GeomSegmentMode
+  href: api/SearchAThing.GeomSegmentMode.html
+  commentId: T:SearchAThing.GeomSegmentMode
+  fullName: SearchAThing.GeomSegmentMode
+  nameWithType: GeomSegmentMode
+- uid: SearchAThing.GeomSegmentMode.From
+  name: From
+  href: api/SearchAThing.GeomSegmentMode.html#SearchAThing_GeomSegmentMode_From
+  commentId: F:SearchAThing.GeomSegmentMode.From
+  fullName: SearchAThing.GeomSegmentMode.From
+  nameWithType: GeomSegmentMode.From
+- uid: SearchAThing.GeomSegmentMode.FromTo
+  name: FromTo
+  href: api/SearchAThing.GeomSegmentMode.html#SearchAThing_GeomSegmentMode_FromTo
+  commentId: F:SearchAThing.GeomSegmentMode.FromTo
+  fullName: SearchAThing.GeomSegmentMode.FromTo
+  nameWithType: GeomSegmentMode.FromTo
+- uid: SearchAThing.GeomSegmentMode.Infinite
+  name: Infinite
+  href: api/SearchAThing.GeomSegmentMode.html#SearchAThing_GeomSegmentMode_Infinite
+  commentId: F:SearchAThing.GeomSegmentMode.Infinite
+  fullName: SearchAThing.GeomSegmentMode.Infinite
+  nameWithType: GeomSegmentMode.Infinite
+- uid: SearchAThing.GeomSegmentMode.To
+  name: To
+  href: api/SearchAThing.GeomSegmentMode.html#SearchAThing_GeomSegmentMode_To
+  commentId: F:SearchAThing.GeomSegmentMode.To
+  fullName: SearchAThing.GeomSegmentMode.To
+  nameWithType: GeomSegmentMode.To
 - uid: SearchAThing.IEdge
   name: IEdge
   href: api/SearchAThing.IEdge.html
@@ -2190,6 +2233,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.IEdge.EdgeType
   nameWithType: IEdge.EdgeType
+- uid: SearchAThing.IEdge.Equals(System.Double,SearchAThing.IEdge,System.Boolean)
+  name: Equals(Double, IEdge, Boolean)
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_Equals_System_Double_SearchAThing_IEdge_System_Boolean_
+  commentId: M:SearchAThing.IEdge.Equals(System.Double,SearchAThing.IEdge,System.Boolean)
+  fullName: SearchAThing.IEdge.Equals(System.Double, SearchAThing.IEdge, System.Boolean)
+  nameWithType: IEdge.Equals(Double, IEdge, Boolean)
+- uid: SearchAThing.IEdge.Equals*
+  name: Equals
+  href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_Equals_
+  commentId: Overload:SearchAThing.IEdge.Equals
+  isSpec: "True"
+  fullName: SearchAThing.IEdge.Equals
+  nameWithType: IEdge.Equals
 - uid: SearchAThing.IEdge.MidPoint
   name: MidPoint
   href: api/SearchAThing.IEdge.html#SearchAThing_IEdge_MidPoint
@@ -2570,6 +2626,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Line3D.EnsureFrom
   nameWithType: Line3D.EnsureFrom
+- uid: SearchAThing.Line3D.Equals(System.Double,SearchAThing.IEdge,System.Boolean)
+  name: Equals(Double, IEdge, Boolean)
+  href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_Equals_System_Double_SearchAThing_IEdge_System_Boolean_
+  commentId: M:SearchAThing.Line3D.Equals(System.Double,SearchAThing.IEdge,System.Boolean)
+  fullName: SearchAThing.Line3D.Equals(System.Double, SearchAThing.IEdge, System.Boolean)
+  nameWithType: Line3D.Equals(Double, IEdge, Boolean)
+- uid: SearchAThing.Line3D.Equals*
+  name: Equals
+  href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_Equals_
+  commentId: Overload:SearchAThing.Line3D.Equals
+  isSpec: "True"
+  fullName: SearchAThing.Line3D.Equals
+  nameWithType: Line3D.Equals
 - uid: SearchAThing.Line3D.EqualsTol(System.Double,SearchAThing.Line3D)
   name: EqualsTol(Double, Line3D)
   href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_EqualsTol_System_Double_SearchAThing_Line3D_
@@ -2609,12 +2678,12 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Line3D.GeomFrom
   nameWithType: Line3D.GeomFrom
-- uid: SearchAThing.Line3D.GeomIntersect(System.Double,SearchAThing.Geometry,System.Boolean)
-  name: GeomIntersect(Double, Geometry, Boolean)
-  href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_GeomIntersect_System_Double_SearchAThing_Geometry_System_Boolean_
-  commentId: M:SearchAThing.Line3D.GeomIntersect(System.Double,SearchAThing.Geometry,System.Boolean)
-  fullName: SearchAThing.Line3D.GeomIntersect(System.Double, SearchAThing.Geometry, System.Boolean)
-  nameWithType: Line3D.GeomIntersect(Double, Geometry, Boolean)
+- uid: SearchAThing.Line3D.GeomIntersect(System.Double,SearchAThing.Geometry,SearchAThing.GeomSegmentMode,SearchAThing.GeomSegmentMode)
+  name: GeomIntersect(Double, Geometry, GeomSegmentMode, GeomSegmentMode)
+  href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_GeomIntersect_System_Double_SearchAThing_Geometry_SearchAThing_GeomSegmentMode_SearchAThing_GeomSegmentMode_
+  commentId: M:SearchAThing.Line3D.GeomIntersect(System.Double,SearchAThing.Geometry,SearchAThing.GeomSegmentMode,SearchAThing.GeomSegmentMode)
+  fullName: SearchAThing.Line3D.GeomIntersect(System.Double, SearchAThing.Geometry, SearchAThing.GeomSegmentMode, SearchAThing.GeomSegmentMode)
+  nameWithType: Line3D.GeomIntersect(Double, Geometry, GeomSegmentMode, GeomSegmentMode)
 - uid: SearchAThing.Line3D.GeomIntersect*
   name: GeomIntersect
   href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_GeomIntersect_
@@ -2622,6 +2691,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Line3D.GeomIntersect
   nameWithType: Line3D.GeomIntersect
+- uid: SearchAThing.Line3D.GeomSegmentMode
+  name: GeomSegmentMode
+  href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_GeomSegmentMode
+  commentId: P:SearchAThing.Line3D.GeomSegmentMode
+  fullName: SearchAThing.Line3D.GeomSegmentMode
+  nameWithType: Line3D.GeomSegmentMode
+- uid: SearchAThing.Line3D.GeomSegmentMode*
+  name: GeomSegmentMode
+  href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_GeomSegmentMode_
+  commentId: Overload:SearchAThing.Line3D.GeomSegmentMode
+  isSpec: "True"
+  fullName: SearchAThing.Line3D.GeomSegmentMode
+  nameWithType: Line3D.GeomSegmentMode
 - uid: SearchAThing.Line3D.GeomTo
   name: GeomTo
   href: api/SearchAThing.Line3D.html#SearchAThing_Line3D_GeomTo
@@ -3146,36 +3228,6 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Line3DEqualityComparer.GetHashCode
   nameWithType: Line3DEqualityComparer.GetHashCode
-- uid: SearchAThing.Line3DSegmentMode
-  name: Line3DSegmentMode
-  href: api/SearchAThing.Line3DSegmentMode.html
-  commentId: T:SearchAThing.Line3DSegmentMode
-  fullName: SearchAThing.Line3DSegmentMode
-  nameWithType: Line3DSegmentMode
-- uid: SearchAThing.Line3DSegmentMode.From
-  name: From
-  href: api/SearchAThing.Line3DSegmentMode.html#SearchAThing_Line3DSegmentMode_From
-  commentId: F:SearchAThing.Line3DSegmentMode.From
-  fullName: SearchAThing.Line3DSegmentMode.From
-  nameWithType: Line3DSegmentMode.From
-- uid: SearchAThing.Line3DSegmentMode.FromTo
-  name: FromTo
-  href: api/SearchAThing.Line3DSegmentMode.html#SearchAThing_Line3DSegmentMode_FromTo
-  commentId: F:SearchAThing.Line3DSegmentMode.FromTo
-  fullName: SearchAThing.Line3DSegmentMode.FromTo
-  nameWithType: Line3DSegmentMode.FromTo
-- uid: SearchAThing.Line3DSegmentMode.None
-  name: None
-  href: api/SearchAThing.Line3DSegmentMode.html#SearchAThing_Line3DSegmentMode_None
-  commentId: F:SearchAThing.Line3DSegmentMode.None
-  fullName: SearchAThing.Line3DSegmentMode.None
-  nameWithType: Line3DSegmentMode.None
-- uid: SearchAThing.Line3DSegmentMode.To
-  name: To
-  href: api/SearchAThing.Line3DSegmentMode.html#SearchAThing_Line3DSegmentMode_To
-  commentId: F:SearchAThing.Line3DSegmentMode.To
-  fullName: SearchAThing.Line3DSegmentMode.To
-  nameWithType: Line3DSegmentMode.To
 - uid: SearchAThing.LineIntersectBehavior
   name: LineIntersectBehavior
   href: api/SearchAThing.LineIntersectBehavior.html
@@ -3267,12 +3319,15 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Loop.Edges
   nameWithType: Loop.Edges
-- uid: SearchAThing.Loop.Intersect(System.Double,SearchAThing.Loop)
-  name: Intersect(Double, Loop)
-  href: api/SearchAThing.Loop.html#SearchAThing_Loop_Intersect_System_Double_SearchAThing_Loop_
-  commentId: M:SearchAThing.Loop.Intersect(System.Double,SearchAThing.Loop)
-  fullName: SearchAThing.Loop.Intersect(System.Double, SearchAThing.Loop)
-  nameWithType: Loop.Intersect(Double, Loop)
+- uid: SearchAThing.Loop.Intersect(System.Double,SearchAThing.Loop,System.Nullable{netDxf.DxfDocument})
+  name: Intersect(Double, Loop, Nullable<netDxf.DxfDocument>)
+  href: api/SearchAThing.Loop.html#SearchAThing_Loop_Intersect_System_Double_SearchAThing_Loop_System_Nullable_netDxf_DxfDocument__
+  commentId: M:SearchAThing.Loop.Intersect(System.Double,SearchAThing.Loop,System.Nullable{netDxf.DxfDocument})
+  name.vb: Intersect(Double, Loop, Nullable(Of netDxf.DxfDocument))
+  fullName: SearchAThing.Loop.Intersect(System.Double, SearchAThing.Loop, System.Nullable<netDxf.DxfDocument>)
+  fullName.vb: SearchAThing.Loop.Intersect(System.Double, SearchAThing.Loop, System.Nullable(Of netDxf.DxfDocument))
+  nameWithType: Loop.Intersect(Double, Loop, Nullable<netDxf.DxfDocument>)
+  nameWithType.vb: Loop.Intersect(Double, Loop, Nullable(Of netDxf.DxfDocument))
 - uid: SearchAThing.Loop.Intersect*
   name: Intersect
   href: api/SearchAThing.Loop.html#SearchAThing_Loop_Intersect_
@@ -3306,6 +3361,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Loop.Tol
   nameWithType: Loop.Tol
+- uid: SearchAThing.Loop.ToString
+  name: ToString()
+  href: api/SearchAThing.Loop.html#SearchAThing_Loop_ToString
+  commentId: M:SearchAThing.Loop.ToString
+  fullName: SearchAThing.Loop.ToString()
+  nameWithType: Loop.ToString()
+- uid: SearchAThing.Loop.ToString*
+  name: ToString
+  href: api/SearchAThing.Loop.html#SearchAThing_Loop_ToString_
+  commentId: Overload:SearchAThing.Loop.ToString
+  isSpec: "True"
+  fullName: SearchAThing.Loop.ToString
+  nameWithType: Loop.ToString
 - uid: SearchAThing.LUT
   name: LUT
   href: api/SearchAThing.LUT.html
@@ -4695,6 +4763,19 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.DetectPlane
   nameWithType: SciExt.DetectPlane
+- uid: SearchAThing.SciExt.DisambiguatedPoints(SearchAThing.Vector3D,System.Double,SearchAThing.Vector3D)
+  name: DisambiguatedPoints(Vector3D, Double, Vector3D)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DisambiguatedPoints_SearchAThing_Vector3D_System_Double_SearchAThing_Vector3D_
+  commentId: M:SearchAThing.SciExt.DisambiguatedPoints(SearchAThing.Vector3D,System.Double,SearchAThing.Vector3D)
+  fullName: SearchAThing.SciExt.DisambiguatedPoints(SearchAThing.Vector3D, System.Double, SearchAThing.Vector3D)
+  nameWithType: SciExt.DisambiguatedPoints(Vector3D, Double, Vector3D)
+- uid: SearchAThing.SciExt.DisambiguatedPoints*
+  name: DisambiguatedPoints
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DisambiguatedPoints_
+  commentId: Overload:SearchAThing.SciExt.DisambiguatedPoints
+  isSpec: "True"
+  fullName: SearchAThing.SciExt.DisambiguatedPoints
+  nameWithType: SciExt.DisambiguatedPoints
 - uid: SearchAThing.SciExt.DistinctKeepOrder(IEnumerable{SearchAThing.Vector3D},SearchAThing.Vector3DEqualityComparer)
   name: DistinctKeepOrder(IEnumerable<Vector3D>, Vector3DEqualityComparer)
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_DistinctKeepOrder_IEnumerable_SearchAThing_Vector3D__SearchAThing_Vector3DEqualityComparer_
@@ -4860,24 +4941,24 @@ references:
   isSpec: "True"
   fullName: SearchAThing.SciExt.GeomCentroid
   nameWithType: SciExt.GeomCentroid
-- uid: SearchAThing.SciExt.Intersect(IEnumerable{SearchAThing.Geometry},System.Double,IEnumerable{SearchAThing.Geometry})
-  name: Intersect(IEnumerable<Geometry>, Double, IEnumerable<Geometry>)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Intersect_IEnumerable_SearchAThing_Geometry__System_Double_IEnumerable_SearchAThing_Geometry__
-  commentId: M:SearchAThing.SciExt.Intersect(IEnumerable{SearchAThing.Geometry},System.Double,IEnumerable{SearchAThing.Geometry})
-  name.vb: Intersect(IEnumerable(Of Geometry), Double, IEnumerable(Of Geometry))
-  fullName: SearchAThing.SciExt.Intersect(IEnumerable<SearchAThing.Geometry>, System.Double, IEnumerable<SearchAThing.Geometry>)
-  fullName.vb: SearchAThing.SciExt.Intersect(IEnumerable(Of SearchAThing.Geometry), System.Double, IEnumerable(Of SearchAThing.Geometry))
-  nameWithType: SciExt.Intersect(IEnumerable<Geometry>, Double, IEnumerable<Geometry>)
-  nameWithType.vb: SciExt.Intersect(IEnumerable(Of Geometry), Double, IEnumerable(Of Geometry))
-- uid: SearchAThing.SciExt.Intersect(IEnumerable{SearchAThing.Line3D},System.Double,SearchAThing.Line3D,SearchAThing.Line3DSegmentMode)
-  name: Intersect(IEnumerable<Line3D>, Double, Line3D, Line3DSegmentMode)
-  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Intersect_IEnumerable_SearchAThing_Line3D__System_Double_SearchAThing_Line3D_SearchAThing_Line3DSegmentMode_
-  commentId: M:SearchAThing.SciExt.Intersect(IEnumerable{SearchAThing.Line3D},System.Double,SearchAThing.Line3D,SearchAThing.Line3DSegmentMode)
-  name.vb: Intersect(IEnumerable(Of Line3D), Double, Line3D, Line3DSegmentMode)
-  fullName: SearchAThing.SciExt.Intersect(IEnumerable<SearchAThing.Line3D>, System.Double, SearchAThing.Line3D, SearchAThing.Line3DSegmentMode)
-  fullName.vb: SearchAThing.SciExt.Intersect(IEnumerable(Of SearchAThing.Line3D), System.Double, SearchAThing.Line3D, SearchAThing.Line3DSegmentMode)
-  nameWithType: SciExt.Intersect(IEnumerable<Line3D>, Double, Line3D, Line3DSegmentMode)
-  nameWithType.vb: SciExt.Intersect(IEnumerable(Of Line3D), Double, Line3D, Line3DSegmentMode)
+- uid: SearchAThing.SciExt.Intersect(IEnumerable{SearchAThing.Geometry},System.Double,IEnumerable{SearchAThing.Geometry},SearchAThing.GeomSegmentMode,SearchAThing.GeomSegmentMode)
+  name: Intersect(IEnumerable<Geometry>, Double, IEnumerable<Geometry>, GeomSegmentMode, GeomSegmentMode)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Intersect_IEnumerable_SearchAThing_Geometry__System_Double_IEnumerable_SearchAThing_Geometry__SearchAThing_GeomSegmentMode_SearchAThing_GeomSegmentMode_
+  commentId: M:SearchAThing.SciExt.Intersect(IEnumerable{SearchAThing.Geometry},System.Double,IEnumerable{SearchAThing.Geometry},SearchAThing.GeomSegmentMode,SearchAThing.GeomSegmentMode)
+  name.vb: Intersect(IEnumerable(Of Geometry), Double, IEnumerable(Of Geometry), GeomSegmentMode, GeomSegmentMode)
+  fullName: SearchAThing.SciExt.Intersect(IEnumerable<SearchAThing.Geometry>, System.Double, IEnumerable<SearchAThing.Geometry>, SearchAThing.GeomSegmentMode, SearchAThing.GeomSegmentMode)
+  fullName.vb: SearchAThing.SciExt.Intersect(IEnumerable(Of SearchAThing.Geometry), System.Double, IEnumerable(Of SearchAThing.Geometry), SearchAThing.GeomSegmentMode, SearchAThing.GeomSegmentMode)
+  nameWithType: SciExt.Intersect(IEnumerable<Geometry>, Double, IEnumerable<Geometry>, GeomSegmentMode, GeomSegmentMode)
+  nameWithType.vb: SciExt.Intersect(IEnumerable(Of Geometry), Double, IEnumerable(Of Geometry), GeomSegmentMode, GeomSegmentMode)
+- uid: SearchAThing.SciExt.Intersect(IEnumerable{SearchAThing.Line3D},System.Double,SearchAThing.Line3D,SearchAThing.GeomSegmentMode)
+  name: Intersect(IEnumerable<Line3D>, Double, Line3D, GeomSegmentMode)
+  href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Intersect_IEnumerable_SearchAThing_Line3D__System_Double_SearchAThing_Line3D_SearchAThing_GeomSegmentMode_
+  commentId: M:SearchAThing.SciExt.Intersect(IEnumerable{SearchAThing.Line3D},System.Double,SearchAThing.Line3D,SearchAThing.GeomSegmentMode)
+  name.vb: Intersect(IEnumerable(Of Line3D), Double, Line3D, GeomSegmentMode)
+  fullName: SearchAThing.SciExt.Intersect(IEnumerable<SearchAThing.Line3D>, System.Double, SearchAThing.Line3D, SearchAThing.GeomSegmentMode)
+  fullName.vb: SearchAThing.SciExt.Intersect(IEnumerable(Of SearchAThing.Line3D), System.Double, SearchAThing.Line3D, SearchAThing.GeomSegmentMode)
+  nameWithType: SciExt.Intersect(IEnumerable<Line3D>, Double, Line3D, GeomSegmentMode)
+  nameWithType.vb: SciExt.Intersect(IEnumerable(Of Line3D), Double, Line3D, GeomSegmentMode)
 - uid: SearchAThing.SciExt.Intersect*
   name: Intersect
   href: api/SearchAThing.SciExt.html#SearchAThing_SciExt_Intersect_
@@ -6667,12 +6748,12 @@ references:
   isSpec: "True"
   fullName: SearchAThing.Vector3D.GeomFrom
   nameWithType: Vector3D.GeomFrom
-- uid: SearchAThing.Vector3D.GeomIntersect(System.Double,SearchAThing.Geometry,System.Boolean)
-  name: GeomIntersect(Double, Geometry, Boolean)
-  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_GeomIntersect_System_Double_SearchAThing_Geometry_System_Boolean_
-  commentId: M:SearchAThing.Vector3D.GeomIntersect(System.Double,SearchAThing.Geometry,System.Boolean)
-  fullName: SearchAThing.Vector3D.GeomIntersect(System.Double, SearchAThing.Geometry, System.Boolean)
-  nameWithType: Vector3D.GeomIntersect(Double, Geometry, Boolean)
+- uid: SearchAThing.Vector3D.GeomIntersect(System.Double,SearchAThing.Geometry,SearchAThing.GeomSegmentMode,SearchAThing.GeomSegmentMode)
+  name: GeomIntersect(Double, Geometry, GeomSegmentMode, GeomSegmentMode)
+  href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_GeomIntersect_System_Double_SearchAThing_Geometry_SearchAThing_GeomSegmentMode_SearchAThing_GeomSegmentMode_
+  commentId: M:SearchAThing.Vector3D.GeomIntersect(System.Double,SearchAThing.Geometry,SearchAThing.GeomSegmentMode,SearchAThing.GeomSegmentMode)
+  fullName: SearchAThing.Vector3D.GeomIntersect(System.Double, SearchAThing.Geometry, SearchAThing.GeomSegmentMode, SearchAThing.GeomSegmentMode)
+  nameWithType: Vector3D.GeomIntersect(Double, Geometry, GeomSegmentMode, GeomSegmentMode)
 - uid: SearchAThing.Vector3D.GeomIntersect*
   name: GeomIntersect
   href: api/SearchAThing.Vector3D.html#SearchAThing_Vector3D_GeomIntersect_
