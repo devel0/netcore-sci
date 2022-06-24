@@ -336,3 +336,5 @@ coverage.json
 *.bak
 
 out.dxf
+
+~*.dxf
