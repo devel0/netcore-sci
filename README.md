@@ -28,8 +28,6 @@
 
 ## Build
 
-*Note*: To make netcore-util debuggable as code comment `PackageReference` and uncomment `ProjectReference` for corresponding netcore-util reference.
-
 ```sh
 mkdir ~/opensource
 git clone https://github.com/devel0/netcore-util.git
@@ -39,6 +37,9 @@ cd netcore-sci
 #git submodule update --init --recursive
 dotnet build
 ```
+
+:point_right: To make dependency netcore-util debuggable comment `PackageReference` and uncomment `ProjectReference` for corresponding netcore-util reference from [csproj](netcore-sci/netcore-sci.csproj)
+
 
 ## Examples
 
@@ -70,6 +71,8 @@ detect polygons ( line, arcs ) intersection loops when edges overlaps
 
 - [nuget package](https://www.nuget.org/packages/netcore-sci/)
 
+- [api](https://devel0.github.io/netcore-sci/html/namespace_search_a_thing.html)
+
 - [extension methods](https://devel0.github.io/netcore-sci/html/class_search_a_thing_1_1_sci_ext.html)
 
 ```csharp
@@ -82,99 +85,55 @@ using SearchAThing;
 using static SearchAThing.SciToolkit;
 ```
 
-#### create an example
+## Basic concepts
 
-From [examples](examples) follow [example_0001](examples/0001) can be created following these steps:
+### Side effects
 
-- create console project
+If not explicitly described in function documentation with a declaration of `(side effects)` all netcore-sci classes operates without side effects on the object.
 
-```sh
-dotnet new console -n example_0001
-cd example_0001
-```
-
-- add reference to netcore-sci ( check latest version [here](https://www.nuget.org/packages/netcore-sci/) )
-
-```sh
-dotnet add package netcore-sci
-```
-
-**optional** if prefer to link source code directly to stepin with debugger add project reference instead
-
-```sh
-dotnet add reference ../../netcore-sci/netcore-sci.csproj
-```
-
-- setup example code
-
+For example:
 ```csharp
-using static System.Math;
-using SearchAThing;
-
-namespace test
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            var tol = 1e-8;
-            var R = 100;
-
-            var dxf = new netDxf.DxfDocument();
-            var ang = 0d;
-            var angStep = 10d.ToRad();
-            var angElev = 20d.ToRad();
-
-            var o = Vector3D.Zero;
-            var p = new Vector3D(R, 0, 0);
-
-            Circle3D circ = null;
-
-            while (ang < 2 * PI)
-            {
-                var l = new Line3D(o, p.RotateAboutZAxis(ang));
-                var l_ent = l.DxfEntity;
-                l_ent.Color = netDxf.AciColor.Cyan;
-                dxf.AddEntity(l_ent);
-
-                var arcCS = new CoordinateSystem3D(o, l.V, Vector3D.ZAxis);
-                var arc = new Arc3D(tol, arcCS, R, 0, angElev);
-                var arc_ent = arc.DxfEntity;
-                arc_ent.Color = netDxf.AciColor.Yellow;
-                dxf.AddEntity(arc_ent);
-
-                var arc2CS = new CoordinateSystem3D(l.To - R * Vector3D.ZAxis,
-                    Vector3D.ZAxis, Vector3D.Zero - l.To);
-                var arc2 = new Arc3D(tol, arc2CS, R, 0, PI / 2);
-                var arc2_ent = arc2.DxfEntity;
-                arc2_ent.Color = netDxf.AciColor.Green;
-                dxf.AddEntity(arc2_ent);
-
-                if (circ == null)
-                {
-                    circ = new Circle3D(tol,
-                        CoordinateSystem3D.WCS.Move(Vector3D.ZAxis * arc.To.Z),
-                        arc.To.Distance2D(Vector3D.Zero));
-                    var circ_ent = circ.DxfEntity;
-                    circ_ent.Color = netDxf.AciColor.Yellow;
-                    dxf.AddEntity(circ_ent);
-                }
-
-                ang += angStep;
-            }
-
-            dxf.Viewport.ShowGrid = false;
-            dxf.Save("output.dxf", isBinary: true);
-        }
-    }
-}
+Vector3D a(1, 2, 3);
+var b = a.SetX(10);
 ```
 
-- execute
+The vector a created with X:1, Y:2, Z:3 will subjected to a SetX(10) but the vector a itself not changed; instead it returns a new instance with X:10, Y:2, Z:3.
 
-```sh
-dotnet run
-```
+### Tolerances
+
+- any function in this library that involves some test of comparision between numbers requires as first argument a tolerance parameter
+- the tolerance depends on the domain application you are working on, for example if you work on mm lengths then a 1e-1 could enogh
+- when working with normalized vector3d regardless of the domain application the constant `NormalizedLengthTolerance` should used ( if has a 1e-4 default value that is enough to work with double and floats )
+- note that the tolerance doesn't influence for example in how accurate is the result of an intersection because the value if computed with maximum resolution doubles provides; tolerance are used only when tests ( EqualsTol, ... ) used in internal algorithm to make decisions.
+
+### Vector3D
+
+- used to represent 3d coordinate ( X, Y, Z ) but used also to keep dummy 2d coordinate ( X, Y, 0 )
+- length of a vector3d is the distance of the point from origin
+
+### Line3D
+
+- defined by a From vector3d ( line application point ) and an extension from there through vector V
+- To is defined as From + V
+- line3d can be created giving (From, To) or (From, V) if specify the overriden method with Line3DConstructMode.PointAndVector
+- extension methods allow to create line from a vector p and using
+  - p.LineTo(Vector3D to)
+  - p.LineV(Vector3D v) : To = p+v
+  - p.LineDir(Vector3D dir, double len) : To = p+dir*len
+- line3d represent an infine line, semiline or segment depending on the usage, for example intersect method allow to specify the behavior ( default: infinite lines )
+
+### Arc3D
+
+- circle3d inherit from arc3d
+- arc is defined in the range [AngleFrom, AngleTo] rotating right-hand over its coordinate system zaxis
+- arc angles are normalized in the range [0, 2pi)
+
+### CoordinateSystem3D
+
+- defined by vector3d origin, basex, basey, basez
+- origin is used in vectro3d ToUCS(), ToWCS() methods to translate between different ucs origins ( WCS origin is 0,0,0 )
+- basex,y,z are 3 vector3d vectors linearly independant
+- cs can be built in various manners, for example by giving an origin and a single vector3D (the normal) then by using an arbitrary axis algorithm it detects appropriate x-y axes. ( used in dxf for example because allow to save 1 vector3d; other methods allow to build cs by giving an origin and two vectors v1, v2 by specifying a SmartCsMode to instruct the wizard on how to consider these in relationship ( normally the smart mode X_YQ consider that v1 is the wanted X axis while v2 is in the xy plane and must not be parallel to the first v1; to obtain a numerical stable cs the angle v1,v2 should near to PI/2 but this depend on the application you are working on, in some cases 5-10deg could enough to compute the normal, then yaxis will be back computed from the z cross x ).
 
 ## Unit tests
 
