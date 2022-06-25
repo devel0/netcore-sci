@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['yaxis_548',['YAxis',['../class_search_a_thing_1_1_vector3_d.html#a979fee565f94ea50e8c96b7b030290cf',1,'SearchAThing::Vector3D']]],
-  ['yaxisline_549',['YAxisLine',['../class_search_a_thing_1_1_line3_d.html#a50b04f22d61a23344faf4513085b669a',1,'SearchAThing::Line3D']]],
-  ['yz_550',['YZ',['../class_search_a_thing_1_1_coordinate_system3_d.html#acb60f1403a73d84d55873f5ce673599b',1,'SearchAThing.CoordinateSystem3D.YZ()'],['../class_search_a_thing_1_1_plane3_d.html#aac6c6d5bc851ffa029c93a615aa55367',1,'SearchAThing.Plane3D.YZ()']]]
+  ['variance_666',['Variance',['../struct_search_a_thing_1_1_numbers_stat_nfo.html#ac49f81b0767f1dee5cedcff89ebd201d',1,'SearchAThing::NumbersStatNfo']]],
+  ['variancep_667',['VarianceP',['../struct_search_a_thing_1_1_numbers_stat_nfo.html#a05d1c9fe767aadaad88d05446c76d46f',1,'SearchAThing::NumbersStatNfo']]]
 ];

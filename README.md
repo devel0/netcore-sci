@@ -4,7 +4,7 @@
 
 .NET core sci
 
-- [API Documentation](https://devel0.github.io/netcore-sci/api/SearchAThing.html)
+- [API Documentation](https://devel0.github.io/netcore-sci/html/namespace_search_a_thing.html)
 - [Changelog](https://github.com/devel0/netcore-sci/commits/master)
 
 **note** : from v2.0.0 some tk parts were removed ( look at [v1.30](https://github.com/devel0/netcore-sci/tree/980868dd4c6b64bcccd108df90d99bb77a0cf076) for these )
@@ -70,13 +70,13 @@ detect polygons ( line, arcs ) intersection loops when edges overlaps
 
 - [nuget package](https://www.nuget.org/packages/netcore-sci/)
 
-- [extension methods](https://devel0.github.io/netcore-sci/api/SearchAThing.SciExt.html)
+- [extension methods](https://devel0.github.io/netcore-sci/html/class_search_a_thing_1_1_sci_ext.html)
 
 ```csharp
 using SearchAThing;
 ```
 
-- [toolkit methods](https://devel0.github.io/netcore-sci/api/SearchAThing.SciToolkit.html)
+- [toolkit methods](https://devel0.github.io/netcore-sci/html/class_search_a_thing_1_1_sci_toolkit.html)
 
 ```csharp
 using static SearchAThing.SciToolkit;
