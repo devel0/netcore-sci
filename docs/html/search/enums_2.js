@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['geometrytype_682',['GeometryType',['../namespace_search_a_thing.html#a1b753fd9c2659910ca1a042a05b56be6',1,'SearchAThing']]],
-  ['geomsegmentmode_683',['GeomSegmentMode',['../namespace_search_a_thing.html#aa4f8b8bbc5743963ccc53bbbe04e5b99',1,'SearchAThing']]]
+  ['geometrytype_688',['GeometryType',['../namespace_search_a_thing.html#a1b753fd9c2659910ca1a042a05b56be6',1,'SearchAThing']]],
+  ['geomsegmentmode_689',['GeomSegmentMode',['../namespace_search_a_thing.html#aa4f8b8bbc5743963ccc53bbbe04e5b99',1,'SearchAThing']]]
 ];

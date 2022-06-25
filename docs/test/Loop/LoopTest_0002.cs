@@ -46,35 +46,35 @@ namespace SearchAThing.Sci.Tests
 
             // cyan-green
 
+            // var outtmp = new DxfDocument();
+
             var loops = loopCyan.Intersect(tol, loopGreen).ToList();
 
             Assert.True(loops.Count == 2);
-            Assert.True(loops[0].Area.EqualsTol(tol, 56.42492663));
-            Assert.True(loops[1].Area.EqualsTol(tol, 360.04194237));
+            loops[0].Area.AssertEqualsTol(tol, 56.42492663);
+            loops[1].Area.AssertEqualsTol(tol, 360.04194237);
 
             // green-cyan
 
             loops = loopGreen.Intersect(tol, loopCyan).ToList();
 
             Assert.True(loops.Count == 2);
-            Assert.True(loops[0].Area.EqualsTol(tol, 56.42492663));
-            Assert.True(loops[1].Area.EqualsTol(tol, 360.04194237));
+            loops[0].Area.AssertEqualsTol(tol, 56.42492663);
+            loops[1].Area.AssertEqualsTol(tol, 360.04194237);
 
-            // green-yellow            
-
-            //            var outtmp = new DxfDocument();
+            // green-yellow                        
 
             loops = loopGreen.Intersect(tol, loopYellow).ToList();
 
             Assert.True(loops.Count == 1);
-            Assert.True(loops[0].Area.EqualsTol(tol, 563.78939052));
+            loops[0].Area.AssertEqualsTol(tol, 563.78939052);
 
             // yellow-green
 
             loops = loopYellow.Intersect(tol, loopGreen).ToList();
 
             Assert.True(loops.Count == 1);
-            Assert.True(loops[0].Area.EqualsTol(tol, 563.78939052));
+            loops[0].Area.AssertEqualsTol(tol, 563.78939052);
 
             // outtmp.DrawingVariables.PdMode = netDxf.Header.PointShape.CircleCross;
             // outtmp.Viewport.ShowGrid = false;

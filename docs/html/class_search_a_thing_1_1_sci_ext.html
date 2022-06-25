@@ -78,7 +78,7 @@ Collaboration diagram for SciExt:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_search_a_thing_1_1_sci_ext__coll__graph.png" border="0" usemap="#a_sci_ext_coll__map" alt="Collaboration graph"/></div>
 <map name="a_sci_ext_coll__map" id="a_sci_ext_coll__map">
-<area shape="rect" title=" " alt="" coords="5,124,68,151"/>
+<area shape="rect" title=" " alt="" coords="5,139,68,165"/>
 <area shape="rect" title=" " alt="" coords="7,5,66,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -207,6 +207,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a85101420346cdb859ec0f0b42ab5cd9b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a85101420346cdb859ec0f0b42ab5cd9b">DetectPlane</a> (this IEnumerable&lt; <a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a> &gt; edges, double tol)</td></tr>
 <tr class="separator:a85101420346cdb859ec0f0b42ab5cd9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64cf1c14837bb73a0abee02cb4df10c4"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a64cf1c14837bb73a0abee02cb4df10c4">CheckSense</a> (this IEnumerable&lt; <a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a> &gt; edges, double tol)</td></tr>
+<tr class="memdesc:a64cf1c14837bb73a0abee02cb4df10c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">from given set of edges returns the same set eventually toggling sense of edges to make them glue so that SGeomTo of previous equals SGeomFrom of current. it can raise exception if there isn't availability to glue edges regardless toggling their sense. first element will toggled to match second one, then other elements will follow the sense matching established.  <a href="class_search_a_thing_1_1_sci_ext.html#a64cf1c14837bb73a0abee02cb4df10c4">More...</a><br /></td></tr>
 <tr class="separator:a64cf1c14837bb73a0abee02cb4df10c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb9054e6731c764f1ae86bdaa99da5ba"><td class="memItemLeft" align="right" valign="top">static Span&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#afb9054e6731c764f1ae86bdaa99da5ba">ToSpan</a> (this Matrix4x4 m)</td></tr>
 <tr class="memdesc:afb9054e6731c764f1ae86bdaa99da5ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve memory contiguous representation of Matrix4x4. If want to use direct array struct fields are taken in byname sort check with ObjectLayoutInspector utility ( <a href="https://github.com/SergeyTeplyakov/ObjectLayoutInspector">https://github.com/SergeyTeplyakov/ObjectLayoutInspector</a> )  <a href="class_search_a_thing_1_1_sci_ext.html#afb9054e6731c764f1ae86bdaa99da5ba">More...</a><br /></td></tr>
@@ -421,6 +422,9 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
+<tr class="memitem:a2882f3b5a4004c4ca3918211c0a2f396"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a2882f3b5a4004c4ca3918211c0a2f396">needToggleSenseThis</a></td></tr>
+<tr class="memdesc:a2882f3b5a4004c4ca3918211c0a2f396"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if this and/or next given edge need to be toggled in their sense to allow glueing. precedence is given to toggling sense of the next one. returns null if no solution.  <a href="class_search_a_thing_1_1_sci_ext.html#a2882f3b5a4004c4ca3918211c0a2f396">More...</a><br /></td></tr>
+<tr class="separator:a2882f3b5a4004c4ca3918211c0a2f396"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f2ba6bf62b25f78c43abfff2a05a5a8"><td class="memItemLeft" align="right" valign="top">static Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a2f2ba6bf62b25f78c43abfff2a05a5a8">translation</a></td></tr>
 <tr class="memdesc:a2f2ba6bf62b25f78c43abfff2a05a5a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">decompose given 4x4 matrix into scale, rotation, translation  <a href="class_search_a_thing_1_1_sci_ext.html#a2f2ba6bf62b25f78c43abfff2a05a5a8">More...</a><br /></td></tr>
 <tr class="separator:a2f2ba6bf62b25f78c43abfff2a05a5a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1342,6 +1346,10 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>from given set of edges returns the same set eventually toggling sense of edges to make them glue so that SGeomTo of previous equals SGeomFrom of current. it can raise exception if there isn't availability to glue edges regardless toggling their sense. first element will toggled to match second one, then other elements will follow the sense matching established. </p>
+<p><br  />
+ </p>
 
 </div>
 </div>
@@ -5198,6 +5206,32 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a2882f3b5a4004c4ca3918211c0a2f396"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2882f3b5a4004c4ca3918211c0a2f396">&#9670;&nbsp;</a></span>needToggleSenseThis</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool needToggleSenseThis</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>states if this and/or next given edge need to be toggled in their sense to allow glueing. precedence is given to toggling sense of the next one. returns null if no solution. </p>
+<p><br  />
+ </p>
+
+</div>
+</div>
 <a id="a348186c87fd8e36f1be6117710cfd185"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a348186c87fd8e36f1be6117710cfd185">&#9670;&nbsp;</a></span>off</h2>
 
@@ -5256,6 +5290,7 @@ Static Public Attributes</h2></td></tr>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>netcore-sci/Arc3D.cs</li>
+<li>netcore-sci/IEdge.cs</li>
 <li>netcore-sci/Matrix4Ext.cs</li>
 <li>netcore-sci/Number.cs</li>
 <li>netcore-sci/BBox3D.cs</li>
