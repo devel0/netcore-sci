@@ -1,6 +1,7 @@
 using System;
 using System.Numerics;
 using System.Text;
+using netDxf.Tables;
 using static System.Math;
 using static SearchAThing.SciToolkit;
 
@@ -337,6 +338,8 @@ namespace SearchAThing
             return new Line3D(i1, i2);
         }
 
+        public UCS ToDxfUCS(string name) => new UCS(name, Origin, BaseX, BaseY);
+
         /// <summary>
         /// debug string
         /// </summary>
@@ -377,14 +380,6 @@ namespace SearchAThing
     public static partial class SciExt
     {
 
-        /// <summary>
-        /// wcs coord of projected coord to the given cs
-        /// </summary>
-        /// <param name="v">wcs point</param>
-        /// <param name="cs">cs to project</param>
-        /// <param name="evalCSOrigin">if true cs origin will subtracted before transform, then readded to obtain wcs point</param>                        
-        public static Vector3D Project(this Vector3D v, CoordinateSystem3D cs, bool evalCSOrigin = true) =>
-            v.ToUCS(cs, evalCSOrigin).Set(OrdIdx.Z, 0).ToWCS(cs, evalCSOrigin);
 
     }
 

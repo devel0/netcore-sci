@@ -493,6 +493,14 @@ namespace SearchAThing
 
         }
 
+        /// <summary>
+        /// create an hatch from given loop, pattern
+        /// </summary>        
+        public netDxf.Entities.Hatch ToHatch(double tol, HatchPattern pattern, bool associative = true) =>
+            Edges.Cast<Geometry>().ToHatch(tol, pattern, associative);
+
+        public LwPolyline ToLwPolyline(double tol) => Edges.Cast<Geometry>().ToLwPolyline(tol);
+
         public override string ToString()
         {
             return $"Edges:{Edges.Count}";
@@ -502,13 +510,6 @@ namespace SearchAThing
 
     public static partial class SciExt
     {
-
-        public static netDxf.Entities.Hatch ToHatch(this Loop loop, double tol,
-            HatchPattern pattern, bool associative = true) =>
-            loop.Edges.Cast<Geometry>().ToHatch(tol, pattern, associative);
-
-        public static LwPolyline ToLwPolyline(this Loop loop, double tol) =>
-            loop.Edges.Cast<Geometry>().ToLwPolyline(tol);
 
         public static Plane3D DetectPlane(this IEnumerable<IEdge> edges, double tol)
         {

@@ -840,6 +840,8 @@ namespace SearchAThing
             return new Line3D(ip, c, Line3DConstructMode.PointAndVector);
         }
 
+        public Line ToLine() => new Line(From, To);
+
     }
 
     public class Line3DEqualityComparer : IEqualityComparer<Line3D>

@@ -336,6 +336,13 @@ namespace SearchAThing
                 Max + margin
             });
 
+
+        public IEnumerable<Face3d> ToFace3DList()
+        {
+            var d = Max - Min;
+            return Cuboid((Max + Min) / 2, d);
+        }
+
         /// <summary>
         /// script to paste in cad to draw bbox
         /// </summary>
@@ -345,23 +352,9 @@ namespace SearchAThing
             {
                 var sb = new StringBuilder();
 
-                var coords = Coords3D.ToList();
-
+                foreach (var x in ToFace3DList())
                 {
-                    var q = coords.Take(4).ToList();
-                    q.Add(q[0]);
-                    sb.Append(q.CadScriptPolyline());
-                }
-
-                for (int i = 0; i < 4; ++i)
-                {
-                    sb.AppendLine(new Line3D(coords[i], coords[i + 4]).CadScript);
-                }
-
-                {
-                    var q = coords.Skip(4).ToList();
-                    q.Add(q[0]);
-                    sb.Append(q.CadScriptPolyline());
+                    sb.AppendLine(x.CadScript());
                 }
 
                 return PostProcessCadScript(sb.ToString());
@@ -445,6 +438,15 @@ namespace SearchAThing
                 var ip = ray.Intersect(tol, face.Plane);
                 if (ip != null && face.Contains(tol, ip)) yield return ip;
             }
+        }
+
+        public IEnumerable<Face3d> DrawCuboid(DxfObject dxfObj, Layer layer = null)
+        {
+            var ents = ToFace3DList().ToList();
+
+            dxfObj.AddEntities(ents, layer);
+
+            return ents;
         }
 
         /// <summary>
@@ -551,38 +553,6 @@ namespace SearchAThing
             }
 
             return bbox;
-        }
-
-        /// <summary>
-        /// create a text ready to paste in cad to generate corresponding bbox
-        /// </summary>
-        /// <param name="bbox">bbox for which generate cadscript</param>
-        /// <returns>cadscript of given bbox</returns>
-        public static string CadScript(this BBox3D bbox)
-        {
-            var sb = new StringBuilder();
-
-            foreach (var x in bbox.ToFace3DList())
-            {
-                sb.AppendLine(x.CadScript());
-            }
-
-            return PostProcessCadScript(sb.ToString());
-        }
-
-        public static IEnumerable<Face3d> ToFace3DList(this BBox3D bbox)
-        {
-            var d = bbox.Max - bbox.Min;
-            return Cuboid((bbox.Max + bbox.Min) / 2, d);
-        }
-
-        public static IEnumerable<Face3d> DrawCuboid(this BBox3D bbox, DxfObject dxfObj, Layer layer = null)
-        {
-            var ents = bbox.ToFace3DList().ToList();
-
-            dxfObj.AddEntities(ents, layer);
-
-            return ents;
         }
 
         public static IEnumerable<Vector3D> Points(this EntityObject eo)

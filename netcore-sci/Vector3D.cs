@@ -451,7 +451,8 @@ namespace SearchAThing
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0016.cs)
         /// ![image](../test/Vector3D/Vector3DTest_0016.png)
         /// </remarks>
-        public double Distance2D(Vector3D other) => Sqrt((X - other.X) * (X - other.X) + (Y - other.Y) * (Y - other.Y));
+        public double Distance2D(Vector3D other) =>
+            Sqrt((X - other.X) * (X - other.X) + (Y - other.Y) * (Y - other.Y));
 
         /// <summary>
         /// compute dot product of this vector for the given one            
@@ -548,6 +549,15 @@ namespace SearchAThing
         /// <param name="line">line to project the point onto</param>
         /// <returns>projected point onto the line ( perpendicularly )</returns>
         public Vector3D Project(Line3D line) => (this - line.From).Project(line.V) + line.From;
+
+        /// <summary>
+        /// wcs coord of projected coord to the given cs
+        /// </summary>
+        /// <param name="v">wcs point</param>
+        /// <param name="cs">cs to project</param>
+        /// <param name="evalCSOrigin">if true cs origin will subtracted before transform, then readded to obtain wcs point</param>                        
+        public Vector3D Project(CoordinateSystem3D cs, bool evalCSOrigin = true) =>
+            ToUCS(cs, evalCSOrigin).Set(OrdIdx.Z, 0).ToWCS(cs, evalCSOrigin);
 
         /// <summary>
         /// create a point copy of this one with component changed
@@ -1113,6 +1123,90 @@ namespace SearchAThing
         public static implicit operator QuantumConcepts.Formats.StereoLithography.Vertex(Vector3D v) =>
             new QuantumConcepts.Formats.StereoLithography.Vertex((float)v.X, (float)v.Y, (float)v.Z);
 
+
+        /// <summary>
+        /// convert to (netdxf) discarding z
+        /// </summary>
+        public netDxf.Vector2 ToDxfVector2() => new netDxf.Vector2(X, Y);
+
+        /// <summary>
+        /// convert to (system.numerics) Vector2 ( casting double to float, discarding z )
+        /// </summary>
+        public System.Numerics.Vector2 ToVector2() => new System.Numerics.Vector2((float)X, (float)Y);
+
+        /// <summary>
+        /// To point (double x, double y)
+        /// </summary>        
+        public Point ToPoint() => new Point(X, Y, 0);
+
+        /// <summary>
+        /// create dxf point from given vector3d
+        /// </summary>        
+        public netDxf.Entities.Point ToDxfPoint() => new netDxf.Entities.Point(new Vector3(X, Y, Z));
+
+        /// <summary>
+        /// convert xyz from deg to rad
+        /// </summary>
+        /// <param name="v">xyz deg angles</param>
+        /// <returns>xyz rad angles</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Vector3D ToRad() => new Vector3D(X.ToRad(), Y.ToRad(), Z.ToRad());
+
+        /// <summary>
+        /// convert xyz from rad to deg
+        /// </summary>
+        /// <param name="v">xyz rad angles</param>
+        /// <returns>xyz deg angles</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Vector3D ToDeg() => new Vector3D(X.ToDeg(), Y.ToDeg(), Z.ToDeg());
+
+        /// <summary>
+        /// debug to console with optional prefix
+        /// </summary>
+        /// <param name="v">vector</param>
+        /// <param name="prefix">optional prefix</param>
+        /// <returns>vector</returns>
+        public Vector3D Debug(string prefix = "")
+        {
+            System.Diagnostics.Debug.WriteLine($"{(prefix.Length > 0 ? ($"{prefix}:") : "")}{this}");
+            return this;
+        }
+
+        /// <summary>
+        /// compute (Abs(v.x), Abs(v.y), Abs(v.z))
+        /// </summary>
+        /// <param name="v">input vector</param>
+        /// <returns>abs(v)</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Vector3D Abs() => new Vector3D(Math.Abs(X), Math.Abs(Y), Math.Abs(Z));
+
+        /// <summary>
+        /// compute (Sign(v.x), Sign(v.y), Sign(v.z))
+        /// </summary>
+        /// <param name="v">input vector</param>
+        /// <returns>sign(v)</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Vector3D Sign() => new Vector3D(Math.Sign(X), Math.Sign(Y), Math.Sign(Z));
+
+        /// <summary>
+        /// returns p1 and p2 if one of the p1 coords are less than corresponding p2 coords ;
+        /// elsewhere returns p2 and p1.
+        /// Useful to obtain the same sequence order independant from order of operands.
+        /// </summary>        
+        public IEnumerable<Vector3D> DisambiguatedPoints(double tol, Vector3D other)
+        {
+            if (X.LessThanTol(tol, other.X) || Y.LessThanTol(tol, other.Y) || Z.LessThanTol(tol, other.Z))
+            {
+                yield return this;
+                yield return other;
+            }
+            else
+            {
+                yield return other;
+                yield return this;
+            }
+        }
+
     }
 
     public class Vector3DEqualityComparer : IEqualityComparer<Vector3D>
@@ -1363,21 +1457,6 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// convert to (netdxf) discarding z
-        /// </summary>
-        public static netDxf.Vector2 ToDxfVector2(this Vector3D v) => new netDxf.Vector2(v.X, v.Y);
-
-        /// <summary>
-        /// convert to (system.numerics) Vector2 ( casting double to float, discarding z )
-        /// </summary>
-        public static System.Numerics.Vector2 ToVector2(this Vector3D v) => new System.Numerics.Vector2((float)v.X, (float)v.Y);
-
-        /// <summary>
-        /// To point (double x, double y)
-        /// </summary>        
-        public static Point ToPoint(this Vector3D v) => new Point(v.X, v.Y, 0);
-
-        /// <summary>
         /// return pts (maintaining order) w/out duplicates
         /// use the other overloaded method if already have a vector 3d equality comparer
         /// </summary>        
@@ -1523,12 +1602,6 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// create dxf point from given vector3d
-        /// </summary>        
-        public static netDxf.Entities.Point ToDxfPoint(this Vector3D pt) =>
-            new netDxf.Entities.Point(new Vector3(pt.X, pt.Y, pt.Z));
-
-        /// <summary>
         /// states if given 3 vectors are linearly independent        
         /// </summary>            
         /// <returns>true if given vector are linearly independent</returns>
@@ -1559,58 +1632,6 @@ namespace SearchAThing
 
             return !m.Determinant().EqualsAutoTol(0);
         }
-
-        /// <summary>
-        /// convert xyz from deg to rad
-        /// </summary>
-        /// <param name="v">xyz deg angles</param>
-        /// <returns>xyz rad angles</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector3D ToRad(this Vector3D v) => new Vector3D(v.X.ToRad(), v.Y.ToRad(), v.Z.ToRad());
-
-        /// <summary>
-        /// convert xyz from rad to deg
-        /// </summary>
-        /// <param name="v">xyz rad angles</param>
-        /// <returns>xyz deg angles</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector3D ToDeg(this Vector3D v) => new Vector3D(v.X.ToDeg(), v.Y.ToDeg(), v.Z.ToDeg());
-
-        /// <summary>
-        /// debug to console with optional prefix
-        /// </summary>
-        /// <param name="v">vector</param>
-        /// <param name="prefix">optional prefix</param>
-        /// <returns>vector</returns>
-        public static Vector3D Debug(this Vector3D v, string prefix = "")
-        {
-            System.Diagnostics.Debug.WriteLine($"{(prefix.Length > 0 ? ($"{prefix}:") : "")}{v}");
-            return v;
-        }
-
-        /// <summary>
-        /// compute (Sqrt(v.x), Sqrt(v.y), Sqrt(v.z))
-        /// </summary>
-        /// <param name="v">input vector</param>
-        /// <returns>sqrt(v)</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector3D Sqrt(this Vector3D v) => new Vector3D(Math.Sqrt(v.X), Math.Sqrt(v.Y), Math.Sqrt(v.Z));
-
-        /// <summary>
-        /// compute (Abs(v.x), Abs(v.y), Abs(v.z))
-        /// </summary>
-        /// <param name="v">input vector</param>
-        /// <returns>abs(v)</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector3D Abs(this Vector3D v) => new Vector3D(Math.Abs(v.X), Math.Abs(v.Y), Math.Abs(v.Z));
-
-        /// <summary>
-        /// compute (Sign(v.x), Sign(v.y), Sign(v.z))
-        /// </summary>
-        /// <param name="v">input vector</param>
-        /// <returns>sign(v)</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector3D Sign(this Vector3D v) => new Vector3D(Math.Sign(v.X), Math.Sign(v.Y), Math.Sign(v.Z));
 
         /// <summary>
         /// detect best fitting plane for given set of coplanar points
@@ -1671,52 +1692,12 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// returns p1 and p2 if one of the p1 coords are less than corresponding p2 coords ;
-        /// elsewhere returns p2 and p1.
-        /// Useful to obtain the same sequence order independant from order of operands.
-        /// </summary>        
-        public static IEnumerable<Vector3D> DisambiguatedPoints(this Vector3D p1, double tol, Vector3D p2)
-        {
-            if (p1.X.LessThanTol(tol, p2.X) || p1.Y.LessThanTol(tol, p2.Y) || p1.Z.LessThanTol(tol, p2.Z))
-            {
-                yield return p1;
-                yield return p2;
-            }
-            else
-            {
-                yield return p2;
-                yield return p1;
-            }
-        }
-
-    }
-
-    public static partial class SciToolkit
-    {
-
-        /// <summary>
         /// compute (Sqrt(v.x), Sqrt(v.y), Sqrt(v.z))
         /// </summary>
         /// <param name="v">input vector</param>
         /// <returns>sqrt(v)</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector3D Sqrt(Vector3D v) => v.Sqrt();
-
-        /// <summary>
-        /// compute (Abs(v.x), Abs(v.y), Abs(v.z))
-        /// </summary>
-        /// <param name="v">input vector</param>
-        /// <returns>abs(v)</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector3D Abs(Vector3D v) => v.Abs();
-
-        /// <summary>
-        /// compute (Sign(v.x), Sign(v.y), Sign(v.z))
-        /// </summary>
-        /// <param name="v">input vector</param>
-        /// <returns>sign(v)</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector3D Sign(Vector3D v) => v.Sign();
+        public static Vector3D Sqrt(this Vector3D v) => new Vector3D(Math.Sqrt(v.X), Math.Sqrt(v.Y), Math.Sqrt(v.Z));
 
     }
 
