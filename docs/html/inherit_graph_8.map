@@ -1,8 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_search_a_thing_1_1_geometry.html" title=" " alt="" coords="5,81,184,108"/>
-<area shape="rect" id="node2" href="$class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities" alt="" coords="242,31,395,57"/>
-<area shape="rect" id="node4" href="$class_search_a_thing_1_1_line3_d.html" title=" " alt="" coords="239,81,398,108"/>
-<area shape="rect" id="node5" href="$class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin" alt="" coords="232,132,405,159"/>
-<area shape="rect" id="node3" href="$class_search_a_thing_1_1_circle3_d.html" title=" " alt="" coords="453,5,623,32"/>
-<area shape="rect" id="node6" href="$interface_search_a_thing_1_1_i_edge.html" title=" " alt="" coords="19,31,170,57"/>
-</map>
