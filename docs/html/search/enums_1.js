@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['edgetype_681',['EdgeType',['../namespace_search_a_thing.html#afc47e436dbcd7bc35fbb7b1c6f215b0a',1,'SearchAThing']]]
+  ['edgetype_681',['EdgeType',['../namespace_search_a_thing.html#a424a64da753a3cd5e96ab8d0553a04c4',1,'SearchAThing']]]
 ];

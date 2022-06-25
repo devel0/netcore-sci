@@ -1,5 +1,5 @@
-<map id="SearchAThing.Arc3D" name="SearchAThing.Arc3D">
-<area shape="rect" id="node1" title="base geometry for arc 3d entities" alt="" coords="20,80,173,107"/>
+<map id="Arc3D" name="Arc3D">
+<area shape="rect" id="node1" title="base geometry for arc 3d entities" alt="" coords="66,80,127,107"/>
 <area shape="rect" id="node2" href="$class_search_a_thing_1_1_geometry.html" title=" " alt="" coords="5,5,92,32"/>
 <area shape="rect" id="node3" href="$interface_search_a_thing_1_1_i_edge.html" title=" " alt="" coords="117,5,175,32"/>
 </map>

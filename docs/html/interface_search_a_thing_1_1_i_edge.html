@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>netcore-sci: SearchAThing.IEdge Interface Reference</title>
+<title>netcore-sci: IEdge Interface Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,66 +70,66 @@ $(function() {
 <a href="#properties">Properties</a> &#124;
 <a href="interface_search_a_thing_1_1_i_edge-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SearchAThing.IEdge Interface Reference</div>  </div>
+<div class="title">IEdge Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for SearchAThing.IEdge:</div>
+Inheritance diagram for IEdge:</div>
 <div class="dyncontent">
-<div class="center"><img src="interface_search_a_thing_1_1_i_edge__inherit__graph.png" border="0" usemap="#a_search_a_thing_8_i_edge_inherit__map" alt="Inheritance graph"/></div>
-<map name="a_search_a_thing_8_i_edge_inherit__map" id="a_search_a_thing_8_i_edge_inherit__map">
-<area shape="rect" title=" " alt="" coords="121,5,272,32"/>
-<area shape="rect" href="class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities" alt="" coords="5,80,159,107"/>
-<area shape="rect" href="class_search_a_thing_1_1_circle3_d.html" title=" " alt="" coords="55,155,224,181"/>
-<area shape="rect" href="class_search_a_thing_1_1_line3_d.html" title=" " alt="" coords="235,80,393,107"/>
+<div class="center"><img src="interface_search_a_thing_1_1_i_edge__inherit__graph.png" border="0" usemap="#a_i_edge_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_i_edge_inherit__map" id="a_i_edge_inherit__map">
+<area shape="rect" title=" " alt="" coords="75,5,133,32"/>
+<area shape="rect" href="class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities" alt="" coords="5,80,67,107"/>
+<area shape="rect" href="class_search_a_thing_1_1_circle3_d.html" title=" " alt="" coords="31,155,108,181"/>
+<area shape="rect" href="class_search_a_thing_1_1_line3_d.html" title=" " alt="" coords="141,80,208,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a14b01a19a1e7f1191d622d0e5c6b14f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a14b01a19a1e7f1191d622d0e5c6b14f7">ToggleSense</a> ()</td></tr>
-<tr class="memdesc:a14b01a19a1e7f1191d622d0e5c6b14f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">(side effect) Toggle Sense flag so that SGeomFrom, SGeomTo equals to GeomFrom, GeomTo (Sense:true) or GeomTo, GeomFrom (Sense:false)  <a href="interface_search_a_thing_1_1_i_edge.html#a14b01a19a1e7f1191d622d0e5c6b14f7">More...</a><br /></td></tr>
-<tr class="separator:a14b01a19a1e7f1191d622d0e5c6b14f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa895eaf44176be6e2655c45de51a7184"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#aa895eaf44176be6e2655c45de51a7184">EdgeContainsPoint</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> pt)</td></tr>
-<tr class="memdesc:aa895eaf44176be6e2655c45de51a7184"><td class="mdescLeft">&#160;</td><td class="mdescRight">States if edge contains given point on its perimeter  <a href="interface_search_a_thing_1_1_i_edge.html#aa895eaf44176be6e2655c45de51a7184">More...</a><br /></td></tr>
-<tr class="separator:aa895eaf44176be6e2655c45de51a7184"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35ab76d7fb2ab1529cdd773310bc9362"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a35ab76d7fb2ab1529cdd773310bc9362">Split</a> (double tol, IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; breaks)</td></tr>
-<tr class="memdesc:a35ab76d7fb2ab1529cdd773310bc9362"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split this edge into one or more geometries based on given breaks. <br  />
-  <a href="interface_search_a_thing_1_1_i_edge.html#a35ab76d7fb2ab1529cdd773310bc9362">More...</a><br /></td></tr>
-<tr class="separator:a35ab76d7fb2ab1529cdd773310bc9362"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7ab399ed0520c8a3a5dd564ac3e0a4e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#ab7ab399ed0520c8a3a5dd564ac3e0a4e">Equals</a> (double tol, <a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a> other, bool includeSense=false)</td></tr>
-<tr class="memdesc:ab7ab399ed0520c8a3a5dd564ac3e0a4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if this edge equals other  <a href="interface_search_a_thing_1_1_i_edge.html#ab7ab399ed0520c8a3a5dd564ac3e0a4e">More...</a><br /></td></tr>
-<tr class="separator:ab7ab399ed0520c8a3a5dd564ac3e0a4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f1d13869885023f1cb830dc2db4f0e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a0f1d13869885023f1cb830dc2db4f0e1">ToggleSense</a> ()</td></tr>
+<tr class="memdesc:a0f1d13869885023f1cb830dc2db4f0e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">(side effect) Toggle Sense flag so that SGeomFrom, SGeomTo equals to GeomFrom, GeomTo (Sense:true) or GeomTo, GeomFrom (Sense:false)  <a href="interface_search_a_thing_1_1_i_edge.html#a0f1d13869885023f1cb830dc2db4f0e1">More...</a><br /></td></tr>
+<tr class="separator:a0f1d13869885023f1cb830dc2db4f0e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a255404360363065fa3e8f8f4060158d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a255404360363065fa3e8f8f4060158d0">EdgeContainsPoint</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> pt)</td></tr>
+<tr class="memdesc:a255404360363065fa3e8f8f4060158d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">States if edge contains given point on its perimeter  <a href="interface_search_a_thing_1_1_i_edge.html#a255404360363065fa3e8f8f4060158d0">More...</a><br /></td></tr>
+<tr class="separator:a255404360363065fa3e8f8f4060158d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f8883020dc8f21c07e0f9251abbd48e"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a8f8883020dc8f21c07e0f9251abbd48e">Split</a> (double tol, IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; breaks)</td></tr>
+<tr class="memdesc:a8f8883020dc8f21c07e0f9251abbd48e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split this edge into one or more geometries based on given breaks. <br  />
+  <a href="interface_search_a_thing_1_1_i_edge.html#a8f8883020dc8f21c07e0f9251abbd48e">More...</a><br /></td></tr>
+<tr class="separator:a8f8883020dc8f21c07e0f9251abbd48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d3b0541b1f259038d79b5b2147b26b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a4d3b0541b1f259038d79b5b2147b26b1">Equals</a> (double tol, <a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a> other, bool includeSense=false)</td></tr>
+<tr class="memdesc:a4d3b0541b1f259038d79b5b2147b26b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if this edge equals other  <a href="interface_search_a_thing_1_1_i_edge.html#a4d3b0541b1f259038d79b5b2147b26b1">More...</a><br /></td></tr>
+<tr class="separator:a4d3b0541b1f259038d79b5b2147b26b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a0f0660bcfcdf2678a6a8f14146219c41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_search_a_thing.html#afc47e436dbcd7bc35fbb7b1c6f215b0a">EdgeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a0f0660bcfcdf2678a6a8f14146219c41">EdgeType</a><code> [get]</code></td></tr>
-<tr class="memdesc:a0f0660bcfcdf2678a6a8f14146219c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">type of edge  <a href="interface_search_a_thing_1_1_i_edge.html#a0f0660bcfcdf2678a6a8f14146219c41">More...</a><br /></td></tr>
-<tr class="separator:a0f0660bcfcdf2678a6a8f14146219c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3f0f2d5da5e83405f80ab90242a6ba9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#af3f0f2d5da5e83405f80ab90242a6ba9">Sense</a><code> [get]</code></td></tr>
-<tr class="memdesc:af3f0f2d5da5e83405f80ab90242a6ba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">allow to store info about sense; when false SGeomFrom = GeomTo and SGeomTo = GeomFrom  <a href="interface_search_a_thing_1_1_i_edge.html#af3f0f2d5da5e83405f80ab90242a6ba9">More...</a><br /></td></tr>
-<tr class="separator:af3f0f2d5da5e83405f80ab90242a6ba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7da7897ac78a7f08b248b6215f35eff0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a7da7897ac78a7f08b248b6215f35eff0">SGeomFrom</a><code> [get]</code></td></tr>
-<tr class="memdesc:a7da7897ac78a7f08b248b6215f35eff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">GeomFrom (Sense:true) or GeomTo (Sense:false)  <a href="interface_search_a_thing_1_1_i_edge.html#a7da7897ac78a7f08b248b6215f35eff0">More...</a><br /></td></tr>
-<tr class="separator:a7da7897ac78a7f08b248b6215f35eff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57c6d785201344c7623e993478720c9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a57c6d785201344c7623e993478720c9f">SGeomTo</a><code> [get]</code></td></tr>
-<tr class="memdesc:a57c6d785201344c7623e993478720c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">GeomTo (Sense:true) or GeomFrom (Sense:false)  <a href="interface_search_a_thing_1_1_i_edge.html#a57c6d785201344c7623e993478720c9f">More...</a><br /></td></tr>
-<tr class="separator:a57c6d785201344c7623e993478720c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd35b6d6f96e35666162740b87616579"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#afd35b6d6f96e35666162740b87616579">MidPoint</a><code> [get]</code></td></tr>
-<tr class="separator:afd35b6d6f96e35666162740b87616579"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfaa9a84a486ded879b68fa8c9a3cee2"><td class="memItemLeft" align="right" valign="top">netDxf.Entities.EntityObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#acfaa9a84a486ded879b68fa8c9a3cee2">DxfEntity</a><code> [get]</code></td></tr>
-<tr class="memdesc:acfaa9a84a486ded879b68fa8c9a3cee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve corresponding dxf entity to this edge  <a href="interface_search_a_thing_1_1_i_edge.html#acfaa9a84a486ded879b68fa8c9a3cee2">More...</a><br /></td></tr>
-<tr class="separator:acfaa9a84a486ded879b68fa8c9a3cee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c36fd6b30a15055862189b3daaec6f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_search_a_thing.html#a424a64da753a3cd5e96ab8d0553a04c4">EdgeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a8c36fd6b30a15055862189b3daaec6f3">EdgeType</a><code> [get]</code></td></tr>
+<tr class="memdesc:a8c36fd6b30a15055862189b3daaec6f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">type of edge  <a href="interface_search_a_thing_1_1_i_edge.html#a8c36fd6b30a15055862189b3daaec6f3">More...</a><br /></td></tr>
+<tr class="separator:a8c36fd6b30a15055862189b3daaec6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3308b0705226d8c9d91160c397788184"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a3308b0705226d8c9d91160c397788184">Sense</a><code> [get]</code></td></tr>
+<tr class="memdesc:a3308b0705226d8c9d91160c397788184"><td class="mdescLeft">&#160;</td><td class="mdescRight">allow to store info about sense; when false SGeomFrom = GeomTo and SGeomTo = GeomFrom  <a href="interface_search_a_thing_1_1_i_edge.html#a3308b0705226d8c9d91160c397788184">More...</a><br /></td></tr>
+<tr class="separator:a3308b0705226d8c9d91160c397788184"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b5a64511e0c468f9ca3b8a39afb77ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a8b5a64511e0c468f9ca3b8a39afb77ef">SGeomFrom</a><code> [get]</code></td></tr>
+<tr class="memdesc:a8b5a64511e0c468f9ca3b8a39afb77ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">GeomFrom (Sense:true) or GeomTo (Sense:false)  <a href="interface_search_a_thing_1_1_i_edge.html#a8b5a64511e0c468f9ca3b8a39afb77ef">More...</a><br /></td></tr>
+<tr class="separator:a8b5a64511e0c468f9ca3b8a39afb77ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cf08361c87f618e094a95e6e640332f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a7cf08361c87f618e094a95e6e640332f">SGeomTo</a><code> [get]</code></td></tr>
+<tr class="memdesc:a7cf08361c87f618e094a95e6e640332f"><td class="mdescLeft">&#160;</td><td class="mdescRight">GeomTo (Sense:true) or GeomFrom (Sense:false)  <a href="interface_search_a_thing_1_1_i_edge.html#a7cf08361c87f618e094a95e6e640332f">More...</a><br /></td></tr>
+<tr class="separator:a7cf08361c87f618e094a95e6e640332f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d6e7323a9b2b24def6dc907390d5c53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a3d6e7323a9b2b24def6dc907390d5c53">MidPoint</a><code> [get]</code></td></tr>
+<tr class="separator:a3d6e7323a9b2b24def6dc907390d5c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae60bcbcd9bde56c96c2b2529f785f799"><td class="memItemLeft" align="right" valign="top">netDxf.Entities.EntityObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#ae60bcbcd9bde56c96c2b2529f785f799">DxfEntity</a><code> [get]</code></td></tr>
+<tr class="memdesc:ae60bcbcd9bde56c96c2b2529f785f799"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve corresponding dxf entity to this edge  <a href="interface_search_a_thing_1_1_i_edge.html#ae60bcbcd9bde56c96c2b2529f785f799">More...</a><br /></td></tr>
+<tr class="separator:ae60bcbcd9bde56c96c2b2529f785f799"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa895eaf44176be6e2655c45de51a7184"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa895eaf44176be6e2655c45de51a7184">&#9670;&nbsp;</a></span>EdgeContainsPoint()</h2>
+<a id="a255404360363065fa3e8f8f4060158d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a255404360363065fa3e8f8f4060158d0">&#9670;&nbsp;</a></span>EdgeContainsPoint()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool SearchAThing.IEdge.EdgeContainsPoint </td>
+          <td class="memname">bool EdgeContainsPoint </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>tol</em>, </td>
@@ -152,18 +152,18 @@ Properties</h2></td></tr>
 <p><br  />
  </p>
 
-<p>Implemented in <a class="el" href="class_search_a_thing_1_1_line3_d.html#a3fc65b741579776f3f19604ca6b8ed77">SearchAThing.Line3D</a>, and <a class="el" href="class_search_a_thing_1_1_arc3_d.html#a201c78c0277f1b21b4e1b8854cb7c30b">SearchAThing.Arc3D</a>.</p>
+<p>Implemented in <a class="el" href="class_search_a_thing_1_1_line3_d.html#a255404360363065fa3e8f8f4060158d0">Line3D</a>, and <a class="el" href="class_search_a_thing_1_1_arc3_d.html#a255404360363065fa3e8f8f4060158d0">Arc3D</a>.</p>
 
 </div>
 </div>
-<a id="ab7ab399ed0520c8a3a5dd564ac3e0a4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7ab399ed0520c8a3a5dd564ac3e0a4e">&#9670;&nbsp;</a></span>Equals()</h2>
+<a id="a4d3b0541b1f259038d79b5b2147b26b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d3b0541b1f259038d79b5b2147b26b1">&#9670;&nbsp;</a></span>Equals()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool SearchAThing.IEdge.Equals </td>
+          <td class="memname">bool Equals </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>tol</em>, </td>
@@ -199,18 +199,18 @@ Properties</h2></td></tr>
 <p><br  />
  </p>
 
-<p>Implemented in <a class="el" href="class_search_a_thing_1_1_line3_d.html#af585ed4c6c40a91649efc1ce08189321">SearchAThing.Line3D</a>, and <a class="el" href="class_search_a_thing_1_1_arc3_d.html#aefdadcf1fa5690dba378cd41ebfc50db">SearchAThing.Arc3D</a>.</p>
+<p>Implemented in <a class="el" href="class_search_a_thing_1_1_line3_d.html#a4d3b0541b1f259038d79b5b2147b26b1">Line3D</a>, and <a class="el" href="class_search_a_thing_1_1_arc3_d.html#a4d3b0541b1f259038d79b5b2147b26b1">Arc3D</a>.</p>
 
 </div>
 </div>
-<a id="a35ab76d7fb2ab1529cdd773310bc9362"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35ab76d7fb2ab1529cdd773310bc9362">&#9670;&nbsp;</a></span>Split()</h2>
+<a id="a8f8883020dc8f21c07e0f9251abbd48e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f8883020dc8f21c07e0f9251abbd48e">&#9670;&nbsp;</a></span>Split()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a>&gt; SearchAThing.IEdge.Split </td>
+          <td class="memname">IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a>&gt; Split </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>tol</em>, </td>
@@ -234,18 +234,18 @@ Properties</h2></td></tr>
 <p><br  />
  </p>
 
-<p>Implemented in <a class="el" href="class_search_a_thing_1_1_line3_d.html#a2ed7f5ca1245e967c8d484b8427a224e">SearchAThing.Line3D</a>, and <a class="el" href="class_search_a_thing_1_1_arc3_d.html#a4d02f0903ac0a2811515fd94d933c565">SearchAThing.Arc3D</a>.</p>
+<p>Implemented in <a class="el" href="class_search_a_thing_1_1_line3_d.html#a22d323cd2cc9e3761b6b8b91b4e81526">Line3D</a>, and <a class="el" href="class_search_a_thing_1_1_arc3_d.html#a22d323cd2cc9e3761b6b8b91b4e81526">Arc3D</a>.</p>
 
 </div>
 </div>
-<a id="a14b01a19a1e7f1191d622d0e5c6b14f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14b01a19a1e7f1191d622d0e5c6b14f7">&#9670;&nbsp;</a></span>ToggleSense()</h2>
+<a id="a0f1d13869885023f1cb830dc2db4f0e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f1d13869885023f1cb830dc2db4f0e1">&#9670;&nbsp;</a></span>ToggleSense()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SearchAThing.IEdge.ToggleSense </td>
+          <td class="memname">void ToggleSense </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -258,8 +258,8 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
-<a id="acfaa9a84a486ded879b68fa8c9a3cee2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfaa9a84a486ded879b68fa8c9a3cee2">&#9670;&nbsp;</a></span>DxfEntity</h2>
+<a id="ae60bcbcd9bde56c96c2b2529f785f799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae60bcbcd9bde56c96c2b2529f785f799">&#9670;&nbsp;</a></span>DxfEntity</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -268,7 +268,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">netDxf.Entities.EntityObject SearchAThing.IEdge.DxfEntity</td>
+          <td class="memname">netDxf.Entities.EntityObject DxfEntity</td>
         </tr>
       </table>
   </td>
@@ -284,8 +284,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a0f0660bcfcdf2678a6a8f14146219c41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f0660bcfcdf2678a6a8f14146219c41">&#9670;&nbsp;</a></span>EdgeType</h2>
+<a id="a8c36fd6b30a15055862189b3daaec6f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c36fd6b30a15055862189b3daaec6f3">&#9670;&nbsp;</a></span>EdgeType</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -294,7 +294,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_search_a_thing.html#afc47e436dbcd7bc35fbb7b1c6f215b0a">EdgeType</a> SearchAThing.IEdge.EdgeType</td>
+          <td class="memname"><a class="el" href="namespace_search_a_thing.html#a424a64da753a3cd5e96ab8d0553a04c4">EdgeType</a> <a class="el" href="namespace_search_a_thing.html#a424a64da753a3cd5e96ab8d0553a04c4">EdgeType</a></td>
         </tr>
       </table>
   </td>
@@ -310,8 +310,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="afd35b6d6f96e35666162740b87616579"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd35b6d6f96e35666162740b87616579">&#9670;&nbsp;</a></span>MidPoint</h2>
+<a id="a3d6e7323a9b2b24def6dc907390d5c53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d6e7323a9b2b24def6dc907390d5c53">&#9670;&nbsp;</a></span>MidPoint</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -320,7 +320,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> SearchAThing.IEdge.MidPoint</td>
+          <td class="memname"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> MidPoint</td>
         </tr>
       </table>
   </td>
@@ -332,8 +332,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="af3f0f2d5da5e83405f80ab90242a6ba9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3f0f2d5da5e83405f80ab90242a6ba9">&#9670;&nbsp;</a></span>Sense</h2>
+<a id="a3308b0705226d8c9d91160c397788184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3308b0705226d8c9d91160c397788184">&#9670;&nbsp;</a></span>Sense</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -342,7 +342,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool SearchAThing.IEdge.Sense</td>
+          <td class="memname">bool Sense</td>
         </tr>
       </table>
   </td>
@@ -358,8 +358,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a7da7897ac78a7f08b248b6215f35eff0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7da7897ac78a7f08b248b6215f35eff0">&#9670;&nbsp;</a></span>SGeomFrom</h2>
+<a id="a8b5a64511e0c468f9ca3b8a39afb77ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b5a64511e0c468f9ca3b8a39afb77ef">&#9670;&nbsp;</a></span>SGeomFrom</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -368,7 +368,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> SearchAThing.IEdge.SGeomFrom</td>
+          <td class="memname"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> SGeomFrom</td>
         </tr>
       </table>
   </td>
@@ -382,8 +382,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a57c6d785201344c7623e993478720c9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57c6d785201344c7623e993478720c9f">&#9670;&nbsp;</a></span>SGeomTo</h2>
+<a id="a7cf08361c87f618e094a95e6e640332f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cf08361c87f618e094a95e6e640332f">&#9670;&nbsp;</a></span>SGeomTo</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -392,7 +392,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> SearchAThing.IEdge.SGeomTo</td>
+          <td class="memname"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> SGeomTo</td>
         </tr>
       </table>
   </td>

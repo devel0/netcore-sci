@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['xaxis_669',['XAxis',['../class_search_a_thing_1_1_vector3_d.html#a1f37924ef032b8055894af4879b48e38',1,'SearchAThing::Vector3D']]],
-  ['xaxisline_670',['XAxisLine',['../class_search_a_thing_1_1_line3_d.html#ad5c890001610ee1aa51ec82f9a6c7cf8',1,'SearchAThing::Line3D']]],
-  ['xy_671',['XY',['../class_search_a_thing_1_1_coordinate_system3_d.html#a51527834eeafb2c6350b8942ea737c1f',1,'SearchAThing.CoordinateSystem3D.XY()'],['../class_search_a_thing_1_1_plane3_d.html#a66380d5d6e82cc266597c82129811723',1,'SearchAThing.Plane3D.XY()']]],
-  ['xz_672',['XZ',['../class_search_a_thing_1_1_coordinate_system3_d.html#a41eed3174df866c35a85c1d589e98b41',1,'SearchAThing.CoordinateSystem3D.XZ()'],['../class_search_a_thing_1_1_plane3_d.html#a4e501153ef0aae68d82b930099335f82',1,'SearchAThing.Plane3D.XZ()']]]
+  ['xaxis_669',['XAxis',['../class_search_a_thing_1_1_vector3_d.html#ad64648c12661aa24186e0028c88f46f3',1,'SearchAThing::Vector3D']]],
+  ['xaxisline_670',['XAxisLine',['../class_search_a_thing_1_1_line3_d.html#aa9715e3b0760623677c1d95fadcb3ee1',1,'SearchAThing::Line3D']]],
+  ['xy_671',['XY',['../class_search_a_thing_1_1_coordinate_system3_d.html#a6aa052b849b7e8679f941982c35dc8b0',1,'SearchAThing.CoordinateSystem3D.XY()'],['../class_search_a_thing_1_1_plane3_d.html#a920b413b9c3a59f871dc679c556ef732',1,'SearchAThing.Plane3D.XY()']]],
+  ['xz_672',['XZ',['../class_search_a_thing_1_1_coordinate_system3_d.html#a7112bc8e5f005afdb20f1020cfff49e7',1,'SearchAThing.CoordinateSystem3D.XZ()'],['../class_search_a_thing_1_1_plane3_d.html#a3dab80785a10589259c8415f40c0e1cb',1,'SearchAThing.Plane3D.XZ()']]]
 ];
