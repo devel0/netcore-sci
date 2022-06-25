@@ -1,8 +1,2 @@
-- name: Api Documentation
-  href: api/
-- name: Extension methods
-  href: api/SearchAThing.SciExt.html
-- name: Toolkit methods
-  href: api/SearchAThing.SciToolkit.html
-- name: Sources
-  href: https://github.com/devel0/netcore-sci
+- name: Getting Started
+  href: getting-started.md

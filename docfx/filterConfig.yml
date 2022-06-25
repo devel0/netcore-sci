@@ -1,6 +1,0 @@
-apiRules:
-- exclude:
-  uidRegex: ^SearchAThing\.Sci\.Lab
-- exclude:
-  uidRegex: ^System\.Object
-  type: Type
