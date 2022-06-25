@@ -531,33 +531,47 @@ namespace SearchAThing
             return lines.BestFittingPlane(tol);
         }
 
+        /// <summary>
+        /// from given set of edges returns the same set eventually toggling sense of edges to make them glue so that SGeomTo of previous equals SGeomFrom of current.
+        /// it can raise exception if there isn't availability to glue edges regardless toggling their sense.
+        /// first element will toggled to match second one, then other elements will follow the sense matching established.
+        /// </summary>        
         public static IEnumerable<IEdge> CheckSense(this IEnumerable<IEdge> edges, double tol)
         {
-            foreach (var edgeItem in edges.WithPrev())
-            {
-                var edge = edgeItem.item;
-                var prevEdge = edgeItem.prev;
+            IEdge? overrideCur = null;
 
-                if (prevEdge == null) yield return edge;
+            var lst = edges.ToList();
+
+            foreach (var edgeItem in edges.WithNext())
+            {
+                if (edgeItem.next == null)
+                {
+                    if (overrideCur != null)
+                        yield return overrideCur;
+                    else
+                        yield return edgeItem.item;
+                }
 
                 else
                 {
-                    if (!prevEdge.SGeomTo.EqualsTol(tol, edge.SGeomFrom))
-                    {
-                        if (!prevEdge.SGeomTo.EqualsTol(tol, edge.SGeomTo))
-                        {
-                            if (edgeItem.itemIdx == 1 && prevEdge.SGeomFrom.EqualsTol(tol, edge.SGeomFrom))
-                            {
-                                prevEdge.ToggleSense();
-                            }
-                            else
-                                throw new Exception($"can't glue edge [{prevEdge}] with [{edge}]");
-                        }
-                        else
-                            edge.ToggleSense();
-                    }
+                    var cur = edgeItem.item;
+                    
+                    if (overrideCur != null) cur = overrideCur;
 
-                    yield return edge;
+                    var q = cur.CheckSense(tol, edgeItem.next);
+
+                    if (q == null || (overrideCur != null && q.Value.needToggleSenseThis))
+                        throw new Exception($"can't glue [{cur}] with [{edgeItem.next}]");
+
+                    overrideCur = null;
+
+                    if (q.Value.needToggleSenseThis)
+                        yield return (IEdge)cur.ToggleSense();
+                    else
+                        yield return cur;
+
+                    if (q.Value.needToggleSenseNext)
+                        overrideCur = (IEdge)edgeItem.next.ToggleSense();
                 }
             }
         }

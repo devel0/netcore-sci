@@ -91,6 +91,8 @@ namespace SearchAThing
 
         #region Geometry
 
+        public override Line3D Copy() => new Line3D(this);
+
         [JsonIgnore]
         public override IEnumerable<Vector3D> Vertexes
         {
@@ -250,6 +252,17 @@ namespace SearchAThing
                 yield return From;
                 yield return To;
             }
+        }
+
+        /// <summary>
+        /// build a copy of given line
+        /// </summary>        
+        public Line3D(Line3D l) : base(GeometryType.Line3D)
+        {
+            CopyFrom(l);
+            
+            From = l.From;
+            V = l.V;            
         }
 
         /// <summary>

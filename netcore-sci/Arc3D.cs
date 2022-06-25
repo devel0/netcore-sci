@@ -115,7 +115,7 @@ namespace SearchAThing
             if (!this.Sense)
             {
                 res.Reverse();
-                foreach (var x in res) x.ToggleSense();
+                res = res.Select(w => w.ToggleSense()).ToList();
             }
 
             // if (res.Count > 0 && !res[0].SGeomFrom.EqualsTol(tol, this.SGeomFrom))
@@ -135,7 +135,7 @@ namespace SearchAThing
         {
             if (this.EdgeType != other.EdgeType) return false;
 
-            var oarc = (Arc3D)other;            
+            var oarc = (Arc3D)other;
 
             if (!Length.EqualsTol(tol, oarc.Length)) return false;
 
@@ -160,6 +160,8 @@ namespace SearchAThing
         #endregion
 
         #region Geometry
+
+        public override Arc3D Copy() => new Arc3D(this);
 
         public override IEnumerable<Vector3D> Vertexes
         {
@@ -299,6 +301,20 @@ namespace SearchAThing
             AngleEnd = angleRadEnd.NormalizeAngle(tol_rad);
             CS = cs;
             Radius = r;
+        }
+
+        /// <summary>
+        /// build a copy of given arc
+        /// </summary>    
+        public Arc3D(Arc3D arc) : base(GeometryType.Arc3D)
+        {
+            CopyFrom(arc);
+
+            tol_rad = arc.tol_rad;
+            AngleStart = arc.AngleStart;
+            AngleEnd = arc.AngleEnd;
+            CS = arc.CS;
+            Radius = arc.Radius;            
         }
 
         protected Arc3D(CoordinateSystem3D cs, double r, double normalizedAngleRadStart, double normalizedAngleRadEnd) :

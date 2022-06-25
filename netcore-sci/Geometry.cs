@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace SearchAThing
 {
@@ -39,15 +40,34 @@ namespace SearchAThing
     public abstract class Geometry
     {
 
+        /// <summary>
+        /// create copy of this geometry.        
+        /// </summary>        
+        /// <remarks>
+        /// it's required to call base.CopyFrom(other) to ensure geometry properties to be copied.
+        /// </remarks>
+        public abstract Geometry Copy();
+
+
+        protected void CopyFrom(Geometry other)
+        {
+            Sense = other.Sense;
+        }
+
         #region IEdge related
 
         public bool Sense { get; private set; } = true;
-
+        
         public Vector3D SGeomFrom => Sense ? GeomFrom : GeomTo;
-
+        
         public Vector3D SGeomTo => Sense ? GeomTo : GeomFrom;
 
-        public void ToggleSense() => Sense = !Sense;
+        public Geometry ToggleSense()
+        {
+            var toggled = Copy();
+            toggled.Sense = !toggled.Sense;
+            return toggled;
+        }
 
         #endregion
 

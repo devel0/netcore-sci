@@ -26,12 +26,11 @@ namespace SearchAThing
         /// </summary>        
         bool Sense { get; }
 
-        /// <summary>
-        /// (side effect)
+        /// <summary>        
         /// Toggle Sense flag so that SGeomFrom, SGeomTo equals to GeomFrom, GeomTo (Sense:true)
         /// or GeomTo, GeomFrom (Sense:false)
         /// </summary>
-        void ToggleSense();
+        Geometry ToggleSense();
 
         /// <summary>
         /// GeomFrom (Sense:true) or GeomTo (Sense:false)
@@ -66,6 +65,34 @@ namespace SearchAThing
         /// </summary>        
         /// <param name="includeSense">if true then two geometrical equals edges but with different sense cause they considered to be different</param>        
         bool Equals(double tol, IEdge other, bool includeSense = false);
+
+    }
+
+    public static partial class SciExt
+    {
+
+        /// <summary>
+        /// states if this and/or next given edge need to be toggled in their sense to allow glueing.
+        /// precedence is given to toggling sense of the next one.
+        /// returns null if no solution.
+        /// </summary>        
+        public static (bool needToggleSenseThis, bool needToggleSenseNext)?
+        CheckSense(this IEdge thisEdge, double tol, IEdge nextEdge)
+        {
+            if (thisEdge.SGeomTo.EqualsTol(tol, nextEdge.SGeomFrom))
+                return (false, false);
+
+            if (thisEdge.SGeomTo.EqualsTol(tol, nextEdge.SGeomTo))
+                return (false, true);
+
+            if (thisEdge.SGeomFrom.EqualsTol(tol, nextEdge.SGeomFrom))
+                return (true, false);
+
+            if (thisEdge.SGeomFrom.EqualsTol(tol, nextEdge.SGeomTo))
+                return (true, true);
+
+            return null;
+        }
 
     }
 

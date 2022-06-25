@@ -24,6 +24,8 @@ namespace SearchAThing
 
         #region Geometry
 
+        public override Vector3D Copy() => new Vector3D(this);
+        
         /// <summary>
         /// Enumerable with only this vector.
         /// ( Geometry Vertexes implementation )            
@@ -243,6 +245,18 @@ namespace SearchAThing
         /// </remarks>
         public Vector3D() : base(GeometryType.Vector3D)
         {
+        }
+
+        /// <summary>
+        /// build a copy of given vector
+        /// </summary>        
+        public Vector3D(Vector3D v) : base(GeometryType.Vector3D)
+        {
+            CopyFrom(v);
+            
+            X = v.X;
+            Y = v.Y;
+            Z = v.Z;
         }
 
         /// <summary>
