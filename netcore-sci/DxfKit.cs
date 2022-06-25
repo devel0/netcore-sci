@@ -1,12 +1,14 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Text;
+using System.Globalization;
+
 using netDxf.Entities;
 using netDxf;
 using netDxf.Blocks;
 using netDxf.Tables;
-using System.Text;
-using System.Globalization;
+
 using SearchAThing;
 using static SearchAThing.SciToolkit;
 
@@ -388,7 +390,7 @@ namespace SearchAThing
             dxf.Viewport.ViewCenter = new Vector2(bbox.Min.X, bbox_center.Y);
             dxf.Viewport.ViewAspectRatio = bbox_size.X / (bbox_size.Y * 2);
         }
-        
+
         public static EntityObject SetColor(this EntityObject eo, AciColor color)
         {
             eo.Color = color;
@@ -445,7 +447,7 @@ namespace SearchAThing
                     var b = (int)rgb.B;
 
                     return netDxf.AciColor.FromTrueColor((r << 16) + (g << 8) + b);
-                }*/        
+                }*/
 
         public static IEnumerable<EntityObject> DrawTimeline(this DxfObject dxf, List<(DateTime from, DateTime to)> timeline,
         double textHeight = 2, double circleRadius = 1.5, double maxWidth = 180, double stopDays = 60, Func<DateTime, string> dtStr = null)

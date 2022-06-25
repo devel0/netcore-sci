@@ -1,12 +1,13 @@
 using static System.Math;
 using System.Collections.Generic;
 using System.Linq;
-using SearchAThing;
-using System.Runtime.CompilerServices;
-using LinqStatistics;
 using System.Text;
-using MathNet.Numerics.Interpolation;
 using System;
+
+using LinqStatistics;
+using MathNet.Numerics.Interpolation;
+
+using SearchAThing;
 
 namespace SearchAThing
 {
@@ -130,7 +131,7 @@ namespace SearchAThing
         public static int CompareToTol(this double a, double tol, double b)
         {
             if (a.EqualsTol(tol, b)) return 0;
-            
+
             if (a < b) return -1;
 
             // a > b

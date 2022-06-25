@@ -1,8 +1,10 @@
 using System;
 using System.Numerics;
 using System.Text;
-using netDxf.Tables;
 using static System.Math;
+
+using netDxf.Tables;
+
 using static SearchAThing.SciToolkit;
 
 namespace SearchAThing

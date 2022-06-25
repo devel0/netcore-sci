@@ -43,7 +43,7 @@ namespace SearchAThing
         {
             System.Diagnostics.Debug.WriteLine($"{(prefix.Length > 0 ? ($"{prefix}:") : "")}{v}");
             return v;
-        }        
+        }
 
     }
 

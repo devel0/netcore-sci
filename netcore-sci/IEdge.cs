@@ -2,10 +2,6 @@ using System;
 using System.Linq;
 using static System.Math;
 using System.Collections.Generic;
-using System.Drawing.Drawing2D;
-using netDxf;
-using ClipperLib;
-using netDxf.Entities;
 
 namespace SearchAThing
 {
@@ -15,7 +11,7 @@ namespace SearchAThing
         Line3D,
         Circle3D,
         Arc3D
-    }    
+    }
 
     public interface IEdge
     {
@@ -24,7 +20,7 @@ namespace SearchAThing
         /// type of edge
         /// </summary>        
         EdgeType EdgeType { get; }
-        
+
         /// <summary>
         /// allow to store info about sense; when false SGeomFrom = GeomTo and SGeomTo = GeomFrom
         /// </summary>        
@@ -69,7 +65,7 @@ namespace SearchAThing
         /// states if this edge equals other
         /// </summary>        
         /// <param name="includeSense">if true then two geometrical equals edges but with different sense cause they considered to be different</param>        
-        bool Equals(double tol, IEdge other, bool includeSense = false);        
+        bool Equals(double tol, IEdge other, bool includeSense = false);
 
     }
 

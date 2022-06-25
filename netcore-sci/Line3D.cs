@@ -3,10 +3,11 @@ using System.Text;
 using System.Globalization;
 using System.Linq;
 using static System.Math;
-using netDxf.Entities;
-using Newtonsoft.Json;
 using static System.FormattableString;
 using System;
+
+using netDxf.Entities;
+using Newtonsoft.Json;
 
 namespace SearchAThing
 {

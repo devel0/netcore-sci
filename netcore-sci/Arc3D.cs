@@ -2,8 +2,10 @@ using System;
 using System.Linq;
 using static System.Math;
 using System.Collections.Generic;
-using netDxf.Entities;
 using System.Diagnostics.CodeAnalysis;
+
+using netDxf.Entities;
+
 using static SearchAThing.SciToolkit;
 
 namespace SearchAThing

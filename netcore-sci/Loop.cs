@@ -2,14 +2,13 @@ using System;
 using System.Linq;
 using static System.Math;
 using System.Collections.Generic;
-using System.Drawing.Drawing2D;
+using System.Runtime.CompilerServices;
+using System.Diagnostics.CodeAnalysis;
+
 using netDxf;
-using ClipperLib;
 using netDxf.Entities;
 
 using SearchAThing;
-using System.Runtime.CompilerServices;
-using System.Diagnostics.CodeAnalysis;
 
 namespace SearchAThing
 {

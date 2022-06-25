@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Globalization;
-using Newtonsoft.Json;
 using static System.Math;
 using static System.FormattableString;
-using SearchAThing;
+using System.Text.RegularExpressions;
+using System.Runtime.CompilerServices;
+
+using Newtonsoft.Json;
 using netDxf.Entities;
 using netDxf;
-using System.Text.RegularExpressions;
 using static SearchAThing.SciToolkit;
-using System.Runtime.CompilerServices;
 
 namespace SearchAThing
 {

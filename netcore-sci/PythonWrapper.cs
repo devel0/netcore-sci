@@ -182,7 +182,7 @@ matplotlib.use('Agg')
             if (finished) return;
 
             debug?.Invoke($"output received [{e.Data}]");
-            
+
             if (!initialized)
                 initialized = true;
             else

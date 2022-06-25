@@ -3,6 +3,7 @@ using System.Linq;
 using static System.Math;
 using System.Collections.Generic;
 using System.Drawing.Drawing2D;
+
 using netDxf;
 using ClipperLib;
 using netDxf.Entities;
@@ -491,6 +492,7 @@ namespace SearchAThing
         /// can generate a Int64MapExceptionRange exception if double values can't fit into a In64 representation.
         /// In that case try with tolerances not too small.
         /// It is suggested to use a lenTol/10 to avoid lost of precision during domain conversions.
+        /// Altenatively use Loop to find exact intersection between planar poly supporting lines and arcs.
         /// </summary>        
         public static IEnumerable<IEnumerable<Vector3D>> Boolean(this IEnumerable<Vector3D> polyA, double tol, IEnumerable<Vector3D> polyB, ClipType type, bool selfCheckInt64MapTolerance = true)
         {
