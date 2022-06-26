@@ -74,6 +74,23 @@ namespace SearchAThing
             yield return new Face3d(m[0, 0, 1], m[1, 0, 1], m[1, 1, 1], m[0, 1, 1]); // top
         }
 
+        /// <summary>
+        /// retrieve 3 or 4 vertex from given face
+        /// </summary>    
+        public static IEnumerable<Vector3D> Vertexes(this Face3d face)
+        {
+            yield return face.FirstVertex;
+            yield return face.SecondVertex;
+            yield return face.ThirdVertex;
+            if (face.FourthVertex != null) yield return face.FourthVertex;
+        }
+
+        /// <summary>
+        /// convert face3d to Plane3DRegion
+        /// </summary>        
+        public static Plane3DRegion ToRegion(this Face3d face, double tol) =>
+            new Plane3DRegion(tol, face.Vertexes().ToList());        
+
     }
 
     public static partial class SciExt
