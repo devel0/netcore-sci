@@ -66,6 +66,11 @@ namespace SearchAThing
         /// <param name="includeSense">if true then two geometrical equals edges but with different sense cause they considered to be different</param>        
         bool Equals(double tol, IEdge other, bool includeSense = false);
 
+        /// <summary>
+        /// length of the edge
+        /// </summary>        
+        double Length { get; }
+
     }
 
     public static partial class SciExt

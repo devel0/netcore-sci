@@ -18,12 +18,12 @@
         <PackageReference Include="LibTessDotNet" Version="$(LibTessDotNetVersion)" />
         <PackageReference Include="LinqStatistics" Version="$(LinqStatisticsVersion)" />
         <PackageReference Include="MathNet.Numerics" Version="$(MathNetNumericsVersion)" />
-        <PackageReference Include="netcore-util" Version="2.0.0" />
+        <!-- <PackageReference Include="netcore-util" Version="2.0.0" /> -->
         <PackageReference Include="netDxf.netstandard" Version="$(NetDxfNetStandardVersion)" />
         <PackageReference Include="ParagonClipper" Version="$(ParagonClipperVersion)" />
         <PackageReference Include="QuantumConcepts.Formats.STL.netcore" Version="$(STLNetCoreVersion)" />
     </ItemGroup>
     <ItemGroup>
-        <!-- <ProjectReference Include="..\..\netcore-util\netcore-util\netcore-util.csproj"/> -->
+        <ProjectReference Include="..\..\netcore-util\netcore-util\netcore-util.csproj"/>
     </ItemGroup>
 </Project>

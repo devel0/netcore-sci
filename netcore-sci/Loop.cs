@@ -54,6 +54,8 @@ namespace SearchAThing
             }
         }
 
+        public double Length => Edges.Sum(w => w.Length);
+
         double ComputeArea(double tol)
         {
             var polysegs = Edges.Select(w => w.SGeomFrom).ToList();
@@ -496,9 +498,11 @@ namespace SearchAThing
         /// create an hatch from given loop, pattern
         /// </summary>        
         public netDxf.Entities.Hatch ToHatch(double tol, HatchPattern pattern, bool associative = true) =>
-            Edges.Cast<Geometry>().ToHatch(tol, pattern, associative);
+            ToLwPolyline(tol).ToHatch(pattern, associative);
 
         public LwPolyline ToLwPolyline(double tol) => Edges.Cast<Geometry>().ToLwPolyline(tol);
+
+        public LwPolyline DxfEntity(double tol) => ToLwPolyline(tol);
 
         public override string ToString()
         {
@@ -555,7 +559,7 @@ namespace SearchAThing
                 else
                 {
                     var cur = edgeItem.item;
-                    
+
                     if (overrideCur != null) cur = overrideCur;
 
                     var q = cur.CheckSense(tol, edgeItem.next);
