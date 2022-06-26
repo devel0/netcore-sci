@@ -93,6 +93,8 @@ namespace SearchAThing
 
         public override Line3D Copy() => new Line3D(this);
 
+        public new Line3D ToggleSense() => (Line3D)base.ToggleSense();
+
         [JsonIgnore]
         public override IEnumerable<Vector3D> Vertexes
         {

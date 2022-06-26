@@ -74,7 +74,7 @@ namespace SearchAThing
     }
 
     public static partial class SciExt
-    {
+    {        
 
         /// <summary>
         /// states if this and/or next given edge need to be toggled in their sense to allow glueing.

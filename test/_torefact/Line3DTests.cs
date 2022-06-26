@@ -402,12 +402,12 @@ namespace SearchAThing.Sci.Tests
 
             // 1 digits explicit
             var s2 = l.ToString(1);
-            Assert.True(s2 == "[Line3D] SFROM[(1, 1, 1)] STO[(1.1, 2.2, 3.4)] L=2.7 Δ=(0.1, 1.2, 2.4)");
+            Assert.Equal("[Line3D] SFROM[(1, 1, 1)] STO[(1.1, 2.2, 3.4)] L=2.7 Δ=(0.1, 1.2, 2.4)", s2);
 
-            l.ToggleSense();
+            l = l.ToggleSense();
 
             var s_s2 = l.ToString(1);
-            Assert.True(s_s2 == "[Line3D] !S SFROM[(1.1, 2.2, 3.4)] STO[(1, 1, 1)] L=2.7 Δ=(-0.1, -1.2, -2.4)");
+            Assert.Equal("[Line3D] !S SFROM[(1.1, 2.2, 3.4)] STO[(1, 1, 1)] L=2.7 Δ=(-0.1, -1.2, -2.4)", s_s2);
         }
 
         [Fact]

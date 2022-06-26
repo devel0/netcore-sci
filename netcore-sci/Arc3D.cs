@@ -163,6 +163,8 @@ namespace SearchAThing
 
         public override Arc3D Copy() => new Arc3D(this);
 
+        public new Arc3D ToggleSense() => (Arc3D)base.ToggleSense();
+
         public override IEnumerable<Vector3D> Vertexes
         {
             get
