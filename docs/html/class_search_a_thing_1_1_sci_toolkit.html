@@ -100,6 +100,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a1700e4f84cc121a433fda90cb86015a0"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; Face3d &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#a1700e4f84cc121a433fda90cb86015a0">Cuboid</a> (<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> center, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> size)</td></tr>
 <tr class="memdesc:a1700e4f84cc121a433fda90cb86015a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates dxf entities for 6 faces of a cuboid  <a href="class_search_a_thing_1_1_sci_toolkit.html#a1700e4f84cc121a433fda90cb86015a0">More...</a><br /></td></tr>
 <tr class="separator:a1700e4f84cc121a433fda90cb86015a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a596bb9aa94da2eb71cd669bce465e2d1"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#a596bb9aa94da2eb71cd669bce465e2d1">Vertexes</a> (this Face3d face)</td></tr>
+<tr class="memdesc:a596bb9aa94da2eb71cd669bce465e2d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">retrieve 3 or 4 vertex from given face  <a href="class_search_a_thing_1_1_sci_toolkit.html#a596bb9aa94da2eb71cd669bce465e2d1">More...</a><br /></td></tr>
+<tr class="separator:a596bb9aa94da2eb71cd669bce465e2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf2003f069480822de213feb7e782fa3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_plane3_d_region.html">Plane3DRegion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#adf2003f069480822de213feb7e782fa3">ToRegion</a> (this Face3d face, double tol)</td></tr>
+<tr class="memdesc:adf2003f069480822de213feb7e782fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert face3d to <a class="el" href="class_search_a_thing_1_1_plane3_d_region.html" title="region of a plane3d delimited by a set of coplanar points">Plane3DRegion</a>  <a href="class_search_a_thing_1_1_sci_toolkit.html#adf2003f069480822de213feb7e782fa3">More...</a><br /></td></tr>
+<tr class="separator:adf2003f069480822de213feb7e782fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab25074b567ccda57831a36354e48b2c0"><td class="memItemLeft" align="right" valign="top">static IInterpolation&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#ab25074b567ccda57831a36354e48b2c0">LinearSplineInterpolate</a> (IEnumerable&lt; double &gt; x, IEnumerable&lt; double &gt; y)</td></tr>
 <tr class="memdesc:ab25074b567ccda57831a36354e48b2c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">(MathNet.Numerics bookmark function) "Create a linear spline interpolation from an unsorted set of (x,y) value pairs." then invoke Interpolate with x value to retrieve interpolated y value.  <a href="class_search_a_thing_1_1_sci_toolkit.html#ab25074b567ccda57831a36354e48b2c0">More...</a><br /></td></tr>
 <tr class="separator:ab25074b567ccda57831a36354e48b2c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -473,6 +479,76 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates dxf entities for a 3 axis of given length centered in given center point. </p>
+<p><br  />
+ </p>
+
+</div>
+</div>
+<a id="adf2003f069480822de213feb7e782fa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf2003f069480822de213feb7e782fa3">&#9670;&nbsp;</a></span>ToRegion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_search_a_thing_1_1_plane3_d_region.html">Plane3DRegion</a> ToRegion </td>
+          <td>(</td>
+          <td class="paramtype">this Face3d&#160;</td>
+          <td class="paramname"><em>face</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>convert face3d to <a class="el" href="class_search_a_thing_1_1_plane3_d_region.html" title="region of a plane3d delimited by a set of coplanar points">Plane3DRegion</a> </p>
+<p><br  />
+ </p>
+
+</div>
+</div>
+<a id="a596bb9aa94da2eb71cd669bce465e2d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a596bb9aa94da2eb71cd669bce465e2d1">&#9670;&nbsp;</a></span>Vertexes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&gt; Vertexes </td>
+          <td>(</td>
+          <td class="paramtype">this Face3d&#160;</td>
+          <td class="paramname"><em>face</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>retrieve 3 or 4 vertex from given face </p>
 <p><br  />
  </p>
 
