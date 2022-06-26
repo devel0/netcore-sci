@@ -1,6 +1,9 @@
 namespace SearchAThing
 {
 
+    /// <summary>
+    /// basic matrix3d with 3x3 double elements and operations to allow arithmetic and 3d linear equation resolution.
+    /// </summary>
     public class Matrix3D
     {
 

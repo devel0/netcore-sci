@@ -1223,6 +1223,9 @@ namespace SearchAThing
 
     }
 
+    /// <summary>
+    /// helper class to compare vector3d set using given tolerance
+    /// </summary>
     public class Vector3DEqualityComparer : IEqualityComparer<Vector3D>
     {
         double tol;
@@ -1251,6 +1254,9 @@ namespace SearchAThing
         }
     }
 
+    /// <summary>
+    /// helper class to compare vector3d in a distinct operation retaining original order, used by DistinctKeepOrder()
+    /// </summary>
     public class Vector3DWithOrderEqualityComparer : IEqualityComparer<Vector3DWithOrder>
     {
         Vector3DEqualityComparer cmp;

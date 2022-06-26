@@ -1,6 +1,9 @@
 namespace SearchAThing
 {
 
+    /// <summary>
+    /// encapsulate a CS to define a plane3d
+    /// </summary>
     public class Plane3D
     {
 

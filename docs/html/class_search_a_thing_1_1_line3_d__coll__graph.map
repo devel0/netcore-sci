@@ -1,6 +1,6 @@
 <map id="Line3D" name="Line3D">
-<area shape="rect" id="node1" title=" " alt="" coords="113,124,179,151"/>
-<area shape="rect" id="node2" href="$class_search_a_thing_1_1_geometry.html" title=" " alt="" coords="5,5,92,32"/>
-<area shape="rect" id="node3" href="$interface_search_a_thing_1_1_i_edge.html" title=" " alt="" coords="117,5,175,32"/>
+<area shape="rect" id="node1" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From..." alt="" coords="113,124,179,151"/>
+<area shape="rect" id="node2" href="$class_search_a_thing_1_1_geometry.html" title="base abstract type for geometries such as Vector3D, Line3D, Arc3D and Circle3D" alt="" coords="5,5,92,32"/>
+<area shape="rect" id="node3" href="$interface_search_a_thing_1_1_i_edge.html" title="interface implemented by some type of geometries used in Loop such as Line3D, Arc3D and Circle3D" alt="" coords="117,5,175,32"/>
 <area shape="rect" id="node4" title=" " alt="" coords="199,5,258,32"/>
 </map>

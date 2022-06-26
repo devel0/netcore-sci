@@ -18,5 +18,6 @@ var searchData=
   ['drawcube_485',['DrawCube',['../class_search_a_thing_1_1_sci_ext.html#af3110680563a6cec8c219657cf40acc9',1,'SearchAThing::SciExt']]],
   ['drawcuboid_486',['DrawCuboid',['../class_search_a_thing_1_1_b_box3_d.html#a1456dcd216f3603dd57628d463806ce5',1,'SearchAThing.BBox3D.DrawCuboid()'],['../class_search_a_thing_1_1_sci_ext.html#a4ed058a781836cf425392ff449cb1c5b',1,'SearchAThing.SciExt.DrawCuboid(this DxfObject dxfObj, Vector3D center, Vector3D size, Layer? layer=null)']]],
   ['drawstar_487',['DrawStar',['../class_search_a_thing_1_1_sci_ext.html#aa6dbef78a37265da41f011ce57441577',1,'SearchAThing::SciExt']]],
-  ['drawtimeline_488',['DrawTimeline',['../class_search_a_thing_1_1_sci_ext.html#a6018071d2f102812ddb4f3cb88cbfbc9',1,'SearchAThing::SciExt']]]
+  ['drawtimeline_488',['DrawTimeline',['../class_search_a_thing_1_1_sci_ext.html#a6018071d2f102812ddb4f3cb88cbfbc9',1,'SearchAThing::SciExt']]],
+  ['dxfentity_489',['DxfEntity',['../class_search_a_thing_1_1_loop.html#af6574b8ce6f668f30e22440356a9b41c',1,'SearchAThing::Loop']]]
 ];

@@ -75,7 +75,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>planar edges loop  
+<p>planar edges loop containing line and arcs  
  <a href="class_search_a_thing_1_1_loop.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -93,6 +93,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a482ecaa1e11cb7a3e3e6f31e700a87e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8373925db15a4c8639313dc726e770c7"><td class="memItemLeft" align="right" valign="top">LwPolyline&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#a8373925db15a4c8639313dc726e770c7">ToLwPolyline</a> (double tol)</td></tr>
 <tr class="separator:a8373925db15a4c8639313dc726e770c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6574b8ce6f668f30e22440356a9b41c"><td class="memItemLeft" align="right" valign="top">LwPolyline&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#af6574b8ce6f668f30e22440356a9b41c">DxfEntity</a> (double tol)</td></tr>
+<tr class="separator:af6574b8ce6f668f30e22440356a9b41c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa73e7c4dd1df5fd5fbf81c7764ee1533"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#aa73e7c4dd1df5fd5fbf81c7764ee1533">ToString</a> ()</td></tr>
 <tr class="separator:aa73e7c4dd1df5fd5fbf81c7764ee1533"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -107,9 +109,11 @@ Properties</h2></td></tr>
 <tr class="memitem:acedb30173c5224396eb7a95709f5c619"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#acedb30173c5224396eb7a95709f5c619">Area</a><code> [get]</code></td></tr>
 <tr class="memdesc:acedb30173c5224396eb7a95709f5c619"><td class="mdescLeft">&#160;</td><td class="mdescRight">area of the loop ( segment and arc are evaluated )  <a href="class_search_a_thing_1_1_loop.html#acedb30173c5224396eb7a95709f5c619">More...</a><br /></td></tr>
 <tr class="separator:acedb30173c5224396eb7a95709f5c619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a165133c1c04da94d94cb485e8de7b99a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#a165133c1c04da94d94cb485e8de7b99a">Length</a><code> [get]</code></td></tr>
+<tr class="separator:a165133c1c04da94d94cb485e8de7b99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>planar edges loop </p>
+<div class="textblock"><p>planar edges loop containing line and arcs </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a438032a69907625fd2b24459a0991ea6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a438032a69907625fd2b24459a0991ea6">&#9670;&nbsp;</a></span>Loop() <span class="overload">[1/2]</span></h2>
@@ -196,6 +200,24 @@ Properties</h2></td></tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af6574b8ce6f668f30e22440356a9b41c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6574b8ce6f668f30e22440356a9b41c">&#9670;&nbsp;</a></span>DxfEntity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LwPolyline DxfEntity </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -347,6 +369,28 @@ Properties</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">List&lt;<a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a>&gt; Edges</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a165133c1c04da94d94cb485e8de7b99a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a165133c1c04da94d94cb485e8de7b99a">&#9670;&nbsp;</a></span>Length</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Length</td>
         </tr>
       </table>
   </td>

@@ -10,6 +10,10 @@ namespace SearchAThing
 {
 
     #region python pipe
+
+    /// <summary>
+    /// Helper to invoke python and retrieve results.
+    /// </summary>
     public class PythonPipe : IDisposable
     {
 

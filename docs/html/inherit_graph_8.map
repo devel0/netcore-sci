@@ -1,8 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_search_a_thing_1_1_geometry.html" title=" " alt="" coords="5,81,92,108"/>
-<area shape="rect" id="node2" href="$class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities" alt="" coords="150,31,211,57"/>
-<area shape="rect" id="node4" href="$class_search_a_thing_1_1_line3_d.html" title=" " alt="" coords="147,81,214,108"/>
-<area shape="rect" id="node5" href="$class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin" alt="" coords="140,132,221,159"/>
-<area shape="rect" id="node3" href="$class_search_a_thing_1_1_circle3_d.html" title=" " alt="" coords="269,5,347,32"/>
-<area shape="rect" id="node6" href="$interface_search_a_thing_1_1_i_edge.html" title=" " alt="" coords="19,31,78,57"/>
+<area shape="rect" id="node1" href="$class_search_a_thing_1_1_geometry.html" title="base abstract type for geometries such as Vector3D, Line3D, Arc3D and Circle3D" alt="" coords="5,56,92,83"/>
+<area shape="rect" id="node2" href="$class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities" alt="" coords="150,56,211,83"/>
+<area shape="rect" id="node4" href="$class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From..." alt="" coords="147,5,214,32"/>
+<area shape="rect" id="node5" href="$class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin" alt="" coords="140,107,221,133"/>
+<area shape="rect" id="node3" href="$class_search_a_thing_1_1_circle3_d.html" title="Specialized version of Arc3D with StartAngle=0 and EndAngle=2PI" alt="" coords="269,56,347,83"/>
+<area shape="rect" id="node6" href="$interface_search_a_thing_1_1_i_edge.html" title="interface implemented by some type of geometries used in Loop such as Line3D, Arc3D and Circle3D" alt="" coords="19,5,78,32"/>
 </map>

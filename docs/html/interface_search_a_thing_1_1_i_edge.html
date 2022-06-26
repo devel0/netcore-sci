@@ -73,15 +73,18 @@ $(function() {
 <div class="title">IEdge Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>interface implemented by some type of geometries used in <a class="el" href="class_search_a_thing_1_1_loop.html" title="planar edges loop containing line and arcs">Loop</a> such as <a class="el" href="class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From...">Line3D</a>, <a class="el" href="class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities">Arc3D</a> and <a class="el" href="class_search_a_thing_1_1_circle3_d.html" title="Specialized version of Arc3D with StartAngle=0 and EndAngle=2PI">Circle3D</a>  
+ <a href="interface_search_a_thing_1_1_i_edge.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for IEdge:</div>
 <div class="dyncontent">
 <div class="center"><img src="interface_search_a_thing_1_1_i_edge__inherit__graph.png" border="0" usemap="#a_i_edge_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_i_edge_inherit__map" id="a_i_edge_inherit__map">
-<area shape="rect" title=" " alt="" coords="75,5,133,32"/>
-<area shape="rect" href="class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities" alt="" coords="5,80,67,107"/>
-<area shape="rect" href="class_search_a_thing_1_1_circle3_d.html" title=" " alt="" coords="31,155,108,181"/>
-<area shape="rect" href="class_search_a_thing_1_1_line3_d.html" title=" " alt="" coords="141,80,208,107"/>
+<area shape="rect" title="interface implemented by some type of geometries used in Loop such as Line3D, Arc3D and Circle3D" alt="" coords="59,5,117,32"/>
+<area shape="rect" href="class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities" alt="" coords="13,80,75,107"/>
+<area shape="rect" href="class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From..." alt="" coords="99,80,165,107"/>
+<area shape="rect" href="class_search_a_thing_1_1_circle3_d.html" title="Specialized version of Arc3D with StartAngle=0 and EndAngle=2PI" alt="" coords="5,155,83,181"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -121,8 +124,13 @@ Properties</h2></td></tr>
 <tr class="memitem:ae60bcbcd9bde56c96c2b2529f785f799"><td class="memItemLeft" align="right" valign="top">netDxf.Entities.EntityObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#ae60bcbcd9bde56c96c2b2529f785f799">DxfEntity</a><code> [get]</code></td></tr>
 <tr class="memdesc:ae60bcbcd9bde56c96c2b2529f785f799"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve corresponding dxf entity to this edge  <a href="interface_search_a_thing_1_1_i_edge.html#ae60bcbcd9bde56c96c2b2529f785f799">More...</a><br /></td></tr>
 <tr class="separator:ae60bcbcd9bde56c96c2b2529f785f799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a165133c1c04da94d94cb485e8de7b99a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a165133c1c04da94d94cb485e8de7b99a">Length</a><code> [get]</code></td></tr>
+<tr class="memdesc:a165133c1c04da94d94cb485e8de7b99a"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of the edge  <a href="interface_search_a_thing_1_1_i_edge.html#a165133c1c04da94d94cb485e8de7b99a">More...</a><br /></td></tr>
+<tr class="separator:a165133c1c04da94d94cb485e8de7b99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>interface implemented by some type of geometries used in <a class="el" href="class_search_a_thing_1_1_loop.html" title="planar edges loop containing line and arcs">Loop</a> such as <a class="el" href="class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From...">Line3D</a>, <a class="el" href="class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities">Arc3D</a> and <a class="el" href="class_search_a_thing_1_1_circle3_d.html" title="Specialized version of Arc3D with StartAngle=0 and EndAngle=2PI">Circle3D</a> </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a255404360363065fa3e8f8f4060158d0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a255404360363065fa3e8f8f4060158d0">&#9670;&nbsp;</a></span>EdgeContainsPoint()</h2>
 
@@ -257,6 +265,8 @@ Properties</h2></td></tr>
 <p><br  />
  Toggle Sense flag so that SGeomFrom, SGeomTo equals to GeomFrom, GeomTo (Sense:true) or GeomTo, GeomFrom (Sense:false) </p>
 
+<p>Implemented in <a class="el" href="class_search_a_thing_1_1_line3_d.html#a2d69fe67c43c3fe09db7ce0bda76a873">Line3D</a>, and <a class="el" href="class_search_a_thing_1_1_arc3_d.html#a434af63605e3c11c199e8fba9273089d">Arc3D</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
@@ -307,6 +317,32 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>type of edge </p>
+<p><br  />
+ </p>
+
+</div>
+</div>
+<a id="a165133c1c04da94d94cb485e8de7b99a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a165133c1c04da94d94cb485e8de7b99a">&#9670;&nbsp;</a></span>Length</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Length</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>length of the edge </p>
 <p><br  />
  </p>
 
