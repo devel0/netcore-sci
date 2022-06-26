@@ -13,6 +13,11 @@ using static SearchAThing.SciToolkit;
 namespace SearchAThing
 {
 
+    /// <summary>
+    /// Bounding Box.
+    /// Initially empty, each added point will increase the extension if min or max exceed actual bbox limits.
+    /// It works within wcs.
+    /// </summary>
     public class BBox3D
     {
 
@@ -458,28 +463,7 @@ namespace SearchAThing
     }
 
     public static partial class SciExt
-    {
-
-        /// <summary>
-        /// retrieve reversed version of given point set ( used to convert ccw, cw )
-        /// </summary>        
-        public static IList<Vector3D> Reversed(this IEnumerable<Vector3D> pts)
-        {
-            var q = pts.ToList();
-            q.Reverse();
-            return q;
-        }
-
-        /// <summary>
-        /// retrieve reversed version of given point set ( used to convert ccw, cw )
-        /// </summary>        
-        public static IEnumerable<Vector3D> Reversed(this IList<Vector3D> pts)
-        {
-            for (int i = pts.Count - 1; i > -1; --i)
-            {
-                yield return pts[i];
-            }
-        }
+    {       
 
         /// <summary>
         /// construct a bbox from given enumerable set of points

@@ -14,7 +14,7 @@ namespace SearchAThing
 {
 
     /// <summary>
-    /// planar edges loop
+    /// planar edges loop containing line and arcs
     /// </summary>
     public class Loop
     {
@@ -522,8 +522,7 @@ namespace SearchAThing
             {
                 switch (edge.EdgeType)
                 {
-                    case EdgeType.Line3D: lines.Add((Line3D)edge); break;
-                    case EdgeType.Circle3D: return new Plane3D(((Circle3D)edge).CS);
+                    case EdgeType.Line3D: lines.Add((Line3D)edge); break;                    
                     case EdgeType.Arc3D: return new Plane3D(((Arc3D)edge).CS);
                     default:
                         throw new Exception($"unexpected edge type {edge.EdgeType}");

@@ -8,14 +8,11 @@ using netDxf.Entities;
 namespace SearchAThing
 {
 
-    public class Circle3D : Arc3D, IEdge
-    {
-
-        #region IEdge
-
-        public new EdgeType EdgeType => EdgeType.Circle3D;
-
-        #endregion
+    /// <summary>
+    /// Specialized version of Arc3D with StartAngle=0 and EndAngle=2PI
+    /// </summary>
+    public class Circle3D : Arc3D
+    {        
 
         /// <summary>
         /// create a circle in the given cs with given radius
@@ -52,6 +49,9 @@ namespace SearchAThing
         /// <param name="delta">new circle origin delta</param>        
         public Circle3D Move(Vector3D delta) => new Circle3D(CS.Move(delta), Radius);
 
+        /// <summary>
+        /// build dxf circle
+        /// </summary>        
         public override EntityObject DxfEntity
         {
             get
@@ -262,6 +262,9 @@ namespace SearchAThing
     public static partial class SciExt
     {
 
+        /// <summary>
+        /// build circle3d by given set of 3 points
+        /// </summary>        
         public static Circle3D CircleBy3Points(this IEnumerable<Vector3D> _pts)
         {
             var pts = _pts.ToArray();
@@ -270,6 +273,9 @@ namespace SearchAThing
             return new Circle3D(pts[0], pts[1], pts[2]);
         }
 
+        /// <summary>
+        /// build circle3d by provided dxf circle
+        /// </summary>        
         public static Circle3D ToCircle3D(this netDxf.Entities.Circle dxf_circle) =>
             new Circle3D(new CoordinateSystem3D(dxf_circle.Center, dxf_circle.Normal, CoordinateSystem3DAutoEnum.AAA),
                 dxf_circle.Radius);

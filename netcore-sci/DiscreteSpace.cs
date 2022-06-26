@@ -6,6 +6,9 @@ using System.Collections.Generic;
 namespace SearchAThing
 {
 
+    /// <summary>
+    /// base item for DiscreteSpace
+    /// </summary>    
     public class DiscreteSpaceItem<T>
     {
 
@@ -32,6 +35,9 @@ namespace SearchAThing
 
     }
 
+    /// <summary>
+    /// comparer to search in DiscreteSpace
+    /// </summary>    
     public class DiscreteSpaceItemComparer<T> : IComparer<DiscreteSpaceItem<T>>
     {
         double tol;

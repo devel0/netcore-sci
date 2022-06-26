@@ -9,10 +9,12 @@ namespace SearchAThing
     public enum EdgeType
     {
         Line3D,
-        Circle3D,
         Arc3D
     }
 
+    /// <summary>
+    /// interface implemented by some type of geometries used in Loop such as Line3D, Arc3D and Circle3D
+    /// </summary>
     public interface IEdge
     {
 
@@ -74,7 +76,7 @@ namespace SearchAThing
     }
 
     public static partial class SciExt
-    {        
+    {
 
         /// <summary>
         /// states if this and/or next given edge need to be toggled in their sense to allow glueing.

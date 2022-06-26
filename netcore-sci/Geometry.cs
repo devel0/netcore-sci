@@ -37,6 +37,9 @@ namespace SearchAThing
         FromTo
     };
 
+    /// <summary>
+    /// base abstract type for geometries such as Vector3D, Line3D, Arc3D and Circle3D
+    /// </summary>
     public abstract class Geometry
     {
 

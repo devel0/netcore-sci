@@ -21,6 +21,12 @@ namespace SearchAThing
         PointOnOther
     }
 
+    /// <summary>
+    /// Defines a line by an application point (From) and an extension from there (V).
+    /// To is computed as From+V.
+    /// Line can be built by givin From and To, or From and V using specialized constructor with Line3DConstructMode.
+    /// Line can be built from a point using LineTo(), LineV() or LineDir() extension methods.
+    /// </summary>
     public class Line3D : Geometry, IEdge
     {
         #region IEdge
@@ -860,6 +866,9 @@ namespace SearchAThing
 
     }
 
+    /// <summary>
+    /// equality comparer helper for Line3D types
+    /// </summary>
     public class Line3DEqualityComparer : IEqualityComparer<Line3D>
     {
         double tol;

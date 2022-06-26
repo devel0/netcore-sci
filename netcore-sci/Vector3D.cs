@@ -25,7 +25,7 @@ namespace SearchAThing
         #region Geometry
 
         public override Vector3D Copy() => new Vector3D(this);
-        
+
         /// <summary>
         /// Enumerable with only this vector.
         /// ( Geometry Vertexes implementation )            
@@ -253,7 +253,7 @@ namespace SearchAThing
         public Vector3D(Vector3D v) : base(GeometryType.Vector3D)
         {
             CopyFrom(v);
-            
+
             X = v.X;
             Y = v.Y;
             Z = v.Z;
@@ -1275,6 +1275,27 @@ namespace SearchAThing
 
     public static partial class SciExt
     {
+
+        /// <summary>
+        /// retrieve reversed version of given point set ( used to convert ccw, cw )
+        /// </summary>        
+        public static IList<Vector3D> Reversed(this IEnumerable<Vector3D> pts)
+        {
+            var q = pts.ToList();
+            q.Reverse();
+            return q;
+        }
+
+        /// <summary>
+        /// retrieve reversed version of given point set ( used to convert ccw, cw )
+        /// </summary>        
+        public static IEnumerable<Vector3D> Reversed(this IList<Vector3D> pts)
+        {
+            for (int i = pts.Count - 1; i > -1; --i)
+            {
+                yield return pts[i];
+            }
+        }
 
         /// <summary>
         /// retrieve distinct of given vector set ensuring to maintain given order

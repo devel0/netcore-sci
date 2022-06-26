@@ -43,6 +43,11 @@ namespace SearchAThing
         Z_Y
     }
 
+    /// <summary>
+    /// CS with origin and basex, basey, basez orthonormal vectors.
+    /// WCS coord can be translated to this cs using ToUCS() method.
+    /// UCS coord can be translated back to wcs using ToWCS() method.
+    /// </summary>
     public partial class CoordinateSystem3D
     {
 
