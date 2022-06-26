@@ -25,6 +25,9 @@
   + [Line3D](#line3d)
   + [Arc3D](#arc3d)
   + [CoordinateSystem3D](#coordinatesystem3d)
+  + [Loop](#loop)
+  + [Edges](#edges)
+  + [Geometry](#geometry)
 * [Unit tests](#unit-tests)
 * [How this project was built](#how-this-project-was-built)
 * [IOT](#iot)
@@ -103,13 +106,13 @@ Vector3D a(1, 2, 3);
 var b = a.SetX(10);
 ```
 
-The vector a created with X:1, Y:2, Z:3 will subjected to a SetX(10) but the vector a itself not changed; instead it returns a new instance with X:10, Y:2, Z:3.
+The vector a created with X:1, Y:2, Z:3 will subjected to a SetX(10) but the vector a itself not changed, it still equals to (1,2,3); instead SetX returns a new instance (10, 2, 3).
 
 ### Tolerances
 
 - any function in this library that involves some test of comparision between numbers requires as first argument a tolerance parameter
-- the tolerance depends on the domain application you are working on, for example if you work on mm lengths then a 1e-1 could enogh
-- when working with normalized vector3d regardless of the domain application the constant `NormalizedLengthTolerance` should used ( if has a 1e-4 default value that is enough to work with double and floats )
+- the tolerance depends on the domain application you are working on, for example if you work on mm lengths then a 1e-1 could enough
+- when working with normalized vector3d regardless of the domain application the constant `NormalizedLengthTolerance` should used ( it has a 1e-4 default value that is enough to work with double and floats )
 - note that the tolerance doesn't influence for example in how accurate is the result of an intersection because the value if computed with maximum resolution doubles provides; tolerance are used only when tests ( EqualsTol, ... ) used in internal algorithm to make decisions.
 
 ### Vector3D
@@ -140,6 +143,20 @@ The vector a created with X:1, Y:2, Z:3 will subjected to a SetX(10) but the vec
 - origin is used in vectro3d ToUCS(), ToWCS() methods to translate between different ucs origins ( WCS origin is 0,0,0 )
 - basex,y,z are 3 vector3d vectors linearly independant
 - cs can be built in various manners, for example by giving an origin and a single vector3D (the normal) then by using an arbitrary axis algorithm it detects appropriate x-y axes. ( used in dxf for example because allow to save 1 vector3d; other methods allow to build cs by giving an origin and two vectors v1, v2 by specifying a SmartCsMode to instruct the wizard on how to consider these in relationship ( normally the smart mode X_YQ consider that v1 is the wanted X axis while v2 is in the xy plane and must not be parallel to the first v1; to obtain a numerical stable cs the angle v1,v2 should near to PI/2 but this depend on the application you are working on, in some cases 5-10deg could enough to compute the normal, then yaxis will be back computed from the z cross x ).
+
+### Loop
+
+- actually implements only planar loop with edges such as Line3D, Arc3D and Circle3D
+- used for intersection of 3d planar loop polygons
+
+### Edges
+
+- is an interface implemented by the loop basic entities such Line3D and Arc3D
+
+### Geometry
+
+- basic abstract type for geometries
+- contains definition of SGeomFrom and SGeomTo that will be used by inherited IEdge interface implemented objects such as Line3D and Arc3D and allow to state the sense of the edge: if sense is true then SGeomFrom equals GeomFrom and SGeomTo equals GeomTo; if sense is false then SGeomFrom equals GeomTo and SGeomTo equals GeomFrom.
 
 ## Unit tests
 
