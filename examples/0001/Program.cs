@@ -48,7 +48,7 @@ namespace test
                 {
                     circ = new Circle3D(
                         CoordinateSystem3D.WCS.Move(Vector3D.ZAxis * arc.To.Z),
-                        arc.To.Distance2D(Vector3D.Zero));
+                        arc.To.XYDistance(Vector3D.Zero));
                     var circ_ent = circ.DxfEntity;
                     circ_ent.Color = netDxf.AciColor.Yellow;
                     dxf.AddEntity(circ_ent);

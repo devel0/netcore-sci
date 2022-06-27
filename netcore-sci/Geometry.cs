@@ -307,8 +307,8 @@ namespace SearchAThing
             }
             else
             {
-                var A = Area(segs, tol);
-                var centroid = Centroid(segs, tol, A);
+                var A = XYArea(segs, tol);
+                var centroid = XYCentroid(segs, tol, A);
 
                 /*
                 // search for arcs

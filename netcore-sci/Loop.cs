@@ -69,7 +69,7 @@ namespace SearchAThing
         double ComputeArea(double tol)
         {
             var polysegs = Edges.Select(w => w.SGeomFrom).ToList();
-            var res = polysegs.Area(tol);
+            var res = polysegs.Select(v => v.ToUCS(Plane.CS)).ToList().XYArea(tol);
 
             foreach (var edge in Edges.Where(r => r.EdgeType == EdgeType.Arc3D))
             {
@@ -510,7 +510,7 @@ namespace SearchAThing
         public netDxf.Entities.Hatch ToHatch(double tol, HatchPattern pattern, bool associative = true) =>
             ToLwPolyline(tol).ToHatch(pattern, associative);
 
-        public LwPolyline ToLwPolyline(double tol) => Edges.Cast<Geometry>().ToLwPolyline(tol);
+        public LwPolyline ToLwPolyline(double tol) => Edges.Cast<Geometry>().ToLwPolyline(tol, normal: Plane.CS.BaseZ, closed: true);
 
         public LwPolyline DxfEntity(double tol) => ToLwPolyline(tol);
 

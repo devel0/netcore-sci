@@ -18,7 +18,7 @@ namespace SearchAThing
         /// (signed) Area of a polygon (does not consider z)
         /// https://en.wikipedia.org/wiki/Centroid        
         /// </summary>        
-        public static double SignedArea(this IReadOnlyList<Vector3D> pts, double tol)
+        public static double XYSignedArea(this IReadOnlyList<Vector3D> pts, double tol)
         {
             var lastEqualsFirst = pts[pts.Count - 1].EqualsTol(tol, pts[0]);
             double a = 0;
@@ -36,24 +36,24 @@ namespace SearchAThing
         /// (abs) Area of a polygon (does not consider z)
         /// https://en.wikipedia.org/wiki/Centroid        
         /// </summary>        
-        public static double Area(this IReadOnlyList<Vector3D> pts, double tol) => Math.Abs(SignedArea(pts, tol));
+        public static double XYArea(this IReadOnlyList<Vector3D> pts, double tol) => Math.Abs(XYSignedArea(pts, tol));
 
         /// <summary>
         /// Centroid of a polygon (does not consider z)    
         /// ( if have area specify the parameter to avoid recomputation )
         /// https://en.wikipedia.org/wiki/Centroid        
         /// </summary>        
-        public static Vector3D Centroid(this IReadOnlyList<Vector3D> pts, double tol)
+        public static Vector3D XYCentroid(this IReadOnlyList<Vector3D> pts, double tol)
         {
-            var signed_area = pts.SignedArea(tol);
-            return pts.Centroid(tol, signed_area);
+            var signed_area = pts.XYSignedArea(tol);
+            return pts.XYCentroid(tol, signed_area);
         }
 
         /// <summary>
         /// Centroid of a polygon (does not consider z)        
         /// https://en.wikipedia.org/wiki/Centroid        
         /// </summary>        
-        public static Vector3D Centroid(this IReadOnlyList<Vector3D> pts, double tol, double signed_area)
+        public static Vector3D XYCentroid(this IReadOnlyList<Vector3D> pts, double tol, double signed_area)
         {
             var lastEqualsFirst = pts[pts.Count - 1].EqualsTol(tol, pts[0]);
             double x = 0;
@@ -356,8 +356,13 @@ namespace SearchAThing
         }
 
         public static netDxf.Entities.Hatch ToHatch(this LwPolyline lw,
-          HatchPattern pattern, bool associative = true) =>
-          new netDxf.Entities.Hatch(pattern, new[] { new HatchBoundaryPath(new[] { lw }) }, associative);
+          HatchPattern pattern, bool associative = true)
+        {
+            var hatch = new netDxf.Entities.Hatch(pattern, new[] { new HatchBoundaryPath(new[] { lw }) }, associative);
+            hatch.Normal = lw.Normal;
+            hatch.Elevation = lw.Elevation;
+            return hatch;
+        }
 
 
         public static netDxf.Entities.Hatch ToHatch(this IEnumerable<Geometry> _geom,
@@ -370,13 +375,15 @@ namespace SearchAThing
         /// </summary>
         /// <param name="_geom"></param>
         /// <param name="tol">length tolerance</param>
-        /// <param name="closed"></param>
+        /// <param name="normal">lw polyline normal</param>
+        /// <param name="closed"></param>        
         /// <returns></returns>
-        public static netDxf.Entities.LwPolyline ToLwPolyline(this IEnumerable<Geometry> _geom, double tol, bool closed = true)
+        public static netDxf.Entities.LwPolyline ToLwPolyline(this IEnumerable<Geometry> _geom, double tol,
+            Vector3D normal, bool closed = true)
         {
             var geom = _geom.ToList();
 
-            var N = Vector3D.ZAxis;
+            var N = normal == null ? Vector3D.ZAxis : normal;
 
             var cs = new CoordinateSystem3D(Vector3D.Zero, N, CoordinateSystem3DAutoEnum.AAA);
 

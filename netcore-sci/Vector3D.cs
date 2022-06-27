@@ -465,7 +465,7 @@ namespace SearchAThing
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0016.cs)
         /// ![image](../test/Vector3D/Vector3DTest_0016.png)
         /// </remarks>
-        public double Distance2D(Vector3D other) =>
+        public double XYDistance(Vector3D other) =>
             Sqrt((X - other.X) * (X - other.X) + (Y - other.Y) * (Y - other.Y));
 
         /// <summary>
@@ -1626,7 +1626,7 @@ namespace SearchAThing
                 {
                     poly = poly.SortPoly(tol, Vector3D.ZAxis).ToList();
 
-                    var polyCentroid = poly.Centroid(tol);
+                    var polyCentroid = poly.XYCentroid(tol);
                     if (!polyCentroidDone.Contains(polyCentroid))
                     {
                         polys.Add(poly);
