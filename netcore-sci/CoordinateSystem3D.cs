@@ -55,6 +55,11 @@ namespace SearchAThing
         Matrix3D mInv;
 
         /// <summary>
+        /// not null if this cs basex, basey honors cs auto type rule
+        /// </summary>        
+        public CoordinateSystem3DAutoEnum? csAutoType { get; private set; } = null;
+
+        /// <summary>
         /// origin of cs where x,y,z base vectors applied
         /// </summary>            
         public Vector3D Origin { get; private set; }
@@ -115,6 +120,7 @@ namespace SearchAThing
         /// <param name="csAutoType">auto cs type</param>
         public CoordinateSystem3D(Vector3D o, Vector3D normal, CoordinateSystem3DAutoEnum csAutoType = CoordinateSystem3DAutoEnum.AAA)
         {
+            this.csAutoType = csAutoType;
             Origin = o;
 
             switch (csAutoType)

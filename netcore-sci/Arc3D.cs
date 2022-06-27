@@ -330,7 +330,7 @@ namespace SearchAThing
             Radius = r;
         }
 
-        public Arc3D Move(Vector3D delta) => 
+        public Arc3D Move(Vector3D delta) =>
             new Arc3D(CS.Move(delta), this.Radius, this.AngleStart, this.AngleEnd);
 
         /// <summary>
@@ -753,10 +753,11 @@ namespace SearchAThing
                 circle_mode: false))
                 yield return x;
         }
-
-        [ExcludeFromCodeCoverage]
-        public override string ToString() =>
-            $"[{GetType().Name}]{((!Sense) ? " !S" : "")} L:{Round(Length, 2)} SFROM[{SGeomFrom}] STO[{SGeomTo}] C:{Center} r:{Round(Radius, 3)} ANGLE:{Round(Angle.ToDeg(), 1)}deg ({Round(AngleStart.ToDeg(), 1)}->{Round(AngleEnd.ToDeg(), 1)})";
+        
+        public override string ToString() => ToString(digits: 3);
+        
+        public string ToString(int digits = 3) =>
+            $"[{GetType().Name}]{((!Sense) ? " !S" : "")} L:{Round(Length, 2)} SFROM[{SGeomFrom.ToString(digits)}] STO[{SGeomTo.ToString(digits)}] C:{Center} r:{Round(Radius, 3)} ANGLE:{Round(Angle.ToDeg(), 1)}deg ({Round(AngleStart.ToDeg(), 1)}->{Round(AngleEnd.ToDeg(), 1)})";
 
         /// <summary>
         /// create a set of subarc from this by splitting through given split points

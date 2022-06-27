@@ -9,6 +9,7 @@ using netDxf;
 using netDxf.Entities;
 
 using SearchAThing;
+using System.Text;
 
 namespace SearchAThing
 {
@@ -533,13 +534,24 @@ namespace SearchAThing
         public netDxf.Entities.Hatch ToHatch(double tol, HatchPattern pattern, bool associative = true) =>
             ToLwPolyline(tol).ToHatch(pattern, associative);
 
-        public LwPolyline ToLwPolyline(double tol) => Edges.Cast<Geometry>().ToLwPolyline(tol, normal: Plane.CS.BaseZ, closed: true);
+        public LwPolyline ToLwPolyline(double tol) => Edges.Cast<Geometry>().ToLwPolyline(tol, Plane.CS);
 
         public LwPolyline DxfEntity(double tol) => ToLwPolyline(tol);
 
         public override string ToString()
         {
             return $"Edges:{Edges.Count}";
+        }
+
+        public string DebugDump(int digits = 3)
+        {
+            var sb = new StringBuilder();
+            foreach (var edge in Edges)
+            {
+                sb.AppendLine(edge.ToString(digits));
+            }
+
+            return sb.ToString();
         }
 
     }

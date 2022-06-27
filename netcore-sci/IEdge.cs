@@ -78,6 +78,8 @@ namespace SearchAThing
         /// </summary>        
         double Length { get; }
 
+        string ToString(int digits);
+
     }
 
     public static partial class SciExt
