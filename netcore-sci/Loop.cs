@@ -85,9 +85,15 @@ namespace SearchAThing
             return res;
         }
 
-        public bool ContainsPoint(double tol, Vector3D pt)
+        public bool ContainsPoint(double tol, Vector3D pt, bool excludePerimeter = false)
         {
-            if (this.Edges.Any(edge => edge.EdgeContainsPoint(tol, pt))) return true;
+            var onperimeter = this.Edges.Any(edge => edge.EdgeContainsPoint(tol, pt));
+
+            if (onperimeter)
+            {
+                if (excludePerimeter) return false;
+                return true;
+            }
 
             var ray = pt.LineV(Plane.CS.BaseX);
 
@@ -171,8 +177,12 @@ namespace SearchAThing
                     .Select(i_nfo => new
                     {
                         ipt = (Vector3D)i_nfo,
+
                         tent = comb.tg,
-                        oent = comb.og
+                        oent = comb.og,
+
+                        // ipt_strictly_inside_this = this.ContainsPoint(tol, (Vector3D)i_nfo, excludePerimeter: true),
+                        // ipt_strictly_inside_other = other.ContainsPoint(tol, (Vector3D)i_nfo, excludePerimeter: true)
                     })
                 )
                 .ToList()
@@ -181,6 +191,7 @@ namespace SearchAThing
                 .Select(w => w.First())
                 .ToList();
 
+                // this contains other, viceversa and disjoint
                 if (iptsNfos.Count == 0)
                 {
                     var opts = other.Edges.Select(edge => (Vector3D)edge.SGeomFrom).ToList();
@@ -193,6 +204,9 @@ namespace SearchAThing
 
                     yield break;
                 }
+
+                // this share only edges with other but not intersects
+                // if (iptsNfos.All(nfo => !nfo.ipt_strictly_inside_this && !nfo.ipt_strictly_inside_other)) yield break;
 
                 var tgeomsBreaks = iptsNfos
                     .GroupBy(w => w.tent)
@@ -391,7 +405,14 @@ namespace SearchAThing
                     else if (!x.vertexVisited.Contains(x.geom.SGeomTo)) vertex = x.geom.SGeomTo;
 
                     if (vertex != null)
-                        return getByIp(vertex, !x.isOnThis);
+                    {
+                        if ((x.isOnThis && ipToOtherBrokenGeoms.ContainsKey(vertex))
+                            ||
+                            (!x.isOnThis && ipToThisBrokenGeoms.ContainsKey(vertex)))
+                            return getByIp(vertex, !x.isOnThis);
+                        else
+                            return null;
+                    }
                     else
                         return null;
                 }
@@ -489,6 +510,8 @@ namespace SearchAThing
                 //     visitedVertexes.Add(geom.SGeomFrom);
                 //     visitedVertexes.Add(geom.SGeomTo);
                 // }
+
+                if (gLoop.Count == 1) yield break;
 
                 var loopres = new Loop(tol, gLoop, checkSense: true);
 
