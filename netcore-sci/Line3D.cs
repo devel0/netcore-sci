@@ -93,6 +93,8 @@ namespace SearchAThing
                 (this.From.EqualsTol(tol, oline.To) && this.From.EqualsTol(tol, oline.From));
         }
 
+        public IEdge EdgeMove(Vector3D delta) => this.Move(delta);
+
         #endregion
 
         #region Geometry
@@ -268,9 +270,9 @@ namespace SearchAThing
         public Line3D(Line3D l) : base(GeometryType.Line3D)
         {
             CopyFrom(l);
-            
+
             From = l.From;
-            V = l.V;            
+            V = l.V;
         }
 
         /// <summary>

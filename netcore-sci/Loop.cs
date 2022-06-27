@@ -21,9 +21,16 @@ namespace SearchAThing
 
         public Plane3D Plane { get; private set; }
 
-        public List<IEdge> Edges { get; private set; }
+        public IReadOnlyList<IEdge> Edges { get; private set; }
 
         public double Tol { get; private set; }
+
+        Loop(double tol, Plane3D plane, IReadOnlyList<IEdge> edges)
+        {
+            Tol = tol;
+            Edges = edges;
+            Plane = plane;
+        }
 
         public Loop(double tol, IEnumerable<IEdge> edges, bool checkSense = true)
         {
@@ -38,6 +45,9 @@ namespace SearchAThing
             Edges = lwPolyline.ToGeometries(tol).Cast<IEdge>().CheckSense(tol).ToList();
             Plane = Edges.DetectPlane(tol);
         }
+
+        public Loop Move(Vector3D delta) =>
+            new Loop(Tol, Plane.Move(delta), Edges.Select(edge => edge.EdgeMove(delta)).ToList());
 
         double? _Area = null;
 
@@ -522,7 +532,7 @@ namespace SearchAThing
             {
                 switch (edge.EdgeType)
                 {
-                    case EdgeType.Line3D: lines.Add((Line3D)edge); break;                    
+                    case EdgeType.Line3D: lines.Add((Line3D)edge); break;
                     case EdgeType.Arc3D: return new Plane3D(((Arc3D)edge).CS);
                     default:
                         throw new Exception($"unexpected edge type {edge.EdgeType}");

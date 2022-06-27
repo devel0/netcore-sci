@@ -58,6 +58,11 @@ namespace SearchAThing
         IEnumerable<Geometry> Split(double tol, IEnumerable<Vector3D> breaks);
 
         /// <summary>
+        /// translate this edge of given amount
+        /// </summary>
+        IEdge EdgeMove(Vector3D delta);
+
+        /// <summary>
         /// Retrieve corresponding dxf entity to this edge
         /// </summary>        
         netDxf.Entities.EntityObject DxfEntity { get; }

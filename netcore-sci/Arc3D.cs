@@ -157,6 +157,8 @@ namespace SearchAThing
                 (this.From.EqualsTol(tol, oarc.To) && this.From.EqualsTol(tol, oarc.From));
         }
 
+        public IEdge EdgeMove(Vector3D delta) => this.Move(delta);
+
         #endregion
 
         #region Geometry
@@ -270,7 +272,7 @@ namespace SearchAThing
             }
         }
 
-        #endregion
+        #endregion        
 
         /// <summary>
         /// coordinate system centered in arc center
@@ -316,7 +318,7 @@ namespace SearchAThing
             AngleStart = arc.AngleStart;
             AngleEnd = arc.AngleEnd;
             CS = arc.CS;
-            Radius = arc.Radius;            
+            Radius = arc.Radius;
         }
 
         protected Arc3D(CoordinateSystem3D cs, double r, double normalizedAngleRadStart, double normalizedAngleRadEnd) :
@@ -327,6 +329,9 @@ namespace SearchAThing
             CS = cs;
             Radius = r;
         }
+
+        public Arc3D Move(Vector3D delta) => 
+            new Arc3D(CS.Move(delta), this.Radius, this.AngleStart, this.AngleEnd);
 
         /// <summary>
         /// helper to build circle by given 3 points

@@ -48,6 +48,8 @@ namespace SearchAThing
         /// <param name="tol">len tolerance</param>
         /// <param name="other">other plane</param>        
         public Line3D? Intersect(double tol, Plane3D other) => CS.Intersect(tol, other.CS);
+        
+        public Plane3D Move(Vector3D delta) => new Plane3D(CS.Move(delta));
 
     }
 
