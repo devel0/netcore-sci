@@ -16,7 +16,7 @@ namespace SearchAThing.Sci.Tests
                 System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Loop/LoopTest_0006.dxf"));
 
             DxfDocument? outdxf = null;
-            outdxf = new DxfDocument();
+            //outdxf = new DxfDocument();
 
             var tol = 0.1;//1e-8;
 
@@ -24,9 +24,7 @@ namespace SearchAThing.Sci.Tests
             var loopYellow = dxf.LwPolylines.First(w => w.Layer.Name == "yellow").ToLoop(tol);
 
             var gyInts = loopGreen.Intersect(tol, loopYellow).ToList();
-
             
-
             Assert.True(gyInts.Count == 1);
 
             if (outdxf != null)
