@@ -26,8 +26,8 @@ namespace SearchAThing.Sci.Tests
             Assert.True(cw[2].EqualsTol(tol, 0, 200, 0));
             Assert.True(cw[3].EqualsTol(tol, 0, 0, 0));
 
-            var ccw_centroid = ccw.Centroid(tol);
-            var cw_centroid = cw.Centroid(tol);
+            var ccw_centroid = ccw.XYCentroid(tol);
+            var cw_centroid = cw.XYCentroid(tol);
 
             Assert.True(ccw_centroid.EqualsTol(tol, cw_centroid));
             Assert.True(ccw_centroid.EqualsTol(tol, 125, 100));

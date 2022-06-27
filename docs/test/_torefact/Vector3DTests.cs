@@ -120,7 +120,7 @@ namespace SearchAThing.Sci.Tests
         {
             var a = new Vector3D(1, 2, 3);
             var b = new Vector3D(4, 5, 6);
-            Assert.True(a.Distance2D(b).EqualsTol(1e-4, Sqrt(3 * 3 + 3 * 3)));
+            Assert.True(a.XYDistance(b).EqualsTol(1e-4, Sqrt(3 * 3 + 3 * 3)));
         }
 
         [Fact]

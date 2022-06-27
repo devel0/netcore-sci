@@ -43,6 +43,17 @@ namespace SearchAThing.Sci.Tests
             loopYellow.Area.AssertEqualsTol(tol, gyInts[0].Area);
             gyInts[0].Length.AssertEqualsTol(tol, 47.89069988);
 
+            {
+                var delta = new Vector3D(1, 2, 3);
+                var movedTest = loopYellow.Move(delta);
+
+                for (int i = 0; i < loopYellow.Edges.Count; ++i)
+                {
+                    (loopYellow.Edges[i].SGeomFrom + delta).AssertEqualsTol(tol, movedTest.Edges[i].SGeomFrom);
+                    (loopYellow.Edges[i].SGeomTo + delta).AssertEqualsTol(tol, movedTest.Edges[i].SGeomTo);
+                }
+            }
+
             if (outdxf != null)
             {
                 outdxf.DrawingVariables.PdMode = netDxf.Header.PointShape.CircleCross;

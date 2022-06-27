@@ -180,10 +180,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a50a4eb4151380b2b1bb9dc2e97919596"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute perpendicular(min) distance of this point from given line <br  />
   <a href="class_search_a_thing_1_1_vector3_d.html#a50a4eb4151380b2b1bb9dc2e97919596">More...</a><br /></td></tr>
 <tr class="separator:a50a4eb4151380b2b1bb9dc2e97919596"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af717c3ef86c897a78b209b2e2afb32e7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#af717c3ef86c897a78b209b2e2afb32e7">Distance2D</a> (<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> other)</td></tr>
-<tr class="memdesc:af717c3ef86c897a78b209b2e2afb32e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute distance of this point from the given in 2d ( x,y ) without consider z component <br  />
-  <a href="class_search_a_thing_1_1_vector3_d.html#af717c3ef86c897a78b209b2e2afb32e7">More...</a><br /></td></tr>
-<tr class="separator:af717c3ef86c897a78b209b2e2afb32e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af29803b83491cec3ed70310ceced94f1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#af29803b83491cec3ed70310ceced94f1">XYDistance</a> (<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> other)</td></tr>
+<tr class="memdesc:af29803b83491cec3ed70310ceced94f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute distance of this point from the given in 2d ( x,y ) without consider z component <br  />
+  <a href="class_search_a_thing_1_1_vector3_d.html#af29803b83491cec3ed70310ceced94f1">More...</a><br /></td></tr>
+<tr class="separator:af29803b83491cec3ed70310ceced94f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ec4452f54c08552288256190dd4ef49"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#a1ec4452f54c08552288256190dd4ef49">DotProduct</a> (<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> other)</td></tr>
 <tr class="memdesc:a1ec4452f54c08552288256190dd4ef49"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute dot product of this vector for the given one <br  />
  a b = |a| |b| cos(alfa) <br  />
@@ -1294,37 +1294,6 @@ Additional Inherited Members</h2></td></tr>
  </p>
 <p><br  />
  <a href="https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0014.cs">unit test</a> </p>
-
-</div>
-</div>
-<a id="af717c3ef86c897a78b209b2e2afb32e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af717c3ef86c897a78b209b2e2afb32e7">&#9670;&nbsp;</a></span>Distance2D()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Distance2D </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>compute distance of this point from the given in 2d ( x,y ) without consider z component <br  />
- </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">other</td><td>other point</td></tr>
-  </table>
-  </dd>
-</dl>
-<p><br  />
- </p>
-<p><br  />
- <a href="https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0016.cs">unit test</a> <img src="../test/Vector3D/Vector3DTest_0016.png" alt="image" class="inline"/> </p>
 
 </div>
 </div>
@@ -3695,6 +3664,37 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="af29803b83491cec3ed70310ceced94f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af29803b83491cec3ed70310ceced94f1">&#9670;&nbsp;</a></span>XYDistance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double XYDistance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>compute distance of this point from the given in 2d ( x,y ) without consider z component <br  />
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>other point</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br  />
+ </p>
+<p><br  />
+ <a href="https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0016.cs">unit test</a> <img src="../test/Vector3D/Vector3DTest_0016.png" alt="image" class="inline"/> </p>
 
 </div>
 </div>

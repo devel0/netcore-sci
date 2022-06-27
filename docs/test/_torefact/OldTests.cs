@@ -474,11 +474,11 @@ namespace SearchAThing.Sci.Tests
                 };
 
                 // area
-                var area = pts.Area(tolLen);
+                var area = pts.XYArea(tolLen);
                 Assert.True(area.EqualsTol(tolLen, 2 * B * h + H * b));
 
                 // centroid
-                Assert.True(pts.Centroid(tolLen, area).EqualsTol(tolLen, (2 * h * B * B / 2 + b * b * H / 2) / area, H / 2 + h, 0));
+                Assert.True(pts.XYCentroid(tolLen, area).EqualsTol(tolLen, (2 * h * B * B / 2 + b * b * H / 2) / area, H / 2 + h, 0));
 
                 // segment contains point
                 // inner
@@ -506,10 +506,10 @@ namespace SearchAThing.Sci.Tests
                         10, 10,
                         0, 10
                         );
-                    Assert.True(pts.Centroid(tol).EqualsTol(tol, 5, 5, 0));
+                    Assert.True(pts.XYCentroid(tol).EqualsTol(tol, 5, 5, 0));
 
                     pts = pts.Select(w => w - new Vector3D(10, 10)).ToList();
-                    Assert.True(pts.Centroid(tol).EqualsTol(tol, -5, -5, 0));
+                    Assert.True(pts.XYCentroid(tol).EqualsTol(tol, -5, -5, 0));
                 }
 
                 {
@@ -519,9 +519,9 @@ namespace SearchAThing.Sci.Tests
                         33, 35,
                         0, 35
                         );
-                    var A = pts.Area(tol);
+                    var A = pts.XYArea(tol);
                     Assert.True(A.EqualsTol(1e-1, 1089));
-                    Assert.True(pts.Centroid(tol).EqualsTol(tol, 16.5, 18.5, 0));
+                    Assert.True(pts.XYCentroid(tol).EqualsTol(tol, 16.5, 18.5, 0));
                 }
 
                 {
@@ -531,9 +531,9 @@ namespace SearchAThing.Sci.Tests
                         33, 35,
                         33, 2
                         );
-                    var A = pts.Area(tol);
+                    var A = pts.XYArea(tol);
                     Assert.True(A.EqualsTol(1e-1, 1089));
-                    Assert.True(pts.SortPoly(tol, Vector3D.ZAxis).ToList().Centroid(tol).EqualsTol(tol, 16.5, 18.5, 0));
+                    Assert.True(pts.SortPoly(tol, Vector3D.ZAxis).ToList().XYCentroid(tol).EqualsTol(tol, 16.5, 18.5, 0));
                 }
 
             }
@@ -548,7 +548,7 @@ namespace SearchAThing.Sci.Tests
                     71.18, 74.56,
                     67.03, 78.61);
 
-                Assert.True(pts.Area(tol).EqualsTol(5.51624999, 1e-6));
+                Assert.True(pts.XYArea(tol).EqualsTol(5.51624999, 1e-6));
             }
 
             {
@@ -599,7 +599,7 @@ namespace SearchAThing.Sci.Tests
 
             var polys = segs.ClosedPolys2D(1e-3).ToList();
             Assert.True(polys.Count == 9);
-            Assert.True(polys.All(r => r.ToList().Area(1e-3).EqualsTol(1e-3, 1111.1111)));
+            Assert.True(polys.All(r => r.ToList().XYArea(1e-3).EqualsTol(1e-3, 1111.1111)));
         }
 
         [Fact(DisplayName = "SortPolygon")]
