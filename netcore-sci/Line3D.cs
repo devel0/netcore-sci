@@ -30,7 +30,7 @@ namespace SearchAThing
     public class Line3D : Geometry, IEdge
     {
         #region IEdge
-        
+
         public EdgeType EdgeType => EdgeType.Line3D;
 
         public bool EdgeContainsPoint(double tol, Vector3D pt) => this.SegmentContainsPoint(tol, pt);
@@ -70,7 +70,7 @@ namespace SearchAThing
                 }
             }
         }
-        
+
         public override Vector3D MidPoint => (From + To) / 2;
 
         public bool Equals(double tol, IEdge other, bool includeSense = false)
@@ -215,7 +215,7 @@ namespace SearchAThing
                     throw new NotImplementedException();
             }
         }
-        
+
         public override EntityObject DxfEntity => this.ToLine();
 
         #endregion
@@ -262,6 +262,11 @@ namespace SearchAThing
                 yield return From;
                 yield return To;
             }
+        }
+
+        [JsonConstructor]
+        Line3D() : base(GeometryType.Line3D)
+        {
         }
 
         /// <summary>

@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace SearchAThing
 {
 
@@ -7,7 +9,8 @@ namespace SearchAThing
     public class Matrix3D
     {
 
-        double[,] data;
+        [JsonProperty]
+        double[,] data { get; set; }
 
         /// <summary>
         /// empty matrix

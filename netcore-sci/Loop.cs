@@ -10,6 +10,7 @@ using netDxf.Entities;
 
 using SearchAThing;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace SearchAThing
 {
@@ -24,7 +25,15 @@ namespace SearchAThing
 
         public IReadOnlyList<IEdge> Edges { get; private set; }
 
+        public IEnumerable<Vector3D> Vertexes(double tol) =>
+            Edges.SelectMany(w => w.Vertexes).Distinct(new Vector3DEqualityComparer(tol));
+
         public double Tol { get; private set; }
+
+        [JsonConstructor]
+        Loop()
+        {
+        }
 
         /// <summary>
         /// precondition: edges must lie on given plane

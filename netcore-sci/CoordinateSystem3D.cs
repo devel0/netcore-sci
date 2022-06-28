@@ -6,6 +6,7 @@ using static System.Math;
 using netDxf.Tables;
 
 using static SearchAThing.SciToolkit;
+using Newtonsoft.Json;
 
 namespace SearchAThing
 {
@@ -51,8 +52,25 @@ namespace SearchAThing
     public partial class CoordinateSystem3D
     {
 
-        Matrix3D m;
-        Matrix3D mInv;
+        Matrix3D? _m = null;
+        Matrix3D m
+        {
+            get
+            {
+                if (_m == null) _m = Matrix3D.FromVectorsAsColumns(BaseX, BaseY, BaseZ);
+                return _m;
+            }
+        }
+
+        Matrix3D? _mInv = null;
+        Matrix3D mInv
+        {
+            get
+            {
+                if (_mInv == null) _mInv = m.Inverse();
+                return _mInv;
+            }
+        }
 
         /// <summary>
         /// not null if this cs basex, basey honors cs auto type rule
@@ -110,6 +128,12 @@ namespace SearchAThing
         /// </summary>
         const double aaaSmall = 1d / 64;
 
+        [JsonConstructor]
+        CoordinateSystem3D()
+        {
+
+        }
+
         /// <summary>
         /// build coordinate system with given origin and given BaseZ on given vector normal;
         /// given normal will subjected to normalization;
@@ -163,8 +187,8 @@ namespace SearchAThing
                     throw new Exception($"unknown cs {csAutoType}");
             }
 
-            m = Matrix3D.FromVectorsAsColumns(BaseX, BaseY, BaseZ);
-            mInv = m.Inverse();
+            //m = Matrix3D.FromVectorsAsColumns(BaseX, BaseY, BaseZ);
+            //mInv = m.Inverse();
         }
 
         /// <summary>
@@ -182,8 +206,8 @@ namespace SearchAThing
             BaseY = baseY;
             BaseZ = baseZ;
 
-            m = Matrix3D.FromVectorsAsColumns(BaseX, BaseY, BaseZ);
-            mInv = m.Inverse();
+            //m = Matrix3D.FromVectorsAsColumns(BaseX, BaseY, BaseZ);
+            //mInv = m.Inverse();
         }
 
         /// <summary>
@@ -227,8 +251,8 @@ namespace SearchAThing
                     throw new Exception($"unknown cs mode {mode}");
             }
 
-            m = Matrix3D.FromVectorsAsColumns(BaseX, BaseY, BaseZ);
-            mInv = m.Inverse();
+            //m = Matrix3D.FromVectorsAsColumns(BaseX, BaseY, BaseZ);
+            //mInv = m.Inverse();
         }
 
         /// <summary>

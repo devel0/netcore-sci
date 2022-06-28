@@ -79,6 +79,8 @@ namespace SearchAThing
         /// </summary>        
         double Length { get; }
 
+        IEnumerable<Vector3D> Vertexes { get; }
+
         string ToString(int digits);
 
     }

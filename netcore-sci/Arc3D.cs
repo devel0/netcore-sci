@@ -7,6 +7,7 @@ using System.Diagnostics.CodeAnalysis;
 using netDxf.Entities;
 
 using static SearchAThing.SciToolkit;
+using Newtonsoft.Json;
 
 namespace SearchAThing
 {
@@ -288,6 +289,11 @@ namespace SearchAThing
 
         private double tol_rad;
 
+        [JsonConstructor]
+        Arc3D() : base(GeometryType.Arc3D)
+        {
+        }
+
         /// <summary>
         /// construct 3d arc
         /// </summary>
@@ -493,17 +499,7 @@ namespace SearchAThing
         /// <param name="to">buldge to pt</param>
         /// <param name="N">arc normal</param>
         /// <returns>arc buldge value</returns>
-        public double Bulge(double tol, Vector3D from, Vector3D to, Vector3D N)
-        {
-            var v1 = from - Center;
-            var v2 = to - Center;
-            var ang = v1.AngleToward(tol, v2, CS.BaseZ);
-            var factor = 1.0;
-            if (!N.Concordant(NormalizedLengthTolerance, CS.BaseZ))
-                factor = -1.0;
-
-            return Tan(ang / 4) * factor;
-        }
+        public double Bulge(double tol) => Tan((SGeomFrom - Center).AngleToward(tol, SGeomTo - Center, CS.BaseZ) / 4);
 
         /// <summary>
         /// statis if given point contained in arc perimeter/shape or circle perimeter/shape depending on specified mode

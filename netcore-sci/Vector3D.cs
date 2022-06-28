@@ -243,6 +243,7 @@ namespace SearchAThing
         /// <remarks>  
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0006.cs)
         /// </remarks>
+        [JsonConstructor]
         public Vector3D() : base(GeometryType.Vector3D)
         {
         }

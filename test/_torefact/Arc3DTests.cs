@@ -80,9 +80,8 @@ namespace SearchAThing.Sci.Tests
                 arc.Radius, arc.AngleStart, arc.AngleEnd)));
             Assert.False(arc.EqualsTol(1e-3, new Arc3D(1e-3, arc.CS, arc.Radius, arc.AngleStart + 1, arc.AngleEnd + 1)));
 
-            // arc bulge
-            Assert.True(arc.Bulge(1e-3, arc.From, arc.To, arc.CS.BaseZ).EqualsTol(1e-3, Tan(arc.Angle / 4)));
-            Assert.True(arc.Bulge(1e-3, arc.From, arc.To, -arc.CS.BaseZ).EqualsTol(1e-3, -Tan(arc.Angle / 4)));
+            // arc bulge            
+            arc.Bulge(1e-3).AssertEqualsTol(1e-3, Tan(arc.Angle / 4));            
 
             // arc contains            
             Assert.False(arc.Contains(1e-3, new Vector3D(3.084, 3.965, -1.843), onlyPerimeter: false)); // out arc shape - in plane

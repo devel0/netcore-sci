@@ -371,6 +371,7 @@ namespace SearchAThing
 
         /// <summary>
         /// build 2d dxf polyline.
+        /// precondition: geom vertex must lie on the same plane
         /// note: use RepeatFirstAtEnd extension to build a closed polyline
         /// </summary>
         /// <param name="_geom"></param>
@@ -385,93 +386,92 @@ namespace SearchAThing
 
             if (cs.csAutoType != CoordinateSystem3DAutoEnum.AAA)
             {
-                cs = new CoordinateSystem3D(cs.Origin, cs.BaseZ, CoordinateSystem3DAutoEnum.AAA);
+                cs = new CoordinateSystem3D(Vector3D.Zero, cs.BaseZ, CoordinateSystem3DAutoEnum.AAA);
             }
             
             var pvtx = new List<netDxf.Entities.LwPolylineVertex>();
 
-            Vector3D? lastPt = null;
+            Vector3D? _lastPt = null;
 
             for (int i = 0; i < geom.Count; ++i)
-            {
-                Vector3D? from = null;
-                Vector3D? to = null;
+            {                
+                var _from = geom[i].SGeomFrom.ToUCS(cs);
+                var _to = geom[i].SGeomTo.ToUCS(cs);
 
                 switch (geom[i].GeomType)
                 {
                     case GeometryType.Vector3D:
                         {
-                            to = (Vector3D)geom[i];
-                            var lwpv = new LwPolylineVertex(to.ToUCS(cs).ToDxfVector2());
+                            //var _to = (Vector3D)geom[i];
+                            var lwpv = new LwPolylineVertex(_to.ToDxfVector2());
                             pvtx.Add(lwpv);
-                            lastPt = to;
+                            _lastPt = _to;
                         }
                         break;
 
                     case GeometryType.Line3D:
                         {
-                            var seg = (Line3D)geom[i];
-                            from = seg.SGeomFrom;
-                            to = seg.SGeomTo;
+                            //var seg = (Line3D)geom[i];
+                            // from = seg.SGeomFrom;
+                            // to = seg.SGeomTo;
 
-                            if (lastPt == null || lastPt.EqualsTol(tol, from))
+                            if (_lastPt == null || _lastPt.EqualsTol(tol, _from))
                             {
-                                var lwpv = new LwPolylineVertex(from.ToUCS(cs).ToDxfVector2());
+                                var lwpv = new LwPolylineVertex(_from.ToDxfVector2());
                                 pvtx.Add(lwpv);
-                                lastPt = to;
+                                _lastPt = _to;
                             }
                             else
                             {
-                                var lwpv = new LwPolylineVertex(to.ToUCS(cs).ToDxfVector2());
+                                var lwpv = new LwPolylineVertex(_to.ToDxfVector2());
                                 pvtx.Add(lwpv);
-                                lastPt = from;
+                                _lastPt = _from;
                             }
                         }
                         break;
+
                     case GeometryType.Arc3D:
                         {
-                            var arc = (Arc3D)geom[i];
-                            from = arc.From;
-                            to = arc.To;
-                            var bulge = arc.Bulge(tol, arc.From, arc.To, cs.BaseZ);
+                            var arc = (Arc3D)geom[i];                            
+                            var bulge = arc.Bulge(tol);//(tol, _from, _to, Vector3D.ZAxis);
 
-                            if (lastPt == null)
+                            if (_lastPt == null)
                             {
                                 if (i < geom.Count - 1)
                                 {
-                                    if (geom[i + 1].GeomFrom.EqualsTol(tol, to))
+                                    if (geom[i + 1].GeomFrom.EqualsTol(tol, _to))
                                     {
-                                        var lwpv = new LwPolylineVertex(from.ToUCS(cs).ToDxfVector2()) { Bulge = bulge };
+                                        var lwpv = new LwPolylineVertex(_from.ToDxfVector2()) { Bulge = bulge };
                                         pvtx.Add(lwpv);
-                                        lastPt = to;
+                                        _lastPt = _to;
                                     }
                                     else
                                     {
-                                        var lwpv = new LwPolylineVertex(to.ToUCS(cs).ToDxfVector2()) { Bulge = -bulge };
+                                        var lwpv = new LwPolylineVertex(_to.ToDxfVector2()) { Bulge = -bulge };
                                         pvtx.Add(lwpv);
-                                        lastPt = from;
+                                        _lastPt = _from;
                                     }
                                 }
                                 else
                                 {
-                                    var lwpv = new LwPolylineVertex(from.ToUCS(cs).ToDxfVector2()) { Bulge = bulge };
+                                    var lwpv = new LwPolylineVertex(_from.ToDxfVector2()) { Bulge = bulge };
                                     pvtx.Add(lwpv);
-                                    lastPt = to;
+                                    _lastPt = _to;
                                 }
                             }
                             else
                             {
-                                if (lastPt.EqualsTol(tol, from))
+                                if (_lastPt.EqualsTol(tol, _from))
                                 {
-                                    var lwpv = new LwPolylineVertex(from.ToUCS(cs).ToDxfVector2()) { Bulge = bulge };
+                                    var lwpv = new LwPolylineVertex(_from.ToDxfVector2()) { Bulge = bulge };
                                     pvtx.Add(lwpv);
-                                    lastPt = to;
+                                    _lastPt = _to;
                                 }
                                 else
                                 {
-                                    var lwpv = new LwPolylineVertex(to.ToUCS(cs).ToDxfVector2()) { Bulge = -bulge };
+                                    var lwpv = new LwPolylineVertex(_to.ToDxfVector2()) { Bulge = -bulge };
                                     pvtx.Add(lwpv);
-                                    lastPt = from;
+                                    _lastPt = _from;
                                 }
                             }
 
@@ -482,15 +482,15 @@ namespace SearchAThing
 
             if (!closed)
             {
-                if (lastPt == null) throw new ArgumentException("can't find last pt");
-                var lwpv = new netDxf.Entities.LwPolylineVertex(lastPt.ToUCS(cs).ToDxfVector2());
+                if (_lastPt == null) throw new ArgumentException("can't find last pt");
+                var lwpv = new netDxf.Entities.LwPolylineVertex(_lastPt.ToDxfVector2());
                 pvtx.Add(lwpv);
             }
 
             var lwpoly = new netDxf.Entities.LwPolyline(pvtx, isClosed: closed);
 
             lwpoly.Normal = cs.BaseZ;
-            lwpoly.Elevation = cs.Origin.Length;
+            lwpoly.Elevation = (cs.Origin * cs.BaseZ).Z;
 
             return lwpoly;
         }

@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace SearchAThing
 {
 
@@ -24,6 +26,11 @@ namespace SearchAThing
         /// </summary>
         public static readonly Plane3D YZ = new Plane3D(CoordinateSystem3D.YZ);
 
+        [JsonConstructor]
+        Plane3D()
+        {
+        }
+
         /// <summary>
         /// build plane using cs as reference for origin and x,y axes
         /// </summary>
@@ -35,12 +42,12 @@ namespace SearchAThing
         /// <summary>
         /// states if given wcs point is contained in this plane
         /// </summary>
-        public bool Contains(double tol, Vector3D pt) => pt.ToUCS(CS).Z.EqualsTol(tol, 0);        
+        public bool Contains(double tol, Vector3D pt) => pt.ToUCS(CS).Z.EqualsTol(tol, 0);
 
         /// <summary>
         /// states if given wcs segment is contained in this plane
         /// </summary>
-        public bool Contains(double tol, Line3D line) => Contains(tol, line.From) && Contains(tol, line.To);        
+        public bool Contains(double tol, Line3D line) => Contains(tol, line.From) && Contains(tol, line.To);
 
         /// <summary>
         /// return intersection line between two planes or null if they parallels
@@ -48,7 +55,7 @@ namespace SearchAThing
         /// <param name="tol">len tolerance</param>
         /// <param name="other">other plane</param>        
         public Line3D? Intersect(double tol, Plane3D other) => CS.Intersect(tol, other.CS);
-        
+
         public Plane3D Move(Vector3D delta) => new Plane3D(CS.Move(delta));
 
         public string ToString(int digits) => CS.ToString(digits);
