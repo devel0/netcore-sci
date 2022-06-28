@@ -69,7 +69,7 @@ namespace SearchAThing
         /// </summary>
         /// <remarks>      
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
-        /// </remarks>
+        /// </remarks>    
         public override double Length
         {
             get
@@ -119,7 +119,7 @@ namespace SearchAThing
         /// </summary>
         /// <remarks>      
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
-        /// </remarks>
+        /// </remarks>        
         public override netDxf.Entities.EntityObject DxfEntity => this.ToDxfPoint();
 
         #endregion
@@ -336,7 +336,7 @@ namespace SearchAThing
         /// </summary>
         /// <remarks>      
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0010.cs)
-        /// </remarks>
+        /// </remarks>        
         public IEnumerable<double> Coordinates
         {
             get

@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using static System.Math;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace SearchAThing
 {
@@ -20,7 +21,7 @@ namespace SearchAThing
 
         /// <summary>
         /// type of edge
-        /// </summary>        
+        /// </summary>                
         EdgeType EdgeType { get; }
 
         /// <summary>
@@ -44,7 +45,7 @@ namespace SearchAThing
         /// </summary>
         /// <value></value>
         Vector3D SGeomTo { get; }
-
+        
         Vector3D MidPoint { get; }
 
         /// <summary>
@@ -64,7 +65,7 @@ namespace SearchAThing
 
         /// <summary>
         /// Retrieve corresponding dxf entity to this edge
-        /// </summary>        
+        /// </summary>                
         netDxf.Entities.EntityObject DxfEntity { get; }
 
         /// <summary>

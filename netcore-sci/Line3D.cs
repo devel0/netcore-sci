@@ -30,7 +30,7 @@ namespace SearchAThing
     public class Line3D : Geometry, IEdge
     {
         #region IEdge
-
+        
         public EdgeType EdgeType => EdgeType.Line3D;
 
         public bool EdgeContainsPoint(double tol, Vector3D pt) => this.SegmentContainsPoint(tol, pt);
@@ -70,7 +70,7 @@ namespace SearchAThing
                 }
             }
         }
-
+        
         public override Vector3D MidPoint => (From + To) / 2;
 
         public bool Equals(double tol, IEdge other, bool includeSense = false)
@@ -215,14 +215,14 @@ namespace SearchAThing
                     throw new NotImplementedException();
             }
         }
-
+        
         public override EntityObject DxfEntity => this.ToLine();
 
         #endregion
 
         /// <summary>
         /// Specify how to consider this Line3D when used in Geometry abstract class operations
-        /// </summary>        
+        /// </summary>                
         public GeomSegmentMode GeomSegmentMode { get; set; }
 
         public static readonly Line3D XAxisLine = new Line3D(Vector3D.Zero, Vector3D.XAxis);
@@ -820,12 +820,12 @@ namespace SearchAThing
 
         /// <summary>
         /// return segment with swapped from,to
-        /// </summary>
+        /// </summary>        
         public Line3D Swapped => new Line3D(To, From);
 
         /// <summary>
         /// return inverted segment
-        /// </summary>
+        /// </summary>        
         public Line3D Inverted => new Line3D(From, -V, Line3DConstructMode.PointAndVector);
 
         /// <summary>
