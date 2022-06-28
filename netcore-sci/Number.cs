@@ -8,7 +8,7 @@ using LinqStatistics;
 using MathNet.Numerics.Interpolation;
 
 using SearchAThing;
-
+using static SearchAThing.SciToolkit;
 namespace SearchAThing
 {
 

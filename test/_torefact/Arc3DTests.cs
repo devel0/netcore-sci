@@ -114,11 +114,13 @@ namespace SearchAThing.Sci.Tests
         [Fact]
         public void Arc3DTest_002()
         {
+            var tol = 1e-3;
+
             var p1 = new Vector3D(20.175, 178.425, -56.314);
             var p2 = new Vector3D(1.799, 231.586, -18.134);
             var p3 = new Vector3D(262.377, 302.118, 132.195);
 
-            var c = new Arc3D(p1, p2, p3);
+            var c = new Arc3D(tol, p1, p2, p3);
             var cs = c.CS;
 
             // verify points contained in arc plane
@@ -150,11 +152,13 @@ namespace SearchAThing.Sci.Tests
         [Fact]
         public void Arc3DTest_003()
         {
+            var tol = 1e-3;
+
             var p1 = new Vector3D(20.175, 178.425, -56.314);
             var p2 = new Vector3D(1.799, 231.586, -18.134);
             var p3 = new Vector3D(262.377, 302.118, 132.195);
 
-            var c = new Arc3D(p1, p2, p3);
+            var c = new Arc3D(tol, p1, p2, p3);
             var cs = c.CS;
 
             var arc = new Arc3D(1e-3, p1, p2, p3, -cs.BaseZ);
@@ -174,11 +178,13 @@ namespace SearchAThing.Sci.Tests
         [Fact]
         public void Arc3DTest_004()
         {
+            var tol = 1e-3;
+
             var p1 = new Vector3D(20.175, 178.425, -56.314);
             var p2 = new Vector3D(1.799, 231.586, -18.134);
             var p3 = new Vector3D(262.377, 302.118, 132.195);
 
-            var c = new Arc3D(p1, p2, p3);
+            var c = new Arc3D(tol, p1, p2, p3);
             var cs = c.CS;            
 
             var wrongNormal = new Vector3D(9.998, .175, 0);

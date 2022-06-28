@@ -60,9 +60,9 @@ namespace SearchAThing
         #region IEdge related
 
         public bool Sense { get; private set; } = true;
-        
+
         public Vector3D SGeomFrom => Sense ? GeomFrom : GeomTo;
-        
+
         public Vector3D SGeomTo => Sense ? GeomTo : GeomFrom;
 
         public Geometry ToggleSense()
@@ -144,6 +144,12 @@ namespace SearchAThing
 
     public static partial class SciExt
     {
+
+        public static Plane3D ToPlane(this netDxf.Entities.LwPolyline lwpolyline) =>
+            new Plane3D(new CoordinateSystem3D(
+                o: ((Vector3D)lwpolyline.Normal) * lwpolyline.Elevation,
+                normal: lwpolyline.Normal,
+                csAutoType: CoordinateSystem3DAutoEnum.AAA));
 
         /// <summary>
         /// extracs Arc3D, Line3D from given lwpolyline

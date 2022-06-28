@@ -357,7 +357,9 @@ namespace SearchAThing
         /// debug string
         /// </summary>
         /// <returns>formatted representation of cs origin, x, y, z</returns>
-        public override string ToString() => $"O:{Origin} X:{BaseX} Y:{BaseY} Z:{BaseZ}";
+        public string ToString(int digits) => $"O:{Origin.ToString(digits)} X:{BaseX.ToString(digits)} Y:{BaseY.ToString(digits)} Z:{BaseZ.ToString(digits)}";
+
+        public override string ToString() => ToString(3);
 
         /// <summary>
         /// script to paste in cad to draw cs rgb mode ( x=red, y=green, z=blue )

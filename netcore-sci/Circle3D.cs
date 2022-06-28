@@ -12,7 +12,7 @@ namespace SearchAThing
     /// Specialized version of Arc3D with StartAngle=0 and EndAngle=2PI
     /// </summary>
     public class Circle3D : Arc3D
-    {        
+    {
 
         /// <summary>
         /// create a circle in the given cs with given radius
@@ -29,9 +29,12 @@ namespace SearchAThing
         /// create circle from given arc
         /// </summary>
         /// <param name="arc">arc used to build circle</param>
-        public Circle3D(Arc3D arc) : base(arc.From, arc.MidPoint, arc.To)
+        public Circle3D(Arc3D arc) : base(arc)
         {
             GeomType = GeometryType.Circle3D;
+
+            AngleStart = 0;
+            AngleEnd = 2 * PI;
         }
 
         /// <summary>

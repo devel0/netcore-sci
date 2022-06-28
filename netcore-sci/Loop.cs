@@ -26,7 +26,10 @@ namespace SearchAThing
 
         public double Tol { get; private set; }
 
-        Loop(double tol, Plane3D plane, IReadOnlyList<IEdge> edges)
+        /// <summary>
+        /// precondition: edges must lie on given plane
+        /// </summary>        
+        public Loop(double tol, Plane3D plane, IReadOnlyList<IEdge> edges, bool checkSense)
         {
             Tol = tol;
             Edges = edges;
@@ -44,11 +47,11 @@ namespace SearchAThing
         {
             Tol = tol;
             Edges = lwPolyline.ToGeometries(tol).Cast<IEdge>().CheckSense(tol).ToList();
-            Plane = Edges.DetectPlane(tol);
+            Plane = lwPolyline.ToPlane();
         }
 
         public Loop Move(Vector3D delta) =>
-            new Loop(Tol, Plane.Move(delta), Edges.Select(edge => edge.EdgeMove(delta)).ToList());
+            new Loop(Tol, Plane.Move(delta), Edges.Select(edge => edge.EdgeMove(delta)).ToList(), checkSense: false);
 
         double? _Area = null;
 

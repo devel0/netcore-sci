@@ -51,9 +51,9 @@ namespace SearchAThing.Sci.Tests
             Assert.True(410d.ToRad().NormalizeAngle(tolRad, 0).EqualsTol(tolRad, -310d.ToRad()));
             Assert.True((-10d).ToRad().NormalizeAngle(tolRad, 0).EqualsTol(tolRad, (-10d).ToRad()));
             Assert.True(0d.ToRad().NormalizeAngle(tolRad, 0).EqualsTol(tolRad, (-360d).ToRad()));
-            Assert.True((-370d).ToRad().NormalizeAngle(tolRad, 0).EqualsTol(tolRad, (-10d).ToRad()));
+            Assert.True((-370d).ToRad().NormalizeAngle(tolRad, 0).EqualsTol(tolRad, (-10d).ToRad()));                        
 
-            // misc
+            // misc            
             Assert.True(6.283185286106162d.AngleInRange(5.890752785109231E-06, 0, 2.6901865734990813));
         }
 

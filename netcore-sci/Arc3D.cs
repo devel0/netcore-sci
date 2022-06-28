@@ -367,7 +367,7 @@ namespace SearchAThing
         /// <param name="p2">second constraint point</param>
         /// <param name="p3">third constraint point</param>
         /// <returns>3d arc passing for given points with angles 0-2pi</returns>
-        public Arc3D(Vector3D p1, Vector3D p2, Vector3D p3) :
+        protected Arc3D(Vector3D p1, Vector3D p2, Vector3D p3) :
             base(GeometryType.Arc3D)
         {
             GeomType = GeometryType.Arc3D;
@@ -384,7 +384,7 @@ namespace SearchAThing
         /// <summary>
         /// Build arc by 3 given points
         /// ( the inside CS will centered in the arc center and Xaxis toward p1 )
-        /// </summary>        
+        /// </summary>                
         public Arc3D(double tol, Vector3D p1, Vector3D p2, Vector3D p3, Vector3D? normal = null) :
             base(GeometryType.Arc3D)
         {
@@ -397,16 +397,15 @@ namespace SearchAThing
 
             if (normal != null)
             {
-                if (!normal.Colinear(tol, CS.BaseZ)) throw new ArgumentException($"invalid given normal not colinear to arc axis");
-                if (!normal.Concordant(tol, CS.BaseZ))
+                if (!normal.Colinear(NormalizedLengthTolerance, CS.BaseZ)) throw new ArgumentException($"invalid given normal not colinear to arc axis");
+                if (!normal.Concordant(NormalizedLengthTolerance, CS.BaseZ))
                 {
                     CS = CS.Rotate(CS.BaseX, PI);
                 }
             }
 
-            tol_rad = tol.RadTol(Radius);
-            AngleStart = CS.BaseX.AngleToward(tol, p1 - CS.Origin, CS.BaseZ).NormalizeAngle(tol_rad);
-            AngleEnd = CS.BaseX.AngleToward(tol, p3 - CS.Origin, CS.BaseZ).NormalizeAngle(tol_rad);
+            AngleStart = CS.BaseX.AngleToward(tol, p1 - CS.Origin, CS.BaseZ).NormalizeAngle(TwoPIRadTol);
+            AngleEnd = CS.BaseX.AngleToward(tol, p3 - CS.Origin, CS.BaseZ).NormalizeAngle(TwoPIRadTol);
         }
 
         /// <summary>
@@ -423,13 +422,13 @@ namespace SearchAThing
         /// start angle (rad) [0-2pi) respect cs xaxis rotating around cs zaxis
         /// note that start angle can be greather than end angle
         /// </summary>
-        public double AngleStart { get; private set; }
+        public double AngleStart { get; protected set; }
 
         /// <summary>
         /// end angle (rad) [0-2pi) respect cs xaxis rotating around cs zaxis
         /// note that start angle can be greather than end angle
         /// </summary>            
-        public double AngleEnd { get; private set; }
+        public double AngleEnd { get; protected set; }
 
         /// <summary>
         /// Arc (rad) angle length.
@@ -753,11 +752,11 @@ namespace SearchAThing
                 circle_mode: false))
                 yield return x;
         }
-        
+
         public override string ToString() => ToString(digits: 3);
-        
+
         public string ToString(int digits = 3) =>
-            $"[{GetType().Name}]{((!Sense) ? " !S" : "")} L:{Round(Length, 2)} SFROM[{SGeomFrom.ToString(digits)}] STO[{SGeomTo.ToString(digits)}] C:{Center} r:{Round(Radius, 3)} ANGLE:{Round(Angle.ToDeg(), 1)}deg ({Round(AngleStart.ToDeg(), 1)}->{Round(AngleEnd.ToDeg(), 1)})";
+            $"[{GetType().Name}]{((!Sense) ? " !S" : "")} L:{Round(Length, 2)} SFROM[{SGeomFrom.ToString(digits)}] STO[{SGeomTo.ToString(digits)}] MID[{MidPoint.ToString(digits)}] C:{Center} r:{Round(Radius, 3)} ANGLE:{Round(Angle.ToDeg(), 1)}deg ({Round(AngleStart.ToDeg(), 1)}->{Round(AngleEnd.ToDeg(), 1)})";
 
         /// <summary>
         /// create a set of subarc from this by splitting through given split points

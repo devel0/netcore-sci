@@ -51,7 +51,9 @@ namespace SearchAThing
         
         public Plane3D Move(Vector3D delta) => new Plane3D(CS.Move(delta));
 
-        public override string ToString() => CS.ToString();
+        public string ToString(int digits) => CS.ToString(digits);
+
+        public override string ToString() => ToString(3);
 
     }
 

@@ -4,7 +4,7 @@ using System;
 
 namespace SearchAThing.Sci.Tests
 {
-    public partial class PolygonTests
+    public partial class LoopTests
     {
 
         [Fact]
