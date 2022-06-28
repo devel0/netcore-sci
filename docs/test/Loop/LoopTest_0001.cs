@@ -1,10 +1,11 @@
 using Xunit;
 using System.Linq;
 using System;
+using Newtonsoft.Json;
 
 namespace SearchAThing.Sci.Tests
 {
-    public partial class PolygonTests
+    public partial class LoopTests
     {
 
         [Fact]
@@ -23,7 +24,7 @@ namespace SearchAThing.Sci.Tests
             Assert.False(loop.ContainsPoint(tol, new Vector3D(49.6, 26.1, 0)));
             
             Assert.True(loop.ContainsPoint(tol, new Vector3D(40.7769, 28.1902, 0)));
-            Assert.False(loop.ContainsPoint(tol, new Vector3D(41.2243, 30.8036, 0)));
+            Assert.False(loop.ContainsPoint(tol, new Vector3D(41.2243, 30.8036, 0)));            
         }
 
     }

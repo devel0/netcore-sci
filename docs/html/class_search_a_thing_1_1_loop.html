@@ -80,6 +80,11 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a27ab30fb86222c2cef0b2461ee16e1bc"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#a27ab30fb86222c2cef0b2461ee16e1bc">Vertexes</a> (double tol)</td></tr>
+<tr class="separator:a27ab30fb86222c2cef0b2461ee16e1bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee8d94d45f95f861df3f51dde6b11412"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#aee8d94d45f95f861df3f51dde6b11412">Loop</a> (double tol, <a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a> plane, IReadOnlyList&lt; <a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a> &gt; edges, bool checkSense)</td></tr>
+<tr class="memdesc:aee8d94d45f95f861df3f51dde6b11412"><td class="mdescLeft">&#160;</td><td class="mdescRight">precondition: edges must lie on given plane  <a href="class_search_a_thing_1_1_loop.html#aee8d94d45f95f861df3f51dde6b11412">More...</a><br /></td></tr>
+<tr class="separator:aee8d94d45f95f861df3f51dde6b11412"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a438032a69907625fd2b24459a0991ea6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#a438032a69907625fd2b24459a0991ea6">Loop</a> (double tol, IEnumerable&lt; <a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a> &gt; edges, bool checkSense=true)</td></tr>
 <tr class="separator:a438032a69907625fd2b24459a0991ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09973170440be93d2267bd8afa2336f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#a09973170440be93d2267bd8afa2336f7">Loop</a> (double tol, LwPolyline lwPolyline)</td></tr>
@@ -99,6 +104,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af6574b8ce6f668f30e22440356a9b41c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa73e7c4dd1df5fd5fbf81c7764ee1533"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#aa73e7c4dd1df5fd5fbf81c7764ee1533">ToString</a> ()</td></tr>
 <tr class="separator:aa73e7c4dd1df5fd5fbf81c7764ee1533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a39f314b29dcbd261d211addfa1b77c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#a5a39f314b29dcbd261d211addfa1b77c">DebugDump</a> (int digits=3)</td></tr>
+<tr class="separator:a5a39f314b29dcbd261d211addfa1b77c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -117,8 +124,52 @@ Properties</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>planar edges loop containing line and arcs </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aee8d94d45f95f861df3f51dde6b11412"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee8d94d45f95f861df3f51dde6b11412">&#9670;&nbsp;</a></span>Loop() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a>&#160;</td>
+          <td class="paramname"><em>plane</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IReadOnlyList&lt; <a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a> &gt;&#160;</td>
+          <td class="paramname"><em>edges</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>checkSense</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>precondition: edges must lie on given plane </p>
+<p><br  />
+ </p>
+
+</div>
+</div>
 <a id="a438032a69907625fd2b24459a0991ea6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a438032a69907625fd2b24459a0991ea6">&#9670;&nbsp;</a></span>Loop() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a438032a69907625fd2b24459a0991ea6">&#9670;&nbsp;</a></span>Loop() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,7 +203,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <a id="a09973170440be93d2267bd8afa2336f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09973170440be93d2267bd8afa2336f7">&#9670;&nbsp;</a></span>Loop() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a09973170440be93d2267bd8afa2336f7">&#9670;&nbsp;</a></span>Loop() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -208,6 +259,24 @@ Properties</h2></td></tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5a39f314b29dcbd261d211addfa1b77c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a39f314b29dcbd261d211addfa1b77c">&#9670;&nbsp;</a></span>DebugDump()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string DebugDump </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>digits</em> = <code>3</code></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -350,6 +419,24 @@ Properties</h2></td></tr>
           <td class="memname">override string ToString </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a27ab30fb86222c2cef0b2461ee16e1bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27ab30fb86222c2cef0b2461ee16e1bc">&#9670;&nbsp;</a></span>Vertexes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&gt; Vertexes </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

@@ -107,6 +107,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4d3b0541b1f259038d79b5b2147b26b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a4d3b0541b1f259038d79b5b2147b26b1">Equals</a> (double tol, <a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a> other, bool includeSense=false)</td></tr>
 <tr class="memdesc:a4d3b0541b1f259038d79b5b2147b26b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if this edge equals other  <a href="interface_search_a_thing_1_1_i_edge.html#a4d3b0541b1f259038d79b5b2147b26b1">More...</a><br /></td></tr>
 <tr class="separator:a4d3b0541b1f259038d79b5b2147b26b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe77134ec112964ec0c25d1c8e67d331"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#afe77134ec112964ec0c25d1c8e67d331">ToString</a> (int digits)</td></tr>
+<tr class="separator:afe77134ec112964ec0c25d1c8e67d331"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -130,6 +132,8 @@ Properties</h2></td></tr>
 <tr class="memitem:a165133c1c04da94d94cb485e8de7b99a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a165133c1c04da94d94cb485e8de7b99a">Length</a><code> [get]</code></td></tr>
 <tr class="memdesc:a165133c1c04da94d94cb485e8de7b99a"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of the edge  <a href="interface_search_a_thing_1_1_i_edge.html#a165133c1c04da94d94cb485e8de7b99a">More...</a><br /></td></tr>
 <tr class="separator:a165133c1c04da94d94cb485e8de7b99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30a727f99d8ab03c1261451dc4316bc7"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a30a727f99d8ab03c1261451dc4316bc7">Vertexes</a><code> [get]</code></td></tr>
+<tr class="separator:a30a727f99d8ab03c1261451dc4316bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>interface implemented by some type of geometries used in <a class="el" href="class_search_a_thing_1_1_loop.html" title="planar edges loop containing line and arcs">Loop</a> such as <a class="el" href="class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From...">Line3D</a>, <a class="el" href="class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities">Arc3D</a> and <a class="el" href="class_search_a_thing_1_1_circle3_d.html" title="Specialized version of Arc3D with StartAngle=0 and EndAngle=2PI">Circle3D</a> </p>
@@ -291,6 +295,26 @@ Properties</h2></td></tr>
  Toggle Sense flag so that SGeomFrom, SGeomTo equals to GeomFrom, GeomTo (Sense:true) or GeomTo, GeomFrom (Sense:false) </p>
 
 <p>Implemented in <a class="el" href="class_search_a_thing_1_1_line3_d.html#a2d69fe67c43c3fe09db7ce0bda76a873">Line3D</a>, and <a class="el" href="class_search_a_thing_1_1_arc3_d.html#a434af63605e3c11c199e8fba9273089d">Arc3D</a>.</p>
+
+</div>
+</div>
+<a id="afe77134ec112964ec0c25d1c8e67d331"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe77134ec112964ec0c25d1c8e67d331">&#9670;&nbsp;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ToString </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>digits</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_search_a_thing_1_1_line3_d.html#a3c04068f0197cba5a0e76fda2f41a59e">Line3D</a>, and <a class="el" href="class_search_a_thing_1_1_arc3_d.html#a3c04068f0197cba5a0e76fda2f41a59e">Arc3D</a>.</p>
 
 </div>
 </div>
@@ -466,6 +490,28 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>GeomTo (Sense:true) or GeomFrom (Sense:false) </p>
+
+</div>
+</div>
+<a id="a30a727f99d8ab03c1261451dc4316bc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30a727f99d8ab03c1261451dc4316bc7">&#9670;&nbsp;</a></span>Vertexes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&gt; Vertexes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

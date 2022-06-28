@@ -26,6 +26,7 @@
     </ItemGroup>
     <ItemGroup>
         <None Update="**/*.dxf" CopyToOutputDirectory="PreserveNewest" />
+        <None Update="**/*.json" CopyToOutputDirectory="PreserveNewest" />
         <None Update="$(ProjectDir)_torefact/doc/**" CopyToOutputDirectory="PreserveNewest" />
     </ItemGroup>
 </Project>

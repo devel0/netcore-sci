@@ -167,6 +167,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac22ccffc8d9fd45023180aa231a58f85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the min distance between two adiacent number given from all of the given ordered set of numbers. <br  />
   <a href="class_search_a_thing_1_1_sci_ext.html#ac22ccffc8d9fd45023180aa231a58f85">More...</a><br /></td></tr>
 <tr class="separator:ac22ccffc8d9fd45023180aa231a58f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a505afcf5dc1833726ee8d12645b15799"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a505afcf5dc1833726ee8d12645b15799">ToPlane</a> (this netDxf.Entities.LwPolyline lwpolyline)</td></tr>
+<tr class="separator:a505afcf5dc1833726ee8d12645b15799"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e6ee93a952757085327144759d20b5f"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a5e6ee93a952757085327144759d20b5f">ToGeometries</a> (this netDxf.Entities.LwPolyline lwpolyline, double tol)</td></tr>
 <tr class="memdesc:a5e6ee93a952757085327144759d20b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">extracs <a class="el" href="class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities">Arc3D</a>, <a class="el" href="class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From...">Line3D</a> from given lwpolyline  <a href="class_search_a_thing_1_1_sci_ext.html#a5e6ee93a952757085327144759d20b5f">More...</a><br /></td></tr>
 <tr class="separator:a5e6ee93a952757085327144759d20b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -299,9 +301,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a982f0be25a99ba3ff4ffa1a32f248ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a711df025828cb2e50630b2c4264dd8cc"><td class="memItemLeft" align="right" valign="top">static netDxf.Entities.Hatch&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a711df025828cb2e50630b2c4264dd8cc">ToHatch</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt; _geom, HatchPattern pattern, bool associative=true)</td></tr>
 <tr class="separator:a711df025828cb2e50630b2c4264dd8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a007135f1ff2b7b23d138ea16bbdca444"><td class="memItemLeft" align="right" valign="top">static netDxf.Entities.LwPolyline&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a007135f1ff2b7b23d138ea16bbdca444">ToLwPolyline</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt; _geom, double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> normal, bool closed=true)</td></tr>
-<tr class="memdesc:a007135f1ff2b7b23d138ea16bbdca444"><td class="mdescLeft">&#160;</td><td class="mdescRight">build 2d dxf polyline. note: use RepeatFirstAtEnd extension to build a closed polyline  <a href="class_search_a_thing_1_1_sci_ext.html#a007135f1ff2b7b23d138ea16bbdca444">More...</a><br /></td></tr>
-<tr class="separator:a007135f1ff2b7b23d138ea16bbdca444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38bd88e57905ce28c1a47a810beb74bc"><td class="memItemLeft" align="right" valign="top">static netDxf.Entities.LwPolyline&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a38bd88e57905ce28c1a47a810beb74bc">ToLwPolyline</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt; _geom, double tol, <a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html">CoordinateSystem3D</a> cs, bool closed=true)</td></tr>
+<tr class="memdesc:a38bd88e57905ce28c1a47a810beb74bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">build 2d dxf polyline. precondition: geom vertex must lie on the same plane note: use RepeatFirstAtEnd extension to build a closed polyline  <a href="class_search_a_thing_1_1_sci_ext.html#a38bd88e57905ce28c1a47a810beb74bc">More...</a><br /></td></tr>
+<tr class="separator:a38bd88e57905ce28c1a47a810beb74bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac84bbdba7e9eb9c7a3293f35b9b8d441"><td class="memItemLeft" align="right" valign="top">static netDxf.Entities.Polyline&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ac84bbdba7e9eb9c7a3293f35b9b8d441">ToPolyline</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; pts, bool isClosed=true)</td></tr>
 <tr class="memdesc:ac84bbdba7e9eb9c7a3293f35b9b8d441"><td class="mdescLeft">&#160;</td><td class="mdescRight">build 3d dxf polyline note: use RepeatFirstAtEnd extension to build a closed polyline  <a href="class_search_a_thing_1_1_sci_ext.html#ac84bbdba7e9eb9c7a3293f35b9b8d441">More...</a><br /></td></tr>
 <tr class="separator:ac84bbdba7e9eb9c7a3293f35b9b8d441"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -4442,8 +4444,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a007135f1ff2b7b23d138ea16bbdca444"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a007135f1ff2b7b23d138ea16bbdca444">&#9670;&nbsp;</a></span>ToLwPolyline()</h2>
+<a id="a38bd88e57905ce28c1a47a810beb74bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38bd88e57905ce28c1a47a810beb74bc">&#9670;&nbsp;</a></span>ToLwPolyline()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4466,8 +4468,8 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
-          <td class="paramname"><em>normal</em>, </td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html">CoordinateSystem3D</a>&#160;</td>
+          <td class="paramname"><em>cs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -4488,7 +4490,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>build 2d dxf polyline. note: use RepeatFirstAtEnd extension to build a closed polyline </p>
+<p>build 2d dxf polyline. precondition: geom vertex must lie on the same plane note: use RepeatFirstAtEnd extension to build a closed polyline </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">_geom</td><td></td></tr>
@@ -4500,6 +4502,32 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <p><br  />
  </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a505afcf5dc1833726ee8d12645b15799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a505afcf5dc1833726ee8d12645b15799">&#9670;&nbsp;</a></span>ToPlane()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a> ToPlane </td>
+          <td>(</td>
+          <td class="paramtype">this netDxf.Entities.LwPolyline&#160;</td>
+          <td class="paramname"><em>lwpolyline</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

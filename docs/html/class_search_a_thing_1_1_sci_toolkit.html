@@ -66,8 +66,10 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#properties">Properties</a> &#124;
 <a href="class_search_a_thing_1_1_sci_toolkit-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">SciToolkit Class Reference</div>  </div>
@@ -86,6 +88,15 @@ Collaboration diagram for SciToolkit:</div>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit_1_1_sci_properties_resolver.html">SciPropertiesResolver</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">addictional json resolver to ignore some <a class="el" href="class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin">Vector3D</a>, <a class="el" href="class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From...">Line3D</a> properties during serialization without affecting source code  <a href="class_search_a_thing_1_1_sci_toolkit_1_1_sci_properties_resolver.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit_1_1_unit_json_converter.html">UnitJsonConverter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">json converter to write unit using abbrev  <a href="class_search_a_thing_1_1_sci_toolkit_1_1_unit_json_converter.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aacdfce96774f44d9070fe25ebab12bf0"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt;(<a class="el" href="namespace_search_a_thing.html#a5e4248e784fa4252d8084865cb91a873">CircleTangentType</a> type, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> pa, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> pb)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#aacdfce96774f44d9070fe25ebab12bf0">CirclesOuterTangent</a> (double x1, double y1, double r1, double x2, double y2, double r2)</td></tr>
@@ -121,8 +132,16 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a7d3cb05ab135bae83f33c2762f52f867"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#a7d3cb05ab135bae83f33c2762f52f867">NormalizedLengthTolerance</a> = 1e-4</td></tr>
 <tr class="memdesc:a7d3cb05ab135bae83f33c2762f52f867"><td class="mdescLeft">&#160;</td><td class="mdescRight">tolerance used when comparing normalized vectors. considering range is [0..1] the valued should not smaller than double precision (15-16 digits) ie.1e-15  <a href="class_search_a_thing_1_1_sci_toolkit.html#a7d3cb05ab135bae83f33c2762f52f867">More...</a><br /></td></tr>
 <tr class="separator:a7d3cb05ab135bae83f33c2762f52f867"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5fec5cf2ae9e550420385fd9b5a82e0"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#af5fec5cf2ae9e550420385fd9b5a82e0">TwoPIRadTol</a> = 1e-10</td></tr>
+<tr class="memdesc:af5fec5cf2ae9e550420385fd9b5a82e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">tolerance over 2PI (rad)  <a href="class_search_a_thing_1_1_sci_toolkit.html#af5fec5cf2ae9e550420385fd9b5a82e0">More...</a><br /></td></tr>
+<tr class="separator:af5fec5cf2ae9e550420385fd9b5a82e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a251e7e36977cb5620dedd1700f407a83"><td class="memItemLeft" align="right" valign="top">static Func&lt; string, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#a251e7e36977cb5620dedd1700f407a83">PostProcessCadScript</a></td></tr>
 <tr class="separator:a251e7e36977cb5620dedd1700f407a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a069ef297efd5a9f6e6d4ed31a0431e6b"><td class="memItemLeft" align="right" valign="top">static JsonSerializerSettings&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#a069ef297efd5a9f6e6d4ed31a0431e6b">SciJsonSettings</a><code> [get]</code></td></tr>
+<tr class="separator:a069ef297efd5a9f6e6d4ed31a0431e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>netcore-sci toolkit static methods </p>
@@ -603,10 +622,58 @@ Static Public Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="af5fec5cf2ae9e550420385fd9b5a82e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5fec5cf2ae9e550420385fd9b5a82e0">&#9670;&nbsp;</a></span>TwoPIRadTol</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double TwoPIRadTol = 1e-10</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>tolerance over 2PI (rad) </p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a069ef297efd5a9f6e6d4ed31a0431e6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a069ef297efd5a9f6e6d4ed31a0431e6b">&#9670;&nbsp;</a></span>SciJsonSettings</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">JsonSerializerSettings SciJsonSettings</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>netcore-sci/Circle2D.cs</li>
 <li>netcore-sci/Constants.cs</li>
 <li>netcore-sci/DxfKit.cs</li>
+<li>netcore-sci/Serialization.cs</li>
 <li>netcore-sci/Number.cs</li>
 <li>netcore-sci/Polygon.cs</li>
 </ul>

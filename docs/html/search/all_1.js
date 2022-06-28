@@ -9,5 +9,5 @@ var searchData=
   ['bestfittingplane_29',['BestFittingPlane',['../class_search_a_thing_1_1_sci_ext.html#a0a46381b7ae7ed066a3579246f237fa1',1,'SearchAThing.SciExt.BestFittingPlane(this IEnumerable&lt; Line3D &gt; lines, double tol)'],['../class_search_a_thing_1_1_sci_ext.html#ac60e0f3b0c9738c6444d19b7dd610754',1,'SearchAThing.SciExt.BestFittingPlane(this IEnumerable&lt; Vector3D &gt; pts, double tol)']]],
   ['bisect_30',['Bisect',['../class_search_a_thing_1_1_line3_d.html#aabf6d8bb138dbc080987d9937d73167b',1,'SearchAThing::Line3D']]],
   ['boolean_31',['Boolean',['../class_search_a_thing_1_1_sci_ext.html#aff9c76fb1862d30c85d828c00878ce27',1,'SearchAThing::SciExt']]],
-  ['bulge_32',['Bulge',['../class_search_a_thing_1_1_arc3_d.html#a4dd750bb799c1fb4d7cf35bca8721aa9',1,'SearchAThing::Arc3D']]]
+  ['bulge_32',['Bulge',['../class_search_a_thing_1_1_arc3_d.html#a6f1e35b2b132cf8a9bb84c81452c4947',1,'SearchAThing::Arc3D']]]
 ];
