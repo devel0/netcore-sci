@@ -103,13 +103,13 @@ namespace SearchAThing
 
             foreach (var bitem in bangles.WithNextPrimitive())
             {
-                if (bitem.itemIdx == 0 && addStart)
+                if (bitem.itemIdx == 0 && addStart && !this.AngleStart.EqualsTol(rad_tol, bitem.item))
                     res.Add(new Arc3D(CS, Radius, this.AngleStart, bitem.item));
 
                 if (bitem.next.HasValue)
                     res.Add(new Arc3D(CS, Radius, bitem.item, bitem.next.Value));
 
-                else if (bitem.isLast && addEnd)
+                else if (bitem.isLast && addEnd && !bitem.item.EqualsTol(rad_tol, this.AngleEnd))
                     res.Add(new Arc3D(CS, Radius, bitem.item, this.AngleEnd));
             }
 
