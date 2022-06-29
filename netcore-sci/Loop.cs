@@ -52,6 +52,13 @@ namespace SearchAThing
             Plane = Edges.DetectPlane(tol);
         }
 
+        public Loop(double tol, IEnumerable<IEdge> edges, Plane3D plane, bool checkSense = true)
+        {
+            Tol = tol;
+            Edges = checkSense ? edges.CheckSense(tol).ToList() : edges.ToList();
+            Plane = plane;
+        }
+
         public Loop(double tol, LwPolyline lwPolyline)
         {
             Tol = tol;
@@ -524,7 +531,7 @@ namespace SearchAThing
                 //     visitedVertexes.Add(geom.SGeomTo);
                 // }
 
-                if (gLoop.Count == 1) yield break;
+                if (gLoop.Count == 1 || (gLoop.Count == 2 && gLoop.All(w => w.EdgeType == EdgeType.Line3D))) yield break;
 
                 var loopres = new Loop(tol, gLoop, checkSense: true);
 
