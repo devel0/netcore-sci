@@ -1238,7 +1238,7 @@ namespace SearchAThing
 
         public bool Equals(Vector3D? x, Vector3D? y) => x != null && y != null && x.EqualsTol(tol, y);
 
-        public int GetHashCode(Vector3D obj) => obj.ToString(tol).GetHashCode();
+        public int GetHashCode(Vector3D obj) => 0;
     }
 
     /// <summary>
