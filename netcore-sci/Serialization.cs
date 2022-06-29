@@ -18,6 +18,8 @@ namespace SearchAThing
     public static partial class SciToolkit
     {
 
+        public static string ToSciJson(object o) => JsonConvert.SerializeObject(o, SciJsonSettings);            
+
         public static JsonSerializerSettings SciJsonSettings
         {
             get
