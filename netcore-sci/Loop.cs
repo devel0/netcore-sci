@@ -160,6 +160,10 @@ namespace SearchAThing
         record struct GeomWalkNfo(List<GeomNfo> lst, bool isOnThis, IEdge geom, int geomIdx,
             HashSet<IEdge> geomVisited, HashSet<Vector3D> vertexVisited);
 
+        /// <summary>
+        /// intersects two planar loops
+        /// precondition: must coplanar
+        /// </summary>        
         public IEnumerable<Loop> Intersect(double tol, Loop other, netDxf.DxfDocument? debugDxf = null)
         {
             var res = new List<List<IEdge>>();
@@ -482,6 +486,8 @@ namespace SearchAThing
 
             var visitedVertexes = new HashSet<Vector3D>(ptCmp);
 
+            if (ipts.Count == 1) yield break;
+
             foreach (var ipt in ipts)
             {
                 if (visitedVertexes.Contains(ipt)) continue;
@@ -533,7 +539,7 @@ namespace SearchAThing
 
                 if (gLoop.Count == 1 || (gLoop.Count == 2 && gLoop.All(w => w.EdgeType == EdgeType.Line3D))) yield break;
 
-                var loopres = new Loop(tol, gLoop, checkSense: true);
+                var loopres = new Loop(tol, this.Plane, gLoop, checkSense: true);
 
                 if (debugDxf != null)
                 {
