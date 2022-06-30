@@ -41,7 +41,7 @@ namespace SearchAThing
         public Loop(double tol, Plane3D plane, IReadOnlyList<IEdge> edges, bool checkSense)
         {
             Tol = tol;
-            Edges = edges;
+            Edges = checkSense ? edges.CheckSense(tol).ToList() : edges.ToList();
             Plane = plane;
         }
 
