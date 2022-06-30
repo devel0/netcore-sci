@@ -34,8 +34,13 @@ namespace SearchAThing.Sci.Tests
                 {
                     foreach (var loop in loops)
                     {
-                        var hatch = loop.ToHatch(tol, new HatchPattern(HatchPattern.Line.Name) { Angle = 45, Scale = 0.5 });
+                        var hatch = loop.ToHatch(tol, new HatchPattern(HatchPattern.Line.Name)
+                        {
+                            Angle = 45,
+                            Scale = 0.2
+                        });
                         if (layer != null) hatch.Layer = layer;
+
                         outdxf.AddEntity(hatch);
                     }
                 }
@@ -62,12 +67,11 @@ namespace SearchAThing.Sci.Tests
             // blue not intersect green
             Assert.True(loopBlue.Intersect(tol, loopGreen).Count() == 0);
 
-            // cyan-green            
-
+            // cyan-green *
             var loops = loopCyan.Intersect(tol, loopGreen).ToList();
-            //dumpLoops(loops);
-
+            // dumpLoops(loops);            
             Assert.True(loops.Count == 2);
+            ((Arc3D)loops[1].Edges[1]).Bulge(tol).AssertEqualsTol(1e-7, -0.21580411634390917);
             loops[0].Area.AssertEqualsTol(tol, 56.42492663);
             loops[0].Length.AssertEqualsTol(tol, 48.02672853);
 
@@ -85,10 +89,8 @@ namespace SearchAThing.Sci.Tests
             loops[1].Area.AssertEqualsTol(tol, 360.04194237);
             loops[1].Length.AssertEqualsTol(tol, 80.08303580);
 
-            // green-yellow                        
-
+            // green-yellow
             loops = loopGreen.Intersect(tol, loopYellow).ToList();
-            //dumpLoops(loops);
 
             Assert.True(loops.Count == 1);
             loops[0].Area.AssertEqualsTol(tol, 563.78939052);
