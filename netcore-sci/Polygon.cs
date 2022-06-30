@@ -433,7 +433,7 @@ namespace SearchAThing
                     case GeometryType.Arc3D:
                         {
                             var arc = (Arc3D)geom[i];                            
-                            var bulge = arc.Bulge(tol);//(tol, _from, _to, Vector3D.ZAxis);
+                            var bulge = arc.Bulge(tol);
 
                             if (_lastPt == null)
                             {
