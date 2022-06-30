@@ -499,7 +499,8 @@ namespace SearchAThing
         /// <param name="to">buldge to pt</param>
         /// <param name="N">arc normal</param>
         /// <returns>arc buldge value</returns>
-        public double Bulge(double tol) => Tan((SGeomFrom - Center).AngleToward(tol, SGeomTo - Center, CS.BaseZ) / 4);
+        public double Bulge(double tol) =>
+            (Sense ? 1d : -1d) * Tan((GeomFrom - Center).AngleToward(tol, GeomTo - Center, CS.BaseZ) / 4);
 
         /// <summary>
         /// statis if given point contained in arc perimeter/shape or circle perimeter/shape depending on specified mode
