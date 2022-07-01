@@ -144,7 +144,7 @@ namespace SearchAThing
 
             if (!Center.EqualsTol(tol, oarc.Center)) return false;
 
-            if (!CS.BaseZ.EqualsTol(NormalizedLengthTolerance, oarc.Center)) return false;
+            if (!CS.BaseZ.EqualsTol(NormalizedLengthTolerance, oarc.CS.BaseZ)) return false;
 
             if (includeSense)
                 return
@@ -190,7 +190,7 @@ namespace SearchAThing
         {
             get
             {
-                if (_Length == null) _Length = Angle * Radius;
+                if (_Length == null) _Length = Angle * Radius;                
                 return _Length.Value;
             }
         }
