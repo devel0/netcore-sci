@@ -155,7 +155,7 @@ namespace SearchAThing
             return
                 (this.From.EqualsTol(tol, oarc.From) && this.To.EqualsTol(tol, oarc.To))
                 ||
-                (this.From.EqualsTol(tol, oarc.To) && this.From.EqualsTol(tol, oarc.From));
+                (this.From.EqualsTol(tol, oarc.To) && this.To.EqualsTol(tol, oarc.From));
         }
 
         public IEdge EdgeMove(Vector3D delta) => this.Move(delta);
