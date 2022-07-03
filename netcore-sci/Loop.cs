@@ -66,7 +66,8 @@ namespace SearchAThing
             Plane = lwPolyline.ToPlane();
         }
 
-        public Loop CheckSense(double tol) => new Loop(tol, Edges, Plane);
+        public Loop InvertSense(double tol) => new Loop(tol,
+            Plane, Edges.Reverse().Select(w => (IEdge)w.ToggleSense()).ToList(), checkSense: false);
 
         public Loop Move(Vector3D delta) =>
             new Loop(Tol, Plane.Move(delta), Edges.Select(edge => edge.EdgeMove(delta)).ToList(), checkSense: false);
@@ -370,7 +371,7 @@ namespace SearchAThing
             GeomWalkNfo getByIp(Vector3D ip, bool onThis)
             {
                 var lst = onThis ? thisBrokenGeoms : otherBrokenGeoms;
-                var q = onThis ? ipToThisBrokenGeoms[ip] : ipToOtherBrokenGeoms[ip];                
+                var q = onThis ? ipToThisBrokenGeoms[ip] : ipToOtherBrokenGeoms[ip];
 
                 var geomVisited = onThis ? thisGeomVisited : otherGeomVisited;
                 var vertexVisited = onThis ? thisVertexVisited : otherVertexVisited;
@@ -484,8 +485,8 @@ namespace SearchAThing
                     var ent = ip.DxfEntity;
                     ent.Layer = iptsLayer;
                     debugDxf.AddEntity(ent);
-                }                
-            }            
+                }
+            }
 
             var visitedVertexes = new HashSet<Vector3D>(ptCmp);
 
@@ -542,7 +543,7 @@ namespace SearchAThing
 
                 if (gLoop.Count == 1 || (gLoop.Count == 2 && gLoop.All(w => w.EdgeType == EdgeType.Line3D))) yield break;
 
-                var loopres = new Loop(tol, this.Plane, gLoop, checkSense: true);                
+                var loopres = new Loop(tol, this.Plane, gLoop, checkSense: true);
 
                 if (debugDxf != null)
                 {
