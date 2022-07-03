@@ -90,7 +90,7 @@ namespace SearchAThing
             return
                 (this.From.EqualsTol(tol, oline.From) && this.To.EqualsTol(tol, oline.To))
                 ||
-                (this.From.EqualsTol(tol, oline.To) && this.From.EqualsTol(tol, oline.From));
+                (this.From.EqualsTol(tol, oline.To) && this.To.EqualsTol(tol, oline.From));
         }
 
         public IEdge EdgeMove(Vector3D delta) => this.Move(delta);
