@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ordidx_718',['OrdIdx',['../namespace_search_a_thing.html#a3197886280b26d361c765c6d7edefb4f',1,'SearchAThing']]]
+  ['ordidx_722',['OrdIdx',['../namespace_search_a_thing.html#a3197886280b26d361c765c6d7edefb4f',1,'SearchAThing']]]
 ];
