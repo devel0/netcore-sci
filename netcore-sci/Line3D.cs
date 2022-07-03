@@ -37,13 +37,13 @@ namespace SearchAThing
 
         public override IEnumerable<Geometry> Split(double tol, IEnumerable<Vector3D> breaks)
         {
-            var Vnorm = V.Normalized();
+            var Vnorm = Sense ? V.Normalized() : -V.Normalized();
 
             var bpts = breaks
                 .Select(pt => new
                 {
                     pt,
-                    off = pt.ColinearScalarOffset(tol, From, Vnorm)
+                    off = pt.ColinearScalarOffset(tol, SGeomFrom, Vnorm)
                 })
                 .OrderBy(w => w.off)
                 .Select(w => w.pt)
@@ -53,19 +53,19 @@ namespace SearchAThing
                 yield return this;
             else
             {
-                var addStart = !bpts[0].EqualsTol(tol, From);
-                var addEnd = !bpts[bpts.Count - 1].EqualsTol(tol, To);
+                var addStart = !bpts[0].EqualsTol(tol, SGeomFrom);
+                var addEnd = !bpts[bpts.Count - 1].EqualsTol(tol, SGeomTo);
 
                 foreach (var bitem in bpts.WithNext())
                 {
                     if (bitem.itemIdx == 0 && addStart)
-                        yield return new Line3D(From, bitem.item);
+                        yield return new Line3D(SGeomFrom, bitem.item);
 
                     if (bitem.next != null)
                         yield return new Line3D(bitem.item, bitem.next);
 
                     else if (bitem.isLast && addEnd)
-                        yield return new Line3D(bitem.item, To);
+                        yield return new Line3D(bitem.item, SGeomTo);
 
                 }
             }
