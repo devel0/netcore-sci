@@ -119,11 +119,6 @@ namespace SearchAThing
                 res = res.Select(w => w.ToggleSense()).ToList();
             }
 
-            // if (res.Count > 0 && !res[0].SGeomFrom.EqualsTol(tol, this.SGeomFrom))
-            // {
-            //     res[0].ToggleSense();
-            // }
-
             foreach (var x in res.Cast<IEdge>().CheckSense(tol)) yield return (Geometry)x;
         }
 
