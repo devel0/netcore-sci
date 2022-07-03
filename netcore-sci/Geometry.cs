@@ -180,7 +180,7 @@ namespace SearchAThing
         }
 
         public static Loop ToLoop(this netDxf.Entities.LwPolyline lwpolyline, double tol) =>
-            new Loop(tol, lwpolyline);
+            new Loop(tol, lwpolyline);        
 
         /// <summary>
         /// segments representation of given geometries

@@ -1,0 +1,246 @@
+{
+  "$type": "SearchAThing.Loop, netcore-sci",
+  "Plane": {
+    "$type": "SearchAThing.Plane3D, netcore-sci",
+    "CS": {
+      "$type": "SearchAThing.CoordinateSystem3D, netcore-sci",
+      "csAutoType": "AAA",
+      "Origin": {
+        "$type": "SearchAThing.Vector3D, netcore-sci",
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "Sense": true,
+        "GeomType": "Vector3D"
+      },
+      "BaseX": {
+        "$type": "SearchAThing.Vector3D, netcore-sci",
+        "X": 1.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "Sense": true,
+        "GeomType": "Vector3D"
+      },
+      "BaseY": {
+        "$type": "SearchAThing.Vector3D, netcore-sci",
+        "X": 0.0,
+        "Y": 1.0,
+        "Z": 0.0,
+        "Sense": true,
+        "GeomType": "Vector3D"
+      },
+      "BaseZ": {
+        "$type": "SearchAThing.Vector3D, netcore-sci",
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 1.0,
+        "Sense": true,
+        "GeomType": "Vector3D"
+      }
+    }
+  },
+  "Edges": {
+    "$type": "System.Collections.Generic.List`1[[SearchAThing.IEdge, netcore-sci]], System.Private.CoreLib",
+    "$values": [
+      {
+        "$type": "SearchAThing.Line3D, netcore-sci",
+        "GeomSegmentMode": "Infinite",
+        "From": {
+          "$type": "SearchAThing.Vector3D, netcore-sci",
+          "X": -8.881784197001252E-16,
+          "Y": 11.57462941601225,
+          "Z": 0.0,
+          "Sense": true,
+          "GeomType": "Vector3D"
+        },
+        "V": {
+          "$type": "SearchAThing.Vector3D, netcore-sci",
+          "X": 4.381784197001252E-16,
+          "Y": -5.6276490831523684,
+          "Z": 0.0,
+          "Sense": true,
+          "GeomType": "Vector3D"
+        },
+        "Sense": false,
+        "GeomType": "Line3D"
+      },
+      {
+        "$type": "SearchAThing.Arc3D, netcore-sci",
+        "CS": {
+          "$type": "SearchAThing.CoordinateSystem3D, netcore-sci",
+          "csAutoType": "AAA",
+          "Origin": {
+            "$type": "SearchAThing.Vector3D, netcore-sci",
+            "X": 6.5712953229982976,
+            "Y": -3.765015688990893,
+            "Z": 0.0,
+            "Sense": true,
+            "GeomType": "Vector3D"
+          },
+          "BaseX": {
+            "$type": "SearchAThing.Vector3D, netcore-sci",
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.0,
+            "Sense": true,
+            "GeomType": "Vector3D"
+          },
+          "BaseY": {
+            "$type": "SearchAThing.Vector3D, netcore-sci",
+            "X": 0.0,
+            "Y": 1.0,
+            "Z": 0.0,
+            "Sense": true,
+            "GeomType": "Vector3D"
+          },
+          "BaseZ": {
+            "$type": "SearchAThing.Vector3D, netcore-sci",
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0,
+            "Sense": true,
+            "GeomType": "Vector3D"
+          }
+        },
+        "Radius": 16.687918808812146,
+        "AngleStart": 1.0413237100221442,
+        "AngleEnd": 1.9755317842206466,
+        "Sense": false,
+        "GeomType": "Arc3D"
+      },
+      {
+        "$type": "SearchAThing.Line3D, netcore-sci",
+        "GeomSegmentMode": "Infinite",
+        "From": {
+          "$type": "SearchAThing.Vector3D, netcore-sci",
+          "X": 15.0,
+          "Y": 2.9259167210351267,
+          "Z": 0.0,
+          "Sense": true,
+          "GeomType": "Vector3D"
+        },
+        "V": {
+          "$type": "SearchAThing.Vector3D, netcore-sci",
+          "X": 0.0,
+          "Y": 7.711969090622934,
+          "Z": 0.0,
+          "Sense": true,
+          "GeomType": "Vector3D"
+        },
+        "Sense": false,
+        "GeomType": "Line3D"
+      },
+      {
+        "$type": "SearchAThing.Line3D, netcore-sci",
+        "GeomSegmentMode": "Infinite",
+        "From": {
+          "$type": "SearchAThing.Vector3D, netcore-sci",
+          "X": 10.0,
+          "Y": 0.5363298290261609,
+          "Z": 0.0,
+          "Sense": true,
+          "GeomType": "Vector3D"
+        },
+        "V": {
+          "$type": "SearchAThing.Vector3D, netcore-sci",
+          "X": 5.0,
+          "Y": 2.389586892008966,
+          "Z": 0.0,
+          "Sense": true,
+          "GeomType": "Vector3D"
+        },
+        "Sense": false,
+        "GeomType": "Line3D"
+      },
+      {
+        "$type": "SearchAThing.Line3D, netcore-sci",
+        "GeomSegmentMode": "Infinite",
+        "From": {
+          "$type": "SearchAThing.Vector3D, netcore-sci",
+          "X": 10.0,
+          "Y": 5.0,
+          "Z": 0.0,
+          "Sense": true,
+          "GeomType": "Vector3D"
+        },
+        "V": {
+          "$type": "SearchAThing.Vector3D, netcore-sci",
+          "X": 0.0,
+          "Y": -4.463670170973839,
+          "Z": 0.0,
+          "Sense": true,
+          "GeomType": "Vector3D"
+        },
+        "Sense": false,
+        "GeomType": "Line3D"
+      },
+      {
+        "$type": "SearchAThing.Line3D, netcore-sci",
+        "GeomSegmentMode": "Infinite",
+        "From": {
+          "$type": "SearchAThing.Vector3D, netcore-sci",
+          "X": 8.283076575777429,
+          "Y": 5.0,
+          "Z": 0.0,
+          "Sense": true,
+          "GeomType": "Vector3D"
+        },
+        "V": {
+          "$type": "SearchAThing.Vector3D, netcore-sci",
+          "X": 1.7169234242225713,
+          "Y": 0.0,
+          "Z": 0.0,
+          "Sense": true,
+          "GeomType": "Vector3D"
+        },
+        "Sense": false,
+        "GeomType": "Line3D"
+      },
+      {
+        "$type": "SearchAThing.Line3D, netcore-sci",
+        "GeomSegmentMode": "Infinite",
+        "From": {
+          "$type": "SearchAThing.Vector3D, netcore-sci",
+          "X": 8.729337155781787,
+          "Y": 8.019644693983071,
+          "Z": 0.0,
+          "Sense": true,
+          "GeomType": "Vector3D"
+        },
+        "V": {
+          "$type": "SearchAThing.Vector3D, netcore-sci",
+          "X": -0.446260580004358,
+          "Y": -3.0196446939830714,
+          "Z": 0.0,
+          "Sense": true,
+          "GeomType": "Vector3D"
+        },
+        "Sense": false,
+        "GeomType": "Line3D"
+      },
+      {
+        "$type": "SearchAThing.Line3D, netcore-sci",
+        "GeomSegmentMode": "Infinite",
+        "From": {
+          "$type": "SearchAThing.Vector3D, netcore-sci",
+          "X": -4.5E-16,
+          "Y": 5.946980332859882,
+          "Z": 0.0,
+          "Sense": true,
+          "GeomType": "Vector3D"
+        },
+        "V": {
+          "$type": "SearchAThing.Vector3D, netcore-sci",
+          "X": 8.729337155781787,
+          "Y": 2.0726643611231896,
+          "Z": 0.0,
+          "Sense": true,
+          "GeomType": "Vector3D"
+        },
+        "Sense": false,
+        "GeomType": "Line3D"
+      }
+    ]
+  },
+  "Tol": 1E-08
+}

@@ -18,8 +18,11 @@ namespace SearchAThing.Sci.Tests
             var dxf = netDxf.DxfDocument.Load(
                 System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Loop/LoopTest_0011.dxf"));
 
-            DxfDocument? outdxf = null;
+            DxfDocument? outdxf = null;            
             outdxf = new DxfDocument();
+
+            DxfDocument? outdxf2 = null;
+            outdxf2 = new DxfDocument();
 
             var tol = 1e-8;
 
@@ -27,13 +30,33 @@ namespace SearchAThing.Sci.Tests
             var loopYellow = dxf.LwPolylines.First(w => w.Color.Index == AciColor.Yellow.Index).ToLoop(tol);
             var loopMagenta = dxf.LwPolylines.First(w => w.Color.Index == AciColor.Magenta.Index).ToLoop(tol);
 
-            outdxf?.AddEntity(loopGreen.DxfEntity(tol).Set(x=>x.SetColor(AciColor.Green)));
-            outdxf?.AddEntity(loopYellow.DxfEntity(tol).Set(x=>x.SetColor(AciColor.Yellow)));
-            outdxf?.AddEntity(loopMagenta.DxfEntity(tol).Set(x=>x.SetColor(AciColor.Magenta)));
+            outdxf?.AddEntity(loopGreen.DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)));
+            outdxf?.AddEntity(loopYellow.DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));
+            outdxf?.AddEntity(loopMagenta.DxfEntity(tol).Set(x => x.SetColor(AciColor.Magenta)));
 
+            var yellowIntersectMagenta = loopYellow.Intersect(tol, loopMagenta).ToList();
+            var greenIntersectMagenta = loopGreen.Intersect(tol, loopMagenta).ToList();
+
+            Assert.True(yellowIntersectMagenta.Count == 1);
+            yellowIntersectMagenta[0].Area.AssertEqualsTol(tol, 109.41172066);
+            outdxf?.AddEntity(yellowIntersectMagenta[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));
+
+            Assert.True(greenIntersectMagenta.Count == 1);
+            greenIntersectMagenta[0].Area.AssertEqualsTol(tol, 88.60501699);
+            outdxf?.AddEntity(greenIntersectMagenta[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)));
+
+            var A = yellowIntersectMagenta[0];
+            var B = greenIntersectMagenta[0];
+
+            var yellowIntSubGreenInt = A.Intersect(tol, B, outdxf2).ToList();
+            foreach (var res in yellowIntSubGreenInt)
+            {
+                outdxf?.AddEntity(res.DxfEntity(tol).Set(x => x.SetColor(AciColor.Red)));
+            }
+            ;
             //var gyInts = loopGreen.Intersect(tol, loopYellow).ToList();
 
-           // Assert.True(gyInts.Count == 1);
+            // Assert.True(gyInts.Count == 1);
 
             if (outdxf != null)
             {
@@ -67,6 +90,13 @@ namespace SearchAThing.Sci.Tests
                 outdxf.DrawingVariables.PdMode = netDxf.Header.PointShape.CircleCross;
                 outdxf.Viewport.ShowGrid = false;
                 outdxf.Save(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "out.dxf"));
+            }
+
+            if (outdxf2 != null)
+            {
+                outdxf2.DrawingVariables.PdMode = netDxf.Header.PointShape.CircleCross;
+                outdxf2.Viewport.ShowGrid = false;
+                outdxf2.Save(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "out2.dxf"));
             }
         }
 
