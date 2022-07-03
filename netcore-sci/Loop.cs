@@ -176,6 +176,8 @@ namespace SearchAThing
             List<GeomNfo>? otherBrokenGeoms = null;
             List<Vector3D>? ipts = null;
 
+            netDxf.Tables.Layer? thisOrigLayer = null;
+            netDxf.Tables.Layer? otherOrigLayer = null;
             netDxf.Tables.Layer? thisLayer = null;
             netDxf.Tables.Layer? otherLayer = null;
             netDxf.Tables.Layer? iptsLayer = null;
@@ -183,6 +185,8 @@ namespace SearchAThing
 
             if (debugDxf != null)
             {
+                thisOrigLayer = new netDxf.Tables.Layer("orig_this") { Color = AciColor.Cyan };
+                otherOrigLayer = new netDxf.Tables.Layer("orig_other") { Color = AciColor.Green };
                 thisLayer = new netDxf.Tables.Layer("this") { Color = AciColor.Cyan };
                 otherLayer = new netDxf.Tables.Layer("other") { Color = AciColor.Green };
                 iptsLayer = new netDxf.Tables.Layer("ipts") { Color = AciColor.Yellow };
@@ -294,16 +298,65 @@ namespace SearchAThing
                 .ToList();
 
                 var overlappedCmp = new GeomNfoEqCmp(tol);
-                var overlapped = otherBrokenGeoms.Intersect(thisBrokenGeoms, overlappedCmp).ToList();
-
-                foreach (var otherOverlapped in overlapped)
+                var overlaps = new List<(GeomNfo toverlap, GeomNfo ooverlap)>();
+                foreach (var tbg in thisBrokenGeoms)
                 {
-                    if (otherOverlapped.onThis)
-                        throw new Exception($"expecting other geom insted of this for removal of intersected overlaps");
-                    otherBrokenGeoms.Remove(otherOverlapped);
+                    foreach (var obg in otherBrokenGeoms)
+                    {
+                        if (overlappedCmp.Equals(tbg, obg)) overlaps.Add((tbg, obg));
+                    }
+                }
+
+                foreach (var overlap in overlaps)
+                {
+                    otherBrokenGeoms.Remove(overlap.ooverlap);
+                    var x = overlap.toverlap;
+                    x.inside = true;
                 }
 
                 ipts = iptsNfos.Select(w => (Vector3D)w.ipt).ToList();
+
+                if (debugDxf != null)
+                {
+                    foreach (var x in thisGeoms.WithIndex())
+                    {
+                        var ent = x.item.DxfEntity;
+                        ent.Layer = thisOrigLayer;
+                        debugDxf.AddEntity(ent);
+
+                        debugDxf.AddEntity(new netDxf.Entities.Text(x.idx.ToString(),
+                            ((Geometry)x.item).MidPoint.ToDxfVector2(), .7)
+                            .Eval(e =>
+                            {
+                                e.Alignment = TextAlignment.MiddleLeft;
+                                e.Layer = thisOrigLayer;
+                                return e;
+                            }));
+                    }
+
+                    foreach (var x in otherGeoms.WithIndex())
+                    {
+                        var ent = x.item.DxfEntity;
+                        ent.Layer = otherOrigLayer;
+                        debugDxf.AddEntity(ent);
+
+                        debugDxf.AddEntity(new netDxf.Entities.Text(x.idx.ToString(),
+                            ((Geometry)x.item).MidPoint.ToDxfVector2(), .7)
+                            .Eval(e =>
+                            {
+                                e.Alignment = TextAlignment.MiddleLeft;
+                                e.Layer = otherOrigLayer;
+                                return e;
+                            }));
+                    }
+
+                    foreach (var ip in ipts)
+                    {
+                        var ent = ip.DxfEntity;
+                        ent.Layer = iptsLayer;
+                        debugDxf.AddEntity(ent);
+                    }
+                }
             }
 
             var iptsHs = ipts.ToHashSet(ptCmp);
@@ -478,13 +531,6 @@ namespace SearchAThing
                             e.Layer = otherLayer;
                             return e;
                         }));
-                }
-
-                foreach (var ip in ipts)
-                {
-                    var ent = ip.DxfEntity;
-                    ent.Layer = iptsLayer;
-                    debugDxf.AddEntity(ent);
                 }
             }
 
