@@ -16,7 +16,7 @@ namespace SearchAThing.Sci.Tests
         public void LoopTest_0010()
         {
             DxfDocument? outdxf = null;
-            outdxf = new DxfDocument();
+            //outdxf = new DxfDocument();
 
             var tol = 0.1;//1e-8;
 
