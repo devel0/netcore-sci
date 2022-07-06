@@ -21,10 +21,19 @@ namespace SearchAThing
     public class Loop
     {
 
+        /// <summary>
+        /// plane where loop edges resides
+        /// </summary>        
         public Plane3D Plane { get; private set; }
 
+        /// <summary>
+        /// loop edges ( line, arc )
+        /// </summary>        
         public IReadOnlyList<IEdge> Edges { get; private set; }
 
+        /// <summary>
+        /// loop edge vertexes
+        /// </summary>
         public IEnumerable<Vector3D> Vertexes(double tol) =>
             Edges.SelectMany(w => w.Vertexes).Distinct(new Vector3DEqualityComparer(tol));
 
@@ -45,6 +54,9 @@ namespace SearchAThing
             Plane = plane;
         }
 
+        /// <summary>
+        /// create loop from given edge template ; plane is detected from edges distribution
+        /// </summary>
         public Loop(double tol, IEnumerable<IEdge> edges, bool checkSense = true)
         {
             Tol = tol;
@@ -52,6 +64,9 @@ namespace SearchAThing
             Plane = Edges.DetectPlane(tol);
         }
 
+        /// <summary>
+        /// create loop from given edges, plane template
+        /// </summary>
         public Loop(double tol, IEnumerable<IEdge> edges, Plane3D plane, bool checkSense = true)
         {
             Tol = tol;
@@ -59,6 +74,9 @@ namespace SearchAThing
             Plane = plane;
         }
 
+        /// <summary>
+        /// create a loop from given lwpolyline template
+        /// </summary>        
         public Loop(double tol, LwPolyline lwPolyline)
         {
             Tol = tol;
@@ -66,9 +84,15 @@ namespace SearchAThing
             Plane = lwPolyline.ToPlane();
         }
 
+        /// <summary>
+        /// retrieve another loop with reversed edges with sense toggled
+        /// </summary>
         public Loop InvertSense(double tol) => new Loop(tol,
-            Plane, Edges.Reverse().Select(w => (IEdge)w.ToggleSense()).ToList(), checkSense: false);
+           Plane, Edges.Reverse().Select(w => (IEdge)w.ToggleSense()).ToList(), checkSense: false);
 
+        /// <summary>
+        /// move loop (plane and edges) of given delta
+        /// </summary>
         public Loop Move(Vector3D delta) =>
             new Loop(Tol, Plane.Move(delta), Edges.Select(edge => edge.EdgeMove(delta)).ToList(), checkSense: false);
 
@@ -87,6 +111,9 @@ namespace SearchAThing
             }
         }
 
+        /// <summary>
+        /// loop perimeter length
+        /// </summary>        
         public double Length => Edges.Sum(w => w.Length);
 
         double ComputeArea(double tol)
@@ -108,6 +135,10 @@ namespace SearchAThing
             return res;
         }
 
+        /// <summary>
+        /// states if given point is included into this loop
+        /// </summary>        
+        /// <param name="excludePerimeter">if true, point on perimeter isn't included</param>        
         public bool ContainsPoint(double tol, Vector3D pt, bool excludePerimeter = false)
         {
             var onperimeter = this.Edges.Any(edge => edge.EdgeContainsPoint(tol, pt));
@@ -163,10 +194,25 @@ namespace SearchAThing
         record struct GeomWalkNfo(List<GeomNfo> lst, bool isOnThis, IEdge geom, int geomIdx,
             HashSet<IEdge> geomVisited, HashSet<Vector3D> vertexVisited);
 
-        public enum BooleanMode { Intersect, Union, Difference };
+        public enum BooleanMode
+        {
+            /// <summary>
+            /// intersects this with other; zero or more intersection loop can results
+            /// </summary>
+            Intersect,
+            /// <summary>
+            /// not yet implemented ; one or two union loop can results
+            /// </summary>
+            Union,
+
+            /// <summary>
+            /// subtract other from this ; zero or more loop can results
+            /// </summary>
+            Difference
+        };
 
         /// <summary>
-        /// intersects two planar loops
+        /// boolean operation with this and other loops.
         /// precondition: must coplanar
         /// </summary>        
         public IEnumerable<Loop> Boolean(double tol, Loop other,
@@ -745,8 +791,14 @@ namespace SearchAThing
         public netDxf.Entities.Hatch ToHatch(double tol, HatchPattern pattern, bool associative = true) =>
             ToLwPolyline(tol).ToHatch(pattern, associative);
 
+        /// <summary>
+        /// create dxf lwpolyline from this loop
+        /// </summary>
         public LwPolyline ToLwPolyline(double tol) => Edges.Cast<Geometry>().ToLwPolyline(tol, Plane.CS);
 
+        /// <summary>
+        /// create dxf lwpolyline from this loop
+        /// </summary>
         public LwPolyline DxfEntity(double tol) => ToLwPolyline(tol);
 
         public override string ToString()
