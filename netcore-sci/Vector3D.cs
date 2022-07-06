@@ -1727,10 +1727,20 @@ namespace SearchAThing
             if (perpLine == null) throw new Exception($"can't find perp line");
 
             var origin = firstPt;
-            var v1 = dLine.V;
-            var v2 = perpLine.V;
+            var bx = dLine.V.Normalized();
+            var by = perpLine.V.Normalized();
+            var bz = bx.CrossProduct(by).Normalized();
 
-            return new Plane3D(new CoordinateSystem3D(origin, v1, v2));
+            if (bz.EqualsTol(tol, CoordinateSystem3D.WCS.BaseZ))
+                return new Plane3D(CoordinateSystem3D.WCS);
+
+            if (bz.EqualsTol(tol, CoordinateSystem3D.XZ.BaseZ))
+                return new Plane3D(CoordinateSystem3D.XZ);
+
+            if (bz.EqualsTol(tol, CoordinateSystem3D.YZ.BaseZ))
+                return new Plane3D(CoordinateSystem3D.YZ);
+
+            return new Plane3D(new CoordinateSystem3D(origin, bx, by, bz));
         }
 
         /// <summary>
