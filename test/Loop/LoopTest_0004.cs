@@ -32,7 +32,7 @@ namespace SearchAThing.Sci.Tests
                 new Line3D(4,1,0, 1,1,0)
             });
 
-            var gyInts = loopGreen.Intersect(tol, loopYellow).ToList();
+            var gyInts = loopGreen.Boolean(tol, loopYellow).ToList();
 
             Assert.True(gyInts.Count == 1);            
 

@@ -31,7 +31,7 @@ namespace SearchAThing.Sci.Tests
                 new Line3D(11,6,0, 4,6,0)
             });
 
-            var gyInts = loopGreen.Intersect(tol, loopYellow).ToList();
+            var gyInts = loopGreen.Boolean(tol, loopYellow).ToList();
 
             Assert.True(gyInts.Count == 0);                         
         }

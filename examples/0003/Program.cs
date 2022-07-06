@@ -27,7 +27,7 @@ namespace test
             var loop1 = lw1.ToLoop(tol);
             var loop2 = lw2.ToLoop(tol);
 
-            var iloops = loop1.Intersect(tol, loop2).ToList();
+            var iloops = loop1.Boolean(tol, loop2).ToList();
 
             var outputPathfilename = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "output.dxf");
             var outDxf = new netDxf.DxfDocument();

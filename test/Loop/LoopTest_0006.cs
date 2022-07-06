@@ -23,7 +23,7 @@ namespace SearchAThing.Sci.Tests
             var loopGreen = dxf.LwPolylines.First(w => w.Layer.Name == "green").ToLoop(tol);
             var loopYellow = dxf.LwPolylines.First(w => w.Layer.Name == "yellow").ToLoop(tol);
 
-            var gyInts = loopGreen.Intersect(tol, loopYellow).ToList();
+            var gyInts = loopGreen.Boolean(tol, loopYellow).ToList();
             
             Assert.True(gyInts.Count == 1);
 

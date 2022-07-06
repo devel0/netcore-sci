@@ -13,16 +13,16 @@ namespace SearchAThing.Sci.Tests
     {
 
         [Fact]
-        public void LoopTest_0011()
+        public void LoopTest_0013()
         {
             var dxf = netDxf.DxfDocument.Load(
-                System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Loop/LoopTest_0011.dxf"));
+                System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Loop/LoopTest_0013.dxf"));
 
             DxfDocument? outdxf = null;
-            // outdxf = new DxfDocument();
+            outdxf = new DxfDocument();
 
             DxfDocument? outdxf2 = null;
-            // outdxf2 = new DxfDocument();
+            outdxf2 = new DxfDocument();
 
             var tol = 1e-8;
 
@@ -30,9 +30,9 @@ namespace SearchAThing.Sci.Tests
             var loopYellow = dxf.LwPolylines.First(w => w.Color.Index == AciColor.Yellow.Index).ToLoop(tol);
             var loopMagenta = dxf.LwPolylines.First(w => w.Color.Index == AciColor.Magenta.Index).ToLoop(tol);
 
-            outdxf?.AddEntity(loopGreen.DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)));
-            outdxf?.AddEntity(loopYellow.DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));
-            outdxf?.AddEntity(loopMagenta.DxfEntity(tol).Set(x => x.SetColor(AciColor.Magenta)));
+            // outdxf?.AddEntity(loopGreen.DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)));
+            // outdxf?.AddEntity(loopYellow.DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));
+            // outdxf?.AddEntity(loopMagenta.DxfEntity(tol).Set(x => x.SetColor(AciColor.Magenta)));
 
             var yellowIntersectMagenta = loopYellow.Boolean(tol, loopMagenta).ToList();
             var greenIntersectMagenta = loopGreen.Boolean(tol, loopMagenta).ToList();
@@ -48,17 +48,17 @@ namespace SearchAThing.Sci.Tests
             var A = yellowIntersectMagenta[0];
             var B = greenIntersectMagenta[0];
 
-            var yellowIntSubGreenInt = A.Boolean(tol, B, Loop.BooleanMode.Intersect, outdxf2).ToList();
+            var yellowIntSubGreenInt = A.Boolean(tol, B, Loop.BooleanMode.Difference, outdxf2).ToList();
             foreach (var res in yellowIntSubGreenInt)
             {
                 outdxf?.AddEntity(res.DxfEntity(tol).Set(x => x.SetColor(AciColor.Red)));
             }
-            ;
+
             //var gyInts = loopGreen.Intersect(tol, loopYellow).ToList();
 
-            Assert.True(yellowIntSubGreenInt.Count == 1);
-            yellowIntSubGreenInt[0].Area.AssertEqualsTol(tol, 88.60501699);
-            yellowIntSubGreenInt[0].Length.AssertEqualsTol(tol, 48.75624125);
+            // Assert.True(yellowIntSubGreenInt.Count == 1);
+            // yellowIntSubGreenInt[0].Area.AssertEqualsTol(tol, 88.60501699);
+            // yellowIntSubGreenInt[0].Length.AssertEqualsTol(tol, 48.75624125);
 
             if (outdxf != null)
             {

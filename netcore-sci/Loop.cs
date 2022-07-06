@@ -158,17 +158,20 @@ namespace SearchAThing
             public int GetHashCode([DisallowNull] GeomNfo obj) => 0;
         }
 
-        record struct GeomWithIdx(IEdge geom, int idx);
+        record struct GeomWithIdx(GeomNfo nfo, int idx);
 
         record struct GeomWalkNfo(List<GeomNfo> lst, bool isOnThis, IEdge geom, int geomIdx,
             HashSet<IEdge> geomVisited, HashSet<Vector3D> vertexVisited);
+
+        public enum BooleanMode { Intersect, Union, Difference };
 
         /// <summary>
         /// intersects two planar loops
         /// precondition: must coplanar
         /// </summary>        
-        public IEnumerable<Loop> Intersect(double tol, Loop other, netDxf.DxfDocument? debugDxf = null,
-            bool subtract = false)
+        public IEnumerable<Loop> Boolean(double tol, Loop other,
+            BooleanMode mode = BooleanMode.Intersect,
+            netDxf.DxfDocument? debugDxf = null)
         {
             var res = new List<List<IEdge>>();
 
@@ -315,90 +318,80 @@ namespace SearchAThing
                 }
 
                 ipts = iptsNfos.Select(w => (Vector3D)w.ipt).ToList();
-
-                if (debugDxf != null)
-                {
-                    foreach (var x in thisGeoms.WithIndex())
-                    {
-                        var ent = x.item.DxfEntity;
-                        ent.Layer = thisOrigLayer;
-                        debugDxf.AddEntity(ent);
-
-                        debugDxf.AddEntity(new netDxf.Entities.Text(x.idx.ToString(),
-                            ((Geometry)x.item).MidPoint.ToDxfVector2(), .7)
-                            .Eval(e =>
-                            {
-                                e.Alignment = TextAlignment.MiddleLeft;
-                                e.Layer = thisOrigLayer;
-                                return e;
-                            }));
-                    }
-
-                    foreach (var x in otherGeoms.WithIndex())
-                    {
-                        var ent = x.item.DxfEntity;
-                        ent.Layer = otherOrigLayer;
-                        debugDxf.AddEntity(ent);
-
-                        debugDxf.AddEntity(new netDxf.Entities.Text(x.idx.ToString(),
-                            ((Geometry)x.item).MidPoint.ToDxfVector2(), .7)
-                            .Eval(e =>
-                            {
-                                e.Alignment = TextAlignment.MiddleLeft;
-                                e.Layer = otherOrigLayer;
-                                return e;
-                            }));
-                    }
-
-                    foreach (var ip in ipts)
-                    {
-                        var ent = ip.DxfEntity;
-                        ent.Layer = iptsLayer;
-                        debugDxf.AddEntity(ent);
-                    }
-                }
             }
 
             var iptsHs = ipts.ToHashSet(ptCmp);
 
-            var ipToThisBrokenGeoms = new Dictionary<Vector3D, GeomWithIdx>(ptCmp);
-            foreach (var nfo in thisBrokenGeoms.WithIndex())
+            var ipToBrokenGeoms = new Dictionary<Vector3D, List<GeomWithIdx>>(ptCmp);
+
+            void ScanBrokenGeoms(List<GeomNfo> brokenGeoms)
             {
-                var containsFrom = iptsHs.Contains(nfo.item.geom.SGeomFrom, ptCmp);
-                var containsTo = iptsHs.Contains(nfo.item.geom.SGeomTo, ptCmp);
-                if (nfo.item.inside)
+                foreach (var nfo in brokenGeoms.WithIndex())
                 {
+                    List<GeomWithIdx>? lst;
+
+                    var containsFrom = iptsHs.Contains(nfo.item.geom.SGeomFrom, ptCmp);
+                    var containsTo = iptsHs.Contains(nfo.item.geom.SGeomTo, ptCmp);
+
                     if (containsFrom)
                     {
-                        if (!ipToThisBrokenGeoms.ContainsKey(nfo.item.geom.SGeomFrom))
-                            ipToThisBrokenGeoms.Add(nfo.item.geom.SGeomFrom, new GeomWithIdx(nfo.item.geom, nfo.idx));
+                        if (!ipToBrokenGeoms.TryGetValue(nfo.item.geom.SGeomFrom, out lst))
+                        {
+                            lst = new List<GeomWithIdx>();
+                            ipToBrokenGeoms.Add(nfo.item.geom.SGeomFrom, lst);
+                        }
+                        lst.Add(new GeomWithIdx(nfo.item, nfo.idx));
                     }
 
                     if (containsTo)
                     {
-                        if (!ipToThisBrokenGeoms.ContainsKey(nfo.item.geom.SGeomTo))
-                            ipToThisBrokenGeoms.Add(nfo.item.geom.SGeomTo, new GeomWithIdx(nfo.item.geom, nfo.idx));
+                        if (!ipToBrokenGeoms.TryGetValue(nfo.item.geom.SGeomTo, out lst))
+                        {
+                            lst = new List<GeomWithIdx>();
+                            ipToBrokenGeoms.Add(nfo.item.geom.SGeomTo, lst);
+                        }
+                        lst.Add(new GeomWithIdx(nfo.item, nfo.idx));
                     }
                 }
             }
 
-            var ipToOtherBrokenGeoms = new Dictionary<Vector3D, GeomWithIdx>(ptCmp);
-            foreach (var nfo in otherBrokenGeoms.WithIndex())
+            ScanBrokenGeoms(thisBrokenGeoms);
+            ScanBrokenGeoms(otherBrokenGeoms);
+
+            if (debugDxf != null)
             {
-                var containsFrom = iptsHs.Contains(nfo.item.geom.SGeomFrom, ptCmp);
-                var containsTo = iptsHs.Contains(nfo.item.geom.SGeomTo, ptCmp);
-                if (nfo.item.inside)
+                foreach (var ipt in ipts)
                 {
-                    if (containsFrom)
+                    var cond = false;
+
+                    switch (mode)
                     {
-                        if (!ipToOtherBrokenGeoms.ContainsKey(nfo.item.geom.SGeomFrom))
-                            ipToOtherBrokenGeoms.Add(nfo.item.geom.SGeomFrom, new GeomWithIdx(nfo.item.geom, nfo.idx));
+
+                        case BooleanMode.Intersect: cond = true; break;
+
+                        case BooleanMode.Difference:
+                            {
+                                var q = ipToBrokenGeoms[ipt];
+
+                                var inside_cnt = 0;
+                                var outside_cnt = 0;
+                                foreach (var x in q)
+                                {
+                                    if (x.nfo.inside) ++inside_cnt;
+                                    else ++outside_cnt;
+                                }
+
+                                cond = inside_cnt > 0 && outside_cnt > 0;
+                            }
+                            break;
+
                     }
 
-                    if (containsTo)
+                    if (cond)
                     {
-                        if (!ipToOtherBrokenGeoms.ContainsKey(nfo.item.geom.SGeomTo))
-                            ipToOtherBrokenGeoms.Add(nfo.item.geom.SGeomTo, new GeomWithIdx(nfo.item.geom, nfo.idx));
+                        var ent = ipt.DxfEntity;
+                        ent.Layer = iptsLayer;
+                        debugDxf.AddEntity(ent);
                     }
                 }
             }
@@ -421,20 +414,6 @@ namespace SearchAThing
             var otherGeomVisited = new HashSet<IEdge>();
             var otherVertexVisited = new HashSet<Vector3D>(ptCmp);
 
-            GeomWalkNfo getByIp(Vector3D ip, bool onThis)
-            {
-                var lst = onThis ? thisBrokenGeoms : otherBrokenGeoms;
-                var q = onThis ? ipToThisBrokenGeoms[ip] : ipToOtherBrokenGeoms[ip];
-
-                var geomVisited = onThis ? thisGeomVisited : otherGeomVisited;
-                var vertexVisited = onThis ? thisVertexVisited : otherVertexVisited;
-
-                geomVisited.Add(q.geom);
-                vertexVisited.Add(ip);
-
-                return new GeomWalkNfo(lst, isOnThis: onThis, q.geom, q.idx, geomVisited, vertexVisited);
-            }
-
             Vector3D? sharedVertex(IEdge g1, IEdge g2)
             {
                 if (g1.SGeomFrom.EqualsTol(tol, g2.SGeomFrom) || (g1.SGeomFrom.EqualsTol(tol, g2.SGeomTo)))
@@ -444,6 +423,22 @@ namespace SearchAThing
                     return g1.SGeomTo;
 
                 return null;
+            }
+
+            GeomWalkNfo getByIp(Vector3D ip, bool onThis)
+            {
+                var qt = ipToBrokenGeoms[ip];
+                var q = qt.First(w => w.nfo.inside && onThis == w.nfo.onThis);
+
+                var lst = onThis ? thisBrokenGeoms : otherBrokenGeoms;
+
+                var geomVisited = onThis ? thisGeomVisited : otherGeomVisited;
+                var vertexVisited = onThis ? thisVertexVisited : otherVertexVisited;
+
+                geomVisited.Add(q.nfo.geom);
+                vertexVisited.Add(ip);
+
+                return new GeomWalkNfo(lst, isOnThis: onThis, q.nfo.geom, q.idx, geomVisited, vertexVisited);
             }
 
             GeomWalkNfo? walk(GeomWalkNfo x)
@@ -487,12 +482,17 @@ namespace SearchAThing
 
                     if (vertex != null)
                     {
-                        if ((x.isOnThis && ipToOtherBrokenGeoms.ContainsKey(vertex))
-                            ||
-                            (!x.isOnThis && ipToThisBrokenGeoms.ContainsKey(vertex)))
-                            return getByIp(vertex, !x.isOnThis);
-                        else
-                            return null;
+                        List<GeomWithIdx>? lst;
+                        if (ipToBrokenGeoms.TryGetValue(vertex, out lst))
+                        {
+                            if (x.isOnThis && lst.Any(w => w.nfo.inside && !w.nfo.onThis))
+                                return getByIp(vertex, onThis: false);
+
+                            if (!x.isOnThis && lst.Any(w => w.nfo.inside && w.nfo.onThis))
+                                return getByIp(vertex, onThis: true);
+                        }
+
+                        return null;
                     }
                     else
                         return null;
@@ -511,7 +511,7 @@ namespace SearchAThing
                         ((Geometry)x.item.geom).MidPoint.ToDxfVector2(), .7)
                         .Eval(e =>
                         {
-                            e.Alignment = TextAlignment.MiddleLeft;
+                            e.Alignment = TextAlignment.Middle;
                             e.Layer = thisLayer;
                             return e;
                         }));
@@ -527,7 +527,7 @@ namespace SearchAThing
                         ((Geometry)x.item.geom).MidPoint.ToDxfVector2(), .7)
                         .Eval(e =>
                         {
-                            e.Alignment = TextAlignment.MiddleLeft;
+                            e.Alignment = TextAlignment.Middle;
                             e.Layer = otherLayer;
                             return e;
                         }));
@@ -538,72 +538,75 @@ namespace SearchAThing
 
             if (ipts.Count == 1) yield break;
 
-            foreach (var ipt in ipts)
+            switch (mode)
             {
-                if (visitedVertexes.Contains(ipt)) continue;
-
-                var gLoop = new List<IEdge>();
-                var gLoopHs = new HashSet<IEdge>();
-
-                var start = getByIp(ipt, onThis: true);
-
-                gLoop.Add(start.geom);
-                gLoopHs.Add(start.geom);
-
-                var cur = start;
-
-                while (true)
-                {
-                    if (gLoop.Count == 2)
+                case BooleanMode.Difference:
                     {
-                        start.vertexVisited.Add(start.geom.SGeomFrom);
-                        start.vertexVisited.Add(start.geom.SGeomTo);
+
                     }
-                    // if (gLoop.Count > 2 && sharedVertex(cur.geom, gLoop[0]) != null)
-                    //      break;
+                    break;
 
-                    var qnext = walk(cur);
+                case BooleanMode.Intersect:
+                    {
+                        foreach (var ipt in ipts)
+                        {
+                            if (visitedVertexes.Contains(ipt)) continue;
 
-                    if (qnext == null) break;
+                            var gLoop = new List<IEdge>();
+                            var gLoopHs = new HashSet<IEdge>();
 
-                    cur = qnext.Value; // BREAKPOINT
+                            var start = getByIp(ipt, onThis: true);
 
-                    if (gLoopHs.Contains(cur.geom)) break;
-                    if (
-                        visitedVertexes.Contains(cur.geom.SGeomFrom, ptCmp) &&
-                        visitedVertexes.Contains(cur.geom.SGeomTo, ptCmp))
-                        break;
+                            gLoop.Add(start.geom);
+                            gLoopHs.Add(start.geom);
 
-                    gLoop.Add(cur.geom);
-                    gLoopHs.Add(cur.geom);
+                            var cur = start;
 
-                    visitedVertexes.Add(cur.geom.SGeomFrom);
-                    visitedVertexes.Add(cur.geom.SGeomTo);
-                }
+                            while (true)
+                            {
+                                if (gLoop.Count == 2)
+                                {
+                                    start.vertexVisited.Add(start.geom.SGeomFrom);
+                                    start.vertexVisited.Add(start.geom.SGeomTo);
+                                }
 
-                // foreach (var geom in gLoop)
-                // {
-                //     visitedVertexes.Add(geom.SGeomFrom);
-                //     visitedVertexes.Add(geom.SGeomTo);
-                // }
+                                var qnext = walk(cur);
 
-                if (gLoop.Count == 1 || (gLoop.Count == 2 && gLoop.All(w => w.EdgeType == EdgeType.Line3D))) yield break;
+                                if (qnext == null) break;
 
-                var loopres = new Loop(tol, this.Plane, gLoop, checkSense: true);
+                                cur = qnext.Value;
 
-                if (debugDxf != null)
-                {
-                    var lw = loopres.ToLwPolyline(tol);
-                    lw.Layer = intersectLayer;
-                    debugDxf.AddEntity(lw);
-                }
+                                if (gLoopHs.Contains(cur.geom)) break;
+                                if (
+                                    visitedVertexes.Contains(cur.geom.SGeomFrom, ptCmp) &&
+                                    visitedVertexes.Contains(cur.geom.SGeomTo, ptCmp))
+                                    break;
 
-                yield return loopres;
+                                gLoop.Add(cur.geom);
+                                gLoopHs.Add(cur.geom);
+
+                                visitedVertexes.Add(cur.geom.SGeomFrom);
+                                visitedVertexes.Add(cur.geom.SGeomTo);
+                            }
+
+                            if (gLoop.Count == 1 || (gLoop.Count == 2 && gLoop.All(w => w.EdgeType == EdgeType.Line3D))) yield break;
+
+                            var loopres = new Loop(tol, this.Plane, gLoop, checkSense: true);
+
+                            if (debugDxf != null)
+                            {
+                                var lw = loopres.ToLwPolyline(tol);
+                                lw.Layer = intersectLayer;
+                                debugDxf.AddEntity(lw);
+                            }
+
+                            yield return loopres;
+                        }
+                    }
+                    break;
             }
 
         }
-
-        public IEnumerable<Loop> Sub(double tol, Loop other) => Intersect(tol, other, debugDxf: null, subtract: true);
 
         /// <summary>
         /// create an hatch from given loop, pattern
