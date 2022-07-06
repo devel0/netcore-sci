@@ -439,7 +439,7 @@ namespace SearchAThing
                             {
                                 if (i < geom.Count - 1)
                                 {
-                                    if (geom[i + 1].GeomFrom.EqualsTol(tol, _to))
+                                    if (geom[i + 1].SGeomFrom.EqualsTol(tol, _to))
                                     {
                                         var lwpv = new LwPolylineVertex(_from.ToDxfVector2()) { Bulge = bulge };
                                         pvtx.Add(lwpv);
