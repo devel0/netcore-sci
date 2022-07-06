@@ -17,6 +17,8 @@
     - [0001](#0001)
     - [0002](#0002)
     - [0003](#0003)
+* [Tests](#tests)
+    - [LoopTest_0013](#looptest_0013)
 * [Quickstart](#quickstart)
 * [Basic concepts](#basic-concepts)
   + [Side effects](#side-effects)
