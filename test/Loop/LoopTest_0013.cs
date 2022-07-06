@@ -51,7 +51,10 @@ namespace SearchAThing.Sci.Tests
             Assert.True(yellowIntSubGreenInt.Count == 3);
             foreach (var res in yellowIntSubGreenInt)
             {
-                outdxf?.AddEntity(res.DxfEntity(tol).Set(x => x.SetColor(AciColor.Red)));
+                outdxf?.AddEntity(res.DxfEntity(tol).Set(x => x.SetColor(AciColor.Red)));                
+                outdxf?.AddEntity(res
+                    .ToHatch(tol, new HatchPattern(HatchPattern.Line.Name) { Angle = 45, Scale = 0.5 })
+                    .SetColor(AciColor.Red));
             }
 
             yellowIntSubGreenInt[0].Area.AssertEqualsTol(tol, 5.71051935);

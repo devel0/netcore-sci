@@ -76,6 +76,12 @@ detect polygons ( line, arcs ) intersection loops when edges overlaps
 
 <img src="examples/0003/output.png" width=300>
 
+## Tests
+
+#### LoopTest_0013
+
+<img src="data/img/LoopTest_0013.png" width=400>
+
 ## Quickstart
 
 - [nuget package](https://www.nuget.org/packages/netcore-sci/)
