@@ -30,8 +30,8 @@ namespace SearchAThing.Sci.Tests
             outdxf?.AddEntity(loopGreen.DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)));
             outdxf?.AddEntity(loopYellow.DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));
 
-            var yellowIntersectGreen = loopYellow.Intersect(tol, loopGreen).ToList();
-            var blueIntersectGreen = loopBlue.Intersect(tol, loopGreen).ToList();
+            var yellowIntersectGreen = loopYellow.Boolean(tol, loopGreen).ToList();
+            var blueIntersectGreen = loopBlue.Boolean(tol, loopGreen).ToList();
 
             Assert.True(yellowIntersectGreen.Count == 1);
             yellowIntersectGreen[0].Area.AssertEqualsTol(tol, 160);

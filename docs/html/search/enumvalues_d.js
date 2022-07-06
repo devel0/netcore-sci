@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['z_743',['Z',['../namespace_search_a_thing.html#a3197886280b26d361c765c6d7edefb4fa21c2e59531c8710156d34a3c30ac81d5',1,'SearchAThing']]],
-  ['z_5fx_744',['Z_X',['../namespace_search_a_thing.html#a42c02aa6d6f0779946333e294f73ef26a937fcc7cbf8cf7d2a12946934be7f0bc',1,'SearchAThing']]],
-  ['z_5fy_745',['Z_Y',['../namespace_search_a_thing.html#a42c02aa6d6f0779946333e294f73ef26a00e337c0cb59150df472dd6a124897bd',1,'SearchAThing']]]
+  ['x_744',['X',['../namespace_search_a_thing.html#a3197886280b26d361c765c6d7edefb4fa02129bb861061d1a052c592e2dc6b383',1,'SearchAThing']]],
+  ['x_5fyq_745',['X_YQ',['../namespace_search_a_thing.html#a42c02aa6d6f0779946333e294f73ef26acfca6406ad797755fb22f3bbabaee655',1,'SearchAThing']]]
 ];

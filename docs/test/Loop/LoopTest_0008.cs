@@ -28,7 +28,7 @@ namespace SearchAThing.Sci.Tests
             var bboxYellow = loopYellow.Vertexes(tol).BBox();
             var bboxGreen = loopGreen.Vertexes(tol).BBox();
 
-            var ints = loopYellow.Intersect(tol, loopGreen).ToList();
+            var ints = loopYellow.Boolean(tol, loopGreen).ToList();
 
             outdxf?.AddEntity(loopGreen.DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)));
             outdxf?.AddEntity(loopYellow.DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));

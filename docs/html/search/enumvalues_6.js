@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['midpoint_733',['MidPoint',['../namespace_search_a_thing.html#aaf41c0cb15959f4a36819442ef87fe8ca1fc0ea0360ff8d5bc1aafc0ced0b49a1',1,'SearchAThing']]]
+  ['line3d_735',['Line3D',['../namespace_search_a_thing.html#a1b753fd9c2659910ca1a042a05b56be6a223c953b6130f20084fb1beb66c9ad4a',1,'SearchAThing.Line3D()'],['../namespace_search_a_thing.html#a424a64da753a3cd5e96ab8d0553a04c4a223c953b6130f20084fb1beb66c9ad4a',1,'SearchAThing.Line3D()']]]
 ];

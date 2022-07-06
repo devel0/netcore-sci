@@ -10,7 +10,8 @@ namespace SearchAThing.Sci.Tests
         [Fact]
         public void Plane3D_0001()
         {
-            var dxf = netDxf.DxfDocument.Load(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Plane3D/Plane3DTest_0001.dxf"));
+            var dxf = netDxf.DxfDocument.Load(
+                System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Plane3D/Plane3DTest_0001.dxf"));
 
             var pts = dxf.Points.Select(w => (Vector3D)w.Position).ToList();
             var plane = pts.BestFittingPlane(1e-3);

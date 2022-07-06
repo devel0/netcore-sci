@@ -67,6 +67,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="class_search_a_thing_1_1_loop-members.html">List of all members</a>  </div>
@@ -78,36 +79,51 @@ $(function() {
 <p>planar edges loop containing line and arcs  
  <a href="class_search_a_thing_1_1_loop.html#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:aa70b8ece6fee2023617d56c86b281bba"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#aa70b8ece6fee2023617d56c86b281bba">BooleanMode</a> { <a class="el" href="class_search_a_thing_1_1_loop.html#aa70b8ece6fee2023617d56c86b281bbaa6faa907d79c8bb46a12bea5c8de76654">Intersect</a>
+, <a class="el" href="class_search_a_thing_1_1_loop.html#aa70b8ece6fee2023617d56c86b281bbaaaef12e903e606a4895a16b393bfdec8c">Union</a>
+, <a class="el" href="class_search_a_thing_1_1_loop.html#aa70b8ece6fee2023617d56c86b281bbaa28ed2ac6c29f64a3692c956004b8ff7a">Difference</a>
+ }</td></tr>
+<tr class="separator:aa70b8ece6fee2023617d56c86b281bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a27ab30fb86222c2cef0b2461ee16e1bc"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#a27ab30fb86222c2cef0b2461ee16e1bc">Vertexes</a> (double tol)</td></tr>
+<tr class="memdesc:a27ab30fb86222c2cef0b2461ee16e1bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">loop edge vertexes  <a href="class_search_a_thing_1_1_loop.html#a27ab30fb86222c2cef0b2461ee16e1bc">More...</a><br /></td></tr>
 <tr class="separator:a27ab30fb86222c2cef0b2461ee16e1bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee8d94d45f95f861df3f51dde6b11412"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#aee8d94d45f95f861df3f51dde6b11412">Loop</a> (double tol, <a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a> plane, IReadOnlyList&lt; <a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a> &gt; edges, bool checkSense)</td></tr>
 <tr class="memdesc:aee8d94d45f95f861df3f51dde6b11412"><td class="mdescLeft">&#160;</td><td class="mdescRight">precondition: edges must lie on given plane  <a href="class_search_a_thing_1_1_loop.html#aee8d94d45f95f861df3f51dde6b11412">More...</a><br /></td></tr>
 <tr class="separator:aee8d94d45f95f861df3f51dde6b11412"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a438032a69907625fd2b24459a0991ea6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#a438032a69907625fd2b24459a0991ea6">Loop</a> (double tol, IEnumerable&lt; <a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a> &gt; edges, bool checkSense=true)</td></tr>
+<tr class="memdesc:a438032a69907625fd2b24459a0991ea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">create loop from given edge template ; plane is detected from edges distribution  <a href="class_search_a_thing_1_1_loop.html#a438032a69907625fd2b24459a0991ea6">More...</a><br /></td></tr>
 <tr class="separator:a438032a69907625fd2b24459a0991ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63d6a3e633b854d53804e582f68fa7fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#a63d6a3e633b854d53804e582f68fa7fe">Loop</a> (double tol, IEnumerable&lt; <a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a> &gt; edges, <a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a> plane, bool checkSense=true)</td></tr>
+<tr class="memdesc:a63d6a3e633b854d53804e582f68fa7fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">create loop from given edges, plane template  <a href="class_search_a_thing_1_1_loop.html#a63d6a3e633b854d53804e582f68fa7fe">More...</a><br /></td></tr>
 <tr class="separator:a63d6a3e633b854d53804e582f68fa7fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09973170440be93d2267bd8afa2336f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#a09973170440be93d2267bd8afa2336f7">Loop</a> (double tol, LwPolyline lwPolyline)</td></tr>
+<tr class="memdesc:a09973170440be93d2267bd8afa2336f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a loop from given lwpolyline template  <a href="class_search_a_thing_1_1_loop.html#a09973170440be93d2267bd8afa2336f7">More...</a><br /></td></tr>
 <tr class="separator:a09973170440be93d2267bd8afa2336f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5305923eff1ab61a9537048b0b0c4c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#ac5305923eff1ab61a9537048b0b0c4c4">InvertSense</a> (double tol)</td></tr>
+<tr class="memdesc:ac5305923eff1ab61a9537048b0b0c4c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">retrieve another loop with reversed edges with sense toggled  <a href="class_search_a_thing_1_1_loop.html#ac5305923eff1ab61a9537048b0b0c4c4">More...</a><br /></td></tr>
 <tr class="separator:ac5305923eff1ab61a9537048b0b0c4c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a970514a3bd56bc57564cc7cb293ab310"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#a970514a3bd56bc57564cc7cb293ab310">Move</a> (<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> delta)</td></tr>
+<tr class="memdesc:a970514a3bd56bc57564cc7cb293ab310"><td class="mdescLeft">&#160;</td><td class="mdescRight">move loop (plane and edges) of given delta  <a href="class_search_a_thing_1_1_loop.html#a970514a3bd56bc57564cc7cb293ab310">More...</a><br /></td></tr>
 <tr class="separator:a970514a3bd56bc57564cc7cb293ab310"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3edb1c2d203d96a37dda8c4baab7c05"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#aa3edb1c2d203d96a37dda8c4baab7c05">ContainsPoint</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> pt, bool excludePerimeter=false)</td></tr>
+<tr class="memdesc:aa3edb1c2d203d96a37dda8c4baab7c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if given point is included into this loop  <a href="class_search_a_thing_1_1_loop.html#aa3edb1c2d203d96a37dda8c4baab7c05">More...</a><br /></td></tr>
 <tr class="separator:aa3edb1c2d203d96a37dda8c4baab7c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad92d7da17e5f3078939ee816b08379e2"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#ad92d7da17e5f3078939ee816b08379e2">Intersect</a> (double tol, <a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a> other, netDxf.DxfDocument? debugDxf=null, bool subtract=false)</td></tr>
-<tr class="memdesc:ad92d7da17e5f3078939ee816b08379e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">intersects two planar loops precondition: must coplanar  <a href="class_search_a_thing_1_1_loop.html#ad92d7da17e5f3078939ee816b08379e2">More...</a><br /></td></tr>
-<tr class="separator:ad92d7da17e5f3078939ee816b08379e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83b6ff1e0cc641db486910fb271dda8e"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#a83b6ff1e0cc641db486910fb271dda8e">Sub</a> (double tol, <a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a> other)</td></tr>
-<tr class="separator:a83b6ff1e0cc641db486910fb271dda8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee7eed5227fdd3501b9ecb912501803f"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#aee7eed5227fdd3501b9ecb912501803f">Boolean</a> (double tol, <a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a> other, <a class="el" href="class_search_a_thing_1_1_loop.html#aa70b8ece6fee2023617d56c86b281bba">BooleanMode</a> mode=<a class="el" href="class_search_a_thing_1_1_loop.html#aa70b8ece6fee2023617d56c86b281bbaa6faa907d79c8bb46a12bea5c8de76654">BooleanMode.Intersect</a>, netDxf.DxfDocument? debugDxf=null)</td></tr>
+<tr class="memdesc:aee7eed5227fdd3501b9ecb912501803f"><td class="mdescLeft">&#160;</td><td class="mdescRight">boolean operation with this and other loops. precondition: must coplanar  <a href="class_search_a_thing_1_1_loop.html#aee7eed5227fdd3501b9ecb912501803f">More...</a><br /></td></tr>
+<tr class="separator:aee7eed5227fdd3501b9ecb912501803f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a482ecaa1e11cb7a3e3e6f31e700a87e2"><td class="memItemLeft" align="right" valign="top">netDxf.Entities.Hatch&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#a482ecaa1e11cb7a3e3e6f31e700a87e2">ToHatch</a> (double tol, HatchPattern pattern, bool associative=true)</td></tr>
 <tr class="memdesc:a482ecaa1e11cb7a3e3e6f31e700a87e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">create an hatch from given loop, pattern  <a href="class_search_a_thing_1_1_loop.html#a482ecaa1e11cb7a3e3e6f31e700a87e2">More...</a><br /></td></tr>
 <tr class="separator:a482ecaa1e11cb7a3e3e6f31e700a87e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8373925db15a4c8639313dc726e770c7"><td class="memItemLeft" align="right" valign="top">LwPolyline&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#a8373925db15a4c8639313dc726e770c7">ToLwPolyline</a> (double tol)</td></tr>
+<tr class="memdesc:a8373925db15a4c8639313dc726e770c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">create dxf lwpolyline from this loop  <a href="class_search_a_thing_1_1_loop.html#a8373925db15a4c8639313dc726e770c7">More...</a><br /></td></tr>
 <tr class="separator:a8373925db15a4c8639313dc726e770c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6574b8ce6f668f30e22440356a9b41c"><td class="memItemLeft" align="right" valign="top">LwPolyline&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#af6574b8ce6f668f30e22440356a9b41c">DxfEntity</a> (double tol)</td></tr>
+<tr class="memdesc:af6574b8ce6f668f30e22440356a9b41c"><td class="mdescLeft">&#160;</td><td class="mdescRight">create dxf lwpolyline from this loop  <a href="class_search_a_thing_1_1_loop.html#af6574b8ce6f668f30e22440356a9b41c">More...</a><br /></td></tr>
 <tr class="separator:af6574b8ce6f668f30e22440356a9b41c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa73e7c4dd1df5fd5fbf81c7764ee1533"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#aa73e7c4dd1df5fd5fbf81c7764ee1533">ToString</a> ()</td></tr>
 <tr class="separator:aa73e7c4dd1df5fd5fbf81c7764ee1533"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,8 +133,10 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:af00973279ae59db1ff6d6ae3efc39419"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#af00973279ae59db1ff6d6ae3efc39419">Plane</a><code> [get]</code></td></tr>
+<tr class="memdesc:af00973279ae59db1ff6d6ae3efc39419"><td class="mdescLeft">&#160;</td><td class="mdescRight">plane where loop edges resides  <a href="class_search_a_thing_1_1_loop.html#af00973279ae59db1ff6d6ae3efc39419">More...</a><br /></td></tr>
 <tr class="separator:af00973279ae59db1ff6d6ae3efc39419"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed3b6f0976cee1f8991d89f9128ef96d"><td class="memItemLeft" align="right" valign="top">IReadOnlyList&lt; <a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#aed3b6f0976cee1f8991d89f9128ef96d">Edges</a><code> [get]</code></td></tr>
+<tr class="memdesc:aed3b6f0976cee1f8991d89f9128ef96d"><td class="mdescLeft">&#160;</td><td class="mdescRight">loop edges ( line, arc )  <a href="class_search_a_thing_1_1_loop.html#aed3b6f0976cee1f8991d89f9128ef96d">More...</a><br /></td></tr>
 <tr class="separator:aed3b6f0976cee1f8991d89f9128ef96d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7aae7a5e29a621b6ed961a28b717a11a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#a7aae7a5e29a621b6ed961a28b717a11a">Tol</a><code> [get]</code></td></tr>
 <tr class="separator:a7aae7a5e29a621b6ed961a28b717a11a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,11 +144,43 @@ Properties</h2></td></tr>
 <tr class="memdesc:acedb30173c5224396eb7a95709f5c619"><td class="mdescLeft">&#160;</td><td class="mdescRight">area of the loop ( segment and arc are evaluated )  <a href="class_search_a_thing_1_1_loop.html#acedb30173c5224396eb7a95709f5c619">More...</a><br /></td></tr>
 <tr class="separator:acedb30173c5224396eb7a95709f5c619"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a165133c1c04da94d94cb485e8de7b99a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_loop.html#a165133c1c04da94d94cb485e8de7b99a">Length</a><code> [get]</code></td></tr>
+<tr class="memdesc:a165133c1c04da94d94cb485e8de7b99a"><td class="mdescLeft">&#160;</td><td class="mdescRight">loop perimeter length  <a href="class_search_a_thing_1_1_loop.html#a165133c1c04da94d94cb485e8de7b99a">More...</a><br /></td></tr>
 <tr class="separator:a165133c1c04da94d94cb485e8de7b99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>planar edges loop containing line and arcs </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="aa70b8ece6fee2023617d56c86b281bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa70b8ece6fee2023617d56c86b281bba">&#9670;&nbsp;</a></span>BooleanMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_search_a_thing_1_1_loop.html#aa70b8ece6fee2023617d56c86b281bba">BooleanMode</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa70b8ece6fee2023617d56c86b281bbaa6faa907d79c8bb46a12bea5c8de76654"></a>Intersect&#160;</td><td class="fielddoc"><p>intersects this with other; zero or more intersection loop can results </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa70b8ece6fee2023617d56c86b281bbaaaef12e903e606a4895a16b393bfdec8c"></a>Union&#160;</td><td class="fielddoc"><p>not yet implemented ; one or two union loop can results </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa70b8ece6fee2023617d56c86b281bbaa28ed2ac6c29f64a3692c956004b8ff7a"></a>Difference&#160;</td><td class="fielddoc"><p>subtract other from this ; zero or more loop can results </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aee8d94d45f95f861df3f51dde6b11412"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aee8d94d45f95f861df3f51dde6b11412">&#9670;&nbsp;</a></span>Loop() <span class="overload">[1/4]</span></h2>
 
@@ -207,6 +257,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>create loop from given edge template ; plane is detected from edges distribution </p>
+
 </div>
 </div>
 <a id="a63d6a3e633b854d53804e582f68fa7fe"></a>
@@ -247,6 +299,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>create loop from given edges, plane template </p>
+
 </div>
 </div>
 <a id="a09973170440be93d2267bd8afa2336f7"></a>
@@ -275,9 +329,57 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>create a loop from given lwpolyline template </p>
+<p><br  />
+ </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aee7eed5227fdd3501b9ecb912501803f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee7eed5227fdd3501b9ecb912501803f">&#9670;&nbsp;</a></span>Boolean()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a>&gt; Boolean </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a>&#160;</td>
+          <td class="paramname"><em>other</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_loop.html#aa70b8ece6fee2023617d56c86b281bba">BooleanMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em> = <code><a class="el" href="class_search_a_thing_1_1_loop.html#aa70b8ece6fee2023617d56c86b281bbaa6faa907d79c8bb46a12bea5c8de76654">BooleanMode.Intersect</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">netDxf.DxfDocument?&#160;</td>
+          <td class="paramname"><em>debugDxf</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>boolean operation with this and other loops. precondition: must coplanar </p>
+<p><br  />
+ </p>
+
+</div>
+</div>
 <a id="aa3edb1c2d203d96a37dda8c4baab7c05"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa3edb1c2d203d96a37dda8c4baab7c05">&#9670;&nbsp;</a></span>ContainsPoint()</h2>
 
@@ -309,6 +411,17 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>states if given point is included into this loop </p>
+<p><br  />
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">excludePerimeter</td><td>if true, point on perimeter isn't included</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br  />
+ </p>
 
 </div>
 </div>
@@ -346,49 +459,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ad92d7da17e5f3078939ee816b08379e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad92d7da17e5f3078939ee816b08379e2">&#9670;&nbsp;</a></span>Intersect()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a>&gt; Intersect </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>tol</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a>&#160;</td>
-          <td class="paramname"><em>other</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">netDxf.DxfDocument?&#160;</td>
-          <td class="paramname"><em>debugDxf</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>subtract</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>intersects two planar loops precondition: must coplanar </p>
-<p><br  />
- </p>
+<p>create dxf lwpolyline from this loop </p>
 
 </div>
 </div>
@@ -408,6 +479,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>retrieve another loop with reversed edges with sense toggled </p>
+
 </div>
 </div>
 <a id="a970514a3bd56bc57564cc7cb293ab310"></a>
@@ -426,33 +499,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a83b6ff1e0cc641db486910fb271dda8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83b6ff1e0cc641db486910fb271dda8e">&#9670;&nbsp;</a></span>Sub()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a>&gt; Sub </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>tol</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a>&#160;</td>
-          <td class="paramname"><em>other</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>move loop (plane and edges) of given delta </p>
 
 </div>
 </div>
@@ -510,6 +557,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>create dxf lwpolyline from this loop </p>
+
 </div>
 </div>
 <a id="aa73e7c4dd1df5fd5fbf81c7764ee1533"></a>
@@ -544,6 +593,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>loop edge vertexes </p>
 
 </div>
 </div>
@@ -594,6 +645,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>loop edges ( line, arc ) </p>
+<p><br  />
+ </p>
+
 </div>
 </div>
 <a id="a165133c1c04da94d94cb485e8de7b99a"></a>
@@ -616,6 +671,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>loop perimeter length </p>
+<p><br  />
+ </p>
+
 </div>
 </div>
 <a id="af00973279ae59db1ff6d6ae3efc39419"></a>
@@ -637,6 +696,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>plane where loop edges resides </p>
+<p><br  />
+ </p>
 
 </div>
 </div>

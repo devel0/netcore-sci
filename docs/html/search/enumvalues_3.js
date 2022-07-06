@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['from_728',['From',['../namespace_search_a_thing.html#aa4f8b8bbc5743963ccc53bbbe04e5b99a5da618e8e4b89c66fe86e32cdafde142',1,'SearchAThing']]],
-  ['fromto_729',['FromTo',['../namespace_search_a_thing.html#aa4f8b8bbc5743963ccc53bbbe04e5b99a0e4794774f28ac0f783e03fa2fd3e7d6',1,'SearchAThing']]]
+  ['exterior_729',['Exterior',['../namespace_search_a_thing.html#a5e4248e784fa4252d8084865cb91a873ad9b3dceaf520ba1fa45c371c498c6baf',1,'SearchAThing']]]
 ];

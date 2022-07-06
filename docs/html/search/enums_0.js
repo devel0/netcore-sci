@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['circletangenttype_715',['CircleTangentType',['../namespace_search_a_thing.html#a5e4248e784fa4252d8084865cb91a873',1,'SearchAThing']]],
-  ['coordinatesystem3dautoenum_716',['CoordinateSystem3DAutoEnum',['../namespace_search_a_thing.html#a1a7fc695aef0ab942c8a39ed73ea2f06',1,'SearchAThing']]]
+  ['booleanmode_715',['BooleanMode',['../class_search_a_thing_1_1_loop.html#aa70b8ece6fee2023617d56c86b281bba',1,'SearchAThing::Loop']]]
 ];

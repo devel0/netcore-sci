@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['edgetype_717',['EdgeType',['../namespace_search_a_thing.html#a424a64da753a3cd5e96ab8d0553a04c4',1,'SearchAThing']]]
+  ['circletangenttype_716',['CircleTangentType',['../namespace_search_a_thing.html#a5e4248e784fa4252d8084865cb91a873',1,'SearchAThing']]],
+  ['coordinatesystem3dautoenum_717',['CoordinateSystem3DAutoEnum',['../namespace_search_a_thing.html#a1a7fc695aef0ab942c8a39ed73ea2f06',1,'SearchAThing']]]
 ];

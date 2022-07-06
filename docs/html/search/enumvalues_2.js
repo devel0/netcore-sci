@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['exterior_727',['Exterior',['../namespace_search_a_thing.html#a5e4248e784fa4252d8084865cb91a873ad9b3dceaf520ba1fa45c371c498c6baf',1,'SearchAThing']]]
+  ['difference_728',['Difference',['../class_search_a_thing_1_1_loop.html#aa70b8ece6fee2023617d56c86b281bbaa28ed2ac6c29f64a3692c956004b8ff7a',1,'SearchAThing::Loop']]]
 ];
