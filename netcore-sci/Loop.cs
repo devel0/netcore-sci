@@ -425,10 +425,12 @@ namespace SearchAThing
                 return null;
             }
 
-            GeomWalkNfo getByIp(Vector3D ip, bool onThis)
+            GeomWalkNfo? getByIp(Vector3D ip, bool onThis, bool searchInside = true)
             {
                 var qt = ipToBrokenGeoms[ip];
-                var q = qt.First(w => w.nfo.inside && onThis == w.nfo.onThis);
+                var q = qt.FirstOrDefault(w => w.nfo.inside == searchInside && onThis == w.nfo.onThis);
+
+                if (q == null) return null;
 
                 var lst = onThis ? thisBrokenGeoms : otherBrokenGeoms;
 
@@ -441,7 +443,7 @@ namespace SearchAThing
                 return new GeomWalkNfo(lst, isOnThis: onThis, q.nfo.geom, q.idx, geomVisited, vertexVisited);
             }
 
-            GeomWalkNfo? walk(GeomWalkNfo x)
+            GeomWalkNfo? intersectWalk(GeomWalkNfo x)
             {
                 int nextElIdx = calcIdx(x.geomIdx, +1, x.lst.Count);
                 var prevElIdx = calcIdx(x.geomIdx, -1, x.lst.Count);
@@ -477,6 +479,68 @@ namespace SearchAThing
                 else // switch to alternate path
                 {
                     Vector3D? vertex = null;
+                    if (!x.vertexVisited.Contains(x.geom.SGeomFrom)) vertex = x.geom.SGeomFrom;
+                    else if (!x.vertexVisited.Contains(x.geom.SGeomTo)) vertex = x.geom.SGeomTo;
+
+                    if (vertex != null)
+                    {
+                        List<GeomWithIdx>? lst;
+                        if (ipToBrokenGeoms.TryGetValue(vertex, out lst))
+                        {
+                            if (x.isOnThis && lst.Any(w => w.nfo.inside && !w.nfo.onThis))
+                                return getByIp(vertex, onThis: false);
+
+                            if (!x.isOnThis && lst.Any(w => w.nfo.inside && w.nfo.onThis))
+                                return getByIp(vertex, onThis: true);
+                        }
+
+                        return null;
+                    }
+                    else
+                        return null;
+                }
+            }
+
+            GeomWalkNfo? differenceWalk(GeomWalkNfo x)
+            {
+                int nextElIdx = calcIdx(x.geomIdx, +1, x.lst.Count);
+                var prevElIdx = calcIdx(x.geomIdx, -1, x.lst.Count);
+
+                var nextEl = x.lst[nextElIdx];
+                var prevEl = x.lst[prevElIdx];
+
+                GeomNfo? candidate = null;
+                int? candidateIdx = null;
+                Vector3D? candidateShVertex = null;
+
+                if (!x.geomVisited.Contains(nextEl.geom) && nextEl.inside != x.isOnThis &&
+                    (candidateShVertex = sharedVertex(x.geom, nextEl.geom)) != null &&
+                    (candidateShVertex.EqualsTol(tol, x.geom.SGeomFrom) || candidateShVertex.EqualsTol(tol, x.geom.SGeomTo)))
+                {
+                    candidate = nextEl;
+                    candidateIdx = nextElIdx;
+                }
+                else if (!x.geomVisited.Contains(prevEl.geom) && prevEl.inside != x.isOnThis &&
+                    (candidateShVertex = sharedVertex(x.geom, prevEl.geom)) != null &&
+                    (candidateShVertex.EqualsTol(tol, x.geom.SGeomFrom) || candidateShVertex.EqualsTol(tol, x.geom.SGeomFrom)))
+                {
+                    candidate = prevEl;
+                    candidateIdx = prevElIdx;
+                }
+
+                if (candidate != null && candidateIdx != null && candidateShVertex != null)
+                {
+                    x.vertexVisited.Add(candidateShVertex);
+                    x.geomVisited.Add(candidate.Value.geom);
+                    return new GeomWalkNfo(x.lst, x.isOnThis,
+                        candidate.Value.geom, candidateIdx.Value,
+                        x.geomVisited, x.vertexVisited);
+                }
+                else // switch to alternate path
+                {
+                    Vector3D? vertex = null;
+                    if (x.geom == null) return null;
+
                     if (!x.vertexVisited.Contains(x.geom.SGeomFrom)) vertex = x.geom.SGeomFrom;
                     else if (!x.vertexVisited.Contains(x.geom.SGeomTo)) vertex = x.geom.SGeomTo;
 
@@ -542,12 +606,6 @@ namespace SearchAThing
             {
                 case BooleanMode.Difference:
                     {
-
-                    }
-                    break;
-
-                case BooleanMode.Intersect:
-                    {
                         foreach (var ipt in ipts)
                         {
                             if (visitedVertexes.Contains(ipt)) continue;
@@ -555,7 +613,12 @@ namespace SearchAThing
                             var gLoop = new List<IEdge>();
                             var gLoopHs = new HashSet<IEdge>();
 
-                            var start = getByIp(ipt, onThis: true);
+                            var startIp = ipt;
+                            var qstart = getByIp(ipt, onThis: true, searchInside: false);
+
+                            if (qstart == null || qstart.Value.geom == null) break;
+
+                            var start = qstart.Value;
 
                             gLoop.Add(start.geom);
                             gLoopHs.Add(start.geom);
@@ -570,13 +633,81 @@ namespace SearchAThing
                                     start.vertexVisited.Add(start.geom.SGeomTo);
                                 }
 
-                                var qnext = walk(cur);
+                                var qnext = differenceWalk(cur);
 
                                 if (qnext == null) break;
 
                                 cur = qnext.Value;
 
                                 if (gLoopHs.Contains(cur.geom)) break;
+
+                                if (
+                                    visitedVertexes.Contains(cur.geom.SGeomFrom, ptCmp) &&
+                                    visitedVertexes.Contains(cur.geom.SGeomTo, ptCmp))
+                                    break;
+
+                                gLoop.Add(cur.geom);
+                                gLoopHs.Add(cur.geom);
+
+                                visitedVertexes.Add(cur.geom.SGeomFrom);
+                                visitedVertexes.Add(cur.geom.SGeomTo);
+
+                                if (cur.geom.SGeomFrom.EqualsTol(tol, startIp) ||
+                                    cur.geom.SGeomTo.EqualsTol(tol, startIp))
+                                    break;
+                            }
+
+                            if (gLoop.Count == 1 || (gLoop.Count == 2 && gLoop.All(w => w.EdgeType == EdgeType.Line3D))) yield break;
+
+                            var loopres = new Loop(tol, this.Plane, gLoop, checkSense: true);
+
+                            if (debugDxf != null)
+                            {
+                                var lw = loopres.ToLwPolyline(tol);
+                                lw.Layer = intersectLayer;
+                                debugDxf.AddEntity(lw);
+                            }
+
+                            yield return loopres;
+                        }
+                    }
+                    break;
+
+                case BooleanMode.Intersect:
+                    {
+                        foreach (var ipt in ipts)
+                        {
+                            if (visitedVertexes.Contains(ipt)) continue;
+
+                            var gLoop = new List<IEdge>();
+                            var gLoopHs = new HashSet<IEdge>();
+
+                            var qstart = getByIp(ipt, onThis: true);
+
+                            if (qstart == null || qstart.Value.geom == null) break;
+                            var start = qstart.Value;
+
+                            gLoop.Add(start.geom);
+                            gLoopHs.Add(start.geom);
+
+                            var cur = start;
+
+                            while (true)
+                            {
+                                if (gLoop.Count == 2)
+                                {
+                                    start.vertexVisited.Add(start.geom.SGeomFrom);
+                                    start.vertexVisited.Add(start.geom.SGeomTo);
+                                }
+
+                                var qnext = intersectWalk(cur);
+
+                                if (qnext == null) break;
+
+                                cur = qnext.Value;
+
+                                if (gLoopHs.Contains(cur.geom)) break;
+
                                 if (
                                     visitedVertexes.Contains(cur.geom.SGeomFrom, ptCmp) &&
                                     visitedVertexes.Contains(cur.geom.SGeomTo, ptCmp))
