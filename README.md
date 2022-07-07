@@ -181,8 +181,8 @@ The vector a created with X:1, Y:2, Z:3 will subjected to a SetX(10) but the vec
 
 - basic abstract type for geometries
 - contains definition of SGeomFrom and SGeomTo that will be used by inherited IEdge interface implemented objects such as Line3D and Arc3D and allow to state the sense of the edge
-  - sense == true ⇒ SGeomFrom == GeomFrom ∧ SGeomTo == GeomTo
-  - sense == false ⇒ SGeomFrom == GeomTo ∧ SGeomTo == GeomFrom
+  - `sense == true ⇒ SGeomFrom == GeomFrom ∧ SGeomTo == GeomTo`
+  - `sense == false ⇒ SGeomFrom == GeomTo ∧ SGeomTo == GeomFrom`
 
 ## Unit tests
 
