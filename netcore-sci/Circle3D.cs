@@ -189,8 +189,7 @@ namespace SearchAThing
         /// <returns></returns>
         public IEnumerable<Vector3D> Intersect(double tol, Circle3D other)
         {
-            if (this.EqualsTol(tol, other))
-                throw new ArgumentException("circles are same");
+            if (this.EqualsTol(tol, other)) yield break;
 
             if (this.CS.IsParallelTo(tol, other.CS))
             {
