@@ -19,6 +19,7 @@
     - [0003](#0003)
 * [Tests](#tests)
     - [LoopTest_0013](#looptest_0013)
+    - [LoopTest_0014](#looptest_0014)
 * [Quickstart](#quickstart)
 * [Basic concepts](#basic-concepts)
   + [Side effects](#side-effects)
@@ -68,6 +69,8 @@ detect polygons ( line, arcs ) intersection loops
 
 [result dxf](https://raw.githubusercontent.com/devel0/netcore-sci/master/examples/0002/output.dxf)
 
+```yellow ∩ green```
+
 <img src="examples/0002/output.png" width=300>
 
 #### 0003
@@ -76,13 +79,23 @@ detect polygons ( line, arcs ) intersection loops when edges overlaps
 
 [result dxf](https://raw.githubusercontent.com/devel0/netcore-sci/master/examples/0003/output.dxf)
 
+```yellow ∩ green```
+
 <img src="examples/0003/output.png" width=300>
 
 ## Tests
 
 #### LoopTest_0013
 
+```(yellow ∩ magenta) - (green ∩ magenta)```
+
 <img src="data/img/LoopTest_0013.png" width=400>
+
+#### LoopTest_0014
+
+```yellow - green```
+
+<img src="data/img/LoopTest_0014.png" width=400>
 
 ## Quickstart
 
