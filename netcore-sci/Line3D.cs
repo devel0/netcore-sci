@@ -204,7 +204,7 @@ namespace SearchAThing
                     {
                         var other = (Arc3D)_other;
 
-                        var pts = other.Intersect(tol, this, only_perimeter: true, segment_mode: true);
+                        var pts = other.Intersect(tol, this, onlyPerimeter: true, segment_mode: true);
 
                         if (pts != null)
                             foreach (var pt in pts) yield return pt;

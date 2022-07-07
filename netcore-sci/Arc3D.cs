@@ -185,7 +185,7 @@ namespace SearchAThing
         {
             get
             {
-                if (_Length == null) _Length = Angle * Radius;                
+                if (_Length == null) _Length = Angle * Radius;
                 return _Length.Value;
             }
         }
@@ -243,7 +243,7 @@ namespace SearchAThing
                     {
                         var other = (Line3D)_other;
 
-                        var pts = this.Intersect(tol, other, only_perimeter: true,
+                        var pts = this.Intersect(tol, other, onlyPerimeter: true,
                             segment_mode: otherSegmentMode == GeomSegmentMode.FromTo);
 
                         if (pts != null)
@@ -252,6 +252,21 @@ namespace SearchAThing
                         }
                     }
                     break;
+
+                case GeometryType.Arc3D:
+                    {
+                        var other = (Arc3D)_other;
+
+                        var pts = this.Intersect(tol, other, onlyPerimeter: true).ToList();
+
+                        if (pts.Count > 0)
+                        {
+                            foreach (var pt in pts) yield return pt;
+                        }
+                    }
+                    break;
+
+                default: throw new NotImplementedException($"intersect with {this.GeomType} and {_other.GeomType}");
             }
         }
 
@@ -661,6 +676,26 @@ namespace SearchAThing
         }
 
         /// <summary>
+        /// finds intersection points between two arcs
+        /// </summary>
+        /// <param name="tol">length tolerance</param>
+        /// <param name="other">other arc</param>
+        /// <param name="only_perimeter">true to test point contained only in perimeter, false to test also contained in area</param>
+        /// <returns></returns>
+        public IEnumerable<Vector3D> Intersect(double tol, Arc3D other, bool onlyPerimeter)
+        {
+            var c1 = this.ToCircle3D(tol);
+            var c2 = other.ToCircle3D(tol);
+            
+            var pts = c1.Intersect(tol, c2).ToList();
+
+            if (pts.Count>0)
+            ;
+
+            return pts.Where(ip => this.Contains(tol, ip, inArcAngleRange: true, onlyPerimeter));
+        }
+
+        /// <summary>
         /// states if this arc intersect given line
         /// </summary>
         /// <param name="tol">arc tolerance</param>
@@ -710,12 +745,12 @@ namespace SearchAThing
         /// </summary>
         /// <param name="tol">length tolerance</param>
         /// <param name="l">line</param>
-        /// <param name="only_perimeter">check intersection only along perimeter; if false it will check intersection along arc area shape border too</param>
+        /// <param name="onlyPerimeter">check intersection only along perimeter; if false it will check intersection along arc area shape border too</param>
         /// <param name="segment_mode">if true treat given line as segment; if false as infinite line</param>
         /// <returns>intersection points between this arc and given line</returns>
         public virtual IEnumerable<Vector3D> Intersect(double tol, Line3D l,
-            bool only_perimeter = true, bool segment_mode = false) => Intersect(tol, l,
-                only_perimeter: only_perimeter,
+            bool onlyPerimeter = true, bool segment_mode = false) => Intersect(tol, l,
+                only_perimeter: onlyPerimeter,
                 segment_mode: segment_mode,
                 circle_mode: false);
 
