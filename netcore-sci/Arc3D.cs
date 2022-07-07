@@ -398,9 +398,14 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// Build arc by 3 given points
-        /// ( the inside CS will centered in the arc center and Xaxis toward p1 )
-        /// </summary>                
+        /// Build arc by 3 given points where p1, p3 are endpoints and p2 is an internal point of the arc.
+        /// ( the inside CS will centered in the arc center and Xaxis toward p1 or p3 depending on right hand rule of the normal )
+        /// </summary>
+        /// <param name="tol">length tolerance</param>
+        /// <param name="p1">first arc extreme point</param>
+        /// <param name="p2">arc inside point</param>
+        /// <param name="p3">second arc extreme point</param>
+        /// <param name="normal">(optional) precondition: must perpendicular to arc plane ; if omitted the normal allow right hand rule p1 to p3 to defined arc; if specified arc start point could p1 or p3 depending on right hand rule. It's not required normalization.</param>
         public Arc3D(double tol, Vector3D p1, Vector3D p2, Vector3D p3, Vector3D? normal = null) :
             base(GeometryType.Arc3D)
         {
@@ -420,8 +425,20 @@ namespace SearchAThing
                 }
             }
 
-            AngleStart = CS.BaseX.AngleToward(tol, p1 - CS.Origin, CS.BaseZ).NormalizeAngle(TwoPIRadTol);
-            AngleEnd = CS.BaseX.AngleToward(tol, p3 - CS.Origin, CS.BaseZ).NormalizeAngle(TwoPIRadTol);
+            var _start = CS.BaseX.AngleToward(tol, p1 - CS.Origin, CS.BaseZ).NormalizeAngle(TwoPIRadTol);
+            var _mid = CS.BaseX.AngleToward(tol, p2 - CS.Origin, CS.BaseZ).NormalizeAngle(TwoPIRadTol);
+            var _end = CS.BaseX.AngleToward(tol, p3 - CS.Origin, CS.BaseZ).NormalizeAngle(TwoPIRadTol);
+
+            if (_mid.GreatThanOrEqualsTol(TwoPIRadTol, _start) && _mid.LessThanOrEqualsTol(TwoPIRadTol, _end))
+            {
+                AngleStart = _start;
+                AngleEnd = _end;
+            }
+            else
+            {
+                AngleStart = _end;
+                AngleEnd = _start;
+            }
         }
 
         /// <summary>
@@ -456,7 +473,7 @@ namespace SearchAThing
         /// point on the arc circumnfere at given angle (rotating cs basex around cs basez)
         /// note: it start
         /// </summary>
-        public Vector3D PtAtAngle(double angleRad) => (Vector3D.XAxis * Radius).RotateAboutZAxis(angleRad).ToWCS(CS);
+        public Vector3D PtAtAngle(double angleRad) => (Vector3D.XAxis * Radius).RotateAboutZAxis(angleRad).ToWCS(CS);        
 
         /// <summary>
         /// return the angle (rad) of the point respect cs x axis rotating around cs z axis
@@ -680,17 +697,14 @@ namespace SearchAThing
         /// </summary>
         /// <param name="tol">length tolerance</param>
         /// <param name="other">other arc</param>
-        /// <param name="only_perimeter">true to test point contained only in perimeter, false to test also contained in area</param>
+        /// <param name="onlyPerimeter">true to test point contained only in perimeter, false to test also contained in area</param>
         /// <returns></returns>
-        public IEnumerable<Vector3D> Intersect(double tol, Arc3D other, bool onlyPerimeter)
+        public IEnumerable<Vector3D> Intersect(double tol, Arc3D other, bool onlyPerimeter = true)
         {
             var c1 = this.ToCircle3D(tol);
             var c2 = other.ToCircle3D(tol);
-            
-            var pts = c1.Intersect(tol, c2).ToList();
 
-            if (pts.Count>0)
-            ;
+            var pts = c1.Intersect(tol, c2).ToList();
 
             return pts.Where(ip => this.Contains(tol, ip, inArcAngleRange: true, onlyPerimeter));
         }
