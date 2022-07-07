@@ -85,6 +85,8 @@ detect polygons ( line, arcs ) intersection loops when edges overlaps
 
 ## Tests
 
+:point_right: [unit tests](test) still a good place to find some example about library usage.
+
 #### LoopTest_0013
 
 ```(yellow ∩ magenta) - (green ∩ magenta)```
