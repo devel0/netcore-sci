@@ -568,7 +568,7 @@ namespace SearchAThing
                 }
                 else if (!x.geomVisited.Contains(prevEl.geom) && prevEl.inside != x.isOnThis &&
                     (candidateShVertex = sharedVertex(x.geom, prevEl.geom)) != null &&
-                    (candidateShVertex.EqualsTol(tol, x.geom.SGeomFrom) || candidateShVertex.EqualsTol(tol, x.geom.SGeomFrom)))
+                    (candidateShVertex.EqualsTol(tol, x.geom.SGeomFrom) || candidateShVertex.EqualsTol(tol, x.geom.SGeomTo)))
                 {
                     candidate = prevEl;
                     candidateIdx = prevElIdx;
@@ -598,8 +598,8 @@ namespace SearchAThing
                             if (x.isOnThis && lst.Any(w => w.nfo.inside && !w.nfo.onThis))
                                 return getByIp(vertex, onThis: false);
 
-                            if (!x.isOnThis && lst.Any(w => w.nfo.inside && w.nfo.onThis))
-                                return getByIp(vertex, onThis: true);
+                            if (!x.isOnThis && lst.Any(w => !w.nfo.inside && w.nfo.onThis))
+                                return getByIp(vertex, onThis: true, searchInside: false);
                         }
 
                         return null;
@@ -853,6 +853,8 @@ namespace SearchAThing
 
             var lst = edges.ToList();
 
+            int i = 0;
+
             foreach (var edgeItem in edges.WithNext())
             {
                 if (edgeItem.next == null)
@@ -872,7 +874,7 @@ namespace SearchAThing
                     var q = cur.CheckSense(tol, edgeItem.next);
 
                     if (q == null || (overrideCur != null && q.Value.needToggleSenseThis))
-                        throw new Exception($"can't glue [{cur}] with [{edgeItem.next}]");
+                        throw new Exception($"can't glue [{cur}] idx:{i} with [{edgeItem.next}]");
 
                     overrideCur = null;
 
@@ -884,6 +886,8 @@ namespace SearchAThing
                     if (q.Value.needToggleSenseNext)
                         overrideCur = (IEdge)edgeItem.next.ToggleSense();
                 }
+
+                ++i;
             }
         }
 
