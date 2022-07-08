@@ -498,7 +498,7 @@ namespace SearchAThing
 
                 case EntityType.Arc:
                     {
-                        var arc = ((Arc)eo).ToArc3D(tol);
+                        var arc = ((Arc)eo).ToArc3D();
                         return new BBox3D(new[] { arc.From, arc.To, arc.MidPoint });
                     }
 

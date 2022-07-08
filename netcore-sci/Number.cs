@@ -75,15 +75,14 @@ namespace SearchAThing
         /// angles will subjected to normalization [0,2pi) and angle from can be greather than to
         /// </summary>
         /// <param name="angleFrom">angle from</param>
-        /// <param name="angleTo">angle to</param>
-        /// <param name="tol_rad">angle tolerance (rad)</param>
+        /// <param name="angleTo">angle to</param>        
         /// <param name="normalizeAngles">actuate [0,2PI) angle normalization</param>
-        public static double Angle(this double angleFrom, double tol_rad, double angleTo, bool normalizeAngles = true)
+        public static double Angle(this double angleFrom, double angleTo, bool normalizeAngles = true)
         {
             if (normalizeAngles)
             {
-                angleFrom = angleFrom.NormalizeAngle(tol_rad);
-                angleTo = angleTo.NormalizeAngle(tol_rad);
+                angleFrom = angleFrom.NormalizeAngle();
+                angleTo = angleTo.NormalizeAngle();
             }
 
             if (angleFrom > angleTo)
@@ -95,24 +94,24 @@ namespace SearchAThing
         /// <summary>
         /// Normalize given angle(rad) into [maxRad-2PI,maxRad) range.
         /// </summary>
-        /// <param name="angle_rad">angle(rad) to normalize</param>
-        /// <param name="tol_rad">tolerance over rad</param>
+        /// <param name="angle_rad">angle(rad) to normalize</param>        
         /// <param name="maxRadExcluded">normalization range (excluded) max value ( minimum will computed as max-2PI )</param>
+        /// <param name="radTol">override rad tolerance</param>        
         /// <returns>angle normalized</returns>
         /// <remarks>
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Number/NumberTest_0003.cs)
         /// </remarks>
-        public static double NormalizeAngle(this double angle_rad, double tol_rad, double maxRadExcluded = 2 * PI)
-        {
-            if (angle_rad.GreatThanOrEqualsTol(tol_rad, maxRadExcluded - 2 * PI) &&
-                angle_rad.LessThanTol(tol_rad, maxRadExcluded))
+        public static double NormalizeAngle(this double angle_rad, double maxRadExcluded = 2 * PI, double radTol = TwoPIRadTol)
+        {            
+            if (angle_rad.GreatThanOrEqualsTol(radTol, maxRadExcluded - 2 * PI) &&
+                angle_rad.LessThanTol(radTol, maxRadExcluded))
                 return angle_rad;
 
-            var n = (int)(angle_rad / (2 * PI)).MRound(tol_rad);
+            var n = (int)(angle_rad / (2 * PI)).MRound(radTol);
 
             var excess = (n != 0) ? (n.Sign() * 2 * PI) : 0;
 
-            var res = (angle_rad - excess).MRound(tol_rad);
+            var res = (angle_rad - excess).MRound(radTol);
 
             if (res < 0) res += 2 * PI;
 

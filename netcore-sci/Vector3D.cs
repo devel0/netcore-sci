@@ -1731,16 +1731,7 @@ namespace SearchAThing
             var by = perpLine.V.Normalized();
             var bz = bx.CrossProduct(by).Normalized();
 
-            if (bz.EqualsTol(tol, CoordinateSystem3D.WCS.BaseZ))
-                return new Plane3D(CoordinateSystem3D.WCS);
-
-            if (bz.EqualsTol(tol, CoordinateSystem3D.XZ.BaseZ))
-                return new Plane3D(CoordinateSystem3D.XZ);
-
-            if (bz.EqualsTol(tol, CoordinateSystem3D.YZ.BaseZ))
-                return new Plane3D(CoordinateSystem3D.YZ);
-
-            return new Plane3D(new CoordinateSystem3D(origin, bx, by, bz));
+            return new Plane3D(new CoordinateSystem3D(origin, bx, by, bz).Simplified());
         }
 
         /// <summary>

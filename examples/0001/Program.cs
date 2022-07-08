@@ -32,14 +32,14 @@ namespace test
                 dxf.AddEntity(l_ent);
 
                 var arcCS = new CoordinateSystem3D(o, l.V, Vector3D.ZAxis);
-                var arc = new Arc3D(tol, arcCS, R, 0, angElev);
+                var arc = new Arc3D(arcCS, R, 0, angElev);
                 var arc_ent = arc.DxfEntity;
                 arc_ent.Color = netDxf.AciColor.Yellow;
                 dxf.AddEntity(arc_ent);
 
                 var arc2CS = new CoordinateSystem3D(l.To - R * Vector3D.ZAxis,
                     Vector3D.ZAxis, Vector3D.Zero - l.To);
-                var arc2 = new Arc3D(tol, arc2CS, R, 0, PI / 2);
+                var arc2 = new Arc3D(arc2CS, R, 0, PI / 2);
                 var arc2_ent = arc2.DxfEntity;
                 arc2_ent.Color = netDxf.AciColor.Green;
                 dxf.AddEntity(arc2_ent);

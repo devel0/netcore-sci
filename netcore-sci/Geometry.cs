@@ -167,7 +167,7 @@ namespace SearchAThing
             {
                 if (el.Type == netDxf.Entities.EntityType.Arc)
                 {
-                    yield return ((netDxf.Entities.Arc)el).ToArc3D(tol);
+                    yield return ((netDxf.Entities.Arc)el).ToArc3D();
                 }
                 else if (el.Type == netDxf.Entities.EntityType.Line)
                 {

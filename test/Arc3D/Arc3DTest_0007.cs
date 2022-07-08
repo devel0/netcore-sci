@@ -10,29 +10,25 @@ namespace SearchAThing.Sci.Tests
     {
 
         [Fact]
-        public void Arc3DTest_0003()
+        public void Arc3DTest_0007()
         {
             DxfDocument? outdxf = null;
             //outdxf = new DxfDocument();
 
-            var tolBuildArc = 1e-1;
-            var tol = 1e-7;            
+            var tol = 1e-3;
+            
+            var p1 = new Vector3D(15, 12.28);
+            var p2 = new Vector3D(15.003722011278999, 12.499999999999998);            
+            var p3 = new Vector3D(15, 12.72);
 
-            var arcFrom = new Vector3D(0.000000000000003, 12.72, 0);
-            var arcMiddle = new Vector3D(1.90117406287241, 17.0988259371276, 0);
-            var arcTo = new Vector3D(6.28, 19, 0);
-
-            var arc = new Arc3D(
-                tolBuildArc,
-                fromPt: arcFrom,
-                insidePt: arcMiddle,
-                toPt: arcTo);
-
-            // arc.From.AssertEqualsTol(tol, arcFrom);
-            // arc.MidPoint.AssertEqualsTol(tol, arcMiddle);
-            // arc.To.AssertEqualsTol(tol, arcTo);
-
+            var arc = new Arc3D(tol, p1, p2, p3);
             outdxf?.AddEntity(arc.DxfEntity);
+            outdxf?.AddEntity(p1.DxfEntity);
+            outdxf?.AddEntity(p2.DxfEntity);
+            outdxf?.AddEntity(p3.DxfEntity);
+
+            arc.Length.AssertEqualsTol(1e-8, 0.44008396);
+            arc.CircularSectorArea.AssertEqualsTol(1e-8, 1.43109185);
 
             if (outdxf != null)
             {
