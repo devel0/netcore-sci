@@ -29,7 +29,7 @@ namespace SearchAThing.Sci.Tests
                 cpt.Z.AssertEqualsTol(tol, 0);
             }
 
-            Assert.True(plane.CS.Equals(tol, CoordinateSystem3D.WCS));
+            Assert.True(plane.CS.Equals(tol, CoordinateSystem3D.WCS.Move(o)));
         }
 
     }

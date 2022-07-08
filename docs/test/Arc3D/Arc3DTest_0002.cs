@@ -17,7 +17,7 @@ namespace SearchAThing.Sci.Tests
             var tol = 1e-8;
             var precision = Abs(tol.Magnitude());
 
-            var arc = dxf.Arcs.First().ToArc3D(tol);
+            var arc = dxf.Arcs.First().ToArc3D();
 
             arc.Length.AssertEqualsTol(tol, 3.37822217);
 

@@ -30,7 +30,7 @@ namespace SearchAThing.Sci.Tests
             var r = 4.2753;
             var ang1 = 63.97731d.ToRad();
             var ange2 = 26.10878d.ToRad();
-            var arc = new Arc3D(1e-4, csCAD, r, ang1, ange2);
+            var arc = new Arc3D(csCAD, r, ang1, ange2);
             var c = new Circle3D(arc);
 
             var seg_i = new Line3D(2.2826, 10.2516, -3.7469, 1.3767, -3.7709, 1.5019);
@@ -74,14 +74,14 @@ namespace SearchAThing.Sci.Tests
 
             // arc equals
             Assert.True(arc.EqualsTol(1e-3, new Arc3D(1e-3, arc.From, arc.MidPoint, arc.To)));
-            Assert.True(arc.EqualsTol(1e-3, new Arc3D(1e-3, arc.CS, arc.Radius, arc.AngleStart, arc.AngleEnd)));
-            Assert.False(arc.EqualsTol(1e-3, new Arc3D(1e-3, arc.CS, arc.Radius / 2, arc.AngleStart, arc.AngleEnd)));
-            Assert.False(arc.EqualsTol(1e-3, new Arc3D(1e-3, arc.CS.Move(new Vector3D(1, 0, 0)),
+            Assert.True(arc.EqualsTol(1e-3, new Arc3D(arc.CS, arc.Radius, arc.AngleStart, arc.AngleEnd)));
+            Assert.False(arc.EqualsTol(1e-3, new Arc3D(arc.CS, arc.Radius / 2, arc.AngleStart, arc.AngleEnd)));
+            Assert.False(arc.EqualsTol(1e-3, new Arc3D(arc.CS.Move(new Vector3D(1, 0, 0)),
                 arc.Radius, arc.AngleStart, arc.AngleEnd)));
-            Assert.False(arc.EqualsTol(1e-3, new Arc3D(1e-3, arc.CS, arc.Radius, arc.AngleStart + 1, arc.AngleEnd + 1)));
+            Assert.False(arc.EqualsTol(1e-3, new Arc3D(arc.CS, arc.Radius, arc.AngleStart + 1, arc.AngleEnd + 1)));
 
             // arc bulge            
-            arc.Bulge(1e-3).AssertEqualsTol(1e-3, Tan(arc.Angle / 4));            
+            arc.Bulge(1e-3).AssertEqualsTol(1e-3, Tan(arc.Angle / 4));
 
             // arc contains            
             Assert.False(arc.Contains(1e-3, new Vector3D(3.084, 3.965, -1.843), onlyPerimeter: false)); // out arc shape - in plane
@@ -94,16 +94,16 @@ namespace SearchAThing.Sci.Tests
             {
                 var doc = netDxf.DxfDocument.Load("_torefact/doc/Arc3DTest_001.dxf");
 
-                var arc_from_dxf = doc.Arcs.First().ToArc3D(1e-3);
+                var arc_from_dxf = doc.Arcs.First().ToArc3D();
                 var cmp = new Arc3DEqualityComparer(1e-3);
                 var q = new[] {
                     arc_from_dxf,
                     arc,
                     new Arc3D(1e-3, arc.From, arc.MidPoint, arc.To),
-                    new Arc3D(1e-3, arc.CS, arc.Radius, arc.AngleStart, arc.AngleEnd) };
+                    new Arc3D(arc.CS, arc.Radius, arc.AngleStart, arc.AngleEnd) };
                 Assert.True(q.Distinct(cmp).Count() == 1);
 
-                Assert.True(arc_from_dxf.EqualsTol(1e-3, ((netDxf.Entities.Arc)arc.DxfEntity).ToArc3D(1e-3)));
+                Assert.True(arc_from_dxf.EqualsTol(1e-3, ((netDxf.Entities.Arc)arc.DxfEntity).ToArc3D()));
             }
         }
 
@@ -146,52 +146,6 @@ namespace SearchAThing.Sci.Tests
         }
 
         /// <summary>
-        /// Arc3DTest_003.dxf
-        /// </summary>
-        [Fact]
-        public void Arc3DTest_003()
-        {
-            var tol = 1e-3;
-
-            var p1 = new Vector3D(20.175, 178.425, -56.314);
-            var p2 = new Vector3D(1.799, 231.586, -18.134);
-            var p3 = new Vector3D(262.377, 302.118, 132.195);
-
-            var c = new Arc3D(tol, p1, p2, p3);
-            var cs = c.CS;
-
-            var arc = new Arc3D(1e-3, p1, p2, p3, -cs.BaseZ);
-            var arcCs = arc.CS;
-
-            // two cs share same origin
-            Assert.True(arc.CS.Origin.EqualsTol(1e-3, cs.Origin));
-            // two cs with discordant colinear Z
-            Assert.True(arc.CS.BaseZ.Colinear(1e-3, cs.BaseZ) && !arc.CS.BaseZ.Concordant(1e-3, cs.BaseZ));
-            // two cs parallel
-            Assert.True(arc.CS.IsParallelTo(1e-3, cs));
-        }
-
-        /// <summary>
-        /// Arc3DTest_004.dxf
-        /// </summary>
-        [Fact]
-        public void Arc3DTest_004()
-        {
-            var tol = 1e-3;
-
-            var p1 = new Vector3D(20.175, 178.425, -56.314);
-            var p2 = new Vector3D(1.799, 231.586, -18.134);
-            var p3 = new Vector3D(262.377, 302.118, 132.195);
-
-            var c = new Arc3D(tol, p1, p2, p3);
-            var cs = c.CS;            
-
-            var wrongNormal = new Vector3D(9.998, .175, 0);
-            var csok = new Arc3D(1e-3, p1, p2, p3, cs.BaseZ);
-            Assert.Throws<ArgumentException>(new System.Action(() => new Arc3D(1e-3, p1, p2, p3, wrongNormal)));
-        }
-
-        /// <summary>
         /// Arc3DTest_005.dxf
         /// </summary>
         [Fact]
@@ -222,7 +176,7 @@ namespace SearchAThing.Sci.Tests
             Assert.True(c.Contains(1e-3, p3, onlyPerimeter: true));
 
             var moveVector = new Vector3D(-1998.843, -6050.954, -1980.059);
-            var cmoved = c.Move(1e-3, moveVector);
+            var cmoved = c.Move(moveVector);
 
             Assert.True(cmoved is Arc3D);
 
@@ -236,7 +190,7 @@ namespace SearchAThing.Sci.Tests
 
             Assert.True(c.Angle.ToDeg().EqualsTol(degTol, 154.14));
 
-            var c2 = new Arc3D(1e-3, c.CS, c.Radius, c.AngleEnd, c.AngleStart);
+            var c2 = new Arc3D(c.CS, c.Radius, c.AngleEnd, c.AngleStart);
 
             Assert.True(c2.Angle.ToDeg().EqualsTol(degTol, 360d - 154.14));
 

@@ -91,12 +91,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a7f304e540a1701b5957008eaa55868c8"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a7f304e540a1701b5957008eaa55868c8">RadTol</a> (this double lenTol, double radius)</td></tr>
 <tr class="memdesc:a7f304e540a1701b5957008eaa55868c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute angle rad tolerance by given arc length tolerance as (lenTol / radius)  <a href="class_search_a_thing_1_1_sci_ext.html#a7f304e540a1701b5957008eaa55868c8">More...</a><br /></td></tr>
 <tr class="separator:a7f304e540a1701b5957008eaa55868c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa100259e16493e67e6ccc07b29112df1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_arc3_d.html">Arc3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#aa100259e16493e67e6ccc07b29112df1">ToArc3D</a> (this netDxf.Entities.Arc dxf_arc, double tol)</td></tr>
-<tr class="memdesc:aa100259e16493e67e6ccc07b29112df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct arc3 from given dxf arc  <a href="class_search_a_thing_1_1_sci_ext.html#aa100259e16493e67e6ccc07b29112df1">More...</a><br /></td></tr>
-<tr class="separator:aa100259e16493e67e6ccc07b29112df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e3915ed065b06097ec9b1e924ad61e3"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a0e3915ed065b06097ec9b1e924ad61e3">AngleInRange</a> (this double pt_angle, double tol_rad, double angle_from, double angle_to)</td></tr>
-<tr class="memdesc:a0e3915ed065b06097ec9b1e924ad61e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if given angle is contained in from, to angle range; multiturn angles are supported because test will normalize to [0,2pi) automatically.  <a href="class_search_a_thing_1_1_sci_ext.html#a0e3915ed065b06097ec9b1e924ad61e3">More...</a><br /></td></tr>
-<tr class="separator:a0e3915ed065b06097ec9b1e924ad61e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbe8e1f22f2f6eb52d6a6dde5c95b1e9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_arc3_d.html">Arc3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#abbe8e1f22f2f6eb52d6a6dde5c95b1e9">ToArc3D</a> (this netDxf.Entities.Arc dxf_arc)</td></tr>
+<tr class="memdesc:abbe8e1f22f2f6eb52d6a6dde5c95b1e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct arc3 from given dxf arc  <a href="class_search_a_thing_1_1_sci_ext.html#abbe8e1f22f2f6eb52d6a6dde5c95b1e9">More...</a><br /></td></tr>
+<tr class="separator:abbe8e1f22f2f6eb52d6a6dde5c95b1e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac09da25ac9eb46526566d3bd01ee0010"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ac09da25ac9eb46526566d3bd01ee0010">AngleInRange</a> (this double pt_angle, double angle_from, double angle_to, double radTol=TwoPIRadTol)</td></tr>
+<tr class="memdesc:ac09da25ac9eb46526566d3bd01ee0010"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if given angle is contained in from, to angle range; multiturn angles are supported because test will normalize to [0,2pi) automatically.  <a href="class_search_a_thing_1_1_sci_ext.html#ac09da25ac9eb46526566d3bd01ee0010">More...</a><br /></td></tr>
+<tr class="separator:ac09da25ac9eb46526566d3bd01ee0010"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b67d98c749030506b61f354b8133d67"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_b_box3_d.html">BBox3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a0b67d98c749030506b61f354b8133d67">BBox</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; pts)</td></tr>
 <tr class="memdesc:a0b67d98c749030506b61f354b8133d67"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct a bbox from given enumerable set of points  <a href="class_search_a_thing_1_1_sci_ext.html#a0b67d98c749030506b61f354b8133d67">More...</a><br /></td></tr>
 <tr class="separator:a0b67d98c749030506b61f354b8133d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -228,12 +228,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a8117d56e61fb72fcbd288ad937efb445"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a8117d56e61fb72fcbd288ad937efb445">Fmt</a> (this double n, int dec, int size)</td></tr>
 <tr class="memdesc:a8117d56e61fb72fcbd288ad937efb445"><td class="mdescLeft">&#160;</td><td class="mdescRight">format number with given decimals and total length aligning right  <a href="class_search_a_thing_1_1_sci_ext.html#a8117d56e61fb72fcbd288ad937efb445">More...</a><br /></td></tr>
 <tr class="separator:a8117d56e61fb72fcbd288ad937efb445"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7270ce60cb9464da87247a5f41dd3f33"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a7270ce60cb9464da87247a5f41dd3f33">Angle</a> (this double angleFrom, double tol_rad, double angleTo, bool normalizeAngles=true)</td></tr>
-<tr class="memdesc:a7270ce60cb9464da87247a5f41dd3f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">retrieve angle between from and to given; angles will subjected to normalization [0,2pi) and angle from can be greather than to  <a href="class_search_a_thing_1_1_sci_ext.html#a7270ce60cb9464da87247a5f41dd3f33">More...</a><br /></td></tr>
-<tr class="separator:a7270ce60cb9464da87247a5f41dd3f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ea62c49326a72f07cc65168fb919253"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a3ea62c49326a72f07cc65168fb919253">NormalizeAngle</a> (this double angle_rad, double tol_rad, double maxRadExcluded=2 *PI)</td></tr>
-<tr class="memdesc:a3ea62c49326a72f07cc65168fb919253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize given angle(rad) into [maxRad-2PI,maxRad) range.  <a href="class_search_a_thing_1_1_sci_ext.html#a3ea62c49326a72f07cc65168fb919253">More...</a><br /></td></tr>
-<tr class="separator:a3ea62c49326a72f07cc65168fb919253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a481b723d57d1f029ee5ce1dc1081a62c"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a481b723d57d1f029ee5ce1dc1081a62c">Angle</a> (this double angleFrom, double angleTo, bool normalizeAngles=true)</td></tr>
+<tr class="memdesc:a481b723d57d1f029ee5ce1dc1081a62c"><td class="mdescLeft">&#160;</td><td class="mdescRight">retrieve angle between from and to given; angles will subjected to normalization [0,2pi) and angle from can be greather than to  <a href="class_search_a_thing_1_1_sci_ext.html#a481b723d57d1f029ee5ce1dc1081a62c">More...</a><br /></td></tr>
+<tr class="separator:a481b723d57d1f029ee5ce1dc1081a62c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae105e13d019be0d0189c48578c88911f"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ae105e13d019be0d0189c48578c88911f">NormalizeAngle</a> (this double angle_rad, double maxRadExcluded=2 *PI, double radTol=TwoPIRadTol)</td></tr>
+<tr class="memdesc:ae105e13d019be0d0189c48578c88911f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize given angle(rad) into [maxRad-2PI,maxRad) range.  <a href="class_search_a_thing_1_1_sci_ext.html#ae105e13d019be0d0189c48578c88911f">More...</a><br /></td></tr>
+<tr class="separator:ae105e13d019be0d0189c48578c88911f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5df12f297190c9d3622ff375bcb05127"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a5df12f297190c9d3622ff375bcb05127">CompareToTol</a> (this double a, double tol, double b)</td></tr>
 <tr class="memdesc:a5df12f297190c9d3622ff375bcb05127"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare a, b using given tol  <a href="class_search_a_thing_1_1_sci_ext.html#a5df12f297190c9d3622ff375bcb05127">More...</a><br /></td></tr>
 <tr class="separator:a5df12f297190c9d3622ff375bcb05127"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -539,8 +539,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a7270ce60cb9464da87247a5f41dd3f33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7270ce60cb9464da87247a5f41dd3f33">&#9670;&nbsp;</a></span>Angle()</h2>
+<a id="a481b723d57d1f029ee5ce1dc1081a62c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a481b723d57d1f029ee5ce1dc1081a62c">&#9670;&nbsp;</a></span>Angle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -553,12 +553,6 @@ Static Public Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">this double&#160;</td>
           <td class="paramname"><em>angleFrom</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>tol_rad</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -590,7 +584,12 @@ Static Public Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">angleFrom</td><td>angle from</td></tr>
     <tr><td class="paramname">angleTo</td><td>angle to</td></tr>
-    <tr><td class="paramname">tol_rad</td><td>angle tolerance (rad)</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br  />
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
     <tr><td class="paramname">normalizeAngles</td><td>actuate [0,2PI) angle normalization</td></tr>
   </table>
   </dd>
@@ -598,8 +597,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a0e3915ed065b06097ec9b1e924ad61e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e3915ed065b06097ec9b1e924ad61e3">&#9670;&nbsp;</a></span>AngleInRange()</h2>
+<a id="ac09da25ac9eb46526566d3bd01ee0010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac09da25ac9eb46526566d3bd01ee0010">&#9670;&nbsp;</a></span>AngleInRange()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -617,19 +616,19 @@ Static Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>tol_rad</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>angle_from</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>angle_to</em>&#160;</td>
+          <td class="paramname"><em>angle_to</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>radTol</em> = <code>TwoPIRadTol</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -649,9 +648,21 @@ Static Public Attributes</h2></td></tr>
  </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pt_angle</td><td>angle(rad) to test</td></tr>
-    <tr><td class="paramname">tol_rad</td><td>angle(rad) tolerance</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br  />
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
     <tr><td class="paramname">angle_from</td><td>angle(rad) from</td></tr>
     <tr><td class="paramname">angle_to</td><td>angle(rad) to</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br  />
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radTol</td><td>optional rad tolerance</td></tr>
   </table>
   </dd>
 </dl>
@@ -2760,8 +2771,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a3ea62c49326a72f07cc65168fb919253"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ea62c49326a72f07cc65168fb919253">&#9670;&nbsp;</a></span>NormalizeAngle()</h2>
+<a id="ae105e13d019be0d0189c48578c88911f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae105e13d019be0d0189c48578c88911f">&#9670;&nbsp;</a></span>NormalizeAngle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2779,13 +2790,13 @@ Static Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>tol_rad</em>, </td>
+          <td class="paramname"><em>maxRadExcluded</em> = <code>2&#160;*&#160;PI</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>maxRadExcluded</em> = <code>2&#160;*&#160;PI</code>&#160;</td>
+          <td class="paramname"><em>radTol</em> = <code>TwoPIRadTol</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2804,12 +2815,19 @@ Static Public Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">angle_rad</td><td>angle(rad) to normalize</td></tr>
-    <tr><td class="paramname">tol_rad</td><td>tolerance over rad</td></tr>
-    <tr><td class="paramname">maxRadExcluded</td><td>normalization range (excluded) max value ( minimum will computed as max-2PI )</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>angle normalized</dd></dl>
+<p><br  />
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maxRadExcluded</td><td>normalization range (excluded) max value ( minimum will computed as max-2PI )</td></tr>
+    <tr><td class="paramname">radTol</td><td>override rad tolerance</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br  />
+ </p><dl class="section return"><dt>Returns</dt><dd>angle normalized</dd></dl>
 <p><a href="https://github.com/devel0/netcore-sci/tree/master/test/Number/NumberTest_0003.cs">unit test</a> </p>
 
 </div>
@@ -3956,8 +3974,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aa100259e16493e67e6ccc07b29112df1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa100259e16493e67e6ccc07b29112df1">&#9670;&nbsp;</a></span>ToArc3D()</h2>
+<a id="abbe8e1f22f2f6eb52d6a6dde5c95b1e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbe8e1f22f2f6eb52d6a6dde5c95b1e9">&#9670;&nbsp;</a></span>ToArc3D()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3969,18 +3987,8 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">static <a class="el" href="class_search_a_thing_1_1_arc3_d.html">Arc3D</a> ToArc3D </td>
           <td>(</td>
           <td class="paramtype">this netDxf.Entities.Arc&#160;</td>
-          <td class="paramname"><em>dxf_arc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>dxf_arc</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>tol</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -3994,7 +4002,6 @@ Static Public Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dxf_arc</td><td></td></tr>
-    <tr><td class="paramname">tol</td><td>length tolerance</td></tr>
   </table>
   </dd>
 </dl>

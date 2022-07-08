@@ -19,10 +19,10 @@ namespace SearchAThing.Sci.Tests
                 System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Loop/LoopTest_0013.dxf"));
 
             DxfDocument? outdxf = null;
-            //outdxf = new DxfDocument();
+            // outdxf = new DxfDocument();
 
             DxfDocument? outdxf2 = null;
-            //outdxf2 = new DxfDocument();
+            // outdxf2 = new DxfDocument();
 
             var tol = 1e-8;
 
@@ -51,7 +51,10 @@ namespace SearchAThing.Sci.Tests
             Assert.True(yellowIntSubGreenInt.Count == 3);
             foreach (var res in yellowIntSubGreenInt)
             {
-                outdxf?.AddEntity(res.DxfEntity(tol).Set(x => x.SetColor(AciColor.Red)));
+                outdxf?.AddEntity(res.DxfEntity(tol).Set(x => x.SetColor(AciColor.Red)));                
+                outdxf?.AddEntity(res
+                    .ToHatch(tol, new HatchPattern(HatchPattern.Line.Name) { Angle = 45, Scale = 0.5 })
+                    .SetColor(AciColor.Red));
             }
 
             yellowIntSubGreenInt[0].Area.AssertEqualsTol(tol, 5.71051935);
