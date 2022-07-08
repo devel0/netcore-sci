@@ -7,6 +7,7 @@ using System.Drawing.Drawing2D;
 using netDxf;
 using ClipperLib;
 using netDxf.Entities;
+using static SearchAThing.SciToolkit;
 
 namespace SearchAThing
 {
@@ -388,13 +389,13 @@ namespace SearchAThing
             {
                 cs = new CoordinateSystem3D(Vector3D.Zero, cs.BaseZ, CoordinateSystem3DAutoEnum.AAA);
             }
-            
+
             var pvtx = new List<netDxf.Entities.LwPolylineVertex>();
 
             Vector3D? _lastPt = null;
 
             for (int i = 0; i < geom.Count; ++i)
-            {                
+            {
                 var _from = geom[i].SGeomFrom.ToUCS(cs);
                 var _to = geom[i].SGeomTo.ToUCS(cs);
 
@@ -432,8 +433,9 @@ namespace SearchAThing
 
                     case GeometryType.Arc3D:
                         {
-                            var arc = (Arc3D)geom[i];                            
+                            var arc = (Arc3D)geom[i];
                             var bulge = arc.Bulge(tol);
+                            if (cs.BaseZ.EqualsTol(NormalizedLengthTolerance, -arc.CS.BaseZ)) bulge *= -1d;
 
                             if (_lastPt == null)
                             {
