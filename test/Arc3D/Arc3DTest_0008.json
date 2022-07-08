@@ -1,0 +1,44 @@
+{
+    "$type": "SearchAThing.Arc3D, netcore-sci",
+    "CS": {
+      "$type": "SearchAThing.CoordinateSystem3D, netcore-sci",
+      "csAutoType": null,
+      "Origin": {
+        "$type": "SearchAThing.Vector3D, netcore-sci",
+        "X": 6.500000000001013,
+        "Y": 12.499999999998966,
+        "Z": 0.0,
+        "Sense": true,
+        "GeomType": "Vector3D"
+      },
+      "BaseX": {
+        "$type": "SearchAThing.Vector3D, netcore-sci",
+        "X": -0.9994277105828069,
+        "Y": 0.0338267840506488,
+        "Z": 0.0,
+        "Sense": true,
+        "GeomType": "Vector3D"
+      },
+      "BaseY": {
+        "$type": "SearchAThing.Vector3D, netcore-sci",
+        "X": 0.0338267840506488,
+        "Y": 0.9994277105828069,
+        "Z": 0.0,
+        "Sense": true,
+        "GeomType": "Vector3D"
+      },
+      "BaseZ": {
+        "$type": "SearchAThing.Vector3D, netcore-sci",
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": -1.0,
+        "Sense": true,
+        "GeomType": "Vector3D"
+      }
+    },
+    "Radius": 6.503722011280435,
+    "AngleStart": 0.0,
+    "AngleEnd": 1.503129849931515,
+    "Sense": true,
+    "GeomType": "Arc3D"
+  }
