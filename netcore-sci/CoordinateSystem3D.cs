@@ -198,17 +198,46 @@ namespace SearchAThing
         /// <param name="o">cs origin</param>
         /// <param name="baseX">cs X base ( must already normalized )</param>
         /// <param name="baseY">cs Y base ( must already normalized )</param>
-        /// <param name="baseZ">cs Z base ( must already normalized )</param>
+        /// <param name="baseZ">cs Z base ( must already normalized )</param>        
         public CoordinateSystem3D(Vector3D o, Vector3D baseX, Vector3D baseY, Vector3D baseZ)
         {
             Origin = o;
             BaseX = baseX;
             BaseY = baseY;
-            BaseZ = baseZ;
-
-            //m = Matrix3D.FromVectorsAsColumns(BaseX, BaseY, BaseZ);
-            //mInv = m.Inverse();
+            BaseZ = baseZ;       
         }
+
+        /// <summary>
+        /// if BaseZ matches one of XY, XZ, YZ default cs then a new cs with origin preserved but baseX, baseY, baseZ overriden will returned.
+        /// </summary>        
+        public CoordinateSystem3D Simplified()
+        {            
+            if (BaseZ.EqualsTol(NormalizedLengthTolerance, CoordinateSystem3D.WCS.BaseZ))
+                return CoordinateSystem3D.WCS.Move(Origin);
+
+            if (BaseZ.EqualsTol(NormalizedLengthTolerance, CoordinateSystem3D.XZ.BaseZ))
+                return CoordinateSystem3D.XZ.Move(Origin);
+
+            if (BaseZ.EqualsTol(NormalizedLengthTolerance, CoordinateSystem3D.YZ.BaseZ))
+                return CoordinateSystem3D.YZ.Move(Origin);
+
+            return this;
+        }
+
+        /// <summary>
+        /// retrieve a new cs with same origin but basex flipped (Origin, -BaseX, BaseY, -BaseZ)
+        /// </summary>        
+        public CoordinateSystem3D FlipX() => new CoordinateSystem3D(Origin, -BaseX, BaseY, -BaseZ);
+
+        /// <summary>
+        /// retrieve a new cs with same origin but basey flipped (Origin, BaseX, -BaseY, -BaseZ)
+        /// </summary>        
+        public CoordinateSystem3D FlipY() => new CoordinateSystem3D(Origin, BaseX, -BaseY, -BaseZ);
+
+        /// <summary>
+        /// retrieve a new cs with same origin but basez inverted (Origin, BaseX, -BaseY, -BaseZ)
+        /// </summary>        
+        public CoordinateSystem3D FlipZ() => new CoordinateSystem3D(Origin, BaseX, -BaseY, -BaseZ);
 
         /// <summary>
         /// Construct a right-hand coordinate system with the given origin and two vector
