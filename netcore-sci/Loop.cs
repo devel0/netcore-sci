@@ -219,6 +219,8 @@ namespace SearchAThing
             BooleanMode mode = BooleanMode.Intersect,
             netDxf.DxfDocument? debugDxf = null)
         {
+            if (mode == BooleanMode.Union) throw new NotImplementedException();
+            
             var res = new List<List<IEdge>>();
 
             List<GeomNfo>? thisBrokenGeoms = null;
