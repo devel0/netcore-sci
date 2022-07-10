@@ -11,13 +11,14 @@ using netDxf.Entities;
 using SearchAThing;
 using System.Text;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace SearchAThing
 {
 
     /// <summary>
     /// planar edges loop containing line and arcs
-    /// </summary>
+    /// </summary>    
     public class Loop
     {
 
@@ -220,7 +221,7 @@ namespace SearchAThing
             netDxf.DxfDocument? debugDxf = null)
         {
             if (mode == BooleanMode.Union) throw new NotImplementedException();
-            
+
             var res = new List<List<IEdge>>();
 
             List<GeomNfo>? thisBrokenGeoms = null;
@@ -236,11 +237,11 @@ namespace SearchAThing
 
             if (debugDxf != null)
             {
-                thisOrigLayer = new netDxf.Tables.Layer("orig_this") { Color = AciColor.Cyan };
+                thisOrigLayer = new netDxf.Tables.Layer("orig_this") { Color = AciColor.Yellow };
                 otherOrigLayer = new netDxf.Tables.Layer("orig_other") { Color = AciColor.Green };
-                thisLayer = new netDxf.Tables.Layer("this") { Color = AciColor.Cyan };
+                thisLayer = new netDxf.Tables.Layer("this") { Color = AciColor.Yellow };
                 otherLayer = new netDxf.Tables.Layer("other") { Color = AciColor.Green };
-                iptsLayer = new netDxf.Tables.Layer("ipts") { Color = AciColor.Yellow };
+                iptsLayer = new netDxf.Tables.Layer("ipts") { Color = AciColor.Cyan };
                 intersectLayer = new netDxf.Tables.Layer("intersect") { Color = AciColor.Red };
             }
 
@@ -543,7 +544,7 @@ namespace SearchAThing
                     if (x.geom == null) return null;
 
                     if (!x.vertexVisited.Contains(x.geom.SGeomFrom)) vertex = x.geom.SGeomFrom;
-                    
+
                     else if (!x.vertexVisited.Contains(x.geom.SGeomTo)) vertex = x.geom.SGeomTo;
 
                     if (vertex != null)
@@ -620,7 +621,13 @@ namespace SearchAThing
 
                 var qstart = getByIp(ipt, onThis: true, searchInside: mode != BooleanMode.Difference);
 
-                if (qstart == null || qstart.Value.geom == null) break;
+                //if (qstart == null || qstart.Value.geom == null) break;
+                if (qstart == null || qstart.Value.geom == null) 
+                {
+                    visitedVertexes.Add(ipt);
+                    continue;   
+                }
+                
                 var start = qstart.Value;
 
                 gLoop.Add(start.geom);
@@ -672,6 +679,18 @@ namespace SearchAThing
 
         }
 
+        public BBox3D BBox => this.Edges.Select(w => w.SGeomFrom).BBox();
+
+        public bool Contains(double tol, Loop other, bool excludePerimeter = true)
+        {
+            foreach (var otherEdge in other.Edges)
+            {
+                if (!ContainsPoint(tol, otherEdge.SGeomFrom, excludePerimeter)) return false;
+            }
+
+            return true;
+        }
+
         /// <summary>
         /// create an hatch from given loop, pattern
         /// </summary>        
@@ -704,10 +723,33 @@ namespace SearchAThing
             return sb.ToString();
         }
 
+        /// <summary>
+        /// qcad 2d script
+        /// </summary>
+        /// <param name="final">adds QQ command</param>        
+        public string QCadScript(bool final = true)
+        {
+            var sb = new StringBuilder();
+
+            foreach (var edge in Edges)
+            {
+                sb.Append(edge.QCadScript(final: false));
+            }
+
+            if (final) sb.AppendLine("QQ");
+
+            return sb.ToString();
+        }
+        
+        public string _QCadScript => QCadScript();
+
     }
 
     public static partial class SciExt
     {
+
+        public static Loop ToLoop(this netDxf.Entities.LwPolyline lwpolyline, double tol) =>
+            new Loop(tol, lwpolyline);
 
         public static Plane3D DetectPlane(this IEnumerable<IEdge> edges, double tol)
         {
