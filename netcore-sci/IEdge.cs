@@ -45,7 +45,7 @@ namespace SearchAThing
         /// </summary>
         /// <value></value>
         Vector3D SGeomTo { get; }
-        
+
         Vector3D MidPoint { get; }
 
         /// <summary>
@@ -82,6 +82,12 @@ namespace SearchAThing
         IEnumerable<Vector3D> Vertexes { get; }
 
         string ToString(int digits);
+
+        /// <summary>
+        /// qcad 2d script
+        /// </summary>
+        /// <param name="final">adds QQ command</param>        
+        string QCadScript(bool final = true);
 
     }
 

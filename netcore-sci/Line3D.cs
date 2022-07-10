@@ -784,7 +784,10 @@ namespace SearchAThing
         /// <summary>
         /// 2d qcad script representation ( vscode watch using var,nq )
         /// </summary>
-        public string QCadScript => Invariant($"LINE\n{From.X},{From.Y}\n{To.X},{To.Y}\n");
+        public string QCadScript(bool final = true) =>
+            Invariant($"LINE\n{From.X},{From.Y}\n{To.X},{To.Y}\n{(final ? "QQ\n" : "")}");
+
+        public string _QCadScript => QCadScript();
 
         /// <summary>
         /// hash string with given tolerance

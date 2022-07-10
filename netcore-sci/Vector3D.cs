@@ -1036,6 +1036,10 @@ namespace SearchAThing
         /// </summary>            
         public string StringRepresentation() => Invariant($"({X}, {Y}, {Z})");
 
+        public string QCadScript(bool final = true) => Invariant($"POINT\n{X},{Y}\n{(final ? "QQ\n" : "")}");
+
+        public string _QCadScript => QCadScript(final: true);
+
         /// <summary>
         /// cad script for this vector as wcs point
         /// </summary>

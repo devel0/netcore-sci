@@ -3,6 +3,7 @@ using System.Linq;
 using static System.Math;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using static System.FormattableString;
 
 using netDxf.Entities;
 
@@ -150,6 +151,11 @@ namespace SearchAThing
         }
 
         public IEdge EdgeMove(Vector3D delta) => this.Move(delta);
+
+        public string QCadScript(bool final = true) =>
+            Invariant($"ARC3\n{SGeomFrom.X},{SGeomFrom.Y}\n{MidPoint.X},{MidPoint.Y}\n{SGeomTo.X},{SGeomTo.Y}\n{(final ? "QQ\n" : "")}");
+
+        public string _QCadScript => QCadScript();
 
         #endregion
 
@@ -791,7 +797,7 @@ namespace SearchAThing
         /// <param name="_splitPts">point where split arc</param>
         /// <param name="validate_pts">if true split only for split points on arc perimeter</param>            
         public IEnumerable<Arc3D> Split(double tol, IEnumerable<Vector3D> _splitPts, bool validate_pts = false)
-        {            
+        {
             if (_splitPts == null || _splitPts.Count() == 0) yield break;
 
             IEnumerable<Vector3D> splitPts = _splitPts;
