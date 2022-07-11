@@ -278,14 +278,22 @@ namespace SearchAThing
                 // this contains other, viceversa and disjoint
                 if (iptsNfos.Count == 0)
                 {
+                    // this contains other
                     var opts = other.Edges.Select(edge => (Vector3D)edge.SGeomFrom).ToList();
                     if (opts.All(opt => this.ContainsPoint(tol, opt)))
                         yield return other;
 
+                    // other contains this
                     var tpts = this.Edges.Select(edge => (Vector3D)edge.SGeomFrom).ToList();
                     if (tpts.All(opt => other.ContainsPoint(tol, opt)))
                         yield return this;
 
+                    // disjoint
+                    switch (mode)
+                    {                        
+                        case BooleanMode.Union: yield return this; yield return other; yield break;
+                        case BooleanMode.Difference: yield return this; break;
+                    }
                     yield break;
                 }
 
@@ -622,12 +630,12 @@ namespace SearchAThing
                 var qstart = getByIp(ipt, onThis: true, searchInside: mode != BooleanMode.Difference);
 
                 //if (qstart == null || qstart.Value.geom == null) break;
-                if (qstart == null || qstart.Value.geom == null) 
+                if (qstart == null || qstart.Value.geom == null)
                 {
                     visitedVertexes.Add(ipt);
-                    continue;   
+                    continue;
                 }
-                
+
                 var start = qstart.Value;
 
                 gLoop.Add(start.geom);
@@ -650,6 +658,8 @@ namespace SearchAThing
                     cur = qnext.Value;
 
                     if (gLoopHs.Contains(cur.geom)) break;
+
+                    if (cur.geom == null) break;
 
                     if (
                         visitedVertexes.Contains(cur.geom.SGeomFrom, ptCmp) &&
@@ -740,8 +750,8 @@ namespace SearchAThing
 
             return sb.ToString();
         }
-        
-        public string _QCadScript => QCadScript();
+
+        public string A0QCadScript => QCadScript();
 
     }
 
