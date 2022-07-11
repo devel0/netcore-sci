@@ -20,37 +20,37 @@ namespace SearchAThing.Sci.Tests
 
             var tol = 1e-8;
 
-            var loopGreen = dxf.LwPolylines.First(w => w.Layer.Name == "green").ToLoop(tol);
-            var loopYellow = dxf.LwPolylines.First(w => w.Layer.Name == "yellow").ToLoop(tol);
+            var faceGreen = dxf.LwPolylines.First(w => w.Layer.Name == "green").ToLoop(tol).ToFace();
+            var faceYellow = dxf.LwPolylines.First(w => w.Layer.Name == "yellow").ToLoop(tol).ToFace();
 
-            var gyInts = loopGreen.Boolean(tol, loopYellow).ToList();
+            var gyInts = faceGreen.Boolean(tol, faceYellow).ToList();
 
-            Assert.True(gyInts.Count == 1);
+            Assert.True(gyInts.Count == 1 && gyInts[0].Loops.Count == 1);
 
             if (outdxf != null)
             {
-                outdxf.AddEntity(loopGreen.DxfEntity(tol).Set(w => w.Layer = dxf.Layers.First(w => w.Name == "green")));
-                outdxf.AddEntity(loopYellow.DxfEntity(tol).Set(w => w.Layer = dxf.Layers.First(w => w.Name == "yellow")));
+                outdxf.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Set(w => w.Layer = dxf.Layers.First(w => w.Name == "green")));
+                outdxf.AddEntity(faceYellow.Loops[0].DxfEntity(tol).Set(w => w.Layer = dxf.Layers.First(w => w.Name == "yellow")));
 
                 foreach (var gyInt in gyInts)
                 {
-                    outdxf.AddEntity(gyInt
+                    outdxf.AddEntity(gyInt.Loops[0]
                         .ToHatch(tol, new HatchPattern(HatchPattern.Line.Name) { Angle = 45, Scale = 0.5 })
                         .SetColor(AciColor.Cyan));
                 }
             }
 
-            loopYellow.Area.AssertEqualsTol(tol, gyInts[0].Area);
-            gyInts[0].Length.AssertEqualsTol(tol, 47.89069988);
+            faceYellow.Loops[0].Area.AssertEqualsTol(tol, gyInts[0].Loops[0].Area);
+            gyInts[0].Loops[0].Length.AssertEqualsTol(tol, 47.89069988);
 
             {
                 var delta = new Vector3D(1, 2, 3);
-                var movedTest = loopYellow.Move(delta);
+                var movedTest = faceYellow.Move(delta);
 
-                for (int i = 0; i < loopYellow.Edges.Count; ++i)
+                for (int i = 0; i < faceYellow.Loops[0].Edges.Count; ++i)
                 {
-                    (loopYellow.Edges[i].SGeomFrom + delta).AssertEqualsTol(tol, movedTest.Edges[i].SGeomFrom);
-                    (loopYellow.Edges[i].SGeomTo + delta).AssertEqualsTol(tol, movedTest.Edges[i].SGeomTo);
+                    (faceYellow.Loops[0].Edges[i].SGeomFrom + delta).AssertEqualsTol(tol, movedTest.Loops[0].Edges[i].SGeomFrom);
+                    (faceYellow.Loops[0].Edges[i].SGeomTo + delta).AssertEqualsTol(tol, movedTest.Loops[0].Edges[i].SGeomTo);
                 }
             }
 

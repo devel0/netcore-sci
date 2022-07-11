@@ -24,21 +24,21 @@ namespace test
             var lw1 = polys[0];
             var lw2 = polys[1];
 
-            var loop1 = lw1.ToLoop(tol);
-            var loop2 = lw2.ToLoop(tol);
+            var face1 = lw1.ToLoop(tol).ToFace();
+            var face2 = lw2.ToLoop(tol).ToFace();
 
-            var iloops = loop1.Boolean(tol, loop2).ToList();
+            var ifaces = face1.Boolean(tol, face2).ToList();
 
             var outputPathfilename = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "output.dxf");
             var outDxf = new netDxf.DxfDocument();
             outDxf.AddEntities(new[] { (EntityObject)lw1.Clone(), (EntityObject)lw2.Clone() });
-            foreach (var loop in iloops)
+            foreach (var face in ifaces)
             {
-                var ent = loop.ToLwPolyline(tol);
+                var ent = face.Loops[0].ToLwPolyline(tol);
                 ent.Color = AciColor.Red;
                 outDxf.AddEntity(ent);
 
-                var hatch = loop.ToHatch(tol,
+                var hatch = face.Loops[0].ToHatch(tol,
                     HatchPattern.Line.Clone().Eval(o =>
                     {
                         HatchPattern h = (HatchPattern)o;

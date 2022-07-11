@@ -23,24 +23,24 @@ namespace SearchAThing.Sci.Tests
 
             var tol = 1e-8;
 
-            var loop1 = JsonConvert.DeserializeObject<Loop>(
-                File.ReadAllText("Loop/LoopTest_0017-loop1.json"), SciToolkit.SciJsonSettings);
+            var face1 = JsonConvert.DeserializeObject<Loop>(
+                File.ReadAllText("Loop/LoopTest_0017-loop1.json"), SciToolkit.SciJsonSettings)!.ToFace();
 
-            var loop2 = JsonConvert.DeserializeObject<Loop>(
-                File.ReadAllText("Loop/LoopTest_0017-loop2.json"), SciToolkit.SciJsonSettings);
+            var face2 = JsonConvert.DeserializeObject<Loop>(
+                File.ReadAllText("Loop/LoopTest_0017-loop2.json"), SciToolkit.SciJsonSettings)!.ToFace();
 
-            var loopYellow = loop1;
-            var loopGreen = loop2;
+            var faceYellow = face1;
+            var faceGreen = face2;
             // Difference
-            var ints = loopYellow.Boolean(tol, loopGreen, Loop.BooleanMode.Intersect, outdxf2).ToList();
+            var ints = faceYellow.Boolean(tol, faceGreen, Face.BooleanMode.Intersect, outdxf2).ToList();
 
-            outdxf?.AddEntity(loopGreen.DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)));
-            outdxf?.AddEntity(loopYellow.DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));
-            outdxf?.AddEntity(ints[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Red)));
+            outdxf?.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)));
+            outdxf?.AddEntity(faceYellow.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));
+            outdxf?.AddEntity(ints[0].Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Red)));
 
-            Assert.True(ints.Count == 1);
-            ints[0].Area.AssertEqualsTol(tol, 16.68099798);
-            ints[0].Length.AssertEqualsTol(tol, 21.16635090);            
+            Assert.True(ints.Count == 1 && ints[0].Loops.Count == 1);
+            ints[0].Loops[0].Area.AssertEqualsTol(tol, 16.68099798);
+            ints[0].Loops[0].Length.AssertEqualsTol(tol, 21.16635090);
 
             if (outdxf != null)
             {

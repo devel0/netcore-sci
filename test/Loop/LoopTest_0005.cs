@@ -16,22 +16,23 @@ namespace SearchAThing.Sci.Tests
 
             // green and yellow are two adjacent rectangles
 
-            var loopGreen = new Loop(tol, new[]
+            var faceGreen = new Loop(tol, new[]
             {
                 new Line3D(4,6,0, 4,6,10),
                 new Line3D(4,6,10, -1,6,10),
                 new Line3D(-1,6,10, -1,6,0),
                 new Line3D(-1,6,0, 4,6,0)
-            });
-            var loopYellow = new Loop(tol, new[]
+            }).ToFace();
+
+            var faceYellow = new Loop(tol, new[]
             {
                 new Line3D(4,6,0, 4,6,10),
                 new Line3D(4,6,10, 11,6,10),
                 new Line3D(11,6,10, 11,6,0),
                 new Line3D(11,6,0, 4,6,0)
-            });
+            }).ToFace();
 
-            var gyInts = loopGreen.Boolean(tol, loopYellow).ToList();
+            var gyInts = faceGreen.Boolean(tol, faceYellow).ToList();
 
             Assert.True(gyInts.Count == 0);                         
         }
