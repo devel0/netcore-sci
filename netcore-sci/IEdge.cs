@@ -3,6 +3,7 @@ using System.Linq;
 using static System.Math;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using System.Text;
 
 namespace SearchAThing
 {
@@ -93,6 +94,25 @@ namespace SearchAThing
 
     public static partial class SciExt
     {
+
+        /// <summary>
+        /// qcad script from edge enumerable
+        /// </summary>
+        /// <param name="edges"></param>
+        /// <param name="final">if true adds QQ</param>        
+        public static string QCadScript(this IEnumerable<IEdge> edges, bool final = true)
+        {
+            var sb = new StringBuilder();
+
+            foreach (var edge in edges)
+            {
+                sb.Append(edge.QCadScript(final: false));
+            }
+
+            if (final) sb.AppendLine("QQ");
+
+            return sb.ToString();
+        }
 
         /// <summary>
         /// states if this and/or next given edge need to be toggled in their sense to allow glueing.
