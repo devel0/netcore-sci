@@ -463,7 +463,7 @@ namespace SearchAThing
     }
 
     public static partial class SciExt
-    {       
+    {
 
         /// <summary>
         /// construct a bbox from given enumerable set of points
@@ -624,6 +624,18 @@ namespace SearchAThing
                     throw new NotImplementedException($"bbox not implemented for dxf entity type [{eo.Type.ToString()}]");
             }
 
+        }
+
+        /// <summary>
+        /// union of bboxes
+        /// </summary>        
+        public static BBox3D Union(this IEnumerable<BBox3D> bboxes)
+        {
+            var res = new BBox3D();
+
+            foreach (var x in bboxes) res = res.Union(x);
+
+            return res;
         }
 
     }
