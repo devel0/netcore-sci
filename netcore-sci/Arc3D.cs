@@ -74,7 +74,8 @@ namespace SearchAThing
             this.Contains(tol, pt, inArcAngleRange: true, onlyPerimeter: true);
 
         /// <summary>
-        /// returns this arc splitted by break points maintaining order from, to as this Start, End angle
+        /// returns this arc splitted by break points maintaining order from, to as this Start, End angle.
+        /// precondition: breaks must lie on the arc angle range
         /// </summary>
         /// <param name="tol">length tolerance</param>
         /// <param name="breaks"></param>

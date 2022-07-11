@@ -110,6 +110,10 @@ namespace SearchAThing
         /// <param name="include_endpoints">if true GeomFrom and GeomTo will added</param>        
         public abstract IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false);
 
+        /// <summary>
+        /// split geometry in given break points.
+        /// precondition: breaks must lie on the geometry perimeter
+        /// </summary>        
         public abstract IEnumerable<Geometry> Split(double tol, IEnumerable<Vector3D> breaks);
 
         /// <summary>
