@@ -155,7 +155,7 @@ namespace SearchAThing
         public string QCadScript(bool final = true) =>
             Invariant($"ARC3\n{SGeomFrom.X},{SGeomFrom.Y}\n{MidPoint.X},{MidPoint.Y}\n{SGeomTo.X},{SGeomTo.Y}\n{(final ? "QQ\n" : "")}");
 
-        public string _QCadScript => QCadScript();
+        public string A0QCadScript => QCadScript();
 
         #endregion
 
@@ -695,7 +695,9 @@ namespace SearchAThing
 
             var pts = c1.Intersect(tol, c2).ToList();
 
-            return pts.Where(ip => this.Contains(tol, ip, inArcAngleRange: true, onlyPerimeter));
+            return pts.Where(ip =>
+                this.Contains(tol, ip, inArcAngleRange: true, onlyPerimeter) &&
+                other.Contains(tol, ip, inArcAngleRange: true, onlyPerimeter));
         }
 
         /// <summary>
