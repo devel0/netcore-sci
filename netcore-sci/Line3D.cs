@@ -787,7 +787,7 @@ namespace SearchAThing
         public string QCadScript(bool final = true) =>
             Invariant($"LINE\n{From.X},{From.Y}\n{To.X},{To.Y}\n{(final ? "QQ\n" : "")}");
 
-        public string _QCadScript => QCadScript();
+        public string A0QCadScript => QCadScript();
 
         /// <summary>
         /// hash string with given tolerance
