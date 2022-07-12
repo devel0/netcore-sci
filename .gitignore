@@ -337,4 +337,8 @@ coverage.json
 
 out.dxf
 
+# qcad
 ~*.dxf
+
+# libreoffice
+.~*#
