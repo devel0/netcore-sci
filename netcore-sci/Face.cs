@@ -210,103 +210,118 @@ namespace SearchAThing
                 //
                 if (ipNfos.Count == 0)
                 {
-
-                    // TODO: if this and other are totally disjoined
-
-                    // else
-                    switch (mode)
+                    // this and other totally disjoint
+                    if (thisOuterLoopNfo.parentLoopNfos.Count == 0 && otherOuterLoopNfo.parentLoopNfos.Count == 0)
                     {
-                        case BooleanMode.Union:
-                            {
-                                var externalOuter = allLoopNfos.First(loopNfo => loopNfo.directParent == null);
+                        switch (mode)
+                        {
+                            case BooleanMode.Union:
+                                yield return this;
+                                yield return other;
+                                break;
 
-                                if (externalOuter.childrenLoopNfos.All(loopNfo => loopNfo.faceOwner != externalOuter.faceOwner))
-                                    yield return externalOuter.faceOwner;
+                            case BooleanMode.Intersect:
+                                yield break;
 
-                                else
+                            case BooleanMode.Difference:
+                                yield return this;
+                                break;
+                        }
+                    }
+                    else
+                        switch (mode)
+                        {
+                            case BooleanMode.Union:
                                 {
-                                    if (externalOuter.directChildrenLoopNfos.All(loopNfo => loopNfo.faceOwner == externalOuter.faceOwner))
-                                    {
+                                    var externalOuter = allLoopNfos.First(loopNfo => loopNfo.directParent == null);
+
+                                    if (externalOuter.childrenLoopNfos.All(loopNfo => loopNfo.faceOwner != externalOuter.faceOwner))
                                         yield return externalOuter.faceOwner;
 
-                                        yield return allLoopNfos.First(loopNfo => loopNfo.faceOwner != externalOuter.faceOwner).faceOwner;
-                                    }
                                     else
                                     {
-                                        var effectiveInnerLoops = allLoopNfos.Where(loopNfo =>
-                                            !loopNfo.outer && !loopNfo.directParent!.outer)
-                                            .Select(loopNfo => loopNfo.loop).ToList();
-
-                                        if (effectiveInnerLoops.Count == 0)
+                                        if (externalOuter.directChildrenLoopNfos.All(loopNfo => loopNfo.faceOwner == externalOuter.faceOwner))
                                         {
-                                            if (externalOuter.faceOwner.Loops.Count == 1)
-                                                yield return externalOuter.faceOwner;
-                                            else
-                                                yield return new Face(Plane, new[] { externalOuter.loop });
+                                            yield return externalOuter.faceOwner;
+
+                                            yield return allLoopNfos.First(loopNfo => loopNfo.faceOwner != externalOuter.faceOwner).faceOwner;
                                         }
-
-                                        else yield return new Face(Plane,
-                                            new[] { externalOuter.loop }.Union(effectiveInnerLoops).ToArray());
-                                    }
-                                }
-                            }
-                            break;
-
-                        case BooleanMode.Intersect:
-                            {
-                                var enclosedOuter = allLoopNfos.First(loopNfo => loopNfo.outer && loopNfo.directParent != null);
-
-                                if (enclosedOuter != null && enclosedOuter.directParent!.outer)
-                                {
-                                    yield return new Face(Plane,
-                                        new[] { enclosedOuter.loop }.Union(enclosedOuter.directChildrenLoopNfos.Select(w => w.loop)).ToArray());
-                                }
-                            }
-                            break;
-
-                        case BooleanMode.Difference:
-                            {
-                                var enclosedOuter = allLoopNfos.First(loopNfo => loopNfo.outer && loopNfo.directParent != null);
-
-                                if (enclosedOuter.directParent!.onThis)
-                                {
-                                    if (enclosedOuter.directParent.outer)
-                                    {
-                                        yield return new Face(Plane, new[] { thisOuterLoopNfo.loop, otherOuterLoopNfo.loop });
-
-                                        foreach (var face in enclosedOuter.directChildrenLoopNfos.Where(w => !w.onThis)
-                                            .Select(loopNfo => new Face(Plane, new[] { loopNfo.loop }.Union(loopNfo.childrenLoopNfos.Select(w => w.loop)).ToArray())))
-                                            yield return face;
-                                    }
-                                    else
-                                        yield return thisOuterLoopNfo.faceOwner;
-                                }
-                                else // enclosedOuter.onThis
-                                {
-                                    if (!enclosedOuter.directParent.outer)
-                                        yield return thisOuterLoopNfo.faceOwner;
-                                    else
-                                    {
-                                        var enclosedOuterOtherChild = enclosedOuter.childrenLoopNfos
-                                            .FirstOrDefault(loopNfo => !loopNfo.onThis);
-
-                                        if (enclosedOuterOtherChild != null &&
-                                            enclosedOuterOtherChild.directParent == enclosedOuter)
+                                        else
                                         {
-                                            var loops = new List<Loop> { enclosedOuterOtherChild.loop };
-                                            loops.AddRange(enclosedOuterOtherChild.childrenLoopNfos
-                                                //.Where(loopNfo=> !loopNfo.directParent!.outer)
-                                                .Select(w => w.loop));
+                                            var effectiveInnerLoops = allLoopNfos.Where(loopNfo =>
+                                                !loopNfo.outer && !loopNfo.directParent!.outer)
+                                                .Select(loopNfo => loopNfo.loop).ToList();
 
-                                            yield return new Face(Plane, loops);
+                                            if (effectiveInnerLoops.Count == 0)
+                                            {
+                                                if (externalOuter.faceOwner.Loops.Count == 1)
+                                                    yield return externalOuter.faceOwner;
+                                                else
+                                                    yield return new Face(Plane, new[] { externalOuter.loop });
+                                            }
+
+                                            else yield return new Face(Plane,
+                                                new[] { externalOuter.loop }.Union(effectiveInnerLoops).ToArray());
                                         }
                                     }
+                                }
+                                break;
+
+                            case BooleanMode.Intersect:
+                                {
+                                    var enclosedOuter = allLoopNfos.First(loopNfo => loopNfo.outer && loopNfo.directParent != null);
+
+                                    if (enclosedOuter != null && enclosedOuter.directParent!.outer)
+                                    {
+                                        yield return new Face(Plane,
+                                            new[] { enclosedOuter.loop }.Union(enclosedOuter.directChildrenLoopNfos.Select(w => w.loop)).ToArray());
+                                    }
+                                }
+                                break;
+
+                            case BooleanMode.Difference:
+                                {
+                                    var enclosedOuter = allLoopNfos.First(loopNfo => loopNfo.outer && loopNfo.directParent != null);
+
+                                    if (enclosedOuter.directParent!.onThis)
+                                    {
+                                        if (enclosedOuter.directParent.outer)
+                                        {
+                                            yield return new Face(Plane, new[] { thisOuterLoopNfo.loop, otherOuterLoopNfo.loop });
+
+                                            foreach (var face in enclosedOuter.directChildrenLoopNfos.Where(w => !w.onThis)
+                                                .Select(loopNfo => new Face(Plane, new[] { loopNfo.loop }.Union(loopNfo.childrenLoopNfos.Select(w => w.loop)).ToArray())))
+                                                yield return face;
+                                        }
+                                        else
+                                            yield return thisOuterLoopNfo.faceOwner;
+                                    }
+                                    else // enclosedOuter.onThis
+                                    {
+                                        if (!enclosedOuter.directParent.outer)
+                                            yield return thisOuterLoopNfo.faceOwner;
+                                        else
+                                        {
+                                            var enclosedOuterOtherChild = enclosedOuter.childrenLoopNfos
+                                                .FirstOrDefault(loopNfo => !loopNfo.onThis);
+
+                                            if (enclosedOuterOtherChild != null &&
+                                                enclosedOuterOtherChild.directParent == enclosedOuter)
+                                            {
+                                                var loops = new List<Loop> { enclosedOuterOtherChild.loop };
+                                                loops.AddRange(enclosedOuterOtherChild.childrenLoopNfos
+                                                    //.Where(loopNfo=> !loopNfo.directParent!.outer)
+                                                    .Select(w => w.loop));
+
+                                                yield return new Face(Plane, loops);
+                                            }
+                                        }
+
+                                    }
 
                                 }
-
-                            }
-                            break;
-                    }
+                                break;
+                        }
 
                     yield break;
                 }
