@@ -89,7 +89,7 @@ namespace SearchAThing
         /// convert face3d to Plane3DRegion
         /// </summary>        
         public static Plane3DRegion ToRegion(this Face3d face, double tol) =>
-            new Plane3DRegion(tol, face.Vertexes().ToList());        
+            new Plane3DRegion(tol, face.Vertexes().ToList());
 
     }
 
@@ -530,6 +530,22 @@ namespace SearchAThing
                 }
             }
 
+        }
+
+        public delegate void HatchSetterDelegate(EntityObject entityObject, bool isBoundary);
+
+        /// <summary>
+        /// set hatch and boundary entities with given action
+        /// </summary>        
+        public static Hatch Set(this Hatch hatch, HatchSetterDelegate setter)
+        {
+            setter.Invoke(hatch, isBoundary: false);
+
+            foreach (var bp in hatch.BoundaryPaths)
+                foreach (var ent in bp.Entities)
+                    setter.Invoke(ent, isBoundary: true);
+
+            return hatch;
         }
 
     }
