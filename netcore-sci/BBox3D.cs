@@ -290,18 +290,31 @@ namespace SearchAThing
         /// </summary>
         /// <param name="tol">tolerance against Min, Max comparision</param>
         /// <param name="other">other bbox to check if contained in this</param>
+        /// <param name="strictly">if true it checks this bbox is stricly contained into given other</param>
+        /// <param name="testZ">if false min,max test of Z isn't evaluated (useful for planar entities bboxes tests)</param>
         /// <returns>true if given other bbox contained in this one</returns>
-        public bool Contains(double tol, BBox3D other)
+        public bool Contains(double tol, BBox3D other, bool strictly = false, bool testZ = true)
         {
             if (IsEmpty) return false;
+
             if (other.IsEmpty) return true;
+
             return
+                strictly
+                ?
+                other.Min.X.GreatThanTol(tol, Min.X) &&
+                other.Min.Y.GreatThanTol(tol, Min.Y) &&
+                (testZ ? other.Min.Z.GreatThanTol(tol, Min.Z) : true) &&
+                other.Max.X.LessThanTol(tol, Max.X) &&
+                other.Max.Y.LessThanTol(tol, Max.Y) &&
+                (testZ ? other.Max.Z.LessThanTol(tol, Max.Z) : true)
+                :
                 other.Min.X.GreatThanOrEqualsTol(tol, Min.X) &&
                 other.Min.Y.GreatThanOrEqualsTol(tol, Min.Y) &&
-                other.Min.Z.GreatThanOrEqualsTol(tol, Min.Z) &&
+                (testZ ? other.Min.Z.GreatThanOrEqualsTol(tol, Min.Z) : true) &&
                 other.Max.X.LessThanOrEqualsTol(tol, Max.X) &&
                 other.Max.Y.LessThanOrEqualsTol(tol, Max.Y) &&
-                other.Max.Z.LessThanOrEqualsTol(tol, Max.Z);
+                (testZ ? other.Max.Z.LessThanOrEqualsTol(tol, Max.Z) : true);
         }
 
         /// <summary>
