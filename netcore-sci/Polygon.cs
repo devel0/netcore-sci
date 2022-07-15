@@ -365,7 +365,6 @@ namespace SearchAThing
             return hatch;
         }
 
-
         public static netDxf.Entities.Hatch ToHatch(this IEnumerable<Geometry> _geom,
             HatchPattern pattern, bool associative = true) =>
             new netDxf.Entities.Hatch(pattern, new[] { new HatchBoundaryPath(_geom.Select(w => w.DxfEntity)) }, associative);
