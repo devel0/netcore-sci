@@ -146,9 +146,32 @@ namespace SearchAThing
         }
 
         /// <summary>
+        /// states if given edge is contained into this loop
+        /// </summary>        
+        /// <param name="excludePerimeter">if true, point on perimeter isn't tested</param>
+        /// <returns></returns>
+        public bool Contains(double tol, IEdge edge, bool excludePerimeter = false) =>
+            ContainsPoint(tol, edge.SGeomFrom, excludePerimeter) &&
+            ContainsPoint(tol, edge.MidPoint, excludePerimeter) &&
+            ContainsPoint(tol, edge.SGeomTo, excludePerimeter);
+
+        Vector3D? _MidPoint = null;
+        /// <summary>
+        /// (cached) geometric midpoint of all edges midpoint of this loop ( used in Contains for ray construction )
+        /// </summary>        
+        public Vector3D MidPoint
+        {
+            get
+            {
+                if (_MidPoint == null) _MidPoint = Edges.Select(w => w.MidPoint).Sum() / Edges.Count;
+                return _MidPoint;
+            }
+        }
+
+        /// <summary>
         /// states if given point is included into this loop
         /// </summary>        
-        /// <param name="excludePerimeter">if true, point on perimeter isn't included</param>        
+        /// <param name="excludePerimeter">if true, point on perimeter isn't tested</param>        
         public bool ContainsPoint(double tol, Vector3D pt, bool excludePerimeter = false)
         {
             var onperimeter = this.Edges.Any(edge => edge.EdgeContainsPoint(tol, pt));
@@ -158,8 +181,8 @@ namespace SearchAThing
                 if (excludePerimeter) return false;
                 return true;
             }
-
-            var ray = pt.LineV(Plane.CS.BaseX);
+            
+            var ray = pt.LineTo(MidPoint);
 
             var qits = this.Edges.Cast<Geometry>()
                 .Intersect(tol, new[] { ray }, GeomSegmentMode.FromTo, GeomSegmentMode.Infinite)
@@ -210,7 +233,7 @@ namespace SearchAThing
             get
             {
                 if (_CSBBox == null) _CSBBox = this.Edges.Select(w => w.SGeomFrom.ToUCS(Plane.CS)).BBox();
-                
+
                 return _CSBBox;
             }
         }
