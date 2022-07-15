@@ -33,7 +33,7 @@ namespace SearchAThing
         public IReadOnlyList<IEdge> Edges { get; private set; }
 
         /// <summary>
-        /// loop edge vertexes
+        /// loop edge distinct filtered vertexes ( not optimized )
         /// </summary>
         public IEnumerable<Vector3D> Vertexes(double tol) =>
             Edges.SelectMany(w => w.Vertexes).Distinct(new Vector3DEqualityComparer(tol));
@@ -100,7 +100,7 @@ namespace SearchAThing
         double? _Area = null;
 
         /// <summary>
-        /// area of the loop ( segment and arc are evaluated )
+        /// (cached) area of the loop ( segment and arc are evaluated )
         /// </summary>        
         public double Area
         {
@@ -112,10 +112,19 @@ namespace SearchAThing
             }
         }
 
+        double? _Length = null;
+
         /// <summary>
-        /// loop perimeter length
+        /// (cached) loop perimeter length
         /// </summary>        
-        public double Length => Edges.Sum(w => w.Length);
+        public double Length
+        {
+            get
+            {
+                if (_Length == null) _Length = Edges.Sum(w => w.Length);
+                return _Length.Value;
+            }
+        }
 
         double ComputeArea(double tol)
         {
@@ -175,14 +184,43 @@ namespace SearchAThing
             return sortedColinearPts.Count % 2 != 0;
         }
 
+        BBox3D? _BBox = null;
 
-        public BBox3D BBox => this.Edges.Select(w => w.SGeomFrom).BBox();
+        /// <summary>
+        /// (cached) bbox of this loop WCS coords
+        /// </summary>        
+        public BBox3D BBox
+        {
+            get
+            {
+                if (_BBox == null) _BBox = this.Edges.Select(w => w.SGeomFrom).BBox();
+
+                return _BBox;
+            }
+        }
+
+
+        BBox3D? _CSBBox = null;
+
+        /// <summary>
+        /// (cached) bbox of this loop CS coords
+        /// </summary>        
+        public BBox3D CSBox
+        {
+            get
+            {
+                if (_CSBBox == null) _CSBBox = this.Edges.Select(w => w.SGeomFrom.ToUCS(Plane.CS)).BBox();
+                
+                return _CSBBox;
+            }
+        }
 
         public bool Contains(double tol, Loop other, bool excludePerimeter = true)
         {
             foreach (var otherEdge in other.Edges)
             {
                 if (!ContainsPoint(tol, otherEdge.SGeomFrom, excludePerimeter)) return false;
+                if (!ContainsPoint(tol, otherEdge.MidPoint, excludePerimeter)) return false;
             }
 
             return true;
