@@ -47,33 +47,73 @@ namespace SearchAThing
         /// </summary>
         public Face Move(Vector3D delta) => new Face(Plane.Move(delta), Loops.Select(l => l.Move(delta)).ToList());
 
-        record struct GeomNfo(IEdge geom, bool inside, bool onThis);
-
-        class GeomNfoEqCmp : IEqualityComparer<GeomNfo>
+        class LoopNfo
         {
-            public double Tol { get; private set; }
-            public GeomNfoEqCmp(double tol)
+            public Face faceOwner { get; private set; }
+
+            public bool onThis { get; private set; }
+
+            public Loop loop { get; private set; }
+
+            public bool outer { get; private set; }
+
+            /// <summary>
+            /// hashset of loopnfo that contains or with geom equals this one ( all levels )
+            /// </summary>            
+            internal HashSet<LoopNfo> parentLoopNfos = new HashSet<LoopNfo>();
+
+            /// <summary>
+            /// hashset of loopnfo contained or with geom equals this one ( all levels )
+            /// </summary>            
+            internal HashSet<LoopNfo> childrenLoopNfos = new HashSet<LoopNfo>();
+
+            /// <summary>
+            /// is the first parent loop that has an Area equals or greather than this ( first direct level )
+            /// </summary>
+            internal LoopNfo? directParent = null;
+
+            /// <summary>
+            /// hashset of loopnfo contained or with geom equals this one ( first direct level )
+            /// </summary>            
+            internal HashSet<LoopNfo> directChildrenLoopNfos = new HashSet<LoopNfo>();
+
+            public LoopNfo(Face faceOwner, bool onThis, Loop loop, bool outer)
             {
-                Tol = tol;
+                this.faceOwner = faceOwner;
+                this.onThis = onThis;
+                this.loop = loop;
+                this.outer = outer;
             }
 
-            public bool Equals(GeomNfo x, GeomNfo y) => x.geom.Equals(Tol, y.geom, includeSense: false);
-
-            public int GetHashCode([DisallowNull] GeomNfo obj) => 0;
+            public override string ToString() => $"A:{loop.Area} onThis:{onThis} outer:{outer} edges:{loop.Edges.Count} parentLoops:{parentLoopNfos.Count}";
         }
 
-        record struct GeomWithIdx(GeomNfo nfo, int idx);
+        class EdgeNfo
+        {
 
-        record struct GeomWalkNfo(List<GeomNfo> lst, bool isOnThis, IEdge geom, int geomIdx,
-            HashSet<IEdge> geomVisited, HashSet<Vector3D> vertexVisited);
+            public LoopNfo loopOwner { get; private set; }
+
+            public IEdge edge { get; private set; }
+
+            public bool onThis { get; private set; }
+
+            public EdgeNfo(LoopNfo loopOwner, IEdge edge, bool onThis)
+            {
+                this.loopOwner = loopOwner;
+                this.edge = edge;
+                this.onThis = onThis;
+            }
+
+            public override string ToString() => $"onThis:{onThis} loopOuter:{loopOwner.outer} edge:{edge}";
+        }
 
         public enum BooleanMode
         {
-            Intersect,
-
             Union,
 
-            Difference
+            Intersect,
+
+            Difference,
         };
 
         /// <summary>
@@ -84,475 +124,271 @@ namespace SearchAThing
             BooleanMode mode = BooleanMode.Intersect,
             netDxf.DxfDocument? debugDxf = null)
         {
-            if (mode == BooleanMode.Union) throw new NotImplementedException();
+            var ptCmp = new Vector3DEqualityComparer(tol);
 
             var res = new List<List<IEdge>>();
 
-            List<GeomNfo>? thisBrokenGeoms = null;
-            List<GeomNfo>? otherBrokenGeoms = null;
-            List<Vector3D>? ipts = null;
+            List<EdgeNfo>? thisLoopBrokenEdgeNfos = null;
+            List<EdgeNfo>? otherLoopBrokenEdgeNfos = null;
+            var ips = new HashSet<Vector3D>(ptCmp);
+            var edgeVertexes = new HashSet<Vector3D>(ptCmp);
+            var vertexToEdgeNfos = new Dictionary<Vector3D, List<EdgeNfo>>(ptCmp);
 
-            netDxf.Tables.Layer? thisOrigLayer = null;
-            netDxf.Tables.Layer? otherOrigLayer = null;
-            netDxf.Tables.Layer? thisLayer = null;
-            netDxf.Tables.Layer? otherLayer = null;
-            netDxf.Tables.Layer? iptsLayer = null;
-            netDxf.Tables.Layer? booleanLayer = null;
+            var thisLoopNfos = this.Loops.Select((loop, idx) =>
+                new LoopNfo(faceOwner: this, onThis: true, loop, outer: idx == 0)).ToList();
 
-            if (debugDxf != null)
+            var otherLoopNfos = other.Loops.Select((loop, idx) =>
+                new LoopNfo(faceOwner: other, onThis: false, loop, outer: idx == 0)).ToList();
+
+            void UpdateLoopNfo(LoopNfo loopNfo1, LoopNfo loopNfo2)
             {
-                thisOrigLayer = new netDxf.Tables.Layer("orig_this") { Color = AciColor.Yellow };
-                otherOrigLayer = new netDxf.Tables.Layer("orig_other") { Color = AciColor.Green };
-                thisLayer = new netDxf.Tables.Layer("this") { Color = AciColor.Yellow };
-                otherLayer = new netDxf.Tables.Layer("other") { Color = AciColor.Green };
-                iptsLayer = new netDxf.Tables.Layer("ipts") { Color = AciColor.Cyan };
-                booleanLayer = new netDxf.Tables.Layer("boolean") { Color = AciColor.Red };
+                if (loopNfo1.loop.Contains(tol, loopNfo2.loop, excludePerimeter: false))
+                {
+                    loopNfo2.parentLoopNfos.Add(loopNfo1);
+                    loopNfo1.childrenLoopNfos.Add(loopNfo2);
+                }
+
+                else if (loopNfo2.loop.Contains(tol, loopNfo1.loop, excludePerimeter: false))
+                {
+                    loopNfo1.parentLoopNfos.Add(loopNfo2);
+                    loopNfo2.childrenLoopNfos.Add(loopNfo1);
+                }
             }
 
-            var ptCmp = new Vector3DEqualityComparer(tol);
             {
-                var thisGeoms = this.Loops[0].Edges.ToList();
-                var otherGeoms = other.Loops[0].Edges.ToList();
+                var allLoopNfos = thisLoopNfos.Union(otherLoopNfos).ToList();
 
-                var combs = from tg in thisGeoms
-                            from og in otherGeoms
-                            select new { tg, og };
+                //
+                // update {thisLoopNfos, otherLoopNfos}.parentLoopNfos
+                //
+                {
+                    foreach (var comb in (
+                        from loop1 in allLoopNfos
+                        from loop2 in allLoopNfos
+                        where loop1 != loop2
+                        select new { loop1, loop2 }))
+                        UpdateLoopNfo(comb.loop1, comb.loop2);
 
-                var iptsNfos = combs.SelectMany(comb =>
-                    ((Geometry)comb.tg).GeomIntersect(tol, (Geometry)comb.og)
+                    foreach (var loopNfo in allLoopNfos)
+                        loopNfo.directParent = loopNfo.parentLoopNfos.OrderBy(w => w.loop.Area).FirstOrDefault();
+
+                    foreach (var loopNfo in allLoopNfos)
+                    {
+                        foreach (var x in loopNfo.childrenLoopNfos.Where(r => r.directParent == loopNfo))
+                            loopNfo.directChildrenLoopNfos.Add(x);
+                    }
+                }
+
+                var thisLoopEdgeNfos = thisLoopNfos.SelectMany(loopNfo =>
+                    loopNfo.loop.Edges.Select(edge => new EdgeNfo(loopOwner: loopNfo, edge, onThis: true))).ToList();
+
+                var otherLoopEdgeNfos = otherLoopNfos.SelectMany(loopNfo =>
+                    loopNfo.loop.Edges.Select(edge => new EdgeNfo(loopOwner: loopNfo, edge, onThis: false))).ToList();
+
+                var combs = from thisEdgeNfo in thisLoopEdgeNfos
+                            from otherEdgeNfo in otherLoopEdgeNfos
+                            select new { thisEdgeNfo, otherEdgeNfo };
+
+                var ipNfos = combs.SelectMany(comb =>
+                    ((Geometry)comb.thisEdgeNfo.edge)
+                    .GeomIntersect(tol, (Geometry)comb.otherEdgeNfo.edge)
                     .Where(x => x.GeomType == GeometryType.Vector3D)
                     .Select(i_nfo => new
                     {
-                        ipt = (Vector3D)i_nfo,
+                        ip = (Vector3D)i_nfo,
 
-                        tent = comb.tg,
-                        oent = comb.og,
+                        thisEdgeNfo = comb.thisEdgeNfo,
+                        otherEdgeNfo = comb.otherEdgeNfo,
+                    }))
+                    .ToList();
 
-                        // ipt_strictly_inside_this = this.ContainsPoint(tol, (Vector3D)i_nfo, excludePerimeter: true),
-                        // ipt_strictly_inside_other = other.ContainsPoint(tol, (Vector3D)i_nfo, excludePerimeter: true)
-                    })
-                )
-                .ToList()
-                // filter pt duplicates                
-                .GroupBy(w => w.ipt, ptCmp)
-                .Select(w => w.First())
-                .ToList();
+                var thisOuterLoopNfo = thisLoopNfos[0];
+                var otherOuterLoopNfo = otherLoopNfos[0];
 
-                // this contains other, viceversa and disjoint
-                if (iptsNfos.Count == 0)
+                //
+                // special case : no ips
+                //
+                if (ipNfos.Count == 0)
                 {
-                    // this contains other
-                    var opts = other.Loops[0].Edges.Select(edge => (Vector3D)edge.SGeomFrom).ToList();
-                    if (opts.All(opt => this.Loops[0].ContainsPoint(tol, opt)))
-                        yield return other;
 
-                    // other contains this
-                    var tpts = this.Loops[0].Edges.Select(edge => (Vector3D)edge.SGeomFrom).ToList();
-                    if (tpts.All(opt => other.Loops[0].ContainsPoint(tol, opt)))
-                        yield return this;
+                    // TODO: if this and other are totally disjoined
 
-                    // disjoint
+                    // else
                     switch (mode)
                     {
-                        case BooleanMode.Union: yield return this; yield return other; yield break;
-                        case BooleanMode.Difference: yield return this; break;
-                    }
-                    yield break;
-                }
-
-                // this share only edges with other but not intersects
-                // if (iptsNfos.All(nfo => !nfo.ipt_strictly_inside_this && !nfo.ipt_strictly_inside_other)) yield break;
-
-                var tgeomsBreaks = iptsNfos
-                    .GroupBy(w => w.tent)
-                    .Select(w => new { ent = w.Key, breaks = w.Select(u => (Vector3D)u.ipt).ToList() })
-                    .ToDictionary(k => k.ent, v => v.breaks);
-
-                var ogeomsBreaks = iptsNfos
-                    .GroupBy(w => w.oent)
-                    .Select(w => new { ent = w.Key, breaks = w.Select(u => (Vector3D)u.ipt).ToList() })
-                    .ToDictionary(k => k.ent, v => v.breaks);
-
-                thisBrokenGeoms = thisGeoms.SelectMany(tgeom =>
-                {
-                    if (tgeomsBreaks.TryGetValue(tgeom, out var ipts))
-                    {
-                        var res = tgeom.Split(tol, ipts)
-                            .Select(geom =>
+                        case BooleanMode.Union:
                             {
-                                var res = new GeomNfo((IEdge)geom,
-                                    inside: other.Loops[0].ContainsPoint(tol, geom.MidPoint),
-                                    onThis: true);
+                                var externalOuter = allLoopNfos.First(loopNfo => loopNfo.directParent == null);
 
-                                return res;
-                            }).ToList();
+                                if (externalOuter.childrenLoopNfos.All(loopNfo => loopNfo.faceOwner != externalOuter.faceOwner))
+                                    yield return externalOuter.faceOwner;
 
-                        return res.ToArray();
-                    }
-                    else
-                        return new[]
-                        {
-                            new GeomNfo((IEdge)tgeom,
-                                inside: other.Loops[0].ContainsPoint(tol, tgeom.MidPoint),
-                                onThis: true)
-                        };
-                }).ToList();
-
-                otherBrokenGeoms = otherGeoms.SelectMany(ogeom =>
-                {
-                    if (ogeomsBreaks.TryGetValue(ogeom, out var ipts))
-                        return ogeom.Split(tol, ipts)
-                            .Select(geom =>
-                            {
-                                var res = new GeomNfo((IEdge)geom,
-                                    inside: this.Loops[0].ContainsPoint(tol, geom.MidPoint),
-                                    onThis: false);
-
-                                return res;
-                            });
-                    else
-                        return new[]
-                        {
-                            new GeomNfo((IEdge)ogeom,
-                                inside: this.Loops[0].ContainsPoint(tol, ogeom.MidPoint),
-                                onThis: false)
-                        };
-                })
-                .ToList();
-
-                var overlappedCmp = new GeomNfoEqCmp(tol);
-                var overlaps = new List<(GeomNfo toverlap, GeomNfo ooverlap)>();
-                foreach (var tbg in thisBrokenGeoms)
-                {
-                    foreach (var obg in otherBrokenGeoms)
-                    {
-                        if (overlappedCmp.Equals(tbg, obg)) overlaps.Add((tbg, obg));
-                    }
-                }
-
-                foreach (var overlap in overlaps)
-                {
-                    otherBrokenGeoms.Remove(overlap.ooverlap);
-                    var x = overlap.toverlap;
-                    x.inside = true;
-                }
-
-                ipts = iptsNfos.Select(w => (Vector3D)w.ipt).ToList();
-            }
-
-            var iptsHs = ipts.ToHashSet(ptCmp);
-
-            var ipToBrokenGeoms = new Dictionary<Vector3D, List<GeomWithIdx>>(ptCmp);
-
-            void ScanBrokenGeoms(List<GeomNfo> brokenGeoms)
-            {
-                foreach (var nfo in brokenGeoms.WithIndex())
-                {
-                    List<GeomWithIdx>? lst;
-
-                    var containsFrom = iptsHs.Contains(nfo.item.geom.SGeomFrom, ptCmp);
-                    var containsTo = iptsHs.Contains(nfo.item.geom.SGeomTo, ptCmp);
-
-                    if (containsFrom)
-                    {
-                        if (!ipToBrokenGeoms.TryGetValue(nfo.item.geom.SGeomFrom, out lst))
-                        {
-                            lst = new List<GeomWithIdx>();
-                            ipToBrokenGeoms.Add(nfo.item.geom.SGeomFrom, lst);
-                        }
-                        lst.Add(new GeomWithIdx(nfo.item, nfo.idx));
-                    }
-
-                    if (containsTo)
-                    {
-                        if (!ipToBrokenGeoms.TryGetValue(nfo.item.geom.SGeomTo, out lst))
-                        {
-                            lst = new List<GeomWithIdx>();
-                            ipToBrokenGeoms.Add(nfo.item.geom.SGeomTo, lst);
-                        }
-                        lst.Add(new GeomWithIdx(nfo.item, nfo.idx));
-                    }
-                }
-            }
-
-            ScanBrokenGeoms(thisBrokenGeoms);
-            ScanBrokenGeoms(otherBrokenGeoms);
-
-            if (debugDxf != null)
-            {
-                foreach (var ipt in ipts)
-                {
-                    var cond = false;
-
-                    switch (mode)
-                    {
-
-                        case BooleanMode.Intersect: cond = true; break;
-
-                        case BooleanMode.Difference:
-                            {
-                                var q = ipToBrokenGeoms[ipt];
-
-                                var inside_cnt = 0;
-                                var outside_cnt = 0;
-                                foreach (var x in q)
+                                else
                                 {
-                                    if (x.nfo.inside) ++inside_cnt;
-                                    else ++outside_cnt;
-                                }
+                                    if (externalOuter.directChildrenLoopNfos.All(loopNfo => loopNfo.faceOwner == externalOuter.faceOwner))
+                                    {
+                                        yield return externalOuter.faceOwner;
 
-                                cond = inside_cnt > 0 && outside_cnt > 0;
+                                        yield return allLoopNfos.First(loopNfo => loopNfo.faceOwner != externalOuter.faceOwner).faceOwner;
+                                    }
+                                    else
+                                    {
+                                        var effectiveInnerLoops = allLoopNfos.Where(loopNfo =>
+                                            !loopNfo.outer && !loopNfo.directParent!.outer)
+                                            .Select(loopNfo => loopNfo.loop).ToList();
+
+                                        if (effectiveInnerLoops.Count == 0)
+                                        {
+                                            if (externalOuter.faceOwner.Loops.Count == 1)
+                                                yield return externalOuter.faceOwner;
+                                            else
+                                                yield return new Face(Plane, new[] { externalOuter.loop });
+                                        }
+
+                                        else yield return new Face(Plane,
+                                            new[] { externalOuter.loop }.Union(effectiveInnerLoops).ToArray());
+                                    }
+                                }
                             }
                             break;
 
+                        case BooleanMode.Intersect:
+                            {
+                                var enclosedOuter = allLoopNfos.First(loopNfo => loopNfo.outer && loopNfo.directParent != null);
+
+                                if (enclosedOuter != null && enclosedOuter.directParent!.outer)
+                                {
+                                    yield return new Face(Plane,
+                                        new[] { enclosedOuter.loop }.Union(enclosedOuter.directChildrenLoopNfos.Select(w => w.loop)).ToArray());
+                                }
+                            }
+                            break;
+
+                        case BooleanMode.Difference:
+                            {
+                                var enclosedOuter = allLoopNfos.First(loopNfo => loopNfo.outer && loopNfo.directParent != null);
+
+                                if (enclosedOuter.directParent!.onThis)
+                                {
+                                    if (enclosedOuter.directParent.outer)
+                                    {
+                                        yield return new Face(Plane, new[] { thisOuterLoopNfo.loop, otherOuterLoopNfo.loop });
+
+                                        foreach (var face in enclosedOuter.directChildrenLoopNfos.Where(w => !w.onThis)
+                                            .Select(loopNfo => new Face(Plane, new[] { loopNfo.loop }.Union(loopNfo.childrenLoopNfos.Select(w => w.loop)).ToArray())))
+                                            yield return face;
+                                    }
+                                    else
+                                        yield return thisOuterLoopNfo.faceOwner;
+                                }
+                                else // enclosedOuter.onThis
+                                {
+                                    if (!enclosedOuter.directParent.outer)
+                                        yield return thisOuterLoopNfo.faceOwner;
+                                    else
+                                    {
+                                        var enclosedOuterOtherChild = enclosedOuter.childrenLoopNfos
+                                            .FirstOrDefault(loopNfo => !loopNfo.onThis);
+
+                                        if (enclosedOuterOtherChild != null &&
+                                            enclosedOuterOtherChild.directParent == enclosedOuter)
+                                        {
+                                            var loops = new List<Loop> { enclosedOuterOtherChild.loop };
+                                            loops.AddRange(enclosedOuterOtherChild.childrenLoopNfos
+                                                //.Where(loopNfo=> !loopNfo.directParent!.outer)
+                                                .Select(w => w.loop));
+
+                                            yield return new Face(Plane, loops);
+                                        }
+                                    }
+
+                                }
+
+                            }
+                            break;
                     }
 
-                    if (cond)
+                    yield break;
+                }
+
+                var thisLoopEdgeNfoToBreaks = ipNfos
+                    .GroupBy(w => w.thisEdgeNfo)
+                    .Select(w => new { edgeNfo = w.Key, edgeBreakIps = w.Select(u => (Vector3D)u.ip).ToList() })
+                    .ToDictionary(k => k.edgeNfo, v => v.edgeBreakIps);
+
+                var otherLoopEdgeNfoToBreaks = ipNfos
+                    .GroupBy(w => w.otherEdgeNfo)
+                    .Select(w => new { edgeNfo = w.Key, edgeBreakIps = w.Select(u => (Vector3D)u.ip).ToList() })
+                    .ToDictionary(k => k.edgeNfo, v => v.edgeBreakIps);
+
+                List<EdgeNfo> BuildBrokenNfos(
+                    List<EdgeNfo> edgeNfos,
+                    Dictionary<EdgeNfo, List<Vector3D>> loopEdgeToBreaks) => edgeNfos.SelectMany(edgeNfo =>
                     {
-                        var ent = ipt.DxfEntity;
-                        ent.Layer = iptsLayer;
-                        debugDxf.AddEntity(ent);
-                    }
-                }
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            int calcIdx(int curIdx, int dir, int N)
-            {
-                if (dir > 0)
-                    return curIdx == N - 1 ? 0 : curIdx + 1;
-                else
-                    return curIdx == 0 ? N - 1 : curIdx - 1;
-            }
-
-            bool fromOrToEquals(Geometry geom, Vector3D p) =>
-                geom.GeomFrom.EqualsTol(tol, p) || geom.GeomTo.EqualsTol(tol, p);
-
-            var thisGeomVisited = new HashSet<IEdge>();
-            var thisVertexVisited = new HashSet<Vector3D>(ptCmp);
-
-            var otherGeomVisited = new HashSet<IEdge>();
-            var otherVertexVisited = new HashSet<Vector3D>(ptCmp);
-
-            Vector3D? sharedVertex(IEdge g1, IEdge g2)
-            {
-                if (g1.SGeomFrom.EqualsTol(tol, g2.SGeomFrom) || (g1.SGeomFrom.EqualsTol(tol, g2.SGeomTo)))
-                    return g1.SGeomFrom;
-
-                if (g1.SGeomTo.EqualsTol(tol, g2.SGeomFrom) || (g1.SGeomTo.EqualsTol(tol, g2.SGeomTo)))
-                    return g1.SGeomTo;
-
-                return null;
-            }
-
-            GeomWalkNfo? getByIp(Vector3D ip, bool onThis, bool searchInside = true)
-            {
-                var qt = ipToBrokenGeoms[ip];
-                var q = qt.FirstOrDefault(w => w.nfo.inside == searchInside && onThis == w.nfo.onThis);
-
-                if (q == null) return null;
-
-                var lst = onThis ? thisBrokenGeoms : otherBrokenGeoms;
-
-                var geomVisited = onThis ? thisGeomVisited : otherGeomVisited;
-                var vertexVisited = onThis ? thisVertexVisited : otherVertexVisited;
-
-                geomVisited.Add(q.nfo.geom);
-                vertexVisited.Add(ip);
-
-                return new GeomWalkNfo(lst, isOnThis: onThis, q.nfo.geom, q.idx, geomVisited, vertexVisited);
-            }
-
-            GeomWalkNfo? walk(GeomWalkNfo x)
-            {
-                int nextElIdx = calcIdx(x.geomIdx, +1, x.lst.Count);
-                var prevElIdx = calcIdx(x.geomIdx, -1, x.lst.Count);
-
-                var nextEl = x.lst[nextElIdx];
-                var prevEl = x.lst[prevElIdx];
-
-                GeomNfo? candidate = null;
-                int? candidateIdx = null;
-                Vector3D? candidateShVertex = null;
-                var candidateInsideness = mode == BooleanMode.Intersect || !x.isOnThis;
-
-                if (!x.geomVisited.Contains(nextEl.geom) &&
-                    nextEl.inside == candidateInsideness &&
-                    (candidateShVertex = sharedVertex(x.geom, nextEl.geom)) != null &&
-                    (
-                        (mode != BooleanMode.Difference)
-                        ||
-                        (candidateShVertex.EqualsTol(tol, x.geom.SGeomFrom) || candidateShVertex.EqualsTol(tol, x.geom.SGeomTo))
-                    ))
-                {
-                    candidate = nextEl;
-                    candidateIdx = nextElIdx;
-                }
-                else if (!x.geomVisited.Contains(prevEl.geom) &&
-                    prevEl.inside == candidateInsideness &&
-                    (candidateShVertex = sharedVertex(x.geom, prevEl.geom)) != null &&
-                    (
-                        (mode != BooleanMode.Difference)
-                        ||
-                        (candidateShVertex.EqualsTol(tol, x.geom.SGeomFrom) || candidateShVertex.EqualsTol(tol, x.geom.SGeomTo))
-                    ))
-                {
-                    candidate = prevEl;
-                    candidateIdx = prevElIdx;
-                }
-
-                if (candidate != null && candidateIdx != null && candidateShVertex != null)
-                {
-                    x.vertexVisited.Add(candidateShVertex);
-                    x.geomVisited.Add(candidate.Value.geom);
-                    return new GeomWalkNfo(x.lst, x.isOnThis,
-                        candidate.Value.geom, candidateIdx.Value,
-                        x.geomVisited, x.vertexVisited);
-                }
-                else // switch to alternate path
-                {
-                    Vector3D? vertex = null;
-                    if (x.geom == null) return null;
-
-                    if (!x.vertexVisited.Contains(x.geom.SGeomFrom)) vertex = x.geom.SGeomFrom;
-
-                    else if (!x.vertexVisited.Contains(x.geom.SGeomTo)) vertex = x.geom.SGeomTo;
-
-                    if (vertex != null)
-                    {
-                        List<GeomWithIdx>? lst;
-                        if (ipToBrokenGeoms.TryGetValue(vertex, out lst))
+                        if (loopEdgeToBreaks.TryGetValue(edgeNfo, out var breaks))
                         {
-                            if (x.isOnThis && lst.Any(w => w.nfo.inside && !w.nfo.onThis))
-                                return getByIp(vertex, onThis: false);
-
-                            if (!x.isOnThis
-                                &&
-                                (
-                                    (mode == BooleanMode.Intersect && lst.Any(w => w.nfo.inside && !w.nfo.onThis))
-                                    ||
-                                    (mode == BooleanMode.Difference && lst.Any(w => !w.nfo.inside && w.nfo.onThis))
-                                ))
-                                return getByIp(vertex, onThis: true,
-                                    searchInside: mode == BooleanMode.Intersect);
+                            return edgeNfo.edge.Split(tol, breaks)
+                                .Select(geom => new EdgeNfo(edgeNfo.loopOwner, (IEdge)geom, edgeNfo.onThis)).ToArray();
                         }
+                        else
+                            return new[] { edgeNfo };
+                    }).ToList();
 
-                        return null;
-                    }
-                    else
-                        return null;
-                }
-            }
+                thisLoopBrokenEdgeNfos = BuildBrokenNfos(thisLoopEdgeNfos, thisLoopEdgeNfoToBreaks);
+                otherLoopBrokenEdgeNfos = BuildBrokenNfos(otherLoopEdgeNfos, otherLoopEdgeNfoToBreaks);
 
-            if (debugDxf != null)
-            {
-                foreach (var x in thisBrokenGeoms.WithIndex())
+                foreach (var ipNfo in ipNfos) ips.Add(ipNfo.ip);
+
+                foreach (var edgeNfo in thisLoopBrokenEdgeNfos.Union(otherLoopBrokenEdgeNfos))
                 {
-                    var ent = x.item.geom.DxfEntity;
-                    ent.Layer = thisLayer;
-                    debugDxf.AddEntity(ent);
-
-                    debugDxf.AddEntity(new netDxf.Entities.Text(x.idx.ToString(),
-                        ((Geometry)x.item.geom).MidPoint.ToDxfVector2(), .7)
-                        .Eval(e =>
-                        {
-                            e.Alignment = TextAlignment.Middle;
-                            e.Layer = thisLayer;
-                            return e;
-                        }));
-                }
-
-                foreach (var x in otherBrokenGeoms.WithIndex())
-                {
-                    var ent = x.item.geom.DxfEntity;
-                    ent.Layer = otherLayer;
-                    debugDxf.AddEntity(ent);
-
-                    debugDxf.AddEntity(new netDxf.Entities.Text(x.idx.ToString(),
-                        ((Geometry)x.item.geom).MidPoint.ToDxfVector2(), .7)
-                        .Eval(e =>
-                        {
-                            e.Alignment = TextAlignment.Middle;
-                            e.Layer = otherLayer;
-                            return e;
-                        }));
-                }
-            }
-
-            var visitedVertexes = new HashSet<Vector3D>(ptCmp);
-
-            if (ipts.Count == 1) yield break;
-
-            foreach (var ipt in ipts)
-            {
-                if (visitedVertexes.Contains(ipt)) continue;
-
-                var gLoop = new List<IEdge>();
-                var gLoopHs = new HashSet<IEdge>();
-
-                var qstart = getByIp(ipt, onThis: true, searchInside: mode != BooleanMode.Difference);
-
-                //if (qstart == null || qstart.Value.geom == null) break;
-                if (qstart == null || qstart.Value.geom == null)
-                {
-                    visitedVertexes.Add(ipt);
-                    continue;
-                }
-
-                var start = qstart.Value;
-
-                gLoop.Add(start.geom);
-                gLoopHs.Add(start.geom);
-
-                var cur = start;
-
-                while (true)
-                {
-                    if (gLoop.Count == 2)
+                    void recNfo(Vector3D vertex)
                     {
-                        start.vertexVisited.Add(start.geom.SGeomFrom);
-                        start.vertexVisited.Add(start.geom.SGeomTo);
+                        edgeVertexes.Add(vertex);
+
+                        if (!vertexToEdgeNfos.TryGetValue(vertex, out var edgeNfos))
+                        {
+                            edgeNfos = new List<EdgeNfo> { edgeNfo };
+                            vertexToEdgeNfos.Add(vertex, edgeNfos);
+                        }
+                        else
+                            edgeNfos.Add(edgeNfo);
                     }
 
-                    var qnext = walk(cur);
-
-                    if (qnext == null) break;
-
-                    cur = qnext.Value;
-
-                    if (gLoopHs.Contains(cur.geom)) break;
-
-                    if (cur.geom == null) break;
-
-                    if (
-                        visitedVertexes.Contains(cur.geom.SGeomFrom, ptCmp) &&
-                        visitedVertexes.Contains(cur.geom.SGeomTo, ptCmp))
-                        break;
-
-                    gLoop.Add(cur.geom);
-                    gLoopHs.Add(cur.geom);
-
-                    visitedVertexes.Add(cur.geom.SGeomFrom);
-                    visitedVertexes.Add(cur.geom.SGeomTo);
+                    recNfo(edgeNfo.edge.SGeomFrom);
+                    recNfo(edgeNfo.edge.SGeomTo);
                 }
-
-                if (gLoop.Count == 1 || (gLoop.Count == 2 && gLoop.All(w => w.EdgeType == EdgeType.Line3D))) yield break;
-
-                var loopres = new Loop(tol, this.Plane, gLoop, checkSense: true);
-
-                if (debugDxf != null)
-                {
-                    var lw = loopres.ToLwPolyline(tol);
-                    lw.Layer = booleanLayer;
-                    debugDxf.AddEntity(lw);
-                }
-
-                yield return loopres.ToFace();
             }
 
+            switch (mode)
+            {
+                case BooleanMode.Intersect:
+                    {
+
+                    }
+                    break;
+            }
+
+            yield break;
         }
 
         public IEnumerable<LwPolyline> DxfEntities(double tol) => Loops.Select(w => w.DxfEntity(tol));
+
+        /// <summary>
+        /// create hatch with outer and inner boundaries
+        /// </summary>        
+        public netDxf.Entities.Hatch? ToHatch(double tol, HatchPattern pattern, bool associative = true)
+        {
+            if (Loops.Count == 0) return null;
+
+            var loopLws = Loops.Select(loop => loop.ToLwPolyline(tol)).ToList();
+
+            var hatch = new netDxf.Entities.Hatch(pattern,
+                loopLws.Select(loopLw => new HatchBoundaryPath(new[] { loopLw })),
+                associative);
+            hatch.Normal = loopLws[0].Normal;
+            hatch.Elevation = loopLws[0].Elevation;
+            return hatch;
+        }
 
     }
 
@@ -561,6 +397,7 @@ namespace SearchAThing
 
         /// <summary>
         /// build planar face with given loops ( first is the outer );
+        /// input loop can be unordered ( loop with greather area will be considered as outer loop );
         /// precondition: loops must lie on same plane
         /// </summary>
         public static Face ToFace(this IEnumerable<netDxf.Entities.LwPolyline> lwpolyline, double tol)
