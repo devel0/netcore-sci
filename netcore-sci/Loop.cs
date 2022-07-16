@@ -16,6 +16,24 @@ using System.Diagnostics;
 namespace SearchAThing
 {
 
+    public enum LoopContainsPointMode
+    {
+        /// <summary>
+        /// point is on perimeter
+        /// </summary>
+        Perimeter,
+
+        /// <summary>
+        /// point is inside (perimeter excluded)
+        /// </summary>
+        InsideExcludedPerimeter,
+
+        /// <summary>
+        /// point is inside or on perimeter
+        /// </summary>
+        InsideOrPerimeter
+    };
+
     /// <summary>
     /// planar edges loop containing line and arcs
     /// </summary>    
@@ -147,13 +165,28 @@ namespace SearchAThing
 
         /// <summary>
         /// states if given edge is contained into this loop
+        /// </summary>                                
+        public (bool SGeomFromTestResult, bool SGeomToTestResult, bool MidPointTestResult)
+        Contains(double tol,
+            IEdge edge,
+            LoopContainsPointMode SGeomFromTestType,
+            LoopContainsPointMode SGeomToTestType,
+            LoopContainsPointMode MidPointTestType) =>
+                (
+                    SGeomFromTestResult: ContainsPoint(tol, edge.SGeomFrom, SGeomFromTestType),
+                    SGeomToTestResult: ContainsPoint(tol, edge.SGeomTo, SGeomToTestType),
+                    MidPointTestResult: ContainsPoint(tol, edge.MidPoint, MidPointTestType)
+                );
+
+        /// <summary>
+        /// test if given edge contained in this loop ( perimeter not excluded )
         /// </summary>        
-        /// <param name="excludePerimeter">if true, point on perimeter isn't tested</param>
-        /// <returns></returns>
-        public bool Contains(double tol, IEdge edge, bool excludePerimeter = false) =>
-            ContainsPoint(tol, edge.SGeomFrom, excludePerimeter) &&
-            ContainsPoint(tol, edge.MidPoint, excludePerimeter) &&
-            ContainsPoint(tol, edge.SGeomTo, excludePerimeter);
+        public bool Contains(double tol, IEdge edge) =>
+            Contains(tol, edge,
+                SGeomFromTestType: LoopContainsPointMode.InsideOrPerimeter,
+                SGeomToTestType: LoopContainsPointMode.InsideOrPerimeter,
+                MidPointTestType: LoopContainsPointMode.InsideOrPerimeter)
+                .Eval(x => x.SGeomFromTestResult && x.SGeomToTestResult && x.MidPointTestResult);
 
         Vector3D? _MidPoint = null;
         /// <summary>
@@ -170,18 +203,18 @@ namespace SearchAThing
 
         /// <summary>
         /// states if given point is included into this loop
-        /// </summary>        
-        /// <param name="excludePerimeter">if true, point on perimeter isn't tested</param>        
-        public bool ContainsPoint(double tol, Vector3D pt, bool excludePerimeter = false)
+        /// </summary>                
+        public bool ContainsPoint(double tol, Vector3D pt, LoopContainsPointMode mode)
         {
             var onperimeter = this.Edges.Any(edge => edge.EdgeContainsPoint(tol, pt));
 
             if (onperimeter)
             {
-                if (excludePerimeter) return false;
+                if (mode == LoopContainsPointMode.InsideExcludedPerimeter) return false;
                 return true;
             }
-            
+            else if (mode == LoopContainsPointMode.Perimeter) return false;
+
             var ray = pt.LineTo(MidPoint);
 
             var qits = this.Edges.Cast<Geometry>()
@@ -238,13 +271,13 @@ namespace SearchAThing
             }
         }
 
-        public bool Contains(double tol, Loop other, bool excludePerimeter = true)
+        /// <summary>
+        /// states if this loop contains given other loop (perimeter not excluded)
+        /// </summary>
+        public bool Contains(double tol, Loop other)
         {
             foreach (var otherEdge in other.Edges)
-            {
-                if (!ContainsPoint(tol, otherEdge.SGeomFrom, excludePerimeter)) return false;
-                if (!ContainsPoint(tol, otherEdge.MidPoint, excludePerimeter)) return false;
-            }
+                if (!Contains(tol, otherEdge)) return false;
 
             return true;
         }

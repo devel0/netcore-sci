@@ -47,6 +47,23 @@ namespace SearchAThing
         /// </summary>
         public Face Move(Vector3D delta) => new Face(Plane.Move(delta), Loops.Select(l => l.Move(delta)).ToList());
 
+        double? _Area = null;
+
+        /// <summary>
+        /// (cached) area of face ( outer loop area - inner loops area )
+        /// </summary>
+        /// <value></value>
+        public double Area
+        {
+            get
+            {
+                if (_Area == null)
+                    _Area = Loops[0].Area - Loops.Skip(1).Select(w => w.Area).Sum();
+
+                return _Area.Value;
+            }
+        }
+
         class LoopNfo
         {
             public Face faceOwner { get; private set; }
@@ -97,6 +114,42 @@ namespace SearchAThing
 
             public bool onThis { get; private set; }
 
+            bool? _occluded = null;
+            /// <summary>
+            /// (updated after broken geom)
+            /// states if edge not totally on counterpart perimeter but something is inside
+            /// </summary>            
+            public bool occluded
+            {
+                get
+                {
+                    if (_occluded == null) throw new Exception($"occluded not setup on this object");
+                    return _occluded.Value;
+                }
+                internal set
+                {
+                    _occluded = value;
+                }
+            }
+
+            bool? _overlapped = null;
+            /// <summary>
+            /// (updated after broken geom)
+            /// states if this edge overlapped with counterpart
+            /// </summary>            
+            public bool overlapped
+            {
+                get
+                {
+                    if (_overlapped == null) throw new Exception($"overlapped not setup on this object");
+                    return _overlapped.Value;
+                }
+                internal set
+                {
+                    _overlapped = value;
+                }
+            }
+
             public EdgeNfo(LoopNfo loopOwner, IEdge edge, bool onThis)
             {
                 this.loopOwner = loopOwner;
@@ -104,7 +157,7 @@ namespace SearchAThing
                 this.onThis = onThis;
             }
 
-            public override string ToString() => $"onThis:{onThis} loopOuter:{loopOwner.outer} edge:{edge}";
+            public override string ToString() => $"{(onThis ? "" : "!")}onThis {(occluded == true ? "" : "!")}occluded {(loopOwner.outer ? "" : "!")}loopOuter edge:{edge}";
         }
 
         public enum BooleanMode
@@ -142,13 +195,13 @@ namespace SearchAThing
 
             void UpdateLoopNfo(LoopNfo loopNfo1, LoopNfo loopNfo2)
             {
-                if (loopNfo1.loop.Contains(tol, loopNfo2.loop, excludePerimeter: false))
+                if (loopNfo1.loop.Contains(tol, loopNfo2.loop))
                 {
                     loopNfo2.parentLoopNfos.Add(loopNfo1);
                     loopNfo1.childrenLoopNfos.Add(loopNfo2);
                 }
 
-                else if (loopNfo2.loop.Contains(tol, loopNfo1.loop, excludePerimeter: false))
+                else if (loopNfo2.loop.Contains(tol, loopNfo1.loop))
                 {
                     loopNfo1.parentLoopNfos.Add(loopNfo2);
                     loopNfo2.childrenLoopNfos.Add(loopNfo1);
@@ -205,9 +258,8 @@ namespace SearchAThing
                 var thisOuterLoopNfo = thisLoopNfos[0];
                 var otherOuterLoopNfo = otherLoopNfos[0];
 
-                //
-                // special case : no ips
-                //
+                #region special case : no ips
+
                 if (ipNfos.Count == 0)
                 {
                     // this and other totally disjoint
@@ -326,6 +378,8 @@ namespace SearchAThing
                     yield break;
                 }
 
+                #endregion
+
                 var thisLoopEdgeNfoToBreaks = ipNfos
                     .GroupBy(w => w.thisEdgeNfo)
                     .Select(w => new { edgeNfo = w.Key, edgeBreakIps = w.Select(u => (Vector3D)u.ip).ToList() })
@@ -354,23 +408,44 @@ namespace SearchAThing
 
                 foreach (var ipNfo in ipNfos) ips.Add(ipNfo.ip);
 
-                foreach (var edgeNfo in thisLoopBrokenEdgeNfos.Union(otherLoopBrokenEdgeNfos))
+                void updateVertexToEdgeNfos(Vector3D vertex, EdgeNfo edgeNfo)
                 {
-                    void recNfo(Vector3D vertex)
+                    edgeVertexes.Add(vertex);
+
+                    if (!vertexToEdgeNfos.TryGetValue(vertex, out var edgeNfos))
                     {
-                        edgeVertexes.Add(vertex);
-
-                        if (!vertexToEdgeNfos.TryGetValue(vertex, out var edgeNfos))
-                        {
-                            edgeNfos = new List<EdgeNfo> { edgeNfo };
-                            vertexToEdgeNfos.Add(vertex, edgeNfos);
-                        }
-                        else
-                            edgeNfos.Add(edgeNfo);
+                        edgeNfos = new List<EdgeNfo> { edgeNfo };
+                        vertexToEdgeNfos.Add(vertex, edgeNfos);
                     }
+                    else
+                        edgeNfos.Add(edgeNfo);
+                }
 
-                    recNfo(edgeNfo.edge.SGeomFrom);
-                    recNfo(edgeNfo.edge.SGeomTo);
+                foreach (var thisEdgeNfo in thisLoopBrokenEdgeNfos)
+                {
+                    thisEdgeNfo.overlapped = other.Overlap(tol, thisEdgeNfo.edge);
+                    thisEdgeNfo.occluded = !thisEdgeNfo.overlapped && other.Contains(tol, thisEdgeNfo.edge);
+
+                    updateVertexToEdgeNfos(thisEdgeNfo.edge.SGeomFrom, thisEdgeNfo);
+                    updateVertexToEdgeNfos(thisEdgeNfo.edge.SGeomTo, thisEdgeNfo);
+                }
+
+                foreach (var otherEdgeNfo in otherLoopBrokenEdgeNfos)
+                {
+                    otherEdgeNfo.overlapped = this.Overlap(tol, otherEdgeNfo.edge);
+                    otherEdgeNfo.occluded = !otherEdgeNfo.overlapped && this.Contains(tol, otherEdgeNfo.edge);
+
+                    if (!otherEdgeNfo.overlapped) // doesn't update other overlapped because will removed later
+                    {
+                        updateVertexToEdgeNfos(otherEdgeNfo.edge.SGeomFrom, otherEdgeNfo);
+                        updateVertexToEdgeNfos(otherEdgeNfo.edge.SGeomTo, otherEdgeNfo);
+                    }
+                }
+
+                // remove other overlapped edges
+                {
+                    var qOtherOverlappedEdges = otherLoopBrokenEdgeNfos.Where(edgeNfo => edgeNfo.overlapped).ToList();
+                    foreach (var edgeNfoToRemove in qOtherOverlappedEdges) otherLoopBrokenEdgeNfos.Remove(edgeNfoToRemove);
                 }
             }
 
@@ -378,12 +453,217 @@ namespace SearchAThing
             {
                 case BooleanMode.Intersect:
                     {
+                        var visitedIps = new HashSet<Vector3D>();
 
+                        foreach (var ip in ips)
+                        {
+                            if (visitedIps.Contains(ip)) continue;
+                            if (visitedIps.Count == ips.Count) break;
+
+                            visitedIps.Add(ip);
+
+                            Vector3D lastVertex = ip;
+                            EdgeNfo? lastEdgeNfo = null;
+                            var loopEdgeNfos = new List<EdgeNfo>();
+                            var finished = false;
+
+                            while (!finished)
+                            {
+                                if (lastEdgeNfo == null) // starting edge
+                                {
+                                    var edgeNfosFromLastVisitedVertex = vertexToEdgeNfos[lastVertex];
+
+                                    lastEdgeNfo = edgeNfosFromLastVisitedVertex.FirstOrDefault(w => w.occluded || w.overlapped);
+
+                                    if (lastEdgeNfo == null) yield break;
+                                }
+                                else
+                                {
+                                    var nextVertex = lastEdgeNfo.edge.OtherEndpoint(tol, lastVertex);
+
+                                    var nextVertexEdges = vertexToEdgeNfos[nextVertex];
+
+                                    var edgeNfosFromLastVisitedVertex = nextVertexEdges
+                                        .Where(edgeNfo => (edgeNfo.occluded || edgeNfo.overlapped) && !edgeNfo.edge.EndpointMatches(tol, lastVertex, nextVertex))
+                                        .ToList();
+
+                                    lastEdgeNfo = edgeNfosFromLastVisitedVertex.First(w => w.occluded || w.overlapped);
+                                    lastVertex = nextVertex;
+
+                                    if (lastEdgeNfo.edge.EndpointMatches(tol, ip)) finished = true;
+                                }
+
+                                loopEdgeNfos.Add(lastEdgeNfo);
+                                if (ips.Contains(lastVertex))
+                                    visitedIps.Add(lastVertex);
+                            }
+
+                            var outerLoop = new Loop(tol, Plane, loopEdgeNfos.Select(w => w.edge).ToList(), checkSense: true);
+
+                            var resFace = new Face(Plane, new[] { outerLoop }.ToList());
+
+                            if (resFace.Area.EqualsTol(tol, 0)) yield break;
+
+                            yield return resFace;
+                        }
+                    }
+                    break;
+
+                case BooleanMode.Difference:
+                    {
+                        var visitedIps = new HashSet<Vector3D>();
+
+                        foreach (var ip in ips)
+                        {
+                            if (visitedIps.Contains(ip)) continue;
+                            if (visitedIps.Count == ips.Count) break;
+
+                            visitedIps.Add(ip);
+
+                            Vector3D lastVertex = ip;
+                            EdgeNfo? lastEdgeNfo = null;
+                            var loopEdgeNfos = new List<EdgeNfo>();
+                            var finished = false;
+                            var occluded = false; // onThis == !occluded
+
+                            while (!finished)
+                            {
+                                if (lastEdgeNfo == null) // starting edge
+                                {
+                                    var edgeNfosFromLastVisitedVertex = vertexToEdgeNfos[lastVertex];
+
+                                    lastEdgeNfo = edgeNfosFromLastVisitedVertex.First(w => w.occluded == occluded && w.onThis == !occluded);
+                                }
+                                else
+                                {
+                                    var nextVertex = lastEdgeNfo.edge.OtherEndpoint(tol, lastVertex);
+
+                                    var qEdges = vertexToEdgeNfos[nextVertex];
+
+                                    if (qEdges.Any(edgeNfo => edgeNfo.occluded == !occluded && edgeNfo.onThis == occluded))
+                                        occluded = true;
+
+                                    var edgeNfosFromLastVisitedVertex = qEdges
+                                        .Where(edgeNfo => edgeNfo.occluded == occluded && edgeNfo.onThis == !occluded && !edgeNfo.edge.EndpointMatches(tol, lastVertex, nextVertex))
+                                        .ToList();
+
+                                    lastEdgeNfo = edgeNfosFromLastVisitedVertex.First(w => w.occluded == occluded);
+                                    lastVertex = nextVertex;
+
+                                    if (lastEdgeNfo.edge.EndpointMatches(tol, ip)) finished = true;
+                                }
+
+                                loopEdgeNfos.Add(lastEdgeNfo);
+                                if (ips.Contains(lastVertex))
+                                    visitedIps.Add(lastVertex);
+                            }
+
+                            var outerLoop = new Loop(tol, Plane, loopEdgeNfos.Select(w => w.edge).ToList(), checkSense: true);
+
+                            var resFace = new Face(Plane, new[] { outerLoop }.ToList());
+
+                            if (resFace.Area.EqualsTol(tol, 0)) yield break;
+
+                            yield return resFace;
+                        }
                     }
                     break;
             }
 
             yield break;
+        }
+
+        /// <summary>
+        /// states if given edge is contained into this face ( inner loop inside content excluded )
+        /// </summary>
+        /// <param name="tol"></param>
+        /// <param name="edge"></param>                
+        public bool Contains(double tol, IEdge edge)
+        {
+            var containedInAnyOfInners = Loops
+                .Skip(1)
+                .Any(loop => loop.Contains(tol, edge,
+                    SGeomFromTestType: LoopContainsPointMode.InsideExcludedPerimeter,
+                    SGeomToTestType: LoopContainsPointMode.InsideExcludedPerimeter,
+                    MidPointTestType: LoopContainsPointMode.InsideExcludedPerimeter).Eval(x =>
+                    x.SGeomFromTestResult || x.SGeomToTestResult || x.MidPointTestResult
+                ));
+
+            if (containedInAnyOfInners) return false;
+
+            return Loops[0].Contains(tol, edge);
+        }
+
+        /// <summary>
+        /// test if edge overlap any of loop edges of this face
+        /// </summary>        
+        public bool Overlap(double tol, IEdge edge)
+        {
+            var containsSGeomFrom = false;
+            var containsSGeomTo = false;
+            var containsMidpoint = false;
+            var testSuccessCnt = 0;
+            var matchingLoopEdges = new Dictionary<IEdge, int>();
+
+            foreach (var loop in Loops)
+            {
+                matchingLoopEdges = new Dictionary<IEdge, int>();
+
+                foreach (var loopEdge in loop.Edges)
+                {
+                    if (!containsSGeomFrom && loopEdge.EdgeContainsPoint(tol, edge.SGeomFrom))
+                    {
+                        containsSGeomFrom = true;
+                        ++testSuccessCnt;
+
+                        if (matchingLoopEdges.ContainsKey(loopEdge))
+                            matchingLoopEdges[loopEdge]++;
+                        else
+                            matchingLoopEdges.Add(loopEdge, 1);
+                    }
+
+                    if (!containsSGeomTo && loopEdge.EdgeContainsPoint(tol, edge.SGeomTo))
+                    {
+                        containsSGeomTo = true;
+                        ++testSuccessCnt;
+
+                        if (matchingLoopEdges.ContainsKey(loopEdge))
+                            matchingLoopEdges[loopEdge]++;
+                        else
+                            matchingLoopEdges.Add(loopEdge, 1);
+                    }
+
+                    if (!containsMidpoint && loopEdge.EdgeContainsPoint(tol, edge.MidPoint))
+                    {
+                        containsMidpoint = true;
+                        ++testSuccessCnt;
+
+                        if (matchingLoopEdges.ContainsKey(loopEdge))
+                            matchingLoopEdges[loopEdge]++;
+                        else
+                            matchingLoopEdges.Add(loopEdge, 1);
+                    }
+
+                    if (testSuccessCnt == 3)
+                    {
+                        if (matchingLoopEdges.Count > 1)
+                        {
+                            foreach (var matchingLoopEdge in matchingLoopEdges.Keys)
+                            {
+                                if (
+                                    matchingLoopEdge.EdgeContainsPoint(tol, edge.SGeomFrom) &&
+                                    matchingLoopEdge.EdgeContainsPoint(tol, edge.SGeomTo) &&
+                                    matchingLoopEdge.EdgeContainsPoint(tol, edge.MidPoint)) return true;
+
+                            }
+                            throw new NotImplementedException($"colinear test for overlap on multiple edges");
+                        }
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         public IEnumerable<LwPolyline> DxfEntities(double tol) => Loops.Select(w => w.DxfEntity(tol));
