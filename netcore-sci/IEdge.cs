@@ -50,6 +50,21 @@ namespace SearchAThing
         Vector3D MidPoint { get; }
 
         /// <summary>
+        /// retrieve GeomFrom or GeomTo that isn't equals to given endpoint
+        /// </summary>        
+        Vector3D OtherEndpoint(double tol, Vector3D endpoint);
+
+        /// <summary>
+        /// states if (GeomFrom == endpoint1 AND GeomTo == endpoint2) OR (GeomTo == endpoint1 AND GeomFrom == endpoint2)
+        /// </summary>        
+        bool EndpointMatches(double tol, Vector3D endpoint1, Vector3D endpoint2);
+
+        /// <summary>
+        /// states if GeomFrom == endpoint1 OR GeomTo == endpoint2
+        /// </summary>        
+        bool EndpointMatches(double tol, Vector3D endpoint1);
+
+        /// <summary>
         /// States if edge contains given point on its perimeter
         /// </summary>        
         bool EdgeContainsPoint(double tol, Vector3D pt);

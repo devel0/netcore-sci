@@ -65,6 +65,17 @@ namespace SearchAThing
 
         public Vector3D SGeomTo => Sense ? GeomTo : GeomFrom;
 
+        public Vector3D OtherEndpoint(double tol, Vector3D endpoint) =>
+            endpoint.EqualsTol(tol, GeomFrom) ? GeomTo : GeomFrom;
+
+        public bool EndpointMatches(double tol, Vector3D endpoint1, Vector3D endpoint2) =>
+            (GeomFrom.EqualsTol(tol, endpoint1) && GeomTo.EqualsTol(tol, endpoint2))
+            ||
+            (GeomTo.EqualsTol(tol, endpoint1) && GeomFrom.EqualsTol(tol, endpoint2));
+
+        public bool EndpointMatches(double tol, Vector3D endpoint1) =>
+            GeomFrom.EqualsTol(tol, endpoint1) || GeomTo.EqualsTol(tol, endpoint1);
+
         public Geometry ToggleSense()
         {
             var toggled = Copy();
@@ -181,7 +192,7 @@ namespace SearchAThing
                     yield return line.ToLine3D();
                 }
             }
-        }    
+        }
 
         /// <summary>
         /// segments representation of given geometries
