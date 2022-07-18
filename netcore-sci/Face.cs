@@ -600,6 +600,114 @@ namespace SearchAThing
                         }
                     }
                     break;
+
+                case BooleanMode.Union:
+                    {
+                        var visitedIps = new HashSet<Vector3D>(ptCmp);
+                        Loop? resOuterLoop = null;
+                        var resInnerLoops = new List<Loop>();
+                        var usedInnerLoops = new HashSet<LoopNfo>();
+
+                        foreach (var ip in ips)
+                        {
+                            if (visitedIps.Contains(ip)) continue;
+                            if (visitedIps.Count == ips.Count) break;
+
+                            visitedIps.Add(ip);
+
+                            {
+                                var qTypes = vertexToEdgeNfos[ip];
+                                var onthis = qTypes.Count(w => w.onThis);
+                                if (onthis == 0 || onthis == qTypes.Count)
+                                    continue;
+                            }
+
+                            Vector3D lastVertex = ip;
+                            EdgeNfo? lastEdgeNfo = null;
+                            var loopEdgeNfos = new List<EdgeNfo>();
+                            var finished = false;
+                            var occluded = false; // onThis == !occluded
+
+                            while (!finished)
+                            {
+                                if (lastEdgeNfo == null) // starting edge
+                                {
+                                    var edgeNfosFromLastVisitedVertex = vertexToEdgeNfos[lastVertex];
+
+                                    lastEdgeNfo = edgeNfosFromLastVisitedVertex.First(w => w.occluded == occluded && !w.overlapped && w.onThis == !occluded);
+                                }
+                                else
+                                {
+                                    var nextVertex = lastEdgeNfo.edge.OtherEndpoint(tol, lastVertex);
+
+                                    var qEdges = vertexToEdgeNfos[nextVertex];
+
+                                    // if (qEdges.Any(edgeNfo => edgeNfo.occluded == !occluded && edgeNfo.onThis == occluded))
+                                    //     occluded = !occluded;
+
+                                    var edgeNfosFromLastVisitedVertex = qEdges
+                                        .Where(edgeNfo => edgeNfo.occluded == occluded && /*edgeNfo.onThis == !occluded &&*/!edgeNfo.edge.EndpointMatches(tol, lastVertex))
+                                        .ToList();
+
+                                    lastEdgeNfo = edgeNfosFromLastVisitedVertex.First(w => w.occluded == occluded);
+                                    lastVertex = nextVertex;
+
+                                    if (lastEdgeNfo.edge.EndpointMatches(tol, ip)) finished = true;
+                                }
+
+                                loopEdgeNfos.Add(lastEdgeNfo);
+                                if (loopEdgeNfos.Count > thisLoopBrokenEdgeNfos.Count + otherLoopBrokenEdgeNfos.Count)
+                                    throw new Exception($"internal error");
+
+                                if (ips.Contains(lastEdgeNfo.edge.SGeomFrom))
+                                    visitedIps.Add(lastEdgeNfo.edge.SGeomFrom);
+
+                                if (ips.Contains(lastEdgeNfo.edge.SGeomTo))
+                                    visitedIps.Add(lastEdgeNfo.edge.SGeomTo);
+                            }
+
+                            if (resOuterLoop == null)
+                            {
+                                resOuterLoop = new Loop(tol, Plane, loopEdgeNfos.Select(w => w.edge).ToList(), checkSense: true);
+                            }
+                            else
+                            {
+                                var qUsedInnerLoops = loopEdgeNfos
+                                    .Select(edgeNfo => edgeNfo.loopOwner)
+                                    .Where(loopNfo => !loopNfo.outer)
+                                    .Distinct()
+                                    .ToList();
+
+                                foreach (var usedInnerLoop in qUsedInnerLoops) usedInnerLoops.Add(usedInnerLoop);
+
+                                var innerLoop = new Loop(tol, Plane, loopEdgeNfos.Select(w => w.edge).ToList(), checkSense: true);
+
+                                // var innerLoops = thisLoopNfos
+                                //     .Where(loopNfo => outerLoop.Contains(tol, loopNfo.loop))
+                                //     .Select(loopNfo => loopNfo.loop)
+                                //     .ToList();
+
+                                resInnerLoops.Add(innerLoop);
+
+                                // var resFace = new Face(Plane, new[] { outerLoop }.Union(innerLoops).ToList());
+
+                                // if (resFace.Area.EqualsTol(tol, 0)) yield break;
+
+
+                            }
+                        }
+
+                        if (resOuterLoop != null)
+                        {
+                            var addictionalInnerLoops = thisLoopNfos.Union(otherLoopNfos)
+                                .Where(loopNfo => !loopNfo.outer && !usedInnerLoops.Contains(loopNfo))
+                                .Select(loopNfo => loopNfo.loop)
+                                .ToList();
+
+                            yield return new Face(Plane, new[] { resOuterLoop }.Union(resInnerLoops).Union(addictionalInnerLoops).ToArray());
+                        }
+                    }
+                    break;
             }
 
             yield break;
