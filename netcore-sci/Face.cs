@@ -4,6 +4,7 @@ using static System.Math;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Diagnostics.CodeAnalysis;
+using static System.FormattableString;
 
 using netDxf;
 using netDxf.Entities;
@@ -586,7 +587,12 @@ namespace SearchAThing
 
                             var outerLoop = new Loop(tol, Plane, loopEdgeNfos.Select(w => w.edge).ToList(), checkSense: true);
 
-                            var resFace = new Face(Plane, new[] { outerLoop }.ToList());
+                            var innerLoops = thisLoopNfos
+                                .Where(loopNfo => outerLoop.Contains(tol, loopNfo.loop))
+                                .Select(loopNfo => loopNfo.loop)
+                                .ToList();
+
+                            var resFace = new Face(Plane, new[] { outerLoop }.Union(innerLoops).ToList());
 
                             if (resFace.Area.EqualsTol(tol, 0)) yield break;
 
@@ -710,6 +716,8 @@ namespace SearchAThing
             hatch.Elevation = loopLws[0].Elevation;
             return hatch;
         }
+
+        public override string ToString() => Invariant($"A:{Area} Loops:{Loops.Count}");
 
     }
 
