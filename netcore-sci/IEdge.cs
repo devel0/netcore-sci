@@ -87,8 +87,8 @@ namespace SearchAThing
         /// <summary>
         /// states if this edge equals other
         /// </summary>        
-        /// <param name="includeSense">if true then two geometrical equals edges but with different sense cause they considered to be different</param>        
-        bool Equals(double tol, IEdge other, bool includeSense = false);
+        /// <param name="checkSense">if true then two geometrical equals edges but with different sense cause they considered to be different</param>        
+        bool EdgeEquals(double tol, IEdge other, bool checkSense = false);
 
         /// <summary>
         /// length of the edge
