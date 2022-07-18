@@ -205,7 +205,7 @@ namespace SearchAThing
         /// states if given point is included into this loop
         /// </summary>                
         public bool ContainsPoint(double tol, Vector3D pt, LoopContainsPointMode mode)
-        {
+        {            
             var onperimeter = this.Edges.Any(edge => edge.EdgeContainsPoint(tol, pt));
 
             if (onperimeter)
@@ -215,7 +215,8 @@ namespace SearchAThing
             }
             else if (mode == LoopContainsPointMode.Perimeter) return false;
 
-            var ray = pt.LineTo(MidPoint);
+            var ray = pt.LineV(Plane.CS.BaseX);
+            //var ray = pt.LineTo(MidPoint);
 
             var qits = this.Edges.Cast<Geometry>()
                 .Intersect(tol, new[] { ray }, GeomSegmentMode.FromTo, GeomSegmentMode.Infinite)
@@ -223,7 +224,10 @@ namespace SearchAThing
 
             if (qits.Count == 0) return false;
 
-            var qips = qits.Where(r => r.GeomType == GeometryType.Vector3D).Select(w => (Vector3D)w).ToList();
+            var qips = qits.Where(r => r.GeomType == GeometryType.Vector3D)
+                .Select(w => (Vector3D)w)
+                .Where(w => ray.SemiLineContainsPoints(tol, w))
+                .ToList();
 
             var rayVNorm = ray.V.Normalized();
             var sortedColinearPts = qips
