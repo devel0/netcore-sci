@@ -382,7 +382,7 @@ namespace SearchAThing
         public static netDxf.Entities.LwPolyline ToLwPolyline(this IEnumerable<Geometry> _geom, double tol,
             CoordinateSystem3D cs, bool closed = true)
         {
-            var geom = _geom.ToList();
+            var edges = _geom.Cast<Edge>().ToList();
 
             var elevation = cs.Origin.ToUCS(cs, evalCSOrigin: false).Z;
 
@@ -397,12 +397,12 @@ namespace SearchAThing
 
             Vector3D? _lastPt = null;
 
-            for (int i = 0; i < geom.Count; ++i)
+            for (int i = 0; i < edges.Count; ++i)
             {
-                var _from = geom[i].SGeomFrom.ToUCS(cs);
-                var _to = geom[i].SGeomTo.ToUCS(cs);
+                var _from = edges[i].SGeomFrom.ToUCS(cs);
+                var _to = edges[i].SGeomTo.ToUCS(cs);
 
-                switch (geom[i].GeomType)
+                switch (edges[i].GeomType)
                 {
                     case GeometryType.Vector3D:
                         {
@@ -436,15 +436,15 @@ namespace SearchAThing
 
                     case GeometryType.Arc3D:
                         {
-                            var arc = (Arc3D)geom[i];
+                            var arc = (Arc3D)edges[i];
                             var bulge = arc.Bulge(tol);
                             if (cs.BaseZ.EqualsTol(NormalizedLengthTolerance, -arc.CS.BaseZ)) bulge *= -1d;
 
                             if (_lastPt == null)
                             {
-                                if (i < geom.Count - 1)
+                                if (i < edges.Count - 1)
                                 {
-                                    if (geom[i + 1].SGeomFrom.EqualsTol(tol, _to))
+                                    if (edges[i + 1].SGeomFrom.EqualsTol(tol, _to))
                                     {
                                         var lwpv = new LwPolylineVertex(_from.ToDxfVector2()) { Bulge = bulge };
                                         pvtx.Add(lwpv);

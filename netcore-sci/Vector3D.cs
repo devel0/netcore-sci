@@ -260,9 +260,7 @@ namespace SearchAThing
         /// build a copy of given vector
         /// </summary>        
         public Vector3D(Vector3D v) : base(GeometryType.Vector3D)
-        {
-            CopyFrom(v);
-
+        {            
             X = v.X;
             Y = v.Y;
             Z = v.Z;
@@ -355,6 +353,8 @@ namespace SearchAThing
                 yield return Z;
             }
         }
+
+        public override Geometry Move(Vector3D delta) => this + delta;
 
         /// <summary>
         /// states if this is a zero vector            
@@ -1545,7 +1545,7 @@ namespace SearchAThing
 
             var vcmp = new Vector3DEqualityComparer(tol);
             var lcmp = new Line3DEqualityComparer(tol);
-            var segsDict = segs.ToDictionary(k => k.ToString(tol), v => v);
+            var segsDict = segs.ToDictionary(k => k.ToStringTol(tol), v => v);
             var segsFromDict = segs.GroupBy(g => g.From, v => v, vcmp).ToDictionary(k => k.Key, v => v.ToList(), vcmp);
             var segsToDict = segs.GroupBy(g => g.To, v => v, vcmp).ToDictionary(k => k.Key, v => v.ToList(), vcmp);
 

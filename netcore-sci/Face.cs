@@ -114,7 +114,7 @@ namespace SearchAThing
 
             public LoopNfo loopOwner { get; private set; }
 
-            public IEdge edge { get; private set; }
+            public Edge edge { get; private set; }
 
             public bool onThis { get; private set; }
 
@@ -154,7 +154,7 @@ namespace SearchAThing
                 }
             }
 
-            public EdgeNfo(LoopNfo loopOwner, IEdge edge, bool onThis)
+            public EdgeNfo(LoopNfo loopOwner, Edge edge, bool onThis)
             {
                 this.loopOwner = loopOwner;
                 this.edge = edge;
@@ -183,7 +183,7 @@ namespace SearchAThing
         {
             var ptCmp = new Vector3DEqualityComparer(tol);
 
-            var res = new List<List<IEdge>>();
+            var res = new List<List<Edge>>();
 
             List<EdgeNfo>? thisLoopBrokenEdgeNfos = null;
             List<EdgeNfo>? otherLoopBrokenEdgeNfos = null;
@@ -402,7 +402,7 @@ namespace SearchAThing
                         if (loopEdgeToBreaks.TryGetValue(edgeNfo, out var breaks))
                         {
                             return edgeNfo.edge.Split(tol, breaks)
-                                .Select(geom => new EdgeNfo(edgeNfo.loopOwner, (IEdge)geom, edgeNfo.onThis)).ToArray();
+                                .Select(geom => new EdgeNfo(edgeNfo.loopOwner, (Edge)geom, edgeNfo.onThis)).ToArray();
                         }
                         else
                             return new[] { edgeNfo };
@@ -604,7 +604,7 @@ namespace SearchAThing
         /// </summary>
         /// <param name="tol"></param>
         /// <param name="edge"></param>                
-        public bool Contains(double tol, IEdge edge)
+        public bool Contains(double tol, Edge edge)
         {
             var containedInAnyOfInners = Loops
                 .Skip(1)
@@ -623,17 +623,17 @@ namespace SearchAThing
         /// <summary>
         /// test if edge overlap any of loop edges of this face
         /// </summary>        
-        public bool Overlap(double tol, IEdge edge)
+        public bool Overlap(double tol, Edge edge)
         {
             var containsSGeomFrom = false;
             var containsSGeomTo = false;
             var containsMidpoint = false;
             var testSuccessCnt = 0;
-            var matchingLoopEdges = new Dictionary<IEdge, int>();
+            var matchingLoopEdges = new Dictionary<Edge, int>();
 
             foreach (var loop in Loops)
             {
-                matchingLoopEdges = new Dictionary<IEdge, int>();
+                matchingLoopEdges = new Dictionary<Edge, int>();
 
                 foreach (var loopEdge in loop.Edges)
                 {

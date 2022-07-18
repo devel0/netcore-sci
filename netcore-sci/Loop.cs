@@ -48,7 +48,7 @@ namespace SearchAThing
         /// <summary>
         /// loop edges ( line, arc )
         /// </summary>        
-        public IReadOnlyList<IEdge> Edges { get; private set; }
+        public IReadOnlyList<Edge> Edges { get; private set; }
 
         /// <summary>
         /// loop edge distinct filtered vertexes ( not optimized )
@@ -66,7 +66,7 @@ namespace SearchAThing
         /// <summary>
         /// precondition: edges must lie on given plane
         /// </summary>        
-        public Loop(double tol, Plane3D plane, IReadOnlyList<IEdge> edges, bool checkSense)
+        public Loop(double tol, Plane3D plane, IReadOnlyList<Edge> edges, bool checkSense)
         {
             Tol = tol;
             Edges = checkSense ? edges.CheckSense(tol).ToList() : edges.ToList();
@@ -76,7 +76,7 @@ namespace SearchAThing
         /// <summary>
         /// create loop from given edge template ; plane is detected from edges distribution
         /// </summary>
-        public Loop(double tol, IEnumerable<IEdge> edges, bool checkSense = true)
+        public Loop(double tol, IEnumerable<Edge> edges, bool checkSense = true)
         {
             Tol = tol;
             Edges = checkSense ? edges.CheckSense(tol).ToList() : edges.ToList();
@@ -86,7 +86,7 @@ namespace SearchAThing
         /// <summary>
         /// create loop from given edges, plane template
         /// </summary>
-        public Loop(double tol, IEnumerable<IEdge> edges, Plane3D plane, bool checkSense = true)
+        public Loop(double tol, IEnumerable<Edge> edges, Plane3D plane, bool checkSense = true)
         {
             Tol = tol;
             Edges = checkSense ? edges.CheckSense(tol).ToList() : edges.ToList();
@@ -99,7 +99,7 @@ namespace SearchAThing
         public Loop(double tol, LwPolyline lwPolyline)
         {
             Tol = tol;
-            Edges = lwPolyline.ToGeometries(tol).Cast<IEdge>().CheckSense(tol).ToList();
+            Edges = lwPolyline.ToGeometries(tol).Cast<Edge>().CheckSense(tol).ToList();
             Plane = lwPolyline.ToPlane();
         }
 
@@ -107,13 +107,13 @@ namespace SearchAThing
         /// retrieve another loop with reversed edges with sense toggled
         /// </summary>
         public Loop InvertSense(double tol) => new Loop(tol,
-           Plane, Edges.Reverse().Select(w => (IEdge)w.ToggleSense()).ToList(), checkSense: false);
+           Plane, Edges.Reverse().Select(w => (Edge)w.ToggleSense()).ToList(), checkSense: false);
 
         /// <summary>
         /// move loop (plane and edges) of given delta
         /// </summary>
         public Loop Move(Vector3D delta) =>
-            new Loop(Tol, Plane.Move(delta), Edges.Select(edge => edge.EdgeMove(delta)).ToList(), checkSense: false);
+            new Loop(Tol, Plane.Move(delta), Edges.Select(edge => (Edge)edge.Move(delta)).ToList(), checkSense: false);
 
         double? _Area = null;
 
@@ -149,7 +149,7 @@ namespace SearchAThing
             var polysegs = Edges.Select(w => w.SGeomFrom).ToList();
             var res = polysegs.Select(v => v.ToUCS(Plane.CS)).ToList().XYArea(tol);
 
-            foreach (var edge in Edges.Where(r => r.EdgeType == EdgeType.Arc3D))
+            foreach (var edge in Edges.Where(r => r.GeomType  == GeometryType.Arc3D))
             {
                 var arc = (Arc3D)edge;
 
@@ -168,7 +168,7 @@ namespace SearchAThing
         /// </summary>                                
         public (bool SGeomFromTestResult, bool SGeomToTestResult, bool MidPointTestResult)
         Contains(double tol,
-            IEdge edge,
+            Edge edge,
             LoopContainsPointMode SGeomFromTestType,
             LoopContainsPointMode SGeomToTestType,
             LoopContainsPointMode MidPointTestType) =>
@@ -181,7 +181,7 @@ namespace SearchAThing
         /// <summary>
         /// test if given edge contained in this loop ( perimeter not excluded )
         /// </summary>        
-        public bool Contains(double tol, IEdge edge) =>
+        public bool Contains(double tol, Edge edge) =>
             Contains(tol, edge,
                 SGeomFromTestType: LoopContainsPointMode.InsideOrPerimeter,
                 SGeomToTestType: LoopContainsPointMode.InsideOrPerimeter,
@@ -346,74 +346,25 @@ namespace SearchAThing
         public static Loop ToLoop(this netDxf.Entities.LwPolyline lwpolyline, double tol) =>
             new Loop(tol, lwpolyline);
 
-        public static Plane3D DetectPlane(this IEnumerable<IEdge> edges, double tol)
+        public static Plane3D DetectPlane(this IEnumerable<Edge> edges, double tol)
         {
             var lines = new List<Line3D>();
 
             foreach (var edge in edges)
             {
-                switch (edge.EdgeType)
+                switch (edge.GeomType)
                 {
-                    case EdgeType.Line3D: lines.Add((Line3D)edge); break;
-                    case EdgeType.Arc3D: return new Plane3D(((Arc3D)edge).CS);
+                    case GeometryType.Line3D: lines.Add((Line3D)edge); break;
+                    case GeometryType.Arc3D: return new Plane3D(((Arc3D)edge).CS);
                     default:
-                        throw new Exception($"unexpected edge type {edge.EdgeType}");
+                        throw new Exception($"unexpected edge type {edge.GeomType}");
                 }
             }
 
             if (lines.Count == 0) throw new Exception($"can't state edges (cnt:{edges.Count()}) plane");
 
             return lines.BestFittingPlane(tol);
-        }
-
-        /// <summary>
-        /// from given set of edges returns the same set eventually toggling sense of edges to make them glue so that SGeomTo of previous equals SGeomFrom of current.
-        /// it can raise exception if there isn't availability to glue edges regardless toggling their sense.
-        /// first element will toggled to match second one, then other elements will follow the sense matching established.
-        /// </summary>        
-        public static IEnumerable<IEdge> CheckSense(this IEnumerable<IEdge> edges, double tol)
-        {
-            IEdge? overrideCur = null;
-
-            var lst = edges.ToList();
-
-            int i = 0;
-
-            foreach (var edgeItem in edges.WithNext())
-            {
-                if (edgeItem.next == null)
-                {
-                    if (overrideCur != null)
-                        yield return overrideCur;
-                    else
-                        yield return edgeItem.item;
-                }
-
-                else
-                {
-                    var cur = edgeItem.item;
-
-                    if (overrideCur != null) cur = overrideCur;
-
-                    var q = cur.CheckSense(tol, edgeItem.next);
-
-                    if (q == null || (overrideCur != null && q.Value.needToggleSenseThis))
-                        throw new Exception($"can't glue [{cur}] idx:{i} with [{edgeItem.next}]");
-
-                    overrideCur = null;
-
-                    if (q.Value.needToggleSenseThis)
-                        yield return (IEdge)cur.ToggleSense();
-                    else
-                        yield return cur;
-
-                    if (q.Value.needToggleSenseNext)
-                        overrideCur = (IEdge)edgeItem.next.ToggleSense();
-                }
-
-                ++i;
-            }
-        }
+        }       
 
     }
 

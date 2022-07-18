@@ -40,7 +40,7 @@
     }
   },
   "Edges": {
-    "$type": "System.Collections.Generic.List`1[[SearchAThing.IEdge, netcore-sci]], System.Private.CoreLib",
+    "$type": "System.Collections.Generic.List`1[[SearchAThing.Edge, netcore-sci]], System.Private.CoreLib",
     "$values": [
       {
         "$type": "SearchAThing.Line3D, netcore-sci",

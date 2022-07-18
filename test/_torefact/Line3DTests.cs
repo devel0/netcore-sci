@@ -415,7 +415,7 @@ namespace SearchAThing.Sci.Tests
         {
             var l = new Line3D(1, 1, 1, 1.12, 2.23, 3.391);
             // 1e-1 tolerance
-            var s = l.ToString(1e-1);
+            var s = l.ToStringTol(1e-1);
             Assert.True(s == "(1, 1, 1)_(1.1, 2.2, 3.4)");
         }
 

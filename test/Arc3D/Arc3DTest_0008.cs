@@ -35,7 +35,7 @@ namespace SearchAThing.Sci.Tests
                 File.ReadAllText("Arc3D/Arc3DTest_0008.json"), SciToolkit.SciJsonSettings);
             var line1 = new Line3D(new Vector3D(0, 20), p1);
             var line2 = new Line3D(p3, line1.From);
-            var geoms = new IEdge[] { line1, arcj, line2 };
+            var geoms = new Edge[] { line1, arcj, line2 };
             var loop = new Loop(tol, geoms, Plane3D.XY);
             outdxf?.AddEntity(arcj.DxfEntity.Set(x => x.SetColor(AciColor.Cyan)));
 

@@ -51,40 +51,6 @@ namespace SearchAThing
         /// </remarks>
         public abstract Geometry Copy();
 
-
-        protected void CopyFrom(Geometry other)
-        {
-            Sense = other.Sense;
-        }
-
-        #region IEdge related
-
-        public bool Sense { get; private set; } = true;
-
-        public Vector3D SGeomFrom => Sense ? GeomFrom : GeomTo;
-
-        public Vector3D SGeomTo => Sense ? GeomTo : GeomFrom;
-
-        public Vector3D OtherEndpoint(double tol, Vector3D endpoint) =>
-            endpoint.EqualsTol(tol, GeomFrom) ? GeomTo : GeomFrom;
-
-        public bool EndpointMatches(double tol, Vector3D endpoint1, Vector3D endpoint2) =>
-            (GeomFrom.EqualsTol(tol, endpoint1) && GeomTo.EqualsTol(tol, endpoint2))
-            ||
-            (GeomTo.EqualsTol(tol, endpoint1) && GeomFrom.EqualsTol(tol, endpoint2));
-
-        public bool EndpointMatches(double tol, Vector3D endpoint1) =>
-            GeomFrom.EqualsTol(tol, endpoint1) || GeomTo.EqualsTol(tol, endpoint1);
-
-        public Geometry ToggleSense()
-        {
-            var toggled = Copy();
-            toggled.Sense = !toggled.Sense;
-            return toggled;
-        }
-
-        #endregion
-
         protected Geometry(GeometryType type) { GeomType = type; }
 
         /// <summary>
@@ -126,6 +92,8 @@ namespace SearchAThing
         /// precondition: breaks must lie on the geometry perimeter
         /// </summary>        
         public abstract IEnumerable<Geometry> Split(double tol, IEnumerable<Vector3D> breaks);
+
+        public abstract Geometry Move(Vector3D delta);
 
         /// <summary>
         /// bbox of this geom

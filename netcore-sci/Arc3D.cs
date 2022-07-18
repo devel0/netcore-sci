@@ -63,14 +63,12 @@ namespace SearchAThing
     /// <summary>
     /// base geometry for arc 3d entities
     /// </summary>
-    public class Arc3D : Geometry, IEdge
+    public class Arc3D : Edge
     {
 
-        #region IEdge
+        #region Edge        
 
-        public EdgeType EdgeType => EdgeType.Arc3D;
-
-        public bool EdgeContainsPoint(double tol, Vector3D pt) =>
+        public override bool EdgeContainsPoint(double tol, Vector3D pt) =>
             this.Contains(tol, pt, inArcAngleRange: true, onlyPerimeter: true);
 
         /// <summary>
@@ -114,47 +112,18 @@ namespace SearchAThing
             if (!this.Sense)
             {
                 res.Reverse();
-                res = res.Select(w => w.ToggleSense()).ToList();
+                res = res.Select(w => ((Edge)w).ToggleSense()).ToList();
             }
 
-            foreach (var x in res.Cast<IEdge>().CheckSense(tol)) yield return (Geometry)x;
+            foreach (var x in res.Cast<Edge>().CheckSense(tol)) yield return (Geometry)x;
         }
 
         /// <summary>
         /// mid point eval as arc point at angle start + arc angle/2
         /// </summary>
-        public override Vector3D MidPoint => PtAtAngle(AngleStart + Angle / 2);
+        public override Vector3D MidPoint => PtAtAngle(AngleStart + Angle / 2);        
 
-        public bool EdgeEquals(double tol, IEdge other, bool includeSense = false)
-        {
-            if (this == other) return true;
-            if (this.EdgeType != other.EdgeType) return false;
-
-            var oarc = (Arc3D)other;
-
-            if (!Length.EqualsTol(tol, oarc.Length)) return false;
-
-            if (!Radius.EqualsTol(tol, oarc.Radius)) return false;
-
-            if (!Center.EqualsTol(tol, oarc.Center)) return false;
-
-            if (!CS.BaseZ.EqualsTol(NormalizedLengthTolerance, oarc.CS.BaseZ)) return false;
-
-            if (includeSense)
-                return
-                    this.SGeomFrom.EqualsTol(tol, other.SGeomFrom)
-                    &&
-                    this.SGeomTo.EqualsTol(tol, other.SGeomTo);
-
-            return
-                (this.From.EqualsTol(tol, oarc.From) && this.To.EqualsTol(tol, oarc.To))
-                ||
-                (this.From.EqualsTol(tol, oarc.To) && this.To.EqualsTol(tol, oarc.From));
-        }
-
-        public IEdge EdgeMove(Vector3D delta) => this.Move(delta);
-
-        public string QCadScript(bool final = true) =>
+        public override string QCadScript(bool final = true) =>
             Invariant($"ARC3\n{SGeomFrom.X},{SGeomFrom.Y}\n{MidPoint.X},{MidPoint.Y}\n{SGeomTo.X},{SGeomTo.Y}\n{(final ? "QQ\n" : "")}");
 
         public string A0QCadScript => QCadScript();
@@ -287,8 +256,32 @@ namespace SearchAThing
             }
         }
 
-        public override bool GeomEquals(double tol, Geometry other, bool checkSense = false) =>
-            ((IEdge)this).EdgeEquals(tol, (IEdge)other, checkSense);
+        public override bool GeomEquals(double tol, Geometry other, bool checkSense = false)
+        {
+            if (this == other) return true;
+            if (this.GeomType != other.GeomType) return false;
+
+            var oarc = (Arc3D)other;
+
+            if (!Length.EqualsTol(tol, oarc.Length)) return false;
+
+            if (!Radius.EqualsTol(tol, oarc.Radius)) return false;
+
+            if (!Center.EqualsTol(tol, oarc.Center)) return false;
+
+            if (!CS.BaseZ.EqualsTol(NormalizedLengthTolerance, oarc.CS.BaseZ)) return false;
+
+            if (checkSense)
+                return
+                    this.SGeomFrom.EqualsTol(tol, oarc.SGeomFrom)
+                    &&
+                    this.SGeomTo.EqualsTol(tol, oarc.SGeomTo);
+
+            return
+                (this.From.EqualsTol(tol, oarc.From) && this.To.EqualsTol(tol, oarc.To))
+                ||
+                (this.From.EqualsTol(tol, oarc.To) && this.To.EqualsTol(tol, oarc.From));
+        }
 
         #endregion        
 
@@ -346,7 +339,7 @@ namespace SearchAThing
         /// create an arc copy with origin moved
         /// </summary>
         /// <param name="delta">new arc origin delta</param>        
-        public virtual Arc3D Move(Vector3D delta) => new Arc3D(CS.Move(delta), Radius, AngleStart, AngleEnd);
+        public override Arc3D Move(Vector3D delta) => new Arc3D(CS.Move(delta), Radius, AngleStart, AngleEnd);
 
         /// <summary>
         /// helper to build circle by given 3 points
@@ -792,7 +785,7 @@ namespace SearchAThing
 
         public override string ToString() => ToString(digits: 3);
 
-        public string ToString(int digits = 3) =>
+        public override string ToString(int digits = 3) =>
             $"[{GetType().Name}]{((!Sense) ? " !S" : "")} L:{Round(Length, 2)} SFROM[{SGeomFrom.ToString(digits)}] STO[{SGeomTo.ToString(digits)}] MID[{MidPoint.ToString(digits)}] C:{Center} r:{Round(Radius, 3)} ANGLE:{Round(Angle.ToDeg(), 1)}deg ({Round(AngleStart.ToDeg(), 1)}->{Round(AngleEnd.ToDeg(), 1)})";
 
         /// <summary>

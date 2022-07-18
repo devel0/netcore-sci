@@ -27,13 +27,14 @@ namespace SearchAThing
     /// Line can be built by givin From and To, or From and V using specialized constructor with Line3DConstructMode.
     /// Line can be built from a point using LineTo(), LineV() or LineDir() extension methods.
     /// </summary>
-    public class Line3D : Geometry, IEdge
+    public class Line3D : Edge
     {
-        #region IEdge
 
-        public EdgeType EdgeType => EdgeType.Line3D;
+        #region Edge
 
-        public bool EdgeContainsPoint(double tol, Vector3D pt) => this.SegmentContainsPoint(tol, pt);
+        // public EdgeType EdgeType => EdgeType.Line3D;
+
+        public override bool EdgeContainsPoint(double tol, Vector3D pt) => this.SegmentContainsPoint(tol, pt);
 
         public override IEnumerable<Geometry> Split(double tol, IEnumerable<Vector3D> breaks)
         {
@@ -73,27 +74,7 @@ namespace SearchAThing
 
         public override Vector3D MidPoint => (From + To) / 2;
 
-        public bool EdgeEquals(double tol, IEdge other, bool includeSense = false)
-        {
-            if (this.EdgeType != other.EdgeType) return false;
-
-            var oline = (Line3D)other;
-
-            if (!Length.EqualsTol(tol, oline.Length)) return false;
-
-            if (includeSense)
-                return
-                    this.SGeomFrom.EqualsTol(tol, other.SGeomFrom)
-                    &&
-                    this.SGeomTo.EqualsTol(tol, other.SGeomTo);
-
-            return
-                (this.From.EqualsTol(tol, oline.From) && this.To.EqualsTol(tol, oline.To))
-                ||
-                (this.From.EqualsTol(tol, oline.To) && this.To.EqualsTol(tol, oline.From));
-        }
-
-        public IEdge EdgeMove(Vector3D delta) => this.Move(delta);
+        public Edge EdgeMove(Vector3D delta) => this.Move(delta);
 
         #endregion
 
@@ -215,8 +196,25 @@ namespace SearchAThing
 
         public override EntityObject DxfEntity => this.ToLine();
 
-        public override bool GeomEquals(double tol, Geometry other, bool checkSense = false) =>
-            ((IEdge)this).EdgeEquals(tol, (IEdge)other, checkSense);
+        public override bool GeomEquals(double tol, Geometry other, bool checkSense = false)
+        {      
+            if (this.GeomType != other.GeomType) return false;            
+
+            var oline = (Line3D)other;
+
+            if (!Length.EqualsTol(tol, oline.Length)) return false;
+
+            if (checkSense)
+                return
+                    this.SGeomFrom.EqualsTol(tol, oline.SGeomFrom)
+                    &&
+                    this.SGeomTo.EqualsTol(tol, oline.SGeomTo);
+
+            return
+                (this.From.EqualsTol(tol, oline.From) && this.To.EqualsTol(tol, oline.To))
+                ||
+                (this.From.EqualsTol(tol, oline.To) && this.To.EqualsTol(tol, oline.From));
+        }            
 
         #endregion
 
@@ -703,7 +701,7 @@ namespace SearchAThing
         /// <summary>
         /// move this segment of given delta
         /// </summary>            
-        public Line3D Move(Vector3D delta) => new Line3D(From + delta, To + delta);
+        public override Line3D Move(Vector3D delta) => new Line3D(From + delta, To + delta);
 
         /// <summary>
         /// Move this segment midpoint to the given coord
@@ -801,7 +799,7 @@ namespace SearchAThing
         /// <summary>
         /// 2d qcad script representation ( vscode watch using var,nq )
         /// </summary>
-        public string QCadScript(bool final = true) =>
+        public override string QCadScript(bool final = true) =>
             Invariant($"LINE\n{From.X},{From.Y}\n{To.X},{To.Y}\n{(final ? "QQ\n" : "")}");
 
         public string A0QCadScript => QCadScript();
@@ -809,7 +807,7 @@ namespace SearchAThing
         /// <summary>
         /// hash string with given tolerance
         /// </summary>            
-        public string ToString(double tol)
+        public string ToStringTol(double tol)
         {
             var pts_en = DisambiguatedPoints.GetEnumerator();
 
@@ -835,7 +833,7 @@ namespace SearchAThing
         /// build an invariant string representation w/given digits
         /// (f.x, f.y, f.z)-(t.x, t.y, t.z) L=len Δ=(v.x, v.y, v.z)
         /// </summary>      
-        public string ToString(int digits = 3) =>
+        public override string ToString(int digits = 3) =>
             $"[{GetType().Name}]{((!Sense) ? " !S" : "")} SFROM[{SGeomFrom.ToString(digits)}] STO[{SGeomTo.ToString(digits)}] L={Length.ToString(digits)} Δ={(SGeomTo - SGeomFrom).ToString(digits)}";
 
         /// <summary>
