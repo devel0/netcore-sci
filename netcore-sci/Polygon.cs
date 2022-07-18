@@ -384,8 +384,12 @@ namespace SearchAThing
         {
             var geom = _geom.ToList();
 
+            var elevation = cs.Origin.ToUCS(cs, evalCSOrigin: false).Z;
+
             if (cs.csAutoType != CoordinateSystem3DAutoEnum.AAA)
             {
+                var originBk = cs.Origin;
+
                 cs = new CoordinateSystem3D(Vector3D.Zero, cs.BaseZ, CoordinateSystem3DAutoEnum.AAA);
             }
 
@@ -491,7 +495,7 @@ namespace SearchAThing
             var lwpoly = new netDxf.Entities.LwPolyline(pvtx, isClosed: closed);
 
             lwpoly.Normal = cs.BaseZ;
-            lwpoly.Elevation = (cs.Origin * cs.BaseZ).Z;
+            lwpoly.Elevation = elevation;
 
             return lwpoly;
         }
