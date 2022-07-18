@@ -122,6 +122,14 @@ namespace SearchAThing
         /// </remarks>        
         public override netDxf.Entities.EntityObject DxfEntity => this.ToDxfPoint();
 
+        public override bool GeomEquals(double tol, Geometry other, bool checkSense = false)
+        {
+            if (other == this) return true;
+            if (other.GeomType != GeometryType.Vector3D) return false;
+
+            return this.EqualsTol(tol, (Vector3D)other);
+        }
+
         #endregion
 
         /// <summary>
