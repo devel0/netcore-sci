@@ -4,6 +4,7 @@ using static System.Math;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Diagnostics.CodeAnalysis;
+using static System.FormattableString;
 
 using netDxf;
 using netDxf.Entities;
@@ -302,10 +303,7 @@ namespace SearchAThing
         /// </summary>
         public LwPolyline DxfEntity(double tol) => ToLwPolyline(tol);
 
-        public override string ToString()
-        {
-            return $"Edges:{Edges.Count}";
-        }
+        public override string ToString() => Invariant($"A:{Area} L:{Length} Edges:{Edges.Count}");
 
         public string DebugDump(int digits = 3)
         {
