@@ -116,7 +116,30 @@ namespace SearchAThing.Sci.Tests
 
                         case Face.BooleanMode.Union:
                             {
-                                Assert.True(res.Count == 7);
+                                Assert.True(res.Count == 1 && res[0].Loops.Count == 8);
+
+                                res[0].Loops[0].Area.AssertEqualsTol(tol, 1200);
+                                res[0].Loops[0].Length.AssertEqualsTol(tol, 160.00000000);
+
+                                var typeA_cnt = 0;
+                                var typeB_cnt = 0;
+                                var typeC_cnt = 0;
+
+                                for (int i = 1; i < 8; ++i)
+                                {
+                                    var loop = res[0].Loops[i];
+
+                                    if (loop.Area.EqualsTol(tol, 98) && loop.Length.EqualsTol(tol, 42.00000000))
+                                        ++typeA_cnt;
+
+                                    if (loop.Area.EqualsTol(tol, 56) && loop.Length.EqualsTol(tol, 36.00000000))
+                                        ++typeB_cnt;
+
+                                    if (loop.Area.EqualsTol(tol, 28) && loop.Length.EqualsTol(tol, 32.00000000))
+                                        ++typeC_cnt;
+                                }
+
+                                Assert.True(typeA_cnt == 4 && typeB_cnt == 2 && typeC_cnt == 1);
                             }
                             break;
                     }
