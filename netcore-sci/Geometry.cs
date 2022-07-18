@@ -145,6 +145,14 @@ namespace SearchAThing
             GeomSegmentMode otherSegmentMode = GeomSegmentMode.FromTo);
 
         /// <summary>
+        /// states if this geom equals to given other
+        /// </summary>
+        /// <param name="tol">length tolerance</param>
+        /// <param name="other">other geom</param>
+        /// <param name="checkSense">if false two geometry with different sense but same space coverage are considered equals</param>        
+        public abstract bool GeomEquals(double tol, Geometry other, bool checkSense = false);
+
+        /// <summary>
         /// dxf entity representing this geom
         /// </summary>        
         public abstract netDxf.Entities.EntityObject DxfEntity { get; }
@@ -368,10 +376,8 @@ namespace SearchAThing
             GeomSegmentMode geom2SegmentMode = GeomSegmentMode.FromTo)
         {
             var geom1 = _geom1.ToList();
-            var geom2 = _geom2.ToList();
-
-            var res = new List<Geometry>();
-
+            var geom2 = _geom2.ToList();            
+            
             foreach (var g1 in geom1)
             {
                 foreach (var g2 in geom2)
