@@ -18,13 +18,13 @@ namespace SearchAThing.Sci.Tests
 
             var loop = dxf.LwPolylines.First().ToLoop(tol);
 
-            Assert.True(loop.ContainsPoint(tol, new Vector3D(39.72, 30.77380445, 0)));
+            Assert.True(loop.ContainsPoint(tol, new Vector3D(39.72, 30.77380445, 0), LoopContainsPointMode.InsideOrPerimeter));
 
-            Assert.True(loop.ContainsPoint(tol, new Vector3D(31.3, 26.9, 0)));
-            Assert.False(loop.ContainsPoint(tol, new Vector3D(49.6, 26.1, 0)));
-            
-            Assert.True(loop.ContainsPoint(tol, new Vector3D(40.7769, 28.1902, 0)));
-            Assert.False(loop.ContainsPoint(tol, new Vector3D(41.2243, 30.8036, 0)));            
+            Assert.True(loop.ContainsPoint(tol, new Vector3D(31.3, 26.9, 0), LoopContainsPointMode.InsideOrPerimeter));
+            Assert.False(loop.ContainsPoint(tol, new Vector3D(49.6, 26.1, 0), LoopContainsPointMode.InsideOrPerimeter));
+
+            Assert.True(loop.ContainsPoint(tol, new Vector3D(40.7769, 28.1902, 0), LoopContainsPointMode.InsideOrPerimeter));
+            Assert.False(loop.ContainsPoint(tol, new Vector3D(41.2243, 30.8036, 0), LoopContainsPointMode.InsideOrPerimeter));
         }
 
     }

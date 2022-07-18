@@ -1,11 +1,16 @@
 var searchData=
 [
-  ['y_379',['Y',['../class_search_a_thing_1_1_vector3_d.html#ac8d59bf77d5ef21e7c7a88b08f14c825',1,'SearchAThing.Vector3D.Y()'],['../namespace_search_a_thing.html#a3197886280b26d361c765c6d7edefb4fa57cec4137b614c87cb4e24a3d003a3e0',1,'SearchAThing.Y()']]],
-  ['yaxis_380',['YAxis',['../class_search_a_thing_1_1_vector3_d.html#a0a83dbe0bcc73bfd0eb67d32fdede849',1,'SearchAThing::Vector3D']]],
-  ['yaxisline_381',['YAxisLine',['../class_search_a_thing_1_1_line3_d.html#ad95f4a6d9e542252ecb20e94692207d9',1,'SearchAThing::Line3D']]],
-  ['yfrom_382',['YFrom',['../class_search_a_thing_1_1_l_u_t.html#a47ca482c358ca5010de38b4929d83b31',1,'SearchAThing::LUT']]],
-  ['ystep_383',['YStep',['../class_search_a_thing_1_1_l_u_t.html#a7beb28ebd6d4a25aa3e03a7537e40586',1,'SearchAThing::LUT']]],
-  ['yto_384',['YTo',['../class_search_a_thing_1_1_l_u_t.html#ace9acde1870fe25408c3f4efa8f71231',1,'SearchAThing::LUT']]],
-  ['yxtable_385',['YXTable',['../class_search_a_thing_1_1_l_u_t.html#a80c8313f5cd42407eef03254b72973be',1,'SearchAThing::LUT']]],
-  ['yz_386',['YZ',['../class_search_a_thing_1_1_coordinate_system3_d.html#a7dafafb9de4d1e2b356af9e23f5a81e3',1,'SearchAThing.CoordinateSystem3D.YZ()'],['../class_search_a_thing_1_1_plane3_d.html#a645dda9fb859d65cfd1b08c34405f919',1,'SearchAThing.Plane3D.YZ()']]]
+  ['x_383',['X',['../class_search_a_thing_1_1_vector3_d.html#a1059b82f84827fc49ea81b12566b3cdb',1,'SearchAThing.Vector3D.X()'],['../namespace_search_a_thing.html#a3197886280b26d361c765c6d7edefb4fa02129bb861061d1a052c592e2dc6b383',1,'SearchAThing.X()']]],
+  ['x_5fyq_384',['X_YQ',['../namespace_search_a_thing.html#a42c02aa6d6f0779946333e294f73ef26acfca6406ad797755fb22f3bbabaee655',1,'SearchAThing']]],
+  ['xaxis_385',['XAxis',['../class_search_a_thing_1_1_vector3_d.html#ad64648c12661aa24186e0028c88f46f3',1,'SearchAThing::Vector3D']]],
+  ['xaxisline_386',['XAxisLine',['../class_search_a_thing_1_1_line3_d.html#aa9715e3b0760623677c1d95fadcb3ee1',1,'SearchAThing::Line3D']]],
+  ['xfrom_387',['XFrom',['../class_search_a_thing_1_1_l_u_t.html#af122d06631995165b4b0204899762ba2',1,'SearchAThing::LUT']]],
+  ['xstep_388',['XStep',['../class_search_a_thing_1_1_l_u_t.html#aec115bf7accdeac1f01996b472a26793',1,'SearchAThing::LUT']]],
+  ['xto_389',['XTo',['../class_search_a_thing_1_1_l_u_t.html#a7cefe0fb07b1eaf66a60035604b91da5',1,'SearchAThing::LUT']]],
+  ['xy_390',['XY',['../class_search_a_thing_1_1_coordinate_system3_d.html#a6aa052b849b7e8679f941982c35dc8b0',1,'SearchAThing.CoordinateSystem3D.XY()'],['../class_search_a_thing_1_1_plane3_d.html#a920b413b9c3a59f871dc679c556ef732',1,'SearchAThing.Plane3D.XY()']]],
+  ['xyarea_391',['XYArea',['../class_search_a_thing_1_1_sci_ext.html#af38921c214fd8b439c96f36fe24189f5',1,'SearchAThing::SciExt']]],
+  ['xycentroid_392',['XYCentroid',['../class_search_a_thing_1_1_sci_ext.html#a7a244b4878a9ce567d1b31d31a5909b9',1,'SearchAThing.SciExt.XYCentroid(this IReadOnlyList&lt; Vector3D &gt; pts, double tol)'],['../class_search_a_thing_1_1_sci_ext.html#a7e78c9fd4e5f33cfb809aac00c2dc0d5',1,'SearchAThing.SciExt.XYCentroid(this IReadOnlyList&lt; Vector3D &gt; pts, double tol, double signed_area)']]],
+  ['xydistance_393',['XYDistance',['../class_search_a_thing_1_1_vector3_d.html#af29803b83491cec3ed70310ceced94f1',1,'SearchAThing::Vector3D']]],
+  ['xysignedarea_394',['XYSignedArea',['../class_search_a_thing_1_1_sci_ext.html#a97213b78e3716259af5c3b3c0b4e27c7',1,'SearchAThing::SciExt']]],
+  ['xz_395',['XZ',['../class_search_a_thing_1_1_coordinate_system3_d.html#a7112bc8e5f005afdb20f1020cfff49e7',1,'SearchAThing.CoordinateSystem3D.XZ()'],['../class_search_a_thing_1_1_plane3_d.html#a3dab80785a10589259c8415f40c0e1cb',1,'SearchAThing.Plane3D.XZ()']]]
 ];

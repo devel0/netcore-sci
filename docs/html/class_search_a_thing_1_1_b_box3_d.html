@@ -112,9 +112,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeaf4ed0877d6b38a450a73d82017a938"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_b_box3_d.html#aeaf4ed0877d6b38a450a73d82017a938">EqualsTol</a> (double tol, <a class="el" href="class_search_a_thing_1_1_b_box3_d.html">BBox3D</a> other)</td></tr>
 <tr class="memdesc:aeaf4ed0877d6b38a450a73d82017a938"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if this bbox equals to the other one  <a href="class_search_a_thing_1_1_b_box3_d.html#aeaf4ed0877d6b38a450a73d82017a938">More...</a><br /></td></tr>
 <tr class="separator:aeaf4ed0877d6b38a450a73d82017a938"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09d4050433f1154d47aa67471b1ae96e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_b_box3_d.html#a09d4050433f1154d47aa67471b1ae96e">Contains</a> (double tol, <a class="el" href="class_search_a_thing_1_1_b_box3_d.html">BBox3D</a> other)</td></tr>
-<tr class="memdesc:a09d4050433f1154d47aa67471b1ae96e"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if given other bbox contained in this  <a href="class_search_a_thing_1_1_b_box3_d.html#a09d4050433f1154d47aa67471b1ae96e">More...</a><br /></td></tr>
-<tr class="separator:a09d4050433f1154d47aa67471b1ae96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7247ce2bdd35d4bb90254d1f010afe22"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_b_box3_d.html#a7247ce2bdd35d4bb90254d1f010afe22">Contains</a> (double tol, <a class="el" href="class_search_a_thing_1_1_b_box3_d.html">BBox3D</a> other, bool strictly=false, bool testZ=true)</td></tr>
+<tr class="memdesc:a7247ce2bdd35d4bb90254d1f010afe22"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if given other bbox contained in this  <a href="class_search_a_thing_1_1_b_box3_d.html#a7247ce2bdd35d4bb90254d1f010afe22">More...</a><br /></td></tr>
+<tr class="separator:a7247ce2bdd35d4bb90254d1f010afe22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee7fc54d000283e55ca38355573ad079"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_b_box3_d.html#aee7fc54d000283e55ca38355573ad079">Contains</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> p)</td></tr>
 <tr class="memdesc:aee7fc54d000283e55ca38355573ad079"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if given point contained in this bbox  <a href="class_search_a_thing_1_1_b_box3_d.html#aee7fc54d000283e55ca38355573ad079">More...</a><br /></td></tr>
 <tr class="separator:aee7fc54d000283e55ca38355573ad079"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -349,8 +349,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a09d4050433f1154d47aa67471b1ae96e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09d4050433f1154d47aa67471b1ae96e">&#9670;&nbsp;</a></span>Contains() <span class="overload">[1/2]</span></h2>
+<a id="a7247ce2bdd35d4bb90254d1f010afe22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7247ce2bdd35d4bb90254d1f010afe22">&#9670;&nbsp;</a></span>Contains() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -365,7 +365,19 @@ Properties</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_b_box3_d.html">BBox3D</a>&#160;</td>
-          <td class="paramname"><em>other</em>&#160;</td>
+          <td class="paramname"><em>other</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>strictly</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>testZ</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -380,6 +392,8 @@ Properties</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">tol</td><td>tolerance against Min, Max comparision</td></tr>
     <tr><td class="paramname">other</td><td>other bbox to check if contained in this</td></tr>
+    <tr><td class="paramname">strictly</td><td>if true it checks this bbox is stricly contained into given other</td></tr>
+    <tr><td class="paramname">testZ</td><td>if false min,max test of Z isn't evaluated (useful for planar entities bboxes tests)</td></tr>
   </table>
   </dd>
 </dl>

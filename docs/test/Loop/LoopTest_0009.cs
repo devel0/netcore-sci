@@ -16,26 +16,29 @@ namespace SearchAThing.Sci.Tests
         public void LoopTest_0009()
         {
             DxfDocument? outdxf = null;
-            //outdxf = new DxfDocument();
+            // outdxf = new DxfDocument();
 
             var tol = 0.1;//1e-8;
 
-            var loop1 = JsonConvert.DeserializeObject<Loop>(
-                File.ReadAllText("Loop/LoopTest_0009-loop1.json"), SciToolkit.SciJsonSettings);
+            var face1 = JsonConvert.DeserializeObject<Loop>(
+                File.ReadAllText("Loop/LoopTest_0009-loop1.json"), SciToolkit.SciJsonSettings)!.ToFace();
 
-            var loop2 = JsonConvert.DeserializeObject<Loop>(
-                File.ReadAllText("Loop/LoopTest_0009-loop2.json"), SciToolkit.SciJsonSettings);
+            var face2 = JsonConvert.DeserializeObject<Loop>(
+                File.ReadAllText("Loop/LoopTest_0009-loop2.json"), SciToolkit.SciJsonSettings)!.ToFace();
 
-            var loopYellow = loop1;
-            var loopGreen = loop2;
+            var faceYellow = face1;
+            var faceGreen = face2;
 
-            var ints = loopYellow.Boolean(tol, loopGreen).ToList();
+            var ints = faceYellow.Boolean(tol, faceGreen).ToList();
 
-            outdxf?.AddEntity(loopGreen.DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)));
-            outdxf?.AddEntity(loopYellow.DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));
+            outdxf?.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)));
+            outdxf?.AddEntity(faceYellow.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));
 
             Assert.True(ints.Count == 0);
-            //outdxf?.AddEntity(ints[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Red))); 
+            // outdxf?.AddEntity(ints[0].DxfEntities(tol).Set(x =>
+            // {
+            //     foreach (var y in x) y.SetColor(AciColor.Red);
+            // }));
 
             if (outdxf != null)
             {

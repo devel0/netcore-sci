@@ -18,22 +18,32 @@ namespace SearchAThing.Sci.Tests
             DxfDocument? outdxf = null;
             //outdxf = new DxfDocument();
 
-            var tol = 0.1;//1e-8;
+            var tolFail = 0.1;
+            var tolSuccess = 0.3;
 
-            var loopGreen = dxf.LwPolylines.First(w => w.Layer.Name == "green").ToLoop(tol);
-            var loopYellow = dxf.LwPolylines.First(w => w.Layer.Name == "yellow").ToLoop(tol);
+            var tol = tolSuccess;
 
-            var gyInts = loopGreen.Boolean(tol, loopYellow).ToList();
-            
-            Assert.True(gyInts.Count == 1);
+            var faceGreen = dxf.LwPolylines.First(w => w.Layer.Name == "green").ToLoop(tol).ToFace();
+            var faceYellow = dxf.LwPolylines.First(w => w.Layer.Name == "yellow").ToLoop(tol).ToFace();
+
+            // zoom at 0.0013,12.7559 to see geometry defect
+
+            tol = tolFail;
+            var gyInts = faceGreen.Boolean(tol, faceYellow).ToList();
+            Assert.False(gyInts.Count == 1 && gyInts[0].Loops.Count == 1);
+
+            tol = tolSuccess;
+            gyInts = faceGreen.Boolean(tol, faceYellow).ToList();
+            Assert.True(gyInts.Count == 1 && gyInts[0].Loops.Count == 1);
 
             if (outdxf != null)
             {
-                outdxf.AddEntity(loopGreen.DxfEntity(tol).Set(w => w.Layer = new netDxf.Tables.Layer("int") { Color = AciColor.Red }));
+                outdxf.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Set(w => w.Layer = new netDxf.Tables.Layer("int") { Color = AciColor.Red }));
 
                 foreach (var gyInt in gyInts)
                 {
                     outdxf.AddEntity(gyInt
+                        .Loops[0]
                         .ToHatch(tol, new HatchPattern(HatchPattern.Line.Name) { Angle = 45, Scale = 0.5 })
                         .SetColor(AciColor.Cyan));
                 }

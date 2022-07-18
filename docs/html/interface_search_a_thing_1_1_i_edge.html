@@ -94,6 +94,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a93f651384a4a0a86b2d24f9b81f6116a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
  Toggle Sense flag so that SGeomFrom, SGeomTo equals to GeomFrom, GeomTo (Sense:true) or GeomTo, GeomFrom (Sense:false)  <a href="interface_search_a_thing_1_1_i_edge.html#a93f651384a4a0a86b2d24f9b81f6116a">More...</a><br /></td></tr>
 <tr class="separator:a93f651384a4a0a86b2d24f9b81f6116a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af170c4876b8e5f3a089c2cb10cc82157"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#af170c4876b8e5f3a089c2cb10cc82157">OtherEndpoint</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> endpoint)</td></tr>
+<tr class="memdesc:af170c4876b8e5f3a089c2cb10cc82157"><td class="mdescLeft">&#160;</td><td class="mdescRight">retrieve GeomFrom or GeomTo that isn't equals to given endpoint  <a href="interface_search_a_thing_1_1_i_edge.html#af170c4876b8e5f3a089c2cb10cc82157">More...</a><br /></td></tr>
+<tr class="separator:af170c4876b8e5f3a089c2cb10cc82157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9af25142d02f8212ab8bb2d75b070dc2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a9af25142d02f8212ab8bb2d75b070dc2">EndpointMatches</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> endpoint1, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> endpoint2)</td></tr>
+<tr class="memdesc:a9af25142d02f8212ab8bb2d75b070dc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if (GeomFrom == endpoint1 AND GeomTo == endpoint2) OR (GeomTo == endpoint1 AND GeomFrom == endpoint2)  <a href="interface_search_a_thing_1_1_i_edge.html#a9af25142d02f8212ab8bb2d75b070dc2">More...</a><br /></td></tr>
+<tr class="separator:a9af25142d02f8212ab8bb2d75b070dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5c3d6a8bbfaf855d762bd4515008daa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#ae5c3d6a8bbfaf855d762bd4515008daa">EndpointMatches</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> endpoint1)</td></tr>
+<tr class="memdesc:ae5c3d6a8bbfaf855d762bd4515008daa"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if GeomFrom == endpoint1 OR GeomTo == endpoint2  <a href="interface_search_a_thing_1_1_i_edge.html#ae5c3d6a8bbfaf855d762bd4515008daa">More...</a><br /></td></tr>
+<tr class="separator:ae5c3d6a8bbfaf855d762bd4515008daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a255404360363065fa3e8f8f4060158d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a255404360363065fa3e8f8f4060158d0">EdgeContainsPoint</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> pt)</td></tr>
 <tr class="memdesc:a255404360363065fa3e8f8f4060158d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">States if edge contains given point on its perimeter  <a href="interface_search_a_thing_1_1_i_edge.html#a255404360363065fa3e8f8f4060158d0">More...</a><br /></td></tr>
 <tr class="separator:a255404360363065fa3e8f8f4060158d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -104,11 +113,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a52493994542b8dfabcb86eae5e475b89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a52493994542b8dfabcb86eae5e475b89">EdgeMove</a> (<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> delta)</td></tr>
 <tr class="memdesc:a52493994542b8dfabcb86eae5e475b89"><td class="mdescLeft">&#160;</td><td class="mdescRight">translate this edge of given amount  <a href="interface_search_a_thing_1_1_i_edge.html#a52493994542b8dfabcb86eae5e475b89">More...</a><br /></td></tr>
 <tr class="separator:a52493994542b8dfabcb86eae5e475b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d3b0541b1f259038d79b5b2147b26b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a4d3b0541b1f259038d79b5b2147b26b1">Equals</a> (double tol, <a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a> other, bool includeSense=false)</td></tr>
-<tr class="memdesc:a4d3b0541b1f259038d79b5b2147b26b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if this edge equals other  <a href="interface_search_a_thing_1_1_i_edge.html#a4d3b0541b1f259038d79b5b2147b26b1">More...</a><br /></td></tr>
-<tr class="separator:a4d3b0541b1f259038d79b5b2147b26b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52f04d4e0e09ecba68e9ad12107ef798"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a52f04d4e0e09ecba68e9ad12107ef798">EdgeEquals</a> (double tol, <a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a> other, bool checkSense=false)</td></tr>
+<tr class="memdesc:a52f04d4e0e09ecba68e9ad12107ef798"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if this edge equals other  <a href="interface_search_a_thing_1_1_i_edge.html#a52f04d4e0e09ecba68e9ad12107ef798">More...</a><br /></td></tr>
+<tr class="separator:a52f04d4e0e09ecba68e9ad12107ef798"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe77134ec112964ec0c25d1c8e67d331"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#afe77134ec112964ec0c25d1c8e67d331">ToString</a> (int digits)</td></tr>
 <tr class="separator:afe77134ec112964ec0c25d1c8e67d331"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84e22d7fc2934f6b8f77763e8ca91953"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_search_a_thing_1_1_i_edge.html#a84e22d7fc2934f6b8f77763e8ca91953">QCadScript</a> (bool final=true)</td></tr>
+<tr class="memdesc:a84e22d7fc2934f6b8f77763e8ca91953"><td class="mdescLeft">&#160;</td><td class="mdescRight">qcad 2d script  <a href="interface_search_a_thing_1_1_i_edge.html#a84e22d7fc2934f6b8f77763e8ca91953">More...</a><br /></td></tr>
+<tr class="separator:a84e22d7fc2934f6b8f77763e8ca91953"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -172,6 +184,53 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="a52f04d4e0e09ecba68e9ad12107ef798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52f04d4e0e09ecba68e9ad12107ef798">&#9670;&nbsp;</a></span>EdgeEquals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EdgeEquals </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a>&#160;</td>
+          <td class="paramname"><em>other</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>checkSense</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>states if this edge equals other </p>
+<p><br  />
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">checkSense</td><td>if true then two geometrical equals edges but with different sense cause they considered to be different</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br  />
+ </p>
+
+<p>Implemented in <a class="el" href="class_search_a_thing_1_1_line3_d.html#a7414cf94b724a37c328d28a75fe1fc63">Line3D</a>, and <a class="el" href="class_search_a_thing_1_1_arc3_d.html#a7414cf94b724a37c328d28a75fe1fc63">Arc3D</a>.</p>
+
+</div>
+</div>
 <a id="a52493994542b8dfabcb86eae5e475b89"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a52493994542b8dfabcb86eae5e475b89">&#9670;&nbsp;</a></span>EdgeMove()</h2>
 
@@ -194,14 +253,14 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a4d3b0541b1f259038d79b5b2147b26b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d3b0541b1f259038d79b5b2147b26b1">&#9670;&nbsp;</a></span>Equals()</h2>
+<a id="ae5c3d6a8bbfaf855d762bd4515008daa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5c3d6a8bbfaf855d762bd4515008daa">&#9670;&nbsp;</a></span>EndpointMatches() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Equals </td>
+          <td class="memname">bool EndpointMatches </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>tol</em>, </td>
@@ -209,14 +268,8 @@ Properties</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="interface_search_a_thing_1_1_i_edge.html">IEdge</a>&#160;</td>
-          <td class="paramname"><em>other</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>includeSense</em> = <code>false</code>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>endpoint1</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -226,18 +279,109 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>states if this edge equals other </p>
+<p>states if GeomFrom == endpoint1 OR GeomTo == endpoint2 </p>
 <p><br  />
- </p><dl class="params"><dt>Parameters</dt><dd>
+ </p>
+
+</div>
+</div>
+<a id="a9af25142d02f8212ab8bb2d75b070dc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9af25142d02f8212ab8bb2d75b070dc2">&#9670;&nbsp;</a></span>EndpointMatches() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EndpointMatches </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>endpoint1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>endpoint2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>states if (GeomFrom == endpoint1 AND GeomTo == endpoint2) OR (GeomTo == endpoint1 AND GeomFrom == endpoint2) </p>
+<p><br  />
+ </p>
+
+</div>
+</div>
+<a id="af170c4876b8e5f3a089c2cb10cc82157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af170c4876b8e5f3a089c2cb10cc82157">&#9670;&nbsp;</a></span>OtherEndpoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> OtherEndpoint </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>endpoint</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>retrieve GeomFrom or GeomTo that isn't equals to given endpoint </p>
+<p><br  />
+ </p>
+
+</div>
+</div>
+<a id="a84e22d7fc2934f6b8f77763e8ca91953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84e22d7fc2934f6b8f77763e8ca91953">&#9670;&nbsp;</a></span>QCadScript()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string QCadScript </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>final</em> = <code>true</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>qcad 2d script </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">includeSense</td><td>if true then two geometrical equals edges but with different sense cause they considered to be different</td></tr>
+    <tr><td class="paramname">final</td><td>adds QQ command</td></tr>
   </table>
   </dd>
 </dl>
 <p><br  />
  </p>
 
-<p>Implemented in <a class="el" href="class_search_a_thing_1_1_line3_d.html#a4d3b0541b1f259038d79b5b2147b26b1">Line3D</a>, and <a class="el" href="class_search_a_thing_1_1_arc3_d.html#a4d3b0541b1f259038d79b5b2147b26b1">Arc3D</a>.</p>
+<p>Implemented in <a class="el" href="class_search_a_thing_1_1_line3_d.html#a84e22d7fc2934f6b8f77763e8ca91953">Line3D</a>, and <a class="el" href="class_search_a_thing_1_1_arc3_d.html#a84e22d7fc2934f6b8f77763e8ca91953">Arc3D</a>.</p>
 
 </div>
 </div>

@@ -107,6 +107,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_discrete_space.html">DiscreteSpace</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">organize given item list into a discretized space to allow fast query of elements in a space region  <a href="class_search_a_thing_1_1_discrete_space.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_face.html">Face</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Planar face with one (outer) or more loops (inners)  <a href="class_search_a_thing_1_1_face.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">base abstract type for geometries such as <a class="el" href="class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin">Vector3D</a>, <a class="el" href="class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From...">Line3D</a>, <a class="el" href="class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities">Arc3D</a> and <a class="el" href="class_search_a_thing_1_1_circle3_d.html" title="Specialized version of Arc3D with StartAngle=0 and EndAngle=2PI">Circle3D</a>  <a href="class_search_a_thing_1_1_geometry.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,6 +215,11 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespace_search_a_thing.html#aaf41c0cb15959f4a36819442ef87fe8ca8ec75c761cc461bd64911f5da7af8b30">PointOnOther</a>
  }</td></tr>
 <tr class="separator:aaf41c0cb15959f4a36819442ef87fe8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5143797c292eae835d22af82642aeac4"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_search_a_thing.html#a5143797c292eae835d22af82642aeac4">LoopContainsPointMode</a> { <a class="el" href="namespace_search_a_thing.html#a5143797c292eae835d22af82642aeac4a90180637c5d5ee1c7c9da352c643e660">Perimeter</a>
+, <a class="el" href="namespace_search_a_thing.html#a5143797c292eae835d22af82642aeac4ac202078d7e764b3446dfe8afd013d6b9">InsideExcludedPerimeter</a>
+, <a class="el" href="namespace_search_a_thing.html#a5143797c292eae835d22af82642aeac4af64cb2becdf0da487330d378f8df442e">InsideOrPerimeter</a>
+ }</td></tr>
+<tr class="separator:a5143797c292eae835d22af82642aeac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3197886280b26d361c765c6d7edefb4f"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_search_a_thing.html#a3197886280b26d361c765c6d7edefb4f">OrdIdx</a> { <a class="el" href="namespace_search_a_thing.html#a3197886280b26d361c765c6d7edefb4fa02129bb861061d1a052c592e2dc6b383">X</a> = 0
 , <a class="el" href="namespace_search_a_thing.html#a3197886280b26d361c765c6d7edefb4fa57cec4137b614c87cb4e24a3d003a3e0">Y</a> = 1
 , <a class="el" href="namespace_search_a_thing.html#a3197886280b26d361c765c6d7edefb4fa21c2e59531c8710156d34a3c30ac81d5">Z</a> = 2
@@ -407,6 +415,36 @@ Enumerations</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aaf41c0cb15959f4a36819442ef87fe8ca1fc0ea0360ff8d5bc1aafc0ced0b49a1"></a>MidPoint&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aaf41c0cb15959f4a36819442ef87fe8ca2a4cb7ef99a9170a0be5c7f41ca39dba"></a>PointOnThis&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aaf41c0cb15959f4a36819442ef87fe8ca8ec75c761cc461bd64911f5da7af8b30"></a>PointOnOther&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a5143797c292eae835d22af82642aeac4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5143797c292eae835d22af82642aeac4">&#9670;&nbsp;</a></span>LoopContainsPointMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespace_search_a_thing.html#a5143797c292eae835d22af82642aeac4">LoopContainsPointMode</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5143797c292eae835d22af82642aeac4a90180637c5d5ee1c7c9da352c643e660"></a>Perimeter&#160;</td><td class="fielddoc"><p>point is on perimeter </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5143797c292eae835d22af82642aeac4ac202078d7e764b3446dfe8afd013d6b9"></a>InsideExcludedPerimeter&#160;</td><td class="fielddoc"><p>point is inside (perimeter excluded) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5143797c292eae835d22af82642aeac4af64cb2becdf0da487330d378f8df442e"></a>InsideOrPerimeter&#160;</td><td class="fielddoc"><p>point is inside or on perimeter </p>
+</td></tr>
 </table>
 
 </div>

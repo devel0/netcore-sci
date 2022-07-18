@@ -109,6 +109,7 @@ Public Member Functions</h2></td></tr>
   <a href="class_search_a_thing_1_1_vector3_d.html#afe0b3588d9a608d747599f103dca1809">More...</a><br /></td></tr>
 <tr class="separator:afe0b3588d9a608d747599f103dca1809"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22d323cd2cc9e3761b6b8b91b4e81526"><td class="memItemLeft" align="right" valign="top">override IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#a22d323cd2cc9e3761b6b8b91b4e81526">Split</a> (double tol, IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; breaks)</td></tr>
+<tr class="memdesc:a22d323cd2cc9e3761b6b8b91b4e81526"><td class="mdescLeft">&#160;</td><td class="mdescRight">split geometry in given break points. precondition: breaks must lie on the geometry perimeter  <a href="class_search_a_thing_1_1_vector3_d.html#a22d323cd2cc9e3761b6b8b91b4e81526">More...</a><br /></td></tr>
 <tr class="separator:a22d323cd2cc9e3761b6b8b91b4e81526"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6535cb5afe49906c12a3554ef488ae0f"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="class_search_a_thing_1_1_b_box3_d.html">BBox3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#a6535cb5afe49906c12a3554ef488ae0f">BBox</a> (double tol)</td></tr>
 <tr class="memdesc:a6535cb5afe49906c12a3554ef488ae0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute bbox of this point. ( <a class="el" href="class_search_a_thing_1_1_geometry.html" title="base abstract type for geometries such as Vector3D, Line3D, Arc3D and Circle3D">Geometry</a> BBox implementation ). <br  />
@@ -118,6 +119,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5fa8056240807d052292deba1fa1f9c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">find intersections between this and another geometry resulting in zero or more geometries. <br  />
   <a href="class_search_a_thing_1_1_vector3_d.html#a5fa8056240807d052292deba1fa1f9c5">More...</a><br /></td></tr>
 <tr class="separator:a5fa8056240807d052292deba1fa1f9c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8690081c8790f191618f848f1bea9e0d"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#a8690081c8790f191618f848f1bea9e0d">GeomEquals</a> (double tol, <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> other, bool checkSense=false)</td></tr>
+<tr class="memdesc:a8690081c8790f191618f848f1bea9e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if this geom equals to given other  <a href="class_search_a_thing_1_1_vector3_d.html#a8690081c8790f191618f848f1bea9e0d">More...</a><br /></td></tr>
+<tr class="separator:a8690081c8790f191618f848f1bea9e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b3fdd936d627f46020bdd2431c70b19"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#a7b3fdd936d627f46020bdd2431c70b19">GetOrd</a> (int ord)</td></tr>
 <tr class="memdesc:a7b3fdd936d627f46020bdd2431c70b19"><td class="mdescLeft">&#160;</td><td class="mdescRight">retrieve the component (0:X, 1:Y, 2:Z) <br  />
   <a href="class_search_a_thing_1_1_vector3_d.html#a7b3fdd936d627f46020bdd2431c70b19">More...</a><br /></td></tr>
@@ -296,6 +300,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af99153e2aac9979faa692a95033085b4"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#af99153e2aac9979faa692a95033085b4">StringRepresentation</a> ()</td></tr>
 <tr class="memdesc:af99153e2aac9979faa692a95033085b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">string invariant representation "(x,y,z)"  <a href="class_search_a_thing_1_1_vector3_d.html#af99153e2aac9979faa692a95033085b4">More...</a><br /></td></tr>
 <tr class="separator:af99153e2aac9979faa692a95033085b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84e22d7fc2934f6b8f77763e8ca91953"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#a84e22d7fc2934f6b8f77763e8ca91953">QCadScript</a> (bool final=true)</td></tr>
+<tr class="separator:a84e22d7fc2934f6b8f77763e8ca91953"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f58b5ad35c58590feb68a4f14ee4a0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#a7f58b5ad35c58590feb68a4f14ee4a0d">LineTo</a> (<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> to)</td></tr>
 <tr class="memdesc:a7f58b5ad35c58590feb68a4f14ee4a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">build <a class="el" href="class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From...">Line3D</a> from this to given to  <a href="class_search_a_thing_1_1_vector3_d.html#a7f58b5ad35c58590feb68a4f14ee4a0d">More...</a><br /></td></tr>
 <tr class="separator:a7f58b5ad35c58590feb68a4f14ee4a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -336,6 +342,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad46fbdd52d1da8cccf397760fae36e3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns p1 and p2 if one of the p1 coords are less than corresponding p2 coords ; elsewhere returns p2 and p1. Useful to obtain the same sequence order independant from order of operands.  <a href="class_search_a_thing_1_1_vector3_d.html#ad46fbdd52d1da8cccf397760fae36e3e">More...</a><br /></td></tr>
 <tr class="separator:ad46fbdd52d1da8cccf397760fae36e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_search_a_thing_1_1_geometry"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_search_a_thing_1_1_geometry')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a></td></tr>
+<tr class="memitem:af170c4876b8e5f3a089c2cb10cc82157 inherit pub_methods_class_search_a_thing_1_1_geometry"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#af170c4876b8e5f3a089c2cb10cc82157">OtherEndpoint</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> endpoint)</td></tr>
+<tr class="separator:af170c4876b8e5f3a089c2cb10cc82157 inherit pub_methods_class_search_a_thing_1_1_geometry"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9af25142d02f8212ab8bb2d75b070dc2 inherit pub_methods_class_search_a_thing_1_1_geometry"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#a9af25142d02f8212ab8bb2d75b070dc2">EndpointMatches</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> endpoint1, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> endpoint2)</td></tr>
+<tr class="separator:a9af25142d02f8212ab8bb2d75b070dc2 inherit pub_methods_class_search_a_thing_1_1_geometry"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5c3d6a8bbfaf855d762bd4515008daa inherit pub_methods_class_search_a_thing_1_1_geometry"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#ae5c3d6a8bbfaf855d762bd4515008daa">EndpointMatches</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> endpoint1)</td></tr>
+<tr class="separator:ae5c3d6a8bbfaf855d762bd4515008daa inherit pub_methods_class_search_a_thing_1_1_geometry"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93f651384a4a0a86b2d24f9b81f6116a inherit pub_methods_class_search_a_thing_1_1_geometry"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#a93f651384a4a0a86b2d24f9b81f6116a">ToggleSense</a> ()</td></tr>
 <tr class="separator:a93f651384a4a0a86b2d24f9b81f6116a inherit pub_methods_class_search_a_thing_1_1_geometry"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -490,6 +502,8 @@ Properties</h2></td></tr>
 <tr class="memitem:abf9fcaabd1399592b48cff9ef0c491f8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#abf9fcaabd1399592b48cff9ef0c491f8">this[int index]</a><code> [get]</code></td></tr>
 <tr class="memdesc:abf9fcaabd1399592b48cff9ef0c491f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">indexed vector component  <a href="class_search_a_thing_1_1_vector3_d.html#abf9fcaabd1399592b48cff9ef0c491f8">More...</a><br /></td></tr>
 <tr class="separator:abf9fcaabd1399592b48cff9ef0c491f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ced46e538512c079771d4ff0b1f51a0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#a8ced46e538512c079771d4ff0b1f51a0">A0QCadScript</a><code> [get]</code></td></tr>
+<tr class="separator:a8ced46e538512c079771d4ff0b1f51a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26057a379e73721c527440a95422a83e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#a26057a379e73721c527440a95422a83e">CadScript</a><code> [get]</code></td></tr>
 <tr class="memdesc:a26057a379e73721c527440a95422a83e"><td class="mdescLeft">&#160;</td><td class="mdescRight">cad script for this vector as wcs point  <a href="class_search_a_thing_1_1_vector3_d.html#a26057a379e73721c527440a95422a83e">More...</a><br /></td></tr>
 <tr class="separator:a26057a379e73721c527440a95422a83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1662,6 +1676,62 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a8690081c8790f191618f848f1bea9e0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8690081c8790f191618f848f1bea9e0d">&#9670;&nbsp;</a></span>GeomEquals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override bool GeomEquals </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a>&#160;</td>
+          <td class="paramname"><em>other</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>checkSense</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>states if this geom equals to given other </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tol</td><td>length tolerance</td></tr>
+    <tr><td class="paramname">other</td><td>other geom</td></tr>
+    <tr><td class="paramname">checkSense</td><td>if false two geometry with different sense but same space coverage are considered equals</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br  />
+ </p>
+
+<p>Implements <a class="el" href="class_search_a_thing_1_1_geometry.html#a38d3d55e754803722eb7fdf9576e7bb4">Geometry</a>.</p>
+
+</div>
+</div>
 <a id="a5fa8056240807d052292deba1fa1f9c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5fa8056240807d052292deba1fa1f9c5">&#9670;&nbsp;</a></span>GeomIntersect()</h2>
 
@@ -2678,6 +2748,24 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a84e22d7fc2934f6b8f77763e8ca91953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84e22d7fc2934f6b8f77763e8ca91953">&#9670;&nbsp;</a></span>QCadScript()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string QCadScript </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>final</em> = <code>true</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a9123316065e3556d147d46ec64b93582"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9123316065e3556d147d46ec64b93582">&#9670;&nbsp;</a></span>Random() <span class="overload">[1/2]</span></h2>
 
@@ -3369,6 +3457,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>split geometry in given break points. precondition: breaks must lie on the geometry perimeter </p>
+<p><br  />
+ </p>
+
 <p>Implements <a class="el" href="class_search_a_thing_1_1_geometry.html#ad16501730eb3e676fd983304054533e5">Geometry</a>.</p>
 
 </div>
@@ -3843,6 +3935,28 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
+<a id="a8ced46e538512c079771d4ff0b1f51a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ced46e538512c079771d4ff0b1f51a0">&#9670;&nbsp;</a></span>A0QCadScript</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string A0QCadScript</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a26057a379e73721c527440a95422a83e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a26057a379e73721c527440a95422a83e">&#9670;&nbsp;</a></span>CadScript</h2>
 

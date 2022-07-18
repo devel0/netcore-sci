@@ -3,6 +3,9 @@ using System.Linq;
 using System;
 using netDxf;
 using netDxf.Entities;
+using Newtonsoft.Json;
+using System.IO;
+using System.Collections.Generic;
 
 namespace SearchAThing.Sci.Tests
 {
@@ -11,29 +14,41 @@ namespace SearchAThing.Sci.Tests
 
         [Fact]
         public void LoopTest_0005()
-        {            
-            var tol = 1e-1;
+        {
+            var dxf = netDxf.DxfDocument.Load(
+                System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Loop/LoopTest_0005.dxf"));
 
-            // green and yellow are two adjacent rectangles
+            DxfDocument? outdxf = null;
+            outdxf = new DxfDocument();
 
-            var loopGreen = new Loop(tol, new[]
+            DxfDocument? outdxf2 = null;
+            // outdxf2 = new DxfDocument();
+
+            var tol = 1e-8;
+
+            var faceGreen = dxf.LwPolylines.First(w => w.Color.Index == AciColor.Green.Index).ToLoop(tol).ToFace();
+            var faceYellow = dxf.LwPolylines.First(w => w.Color.Index == AciColor.Yellow.Index).ToLoop(tol).ToFace();
+
+            outdxf?.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)));
+            outdxf?.AddEntity(faceYellow.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));
+
+            var res = faceYellow.Boolean(tol, faceGreen).ToList();
+
+            Assert.True(res.Count == 0);
+
+            if (outdxf != null)
             {
-                new Line3D(4,6,0, 4,6,10),
-                new Line3D(4,6,10, -1,6,10),
-                new Line3D(-1,6,10, -1,6,0),
-                new Line3D(-1,6,0, 4,6,0)
-            });
-            var loopYellow = new Loop(tol, new[]
+                outdxf.DrawingVariables.PdMode = netDxf.Header.PointShape.CircleCross;
+                outdxf.Viewport.ShowGrid = false;
+                outdxf.Save(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "out.dxf"));
+            }
+
+            if (outdxf2 != null)
             {
-                new Line3D(4,6,0, 4,6,10),
-                new Line3D(4,6,10, 11,6,10),
-                new Line3D(11,6,10, 11,6,0),
-                new Line3D(11,6,0, 4,6,0)
-            });
-
-            var gyInts = loopGreen.Boolean(tol, loopYellow).ToList();
-
-            Assert.True(gyInts.Count == 0);                         
+                outdxf2.DrawingVariables.PdMode = netDxf.Header.PointShape.CircleCross;
+                outdxf2.Viewport.ShowGrid = false;
+                outdxf2.Save(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "out2.dxf"));
+            }
         }
 
     }

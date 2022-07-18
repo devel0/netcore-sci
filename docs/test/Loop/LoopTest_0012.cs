@@ -23,25 +23,25 @@ namespace SearchAThing.Sci.Tests
 
             var tol = 1e-8;
 
-            var loopGreen = dxf.LwPolylines.First(w => w.Color.Index == AciColor.Green.Index).ToLoop(tol);
-            var loopYellow = dxf.LwPolylines.First(w => w.Color.Index == AciColor.Yellow.Index).ToLoop(tol);
-            var loopBlue = dxf.LwPolylines.First(w => w.Color.Index == AciColor.Blue.Index).ToLoop(tol).InvertSense(tol);
+            var faceGreen = dxf.LwPolylines.First(w => w.Color.Index == AciColor.Green.Index).ToLoop(tol).ToFace();
+            var faceYellow = dxf.LwPolylines.First(w => w.Color.Index == AciColor.Yellow.Index).ToLoop(tol).ToFace();
+            var faceBlue = dxf.LwPolylines.First(w => w.Color.Index == AciColor.Blue.Index).ToLoop(tol).InvertSense(tol).ToFace();
 
-            outdxf?.AddEntity(loopGreen.DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)));
-            outdxf?.AddEntity(loopYellow.DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));
+            outdxf?.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)));
+            outdxf?.AddEntity(faceYellow.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));
 
-            var yellowIntersectGreen = loopYellow.Boolean(tol, loopGreen).ToList();
-            var blueIntersectGreen = loopBlue.Boolean(tol, loopGreen).ToList();
+            var yellowIntersectGreen = faceYellow.Boolean(tol, faceGreen).ToList();
+            var blueIntersectGreen = faceBlue.Boolean(tol, faceGreen).ToList();
 
-            Assert.True(yellowIntersectGreen.Count == 1);
-            yellowIntersectGreen[0].Area.AssertEqualsTol(tol, 160);
-            yellowIntersectGreen[0].Length.AssertEqualsTol(tol, 52.00000000);
+            Assert.True(yellowIntersectGreen.Count == 1 && yellowIntersectGreen[0].Loops.Count == 1);
+            yellowIntersectGreen[0].Loops[0].Area.AssertEqualsTol(tol, 160);
+            yellowIntersectGreen[0].Loops[0].Length.AssertEqualsTol(tol, 52.00000000);
 
-            outdxf?.AddEntity(yellowIntersectGreen[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Red)));
+            outdxf?.AddEntity(yellowIntersectGreen[0].Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Red)));
 
-            Assert.True(blueIntersectGreen.Count == 1);
-            blueIntersectGreen[0].Area.AssertEqualsTol(tol, 160);
-            blueIntersectGreen[0].Length.AssertEqualsTol(tol, 52.00000000);
+            Assert.True(blueIntersectGreen.Count == 1 && blueIntersectGreen[0].Loops.Count == 1);
+            blueIntersectGreen[0].Loops[0].Area.AssertEqualsTol(tol, 160);
+            blueIntersectGreen[0].Loops[0].Length.AssertEqualsTol(tol, 52.00000000);
 
             if (outdxf != null)
             {

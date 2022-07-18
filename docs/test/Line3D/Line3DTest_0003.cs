@@ -5,11 +5,11 @@ using netDxf;
 
 namespace SearchAThing.Sci.Tests
 {
-    public partial class PolygonTests
+    public partial class Line3DTests
     {
 
         [Fact]
-        public void Line3DTests()
+        public void Line3DTest_0003()
         {
             var dxf = netDxf.DxfDocument.Load(
                 System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Line3D/Line3DTest_0003.dxf"));
