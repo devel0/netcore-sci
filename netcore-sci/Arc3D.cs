@@ -125,8 +125,9 @@ namespace SearchAThing
         /// </summary>
         public override Vector3D MidPoint => PtAtAngle(AngleStart + Angle / 2);
 
-        public bool Equals(double tol, IEdge other, bool includeSense = false)
+        public bool EdgeEquals(double tol, IEdge other, bool includeSense = false)
         {
+            if (this == other) return true;
             if (this.EdgeType != other.EdgeType) return false;
 
             var oarc = (Arc3D)other;
@@ -285,6 +286,9 @@ namespace SearchAThing
                 return arc;
             }
         }
+
+        public override bool GeomEquals(double tol, Geometry other, bool checkSense = false) =>
+            ((IEdge)this).EdgeEquals(tol, (IEdge)other, checkSense);
 
         #endregion        
 
