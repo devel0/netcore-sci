@@ -339,6 +339,7 @@ out.dxf
 
 # qcad
 ~*.dxf
+*.bak*.dxf
 
 # libreoffice
 .~*#
