@@ -14,7 +14,7 @@ namespace SearchAThing.Sci.Tests
 
         [Fact]
         public void LoopTest_0019()
-        {
+        {            
             var dxf = netDxf.DxfDocument.Load(
                 System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Loop/LoopTest_0019.dxf"));
 

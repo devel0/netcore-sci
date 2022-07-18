@@ -74,17 +74,6 @@ namespace SearchAThing.Sci.Tests
                 q.Vertexes[0].Position.Y.AssertEqualsTol(1e-14, 11.178243024937577);
             }
 
-
-
-            // lwpolyline unit test
-            //yellowIntSubGreenInt[1].ToLwPolyline(tol).Vertexes[0].Bulge.AssertEqualsTol(1e-5, 0);
-
-            //var gyInts = loopGreen.Intersect(tol, loopYellow).ToList();
-
-            // Assert.True(yellowIntSubGreenInt.Count == 1);
-            // yellowIntSubGreenInt[0].Area.AssertEqualsTol(tol, 88.60501699);
-            // yellowIntSubGreenInt[0].Length.AssertEqualsTol(tol, 48.75624125);
-
             if (outdxf != null)
             {
                 outdxf.DrawingVariables.PdMode = netDxf.Header.PointShape.CircleCross;

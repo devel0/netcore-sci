@@ -14,7 +14,7 @@ namespace SearchAThing.Sci.Tests
 
         [Fact]
         public void LoopTest_0018()
-        {
+        {            
             var dxf = netDxf.DxfDocument.Load(
                 System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Loop/LoopTest_0018.dxf"));
 
@@ -47,7 +47,7 @@ namespace SearchAThing.Sci.Tests
                 if (hatch != null) outdxf?.AddEntity(hatch);
             }
 
-            // Assert.True(sub.Count == 6);
+            Assert.True(res.Count == 4);
 
             if (outdxf != null)
             {

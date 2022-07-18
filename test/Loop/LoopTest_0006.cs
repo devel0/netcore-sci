@@ -18,13 +18,22 @@ namespace SearchAThing.Sci.Tests
             DxfDocument? outdxf = null;
             //outdxf = new DxfDocument();
 
-            var tol = 0.1;//1e-8;
+            var tolFail = 0.1;
+            var tolSuccess = 0.3;
+
+            var tol = tolSuccess;
 
             var faceGreen = dxf.LwPolylines.First(w => w.Layer.Name == "green").ToLoop(tol).ToFace();
             var faceYellow = dxf.LwPolylines.First(w => w.Layer.Name == "yellow").ToLoop(tol).ToFace();
 
-            var gyInts = faceGreen.Boolean(tol, faceYellow).ToList();
+            // zoom at 0.0013,12.7559 to see geometry defect
 
+            tol = tolFail;
+            var gyInts = faceGreen.Boolean(tol, faceYellow).ToList();
+            Assert.False(gyInts.Count == 1 && gyInts[0].Loops.Count == 1);
+
+            tol = tolSuccess;
+            gyInts = faceGreen.Boolean(tol, faceYellow).ToList();
             Assert.True(gyInts.Count == 1 && gyInts[0].Loops.Count == 1);
 
             if (outdxf != null)

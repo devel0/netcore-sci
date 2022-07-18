@@ -35,7 +35,10 @@ namespace SearchAThing.Sci.Tests
             outdxf?.AddEntity(faceYellow.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));
 
             Assert.True(ints.Count == 0);
-            //outdxf?.AddEntity(ints[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Red))); 
+            // outdxf?.AddEntity(ints[0].DxfEntities(tol).Set(x =>
+            // {
+            //     foreach (var y in x) y.SetColor(AciColor.Red);
+            // }));
 
             if (outdxf != null)
             {

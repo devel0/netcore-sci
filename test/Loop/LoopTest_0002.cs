@@ -104,7 +104,6 @@ namespace SearchAThing.Sci.Tests
             faces[0].Loops[0].Length.AssertEqualsTol(tol, 113.75563447);
 
             // yellow-green
-
             faces = faceYellow.Boolean(tol, faceGreen).ToList();
 
             Assert.True(faces.Count == 1 && faces[0].Loops.Count == 1);
