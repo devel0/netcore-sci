@@ -73,7 +73,7 @@ namespace SearchAThing
 
         public override Vector3D MidPoint => (From + To) / 2;
 
-        public bool Equals(double tol, IEdge other, bool includeSense = false)
+        public bool EdgeEquals(double tol, IEdge other, bool includeSense = false)
         {
             if (this.EdgeType != other.EdgeType) return false;
 
@@ -161,16 +161,16 @@ namespace SearchAThing
 
                                 var lst = new[]
                                 {
-                                    new { type = 0, pt = From, off = From.ColinearScalarOffset(tol, From, N) },
-                                    new { type = 0, pt = To, off = To.ColinearScalarOffset(tol, From, N) },
+                                    new { isThis = true, isFrom = true, pt = From, off = From.ColinearScalarOffset(tol, From, N) },
+                                    new { isThis = true, isFrom = false, pt = To, off = To.ColinearScalarOffset(tol, From, N) },
 
-                                    new { type = 1, pt = other.From, off = other.From.ColinearScalarOffset(tol, From, N) },
-                                    new { type = 1, pt = other.To, off = other.To.ColinearScalarOffset(tol, From, N) },
+                                    new { isThis = false, isFrom = true, pt = other.From, off = other.From.ColinearScalarOffset(tol, From, N) },
+                                    new { isThis = false, isFrom = false, pt = other.To, off = other.To.ColinearScalarOffset(tol, From, N) },
                                 };
 
                                 var q = lst.OrderBy(w => w.off).ToList();
 
-                                if (q[0].type == q[1].type)
+                                if (q[0].isThis == q[1].isThis)
                                 {
                                     // disjoint ( intersect empty )
                                     if (q[2].off.GreatThanTol(tol, q[1].off))
@@ -182,17 +182,14 @@ namespace SearchAThing
                                 }
                                 else // overlap
                                     yield return q[1].pt.LineTo(q[2].pt);
-
                             }
-
                             else
                                 throw new NotImplementedException();
+
                         }
                         else
                         {
-                            var pt = this.Intersect(tol, other,
-                                thisSegment: thisSegmentMode == GeomSegmentMode.FromTo,
-                                otherSegment: otherSegmentMode == GeomSegmentMode.FromTo);
+                            var pt = this.Intersect(tol, other, thisSegmentMode, otherSegmentMode);
 
                             if (pt != null)
                                 yield return pt;
@@ -218,12 +215,10 @@ namespace SearchAThing
 
         public override EntityObject DxfEntity => this.ToLine();
 
-        #endregion
+        public override bool GeomEquals(double tol, Geometry other, bool checkSense = false) =>
+            ((IEdge)this).EdgeEquals(tol, (IEdge)other, checkSense);
 
-        /// <summary>
-        /// Specify how to consider this Line3D when used in Geometry abstract class operations
-        /// </summary>                
-        public GeomSegmentMode GeomSegmentMode { get; set; }
+        #endregion
 
         public static readonly Line3D XAxisLine = new Line3D(Vector3D.Zero, Vector3D.XAxis);
         public static readonly Line3D YAxisLine = new Line3D(Vector3D.Zero, Vector3D.YAxis);
@@ -612,6 +607,28 @@ namespace SearchAThing
 
             if (thisSegment && !SegmentContainsPoint(tol, i)) return null;
             if (otherSegment && !other.SegmentContainsPoint(tol, i)) return null;
+
+            return i;
+        }
+
+        /// <summary>
+        /// Intersects two lines with arbitrary segment mode for each.
+        /// </summary>        
+        public Vector3D? Intersect(double tol, Line3D other, GeomSegmentMode thisSegmentMode, GeomSegmentMode otherSegmentMode)
+        {
+            var i = Intersect(tol, other);
+            if (i == null) return null;
+
+            if (thisSegmentMode == GeomSegmentMode.Infinite && otherSegmentMode == GeomSegmentMode.Infinite) return i;
+
+            if (thisSegmentMode == GeomSegmentMode.FromTo && !SegmentContainsPoint(tol, i)) return null;
+            if (otherSegmentMode == GeomSegmentMode.FromTo && !other.SegmentContainsPoint(tol, i)) return null;
+
+            if (thisSegmentMode == GeomSegmentMode.From && !SemiLineContainsPoints(tol, i)) return null;
+            if (thisSegmentMode == GeomSegmentMode.To && !Swapped.SemiLineContainsPoints(tol, i)) return null;
+
+            if (otherSegmentMode == GeomSegmentMode.From && !other.SemiLineContainsPoints(tol, i)) return null;
+            if (otherSegmentMode == GeomSegmentMode.To && !other.Swapped.SemiLineContainsPoints(tol, i)) return null;
 
             return i;
         }
