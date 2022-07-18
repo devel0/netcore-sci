@@ -12,6 +12,7 @@ using SearchAThing;
 using System.Text;
 using Newtonsoft.Json;
 using netDxf.Tables;
+using System.Diagnostics;
 
 namespace SearchAThing
 {
@@ -157,7 +158,7 @@ namespace SearchAThing
                 this.onThis = onThis;
             }
 
-            public override string ToString() => $"{(onThis ? "" : "!")}onThis {(occluded == true ? "" : "!")}occluded {(loopOwner.outer ? "" : "!")}loopOuter edge:{edge}";
+            public override string ToString() => $"{(onThis ? "" : "!")}onThis {(occluded == true ? "" : "!")}occluded {(overlapped == true ? "" : "!")}overlapped {(loopOwner.outer ? "" : "!")}loopOuter edge:{edge}";
         }
 
         public enum BooleanMode
@@ -268,6 +269,7 @@ namespace SearchAThing
                         switch (mode)
                         {
                             case BooleanMode.Union:
+                                var q = this.Loops[0].Contains(tol, other.Loops[0]);
                                 yield return this;
                                 yield return other;
                                 break;
@@ -453,7 +455,7 @@ namespace SearchAThing
             {
                 case BooleanMode.Intersect:
                     {
-                        var visitedIps = new HashSet<Vector3D>();
+                        var visitedIps = new HashSet<Vector3D>(ptCmp);
 
                         foreach (var ip in ips)
                         {
@@ -487,13 +489,21 @@ namespace SearchAThing
                                         .Where(edgeNfo => (edgeNfo.occluded || edgeNfo.overlapped) && !edgeNfo.edge.EndpointMatches(tol, lastVertex, nextVertex))
                                         .ToList();
 
-                                    lastEdgeNfo = edgeNfosFromLastVisitedVertex.First(w => w.occluded || w.overlapped);
+                                    if (edgeNfosFromLastVisitedVertex.Count == 0) yield break;
+
+                                    lastEdgeNfo = edgeNfosFromLastVisitedVertex
+                                        // give preference on last geom path
+                                        .OrderByDescending(w => w.onThis == lastEdgeNfo.onThis)
+                                        .First(w => w.occluded || w.overlapped);
                                     lastVertex = nextVertex;
 
                                     if (lastEdgeNfo.edge.EndpointMatches(tol, ip)) finished = true;
                                 }
 
                                 loopEdgeNfos.Add(lastEdgeNfo);
+                                if (loopEdgeNfos.Count > thisLoopBrokenEdgeNfos.Count + otherLoopBrokenEdgeNfos.Count)
+                                    throw new Exception($"internal error");
+
                                 if (ips.Contains(lastVertex))
                                     visitedIps.Add(lastVertex);
                             }
@@ -511,7 +521,7 @@ namespace SearchAThing
 
                 case BooleanMode.Difference:
                     {
-                        var visitedIps = new HashSet<Vector3D>();
+                        var visitedIps = new HashSet<Vector3D>(ptCmp);
 
                         foreach (var ip in ips)
                         {
@@ -519,6 +529,13 @@ namespace SearchAThing
                             if (visitedIps.Count == ips.Count) break;
 
                             visitedIps.Add(ip);
+
+                            {
+                                var qTypes = vertexToEdgeNfos[ip];
+                                var onthis = qTypes.Count(w => w.onThis);
+                                if (onthis == 0 || onthis == qTypes.Count)
+                                    continue;
+                            }
 
                             Vector3D lastVertex = ip;
                             EdgeNfo? lastEdgeNfo = null;
@@ -532,7 +549,7 @@ namespace SearchAThing
                                 {
                                     var edgeNfosFromLastVisitedVertex = vertexToEdgeNfos[lastVertex];
 
-                                    lastEdgeNfo = edgeNfosFromLastVisitedVertex.First(w => w.occluded == occluded && w.onThis == !occluded);
+                                    lastEdgeNfo = edgeNfosFromLastVisitedVertex.First(w => w.occluded == occluded && !w.overlapped && w.onThis == !occluded);
                                 }
                                 else
                                 {
@@ -541,10 +558,10 @@ namespace SearchAThing
                                     var qEdges = vertexToEdgeNfos[nextVertex];
 
                                     if (qEdges.Any(edgeNfo => edgeNfo.occluded == !occluded && edgeNfo.onThis == occluded))
-                                        occluded = true;
+                                        occluded = !occluded;
 
                                     var edgeNfosFromLastVisitedVertex = qEdges
-                                        .Where(edgeNfo => edgeNfo.occluded == occluded && edgeNfo.onThis == !occluded && !edgeNfo.edge.EndpointMatches(tol, lastVertex, nextVertex))
+                                        .Where(edgeNfo => edgeNfo.occluded == occluded && edgeNfo.onThis == !occluded && !edgeNfo.edge.EndpointMatches(tol, lastVertex))
                                         .ToList();
 
                                     lastEdgeNfo = edgeNfosFromLastVisitedVertex.First(w => w.occluded == occluded);
@@ -554,8 +571,14 @@ namespace SearchAThing
                                 }
 
                                 loopEdgeNfos.Add(lastEdgeNfo);
-                                if (ips.Contains(lastVertex))
-                                    visitedIps.Add(lastVertex);
+                                if (loopEdgeNfos.Count > thisLoopBrokenEdgeNfos.Count + otherLoopBrokenEdgeNfos.Count)
+                                    throw new Exception($"internal error");
+
+                                if (ips.Contains(lastEdgeNfo.edge.SGeomFrom))
+                                    visitedIps.Add(lastEdgeNfo.edge.SGeomFrom);
+
+                                if (ips.Contains(lastEdgeNfo.edge.SGeomTo))
+                                    visitedIps.Add(lastEdgeNfo.edge.SGeomTo);
                             }
 
                             var outerLoop = new Loop(tol, Plane, loopEdgeNfos.Select(w => w.edge).ToList(), checkSense: true);
