@@ -1,6 +1,0 @@
-<map id="IEdge" name="IEdge">
-<area shape="rect" id="node1" title="interface implemented by some type of geometries used in Loop such as Line3D, Arc3D and Circle3D" alt="" coords="59,5,117,32"/>
-<area shape="rect" id="node2" href="$class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities" alt="" coords="13,80,75,107"/>
-<area shape="rect" id="node4" href="$class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From..." alt="" coords="99,80,165,107"/>
-<area shape="rect" id="node3" href="$class_search_a_thing_1_1_circle3_d.html" title="Specialized version of Arc3D with StartAngle=0 and EndAngle=2PI" alt="" coords="5,155,83,181"/>
-</map>

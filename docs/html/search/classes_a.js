@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['plane3d_434',['Plane3D',['../class_search_a_thing_1_1_plane3_d.html',1,'SearchAThing']]],
-  ['plane3dregion_435',['Plane3DRegion',['../class_search_a_thing_1_1_plane3_d_region.html',1,'SearchAThing']]],
-  ['pythonexception_436',['PythonException',['../class_search_a_thing_1_1_python_exception.html',1,'SearchAThing']]],
-  ['pythonpipe_437',['PythonPipe',['../class_search_a_thing_1_1_python_pipe.html',1,'SearchAThing']]]
+  ['normalizedanglecomparer_431',['NormalizedAngleComparer',['../class_search_a_thing_1_1_normalized_angle_comparer.html',1,'SearchAThing']]],
+  ['numbersstatnfo_432',['NumbersStatNfo',['../struct_search_a_thing_1_1_numbers_stat_nfo.html',1,'SearchAThing']]]
 ];

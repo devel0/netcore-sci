@@ -83,11 +83,12 @@ Inheritance diagram for Geometry:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_search_a_thing_1_1_geometry__inherit__graph.png" border="0" usemap="#a_geometry_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_geometry_inherit__map" id="a_geometry_inherit__map">
-<area shape="rect" title="base abstract type for geometries such as Vector3D, Line3D, Arc3D and Circle3D" alt="" coords="89,5,175,32"/>
-<area shape="rect" href="class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities" alt="" coords="13,80,75,107"/>
-<area shape="rect" href="class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From..." alt="" coords="99,80,165,107"/>
-<area shape="rect" href="class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin" alt="" coords="190,80,271,107"/>
-<area shape="rect" href="class_search_a_thing_1_1_circle3_d.html" title="Specialized version of Arc3D with StartAngle=0 and EndAngle=2PI" alt="" coords="5,155,83,181"/>
+<area shape="rect" title="base abstract type for geometries such as Vector3D, Line3D, Arc3D and Circle3D" alt="" coords="90,5,177,32"/>
+<area shape="rect" href="class_search_a_thing_1_1_edge.html" title="interface implemented by some type of geometries used in Loop such as Line3D, Arc3D and Circle3D" alt="" coords="61,80,115,107"/>
+<area shape="rect" href="class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin" alt="" coords="139,80,221,107"/>
+<area shape="rect" href="class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities" alt="" coords="13,155,75,181"/>
+<area shape="rect" href="class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From..." alt="" coords="99,155,165,181"/>
+<area shape="rect" href="class_search_a_thing_1_1_circle3_d.html" title="Specialized version of Arc3D with StartAngle=0 and EndAngle=2PI" alt="" coords="5,229,83,256"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -97,20 +98,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4eb5d90088ec38fb3e8290699c83d125"><td class="mdescLeft">&#160;</td><td class="mdescRight">create copy of this geometry. <br  />
   <a href="class_search_a_thing_1_1_geometry.html#a4eb5d90088ec38fb3e8290699c83d125">More...</a><br /></td></tr>
 <tr class="separator:a4eb5d90088ec38fb3e8290699c83d125"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af170c4876b8e5f3a089c2cb10cc82157"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#af170c4876b8e5f3a089c2cb10cc82157">OtherEndpoint</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> endpoint)</td></tr>
-<tr class="separator:af170c4876b8e5f3a089c2cb10cc82157"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9af25142d02f8212ab8bb2d75b070dc2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#a9af25142d02f8212ab8bb2d75b070dc2">EndpointMatches</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> endpoint1, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> endpoint2)</td></tr>
-<tr class="separator:a9af25142d02f8212ab8bb2d75b070dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5c3d6a8bbfaf855d762bd4515008daa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#ae5c3d6a8bbfaf855d762bd4515008daa">EndpointMatches</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> endpoint1)</td></tr>
-<tr class="separator:ae5c3d6a8bbfaf855d762bd4515008daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93f651384a4a0a86b2d24f9b81f6116a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#a93f651384a4a0a86b2d24f9b81f6116a">ToggleSense</a> ()</td></tr>
-<tr class="separator:a93f651384a4a0a86b2d24f9b81f6116a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af146e56101e1ca6038ff3046aff17320"><td class="memItemLeft" align="right" valign="top">abstract IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#af146e56101e1ca6038ff3046aff17320">Divide</a> (int cnt, bool include_endpoints=false)</td></tr>
 <tr class="memdesc:af146e56101e1ca6038ff3046aff17320"><td class="mdescLeft">&#160;</td><td class="mdescRight">find split points for this geometry splitter int cnt parts  <a href="class_search_a_thing_1_1_geometry.html#af146e56101e1ca6038ff3046aff17320">More...</a><br /></td></tr>
 <tr class="separator:af146e56101e1ca6038ff3046aff17320"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad16501730eb3e676fd983304054533e5"><td class="memItemLeft" align="right" valign="top">abstract IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#ad16501730eb3e676fd983304054533e5">Split</a> (double tol, IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; breaks)</td></tr>
 <tr class="memdesc:ad16501730eb3e676fd983304054533e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">split geometry in given break points. precondition: breaks must lie on the geometry perimeter  <a href="class_search_a_thing_1_1_geometry.html#ad16501730eb3e676fd983304054533e5">More...</a><br /></td></tr>
 <tr class="separator:ad16501730eb3e676fd983304054533e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0df47603d312eb689198631dd0a36356"><td class="memItemLeft" align="right" valign="top">abstract <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#a0df47603d312eb689198631dd0a36356">Move</a> (<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> delta)</td></tr>
+<tr class="separator:a0df47603d312eb689198631dd0a36356"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76452414caa2884ba5034046f94fe262"><td class="memItemLeft" align="right" valign="top">abstract <a class="el" href="class_search_a_thing_1_1_b_box3_d.html">BBox3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#a76452414caa2884ba5034046f94fe262">BBox</a> (double tol)</td></tr>
 <tr class="memdesc:a76452414caa2884ba5034046f94fe262"><td class="mdescLeft">&#160;</td><td class="mdescRight">bbox of this geom  <a href="class_search_a_thing_1_1_geometry.html#a76452414caa2884ba5034046f94fe262">More...</a><br /></td></tr>
 <tr class="separator:a76452414caa2884ba5034046f94fe262"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,19 +125,11 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a58c05ff6cf2d51deee975897b24fcd9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#a58c05ff6cf2d51deee975897b24fcd9c">CopyFrom</a> (<a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> other)</td></tr>
-<tr class="separator:a58c05ff6cf2d51deee975897b24fcd9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dcc10a68ed4e86c6065f4f17a6a40f3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#a2dcc10a68ed4e86c6065f4f17a6a40f3">Geometry</a> (<a class="el" href="namespace_search_a_thing.html#a1b753fd9c2659910ca1a042a05b56be6">GeometryType</a> type)</td></tr>
 <tr class="separator:a2dcc10a68ed4e86c6065f4f17a6a40f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a3308b0705226d8c9d91160c397788184"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#a3308b0705226d8c9d91160c397788184">Sense</a> = true<code> [get]</code></td></tr>
-<tr class="separator:a3308b0705226d8c9d91160c397788184"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b5a64511e0c468f9ca3b8a39afb77ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#a8b5a64511e0c468f9ca3b8a39afb77ef">SGeomFrom</a><code> [get]</code></td></tr>
-<tr class="separator:a8b5a64511e0c468f9ca3b8a39afb77ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cf08361c87f618e094a95e6e640332f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#a7cf08361c87f618e094a95e6e640332f">SGeomTo</a><code> [get]</code></td></tr>
-<tr class="separator:a7cf08361c87f618e094a95e6e640332f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef3eb82628bf358013dd0170b4f77fb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_search_a_thing.html#a1b753fd9c2659910ca1a042a05b56be6">GeometryType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#aef3eb82628bf358013dd0170b4f77fb9">GeomType</a><code> [get, protected set]</code></td></tr>
 <tr class="memdesc:aef3eb82628bf358013dd0170b4f77fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">type of geometry  <a href="class_search_a_thing_1_1_geometry.html#aef3eb82628bf358013dd0170b4f77fb9">More...</a><br /></td></tr>
 <tr class="separator:aef3eb82628bf358013dd0170b4f77fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -259,32 +246,6 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a58c05ff6cf2d51deee975897b24fcd9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58c05ff6cf2d51deee975897b24fcd9c">&#9670;&nbsp;</a></span>CopyFrom()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CopyFrom </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a>&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="af146e56101e1ca6038ff3046aff17320"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af146e56101e1ca6038ff3046aff17320">&#9670;&nbsp;</a></span>Divide()</h2>
 
@@ -331,68 +292,6 @@ Properties</h2></td></tr>
  </p>
 
 <p>Implemented in <a class="el" href="class_search_a_thing_1_1_vector3_d.html#afe0b3588d9a608d747599f103dca1809">Vector3D</a>, <a class="el" href="class_search_a_thing_1_1_line3_d.html#afe0b3588d9a608d747599f103dca1809">Line3D</a>, and <a class="el" href="class_search_a_thing_1_1_arc3_d.html#afe0b3588d9a608d747599f103dca1809">Arc3D</a>.</p>
-
-</div>
-</div>
-<a id="ae5c3d6a8bbfaf855d762bd4515008daa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5c3d6a8bbfaf855d762bd4515008daa">&#9670;&nbsp;</a></span>EndpointMatches() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool EndpointMatches </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>tol</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
-          <td class="paramname"><em>endpoint1</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9af25142d02f8212ab8bb2d75b070dc2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9af25142d02f8212ab8bb2d75b070dc2">&#9670;&nbsp;</a></span>EndpointMatches() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool EndpointMatches </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>tol</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
-          <td class="paramname"><em>endpoint1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
-          <td class="paramname"><em>endpoint2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -515,6 +414,34 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="a0df47603d312eb689198631dd0a36356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0df47603d312eb689198631dd0a36356">&#9670;&nbsp;</a></span>Move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> Move </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>delta</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_search_a_thing_1_1_vector3_d.html#af6d5b7e13ab4ace71b34fe5f919de28a">Vector3D</a>, <a class="el" href="class_search_a_thing_1_1_line3_d.html#a266c82698b63df6f7852f5cf645c68d8">Line3D</a>, <a class="el" href="class_search_a_thing_1_1_circle3_d.html#a69262e74c8e8273b12298464460e5067">Circle3D</a>, and <a class="el" href="class_search_a_thing_1_1_arc3_d.html#a85e9aa86597eba621311034800aa054a">Arc3D</a>.</p>
+
+</div>
+</div>
 <a id="ac1de2726f6a3d2b9bd141687adc43971"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac1de2726f6a3d2b9bd141687adc43971">&#9670;&nbsp;</a></span>operator netDxf.Entities.EntityObject()</h2>
 
@@ -546,34 +473,6 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="af170c4876b8e5f3a089c2cb10cc82157"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af170c4876b8e5f3a089c2cb10cc82157">&#9670;&nbsp;</a></span>OtherEndpoint()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> OtherEndpoint </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>tol</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
-          <td class="paramname"><em>endpoint</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -616,23 +515,6 @@ Properties</h2></td></tr>
  </p>
 
 <p>Implemented in <a class="el" href="class_search_a_thing_1_1_vector3_d.html#a22d323cd2cc9e3761b6b8b91b4e81526">Vector3D</a>, <a class="el" href="class_search_a_thing_1_1_line3_d.html#a22d323cd2cc9e3761b6b8b91b4e81526">Line3D</a>, and <a class="el" href="class_search_a_thing_1_1_arc3_d.html#a22d323cd2cc9e3761b6b8b91b4e81526">Arc3D</a>.</p>
-
-</div>
-</div>
-<a id="a93f651384a4a0a86b2d24f9b81f6116a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93f651384a4a0a86b2d24f9b81f6116a">&#9670;&nbsp;</a></span>ToggleSense()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> ToggleSense </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -776,72 +658,6 @@ Properties</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">abstract <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> MidPoint</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3308b0705226d8c9d91160c397788184"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3308b0705226d8c9d91160c397788184">&#9670;&nbsp;</a></span>Sense</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Sense = true</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8b5a64511e0c468f9ca3b8a39afb77ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b5a64511e0c468f9ca3b8a39afb77ef">&#9670;&nbsp;</a></span>SGeomFrom</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> SGeomFrom</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7cf08361c87f618e094a95e6e640332f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cf08361c87f618e094a95e6e640332f">&#9670;&nbsp;</a></span>SGeomTo</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> SGeomTo</td>
         </tr>
       </table>
   </td>

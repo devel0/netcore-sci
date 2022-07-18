@@ -17,7 +17,7 @@ namespace SearchAThing.Sci.Tests
         {
             var tol = 0.1;
 
-            IEdge? arc = JsonConvert.DeserializeObject<Arc3D>(File.ReadAllText("Arc3D/Arc3DTest_0004.json"), SciJsonSettings);
+            Edge? arc = JsonConvert.DeserializeObject<Arc3D>(File.ReadAllText("Arc3D/Arc3DTest_0004.json"), SciJsonSettings);
 
             var res = arc.Split(tol, new[] { new Vector3D(15, 12.719999999999814, -2) }).ToList();
 

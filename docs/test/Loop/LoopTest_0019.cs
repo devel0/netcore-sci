@@ -14,7 +14,7 @@ namespace SearchAThing.Sci.Tests
 
         [Fact]
         public void LoopTest_0019()
-        {            
+        {
             var dxf = netDxf.DxfDocument.Load(
                 System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Loop/LoopTest_0019.dxf"));
 
@@ -22,11 +22,11 @@ namespace SearchAThing.Sci.Tests
             {
                 foreach (var inverseTerm in new[] { false, true })
                 {
+                    DxfDocument? outdxf = null;
+                    outdxf = new DxfDocument();
+
                     for (int layernum = 1; layernum <= 12; ++layernum)
                     {
-
-                        DxfDocument? outdxf = null;
-                        // outdxf = new DxfDocument();
 
                         DxfDocument? outdxf2 = null;
                         // outdxf2 = new DxfDocument();
@@ -60,12 +60,7 @@ namespace SearchAThing.Sci.Tests
                             if (hatch != null) outdxf?.AddEntity(hatch);
                         }
 
-                        if (outdxf != null)
-                        {
-                            outdxf.DrawingVariables.PdMode = netDxf.Header.PointShape.CircleCross;
-                            outdxf.Viewport.ShowGrid = false;
-                            outdxf.Save(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "out.dxf"));
-                        }
+
 
                         if (outdxf2 != null)
                         {
@@ -311,6 +306,15 @@ namespace SearchAThing.Sci.Tests
 
 
                     }
+
+                    if (outdxf != null)
+                    {
+                        outdxf.DrawingVariables.PdMode = netDxf.Header.PointShape.CircleCross;
+                        outdxf.Viewport.ShowGrid = false;
+                        outdxf.Save(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "out.dxf"));
+                    }
+
+                    ;
 
                 }
 
