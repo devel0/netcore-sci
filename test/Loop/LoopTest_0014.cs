@@ -19,7 +19,7 @@ namespace SearchAThing.Sci.Tests
                 System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Loop/LoopTest_0014.dxf"));
 
             DxfDocument? outdxf = null;
-            outdxf = new DxfDocument();
+            // outdxf = new DxfDocument();
 
             DxfDocument? outdxf2 = null;
             // outdxf2 = new DxfDocument();

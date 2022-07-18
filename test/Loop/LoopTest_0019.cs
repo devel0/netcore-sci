@@ -26,7 +26,7 @@ namespace SearchAThing.Sci.Tests
                     {
 
                         DxfDocument? outdxf = null;
-                        outdxf = new DxfDocument();
+                        // outdxf = new DxfDocument();
 
                         DxfDocument? outdxf2 = null;
                         // outdxf2 = new DxfDocument();

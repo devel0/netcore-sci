@@ -17,6 +17,9 @@ using System.Diagnostics;
 namespace SearchAThing
 {
 
+    /// <summary>
+    /// Planar face with one (outer) or more loops (inners)
+    /// </summary>
     public class Face
     {
         public Plane3D Plane { get; private set; }
