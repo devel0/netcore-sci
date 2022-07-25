@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 using System.Text;
 
 namespace SearchAThing
-{ 
+{
 
     /// <summary>
     /// interface implemented by some type of geometries used in Loop such as Line3D, Arc3D and Circle3D
@@ -83,11 +83,11 @@ namespace SearchAThing
 
             return null;
         }
- 
+
         /// <summary>
         /// States if edge contains given point on its perimeter
         /// </summary>        
-        public abstract bool EdgeContainsPoint(double tol, Vector3D pt); 
+        public abstract bool EdgeContainsPoint(double tol, Vector3D pt);
 
         public abstract string ToString(int digits);
 
@@ -122,15 +122,68 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// from given set of edges returns the same set eventually toggling sense of edges to make them glue so that SGeomTo of previous equals SGeomFrom of current.
-        /// it can raise exception if there isn't availability to glue edges regardless toggling their sense.
-        /// first element will toggled to match second one, then other elements will follow the sense matching established.
-        /// </summary>        
+        /// Allow to sort edges when a not consequential set is given to allow subsequent CheckSense.
+        /// It can raise exception if there isn't a possible sequence continuity between given edges.
+        /// </summary>
+        /// <param name="edges">input edges list</param>
+        /// <param name="tol">length tolerance</param>
+        /// <returns>edges in sequence ( sense not yet checked )</returns>
+        public static IEnumerable<Edge> CheckSort(this IEnumerable<Edge> edges, double tol)
+        {
+            var vertexToEdges = new Dictionary<Vector3D, List<Edge>>(new Vector3DEqualityComparer(tol));
+            void scanEdge(Edge edge, Vector3D vertex)
+            {
+                List<Edge>? vertexEdges;
+                if (!vertexToEdges.TryGetValue(vertex, out vertexEdges))
+                {
+                    vertexEdges = new List<Edge>();
+                    vertexToEdges.Add(vertex, vertexEdges);
+                }
+                vertexEdges.Add(edge);
+            }
+            foreach (var edge in edges)
+            {
+                scanEdge(edge, edge.SGeomFrom);
+                scanEdge(edge, edge.SGeomTo);
+            }
+
+            foreach (var x in vertexToEdges)
+            {
+                if (x.Value.Count != 2) throw new Exception($"can't find two edges belonging to vertex [{x.Key}]");
+            }
+
+            var start = vertexToEdges.First();
+            var startVertex = start.Key;
+            var startEdge = start.Value.First();
+
+            yield return startEdge;
+
+            var lastVertex = startVertex;
+            var lastEdge = startEdge;
+
+            while (true)
+            {
+                var nextVertex = lastEdge.OtherEndpoint(tol, lastVertex);
+                if (nextVertex.EqualsTol(tol, startVertex)) break;
+
+                lastEdge = vertexToEdges[nextVertex].First(edge => edge != lastEdge);
+                yield return lastEdge;
+
+                lastVertex = nextVertex;
+            }
+        }
+
+        /// <summary>
+        /// From given set of edges returns the same set eventually toggling sense of edges to make them glue so that
+        /// SGeomTo of previous equals SGeomFrom of current.
+        /// It can raise exception if there isn't availability to glue edges regardless toggling their sense.
+        /// first element will toggled to match second one, then other elements will follow the sense matching established.        
+        /// </summary>
+        /// <param name="edges">input edges list</param>
+        /// <param name="tol">length tolerance</param>        
         public static IEnumerable<Edge> CheckSense(this IEnumerable<Edge> edges, double tol)
         {
             Edge? overrideCur = null;
-
-            var lst = edges.ToList();
 
             int i = 0;
 
@@ -168,6 +221,78 @@ namespace SearchAThing
 
                 ++i;
             }
+        }
+
+        public static Dictionary<Vector3D, List<Edge>> MakeVertexToEdges(this IEnumerable<Edge> edges, double tol)
+        {
+            var res = new Dictionary<Vector3D, List<Edge>>(new Vector3DEqualityComparer(tol));
+
+            void updateVertexToEdgeNfos(Vector3D vertex, Edge edge)
+            {
+                if (!res.TryGetValue(vertex, out var lst))
+                {
+                    lst = new List<Edge>();
+                    res.Add(vertex, lst);
+                }
+
+                if (!lst.Any(lstedge => lstedge.GeomEquals(tol, edge)))
+                    lst.Add(edge);
+            }
+
+            foreach (var edge in edges)
+            {
+                updateVertexToEdgeNfos(edge.SGeomFrom, edge);
+                updateVertexToEdgeNfos(edge.SGeomTo, edge);
+            }
+
+            return res;
+        }
+
+    }
+
+    public static partial class SciToolkit
+    {
+
+        public delegate bool WalkEdgeStopConditionDelegate(Vector3D startVertex, Vector3D nextVertex);
+
+        /// <summary>
+        /// walk edges
+        /// </summary>
+        /// <param name="tol">length tolerance</param>
+        /// <param name="startEdge">starting edge</param>
+        /// <param name="startVertex">starting vertex</param>
+        /// <param name="vertexToEdges">vertex to edges dictionary</param>
+        /// <param name="stopCondition">by default stop when meet startvertex again</param>
+        /// <returns>walked edges</returns>
+        public static IEnumerable<Edge> WalkEdges(
+            double tol,
+            Edge startEdge,
+            Vector3D startVertex,
+            Dictionary<Vector3D, List<Edge>> vertexToEdges,
+            WalkEdgeStopConditionDelegate? stopCondition = null)
+        {
+            var lastEdge = startEdge;
+            var lastVertex = startVertex;
+
+            yield return lastEdge;
+
+            if (stopCondition == null)
+            {
+                stopCondition = (_startVertex, _nextVertex) => _startVertex.EqualsTol(tol, _nextVertex);
+            }
+
+            while (true)
+            {
+                var prevVertex = lastVertex;
+                var nextVertex = lastEdge.OtherEndpoint(tol, lastVertex);
+                if (stopCondition(startVertex, nextVertex)) break;
+
+                lastEdge = vertexToEdges[nextVertex].First(edge => !edge.EndpointMatches(tol, prevVertex));
+
+                yield return lastEdge;
+                lastVertex = nextVertex;
+            }
+
         }
 
     }
