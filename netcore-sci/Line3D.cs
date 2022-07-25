@@ -131,12 +131,16 @@ namespace SearchAThing
                         if (this.Colinear(tol, other))
                         {
                             if (thisSegmentMode == GeomSegmentMode.Infinite)
-                                yield return this;
-
-                            else if (otherSegmentMode == GeomSegmentMode.Infinite)
                                 yield return other;
 
-                            else if (thisSegmentMode == GeomSegmentMode.FromTo && otherSegmentMode == GeomSegmentMode.FromTo)
+                            else if (otherSegmentMode == GeomSegmentMode.Infinite)
+                                yield return this;
+
+                            else if (
+                                thisSegmentMode == GeomSegmentMode.FromTo
+                                &&
+                                otherSegmentMode == GeomSegmentMode.FromTo
+                                )
                             {
                                 var N = V.Normalized();
 
@@ -197,8 +201,8 @@ namespace SearchAThing
         public override EntityObject DxfEntity => this.ToLine();
 
         public override bool GeomEquals(double tol, Geometry other, bool checkSense = false)
-        {      
-            if (this.GeomType != other.GeomType) return false;            
+        {
+            if (this.GeomType != other.GeomType) return false;
 
             var oline = (Line3D)other;
 
@@ -214,7 +218,7 @@ namespace SearchAThing
                 (this.From.EqualsTol(tol, oline.From) && this.To.EqualsTol(tol, oline.To))
                 ||
                 (this.From.EqualsTol(tol, oline.To) && this.To.EqualsTol(tol, oline.From));
-        }            
+        }
 
         #endregion
 
@@ -454,7 +458,7 @@ namespace SearchAThing
         /// </summary>
         /// <param name="tol">len tolerance</param>
         /// <param name="p">point to verify is it on semiline</param>
-        public bool SemiLineContainsPoints(double tol, Vector3D p) =>
+        public bool SemiLineContainsPoint(double tol, Vector3D p) =>
             LineContainsPoint(tol, p) && (p - From).Concordant(tol, To - From);
 
         /// <summary>
@@ -622,11 +626,11 @@ namespace SearchAThing
             if (thisSegmentMode == GeomSegmentMode.FromTo && !SegmentContainsPoint(tol, i)) return null;
             if (otherSegmentMode == GeomSegmentMode.FromTo && !other.SegmentContainsPoint(tol, i)) return null;
 
-            if (thisSegmentMode == GeomSegmentMode.From && !SemiLineContainsPoints(tol, i)) return null;
-            if (thisSegmentMode == GeomSegmentMode.To && !Swapped.SemiLineContainsPoints(tol, i)) return null;
+            if (thisSegmentMode == GeomSegmentMode.From && !SemiLineContainsPoint(tol, i)) return null;
+            if (thisSegmentMode == GeomSegmentMode.To && !Swapped.SemiLineContainsPoint(tol, i)) return null;
 
-            if (otherSegmentMode == GeomSegmentMode.From && !other.SemiLineContainsPoints(tol, i)) return null;
-            if (otherSegmentMode == GeomSegmentMode.To && !other.Swapped.SemiLineContainsPoints(tol, i)) return null;
+            if (otherSegmentMode == GeomSegmentMode.From && !other.SemiLineContainsPoint(tol, i)) return null;
+            if (otherSegmentMode == GeomSegmentMode.To && !other.Swapped.SemiLineContainsPoint(tol, i)) return null;
 
             return i;
         }
