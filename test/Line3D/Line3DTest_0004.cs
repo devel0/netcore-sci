@@ -21,7 +21,7 @@ namespace SearchAThing.Sci.Tests
                 var i1_2 = l1.GeomIntersect(tol, l2,
                     thisSegmentMode: GeomSegmentMode.Infinite, otherSegmentMode: GeomSegmentMode.Infinite);
                 var q = i1_2.First().GeomEquals(tol, l1);
-                Assert.True(i1_2.Count() == 1 && i1_2.First().GeomEquals(tol, l1));
+                Assert.True(i1_2.Count() == 1 && i1_2.First().GeomEquals(tol, l2));
             }            
 
             {
