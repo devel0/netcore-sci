@@ -35,6 +35,29 @@ namespace SearchAThing
         InsideOrPerimeter
     };
 
+    public enum LoopContainsEdgeMode
+    {
+        /// <summary>
+        /// point is on perimeter
+        /// </summary>
+        Perimeter,
+
+        /// <summary>
+        /// point is inside (perimeter excluded)
+        /// </summary>
+        InsideExcludedPerimeter,
+
+        /// <summary>
+        /// point is inside or on perimeter
+        /// </summary>
+        InsideOrPerimeter,
+
+        /// <summary>
+        /// midpoint is inside
+        /// </summary>
+        MidPointInside,
+    };
+
     /// <summary>
     /// planar edges loop containing line and arcs
     /// </summary>    
@@ -52,6 +75,23 @@ namespace SearchAThing
         public IReadOnlyList<Edge> Edges { get; private set; }
 
         /// <summary>
+        /// check if two loops equals
+        /// </summary>        
+        public bool Equals(double tol, Loop other)
+        {
+            if (Edges.Count != other.Edges.Count) return false;
+            if (!Area.EqualsTol(tol, other.Area)) return false;
+            if (!Length.EqualsTol(tol, other.Length)) return false;
+
+            foreach (var edge in Edges)
+            {
+                if (!other.Edges.Any(otherEdge => otherEdge.GeomEquals(tol, edge))) return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
         /// loop edge distinct filtered vertexes ( not optimized )
         /// </summary>
         public IEnumerable<Vector3D> Vertexes(double tol) =>
@@ -67,20 +107,35 @@ namespace SearchAThing
         /// <summary>
         /// precondition: edges must lie on given plane
         /// </summary>        
-        public Loop(double tol, Plane3D plane, IReadOnlyList<Edge> edges, bool checkSense)
+        public Loop(double tol, Plane3D plane, IReadOnlyList<Edge> edges, bool checkSense, bool checkSort = false)
         {
             Tol = tol;
-            Edges = checkSense ? edges.CheckSense(tol).ToList() : edges.ToList();
+
+            var _edges = edges;
+
+            if (checkSort) _edges = _edges.CheckSort(tol).ToList();
+
+            if (checkSense) _edges = _edges.CheckSense(tol).ToList();
+
+            Edges = _edges;
             Plane = plane;
         }
 
         /// <summary>
         /// create loop from given edge template ; plane is detected from edges distribution
         /// </summary>
-        public Loop(double tol, IEnumerable<Edge> edges, bool checkSense = true)
+        public Loop(double tol, IEnumerable<Edge> edges, bool checkSense = true, bool checkSort = false)
         {
             Tol = tol;
-            Edges = checkSense ? edges.CheckSense(tol).ToList() : edges.ToList();
+
+            List<Edge>? _edges = null;
+
+            if (checkSort) _edges = edges.CheckSort(tol).ToList();
+
+            if (checkSense) _edges = (_edges == null) ? edges.CheckSense(tol).ToList() : _edges.CheckSense(tol).ToList();
+
+            Edges = (_edges == null) ? edges.ToList() : _edges;
+
             Plane = Edges.DetectPlane(tol);
         }
 
@@ -147,10 +202,12 @@ namespace SearchAThing
 
         double ComputeArea(double tol)
         {
+            if (Edges.Count <= 2) return 0;
+
             var polysegs = Edges.Select(w => w.SGeomFrom).ToList();
             var res = polysegs.Select(v => v.ToUCS(Plane.CS)).ToList().XYArea(tol);
 
-            foreach (var edge in Edges.Where(r => r.GeomType  == GeometryType.Arc3D))
+            foreach (var edge in Edges.Where(r => r.GeomType == GeometryType.Arc3D))
             {
                 var arc = (Arc3D)edge;
 
@@ -165,29 +222,54 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// states if given edge is contained into this loop
-        /// </summary>                                
-        public (bool SGeomFromTestResult, bool SGeomToTestResult, bool MidPointTestResult)
-        Contains(double tol,
-            Edge edge,
-            LoopContainsPointMode SGeomFromTestType,
-            LoopContainsPointMode SGeomToTestType,
-            LoopContainsPointMode MidPointTestType) =>
-                (
-                    SGeomFromTestResult: ContainsPoint(tol, edge.SGeomFrom, SGeomFromTestType),
-                    SGeomToTestResult: ContainsPoint(tol, edge.SGeomTo, SGeomToTestType),
-                    MidPointTestResult: ContainsPoint(tol, edge.MidPoint, MidPointTestType)
-                );
-
-        /// <summary>
-        /// test if given edge contained in this loop ( perimeter not excluded )
+        /// test if given edge contained in this loop
         /// </summary>        
-        public bool Contains(double tol, Edge edge) =>
-            Contains(tol, edge,
-                SGeomFromTestType: LoopContainsPointMode.InsideOrPerimeter,
-                SGeomToTestType: LoopContainsPointMode.InsideOrPerimeter,
-                MidPointTestType: LoopContainsPointMode.InsideOrPerimeter)
-                .Eval(x => x.SGeomFromTestResult && x.SGeomToTestResult && x.MidPointTestResult);
+        public bool Contains(double tol, Edge edge,
+            LoopContainsEdgeMode mode = LoopContainsEdgeMode.InsideOrPerimeter)
+        {
+            LoopContainsPointMode? sgeomFromMode = null;
+            LoopContainsPointMode? sgeomToMode = null;
+            LoopContainsPointMode? midPointMode = null;
+
+            switch (mode)
+            {
+                case LoopContainsEdgeMode.Perimeter:
+                    sgeomFromMode = sgeomToMode = midPointMode = LoopContainsPointMode.Perimeter;
+                    break;
+
+                case LoopContainsEdgeMode.MidPointInside:
+                    //sgeomFromMode = sgeomToMode = LoopContainsPointMode.InsideOrPerimeter;
+                    midPointMode = LoopContainsPointMode.InsideExcludedPerimeter;
+                    break;
+
+                case LoopContainsEdgeMode.InsideExcludedPerimeter:
+                    sgeomFromMode = sgeomToMode = midPointMode = LoopContainsPointMode.InsideExcludedPerimeter;
+                    break;
+
+                case LoopContainsEdgeMode.InsideOrPerimeter:
+                    sgeomFromMode = sgeomToMode = midPointMode = LoopContainsPointMode.InsideOrPerimeter;
+                    break;
+
+                default: throw new Exception($"unknown mode {mode}");
+            }
+
+            if (sgeomFromMode != null)
+            {
+                if (!ContainsPoint(tol, edge.SGeomFrom, sgeomFromMode.Value)) return false;
+            }
+
+            if (sgeomToMode != null)
+            {
+                if (!ContainsPoint(tol, edge.SGeomTo, sgeomToMode.Value)) return false;
+            }
+
+            if (midPointMode != null)
+            {
+                if (!ContainsPoint(tol, edge.MidPoint, midPointMode.Value)) return false;
+            }
+
+            return true;
+        }
 
         Vector3D? _MidPoint = null;
         /// <summary>
@@ -202,47 +284,55 @@ namespace SearchAThing
             }
         }
 
+        class ContainsPointTmpNfo
+        {
+            public Edge edge;
+            public int edgeIdx;
+            public Vector3D ip;
+            public bool onVertex;
+        }
+
         /// <summary>
         /// states if given point is included into this loop
         /// </summary>                
         public bool ContainsPoint(double tol, Vector3D pt, LoopContainsPointMode mode)
-        {            
+        {
             var onperimeter = this.Edges.Any(edge => edge.EdgeContainsPoint(tol, pt));
 
-            if (onperimeter)
-            {
-                if (mode == LoopContainsPointMode.InsideExcludedPerimeter) return false;
-                return true;
-            }
-            else if (mode == LoopContainsPointMode.Perimeter) return false;
+            if (mode == LoopContainsPointMode.Perimeter) return onperimeter;
+
+            if (mode == LoopContainsPointMode.InsideExcludedPerimeter && onperimeter) return false;
+
+            if (onperimeter) return true;
 
             var ray = pt.LineV(Plane.CS.BaseX);
-            //var ray = pt.LineTo(MidPoint);
 
-            var qits = this.Edges.Cast<Geometry>()
-                .Intersect(tol, new[] { ray }, GeomSegmentMode.FromTo, GeomSegmentMode.Infinite)
-                .ToList();
+            int K = 0;
 
-            if (qits.Count == 0) return false;
+            for (int edgeIdx = 0; edgeIdx < Edges.Count; ++edgeIdx)
+            {
+                var edge = Edges[edgeIdx];
 
-            var qips = qits.Where(r => r.GeomType == GeometryType.Vector3D)
-                .Select(w => (Vector3D)w)
-                .Where(w => ray.SemiLineContainsPoints(tol, w))
-                .ToList();
+                var intersectRes = edge.GeomIntersect(tol, ray, GeomSegmentMode.FromTo, GeomSegmentMode.Infinite).ToList();
 
-            var rayVNorm = ray.V.Normalized();
-            var sortedColinearPts = qips
-                .Select(ip => new
+                foreach (var ires in intersectRes)
                 {
-                    ip,
-                    off = ip.ColinearScalarOffset(tol, ray.From, rayVNorm)
-                })
-                .OrderBy(w => w.off)
-                .Where(w => w.off.GreatThanOrEqualsTol(tol, 0))
-                .Select(w => w.ip)
-                .ToList();
+                    switch (ires.GeomType)
+                    {
+                        case GeometryType.Vector3D:
+                            {
+                                var ip = (Vector3D)ires;
+                                if (ray.SemiLineContainsPoint(tol, ip)) ++K;
+                            }
+                            break;
 
-            return sortedColinearPts.Count % 2 != 0;
+                        case GeometryType.Line3D:
+                            return this.ContainsPoint(tol, pt + tol * Plane.CS.BaseY, mode);
+                    }
+                }
+            }
+
+            return K % 2 != 0;
         }
 
         BBox3D? _BBox = null;
@@ -277,12 +367,13 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// states if this loop contains given other loop (perimeter not excluded)
+        /// states if this loop contains given other loop
         /// </summary>
-        public bool Contains(double tol, Loop other)
+        public bool Contains(double tol, Loop other,
+            LoopContainsEdgeMode mode = LoopContainsEdgeMode.InsideOrPerimeter)
         {
             foreach (var otherEdge in other.Edges)
-                if (!Contains(tol, otherEdge)) return false;
+                if (!Contains(tol, otherEdge, mode)) return false;
 
             return true;
         }
@@ -338,6 +429,20 @@ namespace SearchAThing
 
     }
 
+    public class LoopEqualityComparer : IEqualityComparer<Loop>
+    {
+        double tol;
+
+        public LoopEqualityComparer(double tol)
+        {
+            this.tol = tol;
+        }
+
+        public bool Equals(Loop? x, Loop? y) => (x == null || y == null) ? false : x.Equals(tol, y);
+
+        public int GetHashCode([DisallowNull] Loop obj) => 0;
+    }
+
     public static partial class SciExt
     {
 
@@ -362,7 +467,7 @@ namespace SearchAThing
             if (lines.Count == 0) throw new Exception($"can't state edges (cnt:{edges.Count()}) plane");
 
             return lines.BestFittingPlane(tol);
-        }       
+        }
 
     }
 

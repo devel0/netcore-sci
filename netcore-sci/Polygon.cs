@@ -159,65 +159,17 @@ namespace SearchAThing
             if (!prev.EqualsTol(tol, first)) yield return new Line3D(prev, first);
         }
 
-        /// <summary>        
-        /// states if the given polygon XY contains the test point ( z not considered )
-        /// https://en.wikipedia.org/wiki/Point_in_polygon
-        /// By default check the point contained in the polygon perimeter.
-        /// Optionally duplicate points are zapped in comparing.
-        /// </summary>         
-        /// <param name="_pts">points XY of the polygon</param>
+        /// <summary>
+        /// states if given point is in polygon
+        /// </summary>
+        /// <param name="_pts">polygon point ( must ordered )</param>
         /// <param name="tol">length tolerance</param>
-        /// <param name="_pt">point XY to test if inside polygon</param>
-        /// <param name="zapDuplicates">clean duplicates from pts list if any</param>
-        /// <returns>true if given point inside polygon</returns>        
-        public static bool ContainsPoint(this IReadOnlyList<Vector3D> _pts, double tol, Vector3D _pt,
-            bool zapDuplicates = false)
-        {
-            var pt = _pt.Set(OrdIdx.Z, 0);
-            var pts = _pts.Select(w => w.Set(OrdIdx.Z, 0));
-            var ptHs = new HashSet<Vector3D>(new Vector3DEqualityComparer(tol));
-            var ptsFiltered = pts;
-
-            var pts_bbox = _pts.BBox();
-            if (!pts_bbox.Contains2D(tol, _pt)) return false;
-
-            if (_pts.Any(w => _pt.EqualsTol(tol, w))) return true;
-
-            if (zapDuplicates)
-            {
-                var tmp = new List<Vector3D>();
-                foreach (var p in pts)
-                {
-                    if (!ptHs.Contains(p))
-                    {
-                        ptHs.Add(p);
-                        tmp.Add(p);
-                    }
-                }
-                ptsFiltered = tmp;
-            }
-            var segs = ptsFiltered.PolygonSegments(tol);
-
-            var ray = new Line3D(pt, Vector3D.XAxis, Line3DConstructMode.PointAndVector);
-
-            var intCnt = 0;
-
-            foreach (var seg in segs)
-            {
-                if (seg.SegmentContainsPoint(tol, pt)) return true;
-
-                Vector3D? ip = null;
-
-                ip = ray.Intersect(tol, seg);
-                if (ip != null && seg.SegmentContainsPoint(tol, ip))
-                {
-                    if (pt.X.GreatThanOrEqualsTol(tol, ip.X))
-                        ++intCnt;
-                }
-            }
-
-            return intCnt % 2 != 0;
-        }
+        /// <param name="pt">point to test</param>        
+        /// <param name="mode">allow to specify contains test type</param>        
+        public static bool ContainsPoint(this IReadOnlyList<Vector3D> _pts, double tol, Vector3D pt,
+            LoopContainsPointMode mode = LoopContainsPointMode.InsideOrPerimeter) =>
+            new Loop(tol, _pts.RepeatFirstAtEnd(tol).Segments(tol))
+            .ContainsPoint(tol, pt, mode);
 
         public static IEnumerable<Vector3D> SortPoly(this IEnumerable<Vector3D> pts, double tol, Vector3D? refAxis = null) =>
             pts.SortPoly(tol, (p) => p, refAxis);
