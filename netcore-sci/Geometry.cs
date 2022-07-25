@@ -338,14 +338,14 @@ namespace SearchAThing
         /// <param name="_geom2"></param>        
         /// <param name="geom1SegmentMode">if geom1 item is Line3D specifies how to consider it</param>        
         /// <param name="geom2SegmentMode">if geom2 item is Line3D specifies how to consider it</param>        
-        public static IEnumerable<Geometry> Intersect(this IEnumerable<Geometry> _geom1,
+        public static IEnumerable<(Geometry intersectGeom, Geometry g1, Geometry g2)> Intersect(this IEnumerable<Geometry> _geom1,
             double tol, IEnumerable<Geometry> _geom2,
             GeomSegmentMode geom1SegmentMode = GeomSegmentMode.FromTo,
             GeomSegmentMode geom2SegmentMode = GeomSegmentMode.FromTo)
         {
             var geom1 = _geom1.ToList();
-            var geom2 = _geom2.ToList();            
-            
+            var geom2 = _geom2.ToList();
+
             foreach (var g1 in geom1)
             {
                 foreach (var g2 in geom2)
@@ -353,7 +353,7 @@ namespace SearchAThing
                     var g1g2_intersection = g1.GeomIntersect(tol, g2, geom1SegmentMode, geom2SegmentMode);
 
                     if (g1g2_intersection != null)
-                        foreach (var geom in g1g2_intersection) yield return geom;
+                        foreach (var geom in g1g2_intersection) yield return (intersectGeom: geom, g1, g2);
                 }
             }
         }
