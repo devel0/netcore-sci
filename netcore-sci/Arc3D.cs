@@ -121,7 +121,7 @@ namespace SearchAThing
         /// <summary>
         /// mid point eval as arc point at angle start + arc angle/2
         /// </summary>
-        public override Vector3D MidPoint => PtAtAngle(AngleStart + Angle / 2);        
+        public override Vector3D MidPoint => PtAtAngle(AngleStart + Angle / 2);
 
         public override string QCadScript(bool final = true) =>
             Invariant($"ARC3\n{SGeomFrom.X},{SGeomFrom.Y}\n{MidPoint.X},{MidPoint.Y}\n{SGeomTo.X},{SGeomTo.Y}\n{(final ? "QQ\n" : "")}");
@@ -534,7 +534,7 @@ namespace SearchAThing
             if (inArcAngleRange)
             {
                 var ptAngle = PtAngle(tol, pt);
-                var isInAngleRange = ptAngle.AngleInRange(AngleStart, AngleEnd, radTol: tol.RadTol(Radius));
+                var isInAngleRange = ptAngle.AngleInRange(AngleStart, AngleEnd, radTol: 2 * tol.RadTol(Radius));
                 if (!isInAngleRange) return false;
             }
 
