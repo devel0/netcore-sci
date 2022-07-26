@@ -211,8 +211,11 @@ namespace SearchAThing
             {
                 var arc = (Arc3D)edge;
 
-                var midpt = edge.MidPoint;
-                if (polysegs.ContainsPoint(tol, midpt))
+                var arcmidpt = edge.MidPoint;
+                var segmidpt = edge.SGeomFrom.LineTo(edge.SGeomTo).MidPoint;
+                var testpt = segmidpt + (arcmidpt-segmidpt).Normalized() * 2 * tol;
+
+                if (polysegs.ContainsPoint(tol, testpt))
                     res -= arc.SegmentArea;
                 else
                     res += arc.SegmentArea;
@@ -327,7 +330,14 @@ namespace SearchAThing
                             break;
 
                         case GeometryType.Line3D:
-                            return this.ContainsPoint(tol, pt + tol * Plane.CS.BaseY, mode);
+                            {
+                                var tolfactor = 1.1d;
+                                // if use 1.0 tolfactor some test will fail because
+                                // of different tolerance management between test of line overlap
+                                // with colinear test result and line/line intersect method
+
+                                return this.ContainsPoint(tol, pt + tolfactor * tol * Plane.CS.BaseY, mode);
+                            }
                     }
                 }
             }
