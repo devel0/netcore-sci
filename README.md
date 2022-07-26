@@ -103,19 +103,19 @@ detect polygons ( line, arcs ) intersection loops when edges overlaps
 
 #### LoopTest_0021
 
-- [yellow ∩ green](data/img/LoopTest_0021/dxf/out-Intersect-YG.dxf)
+- yellow ∩ green [dxf](https://raw.githubusercontent.com/devel0/netcore-sci/master/data/img/LoopTest_0021/dxf/out-Intersect-YG.dxf)
 
 <img src="data/img/LoopTest_0021/intersect-YG1.png" width=200>&nbsp;<img src="data/img/LoopTest_0021/intersect-YG2.png" width=200>&nbsp;<img src="data/img/LoopTest_0021/intersect-YG3.png" width=200>
 
-- [yellow - green](data/img/LoopTest_0021/dxf/out-Intersect-YG.dxf)
+- yellow - green [dxf](https://raw.githubusercontent.com/devel0/netcore-sci/master/data/img/LoopTest_0021/dxf/out-Intersect-YG.dxf)
 
 <img src="data/img/LoopTest_0021/difference-YG1.png" width=200>&nbsp;<img src="data/img/LoopTest_0021/difference-YG2.png" width=200>&nbsp;<img src="data/img/LoopTest_0021/difference-YG3.png" width=200>
 
-- [green - yellow](data/img/LoopTest_0021/dxf/out-Intersect-GY.dxf)
+- green - yellow [dxf](https://raw.githubusercontent.com/devel0/netcore-sci/master/data/img/LoopTest_0021/dxf/out-Intersect-GY.dxf)
 
 <img src="data/img/LoopTest_0021/difference-GY1.png" width=200>&nbsp;<img src="data/img/LoopTest_0021/difference-GY2.png" width=200>&nbsp;<img src="data/img/LoopTest_0021/difference-GY3.png" width=200>
 
-- [yellow ∪ green](data/img/LoopTest_0021/dxf/out-Union-YG.dxf)
+- yellow ∪ green [dxf](https://raw.githubusercontent.com/devel0/netcore-sci/master/data/img/LoopTest_0021/dxf/out-Union-YG.dxf)
 
 <img src="data/img/LoopTest_0021/union-YG1.png" width=200>&nbsp;<img src="data/img/LoopTest_0021/union-YG2.png" width=200>&nbsp;<img src="data/img/LoopTest_0021/union-YG3.png" width=200>
 
