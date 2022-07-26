@@ -105,9 +105,9 @@ detect polygons ( line, arcs ) intersection loops when edges overlaps
 
 - [yellow ∩ green](data/img/LoopTest_0021/dxf/out-Intersect-YG.dxf)
 
-<img src="data/img/LoopTest_0021/intersect-YG1.png" width=150>
-<img src="data/img/LoopTest_0021/intersect-YG2.png" width=150>
-<img src="data/img/LoopTest_0021/intersect-YG3.png" width=150>
+| | | |
+|---|---|---|
+|<img src="data/img/LoopTest_0021/intersect-YG1.png" width=150>|<img src="data/img/LoopTest_0021/intersect-YG2.png" width=150>|<img src="data/img/LoopTest_0021/intersect-YG3.png" width=150>|
 
 - [yellow - green](data/img/LoopTest_0021/dxf/out-Intersect-YG.dxf)
 
