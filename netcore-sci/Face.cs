@@ -418,73 +418,117 @@ namespace SearchAThing
 
                     var finalResultSet = new List<List<Face>>();
 
-                    foreach (var k in firstResultSet)
+                    if (mode == BooleanMode.Union)
                     {
-                        var faces = k.Select(loop => new Face(Plane, new[] { loop })).ToList();
+                        var subOp = BooleanMode.Union;
+
+                        var faces = firstResultSet.SelectMany(l => l.Select(loop => new Face(Plane, new[] { loop }))).ToList();
+
+                        var resSet = new List<Face>();
 
                         if (faces.Count == 1)
-                            finalResultSet.Add(new List<Face>() { faces[0] });
-                        else
-                        {
-                            var resSet = new List<Face>();
+                            resSet.Add(faces[0]);
 
+                        else
                             for (int i = 0; i < faces.Count; ++i)
                             {
                                 if (i == 0)
                                 {
-                                    resSet = faces[i].Boolean(tol, faces[i + 1], BooleanMode.Intersect).ToList();
+                                    resSet = faces[i].Boolean(tol, faces[i + 1], subOp).ToList();
                                     ++i;
                                 }
                                 else
                                 {
-                                    if (finalResultSet.Count == 0) resSet = new List<Face>() { faces[i] };
-                                    else
+                                    var newSet = new List<Face>();
+
+                                    for (int j = 0; j < resSet.Count; ++j)
                                     {
-                                        var newSet = new List<Face>();
-
-                                        for (int j = 0; j < finalResultSet.Count; ++j)
-                                        {
-                                            newSet.AddRange(resSet[j].Boolean(tol, faces[i], BooleanMode.Intersect));
-                                        }
-                                        newSet = newSet
-                                            .Select(face => face.Loops[0])
-                                            .Distinct(loopCmp)
-                                            .ToList()
-                                            .Select(loop => new Face(Plane, new[] { loop })).ToList();
-
-                                        resSet = newSet;
+                                        newSet.AddRange(resSet[j].Boolean(tol, faces[i], subOp));
                                     }
+                                    newSet = newSet
+                                        .Select(face => face.Loops[0])
+                                        .Distinct(loopCmp)
+                                        .ToList()
+                                        .Select(loop => new Face(Plane, new[] { loop })).ToList();
+
+                                    resSet = newSet;
                                 }
                             }
 
-                            finalResultSet.Add(resSet);
-                        }
+                        finalResultSet.Add(resSet);
                     }
-
-                    // if (mode == BooleanMode.Union)
-                    // {
-                    //     var faceToRemove = new HashSet<Face>();
-
-                    //     foreach (var face1 in finalResultSet)
-                    //     {
-                    //         foreach (var face2 in finalResultSet)
-                    //         {
-                    //             if (face1 == face2) continue;
-
-                    //             if (face1.Loops[0].Edges.All(edge =>
-                    //                 face2.Contains(tol, edge, evalOnlyOuter: true, mode: LoopContainsEdgeMode.InsideOrPerimeter)))
-                    //                 faceToRemove.Add(face1);
-                    //         }
-                    //     }
-
-                    //     finalResultSet = finalResultSet.Where(face => !faceToRemove.Contains(face)).ToList();
-                    // }
-
-                    foreach (var resfaceset in finalResultSet)
+                    else
                     {
-                        foreach (var resface in resfaceset)
-                            yield return resface.Loops[0];
+                        var subOp = BooleanMode.Intersect;
+
+                        foreach (var k in firstResultSet)
+                        {
+                            var faces = k.Select(loop => new Face(Plane, new[] { loop })).ToList();
+
+                            if (faces.Count == 1)
+                                finalResultSet.Add(new List<Face>() { faces[0] });
+                            else
+                            {
+                                var resSet = new List<Face>();
+
+                                for (int i = 0; i < faces.Count; ++i)
+                                {
+                                    if (i == 0)
+                                    {
+                                        resSet = faces[i].Boolean(tol, faces[i + 1], subOp).ToList();
+                                        ++i;
+                                    }
+                                    else
+                                    {
+                                        if (finalResultSet.Count == 0) resSet = new List<Face>() { faces[i] };
+                                        else
+                                        {
+                                            var newSet = new List<Face>();
+
+                                            for (int j = 0; j < finalResultSet.Count; ++j)
+                                            {
+                                                newSet.AddRange(resSet[j].Boolean(tol, faces[i], subOp));
+                                            }
+                                            newSet = newSet
+                                                .Select(face => face.Loops[0])
+                                                .Distinct(loopCmp)
+                                                .ToList()
+                                                .Select(loop => new Face(Plane, new[] { loop })).ToList();
+
+                                            resSet = newSet;
+                                        }
+                                    }
+                                }
+
+                                finalResultSet.Add(resSet);
+                            }
+                        }
+
                     }
+
+                    var allResFaces = finalResultSet.SelectMany(f => f).ToList();
+
+                    if (mode == BooleanMode.Union)
+                    {
+                        var faceToRemove = new HashSet<Face>();
+
+                        foreach (var face1 in allResFaces)
+                        {
+                            foreach (var face2 in allResFaces)
+                            {
+                                if (face1 == face2) continue;
+
+                                if (face1.Loops[0].Edges.All(edge =>
+                                    face2.Contains(tol, edge, evalOnlyOuter: true, mode: LoopContainsEdgeMode.InsideOrPerimeter)))
+                                    faceToRemove.Add(face1);
+                            }
+                        }
+
+                        allResFaces = allResFaces.Where(face => !faceToRemove.Contains(face)).ToList();
+                    }
+
+                    foreach (var resface in allResFaces)
+                        yield return resface.Loops[0];
                 }
 
                 #region special case outer equals
