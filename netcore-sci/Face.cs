@@ -346,7 +346,6 @@ namespace SearchAThing
                                             {
                                                 var loops = new List<Loop> { enclosedOuterOtherChild.loop };
                                                 loops.AddRange(enclosedOuterOtherChild.childrenLoopNfos
-                                                    //.Where(loopNfo=> !loopNfo.directParent!.outer)
                                                     .Select(w => w.loop));
 
                                                 yield return new Face(Plane, loops);
@@ -387,87 +386,110 @@ namespace SearchAThing
                         yield break;
                     }
 
-                    List<Loop> firstResultSet = new List<Loop>();
+                    var firstResultSet = new List<List<Loop>>();
+
+                    var f1loopidx = 0;
 
                     foreach (var face1 in faces1)
                     {
+                        firstResultSet.Add(new List<Loop>());
+
                         foreach (var face2 in faces2)
                         {
                             var qfaces = face1.Boolean(tol, face2, mode).ToList();
 
                             foreach (var face in qfaces.Where(face => face.Area > 0))
-                                firstResultSet.Add(face.Loops[0]);
+                            {
+                                firstResultSet[f1loopidx].Add(face.Loops[0]);
+                            }
                         }
+
+                        ++f1loopidx;
                     }
                     var loopCmp = new LoopEqualityComparer(tol);
 
-                    firstResultSet = firstResultSet.Distinct(loopCmp).ToList();
+                    firstResultSet = firstResultSet.Select(w => w.Distinct(loopCmp).ToList()).ToList();
 
-                    if (firstResultSet.Count == 1)
+                    // if (firstResultSet.Count == 1)
+                    // {
+                    //     foreach (var resloop in firstResultSet) yield return resloop;
+                    //     yield break;
+                    // }
+
+                    var finalResultSet = new List<List<Face>>();
+
+                    foreach (var k in firstResultSet)
                     {
-                        foreach (var resloop in firstResultSet) yield return resloop;
-                        yield break;
-                    }
+                        var faces = k.Select(loop => new Face(Plane, new[] { loop })).ToList();
 
-                    var finalResultSet = new List<Face>();
-
-                    var faces = firstResultSet.Select(loop => new Face(Plane, new[] { loop })).ToList();
-
-                    for (int i = 0; i < faces.Count; ++i)
-                    {
-                        if (i == 0)
-                        {
-                            finalResultSet = faces[i].Boolean(tol, faces[i + 1], mode).ToList();
-                        }
+                        if (faces.Count == 1)
+                            finalResultSet.Add(new List<Face>() { faces[0] });
                         else
                         {
-                            if (finalResultSet.Count == 0) finalResultSet = new List<Face>() { faces[i] };
-                            else
-                            {
-                                var newSet = new List<Face>();
+                            var resSet = new List<Face>();
 
-                                for (int j = 0; j < finalResultSet.Count; ++j)
+                            for (int i = 0; i < faces.Count; ++i)
+                            {
+                                if (i == 0)
                                 {
-                                    newSet.AddRange(finalResultSet[j].Boolean(tol, faces[i], mode));
+                                    resSet = faces[i].Boolean(tol, faces[i + 1], BooleanMode.Intersect).ToList();
+                                    ++i;
                                 }
-                                newSet = newSet
-                                    .Select(face => face.Loops[0])
-                                    .Distinct(loopCmp)
-                                    .ToList()
-                                    .Select(loop => new Face(Plane, new[] { loop })).ToList();
+                                else
+                                {
+                                    if (finalResultSet.Count == 0) resSet = new List<Face>() { faces[i] };
+                                    else
+                                    {
+                                        var newSet = new List<Face>();
 
-                                finalResultSet = newSet;
+                                        for (int j = 0; j < finalResultSet.Count; ++j)
+                                        {
+                                            newSet.AddRange(resSet[j].Boolean(tol, faces[i], BooleanMode.Intersect));
+                                        }
+                                        newSet = newSet
+                                            .Select(face => face.Loops[0])
+                                            .Distinct(loopCmp)
+                                            .ToList()
+                                            .Select(loop => new Face(Plane, new[] { loop })).ToList();
+
+                                        resSet = newSet;
+                                    }
+                                }
                             }
+
+                            finalResultSet.Add(resSet);
                         }
                     }
 
-                    if (mode == BooleanMode.Union)
+                    // if (mode == BooleanMode.Union)
+                    // {
+                    //     var faceToRemove = new HashSet<Face>();
+
+                    //     foreach (var face1 in finalResultSet)
+                    //     {
+                    //         foreach (var face2 in finalResultSet)
+                    //         {
+                    //             if (face1 == face2) continue;
+
+                    //             if (face1.Loops[0].Edges.All(edge =>
+                    //                 face2.Contains(tol, edge, evalOnlyOuter: true, mode: LoopContainsEdgeMode.InsideOrPerimeter)))
+                    //                 faceToRemove.Add(face1);
+                    //         }
+                    //     }
+
+                    //     finalResultSet = finalResultSet.Where(face => !faceToRemove.Contains(face)).ToList();
+                    // }
+
+                    foreach (var resfaceset in finalResultSet)
                     {
-                        var faceToRemove = new HashSet<Face>();
-
-                        foreach (var face1 in finalResultSet)
-                        {
-                            foreach (var face2 in finalResultSet)
-                            {
-                                if (face1 == face2) continue;
-
-                                if (face1.Loops[0].Edges.All(edge =>
-                                    face2.Contains(tol, edge, evalOnlyOuter: true, mode: LoopContainsEdgeMode.InsideOrPerimeter)))
-                                    faceToRemove.Add(face1);
-                            }
-                        }
-
-                        finalResultSet = finalResultSet.Where(face => !faceToRemove.Contains(face)).ToList();
+                        foreach (var resface in resfaceset)
+                            yield return resface.Loops[0];
                     }
-
-                    foreach (var resface in finalResultSet) yield return resface.Loops[0];
                 }
 
                 #region special case outer equals
                 if (thisOuterLoopNfo.loop.Equals(tol, otherOuterLoopNfo.loop))
                 {
-                    // TODO: evaluate inner loops that could intersect
-
                     switch (mode)
                     {
                         case BooleanMode.Intersect:
@@ -483,6 +505,16 @@ namespace SearchAThing
 
                         case BooleanMode.Difference:
                             {
+                                if (other.Loops.Count > 1)
+                                {
+                                    var thisInnerLoops = thisLoopNfos.Where(loopNfo => !loopNfo.outer).Select(w => w.loop).ToList();
+                                    var otherInnersLoops = otherLoopNfos.Where(loopNfo => !loopNfo.outer).Select(w => w.loop).ToList();
+
+                                    var innerLoops = LoopsOperation(otherInnersLoops, thisInnerLoops, BooleanMode.Difference).ToList();
+
+                                    foreach (var l in innerLoops)
+                                        yield return new Face(Plane, new[] { l });
+                                }
                                 //throw new NotImplementedException();
                             }
                             break;
@@ -589,7 +621,7 @@ namespace SearchAThing
                                 yield return new Face(Plane, new[] { outerLoop }.Union(qInnerLoops).ToArray());
                                 yield break;
                             }
-                            break;
+
                     }
 
                     //yield break;
@@ -614,7 +646,7 @@ namespace SearchAThing
                 foreach (var thisEdgeNfo in thisLoopBrokenEdgeNfos)
                 {
                     thisEdgeNfo.overlapped = other.Overlap(tol, thisEdgeNfo.edge);
-                    thisEdgeNfo.partiallyInside = //!thisEdgeNfo.overlapped &&
+                    thisEdgeNfo.partiallyInside =
                         other.Contains(tol, thisEdgeNfo.edge, evalOnlyOuter: false, LoopContainsEdgeMode.MidPointInside);
 
                     updateVertexToEdgeNfos(thisEdgeNfo.edge.SGeomFrom, thisEdgeNfo);
@@ -624,7 +656,7 @@ namespace SearchAThing
                 foreach (var otherEdgeNfo in otherLoopBrokenEdgeNfos)
                 {
                     otherEdgeNfo.overlapped = this.Overlap(tol, otherEdgeNfo.edge);
-                    otherEdgeNfo.partiallyInside = //!otherEdgeNfo.overlapped &&
+                    otherEdgeNfo.partiallyInside =
                         this.Contains(tol, otherEdgeNfo.edge, evalOnlyOuter: false, LoopContainsEdgeMode.MidPointInside);
 
                     if (otherEdgeNfo.overlapped == false) // doesn't update other overlapped because will removed later
@@ -764,7 +796,7 @@ namespace SearchAThing
                                 {
                                     var nextVertex = lastEdgeNfo.edge.OtherEndpoint(tol, lastVertex);
 
-                                    var qEdges = vertexToEdgeNfos[nextVertex];                                    
+                                    var qEdges = vertexToEdgeNfos[nextVertex];
 
                                     if (qEdges.Any(edgeNfo =>
                                         edgeNfo.partiallyInside == !searchInsideEdge &&
