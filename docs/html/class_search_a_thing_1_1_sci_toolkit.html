@@ -67,6 +67,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
@@ -97,6 +98,11 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">json converter to write unit using abbrev  <a href="class_search_a_thing_1_1_sci_toolkit_1_1_unit_json_converter.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:adda1fcaa81903d8a0be4fccb3aa79260"><td class="memItemLeft" align="right" valign="top">delegate bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#adda1fcaa81903d8a0be4fccb3aa79260">WalkEdgeStopConditionDelegate</a> (<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> startVertex, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> nextVertex)</td></tr>
+<tr class="separator:adda1fcaa81903d8a0be4fccb3aa79260"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aacdfce96774f44d9070fe25ebab12bf0"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt;(<a class="el" href="namespace_search_a_thing.html#a5e4248e784fa4252d8084865cb91a873">CircleTangentType</a> type, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> pa, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> pb)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#aacdfce96774f44d9070fe25ebab12bf0">CirclesOuterTangent</a> (double x1, double y1, double r1, double x2, double y2, double r2)</td></tr>
@@ -117,6 +123,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:adf2003f069480822de213feb7e782fa3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_plane3_d_region.html">Plane3DRegion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#adf2003f069480822de213feb7e782fa3">ToRegion</a> (this Face3d face, double tol)</td></tr>
 <tr class="memdesc:adf2003f069480822de213feb7e782fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert face3d to <a class="el" href="class_search_a_thing_1_1_plane3_d_region.html" title="region of a plane3d delimited by a set of coplanar points">Plane3DRegion</a>  <a href="class_search_a_thing_1_1_sci_toolkit.html#adf2003f069480822de213feb7e782fa3">More...</a><br /></td></tr>
 <tr class="separator:adf2003f069480822de213feb7e782fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf444286109ec376741d56e4b6c249b5"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#acf444286109ec376741d56e4b6c249b5">WalkEdges</a> (double tol, <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> startEdge, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> startVertex, Dictionary&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>, List&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt;&gt; vertexToEdges, <a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#adda1fcaa81903d8a0be4fccb3aa79260">WalkEdgeStopConditionDelegate</a>? stopCondition=null)</td></tr>
+<tr class="memdesc:acf444286109ec376741d56e4b6c249b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">walk edges  <a href="class_search_a_thing_1_1_sci_toolkit.html#acf444286109ec376741d56e4b6c249b5">More...</a><br /></td></tr>
+<tr class="separator:acf444286109ec376741d56e4b6c249b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab25074b567ccda57831a36354e48b2c0"><td class="memItemLeft" align="right" valign="top">static IInterpolation&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#ab25074b567ccda57831a36354e48b2c0">LinearSplineInterpolate</a> (IEnumerable&lt; double &gt; x, IEnumerable&lt; double &gt; y)</td></tr>
 <tr class="memdesc:ab25074b567ccda57831a36354e48b2c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">(MathNet.Numerics bookmark function) "Create a linear spline interpolation from an unsorted set of (x,y) value pairs." then invoke Interpolate with x value to retrieve interpolated y value.  <a href="class_search_a_thing_1_1_sci_toolkit.html#ab25074b567ccda57831a36354e48b2c0">More...</a><br /></td></tr>
 <tr class="separator:ab25074b567ccda57831a36354e48b2c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -601,6 +610,101 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="acf444286109ec376741d56e4b6c249b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf444286109ec376741d56e4b6c249b5">&#9670;&nbsp;</a></span>WalkEdges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a>&gt; WalkEdges </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a>&#160;</td>
+          <td class="paramname"><em>startEdge</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>startVertex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Dictionary&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>, List&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt;&gt;&#160;</td>
+          <td class="paramname"><em>vertexToEdges</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#adda1fcaa81903d8a0be4fccb3aa79260">WalkEdgeStopConditionDelegate</a>?&#160;</td>
+          <td class="paramname"><em>stopCondition</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>walk edges </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tol</td><td>length tolerance</td></tr>
+    <tr><td class="paramname">startEdge</td><td>starting edge</td></tr>
+    <tr><td class="paramname">startVertex</td><td>starting vertex</td></tr>
+    <tr><td class="paramname">vertexToEdges</td><td>vertex to edges dictionary</td></tr>
+    <tr><td class="paramname">stopCondition</td><td>by default stop when meet startvertex again</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>walked edges</dd></dl>
+
+</div>
+</div>
+<a id="adda1fcaa81903d8a0be4fccb3aa79260"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adda1fcaa81903d8a0be4fccb3aa79260">&#9670;&nbsp;</a></span>WalkEdgeStopConditionDelegate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">delegate bool WalkEdgeStopConditionDelegate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>startVertex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>nextVertex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a7d3cb05ab135bae83f33c2762f52f867"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7d3cb05ab135bae83f33c2762f52f867">&#9670;&nbsp;</a></span>NormalizedLengthTolerance</h2>
@@ -702,6 +806,7 @@ Properties</h2></td></tr>
 <li>netcore-sci/Constants.cs</li>
 <li>netcore-sci/DxfKit.cs</li>
 <li>netcore-sci/Serialization.cs</li>
+<li>netcore-sci/Edge.cs</li>
 <li>netcore-sci/Number.cs</li>
 <li>netcore-sci/Polygon.cs</li>
 </ul>

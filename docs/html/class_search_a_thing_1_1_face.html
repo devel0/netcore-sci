@@ -101,9 +101,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a10b7f80e173eec89bbe39904413a4765"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_face.html">Face</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_face.html#a10b7f80e173eec89bbe39904413a4765">Boolean</a> (double tol, <a class="el" href="class_search_a_thing_1_1_face.html">Face</a> other, <a class="el" href="class_search_a_thing_1_1_face.html#aa70b8ece6fee2023617d56c86b281bba">BooleanMode</a> mode=<a class="el" href="class_search_a_thing_1_1_face.html#aa70b8ece6fee2023617d56c86b281bbaa6faa907d79c8bb46a12bea5c8de76654">BooleanMode.Intersect</a>, netDxf.DxfDocument? debugDxf=null)</td></tr>
 <tr class="memdesc:a10b7f80e173eec89bbe39904413a4765"><td class="mdescLeft">&#160;</td><td class="mdescRight">boolean operation with this and other loops. precondition: must coplanar  <a href="class_search_a_thing_1_1_face.html#a10b7f80e173eec89bbe39904413a4765">More...</a><br /></td></tr>
 <tr class="separator:a10b7f80e173eec89bbe39904413a4765"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad03306444f315cc6242c938fe2e2b0f3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_face.html#ad03306444f315cc6242c938fe2e2b0f3">Contains</a> (double tol, <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> edge)</td></tr>
-<tr class="memdesc:ad03306444f315cc6242c938fe2e2b0f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if given edge is contained into this face ( inner loop inside content excluded )  <a href="class_search_a_thing_1_1_face.html#ad03306444f315cc6242c938fe2e2b0f3">More...</a><br /></td></tr>
-<tr class="separator:ad03306444f315cc6242c938fe2e2b0f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bddcf7c792425d147054eae52af9f5d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_face.html#a5bddcf7c792425d147054eae52af9f5d">Contains</a> (double tol, <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> edge, bool evalOnlyOuter, <a class="el" href="namespace_search_a_thing.html#aedf55b8029e07ae2dc4e1ae785e0e5ee">LoopContainsEdgeMode</a> mode=<a class="el" href="namespace_search_a_thing.html#aedf55b8029e07ae2dc4e1ae785e0e5eeac202078d7e764b3446dfe8afd013d6b9">LoopContainsEdgeMode.InsideExcludedPerimeter</a>)</td></tr>
+<tr class="memdesc:a5bddcf7c792425d147054eae52af9f5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if given edge is contained into this face  <a href="class_search_a_thing_1_1_face.html#a5bddcf7c792425d147054eae52af9f5d">More...</a><br /></td></tr>
+<tr class="separator:a5bddcf7c792425d147054eae52af9f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21734bd3f52454d049e2190628c293ef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_face.html#a21734bd3f52454d049e2190628c293ef">Overlap</a> (double tol, <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> edge)</td></tr>
 <tr class="memdesc:a21734bd3f52454d049e2190628c293ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">test if edge overlap any of loop edges of this face  <a href="class_search_a_thing_1_1_face.html#a21734bd3f52454d049e2190628c293ef">More...</a><br /></td></tr>
 <tr class="separator:a21734bd3f52454d049e2190628c293ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -255,11 +255,14 @@ Properties</h2></td></tr>
 <p>boolean operation with this and other loops. precondition: must coplanar </p>
 <p><br  />
  </p>
+<p>helper method to process given set of loops; each will be treated as a <a class="el" href="class_search_a_thing_1_1_face.html" title="Planar face with one (outer) or more loops (inners)">Face</a> with a single outer </p>
+<p><br  />
+</p>
 
 </div>
 </div>
-<a id="ad03306444f315cc6242c938fe2e2b0f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad03306444f315cc6242c938fe2e2b0f3">&#9670;&nbsp;</a></span>Contains()</h2>
+<a id="a5bddcf7c792425d147054eae52af9f5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bddcf7c792425d147054eae52af9f5d">&#9670;&nbsp;</a></span>Contains()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -274,7 +277,19 @@ Properties</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a>&#160;</td>
-          <td class="paramname"><em>edge</em>&#160;</td>
+          <td class="paramname"><em>edge</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>evalOnlyOuter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_search_a_thing.html#aedf55b8029e07ae2dc4e1ae785e0e5ee">LoopContainsEdgeMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em> = <code><a class="el" href="namespace_search_a_thing.html#aedf55b8029e07ae2dc4e1ae785e0e5eeac202078d7e764b3446dfe8afd013d6b9">LoopContainsEdgeMode.InsideExcludedPerimeter</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -284,7 +299,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>states if given edge is contained into this face ( inner loop inside content excluded ) </p>
+<p>states if given edge is contained into this face </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tol</td><td></td></tr>
@@ -293,7 +308,12 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <p><br  />
- </p>
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">evalOnlyOuter</td><td>if true and edge is contained into and inner the test returns false</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

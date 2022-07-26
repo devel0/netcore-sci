@@ -178,9 +178,15 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a8c5e9923093ffd2cc98b38e6f6befdc8"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a8c5e9923093ffd2cc98b38e6f6befdc8">QCadScript</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt; edges, bool final=true)</td></tr>
 <tr class="memdesc:a8c5e9923093ffd2cc98b38e6f6befdc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">qcad script from edge enumerable  <a href="class_search_a_thing_1_1_sci_ext.html#a8c5e9923093ffd2cc98b38e6f6befdc8">More...</a><br /></td></tr>
 <tr class="separator:a8c5e9923093ffd2cc98b38e6f6befdc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa07fb477639c29ce0b5e4ffcb05ffda7"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#aa07fb477639c29ce0b5e4ffcb05ffda7">CheckSort</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt; edges, double tol)</td></tr>
+<tr class="memdesc:aa07fb477639c29ce0b5e4ffcb05ffda7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow to sort edges when a not consequential set is given to allow subsequent CheckSense. It can raise exception if there isn't a possible sequence continuity between given edges.  <a href="class_search_a_thing_1_1_sci_ext.html#aa07fb477639c29ce0b5e4ffcb05ffda7">More...</a><br /></td></tr>
+<tr class="separator:aa07fb477639c29ce0b5e4ffcb05ffda7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a1ca5ef5fe60a1546c7aed9fc34f2dd"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a9a1ca5ef5fe60a1546c7aed9fc34f2dd">CheckSense</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt; edges, double tol)</td></tr>
-<tr class="memdesc:a9a1ca5ef5fe60a1546c7aed9fc34f2dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">from given set of edges returns the same set eventually toggling sense of edges to make them glue so that SGeomTo of previous equals SGeomFrom of current. it can raise exception if there isn't availability to glue edges regardless toggling their sense. first element will toggled to match second one, then other elements will follow the sense matching established.  <a href="class_search_a_thing_1_1_sci_ext.html#a9a1ca5ef5fe60a1546c7aed9fc34f2dd">More...</a><br /></td></tr>
+<tr class="memdesc:a9a1ca5ef5fe60a1546c7aed9fc34f2dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">From given set of edges returns the same set eventually toggling sense of edges to make them glue so that SGeomTo of previous equals SGeomFrom of current. It can raise exception if there isn't availability to glue edges regardless toggling their sense. first element will toggled to match second one, then other elements will follow the sense matching established. <br  />
+  <a href="class_search_a_thing_1_1_sci_ext.html#a9a1ca5ef5fe60a1546c7aed9fc34f2dd">More...</a><br /></td></tr>
 <tr class="separator:a9a1ca5ef5fe60a1546c7aed9fc34f2dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a202ef21f3061a4ccae7ba7864fb711c7"><td class="memItemLeft" align="right" valign="top">static Dictionary&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>, List&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a202ef21f3061a4ccae7ba7864fb711c7">MakeVertexToEdges</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt; edges, double tol)</td></tr>
+<tr class="separator:a202ef21f3061a4ccae7ba7864fb711c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9efc26d3d09d52acd2bf312d14a68d72"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_face.html">Face</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a9efc26d3d09d52acd2bf312d14a68d72">ToFace</a> (this IEnumerable&lt; netDxf.Entities.LwPolyline &gt; lwpolyline, double tol)</td></tr>
 <tr class="memdesc:a9efc26d3d09d52acd2bf312d14a68d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">build planar face with given loops ( first is the outer ); input loop can be unordered ( loop with greather area will be considered as outer loop ); precondition: loops must lie on same plane  <a href="class_search_a_thing_1_1_sci_ext.html#a9efc26d3d09d52acd2bf312d14a68d72">More...</a><br /></td></tr>
 <tr class="separator:a9efc26d3d09d52acd2bf312d14a68d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,9 +211,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae0e2be61363c706bc5205c55affa0319"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ae0e2be61363c706bc5205c55affa0319">GeomCentroid</a> (this IReadOnlyList&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt; geometry_block, double tol)</td></tr>
 <tr class="memdesc:ae0e2be61363c706bc5205c55affa0319"><td class="mdescLeft">&#160;</td><td class="mdescRight">centroid of given geometries (not fully implemented)  <a href="class_search_a_thing_1_1_sci_ext.html#ae0e2be61363c706bc5205c55affa0319">More...</a><br /></td></tr>
 <tr class="separator:ae0e2be61363c706bc5205c55affa0319"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec3e23618d0659660241cecd72d5f099"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#aec3e23618d0659660241cecd72d5f099">Intersect</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt; _geom1, double tol, IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt; _geom2, <a class="el" href="namespace_search_a_thing.html#aa4f8b8bbc5743963ccc53bbbe04e5b99">GeomSegmentMode</a> geom1SegmentMode=<a class="el" href="namespace_search_a_thing.html#aa4f8b8bbc5743963ccc53bbbe04e5b99a0e4794774f28ac0f783e03fa2fd3e7d6">GeomSegmentMode.FromTo</a>, <a class="el" href="namespace_search_a_thing.html#aa4f8b8bbc5743963ccc53bbbe04e5b99">GeomSegmentMode</a> geom2SegmentMode=<a class="el" href="namespace_search_a_thing.html#aa4f8b8bbc5743963ccc53bbbe04e5b99a0e4794774f28ac0f783e03fa2fd3e7d6">GeomSegmentMode.FromTo</a>)</td></tr>
-<tr class="memdesc:aec3e23618d0659660241cecd72d5f099"><td class="mdescLeft">&#160;</td><td class="mdescRight">find intersection geometries resulting from all this geometries with all given geom2  <a href="class_search_a_thing_1_1_sci_ext.html#aec3e23618d0659660241cecd72d5f099">More...</a><br /></td></tr>
-<tr class="separator:aec3e23618d0659660241cecd72d5f099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80ce90a49b8b24e125f497b31aefbefe"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt;(<a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> intersectGeom, <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> g1, <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> g2)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a80ce90a49b8b24e125f497b31aefbefe">Intersect</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt; _geom1, double tol, IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt; _geom2, <a class="el" href="namespace_search_a_thing.html#aa4f8b8bbc5743963ccc53bbbe04e5b99">GeomSegmentMode</a> geom1SegmentMode=<a class="el" href="namespace_search_a_thing.html#aa4f8b8bbc5743963ccc53bbbe04e5b99a0e4794774f28ac0f783e03fa2fd3e7d6">GeomSegmentMode.FromTo</a>, <a class="el" href="namespace_search_a_thing.html#aa4f8b8bbc5743963ccc53bbbe04e5b99">GeomSegmentMode</a> geom2SegmentMode=<a class="el" href="namespace_search_a_thing.html#aa4f8b8bbc5743963ccc53bbbe04e5b99a0e4794774f28ac0f783e03fa2fd3e7d6">GeomSegmentMode.FromTo</a>)</td></tr>
+<tr class="memdesc:a80ce90a49b8b24e125f497b31aefbefe"><td class="mdescLeft">&#160;</td><td class="mdescRight">find intersection geometries resulting from all this geometries with all given geom2  <a href="class_search_a_thing_1_1_sci_ext.html#a80ce90a49b8b24e125f497b31aefbefe">More...</a><br /></td></tr>
+<tr class="separator:a80ce90a49b8b24e125f497b31aefbefe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdc010c27f6ffd866d3250931ecfb833"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_b_box3_d.html">BBox3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#afdc010c27f6ffd866d3250931ecfb833">BBox</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt; geometry_block, double tol)</td></tr>
 <tr class="memdesc:afdc010c27f6ffd866d3250931ecfb833"><td class="mdescLeft">&#160;</td><td class="mdescRight">bbox that cover all given geometries  <a href="class_search_a_thing_1_1_sci_ext.html#afdc010c27f6ffd866d3250931ecfb833">More...</a><br /></td></tr>
 <tr class="separator:afdc010c27f6ffd866d3250931ecfb833"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -298,10 +304,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a7d55995e433703b1498743e9f3a6aab0"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a7d55995e433703b1498743e9f3a6aab0">PolygonSegments</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; pts, double tol)</td></tr>
 <tr class="memdesc:a7d55995e433703b1498743e9f3a6aab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">yields an ienumerable of polygon segments corresponding to the given polygon pts ( z is not considered ) works even last point not equals the first one  <a href="class_search_a_thing_1_1_sci_ext.html#a7d55995e433703b1498743e9f3a6aab0">More...</a><br /></td></tr>
 <tr class="separator:a7d55995e433703b1498743e9f3a6aab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad54d6bb51bc76771b778fa1a0c0529a9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ad54d6bb51bc76771b778fa1a0c0529a9">ContainsPoint</a> (this IReadOnlyList&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; _pts, double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> _pt, bool zapDuplicates=false)</td></tr>
-<tr class="memdesc:ad54d6bb51bc76771b778fa1a0c0529a9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
- states if the given polygon XY contains the test point ( z not considered ) <a href="https://en.wikipedia.org/wiki/Point_in_polygon">https://en.wikipedia.org/wiki/Point_in_polygon</a> By default check the point contained in the polygon perimeter. Optionally duplicate points are zapped in comparing.  <a href="class_search_a_thing_1_1_sci_ext.html#ad54d6bb51bc76771b778fa1a0c0529a9">More...</a><br /></td></tr>
-<tr class="separator:ad54d6bb51bc76771b778fa1a0c0529a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31c82a64c0f6de898fb4ddac2edf2109"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a31c82a64c0f6de898fb4ddac2edf2109">ContainsPoint</a> (this IReadOnlyList&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; _pts, double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> pt, <a class="el" href="namespace_search_a_thing.html#a5143797c292eae835d22af82642aeac4">LoopContainsPointMode</a> mode=<a class="el" href="namespace_search_a_thing.html#a5143797c292eae835d22af82642aeac4af64cb2becdf0da487330d378f8df442e">LoopContainsPointMode.InsideOrPerimeter</a>)</td></tr>
+<tr class="memdesc:a31c82a64c0f6de898fb4ddac2edf2109"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if given point is in polygon  <a href="class_search_a_thing_1_1_sci_ext.html#a31c82a64c0f6de898fb4ddac2edf2109">More...</a><br /></td></tr>
+<tr class="separator:a31c82a64c0f6de898fb4ddac2edf2109"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b852c82ae82a3c49c40f228604f9e1e"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a5b852c82ae82a3c49c40f228604f9e1e">SortPoly</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; pts, double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>? refAxis=null)</td></tr>
 <tr class="separator:a5b852c82ae82a3c49c40f228604f9e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d9c8bff4d1006739e7f8f739b17fcca"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a2d9c8bff4d1006739e7f8f739b17fcca">SortPoly</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> &gt; segs, double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>? refAxis=null)</td></tr>
@@ -1256,9 +1261,63 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>from given set of edges returns the same set eventually toggling sense of edges to make them glue so that SGeomTo of previous equals SGeomFrom of current. it can raise exception if there isn't availability to glue edges regardless toggling their sense. first element will toggled to match second one, then other elements will follow the sense matching established. </p>
+<p>From given set of edges returns the same set eventually toggling sense of edges to make them glue so that SGeomTo of previous equals SGeomFrom of current. It can raise exception if there isn't availability to glue edges regardless toggling their sense. first element will toggled to match second one, then other elements will follow the sense matching established. <br  />
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">edges</td><td>input edges list</td></tr>
+    <tr><td class="paramname">tol</td><td>length tolerance</td></tr>
+  </table>
+  </dd>
+</dl>
 <p><br  />
  </p>
+
+</div>
+</div>
+<a id="aa07fb477639c29ce0b5e4ffcb05ffda7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa07fb477639c29ce0b5e4ffcb05ffda7">&#9670;&nbsp;</a></span>CheckSort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a>&gt; CheckSort </td>
+          <td>(</td>
+          <td class="paramtype">this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt;&#160;</td>
+          <td class="paramname"><em>edges</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allow to sort edges when a not consequential set is given to allow subsequent CheckSense. It can raise exception if there isn't a possible sequence continuity between given edges. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">edges</td><td>input edges list</td></tr>
+    <tr><td class="paramname">tol</td><td>length tolerance</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>edges in sequence ( sense not yet checked )</dd></dl>
 
 </div>
 </div>
@@ -1446,8 +1505,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ad54d6bb51bc76771b778fa1a0c0529a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad54d6bb51bc76771b778fa1a0c0529a9">&#9670;&nbsp;</a></span>ContainsPoint()</h2>
+<a id="a31c82a64c0f6de898fb4ddac2edf2109"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31c82a64c0f6de898fb4ddac2edf2109">&#9670;&nbsp;</a></span>ContainsPoint()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1471,13 +1530,13 @@ Static Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
-          <td class="paramname"><em>_pt</em>, </td>
+          <td class="paramname"><em>pt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>zapDuplicates</em> = <code>false</code>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_search_a_thing.html#a5143797c292eae835d22af82642aeac4">LoopContainsPointMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em> = <code><a class="el" href="namespace_search_a_thing.html#a5143797c292eae835d22af82642aeac4af64cb2becdf0da487330d378f8df442e">LoopContainsPointMode.InsideOrPerimeter</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1492,19 +1551,22 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><br  />
- states if the given polygon XY contains the test point ( z not considered ) <a href="https://en.wikipedia.org/wiki/Point_in_polygon">https://en.wikipedia.org/wiki/Point_in_polygon</a> By default check the point contained in the polygon perimeter. Optionally duplicate points are zapped in comparing. </p>
-<p><br  />
- </p><dl class="params"><dt>Parameters</dt><dd>
+<p>states if given point is in polygon </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">_pts</td><td>points XY of the polygon</td></tr>
+    <tr><td class="paramname">_pts</td><td>polygon point ( must ordered )</td></tr>
     <tr><td class="paramname">tol</td><td>length tolerance</td></tr>
-    <tr><td class="paramname">_pt</td><td>point XY to test if inside polygon</td></tr>
-    <tr><td class="paramname">zapDuplicates</td><td>clean duplicates from pts list if any</td></tr>
+    <tr><td class="paramname">pt</td><td>point to test</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if given point inside polygon</dd></dl>
+<p><br  />
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>allow to specify contains test type</td></tr>
+  </table>
+  </dd>
+</dl>
 <p><br  />
  </p>
 
@@ -2371,8 +2433,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aec3e23618d0659660241cecd72d5f099"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec3e23618d0659660241cecd72d5f099">&#9670;&nbsp;</a></span>Intersect() <span class="overload">[1/2]</span></h2>
+<a id="a80ce90a49b8b24e125f497b31aefbefe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80ce90a49b8b24e125f497b31aefbefe">&#9670;&nbsp;</a></span>Intersect() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2381,7 +2443,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a>&gt; Intersect </td>
+          <td class="memname">static IEnumerable&lt;(<a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> intersectGeom, <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> g1, <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> g2)&gt; Intersect </td>
           <td>(</td>
           <td class="paramtype">this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt;&#160;</td>
           <td class="paramname"><em>_geom1</em>, </td>
@@ -2638,6 +2700,42 @@ Static Public Attributes</h2></td></tr>
 <p>compute length of polyline from given seq_pts </p>
 <p><br  />
  </p>
+
+</div>
+</div>
+<a id="a202ef21f3061a4ccae7ba7864fb711c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a202ef21f3061a4ccae7ba7864fb711c7">&#9670;&nbsp;</a></span>MakeVertexToEdges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Dictionary&lt;<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>, List&lt;<a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a>&gt; &gt; MakeVertexToEdges </td>
+          <td>(</td>
+          <td class="paramtype">this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt;&#160;</td>
+          <td class="paramname"><em>edges</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

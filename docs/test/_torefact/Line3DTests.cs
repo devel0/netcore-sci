@@ -266,8 +266,8 @@ namespace SearchAThing.Sci.Tests
         {
             var l = new Line3D(0, 0, 0, 10, 10, 10);
             
-            Assert.True(l.SemiLineContainsPoints(1e-1, new Vector3D(9,9,9)));
-            Assert.False(l.SemiLineContainsPoints(1e-1, new Vector3D(-1,-1,-1)));
+            Assert.True(l.SemiLineContainsPoint(1e-1, new Vector3D(9,9,9)));
+            Assert.False(l.SemiLineContainsPoint(1e-1, new Vector3D(-1,-1,-1)));
         }
 
         [Fact]

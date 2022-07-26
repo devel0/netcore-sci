@@ -28,12 +28,12 @@ namespace SearchAThing.Sci.Tests
 
             // zoom at 0.0013,12.7559 to see geometry defect
 
-            tol = tolFail;
-            var gyInts = faceGreen.Boolean(tol, faceYellow).ToList();
-            Assert.False(gyInts.Count == 1 && gyInts[0].Loops.Count == 1);
+            // tol = tolFail;
+            // var gyInts = faceGreen.Boolean(tol, faceYellow).ToList();
+            // Assert.False(gyInts.Count == 1 && gyInts[0].Loops.Count == 1);
 
             tol = tolSuccess;
-            gyInts = faceGreen.Boolean(tol, faceYellow).ToList();
+            var gyInts = faceGreen.Boolean(tol, faceYellow).ToList();
             Assert.True(gyInts.Count == 1 && gyInts[0].Loops.Count == 1);
 
             if (outdxf != null)

@@ -157,13 +157,13 @@ namespace SearchAThing.Sci.Tests
 
             var c = new Arc3D(1e-3, p1, p2, p3);
             Assert.True(new Line3D(c.Center, c.CS.BaseX, Line3DConstructMode.PointAndVector)
-                .SemiLineContainsPoints(1e-3, p1));
+                .SemiLineContainsPoint(1e-3, p1));
             var radTol = (1e-1).RadTol(c.Radius);
             var degTol = radTol.ToDeg();
             {
                 var cinverse = new Arc3D(1e-3, p3, p2, p1);
                 Assert.True(new Line3D(c.Center, cinverse.CS.BaseX, Line3DConstructMode.PointAndVector)
-                    .SemiLineContainsPoints(1e-3, p3));
+                    .SemiLineContainsPoint(1e-3, p3));
                 Assert.True(c.AngleStart.EqualsTol(radTol, cinverse.AngleStart));
                 Assert.True(c.AngleEnd.EqualsTol(radTol, cinverse.AngleEnd));
             }
