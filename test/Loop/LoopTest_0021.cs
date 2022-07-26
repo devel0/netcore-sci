@@ -18,20 +18,20 @@ namespace SearchAThing.Sci.Tests
             var dxf = netDxf.DxfDocument.Load(
                 System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Loop/LoopTest_0021.dxf"));
 
-            var evaltest = false;
+            var evaltest = true;
 
             foreach (var op in new[]
             {
                 Face.BooleanMode.Intersect,
-                // Face.BooleanMode.Difference,
-                // Face.BooleanMode.Union
+                Face.BooleanMode.Difference,
+                Face.BooleanMode.Union
             })
             {
 
                 foreach (var inverseTerm in new[]
                 {
                     false,
-                    // true
+                    true
                 })
                 {
                     DxfDocument? outdxf = null;
