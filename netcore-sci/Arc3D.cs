@@ -534,7 +534,7 @@ namespace SearchAThing
             if (inArcAngleRange)
             {
                 var ptAngle = PtAngle(tol, pt);
-                var isInAngleRange = ptAngle.AngleInRange(AngleStart, AngleEnd, radTol: 2 * tol.RadTol(Radius));
+                var isInAngleRange = ptAngle.AngleInRange(AngleStart, AngleEnd, radTol: tol.RadTol(Radius));
                 if (!isInAngleRange) return false;
             }
 

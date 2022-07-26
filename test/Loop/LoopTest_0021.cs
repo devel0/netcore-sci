@@ -15,13 +15,12 @@ namespace SearchAThing.Sci.Tests
         [Fact]
         public void LoopTest_0021()
         {
-            return;
             var dxf = netDxf.DxfDocument.Load(
                 System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Loop/LoopTest_0021.dxf"));
 
             foreach (var op in new[]
             {
-                // Face.BooleanMode.Intersect,
+                //Face.BooleanMode.Intersect,
                 Face.BooleanMode.Difference,
                 // Face.BooleanMode.Union
             })
@@ -29,7 +28,7 @@ namespace SearchAThing.Sci.Tests
 
                 foreach (var inverseTerm in new[]
                 {
-                    //false,
+                    // false,
                     true
                 })
                 {
@@ -38,7 +37,8 @@ namespace SearchAThing.Sci.Tests
 
                     for (int layernum = 1; layernum <= 45; ++layernum)
                     {
-                        if (layernum != 9) continue;
+
+                        // if (layernum != 9) continue;
 
                         DxfDocument? outdxf2 = null;
                         // outdxf2 = new DxfDocument();
@@ -49,85 +49,93 @@ namespace SearchAThing.Sci.Tests
 
                         var faceGreen = dxf.LwPolylines.Where(w => w.Layer == layer && w.Color.Index == AciColor.Green.Index).ToFace(tol);
                         var faceYellow = dxf.LwPolylines.Where(w => w.Layer == layer && w.Color.Index == AciColor.Yellow.Index).ToFace(tol);
-
-                        outdxf?.AddEntities(faceGreen.Loops.Select(loop => { var ent = loop.DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)); ent.Layer = new netDxf.Tables.Layer(layer.Name); return ent; }));
-                        outdxf?.AddEntities(faceYellow.Loops.Select(loop => { var ent = loop.DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)); ent.Layer = new netDxf.Tables.Layer(layer.Name); return ent; }));
-
-                        var firstTerm = inverseTerm ? faceGreen : faceYellow;
-                        var secondTerm = inverseTerm ? faceYellow : faceGreen;
-
-                        var res = firstTerm.Boolean(tol, secondTerm, op, outdxf2).ToList();
-
-                        foreach (var face in res)
+                        try
                         {
-                            var hatch = face
-                                .ToHatch(tol, new HatchPattern(HatchPattern.Line.Name) { Angle = 45, Scale = 0.5 })
-                                ?.Set((eo, isBoundary) =>
-                                {
-                                    eo.SetColor(AciColor.Cyan);
-                                    eo.SetLayer(new netDxf.Tables.Layer(layer.Name));
-                                    eo.Lineweight = isBoundary ? Lineweight.W13 : Lineweight.W0;
-                                });
-                            if (hatch != null) outdxf?.AddEntity(hatch);
-                        }
+                            outdxf?.AddEntities(faceGreen.Loops.Select(loop => { var ent = loop.DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)); ent.Layer = new netDxf.Tables.Layer(layer.Name); return ent; }));
+                            outdxf?.AddEntities(faceYellow.Loops.Select(loop => { var ent = loop.DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)); ent.Layer = new netDxf.Tables.Layer(layer.Name); return ent; }));
 
-                        if (outdxf2 != null)
-                        {
-                            outdxf2.DrawingVariables.PdMode = netDxf.Header.PointShape.CircleCross;
-                            outdxf2.Viewport.ShowGrid = false;
-                            outdxf2.Save(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "out2.dxf"));
-                        }
+                            var firstTerm = inverseTerm ? faceGreen : faceYellow;
+                            var secondTerm = inverseTerm ? faceYellow : faceGreen;
 
-                        var assertmsg = $"---> {op} layernum:{layernum}" + (inverseTerm ? " inversed" : "");
+                            var res = firstTerm.Boolean(tol, secondTerm, op, outdxf2).ToList();
 
-                        switch (op)
-                        {
-                            case Face.BooleanMode.Union:
-                                {
-                                    switch (layernum)
+                            foreach (var face in res)
+                            {
+                                var hatch = face
+                                    .ToHatch(tol, new HatchPattern(HatchPattern.Line.Name) { Angle = 45, Scale = 0.5 })
+                                    ?.Set((eo, isBoundary) =>
                                     {
-                                        case 1:
-                                            // Assert.True(res.Count == 2 && res[0].Loops.Count == 2 && res[1].Loops.Count == 1, assertmsg);
-                                            // res[0].Loops[0].Area.AssertEqualsTol(tol, 900, assertmsg);
-                                            // res[0].Loops[1].Area.AssertEqualsTol(tol, 576, assertmsg);
-                                            // res[1].Loops[0].Area.AssertEqualsTol(tol, 196, assertmsg);
-                                            break;
-                                    }
-                                }
-                                break;
+                                        eo.SetColor(AciColor.Cyan);
+                                        eo.SetLayer(new netDxf.Tables.Layer(layer.Name));
+                                        eo.Lineweight = isBoundary ? Lineweight.W13 : Lineweight.W0;
+                                    });
+                                if (hatch != null) outdxf?.AddEntity(hatch);
+                            }
 
-                            case Face.BooleanMode.Intersect:
-                                {
-                                    switch (layernum)
+                            if (outdxf2 != null)
+                            {
+                                outdxf2.DrawingVariables.PdMode = netDxf.Header.PointShape.CircleCross;
+                                outdxf2.Viewport.ShowGrid = false;
+                                outdxf2.Save(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "out2.dxf"));
+                            }
+
+                            var assertmsg = $"---> {op} layernum:{layernum}" + (inverseTerm ? " inversed" : "");
+
+                            switch (op)
+                            {
+                                case Face.BooleanMode.Union:
                                     {
-
+                                        switch (layernum)
+                                        {
+                                            case 1:
+                                                // Assert.True(res.Count == 2 && res[0].Loops.Count == 2 && res[1].Loops.Count == 1, assertmsg);
+                                                // res[0].Loops[0].Area.AssertEqualsTol(tol, 900, assertmsg);
+                                                // res[0].Loops[1].Area.AssertEqualsTol(tol, 576, assertmsg);
+                                                // res[1].Loops[0].Area.AssertEqualsTol(tol, 196, assertmsg);
+                                                break;
+                                        }
                                     }
-                                }
-                                break;
+                                    break;
 
-                            case Face.BooleanMode.Difference:
-                                {
-                                    if (!inverseTerm)
+                                case Face.BooleanMode.Intersect:
+                                    {
                                         switch (layernum)
                                         {
 
                                         }
-                                    else
-                                        switch (layernum)
-                                        {
+                                    }
+                                    break;
 
-                                        }
-                                }
-                                break;
+                                case Face.BooleanMode.Difference:
+                                    {
+                                        if (!inverseTerm)
+                                            switch (layernum)
+                                            {
+
+                                            }
+                                        else
+                                            switch (layernum)
+                                            {
+
+                                            }
+                                    }
+                                    break;
+                            }
+
+                            //Assert.True(res.Count == 0);
+
+                            if (outdxf != null)
+                            {
+                                outdxf.DrawingVariables.PdMode = netDxf.Header.PointShape.CircleCross;
+                                outdxf.Viewport.ShowGrid = false;
+                                outdxf.Save(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "out.dxf"));
+                            }
                         }
-
-                        //Assert.True(res.Count == 0);
-
-                        if (outdxf != null)
+                        catch (Exception ex)
                         {
-                            outdxf.DrawingVariables.PdMode = netDxf.Header.PointShape.CircleCross;
-                            outdxf.Viewport.ShowGrid = false;
-                            outdxf.Save(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "out.dxf"));
+                            outdxf?.AddEntities(faceGreen.Loops.Select(loop => { var ent = loop.DxfEntity(tol).Set(x => x.SetColor(AciColor.Red)); ent.Layer = new netDxf.Tables.Layer(layer.Name); return ent; }));
+                            outdxf?.AddEntities(faceYellow.Loops.Select(loop => { var ent = loop.DxfEntity(tol).Set(x => x.SetColor(AciColor.Red)); ent.Layer = new netDxf.Tables.Layer(layer.Name); return ent; }));
+
                         }
                     }
 
