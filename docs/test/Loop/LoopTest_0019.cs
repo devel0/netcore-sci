@@ -23,7 +23,7 @@ namespace SearchAThing.Sci.Tests
                 foreach (var inverseTerm in new[] { false, true })
                 {
                     DxfDocument? outdxf = null;
-                    outdxf = new DxfDocument();
+                    // outdxf = new DxfDocument();
 
                     for (int layernum = 1; layernum <= 12; ++layernum)
                     {

@@ -26,10 +26,10 @@ namespace SearchAThing.Sci.Tests
                 {
 
                     DxfDocument? outdxf = null;
-                    outdxf = new DxfDocument();
+                    // outdxf = new DxfDocument();
 
                     DxfDocument? outdxf2 = null;
-                    outdxf2 = new DxfDocument();
+                    // outdxf2 = new DxfDocument();
 
                     var tol = 1e-8;
 

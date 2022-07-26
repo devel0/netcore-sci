@@ -35,7 +35,7 @@ namespace SearchAThing.Sci.Tests
                 })
                 {
                     DxfDocument? outdxf = null;
-                    outdxf = new DxfDocument();
+                    // outdxf = new DxfDocument();
 
                     for (int layernum = 1; layernum <= 45; ++layernum)
                     {
