@@ -20,6 +20,7 @@
 * [Tests](#tests)
     - [LoopTest_0013](#looptest_0013)
     - [LoopTest_0014](#looptest_0014)
+    - [LoopTest_0021](#looptest_0021)
 * [Quickstart](#quickstart)
 * [Basic concepts](#basic-concepts)
   + [Side effects](#side-effects)
@@ -29,6 +30,7 @@
   + [Arc3D](#arc3d)
   + [CoordinateSystem3D](#coordinatesystem3d)
   + [Loop](#loop)
+  + [Face](#face)
   + [Edges](#edges)
   + [Geometry](#geometry)
 * [Unit tests](#unit-tests)
@@ -98,6 +100,32 @@ detect polygons ( line, arcs ) intersection loops when edges overlaps
 ```yellow - green```
 
 <img src="data/img/LoopTest_0014.png" width=400>
+
+#### LoopTest_0021
+
+- [yellow ∩ green](data/img/LoopTest_0021/dxf/out-Intersect-YG.dxf)
+
+<img src="data/img/LoopTest_0021/intersect-YG1.png" width=150>
+<img src="data/img/LoopTest_0021/intersect-YG2.png" width=150>
+<img src="data/img/LoopTest_0021/intersect-YG3.png" width=150>
+
+- [yellow - green](data/img/LoopTest_0021/dxf/out-Intersect-YG.dxf)
+
+<img src="data/img/LoopTest_0021/difference-YG1.png" width=150>
+<img src="data/img/LoopTest_0021/difference-YG2.png" width=150>
+<img src="data/img/LoopTest_0021/difference-YG3.png" width=150>
+
+- [green - yellow](data/img/LoopTest_0021/dxf/out-Intersect-GY.dxf)
+
+<img src="data/img/LoopTest_0021/difference-GY1.png" width=150>
+<img src="data/img/LoopTest_0021/difference-GY2.png" width=150>
+<img src="data/img/LoopTest_0021/difference-GY3.png" width=150>
+
+- [yellow ∪ green](data/img/LoopTest_0021/dxf/out-Union-YG.dxf)
+
+<img src="data/img/LoopTest_0021/union-YG1.png" width=150>
+<img src="data/img/LoopTest_0021/union-YG2.png" width=150>
+<img src="data/img/LoopTest_0021/union-YG3.png" width=150>
 
 ## Quickstart
 
@@ -172,8 +200,13 @@ The vector a created with X:1, Y:2, Z:3 will subjected to a SetX(10) but the vec
 
 ### Loop
 
-- actually implements only planar loop with edges such as Line3D, Arc3D
-- used for boolean ( intersection, difference ) of 3d planar loop polygons.
+- actually implements only planar loop with edges such as Line3D, Arc3D.
+- edges inside loop are ensured to be ordered.
+
+### Face
+
+- can have one or more loops; first loop is the outer.
+- supports boolean ( intersection, difference, union ) of 3d planar loop faces.
 
 ### Edges
 
