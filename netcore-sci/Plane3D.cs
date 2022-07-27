@@ -50,6 +50,11 @@ namespace SearchAThing
         public bool Contains(double tol, Line3D line) => Contains(tol, line.From) && Contains(tol, line.To);
 
         /// <summary>
+        /// states if given edge contained in this plane
+        /// </summary>        
+        public bool Contains(double tol, Edge edge) => Contains(tol, edge.SGeomFrom) && Contains(tol, edge.MidPoint) && Contains(tol, edge.SGeomTo);
+
+        /// <summary>
         /// return intersection line between two planes or null if they parallels
         /// </summary>
         /// <param name="tol">len tolerance</param>
