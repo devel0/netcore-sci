@@ -260,7 +260,7 @@ namespace SearchAThing
         /// build a copy of given vector
         /// </summary>        
         public Vector3D(Vector3D v) : base(GeometryType.Vector3D)
-        {            
+        {
             X = v.X;
             Y = v.Y;
             Z = v.Z;
@@ -1714,36 +1714,29 @@ namespace SearchAThing
             if (firstPt == null || distantPt == null)
                 throw new Exception($"can't find two distant points");
 
-            var dLine = new Line3D(firstPt!, distantPt!);
-            Line3D? perpLine = null;
-            Vector3D? perpDistantPt = null;
-            double perpDistance = 0;
+            var v1 = distantPt - firstPt;
+            double? ang = null;
+            Vector3D? v2 = null;
+
             foreach (var pt in pts)
             {
                 if (pt == firstPt || pt == distantPt) continue;
 
-                var pLine = dLine.Perpendicular(tol, pt);
-                if (pLine != null)
-                {
-                    var pdst = pLine.Length;
+                var qv2 = pt - firstPt;
 
-                    if (perpDistantPt == null || pdst > perpDistance)
-                    {
-                        perpLine = pLine;
-                        perpDistantPt = pt;
-                        perpDistance = pdst;
-                    }
+                var qang = qv2.AngleRad(tol, v1);
+                if (ang == null || qang > ang.Value)
+                {
+                    ang = qang;
+                    v2 = qv2;
                 }
             }
 
-            if (perpLine == null) throw new Exception($"can't find perp line");
+            if (v2 == null) throw new Exception($"can't find v2");
 
-            var origin = firstPt;
-            var bx = dLine.V.Normalized();
-            var by = perpLine.V.Normalized();
-            var bz = bx.CrossProduct(by).Normalized();
+            var pl = new Plane3D(new CoordinateSystem3D(firstPt, v1, v2));
 
-            return new Plane3D(new CoordinateSystem3D(origin, bx, by, bz).Simplified());
+            return pl;
         }
 
         /// <summary>
