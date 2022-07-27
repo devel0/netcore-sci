@@ -128,6 +128,15 @@ namespace SearchAThing
 
         public string A0QCadScript => QCadScript();
 
+        /// <summary>
+        /// project this arc to given projection plane
+        /// </summary>        
+        public override Edge Project(double tol, Plane3D prjPlane) =>
+            new Arc3D(
+                SGeomFrom.Project(prjPlane.CS),
+                MidPoint.Project(prjPlane.CS),
+                SGeomTo.Project(prjPlane.CS));
+
         #endregion
 
         #region Geometry

@@ -89,6 +89,14 @@ namespace SearchAThing
         /// </summary>        
         public abstract bool EdgeContainsPoint(double tol, Vector3D pt);
 
+        /// <summary>
+        /// project this edge to given plane
+        /// </summary>
+        /// <param name="tol"></param>
+        /// <param name="prjPlane"></param>
+        /// <returns></returns>
+        public abstract Edge Project(double tol, Plane3D prjPlane);
+
         public abstract string ToString(int digits);
 
         /// <summary>

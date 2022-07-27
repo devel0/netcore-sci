@@ -1102,6 +1102,9 @@ namespace SearchAThing
             return hatch;
         }
 
+        /// <summary>
+        /// rotate cs and edges like point from rotate toward to
+        /// </summary>        
         public Face RotateAs(double tol, Vector3D from, Vector3D to)
         {
             var newLoops = new List<Loop>();
@@ -1140,6 +1143,29 @@ namespace SearchAThing
             }
 
             return new Face(newLoops[0].Plane, newLoops);
+        }
+
+        /// <summary>
+        /// project this face edges to the given projection plane
+        /// </summary>        
+        public Face Project(double tol, Plane3D prjPlane)
+        {
+            var resLoops = new List<Loop>();
+
+            foreach (var loop in Loops)
+            {
+                var resEdges = new List<Edge>();
+                foreach (var edge in loop.Edges)
+                {
+                    var prjEdge = edge.Project(tol, prjPlane);
+
+                    resEdges.Add(prjEdge);
+                }
+
+                resLoops.Add(new Loop(tol, prjPlane, resEdges, checkSense: false));
+            }
+
+            return new Face(prjPlane, resLoops);
         }
 
         public override string ToString() => Invariant($"A:{Area} Loops:{Loops.Count}");

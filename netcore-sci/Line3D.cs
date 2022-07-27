@@ -72,6 +72,12 @@ namespace SearchAThing
             }
         }
 
+        /// <summary>
+        /// project this line to given projection plane
+        /// </summary>        
+        public override Edge Project(double tol, Plane3D prjPlane) =>
+            SGeomFrom.Project(prjPlane.CS).LineTo(SGeomTo.Project(prjPlane.CS));
+
         public override Vector3D MidPoint => (From + To) / 2;
 
         public Edge EdgeMove(Vector3D delta) => this.Move(delta);
