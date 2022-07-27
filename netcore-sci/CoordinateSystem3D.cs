@@ -2,11 +2,14 @@ using System;
 using System.Numerics;
 using System.Text;
 using static System.Math;
+using System.Collections.Generic;
 
 using netDxf.Tables;
+using Vector3 = System.Numerics.Vector3;
+using Newtonsoft.Json;
 
 using static SearchAThing.SciToolkit;
-using Newtonsoft.Json;
+using netDxf;
 
 namespace SearchAThing
 {
@@ -204,14 +207,14 @@ namespace SearchAThing
             Origin = o;
             BaseX = baseX;
             BaseY = baseY;
-            BaseZ = baseZ;       
+            BaseZ = baseZ;
         }
 
         /// <summary>
         /// if BaseZ matches one of XY, XZ, YZ default cs then a new cs with origin preserved but baseX, baseY, baseZ overriden will returned.
         /// </summary>        
         public CoordinateSystem3D Simplified()
-        {            
+        {
             if (BaseZ.EqualsTol(NormalizedLengthTolerance, CoordinateSystem3D.WCS.BaseZ))
                 return CoordinateSystem3D.WCS.Move(Origin);
 
@@ -373,6 +376,22 @@ namespace SearchAThing
         }
 
         /// <summary>
+        /// return another cs rotated as from goes toward to
+        /// </summary>            
+        public CoordinateSystem3D RotateAs(double tol, Vector3D from, Vector3D to)
+        {
+            var bx = (Origin + BaseX).RotateAs(tol, from, to);
+            var by = (Origin + BaseY).RotateAs(tol, from, to);
+            var bz = (Origin + BaseZ).RotateAs(tol, from, to);
+
+            return new CoordinateSystem3D(
+                Origin.RotateAs(tol, from, to),
+                (bx - Origin).Normalized(),
+                (by - Origin).Normalized(),
+                (bz - Origin).Normalized());
+        }
+
+        /// <summary>
         /// return another cs with same origin and base vector rotated about given vector            
         /// </summary>            
         public CoordinateSystem3D Rotate(Vector3D vectorAxis, double angleRad) =>
@@ -405,6 +424,16 @@ namespace SearchAThing
         }
 
         public UCS ToDxfUCS(string name) => new UCS(name, Origin, BaseX, BaseY);
+
+        /// <summary>
+        /// retrieve a set of 3 dxf line (RED:x, GREEN:y, BLUE:z) representing CS
+        /// </summary>
+        public IEnumerable<netDxf.Entities.EntityObject> ToDxfLines(double len = 1)
+        {
+            yield return Origin.LineV(len * BaseX).DxfEntity.Set(ent => ent.SetColor(AciColor.Red));
+            yield return Origin.LineV(len * BaseY).DxfEntity.Set(ent => ent.SetColor(AciColor.Green));
+            yield return Origin.LineV(len * BaseZ).DxfEntity.Set(ent => ent.SetColor(AciColor.Blue));
+        }
 
         /// <summary>
         /// debug string
