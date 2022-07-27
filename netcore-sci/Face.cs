@@ -5,15 +5,16 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Diagnostics.CodeAnalysis;
 using static System.FormattableString;
+using System.Diagnostics;
+using System.Text;
 
 using netDxf;
 using netDxf.Entities;
-
-using SearchAThing;
-using System.Text;
 using Newtonsoft.Json;
 using netDxf.Tables;
-using System.Diagnostics;
+
+using SearchAThing;
+using static SearchAThing.SciToolkit;
 
 namespace SearchAThing
 {
@@ -1099,6 +1100,46 @@ namespace SearchAThing
             hatch.Normal = loopLws[0].Normal;
             hatch.Elevation = loopLws[0].Elevation;
             return hatch;
+        }
+
+        public Face RotateAs(double tol, Vector3D from, Vector3D to)
+        {
+            var newLoops = new List<Loop>();
+
+            var origin = Plane.CS.Origin;
+
+            foreach (var loop in Loops)
+            {
+                var newEdges = new List<Edge>();
+
+                foreach (var edge in loop.Edges)
+                {
+                    switch (edge.GeomType)
+                    {
+                        case GeometryType.Line3D:
+                            {
+                                newEdges.Add(
+                                    ((edge.SGeomFrom - origin).RotateAs(tol, from, to) + origin).LineTo(
+                                    ((edge.SGeomTo - origin).RotateAs(tol, from, to)) + origin));
+                            }
+                            break;
+
+                        case GeometryType.Arc3D:
+                            {
+                                newEdges.Add(
+                                    new Arc3D(tol,
+                                        ((edge.SGeomFrom - origin).RotateAs(tol, from, to) + origin),
+                                        ((edge.MidPoint - origin).RotateAs(tol, from, to) + origin),
+                                        ((edge.SGeomTo - origin).RotateAs(tol, from, to) + origin)));
+                            }
+                            break;
+                    }
+                }
+
+                newLoops.Add(new Loop(tol, newEdges, checkSense: false));
+            }
+
+            return new Face(newLoops[0].Plane, newLoops);
         }
 
         public override string ToString() => Invariant($"A:{Area} Loops:{Loops.Count}");
