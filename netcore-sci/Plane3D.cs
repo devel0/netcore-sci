@@ -63,6 +63,28 @@ namespace SearchAThing
 
         public Plane3D Move(Vector3D delta) => new Plane3D(CS.Move(delta));
 
+        /// <summary>
+        /// retrieve the plane that is in the middle between this and other given
+        /// </summary>
+        public Plane3D MiddlePlane(double tol, Plane3D other)
+        {
+            if (this.CS.IsParallelTo(tol, other.CS))
+            {
+                var moveDst = other.CS.Origin.ToUCS(this.CS).Z * this.CS.BaseZ / 2;
+                return this.Move(moveDst);
+            }
+            else
+            {
+                var iline = this.CS.Intersect(tol, other.CS);
+                if (iline == null) throw new System.Exception($"can't find intersect line between planes {this} and {other}");
+                var mline = iline.From.LineV(this.CS.BaseZ + other.CS.BaseZ);
+
+                var mcs = new CoordinateSystem3D(iline.From, iline.V, mline.V, SmartCsMode.X_YQ);
+
+                return new Plane3D(mcs);
+            }
+        }
+
         public string ToString(int digits) => CS.ToString(digits);
 
         public override string ToString() => ToString(3);
