@@ -24,6 +24,11 @@ namespace SearchAThing.Sci.Tests
             q.CS.BaseX.AssertEqualsTol(NormalizedLengthTolerance, 1, 0, 0);
             q.CS.BaseY.AssertEqualsTol(NormalizedLengthTolerance, 0, 0, 1);
             q.CS.BaseZ.AssertEqualsTol(NormalizedLengthTolerance, 0, -1, 0);
+
+            foreach (var p in pts)
+            {
+                p.ToUCS(q.CS).Z.AssertEqualsTol(tol, 0);
+            }
         }
     }
 }
