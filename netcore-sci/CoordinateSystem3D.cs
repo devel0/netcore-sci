@@ -215,14 +215,17 @@ namespace SearchAThing
         /// </summary>        
         public CoordinateSystem3D Simplified()
         {
-            if (BaseZ.EqualsTol(NormalizedLengthTolerance, CoordinateSystem3D.WCS.BaseZ))
+            if (BaseZ.EqualsTol(NormalizedLengthTolerance, CoordinateSystem3D.WCS.BaseZ) ||
+                BaseZ.EqualsTol(NormalizedLengthTolerance, -CoordinateSystem3D.WCS.BaseZ))
                 return CoordinateSystem3D.WCS.Move(Origin);
 
-            if (BaseZ.EqualsTol(NormalizedLengthTolerance, CoordinateSystem3D.XZ.BaseZ))
+            if (BaseZ.EqualsTol(NormalizedLengthTolerance, CoordinateSystem3D.XZ.BaseZ) ||
+                BaseZ.EqualsTol(NormalizedLengthTolerance, -CoordinateSystem3D.XZ.BaseZ))
                 return CoordinateSystem3D.XZ.Move(Origin);
-
-            if (BaseZ.EqualsTol(NormalizedLengthTolerance, CoordinateSystem3D.YZ.BaseZ))
-                return CoordinateSystem3D.YZ.Move(Origin);
+            
+            if (BaseZ.EqualsTol(NormalizedLengthTolerance, CoordinateSystem3D.YZ.BaseZ) ||
+                BaseZ.EqualsTol(NormalizedLengthTolerance, -CoordinateSystem3D.YZ.BaseZ))
+                return CoordinateSystem3D.YZ.Move(Origin);            
 
             return this;
         }
