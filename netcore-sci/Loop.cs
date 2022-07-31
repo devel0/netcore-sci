@@ -213,7 +213,7 @@ namespace SearchAThing
 
                 var arcmidpt = edge.MidPoint;
                 var segmidpt = edge.SGeomFrom.LineTo(edge.SGeomTo).MidPoint;
-                var testpt = segmidpt + (arcmidpt-segmidpt).Normalized() * 2 * tol;
+                var testpt = segmidpt + (arcmidpt - segmidpt).Normalized() * 2 * tol;
 
                 if (polysegs.ContainsPoint(tol, testpt))
                     res -= arc.SegmentArea;
@@ -312,6 +312,13 @@ namespace SearchAThing
 
             int K = 0;
 
+            var ipHs = new HashSet<Vector3D>(new Vector3DEqualityComparer(tol));
+
+            var tolfactor = 1.1d;
+            // if use 1.0 tolfactor some test will fail because
+            // of different tolerance management between test of line overlap
+            // with colinear test result and line/line intersect method
+
             for (int edgeIdx = 0; edgeIdx < Edges.Count; ++edgeIdx)
             {
                 var edge = Edges[edgeIdx];
@@ -325,16 +332,19 @@ namespace SearchAThing
                         case GeometryType.Vector3D:
                             {
                                 var ip = (Vector3D)ires;
-                                if (ray.SemiLineContainsPoint(tol, ip)) ++K;
+                                if (ipHs.Contains(ip))
+                                    return this.ContainsPoint(tol, pt + tolfactor * tol * Plane.CS.BaseY, mode);
+
+                                if (ray.SemiLineContainsPoint(tol, ip))
+                                    ++K;
+
+                                ipHs.Add(ip);
                             }
                             break;
 
                         case GeometryType.Line3D:
                             {
-                                var tolfactor = 1.1d;
-                                // if use 1.0 tolfactor some test will fail because
-                                // of different tolerance management between test of line overlap
-                                // with colinear test result and line/line intersect method
+
 
                                 return this.ContainsPoint(tol, pt + tolfactor * tol * Plane.CS.BaseY, mode);
                             }

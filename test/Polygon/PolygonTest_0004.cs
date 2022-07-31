@@ -32,17 +32,17 @@ namespace SearchAThing.Sci.Tests
             }
 
             foreach (var point in insidePts)
-            {
-                var qpoly = poly.ContainsPoint(tol, point);
+            {                                
+                var qpoly = poly.ContainsPoint(tol, point, LoopContainsPointMode.InsideExcludedPerimeter);
                 var qloop = loop.ContainsPoint(tol, point, LoopContainsPointMode.InsideExcludedPerimeter);
 
                 Assert.True(qpoly);
-                Assert.True(qloop);
+                Assert.True(qloop);                
             }
 
             foreach (var point in outsidePts)
-            {
-                var qpoly = poly.ContainsPoint(tol, point);
+            {                
+                var qpoly = poly.ContainsPoint(tol, point, LoopContainsPointMode.InsideExcludedPerimeter);
                 var qloop = loop.ContainsPoint(tol, point, LoopContainsPointMode.InsideExcludedPerimeter);
 
                 Assert.False(qpoly);
