@@ -328,7 +328,7 @@ namespace SearchAThing
         /// </summary>
         /// <param name="_geom"></param>
         /// <param name="tol">length tolerance</param>
-        /// <param name="normal">lw polyline normal</param>
+        /// <param name="cs">lw CS</param>
         /// <param name="closed"></param>        
         /// <returns></returns>
         public static netDxf.Entities.LwPolyline ToLwPolyline(this IEnumerable<Geometry> _geom, double tol,
