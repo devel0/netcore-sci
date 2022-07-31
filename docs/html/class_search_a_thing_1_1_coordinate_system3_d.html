@@ -135,6 +135,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9aff237d63db8e87d32956a557283d30"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html">CoordinateSystem3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html#a9aff237d63db8e87d32956a557283d30">Rotate</a> (<a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> axis, double angleRad)</td></tr>
 <tr class="memdesc:a9aff237d63db8e87d32956a557283d30"><td class="mdescLeft">&#160;</td><td class="mdescRight">return another cs rotated respect given axis  <a href="class_search_a_thing_1_1_coordinate_system3_d.html#a9aff237d63db8e87d32956a557283d30">More...</a><br /></td></tr>
 <tr class="separator:a9aff237d63db8e87d32956a557283d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ad4e72679123d956b52940b7c0503f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html">CoordinateSystem3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html#a0ad4e72679123d956b52940b7c0503f6">RotateAs</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> from, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> to)</td></tr>
+<tr class="memdesc:a0ad4e72679123d956b52940b7c0503f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">return another cs rotated as from goes toward to  <a href="class_search_a_thing_1_1_coordinate_system3_d.html#a0ad4e72679123d956b52940b7c0503f6">More...</a><br /></td></tr>
+<tr class="separator:a0ad4e72679123d956b52940b7c0503f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2c307ae3e667f8753d38beeae110cb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html">CoordinateSystem3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html#aa2c307ae3e667f8753d38beeae110cb5">Rotate</a> (<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> vectorAxis, double angleRad)</td></tr>
 <tr class="memdesc:aa2c307ae3e667f8753d38beeae110cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">return another cs with same origin and base vector rotated about given vector <br  />
   <a href="class_search_a_thing_1_1_coordinate_system3_d.html#aa2c307ae3e667f8753d38beeae110cb5">More...</a><br /></td></tr>
@@ -144,6 +147,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6c8756373447d3a1ba36521dd13773cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56882bce75897f2a896b61fee13a70dd"><td class="memItemLeft" align="right" valign="top">UCS&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html#a56882bce75897f2a896b61fee13a70dd">ToDxfUCS</a> (string name)</td></tr>
 <tr class="separator:a56882bce75897f2a896b61fee13a70dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaedf495791823fb2117491b912a543a1"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; netDxf.Entities.EntityObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html#aaedf495791823fb2117491b912a543a1">ToDxfLines</a> (double len=1)</td></tr>
+<tr class="memdesc:aaedf495791823fb2117491b912a543a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">retrieve a set of 3 dxf line (RED:x, GREEN:y, BLUE:z) representing CS  <a href="class_search_a_thing_1_1_coordinate_system3_d.html#aaedf495791823fb2117491b912a543a1">More...</a><br /></td></tr>
+<tr class="separator:aaedf495791823fb2117491b912a543a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe77134ec112964ec0c25d1c8e67d331"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html#afe77134ec112964ec0c25d1c8e67d331">ToString</a> (int digits)</td></tr>
 <tr class="memdesc:afe77134ec112964ec0c25d1c8e67d331"><td class="mdescLeft">&#160;</td><td class="mdescRight">debug string  <a href="class_search_a_thing_1_1_coordinate_system3_d.html#afe77134ec112964ec0c25d1c8e67d331">More...</a><br /></td></tr>
 <tr class="separator:afe77134ec112964ec0c25d1c8e67d331"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -648,6 +654,44 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="a0ad4e72679123d956b52940b7c0503f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ad4e72679123d956b52940b7c0503f6">&#9670;&nbsp;</a></span>RotateAs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html">CoordinateSystem3D</a> RotateAs </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>to</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>return another cs rotated as from goes toward to </p>
+<p><br  />
+ </p>
+
+</div>
+</div>
 <a id="ae7eae5826cb8c7f1aed4b1a5fd3d2fd4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae7eae5826cb8c7f1aed4b1a5fd3d2fd4">&#9670;&nbsp;</a></span>Simplified()</h2>
 
@@ -694,6 +738,26 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>cad script</dd></dl>
+
+</div>
+</div>
+<a id="aaedf495791823fb2117491b912a543a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaedf495791823fb2117491b912a543a1">&#9670;&nbsp;</a></span>ToDxfLines()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerable&lt;netDxf.Entities.EntityObject&gt; ToDxfLines </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>len</em> = <code>1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>retrieve a set of 3 dxf line (RED:x, GREEN:y, BLUE:z) representing CS </p>
 
 </div>
 </div>

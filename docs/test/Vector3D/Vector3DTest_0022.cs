@@ -3,6 +3,8 @@ using System.IO;
 using Newtonsoft.Json;
 using Xunit;
 
+using static SearchAThing.SciToolkit;
+
 namespace SearchAThing.Sci.Tests
 {
     public partial class Vector3DTests
@@ -18,9 +20,15 @@ namespace SearchAThing.Sci.Tests
 
             var q = pts.BestFittingPlane(tol);
 
-            // TODO: q should (6.28, 19, 0) X:(0,0,1), Y(-1,0,0), Z(0,-1,0)
+            q.CS.Origin.AssertEqualsTol(tol, 6.28, 19, 0);
+            q.CS.BaseX.AssertEqualsTol(NormalizedLengthTolerance, 1, 0, 0);
+            q.CS.BaseY.AssertEqualsTol(NormalizedLengthTolerance, 0, 0, 1);
+            q.CS.BaseZ.AssertEqualsTol(NormalizedLengthTolerance, 0, -1, 0);
 
-            ;
+            foreach (var p in pts)
+            {
+                p.ToUCS(q.CS).Z.AssertEqualsTol(tol, 0);
+            }
         }
     }
 }

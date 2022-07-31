@@ -4,6 +4,7 @@ using System;
 
 using netDxf;
 using netDxf.Entities;
+using System.Collections.Generic;
 
 namespace SearchAThing.Sci.Tests
 {
@@ -16,26 +17,29 @@ namespace SearchAThing.Sci.Tests
             var dxf = netDxf.DxfDocument.Load(
                 System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Geometry/GeometryTest_0001.dxf"));
             netDxf.DxfDocument? outdxf = null;
-            //outdxf = new netDxf.DxfDocument();
+            // outdxf = new netDxf.DxfDocument();
 
             var tol = 1e-8;
 
-            var lw = dxf.LwPolylines.First();
+            var lw = dxf.LwPolylines.First(w => w.Color.Index == AciColor.Red.Index);
 
-            var geoms = lw.ToGeometries(tol);
+            var lw1geoms = lw.ToGeometries(tol).ToList();
 
             var origlw = (LwPolyline)lw.Clone();
-            origlw.SetColor(AciColor.Blue);
+            origlw.SetColor(AciColor.Red);
             if (outdxf != null) outdxf.AddEntity(origlw);
 
-            var relw = geoms.ToLwPolyline(tol, geoms.SelectMany(w => w.Vertexes).BestFittingPlane(tol).CS);
-            if (outdxf != null) outdxf.AddEntity(relw.Set(ent => ent.SetColor(netDxf.AciColor.Red)));
+            var greenCs = lw1geoms.SelectMany(w => w.Vertexes).BestFittingPlane(tol).CS;
+            var relw = lw1geoms.ToLwPolyline(tol, greenCs);
+            if (outdxf != null) outdxf.AddEntity(relw.Set(ent => ent.SetColor(netDxf.AciColor.Green)));
 
-            Assert.True(lw.Vertexes.Count == relw.Vertexes.Count);
-            for (int i = 0; i < lw.Vertexes.Count; ++i)
+            var lw2geoms = lw.ToGeometries(tol).ToList();
+
+            Assert.True(lw1geoms.Count == lw2geoms.Count);
+
+            for (int i = 0; i < lw1geoms.Count; ++i)
             {
-                ((Vector3D)lw.Vertexes[i].Position)
-                    .AssertEqualsTol(tol, relw.Vertexes[i].Position);
+                Assert.True(lw1geoms[i].GeomEquals(tol, lw2geoms[i]));
             }
 
             if (outdxf != null)

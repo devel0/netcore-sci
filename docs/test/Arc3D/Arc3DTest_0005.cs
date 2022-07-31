@@ -18,21 +18,33 @@ namespace SearchAThing.Sci.Tests
         {
             var tol = 1e-8;
 
-            DxfDocument? outdxf = null;            
+            DxfDocument? outdxf = null;
+            outdxf = new DxfDocument();
 
             var p1 = new Vector3D(0, 12.72);
             var p2 = new Vector3D(1.90117406, 17.09882594);
             var p3 = new Vector3D(6.28000000, 19.00000000);
 
-            var arcA = new Arc3D(tol, p1, p2, p3);
-            var arcB = new Arc3D(tol, p3, p2, p1);
+            var arcRed = new Arc3D(tol, p1, p2, p3);
+            var arcGreen = new Arc3D(tol, p3, p2, p1);
 
-            arcA.GeomFrom.AssertEqualsTol(tol, arcB.GeomTo);
-            arcA.GeomTo.AssertEqualsTol(tol, arcB.GeomFrom);            
-            arcA.CS.BaseZ.AssertEqualsTol(NormalizedLengthTolerance, -arcB.CS.BaseZ);
+            arcRed.GeomFrom.AssertEqualsTol(tol, arcGreen.GeomTo);
+            arcRed.GeomTo.AssertEqualsTol(tol, arcGreen.GeomFrom);
 
-            outdxf?.AddEntity(arcA.DxfEntity);
-            outdxf?.AddEntity(arcB.DxfEntity);
+            arcRed.SGeomFrom.AssertEqualsTol(tol, arcGreen.SGeomTo);
+            arcRed.SGeomTo.AssertEqualsTol(tol, arcGreen.SGeomFrom);
+
+            arcRed.CS.BaseZ.AssertEqualsTol(NormalizedLengthTolerance, -arcGreen.CS.BaseZ);
+
+            outdxf?.AddEntity(arcRed.DxfEntity.Set(ent => ent.Color = AciColor.Red));
+            outdxf?.AddEntity(arcGreen.DxfEntity.Set(ent => ent.Color = AciColor.Green));
+
+            var arcGreen2 = arcGreen.ToggleSense();
+            arcRed.GeomFrom.AssertEqualsTol(tol, arcGreen2.GeomTo);
+            arcRed.GeomTo.AssertEqualsTol(tol, arcGreen2.GeomFrom);
+
+            arcRed.SGeomFrom.AssertEqualsTol(tol, arcGreen2.SGeomFrom);
+            arcRed.SGeomTo.AssertEqualsTol(tol, arcGreen2.SGeomTo);
 
             if (outdxf != null)
             {

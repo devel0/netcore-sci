@@ -112,6 +112,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a099acb26f6f23eed3703413e88c9dbd7"><td class="memItemLeft" align="right" valign="top">netDxf.Entities.? Hatch&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_face.html#a099acb26f6f23eed3703413e88c9dbd7">ToHatch</a> (double tol, HatchPattern pattern, bool associative=true)</td></tr>
 <tr class="memdesc:a099acb26f6f23eed3703413e88c9dbd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">create hatch with outer and inner boundaries  <a href="class_search_a_thing_1_1_face.html#a099acb26f6f23eed3703413e88c9dbd7">More...</a><br /></td></tr>
 <tr class="separator:a099acb26f6f23eed3703413e88c9dbd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a779eea83c839c718d0c792570c7d0430"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_face.html">Face</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_face.html#a779eea83c839c718d0c792570c7d0430">RotateAs</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> from, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> to)</td></tr>
+<tr class="memdesc:a779eea83c839c718d0c792570c7d0430"><td class="mdescLeft">&#160;</td><td class="mdescRight">rotate cs and edges like point from rotate toward to  <a href="class_search_a_thing_1_1_face.html#a779eea83c839c718d0c792570c7d0430">More...</a><br /></td></tr>
+<tr class="separator:a779eea83c839c718d0c792570c7d0430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad05caba0d44a245de05c712fa7bed010"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_face.html">Face</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_face.html#ad05caba0d44a245de05c712fa7bed010">Project</a> (double tol, <a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a> prjPlane)</td></tr>
+<tr class="memdesc:ad05caba0d44a245de05c712fa7bed010"><td class="mdescLeft">&#160;</td><td class="mdescRight">project this face edges to the given projection plane  <a href="class_search_a_thing_1_1_face.html#ad05caba0d44a245de05c712fa7bed010">More...</a><br /></td></tr>
+<tr class="separator:ad05caba0d44a245de05c712fa7bed010"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa73e7c4dd1df5fd5fbf81c7764ee1533"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_face.html#aa73e7c4dd1df5fd5fbf81c7764ee1533">ToString</a> ()</td></tr>
 <tr class="separator:aa73e7c4dd1df5fd5fbf81c7764ee1533"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -382,6 +388,76 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>test if edge overlap any of loop edges of this face </p>
+<p><br  />
+ </p>
+
+</div>
+</div>
+<a id="ad05caba0d44a245de05c712fa7bed010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad05caba0d44a245de05c712fa7bed010">&#9670;&nbsp;</a></span>Project()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_search_a_thing_1_1_face.html">Face</a> Project </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a>&#160;</td>
+          <td class="paramname"><em>prjPlane</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>project this face edges to the given projection plane </p>
+<p><br  />
+ </p>
+
+</div>
+</div>
+<a id="a779eea83c839c718d0c792570c7d0430"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a779eea83c839c718d0c792570c7d0430">&#9670;&nbsp;</a></span>RotateAs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_search_a_thing_1_1_face.html">Face</a> RotateAs </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>to</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>rotate cs and edges like point from rotate toward to </p>
 <p><br  />
  </p>
 

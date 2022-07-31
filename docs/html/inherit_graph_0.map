@@ -1,9 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,132,148,159"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,183,148,209"/>
 <area shape="rect" id="node2" href="$class_search_a_thing_1_1_arc3_d_equality_comparer.html" title="checks if arcs share same plane, origin, radius, angle start&#45;end" alt="" coords="207,5,385,32"/>
-<area shape="rect" id="node3" href="$class_search_a_thing_1_1_double_equality_comparer.html" title="helper class to compare a set of doubles by using given tolerance" alt="" coords="203,56,389,83"/>
-<area shape="rect" id="node4" href="$class_search_a_thing_1_1_line3_d_equality_comparer.html" title="equality comparer helper for Line3D types" alt="" coords="204,107,388,133"/>
-<area shape="rect" id="node5" href="$class_search_a_thing_1_1_loop_equality_comparer.html" title=" " alt="" coords="211,157,381,184"/>
-<area shape="rect" id="node6" href="$class_search_a_thing_1_1_vector3_d_equality_comparer.html" title="helper class to compare vector3d set using given tolerance" alt="" coords="197,208,395,235"/>
-<area shape="rect" id="node7" href="$class_search_a_thing_1_1_vector3_d_with_order_equality_comparer.html" title="helper class to compare vector3d in a distinct operation retaining original order,..." alt="" coords="196,259,396,301"/>
+<area shape="rect" id="node3" href="$class_search_a_thing_1_1_d_vector3_equality_comparer.html" title="helper class to compare vector3d set using given tolerance" alt="" coords="197,56,395,83"/>
+<area shape="rect" id="node4" href="$class_search_a_thing_1_1_double_equality_comparer.html" title="helper class to compare a set of doubles by using given tolerance" alt="" coords="203,107,389,133"/>
+<area shape="rect" id="node5" href="$class_search_a_thing_1_1_line3_d_equality_comparer.html" title="equality comparer helper for Line3D types" alt="" coords="204,157,388,184"/>
+<area shape="rect" id="node6" href="$class_search_a_thing_1_1_loop_equality_comparer.html" title=" " alt="" coords="211,208,381,235"/>
+<area shape="rect" id="node7" href="$class_search_a_thing_1_1_n_vector3_equality_comparer.html" title="helper class to compare vector3d set using given tolerance" alt="" coords="197,259,395,285"/>
+<area shape="rect" id="node8" href="$class_search_a_thing_1_1_vector3_d_equality_comparer.html" title="helper class to compare vector3d set using given tolerance" alt="" coords="197,309,395,336"/>
+<area shape="rect" id="node9" href="$class_search_a_thing_1_1_vector3_d_with_order_equality_comparer.html" title="helper class to compare vector3d in a distinct operation retaining original order,..." alt="" coords="196,361,396,402"/>
 </map>
