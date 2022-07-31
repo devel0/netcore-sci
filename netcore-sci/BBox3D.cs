@@ -471,7 +471,7 @@ namespace SearchAThing
         /// <summary>
         /// stringify bbox as Max-Min=Size
         /// </summary>
-        public override string ToString() => $"{Max}-{Min}={Size}";
+        public override string ToString() => IsEmpty ? "Empty" : $"{Max}-{Min}={Size}";
 
     }
 
@@ -630,6 +630,15 @@ namespace SearchAThing
                     {
                         var circleLw = ((Circle)eo).ToPolyline(4);
                         foreach (var x in circleLw.Vertexes) yield return x.Position;
+                    }
+                    break;
+
+                case EntityType.Arc:
+                    {
+                        var arc = ((Arc)eo).ToArc3D();
+                        yield return arc.From;
+                        yield return arc.MidPoint;
+                        yield return arc.To;
                     }
                     break;
 
