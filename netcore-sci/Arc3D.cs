@@ -34,6 +34,9 @@ namespace SearchAThing
             StartGtEnd = NormalizedStartAngleRad > NormalizedEndAngleRad;
         }
 
+        /// <summary>
+        /// compare two angles ; precondition: angles must already normalized
+        /// </summary>        
         public int Compare(double xAngleRad, double yAngleRad)
         {
             if (StartGtEnd)
@@ -126,7 +129,12 @@ namespace SearchAThing
         public override string QCadScript(bool final = true) =>
             Invariant($"ARC3\n{SGeomFrom.X},{SGeomFrom.Y}\n{MidPoint.X},{MidPoint.Y}\n{SGeomTo.X},{SGeomTo.Y}\n{(final ? "QQ\n" : "")}");
 
+        public override string ProgeCadScript(bool final = true) =>
+            Invariant($"ARC {SGeomFrom.X},{SGeomFrom.Y},{SGeomFrom.Z} {MidPoint.X},{MidPoint.Y},{MidPoint.Z} {SGeomTo.X},{SGeomTo.Y},{SGeomTo.Z}\n");
+
         public string A0QCadScript => QCadScript();
+
+        public string A0ProgeCadScript => ProgeCadScript();
 
         /// <summary>
         /// project this arc to given projection plane
@@ -418,32 +426,25 @@ namespace SearchAThing
             CS = nfo.CS;
             Radius = nfo.Radius;
 
-            // if (normal != null)
-            // {
-            //     if (!normal.Colinear(NormalizedLengthTolerance, CS.BaseZ)) throw new ArgumentException($"invalid given normal not colinear to arc axis");
-            //     if (!normal.Concordant(NormalizedLengthTolerance, CS.BaseZ))
-            //     {
-            //         CS = CS.Rotate(CS.BaseX, PI);
-            //     }
-            // }
-
             var _start = CS.BaseX.AngleToward(tol, fromPt - CS.Origin, CS.BaseZ).NormalizeAngle();
             var _mid = CS.BaseX.AngleToward(tol, insidePt - CS.Origin, CS.BaseZ).NormalizeAngle();
             var _end = CS.BaseX.AngleToward(tol, toPt - CS.Origin, CS.BaseZ).NormalizeAngle();
 
             var cmp = new NormalizedAngleComparer(_start, _end);
 
-            if (cmp.Compare(_mid, _start) > 0)// _mid.GreatThanOrEqualsTol(TwoPIRadTol, _start) && _mid.LessThanOrEqualsTol(TwoPIRadTol, _end))
-            {
-                AngleStart = _start;
-                AngleEnd = _end;
-            }
-            else
+            AngleStart = _start;
+            AngleEnd = _end;
+
+            if (cmp.Compare(_mid, _start) < 0)
             {
                 CS = CS.FlipZ();
 
-                AngleStart = _end;
-                AngleEnd = _start;
+                _start = CS.BaseX.AngleToward(tol, fromPt - CS.Origin, CS.BaseZ).NormalizeAngle();
+                _mid = CS.BaseX.AngleToward(tol, insidePt - CS.Origin, CS.BaseZ).NormalizeAngle();
+                _end = CS.BaseX.AngleToward(tol, toPt - CS.Origin, CS.BaseZ).NormalizeAngle();
+
+                AngleStart = _start;
+                AngleEnd = _end;
             }
         }
 
@@ -833,6 +834,39 @@ namespace SearchAThing
             }
         }
 
+        /// <summary>
+        /// retrieve a discretized representation of this arc
+        /// </summary>
+        /// <param name="maxLineAngleRadStep">lines angles max</param>        
+        public IEnumerable<Line3D> Discretize(double maxLineAngleRadStep)
+        {
+            var _AngleEnd = AngleEnd == 0 ? 2 * PI : AngleEnd;
+            var cmp = new NormalizedAngleComparer(AngleStart, _AngleEnd);
+
+            var angle = AngleStart;
+            var angle_step = maxLineAngleRadStep;
+
+            var finished = false;
+            while (!finished)
+            {
+                var a1 = angle;
+                var a2 = (angle + angle_step).NormalizeAngle();
+
+                if (cmp.Compare(a1, a2) >= 0 || !a2.AngleInRange(AngleStart, _AngleEnd))
+                {
+                    a2 = AngleEnd;
+                    finished = true;
+                }
+
+                var p1 = this.PtAtAngle(a1);
+                var p2 = this.PtAtAngle(a2);
+
+                yield return p1.LineTo(p2);
+
+                angle = a2;
+            }
+        }
+
     }
 
     public static partial class SciExt
@@ -867,6 +901,7 @@ namespace SearchAThing
             pt_angle = pt_angle.NormalizeAngle(radTol: radTol);
             angle_from = angle_from.NormalizeAngle(radTol: radTol);
             angle_to = angle_to.NormalizeAngle(radTol: radTol);
+            angle_to = angle_to == 0 ? 2 * PI : angle_to;
 
             if (angle_from.GreatThanTol(radTol, angle_to))
             {
