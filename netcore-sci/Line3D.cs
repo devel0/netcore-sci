@@ -812,7 +812,12 @@ namespace SearchAThing
         public override string QCadScript(bool final = true) =>
             Invariant($"LINE\n{From.X},{From.Y}\n{To.X},{To.Y}\n{(final ? "QQ\n" : "")}");
 
+        public override string ProgeCadScript(bool final = true) =>
+            Invariant($"LINE {From.X},{From.Y},{From.Z} {To.X},{To.Y},{To.Z}\n{(final ? "\n" : "")}");
+
         public string A0QCadScript => QCadScript();
+
+        public string A0ProgeCadScript => ProgeCadScript();
 
         /// <summary>
         /// hash string with given tolerance
