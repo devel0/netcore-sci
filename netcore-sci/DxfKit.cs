@@ -96,6 +96,11 @@ namespace SearchAThing
     public static partial class SciExt
     {
 
+        public static bool EqualsTol(this Vector3 v, double tol, Vector3 other) =>
+            v.X.EqualsTol(tol, other.X) &&        
+            v.Y.EqualsTol(tol, other.Y) &&
+            v.Z.EqualsTol(tol, other.Z);
+
         public static EntityObject SetLayer(this EntityObject eo, Layer layer)
         {
             eo.Layer = layer;
@@ -547,6 +552,20 @@ namespace SearchAThing
 
             return hatch;
         }
+
+        public static BBox3D BBox3D(this DxfDocument dxf) =>
+            new BBox3D(dxf.Entities().SelectMany(ent => ent.Points()));
+
+        public static Block ModelSpace(this DxfDocument dxf) => dxf.Blocks.First(w => w.Name == "*Model_Space");
+
+        public static IEnumerable<EntityObject> Entities(this DxfDocument dxf)
+        {
+            var model = dxf.ModelSpace();
+
+            foreach (var ent in model.Entities) yield return ent;
+        }
+
+
 
     }
 
