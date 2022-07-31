@@ -26,7 +26,7 @@ namespace SearchAThing
         /// <summary>
         /// allow to store info about sense; when false SGeomFrom = GeomTo and SGeomTo = GeomFrom
         /// </summary>        
-        public bool Sense { get; private set; } = true;
+        public bool Sense { get; protected set; } = true;
 
         /// <summary>
         /// GeomFrom (Sense:true) or GeomTo (Sense:false)
@@ -104,6 +104,8 @@ namespace SearchAThing
         /// </summary>
         /// <param name="final">adds QQ command</param>        
         public abstract string QCadScript(bool final = true);
+
+        public abstract string ProgeCadScript(bool final = true);
 
     }
 
