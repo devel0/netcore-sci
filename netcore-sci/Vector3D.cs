@@ -1157,9 +1157,19 @@ namespace SearchAThing
         public netDxf.Vector2 ToDxfVector2() => new netDxf.Vector2(X, Y);
 
         /// <summary>
+        /// convert to (netdxf) discarding z
+        /// </summary>
+        public netDxf.Vector3 ToDxfVector3() => new netDxf.Vector3(X, Y, Z);
+
+        /// <summary>
         /// convert to (system.numerics) Vector2 ( casting double to float, discarding z )
         /// </summary>
         public System.Numerics.Vector2 ToVector2() => new System.Numerics.Vector2((float)X, (float)Y);
+
+        /// <summary>
+        /// convert to (system.numerics) Vector3 ( casting double to float )
+        /// </summary>
+        public System.Numerics.Vector3 ToVector3() => new System.Numerics.Vector3((float)X, (float)Y, (float)Z);
 
         /// <summary>
         /// To point (double x, double y)
@@ -1718,8 +1728,13 @@ namespace SearchAThing
             double? ang = null;
             Vector3D? v2 = null;
 
+            var ptHs = new HashSet<Vector3D>(new Vector3DEqualityComparer(tol));
+
             foreach (var pt in pts)
             {
+                if (ptHs.Contains(pt)) continue;
+                ptHs.Add(pt);
+
                 if (pt == firstPt || pt == distantPt) continue;
 
                 var qv2 = pt - firstPt;
@@ -1734,7 +1749,7 @@ namespace SearchAThing
 
             if (v2 == null) throw new Exception($"can't find v2");
 
-            var pl = new Plane3D(new CoordinateSystem3D(firstPt, v1, v2));
+            var pl = new Plane3D(new CoordinateSystem3D(firstPt, v1, v2).Simplified());
 
             return pl;
         }
