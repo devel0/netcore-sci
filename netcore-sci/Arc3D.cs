@@ -14,24 +14,28 @@ namespace SearchAThing
 {
 
     /// <summary>
-    /// comparer to sort angles so that they follow runs from Start and End given.
-    /// for example giving start=5/4PI, end=PI/2 then the set PI/4 and 3/4PI will sorted as 3/4PI and PI/4.
-    /// Precondition: at constructor and as input elements angles must already normalized [0,2PI) and
-    /// satisfy they in normalized range between given start, end angles
+    /// normalized angles in range [StartAngle, EndAngle] comparer
+    /// 
+    /// Example:
+    /// 
+    /// start:1.25π   end:0.5π
+    /// the set { 0.25π, 0.75π } sorts to { 0.75π, 0.25π }
+    /// 
+    /// Precondition: constructor start, end angles and compare method arguments must normalized [0,2PI)
     /// </summary>
     public class NormalizedAngleComparer : IComparer<double>
     {
         public double NormalizedStartAngleRad { get; private set; }
         public double NormalizedEndAngleRad { get; private set; }
 
-        bool StartGtEnd;
+        bool dirIncrease;
 
         public NormalizedAngleComparer(double normalizedStartAngleRad, double normalizedEndAngleRad)
         {
             NormalizedStartAngleRad = normalizedStartAngleRad;
             NormalizedEndAngleRad = normalizedEndAngleRad;
 
-            StartGtEnd = NormalizedStartAngleRad > NormalizedEndAngleRad;
+            dirIncrease = NormalizedEndAngleRad > NormalizedStartAngleRad;
         }
 
         /// <summary>
@@ -39,7 +43,10 @@ namespace SearchAThing
         /// </summary>        
         public int Compare(double xAngleRad, double yAngleRad)
         {
-            if (StartGtEnd)
+            if (dirIncrease)
+                return xAngleRad.CompareToTol(TwoPIRadTol, yAngleRad);
+
+            else
             {
                 var xLtEqEnd = xAngleRad.LessThanOrEqualsTol(TwoPIRadTol, NormalizedEndAngleRad);
                 var yLtEqEnd = yAngleRad.LessThanOrEqualsTol(TwoPIRadTol, NormalizedEndAngleRad);
@@ -51,15 +58,14 @@ namespace SearchAThing
 
                 if (xGtEqStart && yGtEqStart) return xAngleRad.CompareToTol(TwoPIRadTol, yAngleRad);
 
-                // because of precondition x, y in start, end normalized range...
+                // because of precondition x, y falls in [start, end] normalized range...
 
                 if (xLtEqEnd) // then yGtEqStart
                     return 1;
                 else // yLtEqEnd && xGtEqStart
                     return -1;
             }
-            else
-                return xAngleRad.CompareToTol(TwoPIRadTol, yAngleRad);
+
         }
     }
 
@@ -426,28 +432,17 @@ namespace SearchAThing
             CS = nfo.CS;
             Radius = nfo.Radius;
 
-            var _start = CS.BaseX.AngleToward(tol, fromPt - CS.Origin, CS.BaseZ).NormalizeAngle();
-            var _mid = CS.BaseX.AngleToward(tol, insidePt - CS.Origin, CS.BaseZ).NormalizeAngle();
-            var _end = CS.BaseX.AngleToward(tol, toPt - CS.Origin, CS.BaseZ).NormalizeAngle();
+            AngleStart = CS.BaseX.AngleToward(tol, fromPt - CS.Origin, CS.BaseZ).NormalizeAngle();
+            AngleEnd = CS.BaseX.AngleToward(tol, toPt - CS.Origin, CS.BaseZ).NormalizeAngle();
 
-            var cmp = new NormalizedAngleComparer(_start, _end);
-
-            AngleStart = _start;
-            AngleEnd = _end;
-
-            if (cmp.Compare(_mid, _start) < 0)
+            if (!Contains(tol, insidePt, inArcAngleRange: true, onlyPerimeter: true))
             {
                 CS = CS.FlipZ();
 
-                _start = CS.BaseX.AngleToward(tol, fromPt - CS.Origin, CS.BaseZ).NormalizeAngle();
-                _mid = CS.BaseX.AngleToward(tol, insidePt - CS.Origin, CS.BaseZ).NormalizeAngle();
-                _end = CS.BaseX.AngleToward(tol, toPt - CS.Origin, CS.BaseZ).NormalizeAngle();
-
-                AngleStart = _start;
-                AngleEnd = _end;
+                AngleStart = CS.BaseX.AngleToward(tol, fromPt - CS.Origin, CS.BaseZ).NormalizeAngle();
+                AngleEnd = CS.BaseX.AngleToward(tol, toPt - CS.Origin, CS.BaseZ).NormalizeAngle();
             }
         }
-
 
         /// <summary>
         /// start angle (rad) [0-2pi) respect cs xaxis rotating around cs zaxis
