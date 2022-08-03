@@ -19,7 +19,7 @@ namespace SearchAThing.Sci.Tests
             var tol = 1e-8;
 
             DxfDocument? outdxf = null;
-            outdxf = new DxfDocument();
+            // outdxf = new DxfDocument();
 
             var p1 = new Vector3D(0, 12.72);
             var p2 = new Vector3D(1.90117406, 17.09882594);
