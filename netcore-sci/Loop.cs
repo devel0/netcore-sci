@@ -447,6 +447,23 @@ namespace SearchAThing
 
         public string A0QCadScript => QCadScript();
 
+        public string ProgeCadScript(bool final = true)
+        {
+            var sb = new StringBuilder();
+
+            foreach (var edge in Edges)
+            {
+                sb.Append(edge.ProgeCadScript(final: false));
+                if (edge.GeomType == GeometryType.Line3D) sb.AppendLine();
+            }
+
+            if (final) sb.AppendLine("");
+
+            return sb.ToString();
+        }
+
+        public string A0ProgeCadScript => ProgeCadScript();
+
     }
 
     public class LoopEqualityComparer : IEqualityComparer<Loop>
