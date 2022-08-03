@@ -15,7 +15,7 @@ namespace SearchAThing.Sci.Tests
         public void FaceTest_0002()
         {
             DxfDocument? outdxf = null;
-            outdxf = new DxfDocument();
+            // outdxf = new DxfDocument();
 
             var dxf = netDxf.DxfDocument.Load(
                 System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Face/FaceTest_0002.dxf"));

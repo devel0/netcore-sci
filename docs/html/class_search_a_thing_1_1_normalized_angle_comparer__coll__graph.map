@@ -1,4 +1,4 @@
 <map id="NormalizedAngleComparer" name="NormalizedAngleComparer">
-<area shape="rect" id="node1" title="comparer to sort angles so that they follow runs from Start and End given. for example giving start=5..." alt="" coords="5,80,204,107"/>
+<area shape="rect" id="node1" title="normalized angles in range [StartAngle, EndAngle] comparer" alt="" coords="5,80,204,107"/>
 <area shape="rect" id="node2" title=" " alt="" coords="23,5,187,32"/>
 </map>
