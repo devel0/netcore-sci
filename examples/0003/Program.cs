@@ -20,7 +20,7 @@ namespace test
             var inputPathfilename = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LoopTest_0002.dxf");
             var inputDxf = netDxf.DxfDocument.Load(inputPathfilename);
 
-            var polys = inputDxf.LwPolylines.ToList();
+            var polys = inputDxf.Entities.Polylines2D.ToList();
             var lw1 = polys.First(w => w.Layer.Name == "green");
             var lw2 = polys.First(w => w.Layer.Name == "yellow");
 

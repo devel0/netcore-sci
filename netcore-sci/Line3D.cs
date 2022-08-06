@@ -78,6 +78,18 @@ namespace SearchAThing
         public override Edge Project(double tol, Plane3D prjPlane) =>
             SGeomFrom.Project(prjPlane.CS).LineTo(SGeomTo.Project(prjPlane.CS));
 
+        /// <summary>
+        /// project given pt to this line
+        /// </summary>
+        public override Vector3D? Project(double tol, Vector3D pt, bool segment_mode = true)
+        {
+            var projPt = pt.Project(this);
+
+            if (segment_mode && !SegmentContainsPoint(tol, projPt)) return null;
+
+            return projPt;
+        }
+
         public override Vector3D MidPoint => (From + To) / 2;
 
         public Edge EdgeMove(Vector3D delta) => this.Move(delta);
@@ -790,7 +802,7 @@ namespace SearchAThing
         /// <summary>
         /// create offseted line toward refPt for given offset
         /// </summary>
-        public Line3D Offset(double tol, Vector3D refPt, double offset)
+        public override Line3D Offset(double tol, Vector3D refPt, double offset)
         {
             var perp = this.Perpendicular(tol, refPt);
 

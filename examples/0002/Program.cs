@@ -20,7 +20,7 @@ namespace test
             var inputPathfilename = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "input.dxf");
             var inputDxf = netDxf.DxfDocument.Load(inputPathfilename);
 
-            var polys = inputDxf.LwPolylines.ToList();
+            var polys = inputDxf.Entities.Polylines2D.ToList();
             var lw1 = polys[0];
             var lw2 = polys[1];
 

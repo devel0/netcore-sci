@@ -15,7 +15,7 @@ namespace SearchAThing.Sci.Tests
 
             var tol = 1e-12;
 
-            var poly = dxf.LwPolylines.First().Points().ToList();
+            var poly = dxf.Entities.Polylines2D.First().Points().ToList();
 
             Assert.True(poly.ContainsPoint(tol, new Vector3D(30, 26, 0)));
             Assert.False(poly.ContainsPoint(tol, new Vector3D(57, 21, 0)));

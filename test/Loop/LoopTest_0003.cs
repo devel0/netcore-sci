@@ -20,8 +20,8 @@ namespace SearchAThing.Sci.Tests
 
             var tol = 1e-8;
 
-            var faceGreen = dxf.LwPolylines.First(w => w.Layer.Name == "green").ToLoop(tol).ToFace();
-            var faceYellow = dxf.LwPolylines.First(w => w.Layer.Name == "yellow").ToLoop(tol).ToFace();
+            var faceGreen = dxf.Entities.Polylines2D.First(w => w.Layer.Name == "green").ToLoop(tol).ToFace();
+            var faceYellow = dxf.Entities.Polylines2D.First(w => w.Layer.Name == "yellow").ToLoop(tol).ToFace();
 
             var gyInts = faceGreen.Boolean(tol, faceYellow).ToList();
 

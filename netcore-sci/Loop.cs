@@ -152,7 +152,7 @@ namespace SearchAThing
         /// <summary>
         /// create a loop from given lwpolyline template
         /// </summary>        
-        public Loop(double tol, LwPolyline lwPolyline)
+        public Loop(double tol, Polyline2D lwPolyline)
         {
             Tol = tol;
             Edges = lwPolyline.ToGeometries(tol).Cast<Edge>().CheckSense(tol).ToList();
@@ -407,12 +407,12 @@ namespace SearchAThing
         /// <summary>
         /// create dxf lwpolyline from this loop
         /// </summary>
-        public LwPolyline ToLwPolyline(double tol) => Edges.Cast<Geometry>().ToLwPolyline(tol, Plane.CS);
+        public Polyline2D ToLwPolyline(double tol) => Edges.Cast<Geometry>().ToLwPolyline(tol, Plane.CS);
 
         /// <summary>
         /// create dxf lwpolyline from this loop
         /// </summary>
-        public LwPolyline DxfEntity(double tol) => ToLwPolyline(tol);
+        public Polyline2D DxfEntity(double tol) => ToLwPolyline(tol);
 
         public override string ToString() => Invariant($"A:{Area} L:{Length} Edges:{Edges.Count}");
 
@@ -483,7 +483,7 @@ namespace SearchAThing
     public static partial class SciExt
     {
 
-        public static Loop ToLoop(this netDxf.Entities.LwPolyline lwpolyline, double tol) =>
+        public static Loop ToLoop(this Polyline2D lwpolyline, double tol) =>
             new Loop(tol, lwpolyline);
 
         public static Plane3D DetectPlane(this IEnumerable<Edge> edges, double tol)

@@ -16,7 +16,7 @@ namespace SearchAThing.Sci.Tests
 
             var tol = 1e-8;
 
-            var loop = dxf.LwPolylines.First().ToLoop(tol);
+            var loop = dxf.Entities.Polylines2D.First().ToLoop(tol);
 
             Assert.True(loop.ContainsPoint(tol, new Vector3D(39.72, 30.77380445, 0), LoopContainsPointMode.InsideOrPerimeter));
 

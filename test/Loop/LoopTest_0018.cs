@@ -33,8 +33,8 @@ namespace SearchAThing.Sci.Tests
 
                     var tol = 1e-8;
 
-                    var faceYellow = dxf.LwPolylines.Where(w => w.Layer.Name == "yellow").ToFace(tol);
-                    var faceGreen = dxf.LwPolylines.Where(w => w.Layer.Name == "green").ToFace(tol);
+                    var faceYellow = dxf.Entities.Polylines2D.Where(w => w.Layer.Name == "yellow").ToFace(tol);
+                    var faceGreen = dxf.Entities.Polylines2D.Where(w => w.Layer.Name == "green").ToFace(tol);
 
                     outdxf?.AddEntities(faceGreen.Loops.Select(loop => loop.DxfEntity(tol).Set(x => x.SetColor(AciColor.Green))));
                     outdxf?.AddEntities(faceYellow.Loops.Select(loop => loop.DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow))));

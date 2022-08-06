@@ -97,6 +97,11 @@ namespace SearchAThing
         /// <returns></returns>
         public abstract Edge Project(double tol, Plane3D prjPlane);
 
+        /// <summary>
+        /// project given pt to this edge.
+        /// </summary>
+        public abstract Vector3D? Project(double tol, Vector3D pt, bool segment_mode = true);
+
         public abstract string ToString(int digits);
 
         /// <summary>
@@ -106,6 +111,8 @@ namespace SearchAThing
         public abstract string QCadScript(bool final = true);
 
         public abstract string ProgeCadScript(bool final = true);
+
+        public abstract Edge Offset(double tol, Vector3D refPt, double offset);
 
     }
 

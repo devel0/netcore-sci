@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using netDxf.Entities;
 
 namespace SearchAThing
 {
@@ -136,7 +137,7 @@ namespace SearchAThing
     public static partial class SciExt
     {
 
-        public static Plane3D ToPlane(this netDxf.Entities.LwPolyline lwpolyline) =>
+        public static Plane3D ToPlane(this Polyline2D lwpolyline) =>
             new Plane3D(new CoordinateSystem3D(
                 o: ((Vector3D)lwpolyline.Normal) * lwpolyline.Elevation,
                 normal: lwpolyline.Normal,
@@ -147,18 +148,24 @@ namespace SearchAThing
         /// </summary>
         /// <param name="lwpolyline"></param>
         /// <param name="tol">length tolerance</param>        
-        public static IEnumerable<Geometry> ToGeometries(this netDxf.Entities.LwPolyline lwpolyline,
+        public static IEnumerable<Geometry> ToGeometries(this Polyline2D lwpolyline,
             double tol)
         {
             var geoms = new List<Geometry>();
 
             var els = lwpolyline.Explode();
 
+            var lwp_vertexes = lwpolyline.Vector3DCoords().ToList();
+
+            var i = 0;
+
             foreach (var el in els)
             {
+                var startVertex = lwp_vertexes[i];
+
                 if (el.Type == netDxf.Entities.EntityType.Arc)
                 {
-                    yield return ((netDxf.Entities.Arc)el).ToArc3D();
+                    yield return ((netDxf.Entities.Arc)el).ToArc3D(startVertex, tol);
                 }
                 else if (el.Type == netDxf.Entities.EntityType.Line)
                 {
@@ -167,6 +174,8 @@ namespace SearchAThing
 
                     yield return line.ToLine3D();
                 }
+
+                ++i;
             }
         }
 

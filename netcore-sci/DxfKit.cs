@@ -34,12 +34,12 @@ namespace SearchAThing
         /// <summary>
         /// Creates dxf entities for a 6 faces of a cube
         /// </summary>        
-        public static IEnumerable<Face3d> Cube(Vector3D center, double L) => Cuboid(center, new Vector3D(L, L, L));
+        public static IEnumerable<Face3D> Cube(Vector3D center, double L) => Cuboid(center, new Vector3D(L, L, L));
 
         /// <summary>
         /// Creates dxf entities for 6 faces of a cuboid
         /// </summary>        
-        public static IEnumerable<Face3d> Cuboid(Vector3D center, Vector3D size)
+        public static IEnumerable<Face3D> Cuboid(Vector3D center, Vector3D size)
         {
             var corner = center - size / 2;
 
@@ -66,18 +66,18 @@ namespace SearchAThing
                 }
             }
 
-            yield return new Face3d(m[0, 0, 0], m[1, 0, 0], m[1, 0, 1], m[0, 0, 1]); // front
-            yield return new Face3d(m[0, 1, 0], m[0, 1, 1], m[1, 1, 1], m[1, 1, 0]); // back
-            yield return new Face3d(m[0, 0, 0], m[0, 0, 1], m[0, 1, 1], m[0, 1, 0]); // left
-            yield return new Face3d(m[1, 0, 0], m[1, 1, 0], m[1, 1, 1], m[1, 0, 1]); // right
-            yield return new Face3d(m[0, 0, 0], m[0, 1, 0], m[1, 1, 0], m[1, 0, 0]); // bottom
-            yield return new Face3d(m[0, 0, 1], m[1, 0, 1], m[1, 1, 1], m[0, 1, 1]); // top
+            yield return new Face3D(m[0, 0, 0], m[1, 0, 0], m[1, 0, 1], m[0, 0, 1]); // front
+            yield return new Face3D(m[0, 1, 0], m[0, 1, 1], m[1, 1, 1], m[1, 1, 0]); // back
+            yield return new Face3D(m[0, 0, 0], m[0, 0, 1], m[0, 1, 1], m[0, 1, 0]); // left
+            yield return new Face3D(m[1, 0, 0], m[1, 1, 0], m[1, 1, 1], m[1, 0, 1]); // right
+            yield return new Face3D(m[0, 0, 0], m[0, 1, 0], m[1, 1, 0], m[1, 0, 0]); // bottom
+            yield return new Face3D(m[0, 0, 1], m[1, 0, 1], m[1, 1, 1], m[0, 1, 1]); // top
         }
 
         /// <summary>
         /// retrieve 3 or 4 vertex from given face
         /// </summary>    
-        public static IEnumerable<Vector3D> Vertexes(this Face3d face)
+        public static IEnumerable<Vector3D> Vertexes(this Face3D face)
         {
             yield return face.FirstVertex;
             yield return face.SecondVertex;
@@ -88,7 +88,7 @@ namespace SearchAThing
         /// <summary>
         /// convert face3d to Plane3DRegion
         /// </summary>        
-        public static Plane3DRegion ToRegion(this Face3d face, double tol) =>
+        public static Plane3DRegion ToRegion(this Face3D face, double tol) =>
             new Plane3DRegion(tol, face.Vertexes().ToList());
 
     }
@@ -97,7 +97,7 @@ namespace SearchAThing
     {
 
         public static bool EqualsTol(this Vector3 v, double tol, Vector3 other) =>
-            v.X.EqualsTol(tol, other.X) &&        
+            v.X.EqualsTol(tol, other.X) &&
             v.Y.EqualsTol(tol, other.Y) &&
             v.Z.EqualsTol(tol, other.Z);
 
@@ -111,7 +111,7 @@ namespace SearchAThing
         /// get the midpoint of the 3d polyline
         /// distance is computed over all segments
         /// </summary>        
-        public static Vector3D? MidPoint(this Polyline poly)
+        public static Vector3D? MidPoint(this Polyline2D poly)
         {
             var mid_len = poly.Vector3DCoords().Length() / 2;
             Vector3D? prev = null;
@@ -169,13 +169,13 @@ namespace SearchAThing
         /// <summary>
         /// enumerate as Vector3D given dxf polyline vertexes
         /// </summary>        
-        public static IEnumerable<Vector3D> Vector3DCoords(this Polyline pl) =>
-            pl.Vertexes.Select(w => (Vector3D)w.Position);
+        public static IEnumerable<Vector3D> Vector3DCoords(this Polyline3D pl) =>
+            pl.Vertexes.Select(w => (Vector3D)w);
 
         /// <summary>
         /// enumerate as Vector3D given dxf lwpolyline vertexes
         /// </summary>        
-        public static IEnumerable<Vector3D> Vector3DCoords(this LwPolyline lwp)
+        public static IEnumerable<Vector3D> Vector3DCoords(this Polyline2D lwp)
         {
             var res = new List<Vector3D>();
             var N = lwp.Normal;
@@ -210,16 +210,16 @@ namespace SearchAThing
 
         public static IEnumerable<EntityObject> CoordTransform(this DxfDocument dxf, Func<Vector3D, Vector3D> transform)
         {
-            foreach (var point in dxf.Points) yield return point.CoordTransform(transform);
-            foreach (var line in dxf.Lines) yield return line.CoordTransform(transform);
-            foreach (var lwpoly in dxf.LwPolylines) yield return lwpoly.CoordTransform(transform);
-            foreach (var poly in dxf.Polylines) yield return poly.CoordTransform(transform);
-            foreach (var circle in dxf.Circles) yield return circle.CoordTransform(transform);
-            foreach (var text in dxf.Texts) yield return text.CoordTransform(transform);
-            foreach (var mtext in dxf.MTexts) yield return mtext.CoordTransform(transform);
+            foreach (var point in dxf.Entities.Points) yield return point.CoordTransform(transform);
+            foreach (var line in dxf.Entities.Lines) yield return line.CoordTransform(transform);
+            foreach (var lwpoly in dxf.Entities.Polylines2D) yield return lwpoly.CoordTransform(transform);
+            foreach (var poly in dxf.Entities.Polylines3D) yield return poly.CoordTransform(transform);
+            foreach (var circle in dxf.Entities.Circles) yield return circle.CoordTransform(transform);
+            foreach (var text in dxf.Entities.Texts) yield return text.CoordTransform(transform);
+            foreach (var mtext in dxf.Entities.MTexts) yield return mtext.CoordTransform(transform);
 
             var origin = transform(Vector3D.Zero);
-            var insBlocks = dxf.Inserts.Select(w => w.Block).Distinct();
+            var insBlocks = dxf.Entities.Inserts.Select(w => w.Block).Distinct();
             Dictionary<string, Block> blkDict = new Dictionary<string, Block>();
             foreach (var _insBlock in insBlocks)
             {
@@ -234,7 +234,7 @@ namespace SearchAThing
                 blkDict.Add(insBlock.Name, insBlock);
             }
 
-            foreach (var _ins in dxf.Inserts)
+            foreach (var _ins in dxf.Entities.Inserts)
             {
                 var ins = (Insert)_ins.Clone();//.Clone(blkDict[_ins.Block.Name]);
                                                //ins.Position = transform(ins.Position);
@@ -301,9 +301,9 @@ namespace SearchAThing
                         return point;
                     }
 
-                case EntityType.LwPolyline:
+                case EntityType.Polyline2D:
                     {
-                        var lw = (LwPolyline)eo.Clone();
+                        var lw = (Polyline2D)eo.Clone();
                         lw.Vertexes.ForEach(w =>
                         {
                             w.Position = transform(w.Position).ToDxfVector2();
@@ -321,7 +321,7 @@ namespace SearchAThing
         /// </summary>        
         public static EntityObject AddEntity(this DxfObject dxfObj, EntityObject eo, Layer? layer = null)
         {
-            if (dxfObj is DxfDocument dxfDoc) dxfDoc.AddEntity(eo);
+            if (dxfObj is DxfDocument dxfDoc) dxfDoc.Entities.Add(eo);
             else if (dxfObj is Block dxfBlock) dxfBlock.Entities.Add(eo);
             else if (dxfObj is netDxf.Objects.Group dxfGroup) dxfGroup.Entities.Add(eo);
             else throw new ArgumentException($"dxfObj must DxfDocument or Block");
@@ -385,7 +385,7 @@ namespace SearchAThing
             return ents;
         }
 
-        public static string CadScript(this Face3d face)
+        public static string CadScript(this Face3D face)
         {
             var sb = new StringBuilder();
 
@@ -565,7 +565,101 @@ namespace SearchAThing
             foreach (var ent in model.Entities) yield return ent;
         }
 
+        public static CoordinateSystem3D CS(this EntityObject eo)
+        {
+            var dxfCsType = CoordinateSystem3DAutoEnum.AAA;
 
+            switch (eo.Type)
+            {
+                case EntityType.Polyline2D:
+                    {
+                        var lwp = (Polyline2D)eo;
+                        return new CoordinateSystem3D(new Vector3D(), lwp.Normal, dxfCsType);
+                    }
+
+                case EntityType.Arc:
+                    {
+                        var arc = (Arc)eo;
+                        return new CoordinateSystem3D(arc.Center, arc.Normal, dxfCsType);
+                    }
+
+                default: throw new NotImplementedException($"CS from dxf entity type {eo.Type}");
+            }
+        }
+
+        public static IEnumerable<Edge> OffsetGeoms(this Polyline2D lwp, double tol, Vector3D sideRefPt, double offset)
+        {
+            var edges = lwp.ToGeometries(tol).OfType<Edge>().ToList();
+
+            var lwpCs = lwp.CS();
+
+            var startEdgeNfo = edges.Select(edge => new
+            {
+                edge,
+                offLine = edge.Project(tol, sideRefPt)?.LineTo(sideRefPt)
+            })
+            .Where(r => r.offLine != null)
+            .OrderBy(w => w.offLine!.Length)
+            .FirstOrDefault();
+
+            if (startEdgeNfo == null) yield break;
+
+            yield return startEdgeNfo.edge.Offset(tol, sideRefPt, offset);
+
+            var idxStartEdge = edges.IndexOf(startEdgeNfo.edge);
+
+            var offline = startEdgeNfo.offLine!;
+
+            var idx = idxStartEdge;
+            var edgesProcessed = 0;
+            while (edgesProcessed < edges.Count)
+            {
+                if (idx >= edges.Count) idx = 0;
+
+                var idx1 = idx;                
+                var idx2 = idx + 1;
+                if (idx2 >= edges.Count) idx2 = 0;
+
+                var edge1 = edges[idx1];
+                var edge2 = edges[idx2];
+
+                var line1 = edge1.SGeomFrom.LineTo(edge1.SGeomTo);
+                var line2 = edge2.SGeomFrom.LineTo(edge2.SGeomTo);
+
+                var edgesAngle = line1.V.AngleToward(tol, line2.V, lwpCs.BaseZ);
+                var offline2 = edge2.MidPoint.LineV(
+                    offline.V.RotateAboutAxis(lwpCs.BaseZ, edgesAngle));
+
+                yield return edge2.Offset(tol, offline2.To, offline2.Length);
+
+                ++idx;
+
+                ++edgesProcessed;
+                offline = offline2;
+            }
+
+        }
+
+        public static Polyline2D Offset(this Polyline2D lwp, double tol, Vector3D sideRefPt, double amount)
+        {
+            var edges = lwp.ToGeometries(tol).OfType<Edge>().ToList();
+
+            var q = edges.Select(edge => new
+            {
+                edge,
+                projPt = edge.Project(tol, sideRefPt)
+            })
+            .Where(r => r.projPt != null)
+            .OrderBy(w => w.projPt!.Distance(sideRefPt))
+            .FirstOrDefault();
+
+            ;
+
+            // .Select(w => w.Offset(tol, sideRefPt, amount))
+            // .ToLwPolyline(tol, lwp.CS(), closed: lwp.IsClosed);
+
+            return lwp;
+        }
 
     }
 

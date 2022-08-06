@@ -23,8 +23,8 @@ namespace SearchAThing.Sci.Tests
 
             var tol = tolSuccess;
 
-            var faceGreen = dxf.LwPolylines.First(w => w.Layer.Name == "green").ToLoop(tol).ToFace();
-            var faceYellow = dxf.LwPolylines.First(w => w.Layer.Name == "yellow").ToLoop(tol).ToFace();
+            var faceGreen = dxf.Entities.Polylines2D.First(w => w.Layer.Name == "green").ToLoop(tol).ToFace();
+            var faceYellow = dxf.Entities.Polylines2D.First(w => w.Layer.Name == "yellow").ToLoop(tol).ToFace();
 
             // zoom at 0.0013,12.7559 to see geometry defect
 

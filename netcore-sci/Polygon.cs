@@ -308,7 +308,7 @@ namespace SearchAThing
             yield break;
         }
 
-        public static netDxf.Entities.Hatch ToHatch(this LwPolyline lw,
+        public static netDxf.Entities.Hatch ToHatch(this Polyline2D lw,
           HatchPattern pattern, bool associative = true)
         {
             var hatch = new netDxf.Entities.Hatch(pattern, new[] { new HatchBoundaryPath(new[] { lw }) }, associative);
@@ -331,7 +331,7 @@ namespace SearchAThing
         /// <param name="cs">lw CS</param>
         /// <param name="closed"></param>        
         /// <returns></returns>
-        public static netDxf.Entities.LwPolyline ToLwPolyline(this IEnumerable<Geometry> _geom, double tol,
+        public static netDxf.Entities.Polyline2D ToLwPolyline(this IEnumerable<Geometry> _geom, double tol,
             CoordinateSystem3D cs, bool closed = true)
         {
             var edges = _geom.Cast<Edge>().ToList();
@@ -345,7 +345,7 @@ namespace SearchAThing
                 cs = new CoordinateSystem3D(Vector3D.Zero, cs.BaseZ, CoordinateSystem3DAutoEnum.AAA);
             }
 
-            var pvtx = new List<netDxf.Entities.LwPolylineVertex>();
+            var pvtx = new List<Polyline2DVertex>();
 
             Vector3D? _lastPt = null;
 
@@ -359,7 +359,7 @@ namespace SearchAThing
                     case GeometryType.Vector3D:
                         {
                             //var _to = (Vector3D)geom[i];
-                            var lwpv = new LwPolylineVertex(_to.ToDxfVector2());
+                            var lwpv = new Polyline2DVertex(_to.ToDxfVector2());
                             pvtx.Add(lwpv);
                             _lastPt = _to;
                         }
@@ -373,13 +373,13 @@ namespace SearchAThing
 
                             if (_lastPt == null || _lastPt.EqualsTol(tol, _from))
                             {
-                                var lwpv = new LwPolylineVertex(_from.ToDxfVector2());
+                                var lwpv = new Polyline2DVertex(_from.ToDxfVector2());
                                 pvtx.Add(lwpv);
                                 _lastPt = _to;
                             }
                             else
                             {
-                                var lwpv = new LwPolylineVertex(_to.ToDxfVector2());
+                                var lwpv = new Polyline2DVertex(_to.ToDxfVector2());
                                 pvtx.Add(lwpv);
                                 _lastPt = _from;
                             }
@@ -398,20 +398,20 @@ namespace SearchAThing
                                 {
                                     if (edges[i + 1].SGeomFrom.EqualsTol(tol, _to))
                                     {
-                                        var lwpv = new LwPolylineVertex(_from.ToDxfVector2()) { Bulge = bulge };
+                                        var lwpv = new Polyline2DVertex(_from.ToDxfVector2()) { Bulge = bulge };
                                         pvtx.Add(lwpv);
                                         _lastPt = _to;
                                     }
                                     else
                                     {
-                                        var lwpv = new LwPolylineVertex(_to.ToDxfVector2()) { Bulge = -bulge };
+                                        var lwpv = new Polyline2DVertex(_to.ToDxfVector2()) { Bulge = -bulge };
                                         pvtx.Add(lwpv);
                                         _lastPt = _from;
                                     }
                                 }
                                 else
                                 {
-                                    var lwpv = new LwPolylineVertex(_from.ToDxfVector2()) { Bulge = bulge };
+                                    var lwpv = new Polyline2DVertex(_from.ToDxfVector2()) { Bulge = bulge };
                                     pvtx.Add(lwpv);
                                     _lastPt = _to;
                                 }
@@ -420,13 +420,13 @@ namespace SearchAThing
                             {
                                 if (_lastPt.EqualsTol(tol, _from))
                                 {
-                                    var lwpv = new LwPolylineVertex(_from.ToDxfVector2()) { Bulge = bulge };
+                                    var lwpv = new Polyline2DVertex(_from.ToDxfVector2()) { Bulge = bulge };
                                     pvtx.Add(lwpv);
                                     _lastPt = _to;
                                 }
                                 else
                                 {
-                                    var lwpv = new LwPolylineVertex(_to.ToDxfVector2()) { Bulge = -bulge };
+                                    var lwpv = new Polyline2DVertex(_to.ToDxfVector2()) { Bulge = -bulge };
                                     pvtx.Add(lwpv);
                                     _lastPt = _from;
                                 }
@@ -440,11 +440,11 @@ namespace SearchAThing
             if (!closed)
             {
                 if (_lastPt == null) throw new ArgumentException("can't find last pt");
-                var lwpv = new netDxf.Entities.LwPolylineVertex(_lastPt.ToDxfVector2());
+                var lwpv = new Polyline2DVertex(_lastPt.ToDxfVector2());
                 pvtx.Add(lwpv);
             }
 
-            var lwpoly = new netDxf.Entities.LwPolyline(pvtx, isClosed: closed);
+            var lwpoly = new Polyline2D(pvtx, isClosed: closed);
 
             lwpoly.Normal = cs.BaseZ;
             lwpoly.Elevation = elevation;
@@ -456,8 +456,8 @@ namespace SearchAThing
         /// build 3d dxf polyline
         /// note: use RepeatFirstAtEnd extension to build a closed polyline
         /// </summary>        
-        public static netDxf.Entities.Polyline ToPolyline(this IEnumerable<Vector3D> pts, bool isClosed = true) =>
-            new netDxf.Entities.Polyline(pts.Select(r => (Vector3)r).ToList(), isClosed);
+        public static Polyline3D ToPolyline(this IEnumerable<Vector3D> pts, bool isClosed = true) =>
+            new Polyline3D(pts.Select(r => (Vector3)r).ToList(), isClosed);
 
         /// <summary>
         /// can generate a Int64MapExceptionRange exception if double values can't fit into a In64 representation.

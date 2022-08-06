@@ -94,7 +94,7 @@ namespace SearchAThing.Sci.Tests
             {
                 var doc = netDxf.DxfDocument.Load("_torefact/doc/Arc3DTest_001.dxf");
 
-                var arc_from_dxf = doc.Arcs.First().ToArc3D();
+                var arc_from_dxf = doc.Entities.Arcs.First().ToArc3D();
                 var cmp = new Arc3DEqualityComparer(1e-3);
                 var q = new[] {
                     arc_from_dxf,

@@ -151,6 +151,24 @@ namespace SearchAThing
                 MidPoint.Project(prjPlane.CS),
                 SGeomTo.Project(prjPlane.CS));
 
+        /// <summary>
+        /// create offseted arc toward refPt for given offset.        
+        /// </summary>
+        public override Arc3D Offset(double tol, Vector3D refPt, double offset)
+        {
+            var refPtOnPlane = refPt.Project(CS);
+            
+            var dst_refPt = refPtOnPlane.Distance(Center);            
+
+            var reduceRadius = dst_refPt.LessThanTol(tol, Radius);
+
+            var offsetSign = reduceRadius ? -1d : 1d;            
+
+            var res = new Arc3D(CS, Radius + offset * offsetSign, AngleStart, AngleEnd);
+
+            return res;
+        }
+
         #endregion
 
         #region Geometry
@@ -515,9 +533,6 @@ namespace SearchAThing
         /// http://www.lee-mac.com/bulgeconversion.html
         /// </summary>
         /// <param name="tol">length tolerance</param>
-        /// <param name="from">buldge from pt</param>
-        /// <param name="to">buldge to pt</param>
-        /// <param name="N">arc normal</param>
         /// <returns>arc buldge value</returns>
         public double Bulge(double tol) =>
             (Sense ? 1d : -1d) * Tan((GeomFrom - Center).AngleToward(tol, GeomTo - Center, CS.BaseZ) / 4);
@@ -559,6 +574,38 @@ namespace SearchAThing
             Contains(tol, pt, true, onlyPerimeter);
 
         public Vector3D Center => CS.Origin;
+
+        /// <summary>
+        /// Build a perpendicular vector to this arc starting from the given point p.
+        /// </summary>        
+        public Line3D? Perpendicular(double tol, Vector3D p)
+        {
+            if (Contains(tol, p, inArcAngleRange: true, onlyPerimeter: true)) return null;
+
+            var prj = Project(tol, p);
+
+            if (prj == null) return null;
+
+            return new Line3D(p, prj);
+        }
+
+        /// <summary>
+        /// project given point p to this arc.        
+        /// returns null if ip falls outside arc perimeter and only_arc:true argument or p in the arc plane
+        /// </summary>        
+        public override Vector3D? Project(double tol, Vector3D p, bool segment_mode = true)
+        {
+            if (!CS.Contains(tol, p)) return null;
+
+            var line_center_to_p = CS.Origin.LineTo(p);
+
+            var q = this.Intersect(tol, line_center_to_p,
+                only_perimeter: true, segment_mode: false, circle_mode: !segment_mode).ToList();
+
+            if (q.Count == 0) return null;
+
+            return q.OrderBy(w => w.Distance(p)).First();
+        }
 
         public Circle3D ToCircle3D(double tol) => new Circle3D(CS, Radius);
 
@@ -878,10 +925,24 @@ namespace SearchAThing
         /// construct arc3 from given dxf arc
         /// </summary>
         /// <param name="dxf_arc"></param>        
-        public static Arc3D ToArc3D(this netDxf.Entities.Arc dxf_arc) => new Arc3D(
-            new CoordinateSystem3D(dxf_arc.Center, dxf_arc.Normal, CoordinateSystem3DAutoEnum.AAA),
-            dxf_arc.Radius,
-            dxf_arc.StartAngle.ToRad(), dxf_arc.EndAngle.ToRad());
+        /// <param name="start_vertex">optional start vertex allow to inject edge sense (used when explode from lwpolyline)</param>    
+        /// <param name="start_vertex_tol">when use start_vertex argument this is the tol for equality test</param>    
+        public static Arc3D ToArc3D(this netDxf.Entities.Arc dxf_arc, Vector3D? start_vertex = null, double start_vertex_tol = 0)
+        {
+            var arcCs = dxf_arc.CS();
+
+            var arc = new Arc3D(
+                arcCs,
+                dxf_arc.Radius,
+                dxf_arc.StartAngle.ToRad(), dxf_arc.EndAngle.ToRad());
+
+            if (start_vertex != null && !arc.GeomFrom.EqualsTol(start_vertex_tol, start_vertex))
+            {
+                arc = arc.ToggleSense();
+            }
+
+            return arc;
+        }
 
         /// <summary>
         /// states if given angle is contained in from, to angle range;

@@ -356,7 +356,7 @@ namespace SearchAThing
             });
 
 
-        public IEnumerable<Face3d> ToFace3DList()
+        public IEnumerable<Face3D> ToFace3DList()
         {
             var d = Max - Min;
             return Cuboid((Max + Min) / 2, d);
@@ -459,7 +459,7 @@ namespace SearchAThing
             }
         }
 
-        public IEnumerable<Face3d> DrawCuboid(DxfObject dxfObj, Layer layer = null)
+        public IEnumerable<Face3D> DrawCuboid(DxfObject dxfObj, Layer layer = null)
         {
             var ents = ToFace3DList().ToList();
 
@@ -515,11 +515,11 @@ namespace SearchAThing
                         return new BBox3D(new[] { arc.From, arc.To, arc.MidPoint });
                     }
 
-                case EntityType.Circle: return ((Circle)eo).ToPolyline(4).BBox(tol);
+                case EntityType.Circle: return ((Circle)eo).ToPolyline2D(4).BBox(tol);
 
-                case EntityType.LwPolyline:
+                case EntityType.Polyline2D:
                     {
-                        var lwpoly = (LwPolyline)eo;
+                        var lwpoly = (Polyline2D)eo;
 
                         var N = lwpoly.Normal;
                         var ocs = new CoordinateSystem3D(N * lwpoly.Elevation, N);
@@ -565,9 +565,9 @@ namespace SearchAThing
                     }
                     break;
 
-                case EntityType.LwPolyline:
+                case EntityType.Polyline2D:
                     {
-                        var lw = (LwPolyline)eo;
+                        var lw = (Polyline2D)eo;
                         foreach (var x in lw.Vertexes) yield return x.Position;
                     }
                     break;
@@ -588,7 +588,7 @@ namespace SearchAThing
 
                 case EntityType.Face3D:
                     {
-                        var f = (Face3d)eo;
+                        var f = (Face3D)eo;
                         yield return f.FirstVertex;
                         yield return f.SecondVertex;
                         yield return f.ThirdVertex;
@@ -628,7 +628,7 @@ namespace SearchAThing
 
                 case EntityType.Circle:
                     {
-                        var circleLw = ((Circle)eo).ToPolyline(4);
+                        var circleLw = ((Circle)eo).ToPolyline2D(4);
                         foreach (var x in circleLw.Vertexes) yield return x.Position;
                     }
                     break;

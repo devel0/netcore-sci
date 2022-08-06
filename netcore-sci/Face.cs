@@ -1083,7 +1083,7 @@ namespace SearchAThing
             return false;
         }
 
-        public IEnumerable<LwPolyline> DxfEntities(double tol) => Loops.Select(w => w.DxfEntity(tol));
+        public IEnumerable<Polyline2D> DxfEntities(double tol) => Loops.Select(w => w.DxfEntity(tol));
 
         /// <summary>
         /// create hatch with outer and inner boundaries
@@ -1180,7 +1180,7 @@ namespace SearchAThing
         /// input loop can be unordered ( loop with greather area will be considered as outer loop );
         /// precondition: loops must lie on same plane
         /// </summary>
-        public static Face ToFace(this IEnumerable<netDxf.Entities.LwPolyline> lwpolyline, double tol)
+        public static Face ToFace(this IEnumerable<Polyline2D> lwpolyline, double tol)
         {
             var loops = lwpolyline.Select(w => w.ToLoop(tol)).ToList();
 

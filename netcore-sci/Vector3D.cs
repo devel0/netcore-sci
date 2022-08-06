@@ -567,7 +567,7 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// project this point to the given line
+        /// project this point to the given line considered as infinite line
         /// </summary>
         /// <param name="line">line to project the point onto</param>
         /// <returns>projected point onto the line ( perpendicularly )</returns>
