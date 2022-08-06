@@ -1,7 +1,7 @@
 var searchData=
 [
   ['c_36',['c',['../struct_search_a_thing_1_1_triangle3_d.html#a5545904952e0c3fbccbbc93956a70db9',1,'SearchAThing::Triangle3D']]],
-  ['cadscript_37',['CadScript',['../class_search_a_thing_1_1_b_box3_d.html#a26057a379e73721c527440a95422a83e',1,'SearchAThing.BBox3D.CadScript()'],['../class_search_a_thing_1_1_coordinate_system3_d.html#a26057a379e73721c527440a95422a83e',1,'SearchAThing.CoordinateSystem3D.CadScript()'],['../class_search_a_thing_1_1_line3_d.html#a26057a379e73721c527440a95422a83e',1,'SearchAThing.Line3D.CadScript()'],['../class_search_a_thing_1_1_vector3_d.html#a26057a379e73721c527440a95422a83e',1,'SearchAThing.Vector3D.CadScript()'],['../class_search_a_thing_1_1_sci_ext.html#adb056e3cfdb70bf651d92f0cc2c30ecb',1,'SearchAThing.SciExt.CadScript()']]],
+  ['cadscript_37',['CadScript',['../class_search_a_thing_1_1_b_box3_d.html#a26057a379e73721c527440a95422a83e',1,'SearchAThing.BBox3D.CadScript()'],['../class_search_a_thing_1_1_coordinate_system3_d.html#a26057a379e73721c527440a95422a83e',1,'SearchAThing.CoordinateSystem3D.CadScript()'],['../class_search_a_thing_1_1_line3_d.html#a26057a379e73721c527440a95422a83e',1,'SearchAThing.Line3D.CadScript()'],['../class_search_a_thing_1_1_vector3_d.html#a26057a379e73721c527440a95422a83e',1,'SearchAThing.Vector3D.CadScript()'],['../class_search_a_thing_1_1_sci_ext.html#a1e6ec097d761f7aed15b804f1e9a97da',1,'SearchAThing.SciExt.CadScript()']]],
   ['cadscriptline_38',['CadScriptLine',['../class_search_a_thing_1_1_vector3_d.html#a2f38bed9e1d9a1b33a25b81e39ac14dc',1,'SearchAThing::Vector3D']]],
   ['cadscriptlinefrom_39',['CadScriptLineFrom',['../class_search_a_thing_1_1_vector3_d.html#a134d74b3e7c12c6b72ac593e8d86b57a',1,'SearchAThing::Vector3D']]],
   ['cadscriptpoint_40',['CadScriptPoint',['../class_search_a_thing_1_1_sci_ext.html#a29575fdeb711ff8e648a66c4a97f92de',1,'SearchAThing::SciExt']]],
@@ -48,11 +48,11 @@ var searchData=
   ['count_81',['Count',['../struct_search_a_thing_1_1_numbers_stat_nfo.html#aad462966ed963f892117056de1eba502',1,'SearchAThing.NumbersStatNfo.Count()'],['../class_search_a_thing_1_1_computation_queue.html#aad462966ed963f892117056de1eba502',1,'SearchAThing.ComputationQueue.Count()']]],
   ['createproperty_82',['CreateProperty',['../class_search_a_thing_1_1_sci_toolkit_1_1_sci_properties_resolver.html#a24c748b2a996b01f1124e4373477aee2',1,'SearchAThing::SciToolkit::SciPropertiesResolver']]],
   ['crossproduct_83',['CrossProduct',['../class_search_a_thing_1_1_vector3_d.html#a99bcebf010d2cc331b15567c83b0ac0a',1,'SearchAThing::Vector3D']]],
-  ['cs_84',['CS',['../class_search_a_thing_1_1_arc3_d.html#a423fe70dca8dfa08f6b30a74055982a4',1,'SearchAThing.Arc3D.CS()'],['../class_search_a_thing_1_1_plane3_d.html#a423fe70dca8dfa08f6b30a74055982a4',1,'SearchAThing.Plane3D.CS()']]],
+  ['cs_84',['CS',['../class_search_a_thing_1_1_arc3_d.html#a423fe70dca8dfa08f6b30a74055982a4',1,'SearchAThing.Arc3D.CS()'],['../class_search_a_thing_1_1_plane3_d.html#a423fe70dca8dfa08f6b30a74055982a4',1,'SearchAThing.Plane3D.CS()'],['../class_search_a_thing_1_1_sci_ext.html#ae45bba6aed0e00c754f7d62d3fa0f8ad',1,'SearchAThing.SciExt.CS()']]],
   ['csautotype_85',['csAutoType',['../class_search_a_thing_1_1_coordinate_system3_d.html#a86657ca991ef0e1d6a19afc691aa678a',1,'SearchAThing::CoordinateSystem3D']]],
   ['csbox_86',['CSBox',['../class_search_a_thing_1_1_loop.html#a5a1929db4a51c14d5ef366f279c54788',1,'SearchAThing::Loop']]],
   ['cspoints_87',['CSPoints',['../class_search_a_thing_1_1_plane3_d_region.html#a888b8ecd604931441f9662f8f596513c',1,'SearchAThing::Plane3DRegion']]],
-  ['cube_88',['Cube',['../class_search_a_thing_1_1_sci_toolkit.html#a0ecf0270a3eebf37a46022a34598a2e8',1,'SearchAThing::SciToolkit']]],
-  ['cuboid_89',['Cuboid',['../class_search_a_thing_1_1_sci_toolkit.html#a1700e4f84cc121a433fda90cb86015a0',1,'SearchAThing::SciToolkit']]],
+  ['cube_88',['Cube',['../class_search_a_thing_1_1_sci_toolkit.html#a9019722d6aebb68acbc44e25fa009d60',1,'SearchAThing::SciToolkit']]],
+  ['cuboid_89',['Cuboid',['../class_search_a_thing_1_1_sci_toolkit.html#afc7efbeac10b719751ef317f426c32e0',1,'SearchAThing::SciToolkit']]],
   ['current_90',['Current',['../class_search_a_thing_1_1_computation_queue.html#ac1d17a98108a908b526af12526de8690',1,'SearchAThing::ComputationQueue']]]
 ];

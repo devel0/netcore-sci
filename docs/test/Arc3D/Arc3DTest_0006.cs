@@ -17,9 +17,9 @@ namespace SearchAThing.Sci.Tests
 
             var tol = 1e-8;
 
-            var arcYellow = dxf.Arcs.First(w => w.Color.Index == AciColor.Yellow.Index).ToArc3D();
-            var arcGreen = dxf.Arcs.First(w => w.Color.Index == AciColor.Green.Index).ToArc3D();
-            var arcCyan = dxf.Arcs.First(w => w.Color.Index == AciColor.Cyan.Index).ToArc3D();
+            var arcYellow = dxf.Entities.Arcs.First(w => w.Color.Index == AciColor.Yellow.Index).ToArc3D();
+            var arcGreen = dxf.Entities.Arcs.First(w => w.Color.Index == AciColor.Green.Index).ToArc3D();
+            var arcCyan = dxf.Entities.Arcs.First(w => w.Color.Index == AciColor.Cyan.Index).ToArc3D();
 
             var qYellowGreen = arcYellow.Intersect(tol, arcGreen).ToList();
             var qGreenCyan = arcGreen.Intersect(tol, arcCyan).ToList();

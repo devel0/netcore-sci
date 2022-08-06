@@ -597,7 +597,7 @@ namespace SearchAThing.Sci.Tests
         {
             var dxf = netDxf.DxfDocument.Load("_torefact/doc/test_closed_polys1.dxf");
 
-            var segs = dxf.Lines.Select(w => w.ToLine3D()).ToList();
+            var segs = dxf.Entities.Lines.Select(w => w.ToLine3D()).ToList();
             segs = segs.AutoIntersect(1e-3).ToList();
 
             var polys = segs.ClosedPolys2D(1e-3).ToList();
@@ -696,13 +696,13 @@ namespace SearchAThing.Sci.Tests
         {
             var dxf = netDxf.DxfDocument.Load("_torefact/doc/test_autointersect.dxf");
 
-            var input_segs = dxf.Lines
+            var input_segs = dxf.Entities.Lines
                 .Where(r => r.Layer.Name == "lay_input")
                 .Select(w => w.ToLine3D()).ToList();
 
             var processed_segs = input_segs.AutoIntersect(1e-4);
 
-            var expected_segs = dxf.Lines
+            var expected_segs = dxf.Entities.Lines
                 .Where(r => r.Layer.Name == "lay_ok")
                 .Select(w => w.ToLine3D()).ToList();
 

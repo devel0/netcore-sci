@@ -97,9 +97,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a7f304e540a1701b5957008eaa55868c8"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a7f304e540a1701b5957008eaa55868c8">RadTol</a> (this double lenTol, double radius)</td></tr>
 <tr class="memdesc:a7f304e540a1701b5957008eaa55868c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute angle rad tolerance by given arc length tolerance as (lenTol / radius)  <a href="class_search_a_thing_1_1_sci_ext.html#a7f304e540a1701b5957008eaa55868c8">More...</a><br /></td></tr>
 <tr class="separator:a7f304e540a1701b5957008eaa55868c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbe8e1f22f2f6eb52d6a6dde5c95b1e9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_arc3_d.html">Arc3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#abbe8e1f22f2f6eb52d6a6dde5c95b1e9">ToArc3D</a> (this netDxf.Entities.Arc dxf_arc)</td></tr>
-<tr class="memdesc:abbe8e1f22f2f6eb52d6a6dde5c95b1e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct arc3 from given dxf arc  <a href="class_search_a_thing_1_1_sci_ext.html#abbe8e1f22f2f6eb52d6a6dde5c95b1e9">More...</a><br /></td></tr>
-<tr class="separator:abbe8e1f22f2f6eb52d6a6dde5c95b1e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a222e69bc7ef79e3320632de71762c816"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_arc3_d.html">Arc3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a222e69bc7ef79e3320632de71762c816">ToArc3D</a> (this netDxf.Entities.Arc dxf_arc, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>? start_vertex=null, double start_vertex_tol=0)</td></tr>
+<tr class="memdesc:a222e69bc7ef79e3320632de71762c816"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct arc3 from given dxf arc  <a href="class_search_a_thing_1_1_sci_ext.html#a222e69bc7ef79e3320632de71762c816">More...</a><br /></td></tr>
+<tr class="separator:a222e69bc7ef79e3320632de71762c816"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac09da25ac9eb46526566d3bd01ee0010"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ac09da25ac9eb46526566d3bd01ee0010">AngleInRange</a> (this double pt_angle, double angle_from, double angle_to, double radTol=TwoPIRadTol)</td></tr>
 <tr class="memdesc:ac09da25ac9eb46526566d3bd01ee0010"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if given angle is contained in from, to angle range; multiturn angles are supported because test will normalize to [0,2pi) automatically.  <a href="class_search_a_thing_1_1_sci_ext.html#ac09da25ac9eb46526566d3bd01ee0010">More...</a><br /></td></tr>
 <tr class="separator:ac09da25ac9eb46526566d3bd01ee0010"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,17 +128,17 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:aa838dde847fde30a98bbddc680a84bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95e568abbab87e36539573b60cbeb6ef"><td class="memItemLeft" align="right" valign="top">static EntityObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a95e568abbab87e36539573b60cbeb6ef">SetLayer</a> (this EntityObject eo, Layer layer)</td></tr>
 <tr class="separator:a95e568abbab87e36539573b60cbeb6ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af18b96358de64fa11f043a78989f14f6"><td class="memItemLeft" align="right" valign="top">static ? <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#af18b96358de64fa11f043a78989f14f6">MidPoint</a> (this Polyline poly)</td></tr>
-<tr class="memdesc:af18b96358de64fa11f043a78989f14f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the midpoint of the 3d polyline distance is computed over all segments  <a href="class_search_a_thing_1_1_sci_ext.html#af18b96358de64fa11f043a78989f14f6">More...</a><br /></td></tr>
-<tr class="separator:af18b96358de64fa11f043a78989f14f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23d47bca2efb7e86616b5db4596d5956"><td class="memItemLeft" align="right" valign="top">static ? <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a23d47bca2efb7e86616b5db4596d5956">MidPoint</a> (this Polyline2D poly)</td></tr>
+<tr class="memdesc:a23d47bca2efb7e86616b5db4596d5956"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the midpoint of the 3d polyline distance is computed over all segments  <a href="class_search_a_thing_1_1_sci_ext.html#a23d47bca2efb7e86616b5db4596d5956">More...</a><br /></td></tr>
+<tr class="separator:a23d47bca2efb7e86616b5db4596d5956"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4737cab73625776d42fb3417acb428a"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; EntityObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#aa4737cab73625776d42fb3417acb428a">Explode</a> (this Insert ins)</td></tr>
 <tr class="separator:aa4737cab73625776d42fb3417acb428a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b0557bf2c3b8d33f5f5953027cab522"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a5b0557bf2c3b8d33f5f5953027cab522">Vector3DCoords</a> (this Polyline pl)</td></tr>
-<tr class="memdesc:a5b0557bf2c3b8d33f5f5953027cab522"><td class="mdescLeft">&#160;</td><td class="mdescRight">enumerate as <a class="el" href="class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin">Vector3D</a> given dxf polyline vertexes  <a href="class_search_a_thing_1_1_sci_ext.html#a5b0557bf2c3b8d33f5f5953027cab522">More...</a><br /></td></tr>
-<tr class="separator:a5b0557bf2c3b8d33f5f5953027cab522"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7bbfff80afc913610cd6c60af7a718a"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ab7bbfff80afc913610cd6c60af7a718a">Vector3DCoords</a> (this LwPolyline lwp)</td></tr>
-<tr class="memdesc:ab7bbfff80afc913610cd6c60af7a718a"><td class="mdescLeft">&#160;</td><td class="mdescRight">enumerate as <a class="el" href="class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin">Vector3D</a> given dxf lwpolyline vertexes  <a href="class_search_a_thing_1_1_sci_ext.html#ab7bbfff80afc913610cd6c60af7a718a">More...</a><br /></td></tr>
-<tr class="separator:ab7bbfff80afc913610cd6c60af7a718a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36fdf942f273c3785ce3c8f01ef2112a"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a36fdf942f273c3785ce3c8f01ef2112a">Vector3DCoords</a> (this Polyline3D pl)</td></tr>
+<tr class="memdesc:a36fdf942f273c3785ce3c8f01ef2112a"><td class="mdescLeft">&#160;</td><td class="mdescRight">enumerate as <a class="el" href="class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin">Vector3D</a> given dxf polyline vertexes  <a href="class_search_a_thing_1_1_sci_ext.html#a36fdf942f273c3785ce3c8f01ef2112a">More...</a><br /></td></tr>
+<tr class="separator:a36fdf942f273c3785ce3c8f01ef2112a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78fe5e8bf089983d30c28fe7da400200"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a78fe5e8bf089983d30c28fe7da400200">Vector3DCoords</a> (this Polyline2D lwp)</td></tr>
+<tr class="memdesc:a78fe5e8bf089983d30c28fe7da400200"><td class="mdescLeft">&#160;</td><td class="mdescRight">enumerate as <a class="el" href="class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin">Vector3D</a> given dxf lwpolyline vertexes  <a href="class_search_a_thing_1_1_sci_ext.html#a78fe5e8bf089983d30c28fe7da400200">More...</a><br /></td></tr>
+<tr class="separator:a78fe5e8bf089983d30c28fe7da400200"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e0ba15f457db5f7630a373c805c349e"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a4e0ba15f457db5f7630a373c805c349e">RepeatFirstAtEnd</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; pts, double tol)</td></tr>
 <tr class="memdesc:a4e0ba15f457db5f7630a373c805c349e"><td class="mdescLeft">&#160;</td><td class="mdescRight">given points a,b,c it will return a,b,c,a ( first is repeated at end ) it avoid to repeat first at end when latest point already equals the first one  <a href="class_search_a_thing_1_1_sci_ext.html#a4e0ba15f457db5f7630a373c805c349e">More...</a><br /></td></tr>
 <tr class="separator:a4e0ba15f457db5f7630a373c805c349e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,8 +165,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a4ed058a781836cf425392ff449cb1c5b"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; EntityObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a4ed058a781836cf425392ff449cb1c5b">DrawCuboid</a> (this DxfObject dxfObj, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> center, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> size, Layer? layer=null)</td></tr>
 <tr class="memdesc:a4ed058a781836cf425392ff449cb1c5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and add dxf entities for 6 faces of a cuboid  <a href="class_search_a_thing_1_1_sci_ext.html#a4ed058a781836cf425392ff449cb1c5b">More...</a><br /></td></tr>
 <tr class="separator:a4ed058a781836cf425392ff449cb1c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb056e3cfdb70bf651d92f0cc2c30ecb"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#adb056e3cfdb70bf651d92f0cc2c30ecb">CadScript</a> (this Face3d face)</td></tr>
-<tr class="separator:adb056e3cfdb70bf651d92f0cc2c30ecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e6ec097d761f7aed15b804f1e9a97da"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a1e6ec097d761f7aed15b804f1e9a97da">CadScript</a> (this Face3D face)</td></tr>
+<tr class="separator:a1e6ec097d761f7aed15b804f1e9a97da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a103d223eccfdaa46a8da427ffdcc6547"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a103d223eccfdaa46a8da427ffdcc6547">AutoZoom</a> (this DxfDocument dxf, <a class="el" href="class_search_a_thing_1_1_b_box3_d.html">BBox3D</a> bbox)</td></tr>
 <tr class="memdesc:a103d223eccfdaa46a8da427ffdcc6547"><td class="mdescLeft">&#160;</td><td class="mdescRight">tries to zoom dxf viewport on the given bbox  <a href="class_search_a_thing_1_1_sci_ext.html#a103d223eccfdaa46a8da427ffdcc6547">More...</a><br /></td></tr>
 <tr class="separator:a103d223eccfdaa46a8da427ffdcc6547"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -183,6 +183,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:af9b33b6304c26c8bff0a4410ae5ee277"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac737d526383dee78fb33e64ae84fd2b8"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; EntityObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ac737d526383dee78fb33e64ae84fd2b8">Entities</a> (this DxfDocument dxf)</td></tr>
 <tr class="separator:ac737d526383dee78fb33e64ae84fd2b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae45bba6aed0e00c754f7d62d3fa0f8ad"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html">CoordinateSystem3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ae45bba6aed0e00c754f7d62d3fa0f8ad">CS</a> (this EntityObject eo)</td></tr>
+<tr class="separator:ae45bba6aed0e00c754f7d62d3fa0f8ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30925c33d0efe9b081139ebe7ed53329"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a30925c33d0efe9b081139ebe7ed53329">OffsetGeoms</a> (this Polyline2D lwp, double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> sideRefPt, double offset)</td></tr>
+<tr class="separator:a30925c33d0efe9b081139ebe7ed53329"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64af88e8e767e849d3a775cb9f38e6b4"><td class="memItemLeft" align="right" valign="top">static Polyline2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a64af88e8e767e849d3a775cb9f38e6b4">Offset</a> (this Polyline2D lwp, double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> sideRefPt, double amount)</td></tr>
+<tr class="separator:a64af88e8e767e849d3a775cb9f38e6b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c5e9923093ffd2cc98b38e6f6befdc8"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a8c5e9923093ffd2cc98b38e6f6befdc8">QCadScript</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt; edges, bool final=true)</td></tr>
 <tr class="memdesc:a8c5e9923093ffd2cc98b38e6f6befdc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">qcad script from edge enumerable  <a href="class_search_a_thing_1_1_sci_ext.html#a8c5e9923093ffd2cc98b38e6f6befdc8">More...</a><br /></td></tr>
 <tr class="separator:a8c5e9923093ffd2cc98b38e6f6befdc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,9 +201,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a9a1ca5ef5fe60a1546c7aed9fc34f2dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a202ef21f3061a4ccae7ba7864fb711c7"><td class="memItemLeft" align="right" valign="top">static Dictionary&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>, List&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a202ef21f3061a4ccae7ba7864fb711c7">MakeVertexToEdges</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt; edges, double tol)</td></tr>
 <tr class="separator:a202ef21f3061a4ccae7ba7864fb711c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9efc26d3d09d52acd2bf312d14a68d72"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_face.html">Face</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a9efc26d3d09d52acd2bf312d14a68d72">ToFace</a> (this IEnumerable&lt; netDxf.Entities.LwPolyline &gt; lwpolyline, double tol)</td></tr>
-<tr class="memdesc:a9efc26d3d09d52acd2bf312d14a68d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">build planar face with given loops ( first is the outer ); input loop can be unordered ( loop with greather area will be considered as outer loop ); precondition: loops must lie on same plane  <a href="class_search_a_thing_1_1_sci_ext.html#a9efc26d3d09d52acd2bf312d14a68d72">More...</a><br /></td></tr>
-<tr class="separator:a9efc26d3d09d52acd2bf312d14a68d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9f718a9b9f6e4f89b6a78acb837ca9e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_face.html">Face</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ad9f718a9b9f6e4f89b6a78acb837ca9e">ToFace</a> (this IEnumerable&lt; Polyline2D &gt; lwpolyline, double tol)</td></tr>
+<tr class="memdesc:ad9f718a9b9f6e4f89b6a78acb837ca9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">build planar face with given loops ( first is the outer ); input loop can be unordered ( loop with greather area will be considered as outer loop ); precondition: loops must lie on same plane  <a href="class_search_a_thing_1_1_sci_ext.html#ad9f718a9b9f6e4f89b6a78acb837ca9e">More...</a><br /></td></tr>
+<tr class="separator:ad9f718a9b9f6e4f89b6a78acb837ca9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade580c77c229dab54efd3963a0b297b9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_face.html">Face</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ade580c77c229dab54efd3963a0b297b9">ToFace</a> (this <a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a> loop)</td></tr>
 <tr class="memdesc:ade580c77c229dab54efd3963a0b297b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">build face with given outer loop  <a href="class_search_a_thing_1_1_sci_ext.html#ade580c77c229dab54efd3963a0b297b9">More...</a><br /></td></tr>
 <tr class="separator:ade580c77c229dab54efd3963a0b297b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,11 +211,11 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac22ccffc8d9fd45023180aa231a58f85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the min distance between two adiacent number given from all of the given ordered set of numbers. <br  />
   <a href="class_search_a_thing_1_1_sci_ext.html#ac22ccffc8d9fd45023180aa231a58f85">More...</a><br /></td></tr>
 <tr class="separator:ac22ccffc8d9fd45023180aa231a58f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a505afcf5dc1833726ee8d12645b15799"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a505afcf5dc1833726ee8d12645b15799">ToPlane</a> (this netDxf.Entities.LwPolyline lwpolyline)</td></tr>
-<tr class="separator:a505afcf5dc1833726ee8d12645b15799"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e6ee93a952757085327144759d20b5f"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a5e6ee93a952757085327144759d20b5f">ToGeometries</a> (this netDxf.Entities.LwPolyline lwpolyline, double tol)</td></tr>
-<tr class="memdesc:a5e6ee93a952757085327144759d20b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">extracs <a class="el" href="class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities">Arc3D</a>, <a class="el" href="class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From...">Line3D</a> from given lwpolyline  <a href="class_search_a_thing_1_1_sci_ext.html#a5e6ee93a952757085327144759d20b5f">More...</a><br /></td></tr>
-<tr class="separator:a5e6ee93a952757085327144759d20b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ababd12aef3360f7f17e1c1c3998f37c4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ababd12aef3360f7f17e1c1c3998f37c4">ToPlane</a> (this Polyline2D lwpolyline)</td></tr>
+<tr class="separator:ababd12aef3360f7f17e1c1c3998f37c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c97747e2a32cdf907f7216760f0ad85"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a9c97747e2a32cdf907f7216760f0ad85">ToGeometries</a> (this Polyline2D lwpolyline, double tol)</td></tr>
+<tr class="memdesc:a9c97747e2a32cdf907f7216760f0ad85"><td class="mdescLeft">&#160;</td><td class="mdescRight">extracs <a class="el" href="class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities">Arc3D</a>, <a class="el" href="class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From...">Line3D</a> from given lwpolyline  <a href="class_search_a_thing_1_1_sci_ext.html#a9c97747e2a32cdf907f7216760f0ad85">More...</a><br /></td></tr>
+<tr class="separator:a9c97747e2a32cdf907f7216760f0ad85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a579239df8e550ace116682a9cb7c0a44"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a579239df8e550ace116682a9cb7c0a44">Segments</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt; geometry_block, double tol)</td></tr>
 <tr class="memdesc:a579239df8e550ace116682a9cb7c0a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">segments representation of given geometries if arc found a segment between endpoints returns  <a href="class_search_a_thing_1_1_sci_ext.html#a579239df8e550ace116682a9cb7c0a44">More...</a><br /></td></tr>
 <tr class="separator:a579239df8e550ace116682a9cb7c0a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -241,8 +247,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a0a46381b7ae7ed066a3579246f237fa1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a0a46381b7ae7ed066a3579246f237fa1">BestFittingPlane</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> &gt; lines, double tol)</td></tr>
 <tr class="memdesc:a0a46381b7ae7ed066a3579246f237fa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">detect best fitting plane from the set of given lines. precondition: lines must coplanar  <a href="class_search_a_thing_1_1_sci_ext.html#a0a46381b7ae7ed066a3579246f237fa1">More...</a><br /></td></tr>
 <tr class="separator:a0a46381b7ae7ed066a3579246f237fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8f478045ea307c3d2fea30f440778ca"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#af8f478045ea307c3d2fea30f440778ca">ToLoop</a> (this netDxf.Entities.LwPolyline lwpolyline, double tol)</td></tr>
-<tr class="separator:af8f478045ea307c3d2fea30f440778ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3a1184a69137a12cc967d009fce495b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ae3a1184a69137a12cc967d009fce495b">ToLoop</a> (this Polyline2D lwpolyline, double tol)</td></tr>
+<tr class="separator:ae3a1184a69137a12cc967d009fce495b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3676a2e1f45fb1ddcaf619c6374784f2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a3676a2e1f45fb1ddcaf619c6374784f2">DetectPlane</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt; edges, double tol)</td></tr>
 <tr class="separator:a3676a2e1f45fb1ddcaf619c6374784f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb9054e6731c764f1ae86bdaa99da5ba"><td class="memItemLeft" align="right" valign="top">static Span&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#afb9054e6731c764f1ae86bdaa99da5ba">ToSpan</a> (this Matrix4x4 m)</td></tr>
@@ -331,16 +337,16 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a555dc6de9da84d08e804ad82a3c4f506"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a555dc6de9da84d08e804ad82a3c4f506">Intersect</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> &gt; polygonSegments, double tol, <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> line, <a class="el" href="namespace_search_a_thing.html#aa4f8b8bbc5743963ccc53bbbe04e5b99">GeomSegmentMode</a> segmentMode)</td></tr>
 <tr class="memdesc:a555dc6de9da84d08e804ad82a3c4f506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find intersection points (0,1,2) of the given line with the given polygon TODO unit test  <a href="class_search_a_thing_1_1_sci_ext.html#a555dc6de9da84d08e804ad82a3c4f506">More...</a><br /></td></tr>
 <tr class="separator:a555dc6de9da84d08e804ad82a3c4f506"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a982f0be25a99ba3ff4ffa1a32f248ba8"><td class="memItemLeft" align="right" valign="top">static netDxf.Entities.Hatch&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a982f0be25a99ba3ff4ffa1a32f248ba8">ToHatch</a> (this LwPolyline lw, HatchPattern pattern, bool associative=true)</td></tr>
-<tr class="separator:a982f0be25a99ba3ff4ffa1a32f248ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06f19f6360789aebfa3197315119100a"><td class="memItemLeft" align="right" valign="top">static netDxf.Entities.Hatch&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a06f19f6360789aebfa3197315119100a">ToHatch</a> (this Polyline2D lw, HatchPattern pattern, bool associative=true)</td></tr>
+<tr class="separator:a06f19f6360789aebfa3197315119100a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a711df025828cb2e50630b2c4264dd8cc"><td class="memItemLeft" align="right" valign="top">static netDxf.Entities.Hatch&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a711df025828cb2e50630b2c4264dd8cc">ToHatch</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt; _geom, HatchPattern pattern, bool associative=true)</td></tr>
 <tr class="separator:a711df025828cb2e50630b2c4264dd8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38bd88e57905ce28c1a47a810beb74bc"><td class="memItemLeft" align="right" valign="top">static netDxf.Entities.LwPolyline&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a38bd88e57905ce28c1a47a810beb74bc">ToLwPolyline</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt; _geom, double tol, <a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html">CoordinateSystem3D</a> cs, bool closed=true)</td></tr>
-<tr class="memdesc:a38bd88e57905ce28c1a47a810beb74bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">build 2d dxf polyline. precondition: geom vertex must lie on the same plane note: use RepeatFirstAtEnd extension to build a closed polyline  <a href="class_search_a_thing_1_1_sci_ext.html#a38bd88e57905ce28c1a47a810beb74bc">More...</a><br /></td></tr>
-<tr class="separator:a38bd88e57905ce28c1a47a810beb74bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac84bbdba7e9eb9c7a3293f35b9b8d441"><td class="memItemLeft" align="right" valign="top">static netDxf.Entities.Polyline&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ac84bbdba7e9eb9c7a3293f35b9b8d441">ToPolyline</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; pts, bool isClosed=true)</td></tr>
-<tr class="memdesc:ac84bbdba7e9eb9c7a3293f35b9b8d441"><td class="mdescLeft">&#160;</td><td class="mdescRight">build 3d dxf polyline note: use RepeatFirstAtEnd extension to build a closed polyline  <a href="class_search_a_thing_1_1_sci_ext.html#ac84bbdba7e9eb9c7a3293f35b9b8d441">More...</a><br /></td></tr>
-<tr class="separator:ac84bbdba7e9eb9c7a3293f35b9b8d441"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84cba381b1af5bf309e5449b41af23a9"><td class="memItemLeft" align="right" valign="top">static netDxf.Entities.Polyline2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a84cba381b1af5bf309e5449b41af23a9">ToLwPolyline</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt; _geom, double tol, <a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html">CoordinateSystem3D</a> cs, bool closed=true)</td></tr>
+<tr class="memdesc:a84cba381b1af5bf309e5449b41af23a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">build 2d dxf polyline. precondition: geom vertex must lie on the same plane note: use RepeatFirstAtEnd extension to build a closed polyline  <a href="class_search_a_thing_1_1_sci_ext.html#a84cba381b1af5bf309e5449b41af23a9">More...</a><br /></td></tr>
+<tr class="separator:a84cba381b1af5bf309e5449b41af23a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae90fde5609d8d63131383c249720d977"><td class="memItemLeft" align="right" valign="top">static Polyline3D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ae90fde5609d8d63131383c249720d977">ToPolyline</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; pts, bool isClosed=true)</td></tr>
+<tr class="memdesc:ae90fde5609d8d63131383c249720d977"><td class="mdescLeft">&#160;</td><td class="mdescRight">build 3d dxf polyline note: use RepeatFirstAtEnd extension to build a closed polyline  <a href="class_search_a_thing_1_1_sci_ext.html#ae90fde5609d8d63131383c249720d977">More...</a><br /></td></tr>
+<tr class="separator:ae90fde5609d8d63131383c249720d977"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff9c76fb1862d30c85d828c00878ce27"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#aff9c76fb1862d30c85d828c00878ce27">Boolean</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; polyA, double tol, IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; polyB, ClipType type, bool selfCheckInt64MapTolerance=true)</td></tr>
 <tr class="memdesc:aff9c76fb1862d30c85d828c00878ce27"><td class="mdescLeft">&#160;</td><td class="mdescRight">can generate a <a class="el" href="class_search_a_thing_1_1_int64_map_exception_range.html">Int64MapExceptionRange</a> exception if double values can't fit into a In64 representation. In that case try with tolerances not too small. It is suggested to use a lenTol/10 to avoid lost of precision during domain conversions. Altenatively use <a class="el" href="class_search_a_thing_1_1_loop.html" title="planar edges loop containing line and arcs">Loop</a> to find exact intersection between planar poly supporting lines and arcs.  <a href="class_search_a_thing_1_1_sci_ext.html#aff9c76fb1862d30c85d828c00878ce27">More...</a><br /></td></tr>
 <tr class="separator:aff9c76fb1862d30c85d828c00878ce27"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1145,8 +1151,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="adb056e3cfdb70bf651d92f0cc2c30ecb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb056e3cfdb70bf651d92f0cc2c30ecb">&#9670;&nbsp;</a></span>CadScript()</h2>
+<a id="a1e6ec097d761f7aed15b804f1e9a97da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e6ec097d761f7aed15b804f1e9a97da">&#9670;&nbsp;</a></span>CadScript()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1157,7 +1163,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">static string CadScript </td>
           <td>(</td>
-          <td class="paramtype">this Face3d&#160;</td>
+          <td class="paramtype">this Face3D&#160;</td>
           <td class="paramname"><em>face</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1723,6 +1729,32 @@ Static Public Attributes</h2></td></tr>
 <p>build a clone of the given entity with coord transformed accordingly given function. </p>
 <p><br  />
  </p>
+
+</div>
+</div>
+<a id="ae45bba6aed0e00c754f7d62d3fa0f8ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae45bba6aed0e00c754f7d62d3fa0f8ad">&#9670;&nbsp;</a></span>CS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html">CoordinateSystem3D</a> CS </td>
+          <td>(</td>
+          <td class="paramtype">this EntityObject&#160;</td>
+          <td class="paramname"><em>eo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -3006,8 +3038,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="af18b96358de64fa11f043a78989f14f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af18b96358de64fa11f043a78989f14f6">&#9670;&nbsp;</a></span>MidPoint()</h2>
+<a id="a23d47bca2efb7e86616b5db4596d5956"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23d47bca2efb7e86616b5db4596d5956">&#9670;&nbsp;</a></span>MidPoint()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3018,7 +3050,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">static ? <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> MidPoint </td>
           <td>(</td>
-          <td class="paramtype">this Polyline&#160;</td>
+          <td class="paramtype">this Polyline2D&#160;</td>
           <td class="paramname"><em>poly</em></td><td>)</td>
           <td></td>
         </tr>
@@ -3216,7 +3248,7 @@ Static Public Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a7b9500ca7a7c0f4a2ef2976121df8e9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b9500ca7a7c0f4a2ef2976121df8e9e">&#9670;&nbsp;</a></span>Offset()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b9500ca7a7c0f4a2ef2976121df8e9e">&#9670;&nbsp;</a></span>Offset() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3258,6 +3290,102 @@ Static Public Attributes</h2></td></tr>
 <p>increase of decrease polygon points offseting </p>
 <p><br  />
  </p>
+
+</div>
+</div>
+<a id="a64af88e8e767e849d3a775cb9f38e6b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64af88e8e767e849d3a775cb9f38e6b4">&#9670;&nbsp;</a></span>Offset() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Polyline2D Offset </td>
+          <td>(</td>
+          <td class="paramtype">this Polyline2D&#160;</td>
+          <td class="paramname"><em>lwp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>sideRefPt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>amount</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a30925c33d0efe9b081139ebe7ed53329"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30925c33d0efe9b081139ebe7ed53329">&#9670;&nbsp;</a></span>OffsetGeoms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a>&gt; OffsetGeoms </td>
+          <td>(</td>
+          <td class="paramtype">this Polyline2D&#160;</td>
+          <td class="paramname"><em>lwp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>sideRefPt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -4383,8 +4511,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="abbe8e1f22f2f6eb52d6a6dde5c95b1e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abbe8e1f22f2f6eb52d6a6dde5c95b1e9">&#9670;&nbsp;</a></span>ToArc3D()</h2>
+<a id="a222e69bc7ef79e3320632de71762c816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a222e69bc7ef79e3320632de71762c816">&#9670;&nbsp;</a></span>ToArc3D()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4396,8 +4524,24 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">static <a class="el" href="class_search_a_thing_1_1_arc3_d.html">Arc3D</a> ToArc3D </td>
           <td>(</td>
           <td class="paramtype">this netDxf.Entities.Arc&#160;</td>
-          <td class="paramname"><em>dxf_arc</em></td><td>)</td>
+          <td class="paramname"><em>dxf_arc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>?&#160;</td>
+          <td class="paramname"><em>start_vertex</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>start_vertex_tol</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -4411,6 +4555,20 @@ Static Public Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dxf_arc</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br  />
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start_vertex</td><td>optional start vertex allow to inject edge sense (used when explode from lwpolyline)</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br  />
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start_vertex_tol</td><td>when use start_vertex argument this is the tol for equality test</td></tr>
   </table>
   </dd>
 </dl>
@@ -4697,8 +4855,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a9efc26d3d09d52acd2bf312d14a68d72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9efc26d3d09d52acd2bf312d14a68d72">&#9670;&nbsp;</a></span>ToFace() <span class="overload">[1/2]</span></h2>
+<a id="ad9f718a9b9f6e4f89b6a78acb837ca9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9f718a9b9f6e4f89b6a78acb837ca9e">&#9670;&nbsp;</a></span>ToFace() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4709,7 +4867,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">static <a class="el" href="class_search_a_thing_1_1_face.html">Face</a> ToFace </td>
           <td>(</td>
-          <td class="paramtype">this IEnumerable&lt; netDxf.Entities.LwPolyline &gt;&#160;</td>
+          <td class="paramtype">this IEnumerable&lt; Polyline2D &gt;&#160;</td>
           <td class="paramname"><em>lwpolyline</em>, </td>
         </tr>
         <tr>
@@ -4765,8 +4923,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a5e6ee93a952757085327144759d20b5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e6ee93a952757085327144759d20b5f">&#9670;&nbsp;</a></span>ToGeometries()</h2>
+<a id="a9c97747e2a32cdf907f7216760f0ad85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c97747e2a32cdf907f7216760f0ad85">&#9670;&nbsp;</a></span>ToGeometries()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4777,7 +4935,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">static IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a>&gt; ToGeometries </td>
           <td>(</td>
-          <td class="paramtype">this netDxf.Entities.LwPolyline&#160;</td>
+          <td class="paramtype">this Polyline2D&#160;</td>
           <td class="paramname"><em>lwpolyline</em>, </td>
         </tr>
         <tr>
@@ -4854,8 +5012,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a982f0be25a99ba3ff4ffa1a32f248ba8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a982f0be25a99ba3ff4ffa1a32f248ba8">&#9670;&nbsp;</a></span>ToHatch() <span class="overload">[2/2]</span></h2>
+<a id="a06f19f6360789aebfa3197315119100a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06f19f6360789aebfa3197315119100a">&#9670;&nbsp;</a></span>ToHatch() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4866,7 +5024,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">static netDxf.Entities.Hatch ToHatch </td>
           <td>(</td>
-          <td class="paramtype">this LwPolyline&#160;</td>
+          <td class="paramtype">this Polyline2D&#160;</td>
           <td class="paramname"><em>lw</em>, </td>
         </tr>
         <tr>
@@ -4922,8 +5080,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="af8f478045ea307c3d2fea30f440778ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8f478045ea307c3d2fea30f440778ca">&#9670;&nbsp;</a></span>ToLoop()</h2>
+<a id="ae3a1184a69137a12cc967d009fce495b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3a1184a69137a12cc967d009fce495b">&#9670;&nbsp;</a></span>ToLoop()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4934,7 +5092,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">static <a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a> ToLoop </td>
           <td>(</td>
-          <td class="paramtype">this netDxf.Entities.LwPolyline&#160;</td>
+          <td class="paramtype">this Polyline2D&#160;</td>
           <td class="paramname"><em>lwpolyline</em>, </td>
         </tr>
         <tr>
@@ -4958,8 +5116,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a38bd88e57905ce28c1a47a810beb74bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38bd88e57905ce28c1a47a810beb74bc">&#9670;&nbsp;</a></span>ToLwPolyline()</h2>
+<a id="a84cba381b1af5bf309e5449b41af23a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84cba381b1af5bf309e5449b41af23a9">&#9670;&nbsp;</a></span>ToLwPolyline()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4968,7 +5126,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static netDxf.Entities.LwPolyline ToLwPolyline </td>
+          <td class="memname">static netDxf.Entities.Polyline2D ToLwPolyline </td>
           <td>(</td>
           <td class="paramtype">this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt;&#160;</td>
           <td class="paramname"><em>_geom</em>, </td>
@@ -5047,8 +5205,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a505afcf5dc1833726ee8d12645b15799"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a505afcf5dc1833726ee8d12645b15799">&#9670;&nbsp;</a></span>ToPlane()</h2>
+<a id="ababd12aef3360f7f17e1c1c3998f37c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ababd12aef3360f7f17e1c1c3998f37c4">&#9670;&nbsp;</a></span>ToPlane()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5059,7 +5217,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">static <a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a> ToPlane </td>
           <td>(</td>
-          <td class="paramtype">this netDxf.Entities.LwPolyline&#160;</td>
+          <td class="paramtype">this Polyline2D&#160;</td>
           <td class="paramname"><em>lwpolyline</em></td><td>)</td>
           <td></td>
         </tr>
@@ -5073,8 +5231,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ac84bbdba7e9eb9c7a3293f35b9b8d441"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac84bbdba7e9eb9c7a3293f35b9b8d441">&#9670;&nbsp;</a></span>ToPolyline()</h2>
+<a id="ae90fde5609d8d63131383c249720d977"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae90fde5609d8d63131383c249720d977">&#9670;&nbsp;</a></span>ToPolyline()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5083,7 +5241,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static netDxf.Entities.Polyline ToPolyline </td>
+          <td class="memname">static Polyline3D ToPolyline </td>
           <td>(</td>
           <td class="paramtype">this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td>
           <td class="paramname"><em>pts</em>, </td>
@@ -5481,8 +5639,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab7bbfff80afc913610cd6c60af7a718a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7bbfff80afc913610cd6c60af7a718a">&#9670;&nbsp;</a></span>Vector3DCoords() <span class="overload">[1/2]</span></h2>
+<a id="a78fe5e8bf089983d30c28fe7da400200"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78fe5e8bf089983d30c28fe7da400200">&#9670;&nbsp;</a></span>Vector3DCoords() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5493,7 +5651,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">static IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&gt; Vector3DCoords </td>
           <td>(</td>
-          <td class="paramtype">this LwPolyline&#160;</td>
+          <td class="paramtype">this Polyline2D&#160;</td>
           <td class="paramname"><em>lwp</em></td><td>)</td>
           <td></td>
         </tr>
@@ -5511,8 +5669,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a5b0557bf2c3b8d33f5f5953027cab522"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b0557bf2c3b8d33f5f5953027cab522">&#9670;&nbsp;</a></span>Vector3DCoords() <span class="overload">[2/2]</span></h2>
+<a id="a36fdf942f273c3785ce3c8f01ef2112a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36fdf942f273c3785ce3c8f01ef2112a">&#9670;&nbsp;</a></span>Vector3DCoords() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5523,7 +5681,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">static IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&gt; Vector3DCoords </td>
           <td>(</td>
-          <td class="paramtype">this Polyline&#160;</td>
+          <td class="paramtype">this Polyline3D&#160;</td>
           <td class="paramname"><em>pl</em></td><td>)</td>
           <td></td>
         </tr>

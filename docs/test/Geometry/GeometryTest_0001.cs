@@ -21,11 +21,11 @@ namespace SearchAThing.Sci.Tests
 
             var tol = 1e-8;
 
-            var lw = dxf.LwPolylines.First(w => w.Color.Index == AciColor.Red.Index);
+            var lw = dxf.Entities.Polylines2D.First(w => w.Color.Index == AciColor.Red.Index);
 
             var lw1geoms = lw.ToGeometries(tol).ToList();
 
-            var origlw = (LwPolyline)lw.Clone();
+            var origlw = (Polyline2D)lw.Clone();
             origlw.SetColor(AciColor.Red);
             if (outdxf != null) outdxf.AddEntity(origlw);
 

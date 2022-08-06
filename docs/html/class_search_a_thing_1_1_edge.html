@@ -118,6 +118,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5e9eb6c45fedeea33eb406231c493fed"><td class="memItemLeft" align="right" valign="top">abstract <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_edge.html#a5e9eb6c45fedeea33eb406231c493fed">Project</a> (double tol, <a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a> prjPlane)</td></tr>
 <tr class="memdesc:a5e9eb6c45fedeea33eb406231c493fed"><td class="mdescLeft">&#160;</td><td class="mdescRight">project this edge to given plane  <a href="class_search_a_thing_1_1_edge.html#a5e9eb6c45fedeea33eb406231c493fed">More...</a><br /></td></tr>
 <tr class="separator:a5e9eb6c45fedeea33eb406231c493fed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada8c916f5d0412e058cbff66a7aeee9b"><td class="memItemLeft" align="right" valign="top">abstract ? <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_edge.html#ada8c916f5d0412e058cbff66a7aeee9b">Project</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> pt, bool segment_mode=true)</td></tr>
+<tr class="memdesc:ada8c916f5d0412e058cbff66a7aeee9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">project given pt to this edge.  <a href="class_search_a_thing_1_1_edge.html#ada8c916f5d0412e058cbff66a7aeee9b">More...</a><br /></td></tr>
+<tr class="separator:ada8c916f5d0412e058cbff66a7aeee9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ff9c423e592eb14eb501d417fd60357"><td class="memItemLeft" align="right" valign="top">abstract string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_edge.html#a9ff9c423e592eb14eb501d417fd60357">ToString</a> (int digits)</td></tr>
 <tr class="separator:a9ff9c423e592eb14eb501d417fd60357"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0146221d7285e3b12b9ca1166caca1b"><td class="memItemLeft" align="right" valign="top">abstract string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_edge.html#af0146221d7285e3b12b9ca1166caca1b">QCadScript</a> (bool final=true)</td></tr>
@@ -125,6 +128,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af0146221d7285e3b12b9ca1166caca1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89a0770edb6cd862f267c2195644a4c2"><td class="memItemLeft" align="right" valign="top">abstract string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_edge.html#a89a0770edb6cd862f267c2195644a4c2">ProgeCadScript</a> (bool final=true)</td></tr>
 <tr class="separator:a89a0770edb6cd862f267c2195644a4c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a343c47800e4ffd90fe6604688c387175"><td class="memItemLeft" align="right" valign="top">abstract <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_edge.html#a343c47800e4ffd90fe6604688c387175">Offset</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> refPt, double offset)</td></tr>
+<tr class="separator:a343c47800e4ffd90fe6604688c387175"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_search_a_thing_1_1_geometry"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_search_a_thing_1_1_geometry')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a></td></tr>
 <tr class="memitem:a4eb5d90088ec38fb3e8290699c83d125 inherit pub_methods_class_search_a_thing_1_1_geometry"><td class="memItemLeft" align="right" valign="top">abstract <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_geometry.html#a4eb5d90088ec38fb3e8290699c83d125">Copy</a> ()</td></tr>
 <tr class="memdesc:a4eb5d90088ec38fb3e8290699c83d125 inherit pub_methods_class_search_a_thing_1_1_geometry"><td class="mdescLeft">&#160;</td><td class="mdescRight">create copy of this geometry. <br  />
@@ -365,6 +370,50 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a343c47800e4ffd90fe6604688c387175"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a343c47800e4ffd90fe6604688c387175">&#9670;&nbsp;</a></span>Offset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> Offset </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>refPt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_search_a_thing_1_1_line3_d.html#ab5f67203a0fd40dd76171687cbb32a67">Line3D</a>, and <a class="el" href="class_search_a_thing_1_1_arc3_d.html#a6b002fac4da6ea15ece3c2d37fcc69bb">Arc3D</a>.</p>
+
+</div>
+</div>
 <a id="af170c4876b8e5f3a089c2cb10cc82157"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af170c4876b8e5f3a089c2cb10cc82157">&#9670;&nbsp;</a></span>OtherEndpoint()</h2>
 
@@ -422,7 +471,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a5e9eb6c45fedeea33eb406231c493fed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e9eb6c45fedeea33eb406231c493fed">&#9670;&nbsp;</a></span>Project()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e9eb6c45fedeea33eb406231c493fed">&#9670;&nbsp;</a></span>Project() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -466,6 +515,52 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 <p>Implemented in <a class="el" href="class_search_a_thing_1_1_line3_d.html#aa6809a0b9eb0bab123b24f65b56fd251">Line3D</a>, and <a class="el" href="class_search_a_thing_1_1_arc3_d.html#aa6809a0b9eb0bab123b24f65b56fd251">Arc3D</a>.</p>
+
+</div>
+</div>
+<a id="ada8c916f5d0412e058cbff66a7aeee9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada8c916f5d0412e058cbff66a7aeee9b">&#9670;&nbsp;</a></span>Project() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract ? <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> Project </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>pt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>segment_mode</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>project given pt to this edge. </p>
+
+<p>Implemented in <a class="el" href="class_search_a_thing_1_1_line3_d.html#a8595c362236f1c87661248c301520beb">Line3D</a>, and <a class="el" href="class_search_a_thing_1_1_arc3_d.html#a9ebcfdea0b19da04921143cd9605b39e">Arc3D</a>.</p>
 
 </div>
 </div>

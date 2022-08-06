@@ -16,9 +16,9 @@ namespace SearchAThing.Sci.Tests
 
             var tol = 1e-8;
 
-            var magentaLines = dxf.Lines.Where(r => r.Color.Index == AciColor.Magenta.Index).Select(w => w.ToLine3D()).ToList();
-            var greenLines = dxf.Lines.Where(r => r.Color.Index == AciColor.Green.Index).Select(w => w.ToLine3D()).ToList();
-            var cyanLines = dxf.Lines.Where(r => r.Color.Index == AciColor.Cyan.Index).Select(w => w.ToLine3D()).ToList();
+            var magentaLines = dxf.Entities.Lines.Where(r => r.Color.Index == AciColor.Magenta.Index).Select(w => w.ToLine3D()).ToList();
+            var greenLines = dxf.Entities.Lines.Where(r => r.Color.Index == AciColor.Green.Index).Select(w => w.ToLine3D()).ToList();
+            var cyanLines = dxf.Entities.Lines.Where(r => r.Color.Index == AciColor.Cyan.Index).Select(w => w.ToLine3D()).ToList();
 
             var q = magentaLines[0].GeomIntersect(tol, magentaLines[1]).ToList();
             Assert.True(q.Count == 1);

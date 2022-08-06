@@ -20,11 +20,11 @@ namespace SearchAThing.Sci.Tests
 
             var tol = 0.1;//1e-8;
 
-            var lworig = (LwPolyline)dxf.LwPolylines.First().Clone();
+            var lworig = (Polyline2D)dxf.Entities.Polylines2D.First().Clone();
             lworig.SetColor(AciColor.Blue);
             outdxf?.AddEntity(lworig);
 
-            var loop = dxf.LwPolylines.First().ToLoop(tol);
+            var loop = dxf.Entities.Polylines2D.First().ToLoop(tol);
             var relw = loop.DxfEntity(tol);
             relw.SetColor(AciColor.Red);
 

@@ -21,12 +21,12 @@ namespace SearchAThing.Sci.Tests
 
             var tol = 1e-8;
 
-            var loopGreen = dxf.LwPolylines.First(w => w.Layer.Name == "green").ToLoop(tol);
-            var loopRed = dxf.LwPolylines.First(w => w.Layer.Name == "red").ToLoop(tol);
-            var loopMagenta = dxf.LwPolylines.First(w => w.Layer.Name == "magenta").ToLoop(tol);
-            var loopCyan = dxf.LwPolylines.First(w => w.Layer.Name == "cyan").ToLoop(tol);
-            var loopBlue = dxf.LwPolylines.First(w => w.Layer.Name == "blue").ToLoop(tol);
-            var loopYellow = dxf.LwPolylines.First(w => w.Layer.Name == "yellow").ToLoop(tol);
+            var loopGreen = dxf.Entities.Polylines2D.First(w => w.Layer.Name == "green").ToLoop(tol);
+            var loopRed = dxf.Entities.Polylines2D.First(w => w.Layer.Name == "red").ToLoop(tol);
+            var loopMagenta = dxf.Entities.Polylines2D.First(w => w.Layer.Name == "magenta").ToLoop(tol);
+            var loopCyan = dxf.Entities.Polylines2D.First(w => w.Layer.Name == "cyan").ToLoop(tol);
+            var loopBlue = dxf.Entities.Polylines2D.First(w => w.Layer.Name == "blue").ToLoop(tol);
+            var loopYellow = dxf.Entities.Polylines2D.First(w => w.Layer.Name == "yellow").ToLoop(tol);
 
             var faceGreen = new Face(loopGreen.Plane, new[] { loopGreen });
             var faceRed = new Face(loopRed.Plane, new[] { loopRed });
