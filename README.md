@@ -119,6 +119,12 @@ detect polygons ( line, arcs ) intersection loops when edges overlaps
 
 <img src="data/img/LoopTest_0021/union-YG1.png" width=200>&nbsp;<img src="data/img/LoopTest_0021/union-YG2.png" width=200>&nbsp;<img src="data/img/LoopTest_0021/union-YG3.png" width=200>
 
+#### PolygonTest_0007
+
+![img](data/img/PolylineOffset.png)
+
+offsets existing Cyan polyline using offset amount of 0.1 and reference points yellow, green to build offseted polygons.
+
 ## Quickstart
 
 - [nuget package](https://www.nuget.org/packages/netcore-sci/)
