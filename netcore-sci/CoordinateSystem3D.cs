@@ -222,10 +222,10 @@ namespace SearchAThing
             if (BaseZ.EqualsTol(NormalizedLengthTolerance, CoordinateSystem3D.XZ.BaseZ) ||
                 BaseZ.EqualsTol(NormalizedLengthTolerance, -CoordinateSystem3D.XZ.BaseZ))
                 return CoordinateSystem3D.XZ.Move(Origin);
-            
+
             if (BaseZ.EqualsTol(NormalizedLengthTolerance, CoordinateSystem3D.YZ.BaseZ) ||
                 BaseZ.EqualsTol(NormalizedLengthTolerance, -CoordinateSystem3D.YZ.BaseZ))
-                return CoordinateSystem3D.YZ.Move(Origin);            
+                return CoordinateSystem3D.YZ.Move(Origin);
 
             return this;
         }
@@ -420,10 +420,12 @@ namespace SearchAThing
             var i1 = l1.Intersect(tol, this);
             var i2 = l2.Intersect(tol, this);
 
-            if (i1 == null) i1 = i2 + l1.V;
+            if (i1 == null && i2 == null) return null;
+
+            if (i1 == null) i1 = i2! + l1.V;
             else if (i2 == null) i2 = i1 + l2.V;
 
-            return new Line3D(i1, i2);
+            return new Line3D(i1!, i2!);
         }
 
         public UCS ToDxfUCS(string name) => new UCS(name, Origin, BaseX, BaseY);
