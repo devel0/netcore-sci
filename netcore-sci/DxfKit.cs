@@ -616,7 +616,7 @@ namespace SearchAThing
             {
                 if (idx >= edges.Count) idx = 0;
 
-                var idx1 = idx;                
+                var idx1 = idx;
                 var idx2 = idx + 1;
                 if (idx2 >= edges.Count) idx2 = 0;
 
@@ -630,12 +630,13 @@ namespace SearchAThing
                 var offline2 = edge2.MidPoint.LineV(
                     offline.V.RotateAboutAxis(lwpCs.BaseZ, edgesAngle));
 
-                yield return edge2.Offset(tol, offline2.To, offline2.Length);
+                if ((idx + 1) % edges.Count != idxStartEdge)
+                    yield return edge2.Offset(tol, offline2.To, offline2.Length);
+
+                offline = offline2;
 
                 ++idx;
-
                 ++edgesProcessed;
-                offline = offline2;
             }
 
         }
