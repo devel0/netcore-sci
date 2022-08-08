@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['smartcsmode_801',['SmartCsMode',['../namespace_search_a_thing.html#a42c02aa6d6f0779946333e294f73ef26',1,'SearchAThing']]]
+  ['ordidx_812',['OrdIdx',['../namespace_search_a_thing.html#a3197886280b26d361c765c6d7edefb4f',1,'SearchAThing']]]
 ];

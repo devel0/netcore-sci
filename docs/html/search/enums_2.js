@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['geometrytype_794',['GeometryType',['../namespace_search_a_thing.html#a1b753fd9c2659910ca1a042a05b56be6',1,'SearchAThing']]],
-  ['geomsegmentmode_795',['GeomSegmentMode',['../namespace_search_a_thing.html#aa4f8b8bbc5743963ccc53bbbe04e5b99',1,'SearchAThing']]]
+  ['edgeend_805',['EdgeEnd',['../namespace_search_a_thing.html#a65c629f03eb0e92d4f4d4602b69f48b4',1,'SearchAThing']]]
 ];

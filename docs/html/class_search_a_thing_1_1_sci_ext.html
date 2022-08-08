@@ -201,6 +201,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a9a1ca5ef5fe60a1546c7aed9fc34f2dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a202ef21f3061a4ccae7ba7864fb711c7"><td class="memItemLeft" align="right" valign="top">static Dictionary&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>, List&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a202ef21f3061a4ccae7ba7864fb711c7">MakeVertexToEdges</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt; edges, double tol)</td></tr>
 <tr class="separator:a202ef21f3061a4ccae7ba7864fb711c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eb55ee62b4e9e73b7c7d2eceb2122be"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a4eb55ee62b4e9e73b7c7d2eceb2122be">AutoTrimExtends</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt; edges, double tol)</td></tr>
+<tr class="memdesc:a4eb55ee62b4e9e73b7c7d2eceb2122be"><td class="mdescLeft">&#160;</td><td class="mdescRight">automatically trim or extends consecutive edges intersections  <a href="class_search_a_thing_1_1_sci_ext.html#a4eb55ee62b4e9e73b7c7d2eceb2122be">More...</a><br /></td></tr>
+<tr class="separator:a4eb55ee62b4e9e73b7c7d2eceb2122be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9f718a9b9f6e4f89b6a78acb837ca9e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_face.html">Face</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ad9f718a9b9f6e4f89b6a78acb837ca9e">ToFace</a> (this IEnumerable&lt; Polyline2D &gt; lwpolyline, double tol)</td></tr>
 <tr class="memdesc:ad9f718a9b9f6e4f89b6a78acb837ca9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">build planar face with given loops ( first is the outer ); input loop can be unordered ( loop with greather area will be considered as outer loop ); precondition: loops must lie on same plane  <a href="class_search_a_thing_1_1_sci_ext.html#ad9f718a9b9f6e4f89b6a78acb837ca9e">More...</a><br /></td></tr>
 <tr class="separator:ad9f718a9b9f6e4f89b6a78acb837ca9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -214,7 +217,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ababd12aef3360f7f17e1c1c3998f37c4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ababd12aef3360f7f17e1c1c3998f37c4">ToPlane</a> (this Polyline2D lwpolyline)</td></tr>
 <tr class="separator:ababd12aef3360f7f17e1c1c3998f37c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c97747e2a32cdf907f7216760f0ad85"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a9c97747e2a32cdf907f7216760f0ad85">ToGeometries</a> (this Polyline2D lwpolyline, double tol)</td></tr>
-<tr class="memdesc:a9c97747e2a32cdf907f7216760f0ad85"><td class="mdescLeft">&#160;</td><td class="mdescRight">extracs <a class="el" href="class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities">Arc3D</a>, <a class="el" href="class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From...">Line3D</a> from given lwpolyline  <a href="class_search_a_thing_1_1_sci_ext.html#a9c97747e2a32cdf907f7216760f0ad85">More...</a><br /></td></tr>
+<tr class="memdesc:a9c97747e2a32cdf907f7216760f0ad85"><td class="mdescLeft">&#160;</td><td class="mdescRight">extracs <a class="el" href="class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities.">Arc3D</a>, <a class="el" href="class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From...">Line3D</a> from given lwpolyline  <a href="class_search_a_thing_1_1_sci_ext.html#a9c97747e2a32cdf907f7216760f0ad85">More...</a><br /></td></tr>
 <tr class="separator:a9c97747e2a32cdf907f7216760f0ad85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a579239df8e550ace116682a9cb7c0a44"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a579239df8e550ace116682a9cb7c0a44">Segments</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt; geometry_block, double tol)</td></tr>
 <tr class="memdesc:a579239df8e550ace116682a9cb7c0a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">segments representation of given geometries if arc found a segment between endpoints returns  <a href="class_search_a_thing_1_1_sci_ext.html#a579239df8e550ace116682a9cb7c0a44">More...</a><br /></td></tr>
@@ -766,6 +769,44 @@ Static Public Attributes</h2></td></tr>
 <p>TODO: dummy function, optimize</p>
 <p><br  />
  </p>
+
+</div>
+</div>
+<a id="a4eb55ee62b4e9e73b7c7d2eceb2122be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eb55ee62b4e9e73b7c7d2eceb2122be">&#9670;&nbsp;</a></span>AutoTrimExtends()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a>&gt; AutoTrimExtends </td>
+          <td>(</td>
+          <td class="paramtype">this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt;&#160;</td>
+          <td class="paramname"><em>edges</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>automatically trim or extends consecutive edges intersections </p>
 
 </div>
 </div>
@@ -4957,7 +4998,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>extracs <a class="el" href="class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities">Arc3D</a>, <a class="el" href="class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From...">Line3D</a> from given lwpolyline </p>
+<p>extracs <a class="el" href="class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities.">Arc3D</a>, <a class="el" href="class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From...">Line3D</a> from given lwpolyline </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lwpolyline</td><td></td></tr>

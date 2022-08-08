@@ -34,11 +34,11 @@ namespace SearchAThing.Sci.Tests
             {
                 var tol = 1e-4;
 
-                var c1 = new Circle3D(                    
+                var c1 = new Circle3D(
                     CoordinateSystem3D.WCS.Move(new Vector3D(12397.5233, 112.1186)),
                     960);
 
-                var c2 = new Circle3D(                    
+                var c2 = new Circle3D(
                     CoordinateSystem3D.WCS.Move(new Vector3D(13535.4631, -465.6793)),
                     316.22776602);
 
@@ -52,11 +52,11 @@ namespace SearchAThing.Sci.Tests
             {
                 var tol = 1e-4;
 
-                var c1 = new Circle3D(                    
+                var c1 = new Circle3D(
                     CoordinateSystem3D.WCS.Move(new Vector3D(12397.5233, 112.1186)),
                     960);
 
-                var c2 = new Circle3D(                    
+                var c2 = new Circle3D(
                     CoordinateSystem3D.WCS.Move(new Vector3D(13535.4631 + 1, -465.6793)),
                     316.22776602);
 
@@ -78,7 +78,7 @@ namespace SearchAThing.Sci.Tests
                     new Vector3D(0, -960), new Vector3D(1, 0, 0),
                     Line3DConstructMode.PointAndVector);
 
-                var q = c.Intersect(1e-3, l).ToList();
+                var q = c.Intersect(1e-3, l, onlyPerimeter: true, lineSegmentMode: false).ToList();
 
                 Assert.True(q.Count == 2);
                 Assert.True(q[0].EqualsTol(1e-3, 370.731, -960, 0));

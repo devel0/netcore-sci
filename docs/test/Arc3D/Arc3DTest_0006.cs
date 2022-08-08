@@ -21,9 +21,9 @@ namespace SearchAThing.Sci.Tests
             var arcGreen = dxf.Entities.Arcs.First(w => w.Color.Index == AciColor.Green.Index).ToArc3D();
             var arcCyan = dxf.Entities.Arcs.First(w => w.Color.Index == AciColor.Cyan.Index).ToArc3D();
 
-            var qYellowGreen = arcYellow.Intersect(tol, arcGreen).ToList();
-            var qGreenCyan = arcGreen.Intersect(tol, arcCyan).ToList();
-            var qYellowCyan = arcYellow.Intersect(tol, arcCyan).ToList();
+            var qYellowGreen = arcYellow.Intersect(tol, arcGreen, onlyPerimeter: true).ToList();
+            var qGreenCyan = arcGreen.Intersect(tol, arcCyan, onlyPerimeter: true).ToList();
+            var qYellowCyan = arcYellow.Intersect(tol, arcCyan, onlyPerimeter: true).ToList();
 
             Assert.True(qYellowGreen.Count == 1);
             Assert.True(qGreenCyan.Count == 2);

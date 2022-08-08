@@ -426,18 +426,18 @@ namespace SearchAThing.Sci.Tests
                     new Vector3D(12.61618025, 9.11647552, 5.03700782),
                     new Vector3D(29.98782817, 8.95992883, 10.43914904));
 
-                var ips = c.Intersect(tol, ltangent, segment_mode: false).ToList();
+                var ips = c.Intersect(tol, ltangent, onlyPerimeter: true, lineSegmentMode: false).ToList();
                 Assert.True(ips.Count == 1 && ips[0].EqualsTol(tol, 21.89165531, 20.31895000, 8.22863722));
 
-                ips = c.Intersect(tol, lcoplanar, segment_mode: false).ToList();
+                ips = c.Intersect(tol, lcoplanar, onlyPerimeter: true, lineSegmentMode: false).ToList();
                 Assert.True(ips.Count == 2 &&
                     ips.Any(w => w.EqualsTol(tol, 16.75040000, 16.40478763, 5.24256563)) &&
                     ips.Any(w => w.EqualsTol(tol, 27.98738426, 16.14100832, 9.40609100)));
 
-                ips = c.Intersect(tol, l1point, segment_mode: false).ToList();
+                ips = c.Intersect(tol, l1point, onlyPerimeter: true, lineSegmentMode: false).ToList();
                 Assert.True(ips.Count == 1 && ips[0].EqualsTol(tol, 16.68920095, 13.15707574, 4.34928345));
 
-                ips = c.Intersect(tol, lout, segment_mode: false).ToList();
+                ips = c.Intersect(tol, lout, onlyPerimeter: true, lineSegmentMode: false).ToList();
                 Assert.True(ips.Count == 0);
             }
 
@@ -689,7 +689,7 @@ namespace SearchAThing.Sci.Tests
             Assert.True(bbox.EqualsTol(tolLen, bbox.Union(bbox2)));
 
             Assert.True(bbox.Contains(tolLen, bbox2));
-        }        
+        }
 
         [Fact(DisplayName = "Line3DAutoIntersect")]
         void Line3DAutoIntersect()

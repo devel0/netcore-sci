@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['line3dconstructmode_796',['Line3DConstructMode',['../namespace_search_a_thing.html#acece75c43e8b7d5087ed55e71ba76bf6',1,'SearchAThing']]],
-  ['lineintersectbehavior_797',['LineIntersectBehavior',['../namespace_search_a_thing.html#aaf41c0cb15959f4a36819442ef87fe8c',1,'SearchAThing']]],
-  ['loopcontainsedgemode_798',['LoopContainsEdgeMode',['../namespace_search_a_thing.html#aedf55b8029e07ae2dc4e1ae785e0e5ee',1,'SearchAThing']]],
-  ['loopcontainspointmode_799',['LoopContainsPointMode',['../namespace_search_a_thing.html#a5143797c292eae835d22af82642aeac4',1,'SearchAThing']]]
+  ['geometrytype_806',['GeometryType',['../namespace_search_a_thing.html#a1b753fd9c2659910ca1a042a05b56be6',1,'SearchAThing']]],
+  ['geomsegmentmode_807',['GeomSegmentMode',['../namespace_search_a_thing.html#aa4f8b8bbc5743963ccc53bbbe04e5b99',1,'SearchAThing']]]
 ];

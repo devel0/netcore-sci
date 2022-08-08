@@ -231,6 +231,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab5f67203a0fd40dd76171687cbb32a67"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_line3_d.html#ab5f67203a0fd40dd76171687cbb32a67">Offset</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> refPt, double offset)</td></tr>
 <tr class="memdesc:ab5f67203a0fd40dd76171687cbb32a67"><td class="mdescLeft">&#160;</td><td class="mdescRight">create offseted line toward refPt for given offset  <a href="class_search_a_thing_1_1_line3_d.html#ab5f67203a0fd40dd76171687cbb32a67">More...</a><br /></td></tr>
 <tr class="separator:ab5f67203a0fd40dd76171687cbb32a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41089be71779b247965f24aa6ebe4b8a"><td class="memItemLeft" align="right" valign="top">override? <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_line3_d.html#a41089be71779b247965f24aa6ebe4b8a">MoveEnd</a> (double tol, <a class="el" href="namespace_search_a_thing.html#a65c629f03eb0e92d4f4d4602b69f48b4">EdgeEnd</a> end, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> newEnd)</td></tr>
+<tr class="memdesc:a41089be71779b247965f24aa6ebe4b8a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br  />
+ extends edge endpoint toward new given one. <br  />
+ returns null if edge can't extends toward new given end.  <a href="class_search_a_thing_1_1_line3_d.html#a41089be71779b247965f24aa6ebe4b8a">More...</a><br /></td></tr>
+<tr class="separator:a41089be71779b247965f24aa6ebe4b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41c71c6aae4bc42c5be37dc42d008f01"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_line3_d.html#a41c71c6aae4bc42c5be37dc42d008f01">QCadScript</a> (bool final=true)</td></tr>
 <tr class="memdesc:a41c71c6aae4bc42c5be37dc42d008f01"><td class="mdescLeft">&#160;</td><td class="mdescRight">2d qcad script representation ( vscode watch using var,nq )  <a href="class_search_a_thing_1_1_line3_d.html#a41c71c6aae4bc42c5be37dc42d008f01">More...</a><br /></td></tr>
 <tr class="separator:a41c71c6aae4bc42c5be37dc42d008f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1452,6 +1457,56 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a41089be71779b247965f24aa6ebe4b8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41089be71779b247965f24aa6ebe4b8a">&#9670;&nbsp;</a></span>MoveEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override? <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> MoveEnd </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_search_a_thing.html#a65c629f03eb0e92d4f4d4602b69f48b4">EdgeEnd</a>&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>newEnd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><br  />
+ extends edge endpoint toward new given one. <br  />
+ returns null if edge can't extends toward new given end. </p>
+<p><br  />
+ </p>
+
+<p>Implements <a class="el" href="class_search_a_thing_1_1_edge.html#af9d017cc20bcce77b083362488a55dc5">Edge</a>.</p>
+
+</div>
+</div>
 <a id="af7dbcd000a881a02c3a57f9d72972983"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af7dbcd000a881a02c3a57f9d72972983">&#9670;&nbsp;</a></span>MoveMidpoint()</h2>
 
@@ -1845,7 +1900,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>project given pt to this line </p>
 
-<p>Implements <a class="el" href="class_search_a_thing_1_1_edge.html#ada8c916f5d0412e058cbff66a7aeee9b">Edge</a>.</p>
+<p>Implements <a class="el" href="class_search_a_thing_1_1_edge.html#a046ef9fb1a2a5cf90e3ff85b69306347">Edge</a>.</p>
 
 </div>
 </div>
