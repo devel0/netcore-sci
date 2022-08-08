@@ -70,7 +70,18 @@ namespace SearchAThing
     }
 
     /// <summary>
-    /// base geometry for arc 3d entities
+    /// base geometry for arc 3d entities.
+    /// 
+    /// the CS origin is the Center of the arc.
+    /// the CS basex, basey forms the arc plane.
+    /// 
+    /// angles start, end are normalized [0,2pi) measured as angle from the basex
+    /// right-hand rotating around cs basez.
+    /// the arc coverage goes from the angle start point toward angle end point
+    /// right-hand rotating arond cs basez.
+    /// 
+    /// while the CS right hand rule allow to know the effective arc coverage
+    /// Sense information allow to know the effective edge orientation.
     /// </summary>
     public class Arc3D : Edge
     {
@@ -157,16 +168,46 @@ namespace SearchAThing
         public override Arc3D Offset(double tol, Vector3D refPt, double offset)
         {
             var refPtOnPlane = refPt.Project(CS);
-            
-            var dst_refPt = refPtOnPlane.Distance(Center);            
+
+            var dst_refPt = refPtOnPlane.Distance(Center);
 
             var reduceRadius = dst_refPt.LessThanTol(tol, Radius);
 
-            var offsetSign = reduceRadius ? -1d : 1d;            
+            var offsetSign = reduceRadius ? -1d : 1d;
 
-            var res = new Arc3D(CS, Radius + offset * offsetSign, AngleStart, AngleEnd);
+            var res = new Arc3D(CS, Radius + offset * offsetSign, AngleStart, AngleEnd) { Sense = this.Sense };
 
             return res;
+        }
+
+        public override Edge? MoveEnd(double tol, EdgeEnd end, Vector3D newEnd)
+        {
+            if (!this.Contains(tol, newEnd, inArcAngleRange: false, onlyPerimeter: true)) return null;
+
+            switch (end)
+            {
+                case EdgeEnd.SGeomFrom:
+                    {
+                        if (SGeomTo.EqualsTol(tol, newEnd)) return null;
+
+                        if (Sense)
+                            return new Arc3D(tol, CS, Radius, newEnd, SGeomTo) { Sense = this.Sense };
+                        else
+                            return new Arc3D(tol, CS, Radius, SGeomTo, newEnd) { Sense = this.Sense };
+                    }
+
+                case EdgeEnd.SGeomTo:
+                    {
+                        if (SGeomFrom.EqualsTol(tol, newEnd)) return null;
+
+                        if (Sense)
+                            return new Arc3D(tol, CS, Radius, SGeomFrom, newEnd) { Sense = this.Sense };
+                        else
+                            return new Arc3D(tol, CS, Radius, newEnd, SGeomFrom) { Sense = this.Sense };
+                    }
+
+                default: throw new Exception($"unknown edge end {end}");
+            }
         }
 
         #endregion
@@ -257,8 +298,12 @@ namespace SearchAThing
                     {
                         var other = (Line3D)_other;
 
-                        var pts = this.Intersect(tol, other, onlyPerimeter: true,
-                            segment_mode: otherSegmentMode == GeomSegmentMode.FromTo);
+                        // this(arc) intersects other(line)
+
+                        var pts = this.Intersect(tol, other,
+                            onlyPerimeter: true,
+                            lineSegmentMode: otherSegmentMode == GeomSegmentMode.FromTo,
+                            arcSegmentMode: thisSegmentMode != GeomSegmentMode.Infinite);
 
                         if (pts != null)
                         {
@@ -270,6 +315,8 @@ namespace SearchAThing
                 case GeometryType.Arc3D:
                     {
                         var other = (Arc3D)_other;
+
+                        // this(arc) intersects other(arc)
 
                         var pts = this.Intersect(tol, other, onlyPerimeter: true).ToList();
 
@@ -293,6 +340,16 @@ namespace SearchAThing
                 var aend = dxf_cs.BaseX.AngleToward(NormalizedLengthTolerance, To - CS.Origin, CS.BaseZ);
                 var arc = new Arc(Center, Radius, astart.ToDeg(), aend.ToDeg());
                 arc.Normal = CS.BaseZ;
+
+                if (dxf_cs.Origin.Z.EqualsAutoTol(0) && dxf_cs.BaseZ.EqualsTol(NormalizedLengthTolerance, Vector3D.ZAxis))
+                {
+                    // qcad xdata
+                    var qcad_app = new netDxf.Tables.ApplicationRegistry("QCAD");
+                    var reversed = new netDxf.XData(qcad_app);
+                    reversed.XDataRecord.Add(new netDxf.XDataRecord(netDxf.XDataCode.String, $"reversed:{(Sense ? 0 : 1)}"));
+                    arc.XData.Add(reversed);
+                }
+
                 return arc;
             }
         }
@@ -360,6 +417,18 @@ namespace SearchAThing
             AngleEnd = angleRadEnd.NormalizeAngle();
             CS = cs;
             Radius = r;
+        }
+
+        /// <summary>
+        /// build arc with given cs, radius goind from,to vectors
+        /// </summary>        
+        public Arc3D(double tol, CoordinateSystem3D cs, double r, Vector3D from, Vector3D to) :
+            base(GeometryType.Arc3D)
+        {
+            CS = cs;
+            Radius = r;
+            AngleStart = PtAngle(tol, from).NormalizeAngle();
+            AngleEnd = PtAngle(tol, to).NormalizeAngle();
         }
 
         /// <summary>
@@ -469,10 +538,26 @@ namespace SearchAThing
         public double AngleStart { get; protected set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public double AngleStartDeg => AngleStart.ToDeg();
+
+        public double SensedAngleStart => Sense ? AngleStart : AngleEnd;
+
+        public double SensedAngleStartDeg => SensedAngleStart.ToDeg();
+
+        /// <summary>
         /// end angle (rad) [0-2pi) respect cs xaxis rotating around cs zaxis
         /// note that start angle can be greather than end angle
         /// </summary>            
         public double AngleEnd { get; protected set; }
+
+        public double AngleEndDeg => AngleEnd.ToDeg();
+
+        public double SensedAngleEnd => Sense ? AngleEnd : AngleStart;
+
+        public double SensedAngleEndDeg => SensedAngleEnd.ToDeg();
 
         /// <summary>
         /// Arc (rad) angle length.
@@ -593,14 +678,14 @@ namespace SearchAThing
         /// project given point p to this arc.        
         /// returns null if ip falls outside arc perimeter and only_arc:true argument or p in the arc plane
         /// </summary>        
-        public override Vector3D? Project(double tol, Vector3D p, bool segment_mode = true)
+        public override Vector3D? Project(double tol, Vector3D p, bool arcSegmentMode = true)
         {
             if (!CS.Contains(tol, p)) return null;
 
             var line_center_to_p = CS.Origin.LineTo(p);
 
             var q = this.Intersect(tol, line_center_to_p,
-                only_perimeter: true, segment_mode: false, circle_mode: !segment_mode).ToList();
+                onlyPerimeter: true, lineSegmentMode: false, arcSegmentMode).ToList();
 
             if (q.Count == 0) return null;
 
@@ -682,9 +767,9 @@ namespace SearchAThing
         /// </summary>
         /// <param name="tol">length tolerance</param>
         /// <param name="l">line</param>
-        /// <param name="segment_mode">consider line as segment instead of infinite</param>
+        /// <param name="lineSegmentMode">consider line as segment instead of infinite</param>
         /// <returns>intersection points between this circle and given line, can be at most 2 points</returns>
-        private IEnumerable<Vector3D> IntersectCircle(double tol, Line3D l, bool segment_mode = false)
+        private IEnumerable<Vector3D> IntersectCircle(double tol, Line3D l, bool lineSegmentMode)
         {
             var lprj = new Line3D(l.From.ToUCS(CS).Set(OrdIdx.Z, 0), l.To.ToUCS(CS).Set(OrdIdx.Z, 0));
 
@@ -719,14 +804,14 @@ namespace SearchAThing
             // back to wcs, check line contains point
             var wcs_ip = ip.ToWCS(CS);
 
-            if (l.LineContainsPoint(tol, wcs_ip, segment_mode))
+            if (l.LineContainsPoint(tol, wcs_ip, lineSegmentMode))
                 yield return wcs_ip;
 
             if (ip2 != null)
             {
                 var wcs_ip2 = ip2.ToWCS(CS);
 
-                if (ip2 != null && l.LineContainsPoint(tol, wcs_ip2, segment_mode))
+                if (ip2 != null && l.LineContainsPoint(tol, wcs_ip2, lineSegmentMode))
                     yield return wcs_ip2;
             }
         }
@@ -738,7 +823,7 @@ namespace SearchAThing
         /// <param name="other">other arc</param>
         /// <param name="onlyPerimeter">true to test point contained only in perimeter, false to test also contained in area</param>
         /// <returns></returns>
-        public IEnumerable<Vector3D> Intersect(double tol, Arc3D other, bool onlyPerimeter = true)
+        public IEnumerable<Vector3D> Intersect(double tol, Arc3D other, bool onlyPerimeter)
         {
             var c1 = this.ToCircle3D(tol);
             var c2 = other.ToCircle3D(tol);
@@ -755,23 +840,23 @@ namespace SearchAThing
         /// </summary>
         /// <param name="tol">arc tolerance</param>
         /// <param name="l">line to test intersect</param>
-        /// <param name="segment_mode">if true line treat as segment instead of infinite</param>            
-        /// <param name="only_perimeter">check intersection only along perimeter; if false it will check intersection along arc area shape border too</param>
-        /// <param name="circle_mode">if true arc treat as circle</param>            
-        protected IEnumerable<Vector3D> Intersect(double tol, Line3D l,
-            bool only_perimeter,
-            bool segment_mode,
-            bool circle_mode)
+        /// <param name="lineSegmentMode">if true line treat as segment instead of infinite</param>            
+        /// <param name="onlyPerimeter">check intersection only along perimeter; if false it will check intersection along arc area shape border too</param>
+        /// <param name="arcSegmentMode">if true arc treat as circle</param>            
+        public IEnumerable<Vector3D> Intersect(double tol, Line3D l,
+            bool onlyPerimeter,
+            bool lineSegmentMode,
+            bool arcSegmentMode)
         {
             var cmp = new Vector3DEqualityComparer(tol);
             var res = new HashSet<Vector3D>(cmp);
 
-            foreach (var x in IntersectCircle(tol, l, segment_mode))
+            foreach (var x in IntersectCircle(tol, l, lineSegmentMode))
             {
                 res.Add(x);
             }
 
-            if (!only_perimeter)
+            if (!onlyPerimeter)
             {
                 var c_f = new Line3D(Center, From);
                 {
@@ -779,7 +864,7 @@ namespace SearchAThing
                     if (q_c_f != null) res.Add(q_c_f);
                 }
 
-                if (!circle_mode)
+                //if (arcSegmentMode)
                 {
                     var c_e = new Line3D(Center, To);
                     {
@@ -789,8 +874,10 @@ namespace SearchAThing
                 }
             }
 
-            if (!circle_mode)
-                return res.Where(r => this.Contains(tol, r, onlyPerimeter: only_perimeter));
+            if (arcSegmentMode)
+                return res.Where(r => this.Contains(tol, r,
+                    inArcAngleRange: arcSegmentMode,
+                    onlyPerimeter));
 
             return res;
         }
@@ -801,13 +888,10 @@ namespace SearchAThing
         /// <param name="tol">length tolerance</param>
         /// <param name="l">line</param>
         /// <param name="onlyPerimeter">check intersection only along perimeter; if false it will check intersection along arc area shape border too</param>
-        /// <param name="segment_mode">if true treat given line as segment; if false as infinite line</param>
+        /// <param name="lineSegmentMode">if true treat given line as segment; if false as infinite line</param>
         /// <returns>intersection points between this arc and given line</returns>
-        public virtual IEnumerable<Vector3D> Intersect(double tol, Line3D l,
-            bool onlyPerimeter = true, bool segment_mode = false) => Intersect(tol, l,
-                only_perimeter: onlyPerimeter,
-                segment_mode: segment_mode,
-                circle_mode: false);
+        public virtual IEnumerable<Vector3D> Intersect(double tol, Line3D l, bool onlyPerimeter, bool lineSegmentMode) =>
+            Intersect(tol, l, onlyPerimeter, lineSegmentMode, arcSegmentMode: false);
 
         /// <summary>
         /// find ips of intersect this arc to the given cs plane; 
@@ -815,23 +899,24 @@ namespace SearchAThing
         /// </summary>            
         /// <param name="tol">len tolerance</param>
         /// <param name="cs">cs xy plane</param>
-        /// <param name="only_perimeter">if false it will check in the arc area too, otherwise only on arc perimeter</param>
+        /// <param name="onlyPerimeter">if false it will check in the arc area too, otherwise only on arc perimeter</param>
         /// <returns>sample</returns>
         /// <remarks>            
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Arc3D/Arc3DTest_0001.cs)
         /// ![image](../test/Arc3D/Arc3DTest_0001.png)
         /// </remarks>            
-        public IEnumerable<Vector3D> Intersect(double tol, CoordinateSystem3D cs,
-            bool only_perimeter = true)
+        public IEnumerable<Vector3D> Intersect(double tol, CoordinateSystem3D cs, bool onlyPerimeter, bool inArcAngleRange)
         {
             if (this.CS.IsParallelTo(tol, cs)) yield break;
 
             var iLine = this.CS.Intersect(tol, cs);
 
+            if (iLine == null) yield break;
+
             foreach (var x in this.Intersect(tol, iLine,
-                only_perimeter: only_perimeter,
-                segment_mode: false,
-                circle_mode: false))
+                onlyPerimeter,
+                lineSegmentMode: false,
+                arcSegmentMode: inArcAngleRange))
                 yield return x;
         }
 
