@@ -203,9 +203,16 @@ namespace SearchAThing
                 case GeometryType.Arc3D:
                     {
                         var other = (Arc3D)_other;
+                        
+                        if (thisSegmentMode != GeomSegmentMode.Infinite && thisSegmentMode != GeomSegmentMode.FromTo)
+                            throw new NotImplementedException($"line3d intersects arc (line segmentmode={thisSegmentMode})");
 
-                        var pts = other.Intersect(tol, this, onlyPerimeter: true, segment_mode: true);
-
+                        var pts = other.Intersect(tol,
+                            this,
+                            onlyPerimeter: true,
+                            lineSegmentMode: thisSegmentMode != GeomSegmentMode.Infinite,
+                            arcSegmentMode: otherSegmentMode != GeomSegmentMode.Infinite);
+                            
                         if (pts != null)
                             foreach (var pt in pts) yield return pt;
                     }
@@ -810,9 +817,39 @@ namespace SearchAThing
 
             var voff = (-perp.V).Normalized() * offset;
 
-            var res = new Line3D(From + voff, To + voff);
+            var res = new Line3D(From + voff, To + voff) { Sense = this.Sense };
 
             return res;
+        }
+
+        public override Edge? MoveEnd(double tol, EdgeEnd end, Vector3D newEnd)
+        {
+            if (!this.LineContainsPoint(tol, newEnd)) return null;
+
+            switch (end)
+            {
+                case EdgeEnd.SGeomFrom:
+                    {
+                        if (SGeomTo.EqualsTol(tol, newEnd)) return null;
+
+                        if (Sense)
+                            return newEnd.LineTo(SGeomTo).Set(x => x.Sense = this.Sense);
+                        else
+                            return SGeomTo.LineTo(newEnd).Set(x => x.Sense = this.Sense);
+                    }
+
+                case EdgeEnd.SGeomTo:
+                    {
+                        if (SGeomFrom.EqualsTol(tol, newEnd)) return null;
+
+                        if (Sense)
+                            return SGeomFrom.LineTo(newEnd).Set(x => x.Sense = this.Sense);
+                        else
+                            return newEnd.LineTo(SGeomFrom).Set(x => x.Sense = this.Sense);
+                    }
+
+                default: throw new Exception($"unknown edge end {end}");
+            }
         }
 
         public string CadScript =>
