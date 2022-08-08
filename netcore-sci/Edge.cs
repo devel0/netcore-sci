@@ -8,6 +8,8 @@ using System.Text;
 namespace SearchAThing
 {
 
+    public enum EdgeEnd { SGeomFrom, SGeomTo };
+
     /// <summary>
     /// interface implemented by some type of geometries used in Loop such as Line3D, Arc3D and Circle3D
     /// </summary>
@@ -100,7 +102,7 @@ namespace SearchAThing
         /// <summary>
         /// project given pt to this edge.
         /// </summary>
-        public abstract Vector3D? Project(double tol, Vector3D pt, bool segment_mode = true);
+        public abstract Vector3D? Project(double tol, Vector3D pt, bool segmentMode = true);
 
         public abstract string ToString(int digits);
 
@@ -112,7 +114,16 @@ namespace SearchAThing
 
         public abstract string ProgeCadScript(bool final = true);
 
+        /// <summary>
+        /// build offseted version of this edge toward refPt given for the amount specified by offset.
+        /// </summary>        
         public abstract Edge Offset(double tol, Vector3D refPt, double offset);
+
+        /// <summary>        
+        /// extends edge endpoint toward new given one.        
+        /// returns null if edge can't extends toward new given end.
+        /// </summary>        
+        public abstract Edge? MoveEnd(double tol, EdgeEnd end, Vector3D newEnd);
 
     }
 
@@ -263,6 +274,52 @@ namespace SearchAThing
             }
 
             return res;
+        }
+
+        /// <summary>
+        /// automatically trim or extends consecutive edges intersections
+        /// </summary>
+        public static IEnumerable<Edge> AutoTrimExtends(this IEnumerable<Edge> edges, double tol)
+        {
+            IList<Edge> edgesLst;
+
+            if (edges is IList<Edge>)
+                edgesLst = (IList<Edge>)edges;
+            else
+                edgesLst = edges.ToList();
+
+            for (int i = 0; i < edgesLst.Count; ++i)
+            {
+                var edgeIdx = i;
+                var nextEdgeIdx = i == edgesLst.Count - 1 ? 0 : i + 1;
+
+                var edge = edgesLst[edgeIdx];
+                var nextEdge = edgesLst[nextEdgeIdx];
+
+                if (!edge.SGeomTo.EqualsTol(tol, nextEdge.SGeomFrom))
+                {
+                    var q = edge.GeomIntersect(tol, nextEdge,
+                        thisSegmentMode: GeomSegmentMode.Infinite,
+                        otherSegmentMode: GeomSegmentMode.Infinite).ToList();
+                        
+                    var ipt = q
+                        .OfType<Vector3D>()
+                        .ToList()
+                        .OrderBy(w => w.Distance(edge.GeomTo))
+                        .FirstOrDefault();
+
+                    if (ipt != null)
+                    {                        
+                        edgesLst[edgeIdx] = edgesLst[edgeIdx].MoveEnd(tol, EdgeEnd.SGeomTo, ipt)!;
+
+                        edgesLst[nextEdgeIdx] = edgesLst[nextEdgeIdx].MoveEnd(tol, EdgeEnd.SGeomFrom, ipt)!;
+                    }
+
+                    ;
+                }
+            }
+
+            foreach (var edge in edgesLst) yield return edge;
         }
 
     }
