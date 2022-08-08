@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using static System.Math;
 using System.Collections.Generic;
+using static System.FormattableString;
 
 using netDxf.Entities;
 
@@ -50,7 +51,10 @@ namespace SearchAThing
         /// create a circle copy with origin moved
         /// </summary>
         /// <param name="delta">new circle origin delta</param>        
-        public Circle3D Move(Vector3D delta) => new Circle3D(CS.Move(delta), Radius);
+        public override Circle3D Move(Vector3D delta) => new Circle3D(CS.Move(delta), Radius);
+
+        public override string QCadScript(bool final = true) =>
+            Invariant($"Circle\n{Center.X},{Center.Y}\n{SGeomFrom.X},{SGeomFrom.Y}\n{(final ? "QQ\n" : "")}");
 
         /// <summary>
         /// build dxf circle
@@ -174,9 +178,8 @@ namespace SearchAThing
         /// <summary>
         /// intersect this 3d circle with given 3d line
         /// </summary>            
-        public override IEnumerable<Vector3D> Intersect(double tol, Line3D l,
-            bool only_perimeter = true,
-            bool segment_mode = false) => base.Intersect(tol, l, only_perimeter, segment_mode, circle_mode: true);
+        public override IEnumerable<Vector3D> Intersect(double tol, Line3D l, bool onlyPerimeter, bool lineSegmentMode) =>
+            base.Intersect(tol, l, onlyPerimeter, lineSegmentMode, arcSegmentMode: false);
 
         /// <summary>
         /// intersect this circle with given other;
@@ -202,7 +205,7 @@ namespace SearchAThing
 
                 if (centersDst.EqualsTol(tol, rsum))
                 {
-                    var q = Intersect(tol, Center.LineTo(other.Center)).First();
+                    var q = Intersect(tol, Center.LineTo(other.Center), onlyPerimeter: true, lineSegmentMode: true).First();
                     yield return q;
                     yield break;
                 }
