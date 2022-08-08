@@ -9,8 +9,6 @@ namespace SearchAThing.Sci.Tests
     public partial class PolygonTests
     {
 
-        // TODO: not yet finished
-
         [Fact]
         public void PolygonTest_0007()
         {
@@ -23,17 +21,41 @@ namespace SearchAThing.Sci.Tests
             var tol = 1e-8;
 
             var poly = dxf.Entities.Polylines2D.First(w => w.Color.Index == AciColor.Cyan.Index);
+            var refpyellow = dxf.Entities.Points.First(w => w.Color.Index == AciColor.Yellow.Index);
+            var refpgreen = dxf.Entities.Points.First(w => w.Color.Index == AciColor.Green.Index);
+
             outdxf?.AddEntity((netDxf.Entities.Polyline2D)poly.Clone());
+            outdxf?.AddEntity((netDxf.Entities.Point)refpyellow.Clone());
+            outdxf?.AddEntity((netDxf.Entities.Point)refpgreen.Clone());
 
-            var refpred = new Vector3D(34.3, 32.9);
-            outdxf?.AddEntity(refpred.DxfEntity.Set(w => w.Color = AciColor.Red));
             // var polyred = poly.Offset(tol, refpred, 0.1);
-            // outdxf?.AddEntity(polyred.Set(x => x.Color = AciColor.Red));
+            // outdxf?.AddEntity(polyred.Set(x => x.Color = AciColor.Red));            
 
-            var polyred = poly.OffsetGeoms(tol, refpred, 0.1);
-            outdxf?.AddEntities(polyred.Select(x => x.DxfEntity.Set(x => x.Color = AciColor.Red)));
+            var poly_cs = poly.CS();
 
-            //var refp2 = new Vector3D(34.1000, 33.2000);            
+            var polyyellow = poly
+                .OffsetGeoms(tol, refpyellow.Position, 0.1)
+                .AutoTrimExtends(tol)
+                .ToLwPolyline(tol, poly_cs);
+            outdxf?.AddEntity(polyyellow.Set(x => x.Color = AciColor.Yellow));
+
+            var loopyellow = polyyellow.ToLoop(tol);
+            loopyellow.Area.AssertEqualsTol(tol, 4.10115544);
+            loopyellow.Length.AssertEqualsTol(tol, 27.23531821);
+
+            //
+
+            var polygreen = poly
+                .OffsetGeoms(tol, refpgreen.Position, 0.1)
+                .AutoTrimExtends(tol)
+                .ToLwPolyline(tol, poly_cs);
+            outdxf?.AddEntity(polygreen.Set(x => x.Color = AciColor.Green));
+
+            var loopgreen = polygreen.ToLoop(tol);
+            loopgreen.Area.AssertEqualsTol(tol, 9.07415323);
+            loopgreen.Length.AssertEqualsTol(tol, 29.00329116);
+
+            //
 
             if (outdxf != null)
             {

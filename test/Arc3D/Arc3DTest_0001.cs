@@ -23,19 +23,20 @@ namespace SearchAThing.Sci.Tests
 
             var plcs = new CoordinateSystem3D(plo, plx - plo, ply - plo);
 
-            var iSegmentPts = arc.Intersect(tol, plcs, only_perimeter: false).ToList();            
-            var i1 = iSegmentPts[0];            
+            var iSegmentPts = arc.Intersect(tol, plcs, onlyPerimeter: false, inArcAngleRange: true).ToList();
+            Assert.True(iSegmentPts.Count == 2);
+            var i1 = iSegmentPts[0];
             var i2 = iSegmentPts[1];
             var iSegment = new Line3D(i1, i2);
 
             Assert.True(plcs.Contains(tol, i1));
             Assert.True(plcs.Contains(tol, i2));
 
+            i1.AssertEqualsTol(tol, new Vector3D("X = 40.09735573 Y = 156.48945821 Z = -7.46179105"));
+            i2.AssertEqualsTol(tol, new Vector3D("X = 72.20796391 Y = 188.29182351 Z = -5.18335819"));
+
             Assert.True(arc.Contains(tol, i1, onlyPerimeter: false));
             Assert.True(arc.Contains(tol, i2, onlyPerimeter: false));
-
-            Assert.True(i1.EqualsTol(tol, new Vector3D("X = 40.09735573 Y = 156.48945821 Z = -7.46179105")));
-            Assert.True(i2.EqualsTol(tol, new Vector3D("X = 72.20796391 Y = 188.29182351 Z = -5.18335819")));
         }
     }
 }
