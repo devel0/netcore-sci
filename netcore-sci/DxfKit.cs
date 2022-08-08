@@ -587,6 +587,14 @@ namespace SearchAThing
             }
         }
 
+        /// <summary>
+        /// create offseted polygon from this one by offset of given offset amount toward given sideRefPt.
+        /// </summary>
+        /// <param name="lwp">this polyline</param>
+        /// <param name="tol">length tolerance</param>
+        /// <param name="sideRefPt">offseted polygon will the one on the side nearest to this ref pt. The offseted polygon doesn't need to contains this point, its only used to disambiguate the side choose.</param>
+        /// <param name="offset">offset amount from this actual polyline toward offseted one.</param>
+        /// <returns>offseted polygon</returns>
         public static IEnumerable<Edge> OffsetGeoms(this Polyline2D lwp, double tol, Vector3D sideRefPt, double offset)
         {
             var edges = lwp.ToGeometries(tol).OfType<Edge>().ToList();

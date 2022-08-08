@@ -186,6 +186,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae45bba6aed0e00c754f7d62d3fa0f8ad"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html">CoordinateSystem3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ae45bba6aed0e00c754f7d62d3fa0f8ad">CS</a> (this EntityObject eo)</td></tr>
 <tr class="separator:ae45bba6aed0e00c754f7d62d3fa0f8ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30925c33d0efe9b081139ebe7ed53329"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a30925c33d0efe9b081139ebe7ed53329">OffsetGeoms</a> (this Polyline2D lwp, double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> sideRefPt, double offset)</td></tr>
+<tr class="memdesc:a30925c33d0efe9b081139ebe7ed53329"><td class="mdescLeft">&#160;</td><td class="mdescRight">create offseted polygon from this one by offset of given offset amount toward given sideRefPt.  <a href="class_search_a_thing_1_1_sci_ext.html#a30925c33d0efe9b081139ebe7ed53329">More...</a><br /></td></tr>
 <tr class="separator:a30925c33d0efe9b081139ebe7ed53329"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64af88e8e767e849d3a775cb9f38e6b4"><td class="memItemLeft" align="right" valign="top">static Polyline2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a64af88e8e767e849d3a775cb9f38e6b4">Offset</a> (this Polyline2D lwp, double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> sideRefPt, double amount)</td></tr>
 <tr class="separator:a64af88e8e767e849d3a775cb9f38e6b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3427,6 +3428,18 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>create offseted polygon from this one by offset of given offset amount toward given sideRefPt. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lwp</td><td>this polyline</td></tr>
+    <tr><td class="paramname">tol</td><td>length tolerance</td></tr>
+    <tr><td class="paramname">sideRefPt</td><td>offseted polygon will the one on the side nearest to this ref pt. The offseted polygon doesn't need to contains this point, its only used to disambiguate the side choose.</td></tr>
+    <tr><td class="paramname">offset</td><td>offset amount from this actual polyline toward offseted one.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>offseted polygon</dd></dl>
 
 </div>
 </div>
