@@ -77,6 +77,7 @@ namespace SearchAThing
 
         /// <summary>
         /// increase of decrease polygon points offseting
+        /// ( this implementation uses Int64Map and clipper library )
         /// </summary>        
         public static IEnumerable<Vector3D> Offset(this IReadOnlyList<Vector3D> pts, double tol, double offset)
         {
@@ -464,6 +465,7 @@ namespace SearchAThing
         /// In that case try with tolerances not too small.
         /// It is suggested to use a lenTol/10 to avoid lost of precision during domain conversions.
         /// Altenatively use Loop to find exact intersection between planar poly supporting lines and arcs.
+        /// ( this implementation uses Int64Map and clipper library )
         /// </summary>        
         public static IEnumerable<IEnumerable<Vector3D>> Boolean(this IEnumerable<Vector3D> polyA, double tol, IEnumerable<Vector3D> polyB, ClipType type, bool selfCheckInt64MapTolerance = true)
         {
