@@ -38,10 +38,11 @@ namespace SearchAThing.Sci.Tests
                 .AutoTrimExtends(tol)
                 .ToLwPolyline(tol, poly_cs);
             outdxf?.AddEntity(polyyellow.Set(x => x.Color = AciColor.Yellow));
+            // outdxf?.AddEntities(polyyellow.Select(x=>x.DxfEntity.Set(x => x.Color = AciColor.Yellow)));
 
             var loopyellow = polyyellow.ToLoop(tol);
-            loopyellow.Area.AssertEqualsTol(tol, 4.10115544);
-            loopyellow.Length.AssertEqualsTol(tol, 27.23531821);
+            loopyellow.Area.AssertEqualsTol(tol, 3.97251611);
+            loopyellow.Length.AssertEqualsTol(tol, 27.19882398);
 
             //
 
@@ -50,10 +51,11 @@ namespace SearchAThing.Sci.Tests
                 .AutoTrimExtends(tol)
                 .ToLwPolyline(tol, poly_cs);
             outdxf?.AddEntity(polygreen.Set(x => x.Color = AciColor.Green));
+            // outdxf?.AddEntities(polygreen.Select(x=>x.DxfEntity.Set(x => x.Color = AciColor.Green)));
 
             var loopgreen = polygreen.ToLoop(tol);
-            loopgreen.Area.AssertEqualsTol(tol, 9.07415323);
-            loopgreen.Length.AssertEqualsTol(tol, 29.00329116);
+            loopgreen.Area.AssertEqualsTol(tol, 9.60640941);
+            loopgreen.Length.AssertEqualsTol(tol, 29.15050266);
 
             //
 

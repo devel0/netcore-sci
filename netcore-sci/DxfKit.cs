@@ -639,7 +639,7 @@ namespace SearchAThing
                     offline.V.RotateAboutAxis(lwpCs.BaseZ, edgesAngle));
 
                 if ((idx + 1) % edges.Count != idxStartEdge)
-                    yield return edge2.Offset(tol, offline2.To, offline2.Length);
+                    yield return edge2.Offset(tol, offline2.To, offset);
 
                 offline = offline2;
 
