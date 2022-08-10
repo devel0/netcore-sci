@@ -33,7 +33,7 @@ var searchData=
   ['toline_367',['ToLine',['../class_search_a_thing_1_1_line3_d.html#a6eccbfa741b3f2d8f8f49cc36d5c238a',1,'SearchAThing::Line3D']]],
   ['toline3d_368',['ToLine3D',['../class_search_a_thing_1_1_sci_ext.html#aa0edf93398b456d42b6242a4874c1589',1,'SearchAThing::SciExt']]],
   ['toloop_369',['ToLoop',['../class_search_a_thing_1_1_sci_ext.html#ae3a1184a69137a12cc967d009fce495b',1,'SearchAThing::SciExt']]],
-  ['tolwpolyline_370',['ToLwPolyline',['../class_search_a_thing_1_1_sci_ext.html#a84cba381b1af5bf309e5449b41af23a9',1,'SearchAThing.SciExt.ToLwPolyline()'],['../class_search_a_thing_1_1_loop.html#a56702e4277f623c4d26d42b79b2b55df',1,'SearchAThing.Loop.ToLwPolyline()']]],
+  ['tolwpolyline_370',['ToLwPolyline',['../class_search_a_thing_1_1_sci_ext.html#a4bee9869b2809a11400abb463d351e1d',1,'SearchAThing.SciExt.ToLwPolyline()'],['../class_search_a_thing_1_1_loop.html#a56702e4277f623c4d26d42b79b2b55df',1,'SearchAThing.Loop.ToLwPolyline()']]],
   ['tonvector3_371',['ToNVector3',['../class_search_a_thing_1_1_sci_ext.html#a2c9a5dabbcf12cf0f3aa06191b5a25d4',1,'SearchAThing::SciExt']]],
   ['toplane_372',['ToPlane',['../class_search_a_thing_1_1_sci_ext.html#ababd12aef3360f7f17e1c1c3998f37c4',1,'SearchAThing::SciExt']]],
   ['topoint_373',['ToPoint',['../class_search_a_thing_1_1_vector3_d.html#a3f3c050adcdb638562340cc4ae2eb147',1,'SearchAThing::Vector3D']]],
