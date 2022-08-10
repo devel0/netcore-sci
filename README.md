@@ -116,7 +116,7 @@ detect polygons ( line, arcs ) intersection loops when edges overlaps
 
 ![img](data/img/PolylineOffset.png)
 
-offsets the existing polyline ( cyan ) by specified amount specifying a reference point to disambiguate the offset side ( yellow, green ).
+offsets the existing polyline ( cyan ) by specified amount using a reference point to disambiguate the offset side ( yellow, green ).
 
 ## Quickstart
 
