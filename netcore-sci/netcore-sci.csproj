@@ -4,7 +4,7 @@
 		<LangVersion>10</LangVersion>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<PackageId>netcore-sci</PackageId>
-		<PackageVersion>5.3.1</PackageVersion>
+		<PackageVersion>5.3.2</PackageVersion>
 		<Nullable>enable</Nullable>
 		<Title>net core scientific</Title>
 		<Description />
