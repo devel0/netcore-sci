@@ -407,7 +407,7 @@ namespace SearchAThing
         /// <summary>
         /// create dxf lwpolyline from this loop
         /// </summary>
-        public Polyline2D ToLwPolyline(double tol) => Edges.Cast<Geometry>().ToLwPolyline(tol, Plane.CS);
+        public Polyline2D ToLwPolyline(double tol) => Edges.Cast<Geometry>().ToLwPolyline(tol, Plane.CS, closed: true);
 
         /// <summary>
         /// create dxf lwpolyline from this loop

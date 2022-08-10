@@ -333,7 +333,7 @@ namespace SearchAThing
         /// <param name="closed"></param>        
         /// <returns></returns>
         public static netDxf.Entities.Polyline2D ToLwPolyline(this IEnumerable<Geometry> _geom, double tol,
-            CoordinateSystem3D cs, bool closed = true)
+            CoordinateSystem3D cs, bool closed)
         {
             var edges = _geom.Cast<Edge>().ToList();
 
@@ -359,7 +359,6 @@ namespace SearchAThing
                 {
                     case GeometryType.Vector3D:
                         {
-                            //var _to = (Vector3D)geom[i];
                             var lwpv = new Polyline2DVertex(_to.ToDxfVector2());
                             pvtx.Add(lwpv);
                             _lastPt = _to;
@@ -368,10 +367,6 @@ namespace SearchAThing
 
                     case GeometryType.Line3D:
                         {
-                            //var seg = (Line3D)geom[i];
-                            // from = seg.SGeomFrom;
-                            // to = seg.SGeomTo;
-
                             if (_lastPt == null || _lastPt.EqualsTol(tol, _from))
                             {
                                 var lwpv = new Polyline2DVertex(_from.ToDxfVector2());
