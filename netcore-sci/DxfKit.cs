@@ -601,22 +601,50 @@ namespace SearchAThing
 
             var lwpCs = lwp.CS();
 
-            var startEdgeNfo = edges.Select(edge => new
+            int idxStartEdge;
+            Line3D offline;
+
+            // find near edge sideRefPt projection
+            // walk back to begin edge
             {
-                edge,
-                offLine = edge.Project(tol, sideRefPt)?.LineTo(sideRefPt)
-            })
-            .Where(r => r.offLine != null)
-            .OrderBy(w => w.offLine!.Length)
-            .FirstOrDefault();
+                var startEdgeNfo = edges.Select(edge => new
+                {
+                    edge,
+                    offLine = edge.Project(tol, sideRefPt)?.LineTo(sideRefPt)
+                })
+                .Where(r => r.offLine != null)
+                .OrderBy(w => w.offLine!.Length)
+                .FirstOrDefault();
 
-            if (startEdgeNfo == null) yield break;
+                if (startEdgeNfo == null) yield break;
 
-            yield return startEdgeNfo.edge.Offset(tol, sideRefPt, offset);
+                var startEdgeOffseted = startEdgeNfo.edge.Offset(tol, sideRefPt, offset);
 
-            var idxStartEdge = edges.IndexOf(startEdgeNfo.edge);
+                idxStartEdge = edges.IndexOf(startEdgeNfo.edge);
 
-            var offline = startEdgeNfo.offLine!;
+                offline = startEdgeNfo.edge.MidPoint.LineTo(startEdgeOffseted.MidPoint);
+
+                while (idxStartEdge != 0)
+                {
+                    var edgeCur = edges[idxStartEdge];
+                    var edgePrev = edges[idxStartEdge - 1];
+
+                    var lineCur = edgeCur.SGeomTo.LineTo(edgeCur.SGeomFrom);
+                    var linePrev = edgePrev.SGeomTo.LineTo(edgePrev.SGeomFrom);
+
+                    var edgesAngle = lineCur.V.AngleToward(tol, linePrev.V, lwpCs.BaseZ);
+                    var offlinePrev = edgePrev.MidPoint.LineV(
+                        offline.V.RotateAboutAxis(lwpCs.BaseZ, edgesAngle));
+
+                    offline = offlinePrev;
+
+                    --idxStartEdge;
+                }
+
+                startEdgeOffseted = edges[idxStartEdge].Offset(tol, offline.To, offset);
+
+                yield return startEdgeOffseted;
+            }
 
             var idx = idxStartEdge;
             var edgesProcessed = 0;

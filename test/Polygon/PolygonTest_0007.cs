@@ -36,7 +36,7 @@ namespace SearchAThing.Sci.Tests
             var polyyellow = poly
                 .OffsetGeoms(tol, refpyellow.Position, 0.1)
                 .AutoTrimExtends(tol)
-                .ToLwPolyline(tol, poly_cs);
+                .ToLwPolyline(tol, poly_cs, closed: poly.IsClosed);
             outdxf?.AddEntity(polyyellow.Set(x => x.Color = AciColor.Yellow));
             // outdxf?.AddEntities(polyyellow.Select(x=>x.DxfEntity.Set(x => x.Color = AciColor.Yellow)));
 
@@ -49,7 +49,7 @@ namespace SearchAThing.Sci.Tests
             var polygreen = poly
                 .OffsetGeoms(tol, refpgreen.Position, 0.1)
                 .AutoTrimExtends(tol)
-                .ToLwPolyline(tol, poly_cs);
+                .ToLwPolyline(tol, poly_cs, closed: poly.IsClosed);
             outdxf?.AddEntity(polygreen.Set(x => x.Color = AciColor.Green));
             // outdxf?.AddEntities(polygreen.Select(x=>x.DxfEntity.Set(x => x.Color = AciColor.Green)));
 
