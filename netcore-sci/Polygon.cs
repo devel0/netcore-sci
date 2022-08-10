@@ -8,6 +8,7 @@ using netDxf;
 using ClipperLib;
 using netDxf.Entities;
 using static SearchAThing.SciToolkit;
+using System.Text;
 
 namespace SearchAThing
 {
@@ -321,6 +322,55 @@ namespace SearchAThing
         public static netDxf.Entities.Hatch ToHatch(this IEnumerable<Geometry> _geom,
             HatchPattern pattern, bool associative = true) =>
             new netDxf.Entities.Hatch(pattern, new[] { new HatchBoundaryPath(_geom.Select(w => w.DxfEntity)) }, associative);
+
+        /// <summary>
+        /// qcad script from geoms
+        /// </summary>        
+        public static string QCadScript(this IEnumerable<Geometry> geoms)
+        {
+            var sb = new StringBuilder();
+
+            IReadOnlyList<Geometry> geomsLst;
+
+            if (geoms is IReadOnlyList<Geometry>)
+                geomsLst = (IReadOnlyList<Geometry>)geoms;
+            else
+                geomsLst = geoms.ToList();
+
+            for (int i = 0; i < geomsLst.Count; ++i)
+            {
+                var geom = geomsLst[i];
+
+                switch (geom.GeomType)
+                {
+                    case GeometryType.Vector3D:
+                        sb.AppendLine(((Vector3D)geom).QCadScript(final: i == geomsLst.Count - 1));
+                        break;
+
+                    case GeometryType.Line3D:
+                        sb.AppendLine(((Line3D)geom).QCadScript(final: i == geomsLst.Count - 1));
+                        break;
+
+                    case GeometryType.Arc3D:
+                        sb.AppendLine(((Arc3D)geom).QCadScript(final: i == geomsLst.Count - 1));
+                        break;
+
+                    case GeometryType.Circle3D:
+                        sb.AppendLine(((Circle3D)geom).QCadScript(final: i == geomsLst.Count - 1));
+                        break;
+
+                    default: throw new NotImplementedException($"entity type {geom.GeomType}");
+                }
+            }
+
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// qcad script from lwp
+        /// </summary>        
+        public static string QCadScript(this netDxf.Entities.Polyline2D lwp, double tol) =>
+            lwp.ToGeometries(tol).QCadScript();
 
         /// <summary>
         /// build 2d dxf polyline.
