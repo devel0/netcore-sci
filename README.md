@@ -7,8 +7,6 @@
 - [API Documentation](https://devel0.github.io/netcore-sci/html/namespace_search_a_thing.html)
 - [Changelog](https://github.com/devel0/netcore-sci/commits/master)
 
-**note** : from v2.0.0 some tk parts were removed ( look at [v1.30](https://github.com/devel0/netcore-sci/tree/980868dd4c6b64bcccd108df90d99bb77a0cf076) for these )
-
 <hr/>
 
 <!-- TOC -->
@@ -53,7 +51,7 @@ cd netcore-sci
 dotnet build
 ```
 
-:point_right: To make dependency netcore-util debuggable comment `PackageReference` and uncomment `ProjectReference` for corresponding netcore-util reference from [csproj](netcore-sci/netcore-sci.csproj)
+:point_right: To make the netcore-util dependency debuggable comment `PackageReference` and uncomment `ProjectReference` for corresponding netcore-util reference in [csproj](netcore-sci/netcore-sci.csproj)
 
 
 ## Examples
@@ -90,12 +88,6 @@ detect polygons ( line, arcs ) intersection loops when edges overlaps
 
 :point_right: [unit tests](test) still a good place to find some example about library usage.
 
-#### LoopTest_0013
-
-```(yellow ∩ magenta) - (green ∩ magenta)```
-
-<img src="data/img/LoopTest_0013.png" width=400>
-
 #### LoopTest_0014
 
 ```yellow - green```
@@ -124,7 +116,7 @@ detect polygons ( line, arcs ) intersection loops when edges overlaps
 
 ![img](data/img/PolylineOffset.png)
 
-offsets existing Cyan polyline using offset amount of 0.1 and reference points yellow, green to build offseted polygons.
+offsets the existing polyline ( cyan ) by specified amount specifying a reference point to disambiguate the offset side ( yellow, green ).
 
 ## Quickstart
 
