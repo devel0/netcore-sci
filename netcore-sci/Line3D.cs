@@ -36,7 +36,14 @@ namespace SearchAThing
 
         public override bool EdgeContainsPoint(double tol, Vector3D pt) => this.SegmentContainsPoint(tol, pt);
 
-        public override IEnumerable<Geometry> Split(double tol, IEnumerable<Vector3D> breaks)
+        /// <summary>
+        /// Split current segment into one or more depending on which
+        /// of given split points was found on the segment.        
+        /// </summary>
+        /// <param name="tol">length tolerance</param>
+        /// <param name="breaks">break points</param>
+        /// <returns>splitted segments starts from begin of line</returns>
+        public override IEnumerable<Line3D> Split(double tol, IEnumerable<Vector3D> breaks)
         {
             var Vnorm = Sense ? V.Normalized() : -V.Normalized();
 
@@ -46,6 +53,7 @@ namespace SearchAThing
                     pt,
                     off = pt.ColinearScalarOffset(tol, SGeomFrom, Vnorm)
                 })
+                .Where(w => w.off.GreatThanOrEqualsTol(tol, 0) && w.off.LessThanOrEqualsTol(tol, Length))
                 .OrderBy(w => w.off)
                 .Select(w => w.pt)
                 .ToList();
@@ -203,7 +211,7 @@ namespace SearchAThing
                 case GeometryType.Arc3D:
                     {
                         var other = (Arc3D)_other;
-                        
+
                         if (thisSegmentMode != GeomSegmentMode.Infinite && thisSegmentMode != GeomSegmentMode.FromTo)
                             throw new NotImplementedException($"line3d intersects arc (line segmentmode={thisSegmentMode})");
 
@@ -212,7 +220,7 @@ namespace SearchAThing
                             onlyPerimeter: true,
                             lineSegmentMode: thisSegmentMode != GeomSegmentMode.Infinite,
                             arcSegmentMode: otherSegmentMode != GeomSegmentMode.Infinite);
-                            
+
                         if (pts != null)
                             foreach (var pt in pts) yield return pt;
                     }
@@ -739,57 +747,6 @@ namespace SearchAThing
         {
             var mid = MidPoint;
             return Move(newMidpoint - mid);
-        }
-
-        /// <summary>
-        /// split current segment into one or more depending on which of given split points was found on the segment            
-        /// splitted segments start from begin of line
-        /// TODO : not optimized
-        /// </summary>            
-        public IReadOnlyList<Line3D> Split(double tol, IReadOnlyList<Vector3D> splitPts)
-        {
-            var res = new List<Line3D>() { this };
-
-            if (splitPts == null || splitPts.Count == 0) return res;
-
-            var splitPtIdx = 0;
-
-            while (splitPtIdx < splitPts.Count)
-            {
-                List<Line3D>? repl = null;
-
-                for (int i = 0; i < res.Count; ++i)
-                {
-                    var spnt = splitPts[splitPtIdx];
-                    if (res[i].SegmentContainsPoint(tol, spnt, excludeExtreme: true))
-                    {
-                        repl = new List<Line3D>();
-                        for (int h = 0; h < res.Count; ++h)
-                        {
-                            if (h == i)
-                            {
-                                var l = res[h];
-                                repl.Add(new Line3D(l.From, spnt));
-                                repl.Add(new Line3D(spnt, l.To));
-                            }
-                            else
-                                repl.Add(res[h]);
-                        }
-
-                        break; // break cause need to reeval
-                    }
-                }
-
-                if (repl != null)
-                {
-                    res = repl;
-                    continue;
-                }
-                else
-                    splitPtIdx++;
-            }
-
-            return res;
         }
 
         /// <summary>
