@@ -30,9 +30,11 @@ namespace SearchAThing
         /// build plane3d region based upong given list of pts ( at least 3 non colinear points required )
         /// </summary>
         /// <param name="tol">length tolerance</param>
-        /// <param name="pts">region points</param>
-        public Plane3DRegion(double tol, IReadOnlyList<Vector3D> pts)
+        /// <param name="_pts">region points</param>
+        public Plane3DRegion(double tol, IEnumerable<Vector3D> _pts)
         {
+            var pts = _pts.ToReadOnlyList();
+            
             if (pts.Count < 3) throw new Exception($"at least 3 pts required for Plane3DRegion");
             var o = pts[0];
             Vector3D? a = null, b = null;

@@ -11,7 +11,7 @@ namespace test
 
         static void Main(string[] args)
         {
-            var tol = 1e-8;
+            // var tol = 1e-8;
             var R = 100;
 
             var dxf = new netDxf.DxfDocument();

@@ -20,9 +20,10 @@ namespace SearchAThing
         /// (signed) Area of a polygon (does not consider z)
         /// https://en.wikipedia.org/wiki/Centroid        
         /// </summary>        
-        public static double XYSignedArea(this IReadOnlyList<Vector3D> pts, double tol)
+        public static double XYSignedArea(this IEnumerable<Vector3D> _pts, double tol)
         {
-            // TODO: IEnumerable
+            var pts = _pts.ToReadOnlyList();
+
             var lastEqualsFirst = pts[pts.Count - 1].EqualsTol(tol, pts[0]);
             double a = 0;
 
@@ -35,32 +36,32 @@ namespace SearchAThing
             return a / 2;
         }
 
-        // TODO: IEnumerable
         /// <summary>
         /// (abs) Area of a polygon (does not consider z)
         /// https://en.wikipedia.org/wiki/Centroid                
         /// </summary>        
-        public static double XYArea(this IReadOnlyList<Vector3D> pts, double tol) => Math.Abs(XYSignedArea(pts, tol));
+        public static double XYArea(this IEnumerable<Vector3D> pts, double tol) =>
+            Math.Abs(XYSignedArea(pts, tol));
 
-        // TODO: IEnumerable
         /// <summary>
         /// Centroid of a polygon (does not consider z)    
         /// ( if have area specify the parameter to avoid recomputation )
         /// https://en.wikipedia.org/wiki/Centroid        
         /// </summary>        
-        public static Vector3D XYCentroid(this IReadOnlyList<Vector3D> pts, double tol)
+        public static Vector3D XYCentroid(this IEnumerable<Vector3D> pts, double tol)
         {
             var signed_area = pts.XYSignedArea(tol);
             return pts.XYCentroid(tol, signed_area);
         }
 
-        // TODO: IEnumerable
         /// <summary>
         /// Centroid of a polygon (does not consider z)        
         /// https://en.wikipedia.org/wiki/Centroid        
         /// </summary>        
-        public static Vector3D XYCentroid(this IReadOnlyList<Vector3D> pts, double tol, double signed_area)
+        public static Vector3D XYCentroid(this IEnumerable<Vector3D> _pts, double tol, double signed_area)
         {
+            var pts = _pts.ToReadOnlyList();
+
             var lastEqualsFirst = pts[pts.Count - 1].EqualsTol(tol, pts[0]);
             double x = 0;
             double y = 0;
@@ -80,12 +81,12 @@ namespace SearchAThing
             return new Vector3D(x / (6 * signed_area), y / (6 * signed_area), 0);
         }
 
-        // TODO: IEnumerable
         /// <summary>
         /// increase of decrease polygon points offseting
         /// ( this implementation uses Int64Map and clipper library )
         /// </summary>        
-        public static IEnumerable<Vector3D> Offset(this IReadOnlyList<Vector3D> pts, double tol, double offset)
+        public static IEnumerable<Vector3D> Offset(this IEnumerable<Vector3D> pts,
+            double tol, double offset)
         {
             var intmap = new Int64Map(tol, pts.SelectMany(x => x.Coordinates));
 
@@ -109,7 +110,8 @@ namespace SearchAThing
         /// so that the last not attach to the first ( if makeClosed = false ).
         /// Elsewhere it returns a last point equals the first ( makeClosed = true ).
         /// </summary>        
-        public static IEnumerable<Vector3D> PolyPoints(this IEnumerable<Vector3D> pts, double tol, bool makeClosed = false)
+        public static IEnumerable<Vector3D> PolyPoints(this IEnumerable<Vector3D> pts,
+            double tol, bool makeClosed = false)
         {
             Vector3D? first = null;
 
@@ -173,23 +175,34 @@ namespace SearchAThing
         /// <param name="tol">length tolerance</param>
         /// <param name="pt">point to test</param>        
         /// <param name="mode">allow to specify contains test type</param>        
-        public static bool ContainsPoint(this IReadOnlyList<Vector3D> _pts, double tol, Vector3D pt,
+        public static bool ContainsPoint(this IEnumerable<Vector3D> _pts, double tol, Vector3D pt,
             LoopContainsPointMode mode = LoopContainsPointMode.InsideOrPerimeter) =>
             new Loop(tol, _pts.RepeatFirstAtEnd(tol).Segments(tol))
             .ContainsPoint(tol, pt, mode);
 
         // TODO: SortPoly doc
 
+        /// <summary>
+        /// Sort polygon points.
+        /// </summary>        
         public static IEnumerable<Vector3D> SortPoly(this IEnumerable<Vector3D> pts, double tol, Vector3D? refAxis = null) =>
             pts.SortPoly(tol, (p) => p, refAxis);
 
         /// <summary>
-        /// Sort polygon segments so that they can form a polygon ( if they really form one ).
+        /// Sort polygon segments by their midpoint to form ccw order polygon.
         /// It will not check for segment versus adjancency
         /// </summary>        
         public static IEnumerable<Line3D> SortPoly(this IEnumerable<Line3D> segs, double tol, Vector3D? refAxis = null) =>
             segs.SortPoly(tol, (s) => s.MidPoint, refAxis);
 
+        /// <summary>
+        /// Sort polygon points
+        /// </summary>
+        /// <param name="pts">points</param>
+        /// <param name="tol">length tolerance</param>
+        /// <param name="getPoint">get point function</param>
+        /// <param name="refAxis">ref axis</param>        
+        /// <returns>points ccw sorted by their angle respect the mean center</returns>
         public static IEnumerable<T> SortPoly<T>(this IEnumerable<T> pts, double tol, Func<T, Vector3D> getPoint, Vector3D? refAxis = null)
         {
             if (pts.Count() == 1) return pts;
@@ -337,12 +350,7 @@ namespace SearchAThing
         {
             var sb = new StringBuilder();
 
-            IReadOnlyList<Geometry> geomsLst;
-
-            if (geoms is IReadOnlyList<Geometry>)
-                geomsLst = (IReadOnlyList<Geometry>)geoms;
-            else
-                geomsLst = geoms.ToList();
+            var geomsLst = geoms.ToReadOnlyList();            
 
             for (int i = 0; i < geomsLst.Count; ++i)
             {
@@ -557,10 +565,12 @@ namespace SearchAThing
         /// tessellate given pts list using 1 contour in clockwise ordering
         /// see used tessellation library ( https://github.com/speps/LibTessDotNet )
         /// </summary>
-        /// <param name="pts">pts to tessellate in triangles</param>
+        /// <param name="_pts">pts to tessellate in triangles</param>
         /// <returns>list of triangles</returns>
-        public static IEnumerable<Triangle3D> Tessellate(this IReadOnlyList<Vector3D> pts)
+        public static IEnumerable<Triangle3D> Tessellate(this IEnumerable<Vector3D> _pts)
         {
+            var pts = _pts.ToReadOnlyList();
+            
             var tess = new LibTessDotNet.Tess();
 
             var contour = new LibTessDotNet.ContourVertex[pts.Count];

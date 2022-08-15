@@ -18,7 +18,7 @@ namespace SearchAThing
     public static partial class SciToolkit
     {
 
-        public static string ToSciJson(object o) => JsonConvert.SerializeObject(o, SciJsonSettings);            
+        public static string ToSciJson(object o) => JsonConvert.SerializeObject(o, SciJsonSettings);
 
         public static JsonSerializerSettings SciJsonSettings
         {
@@ -62,17 +62,23 @@ namespace SearchAThing
         /// </summary>        
         public class UnitJsonConverter<TUnitType> : JsonConverter<TUnitType> where TUnitType : Enum
         {
-            public override TUnitType ReadJson(JsonReader reader, Type objectType, TUnitType existingValue, bool hasExistingValue, JsonSerializer serializer)
+            public override TUnitType? ReadJson(JsonReader reader, Type objectType, TUnitType? existingValue, bool hasExistingValue, JsonSerializer serializer)
             {
-                var s = (string)reader.Value;
+                var s = (string?)reader.Value;
+
+                if (s == null) return default(TUnitType);
 
                 return UnitParser.Default.Parse<TUnitType>(s);
             }
 
-            public override void WriteJson(JsonWriter writer, TUnitType value, JsonSerializer serializer)
+            public override void WriteJson(JsonWriter writer, TUnitType? value, JsonSerializer serializer)
             {
-                var res = UnitAbbreviationsCache.Default.GetDefaultAbbreviation(value);
-                writer.WriteValue(res);
+                if (value != null)
+                {
+                    var res = UnitAbbreviationsCache.Default.GetDefaultAbbreviation(value);
+
+                    writer.WriteValue(res);
+                }
             }
         }
 

@@ -36,7 +36,7 @@ namespace SearchAThing
         public Face(Plane3D plane, IEnumerable<Loop> loops)
         {
             Plane = plane;
-            Loops = loops.Fn(_loops => _loops is IReadOnlyList<Loop> loopsLst ? loopsLst : new List<Loop>(_loops));
+            Loops = loops.ToReadOnlyList();
         }
 
         /// <summary>
@@ -364,10 +364,6 @@ namespace SearchAThing
 
                 #endregion
 
-                /// <summary>
-                /// helper method to process given set of loops;
-                /// each will be treated as a Face with a single outer
-                /// </summary>                
                 IEnumerable<Loop> LoopsOperation(IEnumerable<Loop> loops1, IEnumerable<Loop> loops2, BooleanMode mode)
                 {
                     var faces1 = loops1.Select(loop => new Face(Plane, new[] { loop })).ToList();
@@ -410,12 +406,6 @@ namespace SearchAThing
                     var loopCmp = new LoopEqualityComparer(tol);
 
                     firstResultSet = firstResultSet.Select(w => w.Distinct(loopCmp).ToList()).ToList();
-
-                    // if (firstResultSet.Count == 1)
-                    // {
-                    //     foreach (var resloop in firstResultSet) yield return resloop;
-                    //     yield break;
-                    // }
 
                     var finalResultSet = new List<List<Face>>();
 
@@ -559,8 +549,7 @@ namespace SearchAThing
 
                                     foreach (var l in innerLoops)
                                         yield return new Face(Plane, new[] { l });
-                                }
-                                //throw new NotImplementedException();
+                                }                                
                             }
                             break;
 
@@ -658,8 +647,6 @@ namespace SearchAThing
 
                                 var qInnerLoops = thisLoopNfos.Where(loopNfo => !loopNfo.outer)
                                     .Union(otherLoopNfos.Where(loopNfo => !loopNfo.outer))
-                                    //.OrderBy(loopNfo => loopNfo.loop.Area)
-                                    //.Take(1)
                                     .Select(loopNfo => loopNfo.loop)
                                     .ToList();
 
@@ -668,8 +655,6 @@ namespace SearchAThing
                             }
 
                     }
-
-                    //yield break;
                 }
                 #endregion
 
@@ -852,8 +837,7 @@ namespace SearchAThing
                                     }
 
                                     var edgeNfosFromLastVisitedVertex = qEdges
-                                        .Where(edgeNfo =>
-                                            // edgeNfo.overlapped == false &&
+                                        .Where(edgeNfo =>                                            
                                             edgeNfo.partiallyInside == searchInsideEdge &&
                                             edgeNfo.onThis == searchOnThis &&
                                             // discard previous
@@ -970,8 +954,7 @@ namespace SearchAThing
 
                                     var qEdges = vertexToEdgeNfos[nextVertex];
 
-                                    var edgeNfosFromLastVisitedVertex = qEdges.Where(edgeNfo =>
-                                        // edgeNfo.partiallyInside == searchInsideEdge &&
+                                    var edgeNfosFromLastVisitedVertex = qEdges.Where(edgeNfo =>                                        
                                         !edgeNfo.edge.EndpointMatches(tol, lastVertex))
                                         .ToList();
 
@@ -993,11 +976,11 @@ namespace SearchAThing
                                     if (lastEdgeNfo.edge.EndpointMatches(tol, ip)) finished = true;
                                 }
 
-                                loopEdgeNfos.Add(lastEdgeNfo);
+                                loopEdgeNfos.Add(lastEdgeNfo!);
                                 if (loopEdgeNfos.Count > thisLoopBrokenEdgeNfos.Count + otherLoopBrokenEdgeNfos.Count)
                                     throw new Exception($"internal error");
 
-                                if (ips.Contains(lastEdgeNfo.edge.SGeomFrom))
+                                if (ips.Contains(lastEdgeNfo!.edge.SGeomFrom))
                                     visitedIps.Add(lastEdgeNfo.edge.SGeomFrom);
 
                                 if (ips.Contains(lastEdgeNfo.edge.SGeomTo))
@@ -1006,9 +989,7 @@ namespace SearchAThing
 
                             if (resOuterLoop == null)
                             {
-                                resOuterLoop = new Loop(tol, Plane, loopEdgeNfos.Select(w => w.edge).ToList(), checkSense: true);
-
-                                // searchInsideEdge = true;
+                                resOuterLoop = new Loop(tol, Plane, loopEdgeNfos.Select(w => w.edge).ToList(), checkSense: true);                                
                             }
                             else
                             {
@@ -1045,9 +1026,10 @@ namespace SearchAThing
         /// <summary>
         /// states if given edge is contained into this face
         /// </summary>
-        /// <param name="tol"></param>
-        /// <param name="edge"></param>                
+        /// <param name="tol">length tolerance</param>
+        /// <param name="edge">edge to test</param>                    
         /// <param name="evalOnlyOuter">if true and edge is contained into and inner the test returns false</param>
+        /// <param name="mode">type of contains test</param>                
         public bool Contains(double tol, Edge edge,
             bool evalOnlyOuter,
             LoopContainsEdgeMode mode = LoopContainsEdgeMode.InsideExcludedPerimeter)

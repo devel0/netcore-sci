@@ -17,8 +17,7 @@ namespace SearchAThing
 
         /// <summary>
         /// create a circle in the given cs with given radius
-        /// </summary>
-        /// <param name="tol">length tolerance</param>
+        /// </summary>        
         /// <param name="cs"></param>
         /// <param name="r"></param>        
         public Circle3D(CoordinateSystem3D cs, double r) : base(cs, r, 0, 2 * PI)
@@ -139,7 +138,7 @@ namespace SearchAThing
                 else throw new Exception($"circle 2 tan 1 point : pt must contained in one of given tan");
 
                 var lpp = new Line3D(p, lp.V.RotateAboutAxis(t1.V.CrossProduct(t2.V), PI / 2), Line3DConstructMode.PointAndVector);
-                var c = lpp.Intersect(tol, t3);
+                var c = lpp.Intersect(tol, t3)!;
 
                 var Radius = p.Distance(c);
                 var CS = new CoordinateSystem3D(c, lpp.V, t2.V);

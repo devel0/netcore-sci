@@ -95,8 +95,7 @@ namespace SearchAThing
         /// <param name="_tol">length tolerance</param>
         /// <param name="ents">list of entities to discretize</param>
         /// <param name="entPoints">function that retrieve relevant points from templated item</param>
-        /// <param name="_spaceDim">search space dimension (2=2D 3=3D)</param>
-        /// <typeparam name="T">type of the items to discretize</typeparam>
+        /// <param name="_spaceDim">search space dimension (2=2D 3=3D)</param>        
         /// <returns>discrete space object</returns>     
         public DiscreteSpace(double _tol, IEnumerable<T> ents, Func<T, IEnumerable<Vector3D>> entPoints, int _spaceDim) :
             this(_tol, ents.Select(ent => new DiscreteSpaceItem<T>(ent, entPoints)).ToList(), _spaceDim)
@@ -110,8 +109,7 @@ namespace SearchAThing
         /// <param name="_tol">length tolerance</param>
         /// <param name="ents">list of entities to discretize</param>
         /// <param name="entPoint">function that retrieve relevant point from templated item</param>
-        /// <param name="_spaceDim">search space dimension (2=2D 3=3D)</param>
-        /// <typeparam name="T">type of the items to discretize</typeparam>
+        /// <param name="_spaceDim">search space dimension (2=2D 3=3D)</param>        
         /// <returns>discrete space object</returns>     
         public DiscreteSpace(double _tol, IEnumerable<T> ents, Func<T, Vector3D> entPoint, int _spaceDim) :
             this(_tol, ents.Select(ent => new DiscreteSpaceItem<T>(ent, entPoint)).ToList(), _spaceDim)

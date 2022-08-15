@@ -26,8 +26,8 @@ namespace SearchAThing.Sci.Tests
                 var qInt = c1.Intersect(tol, c2).ToList();
 
                 Assert.True(qInt.Count == 2);
-                Assert.True(qInt.Any(w => w.EqualsTol(tol, 12402.20000052949, -847.888494720131, 0)));
-                Assert.True(qInt.Any(w => w.EqualsTol(tol, 12647.715463548095, -814.7183326852199, 0)));
+                Assert.Contains(qInt, w => w.EqualsTol(tol, 12402.20000052949, -847.888494720131, 0));
+                Assert.Contains(qInt, w => w.EqualsTol(tol, 12647.715463548095, -814.7183326852199, 0));
             }
 
             // 1 pt
@@ -45,7 +45,7 @@ namespace SearchAThing.Sci.Tests
                 var qInt = c1.Intersect(tol, c2).ToList();
 
                 Assert.True(qInt.Count == 1);
-                Assert.True(qInt.Any(w => w.EqualsTol(tol, 13253.500741174445, -322.5106905459212, 0)));
+                Assert.Contains(qInt, w => w.EqualsTol(tol, 13253.500741174445, -322.5106905459212, 0));
             }
 
             // 0 pt

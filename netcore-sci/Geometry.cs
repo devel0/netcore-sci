@@ -261,10 +261,12 @@ namespace SearchAThing
         /// <summary>
         /// vertexes from given set of geometries
         /// </summary>
-        /// <param name="geometry_block"></param>
+        /// <param name="_geometry_block"></param>
         /// <param name="tol">length tolerance</param>        
-        public static IEnumerable<Vector3D> Vertexes(this IReadOnlyList<Geometry> geometry_block, double tol)
+        public static IEnumerable<Vector3D> Vertexes(this IEnumerable<Geometry> _geometry_block, double tol)
         {
+            var geometry_block = _geometry_block.ToReadOnlyList();
+
             Vector3D? last = null;
             for (int i = 0; i < geometry_block.Count; ++i)
             {
@@ -295,13 +297,13 @@ namespace SearchAThing
         /// <summary>
         /// centroid of given geometries (not fully implemented)
         /// </summary>
-        /// <param name="geometry_block"></param>
-        /// <param name="tol"length tolerance></param>        
-        public static Vector3D GeomCentroid(this IReadOnlyList<Geometry> geometry_block, double tol)
+        /// <param name="_geometry_block"></param>
+        /// <param name="tol">length tolerance</param>        
+        public static Vector3D GeomCentroid(this IEnumerable<Geometry> _geometry_block, double tol)
         {
-            var segs = geometry_block.Vertexes(tol).ToList();
+            var geometry_block = _geometry_block.ToReadOnlyList();
 
-            // TODO centroid with polyline and arcs
+            var segs = geometry_block.Vertexes(tol).ToList();            
 
             if (geometry_block.Count(r => r.GeomType == GeometryType.Arc3D) > 1)
             {
@@ -312,6 +314,8 @@ namespace SearchAThing
             {
                 var A = XYArea(segs, tol);
                 var centroid = XYCentroid(segs, tol, A);
+
+                // TODO centroid with polyline and arcs
 
                 /*
                 // search for arcs

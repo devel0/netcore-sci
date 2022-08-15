@@ -25,17 +25,17 @@ namespace SearchAThing
 
             // header
             foreach (var x in qT.GetProperties())
-            {                
+            {
                 if (x.PropertyType == typeof(Vector3D))
-                {                    
+                {
                     if (sbHeader.Length > 0) sbHeader.Append('\t');
                     sbHeader.Append($"{x.Name}.X\t{x.Name}.Y\t{x.Name}.Z");
                 }
                 else
-                {                    
+                {
                     if (sbHeader.Length > 0) sbHeader.Append('\t');
                     sbHeader.Append($"{x.Name}");
-                }                
+                }
             }
 
             finalSb.AppendLine(sbHeader.ToString());
@@ -48,7 +48,7 @@ namespace SearchAThing
                 foreach (var x in qT.GetProperties())
                 {
                     if (x.PropertyType == typeof(string))
-                    {                        
+                    {
                         var s = (string?)x.GetMethod?.Invoke(o, null);
 
                         if (sbLine.Length > 0) sbLine.Append('\t');
@@ -65,18 +65,22 @@ namespace SearchAThing
                     {
                         var v = (Vector3D?)x.GetMethod?.Invoke(o, null);
 
-                        foreach (var c in v.Coordinates)
-                        {
-                            if (sbLine.Length > 0) sbLine.Append('\t');
-                            sbLine.Append($"{c}");
-                        }
+                        if (v != null)
+                            foreach (var c in v.Coordinates)
+                            {
+                                if (sbLine.Length > 0) sbLine.Append('\t');
+                                sbLine.Append($"{c}");
+                            }
                     }
                     else
                     {
                         var s = (object?)x.GetMethod?.Invoke(o, null);
 
-                        if (sbLine.Length > 0) sbLine.Append('\t');
-                        sbLine.Append($"{s.ToString()}");
+                        if (s != null)
+                        {
+                            if (sbLine.Length > 0) sbLine.Append('\t');
+                            sbLine.Append($"{s.ToString()}");
+                        }
                     }
                 }
 

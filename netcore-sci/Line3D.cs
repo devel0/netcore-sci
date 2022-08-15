@@ -294,10 +294,12 @@ namespace SearchAThing
             }
         }
 
+#pragma warning disable CS8618
         [JsonConstructor]
         Line3D() : base(GeometryType.Line3D)
-        {
+        {            
         }
+#pragma warning restore
 
         /// <summary>
         /// build a copy of given line
@@ -1046,10 +1048,12 @@ namespace SearchAThing
         /// 
         /// TODO: dummy function, optimize
         /// </summary>       
-        public static IReadOnlyList<Line3D> AutoIntersect(this IReadOnlyList<Line3D> segs, double tol,
-        bool mergeColinearSegments = true, IEnumerable<Vector3D>? addictionalSplitPoints = null)
+        public static IReadOnlyList<Line3D> AutoIntersect(this IEnumerable<Line3D> _segs,
+            double tol,
+            bool mergeColinearSegments = true,
+            IEnumerable<Vector3D>? addictionalSplitPoints = null)
         {
-            segs = segs.MergeColinearSegments(tol).ToList();
+            var segs = _segs.MergeColinearSegments(tol).ToReadOnlyList();
 
             var segCmp = new Line3DEqualityComparer(tol);
             var vecCmp = new Vector3DEqualityComparer(tol);

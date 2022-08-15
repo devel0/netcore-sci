@@ -400,6 +400,8 @@ namespace SearchAThing
         /// checks only x,y            
         /// </summary>        
         /// <param name="tol">geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</param>            
+        /// <param name="x">x coord</param>            
+        /// <param name="y">y coord</param>            
         /// <remarks>      
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0012.cs)
         /// </remarks>
@@ -410,6 +412,9 @@ namespace SearchAThing
         /// checks vector component equality vs other given                        
         /// </summary>
         /// <param name="tol">geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</param>            
+        /// <param name="x">x coord</param>            
+        /// <param name="y">y coord</param>            
+        /// <param name="z">z coord</param>            
         /// <remarks>      
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0012.cs)
         /// </remarks>
@@ -575,8 +580,7 @@ namespace SearchAThing
 
         /// <summary>
         /// wcs coord of projected coord to the given cs
-        /// </summary>
-        /// <param name="v">wcs point</param>
+        /// </summary>        
         /// <param name="cs">cs to project</param>
         /// <param name="evalCSOrigin">if true cs origin will subtracted before transform, then readded to obtain wcs point</param>                        
         public Vector3D Project(CoordinateSystem3D cs, bool evalCSOrigin = true) =>
@@ -1183,24 +1187,21 @@ namespace SearchAThing
 
         /// <summary>
         /// convert xyz from deg to rad
-        /// </summary>
-        /// <param name="v">xyz deg angles</param>
+        /// </summary>        
         /// <returns>xyz rad angles</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Vector3D ToRad() => new Vector3D(X.ToRad(), Y.ToRad(), Z.ToRad());
 
         /// <summary>
         /// convert xyz from rad to deg
-        /// </summary>
-        /// <param name="v">xyz rad angles</param>
+        /// </summary>        
         /// <returns>xyz deg angles</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Vector3D ToDeg() => new Vector3D(X.ToDeg(), Y.ToDeg(), Z.ToDeg());
 
         /// <summary>
         /// debug to console with optional prefix
-        /// </summary>
-        /// <param name="v">vector</param>
+        /// </summary>        
         /// <param name="prefix">optional prefix</param>
         /// <returns>vector</returns>
         public Vector3D Debug(string prefix = "")
@@ -1211,17 +1212,13 @@ namespace SearchAThing
 
         /// <summary>
         /// compute (Abs(v.x), Abs(v.y), Abs(v.z))
-        /// </summary>
-        /// <param name="v">input vector</param>
-        /// <returns>abs(v)</returns>
+        /// </summary>        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Vector3D Abs() => new Vector3D(Math.Abs(X), Math.Abs(Y), Math.Abs(Z));
 
         /// <summary>
         /// compute (Sign(v.x), Sign(v.y), Sign(v.z))
-        /// </summary>
-        /// <param name="v">input vector</param>
-        /// <returns>sign(v)</returns>
+        /// </summary>                
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Vector3D Sign() => new Vector3D(Math.Sign(X), Math.Sign(Y), Math.Sign(Z));
 

@@ -99,25 +99,26 @@ namespace SearchAThing
 
         public double Tol { get; private set; }
 
+#pragma warning disable CS8618
         [JsonConstructor]
         Loop()
         {
+
         }
+#pragma warning restore
 
         /// <summary>
         /// precondition: edges must lie on given plane
         /// </summary>        
-        public Loop(double tol, Plane3D plane, IReadOnlyList<Edge> edges, bool checkSense, bool checkSort = false)
+        public Loop(double tol, Plane3D plane, IEnumerable<Edge> _edges, bool checkSense, bool checkSort = false)
         {
             Tol = tol;
-
-            var _edges = edges;
 
             if (checkSort) _edges = _edges.CheckSort(tol).ToList();
 
             if (checkSense) _edges = _edges.CheckSense(tol).ToList();
 
-            Edges = _edges;
+            Edges = _edges.ToReadOnlyList();
             Plane = plane;
         }
 
@@ -285,14 +286,6 @@ namespace SearchAThing
                 if (_MidPoint == null) _MidPoint = Edges.Select(w => w.MidPoint).Sum() / Edges.Count;
                 return _MidPoint;
             }
-        }
-
-        class ContainsPointTmpNfo
-        {
-            public Edge edge;
-            public int edgeIdx;
-            public Vector3D ip;
-            public bool onVertex;
         }
 
         /// <summary>

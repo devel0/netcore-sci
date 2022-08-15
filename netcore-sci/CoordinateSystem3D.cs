@@ -131,11 +131,12 @@ namespace SearchAThing
         /// </summary>
         const double aaaSmall = 1d / 64;
 
+#pragma warning disable CS8618
         [JsonConstructor]
         CoordinateSystem3D()
         {
-
         }
+#pragma warning restore
 
         /// <summary>
         /// build coordinate system with given origin and given BaseZ on given vector normal;

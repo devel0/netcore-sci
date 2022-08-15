@@ -222,11 +222,11 @@ namespace SearchAThing.Sci.Tests
             {
                 var q = arc.Divide(4, include_endpoints: true).ToList();
                 Assert.True(q.Count == 3 + 2);
-                Assert.True(q.Any(w => w.EqualsTol(tol, p1)));
-                Assert.True(q.Any(w => w.EqualsTol(tol, dp1)));
-                Assert.True(q.Any(w => w.EqualsTol(tol, dp2)));
-                Assert.True(q.Any(w => w.EqualsTol(tol, dp3)));
-                Assert.True(q.Any(w => w.EqualsTol(tol, p3)));
+                Assert.Contains(q, w => w.EqualsTol(tol, p1));
+                Assert.Contains(q, w => w.EqualsTol(tol, dp1));
+                Assert.Contains(q, w => w.EqualsTol(tol, dp2));
+                Assert.Contains(q, w => w.EqualsTol(tol, dp3));
+                Assert.Contains(q, w => w.EqualsTol(tol, p3));
             }
 
             // bbox
@@ -264,8 +264,8 @@ namespace SearchAThing.Sci.Tests
             var ipts = arc.Intersect(tol, csplane, onlyPerimeter: true, inArcAngleRange: true).ToList();
             Assert.True(ipts.Count == 2);
             var ipLine = new Line3D(ipts[0], ipts[1]);
-            Assert.True(ipts.Any(r => r.EqualsTol(tol, new Vector3D("X = 1.7990927 Y = 231.58612296 Z = -18.13420814"))));
-            Assert.True(ipts.Any(r => r.EqualsTol(tol, new Vector3D("X = 169.80266871 Y = 343.29649219 Z = 134.36668758"))));
+            Assert.Contains(ipts, r => r.EqualsTol(tol, new Vector3D("X = 1.7990927 Y = 231.58612296 Z = -18.13420814")));
+            Assert.Contains(ipts, r => r.EqualsTol(tol, new Vector3D("X = 169.80266871 Y = 343.29649219 Z = 134.36668758")));
         }
 
         /// <summary>
@@ -294,8 +294,7 @@ namespace SearchAThing.Sci.Tests
                 Assert.True(subarc.From.EqualsTol(tol, ap1));
                 Assert.True(subarc.To.EqualsTol(tol, ap2));
             };
-
-            Assert.True(arc.Split(tol, null).Count() == 0);
+            
             Assert.True(arc.Split(tol, new Vector3D[] { }).Count() == 0);
             Assert.True(arc.Split(tol, new[] { dp1, dp2, dp3, dp4, arc.From, arc.To }).Count() == 5);
 

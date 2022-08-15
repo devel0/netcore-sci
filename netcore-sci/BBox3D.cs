@@ -416,14 +416,14 @@ namespace SearchAThing
         /// </summary>        
         public IEnumerable<Plane3DRegion> Faces(double tol)
         {
-            ///       3---------2
-            ///     / |       / |
-            ///    /  |      /  |
-            ///   7---------6   |
-            ///   |  0------|---1
-            ///   | /       |  /
-            ///   4---------5/
-            /// 
+            //       3---------2
+            //     / |       / |
+            //    /  |      /  |
+            //   7---------6   |
+            //   |  0------|---1
+            //   | /       |  /
+            //   4---------5/
+            // 
             var pts = Points;
             var p0 = pts[0];
             var p1 = pts[1];
@@ -459,7 +459,7 @@ namespace SearchAThing
             }
         }
 
-        public IEnumerable<Face3D> DrawCuboid(DxfObject dxfObj, Layer layer = null)
+        public IEnumerable<Face3D> DrawCuboid(DxfObject dxfObj, Layer? layer = null)
         {
             var ents = ToFace3DList().ToList();
 
@@ -592,7 +592,7 @@ namespace SearchAThing
                         yield return f.FirstVertex;
                         yield return f.SecondVertex;
                         yield return f.ThirdVertex;
-                        if (f.FourthVertex != null)
+                        if (((Vector3?)f.FourthVertex).HasValue)
                             yield return f.FourthVertex;
                     }
                     break;

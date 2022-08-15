@@ -84,7 +84,7 @@ namespace SearchAThing
             yield return face.FirstVertex;
             yield return face.SecondVertex;
             yield return face.ThirdVertex;
-            if (face.FourthVertex != null) yield return face.FourthVertex;
+            if (((Vector3?)face.FourthVertex).HasValue) yield return face.FourthVertex;
         }
 
         /// <summary>
@@ -396,8 +396,9 @@ namespace SearchAThing
                 face.SecondVertex.X, face.SecondVertex.Y, face.SecondVertex.Z,
                 face.ThirdVertex.X, face.ThirdVertex.Y, face.ThirdVertex.Z));
 
-            if ((Vector3?)face.FourthVertex != null) sb.Append(string.Format(CultureInfo.InvariantCulture, " {0},{1},{2}",
-                face.FourthVertex.X, face.FourthVertex.Y, face.FourthVertex.Z));
+            if (((Vector3?)face.FourthVertex).HasValue)
+                sb.Append(string.Format(CultureInfo.InvariantCulture, " {0},{1},{2}",
+                    face.FourthVertex.X, face.FourthVertex.Y, face.FourthVertex.Z));
 
             sb.AppendLine();
 
@@ -473,8 +474,10 @@ namespace SearchAThing
                     return netDxf.AciColor.FromTrueColor((r << 16) + (g << 8) + b);
                 }*/
 
-        public static IEnumerable<EntityObject> DrawTimeline(this DxfObject dxf, List<(DateTime from, DateTime to)> timeline,
-        double textHeight = 2, double circleRadius = 1.5, double maxWidth = 180, double stopDays = 60, Func<DateTime, string> dtStr = null)
+        public static IEnumerable<EntityObject> DrawTimeline(this DxfObject dxf,
+            List<(DateTime from, DateTime to)> timeline,
+            double textHeight = 2, double circleRadius = 1.5, double maxWidth = 180, double stopDays = 60,
+            Func<DateTime, string>? dtStr = null)
         {
             var q = timeline.OrderBy(w => w.from).ToList();
 

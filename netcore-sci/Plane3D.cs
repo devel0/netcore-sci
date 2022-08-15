@@ -26,10 +26,12 @@ namespace SearchAThing
         /// </summary>
         public static readonly Plane3D YZ = new Plane3D(CoordinateSystem3D.YZ);
 
+#pragma warning disable CS8618
         [JsonConstructor]
         Plane3D()
         {
         }
+#pragma warning restore
 
         /// <summary>
         /// build plane using cs as reference for origin and x,y axes

@@ -32,7 +32,8 @@ namespace SearchAThing.Sci.Tests
             outdxf?.AddEntity(p3.DxfEntity);
 
             var arcj = JsonConvert.DeserializeObject<Arc3D>(
-                File.ReadAllText("Arc3D/Arc3DTest_0008.json"), SciToolkit.SciJsonSettings);
+                File.ReadAllText("Arc3D/Arc3DTest_0008.json"), SciToolkit.SciJsonSettings)
+                .Act(w => Assert.NotNull(w))!;
             var line1 = new Line3D(new Vector3D(0, 20), p1);
             var line2 = new Line3D(p3, line1.From);
             var geoms = new Edge[] { line1, arcj, line2 };

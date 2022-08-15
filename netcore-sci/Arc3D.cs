@@ -397,10 +397,12 @@ namespace SearchAThing
 
         private double tol_rad;
 
+#pragma warning disable CS8618
         [JsonConstructor]
         Arc3D() : base(GeometryType.Arc3D)
         {
         }
+#pragma warning restore
 
         /// <summary>
         /// construct 3d arc
@@ -900,6 +902,7 @@ namespace SearchAThing
         /// <param name="tol">len tolerance</param>
         /// <param name="cs">cs xy plane</param>
         /// <param name="onlyPerimeter">if false it will check in the arc area too, otherwise only on arc perimeter</param>
+        /// <param name="inArcAngleRange">if true find ips only for arc angle range</param>
         /// <returns>sample</returns>
         /// <remarks>            
         /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Arc3D/Arc3DTest_0001.cs)

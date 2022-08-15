@@ -22,7 +22,7 @@ namespace SearchAThing.Sci.Tests
               new Vector3D("X = 72.77627807 Y = 35.03080659 Z = 10"),
               new Vector3D("X = 163.78240786 Y = 236.91916385 Z = 164.44414363"));
 
-            var perpSeg = l1.ApparentIntersect(l2);
+            var perpSeg = l1.ApparentIntersect(l2).Act(w => Assert.NotNull(w))!;
 
             Assert.True(l1.V.AngleRad(tol, perpSeg.V).EqualsTol(radTol, PI / 2));
             Assert.True(l2.V.AngleRad(tol, perpSeg.V).EqualsTol(radTol, PI / 2));
