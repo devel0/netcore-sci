@@ -16,7 +16,7 @@ namespace SearchAThing.Sci.Tests
                 System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Loop/LoopTest_0006.dxf"));
 
             DxfDocument? outdxf = null;
-            //outdxf = new DxfDocument();
+            outdxf = new DxfDocument();
 
             var tolFail = 0.1;
             var tolSuccess = 0.3;
@@ -28,17 +28,17 @@ namespace SearchAThing.Sci.Tests
 
             // zoom at 0.0013,12.7559 to see geometry defect
 
-            // tol = tolFail;
-            // var gyInts = faceGreen.Boolean(tol, faceYellow).ToList();
-            // Assert.False(gyInts.Count == 1 && gyInts[0].Loops.Count == 1);
+            tol = tolFail;
+            var gyInts = faceGreen.Boolean(tol, faceYellow).ToList();
+            Assert.False(gyInts.Count == 1 && gyInts[0].Loops.Count == 1);
 
             tol = tolSuccess;
-            var gyInts = faceGreen.Boolean(tol, faceYellow).ToList();
+            gyInts = faceGreen.Boolean(tol, faceYellow).ToList();
             Assert.True(gyInts.Count == 1 && gyInts[0].Loops.Count == 1);
 
             if (outdxf != null)
             {
-                outdxf.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Set(w => w.Layer = new netDxf.Tables.Layer("int") { Color = AciColor.Red }));
+                outdxf.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Act(w => w.Layer = new netDxf.Tables.Layer("int") { Color = AciColor.Red }));
 
                 foreach (var gyInt in gyInts)
                 {
@@ -49,19 +49,8 @@ namespace SearchAThing.Sci.Tests
                 }
             }
 
-            // loopYellow.Area.AssertEqualsTol(tol, gyInts[0].Area);
-            // gyInts[0].Length.AssertEqualsTol(tol, 47.89069988);
-
-            // {
-            //     var delta = new Vector3D(1, 2, 3);
-            //     var movedTest = loopYellow.Move(delta);
-
-            //     for (int i = 0; i < loopYellow.Edges.Count; ++i)
-            //     {
-            //         (loopYellow.Edges[i].SGeomFrom + delta).AssertEqualsTol(tol, movedTest.Edges[i].SGeomFrom);
-            //         (loopYellow.Edges[i].SGeomTo + delta).AssertEqualsTol(tol, movedTest.Edges[i].SGeomTo);
-            //     }
-            // }
+            gyInts[0].Loops[0].Area.AssertEqualsTol(tol, 33.05683422);
+            gyInts[0].Loops[0].Length.AssertEqualsTol(tol, 51.48005902);
 
             if (outdxf != null)
             {

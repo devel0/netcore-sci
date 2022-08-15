@@ -72,7 +72,7 @@ namespace SearchAThing.Sci.Tests
         {
             var l = new Line3D(1, 2, 3, 4, 5, 6);
             var l2 = new Line3D(4, 5, 6, 7, 8, 9);
-            Assert.True(l.CommonPoint(1e-1, l2).EqualsTol(1e-1, 4, 5, 6));
+            Assert.True(l.CommonPoint(1e-1, l2).Act(w => Assert.NotNull(w))!.EqualsTol(1e-1, 4, 5, 6));
             var l3 = new Line3D(4.11, 5.11, 6.11, 7.11, 8.11, 9.11);
             // common point test only from,to
             Assert.True(l.CommonPoint(1e-1, l3) == null);
@@ -160,14 +160,14 @@ namespace SearchAThing.Sci.Tests
                 var l2 = new Line3D(5, 1e-1, 0, 5, 1e-1, 10); // vertical line dst=1e-1
 
                 // default intersection behavior : midpoint
-                var ip = l.Intersect(1e-1, l2);
+                var ip = l.Intersect(1e-1, l2).Act(w => Assert.NotNull(w))!;
                 Assert.True(ip.EqualsTol(1e-2, l.Intersect(1e-1, l2, LineIntersectBehavior.MidPoint)));
                 Assert.True(ip.EqualsTol(1e-2, 5, 1e-1 / 2, 0));
 
-                ip = l.Intersect(1e-1, l2, LineIntersectBehavior.PointOnThis);
+                ip = l.Intersect(1e-1, l2, LineIntersectBehavior.PointOnThis).Act(w => Assert.NotNull(w))!;
                 Assert.True(ip.EqualsTol(1e-2, 5, 0, 0));
 
-                ip = l.Intersect(1e-1, l2, LineIntersectBehavior.PointOnOther);
+                ip = l.Intersect(1e-1, l2, LineIntersectBehavior.PointOnOther).Act(w => Assert.NotNull(w))!;
                 Assert.True(ip.EqualsTol(1e-2, 5, 1e-1, 0));
 
                 Assert.True(l.Intersect(5e-2, l2) == null);
@@ -183,7 +183,7 @@ namespace SearchAThing.Sci.Tests
                 var lperp_off = new Line3D(l.MidPoint, cs.BaseX, Line3DConstructMode.PointAndVector)
                     .Move(cs.BaseY * 2e-1);
 
-                var ip = l.Intersect(2e-1, lperp_off);
+                var ip = l.Intersect(2e-1, lperp_off).Act(w => Assert.NotNull(w))!;
                 Assert.True(ip.EqualsTol(1e-4, 4.9641, 9.9283, 15.0598));
 
                 Assert.True(l.Intersect(1e-1, lperp_off) == null);
@@ -199,8 +199,10 @@ namespace SearchAThing.Sci.Tests
             Assert.True(l1.Intersect(1e-1, l2, thisSegment: true, otherSegment: true) == null);
             Assert.True(l1.Intersect(1e-1, l2, thisSegment: false, otherSegment: true) == null);
             Assert.True(l1.Intersect(1e-1, l2, thisSegment: true, otherSegment: false)
+                .Act(w => Assert.NotNull(w))!
                 .EqualsTol(1e-1, 5, 0, 0));
             Assert.True(l1.Intersect(1e-1, l2, thisSegment: false, otherSegment: false)
+                .Act(w => Assert.NotNull(w))!
                 .EqualsTol(1e-1, 5, 0, 0));
         }
 
@@ -213,8 +215,10 @@ namespace SearchAThing.Sci.Tests
             Assert.True(l1.Intersect(1e-1, l2, thisSegment: true, otherSegment: true) == null);
             Assert.True(l1.Intersect(1e-1, l2, thisSegment: false, otherSegment: true) == null);
             Assert.True(l1.Intersect(1e-1, l2, thisSegment: true, otherSegment: false)
+                .Act(w => Assert.NotNull(w))!
                 .EqualsTol(1e-1, 5, 0, 0));
             Assert.True(l1.Intersect(1e-1, l2, thisSegment: false, otherSegment: false)
+                .Act(w => Assert.NotNull(w))!
                 .EqualsTol(1e-1, 5, 0, 0));
         }
 
@@ -227,7 +231,7 @@ namespace SearchAThing.Sci.Tests
 
             var l3 = new Line3D(1.3529, 5.5732, 0, 6.3351, .4489, -7.8931);
 
-            var q = l3.Intersect(1e-1, pl);
+            var q = l3.Intersect(1e-1, pl).Act(w => Assert.NotNull(w))!;
             // intersect point of line w/plane is on the plane
             Assert.True(q.ToUCS(pl.CS).Z.EqualsTol(1e-4, 0));
             Assert.True(q.EqualsTol(1e-4, 3.0757, 3.8013, -2.7293));
@@ -239,7 +243,7 @@ namespace SearchAThing.Sci.Tests
             {
                 var l = new Line3D(0, 0, 0, 10, 0, 0);
                 var p = new Vector3D(5, 10, 0);
-                var lperp = l.Perpendicular(1e-1, p);
+                var lperp = l.Perpendicular(1e-1, p).Act(w => Assert.NotNull(w))!;
 
                 // perpendicular segment From equals to the given point
                 Assert.True(lperp.From.EqualsTol(1e-1, p));
@@ -254,20 +258,21 @@ namespace SearchAThing.Sci.Tests
             {
                 var l = new Line3D(new Vector3D(441.37, 689.699, -179.739), new Vector3D(695.01, 759.599, 301.543));
                 var p = new Vector3D(740.754, 286.803, 687.757);
-                var lPerp = l.Perpendicular(1e-2, p);
+                var lPerp = l.Perpendicular(1e-2, p).Act(w => Assert.NotNull(w))!;
 
-                Assert.True(l.LineContainsPoint(1e-2, l.Intersect(1e-2, lPerp)));
+                var ip = l.Intersect(1e-2, lPerp).Act(w => Assert.NotNull(w))!;
+                Assert.True(l.LineContainsPoint(1e-2, ip!));
                 Assert.True(l.V.IsPerpendicular(lPerp.V));
             }
         }
 
-         [Fact]
+        [Fact]
         public void SemiLineContainsPointTest()
         {
             var l = new Line3D(0, 0, 0, 10, 10, 10);
-            
-            Assert.True(l.SemiLineContainsPoint(1e-1, new Vector3D(9,9,9)));
-            Assert.False(l.SemiLineContainsPoint(1e-1, new Vector3D(-1,-1,-1)));
+
+            Assert.True(l.SemiLineContainsPoint(1e-1, new Vector3D(9, 9, 9)));
+            Assert.False(l.SemiLineContainsPoint(1e-1, new Vector3D(-1, -1, -1)));
         }
 
         [Fact]
@@ -348,8 +353,10 @@ namespace SearchAThing.Sci.Tests
                 var segs = l.Split(1e-1, new[]
                 {
                     // external of extreme points skipped
-                    new Vector3D(-1,0,0), new Vector3D(0,0,0), new Vector3D(10,0,0),
-                    new Vector3D(2, 0, 0), new Vector3D(8, 0, 0)
+                    new Vector3D(-1, 0, 0), new Vector3D(0, 0, 0), new Vector3D(10, 0, 0),
+
+                    new Vector3D(2, 0, 0),
+                    new Vector3D(8, 0, 0)
                 });
                 Assert.True(segs.Count() == 3);
                 Assert.True(segs.First().EqualsTol(1e-1, new Line3D(0, 0, 0, 2, 0, 0)));
@@ -398,7 +405,7 @@ namespace SearchAThing.Sci.Tests
             var l = new Line3D(1, 1, 1, 1.12, 2.23, 3.391);
             // 3 digits default
             var s = l.ToString();
-            Assert.True(s == "[Line3D] SFROM[(1, 1, 1)] STO[(1.12, 2.23, 3.391)] L=2.692 Δ=(0.12, 1.23, 2.391)");            
+            Assert.True(s == "[Line3D] SFROM[(1, 1, 1)] STO[(1.12, 2.23, 3.391)] L=2.692 Δ=(0.12, 1.23, 2.391)");
 
             // 1 digits explicit
             var s2 = l.ToString(1);
@@ -466,10 +473,11 @@ namespace SearchAThing.Sci.Tests
             {
                 var l1 = new Line3D(-.2653, 6.7488, 1.4359, 1.8986, 3.1188, 1.0844);
                 var l2 = new Line3D(1.8986, 3.1188, 1.0844, 8.1864, 2.4120, 1.7818);
-                var bisect = l1.Bisect(1e-4, l2);
+                var bisect = l1.Bisect(1e-4, l2).Act(w => Assert.NotNull(w))!;
 
                 // bisect segment from start from the intersection point of two lines
-                var ip = l1.CommonPoint(1e-4, l2);
+                var ip = l1.CommonPoint(1e-4, l2).Act(w => Assert.NotNull(w))!;
+
                 Assert.True(bisect.From.EqualsTol(1e-4, ip));
 
                 var l1_from_ip = l1.EnsureFrom(1e-4, ip);
@@ -491,12 +499,12 @@ namespace SearchAThing.Sci.Tests
                 }
                 {
                     // rotate right-hand Z+
-                    var bisect = l1.Bisect(1e-4, l2, Vector3D.ZAxis);
+                    var bisect = l1.Bisect(1e-4, l2, Vector3D.ZAxis).Act(w => Assert.NotNull(w))!;
                     Assert.True(bisect.EqualsTol(1e-4, new Line3D(0, 0, 0, 0, 10, 0)));
                 }
                 {
                     // rotate right-hand Z-
-                    var bisect = l1.Bisect(1e-4, l2, -Vector3D.ZAxis);
+                    var bisect = l1.Bisect(1e-4, l2, -Vector3D.ZAxis).Act(w => Assert.NotNull(w))!;
                     Assert.True(bisect.EqualsTol(1e-4, new Line3D(0, 0, 0, 0, -10, 0)));
                 }
             }

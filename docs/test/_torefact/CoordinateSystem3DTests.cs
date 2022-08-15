@@ -112,8 +112,8 @@ namespace SearchAThing.Sci.Tests
             var cs2y = new Line3D(cs2o, new Vector3D("X = -187.42845697 Y = 128.44203407 Z = 224.4413331"));
             var cs2 = new CoordinateSystem3D(cs2o, cs2x.V, cs2y.V);
 
-            var i12Line = cs1.Intersect(1e-4, cs2);
-            var i21Line = cs2.Intersect(1e-4, cs1);
+            var i12Line = cs1.Intersect(1e-4, cs2).Act(w => Assert.NotNull(w))!;
+            var i21Line = cs2.Intersect(1e-4, cs1).Act(w => Assert.NotNull(w))!;
 
             Assert.True(i12Line.LineContainsPoint(1e-4, i21Line.From));
             Assert.True(i12Line.LineContainsPoint(1e-4, i21Line.To));

@@ -17,9 +17,9 @@ var searchData=
   ['doubleequalitycomparer_557',['DoubleEqualityComparer',['../class_search_a_thing_1_1_double_equality_comparer.html#aea744e195a36646cb56e3f886ffbd880',1,'SearchAThing::DoubleEqualityComparer']]],
   ['dquaternion_558',['DQuaternion',['../class_search_a_thing_1_1_d_quaternion.html#a5a73290d4b3574aa20a6d7ed1d157ad6',1,'SearchAThing.DQuaternion.DQuaternion(double s, Vector3D v)'],['../class_search_a_thing_1_1_d_quaternion.html#a082fe6b372ade1195047f62450ce3206',1,'SearchAThing.DQuaternion.DQuaternion(Vector3D axis, double alphaRad)']]],
   ['drawcube_559',['DrawCube',['../class_search_a_thing_1_1_sci_ext.html#af3110680563a6cec8c219657cf40acc9',1,'SearchAThing::SciExt']]],
-  ['drawcuboid_560',['DrawCuboid',['../class_search_a_thing_1_1_b_box3_d.html#a4d27745518c85e75009d1e1d4e4356bf',1,'SearchAThing.BBox3D.DrawCuboid()'],['../class_search_a_thing_1_1_sci_ext.html#a4ed058a781836cf425392ff449cb1c5b',1,'SearchAThing.SciExt.DrawCuboid(this DxfObject dxfObj, Vector3D center, Vector3D size, Layer? layer=null)']]],
+  ['drawcuboid_560',['DrawCuboid',['../class_search_a_thing_1_1_b_box3_d.html#a861d53985dfa8e3bc368947f43bf546c',1,'SearchAThing.BBox3D.DrawCuboid()'],['../class_search_a_thing_1_1_sci_ext.html#a4ed058a781836cf425392ff449cb1c5b',1,'SearchAThing.SciExt.DrawCuboid(this DxfObject dxfObj, Vector3D center, Vector3D size, Layer? layer=null)']]],
   ['drawstar_561',['DrawStar',['../class_search_a_thing_1_1_sci_ext.html#aa6dbef78a37265da41f011ce57441577',1,'SearchAThing::SciExt']]],
-  ['drawtimeline_562',['DrawTimeline',['../class_search_a_thing_1_1_sci_ext.html#a6018071d2f102812ddb4f3cb88cbfbc9',1,'SearchAThing::SciExt']]],
+  ['drawtimeline_562',['DrawTimeline',['../class_search_a_thing_1_1_sci_ext.html#af04c30664183c09d00a259ec2f5e380c',1,'SearchAThing::SciExt']]],
   ['dvector3equalitycomparer_563',['DVector3EqualityComparer',['../class_search_a_thing_1_1_d_vector3_equality_comparer.html#a8bb1670ca2b0302f55b519e41501c445',1,'SearchAThing::DVector3EqualityComparer']]],
   ['dxfentities_564',['DxfEntities',['../class_search_a_thing_1_1_face.html#a42bb1888b07a63f3506713c062b4fa41',1,'SearchAThing::Face']]],
   ['dxfentity_565',['DxfEntity',['../class_search_a_thing_1_1_loop.html#a44f4120b37e692e6c3b45d64bd38a01e',1,'SearchAThing::Loop']]]

@@ -6,8 +6,8 @@ namespace SearchAThing.Sci.Tests
 {
     public class PythonTests_torefact : IDisposable
     {
-        PythonPipe pipe = null;
-        PythonPipe sympyPipe = null;
+        PythonPipe pipe;
+        PythonPipe sympyPipe;
 
         bool has_sympy_library = true;
 

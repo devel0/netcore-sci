@@ -28,9 +28,9 @@ namespace SearchAThing.Sci.Tests
                 insidePt: arcMiddle,
                 toPt: arcTo);
 
-            // arc.From.AssertEqualsTol(tol, arcFrom);
-            // arc.MidPoint.AssertEqualsTol(tol, arcMiddle);
-            // arc.To.AssertEqualsTol(tol, arcTo);
+            arc.From.AssertEqualsTol(tol, arcFrom);
+            arc.MidPoint.AssertEqualsTol(tol, arcMiddle);
+            arc.To.AssertEqualsTol(tol, arcTo);
 
             outdxf?.AddEntity(arc.DxfEntity);
 

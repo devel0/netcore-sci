@@ -16,7 +16,7 @@ namespace SearchAThing.Sci.Tests
             var tol = 1e-1;
 
             var pts = JsonConvert.DeserializeObject<List<Vector3D>>(
-                File.ReadAllText("Vector3D/Vector3DTest_0022-pts.json"), SciToolkit.SciJsonSettings);
+                File.ReadAllText("Vector3D/Vector3DTest_0022-pts.json"), SciToolkit.SciJsonSettings)!;            
 
             var q = pts.BestFittingPlane(tol);
 

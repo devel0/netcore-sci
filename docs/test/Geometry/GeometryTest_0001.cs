@@ -31,7 +31,7 @@ namespace SearchAThing.Sci.Tests
 
             var greenCs = lw1geoms.SelectMany(w => w.Vertexes).BestFittingPlane(tol).CS;
             var relw = lw1geoms.ToLwPolyline(tol, greenCs, closed: lw.IsClosed);
-            if (outdxf != null) outdxf.AddEntity(relw.Set(ent => ent.SetColor(netDxf.AciColor.Green)));
+            if (outdxf != null) outdxf.AddEntity(relw.Act(ent => ent.SetColor(netDxf.AciColor.Green)));
 
             var lw2geoms = lw.ToGeometries(tol).ToList();
 

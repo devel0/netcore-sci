@@ -36,8 +36,8 @@ namespace SearchAThing.Sci.Tests
                     var faceGreen = dxf.Entities.Polylines2D.Where(w => w.Color.Index == AciColor.Green.Index).ToFace(tol);
                     var faceYellow = dxf.Entities.Polylines2D.Where(w => w.Color.Index == AciColor.Yellow.Index).ToFace(tol);
 
-                    outdxf?.AddEntities(faceGreen.Loops.Select(loop => loop.DxfEntity(tol).Set(x => x.SetColor(AciColor.Green))));
-                    outdxf?.AddEntities(faceYellow.Loops.Select(loop => loop.DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow))));
+                    outdxf?.AddEntities(faceGreen.Loops.Select(loop => loop.DxfEntity(tol).Act(x => x.SetColor(AciColor.Green))));
+                    outdxf?.AddEntities(faceYellow.Loops.Select(loop => loop.DxfEntity(tol).Act(x => x.SetColor(AciColor.Yellow))));
 
                     var layerRes = new netDxf.Tables.Layer("res") { Color = AciColor.Cyan };
 

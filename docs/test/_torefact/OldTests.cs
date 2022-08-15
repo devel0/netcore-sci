@@ -276,37 +276,37 @@ namespace SearchAThing.Sci.Tests
                 {
                     var l1 = new Line3D(new Vector3D(0, 0, 0), new Vector3D(1, 0, 0));
                     var l2 = new Line3D(new Vector3D(2, 0, 0), new Vector3D(2, 0, 2));
-
-                    Assert.True(l1.Intersect(tolLen, l2).EqualsTol(tolLen, 2, 0, 0));
+                    var ip = l1.Intersect(tolLen, l2).Act(w => Assert.NotNull(w))!;
+                    Assert.True(ip.EqualsTol(tolLen, 2, 0, 0));
                 }
 
                 {
                     var l1 = new Line3D(new Vector3D(0, 0, 0), new Vector3D(0, 1, 0));
                     var l2 = new Line3D(new Vector3D(0, 2, 0), new Vector3D(2, 2, 0));
-
-                    Assert.True(l1.Intersect(tolLen, l2).EqualsTol(tolLen, 0, 2, 0));
+                    var ip = l1.Intersect(tolLen, l2).Act(w => Assert.NotNull(w))!;
+                    Assert.True(ip.EqualsTol(tolLen, 0, 2, 0));
                 }
 
                 {
                     var l1 = new Line3D(new Vector3D(0, 0, 0), new Vector3D(0, 0, 1));
                     var l2 = new Line3D(new Vector3D(0, 0, 2), new Vector3D(2, 0, 2));
-
-                    Assert.True(l1.Intersect(tolLen, l2).EqualsTol(tolLen, 0, 0, 2));
+                    var ip = l1.Intersect(tolLen, l2).Act(w => Assert.NotNull(w))!;
+                    Assert.True(ip.EqualsTol(tolLen, 0, 0, 2));
                 }
 
                 {
                     var l1 = new Line3D(new Vector3D(0, 0, 0), new Vector3D(1.6206, 2, -1.4882));
                     var l2 = new Line3D(new Vector3D(1.2, .7, 2), new Vector3D(.6338, .3917, .969));
 
-                    Assert.True(l1.Intersect(tolLen, l2).EqualsTol(tolLen, 0.0675, 0.0833, -0.062));
+                    Assert.True(l1.Intersect(tolLen, l2)?.EqualsTol(tolLen, 0.0675, 0.0833, -0.062));
                 }
             }
 
             // project point on a line
             {
                 var p = new Vector3D(1, 1, 0);
-                var perpLine = Line3D.XAxisLine.Perpendicular(tolLen, p);
-                Assert.True(perpLine.From.EqualsTol(tolLen, p) && perpLine.To.EqualsTol(tolLen, 1, 0, 0));
+                var perpLine = Line3D.XAxisLine.Perpendicular(tolLen, p).Act(w => Assert.NotNull(w))!;
+                Assert.True(perpLine!.From.EqualsTol(tolLen, p) && perpLine.To.EqualsTol(tolLen, 1, 0, 0));
             }
 
             // check two lines are colinear
@@ -380,7 +380,8 @@ namespace SearchAThing.Sci.Tests
 
             var plane = new Plane3D(new CoordinateSystem3D(Vector3D.Zero, Vector3D.XAxis, Vector3D.YAxis));
 
-            var q = new Line3D(new Vector3D(1, -3, -5), new Vector3D(10, 4, 6)).Intersect(tol, plane);
+            var q = new Line3D(new Vector3D(1, -3, -5), new Vector3D(10, 4, 6)).Intersect(tol, plane)
+                .Act(w => Assert.NotNull(w))!;
 
             Assert.True(q.EqualsTol(tol, 5.0909, 0.1818, 0));
 

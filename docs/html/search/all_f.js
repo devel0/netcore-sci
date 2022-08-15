@@ -4,7 +4,7 @@ var searchData=
   ['radtol_277',['RadTol',['../class_search_a_thing_1_1_sci_ext.html#a7f304e540a1701b5957008eaa55868c8',1,'SearchAThing::SciExt']]],
   ['random_278',['Random',['../class_search_a_thing_1_1_vector3_d.html#a9123316065e3556d147d46ec64b93582',1,'SearchAThing.Vector3D.Random(int N, double L, int seed=0)'],['../class_search_a_thing_1_1_vector3_d.html#a5009dc56f22479476e4e944d0deceaf2',1,'SearchAThing.Vector3D.Random(int qty, double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, int seed=0, Random? random=null)']]],
   ['range_279',['Range',['../struct_search_a_thing_1_1_numbers_stat_nfo.html#a053a0abc6efb63a27b1c3081229c6455',1,'SearchAThing.NumbersStatNfo.Range()'],['../class_search_a_thing_1_1_sci_toolkit.html#ac1e20971c28c9d05ad31cf9b99a1a7f6',1,'SearchAThing.SciToolkit.Range()']]],
-  ['readjson_280',['ReadJson',['../class_search_a_thing_1_1_sci_toolkit_1_1_unit_json_converter.html#ac99bafa281d12652d1c904cf8281790d',1,'SearchAThing::SciToolkit::UnitJsonConverter']]],
+  ['readjson_280',['ReadJson',['../class_search_a_thing_1_1_sci_toolkit_1_1_unit_json_converter.html#a92f23121001d6b6324e5a455bc8d83d4',1,'SearchAThing::SciToolkit::UnitJsonConverter']]],
   ['rel_281',['Rel',['../class_search_a_thing_1_1_vector3_d.html#adea204ade400d03f1158f31d51d43e48',1,'SearchAThing::Vector3D']]],
   ['repeatfirstatend_282',['RepeatFirstAtEnd',['../class_search_a_thing_1_1_sci_ext.html#a4e0ba15f457db5f7630a373c805c349e',1,'SearchAThing::SciExt']]],
   ['reverse_283',['Reverse',['../class_search_a_thing_1_1_line3_d.html#aeaa3e0832d9e563adbb385245e89274d',1,'SearchAThing::Line3D']]],

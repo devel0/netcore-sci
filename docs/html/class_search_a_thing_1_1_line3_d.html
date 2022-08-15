@@ -105,9 +105,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a280e036b8cccd3ffb930100257425b16"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_line3_d.html#a280e036b8cccd3ffb930100257425b16">EdgeContainsPoint</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> pt)</td></tr>
 <tr class="memdesc:a280e036b8cccd3ffb930100257425b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">States if edge contains given point on its perimeter  <a href="class_search_a_thing_1_1_line3_d.html#a280e036b8cccd3ffb930100257425b16">More...</a><br /></td></tr>
 <tr class="separator:a280e036b8cccd3ffb930100257425b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22d323cd2cc9e3761b6b8b91b4e81526"><td class="memItemLeft" align="right" valign="top">override IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_line3_d.html#a22d323cd2cc9e3761b6b8b91b4e81526">Split</a> (double tol, IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; breaks)</td></tr>
-<tr class="memdesc:a22d323cd2cc9e3761b6b8b91b4e81526"><td class="mdescLeft">&#160;</td><td class="mdescRight">split geometry in given break points. precondition: breaks must lie on the geometry perimeter  <a href="class_search_a_thing_1_1_line3_d.html#a22d323cd2cc9e3761b6b8b91b4e81526">More...</a><br /></td></tr>
-<tr class="separator:a22d323cd2cc9e3761b6b8b91b4e81526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e5a7f009f921a5b5532f7175ab44e75"><td class="memItemLeft" align="right" valign="top">override IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_line3_d.html#a5e5a7f009f921a5b5532f7175ab44e75">Split</a> (double tol, IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; breaks)</td></tr>
+<tr class="memdesc:a5e5a7f009f921a5b5532f7175ab44e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split current segment into one or more depending on which of given split points was found on the segment. <br  />
+  <a href="class_search_a_thing_1_1_line3_d.html#a5e5a7f009f921a5b5532f7175ab44e75">More...</a><br /></td></tr>
+<tr class="separator:a5e5a7f009f921a5b5532f7175ab44e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6809a0b9eb0bab123b24f65b56fd251"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="class_search_a_thing_1_1_edge.html">Edge</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_line3_d.html#aa6809a0b9eb0bab123b24f65b56fd251">Project</a> (double tol, <a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a> prjPlane)</td></tr>
 <tr class="memdesc:aa6809a0b9eb0bab123b24f65b56fd251"><td class="mdescLeft">&#160;</td><td class="mdescRight">project this line to given projection plane  <a href="class_search_a_thing_1_1_line3_d.html#aa6809a0b9eb0bab123b24f65b56fd251">More...</a><br /></td></tr>
 <tr class="separator:aa6809a0b9eb0bab123b24f65b56fd251"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -221,10 +222,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af7dbcd000a881a02c3a57f9d72972983"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_line3_d.html#af7dbcd000a881a02c3a57f9d72972983">MoveMidpoint</a> (<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> newMidpoint)</td></tr>
 <tr class="memdesc:af7dbcd000a881a02c3a57f9d72972983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move this segment midpoint to the given coord  <a href="class_search_a_thing_1_1_line3_d.html#af7dbcd000a881a02c3a57f9d72972983">More...</a><br /></td></tr>
 <tr class="separator:af7dbcd000a881a02c3a57f9d72972983"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee1ec19e239cfca84d72ca63144b1a0b"><td class="memItemLeft" align="right" valign="top">IReadOnlyList&lt; <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_line3_d.html#aee1ec19e239cfca84d72ca63144b1a0b">Split</a> (double tol, IReadOnlyList&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; splitPts)</td></tr>
-<tr class="memdesc:aee1ec19e239cfca84d72ca63144b1a0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">split current segment into one or more depending on which of given split points was found on the segment <br  />
- splitted segments start from begin of line TODO : not optimized  <a href="class_search_a_thing_1_1_line3_d.html#aee1ec19e239cfca84d72ca63144b1a0b">More...</a><br /></td></tr>
-<tr class="separator:aee1ec19e239cfca84d72ca63144b1a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f5b9170a2aa588627985bb9f82ecce8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_line3_d.html#a2f5b9170a2aa588627985bb9f82ecce8">EnsureFrom</a> (double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> ptFromDesired)</td></tr>
 <tr class="memdesc:a2f5b9170a2aa588627985bb9f82ecce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">if this segment from matches the given point returns this; if this segment to matches the given point return this with from,to swapped; precondition: this segment must have from or to equals given from  <a href="class_search_a_thing_1_1_line3_d.html#a2f5b9170a2aa588627985bb9f82ecce8">More...</a><br /></td></tr>
 <tr class="separator:a2f5b9170a2aa588627985bb9f82ecce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2188,8 +2185,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a22d323cd2cc9e3761b6b8b91b4e81526"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22d323cd2cc9e3761b6b8b91b4e81526">&#9670;&nbsp;</a></span>Split() <span class="overload">[1/2]</span></h2>
+<a id="a5e5a7f009f921a5b5532f7175ab44e75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e5a7f009f921a5b5532f7175ab44e75">&#9670;&nbsp;</a></span>Split()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2198,7 +2195,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">override IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_geometry.html">Geometry</a>&gt; Split </td>
+          <td class="memname">override IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a>&gt; Split </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>tol</em>, </td>
@@ -2222,44 +2219,18 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>split geometry in given break points. precondition: breaks must lie on the geometry perimeter </p>
-<p><br  />
+<p>Split current segment into one or more depending on which of given split points was found on the segment. <br  />
  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tol</td><td>length tolerance</td></tr>
+    <tr><td class="paramname">breaks</td><td>break points</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>splitted segments starts from begin of line</dd></dl>
 
 <p>Implements <a class="el" href="class_search_a_thing_1_1_geometry.html#ad16501730eb3e676fd983304054533e5">Geometry</a>.</p>
-
-</div>
-</div>
-<a id="aee1ec19e239cfca84d72ca63144b1a0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee1ec19e239cfca84d72ca63144b1a0b">&#9670;&nbsp;</a></span>Split() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">IReadOnlyList&lt;<a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a>&gt; Split </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>tol</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">IReadOnlyList&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td>
-          <td class="paramname"><em>splitPts</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>split current segment into one or more depending on which of given split points was found on the segment <br  />
- splitted segments start from begin of line TODO : not optimized </p>
-<p><br  />
- </p>
 
 </div>
 </div>

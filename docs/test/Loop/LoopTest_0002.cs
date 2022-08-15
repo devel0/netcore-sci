@@ -35,24 +35,6 @@ namespace SearchAThing.Sci.Tests
             var faceBlue = new Face(loopBlue.Plane, new[] { loopBlue });
             var faceYellow = new Face(loopYellow.Plane, new[] { loopYellow });
 
-            void dumpLoops(IEnumerable<Loop> loops, netDxf.Tables.Layer? layer = null)
-            {
-                if (outdxf != null)
-                {
-                    foreach (var loop in loops)
-                    {
-                        var hatch = loop.ToHatch(tol, new HatchPattern(HatchPattern.Line.Name)
-                        {
-                            Angle = 45,
-                            Scale = 0.2
-                        });
-                        if (layer != null) hatch.Layer = layer;
-
-                        outdxf.AddEntity(hatch);
-                    }
-                }
-            }
-
             // check green fully contained into magenta
             {
                 var q = faceGreen.Boolean(tol, faceMagenta).ToList();

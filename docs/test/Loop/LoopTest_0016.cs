@@ -34,8 +34,8 @@ namespace SearchAThing.Sci.Tests
 
             var ints = faceYellow.Boolean(tol, faceGreen, Face.BooleanMode.Difference, outdxf2).ToList();
 
-            outdxf?.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)));
-            outdxf?.AddEntity(faceYellow.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));
+            outdxf?.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Act(x => x.SetColor(AciColor.Green)));
+            outdxf?.AddEntity(faceYellow.Loops[0].DxfEntity(tol).Act(x => x.SetColor(AciColor.Yellow)));
 
             Assert.True(ints.Count == 1);
             ints[0].Loops[0].Area.AssertEqualsTol(tol, 4.75);

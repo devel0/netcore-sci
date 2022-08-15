@@ -2,7 +2,7 @@ var searchData=
 [
   ['perpendicular_654',['Perpendicular',['../class_search_a_thing_1_1_line3_d.html#a767a1ff9fd31c4874d90a64badce69d9',1,'SearchAThing.Line3D.Perpendicular()'],['../class_search_a_thing_1_1_arc3_d.html#a767a1ff9fd31c4874d90a64badce69d9',1,'SearchAThing.Arc3D.Perpendicular()']]],
   ['plane3d_655',['Plane3D',['../class_search_a_thing_1_1_plane3_d.html#a89be816dbf2f5420512af83a3a632cb6',1,'SearchAThing::Plane3D']]],
-  ['plane3dregion_656',['Plane3DRegion',['../class_search_a_thing_1_1_plane3_d_region.html#a928a6905567bc1fff8483ac1e5aadc22',1,'SearchAThing::Plane3DRegion']]],
+  ['plane3dregion_656',['Plane3DRegion',['../class_search_a_thing_1_1_plane3_d_region.html#aec6884ab60daba189f7eeaa5634b8efd',1,'SearchAThing::Plane3DRegion']]],
   ['points_657',['Points',['../class_search_a_thing_1_1_sci_ext.html#a47646e51dd206c5cc21b1a8a03314ede',1,'SearchAThing::SciExt']]],
   ['polygonsegments_658',['PolygonSegments',['../class_search_a_thing_1_1_sci_ext.html#a7d55995e433703b1498743e9f3a6aab0',1,'SearchAThing::SciExt']]],
   ['polypoints_659',['PolyPoints',['../class_search_a_thing_1_1_sci_ext.html#acd65283cc0e959e84fde5e8f0bfca773',1,'SearchAThing.SciExt.PolyPoints(this IEnumerable&lt; Line3D &gt; segs)'],['../class_search_a_thing_1_1_sci_ext.html#a019414a4ec03380eac379fd0982b1a99',1,'SearchAThing.SciExt.PolyPoints(this IEnumerable&lt; Vector3D &gt; pts, double tol, bool makeClosed=false)']]],

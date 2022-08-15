@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['geomcentroid_592',['GeomCentroid',['../class_search_a_thing_1_1_sci_ext.html#ae0e2be61363c706bc5205c55affa0319',1,'SearchAThing::SciExt']]],
+  ['geomcentroid_592',['GeomCentroid',['../class_search_a_thing_1_1_sci_ext.html#a9aab830057e50bd95b72406ca2d1e993',1,'SearchAThing::SciExt']]],
   ['geomequals_593',['GeomEquals',['../class_search_a_thing_1_1_arc3_d.html#a8690081c8790f191618f848f1bea9e0d',1,'SearchAThing.Arc3D.GeomEquals()'],['../class_search_a_thing_1_1_geometry.html#a38d3d55e754803722eb7fdf9576e7bb4',1,'SearchAThing.Geometry.GeomEquals()'],['../class_search_a_thing_1_1_line3_d.html#a8690081c8790f191618f848f1bea9e0d',1,'SearchAThing.Line3D.GeomEquals()'],['../class_search_a_thing_1_1_vector3_d.html#a8690081c8790f191618f848f1bea9e0d',1,'SearchAThing.Vector3D.GeomEquals()']]],
   ['geometry_594',['Geometry',['../class_search_a_thing_1_1_geometry.html#a2dcc10a68ed4e86c6065f4f17a6a40f3',1,'SearchAThing::Geometry']]],
   ['geomintersect_595',['GeomIntersect',['../class_search_a_thing_1_1_arc3_d.html#adafbce85188011689402ffd1304d2f2f',1,'SearchAThing.Arc3D.GeomIntersect()'],['../class_search_a_thing_1_1_geometry.html#ae9dbca8373d3ecc3e8a9b45e056544e1',1,'SearchAThing.Geometry.GeomIntersect()'],['../class_search_a_thing_1_1_line3_d.html#a9783fdd32dd4af084f82b03a35a8e2ff',1,'SearchAThing.Line3D.GeomIntersect()'],['../class_search_a_thing_1_1_vector3_d.html#a5fa8056240807d052292deba1fa1f9c5',1,'SearchAThing.Vector3D.GeomIntersect()']]],

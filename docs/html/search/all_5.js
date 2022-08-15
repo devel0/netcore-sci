@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['face_137',['Face',['../class_search_a_thing_1_1_face.html#a6abfcb94f167e37fd847e787702c0ea4',1,'SearchAThing.Face.Face(Plane3D plane, IReadOnlyList&lt; Loop &gt; loops)'],['../class_search_a_thing_1_1_face.html#a06b31e5c17a6747c531e929ca9331c87',1,'SearchAThing.Face.Face(Loop loop)'],['../class_search_a_thing_1_1_face.html',1,'Face']]],
+  ['face_137',['Face',['../class_search_a_thing_1_1_face.html#a50fe199d3ec164501f62e7efbfae3e3d',1,'SearchAThing.Face.Face(Plane3D plane, IEnumerable&lt; Loop &gt; loops)'],['../class_search_a_thing_1_1_face.html#a06b31e5c17a6747c531e929ca9331c87',1,'SearchAThing.Face.Face(Loop loop)'],['../class_search_a_thing_1_1_face.html',1,'Face']]],
   ['faces_138',['Faces',['../class_search_a_thing_1_1_b_box3_d.html#a8062c88be8bb47354fc146fd654644c4',1,'SearchAThing::BBox3D']]],
   ['flipx_139',['FlipX',['../class_search_a_thing_1_1_coordinate_system3_d.html#a3fbbea835e608bb04110cceae08e1b7a',1,'SearchAThing::CoordinateSystem3D']]],
   ['flipy_140',['FlipY',['../class_search_a_thing_1_1_coordinate_system3_d.html#a969d2f8c1ccc0834d8f5416adda6b3cc',1,'SearchAThing::CoordinateSystem3D']]],

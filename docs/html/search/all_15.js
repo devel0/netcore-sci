@@ -8,9 +8,9 @@ var searchData=
   ['xstep_415',['XStep',['../class_search_a_thing_1_1_l_u_t.html#aec115bf7accdeac1f01996b472a26793',1,'SearchAThing::LUT']]],
   ['xto_416',['XTo',['../class_search_a_thing_1_1_l_u_t.html#a7cefe0fb07b1eaf66a60035604b91da5',1,'SearchAThing::LUT']]],
   ['xy_417',['XY',['../class_search_a_thing_1_1_coordinate_system3_d.html#a6aa052b849b7e8679f941982c35dc8b0',1,'SearchAThing.CoordinateSystem3D.XY()'],['../class_search_a_thing_1_1_plane3_d.html#a920b413b9c3a59f871dc679c556ef732',1,'SearchAThing.Plane3D.XY()']]],
-  ['xyarea_418',['XYArea',['../class_search_a_thing_1_1_sci_ext.html#af38921c214fd8b439c96f36fe24189f5',1,'SearchAThing::SciExt']]],
-  ['xycentroid_419',['XYCentroid',['../class_search_a_thing_1_1_sci_ext.html#a7a244b4878a9ce567d1b31d31a5909b9',1,'SearchAThing.SciExt.XYCentroid(this IReadOnlyList&lt; Vector3D &gt; pts, double tol)'],['../class_search_a_thing_1_1_sci_ext.html#a7e78c9fd4e5f33cfb809aac00c2dc0d5',1,'SearchAThing.SciExt.XYCentroid(this IReadOnlyList&lt; Vector3D &gt; pts, double tol, double signed_area)']]],
+  ['xyarea_418',['XYArea',['../class_search_a_thing_1_1_sci_ext.html#aeda41cc30b68f66b1a15f2b3e56cf825',1,'SearchAThing::SciExt']]],
+  ['xycentroid_419',['XYCentroid',['../class_search_a_thing_1_1_sci_ext.html#aa9a6e868ef98643f4c3e68ae77794432',1,'SearchAThing.SciExt.XYCentroid(this IEnumerable&lt; Vector3D &gt; pts, double tol)'],['../class_search_a_thing_1_1_sci_ext.html#a053d9ce4a0c8d559424bd9beb48d2e54',1,'SearchAThing.SciExt.XYCentroid(this IEnumerable&lt; Vector3D &gt; _pts, double tol, double signed_area)']]],
   ['xydistance_420',['XYDistance',['../class_search_a_thing_1_1_vector3_d.html#af29803b83491cec3ed70310ceced94f1',1,'SearchAThing::Vector3D']]],
-  ['xysignedarea_421',['XYSignedArea',['../class_search_a_thing_1_1_sci_ext.html#a97213b78e3716259af5c3b3c0b4e27c7',1,'SearchAThing::SciExt']]],
+  ['xysignedarea_421',['XYSignedArea',['../class_search_a_thing_1_1_sci_ext.html#a7997aa5de45559ba7a4d47e57d861cee',1,'SearchAThing::SciExt']]],
   ['xz_422',['XZ',['../class_search_a_thing_1_1_coordinate_system3_d.html#a7112bc8e5f005afdb20f1020cfff49e7',1,'SearchAThing.CoordinateSystem3D.XZ()'],['../class_search_a_thing_1_1_plane3_d.html#a3dab80785a10589259c8415f40c0e1cb',1,'SearchAThing.Plane3D.XZ()']]]
 ];

@@ -89,9 +89,9 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6abfcb94f167e37fd847e787702c0ea4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_face.html#a6abfcb94f167e37fd847e787702c0ea4">Face</a> (<a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a> plane, IReadOnlyList&lt; <a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a> &gt; loops)</td></tr>
-<tr class="memdesc:a6abfcb94f167e37fd847e787702c0ea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">planar face with outer and optional inner loops  <a href="class_search_a_thing_1_1_face.html#a6abfcb94f167e37fd847e787702c0ea4">More...</a><br /></td></tr>
-<tr class="separator:a6abfcb94f167e37fd847e787702c0ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50fe199d3ec164501f62e7efbfae3e3d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_face.html#a50fe199d3ec164501f62e7efbfae3e3d">Face</a> (<a class="el" href="class_search_a_thing_1_1_plane3_d.html">Plane3D</a> plane, IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a> &gt; loops)</td></tr>
+<tr class="memdesc:a50fe199d3ec164501f62e7efbfae3e3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">planar face with outer and optional inner loops  <a href="class_search_a_thing_1_1_face.html#a50fe199d3ec164501f62e7efbfae3e3d">More...</a><br /></td></tr>
+<tr class="separator:a50fe199d3ec164501f62e7efbfae3e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06b31e5c17a6747c531e929ca9331c87"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_face.html#a06b31e5c17a6747c531e929ca9331c87">Face</a> (<a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a> loop)</td></tr>
 <tr class="memdesc:a06b31e5c17a6747c531e929ca9331c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">build a face with given outer loop  <a href="class_search_a_thing_1_1_face.html#a06b31e5c17a6747c531e929ca9331c87">More...</a><br /></td></tr>
 <tr class="separator:a06b31e5c17a6747c531e929ca9331c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,8 +162,8 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a6abfcb94f167e37fd847e787702c0ea4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6abfcb94f167e37fd847e787702c0ea4">&#9670;&nbsp;</a></span>Face() <span class="overload">[1/2]</span></h2>
+<a id="a50fe199d3ec164501f62e7efbfae3e3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50fe199d3ec164501f62e7efbfae3e3d">&#9670;&nbsp;</a></span>Face() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,7 +177,7 @@ Properties</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">IReadOnlyList&lt; <a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a> &gt;&#160;</td>
+          <td class="paramtype">IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_loop.html">Loop</a> &gt;&#160;</td>
           <td class="paramname"><em>loops</em>&#160;</td>
         </tr>
         <tr>
@@ -261,9 +261,6 @@ Properties</h2></td></tr>
 <p>boolean operation with this and other loops. precondition: must coplanar </p>
 <p><br  />
  </p>
-<p>helper method to process given set of loops; each will be treated as a <a class="el" href="class_search_a_thing_1_1_face.html" title="Planar face with one (outer) or more loops (inners)">Face</a> with a single outer </p>
-<p><br  />
-</p>
 
 </div>
 </div>
@@ -308,8 +305,8 @@ Properties</h2></td></tr>
 <p>states if given edge is contained into this face </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tol</td><td></td></tr>
-    <tr><td class="paramname">edge</td><td></td></tr>
+    <tr><td class="paramname">tol</td><td>length tolerance</td></tr>
+    <tr><td class="paramname">edge</td><td>edge to test</td></tr>
   </table>
   </dd>
 </dl>
@@ -317,9 +314,12 @@ Properties</h2></td></tr>
  </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">evalOnlyOuter</td><td>if true and edge is contained into and inner the test returns false</td></tr>
+    <tr><td class="paramname">mode</td><td>type of contains test</td></tr>
   </table>
   </dd>
 </dl>
+<p><br  />
+ </p>
 
 </div>
 </div>

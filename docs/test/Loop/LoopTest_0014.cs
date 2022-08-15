@@ -29,14 +29,14 @@ namespace SearchAThing.Sci.Tests
             var faceGreen = dxf.Entities.Polylines2D.First(w => w.Color.Index == AciColor.Green.Index).ToLoop(tol).ToFace();
             var faceYellow = dxf.Entities.Polylines2D.First(w => w.Color.Index == AciColor.Yellow.Index).ToLoop(tol).ToFace();
 
-            outdxf?.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)));
-            outdxf?.AddEntity(faceYellow.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));
+            outdxf?.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Act(x => x.SetColor(AciColor.Green)));
+            outdxf?.AddEntity(faceYellow.Loops[0].DxfEntity(tol).Act(x => x.SetColor(AciColor.Yellow)));
 
             var sub = faceYellow.Boolean(tol, faceGreen, Face.BooleanMode.Difference, outdxf2).ToList();
 
             foreach (var res in sub)
             {
-                outdxf?.AddEntity(res.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Red)));
+                outdxf?.AddEntity(res.Loops[0].DxfEntity(tol).Act(x => x.SetColor(AciColor.Red)));
                 outdxf?.AddEntity(res
                     .Loops[0]
                     .ToHatch(tol, new HatchPattern(HatchPattern.Line.Name) { Angle = 45, Scale = 0.5 })

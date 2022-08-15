@@ -24,7 +24,7 @@ namespace SearchAThing.Sci.Tests
                 var plane = new Plane3DRegion(tol, pts);
                 Assert.True(false);
             }
-            catch (Exception ex)
+            catch
             {
             }
 
@@ -33,7 +33,7 @@ namespace SearchAThing.Sci.Tests
                 tol = 1e-3;
                 var plane = new Plane3DRegion(tol, pts);
             }
-            catch (Exception ex)
+            catch
             {
                 Assert.True(false);
             }

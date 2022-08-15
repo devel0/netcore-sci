@@ -30,11 +30,11 @@ namespace SearchAThing.Sci.Tests
 
             var ints = faceYellow.Boolean(tol, faceGreen).ToList();
 
-            outdxf?.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)));
-            outdxf?.AddEntity(faceYellow.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));
+            outdxf?.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Act(x => x.SetColor(AciColor.Green)));
+            outdxf?.AddEntity(faceYellow.Loops[0].DxfEntity(tol).Act(x => x.SetColor(AciColor.Yellow)));
 
             Assert.True(ints.Count == 1);
-            outdxf?.AddEntity(ints[0].Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Red)));
+            outdxf?.AddEntity(ints[0].Loops[0].DxfEntity(tol).Act(x => x.SetColor(AciColor.Red)));
 
             ints[0].Loops[0].Area.AssertEqualsTol(tol, 33.0552);
             ints[0].Loops[0].Length.AssertEqualsTol(tol, 51.4801);
