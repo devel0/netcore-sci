@@ -38,7 +38,7 @@ namespace SearchAThing.Sci.Tests
 
             if (outdxf != null)
             {
-                outdxf.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Set(w => w.Layer = new netDxf.Tables.Layer("int") { Color = AciColor.Red }));
+                outdxf.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Act(w => w.Layer = new netDxf.Tables.Layer("int") { Color = AciColor.Red }));
 
                 foreach (var gyInt in gyInts)
                 {

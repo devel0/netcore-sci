@@ -29,8 +29,8 @@ namespace SearchAThing.Sci.Tests
 
             if (outdxf != null)
             {
-                outdxf.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Set(w => w.Layer = dxf.Layers.First(w => w.Name == "green")));
-                outdxf.AddEntity(faceYellow.Loops[0].DxfEntity(tol).Set(w => w.Layer = dxf.Layers.First(w => w.Name == "yellow")));
+                outdxf.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Act(w => w.Layer = dxf.Layers.First(w => w.Name == "green")));
+                outdxf.AddEntity(faceYellow.Loops[0].DxfEntity(tol).Act(w => w.Layer = dxf.Layers.First(w => w.Name == "yellow")));
 
                 foreach (var gyInt in gyInts)
                 {

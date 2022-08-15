@@ -39,7 +39,7 @@ namespace test
                 outDxf.AddEntity(ent);
 
                 var hatch = face.Loops[0].ToHatch(tol,
-                    HatchPattern.Line.Clone().Eval(o =>
+                    HatchPattern.Line.Clone().Fn(o =>
                     {
                         HatchPattern h = (HatchPattern)o;
                         h.Angle = 45;

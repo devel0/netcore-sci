@@ -36,8 +36,8 @@ namespace SearchAThing.Sci.Tests
 
             arcRed.CS.BaseZ.AssertEqualsTol(NormalizedLengthTolerance, -arcGreen.CS.BaseZ);
 
-            outdxf?.AddEntity(arcRed.DxfEntity.Set(ent => ent.Color = AciColor.Red));
-            outdxf?.AddEntity(arcGreen.DxfEntity.Set(ent => ent.Color = AciColor.Green));
+            outdxf?.AddEntity(arcRed.DxfEntity.Act(ent => ent.Color = AciColor.Red));
+            outdxf?.AddEntity(arcGreen.DxfEntity.Act(ent => ent.Color = AciColor.Green));
 
             var arcGreen2 = arcGreen.ToggleSense();
             arcRed.GeomFrom.AssertEqualsTol(tol, arcGreen2.GeomTo);

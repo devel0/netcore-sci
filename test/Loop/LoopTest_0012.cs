@@ -27,8 +27,8 @@ namespace SearchAThing.Sci.Tests
             var faceYellow = dxf.Entities.Polylines2D.First(w => w.Color.Index == AciColor.Yellow.Index).ToLoop(tol).ToFace();
             var faceBlue = dxf.Entities.Polylines2D.First(w => w.Color.Index == AciColor.Blue.Index).ToLoop(tol).InvertSense(tol).ToFace();
 
-            outdxf?.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)));
-            outdxf?.AddEntity(faceYellow.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));
+            outdxf?.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Act(x => x.SetColor(AciColor.Green)));
+            outdxf?.AddEntity(faceYellow.Loops[0].DxfEntity(tol).Act(x => x.SetColor(AciColor.Yellow)));
 
             var yellowIntersectGreen = faceYellow.Boolean(tol, faceGreen).ToList();
             var blueIntersectGreen = faceBlue.Boolean(tol, faceGreen).ToList();
@@ -37,7 +37,7 @@ namespace SearchAThing.Sci.Tests
             yellowIntersectGreen[0].Loops[0].Area.AssertEqualsTol(tol, 160);
             yellowIntersectGreen[0].Loops[0].Length.AssertEqualsTol(tol, 52.00000000);
 
-            outdxf?.AddEntity(yellowIntersectGreen[0].Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Red)));
+            outdxf?.AddEntity(yellowIntersectGreen[0].Loops[0].DxfEntity(tol).Act(x => x.SetColor(AciColor.Red)));
 
             Assert.True(blueIntersectGreen.Count == 1 && blueIntersectGreen[0].Loops.Count == 1);
             blueIntersectGreen[0].Loops[0].Area.AssertEqualsTol(tol, 160);

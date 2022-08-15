@@ -833,9 +833,9 @@ namespace SearchAThing
                         if (SGeomTo.EqualsTol(tol, newEnd)) return null;
 
                         if (Sense)
-                            return newEnd.LineTo(SGeomTo).Set(x => x.Sense = this.Sense);
+                            return newEnd.LineTo(SGeomTo).Act(x => x.Sense = this.Sense);
                         else
-                            return SGeomTo.LineTo(newEnd).Set(x => x.Sense = this.Sense);
+                            return SGeomTo.LineTo(newEnd).Act(x => x.Sense = this.Sense);
                     }
 
                 case EdgeEnd.SGeomTo:
@@ -843,9 +843,9 @@ namespace SearchAThing
                         if (SGeomFrom.EqualsTol(tol, newEnd)) return null;
 
                         if (Sense)
-                            return SGeomFrom.LineTo(newEnd).Set(x => x.Sense = this.Sense);
+                            return SGeomFrom.LineTo(newEnd).Act(x => x.Sense = this.Sense);
                         else
-                            return newEnd.LineTo(SGeomFrom).Set(x => x.Sense = this.Sense);
+                            return newEnd.LineTo(SGeomFrom).Act(x => x.Sense = this.Sense);
                     }
 
                 default: throw new Exception($"unknown edge end {end}");

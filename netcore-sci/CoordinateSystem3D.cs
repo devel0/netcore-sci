@@ -435,9 +435,9 @@ namespace SearchAThing
         /// </summary>
         public IEnumerable<netDxf.Entities.EntityObject> ToDxfLines(double len = 1)
         {
-            yield return Origin.LineV(len * BaseX).DxfEntity.Set(ent => ent.SetColor(AciColor.Red));
-            yield return Origin.LineV(len * BaseY).DxfEntity.Set(ent => ent.SetColor(AciColor.Green));
-            yield return Origin.LineV(len * BaseZ).DxfEntity.Set(ent => ent.SetColor(AciColor.Blue));
+            yield return Origin.LineV(len * BaseX).DxfEntity.Act(ent => ent.SetColor(AciColor.Red));
+            yield return Origin.LineV(len * BaseY).DxfEntity.Act(ent => ent.SetColor(AciColor.Green));
+            yield return Origin.LineV(len * BaseZ).DxfEntity.Act(ent => ent.SetColor(AciColor.Blue));
         }
 
         /// <summary>

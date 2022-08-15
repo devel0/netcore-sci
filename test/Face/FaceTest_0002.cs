@@ -30,14 +30,14 @@ namespace SearchAThing.Sci.Tests
             var midplane = faceYellow.Plane.MiddlePlane(tol, faceGreen.Plane);
             outdxf?.AddEntities(midplane.CS.ToDxfLines(10));
 
-            outdxf?.AddEntities(faceYellow.DxfEntities(tol).ToList().Set(ent => { foreach (var x in ent) x.Color = AciColor.Yellow; }));
-            outdxf?.AddEntities(faceGreen.DxfEntities(tol).ToList().Set(ent => { foreach (var x in ent) x.Color = AciColor.Green; }));
+            outdxf?.AddEntities(faceYellow.DxfEntities(tol).ToList().Act(ent => { foreach (var x in ent) x.Color = AciColor.Yellow; }));
+            outdxf?.AddEntities(faceGreen.DxfEntities(tol).ToList().Act(ent => { foreach (var x in ent) x.Color = AciColor.Green; }));
 
             var faceYellowProjected = faceYellow.Project(tol, midplane);
-            outdxf?.AddEntities(faceYellowProjected.DxfEntities(tol).ToList().Set(ent => { foreach (var x in ent) x.Color = AciColor.Yellow; }));
+            outdxf?.AddEntities(faceYellowProjected.DxfEntities(tol).ToList().Act(ent => { foreach (var x in ent) x.Color = AciColor.Yellow; }));
 
             var faceGreenProjected = faceGreen.Project(tol, midplane);
-            outdxf?.AddEntities(faceGreenProjected.DxfEntities(tol).ToList().Set(ent => { foreach (var x in ent) x.Color = AciColor.Green; }));
+            outdxf?.AddEntities(faceGreenProjected.DxfEntities(tol).ToList().Act(ent => { foreach (var x in ent) x.Color = AciColor.Green; }));
 
             var prjInt = faceYellowProjected.Boolean(tol, faceGreenProjected, Face.BooleanMode.Intersect).ToList();
             Assert.True(prjInt.Count == 1 && prjInt[0].Loops.Count == 1);

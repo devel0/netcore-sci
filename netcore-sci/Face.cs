@@ -33,10 +33,10 @@ namespace SearchAThing
         /// </summary>
         /// <param name="plane">plane where loop lies</param>
         /// <param name="loops">loops ( first is the outer )</param>
-        public Face(Plane3D plane, IReadOnlyList<Loop> loops)
+        public Face(Plane3D plane, IEnumerable<Loop> loops)
         {
             Plane = plane;
-            Loops = loops;
+            Loops = loops.Fn(_loops => _loops is IReadOnlyList<Loop> loopsLst ? loopsLst : new List<Loop>(_loops));
         }
 
         /// <summary>

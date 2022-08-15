@@ -22,6 +22,7 @@ namespace SearchAThing
         /// </summary>        
         public static double XYSignedArea(this IReadOnlyList<Vector3D> pts, double tol)
         {
+            // TODO: IEnumerable
             var lastEqualsFirst = pts[pts.Count - 1].EqualsTol(tol, pts[0]);
             double a = 0;
 
@@ -34,12 +35,14 @@ namespace SearchAThing
             return a / 2;
         }
 
+        // TODO: IEnumerable
         /// <summary>
         /// (abs) Area of a polygon (does not consider z)
-        /// https://en.wikipedia.org/wiki/Centroid        
+        /// https://en.wikipedia.org/wiki/Centroid                
         /// </summary>        
         public static double XYArea(this IReadOnlyList<Vector3D> pts, double tol) => Math.Abs(XYSignedArea(pts, tol));
 
+        // TODO: IEnumerable
         /// <summary>
         /// Centroid of a polygon (does not consider z)    
         /// ( if have area specify the parameter to avoid recomputation )
@@ -51,6 +54,7 @@ namespace SearchAThing
             return pts.XYCentroid(tol, signed_area);
         }
 
+        // TODO: IEnumerable
         /// <summary>
         /// Centroid of a polygon (does not consider z)        
         /// https://en.wikipedia.org/wiki/Centroid        
@@ -76,6 +80,7 @@ namespace SearchAThing
             return new Vector3D(x / (6 * signed_area), y / (6 * signed_area), 0);
         }
 
+        // TODO: IEnumerable
         /// <summary>
         /// increase of decrease polygon points offseting
         /// ( this implementation uses Int64Map and clipper library )
@@ -172,6 +177,8 @@ namespace SearchAThing
             LoopContainsPointMode mode = LoopContainsPointMode.InsideOrPerimeter) =>
             new Loop(tol, _pts.RepeatFirstAtEnd(tol).Segments(tol))
             .ContainsPoint(tol, pt, mode);
+
+        // TODO: SortPoly doc
 
         public static IEnumerable<Vector3D> SortPoly(this IEnumerable<Vector3D> pts, double tol, Vector3D? refAxis = null) =>
             pts.SortPoly(tol, (p) => p, refAxis);

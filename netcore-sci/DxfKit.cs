@@ -32,12 +32,14 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// Creates dxf entities for a 6 faces of a cube
+        /// Creates dxf entities for a 6 faces of a cube;
+        /// generated face order is front, back, left, right, bottom, top
         /// </summary>        
         public static IEnumerable<Face3D> Cube(Vector3D center, double L) => Cuboid(center, new Vector3D(L, L, L));
 
         /// <summary>
-        /// Creates dxf entities for 6 faces of a cuboid
+        /// Creates dxf entities for 6 faces of a cuboid;
+        /// generated face order is front, back, left, right, bottom, top
         /// </summary>        
         public static IEnumerable<Face3D> Cuboid(Vector3D center, Vector3D size)
         {

@@ -39,11 +39,11 @@ namespace SearchAThing.Sci.Tests
 
             Assert.True(yellowIntersectMagenta.Count == 1 && yellowIntersectMagenta[0].Loops.Count == 1);
             yellowIntersectMagenta[0].Loops[0].Area.AssertEqualsTol(tol, 109.41172066);
-            outdxf?.AddEntity(yellowIntersectMagenta[0].Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)));
+            outdxf?.AddEntity(yellowIntersectMagenta[0].Loops[0].DxfEntity(tol).Act(x => x.SetColor(AciColor.Yellow)));
 
             Assert.True(greenIntersectMagenta.Count == 1 && greenIntersectMagenta[0].Loops.Count == 1);
             greenIntersectMagenta[0].Loops[0].Area.AssertEqualsTol(tol, 88.60501699);
-            outdxf?.AddEntity(greenIntersectMagenta[0].Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)));
+            outdxf?.AddEntity(greenIntersectMagenta[0].Loops[0].DxfEntity(tol).Act(x => x.SetColor(AciColor.Green)));
 
             var yellowIntSubGreenInt = yellowIntersectMagenta[0]
                 .Boolean(tol, greenIntersectMagenta[0], Face.BooleanMode.Difference, outdxf2).ToList();
@@ -51,7 +51,7 @@ namespace SearchAThing.Sci.Tests
             Assert.True(yellowIntSubGreenInt.Count == 3 && yellowIntSubGreenInt.All(w => w.Loops.Count == 1));
             foreach (var res in yellowIntSubGreenInt)
             {
-                outdxf?.AddEntity(res.Loops[0].DxfEntity(tol).Set(x => x.SetColor(AciColor.Red)));
+                outdxf?.AddEntity(res.Loops[0].DxfEntity(tol).Act(x => x.SetColor(AciColor.Red)));
                 outdxf?.AddEntity(res
                     .Loops[0]
                     .ToHatch(tol, new HatchPattern(HatchPattern.Line.Name) { Angle = 45, Scale = 0.5 })

@@ -52,8 +52,8 @@ namespace SearchAThing.Sci.Tests
                         var faceYellow = dxf.Entities.Polylines2D.Where(w => w.Layer == layer && w.Color.Index == AciColor.Yellow.Index).ToFace(tol);
                         // try
                         {
-                            outdxf?.AddEntities(faceGreen.Loops.Select(loop => { var ent = loop.DxfEntity(tol).Set(x => x.SetColor(AciColor.Green)); ent.Layer = new netDxf.Tables.Layer(layer.Name); return ent; }));
-                            outdxf?.AddEntities(faceYellow.Loops.Select(loop => { var ent = loop.DxfEntity(tol).Set(x => x.SetColor(AciColor.Yellow)); ent.Layer = new netDxf.Tables.Layer(layer.Name); return ent; }));
+                            outdxf?.AddEntities(faceGreen.Loops.Select(loop => { var ent = loop.DxfEntity(tol).Act(x => x.SetColor(AciColor.Green)); ent.Layer = new netDxf.Tables.Layer(layer.Name); return ent; }));
+                            outdxf?.AddEntities(faceYellow.Loops.Select(loop => { var ent = loop.DxfEntity(tol).Act(x => x.SetColor(AciColor.Yellow)); ent.Layer = new netDxf.Tables.Layer(layer.Name); return ent; }));
 
                             var firstTerm = inverseTerm ? faceGreen : faceYellow;
                             var secondTerm = inverseTerm ? faceYellow : faceGreen;

@@ -39,8 +39,8 @@ namespace SearchAThing.Sci.Tests
 
             if (outdxf != null)
             {
-                outdxf.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Set(w => w.SetColor(AciColor.Green)));
-                outdxf.AddEntity(faceYellow.Loops[0].DxfEntity(tol).Set(w => w.SetColor(AciColor.Yellow)));
+                outdxf.AddEntity(faceGreen.Loops[0].DxfEntity(tol).Act(w => w.SetColor(AciColor.Green)));
+                outdxf.AddEntity(faceYellow.Loops[0].DxfEntity(tol).Act(w => w.SetColor(AciColor.Yellow)));
 
                 foreach (var gyInt in gyInts)
                 {

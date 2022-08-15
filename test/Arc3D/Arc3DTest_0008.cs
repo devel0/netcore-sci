@@ -37,9 +37,9 @@ namespace SearchAThing.Sci.Tests
             var line2 = new Line3D(p3, line1.From);
             var geoms = new Edge[] { line1, arcj, line2 };
             var loop = new Loop(tol, geoms, Plane3D.XY);
-            outdxf?.AddEntity(arcj.DxfEntity.Set(x => x.SetColor(AciColor.Cyan)));
+            outdxf?.AddEntity(arcj.DxfEntity.Act(x => x.SetColor(AciColor.Cyan)));
 
-            var lw = loop.DxfEntity(tol).Set(x => x.SetColor(AciColor.Green));
+            var lw = loop.DxfEntity(tol).Act(x => x.SetColor(AciColor.Green));
             Assert.True(lw.Vertexes.Count == 3);
             lw.Vertexes[1].Bulge.AssertEqualsTol(TwoPIRadTol, -0.39453055322534736);
             outdxf?.AddEntity(lw);
