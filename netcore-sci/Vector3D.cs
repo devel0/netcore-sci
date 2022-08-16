@@ -521,7 +521,7 @@ namespace SearchAThing
         /// <summary>
         /// angle between this and given vector
         /// </summary>
-        /// <param name="tol">geometric tolerance to test vector equalities ( use Constants.NormalizedLengthTolerance when comparing normalized vectors )</param>
+        /// <param name="tol">length tolerance to test vector equalities ( use Constants.NormalizedLengthTolerance when comparing normalized vectors )</param>
         /// <param name="to">other vector</param>
         /// <returns>angle between two vectors (rad)</returns>
         /// <remarks>      
@@ -729,7 +729,7 @@ namespace SearchAThing
         /// compute angle required to make this point go to the given one
         /// if rotate right-hand around given reference axis
         /// </summary>
-        /// <param name="tol">geometric tolerance ( use Constants.NormalizedLengthTolerance if working with normalized vectors )</param>
+        /// <param name="tol">length tolerance ( use Constants.NormalizedLengthTolerance if working with normalized vectors )</param>
         /// <param name="to">point toward rotate this one</param>
         /// <param name="refAxis">reference axis to make right-hand rotation of this point toward given one</param>
         /// <returns>angle (rad)</returns>
