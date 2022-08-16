@@ -296,21 +296,19 @@ Static Public Member Functions</h2></td></tr>
   <a href="class_search_a_thing_1_1_sci_ext.html#a78b7bf9693adc084645f6d6095c5433b">More...</a><br /></td></tr>
 <tr class="separator:a78b7bf9693adc084645f6d6095c5433b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7997aa5de45559ba7a4d47e57d861cee"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a7997aa5de45559ba7a4d47e57d861cee">XYSignedArea</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; _pts, double tol)</td></tr>
-<tr class="memdesc:a7997aa5de45559ba7a4d47e57d861cee"><td class="mdescLeft">&#160;</td><td class="mdescRight">(signed) Area of a polygon (does not consider z) <a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a> <br  />
+<tr class="memdesc:a7997aa5de45559ba7a4d47e57d861cee"><td class="mdescLeft">&#160;</td><td class="mdescRight">(signed) Area of a polygon (does not consider z); note: points must ccw ordered. <a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a> <br  />
   <a href="class_search_a_thing_1_1_sci_ext.html#a7997aa5de45559ba7a4d47e57d861cee">More...</a><br /></td></tr>
 <tr class="separator:a7997aa5de45559ba7a4d47e57d861cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeda41cc30b68f66b1a15f2b3e56cf825"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#aeda41cc30b68f66b1a15f2b3e56cf825">XYArea</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; pts, double tol)</td></tr>
-<tr class="memdesc:aeda41cc30b68f66b1a15f2b3e56cf825"><td class="mdescLeft">&#160;</td><td class="mdescRight">(abs) Area of a polygon (does not consider z) <a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a> <br  />
+<tr class="memdesc:aeda41cc30b68f66b1a15f2b3e56cf825"><td class="mdescLeft">&#160;</td><td class="mdescRight">(abs) Area of a polygon (does not consider z). note: points must ccw ordered. <a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a> <br  />
   <a href="class_search_a_thing_1_1_sci_ext.html#aeda41cc30b68f66b1a15f2b3e56cf825">More...</a><br /></td></tr>
 <tr class="separator:aeda41cc30b68f66b1a15f2b3e56cf825"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9a6e868ef98643f4c3e68ae77794432"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#aa9a6e868ef98643f4c3e68ae77794432">XYCentroid</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; pts, double tol)</td></tr>
-<tr class="memdesc:aa9a6e868ef98643f4c3e68ae77794432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Centroid of a polygon (does not consider z) <br  />
- ( if have area specify the parameter to avoid recomputation ) <a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a> <br  />
+<tr class="memdesc:aa9a6e868ef98643f4c3e68ae77794432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Centroid of a polygon (does not consider z). note: points must ccw ordered. use overloaded method if signed area already computed. <a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a> <br  />
   <a href="class_search_a_thing_1_1_sci_ext.html#aa9a6e868ef98643f4c3e68ae77794432">More...</a><br /></td></tr>
 <tr class="separator:aa9a6e868ef98643f4c3e68ae77794432"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a053d9ce4a0c8d559424bd9beb48d2e54"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a053d9ce4a0c8d559424bd9beb48d2e54">XYCentroid</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; _pts, double tol, double signed_area)</td></tr>
-<tr class="memdesc:a053d9ce4a0c8d559424bd9beb48d2e54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Centroid of a polygon (does not consider z) <br  />
- <a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a> <br  />
+<tr class="memdesc:a053d9ce4a0c8d559424bd9beb48d2e54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Centroid of a polygon (does not consider z). note: points must ccw ordered. <a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a> <br  />
   <a href="class_search_a_thing_1_1_sci_ext.html#a053d9ce4a0c8d559424bd9beb48d2e54">More...</a><br /></td></tr>
 <tr class="separator:a053d9ce4a0c8d559424bd9beb48d2e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29062141d3e53c3bcf5dbda92ff26361"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a29062141d3e53c3bcf5dbda92ff26361">Offset</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; pts, double tol, double offset)</td></tr>
@@ -325,15 +323,22 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a727a17450fcaf7aa9246464cdeb51991"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a727a17450fcaf7aa9246464cdeb51991">ContainsPoint</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; _pts, double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> pt, <a class="el" href="namespace_search_a_thing.html#a5143797c292eae835d22af82642aeac4">LoopContainsPointMode</a> mode=<a class="el" href="namespace_search_a_thing.html#a5143797c292eae835d22af82642aeac4af64cb2becdf0da487330d378f8df442e">LoopContainsPointMode.InsideOrPerimeter</a>)</td></tr>
 <tr class="memdesc:a727a17450fcaf7aa9246464cdeb51991"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if given point is in polygon  <a href="class_search_a_thing_1_1_sci_ext.html#a727a17450fcaf7aa9246464cdeb51991">More...</a><br /></td></tr>
 <tr class="separator:a727a17450fcaf7aa9246464cdeb51991"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b852c82ae82a3c49c40f228604f9e1e"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a5b852c82ae82a3c49c40f228604f9e1e">SortPoly</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; pts, double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>? refAxis=null)</td></tr>
-<tr class="memdesc:a5b852c82ae82a3c49c40f228604f9e1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort polygon points.  <a href="class_search_a_thing_1_1_sci_ext.html#a5b852c82ae82a3c49c40f228604f9e1e">More...</a><br /></td></tr>
-<tr class="separator:a5b852c82ae82a3c49c40f228604f9e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d9c8bff4d1006739e7f8f739b17fcca"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a2d9c8bff4d1006739e7f8f739b17fcca">SortPoly</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> &gt; segs, double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>? refAxis=null)</td></tr>
-<tr class="memdesc:a2d9c8bff4d1006739e7f8f739b17fcca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort polygon segments by their midpoint to form ccw order polygon. It will not check for segment versus adjancency  <a href="class_search_a_thing_1_1_sci_ext.html#a2d9c8bff4d1006739e7f8f739b17fcca">More...</a><br /></td></tr>
-<tr class="separator:a2d9c8bff4d1006739e7f8f739b17fcca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace2a234fbec070261bd1e084bc89af65"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ace2a234fbec070261bd1e084bc89af65">SortPoly&lt; T &gt;</a> (this IEnumerable&lt; T &gt; pts, double tol, Func&lt; T, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; getPoint, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>? refAxis=null)</td></tr>
-<tr class="memdesc:ace2a234fbec070261bd1e084bc89af65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort polygon points  <a href="class_search_a_thing_1_1_sci_ext.html#ace2a234fbec070261bd1e084bc89af65">More...</a><br /></td></tr>
-<tr class="separator:ace2a234fbec070261bd1e084bc89af65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3087ab0ce6f2680b7850d5f9ccccf86b"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a3087ab0ce6f2680b7850d5f9ccccf86b">SortCCW&lt; T &gt;</a> (this IEnumerable&lt; T &gt; _tpts, double tol, Func&lt; T, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; getPoint, <a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html">CoordinateSystem3D</a> cs)</td></tr>
+<tr class="memdesc:a3087ab0ce6f2680b7850d5f9ccccf86b"><td class="mdescLeft">&#160;</td><td class="mdescRight">sort the set of templated points in ccw order; <br  />
+ note that first returned point could not match the first point in the sequence ( for that use RouteFirst() ext )  <a href="class_search_a_thing_1_1_sci_ext.html#a3087ab0ce6f2680b7850d5f9ccccf86b">More...</a><br /></td></tr>
+<tr class="separator:a3087ab0ce6f2680b7850d5f9ccccf86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d516a8dc402d9eb2b1f48e0b75bc32f"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a9d516a8dc402d9eb2b1f48e0b75bc32f">SortCCW&lt; T &gt;</a> (this IEnumerable&lt; T &gt; tpts, double tol, Func&lt; T, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; getPoint, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> center, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> refAxis)</td></tr>
+<tr class="memdesc:a9d516a8dc402d9eb2b1f48e0b75bc32f"><td class="mdescLeft">&#160;</td><td class="mdescRight">sort the set of templated points in ccw order; <br  />
+ note that first returned point could not match the first point in the sequence ( for that use RouteFirst() ext )  <a href="class_search_a_thing_1_1_sci_ext.html#a9d516a8dc402d9eb2b1f48e0b75bc32f">More...</a><br /></td></tr>
+<tr class="separator:a9d516a8dc402d9eb2b1f48e0b75bc32f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06a84b1cfabc6655f025d7caa0e3a1c1"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a06a84b1cfabc6655f025d7caa0e3a1c1">SortCCW</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; pts, double tol, <a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html">CoordinateSystem3D</a> cs)</td></tr>
+<tr class="memdesc:a06a84b1cfabc6655f025d7caa0e3a1c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">sort the set of points in ccw order; <br  />
+ note that first returned point could not match the first point in the sequence ( for that use RouteFirst() ext )  <a href="class_search_a_thing_1_1_sci_ext.html#a06a84b1cfabc6655f025d7caa0e3a1c1">More...</a><br /></td></tr>
+<tr class="separator:a06a84b1cfabc6655f025d7caa0e3a1c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a190e406547a4adec4200909ef4746e9d"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a190e406547a4adec4200909ef4746e9d">SortCCW</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; pts, double tol, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> center, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> refAxis)</td></tr>
+<tr class="memdesc:a190e406547a4adec4200909ef4746e9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">sort the set of points in ccw order; <br  />
+ note that first returned point could not match the first point in the sequence ( for that use RouteFirst() ext )  <a href="class_search_a_thing_1_1_sci_ext.html#a190e406547a4adec4200909ef4746e9d">More...</a><br /></td></tr>
+<tr class="separator:a190e406547a4adec4200909ef4746e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a772ef0f46fd1760bc176ba738da5f59f"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a772ef0f46fd1760bc176ba738da5f59f">TakeUntilAdjacent</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> &gt; segs, double tol, bool rectifyVersus=true)</td></tr>
 <tr class="memdesc:a772ef0f46fd1760bc176ba738da5f59f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the input set of segments until an adjacency between one and next is found. It can rectify the versus of line (by default) if needed. Note: returned set references can be different if rectifyVersus==true  <a href="class_search_a_thing_1_1_sci_ext.html#a772ef0f46fd1760bc176ba738da5f59f">More...</a><br /></td></tr>
 <tr class="separator:a772ef0f46fd1760bc176ba738da5f59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -462,9 +467,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a3e09e632ceb1da4a2d75fc1f0ae79f6f"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a3e09e632ceb1da4a2d75fc1f0ae79f6f">ZapDuplicates</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; pts, <a class="el" href="class_search_a_thing_1_1_vector3_d_equality_comparer.html">Vector3DEqualityComparer</a> cmp)</td></tr>
 <tr class="memdesc:a3e09e632ceb1da4a2d75fc1f0ae79f6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">return pts (maintaining order) w/out duplicates  <a href="class_search_a_thing_1_1_sci_ext.html#a3e09e632ceb1da4a2d75fc1f0ae79f6f">More...</a><br /></td></tr>
 <tr class="separator:a3e09e632ceb1da4a2d75fc1f0ae79f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3ac4a37c4ac6304a01c3b6c8f529c39"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; IReadOnlyList&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#ab3ac4a37c4ac6304a01c3b6c8f529c39">ClosedPolys2D</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> &gt; segs, double tol, int polyMaxPoints=0)</td></tr>
-<tr class="memdesc:ab3ac4a37c4ac6304a01c3b6c8f529c39"><td class="mdescLeft">&#160;</td><td class="mdescRight">build polygons from given list of segments if want to represent arcs, add them as dummy lines to segs polys returned are ordered anticlockwise  <a href="class_search_a_thing_1_1_sci_ext.html#ab3ac4a37c4ac6304a01c3b6c8f529c39">More...</a><br /></td></tr>
-<tr class="separator:ab3ac4a37c4ac6304a01c3b6c8f529c39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a826740ed0ff1d0f6d5d82e5a62775c"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; IReadOnlyList&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#a6a826740ed0ff1d0f6d5d82e5a62775c">XYClosedPolys</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> &gt; segs, double tol, int polyMaxPoints=0)</td></tr>
+<tr class="memdesc:a6a826740ed0ff1d0f6d5d82e5a62775c"><td class="mdescLeft">&#160;</td><td class="mdescRight">build polygons from given list of 2d segments by intersecting segments. (does not consider z)  <a href="class_search_a_thing_1_1_sci_ext.html#a6a826740ed0ff1d0f6d5d82e5a62775c">More...</a><br /></td></tr>
+<tr class="separator:a6a826740ed0ff1d0f6d5d82e5a62775c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab4835430c282f9553d2ca9a04ff2604"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_ext.html#aab4835430c282f9553d2ca9a04ff2604">IsLinearIndependent</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt; vectors)</td></tr>
 <tr class="memdesc:aab4835430c282f9553d2ca9a04ff2604"><td class="mdescLeft">&#160;</td><td class="mdescRight">states if given 3 vectors are linearly independent <br  />
   <a href="class_search_a_thing_1_1_sci_ext.html#aab4835430c282f9553d2ca9a04ff2604">More...</a><br /></td></tr>
@@ -1499,52 +1504,6 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>given vector with xyz components clamped to corresponding min,max components</dd></dl>
-<p><br  />
- </p>
-
-</div>
-</div>
-<a id="ab3ac4a37c4ac6304a01c3b6c8f529c39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3ac4a37c4ac6304a01c3b6c8f529c39">&#9670;&nbsp;</a></span>ClosedPolys2D()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static IEnumerable&lt;IReadOnlyList&lt;<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&gt; &gt; ClosedPolys2D </td>
-          <td>(</td>
-          <td class="paramtype">this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> &gt;&#160;</td>
-          <td class="paramname"><em>segs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>tol</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>polyMaxPoints</em> = <code>0</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>build polygons from given list of segments if want to represent arcs, add them as dummy lines to segs polys returned are ordered anticlockwise </p>
 <p><br  />
  </p>
 
@@ -4243,8 +4202,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a2d9c8bff4d1006739e7f8f739b17fcca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d9c8bff4d1006739e7f8f739b17fcca">&#9670;&nbsp;</a></span>SortPoly() <span class="overload">[1/2]</span></h2>
+<a id="a06a84b1cfabc6655f025d7caa0e3a1c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06a84b1cfabc6655f025d7caa0e3a1c1">&#9670;&nbsp;</a></span>SortCCW() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4253,53 +4212,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a>&gt; SortPoly </td>
-          <td>(</td>
-          <td class="paramtype">this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> &gt;&#160;</td>
-          <td class="paramname"><em>segs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>tol</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>?&#160;</td>
-          <td class="paramname"><em>refAxis</em> = <code>null</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sort polygon segments by their midpoint to form ccw order polygon. It will not check for segment versus adjancency </p>
-<p><br  />
- </p>
-
-</div>
-</div>
-<a id="a5b852c82ae82a3c49c40f228604f9e1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b852c82ae82a3c49c40f228604f9e1e">&#9670;&nbsp;</a></span>SortPoly() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&gt; SortPoly </td>
+          <td class="memname">static IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&gt; SortCCW </td>
           <td>(</td>
           <td class="paramtype">this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td>
           <td class="paramname"><em>pts</em>, </td>
@@ -4313,8 +4226,8 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>?&#160;</td>
-          <td class="paramname"><em>refAxis</em> = <code>null</code>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html">CoordinateSystem3D</a>&#160;</td>
+          <td class="paramname"><em>cs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -4329,14 +4242,29 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Sort polygon points. </p>
+<p>sort the set of points in ccw order; <br  />
+ note that first returned point could not match the first point in the sequence ( for that use RouteFirst() ext ) </p>
 <p><br  />
- </p>
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pts</td><td>points</td></tr>
+    <tr><td class="paramname">tol</td><td>length tolerance</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br  />
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cs</td><td>CS used with origin as rotation center to sort ccw points and BaseZ used as reference rotation axis ( points plane normal right-hand rotate around )</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>input set of points ccw sorted</dd></dl>
 
 </div>
 </div>
-<a id="ace2a234fbec070261bd1e084bc89af65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace2a234fbec070261bd1e084bc89af65">&#9670;&nbsp;</a></span>SortPoly&lt; T &gt;()</h2>
+<a id="a190e406547a4adec4200909ef4746e9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a190e406547a4adec4200909ef4746e9d">&#9670;&nbsp;</a></span>SortCCW() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4345,10 +4273,78 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static IEnumerable&lt;T&gt; <a class="el" href="class_search_a_thing_1_1_sci_ext.html#a5b852c82ae82a3c49c40f228604f9e1e">SortPoly</a>&lt; T &gt; </td>
+          <td class="memname">static IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&gt; SortCCW </td>
+          <td>(</td>
+          <td class="paramtype">this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td>
+          <td class="paramname"><em>pts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>center</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>refAxis</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>sort the set of points in ccw order; <br  />
+ note that first returned point could not match the first point in the sequence ( for that use RouteFirst() ext ) </p>
+<p><br  />
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pts</td><td>points</td></tr>
+    <tr><td class="paramname">tol</td><td>length tolerance</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><br  />
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">center</td><td>rotation center to sort ccw points ( can use <a class="el" href="class_search_a_thing_1_1_sci_ext.html#a3a0882f33ede044c50e063cc511c2d2b" title="retrieve mean point of facet vertices">Mean()</a> or Centroid() ext for closed polygon )</td></tr>
+    <tr><td class="paramname">refAxis</td><td>reference rotation axis ( points plane normal right-hand rotate around )</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>input set of points ccw sorted</dd></dl>
+
+</div>
+</div>
+<a id="a3087ab0ce6f2680b7850d5f9ccccf86b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3087ab0ce6f2680b7850d5f9ccccf86b">&#9670;&nbsp;</a></span>SortCCW&lt; T &gt;() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static IEnumerable&lt;T&gt; <a class="el" href="class_search_a_thing_1_1_sci_ext.html#a06a84b1cfabc6655f025d7caa0e3a1c1">SortCCW</a>&lt; T &gt; </td>
           <td>(</td>
           <td class="paramtype">this IEnumerable&lt; T &gt;&#160;</td>
-          <td class="paramname"><em>pts</em>, </td>
+          <td class="paramname"><em>_tpts</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -4365,8 +4361,8 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>?&#160;</td>
-          <td class="paramname"><em>refAxis</em> = <code>null</code>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_coordinate_system3_d.html">CoordinateSystem3D</a>&#160;</td>
+          <td class="paramname"><em>cs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -4381,18 +4377,88 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Sort polygon points </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>sort the set of templated points in ccw order; <br  />
+ note that first returned point could not match the first point in the sequence ( for that use RouteFirst() ext ) </p>
+<p><br  />
+ </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pts</td><td>points</td></tr>
+    <tr><td class="paramname">_tpts</td><td>templated points</td></tr>
     <tr><td class="paramname">tol</td><td>length tolerance</td></tr>
-    <tr><td class="paramname">getPoint</td><td>get point function</td></tr>
-    <tr><td class="paramname">refAxis</td><td>ref axis</td></tr>
+    <tr><td class="paramname">getPoint</td><td>function to extract <a class="el" href="class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin">Vector3D</a> point from templated point</td></tr>
+    <tr><td class="paramname">cs</td><td>CS used with origin as rotation center to sort ccw points and BaseZ used as reference rotation axis ( points plane normal right-hand rotate around )</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>input set of templated points ccw sorted</dd></dl>
+
+</div>
+</div>
+<a id="a9d516a8dc402d9eb2b1f48e0b75bc32f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d516a8dc402d9eb2b1f48e0b75bc32f">&#9670;&nbsp;</a></span>SortCCW&lt; T &gt;() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static IEnumerable&lt;T&gt; <a class="el" href="class_search_a_thing_1_1_sci_ext.html#a06a84b1cfabc6655f025d7caa0e3a1c1">SortCCW</a>&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">this IEnumerable&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>tpts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Func&lt; T, <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td>
+          <td class="paramname"><em>getPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>center</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
+          <td class="paramname"><em>refAxis</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>sort the set of templated points in ccw order; <br  />
+ note that first returned point could not match the first point in the sequence ( for that use RouteFirst() ext ) </p>
 <p><br  />
- </p><dl class="section return"><dt>Returns</dt><dd>points ccw sorted by their angle respect the mean center</dd></dl>
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tpts</td><td>templated points</td></tr>
+    <tr><td class="paramname">tol</td><td>length tolerance</td></tr>
+    <tr><td class="paramname">getPoint</td><td>function to extract <a class="el" href="class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin">Vector3D</a> point from templated point</td></tr>
+    <tr><td class="paramname">center</td><td>rotation center to sort ccw points ( can use <a class="el" href="class_search_a_thing_1_1_sci_ext.html#a3a0882f33ede044c50e063cc511c2d2b" title="retrieve mean point of facet vertices">Mean()</a> or Centroid() ext for closed polygon )</td></tr>
+    <tr><td class="paramname">refAxis</td><td>reference rotation axis ( points plane normal right-hand rotate around )</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>input set of templated points ccw sorted</dd></dl>
 
 </div>
 </div>
@@ -5929,7 +5995,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>(abs) Area of a polygon (does not consider z) <a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a> <br  />
+<p>(abs) Area of a polygon (does not consider z). note: points must ccw ordered. <a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a> <br  />
  </p>
 <p><br  />
  </p>
@@ -5976,8 +6042,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Centroid of a polygon (does not consider z) <br  />
- <a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a> <br  />
+<p>Centroid of a polygon (does not consider z). note: points must ccw ordered. <a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a> <br  />
  </p>
 <p><br  />
  </p>
@@ -6018,9 +6083,54 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Centroid of a polygon (does not consider z) <br  />
- ( if have area specify the parameter to avoid recomputation ) <a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a> <br  />
+<p>Centroid of a polygon (does not consider z). note: points must ccw ordered. use overloaded method if signed area already computed. <a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a> <br  />
  </p>
+<p><br  />
+ </p>
+
+</div>
+</div>
+<a id="a6a826740ed0ff1d0f6d5d82e5a62775c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a826740ed0ff1d0f6d5d82e5a62775c">&#9670;&nbsp;</a></span>XYClosedPolys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static IEnumerable&lt;IReadOnlyList&lt;<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&gt; &gt; XYClosedPolys </td>
+          <td>(</td>
+          <td class="paramtype">this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_line3_d.html">Line3D</a> &gt;&#160;</td>
+          <td class="paramname"><em>segs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>polyMaxPoints</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>build polygons from given list of 2d segments by intersecting segments. (does not consider z) </p>
 <p><br  />
  </p>
 
@@ -6060,7 +6170,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>(signed) Area of a polygon (does not consider z) <a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a> <br  />
+<p>(signed) Area of a polygon (does not consider z); note: points must ccw ordered. <a href="https://en.wikipedia.org/wiki/Centroid">https://en.wikipedia.org/wiki/Centroid</a> <br  />
  </p>
 <p><br  />
  </p>
