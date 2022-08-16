@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System;
 using ClipperLib;
 using static SearchAThing.SciToolkit;
+using netDxf;
 
 namespace SearchAThing.Sci.Tests
 {
@@ -537,7 +538,7 @@ namespace SearchAThing.Sci.Tests
                         );
                     var A = pts.XYArea(tol);
                     Assert.True(A.EqualsTol(1e-1, 1089));
-                    Assert.True(pts.SortPoly(tol, Vector3D.ZAxis).ToList().XYCentroid(tol).EqualsTol(tol, 16.5, 18.5, 0));
+                    Assert.True(pts.SortCCW(tol, CoordinateSystem3D.WCS.Move(pts.Mean())).ToList().XYCentroid(tol).EqualsTol(tol, 16.5, 18.5, 0));
                 }
 
             }
@@ -601,33 +602,43 @@ namespace SearchAThing.Sci.Tests
             var segs = dxf.Entities.Lines.Select(w => w.ToLine3D()).ToList();
             segs = segs.AutoIntersect(1e-3).ToList();
 
-            var polys = segs.ClosedPolys2D(1e-3).ToList();
+            var polys = segs.XYClosedPolys(1e-3).ToList();
             Assert.True(polys.Count == 9);
-            Assert.True(polys.All(r => r.ToList().XYArea(1e-3).EqualsTol(1e-3, 1111.1111)));
+            Assert.All(polys, p => p.ToList().XYArea(1e-3).EqualsTol(1e-3, 1111.1111));
         }
 
         [Fact(DisplayName = "SortPolygon")]
         void SortPolygonTest()
         {
+            DxfDocument? outdxf = null;
+            // outdxf = new DxfDocument();
+
             var tol = 1e-6;
 
             {
+                // p1..p5 are already ccw
                 var p1 = new Vector3D(-19.331, 168.749, 0);
                 var p2 = new Vector3D(95.57, 90.108, 0);
                 var p3 = new Vector3D(286.757, 182.876, 0);
                 var p4 = new Vector3D(149.253, 277.528, 0);
                 var p5 = new Vector3D(29.173, 265.755, 0);
 
+                // unordered pts
                 var pts = new List<Vector3D>() { p4, p2, p5, p3, p1 };
 
-                var pts2 = pts.SortPoly(tol).ToList();
+                foreach (var x in pts) outdxf?.AddEntity(x);
+
+                var pts2 = pts
+                    .SortCCW(tol, CoordinateSystem3D.WCS.Move(pts.Mean()))
+                    .RouteFirst(p3)
+                    .ToList();
 
                 Assert.True(
                     pts2[0].EqualsTol(tol, p3) &&
-                    pts2[1].EqualsTol(tol, p2) &&
-                    pts2[2].EqualsTol(tol, p1) &&
-                    pts2[3].EqualsTol(tol, p5) &&
-                    pts2[4].EqualsTol(tol, p4));
+                    pts2[1].EqualsTol(tol, p4) &&
+                    pts2[2].EqualsTol(tol, p5) &&
+                    pts2[3].EqualsTol(tol, p1) &&
+                    pts2[4].EqualsTol(tol, p2));
             }
 
             {
@@ -637,7 +648,9 @@ namespace SearchAThing.Sci.Tests
                     300, 500,
                     100, 700);
 
-                var pts2 = pts.SortPoly(tol).ToList();
+                var pts2 = pts
+                    .SortCCW(tol, CoordinateSystem3D.WCS.Move(pts.Mean()))
+                    .RouteFirst(pts[2]).ToList();
 
                 Assert.True(pts2.EqualsTol(tol, Vector3D.From2DCoords(
                     300, 500,
@@ -645,7 +658,11 @@ namespace SearchAThing.Sci.Tests
                     100, 700,
                     100, 500)));
 
-                pts2 = pts.SortPoly(tol, -Vector3D.ZAxis).ToList();
+                pts2 = pts
+                    .SortCCW(tol, CoordinateSystem3D.WCS.Move(pts.Mean()).FlipZ())
+                    .RouteFirst(pts2[2])
+                    .ToList();
+
                 Assert.True(pts2.EqualsTol(tol, Vector3D.From2DCoords(
                     100, 700,
                     300, 700,
@@ -661,13 +678,23 @@ namespace SearchAThing.Sci.Tests
                     12.9, 6.3850000000000007
                     );
 
-                var pts2 = pts.SortPoly(1e-6).ToList();
+                var pts2 = pts
+                    .SortCCW(1e-6, CoordinateSystem3D.WCS.Move(pts.Mean()))
+                    .RouteFirst(pts[1])
+                    .ToList();
 
                 Assert.True(pts2.EqualsTol(tol, Vector3D.From2DCoords(
                     12.9, -3.96,
                     12.9, 6.385,
                     -1, 6.385,
                     -1, -3.96)));
+            }
+
+            if (outdxf != null)
+            {
+                outdxf.DrawingVariables.PdMode = netDxf.Header.PointShape.CircleCross;
+                outdxf.Viewport.ShowGrid = false;
+                outdxf.Save(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "out.dxf"));
             }
         }
 

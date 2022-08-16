@@ -17,7 +17,8 @@ namespace SearchAThing
     {
 
         /// <summary>
-        /// (signed) Area of a polygon (does not consider z)
+        /// (signed) Area of a polygon (does not consider z);
+        /// note: points must ccw ordered.
         /// https://en.wikipedia.org/wiki/Centroid        
         /// </summary>        
         public static double XYSignedArea(this IEnumerable<Vector3D> _pts, double tol)
@@ -37,15 +38,17 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// (abs) Area of a polygon (does not consider z)
+        /// (abs) Area of a polygon (does not consider z).
+        /// note: points must ccw ordered.
         /// https://en.wikipedia.org/wiki/Centroid                
         /// </summary>        
         public static double XYArea(this IEnumerable<Vector3D> pts, double tol) =>
             Math.Abs(XYSignedArea(pts, tol));
 
         /// <summary>
-        /// Centroid of a polygon (does not consider z)    
-        /// ( if have area specify the parameter to avoid recomputation )
+        /// Centroid of a polygon (does not consider z).
+        /// note: points must ccw ordered.
+        /// use overloaded method if signed area already computed.
         /// https://en.wikipedia.org/wiki/Centroid        
         /// </summary>        
         public static Vector3D XYCentroid(this IEnumerable<Vector3D> pts, double tol)
@@ -55,7 +58,8 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// Centroid of a polygon (does not consider z)        
+        /// Centroid of a polygon (does not consider z).
+        /// note: points must ccw ordered.
         /// https://en.wikipedia.org/wiki/Centroid        
         /// </summary>        
         public static Vector3D XYCentroid(this IEnumerable<Vector3D> _pts, double tol, double signed_area)
@@ -180,61 +184,61 @@ namespace SearchAThing
             new Loop(tol, _pts.RepeatFirstAtEnd(tol).Segments(tol))
             .ContainsPoint(tol, pt, mode);
 
-        // TODO: SortPoly doc
-
         /// <summary>
-        /// Sort polygon points.
-        /// </summary>        
-        public static IEnumerable<Vector3D> SortPoly(this IEnumerable<Vector3D> pts, double tol, Vector3D? refAxis = null) =>
-            pts.SortPoly(tol, (p) => p, refAxis);
-
-        /// <summary>
-        /// Sort polygon segments by their midpoint to form ccw order polygon.
-        /// It will not check for segment versus adjancency
-        /// </summary>        
-        public static IEnumerable<Line3D> SortPoly(this IEnumerable<Line3D> segs, double tol, Vector3D? refAxis = null) =>
-            segs.SortPoly(tol, (s) => s.MidPoint, refAxis);
-
-        /// <summary>
-        /// Sort polygon points
-        /// </summary>
-        /// <param name="pts">points</param>
+        /// sort the set of templated points in ccw order;        
+        /// note that first returned point could not match the first point in the sequence ( for that use RouteFirst() ext )
+        /// </summary>                
+        /// <param name="_tpts">templated points</param>
         /// <param name="tol">length tolerance</param>
-        /// <param name="getPoint">get point function</param>
-        /// <param name="refAxis">ref axis</param>        
-        /// <returns>points ccw sorted by their angle respect the mean center</returns>
-        public static IEnumerable<T> SortPoly<T>(this IEnumerable<T> pts, double tol, Func<T, Vector3D> getPoint, Vector3D? refAxis = null)
+        /// <param name="getPoint">function to extract Vector3D point from templated point</param>
+        /// <param name="cs">CS used with origin as rotation center to sort ccw points and BaseZ used as reference rotation axis ( points plane normal right-hand rotate around )</param>
+        /// <returns>input set of templated points ccw sorted</returns>
+        public static IEnumerable<T> SortCCW<T>(this IEnumerable<T> _tpts,
+            double tol, Func<T, Vector3D> getPoint, CoordinateSystem3D cs)
         {
-            if (pts.Count() == 1) return pts;
+            var tpts = _tpts.ToReadOnlyList();
 
-            var c = pts.Select(w => getPoint(w)).Mean();
+            if (tpts.Count < 2) return tpts;
 
-            var r = getPoint(pts.First()) - c;
-
-            // search non-null ref axis
-            Vector3D? N = null;
-            if (refAxis != null)
-                N = refAxis;
-            else
-            {
-                foreach (var r2 in pts.Skip(1))
-                {
-                    N = r.CrossProduct(getPoint(r2) - c);
-                    if (!N.Length.EqualsTol(tol, 0)) break;
-                }
-            }
-
-            if (N == null) throw new Exception($"can't state normal from pts input set");
-
-            var q = pts.Select(p => new
-            {
-                pt = p,
-                ang = r.AngleToward(tol, getPoint(p) - c, N)
-            });
-            var res = q.OrderBy(w => w.ang).Select(w => w.pt);
-
-            return res;
+            return tpts.OrderBy(tpt => cs.BaseX.AngleToward(tol, getPoint(tpt) - cs.Origin, cs.BaseZ));
         }
+
+        /// <summary>
+        /// sort the set of templated points in ccw order;        
+        /// note that first returned point could not match the first point in the sequence ( for that use RouteFirst() ext )
+        /// </summary>                
+        /// <param name="tpts">templated points</param>
+        /// <param name="tol">length tolerance</param>
+        /// <param name="getPoint">function to extract Vector3D point from templated point</param>
+        /// <param name="center">rotation center to sort ccw points ( can use Mean() or Centroid() ext for closed polygon )</param>
+        /// <param name="refAxis">reference rotation axis ( points plane normal right-hand rotate around )</param>
+        /// <returns>input set of templated points ccw sorted</returns>
+        public static IEnumerable<T> SortCCW<T>(this IEnumerable<T> tpts,
+            double tol, Func<T, Vector3D> getPoint, Vector3D center, Vector3D refAxis) =>
+            tpts.SortCCW(tol, getPoint, new CoordinateSystem3D(center, refAxis));
+
+        /// <summary>
+        /// sort the set of points in ccw order;        
+        /// note that first returned point could not match the first point in the sequence ( for that use RouteFirst() ext )
+        /// </summary>        
+        /// <param name="pts">points</param>
+        /// <param name="tol">length tolerance</param>        
+        /// <param name="cs">CS used with origin as rotation center to sort ccw points and BaseZ used as reference rotation axis ( points plane normal right-hand rotate around )</param>
+        /// <returns>input set of points ccw sorted</returns>
+        public static IEnumerable<Vector3D> SortCCW(this IEnumerable<Vector3D> pts, double tol, CoordinateSystem3D cs) =>
+            SortCCW(pts, tol, (p) => p, cs);
+
+        /// <summary>
+        /// sort the set of points in ccw order;        
+        /// note that first returned point could not match the first point in the sequence ( for that use RouteFirst() ext )
+        /// </summary>        
+        /// <param name="pts">points</param>
+        /// <param name="tol">length tolerance</param>        
+        /// <param name="center">rotation center to sort ccw points ( can use Mean() or Centroid() ext for closed polygon )</param>
+        /// <param name="refAxis">reference rotation axis ( points plane normal right-hand rotate around )</param>
+        /// <returns>input set of points ccw sorted</returns>
+        public static IEnumerable<Vector3D> SortCCW(this IEnumerable<Vector3D> pts, double tol, Vector3D center, Vector3D refAxis) =>
+            SortCCW(pts, tol, (p) => p, center, refAxis);
 
         /// <summary>
         /// Return the input set of segments until an adjacency between one and next is found.
@@ -297,7 +301,13 @@ namespace SearchAThing
         /// </summary>        
         public static IEnumerable<Line3D>? IsAClosedPoly(this IEnumerable<Line3D> segs, double tol)
         {
-            var sply = segs.SortPoly(tol).TakeUntilAdjacent(tol).ToList();
+            var polyMidPts = segs.Select(w => w.MidPoint).ToList();
+
+            var polyPlane = polyMidPts.BestFittingPlane(tol);
+
+            var polyCenter = polyMidPts.Mean();
+
+            var sply = segs.SortCCW(tol, seg => seg.MidPoint, polyPlane.CS).TakeUntilAdjacent(tol).ToList();
 
             if (sply.Count != segs.Count()) return null;
 
@@ -350,7 +360,7 @@ namespace SearchAThing
         {
             var sb = new StringBuilder();
 
-            var geomsLst = geoms.ToReadOnlyList();            
+            var geomsLst = geoms.ToReadOnlyList();
 
             for (int i = 0; i < geomsLst.Count; ++i)
             {
@@ -570,7 +580,7 @@ namespace SearchAThing
         public static IEnumerable<Triangle3D> Tessellate(this IEnumerable<Vector3D> _pts)
         {
             var pts = _pts.ToReadOnlyList();
-            
+
             var tess = new LibTessDotNet.Tess();
 
             var contour = new LibTessDotNet.ContourVertex[pts.Count];

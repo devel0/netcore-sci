@@ -16,7 +16,7 @@ namespace SearchAThing.Sci.Tests
                 System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Loop/LoopTest_0006.dxf"));
 
             DxfDocument? outdxf = null;
-            outdxf = new DxfDocument();
+            // outdxf = new DxfDocument();
 
             var tolFail = 0.1;
             var tolSuccess = 0.3;

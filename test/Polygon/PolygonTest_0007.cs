@@ -13,7 +13,7 @@ namespace SearchAThing.Sci.Tests
         public void PolygonTest_0007()
         {
             DxfDocument? outdxf = null;
-            outdxf = new DxfDocument();
+            // outdxf = new DxfDocument();
 
             var dxf = netDxf.DxfDocument.Load(
                 System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Polygon/PolygonTest_0007.dxf"));

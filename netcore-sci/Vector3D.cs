@@ -1541,11 +1541,10 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// build polygons from given list of segments
-        /// if want to represent arcs, add them as dummy lines to segs
-        /// polys returned are ordered anticlockwise
+        /// build polygons from given list of 2d segments by intersecting segments.
+        /// (does not consider z)
         /// </summary>        
-        public static IEnumerable<IReadOnlyList<Vector3D>> ClosedPolys2D(this IEnumerable<Line3D> segs, double tol,
+        public static IEnumerable<IReadOnlyList<Vector3D>> XYClosedPolys(this IEnumerable<Line3D> segs, double tol,
             int polyMaxPoints = 0)
         {
             var minCoord = new BBox3D(segs.SelectMany(r => new[] { r.From, r.To })).Min;
@@ -1644,7 +1643,8 @@ namespace SearchAThing
 
                 if (poly.Count > 2)
                 {
-                    poly = poly.SortPoly(tol, Vector3D.ZAxis).ToList();
+                    var polyMean = poly.Mean();
+                    poly = poly.SortCCW(tol, CoordinateSystem3D.WCS.Move(polyMean)).ToList();
 
                     var polyCentroid = poly.XYCentroid(tol);
                     if (!polyCentroidDone.Contains(polyCentroid))
