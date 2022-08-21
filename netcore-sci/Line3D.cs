@@ -297,7 +297,7 @@ namespace SearchAThing
 #pragma warning disable CS8618
         [JsonConstructor]
         Line3D() : base(GeometryType.Line3D)
-        {            
+        {
         }
 #pragma warning restore
 
@@ -346,12 +346,21 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// Checks if two lines are equals ( it checks agains swapped from-to too )
-        /// </summary>        
-        public bool EqualsTol(double tol, Line3D other) =>
+        /// Checks if two lines are equals
+        /// </summary>
+        /// <param name="tol">length tolerance</param>
+        /// <param name="other">other line</param>
+        /// <param name="strict">if false(default) two line equals even with swapped from,to</param>        
+        public bool EqualsTol(double tol, Line3D other, bool strict = false) =>
             (From.EqualsTol(tol, other.From) && To.EqualsTol(tol, other.To))
             ||
-            (From.EqualsTol(tol, other.To) && To.EqualsTol(tol, other.From));
+            (
+                strict
+                ?
+                false
+                :
+                (From.EqualsTol(tol, other.To) && To.EqualsTol(tol, other.From))
+            );
 
         /// <summary>
         /// returns the common point from,to between two lines or null if not consecutives
@@ -920,13 +929,20 @@ namespace SearchAThing
     public class Line3DEqualityComparer : IEqualityComparer<Line3D>
     {
         double tol;
+        bool strict;
 
-        public Line3DEqualityComparer(double _tol)
+        /// <summary>
+        /// constructor for line3d eq cmp
+        /// </summary>
+        /// <param name="_tol">length tolerance</param>
+        /// <param name="_strict">if false(default) two line equals even with swapped from,to</param>
+        public Line3DEqualityComparer(double _tol, bool _strict = false)
         {
             tol = _tol;
+            strict = _strict;
         }
 
-        public bool Equals(Line3D? x, Line3D? y) => x != null && y != null && x.EqualsTol(tol, y);
+        public bool Equals(Line3D? x, Line3D? y) => x != null && y != null && x.EqualsTol(tol, y, strict);
 
         public int GetHashCode(Line3D obj) => 0;
 
