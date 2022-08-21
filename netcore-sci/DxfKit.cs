@@ -32,6 +32,22 @@ namespace SearchAThing
         }
 
         /// <summary>
+        /// retrieve 3 or 4 segments from given face
+        /// </summary>
+        public static IEnumerable<Line3D> Segments(this Face3D face)
+        {
+            yield return ((Vector3D)face.FirstVertex).LineTo(face.SecondVertex);
+            yield return ((Vector3D)face.SecondVertex).LineTo(face.ThirdVertex);
+            if (((Vector3?)face.FourthVertex).HasValue)
+            {
+                yield return ((Vector3D)face.ThirdVertex).LineTo(face.FourthVertex);
+                yield return ((Vector3D)face.FourthVertex).LineTo(face.FirstVertex);
+            }
+            else
+                yield return ((Vector3D)face.ThirdVertex).LineTo(face.FirstVertex);
+        }
+
+        /// <summary>
         /// Creates dxf entities for a 6 faces of a cube;
         /// generated face order is front, back, left, right, bottom, top
         /// </summary>        
