@@ -21,6 +21,10 @@ namespace SearchAThing
     public class BBox3D
     {
 
+        static BBox3D EmptyBBox = new BBox3D();
+
+        public static BBox3D Empty => EmptyBBox;
+
         /// <summary>
         /// states if bbox empty
         /// </summary>            
