@@ -16,7 +16,7 @@
 
         <!-- === netcore-sci -->        
         <NetcoreUtilVersion>4.0.0</NetcoreUtilVersion>
-        <NetDxfDevel0>3.0.2</NetDxfDevel0>
+        <NetDxfDevel0Version>3.0.2</NetDxfDevel0Version>
         
         <LibTessDotNetVersion>1.1.15</LibTessDotNetVersion>
         <LinqStatisticsVersion>2.3.0</LinqStatisticsVersion>

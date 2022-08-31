@@ -15,16 +15,17 @@
 		<noWarn>1591</noWarn>
 	</PropertyGroup>
 	<ItemGroup>
+		<PackageReference Include="netcore-util" Version="$(NetcoreUtilVersion)" />
+		<PackageReference Include="netDxf-devel0" Version="$(NetDxfDevel0Version)" />
+
 		<PackageReference Include="JsonNet.ContractResolvers" Version="$(JsonNetContractResolversVersion)" />
 		<PackageReference Include="LibTessDotNet" Version="$(LibTessDotNetVersion)" />
 		<PackageReference Include="LinqStatistics" Version="$(LinqStatisticsVersion)" />
-		<PackageReference Include="MathNet.Numerics" Version="$(MathNetNumericsVersion)" />
-		<PackageReference Include="netcore-util" Version="$(NetcoreUtilVersion)" />
+		<PackageReference Include="MathNet.Numerics" Version="$(MathNetNumericsVersion)" />		
 		<PackageReference Include="ParagonClipper" Version="$(ParagonClipperVersion)" />
 		<PackageReference Include="QuantumConcepts.Formats.STL.netcore" Version="$(STLNetCoreVersion)" />
 		<PackageReference Include="UnitsNet.Serialization.JsonNet" Version="$(UnitsNetSerializationJsonNetVersion)" />
-		<PackageReference Include="System.Drawing.Common" Version="$(SystemDrawingCommonVersion)" />
-		<PackageReference Include="netDxf-devel0" Version="$(NetDxfDevel0)" />
+		<PackageReference Include="System.Drawing.Common" Version="$(SystemDrawingCommonVersion)" />		
 	</ItemGroup>
 	<ItemGroup>
 		<!-- <ProjectReference Include="..\..\netcore-util\netcore-util\netcore-util.csproj"/> -->
