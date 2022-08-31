@@ -1,7 +1,7 @@
 <map id="Edge" name="Edge">
-<area shape="rect" id="node1" title="interface implemented by some type of geometries used in Loop such as Line3D, Arc3D and Circle3D" alt="" coords="61,80,115,107"/>
-<area shape="rect" id="node3" href="$class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities." alt="" coords="13,155,75,181"/>
-<area shape="rect" id="node5" href="$class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From..." alt="" coords="99,155,165,181"/>
-<area shape="rect" id="node2" href="$class_search_a_thing_1_1_geometry.html" title="base abstract type for geometries such as Vector3D, Line3D, Arc3D and Circle3D" alt="" coords="45,5,131,32"/>
-<area shape="rect" id="node4" href="$class_search_a_thing_1_1_circle3_d.html" title="Specialized version of Arc3D with StartAngle=0 and EndAngle=2PI" alt="" coords="5,229,83,256"/>
+<area shape="rect" id="node1" title="interface implemented by some type of geometries used in Loop such as Line3D, Arc3D and Circle3D" alt="" coords="59,80,111,107"/>
+<area shape="rect" id="node3" href="$class_search_a_thing_1_1_arc3_d.html" title="base geometry for arc 3d entities." alt="" coords="13,155,71,181"/>
+<area shape="rect" id="node5" href="$class_search_a_thing_1_1_line3_d.html" title="Defines a line by an application point (From) and an extension from there (V). To is computed as From..." alt="" coords="96,155,159,181"/>
+<area shape="rect" id="node2" href="$class_search_a_thing_1_1_geometry.html" title="base abstract type for geometries such as Vector3D, Line3D, Arc3D and Circle3D" alt="" coords="45,5,124,32"/>
+<area shape="rect" id="node4" href="$class_search_a_thing_1_1_circle3_d.html" title="Specialized version of Arc3D with StartAngle=0 and EndAngle=2PI" alt="" coords="5,229,79,256"/>
 </map>

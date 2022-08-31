@@ -17,8 +17,7 @@ namespace SearchAThing.Sci.Tests
             sympyPipe = new PythonPipe("from sympy import *", (s) => System.Diagnostics.Debug.WriteLine(s));
             try
             {
-                var strwr = new StringWrapper();
-                strwr.str = "x = symbols('x')";
+                var strwr = new StringWrapper("x = symbols('x')");                
                 sympyPipe.Exec(strwr);
             }
             catch
@@ -36,8 +35,7 @@ namespace SearchAThing.Sci.Tests
         [Fact]
         public void Test0()
         {
-            var strwr = new StringWrapper();
-            strwr.str = "print(1+2)";
+            var strwr = new StringWrapper("print(1+2)");            
             var res = pipe.Exec(strwr).str;
             var reslines = res.Lines().ToArray();
             Assert.True(reslines.Length == 1 && reslines[0] == "3");
@@ -46,8 +44,7 @@ namespace SearchAThing.Sci.Tests
         [Fact]
         public void Test1()
         {
-            var strwr = new StringWrapper();
-            strwr.str = "print(1+2)\r\nprint(3+5)";
+            var strwr = new StringWrapper("print(1+2)\r\nprint(3+5)");            
             var res = pipe.Exec(strwr).str;
             var reslines = res.Lines().ToArray();
             Assert.True(reslines.Length == 2 && reslines[0] == "3" && reslines[1] == "8");
@@ -58,10 +55,9 @@ namespace SearchAThing.Sci.Tests
         {
             Skip.IfNot(has_sympy_library);
 
-            var strwr = new StringWrapper();
-            strwr.str = @"x = symbols('x')
+            var strwr = new StringWrapper(@"x = symbols('x')
 print(integrate(x**2 * cos(x), x))
-print(integrate(x**2 * cos(x), (x, 0, pi/2)))";
+print(integrate(x**2 * cos(x), (x, 0, pi/2)))");            
             var res = sympyPipe.Exec(strwr).str;
             var reslines = res.Lines().ToArray();
             Assert.True(reslines.Length == 2 && reslines[0] == "x**2*sin(x) + 2*x*cos(x) - 2*sin(x)" && reslines[1] == "-2 + pi**2/4");
