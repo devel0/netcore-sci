@@ -628,31 +628,4 @@ namespace SearchAThing
 
     }
 
-    public static partial class SciToolkit
-    {
-
-#pragma warning disable CA1416
-
-        /// <summary>
-        /// create an approximation of ellipse
-        /// </summary>
-        /// <param name="center">center of ellipse</param>
-        /// <param name="width">width of ellipse</param>
-        /// <param name="height">height of ellipse</param>
-        /// <param name="flatness">maximum error of approximation</param>
-        /// <returns>vertexes of approximated ellipse (including last=first)</returns>
-        public static IEnumerable<Vector3D> EllipseToPolygon2D(Vector3D center, double width, double height, double flatness = .1)
-        {
-            var _center = Vector3D.Zero;
-
-            var gp = new GraphicsPath();
-            gp.AddEllipse((float)(_center.X - width / 2), (float)(_center.Y - height / 2), (float)width, (float)height);
-            gp.Flatten(new Matrix(), (float)flatness);
-            foreach (var p in gp.PathPoints) yield return new Vector3D(p.X, p.Y, 0) + center;
-        }
-        
-#pragma warning restore CA1416
-
-    }
-
 }
