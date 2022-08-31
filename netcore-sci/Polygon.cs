@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using static System.Math;
 using System.Collections.Generic;
-using System.Drawing.Drawing2D;
 
 using netDxf;
 using ClipperLib;
