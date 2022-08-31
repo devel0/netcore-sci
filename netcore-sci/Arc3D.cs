@@ -248,7 +248,7 @@ namespace SearchAThing
         {
             get
             {
-                if (_Length == null) _Length = Angle * Radius;
+                if (_Length is null) _Length = Angle * Radius;
                 return _Length.Value;
             }
         }
@@ -683,7 +683,7 @@ namespace SearchAThing
 
             var prj = Project(tol, p);
 
-            if (prj == null) return null;
+            if (prj is null) return null;
 
             return new Line3D(p, prj);
         }
@@ -926,7 +926,7 @@ namespace SearchAThing
 
             var iLine = this.CS.Intersect(tol, cs);
 
-            if (iLine == null) yield break;
+            if (iLine is null) yield break;
 
             foreach (var x in this.Intersect(tol, iLine,
                 onlyPerimeter,
@@ -950,7 +950,7 @@ namespace SearchAThing
         /// <param name="validate_pts">if true split only for split points on arc perimeter</param>            
         public IEnumerable<Arc3D> Split(double tol, IEnumerable<Vector3D> _splitPts, bool validate_pts = false)
         {
-            if (_splitPts == null || _splitPts.Count() == 0) yield break;
+            if (_splitPts is null || _splitPts.Count() == 0) yield break;
 
             IEnumerable<Vector3D> splitPts = _splitPts;
 
@@ -1098,7 +1098,7 @@ namespace SearchAThing
 
         public bool Equals(Arc3D? x, Arc3D? y)
         {
-            if (x == null || y == null) return false;
+            if (x is null || y is null) return false;
 
             return x.EqualsTol(tol, y);
         }

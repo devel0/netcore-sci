@@ -658,7 +658,7 @@ namespace SearchAThing
         public Vector3D? Intersect(double tol, Line3D other, bool thisSegment, bool otherSegment)
         {
             var i = Intersect(tol, other);
-            if (i == null) return null;
+            if (i is null) return null;
 
             if (thisSegment && !SegmentContainsPoint(tol, i)) return null;
             if (otherSegment && !other.SegmentContainsPoint(tol, i)) return null;
@@ -672,7 +672,7 @@ namespace SearchAThing
         public Vector3D? Intersect(double tol, Line3D other, GeomSegmentMode thisSegmentMode, GeomSegmentMode otherSegmentMode)
         {
             var i = Intersect(tol, other);
-            if (i == null) return null;
+            if (i is null) return null;
 
             if (thisSegmentMode == GeomSegmentMode.Infinite && otherSegmentMode == GeomSegmentMode.Infinite) return i;
 
@@ -798,7 +798,7 @@ namespace SearchAThing
         {
             var perp = this.Perpendicular(tol, refPt);
 
-            if (perp == null) throw new Exception($"can't find perp vector");
+            if (perp is null) throw new Exception($"can't find perp vector");
 
             var voff = (-perp.V).Normalized() * offset;
 
@@ -915,7 +915,7 @@ namespace SearchAThing
         {
             if (V.IsParallelTo(tol, other.V))
             {
-                if (parallelRotationAxis == null) return null;
+                if (parallelRotationAxis is null) return null;
 
                 var p = From;
 
@@ -926,7 +926,7 @@ namespace SearchAThing
             }
 
             var ip = this.Intersect(tol, other);
-            if (ip == null) return null;
+            if (ip is null) return null;
 
             var k = From.EqualsTol(tol, ip) ? To : From;
             var k2 = other.From.EqualsTol(tol, ip) ? other.To : other.From;
@@ -997,7 +997,7 @@ namespace SearchAThing
                 yield return seg.From;
             }
 
-            if (seg == null) yield break;
+            if (seg is null) yield break;
 
             yield return seg.To;
         }

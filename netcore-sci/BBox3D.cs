@@ -28,7 +28,7 @@ namespace SearchAThing
         /// <summary>
         /// states if bbox empty
         /// </summary>            
-        public bool IsEmpty => _Min == null;
+        public bool IsEmpty => _Min is null;
 
         Vector3D? _Min = null;
         /// <summary>
@@ -38,7 +38,7 @@ namespace SearchAThing
         {
             get
             {
-                if (_Min == null) throw new Exception($"empty bbox");
+                if (_Min is null) throw new Exception($"empty bbox");
                 return _Min;
             }
             private set
@@ -55,7 +55,7 @@ namespace SearchAThing
         {
             get
             {
-                if (_Max == null) throw new Exception($"empty bbox");
+                if (_Max is null) throw new Exception($"empty bbox");
                 return _Max;
             }
             private set

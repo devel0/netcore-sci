@@ -216,7 +216,7 @@ namespace SearchAThing
 
             foreach (var edgeItem in edges.WithNext())
             {
-                if (edgeItem.next == null)
+                if (edgeItem.next is null)
                 {
                     if (overrideCur != null)
                         yield return overrideCur;
@@ -232,7 +232,7 @@ namespace SearchAThing
 
                     var q = cur.CheckSense(tol, edgeItem.next);
 
-                    if (q == null || (overrideCur != null && q.Value.needToggleSenseThis))
+                    if (q is null || (overrideCur != null && q.Value.needToggleSenseThis))
                         throw new Exception($"can't glue [{cur}] idx:{i} with [{edgeItem.next}]");
 
                     overrideCur = null;
@@ -349,7 +349,7 @@ namespace SearchAThing
 
             yield return lastEdge;
 
-            if (stopCondition == null)
+            if (stopCondition is null)
             {
                 stopCondition = (_startVertex, _nextVertex) => _startVertex.EqualsTol(tol, _nextVertex);
             }

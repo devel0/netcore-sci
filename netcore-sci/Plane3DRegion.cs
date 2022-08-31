@@ -49,7 +49,7 @@ namespace SearchAThing
                 }
                 ++i;
             }
-            if (a == null) throw new Exception($"can't find 2 non colinear pts for Plane3DRegion");
+            if (a is null) throw new Exception($"can't find 2 non colinear pts for Plane3DRegion");
             var v1 = a - o;
             var alpha = 0d;
             while (i < pts.Count)
@@ -63,7 +63,7 @@ namespace SearchAThing
                 }
                 ++i;
             }
-            if (b == null) throw new Exception($"can't find 3 non colinear pts for Plane3DRegion");
+            if (b is null) throw new Exception($"can't find 3 non colinear pts for Plane3DRegion");
 
             var cs = new CoordinateSystem3D(o, v1.CrossProduct(b - o));
             Plane = new Plane3D(cs);
@@ -95,7 +95,7 @@ namespace SearchAThing
         public Vector3D? Intersect(double tol, Line3D ray)
         {
             var ip = ray.Intersect(tol, Plane);
-            if (ip == null || !Contains(tol, ip)) return null;
+            if (ip is null || !Contains(tol, ip)) return null;
 
             return ip;
         }

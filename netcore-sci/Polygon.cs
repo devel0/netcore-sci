@@ -123,7 +123,7 @@ namespace SearchAThing
 
             foreach (var p in pts)
             {
-                if (first == null)
+                if (first is null)
                     first = p;
                 else
                     if (first.EqualsTol(tol, p))
@@ -136,7 +136,7 @@ namespace SearchAThing
                 yield return p;
             }
 
-            if (first == null) throw new Exception($"empty pts input set");
+            if (first is null) throw new Exception($"empty pts input set");
 
             if (!foundFirstAtend && makeClosed)
                 yield return first;
@@ -153,7 +153,7 @@ namespace SearchAThing
 
             foreach (var p in pts)
             {
-                if (first == null)
+                if (first is null)
                 {
                     first = prev = p;
                     continue;
@@ -165,9 +165,9 @@ namespace SearchAThing
                 yield return seg;
             }
 
-            if (prev == null) yield break;
+            if (prev is null) yield break;
 
-            if (first == null) throw new Exception($"empty pts input set");
+            if (first is null) throw new Exception($"empty pts input set");
 
             if (!prev.EqualsTol(tol, first)) yield return new Line3D(prev, first);
         }
@@ -327,7 +327,7 @@ namespace SearchAThing
             foreach (var s in polygonSegments)
             {
                 var i = s.Intersect(tol, line, true, false);
-                if (i == null) continue;
+                if (i is null) continue;
                 switch (segmentMode)
                 {
                     case GeomSegmentMode.Infinite: yield return i; break;
@@ -442,7 +442,7 @@ namespace SearchAThing
 
                     case GeometryType.Line3D:
                         {
-                            if (_lastPt == null || _lastPt.EqualsTol(tol, _from))
+                            if (_lastPt is null || _lastPt.EqualsTol(tol, _from))
                             {
                                 var lwpv = new Polyline2DVertex(_from.ToDxfVector2());
                                 pvtx.Add(lwpv);
@@ -463,7 +463,7 @@ namespace SearchAThing
                             var bulge = arc.Bulge(tol);
                             if (cs.BaseZ.EqualsTol(NormalizedLengthTolerance, -arc.CS.BaseZ)) bulge *= -1d;
 
-                            if (_lastPt == null)
+                            if (_lastPt is null)
                             {
                                 if (i < edges.Count - 1)
                                 {
@@ -510,7 +510,7 @@ namespace SearchAThing
 
             if (!closed)
             {
-                if (_lastPt == null) throw new ArgumentException("can't find last pt");
+                if (_lastPt is null) throw new ArgumentException("can't find last pt");
                 var lwpv = new Polyline2DVertex(_lastPt.ToDxfVector2());
                 pvtx.Add(lwpv);
             }

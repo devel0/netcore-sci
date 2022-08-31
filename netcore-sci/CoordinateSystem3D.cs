@@ -60,7 +60,7 @@ namespace SearchAThing
         {
             get
             {
-                if (_m == null) _m = Matrix3D.FromVectorsAsColumns(BaseX, BaseY, BaseZ);
+                if (_m is null) _m = Matrix3D.FromVectorsAsColumns(BaseX, BaseY, BaseZ);
                 return _m;
             }
         }
@@ -70,7 +70,7 @@ namespace SearchAThing
         {
             get
             {
-                if (_mInv == null) _mInv = m.Inverse();
+                if (_mInv is null) _mInv = m.Inverse();
                 return _mInv;
             }
         }
@@ -421,10 +421,10 @@ namespace SearchAThing
             var i1 = l1.Intersect(tol, this);
             var i2 = l2.Intersect(tol, this);
 
-            if (i1 == null && i2 == null) return null;
+            if (i1 is null && i2 is null) return null;
 
-            if (i1 == null) i1 = i2! + l1.V;
-            else if (i2 == null) i2 = i1 + l2.V;
+            if (i1 is null) i1 = i2! + l1.V;
+            else if (i2 is null) i2 = i1 + l2.V;
 
             return new Line3D(i1!, i2!);
         }

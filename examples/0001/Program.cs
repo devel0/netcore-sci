@@ -44,7 +44,7 @@ namespace test
                 arc2_ent.Color = netDxf.AciColor.Green;
                 dxf.AddEntity(arc2_ent);
 
-                if (circ == null)
+                if (circ is null)
                 {
                     circ = new Circle3D(
                         CoordinateSystem3D.WCS.Move(Vector3D.ZAxis * arc.To.Z),

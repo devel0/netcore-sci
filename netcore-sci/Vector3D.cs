@@ -78,7 +78,7 @@ namespace SearchAThing
         {
             get
             {
-                if (_Length == null)
+                if (_Length is null)
                     _Length = Sqrt(X * X + Y * Y + Z * Z);
 
                 return _Length.Value;
@@ -315,7 +315,7 @@ namespace SearchAThing
         {
             get
             {
-                if (_cad_id_regex == null)
+                if (_cad_id_regex is null)
                     _cad_id_regex = new Regex(@"X\s*=\s*([-]?[\d\.]*)\s*Y\s*=\s*([-]?[\d\.]*)\s*Z\s*=\s*([-]?[\d\.]*)");
                 return _cad_id_regex;
             }
@@ -378,7 +378,7 @@ namespace SearchAThing
         /// </remarks>            
         public bool EqualsTol(double tol, Vector3D? other)
         {
-            if (other == null) return false;
+            if (other is null) return false;
 
             return
                 X.EqualsTol(tol, other.X) &&
@@ -471,7 +471,7 @@ namespace SearchAThing
         public double Distance(double tol, Line3D other)
         {
             var q = other.Perpendicular(tol, this);
-            if (q == null) return 0;
+            if (q is null) return 0;
             return q.Length;
         }
 
@@ -991,7 +991,7 @@ namespace SearchAThing
             var dy = ymax - ymin;
             var dz = zmax - zmin;
 
-            var rnd = (random == null) ? new Random(seed) : random;
+            var rnd = (random is null) ? new Random(seed) : random;
             for (int i = 0; i < qty; ++i)
             {
                 yield return new Vector3D(
@@ -1714,7 +1714,7 @@ namespace SearchAThing
                 else
                 {
                     var dst = pt.Distance(firstPt!);
-                    if (distantPt == null || dst > distantPtDst)
+                    if (distantPt is null || dst > distantPtDst)
                     {
                         distantPt = pt;
                         distantPtDst = dst;
@@ -1722,7 +1722,7 @@ namespace SearchAThing
                 }
             }
 
-            if (firstPt == null || distantPt == null)
+            if (firstPt is null || distantPt is null)
                 throw new Exception($"can't find two distant points");
 
             var v1 = distantPt - firstPt;
@@ -1741,14 +1741,14 @@ namespace SearchAThing
                 var qv2 = pt - firstPt;
 
                 var qang = qv2.AngleRad(tol, v1);
-                if (ang == null || qang > ang.Value)
+                if (ang is null || qang > ang.Value)
                 {
                     ang = qang;
                     v2 = qv2;
                 }
             }
 
-            if (v2 == null) throw new Exception($"can't find v2");
+            if (v2 is null) throw new Exception($"can't find v2");
 
             var pl = new Plane3D(new CoordinateSystem3D(firstPt, v1, v2).Simplified());
 

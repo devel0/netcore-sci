@@ -66,7 +66,7 @@ namespace SearchAThing
             {
                 var s = (string?)reader.Value;
 
-                if (s == null) return default(TUnitType);
+                if (s is null) return default(TUnitType);
 
                 return UnitParser.Default.Parse<TUnitType>(s);
             }
@@ -102,13 +102,13 @@ namespace SearchAThing
             static bool ShouldSerialize(MemberInfo memberInfo)
             {
                 var propertyInfo = memberInfo as PropertyInfo;
-                if (propertyInfo == null) return false;
+                if (propertyInfo is null) return false;
 
                 if (propertyInfo.SetMethod != null) return true;
 
                 var getMethod = propertyInfo.GetMethod;
 
-                if (getMethod == null) return false;
+                if (getMethod is null) return false;
 
                 return Attribute.GetCustomAttribute(getMethod, typeof(CompilerGeneratedAttribute)) != null;
             }

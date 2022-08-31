@@ -29,7 +29,7 @@ namespace SearchAThing
         {
             get
             {
-                if (lut == null) throw new Exception($"lut not defined");
+                if (lut is null) throw new Exception($"lut not defined");
                 return lut;
             }
         }
@@ -40,7 +40,7 @@ namespace SearchAThing
             if (y.EqualsTol(Abs(YStep / 2), YFrom)) return XFrom;
             if (y.EqualsTol(Abs(YStep / 2), YTo)) return XTo;
 
-            if (invInterp == null) throw new Exception($"invInterp not defined");
+            if (invInterp is null) throw new Exception($"invInterp not defined");
 
             return invInterp.Interpolate(y);
         }

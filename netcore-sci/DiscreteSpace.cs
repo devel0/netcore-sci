@@ -51,7 +51,7 @@ namespace SearchAThing
 
         public int Compare(DiscreteSpaceItem<T>? x, DiscreteSpaceItem<T>? y)
         {
-            if (x == null || y == null) return -1;
+            if (x is null || y is null) return -1;
 
             return x.Mean.GetOrd(ord).CompareTol(tol, y.Mean.GetOrd(ord));
         }
@@ -261,7 +261,7 @@ namespace SearchAThing
 
                     if (!qs.Any()) // cannot recurse with smaller because will get none
                     {
-                        if (entGetPoint == null) throw new Exception($"entGetPoint undefined");
+                        if (entGetPoint is null) throw new Exception($"entGetPoint undefined");
 
                         foreach (var x in q.OrderBy(u => (entGetPoint(u) - pt).Length).Take(maxRes))
                         {

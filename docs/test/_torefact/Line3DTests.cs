@@ -75,7 +75,7 @@ namespace SearchAThing.Sci.Tests
             Assert.True(l.CommonPoint(1e-1, l2).Act(w => Assert.NotNull(w))!.EqualsTol(1e-1, 4, 5, 6));
             var l3 = new Line3D(4.11, 5.11, 6.11, 7.11, 8.11, 9.11);
             // common point test only from,to
-            Assert.True(l.CommonPoint(1e-1, l3) == null);
+            Assert.True(l.CommonPoint(1e-1, l3) is null);
         }
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace SearchAThing.Sci.Tests
                 ip = l.Intersect(1e-1, l2, LineIntersectBehavior.PointOnOther).Act(w => Assert.NotNull(w))!;
                 Assert.True(ip.EqualsTol(1e-2, 5, 1e-1, 0));
 
-                Assert.True(l.Intersect(5e-2, l2) == null);
+                Assert.True(l.Intersect(5e-2, l2) is null);
             }
 
             {
@@ -186,7 +186,7 @@ namespace SearchAThing.Sci.Tests
                 var ip = l.Intersect(2e-1, lperp_off).Act(w => Assert.NotNull(w))!;
                 Assert.True(ip.EqualsTol(1e-4, 4.9641, 9.9283, 15.0598));
 
-                Assert.True(l.Intersect(1e-1, lperp_off) == null);
+                Assert.True(l.Intersect(1e-1, lperp_off) is null);
             }
         }
 
@@ -196,8 +196,8 @@ namespace SearchAThing.Sci.Tests
             var l1 = new Line3D(0, 0, 0, 10, 0, 0);
             var l2 = new Line3D(5, -5, 0, 5, -10, 0);
 
-            Assert.True(l1.Intersect(1e-1, l2, thisSegment: true, otherSegment: true) == null);
-            Assert.True(l1.Intersect(1e-1, l2, thisSegment: false, otherSegment: true) == null);
+            Assert.True(l1.Intersect(1e-1, l2, thisSegment: true, otherSegment: true) is null);
+            Assert.True(l1.Intersect(1e-1, l2, thisSegment: false, otherSegment: true) is null);
             Assert.True(l1.Intersect(1e-1, l2, thisSegment: true, otherSegment: false)
                 .Act(w => Assert.NotNull(w))!
                 .EqualsTol(1e-1, 5, 0, 0));
@@ -212,8 +212,8 @@ namespace SearchAThing.Sci.Tests
             var l1 = new Line3D(0, 0, 0, 10, 0, 0);
             var l2 = new Line3D(5, -5, 0, 5, -10, 0);
 
-            Assert.True(l1.Intersect(1e-1, l2, thisSegment: true, otherSegment: true) == null);
-            Assert.True(l1.Intersect(1e-1, l2, thisSegment: false, otherSegment: true) == null);
+            Assert.True(l1.Intersect(1e-1, l2, thisSegment: true, otherSegment: true) is null);
+            Assert.True(l1.Intersect(1e-1, l2, thisSegment: false, otherSegment: true) is null);
             Assert.True(l1.Intersect(1e-1, l2, thisSegment: true, otherSegment: false)
                 .Act(w => Assert.NotNull(w))!
                 .EqualsTol(1e-1, 5, 0, 0));
@@ -495,7 +495,7 @@ namespace SearchAThing.Sci.Tests
                 {
                     var bisect = l1.Bisect(1e-4, l2);
                     // two parallel lines not form a plane, then a fallback rotation axis must be given
-                    Assert.True(bisect == null);
+                    Assert.True(bisect is null);
                 }
                 {
                     // rotate right-hand Z+

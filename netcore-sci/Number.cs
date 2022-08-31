@@ -151,7 +151,7 @@ namespace SearchAThing
                 if (_max.HasValue) _max = Max(_max.Value, x); else _max = x;
             }
 
-            if (_min == null) throw new Exception($"empty input set");
+            if (_min is null) throw new Exception($"empty input set");
 
             return (_min!.Value, _max!.Value);
         }

@@ -110,7 +110,7 @@ namespace SearchAThing
                 alpha += alpha_step;
             }
 
-            if (nextPt == null) yield break;
+            if (nextPt is null) yield break;
 
             if (!nextPt.EqualsTol(tol, origPt)) yield return firstPt;
         }
@@ -130,7 +130,7 @@ namespace SearchAThing
             foreach (var da in new double[] { 0, PI / 2 })
             {
                 var ip = t1.Intersect(tol, t2);
-                if (ip == null) throw new Exception($"null intersect");
+                if (ip is null) throw new Exception($"null intersect");
 
                 var angle = t1.V.AngleRad(tol, t2.V);
                 var t3 = new Line3D(ip, t1.V.RotateAs(tol, t1.V, t2.V, .5, da), Line3DConstructMode.PointAndVector);

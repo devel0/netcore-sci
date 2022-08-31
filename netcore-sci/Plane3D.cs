@@ -78,7 +78,7 @@ namespace SearchAThing
             else
             {
                 var iline = this.CS.Intersect(tol, other.CS);
-                if (iline == null) throw new System.Exception($"can't find intersect line between planes {this} and {other}");
+                if (iline is null) throw new System.Exception($"can't find intersect line between planes {this} and {other}");
                 var mline = iline.From.LineV(this.CS.BaseZ + other.CS.BaseZ);
 
                 var mcs = new CoordinateSystem3D(iline.From, iline.V, mline.V, SmartCsMode.X_YQ);

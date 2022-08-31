@@ -137,7 +137,7 @@ namespace SearchAThing
             var en = poly.Vector3DCoords().GetEnumerator();
             while (en.MoveNext())
             {
-                if (prev == null)
+                if (prev is null)
                     prev = en.Current;
                 else
                 {
@@ -216,12 +216,12 @@ namespace SearchAThing
             Vector3D? last = null;
             foreach (var x in pts)
             {
-                if (first == null) first = x;
+                if (first is null) first = x;
                 last = x;
                 yield return x;
             }
 
-            if (last == null) yield break;
+            if (last is null) yield break;
 
             if (first != null && !last.EqualsTol(tol, first)) yield return first;
         }
@@ -506,7 +506,7 @@ namespace SearchAThing
                 return day * dayWidth;
             };
 
-            if (dtStr == null) dtStr = (dt) => dt.Year.ToString();
+            if (dtStr is null) dtStr = (dt) => dt.Year.ToString();
 
             for (int i = 0; i < q.Count; ++i)
             {
@@ -637,7 +637,7 @@ namespace SearchAThing
                 .OrderBy(w => w.offLine!.Length)
                 .FirstOrDefault();
 
-                if (startEdgeNfo == null) yield break;
+                if (startEdgeNfo is null) yield break;
 
                 var startEdgeOffseted = startEdgeNfo.edge.Offset(tol, sideRefPt, offset);
 

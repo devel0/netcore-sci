@@ -23,7 +23,7 @@ namespace SearchAThing.Sci.Tests
             // var l3 = res[2].pa.LineTo(res[2].pb).QCadScript;
             // var l4 = res[3].pa.LineTo(res[3].pb).QCadScript;
 
-            if (res == null)
+            if (res is null)
             {
                 Assert.True(false);
             }

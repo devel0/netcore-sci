@@ -24,7 +24,7 @@ namespace SearchAThing
         {
             get
             {
-                if (_PythonExePathfilename == null)
+                if (_PythonExePathfilename is null)
                 {
                     var searchFor = new List<string>();
 
@@ -54,7 +54,7 @@ namespace SearchAThing
                         }
                     }
 
-                    if (_PythonExePathfilename == null)
+                    if (_PythonExePathfilename is null)
                     {
                         _PythonExePathfilename = "";
                     }
@@ -110,8 +110,8 @@ matplotlib.use('Agg')
                 var guid = Guid.NewGuid().ToString();
 
                 process = new Process();
-                process.StartInfo.FileName = custom_python_executable == null ? PythonExePathfilename : custom_python_executable;
-                process.StartInfo.Arguments = (custom_python_args == null) ? "-i" : custom_python_args;
+                process.StartInfo.FileName = custom_python_executable is null ? PythonExePathfilename : custom_python_executable;
+                process.StartInfo.Arguments = (custom_python_args is null) ? "-i" : custom_python_args;
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.ErrorDialog = false;
                 process.StartInfo.CreateNoWindow = true;
@@ -158,7 +158,7 @@ matplotlib.use('Agg')
 
                         process.StandardInput.Flush();
 
-                        while (!initialized && (token == null || !token.Value.IsCancellationRequested))
+                        while (!initialized && (token is null || !token.Value.IsCancellationRequested))
                         {
                             Thread.Sleep(250);
                         }
@@ -182,7 +182,7 @@ matplotlib.use('Agg')
 
         private void Process_OutputDataReceived(object sender, DataReceivedEventArgs e)
         {
-            if (e.Data == null) return;
+            if (e.Data is null) return;
             if (finished) return;
 
             debug?.Invoke($"output received [{e.Data}]");
@@ -191,7 +191,7 @@ matplotlib.use('Agg')
                 initialized = true;
             else
             {
-                if (guid == null) throw new Exception($"guid not initialized in Exec");
+                if (guid is null) throw new Exception($"guid not initialized in Exec");
 
                 var str = e.Data;
 
@@ -211,7 +211,7 @@ matplotlib.use('Agg')
 
         private void Process_ErrorDataReceived(object sender, DataReceivedEventArgs e)
         {
-            if (e.Data == null) return;
+            if (e.Data is null) return;
             if (finished) return;
 
             if (e.Data.StartsWith("Python ") || e.Data.StartsWith("[GCC ") || e.Data.StartsWith("Type \"help\"")) return;
@@ -220,7 +220,7 @@ matplotlib.use('Agg')
 
             hasErr = true;
 
-            if (e.Data == null) return;
+            if (e.Data is null) return;
 
             var s = e.Data;
             while (s.StartsWith(">>> ")) s = s.Substring(4);
@@ -239,7 +239,7 @@ matplotlib.use('Agg')
         public StringWrapper Exec(StringWrapper code, bool remove_tmp_file = true)
         {
             string? tmp_pathfilename = null;
-            if (TempFolder == null)
+            if (TempFolder is null)
                 tmp_pathfilename = System.IO.Path.GetTempFileName() + ".py";
             else
                 tmp_pathfilename = System.IO.Path.Combine(TempFolder, "_" + Guid.NewGuid().ToString() + ".py");
@@ -280,7 +280,7 @@ matplotlib.use('Agg')
                 Thread.Sleep(25);
             }
 
-            if (process == null) throw new Exception($"process not initialized");
+            if (process is null) throw new Exception($"process not initialized");
 
             lock (wrapper_initialized)
             {

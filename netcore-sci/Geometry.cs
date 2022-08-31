@@ -208,7 +208,7 @@ namespace SearchAThing
                     case GeometryType.Line3D:
                         {
                             var cur = (Line3D)geom;
-                            if (prev == null)
+                            if (prev is null)
                             {
                                 yield return cur;
                                 prev = cur.To;
@@ -232,7 +232,7 @@ namespace SearchAThing
                     case GeometryType.Arc3D:
                         {
                             var cur = (Arc3D)geom;
-                            if (prev == null)
+                            if (prev is null)
                             {
                                 yield return cur.Segment;
                                 prev = cur.To;

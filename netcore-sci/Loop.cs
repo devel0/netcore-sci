@@ -133,9 +133,9 @@ namespace SearchAThing
 
             if (checkSort) _edges = edges.CheckSort(tol).ToList();
 
-            if (checkSense) _edges = (_edges == null) ? edges.CheckSense(tol).ToList() : _edges.CheckSense(tol).ToList();
+            if (checkSense) _edges = (_edges is null) ? edges.CheckSense(tol).ToList() : _edges.CheckSense(tol).ToList();
 
-            Edges = (_edges == null) ? edges.ToList() : _edges;
+            Edges = (_edges is null) ? edges.ToList() : _edges;
 
             Plane = Edges.DetectPlane(tol);
         }
@@ -181,7 +181,7 @@ namespace SearchAThing
         {
             get
             {
-                if (_Area == null) _Area = ComputeArea(Tol);
+                if (_Area is null) _Area = ComputeArea(Tol);
 
                 return _Area.Value;
             }
@@ -196,7 +196,7 @@ namespace SearchAThing
         {
             get
             {
-                if (_Length == null) _Length = Edges.Sum(w => w.Length);
+                if (_Length is null) _Length = Edges.Sum(w => w.Length);
                 return _Length.Value;
             }
         }
@@ -283,7 +283,7 @@ namespace SearchAThing
         {
             get
             {
-                if (_MidPoint == null) _MidPoint = Edges.Select(w => w.MidPoint).Sum() / Edges.Count;
+                if (_MidPoint is null) _MidPoint = Edges.Select(w => w.MidPoint).Sum() / Edges.Count;
                 return _MidPoint;
             }
         }
@@ -357,7 +357,7 @@ namespace SearchAThing
         {
             get
             {
-                if (_BBox == null) _BBox = this.Edges.Select(w => w.SGeomFrom).BBox();
+                if (_BBox is null) _BBox = this.Edges.Select(w => w.SGeomFrom).BBox();
 
                 return _BBox;
             }
@@ -373,7 +373,7 @@ namespace SearchAThing
         {
             get
             {
-                if (_CSBBox == null) _CSBBox = this.Edges.Select(w => w.SGeomFrom.ToUCS(Plane.CS)).BBox();
+                if (_CSBBox is null) _CSBBox = this.Edges.Select(w => w.SGeomFrom.ToUCS(Plane.CS)).BBox();
 
                 return _CSBBox;
             }
@@ -468,7 +468,7 @@ namespace SearchAThing
             this.tol = tol;
         }
 
-        public bool Equals(Loop? x, Loop? y) => (x == null || y == null) ? false : x.Equals(tol, y);
+        public bool Equals(Loop? x, Loop? y) => (x is null || y is null) ? false : x.Equals(tol, y);
 
         public int GetHashCode([DisallowNull] Loop obj) => 0;
     }

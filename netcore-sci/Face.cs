@@ -63,7 +63,7 @@ namespace SearchAThing
         {
             get
             {
-                if (_Area == null)
+                if (_Area is null)
                     _Area = Loops[0].Area - Loops.Skip(1).Select(w => w.Area).Sum();
 
                 return _Area.Value;
@@ -270,7 +270,7 @@ namespace SearchAThing
                         {
                             case BooleanMode.Union:
                                 {
-                                    var externalOuter = allLoopNfos.First(loopNfo => loopNfo.directParent == null);
+                                    var externalOuter = allLoopNfos.First(loopNfo => loopNfo.directParent is null);
 
                                     if (externalOuter.childrenLoopNfos.All(loopNfo => loopNfo.faceOwner != externalOuter.faceOwner))
                                         yield return externalOuter.faceOwner;
@@ -627,7 +627,7 @@ namespace SearchAThing
                                         .Select(vten => vten.Key)
                                         .FirstOrDefault();
 
-                                    if (qStartVertex == null) break;
+                                    if (qStartVertex is null) break;
 
                                     var shortestEdgePath = vertexToEdges[qStartVertex]
                                         .Select(edge => SciToolkit.WalkEdges(tol,
@@ -725,14 +725,14 @@ namespace SearchAThing
 
                             while (!finished)
                             {
-                                if (lastEdgeNfo == null) // starting edge
+                                if (lastEdgeNfo is null) // starting edge
                                 {
                                     var edgeNfosFromLastVisitedVertex = vertexToEdgeNfos[lastVertex];
 
                                     lastEdgeNfo = edgeNfosFromLastVisitedVertex
                                         .FirstOrDefault(w => w.partiallyInside == true || w.overlapped == true);
 
-                                    if (lastEdgeNfo == null) yield break;
+                                    if (lastEdgeNfo is null) yield break;
                                 }
                                 else
                                 {
@@ -813,7 +813,7 @@ namespace SearchAThing
 
                             while (!finished)
                             {
-                                if (lastEdgeNfo == null) // starting edge
+                                if (lastEdgeNfo is null) // starting edge
                                 {
                                     var edgeNfosFromLastVisitedVertex = vertexToEdgeNfos[lastVertex];
 
@@ -931,7 +931,7 @@ namespace SearchAThing
 
                             while (!finished)
                             {
-                                if (lastEdgeNfo == null) // starting edge
+                                if (lastEdgeNfo is null) // starting edge
                                 {
                                     var edgeNfosFromLastVisitedVertex = vertexToEdgeNfos[lastVertex];
 
@@ -940,7 +940,7 @@ namespace SearchAThing
                                         w.overlapped == false &&
                                         w.onThis == searchOnThis);
 
-                                    if (q == null)
+                                    if (q is null)
                                     {
                                         lastEdgeNfo = edgeNfosFromLastVisitedVertex.FirstOrDefault(w =>
                                             w.partiallyInside == false);
@@ -959,11 +959,11 @@ namespace SearchAThing
                                         .ToList();
 
                                     var q = edgeNfosFromLastVisitedVertex.FirstOrDefault(w => w.partiallyInside == searchInsideEdge);
-                                    if (q == null)
+                                    if (q is null)
                                     {
                                         q = edgeNfosFromLastVisitedVertex.FirstOrDefault(w => w.partiallyInside == false);
 
-                                        if (q == null)
+                                        if (q is null)
                                             lastEdgeNfo = edgeNfosFromLastVisitedVertex.First(w => w.overlapped == true);
                                         else
                                             lastEdgeNfo = q;
@@ -987,7 +987,7 @@ namespace SearchAThing
                                     visitedIps.Add(lastEdgeNfo.edge.SGeomTo);
                             }
 
-                            if (resOuterLoop == null)
+                            if (resOuterLoop is null)
                             {
                                 resOuterLoop = new Loop(tol, Plane, loopEdgeNfos.Select(w => w.edge).ToList(), checkSense: true);                                
                             }
