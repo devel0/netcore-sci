@@ -1,23 +1,30 @@
 <!--Directory.Build.props: MSBuild properties that are included in every project--><!--Info: https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?view=vs-2019#directorybuildprops-and-directorybuildtargets-->
 <Project>
-    <PropertyGroup>        <!-- 
-        === netcore-util -->
+    <PropertyGroup>
+        <!-- === netcore-util -->
+        <NpgsqlEntityFrameworkCorePostgreSQLVersion>6.0.1</NpgsqlEntityFrameworkCorePostgreSQLVersion>
+        <MicrosoftEntityFrameworkCoreVersion>6.0.8</MicrosoftEntityFrameworkCoreVersion>
+
         <MicrosoftCSharpVersion>4.7.0</MicrosoftCSharpVersion>
-        <MicrosoftEntityFrameworkCoreVersion>5.0.1</MicrosoftEntityFrameworkCoreVersion>
-        <!-- <NewtonsoftJsonVersion>13.0.1</NewtonsoftJsonVersion>         -->
-        <NpgsqlEntityFrameworkCorePostgreSQLVersion>5.0.0</NpgsqlEntityFrameworkCorePostgreSQLVersion>
-        <UnitsNetVersion>4.74.0</UnitsNetVersion>        <!-- 
-        === netcore-sci -->
-        <NewtonsoftJsonVersion>13.0.2-beta1</NewtonsoftJsonVersion>
-        <NetcoreUtilVersion>3.2.0</NetcoreUtilVersion>
-        <LibTessDotNetVersion>1.1.13</LibTessDotNetVersion>
+        <NewtonsoftJsonVersion>13.0.1</NewtonsoftJsonVersion>
+        <UnitsNetVersion>4.144.0</UnitsNetVersion>
+
+        <MicrosoftNETTestSdkVersion>17.3.1</MicrosoftNETTestSdkVersion>
+        <xunitVersion>2.4.2</xunitVersion>
+        <dotnetXUnitVersion>2.3.1</dotnetXUnitVersion>
+        <xunitSkippableFactVersion>1.4.13</xunitSkippableFactVersion>
+
+        <!-- === netcore-sci -->        
+        <NetcoreUtilVersion>4.0.0</NetcoreUtilVersion>
+        <NetDxfDevel0>3.0.2</NetDxfDevel0>
+        
+        <LibTessDotNetVersion>1.1.15</LibTessDotNetVersion>
         <LinqStatisticsVersion>2.3.0</LinqStatisticsVersion>
-        <MathNetNumericsVersion>4.12.0</MathNetNumericsVersion>
+        <MathNetNumericsVersion>5.0.0</MathNetNumericsVersion>
         <ParagonClipperVersion>6.4.2</ParagonClipperVersion>
         <STLNetCoreVersion>1.3.1</STLNetCoreVersion>
-        <UnitsNetSerializationJsonNetVersion>5.0.0-alpha004</UnitsNetSerializationJsonNetVersion>
+        <UnitsNetSerializationJsonNetVersion>4.6.0</UnitsNetSerializationJsonNetVersion>
         <JsonNetContractResolversVersion>2.0.0</JsonNetContractResolversVersion>
-        <SystemDrawingCommonVersion>6.0.0</SystemDrawingCommonVersion>
-        <NetDxfDevel0>3.0.1</NetDxfDevel0>
+        <SystemDrawingCommonVersion>6.0.0</SystemDrawingCommonVersion>        
     </PropertyGroup>
 </Project>

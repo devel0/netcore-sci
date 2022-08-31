@@ -294,6 +294,7 @@ namespace SearchAThing
             }
         }
 
+/*
         /// <summary>
         /// centroid of given geometries (not fully implemented)
         /// </summary>
@@ -317,32 +318,32 @@ namespace SearchAThing
 
                 // TODO centroid with polyline and arcs
 
-                /*
-                // search for arcs
-                foreach (var geom in geometry_block)
-                {
-                    if (geom.Type == GeometryType.Arc3D)
-                    {
-                        var arc = geom as Arc3D;
-                        var arc_sign = segs.ContainsPoint(tolLen, arc.MidPoint) ? -1.0 : 1.0;
-                        var arc_A = 0.0;
-                        var arc_centre_of_mass = arc.CentreOfMass(out arc_A);
+                
+                // // search for arcs
+                // foreach (var geom in geometry_block)
+                // {
+                //     if (geom.Type == GeometryType.Arc3D)
+                //     {
+                //         var arc = geom as Arc3D;
+                //         var arc_sign = segs.ContainsPoint(tolLen, arc.MidPoint) ? -1.0 : 1.0;
+                //         var arc_A = 0.0;
+                //         var arc_centre_of_mass = arc.CentreOfMass(out arc_A);
 
-                        var new_centroid_x = (centroid.X * A + arc_centre_of_mass.X * arc_A * arc_sign) / (A + arc_A * arc_sign);
-                        var new_centroid_y = (centroid.Y * A + arc_centre_of_mass.Y * arc_A * arc_sign) / (A + arc_A * arc_sign);
+                //         var new_centroid_x = (centroid.X * A + arc_centre_of_mass.X * arc_A * arc_sign) / (A + arc_A * arc_sign);
+                //         var new_centroid_y = (centroid.Y * A + arc_centre_of_mass.Y * arc_A * arc_sign) / (A + arc_A * arc_sign);
 
-                        A += arc_A * arc_sign;
-                        centroid = new Vector3D(new_centroid_x, new_centroid_y, 0);
-                    }
-                }
-                */
+                //         A += arc_A * arc_sign;
+                //         centroid = new Vector3D(new_centroid_x, new_centroid_y, 0);
+                //     }
+                // }
+                 
 
                 throw new NotImplementedException();
 
                 return centroid;
             }
         }
-
+*/
         /// <summary>
         /// find intersection geometries resulting from all this geometries with all given geom2
         /// </summary>

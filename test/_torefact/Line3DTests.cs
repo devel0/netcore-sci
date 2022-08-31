@@ -180,7 +180,7 @@ namespace SearchAThing.Sci.Tests
                 var cs = new CoordinateSystem3D(l.From, l.V, CoordinateSystem3DAutoEnum.AAA);
 
                 // build a per line offsetted
-                var lperp_off = new Line3D(l.MidPoint, cs.BaseX, Line3DConstructMode.PointAndVector)
+                var lperp_off = (Line3D)new Line3D(l.MidPoint, cs.BaseX, Line3DConstructMode.PointAndVector)
                     .Move(cs.BaseY * 2e-1);
 
                 var ip = l.Intersect(2e-1, lperp_off).Act(w => Assert.NotNull(w))!;
@@ -322,7 +322,7 @@ namespace SearchAThing.Sci.Tests
         {
             var l = new Line3D(1, 2, 3, 10, 0, 0);
             var delta = new Vector3D(10, 20, 30);
-            var l2 = l.Move(delta);
+            var l2 = (Line3D)(l.Move(delta));
             Assert.True(l2.From.EqualsTol(1e-1, l.From + delta));
             Assert.True(l2.V.EqualsTol(1e-1, l.V));
         }
@@ -341,7 +341,7 @@ namespace SearchAThing.Sci.Tests
         {
             {
                 var l = new Line3D(0, 0, 0, 10, 0, 0);
-                var segs = l.Split(1e-1, new[] { new Vector3D(2, 0, 0), new Vector3D(8, 0, 0) });
+                var segs = l.Split(1e-1, new[] { new Vector3D(2, 0, 0), new Vector3D(8, 0, 0) }).Cast<Line3D>();
                 Assert.True(segs.Count() == 3);
                 Assert.True(segs.First().EqualsTol(1e-1, new Line3D(0, 0, 0, 2, 0, 0)));
                 Assert.True(segs.Skip(1).First().EqualsTol(1e-1, new Line3D(2, 0, 0, 8, 0, 0)));
@@ -357,7 +357,7 @@ namespace SearchAThing.Sci.Tests
 
                     new Vector3D(2, 0, 0),
                     new Vector3D(8, 0, 0)
-                });
+                }).Cast<Line3D>();
                 Assert.True(segs.Count() == 3);
                 Assert.True(segs.First().EqualsTol(1e-1, new Line3D(0, 0, 0, 2, 0, 0)));
                 Assert.True(segs.Skip(1).First().EqualsTol(1e-1, new Line3D(2, 0, 0, 8, 0, 0)));
@@ -366,7 +366,7 @@ namespace SearchAThing.Sci.Tests
 
             {
                 var l = new Line3D(0, 0, 0, 10, 0, 0);
-                var segs = l.Split(1e-1, new[] { new Vector3D(8, 0, 0), new Vector3D(2, 0, 0) });
+                var segs = l.Split(1e-1, new[] { new Vector3D(8, 0, 0), new Vector3D(2, 0, 0) }).Cast<Line3D>();
                 Assert.True(segs.Count() == 3);
                 // splitted segments start from begin of line
                 Assert.True(segs.First().EqualsTol(1e-1, new Line3D(0, 0, 0, 2, 0, 0)));
@@ -517,7 +517,7 @@ namespace SearchAThing.Sci.Tests
             var p = new Vector3D(740.754, 286.803, 687.757);
 
             var off = 15.5;
-            var lOff = l.Offset(1e-2, p, off);
+            var lOff = (Line3D)(l.Offset(1e-2, p, off));
 
             Assert.True(l.V.IsParallelTo(1e-2, lOff.V));
 

@@ -24,7 +24,11 @@ namespace SearchAThing
 
         #region Geometry
 
+#if NETSTANDARD2_1_OR_GREATER
+        public override Geometry Copy() => new Vector3D(this);
+#elif NET6_0_OR_GREATER
         public override Vector3D Copy() => new Vector3D(this);
+#endif
 
         /// <summary>
         /// Enumerable with only this vector.

@@ -319,7 +319,7 @@ matplotlib.use('Agg')
 
             if (remove_tmp_file) File.Delete(tmp_pathfilename);
 
-            return new StringWrapper() { str = res };
+            return new StringWrapper(res);
         }
 
         CancellationTokenSource cts = new CancellationTokenSource();

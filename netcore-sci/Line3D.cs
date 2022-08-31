@@ -43,7 +43,12 @@ namespace SearchAThing
         /// <param name="tol">length tolerance</param>
         /// <param name="breaks">break points</param>
         /// <returns>splitted segments starts from begin of line</returns>
+
+#if NETSTANDARD2_1_OR_GREATER
+        public override IEnumerable<Geometry> Split(double tol, IEnumerable<Vector3D> breaks)
+#elif NET6_0_OR_GREATER
         public override IEnumerable<Line3D> Split(double tol, IEnumerable<Vector3D> breaks)
+#endif      
         {
             var Vnorm = Sense ? V.Normalized() : -V.Normalized();
 
@@ -100,13 +105,17 @@ namespace SearchAThing
 
         public override Vector3D MidPoint => (From + To) / 2;
 
-        public Edge EdgeMove(Vector3D delta) => this.Move(delta);
+        public Edge EdgeMove(Vector3D delta) => (Edge)this.Move(delta);
 
         #endregion
 
         #region Geometry
 
+#if NETSTANDARD2_1_OR_GREATER
+        public override Geometry Copy() => new Line3D(this);
+#elif NET6_0_OR_GREATER
         public override Line3D Copy() => new Line3D(this);
+#endif
 
         public new Line3D ToggleSense() => (Line3D)base.ToggleSense();
 
@@ -748,8 +757,12 @@ namespace SearchAThing
 
         /// <summary>
         /// move this segment of given delta
-        /// </summary>            
+        /// </summary>                    
+#if NETSTANDARD2_1_OR_GREATER
+        public override Geometry Move(Vector3D delta) => new Line3D(From + delta, To + delta);
+#elif NET6_0_OR_GREATER
         public override Line3D Move(Vector3D delta) => new Line3D(From + delta, To + delta);
+#endif        
 
         /// <summary>
         /// Move this segment midpoint to the given coord
@@ -757,7 +770,7 @@ namespace SearchAThing
         public Line3D MoveMidpoint(Vector3D newMidpoint)
         {
             var mid = MidPoint;
-            return Move(newMidpoint - mid);
+            return (Line3D)Move(newMidpoint - mid);
         }
 
         /// <summary>
@@ -777,7 +790,11 @@ namespace SearchAThing
         /// <summary>
         /// create offseted line toward refPt for given offset
         /// </summary>
+#if NETSTANDARD2_1_OR_GREATER
+        public override Edge Offset(double tol, Vector3D refPt, double offset)
+#elif NET6_0_OR_GREATER
         public override Line3D Offset(double tol, Vector3D refPt, double offset)
+#endif              
         {
             var perp = this.Perpendicular(tol, refPt);
 
@@ -1145,7 +1162,7 @@ namespace SearchAThing
                 for (int i = 0; i < segs.Count; ++i)
                 {
                     if (splitPts.TryGetValue(segs[i], out qSplitPts))
-                        res.AddRange(segs[i].Split(tol, qSplitPts.ToList()));
+                        res.AddRange(segs[i].Split(tol, qSplitPts.ToList()).Cast<Line3D>());
                     else
                         res.Add(segs[i]);
                 }

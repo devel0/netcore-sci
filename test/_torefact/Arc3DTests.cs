@@ -176,7 +176,7 @@ namespace SearchAThing.Sci.Tests
             Assert.True(c.Contains(1e-3, p3, onlyPerimeter: true));
 
             var moveVector = new Vector3D(-1998.843, -6050.954, -1980.059);
-            var cmoved = c.Move(moveVector);
+            var cmoved = (Arc3D)(c.Move(moveVector));
 
             Assert.True(cmoved is Arc3D);
 

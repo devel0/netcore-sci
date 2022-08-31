@@ -67,12 +67,13 @@ namespace SearchAThing.Sci.Tests
 
             // 
             {
-                var c = new Circle3D(
-                        CoordinateSystem3D.WCS.Move(
-                            new Vector3D(
-                                250.21546070748141,
-                                -926.81833345210805)
-                        ), 125).Move(Vector3D.Zero).ToCircle3D(1e-3); // move0 to verify arc convert
+                var c = ((Circle3D)new Circle3D(
+                    CoordinateSystem3D.WCS.Move(                        
+                        new Vector3D(
+                            250.21546070748141,
+                            -926.81833345210805)
+                        ), 125).Move(Vector3D.Zero))
+                        .ToCircle3D(1e-3); // move0 to verify arc convert
 
                 var l = new Line3D(
                     new Vector3D(0, -960), new Vector3D(1, 0, 0),

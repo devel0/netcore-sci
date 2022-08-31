@@ -631,6 +631,8 @@ namespace SearchAThing
     public static partial class SciToolkit
     {
 
+#pragma warning disable CA1416
+
         /// <summary>
         /// create an approximation of ellipse
         /// </summary>
@@ -648,6 +650,8 @@ namespace SearchAThing
             gp.Flatten(new Matrix(), (float)flatness);
             foreach (var p in gp.PathPoints) yield return new Vector3D(p.X, p.Y, 0) + center;
         }
+        
+#pragma warning restore CA1416
 
     }
 
