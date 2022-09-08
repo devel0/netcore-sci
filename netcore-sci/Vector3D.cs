@@ -977,6 +977,36 @@ namespace SearchAThing
             return res;
         }
 
+        /// <summary>
+        /// retrieve list of Vector3D by reading from a txt file, for example:
+        /// -53.54533794,-141.18745265
+        /// 18.20103872,-149.89903999
+        /// 85.77777676,-124.27056375
+        /// 
+        /// notes:
+        /// - supports also third coord (Z) ;
+        /// - whitespace are removed ;
+        /// - empty lines are removed
+        /// </summary>
+        /// <param name="txt">txt data to read</param>
+        /// <param name="culture">culture for number parsing (default: invariant)</param>
+        /// <returns>enumerable of Vector3D corresponding to data</returns>
+        public static IEnumerable<Vector3D> FromTxtPointsList(string txt, CultureInfo? culture = null)
+        {
+            if (culture is null) culture = CultureInfo.InvariantCulture;
+
+            foreach (var l in txt.Lines().Select(l => l.Trim()).Where(l => l.Length > 0))
+            {
+                var ss = l.Split(',');
+                var X = double.Parse(ss[0].Trim(), culture);
+                var Y = double.Parse(ss[1].Trim(), culture);
+                var Z = 0d;
+                if (ss.Length > 2) Z = double.Parse(ss[2].Trim(), culture);
+
+                yield return new Vector3D(X, Y, Z);
+            }
+        }
+
         public static IEnumerable<Vector3D> Random(int N, double L, int seed = 0) =>
             Random(N, -L / 2, L / 2, -L / 2, L / 2, -L / 2, L / 2, seed);
 
@@ -1761,7 +1791,7 @@ namespace SearchAThing
         /// <param name="v">input vector</param>
         /// <returns>sqrt(v)</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector3D Sqrt(this Vector3D v) => new Vector3D(Math.Sqrt(v.X), Math.Sqrt(v.Y), Math.Sqrt(v.Z));
+        public static Vector3D Sqrt(this Vector3D v) => new Vector3D(Math.Sqrt(v.X), Math.Sqrt(v.Y), Math.Sqrt(v.Z));        
 
     }
 
