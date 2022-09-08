@@ -26,6 +26,7 @@
         <STLNetCoreVersion>1.3.1</STLNetCoreVersion>
         <UnitsNetSerializationJsonNetVersion>4.6.0</UnitsNetSerializationJsonNetVersion>
         <JsonNetContractResolversVersion>2.0.0</JsonNetContractResolversVersion>
+        <SystemDrawingCommonVersion>6.0.0</SystemDrawingCommonVersion>
                 
     </PropertyGroup>
 </Project>
