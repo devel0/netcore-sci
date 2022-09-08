@@ -135,9 +135,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ac1e20971c28c9d05ad31cf9b99a1a7f6"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#ac1e20971c28c9d05ad31cf9b99a1a7f6">Range</a> (double tol, double start, double end, double inc, bool includeEnd=false)</td></tr>
 <tr class="memdesc:ac1e20971c28c9d05ad31cf9b99a1a7f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">span a range of doubles from start to end ( optionally included ) stepping with given inc  <a href="class_search_a_thing_1_1_sci_toolkit.html#ac1e20971c28c9d05ad31cf9b99a1a7f6">More...</a><br /></td></tr>
 <tr class="separator:ac1e20971c28c9d05ad31cf9b99a1a7f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cd3aa88def91ca57153d7f4df4fb40d"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#a3cd3aa88def91ca57153d7f4df4fb40d">EllipseToPolygon2D</a> (<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> center, double width, double height, double flatness=.1)</td></tr>
-<tr class="memdesc:a3cd3aa88def91ca57153d7f4df4fb40d"><td class="mdescLeft">&#160;</td><td class="mdescRight">create an approximation of ellipse  <a href="class_search_a_thing_1_1_sci_toolkit.html#a3cd3aa88def91ca57153d7f4df4fb40d">More...</a><br /></td></tr>
-<tr class="separator:a3cd3aa88def91ca57153d7f4df4fb40d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a802b8635ce7c07f9ca08a00de2ba9276"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_toolkit.html#a802b8635ce7c07f9ca08a00de2ba9276">ToSciJson</a> (object o)</td></tr>
 <tr class="separator:a802b8635ce7c07f9ca08a00de2ba9276"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -303,66 +300,6 @@ Properties</h2></td></tr>
 <p>Creates dxf entities for 6 faces of a cuboid; generated face order is front, back, left, right, bottom, top </p>
 <p><br  />
  </p>
-
-</div>
-</div>
-<a id="a3cd3aa88def91ca57153d7f4df4fb40d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cd3aa88def91ca57153d7f4df4fb40d">&#9670;&nbsp;</a></span>EllipseToPolygon2D()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&gt; EllipseToPolygon2D </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&#160;</td>
-          <td class="paramname"><em>center</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>height</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>flatness</em> = <code>.1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>create an approximation of ellipse </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">center</td><td>center of ellipse</td></tr>
-    <tr><td class="paramname">width</td><td>width of ellipse</td></tr>
-    <tr><td class="paramname">height</td><td>height of ellipse</td></tr>
-    <tr><td class="paramname">flatness</td><td>maximum error of approximation</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>vertexes of approximated ellipse (including last=first)</dd></dl>
 
 </div>
 </div>
@@ -839,7 +776,6 @@ Properties</h2></td></tr>
 <li>netcore-sci/Serialization.cs</li>
 <li>netcore-sci/Edge.cs</li>
 <li>netcore-sci/Number.cs</li>
-<li>netcore-sci/Polygon.cs</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -388,6 +388,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac78a20c67edb33968f2ceac5197f73b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an array of <a class="el" href="class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin">Vector3D</a> from given list of 3d coords ( eg. { 100, 200, 10, 300, 400, 20 } will create follow list of vector3d = { (100,200,10), (300,400,20) } <br  />
   <a href="class_search_a_thing_1_1_vector3_d.html#ac78a20c67edb33968f2ceac5197f73b9">More...</a><br /></td></tr>
 <tr class="separator:ac78a20c67edb33968f2ceac5197f73b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dfa493f8d3173dcd9e86fc32c81b98a"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#a0dfa493f8d3173dcd9e86fc32c81b98a">FromTxtPointsList</a> (string txt, CultureInfo? culture=null)</td></tr>
+<tr class="memdesc:a0dfa493f8d3173dcd9e86fc32c81b98a"><td class="mdescLeft">&#160;</td><td class="mdescRight">retrieve list of <a class="el" href="class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin">Vector3D</a> by reading from a txt file, for example: -53.54533794,-141.18745265 18.20103872,-149.89903999 85.77777676,-124.27056375  <a href="class_search_a_thing_1_1_vector3_d.html#a0dfa493f8d3173dcd9e86fc32c81b98a">More...</a><br /></td></tr>
+<tr class="separator:a0dfa493f8d3173dcd9e86fc32c81b98a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9123316065e3556d147d46ec64b93582"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#a9123316065e3556d147d46ec64b93582">Random</a> (int N, double L, int seed=0)</td></tr>
 <tr class="separator:a9123316065e3556d147d46ec64b93582"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5009dc56f22479476e4e944d0deceaf2"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#a5009dc56f22479476e4e944d0deceaf2">Random</a> (int qty, double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, int seed=0, Random? random=null)</td></tr>
@@ -1662,6 +1665,57 @@ Additional Inherited Members</h2></td></tr>
 <p>parse vector3d from array "(x1,y1,z1);(x2,y2,z2)"; an appropriate string can be generated with StringRepresentation extension. </p>
 <p><br  />
  </p>
+
+</div>
+</div>
+<a id="a0dfa493f8d3173dcd9e86fc32c81b98a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dfa493f8d3173dcd9e86fc32c81b98a">&#9670;&nbsp;</a></span>FromTxtPointsList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static IEnumerable&lt;<a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a>&gt; FromTxtPointsList </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>txt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CultureInfo?&#160;</td>
+          <td class="paramname"><em>culture</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>retrieve list of <a class="el" href="class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin">Vector3D</a> by reading from a txt file, for example: -53.54533794,-141.18745265 18.20103872,-149.89903999 85.77777676,-124.27056375 </p>
+<p>notes:</p><ul>
+<li>supports also third coord (Z) ;</li>
+<li>whitespace are removed ;</li>
+<li>empty lines are removed</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">txt</td><td>txt data to read</td></tr>
+    <tr><td class="paramname">culture</td><td>culture for number parsing (default: invariant)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>enumerable of <a class="el" href="class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin">Vector3D</a> corresponding to data</dd></dl>
 
 </div>
 </div>
