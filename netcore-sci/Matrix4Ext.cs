@@ -158,6 +158,53 @@ namespace SearchAThing
             return (translation, rotation, scale, success);
         }
 
+        /// <summary>
+        /// retrieve item at given row(0..3), col(0..3) of the matrix4x4
+        /// </summary>
+        /// <param name="m">matrix</param>
+        /// <param name="rowIdx">row (0 based index)</param>
+        /// <param name="colIdx">col (0 based index)</param>
+        /// <returns>matrix item</returns>
+        public static float GetItem(this Matrix4x4 m, int rowIdx, int colIdx) => rowIdx switch
+        {
+            0 => colIdx switch
+            {
+                0 => m.M11,
+                1 => m.M12,
+                2 => m.M13,
+                3 => m.M14,
+                _ => throw new ArgumentException($"invalid col {colIdx}")
+            },
+
+            1 => colIdx switch
+            {
+                0 => m.M21,
+                1 => m.M22,
+                2 => m.M23,
+                3 => m.M24,
+                _ => throw new ArgumentException($"invalid col {colIdx}")
+            },
+
+            2 => colIdx switch
+            {
+                0 => m.M31,
+                1 => m.M32,
+                2 => m.M33,
+                3 => m.M34,
+                _ => throw new ArgumentException($"invalid col {colIdx}")
+            },
+
+            3 => colIdx switch
+            {
+                0 => m.M41,
+                1 => m.M42,
+                2 => m.M43,
+                3 => m.M44,
+                _ => throw new ArgumentException($"invalid col {colIdx}")
+            },
+            _ => throw new ArgumentException($"invalid row {rowIdx}")
+        };
+
     }
 
 }
