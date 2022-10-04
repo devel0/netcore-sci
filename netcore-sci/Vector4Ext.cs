@@ -33,6 +33,14 @@ namespace SearchAThing
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3 ToVector3(this Vector4 v) => new Vector3(v.X, v.Y, v.Z);
 
+         /// <summary>
+        /// create vector2 from vector4 discarding z, w
+        /// </summary>
+        /// <param name="v">vector4 input</param>
+        /// <returns>vector2</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector2 ToVector2(this Vector4 v) => new Vector2(v.X, v.Y);
+
         /// <summary>
         /// debug to console with optional prefix
         /// </summary>
