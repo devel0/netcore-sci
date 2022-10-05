@@ -49,7 +49,7 @@ namespace SearchAThing
 
         Vector3D? _Max = null;
         /// <summary>
-        /// Man coord of bbox resulting by all inserted points
+        /// Max coord of bbox resulting by all inserted points
         /// </summary>            
         public Vector3D Max
         {
