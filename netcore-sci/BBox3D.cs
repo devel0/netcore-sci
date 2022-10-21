@@ -385,7 +385,7 @@ namespace SearchAThing
         }
 
         /// <summary>
-        /// retrieve ordered set of points for this bbox (0..4) first face (5..7) other face
+        /// (not cached) retrieve ordered set of points for this bbox (0..4) first face (5..7) other face
         /// - [0] = (Min.X, Min.Y, Min.Z)
         /// - [1] = (Max.X, Min.Y, Min.Z)
         /// - [2] = (Max.X, Max.Y, Min.Z)
