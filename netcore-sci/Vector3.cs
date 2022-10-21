@@ -39,6 +39,11 @@ namespace SearchAThing
         }
 
         /// <summary>
+        /// return abs of given Vector3
+        /// </summary>        
+        public static NVector3 Abs(this NVector3 v) => new NVector3(v.X, v.Y, v.Z);
+
+        /// <summary>
         /// debug to console with optional prefix
         /// </summary>
         /// <param name="v">vector</param>
