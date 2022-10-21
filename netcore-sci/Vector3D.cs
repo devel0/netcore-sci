@@ -85,6 +85,14 @@ namespace SearchAThing
             }
         }
 
+        /// <summary>
+        /// (other.X - this.X)^2 + (other.Y - this.Y)^2 + (other.Z - this.Z)^2
+        /// </summary>
+        public double SquaredDistance(Vector3D other) =>
+            ((other.X - this.X) * (other.X - this.X)) +
+            ((other.Y - this.Y) * (other.Y - this.Y)) +
+            ((other.Z - this.Z) * (other.Z - this.Z));
+
         public override Vector3D MidPoint => this;
 
         /// <summary>
@@ -1791,7 +1799,7 @@ namespace SearchAThing
         /// <param name="v">input vector</param>
         /// <returns>sqrt(v)</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector3D Sqrt(this Vector3D v) => new Vector3D(Math.Sqrt(v.X), Math.Sqrt(v.Y), Math.Sqrt(v.Z));        
+        public static Vector3D Sqrt(this Vector3D v) => new Vector3D(Math.Sqrt(v.X), Math.Sqrt(v.Y), Math.Sqrt(v.Z));
 
     }
 
