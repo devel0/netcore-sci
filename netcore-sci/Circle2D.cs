@@ -12,6 +12,48 @@ namespace SearchAThing
     {
 
         /// <summary>
+        /// create circle 2D by given two points and radius
+        /// </summary>
+        /// <param name="tol">length tolerance</param>
+        /// <param name="radius">circle radius</param>
+        /// <param name="p1">circle first point (z not considered)</param>
+        /// <param name="p2">circle second point (z not considered)</param>
+        /// <returns>circle centers</returns>
+        public static Vector3D[] Circle2D(double tol, double radius, Vector3D p1, Vector3D p2)
+        {
+            if (radius.LessThanTol(tol, 0)) throw new ArgumentException("negative radius");
+
+            if (radius.EqualsTol(tol, 0))
+            {
+                if (p1.EqualsTol(tol, p2))
+                    return new[] { p1 };
+
+                throw new ArgumentException("no circles");
+            }
+            if (p1.EqualsTol(tol, p2))
+                throw new ArgumentException($"infinite number of circles");
+
+            var sqDst = p1.SquaredDistance(p2);
+            var sqDiam = 4d * radius * radius;
+            if (sqDst.GreatThanTol(tol, sqDiam)) throw new ArgumentException("points too far");
+
+            var midpt = (p1 + p2) / 2;
+            if (sqDst.EqualsTol(tol, sqDiam)) return new[] { midpt };
+
+            var d = Sqrt(radius * radius - sqDst / 4);
+            var dst = Sqrt(sqDst);
+            var o = d * (p2 - p1) / dst;
+
+            var c1 = new Vector3D(midpt.X - o.Y, midpt.Y + o.X);
+            var c2 = new Vector3D(midpt.X + o.Y, midpt.Y - o.X);
+
+            if (c1.EqualsTol(tol, c2))
+                return new[] { c1 };
+            else
+                return new[] { c1, c2 };
+        }
+
+        /// <summary>
         /// Finds tangent segments between two given circles.
         /// 
         /// returns empty,
