@@ -5,6 +5,7 @@ using System.Threading;
 using System.Diagnostics;
 using System.IO;
 using System.Collections.Generic;
+using Newtonsoft.Json.Serialization;
 
 namespace SearchAThing
 {
@@ -16,6 +17,9 @@ namespace SearchAThing
     /// </summary>
     public class PythonPipe : IDisposable
     {
+
+        public enum OnErrorResultEnum { Ignore, GenerateException };
+        public delegate OnErrorResultEnum OnErrorDelegate(string errMsg, string output);
 
         #region python path
         static string? _PythonExePathfilename = null;
@@ -83,14 +87,17 @@ matplotlib.use('Agg')
         string? custom_python_executable = null;
         string? custom_python_args = null;
         string initial_imports = "";
+        OnErrorDelegate? onErrorAction = null;
 
         public PythonPipe(string _initial_imports = "", Action<string>? _debug = null,
             string? tempFolder = null, bool delete_tmp_files = true,
-            string? _custom_python_executable = null, string? _custom_python_args = null)
+            string? _custom_python_executable = null, string? _custom_python_args = null,
+            OnErrorDelegate? _onErrorAction = null)
         {
             custom_python_executable = _custom_python_executable;
             custom_python_args = _custom_python_args;
             initial_imports = _initial_imports;
+            onErrorAction = _onErrorAction;
 
             DeleteTmpFiles = delete_tmp_files;
             TempFolder = tempFolder;
@@ -240,9 +247,9 @@ matplotlib.use('Agg')
         {
             string? tmp_pathfilename = null;
             if (TempFolder is null)
-                tmp_pathfilename = System.IO.Path.GetTempFileName() + ".py";
+                tmp_pathfilename = Path.GetTempFileName() + ".py";
             else
-                tmp_pathfilename = System.IO.Path.Combine(TempFolder, "_" + Guid.NewGuid().ToString() + ".py");
+                tmp_pathfilename = Path.Combine(TempFolder, "_" + Guid.NewGuid().ToString() + ".py");
 
             guid = Guid.NewGuid().ToString();
 
@@ -302,14 +309,24 @@ matplotlib.use('Agg')
                     if (hasErr)
                     {
                         Thread.Sleep(25); // gather other errors
-                        break;
+
+                        if (onErrorAction is not null && onErrorAction(sberr.ToString(), sbout.ToString()) == OnErrorResultEnum.Ignore)
+                        {
+                            sberr.Clear();
+                            hasErr = false;
+                        }
+                        else
+                            break;
                     }
                 }
 
                 //process.CancelErrorRead();
                 //process.CancelOutputRead();
 
-                if (hasErr) throw new PythonException($"pyhton[{PythonExePathfilename}] script[{tmp_pathfilename}] : {sberr.ToString()}", sbout.ToString());
+                if (hasErr)
+                {
+                    throw new PythonException($"pyhton[{PythonExePathfilename}] script[{tmp_pathfilename}] : {sberr.ToString()}", sbout.ToString());
+                }
 
                 res = sbout.ToString();
             }
