@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Collections.Generic;
 using Newtonsoft.Json.Serialization;
+using System.Threading.Tasks;
 
 namespace SearchAThing
 {
@@ -68,7 +69,7 @@ namespace SearchAThing
         }
         #endregion
 
-        object wrapper_initialized = new object();
+        public AutoResetEvent areInit = new AutoResetEvent(false);
         Action<string>? debug = null;
 
         Process? process = null;
@@ -112,75 +113,75 @@ matplotlib.use('Agg')
             if (obj is CancellationToken ct) token = ct;
 
             debug?.Invoke("initializing python");
-            lock (wrapper_initialized)
+
+            var guid = Guid.NewGuid().ToString();
+
+            process = new Process();
+            process.StartInfo.FileName = custom_python_executable is null ? PythonExePathfilename : custom_python_executable;
+            process.StartInfo.Arguments = (custom_python_args is null) ? "-i" : custom_python_args;
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.ErrorDialog = false;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.RedirectStandardInput = true;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardError = true;
+
+            process.OutputDataReceived += Process_OutputDataReceived;
+            process.ErrorDataReceived += Process_ErrorDataReceived;
+
+            var started = process.Start();
+
+            if (process.HasExited)
             {
-                var guid = Guid.NewGuid().ToString();
+                startup_error = true;
+                return;
+            }
 
-                process = new Process();
-                process.StartInfo.FileName = custom_python_executable is null ? PythonExePathfilename : custom_python_executable;
-                process.StartInfo.Arguments = (custom_python_args is null) ? "-i" : custom_python_args;
-                process.StartInfo.UseShellExecute = false;
-                process.StartInfo.ErrorDialog = false;
-                process.StartInfo.CreateNoWindow = true;
-                process.StartInfo.RedirectStandardInput = true;
-                process.StartInfo.RedirectStandardOutput = true;
-                process.StartInfo.RedirectStandardError = true;
-
-                process.OutputDataReceived += Process_OutputDataReceived;
-                process.ErrorDataReceived += Process_ErrorDataReceived;
-
-                var started = process.Start();
-
-                if (process.HasExited)
+            if (started)
+            {
+                try
                 {
-                    startup_error = true;
-                    return;
+                    process.BeginOutputReadLine();
+                    process.BeginErrorReadLine();
+
+                    process.StandardInput.AutoFlush = false;
+                    debug?.Invoke($"(init) using process id = [{process.Id}]");
+
+                    switch (Environment.OSVersion.Platform)
+                    {
+                        case PlatformID.Unix:
+                        case PlatformID.MacOSX:
+                            {
+                                process.StandardInput.Write($"{initial_imports.Replace("\r\n", "\n")}\nprint('{guid}')\n");
+                            }
+                            break;
+
+                        default:
+                            {
+                                process.StandardInput.Write($"{initial_imports}\r\nprint('{guid}')\r\n");
+                            }
+                            break;
+                    }
+
+                    process.StandardInput.Flush();
+
+                    while (!initialized && (token is null || !token.Value.IsCancellationRequested))
+                    {
+                        Thread.Sleep(250);
+                    }
+
+                    //process.CancelOutputRead();
+                    //process.CancelErrorRead();
+
+                    if (hasErr) throw new Exception($"python init err [{sberr}]");
                 }
-
-                if (started)
+                catch (Exception ex)
                 {
-                    try
-                    {
-                        process.BeginOutputReadLine();
-                        process.BeginErrorReadLine();
-
-                        process.StandardInput.AutoFlush = false;
-                        debug?.Invoke($"(init) using process id = [{process.Id}]");
-
-                        switch (Environment.OSVersion.Platform)
-                        {
-                            case PlatformID.Unix:
-                            case PlatformID.MacOSX:
-                                {
-                                    process.StandardInput.Write($"{initial_imports.Replace("\r\n", "\n")}\nprint('{guid}')\n");
-                                }
-                                break;
-
-                            default:
-                                {
-                                    process.StandardInput.Write($"{initial_imports}\r\nprint('{guid}')\r\n");
-                                }
-                                break;
-                        }
-
-                        process.StandardInput.Flush();
-
-                        while (!initialized && (token is null || !token.Value.IsCancellationRequested))
-                        {
-                            Thread.Sleep(250);
-                        }
-
-                        //process.CancelOutputRead();
-                        //process.CancelErrorRead();
-
-                        if (hasErr) throw new Exception($"python init err [{sberr}]");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"using python[{process.StartInfo.FileName}] err [{ex.Details()}]");
-                    }
+                    Console.WriteLine($"using python[{process.StartInfo.FileName}] err [{ex.Details()}]");
                 }
             }
+
+            areInit.Set();
             process.WaitForExit();
         }
 
@@ -243,7 +244,7 @@ matplotlib.use('Agg')
         /// <summary>
         /// exec given code through a temp file
         /// </summary>        
-        public StringWrapper Exec(StringWrapper code, bool remove_tmp_file = true)
+        public async Task<StringWrapper> Exec(StringWrapper code, bool remove_tmp_file = true)
         {
             string? tmp_pathfilename = null;
             if (TempFolder is null)
@@ -284,12 +285,12 @@ matplotlib.use('Agg')
             while (!initialized)
             {
                 if (startup_error) throw new Exception($"startup error [{sberr.ToString()}]");
-                Thread.Sleep(25);
+                await Task.Delay(25);
             }
 
             if (process is null) throw new Exception($"process not initialized");
 
-            lock (wrapper_initialized)
+            areInit.WaitOne();
             {
                 finished = false;
                 hasErr = false;
@@ -305,10 +306,10 @@ matplotlib.use('Agg')
                 while (!finished)
                 {
                     //process.StandardInput.Flush();
-                    Thread.Sleep(25);
+                    await Task.Delay(25);
                     if (hasErr)
                     {
-                        Thread.Sleep(25); // gather other errors
+                        await Task.Delay(25); // gather other errors
 
                         if (onErrorAction is not null && onErrorAction(sberr.ToString(), sbout.ToString()) == OnErrorResultEnum.Ignore)
                         {
