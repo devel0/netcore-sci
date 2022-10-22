@@ -89,16 +89,19 @@ matplotlib.use('Agg')
         string? custom_python_args = null;
         string initial_imports = "";
         OnErrorDelegate? onErrorAction = null;
+        Action<string>? onOutputString = null;
 
         public PythonPipe(string _initial_imports = "", Action<string>? _debug = null,
             string? tempFolder = null, bool delete_tmp_files = true,
             string? _custom_python_executable = null, string? _custom_python_args = null,
-            OnErrorDelegate? _onErrorAction = null)
+            OnErrorDelegate? _onErrorAction = null,
+            Action<string>? _onOutputString = null)
         {
             custom_python_executable = _custom_python_executable;
             custom_python_args = _custom_python_args;
             initial_imports = _initial_imports;
             onErrorAction = _onErrorAction;
+            onOutputString = _onOutputString;
 
             DeleteTmpFiles = delete_tmp_files;
             TempFolder = tempFolder;
@@ -213,6 +216,7 @@ matplotlib.use('Agg')
                     }
 
                     sbout.AppendLine(str);
+                    if (onOutputString is not null) onOutputString(str);
                 }
             }
         }
