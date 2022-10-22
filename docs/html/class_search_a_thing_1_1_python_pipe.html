@@ -66,7 +66,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="class_search_a_thing_1_1_python_pipe-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -95,15 +97,29 @@ Collaboration diagram for PythonPipe:</div>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a8dee6105350d1cf53db847882e638e7b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#a8dee6105350d1cf53db847882e638e7b">OnErrorResultEnum</a> { <a class="el" href="class_search_a_thing_1_1_python_pipe.html#a8dee6105350d1cf53db847882e638e7bafd038fc7f319e48f3115d92bf5bdbef9">Ignore</a>
+, <a class="el" href="class_search_a_thing_1_1_python_pipe.html#a8dee6105350d1cf53db847882e638e7ba68dff4dea22b86d714d6aaaa779e649e">GenerateException</a>
+ }</td></tr>
+<tr class="separator:a8dee6105350d1cf53db847882e638e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae1848cdf9dda13e7b056ce96dbcbbde8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#ae1848cdf9dda13e7b056ce96dbcbbde8">PythonPipe</a> (string _initial_imports=&quot;&quot;, Action&lt; string &gt;? _debug=null, string? tempFolder=null, bool delete_tmp_files=true, string? _custom_python_executable=null, string? _custom_python_args=null)</td></tr>
-<tr class="separator:ae1848cdf9dda13e7b056ce96dbcbbde8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07e40429575e32d2149fd62a7887a353"><td class="memItemLeft" align="right" valign="top">StringWrapper&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#a07e40429575e32d2149fd62a7887a353">Exec</a> (StringWrapper code, bool remove_tmp_file=true)</td></tr>
-<tr class="memdesc:a07e40429575e32d2149fd62a7887a353"><td class="mdescLeft">&#160;</td><td class="mdescRight">exec given code through a temp file  <a href="class_search_a_thing_1_1_python_pipe.html#a07e40429575e32d2149fd62a7887a353">More...</a><br /></td></tr>
-<tr class="separator:a07e40429575e32d2149fd62a7887a353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f2e56a856785e34d628fad842f90cf1"><td class="memItemLeft" align="right" valign="top">delegate <a class="el" href="class_search_a_thing_1_1_python_pipe.html#a8dee6105350d1cf53db847882e638e7b">OnErrorResultEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#a7f2e56a856785e34d628fad842f90cf1">OnErrorDelegate</a> (string errMsg, string output)</td></tr>
+<tr class="separator:a7f2e56a856785e34d628fad842f90cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafa10c3440f85d0523adc169e65e90d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#aafa10c3440f85d0523adc169e65e90d2">PythonPipe</a> (string _initial_imports=&quot;&quot;, Action&lt; string &gt;? _debug=null, string? tempFolder=null, bool delete_tmp_files=true, string? _custom_python_executable=null, string? _custom_python_args=null, <a class="el" href="class_search_a_thing_1_1_python_pipe.html#a7f2e56a856785e34d628fad842f90cf1">OnErrorDelegate</a>? _onErrorAction=null)</td></tr>
+<tr class="separator:aafa10c3440f85d0523adc169e65e90d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af15a301334887271ae72ce9d415cb0f3"><td class="memItemLeft" align="right" valign="top">async Task&lt; StringWrapper &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#af15a301334887271ae72ce9d415cb0f3">Exec</a> (StringWrapper code, bool remove_tmp_file=true)</td></tr>
+<tr class="memdesc:af15a301334887271ae72ce9d415cb0f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">exec given code through a temp file  <a href="class_search_a_thing_1_1_python_pipe.html#af15a301334887271ae72ce9d415cb0f3">More...</a><br /></td></tr>
+<tr class="separator:af15a301334887271ae72ce9d415cb0f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e2d745cdb7a7b983f861ed6a9a541a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#a6e2d745cdb7a7b983f861ed6a9a541a7">Dispose</a> ()</td></tr>
 <tr class="separator:a6e2d745cdb7a7b983f861ed6a9a541a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a4557314d360738161a6c52ab47af8b15"><td class="memItemLeft" align="right" valign="top">AutoResetEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#a4557314d360738161a6c52ab47af8b15">areInit</a> = new AutoResetEvent(false)</td></tr>
+<tr class="separator:a4557314d360738161a6c52ab47af8b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -112,9 +128,36 @@ Properties</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper to invoke python and retrieve results. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae1848cdf9dda13e7b056ce96dbcbbde8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1848cdf9dda13e7b056ce96dbcbbde8">&#9670;&nbsp;</a></span>PythonPipe()</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a8dee6105350d1cf53db847882e638e7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dee6105350d1cf53db847882e638e7b">&#9670;&nbsp;</a></span>OnErrorResultEnum</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_search_a_thing_1_1_python_pipe.html#a8dee6105350d1cf53db847882e638e7b">OnErrorResultEnum</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8dee6105350d1cf53db847882e638e7bafd038fc7f319e48f3115d92bf5bdbef9"></a>Ignore&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8dee6105350d1cf53db847882e638e7ba68dff4dea22b86d714d6aaaa779e649e"></a>GenerateException&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aafa10c3440f85d0523adc169e65e90d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafa10c3440f85d0523adc169e65e90d2">&#9670;&nbsp;</a></span>PythonPipe()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,7 +196,13 @@ Properties</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">string?&#160;</td>
-          <td class="paramname"><em>_custom_python_args</em> = <code>null</code>&#160;</td>
+          <td class="paramname"><em>_custom_python_args</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#a7f2e56a856785e34d628fad842f90cf1">OnErrorDelegate</a>?&#160;</td>
+          <td class="paramname"><em>_onErrorAction</em> = <code>null</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -183,14 +232,14 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a07e40429575e32d2149fd62a7887a353"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07e40429575e32d2149fd62a7887a353">&#9670;&nbsp;</a></span>Exec()</h2>
+<a id="af15a301334887271ae72ce9d415cb0f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af15a301334887271ae72ce9d415cb0f3">&#9670;&nbsp;</a></span>Exec()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">StringWrapper Exec </td>
+          <td class="memname">async Task&lt;StringWrapper&gt; Exec </td>
           <td>(</td>
           <td class="paramtype">StringWrapper&#160;</td>
           <td class="paramname"><em>code</em>, </td>
@@ -212,6 +261,49 @@ Properties</h2></td></tr>
 <p>exec given code through a temp file </p>
 <p><br  />
  </p>
+
+</div>
+</div>
+<a id="a7f2e56a856785e34d628fad842f90cf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f2e56a856785e34d628fad842f90cf1">&#9670;&nbsp;</a></span>OnErrorDelegate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">delegate <a class="el" href="class_search_a_thing_1_1_python_pipe.html#a8dee6105350d1cf53db847882e638e7b">OnErrorResultEnum</a> OnErrorDelegate </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>errMsg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>output</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4557314d360738161a6c52ab47af8b15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4557314d360738161a6c52ab47af8b15">&#9670;&nbsp;</a></span>areInit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AutoResetEvent areInit = new AutoResetEvent(false)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

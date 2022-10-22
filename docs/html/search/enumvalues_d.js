@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['x_838',['X',['../namespace_search_a_thing.html#a3197886280b26d361c765c6d7edefb4fa02129bb861061d1a052c592e2dc6b383',1,'SearchAThing']]],
-  ['x_5fyq_839',['X_YQ',['../namespace_search_a_thing.html#a42c02aa6d6f0779946333e294f73ef26acfca6406ad797755fb22f3bbabaee655',1,'SearchAThing']]]
+  ['vector3d_851',['Vector3D',['../namespace_search_a_thing.html#a1b753fd9c2659910ca1a042a05b56be6a11d6d4839c41bcd39255a062482c2628',1,'SearchAThing']]]
 ];

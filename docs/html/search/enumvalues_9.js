@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['sgeomfrom_832',['SGeomFrom',['../namespace_search_a_thing.html#a65c629f03eb0e92d4f4d4602b69f48b4a9b516c6193e15050a9aedb91036bb2b4',1,'SearchAThing']]],
-  ['sgeomto_833',['SGeomTo',['../namespace_search_a_thing.html#a65c629f03eb0e92d4f4d4602b69f48b4a5e93311b246506d30908b96f6e3d7765',1,'SearchAThing']]],
-  ['st7_834',['St7',['../namespace_search_a_thing.html#a1a7fc695aef0ab942c8a39ed73ea2f06aa2c41eab90ca84e8d86da5ff63befcc7',1,'SearchAThing']]]
+  ['perimeter_842',['Perimeter',['../namespace_search_a_thing.html#a5143797c292eae835d22af82642aeac4a90180637c5d5ee1c7c9da352c643e660',1,'SearchAThing.Perimeter()'],['../namespace_search_a_thing.html#aedf55b8029e07ae2dc4e1ae785e0e5eea90180637c5d5ee1c7c9da352c643e660',1,'SearchAThing.Perimeter()']]],
+  ['pointandvector_843',['PointAndVector',['../namespace_search_a_thing.html#acece75c43e8b7d5087ed55e71ba76bf6ad65b624bee370a815c5c9ed26ef1e4c4',1,'SearchAThing']]],
+  ['pointonother_844',['PointOnOther',['../namespace_search_a_thing.html#aaf41c0cb15959f4a36819442ef87fe8ca8ec75c761cc461bd64911f5da7af8b30',1,'SearchAThing']]],
+  ['pointonthis_845',['PointOnThis',['../namespace_search_a_thing.html#aaf41c0cb15959f4a36819442ef87fe8ca2a4cb7ef99a9170a0be5c7f41ca39dba',1,'SearchAThing']]]
 ];

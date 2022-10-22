@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['union_836',['Union',['../class_search_a_thing_1_1_face.html#aa70b8ece6fee2023617d56c86b281bbaaaef12e903e606a4895a16b393bfdec8c',1,'SearchAThing::Face']]]
+  ['to_849',['To',['../namespace_search_a_thing.html#aa4f8b8bbc5743963ccc53bbbe04e5b99ae12167aa0a7698e6ebc92b4ce3909b53',1,'SearchAThing']]]
 ];
