@@ -4,7 +4,7 @@
 		<LangVersion>10</LangVersion>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<PackageId>netcore-sci</PackageId>
-		<PackageVersion>6.2.1</PackageVersion>
+		<PackageVersion>6.3.0</PackageVersion>
 		<Nullable>enable</Nullable>
 		<Title>net core scientific</Title>
 		<Description />
@@ -15,7 +15,7 @@
 		<noWarn>1591</noWarn>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="netcore-util" Version="$(NetcoreUtilVersion)" />
+		 <PackageReference Include="netcore-util" Version="$(NetcoreUtilVersion)" /> 
 		<PackageReference Include="netDxf-devel0" Version="$(NetDxfDevel0Version)" />
 
 		<PackageReference Include="JsonNet.ContractResolvers" Version="$(JsonNetContractResolversVersion)" />
@@ -28,7 +28,7 @@
 		<PackageReference Include="System.Drawing.Common" Version="$(SystemDrawingCommonVersion)" />		
 	</ItemGroup>
 	<ItemGroup>
-		<!-- <ProjectReference Include="..\..\netcore-util\netcore-util\netcore-util.csproj"/> -->
-		<!-- <ProjectReference Include="..\..\netDxf\netDxf\netDxf.csproj" /> -->
+		<!--<ProjectReference Include="..\..\netcore-util\netcore-util\netcore-util.csproj"/>-->
+		 <!--<ProjectReference Include="..\..\netDxf\netDxf\netDxf.csproj" />--> 
 	</ItemGroup>
 </Project>
