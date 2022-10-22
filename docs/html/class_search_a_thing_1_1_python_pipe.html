@@ -66,7 +66,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
@@ -97,22 +96,16 @@ Collaboration diagram for PythonPipe:</div>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a8dee6105350d1cf53db847882e638e7b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#a8dee6105350d1cf53db847882e638e7b">OnErrorResultEnum</a> { <a class="el" href="class_search_a_thing_1_1_python_pipe.html#a8dee6105350d1cf53db847882e638e7bafd038fc7f319e48f3115d92bf5bdbef9">Ignore</a>
-, <a class="el" href="class_search_a_thing_1_1_python_pipe.html#a8dee6105350d1cf53db847882e638e7ba68dff4dea22b86d714d6aaaa779e649e">GenerateException</a>
- }</td></tr>
-<tr class="separator:a8dee6105350d1cf53db847882e638e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7f2e56a856785e34d628fad842f90cf1"><td class="memItemLeft" align="right" valign="top">delegate <a class="el" href="class_search_a_thing_1_1_python_pipe.html#a8dee6105350d1cf53db847882e638e7b">OnErrorResultEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#a7f2e56a856785e34d628fad842f90cf1">OnErrorDelegate</a> (string errMsg, string output)</td></tr>
-<tr class="separator:a7f2e56a856785e34d628fad842f90cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53179bd1cf15cbb4fee21d88f6121452"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#a53179bd1cf15cbb4fee21d88f6121452">PythonPipe</a> (string _initial_imports=&quot;&quot;, Action&lt; string &gt;? _debug=null, string? tempFolder=null, bool delete_tmp_files=true, string? _custom_python_executable=null, string? _custom_python_args=null, <a class="el" href="class_search_a_thing_1_1_python_pipe.html#a7f2e56a856785e34d628fad842f90cf1">OnErrorDelegate</a>? _onErrorAction=null, Action&lt; string &gt;? _onOutputString=null)</td></tr>
-<tr class="separator:a53179bd1cf15cbb4fee21d88f6121452"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af15a301334887271ae72ce9d415cb0f3"><td class="memItemLeft" align="right" valign="top">async Task&lt; StringWrapper &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#af15a301334887271ae72ce9d415cb0f3">Exec</a> (StringWrapper code, bool remove_tmp_file=true)</td></tr>
-<tr class="memdesc:af15a301334887271ae72ce9d415cb0f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">exec given code through a temp file  <a href="class_search_a_thing_1_1_python_pipe.html#af15a301334887271ae72ce9d415cb0f3">More...</a><br /></td></tr>
-<tr class="separator:af15a301334887271ae72ce9d415cb0f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc65e76f4ffce0a8ba718c01525f7d86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#acc65e76f4ffce0a8ba718c01525f7d86">PythonPipe</a> (<a class="el" href="class_search_a_thing_1_1_python_pipe_options.html">PythonPipeOptions</a>? options=null)</td></tr>
+<tr class="separator:acc65e76f4ffce0a8ba718c01525f7d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9f10745e52acd94468dcd54c359e6fa"><td class="memItemLeft" align="right" valign="top">async Task&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#aa9f10745e52acd94468dcd54c359e6fa">Exec</a> (IEnumerable&lt; string &gt; code_lines)</td></tr>
+<tr class="memdesc:aa9f10745e52acd94468dcd54c359e6fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">exec given code lines  <a href="class_search_a_thing_1_1_python_pipe.html#aa9f10745e52acd94468dcd54c359e6fa">More...</a><br /></td></tr>
+<tr class="separator:aa9f10745e52acd94468dcd54c359e6fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e15e26121f2858e6f8ae2f43edce755"><td class="memItemLeft" align="right" valign="top">async Task&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#a4e15e26121f2858e6f8ae2f43edce755">Exec</a> (string code)</td></tr>
+<tr class="memdesc:a4e15e26121f2858e6f8ae2f43edce755"><td class="mdescLeft">&#160;</td><td class="mdescRight">exec given code ( can contains newlines as read from a file ). Actually only one execution per <a class="el" href="class_search_a_thing_1_1_python_pipe.html" title="Helper to invoke python and retrieve results.">PythonPipe</a> object is allowed.  <a href="class_search_a_thing_1_1_python_pipe.html#a4e15e26121f2858e6f8ae2f43edce755">More...</a><br /></td></tr>
+<tr class="separator:a4e15e26121f2858e6f8ae2f43edce755"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e2d745cdb7a7b983f861ed6a9a541a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#a6e2d745cdb7a7b983f861ed6a9a541a7">Dispose</a> ()</td></tr>
 <tr class="separator:a6e2d745cdb7a7b983f861ed6a9a541a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -123,41 +116,14 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:aeda9237a4c3bbe92e1f7ca125c040398"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#aeda9237a4c3bbe92e1f7ca125c040398">DeleteTmpFiles</a><code> [get, set]</code></td></tr>
-<tr class="separator:aeda9237a4c3bbe92e1f7ca125c040398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ab22ae225b77d7785f52025529bed67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_search_a_thing_1_1_python_pipe_options.html">PythonPipeOptions</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#a0ab22ae225b77d7785f52025529bed67">Options</a> = new <a class="el" href="class_search_a_thing_1_1_python_pipe_options.html">PythonPipeOptions</a>()<code> [get]</code></td></tr>
+<tr class="separator:a0ab22ae225b77d7785f52025529bed67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper to invoke python and retrieve results. </p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="a8dee6105350d1cf53db847882e638e7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8dee6105350d1cf53db847882e638e7b">&#9670;&nbsp;</a></span>OnErrorResultEnum</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_search_a_thing_1_1_python_pipe.html#a8dee6105350d1cf53db847882e638e7b">OnErrorResultEnum</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8dee6105350d1cf53db847882e638e7bafd038fc7f319e48f3115d92bf5bdbef9"></a>Ignore&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a8dee6105350d1cf53db847882e638e7ba68dff4dea22b86d714d6aaaa779e649e"></a>GenerateException&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a53179bd1cf15cbb4fee21d88f6121452"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53179bd1cf15cbb4fee21d88f6121452">&#9670;&nbsp;</a></span>PythonPipe()</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="acc65e76f4ffce0a8ba718c01525f7d86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc65e76f4ffce0a8ba718c01525f7d86">&#9670;&nbsp;</a></span>PythonPipe()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -165,55 +131,9 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="class_search_a_thing_1_1_python_pipe.html">PythonPipe</a> </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>_initial_imports</em> = <code>&quot;&quot;</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_python_pipe_options.html">PythonPipeOptions</a>?&#160;</td>
+          <td class="paramname"><em>options</em> = <code>null</code></td><td>)</td>
           <td></td>
-          <td class="paramtype">Action&lt; string &gt;?&#160;</td>
-          <td class="paramname"><em>_debug</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string?&#160;</td>
-          <td class="paramname"><em>tempFolder</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>delete_tmp_files</em> = <code>true</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string?&#160;</td>
-          <td class="paramname"><em>_custom_python_executable</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string?&#160;</td>
-          <td class="paramname"><em>_custom_python_args</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_search_a_thing_1_1_python_pipe.html#a7f2e56a856785e34d628fad842f90cf1">OnErrorDelegate</a>?&#160;</td>
-          <td class="paramname"><em>_onErrorAction</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Action&lt; string &gt;?&#160;</td>
-          <td class="paramname"><em>_onOutputString</em> = <code>null</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -238,63 +158,45 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="af15a301334887271ae72ce9d415cb0f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af15a301334887271ae72ce9d415cb0f3">&#9670;&nbsp;</a></span>Exec()</h2>
+<a id="aa9f10745e52acd94468dcd54c359e6fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9f10745e52acd94468dcd54c359e6fa">&#9670;&nbsp;</a></span>Exec() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">async Task&lt;StringWrapper&gt; Exec </td>
+          <td class="memname">async Task&lt;string&gt; Exec </td>
           <td>(</td>
-          <td class="paramtype">StringWrapper&#160;</td>
-          <td class="paramname"><em>code</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">IEnumerable&lt; string &gt;&#160;</td>
+          <td class="paramname"><em>code_lines</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>remove_tmp_file</em> = <code>true</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>exec given code through a temp file </p>
+<p>exec given code lines </p>
+
+</div>
+</div>
+<a id="a4e15e26121f2858e6f8ae2f43edce755"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e15e26121f2858e6f8ae2f43edce755">&#9670;&nbsp;</a></span>Exec() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt;string&gt; Exec </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>exec given code ( can contains newlines as read from a file ). Actually only one execution per <a class="el" href="class_search_a_thing_1_1_python_pipe.html" title="Helper to invoke python and retrieve results.">PythonPipe</a> object is allowed. </p>
 <p><br  />
  </p>
-
-</div>
-</div>
-<a id="a7f2e56a856785e34d628fad842f90cf1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f2e56a856785e34d628fad842f90cf1">&#9670;&nbsp;</a></span>OnErrorDelegate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">delegate <a class="el" href="class_search_a_thing_1_1_python_pipe.html#a8dee6105350d1cf53db847882e638e7b">OnErrorResultEnum</a> OnErrorDelegate </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>errMsg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>output</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -314,8 +216,8 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
-<a id="aeda9237a4c3bbe92e1f7ca125c040398"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeda9237a4c3bbe92e1f7ca125c040398">&#9670;&nbsp;</a></span>DeleteTmpFiles</h2>
+<a id="a0ab22ae225b77d7785f52025529bed67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ab22ae225b77d7785f52025529bed67">&#9670;&nbsp;</a></span>Options</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -324,12 +226,12 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool DeleteTmpFiles</td>
+          <td class="memname"><a class="el" href="class_search_a_thing_1_1_python_pipe_options.html">PythonPipeOptions</a> Options = new <a class="el" href="class_search_a_thing_1_1_python_pipe_options.html">PythonPipeOptions</a>()</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

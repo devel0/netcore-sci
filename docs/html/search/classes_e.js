@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unitjsonconverter_480',['UnitJsonConverter',['../class_search_a_thing_1_1_sci_toolkit_1_1_unit_json_converter.html',1,'SearchAThing::SciToolkit']]]
+  ['unitjsonconverter_485',['UnitJsonConverter',['../class_search_a_thing_1_1_sci_toolkit_1_1_unit_json_converter.html',1,'SearchAThing::SciToolkit']]]
 ];
