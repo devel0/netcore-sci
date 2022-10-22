@@ -1,64 +1,67 @@
 using Xunit;
 using System.Linq;
 using System;
+using System.Threading.Tasks;
 
 namespace SearchAThing.Sci.Tests
 {
     public class PythonTests_torefact : IDisposable
     {
-        PythonPipe pipe;
-        PythonPipe sympyPipe;
-
-        bool has_sympy_library = true;
+        PythonPipe pipe;             
 
         public PythonTests_torefact()
         {
-            pipe = new PythonPipe();
-            sympyPipe = new PythonPipe("from sympy import *", (s) => System.Diagnostics.Debug.WriteLine(s));
-            try
+            pipe = new PythonPipe(new PythonPipeOptions
             {
-                var strwr = new StringWrapper("x = symbols('x')");                
-                sympyPipe.Exec(strwr);
-            }
-            catch
-            {
-                has_sympy_library = false;
-            }
+                Debug = (str) =>
+                {
+                    // System.Console.WriteLine($"pydbg> [{str}]");
+                }
+            });
         }
 
         public void Dispose()
-        {
-            sympyPipe.Dispose();
+        {            
             pipe.Dispose();
         }
 
         [Fact]
-        public void Test0()
+        public async void Test0()
         {
-            var strwr = new StringWrapper("print(1+2)");            
-            var res = pipe.Exec(strwr).str;
+            // System.Console.WriteLine("PYTHON TEST");            
+            var res = (await pipe.Exec("print(1+2)"));
             var reslines = res.Lines().ToArray();
             Assert.True(reslines.Length == 1 && reslines[0] == "3");
         }
 
         [Fact]
-        public void Test1()
-        {
-            var strwr = new StringWrapper("print(1+2)\r\nprint(3+5)");            
-            var res = pipe.Exec(strwr).str;
+        public async void Test1()
+        {            
+            var res = (await pipe.Exec("print(1+2)\r\nprint(3+5)"));
             var reslines = res.Lines().ToArray();
             Assert.True(reslines.Length == 2 && reslines[0] == "3" && reslines[1] == "8");
         }
 
         [SkippableFact]
-        public void Test2()
+        public async void Test2()
         {
-            Skip.IfNot(has_sympy_library);
+            var skip = false;
+            try
+            {
+                var sympyPipeTest = new PythonPipe();
+                await sympyPipeTest.Exec("from sympy import *");
+            }
+            catch
+            {
+                skip = true;
+            }
 
-            var strwr = new StringWrapper(@"x = symbols('x')
+            Skip.If(skip);
+            
+            var res = (await pipe.Exec(@"from sympy import *
+x = symbols('x')
 print(integrate(x**2 * cos(x), x))
-print(integrate(x**2 * cos(x), (x, 0, pi/2)))");            
-            var res = sympyPipe.Exec(strwr).str;
+print(integrate(x**2 * cos(x), (x, 0, pi/2)))"));
             var reslines = res.Lines().ToArray();
             Assert.True(reslines.Length == 2 && reslines[0] == "x**2*sin(x) + 2*x*cos(x) - 2*sin(x)" && reslines[1] == "-2 + pi**2/4");
         }
