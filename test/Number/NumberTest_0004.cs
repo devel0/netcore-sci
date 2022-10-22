@@ -36,7 +36,7 @@ namespace SearchAThing.Sci.Tests
                 var interpolated = ipol.Interpolate(x);
                 var diff = Abs(expected-interpolated);
 
-                System.Console.WriteLine($"expected:{expected} interpolated:{interpolated} diff:{diff}");
+                // System.Console.WriteLine($"expected:{expected} interpolated:{interpolated} diff:{diff}");
 
                 Assert.True(diff < 6e-4);
             }

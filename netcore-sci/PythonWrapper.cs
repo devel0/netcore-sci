@@ -7,20 +7,47 @@ using System.IO;
 using System.Collections.Generic;
 using Newtonsoft.Json.Serialization;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace SearchAThing
 {
 
-    #region python pipe
+    public enum PythonPipeOnErrorResultEnum { Ignore, GenerateException };
+
+    public class PythonPipeOptions
+    {
+
+        /// <summary>
+        /// debug messages of pythonpipe execution
+        /// </summary>
+        public Action<string>? Debug { get; set; } = null;
+
+        /// <summary>
+        /// action called when error message reported and allow to ignore by returning OnErrorResultEnum.Ignore
+        /// </summary>
+        public Func<string, PythonPipeOnErrorResultEnum>? OnError { get; set; } = null;
+
+        /// <summary>
+        /// action called when output from pipe ( full output already results from python exec )
+        /// </summary>
+        public Action<string>? OnOutput { get; set; } = null;
+
+        /// <summary>
+        /// allow to override environment python executable pathfilename
+        /// </summary>
+        public string? PythonExecutablePathfilename = null;
+
+        /// <summary>
+        /// allow to specify custom arguments in place of default "-i" argument
+        /// </summary>
+        public string? PythonArgs = null;
+    }
 
     /// <summary>
     /// Helper to invoke python and retrieve results.
     /// </summary>
     public class PythonPipe : IDisposable
     {
-
-        public enum OnErrorResultEnum { Ignore, GenerateException };
-        public delegate OnErrorResultEnum OnErrorDelegate(string errMsg, string output);
 
         #region python path
         static string? _PythonExePathfilename = null;
@@ -70,58 +97,77 @@ namespace SearchAThing
         #endregion
 
         public AutoResetEvent areInit = new AutoResetEvent(false);
-        Action<string>? debug = null;
 
         Process? process = null;
         StringBuilder sberr = new StringBuilder();
         StringBuilder sbout = new StringBuilder();
 
-        string? TempFolder = null;
-        public bool DeleteTmpFiles { get; set; }
-
-        const string initial_imports_default = @"
-import matplotlib
-matplotlib.use('Agg')
-";
-
         bool startup_error = false;
-        string? custom_python_executable = null;
-        string? custom_python_args = null;
-        string initial_imports = "";
-        OnErrorDelegate? onErrorAction = null;
-        Action<string>? onOutputString = null;
 
-        public PythonPipe(string _initial_imports = "", Action<string>? _debug = null,
-            string? tempFolder = null, bool delete_tmp_files = true,
-            string? _custom_python_executable = null, string? _custom_python_args = null,
-            OnErrorDelegate? _onErrorAction = null,
-            Action<string>? _onOutputString = null)
+        public PythonPipeOptions Options { get; private set; } = new PythonPipeOptions();
+
+        public PythonPipe(PythonPipeOptions? options = null)
         {
-            custom_python_executable = _custom_python_executable;
-            custom_python_args = _custom_python_args;
-            initial_imports = _initial_imports;
-            onErrorAction = _onErrorAction;
-            onOutputString = _onOutputString;
+            if (options is not null)
+                Options = options;
 
-            DeleteTmpFiles = delete_tmp_files;
-            TempFolder = tempFolder;
-            debug = _debug;
-
-            ThreadPool.QueueUserWorkItem(new WaitCallback(ThFunction), cts.Token);
+            ThFunction();
         }
 
-        void ThFunction(object? obj)
+        /// <summary>
+        /// naive python comment removal, only beginning (#) or ending (whitespace #) or multiline beginning and ending with (''')
+        /// </summary>        
+        string StripPythonComments(string input)
         {
-            CancellationToken? token = null;
-            if (obj is CancellationToken ct) token = ct;
+            var ll = input.Lines().ToList();
+            var ll2 = new List<string>();
 
-            debug?.Invoke("initializing python");
+            var comment_block_open = false;
 
-            var guid = Guid.NewGuid().ToString();
+            var endingCommentRegex = new Regex(@"(.*)\s#(.*)");
+
+            for (int i = 0; i < ll.Count; ++i)
+            {
+                var line = ll[i].Trim();
+                if (line.StartsWith("'''"))
+                {
+                    comment_block_open = !comment_block_open;
+                    continue;
+                }
+
+                if (comment_block_open) continue;
+
+                if (line.StartsWith("#")) continue;
+
+                var endingCommentTest = endingCommentRegex.Match(line);
+                if (endingCommentTest.Success)
+                    ll2.Add(endingCommentTest.Groups[1].Value);
+                else
+
+                    ll2.Add(ll[i]);
+            }
+
+            var src = string.Join("\\n", ll2.Select(w => w.Replace("'", "\\'")));
+
+            return src;
+        }
+
+        void ThFunction()
+        {
+            Options.Debug?.Invoke("initializing python");
+
+            guid = Guid.NewGuid().ToString();
 
             process = new Process();
-            process.StartInfo.FileName = custom_python_executable is null ? PythonExePathfilename : custom_python_executable;
-            process.StartInfo.Arguments = (custom_python_args is null) ? "-i" : custom_python_args;
+
+            process.StartInfo.FileName = Options?.PythonExecutablePathfilename is null ?
+                PythonExePathfilename :
+                Options?.PythonExecutablePathfilename;
+
+            process.StartInfo.Arguments = Options?.PythonArgs is null ?
+                "-i" :
+                Options.PythonArgs;
+
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.ErrorDialog = false;
             process.StartInfo.CreateNoWindow = true;
@@ -148,33 +194,16 @@ matplotlib.use('Agg')
                     process.BeginErrorReadLine();
 
                     process.StandardInput.AutoFlush = false;
-                    debug?.Invoke($"(init) using process id = [{process.Id}]");
+                    Options.Debug?.Invoke($"(init) using process id = [{process.Id}]");
 
-                    switch (Environment.OSVersion.Platform)
-                    {
-                        case PlatformID.Unix:
-                        case PlatformID.MacOSX:
-                            {
-                                process.StandardInput.Write($"{initial_imports.Replace("\r\n", "\n")}\nprint('{guid}')\n");
-                            }
-                            break;
-
-                        default:
-                            {
-                                process.StandardInput.Write($"{initial_imports}\r\nprint('{guid}')\r\n");
-                            }
-                            break;
-                    }
+                    process.StandardInput.Write($"{Environment.NewLine}print('{guid}'){Environment.NewLine}");
 
                     process.StandardInput.Flush();
 
-                    while (!initialized && (token is null || !token.Value.IsCancellationRequested))
+                    while (!initialized && !cts.Token.IsCancellationRequested)
                     {
                         Thread.Sleep(250);
                     }
-
-                    //process.CancelOutputRead();
-                    //process.CancelErrorRead();
 
                     if (hasErr) throw new Exception($"python init err [{sberr}]");
                 }
@@ -185,7 +214,6 @@ matplotlib.use('Agg')
             }
 
             areInit.Set();
-            process.WaitForExit();
         }
 
         bool initialized = false;
@@ -196,27 +224,31 @@ matplotlib.use('Agg')
             if (e.Data is null) return;
             if (finished) return;
 
-            debug?.Invoke($"output received [{e.Data}]");
+            Options.Debug?.Invoke($"output received [{e.Data}]");
 
             if (!initialized)
                 initialized = true;
+
             else
             {
                 if (guid is null) throw new Exception($"guid not initialized in Exec");
 
                 var str = e.Data;
 
-                if (str == guid) finished = true;
+                if (str == guid)
+                    finished = true;
+
                 else
                 {
-                    if (str.EndsWith(guid + "\r\n"))
+                    if (str.EndsWith(guid + Environment.NewLine))
                     {
                         str = str.Substring(0, str.Length - guid.Length);
                         finished = true;
                     }
 
                     sbout.AppendLine(str);
-                    if (onOutputString is not null) onOutputString(str);
+
+                    Options.OnOutput?.Invoke(str);
                 }
             }
         }
@@ -228,9 +260,12 @@ matplotlib.use('Agg')
 
             if (e.Data.StartsWith("Python ") || e.Data.StartsWith("[GCC ") || e.Data.StartsWith("Type \"help\"")) return;
 
-            debug?.Invoke($"***error received [{e.Data}]");
+            var ignore = Options.OnError is not null && Options.OnError(e.Data) == PythonPipeOnErrorResultEnum.Ignore;
 
-            hasErr = true;
+            Options.Debug?.Invoke($"***error received{(ignore ? " (ignored)" : "")} [{e.Data}]");
+
+            if (!ignore)
+                hasErr = true;
 
             if (e.Data is null) return;
 
@@ -246,45 +281,24 @@ matplotlib.use('Agg')
         bool finished = false;
 
         /// <summary>
-        /// exec given code through a temp file
+        /// exec given code lines
+        /// </summary>
+        public async Task<string> Exec(IEnumerable<string> code_lines) =>
+            await Exec(string.Join("\n", code_lines));
+
+        /// <summary>
+        /// exec given code ( can contains newlines as read from a file ).
+        /// Actually only one execution per PythonPipe object is allowed.
         /// </summary>        
-        public async Task<StringWrapper> Exec(StringWrapper code, bool remove_tmp_file = true)
+        public async Task<string> Exec(string code)
         {
-            string? tmp_pathfilename = null;
-            if (TempFolder is null)
-                tmp_pathfilename = Path.GetTempFileName() + ".py";
-            else
-                tmp_pathfilename = Path.Combine(TempFolder, "_" + Guid.NewGuid().ToString() + ".py");
-
-            guid = Guid.NewGuid().ToString();
-
-            using (var sw0 = new StreamWriter(tmp_pathfilename))
-            {
-                switch (Environment.OSVersion.Platform)
-                {
-                    case PlatformID.Unix:
-                    case PlatformID.MacOSX:
-                        {
-                            sw0.WriteLine(code.str.Replace("\r\n", "\n"));
-                        }
-                        break;
-
-                    default:
-                        {
-                            sw0.WriteLine(code.str);
-                        }
-                        break;
-                }
-                sw0.WriteLine($"print('{guid}')");
-            }
+            if (finished) throw new NotImplementedException($"Subsequent exec not yet supported");
 
             sberr.Clear();
             sbout.Clear();
 
             var sw = new Stopwatch();
             sw.Start();
-
-            string res = "";
 
             while (!initialized)
             {
@@ -295,53 +309,42 @@ matplotlib.use('Agg')
             if (process is null) throw new Exception($"process not initialized");
 
             areInit.WaitOne();
+
+            string res;
             {
                 finished = false;
                 hasErr = false;
 
-                //process.BeginErrorReadLine();
-                //process.BeginOutputReadLine();
+                var src = StripPythonComments(code);
+                src += $"\\nprint(\\'{guid}\\')";
 
-                var cmd = $"exec(open('{tmp_pathfilename.Replace('\\', '/')}').read())\n";
-                debug?.Invoke($"using process id = [{process.Id}]");
-                process.StandardInput.WriteLine(cmd);
+                process.StandardInput.WriteLine($"exec('{src}')");
+
                 process.StandardInput.Flush();
 
                 while (!finished)
                 {
-                    //process.StandardInput.Flush();
                     await Task.Delay(25);
                     if (hasErr)
                     {
                         await Task.Delay(25); // gather other errors
-
-                        if (onErrorAction is not null && onErrorAction(sberr.ToString(), sbout.ToString()) == OnErrorResultEnum.Ignore)
-                        {
-                            sberr.Clear();
-                            hasErr = false;
-                        }
-                        else
-                            break;
+                                              // 
+                        break;
                     }
                 }
 
-                //process.CancelErrorRead();
-                //process.CancelOutputRead();
-
                 if (hasErr)
                 {
-                    throw new PythonException($"pyhton[{PythonExePathfilename}] script[{tmp_pathfilename}] : {sberr.ToString()}", sbout.ToString());
+                    throw new PythonException($"pyhton[{PythonExePathfilename}] : {sberr.ToString()}", sbout.ToString());
                 }
 
                 res = sbout.ToString();
             }
 
             sw.Stop();
-            debug?.Invoke($"python took [{sw.Elapsed}]");
+            Options.Debug?.Invoke($"python took [{sw.Elapsed}]");
 
-            if (remove_tmp_file) File.Delete(tmp_pathfilename);
-
-            return new StringWrapper(res);
+            return res;
         }
 
         CancellationTokenSource cts = new CancellationTokenSource();
@@ -349,18 +352,10 @@ matplotlib.use('Agg')
         public void Dispose()
         {
             cts.Cancel();
-            /*
-                debug?.Invoke($"kill python");
-                process.Kill();
-                if (Environment.OSVersion.Platform != PlatformID.Unix && Environment.OSVersion.Platform != PlatformID.MacOSX)
-                {
-                    
-                }*/
 
+            process?.Kill();
         }
     }
-    #endregion
-
 
     public class PythonException : Exception
     {
