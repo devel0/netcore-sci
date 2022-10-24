@@ -16,7 +16,7 @@
         <xunitSkippableFactVersion>1.4.13</xunitSkippableFactVersion>
 
         <!-- === netcore-sci -->        
-        <NetcoreUtilVersion>4.3.1</NetcoreUtilVersion>
+        <NetcoreUtilVersion>4.4.0</NetcoreUtilVersion>
         <NetDxfDevel0Version>3.0.2</NetDxfDevel0Version>
         
         <LibTessDotNetVersion>1.1.15</LibTessDotNetVersion>
