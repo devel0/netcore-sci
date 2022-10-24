@@ -1283,6 +1283,16 @@ namespace SearchAThing
             }
         }
 
+        /// <summary>
+        /// max between X,Y,Z
+        /// </summary>           
+        public double Max => Math.Max(Math.Max(X, Y), Z);
+
+        /// <summary>
+        /// min between X,Y,Z
+        /// </summary>                
+        public double Min => Math.Min(Math.Min(X, Y), Z);
+
     }
 
     /// <summary>
