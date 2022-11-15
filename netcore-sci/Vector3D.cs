@@ -7,6 +7,10 @@ using static System.Math;
 using static System.FormattableString;
 using System.Text.RegularExpressions;
 using System.Runtime.CompilerServices;
+using System.Numerics;
+using NVector2 = System.Numerics.Vector2;
+using NVector3 = System.Numerics.Vector3;
+using DVector3 = netDxf.Vector3;
 
 using Newtonsoft.Json;
 using netDxf.Entities;
@@ -1145,7 +1149,7 @@ namespace SearchAThing
         /// <summary>
         /// convert given (System.Numerics) Vector2 to a Vector3D ( with z=0 )
         /// </summary>            
-        public static implicit operator Vector3D(System.Numerics.Vector2 v) => new Vector3D(v.X, v.Y, 0);
+        public static implicit operator Vector3D(NVector2 v) => new Vector3D(v.X, v.Y, 0);
 
         /// <summary>
         /// Convert given (netdxf) Vector3 to Vector3D
@@ -1155,7 +1159,7 @@ namespace SearchAThing
         /// <summary>
         /// Convert given Vector3D to (netdxf) Vector3
         /// </summary>            
-        public static implicit operator netDxf.Vector3(Vector3D v) => new Vector3(v.X, v.Y, v.Z);
+        public static implicit operator netDxf.Vector3(Vector3D v) => new DVector3(v.X, v.Y, v.Z);
 
         /// <summary>
         /// Convert given Vector3D to System.Numerics.Vector3            
@@ -1164,14 +1168,14 @@ namespace SearchAThing
         /// double to float conversion will be done
         /// </remarks>
         /// <param name="v">input vector</param>
-        public static implicit operator System.Numerics.Vector3(Vector3D v) =>
-            new System.Numerics.Vector3((float)v.X, (float)v.Y, (float)v.Z);
+        public static implicit operator NVector3(Vector3D v) =>
+            new NVector3((float)v.X, (float)v.Y, (float)v.Z);
 
         /// <summary>
         /// Convert given System.Numerics.Vector3 to Vector3D
         /// </summary>
         /// <param name="v">input vector</param>
-        public static implicit operator Vector3D(System.Numerics.Vector3 v) => new Vector3D(v.X, v.Y, v.Z);
+        public static implicit operator Vector3D(NVector3 v) => new Vector3D(v.X, v.Y, v.Z);
 
         /// <summary>
         /// Convert given LibTessDotNet.Vec3 to Vector3D
@@ -1210,12 +1214,12 @@ namespace SearchAThing
         /// <summary>
         /// convert to (system.numerics) Vector2 ( casting double to float, discarding z )
         /// </summary>
-        public System.Numerics.Vector2 ToVector2() => new System.Numerics.Vector2((float)X, (float)Y);
+        public NVector2 ToNVector2() => new NVector2((float)X, (float)Y);
 
         /// <summary>
         /// convert to (system.numerics) Vector3 ( casting double to float )
         /// </summary>
-        public System.Numerics.Vector3 ToVector3() => new System.Numerics.Vector3((float)X, (float)Y, (float)Z);
+        public NVector3 ToNVector3() => new NVector3((float)X, (float)Y, (float)Z);
 
         /// <summary>
         /// To point (double x, double y)
@@ -1225,7 +1229,7 @@ namespace SearchAThing
         /// <summary>
         /// create dxf point from given vector3d
         /// </summary>        
-        public netDxf.Entities.Point ToDxfPoint() => new netDxf.Entities.Point(new Vector3(X, Y, Z));
+        public netDxf.Entities.Point ToDxfPoint() => new netDxf.Entities.Point(new DVector3(X, Y, Z));
 
         /// <summary>
         /// convert xyz from deg to rad
@@ -1292,6 +1296,13 @@ namespace SearchAThing
         /// min between X,Y,Z
         /// </summary>                
         public double Min => Math.Min(Math.Min(X, Y), Z);
+
+        /// <summary>
+        /// return this vector transformed by given (float) transformation
+        /// </summary>
+        public Vector3D Transform(Matrix4x4 transform) =>
+            NVector3.Transform(this, transform);
+
 
     }
 

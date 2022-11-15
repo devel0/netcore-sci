@@ -8,6 +8,7 @@ using System;
 
 using netDxf.Entities;
 using Newtonsoft.Json;
+using System.Numerics;
 
 namespace SearchAThing
 {
@@ -935,6 +936,8 @@ namespace SearchAThing
 
             return new Line3D(ip, c, Line3DConstructMode.PointAndVector);
         }
+
+        public Line3D Transform(Matrix4x4 transform) => new Line3D(From.Transform(transform), To.Transform(transform));
 
         public Line ToLine() => new Line(From, To);
 

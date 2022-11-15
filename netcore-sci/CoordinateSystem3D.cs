@@ -356,9 +356,9 @@ namespace SearchAThing
         /// </summary>
         public CoordinateSystem3D Transform(Matrix4x4 m)
         {
-            var o = Vector3.Transform(Origin, m);
-            var p1 = Vector3.Transform(Origin + BaseX, m);
-            var p2 = Vector3.Transform(Origin + BaseY, m);
+            var o = Origin.Transform(m);
+            var p1 = (Origin + BaseX).Transform(m);
+            var p2 = (Origin + BaseY).Transform(m);
 
             return new CoordinateSystem3D(o, p1 - o, p2 - o, SmartCsMode.X_YQ);
         }
