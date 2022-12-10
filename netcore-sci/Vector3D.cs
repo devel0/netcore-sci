@@ -1822,6 +1822,12 @@ namespace SearchAThing
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3D Sqrt(this Vector3D v) => new Vector3D(Math.Sqrt(v.X), Math.Sqrt(v.Y), Math.Sqrt(v.Z));
 
+        /// <summary>
+        /// convert given STL Vertex to Vector3 (System.Numerics)
+        /// </summary>        
+        public static NVector3 ToNVector3(this QuantumConcepts.Formats.StereoLithography.Vertex v) =>
+            new NVector3(v.X, v.Y, v.Z);
+
     }
 
 }
