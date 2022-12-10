@@ -237,6 +237,14 @@ namespace SearchAThing
         }
 
         /// <summary>
+        /// reset to empty bbox
+        /// </summary>
+        public void Clear()
+        {
+            _Min = _Max = null;
+        }
+
+        /// <summary>
         /// construct a copy of bbox
         /// </summary>
         /// <param name="other">source bbox</param>
