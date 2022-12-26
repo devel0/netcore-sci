@@ -324,6 +324,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a86fe77377228f49717833089d779e495"><td class="memItemLeft" align="right" valign="top">NVector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#a86fe77377228f49717833089d779e495">ToNVector3</a> ()</td></tr>
 <tr class="memdesc:a86fe77377228f49717833089d779e495"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert to (system.numerics) Vector3 ( casting double to float )  <a href="class_search_a_thing_1_1_vector3_d.html#a86fe77377228f49717833089d779e495">More...</a><br /></td></tr>
 <tr class="separator:a86fe77377228f49717833089d779e495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab23057731f9f17fae332b4099fad1901"><td class="memItemLeft" align="right" valign="top">GPoint3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#ab23057731f9f17fae332b4099fad1901">ToGPoint3</a> ()</td></tr>
+<tr class="memdesc:ab23057731f9f17fae332b4099fad1901"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert to GShark.Geometry.Point3  <a href="class_search_a_thing_1_1_vector3_d.html#ab23057731f9f17fae332b4099fad1901">More...</a><br /></td></tr>
+<tr class="separator:ab23057731f9f17fae332b4099fad1901"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f3c050adcdb638562340cc4ae2eb147"><td class="memItemLeft" align="right" valign="top">Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#a3f3c050adcdb638562340cc4ae2eb147">ToPoint</a> ()</td></tr>
 <tr class="memdesc:a3f3c050adcdb638562340cc4ae2eb147"><td class="mdescLeft">&#160;</td><td class="mdescRight">To point (double x, double y)  <a href="class_search_a_thing_1_1_vector3_d.html#a3f3c050adcdb638562340cc4ae2eb147">More...</a><br /></td></tr>
 <tr class="separator:a3f3c050adcdb638562340cc4ae2eb147"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -424,6 +427,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2de3f4a7737ff5974b605389d5cab949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert given <a class="el" href="class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin">Vector3D</a> to System.Numerics.Vector3 <br  />
   <a href="class_search_a_thing_1_1_vector3_d.html#a2de3f4a7737ff5974b605389d5cab949">More...</a><br /></td></tr>
 <tr class="separator:a2de3f4a7737ff5974b605389d5cab949"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b9514d66d1dcb62c2748bef61b84c0b"><td class="memItemLeft" align="right" valign="top">static implicit&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#a7b9514d66d1dcb62c2748bef61b84c0b">operator Vector3D</a> (GPoint3 v)</td></tr>
+<tr class="memdesc:a7b9514d66d1dcb62c2748bef61b84c0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert given <a class="el" href="class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin">Vector3D</a> to GShark.Geometry.Point3  <a href="class_search_a_thing_1_1_vector3_d.html#a7b9514d66d1dcb62c2748bef61b84c0b">More...</a><br /></td></tr>
+<tr class="separator:a7b9514d66d1dcb62c2748bef61b84c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a989f4da3010e383335cf5bc9e1e93ca6"><td class="memItemLeft" align="right" valign="top">static implicit&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_vector3_d.html#a989f4da3010e383335cf5bc9e1e93ca6">operator Vector3D</a> (NVector3 v)</td></tr>
 <tr class="memdesc:a989f4da3010e383335cf5bc9e1e93ca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert given System.Numerics.Vector3 to <a class="el" href="class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin">Vector3D</a>  <a href="class_search_a_thing_1_1_vector3_d.html#a989f4da3010e383335cf5bc9e1e93ca6">More...</a><br /></td></tr>
 <tr class="separator:a989f4da3010e383335cf5bc9e1e93ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2233,8 +2239,42 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a7b9514d66d1dcb62c2748bef61b84c0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b9514d66d1dcb62c2748bef61b84c0b">&#9670;&nbsp;</a></span>operator Vector3D() <span class="overload">[1/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static implicit operator <a class="el" href="class_search_a_thing_1_1_vector3_d.html">Vector3D</a> </td>
+          <td>(</td>
+          <td class="paramtype">GPoint3&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert given <a class="el" href="class_search_a_thing_1_1_vector3_d.html" title="can be used to describe a wcs point or a vector x,y,z components from some reference origin">Vector3D</a> to GShark.Geometry.Point3 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>input vector</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a8727b174bc269b13f2e38d409acd0c1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8727b174bc269b13f2e38d409acd0c1c">&#9670;&nbsp;</a></span>operator Vector3D() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8727b174bc269b13f2e38d409acd0c1c">&#9670;&nbsp;</a></span>operator Vector3D() <span class="overload">[2/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2268,7 +2308,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a59fcce371e51edba9e4e0d2b89ad258c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59fcce371e51edba9e4e0d2b89ad258c">&#9670;&nbsp;</a></span>operator Vector3D() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a59fcce371e51edba9e4e0d2b89ad258c">&#9670;&nbsp;</a></span>operator Vector3D() <span class="overload">[3/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2298,7 +2338,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a3f5d48a7b93ca82f6d973f886814793f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f5d48a7b93ca82f6d973f886814793f">&#9670;&nbsp;</a></span>operator Vector3D() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f5d48a7b93ca82f6d973f886814793f">&#9670;&nbsp;</a></span>operator Vector3D() <span class="overload">[4/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2328,7 +2368,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a0a3950bc224ea55350b93aa649c05eee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a3950bc224ea55350b93aa649c05eee">&#9670;&nbsp;</a></span>operator Vector3D() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a3950bc224ea55350b93aa649c05eee">&#9670;&nbsp;</a></span>operator Vector3D() <span class="overload">[5/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2358,7 +2398,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a989f4da3010e383335cf5bc9e1e93ca6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a989f4da3010e383335cf5bc9e1e93ca6">&#9670;&nbsp;</a></span>operator Vector3D() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a989f4da3010e383335cf5bc9e1e93ca6">&#9670;&nbsp;</a></span>operator Vector3D() <span class="overload">[6/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2392,7 +2432,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="abb3bcdc949dea53c4fad6b628fb4448e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb3bcdc949dea53c4fad6b628fb4448e">&#9670;&nbsp;</a></span>operator Vector3D() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abb3bcdc949dea53c4fad6b628fb4448e">&#9670;&nbsp;</a></span>operator Vector3D() <span class="overload">[7/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3661,6 +3701,25 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>convert to (netdxf) discarding z </p>
+
+</div>
+</div>
+<a id="ab23057731f9f17fae332b4099fad1901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab23057731f9f17fae332b4099fad1901">&#9670;&nbsp;</a></span>ToGPoint3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GPoint3 ToGPoint3 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>convert to GShark.Geometry.Point3 </p>
 
 </div>
 </div>

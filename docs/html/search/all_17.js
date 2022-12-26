@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['z_444',['Z',['../class_search_a_thing_1_1_vector3_d.html#a0f16a8f561453187897f0820186da39b',1,'SearchAThing.Vector3D.Z()'],['../namespace_search_a_thing.html#a3197886280b26d361c765c6d7edefb4fa21c2e59531c8710156d34a3c30ac81d5',1,'SearchAThing.Z()']]],
-  ['z_5fx_445',['Z_X',['../namespace_search_a_thing.html#a42c02aa6d6f0779946333e294f73ef26a937fcc7cbf8cf7d2a12946934be7f0bc',1,'SearchAThing']]],
-  ['z_5fy_446',['Z_Y',['../namespace_search_a_thing.html#a42c02aa6d6f0779946333e294f73ef26a00e337c0cb59150df472dd6a124897bd',1,'SearchAThing']]],
-  ['zapduplicates_447',['ZapDuplicates',['../class_search_a_thing_1_1_sci_ext.html#ad7ac207bc149cc0a8c757b84e3b1c2f5',1,'SearchAThing.SciExt.ZapDuplicates(this IEnumerable&lt; Vector3D &gt; pts, double tol)'],['../class_search_a_thing_1_1_sci_ext.html#a3e09e632ceb1da4a2d75fc1f0ae79f6f',1,'SearchAThing.SciExt.ZapDuplicates(this IEnumerable&lt; Vector3D &gt; pts, Vector3DEqualityComparer cmp)']]],
-  ['zaxis_448',['ZAxis',['../class_search_a_thing_1_1_vector3_d.html#ab26215de167cba30be281bae04fc40fc',1,'SearchAThing::Vector3D']]],
-  ['zaxisline_449',['ZAxisLine',['../class_search_a_thing_1_1_line3_d.html#ad9432ae0bbbfd3ff975ab37064dd1e36',1,'SearchAThing::Line3D']]],
-  ['zero_450',['Zero',['../class_search_a_thing_1_1_vector3_d.html#a8e31613e2f5bca11c362a9682af16834',1,'SearchAThing::Vector3D']]]
+  ['z_446',['Z',['../class_search_a_thing_1_1_vector3_d.html#a0f16a8f561453187897f0820186da39b',1,'SearchAThing.Vector3D.Z()'],['../namespace_search_a_thing.html#a3197886280b26d361c765c6d7edefb4fa21c2e59531c8710156d34a3c30ac81d5',1,'SearchAThing.Z()']]],
+  ['z_5fx_447',['Z_X',['../namespace_search_a_thing.html#a42c02aa6d6f0779946333e294f73ef26a937fcc7cbf8cf7d2a12946934be7f0bc',1,'SearchAThing']]],
+  ['z_5fy_448',['Z_Y',['../namespace_search_a_thing.html#a42c02aa6d6f0779946333e294f73ef26a00e337c0cb59150df472dd6a124897bd',1,'SearchAThing']]],
+  ['zapduplicates_449',['ZapDuplicates',['../class_search_a_thing_1_1_sci_ext.html#ad7ac207bc149cc0a8c757b84e3b1c2f5',1,'SearchAThing.SciExt.ZapDuplicates(this IEnumerable&lt; Vector3D &gt; pts, double tol)'],['../class_search_a_thing_1_1_sci_ext.html#a3e09e632ceb1da4a2d75fc1f0ae79f6f',1,'SearchAThing.SciExt.ZapDuplicates(this IEnumerable&lt; Vector3D &gt; pts, Vector3DEqualityComparer cmp)']]],
+  ['zaxis_450',['ZAxis',['../class_search_a_thing_1_1_vector3_d.html#ab26215de167cba30be281bae04fc40fc',1,'SearchAThing::Vector3D']]],
+  ['zaxisline_451',['ZAxisLine',['../class_search_a_thing_1_1_line3_d.html#ad9432ae0bbbfd3ff975ab37064dd1e36',1,'SearchAThing::Line3D']]],
+  ['zero_452',['Zero',['../class_search_a_thing_1_1_vector3_d.html#a8e31613e2f5bca11c362a9682af16834',1,'SearchAThing::Vector3D']]]
 ];
