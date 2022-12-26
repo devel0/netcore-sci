@@ -1,18 +1,12 @@
-using System;
-using System.Linq;
-using static System.Math;
-using System.Collections.Generic;
-using static System.FormattableString;
-
 using netDxf.Entities;
 
 namespace SearchAThing
 {
 
-    /// <summary>
-    /// Specialized version of Arc3D with StartAngle=0 and EndAngle=2PI
-    /// </summary>
-    public class Circle3D : Arc3D
+	/// <summary>
+	/// Specialized version of Arc3D with StartAngle=0 and EndAngle=2PI
+	/// </summary>
+	public class Circle3D : Arc3D
     {
 
         /// <summary>

@@ -1,11 +1,7 @@
-using static System.Math;
-using System.Collections.Generic;
-using System;
-
 namespace SearchAThing
 {
 
-    public static partial class SciExt
+	public static partial class SciExt
     {
 
         /// <summary>

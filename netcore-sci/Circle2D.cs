@@ -1,12 +1,7 @@
-using System;
-using System.Linq;
-using static System.Math;
-using System.Collections.Generic;
-
 namespace SearchAThing
 {
 
-    public enum CircleTangentType { Exterior, Interior };
+	public enum CircleTangentType { Exterior, Interior };
 
     public static partial class SciToolkit
     {

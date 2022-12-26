@@ -1,16 +1,13 @@
-using System;
-using System.Collections.Generic;
-
 namespace SearchAThing
 {
 
-    /// <summary>
-    /// Scan a given domain of doubles, determine the midpoint ( Origin )
-    /// and using the given tolerance it tests for integrity in conversion between values
-    /// from double to Int64 and vice-versa.
-    /// It can generate a Int64MapExceptionRange.
-    /// </summary>
-    public class Int64Map
+	/// <summary>
+	/// Scan a given domain of doubles, determine the midpoint ( Origin )
+	/// and using the given tolerance it tests for integrity in conversion between values
+	/// from double to Int64 and vice-versa.
+	/// It can generate a Int64MapExceptionRange.
+	/// </summary>
+	public class Int64Map
     {
 
         public double Origin { get; private set; }

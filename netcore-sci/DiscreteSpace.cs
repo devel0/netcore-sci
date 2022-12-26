@@ -1,15 +1,10 @@
-using System;
-using System.Linq;
-using static System.Math;
-using System.Collections.Generic;
-
 namespace SearchAThing
 {
 
-    /// <summary>
-    /// base item for DiscreteSpace
-    /// </summary>    
-    public class DiscreteSpaceItem<T>
+	/// <summary>
+	/// base item for DiscreteSpace
+	/// </summary>    
+	public class DiscreteSpaceItem<T>
     {
 
         public Vector3D Mean { get; private set; }

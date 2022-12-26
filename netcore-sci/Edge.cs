@@ -1,13 +1,7 @@
-using System;
-using System.Linq;
-using static System.Math;
-using System.Collections.Generic;
-using System.Text;
-
 namespace SearchAThing
 {
 
-    public enum EdgeEnd { SGeomFrom, SGeomTo };
+	public enum EdgeEnd { SGeomFrom, SGeomTo };
 
     /// <summary>
     /// interface implemented by some type of geometries used in Loop such as Line3D, Arc3D and Circle3D

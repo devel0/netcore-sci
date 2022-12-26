@@ -1,11 +1,3 @@
-using System.Collections.Generic;
-using System.Text;
-using System.Globalization;
-using System.Linq;
-using static System.Math;
-using static System.FormattableString;
-using System;
-
 using netDxf.Entities;
 using Newtonsoft.Json;
 using System.Numerics;
@@ -13,7 +5,7 @@ using System.Numerics;
 namespace SearchAThing
 {
 
-    public enum Line3DConstructMode { PointAndVector };
+	public enum Line3DConstructMode { PointAndVector };
 
     public enum LineIntersectBehavior
     {

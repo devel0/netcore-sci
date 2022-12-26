@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-//using System.Numerics;
 using System.Runtime.CompilerServices;
 
 using NVector3 = System.Numerics.Vector3;
@@ -9,7 +7,7 @@ using Matrix4x4 = System.Numerics.Matrix4x4;
 namespace SearchAThing
 {
 
-    public static partial class SciExt
+	public static partial class SciExt
     {
 
         /// <summary>

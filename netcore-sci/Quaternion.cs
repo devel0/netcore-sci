@@ -1,5 +1,3 @@
-using static System.Math;
-
 namespace SearchAThing
 {
 

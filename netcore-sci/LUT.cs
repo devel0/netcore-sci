@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
-using static System.FormattableString;
-using static System.Math;
-
 namespace SearchAThing
 {
 
-    /// <summary>
-    /// Lookup Table genertor
-    /// </summary>
-    public class LUT
+	/// <summary>
+	/// Lookup Table genertor
+	/// </summary>
+	public class LUT
     {
 
         public int LUTSize { get; private set; }

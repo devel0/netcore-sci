@@ -1,13 +1,4 @@
-﻿using System;
-using System.Text;
-using System.Linq;
-using System.Threading;
-using System.Diagnostics;
-using System.IO;
-using System.Collections.Generic;
-using Newtonsoft.Json.Serialization;
-using System.Threading.Tasks;
-using System.Text.RegularExpressions;
+﻿using System.Threading;
 
 namespace SearchAThing
 {
@@ -78,7 +69,7 @@ namespace SearchAThing
 
                     foreach (var fname in searchFor)
                     {
-                        var q = fname.SearchInPath();
+                        var q = SearchInPath(fname);
                         if (q != null)
                         {
                             _PythonExePathfilename = q;

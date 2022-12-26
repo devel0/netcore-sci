@@ -1,21 +1,18 @@
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using Newtonsoft.Json;
-using UnitsNet.Serialization.JsonNet;
-using Newtonsoft.Json.Converters;
-using UnitsNet.Units;
-using System;
-using UnitsNet;
-using JsonNet.ContractResolvers;
-using Newtonsoft.Json.Serialization;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using JsonNet.ContractResolvers;
+using UnitsNet;
+using UnitsNet.Units;
+using UnitsNet.Serialization.JsonNet;
 
 namespace SearchAThing
 {
 
-    public static partial class SciToolkit
+	public static partial class SciToolkit
     {
 
         public static string ToSciJson(object o) => JsonConvert.SerializeObject(o, SciJsonSettings);
@@ -52,7 +49,7 @@ namespace SearchAThing
             }
         }
 
-        private static void errhandler(object? sender, ErrorEventArgs e)
+        private static void errhandler(object? sender, Newtonsoft.Json.Serialization.ErrorEventArgs e)
         {
             throw new Exception($"{e.ErrorContext.Error.Message} ; Path: {e.ErrorContext.Path}");
         }

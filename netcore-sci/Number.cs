@@ -1,21 +1,13 @@
-using static System.Math;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System;
-
 using LinqStatistics;
 using MathNet.Numerics.Interpolation;
 
-using SearchAThing;
-using static SearchAThing.SciToolkit;
 namespace SearchAThing
 {
 
-    /// <summary>
-    /// statistical info about number set
-    /// </summary>
-    public struct NumbersStatNfo
+	/// <summary>
+	/// statistical info about number set
+	/// </summary>
+	public struct NumbersStatNfo
     {
         public int Count;
         public double Average;

@@ -1,28 +1,12 @@
-using System;
-using System.Linq;
-using static System.Math;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Diagnostics.CodeAnalysis;
-using static System.FormattableString;
-using System.Diagnostics;
-using System.Text;
-
-using netDxf;
 using netDxf.Entities;
-using Newtonsoft.Json;
-using netDxf.Tables;
-
-using SearchAThing;
-using static SearchAThing.SciToolkit;
 
 namespace SearchAThing
 {
 
-    /// <summary>
-    /// Planar face with one (outer) or more loops (inners)
-    /// </summary>
-    public class Face
+	/// <summary>
+	/// Planar face with one (outer) or more loops (inners)
+	/// </summary>
+	public class Face
     {
         public Plane3D Plane { get; private set; }
 

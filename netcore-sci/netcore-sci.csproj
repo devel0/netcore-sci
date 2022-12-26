@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.1;net6.0</TargetFrameworks>
+		<TargetFrameworks>netstandard2.1;net7.0</TargetFrameworks>
 		<LangVersion>10</LangVersion>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<PackageId>netcore-sci</PackageId>
@@ -15,21 +15,23 @@
 		<noWarn>1591</noWarn>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="netcore-util" Version="$(NetcoreUtilVersion)" />
-		<!-- <PackageReference Include="netDxf-devel0" Version="$(NetDxfDevel0Version)" /> -->
+		<PackageReference Include="netcore-util" Version="5.0.0" />
+		<PackageReference Include="netDxf-devel0" Version="3.0.3" />
 
-		<PackageReference Include="JsonNet.ContractResolvers" Version="$(JsonNetContractResolversVersion)" />
-		<PackageReference Include="LibTessDotNet" Version="$(LibTessDotNetVersion)" />
-		<PackageReference Include="LinqStatistics" Version="$(LinqStatisticsVersion)" />
-		<PackageReference Include="MathNet.Numerics" Version="$(MathNetNumericsVersion)" />
-		<PackageReference Include="ParagonClipper" Version="$(ParagonClipperVersion)" />
-		<PackageReference Include="QuantumConcepts.Formats.STL.netcore" Version="$(STLNetCoreVersion)" />
-		<PackageReference Include="UnitsNet.Serialization.JsonNet" Version="$(UnitsNetSerializationJsonNetVersion)" />
-		<PackageReference Include="System.Drawing.Common" Version="$(SystemDrawingCommonVersion)" />
+		<PackageReference Include="GShark" Version="1.5.0" />
+		<PackageReference Include="JsonNet.ContractResolvers" Version="2.0.0" />
+		<PackageReference Include="LibTessDotNet" Version="1.1.15" />
+		<PackageReference Include="LinqStatistics" Version="2.3.0" />
+		<PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+		<PackageReference Include="ParagonClipper" Version="6.4.2" />
+		<PackageReference Include="QuantumConcepts.Formats.STL.netcore" Version="1.3.1" />
+		<PackageReference Include="UnitsNet.Serialization.JsonNet" Version="4.6.0" />
+		<PackageReference Include="System.Drawing.Common" Version="6.0.0" />
 	</ItemGroup>
-	<ItemGroup><!--<ProjectReference Include="..\..\netcore-util\netcore-util\netcore-util.csproj"/>-->
+	<ItemGroup>
+		<!-- <ProjectReference Include="..\..\G-Shark\src\GShark/GShark.csproj" /> -->
+		<!-- <ProjectReference Include="..\..\netcore-util\netcore-util\netcore-util.csproj" /> -->
 		<!--<ProjectReference Include="..\..\netDxf\netDxf\netDxf.csproj" />-->
-	
-	  <ProjectReference Include="..\..\netDxf\netDxf\netDxf.csproj" />
+		<!-- <ProjectReference Include="..\..\netDxf\netDxf\netDxf.csproj" /> -->
 	</ItemGroup>
 </Project>

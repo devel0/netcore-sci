@@ -1,21 +1,12 @@
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Text;
-using System.Globalization;
-
 using netDxf.Entities;
 using netDxf;
 using netDxf.Blocks;
 using netDxf.Tables;
 
-using SearchAThing;
-using static SearchAThing.SciToolkit;
-
 namespace SearchAThing
 {
 
-    public static partial class SciToolkit
+	public static partial class SciToolkit
     {
 
         public static Func<string, string> PostProcessCadScript = (script) =>

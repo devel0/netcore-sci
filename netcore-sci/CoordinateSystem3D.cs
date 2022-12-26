@@ -1,20 +1,13 @@
-using System;
 using System.Numerics;
-using System.Text;
-using static System.Math;
-using System.Collections.Generic;
 
 using netDxf.Tables;
-using Vector3 = System.Numerics.Vector3;
 using Newtonsoft.Json;
-
-using static SearchAThing.SciToolkit;
 using netDxf;
 
 namespace SearchAThing
 {
 
-    public enum CoordinateSystem3DAutoEnum
+	public enum CoordinateSystem3DAutoEnum
     {
         /// <summary>
         /// Arbitrary Axis Alghoritm ( dxf spec )

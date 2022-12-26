@@ -1,24 +1,16 @@
-using static System.Math;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System;
-
 using netDxf.Entities;
 using netDxf;
 using netDxf.Tables;
 
-using static SearchAThing.SciToolkit;
-
 namespace SearchAThing
 {
 
-    /// <summary>
-    /// Bounding Box.
-    /// Initially empty, each added point will increase the extension if min or max exceed actual bbox limits.
-    /// It works within wcs.
-    /// </summary>
-    public class BBox3D
+	/// <summary>
+	/// Bounding Box.
+	/// Initially empty, each added point will increase the extension if min or max exceed actual bbox limits.
+	/// It works within wcs.
+	/// </summary>
+	public class BBox3D
     {
 
         static BBox3D EmptyBBox = new BBox3D();

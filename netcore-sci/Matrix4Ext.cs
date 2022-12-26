@@ -1,12 +1,9 @@
-using System;
 using System.Numerics;
-using System.Text;
-using static System.Math;
 
 namespace SearchAThing
 {
 
-    public static partial class SciExt
+	public static partial class SciExt
     {
 
         /// <summary>

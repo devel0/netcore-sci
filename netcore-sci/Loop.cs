@@ -1,23 +1,11 @@
-using System;
-using System.Linq;
-using static System.Math;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using System.Diagnostics.CodeAnalysis;
-using static System.FormattableString;
-
-using netDxf;
 using netDxf.Entities;
-
-using SearchAThing;
-using System.Text;
 using Newtonsoft.Json;
-using System.Diagnostics;
 
 namespace SearchAThing
 {
 
-    public enum LoopContainsPointMode
+	public enum LoopContainsPointMode
     {
         /// <summary>
         /// point is on perimeter

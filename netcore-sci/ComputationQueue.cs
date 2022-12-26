@@ -1,15 +1,12 @@
-using System;
-using System.Collections.Generic;
-
 namespace SearchAThing
 {
 
-    /// <summary>
-    /// helper circular queue manager for computation.
-    /// at constructor the maxSize ( default=3 ) can be specified to allow retrieval of previous computed items
-    /// </summary>
-    /// <typeparam name="T">type that hold computation data</typeparam>
-    public class ComputationQueue<T> where T : class
+	/// <summary>
+	/// helper circular queue manager for computation.
+	/// at constructor the maxSize ( default=3 ) can be specified to allow retrieval of previous computed items
+	/// </summary>
+	/// <typeparam name="T">type that hold computation data</typeparam>
+	public class ComputationQueue<T> where T : class
     {
         List<T> lst = new List<T>();
 

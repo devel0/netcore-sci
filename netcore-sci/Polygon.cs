@@ -1,18 +1,11 @@
-using System;
-using System.Linq;
-using static System.Math;
-using System.Collections.Generic;
-
 using netDxf;
 using ClipperLib;
 using netDxf.Entities;
-using static SearchAThing.SciToolkit;
-using System.Text;
 
 namespace SearchAThing
 {
 
-    public static partial class SciExt
+	public static partial class SciExt
     {
 
         /// <summary>

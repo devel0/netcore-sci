@@ -1,29 +1,20 @@
-using System;
-using System.Linq;
-using static System.Math;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using static System.FormattableString;
-
 using netDxf.Entities;
-
-using static SearchAThing.SciToolkit;
 using Newtonsoft.Json;
 
 namespace SearchAThing
 {
 
-    /// <summary>
-    /// normalized angles in range [StartAngle, EndAngle] comparer
-    /// 
-    /// Example:
-    /// 
-    /// start:1.25π   end:0.5π
-    /// the set { 0.25π, 0.75π } sorts to { 0.75π, 0.25π }
-    /// 
-    /// Precondition: constructor start, end angles and compare method arguments must normalized [0,2PI)
-    /// </summary>
-    public class NormalizedAngleComparer : IComparer<double>
+	/// <summary>
+	/// normalized angles in range [StartAngle, EndAngle] comparer
+	/// 
+	/// Example:
+	/// 
+	/// start:1.25π   end:0.5π
+	/// the set { 0.25π, 0.75π } sorts to { 0.75π, 0.25π }
+	/// 
+	/// Precondition: constructor start, end angles and compare method arguments must normalized [0,2PI)
+	/// </summary>
+	public class NormalizedAngleComparer : IComparer<double>
     {
         public double NormalizedStartAngleRad { get; private set; }
         public double NormalizedEndAngleRad { get; private set; }

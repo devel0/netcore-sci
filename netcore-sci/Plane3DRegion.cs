@@ -1,14 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace SearchAThing
 {
 
-    /// <summary>
-    /// region of a plane3d delimited by a set of coplanar points
-    /// </summary>
-    public class Plane3DRegion
+	/// <summary>
+	/// region of a plane3d delimited by a set of coplanar points
+	/// </summary>
+	public class Plane3DRegion
     {
 
         /// <summary>
