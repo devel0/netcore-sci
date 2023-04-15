@@ -458,7 +458,7 @@ namespace SearchAThing
 
         public bool Equals(Loop? x, Loop? y) => (x is null || y is null) ? false : x.Equals(tol, y);
 
-        public int GetHashCode([DisallowNull] Loop obj) => 0;
+        public int GetHashCode(Loop obj) => 0;
     }
 
     public static partial class SciExt

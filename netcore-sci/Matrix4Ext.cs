@@ -3,8 +3,10 @@ using System.Numerics;
 namespace SearchAThing
 {
 
-	public static partial class SciExt
+    public static partial class SciExt
     {
+
+#if NET6_0_OR_GREATER
 
         /// <summary>
         /// Retrieve memory contiguous representation of Matrix4x4.
@@ -61,6 +63,8 @@ namespace SearchAThing
                 m.M41, m.M42, m.M43, m.M44
             });
         }
+
+#endif
 
         /// <summary>
         /// retrieve inverse of given matrix

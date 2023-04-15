@@ -200,7 +200,7 @@ namespace SearchAThing
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"using python[{process.StartInfo.FileName}] err [{ex.Details()}]");
+                    Console.WriteLine($"using python[{process.StartInfo.FileName}] err [{ex.Message}]");
                 }
             }
 

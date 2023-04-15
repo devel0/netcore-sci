@@ -352,7 +352,7 @@ namespace SearchAThing
         {
             var sb = new StringBuilder();
 
-            var geomsLst = geoms.ToReadOnlyList();
+            var geomsLst = (IReadOnlyList<Geometry>)geoms;
 
             for (int i = 0; i < geomsLst.Count; ++i)
             {

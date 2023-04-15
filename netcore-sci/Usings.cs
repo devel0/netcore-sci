@@ -12,6 +12,11 @@ global using System.Threading.Tasks;
 global using static System.Math;
 global using static System.FormattableString;
 
+global using SearchAThing.Ext;
+global using static SearchAThing.Ext.Toolkit;
+
 global using SearchAThing;
-global using static SearchAThing.Toolkit;
 global using static SearchAThing.SciToolkit;
+// global using static SearchAThing.Ext.Toolkit;
+// global using static SearchAThing.Toolkit;
+// global using static SearchAThing.SciToolkit;

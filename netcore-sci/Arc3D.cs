@@ -156,7 +156,7 @@ namespace SearchAThing
         /// <summary>
         /// create offseted arc toward refPt for given offset.        
         /// </summary>
-#if NETSTANDARD2_1_OR_GREATER
+#if NETSTANDARD2_0_OR_GREATER
         public override Edge Offset(double tol, Vector3D refPt, double offset)
 #elif NET6_0_OR_GREATER
         public override Arc3D Offset(double tol, Vector3D refPt, double offset)
@@ -209,7 +209,7 @@ namespace SearchAThing
 
         #region Geometry
 
-#if NETSTANDARD2_1_OR_GREATER
+#if NETSTANDARD2_0_OR_GREATER
         public override Geometry Copy() => new Arc3D(this);
 #elif NET6_0_OR_GREATER
         public override Arc3D Copy() => new Arc3D(this);
@@ -450,7 +450,7 @@ namespace SearchAThing
         /// create an arc copy with origin moved
         /// </summary>
         /// <param name="delta">new arc origin delta</param>        
-#if NETSTANDARD2_1_OR_GREATER
+#if NETSTANDARD2_0_OR_GREATER
         public override Geometry Move(Vector3D delta) => new Arc3D(CS.Move(delta), Radius, AngleStart, AngleEnd);
 #elif NET6_0_OR_GREATER
         public override Arc3D Move(Vector3D delta) => new Arc3D(CS.Move(delta), Radius, AngleStart, AngleEnd);
@@ -1033,7 +1033,7 @@ namespace SearchAThing
             }
 
             return arc;
-        }
+        }        
 
         /// <summary>
         /// states if given angle is contained in from, to angle range;

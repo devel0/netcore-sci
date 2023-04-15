@@ -7,6 +7,7 @@ using SearchAThing;
 using System.Diagnostics;
 using netDxf.Entities;
 using netDxf;
+using SearchAThing.Ext;
 
 namespace test
 {

@@ -5,6 +5,7 @@ using System.Linq;
 using LinqStatistics;
 using SearchAThing;
 using System.Diagnostics;
+using SearchAThing.Ext;
 using netDxf.Entities;
 using netDxf;
 

@@ -44,7 +44,7 @@ namespace SearchAThing
         /// create a circle copy with origin moved
         /// </summary>
         /// <param name="delta">new circle origin delta</param>        
-#if NETSTANDARD2_1_OR_GREATER
+#if NETSTANDARD2_0_OR_GREATER
         public override Geometry Move(Vector3D delta) => new Circle3D(CS.Move(delta), Radius);
 #elif NET6_0_OR_GREATER
         public override Circle3D Move(Vector3D delta) => new Circle3D(CS.Move(delta), Radius);

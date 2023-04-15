@@ -37,7 +37,7 @@ namespace SearchAThing
         /// <param name="breaks">break points</param>
         /// <returns>splitted segments starts from begin of line</returns>
 
-#if NETSTANDARD2_1_OR_GREATER
+#if NETSTANDARD2_0_OR_GREATER
         public override IEnumerable<Geometry> Split(double tol, IEnumerable<Vector3D> breaks)
 #elif NET6_0_OR_GREATER
         public override IEnumerable<Line3D> Split(double tol, IEnumerable<Vector3D> breaks)
@@ -104,7 +104,7 @@ namespace SearchAThing
 
         #region Geometry
 
-#if NETSTANDARD2_1_OR_GREATER
+#if NETSTANDARD2_0_OR_GREATER
         public override Geometry Copy() => new Line3D(this);
 #elif NET6_0_OR_GREATER
         public override Line3D Copy() => new Line3D(this);
@@ -751,7 +751,7 @@ namespace SearchAThing
         /// <summary>
         /// move this segment of given delta
         /// </summary>                    
-#if NETSTANDARD2_1_OR_GREATER
+#if NETSTANDARD2_0_OR_GREATER
         public override Geometry Move(Vector3D delta) => new Line3D(From + delta, To + delta);
 #elif NET6_0_OR_GREATER
         public override Line3D Move(Vector3D delta) => new Line3D(From + delta, To + delta);
@@ -783,7 +783,7 @@ namespace SearchAThing
         /// <summary>
         /// create offseted line toward refPt for given offset
         /// </summary>
-#if NETSTANDARD2_1_OR_GREATER
+#if NETSTANDARD2_0_OR_GREATER
         public override Edge Offset(double tol, Vector3D refPt, double offset)
 #elif NET6_0_OR_GREATER
         public override Line3D Offset(double tol, Vector3D refPt, double offset)
