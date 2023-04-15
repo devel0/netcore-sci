@@ -16,7 +16,6 @@
     - [0002](#0002)
     - [0003](#0003)
 * [Tests](#tests)
-    - [LoopTest_0013](#looptest_0013)
     - [LoopTest_0014](#looptest_0014)
     - [LoopTest_0021](#looptest_0021)
     - [PolygonTest_0007](#polygontest_0007)
@@ -34,6 +33,9 @@
   + [Geometry](#geometry)
 * [Unit tests](#unit-tests)
 * [How this project was built](#how-this-project-was-built)
+* [Documentation (github pages)](#documentation-github-pages)
+  + [Build and view locally](#build-and-view-locally)
+  + [Build and commit into docs branch](#build-and-commit-into-docs-branch)
 * [IOT](#iot)
 <!-- TOCEND -->
 
@@ -43,16 +45,11 @@
 
 ```sh
 mkdir ~/opensource
-git clone https://github.com/devel0/netcore-util.git
 git clone https://github.com/devel0/netcore-sci.git
 
 cd netcore-sci
-#git submodule update --init --recursive
 dotnet build
 ```
-
-:point_right: To make the netcore-util dependency debuggable comment `PackageReference` and uncomment `ProjectReference` for corresponding netcore-util reference in [csproj](netcore-sci/netcore-sci.csproj)
-
 
 ## Examples
 
@@ -254,6 +251,27 @@ dotnet sln netcore-sci.sln add test/test.csproj
 dotnet restore
 dotnet build
 dotnet test test/test.csproj
+```
+
+
+## Documentation (github pages)
+
+Configured through Settings/Pages on Branch docs ( path /docs ).
+
+- while main branch exclude "docs" with .gitignore the docs branch doesn't
+
+### Build and view locally
+
+```sh
+./doc build
+./doc serve
+./doc view
+```
+
+### Build and commit into docs branch
+
+```sh
+./doc commit
 ```
 
 ## IOT
