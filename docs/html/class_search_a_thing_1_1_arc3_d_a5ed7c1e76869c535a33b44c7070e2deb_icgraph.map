@@ -1,0 +1,12 @@
+<map id="Contains" name="Contains">
+<area shape="rect" id="node1" title="statis if given point contained in arc perimeter/shape or circle perimeter/shape depending on specifi..." alt="" coords="331,129,409,155"/>
+<area shape="rect" id="node2" href="$class_search_a_thing_1_1_arc3_d.html#aee7246a76ac2ccbce0caddb70d0137db" title="Build arc by 3 given points. &#160;&#160;Resulting simplified CS and normalized [0,2pi) AngleStart and AngleEnd..." alt="" coords="197,5,258,31"/>
+<area shape="rect" id="node3" href="$class_search_a_thing_1_1_arc3_d.html#a12c9267c6b6af687d05881a71021b9af" title="finds intersection points between two arcs" alt="" coords="188,55,267,80"/>
+<area shape="rect" id="node7" href="$class_search_a_thing_1_1_arc3_d.html#a48304ba0ad1da7f673e9c7be8c59e39c" title="states if this arc intersect given line" alt="" coords="188,104,267,129"/>
+<area shape="rect" id="node8" href="$class_search_a_thing_1_1_arc3_d.html#a41089be71779b247965f24aa6ebe4b8a" title="extends edge endpoint toward new given one. &#160;&#160;returns null if edge can&#39;t extends toward new given end..." alt="" coords="186,153,269,179"/>
+<area shape="rect" id="node9" href="$class_search_a_thing_1_1_arc3_d.html#a767a1ff9fd31c4874d90a64badce69d9" title="Build a perpendicular vector to this arc starting from the given point p." alt="" coords="172,203,283,228"/>
+<area shape="rect" id="node10" href="$class_search_a_thing_1_1_arc3_d.html#ab69dc258749ee37248a1342b257311b2" title="create a set of subarc from this by splitting through given split points split point are not required..." alt="" coords="202,252,253,277"/>
+<area shape="rect" id="node4" href="$class_search_a_thing_1_1_arc3_d.html#a048753f284cb4dd8eb62a5545fd2f073" title="find intersections between this and another geometry resulting in zero or more geometries." alt="" coords="5,5,124,31"/>
+<area shape="rect" id="node5" href="$class_search_a_thing_1_1_arc3_d.html#a577b1f959ca1dedae02ca1d23e8c75aa" title="find ips of intersect this arc to the given cs plane; return empty set if arc cs plane parallel to ot..." alt="" coords="25,55,104,80"/>
+<area shape="rect" id="node6" href="$class_search_a_thing_1_1_arc3_d.html#ae649b3f46da0206f8587febb36aab1fe" title="project given point p to this arc. &#160;&#160;returns null if ip falls outside arc perimeter and only_arc:true..." alt="" coords="31,104,98,129"/>
+</map>

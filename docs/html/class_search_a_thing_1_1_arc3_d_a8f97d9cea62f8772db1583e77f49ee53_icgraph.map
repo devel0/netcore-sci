@@ -1,0 +1,7 @@
+<map id="ToCircle3D" name="ToCircle3D">
+<area shape="rect" id="node1" title=" " alt="" coords="299,55,389,80"/>
+<area shape="rect" id="node2" href="$class_search_a_thing_1_1_arc3_d.html#a12c9267c6b6af687d05881a71021b9af" title="finds intersection points between two arcs" alt="" coords="172,55,251,80"/>
+<area shape="rect" id="node3" href="$class_search_a_thing_1_1_arc3_d.html#a048753f284cb4dd8eb62a5545fd2f073" title="find intersections between this and another geometry resulting in zero or more geometries." alt="" coords="5,5,124,31"/>
+<area shape="rect" id="node4" href="$class_search_a_thing_1_1_arc3_d.html#a577b1f959ca1dedae02ca1d23e8c75aa" title="find ips of intersect this arc to the given cs plane; return empty set if arc cs plane parallel to ot..." alt="" coords="25,55,104,80"/>
+<area shape="rect" id="node5" href="$class_search_a_thing_1_1_arc3_d.html#ae649b3f46da0206f8587febb36aab1fe" title="project given point p to this arc. &#160;&#160;returns null if ip falls outside arc perimeter and only_arc:true..." alt="" coords="31,104,98,129"/>
+</map>

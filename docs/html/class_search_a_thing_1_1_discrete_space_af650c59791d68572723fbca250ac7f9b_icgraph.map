@@ -1,0 +1,4 @@
+<map id="GetItemsAt" name="GetItemsAt">
+<area shape="rect" id="node1" title="retrieve items that resides in the space at given point with given extents max distance" alt="" coords="120,29,216,55"/>
+<area shape="rect" id="node2" href="$class_search_a_thing_1_1_discrete_space.html#aa6883617d32430e4e6f2763f1821a302" title=" " alt="" coords="5,29,72,55"/>
+</map>

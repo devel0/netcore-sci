@@ -1,0 +1,7 @@
+<map id="EqualsTol" name="EqualsTol">
+<area shape="rect" id="node1" title="Checks if two lines are equals." alt="" coords="551,70,633,95"/>
+<area shape="rect" id="node2" href="$class_search_a_thing_1_1_arc3_d.html#aceadfdb18af288e2a000c0b1e07d3234" title="Checks if two arcs are equals ( it checks agains swapped from&#45;to too )" alt="" coords="284,70,503,95"/>
+<area shape="rect" id="node3" href="$class_search_a_thing_1_1_arc3_d_equality_comparer.html#a410d5009cd0fd461223db0ef5d30bb09" title=" " alt="" coords="17,5,224,45"/>
+<area shape="rect" id="node4" href="$class_search_a_thing_1_1_circle3_d.html#a73e18184c469df5ead90339c98eeedc2" title="intersect this circle with given other; pre&#45;requisite: circles are not the same one ; actually implem..." alt="" coords="5,70,236,95"/>
+<area shape="rect" id="node5" href="$class_search_a_thing_1_1_arc3_d.html#ab69dc258749ee37248a1342b257311b2" title="create a set of subarc from this by splitting through given split points split point are not required..." alt="" coords="27,119,214,145"/>
+</map>

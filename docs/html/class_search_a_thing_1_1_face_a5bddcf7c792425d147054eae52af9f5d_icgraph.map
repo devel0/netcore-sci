@@ -1,0 +1,4 @@
+<map id="Contains" name="Contains">
+<area shape="rect" id="node1" title="states if given edge is contained into this face" alt="" coords="128,29,207,55"/>
+<area shape="rect" id="node2" href="$class_search_a_thing_1_1_face.html#a945fd983232146ce482365aa683bd5e2" title="boolean operation with this and other loops. precondition: must coplanar" alt="" coords="5,29,80,55"/>
+</map>

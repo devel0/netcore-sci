@@ -1,0 +1,4 @@
+<map id="Intersect" name="Intersect">
+<area shape="rect" id="node1" title="return intersect line between two cs xy planes" alt="" coords="269,13,348,38"/>
+<area shape="rect" id="node2" href="$class_search_a_thing_1_1_plane3_d.html#a5be865391e1a733a43fe67b25ced6782" title="retrieve the plane that is in the middle between this and other given" alt="" coords="5,5,221,45"/>
+</map>

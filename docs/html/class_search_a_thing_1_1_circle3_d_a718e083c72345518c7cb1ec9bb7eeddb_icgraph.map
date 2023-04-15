@@ -1,0 +1,8 @@
+<map id="Intersect" name="Intersect">
+<area shape="rect" id="node1" title="intersect this 3d circle with given 3d line" alt="" coords="569,80,648,105"/>
+<area shape="rect" id="node2" href="$class_search_a_thing_1_1_arc3_d.html#a12c9267c6b6af687d05881a71021b9af" title="finds intersection points between two arcs" alt="" coords="307,55,521,80"/>
+<area shape="rect" id="node6" href="$class_search_a_thing_1_1_circle3_d.html#a73e18184c469df5ead90339c98eeedc2" title="intersect this circle with given other; pre&#45;requisite: circles are not the same one ; actually implem..." alt="" coords="375,104,453,129"/>
+<area shape="rect" id="node3" href="$class_search_a_thing_1_1_arc3_d.html#a048753f284cb4dd8eb62a5545fd2f073" title="find intersections between this and another geometry resulting in zero or more geometries." alt="" coords="5,5,259,31"/>
+<area shape="rect" id="node4" href="$class_search_a_thing_1_1_arc3_d.html#a577b1f959ca1dedae02ca1d23e8c75aa" title="find ips of intersect this arc to the given cs plane; return empty set if arc cs plane parallel to ot..." alt="" coords="25,55,239,80"/>
+<area shape="rect" id="node5" href="$class_search_a_thing_1_1_arc3_d.html#ae649b3f46da0206f8587febb36aab1fe" title="project given point p to this arc. &#160;&#160;returns null if ip falls outside arc perimeter and only_arc:true..." alt="" coords="31,104,233,129"/>
+</map>

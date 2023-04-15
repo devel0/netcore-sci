@@ -1,0 +1,5 @@
+<map id="LineContainsPoint" name="LineContainsPoint">
+<area shape="rect" id="node1" title="Infinite line contains point. Note: tol must be Constant.NormalizedLengthTolerance if comparing norma..." alt="" coords="164,31,303,56"/>
+<area shape="rect" id="node2" href="$class_search_a_thing_1_1_line3_d.html#a41089be71779b247965f24aa6ebe4b8a" title="extends edge endpoint toward new given one. &#160;&#160;returns null if edge can&#39;t extends toward new given end..." alt="" coords="19,5,102,31"/>
+<area shape="rect" id="node3" href="$class_search_a_thing_1_1_line3_d.html#a767a1ff9fd31c4874d90a64badce69d9" title="Build a perpendicular vector to this one starting from the given point p." alt="" coords="5,55,116,80"/>
+</map>
