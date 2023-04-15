@@ -1,0 +1,4 @@
+<map id="Edge" name="Edge">
+<area shape="rect" id="node1" title="interface implemented by some type of geometries used in Loop such as Line3D, Arc3D and Circle3D" alt="" coords="21,79,76,104"/>
+<area shape="rect" id="node2" href="$class_search_a_thing_1_1_geometry.html" title="base abstract type for geometries such as Vector3D, Line3D, Arc3D and Circle3D" alt="" coords="5,5,92,31"/>
+</map>
