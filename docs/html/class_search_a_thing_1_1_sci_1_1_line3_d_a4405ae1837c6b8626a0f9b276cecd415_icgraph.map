@@ -1,0 +1,9 @@
+<map id="ApparentIntersect" name="ApparentIntersect">
+<area shape="rect" id="node1" title="Find apparent intersection between this and given other line returning (shortest) segment perpendicul..." alt="" coords="420,104,559,129"/>
+<area shape="rect" id="node2" href="$class_search_a_thing_1_1_sci_1_1_line3_d.html#ac279145d85bb4fd2ea89f0bc5ae4efbf" title="Find intersection point between this and other line using given tolerance. Returns null if no interse..." alt="" coords="293,104,372,129"/>
+<area shape="rect" id="node3" href="$class_search_a_thing_1_1_sci_1_1_line3_d.html#aabf6d8bb138dbc080987d9937d73167b" title="returns bisect of two given segment/lines ( if given segment not share nodes but intesects returned b..." alt="" coords="94,5,157,31"/>
+<area shape="rect" id="node4" href="$class_search_a_thing_1_1_sci_1_1_line3_d.html#a4e9c08ecfad184897aff9e9cc19fafcf" title="find intersections between this and another geometry resulting in zero or more geometries." alt="" coords="66,55,185,80"/>
+<area shape="rect" id="node5" href="$class_search_a_thing_1_1_sci_1_1_line3_d.html#a9fcf0812eb6b3e36390d4a76c3b64ef8" title="Intersects two lines with arbitrary segment mode for each." alt="" coords="86,104,165,129"/>
+<area shape="rect" id="node6" href="$class_search_a_thing_1_1_sci_1_1_line3_d.html#a02a25dd4ae4b20a5b72dfc604f74ee56" title="Intersects two lines with arbitrary segment mode for each." alt="" coords="86,153,165,179"/>
+<area shape="rect" id="node7" href="$class_search_a_thing_1_1_sci_1_1_plane3_d_region.html#a73c96313fb28f7e4aef325b09627e6d8" title="states if given ray line intersect this plane3d region" alt="" coords="5,203,245,243"/>
+</map>

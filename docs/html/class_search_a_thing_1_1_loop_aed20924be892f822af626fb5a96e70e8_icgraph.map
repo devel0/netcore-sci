@@ -1,5 +1,0 @@
-<map id="ContainsPoint" name="ContainsPoint">
-<area shape="rect" id="node1" title="states if given point is included into this loop" alt="" coords="259,29,371,55"/>
-<area shape="rect" id="node2" href="$class_search_a_thing_1_1_loop.html#ab01260fd99f6dd7500b3de765e6043e3" title="test if given edge contained in this loop" alt="" coords="132,29,211,55"/>
-<area shape="rect" id="node3" href="$class_search_a_thing_1_1_loop.html#a72cf4602283fe6bc1748a9c48c4e5452" title="states if this loop contains given other loop" alt="" coords="5,29,84,55"/>
-</map>

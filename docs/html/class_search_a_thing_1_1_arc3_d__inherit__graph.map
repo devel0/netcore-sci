@@ -1,6 +1,0 @@
-<map id="Arc3D" name="Arc3D">
-<area shape="rect" id="node1" title="base geometry for arc 3d entities." alt="" coords="18,152,79,177"/>
-<area shape="rect" id="node4" href="$class_search_a_thing_1_1_circle3_d.html" title="Specialized version of Arc3D with StartAngle=0 and EndAngle=2PI." alt="" coords="10,225,87,251"/>
-<area shape="rect" id="node2" href="$class_search_a_thing_1_1_edge.html" title="interface implemented by some type of geometries used in Loop such as Line3D, Arc3D and Circle3D" alt="" coords="21,79,76,104"/>
-<area shape="rect" id="node3" href="$class_search_a_thing_1_1_geometry.html" title="base abstract type for geometries such as Vector3D, Line3D, Arc3D and Circle3D" alt="" coords="5,5,92,31"/>
-</map>

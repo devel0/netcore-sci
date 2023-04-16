@@ -1,4 +1,0 @@
-<map id="Contains" name="Contains">
-<area shape="rect" id="node1" title="test if given edge contained in this loop" alt="" coords="132,5,211,31"/>
-<area shape="rect" id="node2" href="$class_search_a_thing_1_1_loop.html#a72cf4602283fe6bc1748a9c48c4e5452" title="states if this loop contains given other loop" alt="" coords="5,5,84,31"/>
-</map>

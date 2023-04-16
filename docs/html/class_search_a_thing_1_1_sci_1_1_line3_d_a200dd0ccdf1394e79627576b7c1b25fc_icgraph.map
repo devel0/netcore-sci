@@ -1,0 +1,6 @@
+<map id="SegmentContainsPoint" name="SegmentContainsPoint">
+<area shape="rect" id="node1" title="Finite segment contains point. Note: tol must be Constant.NormalizedLengthTolerance if comparing norm..." alt="" coords="132,55,303,80"/>
+<area shape="rect" id="node2" href="$class_search_a_thing_1_1_sci_1_1_line3_d.html#a9fcf0812eb6b3e36390d4a76c3b64ef8" title="Intersects two lines with arbitrary segment mode for each." alt="" coords="5,5,84,31"/>
+<area shape="rect" id="node3" href="$class_search_a_thing_1_1_sci_1_1_line3_d.html#a02a25dd4ae4b20a5b72dfc604f74ee56" title="Intersects two lines with arbitrary segment mode for each." alt="" coords="5,55,84,80"/>
+<area shape="rect" id="node4" href="$class_search_a_thing_1_1_sci_1_1_line3_d.html#a8595c362236f1c87661248c301520beb" title="project given pt to this line" alt="" coords="11,104,78,129"/>
+</map>

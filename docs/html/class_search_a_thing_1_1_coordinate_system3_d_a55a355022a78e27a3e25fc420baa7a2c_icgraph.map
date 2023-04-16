@@ -1,6 +1,0 @@
-<map id="IsParallelTo" name="IsParallelTo">
-<area shape="rect" id="node1" title="states if this cs have Z base parallel to the other given cs" alt="" coords="548,55,643,80"/>
-<area shape="rect" id="node2" href="$class_search_a_thing_1_1_circle3_d.html#a73e18184c469df5ead90339c98eeedc2" title="intersect this circle with given other; pre&#45;requisite: circles are not the same one ; actually implem..." alt="" coords="269,5,500,31"/>
-<area shape="rect" id="node3" href="$class_search_a_thing_1_1_coordinate_system3_d.html#a6c8756373447d3a1ba36521dd13773cf" title="return intersect line between two cs xy planes" alt="" coords="345,55,424,80"/>
-<area shape="rect" id="node4" href="$class_search_a_thing_1_1_plane3_d.html#a5be865391e1a733a43fe67b25ced6782" title="retrieve the plane that is in the middle between this and other given" alt="" coords="5,73,221,113"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="Offset" name="Offset">
-<area shape="rect" id="node1" title="build offseted version of this edge toward refPt given for the amount specified by offset." alt="" coords="251,13,312,38"/>
-<area shape="rect" id="node2" href="$class_search_a_thing_1_1_sci_ext.html#aaa46116a2a07711a1c9fd31374cea680" title="create offseted polygon from this one by offset of given offset amount toward given sideRefPt." alt="" coords="5,5,203,45"/>
-</map>

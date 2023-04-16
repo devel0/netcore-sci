@@ -1,0 +1,4 @@
+<map id="Contains" name="Contains">
+<area shape="rect" id="node1" title="states if this plane3d region contains given point" alt="" coords="132,5,211,31"/>
+<area shape="rect" id="node2" href="$class_search_a_thing_1_1_sci_1_1_plane3_d_region.html#a73c96313fb28f7e4aef325b09627e6d8" title="states if given ray line intersect this plane3d region" alt="" coords="5,5,84,31"/>
+</map>

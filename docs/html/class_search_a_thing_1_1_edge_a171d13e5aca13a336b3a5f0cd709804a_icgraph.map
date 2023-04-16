@@ -1,5 +1,0 @@
-<map id="CheckSense" name="CheckSense">
-<area shape="rect" id="node1" title=" " alt="" coords="252,42,353,67"/>
-<area shape="rect" id="node2" href="$class_search_a_thing_1_1_sci_ext.html#a6324a5d66385885bbe6949ad5e32a552" title="From given set of edges returns the same set eventually toggling sense of edges to make them glue so ..." alt="" coords="5,5,204,45"/>
-<area shape="rect" id="node3" href="$class_search_a_thing_1_1_arc3_d.html#a4cd722b08333ccb9f25d1c39edac363b" title="returns this arc splitted by break points maintaining order from, to as this Start,..." alt="" coords="11,70,198,95"/>
-</map>

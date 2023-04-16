@@ -11,7 +11,7 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<g id="a_node1"><a xlink:href="class_search_a_thing_1_1_computation_queue.html" target="_top" xlink:title="helper circular queue manager for computation. at constructor the maxSize ( default=3 ) can be specif...">
+<g id="a_node1"><a xlink:href="class_search_a_thing_1_1_sci_1_1_computation_queue.html" target="_top" xlink:title="helper circular queue manager for computation. at constructor the maxSize ( default=3 ) can be specif...">
 <polygon fill="white" stroke="#666666" points="140,-19 0,-19 0,0 140,0 140,-19"/>
 <text text-anchor="middle" x="70" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ComputationQueue&lt; T &gt;</text>
 </a>

@@ -1,0 +1,4 @@
+<map id="Move" name="Move">
+<area shape="rect" id="node1" title="return another cs with origin translated" alt="" coords="140,5,199,31"/>
+<area shape="rect" id="node2" href="$class_search_a_thing_1_1_sci_1_1_coordinate_system3_d.html#ae7eae5826cb8c7f1aed4b1a5fd3d2fd4" title="if BaseZ matches one of XY, XZ, YZ default cs then a new cs with origin preserved but baseX,..." alt="" coords="5,5,92,31"/>
+</map>

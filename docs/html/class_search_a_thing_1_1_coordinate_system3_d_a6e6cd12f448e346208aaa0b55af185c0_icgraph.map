@@ -1,4 +1,0 @@
-<map id="FlipZ" name="FlipZ">
-<area shape="rect" id="node1" title="retrieve a new cs with same origin but basez inverted (Origin, BaseX, &#45;BaseY, &#45;BaseZ)" alt="" coords="249,5,304,31"/>
-<area shape="rect" id="node2" href="$class_search_a_thing_1_1_arc3_d.html#aee7246a76ac2ccbce0caddb70d0137db" title="Build arc by 3 given points. &#160;&#160;Resulting simplified CS and normalized [0,2pi) AngleStart and AngleEnd..." alt="" coords="5,5,201,31"/>
-</map>
