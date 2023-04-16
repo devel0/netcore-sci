@@ -1,0 +1,34 @@
+[
+  {
+    "$type": "SearchAThing.Sci.Vector3D, netcore-sci",
+    "X": 6.28,
+    "Y": 19.0,
+    "Z": 0.0,
+    "Sense": true,
+    "GeomType": "Vector3D"
+  },
+  {
+    "$type": "SearchAThing.Sci.Vector3D, netcore-sci",
+    "X": 8.72,
+    "Y": 19.0,
+    "Z": 0.0,
+    "Sense": true,
+    "GeomType": "Vector3D"
+  },
+  {
+    "$type": "SearchAThing.Sci.Vector3D, netcore-sci",
+    "X": 8.72,
+    "Y": 19.0,
+    "Z": 10.0,
+    "Sense": true,
+    "GeomType": "Vector3D"
+  },
+  {
+    "$type": "SearchAThing.Sci.Vector3D, netcore-sci",
+    "X": 6.28,
+    "Y": 19.0,
+    "Z": 10.0,
+    "Sense": true,
+    "GeomType": "Vector3D"
+  }
+]

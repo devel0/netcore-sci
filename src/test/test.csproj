@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>net7.0</TargetFrameworks>
+        <Nullable>enable</Nullable>
+        <LangVersion>11</LangVersion>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="coverlet.msbuild" Version="3.2.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
+        <PackageReference Include="xunit" Version="2.4.2" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="coverlet.collector" Version="3.2.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Xunit.SkippableFact" Version="1.4.13" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="netcore-ext" Version="2.2.0" />
+        <Compile Include="../sci/using.sci.cs" />
+        <ProjectReference Include="../sci/netcore-sci.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="**/*.dxf" CopyToOutputDirectory="PreserveNewest" />
+        <None Update="**/*.json" CopyToOutputDirectory="PreserveNewest" />
+        <None Update="$(ProjectDir)_torefact/doc/**" CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+</Project>
