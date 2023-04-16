@@ -1,0 +1,47 @@
+﻿global using System;
+global using System.Linq;
+global using System.Globalization;
+global using System.Collections;
+global using System.Collections.Generic;
+global using System.Collections.ObjectModel;
+global using System.Text;
+global using System.Text.RegularExpressions;
+global using System.IO;
+global using System.Diagnostics;
+global using System.Threading.Tasks;
+global using static System.Math;
+global using static System.FormattableString;
+global using Newtonsoft.Json;
+global using System.Numerics;
+global using LinqStatistics;
+global using MathNet.Numerics.Interpolation;
+global using ClipperLib;
+global using System.Threading;
+global using System.Reflection;
+global using System.Runtime.CompilerServices;
+global using Newtonsoft.Json.Converters;
+global using Newtonsoft.Json.Serialization;
+global using JsonNet.ContractResolvers;
+global using UnitsNet;
+global using UnitsNet.Units;
+global using UnitsNet.Serialization.JsonNet;
+global using QuantumConcepts.Formats.StereoLithography;
+global using NVector2 = System.Numerics.Vector2;
+global using NVector3 = System.Numerics.Vector3;
+global using NVector4 = System.Numerics.Vector4;
+global using DVector2 = netDxf.Vector2;
+global using DVector3 = netDxf.Vector3;
+global using Matrix4x4 = System.Numerics.Matrix4x4;
+global using GPoint3 = GShark.Geometry.Point3;
+
+global using netDxf;
+global using netDxf.Tables;
+global using netDxf.Entities;
+global using netDxf.Blocks;
+
+global using SearchAThing.Ext;
+global using static SearchAThing.Ext.Toolkit;
+
+global using SearchAThing.Sci;
+global using static SearchAThing.Sci.Toolkit;
+global using static SearchAThing.Sci.Constants;
