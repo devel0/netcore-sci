@@ -4,7 +4,7 @@
 
 .NET core sci
 
-- [API Documentation](https://devel0.github.io/netcore-sci/html/namespaces.html)
+- [API Documentation](https://devel0.github.io/netcore-sci/html/index.html)
 - [Changelog](https://github.com/devel0/netcore-sci/commits/master)
 
 <hr/>
@@ -117,7 +117,7 @@ offsets the existing polyline ( cyan ) by specified amount using a reference poi
 
 - [nuget package](https://www.nuget.org/packages/netcore-sci/)
 
-- [api](https://devel0.github.io/netcore-sci/html/namespaces.html)
+- [api](https://devel0.github.io/netcore-sci/html/index.html)
 
 global usings:
 
