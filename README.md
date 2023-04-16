@@ -4,7 +4,7 @@
 
 .NET core sci
 
-- [API Documentation](https://devel0.github.io/netcore-sci/html/namespace_search_a_thing.html)
+- [API Documentation](https://devel0.github.io/netcore-sci/html/namespaces.html)
 - [Changelog](https://github.com/devel0/netcore-sci/commits/master)
 
 <hr/>
@@ -46,8 +46,6 @@
 ```sh
 mkdir ~/opensource
 git clone https://github.com/devel0/netcore-sci.git
-
-cd netcore-sci
 dotnet build
 ```
 
@@ -57,29 +55,29 @@ dotnet build
 
 create a dxf
 
-[result dxf](https://raw.githubusercontent.com/devel0/netcore-sci/master/examples/0001/output.dxf)
+[result dxf](https://raw.githubusercontent.com/devel0/netcore-sci/master/examples/example-0001/output.dxf)
 
-<img src="examples/0001/output.png" width=300>
+<img src="examples/example-0001/output.png" width=300>
 
 #### 0002
 
 detect polygons ( line, arcs ) intersection loops
 
-[result dxf](https://raw.githubusercontent.com/devel0/netcore-sci/master/examples/0002/output.dxf)
+[result dxf](https://raw.githubusercontent.com/devel0/netcore-sci/master/examples/example-0002/output.dxf)
 
 ```yellow ∩ green```
 
-<img src="examples/0002/output.png" width=300>
+<img src="examples/example-0002/output.png" width=300>
 
 #### 0003
 
 detect polygons ( line, arcs ) intersection loops when edges overlaps
 
-[result dxf](https://raw.githubusercontent.com/devel0/netcore-sci/master/examples/0003/output.dxf)
+[result dxf](https://raw.githubusercontent.com/devel0/netcore-sci/master/examples/example-0003/output.dxf)
 
 ```yellow ∩ green```
 
-<img src="examples/0003/output.png" width=300>
+<img src="examples/example-0003/output.png" width=300>
 
 ## Tests
 
@@ -119,18 +117,17 @@ offsets the existing polyline ( cyan ) by specified amount using a reference poi
 
 - [nuget package](https://www.nuget.org/packages/netcore-sci/)
 
-- [api](https://devel0.github.io/netcore-sci/html/namespace_search_a_thing.html)
+- [api](https://devel0.github.io/netcore-sci/html/namespaces.html)
 
-- [extension methods](https://devel0.github.io/netcore-sci/html/class_search_a_thing_1_1_sci_ext.html)
-
-```csharp
-using SearchAThing;
-```
-
-- [toolkit methods](https://devel0.github.io/netcore-sci/html/class_search_a_thing_1_1_sci_toolkit.html)
+global usings:
 
 ```csharp
-using static SearchAThing.SciToolkit;
+global using SearchAThing.Ext;
+global using static SearchAThing.Ext.Toolkit;
+
+global using SearchAThing.Sci;
+global using static SearchAThing.Sci.Toolkit;
+global using static SearchAThing.Sci.Constants;
 ```
 
 ## Basic concepts
@@ -225,32 +222,33 @@ The vector a created with X:1, Y:2, Z:3 will subjected to a SetX(10) but the vec
 mkdir netcore-sci
 cd netcore-sci
 
-dotnet new sln
-dotnet new classlib -n netcore-sci
+mkdir src examples
 
-cd netcore-sci
-dotnet add package netcore-util
-dotnet add package netcore-psql-util
-dotnet add package netDXF.Standard
-dotnet add package ParagonClipper
-# follow requires nuget.config with "searchathing-forks" source key enabled
-dotnet add package QuantumConcepts.Formats.STL.netcore
+cd src
+dotnet new classlib -n netcore-sci
+mv netcore-sci sci
 cd ..
+
+cd examples
+dotnet new console --use-program-main -n example
+mv example/example.csproj example/example-0001.csproj
+mv example example-0001
 
 dotnet new xunit -n test
 cd test
-dotnet tool install --global dotnet-sonarscanner
-dotnet add reference ../netcore-sci/netcore-sci.csproj
-dotnet add package Microsoft.NET.Test.Sdk --version 16.7.0-preview-20200519-01
-dotnet add package coverlet.collector --version 1.3.0
-dotnet add package coverlet.msbuild --version 2.9.0
+dotnet add reference ../sci/netcore-sci.csproj
+# enable test coverage collector
+# to view in vscode ( "Coverage Gutters" ext ) run `./test-coverage` then `C-S-p` Coverage Gutters: Watch
+dotnet add package coverlet.collector
+dotnet add package coverlet.msbuild
 cd ..
 
-dotnet sln netcore-sci.sln add netcore-sci/netcore-sci.csproj
-dotnet sln netcore-sci.sln add test/test.csproj
-dotnet restore
+cd ..
+
+dotnet new sln
+dotnet sln add src/sci src/test
+dotnet sln add examples/example-0001 examples/example-0002 examples/example-0003
 dotnet build
-dotnet test test/test.csproj
 ```
 
 
