@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['variance_0',['Variance',['../struct_search_a_thing_1_1_sci_1_1_numbers_stat_nfo.html#a76a22891cc6893a24c84c8d74cd6d882',1,'SearchAThing::Sci::NumbersStatNfo']]],
-  ['variancep_1',['VarianceP',['../struct_search_a_thing_1_1_sci_1_1_numbers_stat_nfo.html#a8b7d2bc6e77e79ce74070a17daebb0e9',1,'SearchAThing::Sci::NumbersStatNfo']]]
+  ['wcs_0',['WCS',['../class_search_a_thing_1_1_sci_1_1_coordinate_system3_d.html#adb718d233dbeb30c04d6afc131fd6b37',1,'SearchAThing::Sci::CoordinateSystem3D']]],
+  ['win32_5fmax_5fstring_5flen_1',['win32_max_string_len',['../class_search_a_thing_1_1_sci_1_1_python_pipe.html#a791055a0701e79b43dab208b4a7fa014',1,'SearchAThing::Sci::PythonPipe']]],
+  ['win32_5fstring_5flen_5fsafe_2',['win32_string_len_safe',['../class_search_a_thing_1_1_sci_1_1_python_pipe.html#ae50e24171ae02835b3a5271f68ff2b6b',1,'SearchAThing::Sci::PythonPipe']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['translation_0',['translation',['../class_search_a_thing_1_1_sci_1_1_ext.html#ad9b0b4f6893d66e449f8e0634dce0239',1,'SearchAThing::Sci::Ext']]],
-  ['twopiradtol_1',['TwoPIRadTol',['../class_search_a_thing_1_1_sci_1_1_constants.html#af5fec5cf2ae9e550420385fd9b5a82e0',1,'SearchAThing::Sci::Constants']]]
+  ['variance_0',['Variance',['../struct_search_a_thing_1_1_sci_1_1_numbers_stat_nfo.html#a76a22891cc6893a24c84c8d74cd6d882',1,'SearchAThing::Sci::NumbersStatNfo']]],
+  ['variancep_1',['VarianceP',['../struct_search_a_thing_1_1_sci_1_1_numbers_stat_nfo.html#a8b7d2bc6e77e79ce74070a17daebb0e9',1,'SearchAThing::Sci::NumbersStatNfo']]]
 ];

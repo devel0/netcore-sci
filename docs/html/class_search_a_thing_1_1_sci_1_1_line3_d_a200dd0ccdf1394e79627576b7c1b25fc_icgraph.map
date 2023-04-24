@@ -1,6 +1,8 @@
 <map id="SegmentContainsPoint" name="SegmentContainsPoint">
-<area shape="rect" id="node1" title="Finite segment contains point. Note: tol must be Constant.NormalizedLengthTolerance if comparing norm..." alt="" coords="132,55,303,80"/>
-<area shape="rect" id="node2" href="$class_search_a_thing_1_1_sci_1_1_line3_d.html#a9fcf0812eb6b3e36390d4a76c3b64ef8" title="Intersects two lines with arbitrary segment mode for each." alt="" coords="5,5,84,31"/>
-<area shape="rect" id="node3" href="$class_search_a_thing_1_1_sci_1_1_line3_d.html#a02a25dd4ae4b20a5b72dfc604f74ee56" title="Intersects two lines with arbitrary segment mode for each." alt="" coords="5,55,84,80"/>
-<area shape="rect" id="node4" href="$class_search_a_thing_1_1_sci_1_1_line3_d.html#a8595c362236f1c87661248c301520beb" title="project given pt to this line" alt="" coords="11,104,78,129"/>
+<area shape="rect" id="node1" title="Finite segment contains point. Note: tol must be Constant.NormalizedLengthTolerance if comparing norm..." alt="" coords="493,80,664,105"/>
+<area shape="rect" id="node2" href="$class_search_a_thing_1_1_sci_1_1_line3_d.html#a9fcf0812eb6b3e36390d4a76c3b64ef8" title="Intersects two lines with arbitrary segment mode for each." alt="" coords="308,5,387,31"/>
+<area shape="rect" id="node3" href="$class_search_a_thing_1_1_sci_1_1_line3_d.html#a02a25dd4ae4b20a5b72dfc604f74ee56" title="Intersects two lines with arbitrary segment mode for each." alt="" coords="308,55,387,80"/>
+<area shape="rect" id="node4" href="$class_search_a_thing_1_1_sci_1_1_line3_d.html#a8595c362236f1c87661248c301520beb" title="project given pt to this line" alt="" coords="314,104,381,129"/>
+<area shape="rect" id="node5" href="$class_search_a_thing_1_1_sci_1_1_triangle3_d.html#a13ec69799d98a544d3242130d0508c36" title="Restrict given this triangle coplanar line to be enclosed in the triangle shape." alt="" coords="249,154,445,194"/>
+<area shape="rect" id="node6" href="$class_search_a_thing_1_1_sci_1_1_triangle3_d.html#ac56dafbeedb2cb2158eaec3bc3ca8a96" title="intersect this triangle with given other, returning intersection line ( eventyally a point line ) or ..." alt="" coords="5,154,201,194"/>
 </map>

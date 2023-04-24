@@ -11,7 +11,7 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<g id="a_node1"><a xlink:href="struct_search_a_thing_1_1_sci_1_1_triangle3_d.html" target="_top" xlink:title="helper class to hold triangle info, used in conjunction with LibTessDotNet methods.">
+<g id="a_node1"><a xlink:href="class_search_a_thing_1_1_sci_1_1_triangle3_d.html" target="_top" xlink:title="helper class to hold triangle info, used in conjunction with LibTessDotNet methods.">
 <polygon fill="white" stroke="#666666" points="68,-19 0,-19 0,0 68,0 68,-19"/>
 <text text-anchor="middle" x="34" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Triangle3D</text>
 </a>

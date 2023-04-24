@@ -235,6 +235,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:afdc010c27f6ffd866d3250931ecfb833"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_sci_1_1_b_box3_d.html">BBox3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_1_1_ext.html#afdc010c27f6ffd866d3250931ecfb833">BBox</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_sci_1_1_geometry.html">Geometry</a> &gt; geometry_block, double tol)</td></tr>
 <tr class="memdesc:afdc010c27f6ffd866d3250931ecfb833"><td class="mdescLeft">&#160;</td><td class="mdescRight">bbox that cover all given geometries  <br /></td></tr>
 <tr class="separator:afdc010c27f6ffd866d3250931ecfb833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49890b6e07155c4b34a4f013906f7926"><td class="memItemLeft" align="right" valign="top">static Line&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_1_1_ext.html#a49890b6e07155c4b34a4f013906f7926">ToDxfLine</a> (this <a class="el" href="class_search_a_thing_1_1_sci_1_1_line3_d.html">Line3D</a> line)</td></tr>
+<tr class="separator:a49890b6e07155c4b34a4f013906f7926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa896631f7c01a3f807b6726c56222305"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_1_1_ext.html#aa896631f7c01a3f807b6726c56222305">ToCadScript</a> (this IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_sci_1_1_line3_d.html">Line3D</a> &gt; lines)</td></tr>
 <tr class="separator:aa896631f7c01a3f807b6726c56222305"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0edf93398b456d42b6242a4874c1589"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_sci_1_1_line3_d.html">Line3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_1_1_ext.html#aa0edf93398b456d42b6242a4874c1589">ToLine3D</a> (this netDxf.Entities.Line line)</td></tr>
@@ -376,14 +378,11 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aab8c9fb1f6cb26b205a1eea07f39f39e"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="namespace_search_a_thing_1_1_sci.html#a1b753fd9c2659910ca1a042a05b56be6a11d6d4839c41bcd39255a062482c2628">Vector3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_1_1_ext.html#aab8c9fb1f6cb26b205a1eea07f39f39e">ConvexHull2D</a> (this IEnumerable&lt; <a class="el" href="namespace_search_a_thing_1_1_sci.html#a1b753fd9c2659910ca1a042a05b56be6a11d6d4839c41bcd39255a062482c2628">Vector3D</a> &gt; pts)</td></tr>
 <tr class="memdesc:aab8c9fb1f6cb26b205a1eea07f39f39e"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute convex hull using LoycCore <a href="https://github.com/qwertie/LoycCore">https://github.com/qwertie/LoycCore</a>  <br /></td></tr>
 <tr class="separator:aab8c9fb1f6cb26b205a1eea07f39f39e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad52586ef56b07a329a5031d570180b90"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="struct_search_a_thing_1_1_sci_1_1_triangle3_d.html">Triangle3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_1_1_ext.html#ad52586ef56b07a329a5031d570180b90">Tessellate</a> (this IEnumerable&lt; <a class="el" href="namespace_search_a_thing_1_1_sci.html#a1b753fd9c2659910ca1a042a05b56be6a11d6d4839c41bcd39255a062482c2628">Vector3D</a> &gt; _pts)</td></tr>
+<tr class="memitem:ad52586ef56b07a329a5031d570180b90"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_sci_1_1_triangle3_d.html">Triangle3D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_1_1_ext.html#ad52586ef56b07a329a5031d570180b90">Tessellate</a> (this IEnumerable&lt; <a class="el" href="namespace_search_a_thing_1_1_sci.html#a1b753fd9c2659910ca1a042a05b56be6a11d6d4839c41bcd39255a062482c2628">Vector3D</a> &gt; _pts)</td></tr>
 <tr class="memdesc:ad52586ef56b07a329a5031d570180b90"><td class="mdescLeft">&#160;</td><td class="mdescRight">tessellate given pts list using 1 contour in clockwise ordering see used tessellation library ( <a href="https://github.com/speps/LibTessDotNet">https://github.com/speps/LibTessDotNet</a> )  <br /></td></tr>
 <tr class="separator:ad52586ef56b07a329a5031d570180b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21a8075bf8ab185e7b108d2f9ea1b654"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_search_a_thing_1_1_sci_1_1_triangle3_d.html">Triangle3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_1_1_ext.html#a21a8075bf8ab185e7b108d2f9ea1b654">ToTriangle3D</a> (this IEnumerable&lt; <a class="el" href="namespace_search_a_thing_1_1_sci.html#a1b753fd9c2659910ca1a042a05b56be6a11d6d4839c41bcd39255a062482c2628">Vector3D</a> &gt; pts)</td></tr>
+<tr class="memitem:a21a8075bf8ab185e7b108d2f9ea1b654"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_search_a_thing_1_1_sci_1_1_triangle3_d.html">Triangle3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_1_1_ext.html#a21a8075bf8ab185e7b108d2f9ea1b654">ToTriangle3D</a> (this IEnumerable&lt; <a class="el" href="namespace_search_a_thing_1_1_sci.html#a1b753fd9c2659910ca1a042a05b56be6a11d6d4839c41bcd39255a062482c2628">Vector3D</a> &gt; pts)</td></tr>
 <tr class="separator:a21a8075bf8ab185e7b108d2f9ea1b654"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a0882f33ede044c50e063cc511c2d2b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespace_search_a_thing_1_1_sci.html#a1b753fd9c2659910ca1a042a05b56be6a11d6d4839c41bcd39255a062482c2628">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_1_1_ext.html#a3a0882f33ede044c50e063cc511c2d2b">Mean</a> (this Facet facet)</td></tr>
-<tr class="memdesc:a3a0882f33ede044c50e063cc511c2d2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">retrieve mean point of facet vertices  <br /></td></tr>
-<tr class="separator:a3a0882f33ede044c50e063cc511c2d2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fc818b4c9895c16bb89d2f4b8d8ab0a"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search_a_thing_1_1_sci_1_1_ext.html#a9fc818b4c9895c16bb89d2f4b8d8ab0a">ToCSV</a> (this IEnumerable&lt; object &gt; lst)</td></tr>
 <tr class="memdesc:a9fc818b4c9895c16bb89d2f4b8d8ab0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">exports to a csv string some known fields note: not really a csv its a tab separated values for debug purpose just copy and paste  <br /></td></tr>
 <tr class="separator:a9fc818b4c9895c16bb89d2f4b8d8ab0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2390,41 +2389,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a3a0882f33ede044c50e063cc511c2d2b" name="a3a0882f33ede044c50e063cc511c2d2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a0882f33ede044c50e063cc511c2d2b">&#9670;&#160;</a></span>Mean()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="namespace_search_a_thing_1_1_sci.html#a1b753fd9c2659910ca1a042a05b56be6a11d6d4839c41bcd39255a062482c2628">Vector3D</a> Mean </td>
-          <td>(</td>
-          <td class="paramtype">this Facet&#160;</td>
-          <td class="paramname"><em>facet</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>retrieve mean point of facet vertices </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">facet</td><td>stl facet</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>mean point of face vertices</dd></dl>
-
-</div>
-</div>
 <a id="a67d1331b646b3937cf6c0654de364c4d" name="a67d1331b646b3937cf6c0654de364c4d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a67d1331b646b3937cf6c0654de364c4d">&#9670;&#160;</a></span>MergeColinearSegments()</h2>
 
@@ -3739,7 +3703,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static IEnumerable&lt; <a class="el" href="struct_search_a_thing_1_1_sci_1_1_triangle3_d.html">Triangle3D</a> &gt; Tessellate </td>
+          <td class="memname">static IEnumerable&lt; <a class="el" href="class_search_a_thing_1_1_sci_1_1_triangle3_d.html">Triangle3D</a> &gt; Tessellate </td>
           <td>(</td>
           <td class="paramtype">this IEnumerable&lt; <a class="el" href="namespace_search_a_thing_1_1_sci.html#a1b753fd9c2659910ca1a042a05b56be6a11d6d4839c41bcd39255a062482c2628">Vector3D</a> &gt;&#160;</td>
           <td class="paramname"><em>_pts</em></td><td>)</td>
@@ -3965,6 +3929,32 @@ Here is the caller graph for this function:</div>
 <p>exports to a csv string some known fields note: not really a csv its a tab separated values for debug purpose just copy and paste </p>
 <p><br  />
  </p>
+
+</div>
+</div>
+<a id="a49890b6e07155c4b34a4f013906f7926" name="a49890b6e07155c4b34a4f013906f7926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49890b6e07155c4b34a4f013906f7926">&#9670;&#160;</a></span>ToDxfLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Line ToDxfLine </td>
+          <td>(</td>
+          <td class="paramtype">this <a class="el" href="class_search_a_thing_1_1_sci_1_1_line3_d.html">Line3D</a>&#160;</td>
+          <td class="paramname"><em>line</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -4403,7 +4393,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="struct_search_a_thing_1_1_sci_1_1_triangle3_d.html">Triangle3D</a> ToTriangle3D </td>
+          <td class="memname">static <a class="el" href="class_search_a_thing_1_1_sci_1_1_triangle3_d.html">Triangle3D</a> ToTriangle3D </td>
           <td>(</td>
           <td class="paramtype">this IEnumerable&lt; <a class="el" href="namespace_search_a_thing_1_1_sci.html#a1b753fd9c2659910ca1a042a05b56be6a11d6d4839c41bcd39255a062482c2628">Vector3D</a> &gt;&#160;</td>
           <td class="paramname"><em>pts</em></td><td>)</td>
@@ -4903,7 +4893,6 @@ Here is the caller graph for this function:</div>
 <li>src/sci/Line3D.cs</li>
 <li>src/sci/Loop.cs</li>
 <li>src/sci/Polygon.cs</li>
-<li>src/sci/STL.cs</li>
 <li>src/sci/Util.cs</li>
 </ul>
 </div><!-- contents -->

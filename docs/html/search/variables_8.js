@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['scale_0',['scale',['../class_search_a_thing_1_1_sci_1_1_ext.html#aae5cbd4bd3bf03fd133225955da4d666',1,'SearchAThing::Sci::Ext']]],
-  ['similarity_1',['Similarity',['../struct_search_a_thing_1_1_sci_1_1_numbers_stat_nfo.html#a9bb1667cab61fe79af1d444dec7432ca',1,'SearchAThing::Sci::NumbersStatNfo']]],
-  ['standarddeviation_2',['StandardDeviation',['../struct_search_a_thing_1_1_sci_1_1_numbers_stat_nfo.html#afc91999d13224cb9c1cedfd2e78e3f74',1,'SearchAThing::Sci::NumbersStatNfo']]],
-  ['standarddeviationp_3',['StandardDeviationP',['../struct_search_a_thing_1_1_sci_1_1_numbers_stat_nfo.html#adc5af130999b246ecc9ebd700e000073',1,'SearchAThing::Sci::NumbersStatNfo']]]
+  ['translation_0',['translation',['../class_search_a_thing_1_1_sci_1_1_ext.html#ad9b0b4f6893d66e449f8e0634dce0239',1,'SearchAThing::Sci::Ext']]],
+  ['twopiradtol_1',['TwoPIRadTol',['../class_search_a_thing_1_1_sci_1_1_constants.html#af5fec5cf2ae9e550420385fd9b5a82e0',1,'SearchAThing::Sci::Constants']]]
 ];
