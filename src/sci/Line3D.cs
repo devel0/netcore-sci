@@ -228,7 +228,7 @@ public class Line3D : Edge
         }
     }
 
-    public override EntityObject DxfEntity => this.ToLine();
+    public override EntityObject DxfEntity => this.ToDxfLine();
 
     public override bool GeomEquals(double tol, Geometry other, bool checkSense = false)
     {
@@ -537,7 +537,8 @@ public class Line3D : Edge
     /// <remarks>      
     /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Line3D/Line3DTest_0001.cs)
     /// ![image](../test/Line3D/Line3DTest_0001.png)
-    /// </remarks>
+    /// </remarks>    
+    /// <returns>Perp segment from(on this), to(on other).</returns>
     public Line3D? ApparentIntersect(Line3D other)
     {
         // this  : t = tf + tu * tv
@@ -926,8 +927,6 @@ public class Line3D : Edge
 
     public Line3D Transform(Matrix4x4 transform) => new Line3D(From.Transform(transform), To.Transform(transform));
 
-    public Line ToLine() => new Line(From, To);
-
 }
 
 /// <summary>
@@ -957,6 +956,8 @@ public class Line3DEqualityComparer : IEqualityComparer<Line3D>
 
 public static partial class Ext
 {
+
+    public static Line ToDxfLine(this Line3D line) => new Line(line.From, line.To);
 
     public static string ToCadScript(this IEnumerable<Line3D> lines)
     {
