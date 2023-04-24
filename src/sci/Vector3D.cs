@@ -1149,17 +1149,7 @@ public partial class Vector3D : Geometry
     /// </remarks>
     /// <param name="v">input vector</param>
     public static implicit operator NVector3(Vector3D v) =>
-        new NVector3((float)v.X, (float)v.Y, (float)v.Z);
-
-    /// <summary>
-    /// Convert given Vector3D to GShark.Geometry.Point3
-    /// </summary>
-    /// <param name="v">input vector</param>
-    public static implicit operator Vector3D(GPoint3 v)
-    {
-        var res = new Vector3D(v.X, v.Y, v.Z);
-        return res;
-    }
+        new NVector3((float)v.X, (float)v.Y, (float)v.Z);   
 
     /// <summary>
     /// Convert given System.Numerics.Vector3 to Vector3D
@@ -1172,24 +1162,6 @@ public partial class Vector3D : Geometry
     /// </summary>
     /// <param name="v">input vector</param>
     public static implicit operator Vector3D(LibTessDotNet.Vec3 v) => new Vector3D(v.X, v.Y, v.Z);
-
-    /// <summary>
-    /// Convert given QuantumConcepts.Formats.StereoLithography.Vertex to Vector3D
-    /// </summary>
-    /// <param name="v">input vector</param>
-    public static implicit operator Vector3D(QuantumConcepts.Formats.StereoLithography.Vertex v) =>
-        new Vector3D(v.X, v.Y, v.Z);
-
-    /// <summary>
-    /// Convert given Vector3D to QuantumConcepts.Formats.StereoLithography.Vertex
-    /// </summary>
-    /// <remarks>
-    /// double to float conversion will be done
-    /// </remarks>
-    /// <param name="v">input vector</param>
-    public static implicit operator QuantumConcepts.Formats.StereoLithography.Vertex(Vector3D v) =>
-        new QuantumConcepts.Formats.StereoLithography.Vertex((float)v.X, (float)v.Y, (float)v.Z);
-
 
     /// <summary>
     /// convert to (netdxf) discarding z
@@ -1210,11 +1182,6 @@ public partial class Vector3D : Geometry
     /// convert to (system.numerics) Vector3 ( casting double to float )
     /// </summary>
     public NVector3 ToNVector3() => new NVector3((float)X, (float)Y, (float)Z);
-
-    /// <summary>
-    /// convert to GShark.Geometry.Point3
-    /// </summary>
-    public GPoint3 ToGPoint3() => new GPoint3(X, Y, Z);
 
     /// <summary>
     /// To point (double x, double y)
@@ -1810,12 +1777,5 @@ public static partial class Ext
     /// <returns>sqrt(v)</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Vector3D Sqrt(this Vector3D v) => new Vector3D(Math.Sqrt(v.X), Math.Sqrt(v.Y), Math.Sqrt(v.Z));
-
-    /// <summary>
-    /// convert given STL Vertex to Vector3 (System.Numerics)
-    /// </summary>        
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static NVector3 ToNVector3(this QuantumConcepts.Formats.StereoLithography.Vertex v) =>
-        new NVector3(v.X, v.Y, v.Z);
 
 }

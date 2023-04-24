@@ -24,8 +24,7 @@
         <PackageReference Include="Xunit.SkippableFact" Version="1.4.13" />
     </ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="netcore-ext" Version="2.2.0" />
+    <ItemGroup>        
         <Compile Include="../sci/using.sci.cs" />
         <ProjectReference Include="../sci/netcore-sci.csproj" />
     </ItemGroup>
