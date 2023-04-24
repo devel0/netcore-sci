@@ -583,34 +583,35 @@ public static partial class Ext
 
         for (int i = 0; i < tess.ElementCount; ++i)
         {
-            yield return new Triangle3D
-            {
-                a = tess.Vertices[tess.Elements[i * 3]].Position,
-                b = tess.Vertices[tess.Elements[i * 3 + 1]].Position,
-                c = tess.Vertices[tess.Elements[i * 3 + 2]].Position
-            };
+            yield return new Triangle3D(
+                tess.Vertices[tess.Elements[i * 3]].Position,
+                tess.Vertices[tess.Elements[i * 3 + 1]].Position,
+                tess.Vertices[tess.Elements[i * 3 + 2]].Position
+            );
         }
 
     }
 
     public static Triangle3D ToTriangle3D(this IEnumerable<Vector3D> pts)
     {
-        var res = new Triangle3D();
+        Vector3D? v1 = null, v2 = null, v3 = null;
 
         int idx = 0;
         foreach (var p in pts)
         {
             switch (idx)
             {
-                case 0: res.a = p; break;
-                case 1: res.b = p; break;
-                case 2: res.c = p; break;
-                default: throw new ArgumentException($"need exactly 3 pts for triangle");
+                case 0: v1 = p; break;
+                case 1: v2 = p; break;
+                case 2: v3 = p; break;
             }
             ++idx;
         }
 
-        return res;
+        if (v1 is null || v2 is null || v3 is null)
+            throw new ArgumentException($"need exactly 3 pts for triangle");
+
+        return new Triangle3D(v1, v2, v3);
     }
 
 }

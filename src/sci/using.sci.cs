@@ -25,14 +25,12 @@ global using JsonNet.ContractResolvers;
 global using UnitsNet;
 global using UnitsNet.Units;
 global using UnitsNet.Serialization.JsonNet;
-global using QuantumConcepts.Formats.StereoLithography;
 global using NVector2 = System.Numerics.Vector2;
 global using NVector3 = System.Numerics.Vector3;
 global using NVector4 = System.Numerics.Vector4;
 global using DVector2 = netDxf.Vector2;
 global using DVector3 = netDxf.Vector3;
 global using Matrix4x4 = System.Numerics.Matrix4x4;
-global using GPoint3 = GShark.Geometry.Point3;
 
 global using netDxf;
 global using netDxf.Tables;

@@ -233,7 +233,7 @@ public partial class CoordinateSystem3D
     public CoordinateSystem3D FlipZ() => new CoordinateSystem3D(Origin, BaseX, -BaseY, -BaseZ);
 
     /// <summary>
-    /// Construct a right-hand coordinate system with the given origin and two vector
+    /// Construct a right-hand coordinate system with the given origin and two vector ( not required to be normalized, nor orthogonal ).
     /// </summary>
     /// <param name="o">cs origin</param>
     /// <param name="v1">first vector</param>
