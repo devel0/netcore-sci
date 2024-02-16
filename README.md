@@ -9,35 +9,33 @@
 
 <hr/>
 
-<!-- TOC -->
-* [Build](#build)
-* [Examples](#examples)
+- [Build](#build)
+- [Examples](#examples)
     - [0001](#0001)
     - [0002](#0002)
     - [0003](#0003)
-* [Tests](#tests)
-    - [LoopTest_0014](#looptest_0014)
-    - [LoopTest_0021](#looptest_0021)
-    - [PolygonTest_0007](#polygontest_0007)
-* [Quickstart](#quickstart)
-* [Basic concepts](#basic-concepts)
-  + [Side effects](#side-effects)
-  + [Tolerances](#tolerances)
-  + [Vector3D](#vector3d)
-  + [Line3D](#line3d)
-  + [Arc3D](#arc3d)
-  + [CoordinateSystem3D](#coordinatesystem3d)
-  + [Loop](#loop)
-  + [Face](#face)
-  + [Edges](#edges)
-  + [Geometry](#geometry)
-* [Unit tests](#unit-tests)
-* [How this project was built](#how-this-project-was-built)
-* [Documentation (github pages)](#documentation-github-pages)
-  + [Build and view locally](#build-and-view-locally)
-  + [Build and commit into docs branch](#build-and-commit-into-docs-branch)
-* [IOT](#iot)
-<!-- TOCEND -->
+- [Tests](#tests)
+    - [LoopTest\_0014](#looptest_0014)
+    - [LoopTest\_0021](#looptest_0021)
+    - [PolygonTest\_0007](#polygontest_0007)
+- [Quickstart](#quickstart)
+- [Basic concepts](#basic-concepts)
+  - [Side effects](#side-effects)
+  - [Tolerances](#tolerances)
+  - [Vector3D](#vector3d)
+  - [Line3D](#line3d)
+  - [Arc3D](#arc3d)
+  - [CoordinateSystem3D](#coordinatesystem3d)
+  - [Loop](#loop)
+  - [Face](#face)
+  - [Edges](#edges)
+  - [Geometry](#geometry)
+- [Unit tests](#unit-tests)
+- [How this project was built](#how-this-project-was-built)
+- [Documentation (github pages)](#documentation-github-pages)
+  - [Build and view locally](#build-and-view-locally)
+  - [Build and commit into docs branch](#build-and-commit-into-docs-branch)
+- [IOT](#iot)
 
 <hr/>
 
@@ -261,9 +259,7 @@ Configured through Settings/Pages on Branch docs ( path /docs ).
 ### Build and view locally
 
 ```sh
-./doc build
 ./doc serve
-./doc view
 ```
 
 ### Build and commit into docs branch
