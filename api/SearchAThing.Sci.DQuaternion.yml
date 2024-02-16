@@ -1,0 +1,592 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.DQuaternion
+  commentId: T:SearchAThing.Sci.DQuaternion
+  id: DQuaternion
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.DQuaternion.#ctor(SearchAThing.Sci.Vector3D,System.Double)
+  - SearchAThing.Sci.DQuaternion.#ctor(System.Double,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.DQuaternion.Conjugate
+  - SearchAThing.Sci.DQuaternion.Identity
+  - SearchAThing.Sci.DQuaternion.op_Multiply(SearchAThing.Sci.DQuaternion,SearchAThing.Sci.DQuaternion)
+  - SearchAThing.Sci.DQuaternion.v
+  langs:
+  - csharp
+  - vb
+  name: DQuaternion
+  nameWithType: DQuaternion
+  fullName: SearchAThing.Sci.DQuaternion
+  type: Class
+  source:
+    remote:
+      path: src/sci/Quaternion.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: DQuaternion
+    path: src/sci/Quaternion.cs
+    startLine: 12
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: >-
+    Quaternion implementation using doubles for purpose of Vector3D.RotateAboutAxis and Vector3D.RotateAs
+
+    references:
+
+    - http://www.euclideanspace.com/maths/algebra/realNormedAlgebra/quaternions/index.htm
+
+    - https://www.3dgep.com/understanding-quaternions/
+
+    - http://www.ncsa.illinois.edu/People/kindr/emtc/quaternions/
+  remarks: '[unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Transform3D/Transform3DTest_0001.cs)'
+  example: []
+  syntax:
+    content: public class DQuaternion
+    content.vb: Public Class DQuaternion
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: SearchAThing.Sci.DQuaternion.v
+  commentId: P:SearchAThing.Sci.DQuaternion.v
+  id: v
+  parent: SearchAThing.Sci.DQuaternion
+  langs:
+  - csharp
+  - vb
+  name: v
+  nameWithType: DQuaternion.v
+  fullName: SearchAThing.Sci.DQuaternion.v
+  type: Property
+  source:
+    remote:
+      path: src/sci/Quaternion.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: v
+    path: src/sci/Quaternion.cs
+    startLine: 15
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public Vector3D v { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public Property v As Vector3D
+  overload: SearchAThing.Sci.DQuaternion.v*
+- uid: SearchAThing.Sci.DQuaternion.#ctor(System.Double,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.DQuaternion.#ctor(System.Double,SearchAThing.Sci.Vector3D)
+  id: '#ctor(System.Double,SearchAThing.Sci.Vector3D)'
+  parent: SearchAThing.Sci.DQuaternion
+  langs:
+  - csharp
+  - vb
+  name: DQuaternion(double, Vector3D)
+  nameWithType: DQuaternion.DQuaternion(double, Vector3D)
+  fullName: SearchAThing.Sci.DQuaternion.DQuaternion(double, SearchAThing.Sci.Vector3D)
+  type: Constructor
+  source:
+    remote:
+      path: src/sci/Quaternion.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: .ctor
+    path: src/sci/Quaternion.cs
+    startLine: 22
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: direct construct quaternion q=[s, v]
+  example: []
+  syntax:
+    content: public DQuaternion(double s, Vector3D v)
+    parameters:
+    - id: s
+      type: System.Double
+    - id: v
+      type: SearchAThing.Sci.Vector3D
+    content.vb: Public Sub New(s As Double, v As Vector3D)
+  overload: SearchAThing.Sci.DQuaternion.#ctor*
+  nameWithType.vb: DQuaternion.New(Double, Vector3D)
+  fullName.vb: SearchAThing.Sci.DQuaternion.New(Double, SearchAThing.Sci.Vector3D)
+  name.vb: New(Double, Vector3D)
+- uid: SearchAThing.Sci.DQuaternion.#ctor(SearchAThing.Sci.Vector3D,System.Double)
+  commentId: M:SearchAThing.Sci.DQuaternion.#ctor(SearchAThing.Sci.Vector3D,System.Double)
+  id: '#ctor(SearchAThing.Sci.Vector3D,System.Double)'
+  parent: SearchAThing.Sci.DQuaternion
+  langs:
+  - csharp
+  - vb
+  name: DQuaternion(Vector3D, double)
+  nameWithType: DQuaternion.DQuaternion(Vector3D, double)
+  fullName: SearchAThing.Sci.DQuaternion.DQuaternion(SearchAThing.Sci.Vector3D, double)
+  type: Constructor
+  source:
+    remote:
+      path: src/sci/Quaternion.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: .ctor
+    path: src/sci/Quaternion.cs
+    startLine: 32
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: >-
+    build quaternion from axis and angle.
+
+    axis will be subjected to normalization.
+  example: []
+  syntax:
+    content: public DQuaternion(Vector3D axis, double alphaRad)
+    parameters:
+    - id: axis
+      type: SearchAThing.Sci.Vector3D
+    - id: alphaRad
+      type: System.Double
+    content.vb: Public Sub New(axis As Vector3D, alphaRad As Double)
+  overload: SearchAThing.Sci.DQuaternion.#ctor*
+  nameWithType.vb: DQuaternion.New(Vector3D, Double)
+  fullName.vb: SearchAThing.Sci.DQuaternion.New(SearchAThing.Sci.Vector3D, Double)
+  name.vb: New(Vector3D, Double)
+- uid: SearchAThing.Sci.DQuaternion.Identity
+  commentId: P:SearchAThing.Sci.DQuaternion.Identity
+  id: Identity
+  parent: SearchAThing.Sci.DQuaternion
+  langs:
+  - csharp
+  - vb
+  name: Identity
+  nameWithType: DQuaternion.Identity
+  fullName: SearchAThing.Sci.DQuaternion.Identity
+  type: Property
+  source:
+    remote:
+      path: src/sci/Quaternion.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Identity
+    path: src/sci/Quaternion.cs
+    startLine: 43
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: Identity qi = [1, nullvector]
+  example: []
+  syntax:
+    content: public static DQuaternion Identity { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.DQuaternion
+    content.vb: Public Shared ReadOnly Property Identity As DQuaternion
+  overload: SearchAThing.Sci.DQuaternion.Identity*
+- uid: SearchAThing.Sci.DQuaternion.Conjugate
+  commentId: M:SearchAThing.Sci.DQuaternion.Conjugate
+  id: Conjugate
+  parent: SearchAThing.Sci.DQuaternion
+  langs:
+  - csharp
+  - vb
+  name: Conjugate()
+  nameWithType: DQuaternion.Conjugate()
+  fullName: SearchAThing.Sci.DQuaternion.Conjugate()
+  type: Method
+  source:
+    remote:
+      path: src/sci/Quaternion.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Conjugate
+    path: src/sci/Quaternion.cs
+    startLine: 49
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: >-
+    Conjugate
+
+    q* = [s, -v]
+  example: []
+  syntax:
+    content: public DQuaternion Conjugate()
+    return:
+      type: SearchAThing.Sci.DQuaternion
+    content.vb: Public Function Conjugate() As DQuaternion
+  overload: SearchAThing.Sci.DQuaternion.Conjugate*
+- uid: SearchAThing.Sci.DQuaternion.op_Multiply(SearchAThing.Sci.DQuaternion,SearchAThing.Sci.DQuaternion)
+  commentId: M:SearchAThing.Sci.DQuaternion.op_Multiply(SearchAThing.Sci.DQuaternion,SearchAThing.Sci.DQuaternion)
+  id: op_Multiply(SearchAThing.Sci.DQuaternion,SearchAThing.Sci.DQuaternion)
+  parent: SearchAThing.Sci.DQuaternion
+  langs:
+  - csharp
+  - vb
+  name: operator *(DQuaternion, DQuaternion)
+  nameWithType: DQuaternion.operator *(DQuaternion, DQuaternion)
+  fullName: SearchAThing.Sci.DQuaternion.operator *(SearchAThing.Sci.DQuaternion, SearchAThing.Sci.DQuaternion)
+  type: Operator
+  source:
+    remote:
+      path: src/sci/Quaternion.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: op_Multiply
+    path: src/sci/Quaternion.cs
+    startLine: 55
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: >-
+    Multiply
+
+    [sa, va] * [sb, vb] = [sa * sb - va * vb, va x vb + sa * vb + sb * va]
+  example: []
+  syntax:
+    content: public static DQuaternion operator *(DQuaternion qa, DQuaternion qb)
+    parameters:
+    - id: qa
+      type: SearchAThing.Sci.DQuaternion
+    - id: qb
+      type: SearchAThing.Sci.DQuaternion
+    return:
+      type: SearchAThing.Sci.DQuaternion
+    content.vb: Public Shared Operator *(qa As DQuaternion, qb As DQuaternion) As DQuaternion
+  overload: SearchAThing.Sci.DQuaternion.op_Multiply*
+  nameWithType.vb: DQuaternion.*(DQuaternion, DQuaternion)
+  fullName.vb: SearchAThing.Sci.DQuaternion.*(SearchAThing.Sci.DQuaternion, SearchAThing.Sci.DQuaternion)
+  name.vb: '*(DQuaternion, DQuaternion)'
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  href: SearchAThing.html
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+  spec.csharp:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+  spec.vb:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: SearchAThing.Sci.DQuaternion.v*
+  commentId: Overload:SearchAThing.Sci.DQuaternion.v
+  href: SearchAThing.Sci.DQuaternion.html#SearchAThing_Sci_DQuaternion_v
+  name: v
+  nameWithType: DQuaternion.v
+  fullName: SearchAThing.Sci.DQuaternion.v
+- uid: SearchAThing.Sci.Vector3D
+  commentId: T:SearchAThing.Sci.Vector3D
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Vector3D.html
+  name: Vector3D
+  nameWithType: Vector3D
+  fullName: SearchAThing.Sci.Vector3D
+- uid: SearchAThing.Sci.DQuaternion.#ctor*
+  commentId: Overload:SearchAThing.Sci.DQuaternion.#ctor
+  href: SearchAThing.Sci.DQuaternion.html#SearchAThing_Sci_DQuaternion__ctor_System_Double_SearchAThing_Sci_Vector3D_
+  name: DQuaternion
+  nameWithType: DQuaternion.DQuaternion
+  fullName: SearchAThing.Sci.DQuaternion.DQuaternion
+  nameWithType.vb: DQuaternion.New
+  fullName.vb: SearchAThing.Sci.DQuaternion.New
+  name.vb: New
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: SearchAThing.Sci.DQuaternion.Identity*
+  commentId: Overload:SearchAThing.Sci.DQuaternion.Identity
+  href: SearchAThing.Sci.DQuaternion.html#SearchAThing_Sci_DQuaternion_Identity
+  name: Identity
+  nameWithType: DQuaternion.Identity
+  fullName: SearchAThing.Sci.DQuaternion.Identity
+- uid: SearchAThing.Sci.DQuaternion
+  commentId: T:SearchAThing.Sci.DQuaternion
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.DQuaternion.html
+  name: DQuaternion
+  nameWithType: DQuaternion
+  fullName: SearchAThing.Sci.DQuaternion
+- uid: SearchAThing.Sci.DQuaternion.Conjugate*
+  commentId: Overload:SearchAThing.Sci.DQuaternion.Conjugate
+  href: SearchAThing.Sci.DQuaternion.html#SearchAThing_Sci_DQuaternion_Conjugate
+  name: Conjugate
+  nameWithType: DQuaternion.Conjugate
+  fullName: SearchAThing.Sci.DQuaternion.Conjugate
+- uid: SearchAThing.Sci.DQuaternion.op_Multiply*
+  commentId: Overload:SearchAThing.Sci.DQuaternion.op_Multiply
+  href: SearchAThing.Sci.DQuaternion.html#SearchAThing_Sci_DQuaternion_op_Multiply_SearchAThing_Sci_DQuaternion_SearchAThing_Sci_DQuaternion_
+  name: operator *
+  nameWithType: DQuaternion.operator *
+  fullName: SearchAThing.Sci.DQuaternion.operator *
+  nameWithType.vb: DQuaternion.*
+  fullName.vb: SearchAThing.Sci.DQuaternion.*
+  name.vb: '*'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SearchAThing.Sci.DQuaternion.op_Multiply*
+    name: '*'
+    href: SearchAThing.Sci.DQuaternion.html#SearchAThing_Sci_DQuaternion_op_Multiply_SearchAThing_Sci_DQuaternion_SearchAThing_Sci_DQuaternion_

@@ -1,0 +1,810 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.PythonPipe
+  commentId: T:SearchAThing.Sci.PythonPipe
+  id: PythonPipe
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.PythonPipe.#ctor(SearchAThing.Sci.PythonPipeOptions)
+  - SearchAThing.Sci.PythonPipe.Dispose
+  - SearchAThing.Sci.PythonPipe.Exec(System.Collections.Generic.IEnumerable{System.String})
+  - SearchAThing.Sci.PythonPipe.Exec(System.String)
+  - SearchAThing.Sci.PythonPipe.Options
+  - SearchAThing.Sci.PythonPipe.areInit
+  langs:
+  - csharp
+  - vb
+  name: PythonPipe
+  nameWithType: PythonPipe
+  fullName: SearchAThing.Sci.PythonPipe
+  type: Class
+  source:
+    remote:
+      path: src/sci/PythonWrapper.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: PythonPipe
+    path: src/sci/PythonWrapper.cs
+    startLine: 37
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: Helper to invoke python and retrieve results.
+  example: []
+  syntax:
+    content: 'public class PythonPipe : IDisposable'
+    content.vb: Public Class PythonPipe Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: SearchAThing.Sci.PythonPipe.areInit
+  commentId: F:SearchAThing.Sci.PythonPipe.areInit
+  id: areInit
+  parent: SearchAThing.Sci.PythonPipe
+  langs:
+  - csharp
+  - vb
+  name: areInit
+  nameWithType: PythonPipe.areInit
+  fullName: SearchAThing.Sci.PythonPipe.areInit
+  type: Field
+  source:
+    remote:
+      path: src/sci/PythonWrapper.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: areInit
+    path: src/sci/PythonWrapper.cs
+    startLine: 87
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public AutoResetEvent areInit
+    return:
+      type: System.Threading.AutoResetEvent
+    content.vb: Public areInit As AutoResetEvent
+- uid: SearchAThing.Sci.PythonPipe.Options
+  commentId: P:SearchAThing.Sci.PythonPipe.Options
+  id: Options
+  parent: SearchAThing.Sci.PythonPipe
+  langs:
+  - csharp
+  - vb
+  name: Options
+  nameWithType: PythonPipe.Options
+  fullName: SearchAThing.Sci.PythonPipe.Options
+  type: Property
+  source:
+    remote:
+      path: src/sci/PythonWrapper.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Options
+    path: src/sci/PythonWrapper.cs
+    startLine: 95
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public PythonPipeOptions Options { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.PythonPipeOptions
+    content.vb: Public Property Options As PythonPipeOptions
+  overload: SearchAThing.Sci.PythonPipe.Options*
+- uid: SearchAThing.Sci.PythonPipe.#ctor(SearchAThing.Sci.PythonPipeOptions)
+  commentId: M:SearchAThing.Sci.PythonPipe.#ctor(SearchAThing.Sci.PythonPipeOptions)
+  id: '#ctor(SearchAThing.Sci.PythonPipeOptions)'
+  parent: SearchAThing.Sci.PythonPipe
+  langs:
+  - csharp
+  - vb
+  name: PythonPipe(PythonPipeOptions?)
+  nameWithType: PythonPipe.PythonPipe(PythonPipeOptions?)
+  fullName: SearchAThing.Sci.PythonPipe.PythonPipe(SearchAThing.Sci.PythonPipeOptions?)
+  type: Constructor
+  source:
+    remote:
+      path: src/sci/PythonWrapper.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: .ctor
+    path: src/sci/PythonWrapper.cs
+    startLine: 97
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public PythonPipe(PythonPipeOptions? options = null)
+    parameters:
+    - id: options
+      type: SearchAThing.Sci.PythonPipeOptions
+    content.vb: Public Sub New(options As PythonPipeOptions = Nothing)
+  overload: SearchAThing.Sci.PythonPipe.#ctor*
+  nameWithType.vb: PythonPipe.New(PythonPipeOptions)
+  fullName.vb: SearchAThing.Sci.PythonPipe.New(SearchAThing.Sci.PythonPipeOptions)
+  name.vb: New(PythonPipeOptions)
+- uid: SearchAThing.Sci.PythonPipe.Exec(System.Collections.Generic.IEnumerable{System.String})
+  commentId: M:SearchAThing.Sci.PythonPipe.Exec(System.Collections.Generic.IEnumerable{System.String})
+  id: Exec(System.Collections.Generic.IEnumerable{System.String})
+  parent: SearchAThing.Sci.PythonPipe
+  langs:
+  - csharp
+  - vb
+  name: Exec(IEnumerable<string>)
+  nameWithType: PythonPipe.Exec(IEnumerable<string>)
+  fullName: SearchAThing.Sci.PythonPipe.Exec(System.Collections.Generic.IEnumerable<string>)
+  type: Method
+  source:
+    remote:
+      path: src/sci/PythonWrapper.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Exec
+    path: src/sci/PythonWrapper.cs
+    startLine: 274
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: exec given code lines
+  example: []
+  syntax:
+    content: public Task<string> Exec(IEnumerable<string> code_lines)
+    parameters:
+    - id: code_lines
+      type: System.Collections.Generic.IEnumerable{System.String}
+    return:
+      type: System.Threading.Tasks.Task{System.String}
+    content.vb: Public Function Exec(code_lines As IEnumerable(Of String)) As Task(Of String)
+  overload: SearchAThing.Sci.PythonPipe.Exec*
+  nameWithType.vb: PythonPipe.Exec(IEnumerable(Of String))
+  fullName.vb: SearchAThing.Sci.PythonPipe.Exec(System.Collections.Generic.IEnumerable(Of String))
+  name.vb: Exec(IEnumerable(Of String))
+- uid: SearchAThing.Sci.PythonPipe.Exec(System.String)
+  commentId: M:SearchAThing.Sci.PythonPipe.Exec(System.String)
+  id: Exec(System.String)
+  parent: SearchAThing.Sci.PythonPipe
+  langs:
+  - csharp
+  - vb
+  name: Exec(string)
+  nameWithType: PythonPipe.Exec(string)
+  fullName: SearchAThing.Sci.PythonPipe.Exec(string)
+  type: Method
+  source:
+    remote:
+      path: src/sci/PythonWrapper.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Exec
+    path: src/sci/PythonWrapper.cs
+    startLine: 281
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: >-
+    exec given code ( can contains newlines as read from a file ).
+
+    Actually only one execution per PythonPipe object is allowed.
+  example: []
+  syntax:
+    content: public Task<string> Exec(string code)
+    parameters:
+    - id: code
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{System.String}
+    content.vb: Public Function Exec(code As String) As Task(Of String)
+  overload: SearchAThing.Sci.PythonPipe.Exec*
+  nameWithType.vb: PythonPipe.Exec(String)
+  fullName.vb: SearchAThing.Sci.PythonPipe.Exec(String)
+  name.vb: Exec(String)
+- uid: SearchAThing.Sci.PythonPipe.Dispose
+  commentId: M:SearchAThing.Sci.PythonPipe.Dispose
+  id: Dispose
+  parent: SearchAThing.Sci.PythonPipe
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: PythonPipe.Dispose()
+  fullName: SearchAThing.Sci.PythonPipe.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/sci/PythonWrapper.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Dispose
+    path: src/sci/PythonWrapper.cs
+    startLine: 340
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: SearchAThing.Sci.PythonPipe.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  href: SearchAThing.html
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+  spec.csharp:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+  spec.vb:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.AutoResetEvent
+  commentId: T:System.Threading.AutoResetEvent
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.autoresetevent
+  name: AutoResetEvent
+  nameWithType: AutoResetEvent
+  fullName: System.Threading.AutoResetEvent
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: SearchAThing.Sci.PythonPipe.Options*
+  commentId: Overload:SearchAThing.Sci.PythonPipe.Options
+  href: SearchAThing.Sci.PythonPipe.html#SearchAThing_Sci_PythonPipe_Options
+  name: Options
+  nameWithType: PythonPipe.Options
+  fullName: SearchAThing.Sci.PythonPipe.Options
+- uid: SearchAThing.Sci.PythonPipeOptions
+  commentId: T:SearchAThing.Sci.PythonPipeOptions
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.PythonPipeOptions.html
+  name: PythonPipeOptions
+  nameWithType: PythonPipeOptions
+  fullName: SearchAThing.Sci.PythonPipeOptions
+- uid: SearchAThing.Sci.PythonPipe.#ctor*
+  commentId: Overload:SearchAThing.Sci.PythonPipe.#ctor
+  href: SearchAThing.Sci.PythonPipe.html#SearchAThing_Sci_PythonPipe__ctor_SearchAThing_Sci_PythonPipeOptions_
+  name: PythonPipe
+  nameWithType: PythonPipe.PythonPipe
+  fullName: SearchAThing.Sci.PythonPipe.PythonPipe
+  nameWithType.vb: PythonPipe.New
+  fullName.vb: SearchAThing.Sci.PythonPipe.New
+  name.vb: New
+- uid: SearchAThing.Sci.PythonPipe.Exec*
+  commentId: Overload:SearchAThing.Sci.PythonPipe.Exec
+  href: SearchAThing.Sci.PythonPipe.html#SearchAThing_Sci_PythonPipe_Exec_System_Collections_Generic_IEnumerable_System_String__
+  name: Exec
+  nameWithType: PythonPipe.Exec
+  fullName: SearchAThing.Sci.PythonPipe.Exec
+- uid: System.Collections.Generic.IEnumerable{System.String}
+  commentId: T:System.Collections.Generic.IEnumerable{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<string>
+  nameWithType: IEnumerable<string>
+  fullName: System.Collections.Generic.IEnumerable<string>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of String)
+  name.vb: IEnumerable(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Threading.Tasks.Task{System.String}
+  commentId: T:System.Threading.Tasks.Task{System.String}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<string>
+  nameWithType: Task<string>
+  fullName: System.Threading.Tasks.Task<string>
+  nameWithType.vb: Task(Of String)
+  fullName.vb: System.Threading.Tasks.Task(Of String)
+  name.vb: Task(Of String)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: SearchAThing.Sci.PythonPipe.Dispose*
+  commentId: Overload:SearchAThing.Sci.PythonPipe.Dispose
+  href: SearchAThing.Sci.PythonPipe.html#SearchAThing_Sci_PythonPipe_Dispose
+  name: Dispose
+  nameWithType: PythonPipe.Dispose
+  fullName: SearchAThing.Sci.PythonPipe.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )

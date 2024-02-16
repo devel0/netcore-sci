@@ -1,0 +1,1392 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CoordinateSystem3D | netcore-sci </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CoordinateSystem3D | netcore-sci ">
+      
+      <meta name="description" content="CS with origin and basex, basey, basez orthonormal vectors. WCS coord can be translated to this cs using ToUCS() method. UCS coord can be translated back to wcs using ToWCS() method.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Sci_CoordinateSystem3D.md&amp;value=---%0Auid%3A%20SearchAThing.Sci.CoordinateSystem3D%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="netcore-sci">
+            netcore-sci
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SearchAThing.Sci.CoordinateSystem3D">
+
+
+
+  <h1 id="SearchAThing_Sci_CoordinateSystem3D" data-uid="SearchAThing.Sci.CoordinateSystem3D" class="text-break">
+Class CoordinateSystem3D  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SearchAThing.html">SearchAThing</a>.<a class="xref" href="SearchAThing.Sci.html">Sci</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>netcore-sci.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>CS with origin and basex, basey, basez orthonormal vectors.
+WCS coord can be translated to this cs using ToUCS() method.
+UCS coord can be translated back to wcs using ToWCS() method.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CoordinateSystem3D</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">CoordinateSystem3D</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D__ctor_" data-uid="SearchAThing.Sci.CoordinateSystem3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D__ctor_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_SearchAThing_Sci_CoordinateSystem3DAutoEnum_" data-uid="SearchAThing.Sci.CoordinateSystem3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.CoordinateSystem3DAutoEnum)">
+  CoordinateSystem3D(Vector3D, Vector3D, CoordinateSystem3DAutoEnum)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L135"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>build coordinate system with given origin and given BaseZ on given vector normal;
+given normal will subjected to normalization;
+depending on csAutoType one or another arbitrary axis alghoritm will used to build cs from a point and a normal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoordinateSystem3D(Vector3D o, Vector3D normal, CoordinateSystem3DAutoEnum csAutoType = CoordinateSystem3DAutoEnum.AAA)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>origin of cs</p>
+</dd>
+    <dt><code>normal</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>Z vector of cs</p>
+</dd>
+    <dt><code>csAutoType</code> <a class="xref" href="SearchAThing.Sci.CoordinateSystem3DAutoEnum.html">CoordinateSystem3DAutoEnum</a></dt>
+    <dd><p>auto cs type</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D__ctor_" data-uid="SearchAThing.Sci.CoordinateSystem3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D__ctor_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_SearchAThing_Sci_SmartCsMode_" data-uid="SearchAThing.Sci.CoordinateSystem3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.SmartCsMode)">
+  CoordinateSystem3D(Vector3D, Vector3D, Vector3D, SmartCsMode)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L242"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Construct a right-hand coordinate system with the given origin and two vector ( not required to be normalized, nor orthogonal ).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoordinateSystem3D(Vector3D o, Vector3D v1, Vector3D v2, SmartCsMode mode = SmartCsMode.X_YQ)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>cs origin</p>
+</dd>
+    <dt><code>v1</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>first vector</p>
+</dd>
+    <dt><code>v2</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>second vector</p>
+</dd>
+    <dt><code>mode</code> <a class="xref" href="SearchAThing.Sci.SmartCsMode.html">SmartCsMode</a></dt>
+    <dd><p>specify how to consider first and second vector to build the cs</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D__ctor_" data-uid="SearchAThing.Sci.CoordinateSystem3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D__ctor_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.CoordinateSystem3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)">
+  CoordinateSystem3D(Vector3D, Vector3D, Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L192"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>construct a coordinate system with the given origin and orthonormal bases
+note that given bases MUST already normalized</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoordinateSystem3D(Vector3D o, Vector3D baseX, Vector3D baseY, Vector3D baseZ)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>cs origin</p>
+</dd>
+    <dt><code>baseX</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>cs X base ( must already normalized )</p>
+</dd>
+    <dt><code>baseY</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>cs Y base ( must already normalized )</p>
+</dd>
+    <dt><code>baseZ</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>cs Z base ( must already normalized )</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_WCS" data-uid="SearchAThing.Sci.CoordinateSystem3D.WCS">
+  WCS
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L113"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>world cs : basex=(1,0,0) basey=(0,1,0) basez=(0,0,1)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly CoordinateSystem3D WCS</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_CoordinateSystem3D_WCS_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0001.cs">unit test</a></p>
+</div>
+
+
+
+
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_XY" data-uid="SearchAThing.Sci.CoordinateSystem3D.XY">
+  XY
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>right handed XY ( Z ) : top view</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly CoordinateSystem3D XY</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_XZ" data-uid="SearchAThing.Sci.CoordinateSystem3D.XZ">
+  XZ
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L98"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>right handed XZ ( -Y ) : front view</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly CoordinateSystem3D XZ</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_YZ" data-uid="SearchAThing.Sci.CoordinateSystem3D.YZ">
+  YZ
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>right handed YZ ( X ) : side view</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly CoordinateSystem3D YZ</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_BaseX_" data-uid="SearchAThing.Sci.CoordinateSystem3D.BaseX*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_BaseX" data-uid="SearchAThing.Sci.CoordinateSystem3D.BaseX">
+  BaseX
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>cs x versor ( normalized )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D BaseX { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_BaseY_" data-uid="SearchAThing.Sci.CoordinateSystem3D.BaseY*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_BaseY" data-uid="SearchAThing.Sci.CoordinateSystem3D.BaseY">
+  BaseY
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>cs y versor ( normalized )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D BaseY { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_BaseZ_" data-uid="SearchAThing.Sci.CoordinateSystem3D.BaseZ*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_BaseZ" data-uid="SearchAThing.Sci.CoordinateSystem3D.BaseZ">
+  BaseZ
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>cs z versor ( normalized )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D BaseZ { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_CadScript_" data-uid="SearchAThing.Sci.CoordinateSystem3D.CadScript*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_CadScript" data-uid="SearchAThing.Sci.CoordinateSystem3D.CadScript">
+  CadScript
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L465"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>script to paste in cad ( axis length = 1 )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CadScript { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_Origin_" data-uid="SearchAThing.Sci.CoordinateSystem3D.Origin*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_Origin" data-uid="SearchAThing.Sci.CoordinateSystem3D.Origin">
+  Origin
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>origin of cs where x,y,z base vectors applied</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Origin { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_csAutoType_" data-uid="SearchAThing.Sci.CoordinateSystem3D.csAutoType*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_csAutoType" data-uid="SearchAThing.Sci.CoordinateSystem3D.csAutoType">
+  csAutoType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>not null if this cs basex, basey honors cs auto type rule</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoordinateSystem3DAutoEnum? csAutoType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.CoordinateSystem3DAutoEnum.html">CoordinateSystem3DAutoEnum</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_Contains_" data-uid="SearchAThing.Sci.CoordinateSystem3D.Contains*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_Contains_System_Double_SearchAThing_Sci_Vector3D_System_Boolean_" data-uid="SearchAThing.Sci.CoordinateSystem3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)">
+  Contains(double, Vector3D, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L311"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>verify if this cs XY plane contains given wcs point</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Contains(double tol, Vector3D point, bool evalCSOrigin = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>calc tolerance</p>
+</dd>
+    <dt><code>point</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>point to verify</p>
+</dd>
+    <dt><code>evalCSOrigin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if true CS origin will subtracted before transform test</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if point contained in cs, else otherwise</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_Equals_" data-uid="SearchAThing.Sci.CoordinateSystem3D.Equals*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_Equals_System_Double_SearchAThing_Sci_CoordinateSystem3D_" data-uid="SearchAThing.Sci.CoordinateSystem3D.Equals(System.Double,SearchAThing.Sci.CoordinateSystem3D)">
+  Equals(double, CoordinateSystem3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L323"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>verify is this cs is equals to otherByLayer ( same origin, x, y, z base vectors )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(double tol, CoordinateSystem3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>calc tolerance ( for origin check )</p>
+</dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd><p>cs to check equality against</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if this cs equals the given on, false otherwise</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_CoordinateSystem3D_Equals_System_Double_SearchAThing_Sci_CoordinateSystem3D__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0001.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_FlipX_" data-uid="SearchAThing.Sci.CoordinateSystem3D.FlipX*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_FlipX" data-uid="SearchAThing.Sci.CoordinateSystem3D.FlipX">
+  FlipX()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L223"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>retrieve a new cs with same origin but basex flipped (Origin, -BaseX, BaseY, -BaseZ)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoordinateSystem3D FlipX()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_FlipY_" data-uid="SearchAThing.Sci.CoordinateSystem3D.FlipY*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_FlipY" data-uid="SearchAThing.Sci.CoordinateSystem3D.FlipY">
+  FlipY()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L228"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>retrieve a new cs with same origin but basey flipped (Origin, BaseX, -BaseY, -BaseZ)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoordinateSystem3D FlipY()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_FlipZ_" data-uid="SearchAThing.Sci.CoordinateSystem3D.FlipZ*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_FlipZ" data-uid="SearchAThing.Sci.CoordinateSystem3D.FlipZ">
+  FlipZ()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L233"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>retrieve a new cs with same origin but basez inverted (Origin, BaseX, -BaseY, -BaseZ)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoordinateSystem3D FlipZ()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_Intersect_" data-uid="SearchAThing.Sci.CoordinateSystem3D.Intersect*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_Intersect_System_Double_SearchAThing_Sci_CoordinateSystem3D_" data-uid="SearchAThing.Sci.CoordinateSystem3D.Intersect(System.Double,SearchAThing.Sci.CoordinateSystem3D)">
+  Intersect(double, CoordinateSystem3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L400"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>return intersect line between two cs xy planes</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D? Intersect(double tol, CoordinateSystem3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>len tolernace</p>
+</dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd><p>other cs</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd><p>null if cs parallel to the given other</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_IsParallelTo_" data-uid="SearchAThing.Sci.CoordinateSystem3D.IsParallelTo*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_IsParallelTo_System_Double_SearchAThing_Sci_CoordinateSystem3D_" data-uid="SearchAThing.Sci.CoordinateSystem3D.IsParallelTo(System.Double,SearchAThing.Sci.CoordinateSystem3D)">
+  IsParallelTo(double, CoordinateSystem3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L332"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>states if this cs have Z base parallel to the other given cs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsParallelTo(double tol, CoordinateSystem3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_Move_" data-uid="SearchAThing.Sci.CoordinateSystem3D.Move*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_Move_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.CoordinateSystem3D.Move(SearchAThing.Sci.Vector3D)">
+  Move(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L337"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>return another cs with origin translated</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoordinateSystem3D Move(Vector3D delta)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>delta</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_Rotate_" data-uid="SearchAThing.Sci.CoordinateSystem3D.Rotate*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_Rotate_SearchAThing_Sci_Line3D_System_Double_" data-uid="SearchAThing.Sci.CoordinateSystem3D.Rotate(SearchAThing.Sci.Line3D,System.Double)">
+  Rotate(Line3D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L355"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>return another cs rotated respect given axis</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoordinateSystem3D Rotate(Line3D axis, double angleRad)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>axis</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+    <dt><code>angleRad</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_Rotate_" data-uid="SearchAThing.Sci.CoordinateSystem3D.Rotate*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_Rotate_SearchAThing_Sci_Vector3D_System_Double_" data-uid="SearchAThing.Sci.CoordinateSystem3D.Rotate(SearchAThing.Sci.Vector3D,System.Double)">
+  Rotate(Vector3D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L387"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>return another cs with same origin and base vector rotated about given vector</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoordinateSystem3D Rotate(Vector3D vectorAxis, double angleRad)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vectorAxis</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>angleRad</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_RotateAs_" data-uid="SearchAThing.Sci.CoordinateSystem3D.RotateAs*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_RotateAs_System_Double_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.CoordinateSystem3D.RotateAs(System.Double,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)">
+  RotateAs(double, Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L371"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>return another cs rotated as from goes toward to</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoordinateSystem3D RotateAs(double tol, Vector3D from, Vector3D to)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>from</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>to</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_Simplified_" data-uid="SearchAThing.Sci.CoordinateSystem3D.Simplified*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_Simplified" data-uid="SearchAThing.Sci.CoordinateSystem3D.Simplified">
+  Simplified()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L203"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>if BaseZ matches one of XY, XZ, YZ default cs then a new cs with origin preserved but baseX, baseY, baseZ overriden will returned.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoordinateSystem3D Simplified()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_ToCadString_" data-uid="SearchAThing.Sci.CoordinateSystem3D.ToCadString*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_ToCadString_System_Double_" data-uid="SearchAThing.Sci.CoordinateSystem3D.ToCadString(System.Double)">
+  ToCadString(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L443"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>script to paste in cad to draw cs rgb mode ( x=red, y=green, z=blue )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToCadString(double axisLen)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>axisLen</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length of x,y,z axes</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>cad script</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_ToDxfLines_" data-uid="SearchAThing.Sci.CoordinateSystem3D.ToDxfLines*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_ToDxfLines_System_Double_" data-uid="SearchAThing.Sci.CoordinateSystem3D.ToDxfLines(System.Double)">
+  ToDxfLines(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L423"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>retrieve a set of 3 dxf line (RED:x, GREEN:y, BLUE:z) representing CS</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;EntityObject&gt; ToDxfLines(double len = 1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>len</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">EntityObject</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_ToDxfUCS_" data-uid="SearchAThing.Sci.CoordinateSystem3D.ToDxfUCS*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_ToDxfUCS_System_String_" data-uid="SearchAThing.Sci.CoordinateSystem3D.ToDxfUCS(System.String)">
+  ToDxfUCS(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L418"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UCS ToDxfUCS(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">UCS</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_ToString_" data-uid="SearchAThing.Sci.CoordinateSystem3D.ToString*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_ToString" data-uid="SearchAThing.Sci.CoordinateSystem3D.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L436"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_ToString_" data-uid="SearchAThing.Sci.CoordinateSystem3D.ToString*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_ToString_System_Int32_" data-uid="SearchAThing.Sci.CoordinateSystem3D.ToString(System.Int32)">
+  ToString(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L434"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>debug string</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToString(int digits)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>digits</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>formatted representation of cs origin, x, y, z</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_ToUCS_" data-uid="SearchAThing.Sci.CoordinateSystem3D.ToUCS*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_ToUCS_SearchAThing_Sci_Vector3D_System_Boolean_" data-uid="SearchAThing.Sci.CoordinateSystem3D.ToUCS(SearchAThing.Sci.Vector3D,System.Boolean)">
+  ToUCS(Vector3D, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L285"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Transform wcs point to given cs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D ToUCS(Vector3D p, bool evalCSOrigin = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>p</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>wcs point</p>
+</dd>
+    <dt><code>evalCSOrigin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if true CS origin will subtracted from wcs point before transform</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_ToWCS_" data-uid="SearchAThing.Sci.CoordinateSystem3D.ToWCS*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_ToWCS_SearchAThing_Sci_Vector3D_System_Boolean_" data-uid="SearchAThing.Sci.CoordinateSystem3D.ToWCS(SearchAThing.Sci.Vector3D,System.Boolean)">
+  ToWCS(Vector3D, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L297"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>transform ucs point to wcs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D ToWCS(Vector3D p, bool evalCSOrigin = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>p</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>ucs point</p>
+</dd>
+    <dt><code>evalCSOrigin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if true CS origin will added after transform</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_CoordinateSystem3D_Transform_" data-uid="SearchAThing.Sci.CoordinateSystem3D.Transform*"></a>
+
+  <h3 id="SearchAThing_Sci_CoordinateSystem3D_Transform_System_Numerics_Matrix4x4_" data-uid="SearchAThing.Sci.CoordinateSystem3D.Transform(System.Numerics.Matrix4x4)">
+  Transform(Matrix4x4)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L343"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>create transformed CS by given transformation matrix</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoordinateSystem3D Transform(Matrix4x4 m)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>m</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.matrix4x4">Matrix4x4</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/devel0/netcore-sci/blob/master/src/sci/CoordinateSystem3D.cs/#L41" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.Ext.HatchSetterDelegate
+  commentId: T:SearchAThing.Sci.Ext.HatchSetterDelegate
+  id: Ext.HatchSetterDelegate
+  parent: SearchAThing.Sci
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Ext.HatchSetterDelegate
+  nameWithType: Ext.HatchSetterDelegate
+  fullName: SearchAThing.Sci.Ext.HatchSetterDelegate
+  type: Delegate
+  source:
+    remote:
+      path: src/sci/DxfKit.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: HatchSetterDelegate
+    path: src/sci/DxfKit.cs
+    startLine: 545
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public delegate void Ext.HatchSetterDelegate(EntityObject entityObject, bool isBoundary)
+    parameters:
+    - id: entityObject
+      type: netDxf.Entities.EntityObject
+    - id: isBoundary
+      type: System.Boolean
+    content.vb: Public Delegate Sub Ext.HatchSetterDelegate(entityObject As EntityObject, isBoundary As Boolean)
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  href: SearchAThing.html
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+  spec.csharp:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+  spec.vb:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+- uid: netDxf.Entities.EntityObject
+  commentId: T:netDxf.Entities.EntityObject
+  parent: netDxf.Entities
+  isExternal: true
+  name: EntityObject
+  nameWithType: EntityObject
+  fullName: netDxf.Entities.EntityObject
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: netDxf.Entities
+  commentId: N:netDxf.Entities
+  isExternal: true
+  name: netDxf.Entities
+  nameWithType: netDxf.Entities
+  fullName: netDxf.Entities
+  spec.csharp:
+  - uid: netDxf
+    name: netDxf
+    isExternal: true
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    isExternal: true
+  spec.vb:
+  - uid: netDxf
+    name: netDxf
+    isExternal: true
+  - name: .
+  - uid: netDxf.Entities
+    name: Entities
+    isExternal: true
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

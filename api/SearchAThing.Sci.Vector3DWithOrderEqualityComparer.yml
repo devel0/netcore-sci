@@ -1,0 +1,691 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.Vector3DWithOrderEqualityComparer
+  commentId: T:SearchAThing.Sci.Vector3DWithOrderEqualityComparer
+  id: Vector3DWithOrderEqualityComparer
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.Vector3DWithOrderEqualityComparer.#ctor(SearchAThing.Sci.Vector3DEqualityComparer)
+  - SearchAThing.Sci.Vector3DWithOrderEqualityComparer.Equals(SearchAThing.Sci.Vector3DWithOrder,SearchAThing.Sci.Vector3DWithOrder)
+  - SearchAThing.Sci.Vector3DWithOrderEqualityComparer.GetHashCode(SearchAThing.Sci.Vector3DWithOrder)
+  langs:
+  - csharp
+  - vb
+  name: Vector3DWithOrderEqualityComparer
+  nameWithType: Vector3DWithOrderEqualityComparer
+  fullName: SearchAThing.Sci.Vector3DWithOrderEqualityComparer
+  type: Class
+  source:
+    remote:
+      path: src/sci/Vector3D.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Vector3DWithOrderEqualityComparer
+    path: src/sci/Vector3D.cs
+    startLine: 1304
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: helper class to compare vector3d in a distinct operation retaining original order, used by DistinctKeepOrder()
+  example: []
+  syntax:
+    content: 'public class Vector3DWithOrderEqualityComparer : IEqualityComparer<Vector3DWithOrder>'
+    content.vb: Public Class Vector3DWithOrderEqualityComparer Implements IEqualityComparer(Of Vector3DWithOrder)
+  inheritance:
+  - System.Object
+  implements:
+  - System.Collections.Generic.IEqualityComparer{SearchAThing.Sci.Vector3DWithOrder}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.#ctor(SearchAThing.Sci.Vector3DEqualityComparer)
+  commentId: M:SearchAThing.Sci.Vector3DWithOrderEqualityComparer.#ctor(SearchAThing.Sci.Vector3DEqualityComparer)
+  id: '#ctor(SearchAThing.Sci.Vector3DEqualityComparer)'
+  parent: SearchAThing.Sci.Vector3DWithOrderEqualityComparer
+  langs:
+  - csharp
+  - vb
+  name: Vector3DWithOrderEqualityComparer(Vector3DEqualityComparer)
+  nameWithType: Vector3DWithOrderEqualityComparer.Vector3DWithOrderEqualityComparer(Vector3DEqualityComparer)
+  fullName: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.Vector3DWithOrderEqualityComparer(SearchAThing.Sci.Vector3DEqualityComparer)
+  type: Constructor
+  source:
+    remote:
+      path: src/sci/Vector3D.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: .ctor
+    path: src/sci/Vector3D.cs
+    startLine: 1308
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public Vector3DWithOrderEqualityComparer(Vector3DEqualityComparer _cmp)
+    parameters:
+    - id: _cmp
+      type: SearchAThing.Sci.Vector3DEqualityComparer
+    content.vb: Public Sub New(_cmp As Vector3DEqualityComparer)
+  overload: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.#ctor*
+  nameWithType.vb: Vector3DWithOrderEqualityComparer.New(Vector3DEqualityComparer)
+  fullName.vb: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.New(SearchAThing.Sci.Vector3DEqualityComparer)
+  name.vb: New(Vector3DEqualityComparer)
+- uid: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.Equals(SearchAThing.Sci.Vector3DWithOrder,SearchAThing.Sci.Vector3DWithOrder)
+  commentId: M:SearchAThing.Sci.Vector3DWithOrderEqualityComparer.Equals(SearchAThing.Sci.Vector3DWithOrder,SearchAThing.Sci.Vector3DWithOrder)
+  id: Equals(SearchAThing.Sci.Vector3DWithOrder,SearchAThing.Sci.Vector3DWithOrder)
+  parent: SearchAThing.Sci.Vector3DWithOrderEqualityComparer
+  langs:
+  - csharp
+  - vb
+  name: Equals(Vector3DWithOrder?, Vector3DWithOrder?)
+  nameWithType: Vector3DWithOrderEqualityComparer.Equals(Vector3DWithOrder?, Vector3DWithOrder?)
+  fullName: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.Equals(SearchAThing.Sci.Vector3DWithOrder?, SearchAThing.Sci.Vector3DWithOrder?)
+  type: Method
+  source:
+    remote:
+      path: src/sci/Vector3D.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Equals
+    path: src/sci/Vector3D.cs
+    startLine: 1313
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  example: []
+  syntax:
+    content: public bool Equals(Vector3DWithOrder? x, Vector3DWithOrder? y)
+    parameters:
+    - id: x
+      type: SearchAThing.Sci.Vector3DWithOrder
+    - id: y
+      type: SearchAThing.Sci.Vector3DWithOrder
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(x As Vector3DWithOrder, y As Vector3DWithOrder) As Boolean
+  overload: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.Equals*
+  implements:
+  - System.Collections.Generic.IEqualityComparer{SearchAThing.Sci.Vector3DWithOrder}.Equals(SearchAThing.Sci.Vector3DWithOrder,SearchAThing.Sci.Vector3DWithOrder)
+  nameWithType.vb: Vector3DWithOrderEqualityComparer.Equals(Vector3DWithOrder, Vector3DWithOrder)
+  fullName.vb: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.Equals(SearchAThing.Sci.Vector3DWithOrder, SearchAThing.Sci.Vector3DWithOrder)
+  name.vb: Equals(Vector3DWithOrder, Vector3DWithOrder)
+- uid: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.GetHashCode(SearchAThing.Sci.Vector3DWithOrder)
+  commentId: M:SearchAThing.Sci.Vector3DWithOrderEqualityComparer.GetHashCode(SearchAThing.Sci.Vector3DWithOrder)
+  id: GetHashCode(SearchAThing.Sci.Vector3DWithOrder)
+  parent: SearchAThing.Sci.Vector3DWithOrderEqualityComparer
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode(Vector3DWithOrder)
+  nameWithType: Vector3DWithOrderEqualityComparer.GetHashCode(Vector3DWithOrder)
+  fullName: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.GetHashCode(SearchAThing.Sci.Vector3DWithOrder)
+  type: Method
+  source:
+    remote:
+      path: src/sci/Vector3D.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: GetHashCode
+    path: src/sci/Vector3D.cs
+    startLine: 1316
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  example: []
+  syntax:
+    content: public int GetHashCode(Vector3DWithOrder obj)
+    parameters:
+    - id: obj
+      type: SearchAThing.Sci.Vector3DWithOrder
+    return:
+      type: System.Int32
+    content.vb: Public Function GetHashCode(obj As Vector3DWithOrder) As Integer
+  overload: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.GetHashCode*
+  implements:
+  - System.Collections.Generic.IEqualityComparer{SearchAThing.Sci.Vector3DWithOrder}.GetHashCode(SearchAThing.Sci.Vector3DWithOrder)
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  href: SearchAThing.html
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+  spec.csharp:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+  spec.vb:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Collections.Generic.IEqualityComparer{SearchAThing.Sci.Vector3DWithOrder}
+  commentId: T:System.Collections.Generic.IEqualityComparer{SearchAThing.Sci.Vector3DWithOrder}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEqualityComparer`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
+  name: IEqualityComparer<Vector3DWithOrder>
+  nameWithType: IEqualityComparer<Vector3DWithOrder>
+  fullName: System.Collections.Generic.IEqualityComparer<SearchAThing.Sci.Vector3DWithOrder>
+  nameWithType.vb: IEqualityComparer(Of Vector3DWithOrder)
+  fullName.vb: System.Collections.Generic.IEqualityComparer(Of SearchAThing.Sci.Vector3DWithOrder)
+  name.vb: IEqualityComparer(Of Vector3DWithOrder)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
+  - name: <
+  - uid: SearchAThing.Sci.Vector3DWithOrder
+    name: Vector3DWithOrder
+    href: SearchAThing.Sci.Vector3DWithOrder.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: SearchAThing.Sci.Vector3DWithOrder
+    name: Vector3DWithOrder
+    href: SearchAThing.Sci.Vector3DWithOrder.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.IEqualityComparer`1
+  commentId: T:System.Collections.Generic.IEqualityComparer`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
+  name: IEqualityComparer<T>
+  nameWithType: IEqualityComparer<T>
+  fullName: System.Collections.Generic.IEqualityComparer<T>
+  nameWithType.vb: IEqualityComparer(Of T)
+  fullName.vb: System.Collections.Generic.IEqualityComparer(Of T)
+  name.vb: IEqualityComparer(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.#ctor*
+  commentId: Overload:SearchAThing.Sci.Vector3DWithOrderEqualityComparer.#ctor
+  href: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.html#SearchAThing_Sci_Vector3DWithOrderEqualityComparer__ctor_SearchAThing_Sci_Vector3DEqualityComparer_
+  name: Vector3DWithOrderEqualityComparer
+  nameWithType: Vector3DWithOrderEqualityComparer.Vector3DWithOrderEqualityComparer
+  fullName: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.Vector3DWithOrderEqualityComparer
+  nameWithType.vb: Vector3DWithOrderEqualityComparer.New
+  fullName.vb: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.New
+  name.vb: New
+- uid: SearchAThing.Sci.Vector3DEqualityComparer
+  commentId: T:SearchAThing.Sci.Vector3DEqualityComparer
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Vector3DEqualityComparer.html
+  name: Vector3DEqualityComparer
+  nameWithType: Vector3DEqualityComparer
+  fullName: SearchAThing.Sci.Vector3DEqualityComparer
+- uid: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.Equals*
+  commentId: Overload:SearchAThing.Sci.Vector3DWithOrderEqualityComparer.Equals
+  href: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.html#SearchAThing_Sci_Vector3DWithOrderEqualityComparer_Equals_SearchAThing_Sci_Vector3DWithOrder_SearchAThing_Sci_Vector3DWithOrder_
+  name: Equals
+  nameWithType: Vector3DWithOrderEqualityComparer.Equals
+  fullName: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.Equals
+- uid: System.Collections.Generic.IEqualityComparer{SearchAThing.Sci.Vector3DWithOrder}.Equals(SearchAThing.Sci.Vector3DWithOrder,SearchAThing.Sci.Vector3DWithOrder)
+  commentId: M:System.Collections.Generic.IEqualityComparer{SearchAThing.Sci.Vector3DWithOrder}.Equals(SearchAThing.Sci.Vector3DWithOrder,SearchAThing.Sci.Vector3DWithOrder)
+  parent: System.Collections.Generic.IEqualityComparer{SearchAThing.Sci.Vector3DWithOrder}
+  definition: System.Collections.Generic.IEqualityComparer`1.Equals(`0,`0)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1.equals
+  name: Equals(Vector3DWithOrder, Vector3DWithOrder)
+  nameWithType: IEqualityComparer<Vector3DWithOrder>.Equals(Vector3DWithOrder, Vector3DWithOrder)
+  fullName: System.Collections.Generic.IEqualityComparer<SearchAThing.Sci.Vector3DWithOrder>.Equals(SearchAThing.Sci.Vector3DWithOrder, SearchAThing.Sci.Vector3DWithOrder)
+  nameWithType.vb: IEqualityComparer(Of Vector3DWithOrder).Equals(Vector3DWithOrder, Vector3DWithOrder)
+  fullName.vb: System.Collections.Generic.IEqualityComparer(Of SearchAThing.Sci.Vector3DWithOrder).Equals(SearchAThing.Sci.Vector3DWithOrder, SearchAThing.Sci.Vector3DWithOrder)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEqualityComparer{SearchAThing.Sci.Vector3DWithOrder}.Equals(SearchAThing.Sci.Vector3DWithOrder,SearchAThing.Sci.Vector3DWithOrder)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1.equals
+  - name: (
+  - uid: SearchAThing.Sci.Vector3DWithOrder
+    name: Vector3DWithOrder
+    href: SearchAThing.Sci.Vector3DWithOrder.html
+  - name: ','
+  - name: " "
+  - uid: SearchAThing.Sci.Vector3DWithOrder
+    name: Vector3DWithOrder
+    href: SearchAThing.Sci.Vector3DWithOrder.html
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEqualityComparer{SearchAThing.Sci.Vector3DWithOrder}.Equals(SearchAThing.Sci.Vector3DWithOrder,SearchAThing.Sci.Vector3DWithOrder)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1.equals
+  - name: (
+  - uid: SearchAThing.Sci.Vector3DWithOrder
+    name: Vector3DWithOrder
+    href: SearchAThing.Sci.Vector3DWithOrder.html
+  - name: ','
+  - name: " "
+  - uid: SearchAThing.Sci.Vector3DWithOrder
+    name: Vector3DWithOrder
+    href: SearchAThing.Sci.Vector3DWithOrder.html
+  - name: )
+- uid: SearchAThing.Sci.Vector3DWithOrder
+  commentId: T:SearchAThing.Sci.Vector3DWithOrder
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Vector3DWithOrder.html
+  name: Vector3DWithOrder
+  nameWithType: Vector3DWithOrder
+  fullName: SearchAThing.Sci.Vector3DWithOrder
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Collections.Generic.IEqualityComparer`1.Equals(`0,`0)
+  commentId: M:System.Collections.Generic.IEqualityComparer`1.Equals(`0,`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1.equals
+  name: Equals(T, T)
+  nameWithType: IEqualityComparer<T>.Equals(T, T)
+  fullName: System.Collections.Generic.IEqualityComparer<T>.Equals(T, T)
+  nameWithType.vb: IEqualityComparer(Of T).Equals(T, T)
+  fullName.vb: System.Collections.Generic.IEqualityComparer(Of T).Equals(T, T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEqualityComparer`1.Equals(`0,`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1.equals
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEqualityComparer`1.Equals(`0,`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1.equals
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+- uid: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.GetHashCode*
+  commentId: Overload:SearchAThing.Sci.Vector3DWithOrderEqualityComparer.GetHashCode
+  href: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.html#SearchAThing_Sci_Vector3DWithOrderEqualityComparer_GetHashCode_SearchAThing_Sci_Vector3DWithOrder_
+  name: GetHashCode
+  nameWithType: Vector3DWithOrderEqualityComparer.GetHashCode
+  fullName: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.GetHashCode
+- uid: System.Collections.Generic.IEqualityComparer{SearchAThing.Sci.Vector3DWithOrder}.GetHashCode(SearchAThing.Sci.Vector3DWithOrder)
+  commentId: M:System.Collections.Generic.IEqualityComparer{SearchAThing.Sci.Vector3DWithOrder}.GetHashCode(SearchAThing.Sci.Vector3DWithOrder)
+  parent: System.Collections.Generic.IEqualityComparer{SearchAThing.Sci.Vector3DWithOrder}
+  definition: System.Collections.Generic.IEqualityComparer`1.GetHashCode(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1.gethashcode
+  name: GetHashCode(Vector3DWithOrder)
+  nameWithType: IEqualityComparer<Vector3DWithOrder>.GetHashCode(Vector3DWithOrder)
+  fullName: System.Collections.Generic.IEqualityComparer<SearchAThing.Sci.Vector3DWithOrder>.GetHashCode(SearchAThing.Sci.Vector3DWithOrder)
+  nameWithType.vb: IEqualityComparer(Of Vector3DWithOrder).GetHashCode(Vector3DWithOrder)
+  fullName.vb: System.Collections.Generic.IEqualityComparer(Of SearchAThing.Sci.Vector3DWithOrder).GetHashCode(SearchAThing.Sci.Vector3DWithOrder)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEqualityComparer{SearchAThing.Sci.Vector3DWithOrder}.GetHashCode(SearchAThing.Sci.Vector3DWithOrder)
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1.gethashcode
+  - name: (
+  - uid: SearchAThing.Sci.Vector3DWithOrder
+    name: Vector3DWithOrder
+    href: SearchAThing.Sci.Vector3DWithOrder.html
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEqualityComparer{SearchAThing.Sci.Vector3DWithOrder}.GetHashCode(SearchAThing.Sci.Vector3DWithOrder)
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1.gethashcode
+  - name: (
+  - uid: SearchAThing.Sci.Vector3DWithOrder
+    name: Vector3DWithOrder
+    href: SearchAThing.Sci.Vector3DWithOrder.html
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Collections.Generic.IEqualityComparer`1.GetHashCode(`0)
+  commentId: M:System.Collections.Generic.IEqualityComparer`1.GetHashCode(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1.gethashcode
+  name: GetHashCode(T)
+  nameWithType: IEqualityComparer<T>.GetHashCode(T)
+  fullName: System.Collections.Generic.IEqualityComparer<T>.GetHashCode(T)
+  nameWithType.vb: IEqualityComparer(Of T).GetHashCode(T)
+  fullName.vb: System.Collections.Generic.IEqualityComparer(Of T).GetHashCode(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEqualityComparer`1.GetHashCode(`0)
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1.gethashcode
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEqualityComparer`1.GetHashCode(`0)
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1.gethashcode
+  - name: (
+  - name: T
+  - name: )

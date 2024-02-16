@@ -1,0 +1,1114 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Matrix3D | netcore-sci </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Matrix3D | netcore-sci ">
+      
+      <meta name="description" content="basic matrix3d with 3x3 double elements and operations to allow arithmetic and 3d linear equation resolution.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Sci_Matrix3D.md&amp;value=---%0Auid%3A%20SearchAThing.Sci.Matrix3D%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="netcore-sci">
+            netcore-sci
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SearchAThing.Sci.Matrix3D">
+
+
+
+  <h1 id="SearchAThing_Sci_Matrix3D" data-uid="SearchAThing.Sci.Matrix3D" class="text-break">
+Class Matrix3D  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SearchAThing.html">SearchAThing</a>.<a class="xref" href="SearchAThing.Sci.html">Sci</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>netcore-sci.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>basic matrix3d with 3x3 double elements and operations to allow arithmetic and 3d linear equation resolution.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Matrix3D</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Matrix3D</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SearchAThing_Sci_Matrix3D__ctor_" data-uid="SearchAThing.Sci.Matrix3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D__ctor" data-uid="SearchAThing.Sci.Matrix3D.#ctor">
+  Matrix3D()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>empty matrix</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix3D()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D__ctor_" data-uid="SearchAThing.Sci.Matrix3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D__ctor_System_Double___" data-uid="SearchAThing.Sci.Matrix3D.#ctor(System.Double[])">
+  Matrix3D(double[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Init matrix using terms m00 m01 m02 - m10 m11 m12 - m20 m21 m22</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix3D(double[] terms)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>terms</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SearchAThing_Sci_Matrix3D_Item_" data-uid="SearchAThing.Sci.Matrix3D.Item*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_Item_System_Int32_System_Int32_" data-uid="SearchAThing.Sci.Matrix3D.Item(System.Int32,System.Int32)">
+  this[int, int]
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L315"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>indexed matrix component [row,col]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double this[int r, int c] { get; }</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>r</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>c</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SearchAThing_Sci_Matrix3D_Adjoint_" data-uid="SearchAThing.Sci.Matrix3D.Adjoint*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_Adjoint" data-uid="SearchAThing.Sci.Matrix3D.Adjoint">
+  Adjoint()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L163"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adjoint matrix
+<a href="http://www.mathsisfun.com/algebra/matrix-inverse-minors-cofactors-adjugate.html">http://www.mathsisfun.com/algebra/matrix-inverse-minors-cofactors-adjugate.html</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix3D Adjoint()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_Cofactor_" data-uid="SearchAThing.Sci.Matrix3D.Cofactor*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_Cofactor" data-uid="SearchAThing.Sci.Matrix3D.Cofactor">
+  Cofactor()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L144"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Matrix of cofactors
+<a href="http://www.mathsisfun.com/algebra/matrix-inverse-minors-cofactors-adjugate.html">http://www.mathsisfun.com/algebra/matrix-inverse-minors-cofactors-adjugate.html</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix3D Cofactor()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_CopyVectorAsColumn_" data-uid="SearchAThing.Sci.Matrix3D.CopyVectorAsColumn*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_CopyVectorAsColumn_SearchAThing_Sci_Vector3D_System_Int32_" data-uid="SearchAThing.Sci.Matrix3D.CopyVectorAsColumn(SearchAThing.Sci.Vector3D,System.Int32)">
+  CopyVectorAsColumn(Vector3D, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix3D CopyVectorAsColumn(Vector3D v, int colIdx)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>v</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>colIdx</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_CopyVectorAsRow_" data-uid="SearchAThing.Sci.Matrix3D.CopyVectorAsRow*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_CopyVectorAsRow_SearchAThing_Sci_Vector3D_System_Int32_" data-uid="SearchAThing.Sci.Matrix3D.CopyVectorAsRow(SearchAThing.Sci.Vector3D,System.Int32)">
+  CopyVectorAsRow(Vector3D, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix3D CopyVectorAsRow(Vector3D v, int rowIdx)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>v</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>rowIdx</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_Determinant_" data-uid="SearchAThing.Sci.Matrix3D.Determinant*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_Determinant" data-uid="SearchAThing.Sci.Matrix3D.Determinant">
+  Determinant()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Matrix determinant
+<a href="http://mathcentral.uregina.ca/QQ/database/QQ.09.06/h/suud1.html">http://mathcentral.uregina.ca/QQ/database/QQ.09.06/h/suud1.html</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Determinant()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_EqualsTol_" data-uid="SearchAThing.Sci.Matrix3D.EqualsTol*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_EqualsTol_System_Double_SearchAThing_Sci_Matrix3D_" data-uid="SearchAThing.Sci.Matrix3D.EqualsTol(System.Double,SearchAThing.Sci.Matrix3D)">
+  EqualsTol(double, Matrix3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EqualsTol(double tol, Matrix3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_FromVectorsAsColumns_" data-uid="SearchAThing.Sci.Matrix3D.FromVectorsAsColumns*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_FromVectorsAsColumns_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Matrix3D.FromVectorsAsColumns(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)">
+  FromVectorsAsColumns(Vector3D, Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix3D FromVectorsAsColumns(Vector3D v1, Vector3D v2, Vector3D v3)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>v1</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>v2</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>v3</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_FromVectorsAsRows_" data-uid="SearchAThing.Sci.Matrix3D.FromVectorsAsRows*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_FromVectorsAsRows_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Matrix3D.FromVectorsAsRows(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)">
+  FromVectorsAsRows(Vector3D, Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix3D FromVectorsAsRows(Vector3D v1, Vector3D v2, Vector3D v3)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>v1</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>v2</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>v3</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_Inverse_" data-uid="SearchAThing.Sci.Matrix3D.Inverse*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_Inverse" data-uid="SearchAThing.Sci.Matrix3D.Inverse">
+  Inverse()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L169"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Inverse matrix
+<a href="http://www.mathsisfun.com/algebra/matrix-inverse-minors-cofactors-adjugate.html">http://www.mathsisfun.com/algebra/matrix-inverse-minors-cofactors-adjugate.html</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix3D Inverse()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_Minor_" data-uid="SearchAThing.Sci.Matrix3D.Minor*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_Minor" data-uid="SearchAThing.Sci.Matrix3D.Minor">
+  Minor()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Matrix of minors
+<a href="http://www.mathsisfun.com/algebra/matrix-inverse-minors-cofactors-adjugate.html">http://www.mathsisfun.com/algebra/matrix-inverse-minors-cofactors-adjugate.html</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix3D Minor()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_Solve_" data-uid="SearchAThing.Sci.Matrix3D.Solve*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_Solve_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Matrix3D.Solve(SearchAThing.Sci.Vector3D)">
+  Solve(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L182"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Solve linear system of eq represented by this matrix
+defined n known term.
+Ax = B -&gt; x = A^(-1)B</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Solve(Vector3D n)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>n</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_Solve_" data-uid="SearchAThing.Sci.Matrix3D.Solve*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_Solve_System_Double_System_Double_System_Double_" data-uid="SearchAThing.Sci.Matrix3D.Solve(System.Double,System.Double,System.Double)">
+  Solve(double, double, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L175"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Solve linear system of eq represented by this matrix
+defined (a,b,c) known terms.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Solve(double a, double b, double c)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>a</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>b</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>c</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_Transpose_" data-uid="SearchAThing.Sci.Matrix3D.Transpose*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_Transpose" data-uid="SearchAThing.Sci.Matrix3D.Transpose">
+  Transpose()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>swap row, cols</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix3D Transpose()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
+  <a id="SearchAThing_Sci_Matrix3D_op_Addition_" data-uid="SearchAThing.Sci.Matrix3D.op_Addition*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_op_Addition_SearchAThing_Sci_Matrix3D_SearchAThing_Sci_Matrix3D_" data-uid="SearchAThing.Sci.Matrix3D.op_Addition(SearchAThing.Sci.Matrix3D,SearchAThing.Sci.Matrix3D)">
+  operator +(Matrix3D, Matrix3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L189"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>sum</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix3D operator +(Matrix3D a, Matrix3D b)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>a</code> <a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+    <dt><code>b</code> <a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_op_Division_" data-uid="SearchAThing.Sci.Matrix3D.op_Division*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_op_Division_SearchAThing_Sci_Matrix3D_System_Double_" data-uid="SearchAThing.Sci.Matrix3D.op_Division(SearchAThing.Sci.Matrix3D,System.Double)">
+  operator /(Matrix3D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L297"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>scalar div</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix3D operator /(Matrix3D m, double s)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>m</code> <a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+    <dt><code>s</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_op_Division_" data-uid="SearchAThing.Sci.Matrix3D.op_Division*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_op_Division_System_Double_SearchAThing_Sci_Matrix3D_" data-uid="SearchAThing.Sci.Matrix3D.op_Division(System.Double,SearchAThing.Sci.Matrix3D)">
+  operator /(double, Matrix3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L279"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>scalar div</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix3D operator /(double s, Matrix3D m)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>s</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>m</code> <a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_op_Multiply_" data-uid="SearchAThing.Sci.Matrix3D.op_Multiply*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_op_Multiply_SearchAThing_Sci_Matrix3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Matrix3D.op_Multiply(SearchAThing.Sci.Matrix3D,SearchAThing.Sci.Vector3D)">
+  operator *(Matrix3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L321"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>matrix * vector as column -&gt; vector
+3x3 x 3x1 -&gt; 3x1</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D operator *(Matrix3D m, Vector3D v)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>m</code> <a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_op_Multiply_" data-uid="SearchAThing.Sci.Matrix3D.op_Multiply*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_op_Multiply_SearchAThing_Sci_Matrix3D_System_Double_" data-uid="SearchAThing.Sci.Matrix3D.op_Multiply(SearchAThing.Sci.Matrix3D,System.Double)">
+  operator *(Matrix3D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L261"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>scalar multiply</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix3D operator *(Matrix3D m, double s)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>m</code> <a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+    <dt><code>s</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_op_Multiply_" data-uid="SearchAThing.Sci.Matrix3D.op_Multiply*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_op_Multiply_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Matrix3D_" data-uid="SearchAThing.Sci.Matrix3D.op_Multiply(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Matrix3D)">
+  operator *(Vector3D, Matrix3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L342"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>vector as row * matrix -&gt; vector
+1x3 * 3x3 -&gt; 1x3</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D operator *(Vector3D v, Matrix3D m)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>v</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>m</code> <a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_op_Multiply_" data-uid="SearchAThing.Sci.Matrix3D.op_Multiply*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_op_Multiply_System_Double_SearchAThing_Sci_Matrix3D_" data-uid="SearchAThing.Sci.Matrix3D.op_Multiply(System.Double,SearchAThing.Sci.Matrix3D)">
+  operator *(double, Matrix3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L243"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>scalar multiply</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix3D operator *(double s, Matrix3D m)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>s</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>m</code> <a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_op_Subtraction_" data-uid="SearchAThing.Sci.Matrix3D.op_Subtraction*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_op_Subtraction_SearchAThing_Sci_Matrix3D_SearchAThing_Sci_Matrix3D_" data-uid="SearchAThing.Sci.Matrix3D.op_Subtraction(SearchAThing.Sci.Matrix3D,SearchAThing.Sci.Matrix3D)">
+  operator -(Matrix3D, Matrix3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L207"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>sub</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix3D operator -(Matrix3D a, Matrix3D b)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>a</code> <a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+    <dt><code>b</code> <a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Matrix3D_op_UnaryNegation_" data-uid="SearchAThing.Sci.Matrix3D.op_UnaryNegation*"></a>
+
+  <h3 id="SearchAThing_Sci_Matrix3D_op_UnaryNegation_SearchAThing_Sci_Matrix3D_" data-uid="SearchAThing.Sci.Matrix3D.op_UnaryNegation(SearchAThing.Sci.Matrix3D)">
+  operator -(Matrix3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L225"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>neg</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix3D operator -(Matrix3D m)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>m</code> <a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Matrix3D.html">Matrix3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Matrix3D.cs/#L6" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

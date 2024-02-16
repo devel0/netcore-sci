@@ -1,0 +1,1195 @@
+{
+  "source_base_path": "/home/devel0/Documents/opensource/netcore-sci",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/data/img/LoopTest_0013.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/data/img/LoopTest_0013.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/data/img/LoopTest_0014.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/data/img/LoopTest_0014.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/data/img/LoopTest_0021/difference-GY1.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/data/img/LoopTest_0021/difference-GY1.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/data/img/LoopTest_0021/difference-GY2.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/data/img/LoopTest_0021/difference-GY2.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/data/img/LoopTest_0021/difference-GY3.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/data/img/LoopTest_0021/difference-GY3.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/data/img/LoopTest_0021/difference-YG1.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/data/img/LoopTest_0021/difference-YG1.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/data/img/LoopTest_0021/difference-YG2.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/data/img/LoopTest_0021/difference-YG2.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/data/img/LoopTest_0021/difference-YG3.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/data/img/LoopTest_0021/difference-YG3.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/data/img/LoopTest_0021/intersect-YG1.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/data/img/LoopTest_0021/intersect-YG1.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/data/img/LoopTest_0021/intersect-YG2.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/data/img/LoopTest_0021/intersect-YG2.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/data/img/LoopTest_0021/intersect-YG3.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/data/img/LoopTest_0021/intersect-YG3.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/data/img/LoopTest_0021/union-YG1.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/data/img/LoopTest_0021/union-YG1.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/data/img/LoopTest_0021/union-YG2.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/data/img/LoopTest_0021/union-YG2.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/data/img/LoopTest_0021/union-YG3.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/data/img/LoopTest_0021/union-YG3.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/data/img/PolylineOffset.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/data/img/PolylineOffset.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/data/img/unit-tests-coverage-gutters.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/data/img/unit-tests-coverage-gutters.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/examples/example-0001/output.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/examples/example-0001/output.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/examples/example-0002/output.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/examples/example-0002/output.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/examples/example-0003/output.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/examples/example-0003/output.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/src/test/Arc3D/Arc3DTest_0001.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/src/test/Arc3D/Arc3DTest_0001.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/src/test/Line3D/Line3DTest_0001.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/src/test/Line3D/Line3DTest_0001.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/src/test/Transform3D/Transform3DTest_0001.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/src/test/Transform3D/Transform3DTest_0001.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/src/test/Vector3D/Vector3DTest_0015.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/src/test/Vector3D/Vector3DTest_0015.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/src/test/Vector3D/Vector3DTest_0016.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/src/test/Vector3D/Vector3DTest_0016.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/src/test/Vector3D/Vector3DTest_0019.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/src/test/Vector3D/Vector3DTest_0019.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/src/test/Vector3D/Vector3DTest_0020.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/src/test/Vector3D/Vector3DTest_0020.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "_site/src/test/Vector3D/Vector3DTest_0021.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/src/test/Vector3D/Vector3DTest_0021.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Arc3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Arc3D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Arc3DEqualityComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Arc3DEqualityComparer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.BBox3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.BBox3D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Circle3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Circle3D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.CircleTangentType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.CircleTangentType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.ComputationQueue-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.ComputationQueue-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Constants.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.CoordinateSystem3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.CoordinateSystem3D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.CoordinateSystem3DAutoEnum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.CoordinateSystem3DAutoEnum.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.DQuaternion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.DQuaternion.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.DVector3EqualityComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.DVector3EqualityComparer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.DiscreteSpace-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.DiscreteSpace-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.DiscreteSpaceItem-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.DiscreteSpaceItem-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.DiscreteSpaceItemComparer-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.DiscreteSpaceItemComparer-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.DoubleEqualityComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.DoubleEqualityComparer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Edge.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Edge.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.EdgeEnd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.EdgeEnd.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Ext.HatchSetterDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Ext.HatchSetterDelegate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Ext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Ext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Face.BooleanMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Face.BooleanMode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Face.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Face.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.GeomSegmentMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.GeomSegmentMode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Geometry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Geometry.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.GeometryType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.GeometryType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Int64Map.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Int64Map.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Int64MapExceptionRange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Int64MapExceptionRange.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.LUT.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.LUT.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Line3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Line3D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Line3DConstructMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Line3DConstructMode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Line3DEqualityComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Line3DEqualityComparer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.LineIntersectBehavior.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.LineIntersectBehavior.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Loop.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Loop.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.LoopContainsEdgeMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.LoopContainsEdgeMode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.LoopContainsPointMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.LoopContainsPointMode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.LoopEqualityComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.LoopEqualityComparer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Matrix3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Matrix3D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.NVector3EqualityComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.NVector3EqualityComparer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.NormalizedAngleComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.NormalizedAngleComparer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.NumbersStatNfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.NumbersStatNfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.OrdIdx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.OrdIdx.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Plane3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Plane3D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Plane3DRegion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Plane3DRegion.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.PythonException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.PythonException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.PythonPipe.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.PythonPipe.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.PythonPipeOnErrorResultEnum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.PythonPipeOnErrorResultEnum.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.PythonPipeOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.PythonPipeOptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.SmartCsMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.SmartCsMode.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Toolkit.SciPropertiesResolver.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Toolkit.SciPropertiesResolver.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Toolkit.UnitJsonConverter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Toolkit.UnitJsonConverter-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Toolkit.WalkEdgeStopConditionDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Toolkit.WalkEdgeStopConditionDelegate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Toolkit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Toolkit.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Transform3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Transform3D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Triangle3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Triangle3D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Vector3D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Vector3DEqualityComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Vector3DEqualityComparer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Vector3DWithOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Vector3DWithOrder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.Vector3DWithOrderEqualityComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.Vector3DWithOrderEqualityComparer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Sci.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Sci.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "data/img/LoopTest_0013.png",
+      "output": {
+        "resource": {
+          "relative_path": "data/img/LoopTest_0013.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "data/img/LoopTest_0014.png",
+      "output": {
+        "resource": {
+          "relative_path": "data/img/LoopTest_0014.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "data/img/LoopTest_0021/difference-GY1.png",
+      "output": {
+        "resource": {
+          "relative_path": "data/img/LoopTest_0021/difference-GY1.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "data/img/LoopTest_0021/difference-GY2.png",
+      "output": {
+        "resource": {
+          "relative_path": "data/img/LoopTest_0021/difference-GY2.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "data/img/LoopTest_0021/difference-GY3.png",
+      "output": {
+        "resource": {
+          "relative_path": "data/img/LoopTest_0021/difference-GY3.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "data/img/LoopTest_0021/difference-YG1.png",
+      "output": {
+        "resource": {
+          "relative_path": "data/img/LoopTest_0021/difference-YG1.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "data/img/LoopTest_0021/difference-YG2.png",
+      "output": {
+        "resource": {
+          "relative_path": "data/img/LoopTest_0021/difference-YG2.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "data/img/LoopTest_0021/difference-YG3.png",
+      "output": {
+        "resource": {
+          "relative_path": "data/img/LoopTest_0021/difference-YG3.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "data/img/LoopTest_0021/intersect-YG1.png",
+      "output": {
+        "resource": {
+          "relative_path": "data/img/LoopTest_0021/intersect-YG1.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "data/img/LoopTest_0021/intersect-YG2.png",
+      "output": {
+        "resource": {
+          "relative_path": "data/img/LoopTest_0021/intersect-YG2.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "data/img/LoopTest_0021/intersect-YG3.png",
+      "output": {
+        "resource": {
+          "relative_path": "data/img/LoopTest_0021/intersect-YG3.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "data/img/LoopTest_0021/union-YG1.png",
+      "output": {
+        "resource": {
+          "relative_path": "data/img/LoopTest_0021/union-YG1.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "data/img/LoopTest_0021/union-YG2.png",
+      "output": {
+        "resource": {
+          "relative_path": "data/img/LoopTest_0021/union-YG2.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "data/img/LoopTest_0021/union-YG3.png",
+      "output": {
+        "resource": {
+          "relative_path": "data/img/LoopTest_0021/union-YG3.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "data/img/PolylineOffset.png",
+      "output": {
+        "resource": {
+          "relative_path": "data/img/PolylineOffset.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "data/img/unit-tests-coverage-gutters.png",
+      "output": {
+        "resource": {
+          "relative_path": "data/img/unit-tests-coverage-gutters.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "data/pages/mainpage-doc.md",
+      "output": {
+        ".html": {
+          "relative_path": "data/pages/mainpage-doc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/example-0001/output.png",
+      "output": {
+        "resource": {
+          "relative_path": "examples/example-0001/output.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/example-0002/output.png",
+      "output": {
+        "resource": {
+          "relative_path": "examples/example-0002/output.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/example-0003/output.png",
+      "output": {
+        "resource": {
+          "relative_path": "examples/example-0003/output.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "src/test/Arc3D/Arc3DTest_0001.png",
+      "output": {
+        "resource": {
+          "relative_path": "src/test/Arc3D/Arc3DTest_0001.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "src/test/Line3D/Line3DTest_0001.png",
+      "output": {
+        "resource": {
+          "relative_path": "src/test/Line3D/Line3DTest_0001.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "src/test/Transform3D/Transform3DTest_0001.png",
+      "output": {
+        "resource": {
+          "relative_path": "src/test/Transform3D/Transform3DTest_0001.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "src/test/Vector3D/Vector3DTest_0015.png",
+      "output": {
+        "resource": {
+          "relative_path": "src/test/Vector3D/Vector3DTest_0015.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "src/test/Vector3D/Vector3DTest_0016.png",
+      "output": {
+        "resource": {
+          "relative_path": "src/test/Vector3D/Vector3DTest_0016.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "src/test/Vector3D/Vector3DTest_0019.png",
+      "output": {
+        "resource": {
+          "relative_path": "src/test/Vector3D/Vector3DTest_0019.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "src/test/Vector3D/Vector3DTest_0020.png",
+      "output": {
+        "resource": {
+          "relative_path": "src/test/Vector3D/Vector3DTest_0020.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "src/test/Vector3D/Vector3DTest_0021.png",
+      "output": {
+        "resource": {
+          "relative_path": "src/test/Vector3D/Vector3DTest_0021.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

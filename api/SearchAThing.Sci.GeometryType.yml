@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.GeometryType
+  commentId: T:SearchAThing.Sci.GeometryType
+  id: GeometryType
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.GeometryType.Arc3D
+  - SearchAThing.Sci.GeometryType.Circle3D
+  - SearchAThing.Sci.GeometryType.Line3D
+  - SearchAThing.Sci.GeometryType.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: GeometryType
+  nameWithType: GeometryType
+  fullName: SearchAThing.Sci.GeometryType
+  type: Enum
+  source:
+    remote:
+      path: src/sci/Geometry.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: GeometryType
+    path: src/sci/Geometry.cs
+    startLine: 2
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public enum GeometryType
+    content.vb: Public Enum GeometryType
+- uid: SearchAThing.Sci.GeometryType.Vector3D
+  commentId: F:SearchAThing.Sci.GeometryType.Vector3D
+  id: Vector3D
+  parent: SearchAThing.Sci.GeometryType
+  langs:
+  - csharp
+  - vb
+  name: Vector3D
+  nameWithType: GeometryType.Vector3D
+  fullName: SearchAThing.Sci.GeometryType.Vector3D
+  type: Field
+  source:
+    remote:
+      path: src/sci/Geometry.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Vector3D
+    path: src/sci/Geometry.cs
+    startLine: 4
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: Vector3D = 0
+    return:
+      type: SearchAThing.Sci.GeometryType
+- uid: SearchAThing.Sci.GeometryType.Line3D
+  commentId: F:SearchAThing.Sci.GeometryType.Line3D
+  id: Line3D
+  parent: SearchAThing.Sci.GeometryType
+  langs:
+  - csharp
+  - vb
+  name: Line3D
+  nameWithType: GeometryType.Line3D
+  fullName: SearchAThing.Sci.GeometryType.Line3D
+  type: Field
+  source:
+    remote:
+      path: src/sci/Geometry.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Line3D
+    path: src/sci/Geometry.cs
+    startLine: 5
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: Line3D = 1
+    return:
+      type: SearchAThing.Sci.GeometryType
+- uid: SearchAThing.Sci.GeometryType.Circle3D
+  commentId: F:SearchAThing.Sci.GeometryType.Circle3D
+  id: Circle3D
+  parent: SearchAThing.Sci.GeometryType
+  langs:
+  - csharp
+  - vb
+  name: Circle3D
+  nameWithType: GeometryType.Circle3D
+  fullName: SearchAThing.Sci.GeometryType.Circle3D
+  type: Field
+  source:
+    remote:
+      path: src/sci/Geometry.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Circle3D
+    path: src/sci/Geometry.cs
+    startLine: 6
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: Circle3D = 2
+    return:
+      type: SearchAThing.Sci.GeometryType
+- uid: SearchAThing.Sci.GeometryType.Arc3D
+  commentId: F:SearchAThing.Sci.GeometryType.Arc3D
+  id: Arc3D
+  parent: SearchAThing.Sci.GeometryType
+  langs:
+  - csharp
+  - vb
+  name: Arc3D
+  nameWithType: GeometryType.Arc3D
+  fullName: SearchAThing.Sci.GeometryType.Arc3D
+  type: Field
+  source:
+    remote:
+      path: src/sci/Geometry.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Arc3D
+    path: src/sci/Geometry.cs
+    startLine: 7
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: Arc3D = 3
+    return:
+      type: SearchAThing.Sci.GeometryType
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  href: SearchAThing.html
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+  spec.csharp:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+  spec.vb:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+- uid: SearchAThing.Sci.GeometryType
+  commentId: T:SearchAThing.Sci.GeometryType
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.GeometryType.html
+  name: GeometryType
+  nameWithType: GeometryType
+  fullName: SearchAThing.Sci.GeometryType

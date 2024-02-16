@@ -1,0 +1,112 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.PythonPipeOnErrorResultEnum
+  commentId: T:SearchAThing.Sci.PythonPipeOnErrorResultEnum
+  id: PythonPipeOnErrorResultEnum
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.PythonPipeOnErrorResultEnum.GenerateException
+  - SearchAThing.Sci.PythonPipeOnErrorResultEnum.Ignore
+  langs:
+  - csharp
+  - vb
+  name: PythonPipeOnErrorResultEnum
+  nameWithType: PythonPipeOnErrorResultEnum
+  fullName: SearchAThing.Sci.PythonPipeOnErrorResultEnum
+  type: Enum
+  source:
+    remote:
+      path: src/sci/PythonWrapper.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: PythonPipeOnErrorResultEnum
+    path: src/sci/PythonWrapper.cs
+    startLine: 3
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public enum PythonPipeOnErrorResultEnum
+    content.vb: Public Enum PythonPipeOnErrorResultEnum
+- uid: SearchAThing.Sci.PythonPipeOnErrorResultEnum.Ignore
+  commentId: F:SearchAThing.Sci.PythonPipeOnErrorResultEnum.Ignore
+  id: Ignore
+  parent: SearchAThing.Sci.PythonPipeOnErrorResultEnum
+  langs:
+  - csharp
+  - vb
+  name: Ignore
+  nameWithType: PythonPipeOnErrorResultEnum.Ignore
+  fullName: SearchAThing.Sci.PythonPipeOnErrorResultEnum.Ignore
+  type: Field
+  source:
+    remote:
+      path: src/sci/PythonWrapper.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Ignore
+    path: src/sci/PythonWrapper.cs
+    startLine: 3
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: Ignore = 0
+    return:
+      type: SearchAThing.Sci.PythonPipeOnErrorResultEnum
+- uid: SearchAThing.Sci.PythonPipeOnErrorResultEnum.GenerateException
+  commentId: F:SearchAThing.Sci.PythonPipeOnErrorResultEnum.GenerateException
+  id: GenerateException
+  parent: SearchAThing.Sci.PythonPipeOnErrorResultEnum
+  langs:
+  - csharp
+  - vb
+  name: GenerateException
+  nameWithType: PythonPipeOnErrorResultEnum.GenerateException
+  fullName: SearchAThing.Sci.PythonPipeOnErrorResultEnum.GenerateException
+  type: Field
+  source:
+    remote:
+      path: src/sci/PythonWrapper.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: GenerateException
+    path: src/sci/PythonWrapper.cs
+    startLine: 3
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: GenerateException = 1
+    return:
+      type: SearchAThing.Sci.PythonPipeOnErrorResultEnum
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  href: SearchAThing.html
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+  spec.csharp:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+  spec.vb:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+- uid: SearchAThing.Sci.PythonPipeOnErrorResultEnum
+  commentId: T:SearchAThing.Sci.PythonPipeOnErrorResultEnum
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.PythonPipeOnErrorResultEnum.html
+  name: PythonPipeOnErrorResultEnum
+  nameWithType: PythonPipeOnErrorResultEnum
+  fullName: SearchAThing.Sci.PythonPipeOnErrorResultEnum

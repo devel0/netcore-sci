@@ -1,0 +1,639 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  id: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.Arc3D
+  - SearchAThing.Sci.Arc3DEqualityComparer
+  - SearchAThing.Sci.BBox3D
+  - SearchAThing.Sci.Circle3D
+  - SearchAThing.Sci.CircleTangentType
+  - SearchAThing.Sci.ComputationQueue`1
+  - SearchAThing.Sci.Constants
+  - SearchAThing.Sci.CoordinateSystem3D
+  - SearchAThing.Sci.CoordinateSystem3DAutoEnum
+  - SearchAThing.Sci.DQuaternion
+  - SearchAThing.Sci.DVector3EqualityComparer
+  - SearchAThing.Sci.DiscreteSpaceItemComparer`1
+  - SearchAThing.Sci.DiscreteSpaceItem`1
+  - SearchAThing.Sci.DiscreteSpace`1
+  - SearchAThing.Sci.DoubleEqualityComparer
+  - SearchAThing.Sci.Edge
+  - SearchAThing.Sci.EdgeEnd
+  - SearchAThing.Sci.Ext
+  - SearchAThing.Sci.Ext.HatchSetterDelegate
+  - SearchAThing.Sci.Face
+  - SearchAThing.Sci.Face.BooleanMode
+  - SearchAThing.Sci.GeomSegmentMode
+  - SearchAThing.Sci.Geometry
+  - SearchAThing.Sci.GeometryType
+  - SearchAThing.Sci.Int64Map
+  - SearchAThing.Sci.Int64MapExceptionRange
+  - SearchAThing.Sci.LUT
+  - SearchAThing.Sci.Line3D
+  - SearchAThing.Sci.Line3DConstructMode
+  - SearchAThing.Sci.Line3DEqualityComparer
+  - SearchAThing.Sci.LineIntersectBehavior
+  - SearchAThing.Sci.Loop
+  - SearchAThing.Sci.LoopContainsEdgeMode
+  - SearchAThing.Sci.LoopContainsPointMode
+  - SearchAThing.Sci.LoopEqualityComparer
+  - SearchAThing.Sci.Matrix3D
+  - SearchAThing.Sci.NVector3EqualityComparer
+  - SearchAThing.Sci.NormalizedAngleComparer
+  - SearchAThing.Sci.NumbersStatNfo
+  - SearchAThing.Sci.OrdIdx
+  - SearchAThing.Sci.Plane3D
+  - SearchAThing.Sci.Plane3DRegion
+  - SearchAThing.Sci.PythonException
+  - SearchAThing.Sci.PythonPipe
+  - SearchAThing.Sci.PythonPipeOnErrorResultEnum
+  - SearchAThing.Sci.PythonPipeOptions
+  - SearchAThing.Sci.SmartCsMode
+  - SearchAThing.Sci.Toolkit
+  - SearchAThing.Sci.Toolkit.SciPropertiesResolver
+  - SearchAThing.Sci.Toolkit.UnitJsonConverter`1
+  - SearchAThing.Sci.Toolkit.WalkEdgeStopConditionDelegate
+  - SearchAThing.Sci.Transform3D
+  - SearchAThing.Sci.Triangle3D
+  - SearchAThing.Sci.Vector3D
+  - SearchAThing.Sci.Vector3DEqualityComparer
+  - SearchAThing.Sci.Vector3DWithOrder
+  - SearchAThing.Sci.Vector3DWithOrderEqualityComparer
+  langs:
+  - csharp
+  - vb
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+  type: Namespace
+  assemblies:
+  - netcore-sci
+references:
+- uid: SearchAThing.Sci.NormalizedAngleComparer
+  commentId: T:SearchAThing.Sci.NormalizedAngleComparer
+  href: SearchAThing.Sci.NormalizedAngleComparer.html
+  name: NormalizedAngleComparer
+  nameWithType: NormalizedAngleComparer
+  fullName: SearchAThing.Sci.NormalizedAngleComparer
+- uid: SearchAThing.Sci.Arc3D
+  commentId: T:SearchAThing.Sci.Arc3D
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Arc3D.html
+  name: Arc3D
+  nameWithType: Arc3D
+  fullName: SearchAThing.Sci.Arc3D
+- uid: SearchAThing.Sci.Ext
+  commentId: T:SearchAThing.Sci.Ext
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Ext.html
+  name: Ext
+  nameWithType: Ext
+  fullName: SearchAThing.Sci.Ext
+- uid: SearchAThing.Sci.Ext.HatchSetterDelegate
+  commentId: T:SearchAThing.Sci.Ext.HatchSetterDelegate
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Ext.html
+  name: Ext.HatchSetterDelegate
+  nameWithType: Ext.HatchSetterDelegate
+  fullName: SearchAThing.Sci.Ext.HatchSetterDelegate
+  spec.csharp:
+  - uid: SearchAThing.Sci.Ext
+    name: Ext
+    href: SearchAThing.Sci.Ext.html
+  - name: .
+  - uid: SearchAThing.Sci.Ext.HatchSetterDelegate
+    name: HatchSetterDelegate
+    href: SearchAThing.Sci.Ext.HatchSetterDelegate.html
+  spec.vb:
+  - uid: SearchAThing.Sci.Ext
+    name: Ext
+    href: SearchAThing.Sci.Ext.html
+  - name: .
+  - uid: SearchAThing.Sci.Ext.HatchSetterDelegate
+    name: HatchSetterDelegate
+    href: SearchAThing.Sci.Ext.HatchSetterDelegate.html
+- uid: SearchAThing.Sci.Arc3DEqualityComparer
+  commentId: T:SearchAThing.Sci.Arc3DEqualityComparer
+  href: SearchAThing.Sci.Arc3DEqualityComparer.html
+  name: Arc3DEqualityComparer
+  nameWithType: Arc3DEqualityComparer
+  fullName: SearchAThing.Sci.Arc3DEqualityComparer
+- uid: SearchAThing.Sci.BBox3D
+  commentId: T:SearchAThing.Sci.BBox3D
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.BBox3D.html
+  name: BBox3D
+  nameWithType: BBox3D
+  fullName: SearchAThing.Sci.BBox3D
+- uid: SearchAThing.Sci.CircleTangentType
+  commentId: T:SearchAThing.Sci.CircleTangentType
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.CircleTangentType.html
+  name: CircleTangentType
+  nameWithType: CircleTangentType
+  fullName: SearchAThing.Sci.CircleTangentType
+- uid: SearchAThing.Sci.Toolkit
+  commentId: T:SearchAThing.Sci.Toolkit
+  href: SearchAThing.Sci.Toolkit.html
+  name: Toolkit
+  nameWithType: Toolkit
+  fullName: SearchAThing.Sci.Toolkit
+- uid: SearchAThing.Sci.Toolkit.WalkEdgeStopConditionDelegate
+  commentId: T:SearchAThing.Sci.Toolkit.WalkEdgeStopConditionDelegate
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Toolkit.html
+  name: Toolkit.WalkEdgeStopConditionDelegate
+  nameWithType: Toolkit.WalkEdgeStopConditionDelegate
+  fullName: SearchAThing.Sci.Toolkit.WalkEdgeStopConditionDelegate
+  spec.csharp:
+  - uid: SearchAThing.Sci.Toolkit
+    name: Toolkit
+    href: SearchAThing.Sci.Toolkit.html
+  - name: .
+  - uid: SearchAThing.Sci.Toolkit.WalkEdgeStopConditionDelegate
+    name: WalkEdgeStopConditionDelegate
+    href: SearchAThing.Sci.Toolkit.WalkEdgeStopConditionDelegate.html
+  spec.vb:
+  - uid: SearchAThing.Sci.Toolkit
+    name: Toolkit
+    href: SearchAThing.Sci.Toolkit.html
+  - name: .
+  - uid: SearchAThing.Sci.Toolkit.WalkEdgeStopConditionDelegate
+    name: WalkEdgeStopConditionDelegate
+    href: SearchAThing.Sci.Toolkit.WalkEdgeStopConditionDelegate.html
+- uid: SearchAThing.Sci.Toolkit.UnitJsonConverter`1
+  commentId: T:SearchAThing.Sci.Toolkit.UnitJsonConverter`1
+  href: SearchAThing.Sci.Toolkit.html
+  name: Toolkit.UnitJsonConverter<TUnitType>
+  nameWithType: Toolkit.UnitJsonConverter<TUnitType>
+  fullName: SearchAThing.Sci.Toolkit.UnitJsonConverter<TUnitType>
+  nameWithType.vb: Toolkit.UnitJsonConverter(Of TUnitType)
+  fullName.vb: SearchAThing.Sci.Toolkit.UnitJsonConverter(Of TUnitType)
+  name.vb: Toolkit.UnitJsonConverter(Of TUnitType)
+  spec.csharp:
+  - uid: SearchAThing.Sci.Toolkit
+    name: Toolkit
+    href: SearchAThing.Sci.Toolkit.html
+  - name: .
+  - uid: SearchAThing.Sci.Toolkit.UnitJsonConverter`1
+    name: UnitJsonConverter
+    href: SearchAThing.Sci.Toolkit.UnitJsonConverter-1.html
+  - name: <
+  - name: TUnitType
+  - name: '>'
+  spec.vb:
+  - uid: SearchAThing.Sci.Toolkit
+    name: Toolkit
+    href: SearchAThing.Sci.Toolkit.html
+  - name: .
+  - uid: SearchAThing.Sci.Toolkit.UnitJsonConverter`1
+    name: UnitJsonConverter
+    href: SearchAThing.Sci.Toolkit.UnitJsonConverter-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TUnitType
+  - name: )
+- uid: SearchAThing.Sci.Toolkit.SciPropertiesResolver
+  commentId: T:SearchAThing.Sci.Toolkit.SciPropertiesResolver
+  href: SearchAThing.Sci.Toolkit.html
+  name: Toolkit.SciPropertiesResolver
+  nameWithType: Toolkit.SciPropertiesResolver
+  fullName: SearchAThing.Sci.Toolkit.SciPropertiesResolver
+  spec.csharp:
+  - uid: SearchAThing.Sci.Toolkit
+    name: Toolkit
+    href: SearchAThing.Sci.Toolkit.html
+  - name: .
+  - uid: SearchAThing.Sci.Toolkit.SciPropertiesResolver
+    name: SciPropertiesResolver
+    href: SearchAThing.Sci.Toolkit.SciPropertiesResolver.html
+  spec.vb:
+  - uid: SearchAThing.Sci.Toolkit
+    name: Toolkit
+    href: SearchAThing.Sci.Toolkit.html
+  - name: .
+  - uid: SearchAThing.Sci.Toolkit.SciPropertiesResolver
+    name: SciPropertiesResolver
+    href: SearchAThing.Sci.Toolkit.SciPropertiesResolver.html
+- uid: SearchAThing.Sci.Circle3D
+  commentId: T:SearchAThing.Sci.Circle3D
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Circle3D.html
+  name: Circle3D
+  nameWithType: Circle3D
+  fullName: SearchAThing.Sci.Circle3D
+- uid: SearchAThing.Sci.ComputationQueue`1
+  commentId: T:SearchAThing.Sci.ComputationQueue`1
+  href: SearchAThing.Sci.ComputationQueue-1.html
+  name: ComputationQueue<T>
+  nameWithType: ComputationQueue<T>
+  fullName: SearchAThing.Sci.ComputationQueue<T>
+  nameWithType.vb: ComputationQueue(Of T)
+  fullName.vb: SearchAThing.Sci.ComputationQueue(Of T)
+  name.vb: ComputationQueue(Of T)
+  spec.csharp:
+  - uid: SearchAThing.Sci.ComputationQueue`1
+    name: ComputationQueue
+    href: SearchAThing.Sci.ComputationQueue-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: SearchAThing.Sci.ComputationQueue`1
+    name: ComputationQueue
+    href: SearchAThing.Sci.ComputationQueue-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: SearchAThing.Sci.Constants
+  commentId: T:SearchAThing.Sci.Constants
+  href: SearchAThing.Sci.Constants.html
+  name: Constants
+  nameWithType: Constants
+  fullName: SearchAThing.Sci.Constants
+- uid: SearchAThing.Sci.CoordinateSystem3DAutoEnum
+  commentId: T:SearchAThing.Sci.CoordinateSystem3DAutoEnum
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.CoordinateSystem3DAutoEnum.html
+  name: CoordinateSystem3DAutoEnum
+  nameWithType: CoordinateSystem3DAutoEnum
+  fullName: SearchAThing.Sci.CoordinateSystem3DAutoEnum
+- uid: SearchAThing.Sci.SmartCsMode
+  commentId: T:SearchAThing.Sci.SmartCsMode
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.SmartCsMode.html
+  name: SmartCsMode
+  nameWithType: SmartCsMode
+  fullName: SearchAThing.Sci.SmartCsMode
+- uid: SearchAThing.Sci.CoordinateSystem3D
+  commentId: T:SearchAThing.Sci.CoordinateSystem3D
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.CoordinateSystem3D.html
+  name: CoordinateSystem3D
+  nameWithType: CoordinateSystem3D
+  fullName: SearchAThing.Sci.CoordinateSystem3D
+- uid: SearchAThing.Sci.DiscreteSpaceItem`1
+  commentId: T:SearchAThing.Sci.DiscreteSpaceItem`1
+  href: SearchAThing.Sci.DiscreteSpaceItem-1.html
+  name: DiscreteSpaceItem<T>
+  nameWithType: DiscreteSpaceItem<T>
+  fullName: SearchAThing.Sci.DiscreteSpaceItem<T>
+  nameWithType.vb: DiscreteSpaceItem(Of T)
+  fullName.vb: SearchAThing.Sci.DiscreteSpaceItem(Of T)
+  name.vb: DiscreteSpaceItem(Of T)
+  spec.csharp:
+  - uid: SearchAThing.Sci.DiscreteSpaceItem`1
+    name: DiscreteSpaceItem
+    href: SearchAThing.Sci.DiscreteSpaceItem-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: SearchAThing.Sci.DiscreteSpaceItem`1
+    name: DiscreteSpaceItem
+    href: SearchAThing.Sci.DiscreteSpaceItem-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: SearchAThing.Sci.DiscreteSpaceItemComparer`1
+  commentId: T:SearchAThing.Sci.DiscreteSpaceItemComparer`1
+  href: SearchAThing.Sci.DiscreteSpaceItemComparer-1.html
+  name: DiscreteSpaceItemComparer<T>
+  nameWithType: DiscreteSpaceItemComparer<T>
+  fullName: SearchAThing.Sci.DiscreteSpaceItemComparer<T>
+  nameWithType.vb: DiscreteSpaceItemComparer(Of T)
+  fullName.vb: SearchAThing.Sci.DiscreteSpaceItemComparer(Of T)
+  name.vb: DiscreteSpaceItemComparer(Of T)
+  spec.csharp:
+  - uid: SearchAThing.Sci.DiscreteSpaceItemComparer`1
+    name: DiscreteSpaceItemComparer
+    href: SearchAThing.Sci.DiscreteSpaceItemComparer-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: SearchAThing.Sci.DiscreteSpaceItemComparer`1
+    name: DiscreteSpaceItemComparer
+    href: SearchAThing.Sci.DiscreteSpaceItemComparer-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: SearchAThing.Sci.DiscreteSpace`1
+  commentId: T:SearchAThing.Sci.DiscreteSpace`1
+  href: SearchAThing.Sci.DiscreteSpace-1.html
+  name: DiscreteSpace<T>
+  nameWithType: DiscreteSpace<T>
+  fullName: SearchAThing.Sci.DiscreteSpace<T>
+  nameWithType.vb: DiscreteSpace(Of T)
+  fullName.vb: SearchAThing.Sci.DiscreteSpace(Of T)
+  name.vb: DiscreteSpace(Of T)
+  spec.csharp:
+  - uid: SearchAThing.Sci.DiscreteSpace`1
+    name: DiscreteSpace
+    href: SearchAThing.Sci.DiscreteSpace-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: SearchAThing.Sci.DiscreteSpace`1
+    name: DiscreteSpace
+    href: SearchAThing.Sci.DiscreteSpace-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: SearchAThing.Sci.EdgeEnd
+  commentId: T:SearchAThing.Sci.EdgeEnd
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.EdgeEnd.html
+  name: EdgeEnd
+  nameWithType: EdgeEnd
+  fullName: SearchAThing.Sci.EdgeEnd
+- uid: SearchAThing.Sci.Edge
+  commentId: T:SearchAThing.Sci.Edge
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Edge.html
+  name: Edge
+  nameWithType: Edge
+  fullName: SearchAThing.Sci.Edge
+- uid: SearchAThing.Sci.Face
+  commentId: T:SearchAThing.Sci.Face
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Face.html
+  name: Face
+  nameWithType: Face
+  fullName: SearchAThing.Sci.Face
+- uid: SearchAThing.Sci.Face.BooleanMode
+  commentId: T:SearchAThing.Sci.Face.BooleanMode
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Face.html
+  name: Face.BooleanMode
+  nameWithType: Face.BooleanMode
+  fullName: SearchAThing.Sci.Face.BooleanMode
+  spec.csharp:
+  - uid: SearchAThing.Sci.Face
+    name: Face
+    href: SearchAThing.Sci.Face.html
+  - name: .
+  - uid: SearchAThing.Sci.Face.BooleanMode
+    name: BooleanMode
+    href: SearchAThing.Sci.Face.BooleanMode.html
+  spec.vb:
+  - uid: SearchAThing.Sci.Face
+    name: Face
+    href: SearchAThing.Sci.Face.html
+  - name: .
+  - uid: SearchAThing.Sci.Face.BooleanMode
+    name: BooleanMode
+    href: SearchAThing.Sci.Face.BooleanMode.html
+- uid: SearchAThing.Sci.GeometryType
+  commentId: T:SearchAThing.Sci.GeometryType
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.GeometryType.html
+  name: GeometryType
+  nameWithType: GeometryType
+  fullName: SearchAThing.Sci.GeometryType
+- uid: SearchAThing.Sci.GeomSegmentMode
+  commentId: T:SearchAThing.Sci.GeomSegmentMode
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.GeomSegmentMode.html
+  name: GeomSegmentMode
+  nameWithType: GeomSegmentMode
+  fullName: SearchAThing.Sci.GeomSegmentMode
+- uid: SearchAThing.Sci.Geometry
+  commentId: T:SearchAThing.Sci.Geometry
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Geometry.html
+  name: Geometry
+  nameWithType: Geometry
+  fullName: SearchAThing.Sci.Geometry
+- uid: SearchAThing.Sci.Int64Map
+  commentId: T:SearchAThing.Sci.Int64Map
+  href: SearchAThing.Sci.Int64Map.html
+  name: Int64Map
+  nameWithType: Int64Map
+  fullName: SearchAThing.Sci.Int64Map
+- uid: SearchAThing.Sci.Int64MapExceptionRange
+  commentId: T:SearchAThing.Sci.Int64MapExceptionRange
+  href: SearchAThing.Sci.Int64MapExceptionRange.html
+  name: Int64MapExceptionRange
+  nameWithType: Int64MapExceptionRange
+  fullName: SearchAThing.Sci.Int64MapExceptionRange
+- uid: SearchAThing.Sci.Line3DConstructMode
+  commentId: T:SearchAThing.Sci.Line3DConstructMode
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Line3DConstructMode.html
+  name: Line3DConstructMode
+  nameWithType: Line3DConstructMode
+  fullName: SearchAThing.Sci.Line3DConstructMode
+- uid: SearchAThing.Sci.LineIntersectBehavior
+  commentId: T:SearchAThing.Sci.LineIntersectBehavior
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.LineIntersectBehavior.html
+  name: LineIntersectBehavior
+  nameWithType: LineIntersectBehavior
+  fullName: SearchAThing.Sci.LineIntersectBehavior
+- uid: SearchAThing.Sci.Line3D
+  commentId: T:SearchAThing.Sci.Line3D
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Line3D.html
+  name: Line3D
+  nameWithType: Line3D
+  fullName: SearchAThing.Sci.Line3D
+- uid: SearchAThing.Sci.Line3DEqualityComparer
+  commentId: T:SearchAThing.Sci.Line3DEqualityComparer
+  href: SearchAThing.Sci.Line3DEqualityComparer.html
+  name: Line3DEqualityComparer
+  nameWithType: Line3DEqualityComparer
+  fullName: SearchAThing.Sci.Line3DEqualityComparer
+- uid: SearchAThing.Sci.LoopContainsPointMode
+  commentId: T:SearchAThing.Sci.LoopContainsPointMode
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.LoopContainsPointMode.html
+  name: LoopContainsPointMode
+  nameWithType: LoopContainsPointMode
+  fullName: SearchAThing.Sci.LoopContainsPointMode
+- uid: SearchAThing.Sci.LoopContainsEdgeMode
+  commentId: T:SearchAThing.Sci.LoopContainsEdgeMode
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.LoopContainsEdgeMode.html
+  name: LoopContainsEdgeMode
+  nameWithType: LoopContainsEdgeMode
+  fullName: SearchAThing.Sci.LoopContainsEdgeMode
+- uid: SearchAThing.Sci.Loop
+  commentId: T:SearchAThing.Sci.Loop
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Loop.html
+  name: Loop
+  nameWithType: Loop
+  fullName: SearchAThing.Sci.Loop
+- uid: SearchAThing.Sci.LoopEqualityComparer
+  commentId: T:SearchAThing.Sci.LoopEqualityComparer
+  href: SearchAThing.Sci.LoopEqualityComparer.html
+  name: LoopEqualityComparer
+  nameWithType: LoopEqualityComparer
+  fullName: SearchAThing.Sci.LoopEqualityComparer
+- uid: SearchAThing.Sci.LUT
+  commentId: T:SearchAThing.Sci.LUT
+  href: SearchAThing.Sci.LUT.html
+  name: LUT
+  nameWithType: LUT
+  fullName: SearchAThing.Sci.LUT
+- uid: SearchAThing.Sci.Matrix3D
+  commentId: T:SearchAThing.Sci.Matrix3D
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Matrix3D.html
+  name: Matrix3D
+  nameWithType: Matrix3D
+  fullName: SearchAThing.Sci.Matrix3D
+- uid: SearchAThing.Sci.NumbersStatNfo
+  commentId: T:SearchAThing.Sci.NumbersStatNfo
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.NumbersStatNfo.html
+  name: NumbersStatNfo
+  nameWithType: NumbersStatNfo
+  fullName: SearchAThing.Sci.NumbersStatNfo
+- uid: SearchAThing.Sci.Plane3D
+  commentId: T:SearchAThing.Sci.Plane3D
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Plane3D.html
+  name: Plane3D
+  nameWithType: Plane3D
+  fullName: SearchAThing.Sci.Plane3D
+- uid: SearchAThing.Sci.Plane3DRegion
+  commentId: T:SearchAThing.Sci.Plane3DRegion
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Plane3DRegion.html
+  name: Plane3DRegion
+  nameWithType: Plane3DRegion
+  fullName: SearchAThing.Sci.Plane3DRegion
+- uid: SearchAThing.Sci.PythonPipeOnErrorResultEnum
+  commentId: T:SearchAThing.Sci.PythonPipeOnErrorResultEnum
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.PythonPipeOnErrorResultEnum.html
+  name: PythonPipeOnErrorResultEnum
+  nameWithType: PythonPipeOnErrorResultEnum
+  fullName: SearchAThing.Sci.PythonPipeOnErrorResultEnum
+- uid: SearchAThing.Sci.PythonPipeOptions
+  commentId: T:SearchAThing.Sci.PythonPipeOptions
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.PythonPipeOptions.html
+  name: PythonPipeOptions
+  nameWithType: PythonPipeOptions
+  fullName: SearchAThing.Sci.PythonPipeOptions
+- uid: SearchAThing.Sci.PythonPipe
+  commentId: T:SearchAThing.Sci.PythonPipe
+  href: SearchAThing.Sci.PythonPipe.html
+  name: PythonPipe
+  nameWithType: PythonPipe
+  fullName: SearchAThing.Sci.PythonPipe
+- uid: SearchAThing.Sci.PythonException
+  commentId: T:SearchAThing.Sci.PythonException
+  href: SearchAThing.Sci.PythonException.html
+  name: PythonException
+  nameWithType: PythonException
+  fullName: SearchAThing.Sci.PythonException
+- uid: SearchAThing.Sci.DQuaternion
+  commentId: T:SearchAThing.Sci.DQuaternion
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.DQuaternion.html
+  name: DQuaternion
+  nameWithType: DQuaternion
+  fullName: SearchAThing.Sci.DQuaternion
+- uid: SearchAThing.Sci.DoubleEqualityComparer
+  commentId: T:SearchAThing.Sci.DoubleEqualityComparer
+  href: SearchAThing.Sci.DoubleEqualityComparer.html
+  name: DoubleEqualityComparer
+  nameWithType: DoubleEqualityComparer
+  fullName: SearchAThing.Sci.DoubleEqualityComparer
+- uid: SearchAThing.Sci.Transform3D
+  commentId: T:SearchAThing.Sci.Transform3D
+  href: SearchAThing.Sci.Transform3D.html
+  name: Transform3D
+  nameWithType: Transform3D
+  fullName: SearchAThing.Sci.Transform3D
+- uid: SearchAThing.Sci.Triangle3D
+  commentId: T:SearchAThing.Sci.Triangle3D
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Triangle3D.html
+  name: Triangle3D
+  nameWithType: Triangle3D
+  fullName: SearchAThing.Sci.Triangle3D
+- uid: SearchAThing.Sci.NVector3EqualityComparer
+  commentId: T:SearchAThing.Sci.NVector3EqualityComparer
+  href: SearchAThing.Sci.NVector3EqualityComparer.html
+  name: NVector3EqualityComparer
+  nameWithType: NVector3EqualityComparer
+  fullName: SearchAThing.Sci.NVector3EqualityComparer
+- uid: SearchAThing.Sci.DVector3EqualityComparer
+  commentId: T:SearchAThing.Sci.DVector3EqualityComparer
+  href: SearchAThing.Sci.DVector3EqualityComparer.html
+  name: DVector3EqualityComparer
+  nameWithType: DVector3EqualityComparer
+  fullName: SearchAThing.Sci.DVector3EqualityComparer
+- uid: SearchAThing.Sci.Vector3D
+  commentId: T:SearchAThing.Sci.Vector3D
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Vector3D.html
+  name: Vector3D
+  nameWithType: Vector3D
+  fullName: SearchAThing.Sci.Vector3D
+- uid: SearchAThing.Sci.Vector3DEqualityComparer
+  commentId: T:SearchAThing.Sci.Vector3DEqualityComparer
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Vector3DEqualityComparer.html
+  name: Vector3DEqualityComparer
+  nameWithType: Vector3DEqualityComparer
+  fullName: SearchAThing.Sci.Vector3DEqualityComparer
+- uid: SearchAThing.Sci.Vector3DWithOrder
+  commentId: T:SearchAThing.Sci.Vector3DWithOrder
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Vector3DWithOrder.html
+  name: Vector3DWithOrder
+  nameWithType: Vector3DWithOrder
+  fullName: SearchAThing.Sci.Vector3DWithOrder
+- uid: SearchAThing.Sci.Vector3DWithOrderEqualityComparer
+  commentId: T:SearchAThing.Sci.Vector3DWithOrderEqualityComparer
+  href: SearchAThing.Sci.Vector3DWithOrderEqualityComparer.html
+  name: Vector3DWithOrderEqualityComparer
+  nameWithType: Vector3DWithOrderEqualityComparer
+  fullName: SearchAThing.Sci.Vector3DWithOrderEqualityComparer
+- uid: SearchAThing.Sci.OrdIdx
+  commentId: T:SearchAThing.Sci.OrdIdx
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.OrdIdx.html
+  name: OrdIdx
+  nameWithType: OrdIdx
+  fullName: SearchAThing.Sci.OrdIdx
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  href: SearchAThing.html
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+  spec.csharp:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+  spec.vb:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html

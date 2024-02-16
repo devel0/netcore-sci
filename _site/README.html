@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>netcore-sci | netcore-sci </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="netcore-sci | netcore-sci ">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/devel0/netcore-sci/blob/master/README.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="logo.svg" alt="netcore-sci">
+            netcore-sci
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="netcore-sci">netcore-sci</h1>
+
+<p><a href="https://www.nuget.org/packages/netcore-sci/"><img src="https://buildstats.info/nuget/netcore-sci" alt="NuGet Badge"></a></p>
+<p>.NET core sci</p>
+<ul>
+<li><a href="https://devel0.github.io/netcore-sci/html/index.html">API Documentation</a></li>
+<li><a href="https://github.com/devel0/netcore-sci/commits/master">Changelog</a></li>
+</ul>
+<hr>
+<!-- TOC -->
+<ul>
+<li><a href="#build">Build</a></li>
+<li><a href="#examples">Examples</a>
+<ul>
+<li><a href="#0001">0001</a></li>
+<li><a href="#0002">0002</a></li>
+<li><a href="#0003">0003</a></li>
+</ul>
+</li>
+<li><a href="#tests">Tests</a>
+<ul>
+<li><a href="#looptest_0014">LoopTest_0014</a></li>
+<li><a href="#looptest_0021">LoopTest_0021</a></li>
+<li><a href="#polygontest_0007">PolygonTest_0007</a></li>
+</ul>
+</li>
+<li><a href="#quickstart">Quickstart</a></li>
+<li><a href="#basic-concepts">Basic concepts</a>
+<ul>
+<li><a href="#side-effects">Side effects</a></li>
+<li><a href="#tolerances">Tolerances</a></li>
+<li><a href="#vector3d">Vector3D</a></li>
+<li><a href="#line3d">Line3D</a></li>
+<li><a href="#arc3d">Arc3D</a></li>
+<li><a href="#coordinatesystem3d">CoordinateSystem3D</a></li>
+<li><a href="#loop">Loop</a></li>
+<li><a href="#face">Face</a></li>
+<li><a href="#edges">Edges</a></li>
+<li><a href="#geometry">Geometry</a></li>
+</ul>
+</li>
+<li><a href="#unit-tests">Unit tests</a></li>
+<li><a href="#how-this-project-was-built">How this project was built</a></li>
+<li><a href="#documentation-github-pages">Documentation (github pages)</a>
+<ul>
+<li><a href="#build-and-view-locally">Build and view locally</a></li>
+<li><a href="#build-and-commit-into-docs-branch">Build and commit into docs branch</a></li>
+</ul>
+</li>
+<li><a href="#iot">IOT</a></li>
+</ul>
+<!-- TOCEND -->
+<hr>
+<h2 id="build">Build</h2>
+<pre><code class="lang-sh">mkdir ~/opensource
+git clone https://github.com/devel0/netcore-sci.git
+dotnet build
+</code></pre>
+<h2 id="examples">Examples</h2>
+<h4 id="0001">0001</h4>
+<p>create a dxf</p>
+<p><a href="https://raw.githubusercontent.com/devel0/netcore-sci/master/examples/example-0001/output.dxf">result dxf</a></p>
+<img src="examples/example-0001/output.png" width="300">
+<h4 id="0002">0002</h4>
+<p>detect polygons ( line, arcs ) intersection loops</p>
+<p><a href="https://raw.githubusercontent.com/devel0/netcore-sci/master/examples/example-0002/output.dxf">result dxf</a></p>
+<p><code>yellow ∩ green</code></p>
+<img src="examples/example-0002/output.png" width="300">
+<h4 id="0003">0003</h4>
+<p>detect polygons ( line, arcs ) intersection loops when edges overlaps</p>
+<p><a href="https://raw.githubusercontent.com/devel0/netcore-sci/master/examples/example-0003/output.dxf">result dxf</a></p>
+<p><code>yellow ∩ green</code></p>
+<img src="examples/example-0003/output.png" width="300">
+<h2 id="tests">Tests</h2>
+<p>👉 <a href="test">unit tests</a> still a good place to find some example about library usage.</p>
+<h4 id="looptest_0014">LoopTest_0014</h4>
+<p><code>yellow - green</code></p>
+<img src="data/img/LoopTest_0014.png" width="400">
+<h4 id="looptest_0021">LoopTest_0021</h4>
+<ul>
+<li>yellow ∩ green <a href="https://raw.githubusercontent.com/devel0/netcore-sci/master/data/img/LoopTest_0021/dxf/out-Intersect-YG.dxf">dxf</a></li>
+</ul>
+<p><img src="data/img/LoopTest_0021/intersect-YG1.png" width="200"> <img src="data/img/LoopTest_0021/intersect-YG2.png" width="200"> <img src="data/img/LoopTest_0021/intersect-YG3.png" width="200"></p>
+<ul>
+<li>yellow - green <a href="https://raw.githubusercontent.com/devel0/netcore-sci/master/data/img/LoopTest_0021/dxf/out-Intersect-YG.dxf">dxf</a></li>
+</ul>
+<p><img src="data/img/LoopTest_0021/difference-YG1.png" width="200"> <img src="data/img/LoopTest_0021/difference-YG2.png" width="200"> <img src="data/img/LoopTest_0021/difference-YG3.png" width="200"></p>
+<ul>
+<li>green - yellow <a href="https://raw.githubusercontent.com/devel0/netcore-sci/master/data/img/LoopTest_0021/dxf/out-Intersect-GY.dxf">dxf</a></li>
+</ul>
+<p><img src="data/img/LoopTest_0021/difference-GY1.png" width="200"> <img src="data/img/LoopTest_0021/difference-GY2.png" width="200"> <img src="data/img/LoopTest_0021/difference-GY3.png" width="200"></p>
+<ul>
+<li>yellow ∪ green <a href="https://raw.githubusercontent.com/devel0/netcore-sci/master/data/img/LoopTest_0021/dxf/out-Union-YG.dxf">dxf</a></li>
+</ul>
+<p><img src="data/img/LoopTest_0021/union-YG1.png" width="200"> <img src="data/img/LoopTest_0021/union-YG2.png" width="200"> <img src="data/img/LoopTest_0021/union-YG3.png" width="200"></p>
+<h4 id="polygontest_0007">PolygonTest_0007</h4>
+<p><img src="data/img/PolylineOffset.png" alt="img"></p>
+<p>offsets the existing polyline ( cyan ) by specified amount using a reference point to disambiguate the offset side ( yellow, green ).</p>
+<h2 id="quickstart">Quickstart</h2>
+<ul>
+<li><p><a href="https://www.nuget.org/packages/netcore-sci/">nuget package</a></p>
+</li>
+<li><p><a href="https://devel0.github.io/netcore-sci/html/index.html">api</a></p>
+</li>
+</ul>
+<p>global usings:</p>
+<pre><code class="lang-csharp">global using SearchAThing.Ext;
+global using static SearchAThing.Ext.Toolkit;
+
+global using SearchAThing.Sci;
+global using static SearchAThing.Sci.Toolkit;
+global using static SearchAThing.Sci.Constants;
+</code></pre>
+<h2 id="basic-concepts">Basic concepts</h2>
+<h3 id="side-effects">Side effects</h3>
+<p>If not explicitly described in function documentation with a declaration of <code>(side effects)</code> all netcore-sci classes operates without side effects on the object.</p>
+<p>For example:</p>
+<pre><code class="lang-csharp">Vector3D a(1, 2, 3);
+var b = a.SetX(10);
+</code></pre>
+<p>The vector a created with X:1, Y:2, Z:3 will subjected to a SetX(10) but the vector a itself not changes, it still equals to (1,2,3); instead SetX returns a new instance (10, 2, 3).</p>
+<h3 id="tolerances">Tolerances</h3>
+<ul>
+<li>any function in this library that involves some test of comparision between numbers requires as first argument a tolerance parameter</li>
+<li>the tolerance depends on the domain application you are working on, for example if you work on mm lengths then a 1e-1 could enough</li>
+<li>when working with normalized vector3d regardless of the domain application the constant <code>NormalizedLengthTolerance</code> should used ( it has a 1e-4 default value that is enough to work with double and floats )</li>
+<li>note that the tolerance doesn't influence for example in how accurate is the result of an intersection because the value is computed with maximum resolution that doubles provides; tolerance are used only when tests ( EqualsTol, ... ) are used into internal algorithms to make decisions.</li>
+</ul>
+<h3 id="vector3d">Vector3D</h3>
+<ul>
+<li>used to represent 3d coordinate ( X, Y, Z ) but used also to keep dummy 2d coordinate ( X, Y, 0 )</li>
+<li>length of a vector3d is the distance of the point from wcs origin (0,0,0)</li>
+</ul>
+<h3 id="line3d">Line3D</h3>
+<ul>
+<li>defined by a From vector3d ( line application point ) and an extension from there through a vector V</li>
+<li>To = From + V</li>
+<li>line3d can be created giving (From, To) or (From, V) specifying overriden method with <code>Line3DConstructMode.PointAndVector</code></li>
+<li>extension methods allow to create line from a vector p and using
+<ul>
+<li><code>p.LineTo(Vector3D to)</code></li>
+<li><code>p.LineV(Vector3D v)</code> : To = p+v</li>
+<li><code>p.LineDir(Vector3D dir, double len)</code> : To = p + dir * len</li>
+</ul>
+</li>
+<li>line3d represent an infine line, semiline or segment depending on the usage, for example intersect methods allow to specify the behavior ( default: infinite lines )</li>
+</ul>
+<h3 id="arc3d">Arc3D</h3>
+<ul>
+<li>circle3d inherit from arc3d</li>
+<li>arc is defined in the range <code>[AngleFrom, AngleTo)</code> rotating right-hand over its coordinate system zaxis</li>
+<li>arc angles are normalized so that they fall into range [0, 2pi)</li>
+</ul>
+<h3 id="coordinatesystem3d">CoordinateSystem3D</h3>
+<ul>
+<li>defined by vector3d origin, basex, basey, basez</li>
+<li>origin is used in vectro3d ToUCS(), ToWCS() methods to translate between different ucs origins ( WCS origin is 0,0,0 )</li>
+<li>basex,y,z are linearly independant normalized vector3d</li>
+<li>CS can be built in various manners
+<ul>
+<li>by giving an origin and a single vector3D (the normal) then by using an arbitrary axis algorithm it detects appropriate x-y axes. ( used in dxf for example because allow to save 1 vector3d )</li>
+<li>by giving an origin and two vectors v1, v2 by specifying a <code>SmartCsMode</code> to instruct the wizard on how to consider these in relationship ( normally the smart mode X_YQ consider that v1 is the wanted X axis while v2 is in the xy plane and must not be parallel to the first v1; to obtain a numerical stable cs the angle v1,v2 should near to PI/2 but this depend on the application you are working on, in some cases 5-10deg could enough to compute the normal, then yaxis will be back computed from the z cross x ).</li>
+<li>by giving origin and normalized base vectors</li>
+</ul>
+</li>
+</ul>
+<h3 id="loop">Loop</h3>
+<ul>
+<li>actually implements only planar loop with edges such as Line3D, Arc3D.</li>
+<li>edges inside loop are ensured to be ordered.</li>
+</ul>
+<h3 id="face">Face</h3>
+<ul>
+<li>can have one or more loops; first loop is the outer.</li>
+<li>supports boolean ( intersection, difference, union ) of 3d planar loop faces.</li>
+</ul>
+<h3 id="edges">Edges</h3>
+<ul>
+<li>is an interface for Loop purpose implemented over basic entities such as Line3D and Arc3D</li>
+</ul>
+<h3 id="geometry">Geometry</h3>
+<ul>
+<li>basic abstract type for geometries</li>
+<li>contains definition of SGeomFrom and SGeomTo that will be used by inherited IEdge interface implemented objects such as Line3D and Arc3D and allow to state the sense of the edge
+<ul>
+<li><code>sense == true ⇒ SGeomFrom == GeomFrom ∧ SGeomTo == GeomTo</code></li>
+<li><code>sense == false ⇒ SGeomFrom == GeomTo ∧ SGeomTo == GeomFrom</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="unit-tests">Unit tests</h2>
+<ul>
+<li>debugging unit tests
+<ul>
+<li>from vscode just run debug test from code lens balloon</li>
+</ul>
+</li>
+<li>executing all tests
+<ul>
+<li>from solution root folder <code>dotnet test</code></li>
+</ul>
+</li>
+<li>testing coverage
+<ul>
+<li>from vscode run task ( ctrl+shift+p ) <code>Tasks: Run Task</code> then <code>test with coverage</code> or use provided script <code>./generate-coverage.sh</code></li>
+<li>extensions required to watch coverage ( <code>Coverage Gutters</code> )</li>
+</ul>
+</li>
+</ul>
+<p><img src="data/img/unit-tests-coverage-gutters.png" alt=""></p>
+<h2 id="how-this-project-was-built">How this project was built</h2>
+<pre><code class="lang-sh">mkdir netcore-sci
+cd netcore-sci
+
+mkdir src examples
+
+cd src
+dotnet new classlib -n netcore-sci
+mv netcore-sci sci
+cd ..
+
+cd examples
+dotnet new console --use-program-main -n example
+mv example/example.csproj example/example-0001.csproj
+mv example example-0001
+
+dotnet new xunit -n test
+cd test
+dotnet add reference ../sci/netcore-sci.csproj
+# enable test coverage collector
+# to view in vscode ( &quot;Coverage Gutters&quot; ext ) run `./test-coverage` then `C-S-p` Coverage Gutters: Watch
+dotnet add package coverlet.collector
+dotnet add package coverlet.msbuild
+cd ..
+
+cd ..
+
+dotnet new sln
+dotnet sln add src/sci src/test
+dotnet sln add examples/example-0001 examples/example-0002 examples/example-0003
+dotnet build
+</code></pre>
+<h2 id="documentation-github-pages">Documentation (github pages)</h2>
+<p>Configured through Settings/Pages on Branch docs ( path /docs ).</p>
+<ul>
+<li>while main branch exclude &quot;docs&quot; with .gitignore the docs branch doesn't</li>
+</ul>
+<h3 id="build-and-view-locally">Build and view locally</h3>
+<pre><code class="lang-sh">./doc build
+./doc serve
+./doc view
+</code></pre>
+<h3 id="build-and-commit-into-docs-branch">Build and commit into docs branch</h3>
+<pre><code class="lang-sh">./doc commit
+</code></pre>
+<h2 id="iot">IOT</h2>
+<p><a href="https://github.com/devel0/iot-sci">iot-sci</a> is a c++ port of this library.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/devel0/netcore-sci/blob/master/README.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

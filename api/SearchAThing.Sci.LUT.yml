@@ -1,0 +1,916 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.LUT
+  commentId: T:SearchAThing.Sci.LUT
+  id: LUT
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.LUT.#ctor(System.Func{System.Double,System.Double},System.Double,System.Double,System.Int32)
+  - SearchAThing.Sci.LUT.ComputeX(System.Double)
+  - SearchAThing.Sci.LUT.Fx
+  - SearchAThing.Sci.LUT.LUTSize
+  - SearchAThing.Sci.LUT.XFrom
+  - SearchAThing.Sci.LUT.XStep
+  - SearchAThing.Sci.LUT.XTo
+  - SearchAThing.Sci.LUT.YFrom
+  - SearchAThing.Sci.LUT.YStep
+  - SearchAThing.Sci.LUT.YTo
+  - SearchAThing.Sci.LUT.YXTable
+  langs:
+  - csharp
+  - vb
+  name: LUT
+  nameWithType: LUT
+  fullName: SearchAThing.Sci.LUT
+  type: Class
+  source:
+    remote:
+      path: src/sci/LUT.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: LUT
+    path: src/sci/LUT.cs
+    startLine: 5
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: Lookup Table genertor
+  example: []
+  syntax:
+    content: public class LUT
+    content.vb: Public Class LUT
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: SearchAThing.Sci.LUT.LUTSize
+  commentId: P:SearchAThing.Sci.LUT.LUTSize
+  id: LUTSize
+  parent: SearchAThing.Sci.LUT
+  langs:
+  - csharp
+  - vb
+  name: LUTSize
+  nameWithType: LUT.LUTSize
+  fullName: SearchAThing.Sci.LUT.LUTSize
+  type: Property
+  source:
+    remote:
+      path: src/sci/LUT.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: LUTSize
+    path: src/sci/LUT.cs
+    startLine: 8
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public int LUTSize { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property LUTSize As Integer
+  overload: SearchAThing.Sci.LUT.LUTSize*
+- uid: SearchAThing.Sci.LUT.Fx
+  commentId: P:SearchAThing.Sci.LUT.Fx
+  id: Fx
+  parent: SearchAThing.Sci.LUT
+  langs:
+  - csharp
+  - vb
+  name: Fx
+  nameWithType: LUT.Fx
+  fullName: SearchAThing.Sci.LUT.Fx
+  type: Property
+  source:
+    remote:
+      path: src/sci/LUT.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Fx
+    path: src/sci/LUT.cs
+    startLine: 10
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public Func<double, double> Fx { get; }
+    parameters: []
+    return:
+      type: System.Func{System.Double,System.Double}
+    content.vb: Public Property Fx As Func(Of Double, Double)
+  overload: SearchAThing.Sci.LUT.Fx*
+- uid: SearchAThing.Sci.LUT.XFrom
+  commentId: P:SearchAThing.Sci.LUT.XFrom
+  id: XFrom
+  parent: SearchAThing.Sci.LUT
+  langs:
+  - csharp
+  - vb
+  name: XFrom
+  nameWithType: LUT.XFrom
+  fullName: SearchAThing.Sci.LUT.XFrom
+  type: Property
+  source:
+    remote:
+      path: src/sci/LUT.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: XFrom
+    path: src/sci/LUT.cs
+    startLine: 12
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public double XFrom { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property XFrom As Double
+  overload: SearchAThing.Sci.LUT.XFrom*
+- uid: SearchAThing.Sci.LUT.XTo
+  commentId: P:SearchAThing.Sci.LUT.XTo
+  id: XTo
+  parent: SearchAThing.Sci.LUT
+  langs:
+  - csharp
+  - vb
+  name: XTo
+  nameWithType: LUT.XTo
+  fullName: SearchAThing.Sci.LUT.XTo
+  type: Property
+  source:
+    remote:
+      path: src/sci/LUT.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: XTo
+    path: src/sci/LUT.cs
+    startLine: 13
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public double XTo { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property XTo As Double
+  overload: SearchAThing.Sci.LUT.XTo*
+- uid: SearchAThing.Sci.LUT.XStep
+  commentId: P:SearchAThing.Sci.LUT.XStep
+  id: XStep
+  parent: SearchAThing.Sci.LUT
+  langs:
+  - csharp
+  - vb
+  name: XStep
+  nameWithType: LUT.XStep
+  fullName: SearchAThing.Sci.LUT.XStep
+  type: Property
+  source:
+    remote:
+      path: src/sci/LUT.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: XStep
+    path: src/sci/LUT.cs
+    startLine: 14
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public double XStep { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property XStep As Double
+  overload: SearchAThing.Sci.LUT.XStep*
+- uid: SearchAThing.Sci.LUT.YFrom
+  commentId: P:SearchAThing.Sci.LUT.YFrom
+  id: YFrom
+  parent: SearchAThing.Sci.LUT
+  langs:
+  - csharp
+  - vb
+  name: YFrom
+  nameWithType: LUT.YFrom
+  fullName: SearchAThing.Sci.LUT.YFrom
+  type: Property
+  source:
+    remote:
+      path: src/sci/LUT.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: YFrom
+    path: src/sci/LUT.cs
+    startLine: 16
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public double YFrom { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property YFrom As Double
+  overload: SearchAThing.Sci.LUT.YFrom*
+- uid: SearchAThing.Sci.LUT.YTo
+  commentId: P:SearchAThing.Sci.LUT.YTo
+  id: YTo
+  parent: SearchAThing.Sci.LUT
+  langs:
+  - csharp
+  - vb
+  name: YTo
+  nameWithType: LUT.YTo
+  fullName: SearchAThing.Sci.LUT.YTo
+  type: Property
+  source:
+    remote:
+      path: src/sci/LUT.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: YTo
+    path: src/sci/LUT.cs
+    startLine: 17
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public double YTo { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property YTo As Double
+  overload: SearchAThing.Sci.LUT.YTo*
+- uid: SearchAThing.Sci.LUT.YStep
+  commentId: P:SearchAThing.Sci.LUT.YStep
+  id: YStep
+  parent: SearchAThing.Sci.LUT
+  langs:
+  - csharp
+  - vb
+  name: YStep
+  nameWithType: LUT.YStep
+  fullName: SearchAThing.Sci.LUT.YStep
+  type: Property
+  source:
+    remote:
+      path: src/sci/LUT.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: YStep
+    path: src/sci/LUT.cs
+    startLine: 18
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public double YStep { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property YStep As Double
+  overload: SearchAThing.Sci.LUT.YStep*
+- uid: SearchAThing.Sci.LUT.YXTable
+  commentId: P:SearchAThing.Sci.LUT.YXTable
+  id: YXTable
+  parent: SearchAThing.Sci.LUT
+  langs:
+  - csharp
+  - vb
+  name: YXTable
+  nameWithType: LUT.YXTable
+  fullName: SearchAThing.Sci.LUT.YXTable
+  type: Property
+  source:
+    remote:
+      path: src/sci/LUT.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: YXTable
+    path: src/sci/LUT.cs
+    startLine: 21
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public IReadOnlyList<double> YXTable { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{System.Double}
+    content.vb: Public ReadOnly Property YXTable As IReadOnlyList(Of Double)
+  overload: SearchAThing.Sci.LUT.YXTable*
+- uid: SearchAThing.Sci.LUT.ComputeX(System.Double)
+  commentId: M:SearchAThing.Sci.LUT.ComputeX(System.Double)
+  id: ComputeX(System.Double)
+  parent: SearchAThing.Sci.LUT
+  langs:
+  - csharp
+  - vb
+  name: ComputeX(double)
+  nameWithType: LUT.ComputeX(double)
+  fullName: SearchAThing.Sci.LUT.ComputeX(double)
+  type: Method
+  source:
+    remote:
+      path: src/sci/LUT.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: ComputeX
+    path: src/sci/LUT.cs
+    startLine: 31
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public double ComputeX(double y)
+    parameters:
+    - id: y
+      type: System.Double
+    return:
+      type: System.Double
+    content.vb: Public Function ComputeX(y As Double) As Double
+  overload: SearchAThing.Sci.LUT.ComputeX*
+  nameWithType.vb: LUT.ComputeX(Double)
+  fullName.vb: SearchAThing.Sci.LUT.ComputeX(Double)
+  name.vb: ComputeX(Double)
+- uid: SearchAThing.Sci.LUT.#ctor(System.Func{System.Double,System.Double},System.Double,System.Double,System.Int32)
+  commentId: M:SearchAThing.Sci.LUT.#ctor(System.Func{System.Double,System.Double},System.Double,System.Double,System.Int32)
+  id: '#ctor(System.Func{System.Double,System.Double},System.Double,System.Double,System.Int32)'
+  parent: SearchAThing.Sci.LUT
+  langs:
+  - csharp
+  - vb
+  name: LUT(Func<double, double>, double, double, int)
+  nameWithType: LUT.LUT(Func<double, double>, double, double, int)
+  fullName: SearchAThing.Sci.LUT.LUT(System.Func<double, double>, double, double, int)
+  type: Constructor
+  source:
+    remote:
+      path: src/sci/LUT.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: .ctor
+    path: src/sci/LUT.cs
+    startLine: 41
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public LUT(Func<double, double> fx, double xFrom, double xTo, int lutSize)
+    parameters:
+    - id: fx
+      type: System.Func{System.Double,System.Double}
+    - id: xFrom
+      type: System.Double
+    - id: xTo
+      type: System.Double
+    - id: lutSize
+      type: System.Int32
+    content.vb: Public Sub New(fx As Func(Of Double, Double), xFrom As Double, xTo As Double, lutSize As Integer)
+  overload: SearchAThing.Sci.LUT.#ctor*
+  nameWithType.vb: LUT.New(Func(Of Double, Double), Double, Double, Integer)
+  fullName.vb: SearchAThing.Sci.LUT.New(System.Func(Of Double, Double), Double, Double, Integer)
+  name.vb: New(Func(Of Double, Double), Double, Double, Integer)
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  href: SearchAThing.html
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+  spec.csharp:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+  spec.vb:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: SearchAThing.Sci.LUT.LUTSize*
+  commentId: Overload:SearchAThing.Sci.LUT.LUTSize
+  href: SearchAThing.Sci.LUT.html#SearchAThing_Sci_LUT_LUTSize
+  name: LUTSize
+  nameWithType: LUT.LUTSize
+  fullName: SearchAThing.Sci.LUT.LUTSize
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: SearchAThing.Sci.LUT.Fx*
+  commentId: Overload:SearchAThing.Sci.LUT.Fx
+  href: SearchAThing.Sci.LUT.html#SearchAThing_Sci_LUT_Fx
+  name: Fx
+  nameWithType: LUT.Fx
+  fullName: SearchAThing.Sci.LUT.Fx
+- uid: System.Func{System.Double,System.Double}
+  commentId: T:System.Func{System.Double,System.Double}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<double, double>
+  nameWithType: Func<double, double>
+  fullName: System.Func<double, double>
+  nameWithType.vb: Func(Of Double, Double)
+  fullName.vb: System.Func(Of Double, Double)
+  name.vb: Func(Of Double, Double)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: SearchAThing.Sci.LUT.XFrom*
+  commentId: Overload:SearchAThing.Sci.LUT.XFrom
+  href: SearchAThing.Sci.LUT.html#SearchAThing_Sci_LUT_XFrom
+  name: XFrom
+  nameWithType: LUT.XFrom
+  fullName: SearchAThing.Sci.LUT.XFrom
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: SearchAThing.Sci.LUT.XTo*
+  commentId: Overload:SearchAThing.Sci.LUT.XTo
+  href: SearchAThing.Sci.LUT.html#SearchAThing_Sci_LUT_XTo
+  name: XTo
+  nameWithType: LUT.XTo
+  fullName: SearchAThing.Sci.LUT.XTo
+- uid: SearchAThing.Sci.LUT.XStep*
+  commentId: Overload:SearchAThing.Sci.LUT.XStep
+  href: SearchAThing.Sci.LUT.html#SearchAThing_Sci_LUT_XStep
+  name: XStep
+  nameWithType: LUT.XStep
+  fullName: SearchAThing.Sci.LUT.XStep
+- uid: SearchAThing.Sci.LUT.YFrom*
+  commentId: Overload:SearchAThing.Sci.LUT.YFrom
+  href: SearchAThing.Sci.LUT.html#SearchAThing_Sci_LUT_YFrom
+  name: YFrom
+  nameWithType: LUT.YFrom
+  fullName: SearchAThing.Sci.LUT.YFrom
+- uid: SearchAThing.Sci.LUT.YTo*
+  commentId: Overload:SearchAThing.Sci.LUT.YTo
+  href: SearchAThing.Sci.LUT.html#SearchAThing_Sci_LUT_YTo
+  name: YTo
+  nameWithType: LUT.YTo
+  fullName: SearchAThing.Sci.LUT.YTo
+- uid: SearchAThing.Sci.LUT.YStep*
+  commentId: Overload:SearchAThing.Sci.LUT.YStep
+  href: SearchAThing.Sci.LUT.html#SearchAThing_Sci_LUT_YStep
+  name: YStep
+  nameWithType: LUT.YStep
+  fullName: SearchAThing.Sci.LUT.YStep
+- uid: SearchAThing.Sci.LUT.YXTable*
+  commentId: Overload:SearchAThing.Sci.LUT.YXTable
+  href: SearchAThing.Sci.LUT.html#SearchAThing_Sci_LUT_YXTable
+  name: YXTable
+  nameWithType: LUT.YXTable
+  fullName: SearchAThing.Sci.LUT.YXTable
+- uid: System.Collections.Generic.IReadOnlyList{System.Double}
+  commentId: T:System.Collections.Generic.IReadOnlyList{System.Double}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<double>
+  nameWithType: IReadOnlyList<double>
+  fullName: System.Collections.Generic.IReadOnlyList<double>
+  nameWithType.vb: IReadOnlyList(Of Double)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of Double)
+  name.vb: IReadOnlyList(Of Double)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: SearchAThing.Sci.LUT.ComputeX*
+  commentId: Overload:SearchAThing.Sci.LUT.ComputeX
+  href: SearchAThing.Sci.LUT.html#SearchAThing_Sci_LUT_ComputeX_System_Double_
+  name: ComputeX
+  nameWithType: LUT.ComputeX
+  fullName: SearchAThing.Sci.LUT.ComputeX
+- uid: SearchAThing.Sci.LUT.#ctor*
+  commentId: Overload:SearchAThing.Sci.LUT.#ctor
+  href: SearchAThing.Sci.LUT.html#SearchAThing_Sci_LUT__ctor_System_Func_System_Double_System_Double__System_Double_System_Double_System_Int32_
+  name: LUT
+  nameWithType: LUT.LUT
+  fullName: SearchAThing.Sci.LUT.LUT
+  nameWithType.vb: LUT.New
+  fullName.vb: SearchAThing.Sci.LUT.New
+  name.vb: New

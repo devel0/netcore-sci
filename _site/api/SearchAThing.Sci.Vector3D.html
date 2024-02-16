@@ -1,0 +1,4919 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Vector3D | netcore-sci </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Vector3D | netcore-sci ">
+      
+      <meta name="description" content="can be used to describe a wcs point or a vector x,y,z components from some reference origin">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Sci_Vector3D.md&amp;value=---%0Auid%3A%20SearchAThing.Sci.Vector3D%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="netcore-sci">
+            netcore-sci
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SearchAThing.Sci.Vector3D">
+
+
+
+  <h1 id="SearchAThing_Sci_Vector3D" data-uid="SearchAThing.Sci.Vector3D" class="text-break">
+Class Vector3D  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SearchAThing.html">SearchAThing</a>.<a class="xref" href="SearchAThing.Sci.html">Sci</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>netcore-sci.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>can be used to describe a wcs point or a vector x,y,z components from some reference origin</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Vector3D : Geometry</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a></div>
+      <div><span class="xref">Vector3D</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Geometry.html#SearchAThing_Sci_Geometry_GeomType">Geometry.GeomType</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="SearchAThing.Sci.Ext.html#SearchAThing_Sci_Ext_Sqrt_SearchAThing_Sci_Vector3D_">Ext.Sqrt(Vector3D)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SearchAThing_Sci_Vector3D__ctor_" data-uid="SearchAThing.Sci.Vector3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D__ctor" data-uid="SearchAThing.Sci.Vector3D.#ctor">
+  Vector3D()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L250"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>zero vector</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConstructor]
+public Vector3D()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D__ctor_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0006.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D__ctor_" data-uid="SearchAThing.Sci.Vector3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D__ctor_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.#ctor(SearchAThing.Sci.Vector3D)">
+  Vector3D(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L258"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>build a copy of given vector</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D(Vector3D v)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>v</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D__ctor_" data-uid="SearchAThing.Sci.Vector3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D__ctor_System_Double_System_Double_" data-uid="SearchAThing.Sci.Vector3D.#ctor(System.Double,System.Double)">
+  Vector3D(double, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L296"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>build a vector (x,y,0) by given components</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D(double x, double y)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D__ctor_System_Double_System_Double__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0008.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D__ctor_" data-uid="SearchAThing.Sci.Vector3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D__ctor_System_Double_System_Double_System_Double_" data-uid="SearchAThing.Sci.Vector3D.#ctor(System.Double,System.Double,System.Double)">
+  Vector3D(double, double, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L285"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>build a vector by given components</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D(double x, double y, double z)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>z</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D__ctor_System_Double_System_Double_System_Double__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0008.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D__ctor_" data-uid="SearchAThing.Sci.Vector3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D__ctor_System_Double___" data-uid="SearchAThing.Sci.Vector3D.#ctor(System.Double[])">
+  Vector3D(double[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L271"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>build a vector (x,y,0) or (x,y,z) from given 2 or 3 doubles</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D(double[] arr)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arr</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D__ctor_System_Double____remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0007.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D__ctor_" data-uid="SearchAThing.Sci.Vector3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D__ctor_System_String_" data-uid="SearchAThing.Sci.Vector3D.#ctor(System.String)">
+  Vector3D(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L324"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>parse cad id string (eg. &quot;X = 4.11641325 Y = 266.06066703 Z = 11.60392802&quot;)
+constructing a point</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D(string cad_id_string)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cad_id_string</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>cad id string</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D__ctor_System_String__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0009.cs">unit test</a></p>
+</div>
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="SearchAThing_Sci_Vector3D_One" data-uid="SearchAThing.Sci.Vector3D.One">
+  One
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>one vector (1,1,1)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Vector3D One</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SearchAThing_Sci_Vector3D_XAxis" data-uid="SearchAThing.Sci.Vector3D.XAxis">
+  XAxis
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>xaxis vector (1,0,0)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Vector3D XAxis</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_XAxis_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0004.cs">unit test</a></p>
+</div>
+
+
+
+
+
+  <h3 id="SearchAThing_Sci_Vector3D_YAxis" data-uid="SearchAThing.Sci.Vector3D.YAxis">
+  YAxis
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L153"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>yaxis vector (0,1,0)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Vector3D YAxis</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_YAxis_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0004.cs">unit test</a></p>
+</div>
+
+
+
+
+
+  <h3 id="SearchAThing_Sci_Vector3D_ZAxis" data-uid="SearchAThing.Sci.Vector3D.ZAxis">
+  ZAxis
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L161"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>zaxis vector (0,0,1)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Vector3D ZAxis</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_ZAxis_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0004.cs">unit test</a></p>
+</div>
+
+
+
+
+
+  <h3 id="SearchAThing_Sci_Vector3D_Zero" data-uid="SearchAThing.Sci.Vector3D.Zero">
+  Zero
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>zero vector (0,0,0)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Vector3D Zero</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_Zero_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0001.cs">unit test</a></p>
+</div>
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SearchAThing_Sci_Vector3D_A0QCadScript_" data-uid="SearchAThing.Sci.Vector3D.A0QCadScript*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_A0QCadScript" data-uid="SearchAThing.Sci.Vector3D.A0QCadScript">
+  A0QCadScript
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1079"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string A0QCadScript { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_CadScript_" data-uid="SearchAThing.Sci.Vector3D.CadScript*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_CadScript" data-uid="SearchAThing.Sci.Vector3D.CadScript">
+  CadScript
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1084"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>cad script for this vector as wcs point</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CadScript { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_CadScriptLine_" data-uid="SearchAThing.Sci.Vector3D.CadScriptLine*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_CadScriptLine" data-uid="SearchAThing.Sci.Vector3D.CadScriptLine">
+  CadScriptLine
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1090"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>cad script for a line (0,0,0) to this vector</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CadScriptLine { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_CadScriptLineFrom_" data-uid="SearchAThing.Sci.Vector3D.CadScriptLineFrom*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_CadScriptLineFrom" data-uid="SearchAThing.Sci.Vector3D.CadScriptLineFrom">
+  CadScriptLineFrom
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1095"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>cad script for a line departing from this wcs point</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CadScriptLineFrom { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Coordinates_" data-uid="SearchAThing.Sci.Vector3D.Coordinates*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Coordinates" data-uid="SearchAThing.Sci.Vector3D.Coordinates">
+  Coordinates
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L343"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>enumerate coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;double&gt; Coordinates { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_Coordinates_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0010.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_DxfEntity_" data-uid="SearchAThing.Sci.Vector3D.DxfEntity*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_DxfEntity" data-uid="SearchAThing.Sci.Vector3D.DxfEntity">
+  DxfEntity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create dxf point entity suitable for netDxf addEntity.
+( Geometry DxfEntity implementation )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override EntityObject DxfEntity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">EntityObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_DxfEntity_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0002.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_GeomFrom_" data-uid="SearchAThing.Sci.Vector3D.GeomFrom*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_GeomFrom" data-uid="SearchAThing.Sci.Vector3D.GeomFrom">
+  GeomFrom
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This vector.
+( Geometry GeomFrom implementation )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonIgnore]
+public override Vector3D GeomFrom { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_GeomFrom_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0002.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_GeomTo_" data-uid="SearchAThing.Sci.Vector3D.GeomTo*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_GeomTo" data-uid="SearchAThing.Sci.Vector3D.GeomTo">
+  GeomTo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This vector.
+( Geometry GeomTo implementation)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonIgnore]
+public override Vector3D GeomTo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_GeomTo_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0002.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_IsZeroLength_" data-uid="SearchAThing.Sci.Vector3D.IsZeroLength*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_IsZeroLength" data-uid="SearchAThing.Sci.Vector3D.IsZeroLength">
+  IsZeroLength
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L361"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>states if this is a zero vector</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsZeroLength { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_IsZeroLength_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0011.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Item_" data-uid="SearchAThing.Sci.Vector3D.Item*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Item_System_Int32_" data-uid="SearchAThing.Sci.Vector3D.Item(System.Int32)">
+  this[int]
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L890"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>indexed vector component</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double this[int index] { get; }</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Length_" data-uid="SearchAThing.Sci.Vector3D.Length*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Length" data-uid="SearchAThing.Sci.Vector3D.Length">
+  Length
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Length of this vector.
+( Geometry Length implementation )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override double Length { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_Length_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0002.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Max_" data-uid="SearchAThing.Sci.Vector3D.Max*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Max" data-uid="SearchAThing.Sci.Vector3D.Max">
+  Max
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1255"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>max between X,Y,Z</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Max { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_MidPoint_" data-uid="SearchAThing.Sci.Vector3D.MidPoint*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_MidPoint" data-uid="SearchAThing.Sci.Vector3D.MidPoint">
+  MidPoint
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Vector3D MidPoint { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Min_" data-uid="SearchAThing.Sci.Vector3D.Min*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Min" data-uid="SearchAThing.Sci.Vector3D.Min">
+  Min
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1260"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>min between X,Y,Z</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Min { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Vertexes_" data-uid="SearchAThing.Sci.Vector3D.Vertexes*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Vertexes" data-uid="SearchAThing.Sci.Vector3D.Vertexes">
+  Vertexes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enumerable with only this vector.
+( Geometry Vertexes implementation )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonIgnore]
+public override IEnumerable&lt;Vector3D&gt; Vertexes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_Vertexes_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0002.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_X_" data-uid="SearchAThing.Sci.Vector3D.X*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_X" data-uid="SearchAThing.Sci.Vector3D.X">
+  X
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L226"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>X vector component</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double X { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_X_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0005.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Y_" data-uid="SearchAThing.Sci.Vector3D.Y*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Y" data-uid="SearchAThing.Sci.Vector3D.Y">
+  Y
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L234"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Y vector component</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Y { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_Y_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0005.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Z_" data-uid="SearchAThing.Sci.Vector3D.Z*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Z" data-uid="SearchAThing.Sci.Vector3D.Z">
+  Z
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L242"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Z vector component</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Z { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_Z_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0005.cs">unit test</a></p>
+</div>
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SearchAThing_Sci_Vector3D_Abs_" data-uid="SearchAThing.Sci.Vector3D.Abs*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Abs" data-uid="SearchAThing.Sci.Vector3D.Abs">
+  Abs()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1224"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>compute (Abs(v.x), Abs(v.y), Abs(v.z))</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Abs()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_AngleRad_" data-uid="SearchAThing.Sci.Vector3D.AngleRad*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_AngleRad_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.AngleRad(System.Double,SearchAThing.Sci.Vector3D)">
+  AngleRad(double, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L527"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>angle between this and given vector</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double AngleRad(double tol, Vector3D to)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance to test vector equalities ( use Constants.NormalizedLengthTolerance when comparing normalized vectors )</p>
+</dd>
+    <dt><code>to</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>other vector</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>angle between two vectors (rad)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_AngleRad_System_Double_SearchAThing_Sci_Vector3D__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0020.cs">unit test</a>
+<img src="../src/test/Vector3D/Vector3DTest_0020.png" alt="image"></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_AngleToward_" data-uid="SearchAThing.Sci.Vector3D.AngleToward*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_AngleToward_System_Double_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.AngleToward(System.Double,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)">
+  AngleToward(double, Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L732"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>compute angle required to make this point go to the given one
+if rotate right-hand around given reference axis</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double AngleToward(double tol, Vector3D to, Vector3D refAxis)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance ( use Constants.NormalizedLengthTolerance if working with normalized vectors )</p>
+</dd>
+    <dt><code>to</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>point toward rotate this one</p>
+</dd>
+    <dt><code>refAxis</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>reference axis to make right-hand rotation of this point toward given one</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>angle (rad)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Axis_" data-uid="SearchAThing.Sci.Vector3D.Axis*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Axis_System_Int32_" data-uid="SearchAThing.Sci.Vector3D.Axis(System.Int32)">
+  Axis(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L175"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>retrieve wcs axis by given index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D Axis(int ord)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ord</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>0:(1,0,0) 1:(0,1,0) 2:(0,0,1)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_Axis_System_Int32__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0004.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_BBox_" data-uid="SearchAThing.Sci.Vector3D.BBox*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_BBox_System_Double_" data-uid="SearchAThing.Sci.Vector3D.BBox(System.Double)">
+  BBox(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Compute bbox of this point.
+( Geometry BBox implementation ).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BBox3D BBox(double tol)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.BBox3D.html">BBox3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_BBox_System_Double__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0002.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Clamp_" data-uid="SearchAThing.Sci.Vector3D.Clamp*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Clamp_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.Clamp(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)">
+  Clamp(Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L876"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>return clamped Vector3D between [min,max] interval</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Clamp(Vector3D min, Vector3D max)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>min</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>min value admissible</p>
+</dd>
+    <dt><code>max</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>max value admissible</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>given vector with xyz components clamped to corresponding min,max components</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Colinear_" data-uid="SearchAThing.Sci.Vector3D.Colinear*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Colinear_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.Colinear(System.Double,SearchAThing.Sci.Vector3D)">
+  Colinear(double, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L705"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>states if this vector is colinear to the given one</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Colinear(double tol, Vector3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>geometric tolerance</p>
+</dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>other vector</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_ColinearScalarOffset_" data-uid="SearchAThing.Sci.Vector3D.ColinearScalarOffset*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_ColinearScalarOffset_System_Double_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.ColinearScalarOffset(System.Double,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)">
+  ColinearScalarOffset(double, Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L444"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>retrieve signed offset of this point respect given origin point in the given normalized direction v.
+precondition: vector v must colinear to (this-origin) and must already normalized</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ColinearScalarOffset(double tol, Vector3D origin, Vector3D v)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>origin</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Concordant_" data-uid="SearchAThing.Sci.Vector3D.Concordant*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Concordant_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.Concordant(System.Double,SearchAThing.Sci.Vector3D)">
+  Concordant(double, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L715"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>states if this vector concord to the given one</p>
+<p><strong>NOTE</strong>: it does not test two vectors are parallels ( precondition must meet )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Concordant(double tol, Vector3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>geometric tolerance ( Constants.NormalizedLengthTolerance if comparing normalized vectors )</p>
+</dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>other vector</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_ConcordantColinear_" data-uid="SearchAThing.Sci.Vector3D.ConcordantColinear*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_ConcordantColinear_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.ConcordantColinear(System.Double,SearchAThing.Sci.Vector3D)">
+  ConcordantColinear(double, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L722"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>statis if this vector is concordant and colinear to the given one</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ConcordantColinear(double tol, Vector3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>geometric tolerance ( Constants.NormalizedLengthTolerance if comparing normalized vectors )</p>
+</dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>other vector</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Copy_" data-uid="SearchAThing.Sci.Vector3D.Copy*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Copy" data-uid="SearchAThing.Sci.Vector3D.Copy">
+  Copy()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>create copy of this geometry.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Geometry Copy()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_Copy_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>it's required to call base.CopyFrom(other) to ensure geometry properties to be copied.</p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_CrossProduct_" data-uid="SearchAThing.Sci.Vector3D.CrossProduct*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_CrossProduct_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.CrossProduct(SearchAThing.Sci.Vector3D)">
+  CrossProduct(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L514"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Cross product ( not normalized ) ;<br>
+a x b = |a| |b| sin(alfa) N ;<br>
+a x b = |  x  y  z |
+| ax ay az |
+| bx by bz |<br>
+<a href="https://en.wikipedia.org/wiki/Cross_product">reference</a> ;</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D CrossProduct(Vector3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>other vector</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_CrossProduct_SearchAThing_Sci_Vector3D__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0019.cs">unit test</a>
+<img src="../src/test/Vector3D/Vector3DTest_0019.png" alt="image"></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Debug_" data-uid="SearchAThing.Sci.Vector3D.Debug*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Debug_System_String_" data-uid="SearchAThing.Sci.Vector3D.Debug(System.String)">
+  Debug(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1215"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>debug to console with optional prefix</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Debug(string prefix = &quot;&quot;)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>prefix</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>optional prefix</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>vector</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_DisambiguatedPoints_" data-uid="SearchAThing.Sci.Vector3D.DisambiguatedPoints*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_DisambiguatedPoints_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.DisambiguatedPoints(System.Double,SearchAThing.Sci.Vector3D)">
+  DisambiguatedPoints(double, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1238"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>returns p1 and p2 if one of the p1 coords are less than corresponding p2 coords ;
+elsewhere returns p2 and p1.
+Useful to obtain the same sequence order independant from order of operands.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Vector3D&gt; DisambiguatedPoints(double tol, Vector3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Distance_" data-uid="SearchAThing.Sci.Vector3D.Distance*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Distance_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.Distance(SearchAThing.Sci.Vector3D)">
+  Distance(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L438"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>compute distance between this point and the other given</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Distance(Vector3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_Distance_SearchAThing_Sci_Vector3D__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0014.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Distance_" data-uid="SearchAThing.Sci.Vector3D.Distance*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Distance_System_Double_SearchAThing_Sci_Line3D_" data-uid="SearchAThing.Sci.Vector3D.Distance(System.Double,SearchAThing.Sci.Line3D)">
+  Distance(double, Line3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L463"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>compute perpendicular(min) distance of this point from given line</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Distance(double tol, Line3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance ( used to check if point contained in line )</p>
+</dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd><p>line</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_Distance_System_Double_SearchAThing_Sci_Line3D__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0015.cs">unit test</a>
+<img src="../src/test/Vector3D/Vector3DTest_0015.png" alt="image"></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Divide_" data-uid="SearchAThing.Sci.Vector3D.Divide*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Divide_System_Int32_System_Boolean_" data-uid="SearchAThing.Sci.Vector3D.Divide(System.Int32,System.Boolean)">
+  Divide(int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L89"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Divide this point returning itself.
+( Geometry Divide implementation )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Vector3D&gt; Divide(int cnt, bool include_endpoints = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cnt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>include_endpoints</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_Divide_System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0002.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_DotProduct_" data-uid="SearchAThing.Sci.Vector3D.DotProduct*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_DotProduct_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.DotProduct(SearchAThing.Sci.Vector3D)">
+  DotProduct(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L489"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>compute dot product of this vector for the given one<br>
+a b = |a| |b| cos(alfa)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double DotProduct(Vector3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>second vector</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_DotProduct_SearchAThing_Sci_Vector3D__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0017.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_EqualsAutoTol_" data-uid="SearchAThing.Sci.Vector3D.EqualsAutoTol*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_EqualsAutoTol_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.EqualsAutoTol(SearchAThing.Sci.Vector3D)">
+  EqualsAutoTol(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L387"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>check if this vector equals the given one component by component using EqualsAutoTol</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EqualsAutoTol(Vector3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_EqualsAutoTol_SearchAThing_Sci_Vector3D__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0012.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_EqualsTol_" data-uid="SearchAThing.Sci.Vector3D.EqualsTol*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_EqualsTol_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.EqualsTol(System.Double,SearchAThing.Sci.Vector3D)">
+  EqualsTol(double, Vector3D?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L371"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>checks vector component equality vs other given</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EqualsTol(double tol, Vector3D? other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</p>
+</dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>vector to compare to this</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_EqualsTol_System_Double_SearchAThing_Sci_Vector3D__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0012.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_EqualsTol_" data-uid="SearchAThing.Sci.Vector3D.EqualsTol*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_EqualsTol_System_Double_System_Double_System_Double_" data-uid="SearchAThing.Sci.Vector3D.EqualsTol(System.Double,System.Double,System.Double)">
+  EqualsTol(double, double, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L404"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>checks only x,y</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EqualsTol(double tol, double x, double y)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</p>
+</dd>
+    <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>x coord</p>
+</dd>
+    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>y coord</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_EqualsTol_System_Double_System_Double_System_Double__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0012.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_EqualsTol_" data-uid="SearchAThing.Sci.Vector3D.EqualsTol*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_EqualsTol_System_Double_System_Double_System_Double_System_Double_" data-uid="SearchAThing.Sci.Vector3D.EqualsTol(System.Double,System.Double,System.Double,System.Double)">
+  EqualsTol(double, double, double, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L417"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>checks vector component equality vs other given</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EqualsTol(double tol, double x, double y, double z)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</p>
+</dd>
+    <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>x coord</p>
+</dd>
+    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>y coord</p>
+</dd>
+    <dt><code>z</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>z coord</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_EqualsTol_System_Double_System_Double_System_Double_System_Double__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0012.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_From2DCoords_" data-uid="SearchAThing.Sci.Vector3D.From2DCoords*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_From2DCoords_System_Double___" data-uid="SearchAThing.Sci.Vector3D.From2DCoords(System.Double[])">
+  From2DCoords(params double[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L948"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create an array of Vector3D from given list of 2d coords ( eg. { 100, 200, 300, 400 }
+will create follow list of vector3d = { (100,200,0), (300,400,0) }</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;Vector3D&gt; From2DCoords(params double[] coords)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>coords</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_From3DCoords_" data-uid="SearchAThing.Sci.Vector3D.From3DCoords*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_From3DCoords_System_Double___" data-uid="SearchAThing.Sci.Vector3D.From3DCoords(System.Double[])">
+  From3DCoords(params double[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L962"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create an array of Vector3D from given list of 3d coords ( eg. { 100, 200, 10, 300, 400, 20 }
+will create follow list of vector3d = { (100,200,10), (300,400,20) }</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;Vector3D&gt; From3DCoords(params double[] coords)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>coords</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_FromString_" data-uid="SearchAThing.Sci.Vector3D.FromString*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_FromString_System_String_" data-uid="SearchAThing.Sci.Vector3D.FromString(System.String)">
+  FromString(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1034"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>parse vector3d from string format &quot;(x y z)&quot; or &quot;(x,y,z)&quot; invariant type</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D FromString(string str)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>str</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_FromStringArray_" data-uid="SearchAThing.Sci.Vector3D.FromStringArray*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_FromStringArray_System_String_" data-uid="SearchAThing.Sci.Vector3D.FromStringArray(System.String)">
+  FromStringArray(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1049"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>parse vector3d from array &quot;(x1,y1,z1);(x2,y2,z2)&quot;;
+an appropriate string can be generated with StringRepresentation extension.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3D&gt; FromStringArray(string str)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>str</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_FromTxtPointsList_" data-uid="SearchAThing.Sci.Vector3D.FromTxtPointsList*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_FromTxtPointsList_System_String_System_Globalization_CultureInfo_" data-uid="SearchAThing.Sci.Vector3D.FromTxtPointsList(System.String,System.Globalization.CultureInfo)">
+  FromTxtPointsList(string, CultureInfo?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L986"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>retrieve list of Vector3D by reading from a txt file, for example:
+-53.54533794,-141.18745265
+18.20103872,-149.89903999
+85.77777676,-124.27056375</p>
+<p>notes:</p>
+<ul>
+<li>supports also third coord (Z) ;</li>
+<li>whitespace are removed ;</li>
+<li>empty lines are removed</li>
+</ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3D&gt; FromTxtPointsList(string txt, CultureInfo? culture = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>txt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>txt data to read</p>
+</dd>
+    <dt><code>culture</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo">CultureInfo</a></dt>
+    <dd><p>culture for number parsing (default: invariant)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd><p>enumerable of Vector3D corresponding to data</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_GeomEquals_" data-uid="SearchAThing.Sci.Vector3D.GeomEquals*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_GeomEquals_System_Double_SearchAThing_Sci_Geometry_System_Boolean_" data-uid="SearchAThing.Sci.Vector3D.GeomEquals(System.Double,SearchAThing.Sci.Geometry,System.Boolean)">
+  GeomEquals(double, Geometry, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>states if this geom equals to given other</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool GeomEquals(double tol, Geometry other, bool checkSense = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance</p>
+</dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a></dt>
+    <dd><p>other geom</p>
+</dd>
+    <dt><code>checkSense</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if false two geometry with different sense but same space coverage are considered equals</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_GeomIntersect_" data-uid="SearchAThing.Sci.Vector3D.GeomIntersect*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_GeomIntersect_System_Double_SearchAThing_Sci_Geometry_SearchAThing_Sci_GeomSegmentMode_SearchAThing_Sci_GeomSegmentMode_" data-uid="SearchAThing.Sci.Vector3D.GeomIntersect(System.Double,SearchAThing.Sci.Geometry,SearchAThing.Sci.GeomSegmentMode,SearchAThing.Sci.GeomSegmentMode)">
+  GeomIntersect(double, Geometry, GeomSegmentMode, GeomSegmentMode)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>find intersections between this and another geometry resulting in zero or more geometries.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Geometry&gt; GeomIntersect(double tol, Geometry other, GeomSegmentMode thisSegmentMode, GeomSegmentMode otherSegmentMode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a></dt>
+    <dd></dd>
+    <dt><code>thisSegmentMode</code> <a class="xref" href="SearchAThing.Sci.GeomSegmentMode.html">GeomSegmentMode</a></dt>
+    <dd><p>if this is Line3D specifies how to consider</p>
+</dd>
+    <dt><code>otherSegmentMode</code> <a class="xref" href="SearchAThing.Sci.GeomSegmentMode.html">GeomSegmentMode</a></dt>
+    <dd><p>if other is Line3D specifies how to consider</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_GetOrd_" data-uid="SearchAThing.Sci.Vector3D.GetOrd*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_GetOrd_SearchAThing_Sci_OrdIdx_" data-uid="SearchAThing.Sci.Vector3D.GetOrd(SearchAThing.Sci.OrdIdx)">
+  GetOrd(OrdIdx)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L209"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>retrieve the component (0:X, 1:Y, 2:Z)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double GetOrd(OrdIdx ord)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ord</code> <a class="xref" href="SearchAThing.Sci.OrdIdx.html">OrdIdx</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_GetOrd_SearchAThing_Sci_OrdIdx__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0003.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_GetOrd_" data-uid="SearchAThing.Sci.Vector3D.GetOrd*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_GetOrd_System_Int32_" data-uid="SearchAThing.Sci.Vector3D.GetOrd(System.Int32)">
+  GetOrd(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L192"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>retrieve the component (0:X, 1:Y, 2:Z)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double GetOrd(int ord)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ord</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_GetOrd_System_Int32__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0003.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_IsParallelTo_" data-uid="SearchAThing.Sci.Vector3D.IsParallelTo*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_IsParallelTo_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.IsParallelTo(System.Double,SearchAThing.Sci.Vector3D)">
+  IsParallelTo(double, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L666"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Note: tol must be Constants.NormalizedLengthTolerance
+if comparing normalized vectors</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsParallelTo(double tol, Vector3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_IsPerpendicular_" data-uid="SearchAThing.Sci.Vector3D.IsPerpendicular*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_IsPerpendicular_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.IsPerpendicular(SearchAThing.Sci.Vector3D)">
+  IsPerpendicular(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L498"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>states is this vector is perpendicular to the given one</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsPerpendicular(Vector3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>other vector</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_IsPerpendicular_SearchAThing_Sci_Vector3D__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0018.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_LineDir_" data-uid="SearchAThing.Sci.Vector3D.LineDir*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_LineDir_SearchAThing_Sci_Vector3D_System_Double_System_Boolean_" data-uid="SearchAThing.Sci.Vector3D.LineDir(SearchAThing.Sci.Vector3D,System.Double,System.Boolean)">
+  LineDir(Vector3D, double, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1120"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>build Line3D from this to (this+dir*len)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D LineDir(Vector3D dir, double len, bool applyDirNorm = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dir</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>direction</p>
+</dd>
+    <dt><code>len</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length of the line</p>
+</dd>
+    <dt><code>applyDirNorm</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>apply normalization to given direction ( default:false )</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd><p>Line3D from this to (this+dir*len)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_LineTo_" data-uid="SearchAThing.Sci.Vector3D.LineTo*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_LineTo_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.LineTo(SearchAThing.Sci.Vector3D)">
+  LineTo(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>build Line3D from this to given to</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D LineTo(Vector3D to)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>to</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>line3d to point</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd><p>build Line3D from this to given to</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_LineV_" data-uid="SearchAThing.Sci.Vector3D.LineV*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_LineV_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.LineV(SearchAThing.Sci.Vector3D)">
+  LineV(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>build Line3D from this to (this+vector)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D LineV(Vector3D vector)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vector</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>vector to add this to obtain line to</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd><p>Line3D from this to (this+given vector)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Mirror_" data-uid="SearchAThing.Sci.Vector3D.Mirror*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Mirror_SearchAThing_Sci_Line3D_" data-uid="SearchAThing.Sci.Vector3D.Mirror(SearchAThing.Sci.Line3D)">
+  Mirror(Line3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L849"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>mirror this point about given axis</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Mirror(Line3D axis)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>axis</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Move_" data-uid="SearchAThing.Sci.Vector3D.Move*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Move_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.Move(SearchAThing.Sci.Vector3D)">
+  Move(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L353"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Geometry Move(Vector3D delta)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>delta</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Normalized_" data-uid="SearchAThing.Sci.Vector3D.Normalized*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Normalized" data-uid="SearchAThing.Sci.Vector3D.Normalized">
+  Normalized()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L426"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>create a normalized version of this vector</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Normalized()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_Normalized_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0013.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Project_" data-uid="SearchAThing.Sci.Vector3D.Project*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Project_SearchAThing_Sci_CoordinateSystem3D_System_Boolean_" data-uid="SearchAThing.Sci.Vector3D.Project(SearchAThing.Sci.CoordinateSystem3D,System.Boolean)">
+  Project(CoordinateSystem3D, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L582"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>wcs coord of projected coord to the given cs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Project(CoordinateSystem3D cs, bool evalCSOrigin = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cs</code> <a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd><p>cs to project</p>
+</dd>
+    <dt><code>evalCSOrigin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if true cs origin will subtracted before transform, then readded to obtain wcs point</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Project_" data-uid="SearchAThing.Sci.Vector3D.Project*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Project_SearchAThing_Sci_Line3D_" data-uid="SearchAThing.Sci.Vector3D.Project(SearchAThing.Sci.Line3D)">
+  Project(Line3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L575"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>project this point to the given line considered as infinite line</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Project(Line3D line)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>line</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd><p>line to project the point onto</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>projected point onto the line ( perpendicularly )</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Project_" data-uid="SearchAThing.Sci.Vector3D.Project*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Project_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.Project(SearchAThing.Sci.Vector3D)">
+  Project(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L560"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>project this vector to the given one</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Project(Vector3D to)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>to</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>other vector</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>projected vector ( will be colinear to the given one )</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_Project_SearchAThing_Sci_Vector3D__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0021.cs">unit test</a>
+<img src="../src/test/Vector3D/Vector3DTest_0021.png" alt="image"></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_QCadScript_" data-uid="SearchAThing.Sci.Vector3D.QCadScript*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_QCadScript_System_Boolean_" data-uid="SearchAThing.Sci.Vector3D.QCadScript(System.Boolean)">
+  QCadScript(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1077"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string QCadScript(bool final = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>final</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Random_" data-uid="SearchAThing.Sci.Vector3D.Random*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Random_System_Int32_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_System_Int32_System_Random_" data-uid="SearchAThing.Sci.Vector3D.Random(System.Int32,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Random)">
+  Random(int, double, double, double, double, double, double, int, Random?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1009"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Span a set of qty vector3d with random coord between given range.
+Optionally a seed can be specified for rand or Random obj directly ( in latter case seed aren't used )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3D&gt; Random(int qty, double xmin, double xmax, double ymin, double ymax, double zmin, double zmax, int seed = 0, Random? random = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>qty</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>xmin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>xmax</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>ymin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>ymax</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>zmin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>zmax</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>seed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>random</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.random">Random</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Random_" data-uid="SearchAThing.Sci.Vector3D.Random*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Random_System_Int32_System_Double_System_Int32_" data-uid="SearchAThing.Sci.Vector3D.Random(System.Int32,System.Double,System.Int32)">
+  Random(int, double, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1002"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Vector3D&gt; Random(int N, double L, int seed = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>N</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>L</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>seed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Rel_" data-uid="SearchAThing.Sci.Vector3D.Rel*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Rel_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.Rel(SearchAThing.Sci.Vector3D)">
+  Rel(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L660"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>create a vector relative to given origin from this point and given origin</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Rel(Vector3D origin)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>origin</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>origin to make this point relative to</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>vector</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_RotateAboutAxis_" data-uid="SearchAThing.Sci.Vector3D.RotateAboutAxis*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_RotateAboutAxis_SearchAThing_Sci_Line3D_System_Double_" data-uid="SearchAThing.Sci.Vector3D.RotateAboutAxis(SearchAThing.Sci.Line3D,System.Double)">
+  RotateAboutAxis(Line3D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L797"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>rotate this point right-hand around given segment using quaternion</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D RotateAboutAxis(Line3D axisSegment, double angleRad)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>axisSegment</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd><p>rotation axis segment</p>
+</dd>
+    <dt><code>angleRad</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>angle (rad) of rotation</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>rotated point</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_RotateAboutAxis_" data-uid="SearchAThing.Sci.Vector3D.RotateAboutAxis*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_RotateAboutAxis_SearchAThing_Sci_Vector3D_System_Double_" data-uid="SearchAThing.Sci.Vector3D.RotateAboutAxis(SearchAThing.Sci.Vector3D,System.Double)">
+  RotateAboutAxis(Vector3D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L784"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>rotate this point right-hand around given axis using quaternion</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D RotateAboutAxis(Vector3D axis, double angleRad)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>axis</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>rotation axis</p>
+</dd>
+    <dt><code>angleRad</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>angle (rad) of rotation</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>rotated point</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_RotateAboutXAxis_" data-uid="SearchAThing.Sci.Vector3D.RotateAboutXAxis*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_RotateAboutXAxis_System_Double_" data-uid="SearchAThing.Sci.Vector3D.RotateAboutXAxis(System.Double)">
+  RotateAboutXAxis(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L747"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>rotate this point around x-axis using quaternion</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D RotateAboutXAxis(double angleRad)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>angleRad</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>angle (rad) of rotation</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>rotated point</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_RotateAboutYAxis_" data-uid="SearchAThing.Sci.Vector3D.RotateAboutYAxis*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_RotateAboutYAxis_System_Double_" data-uid="SearchAThing.Sci.Vector3D.RotateAboutYAxis(System.Double)">
+  RotateAboutYAxis(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L759"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>rotate this point around y-axis using quaternion</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D RotateAboutYAxis(double angleRad)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>angleRad</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>angle (rad) of rotation</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>rotated point</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_RotateAboutZAxis_" data-uid="SearchAThing.Sci.Vector3D.RotateAboutZAxis*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_RotateAboutZAxis_System_Double_" data-uid="SearchAThing.Sci.Vector3D.RotateAboutZAxis(System.Double)">
+  RotateAboutZAxis(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L771"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>rotate this point around z-axis using quaternion</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D RotateAboutZAxis(double angleRad)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>angleRad</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>angle (rad) of rotation</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>rotated point</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_RotateAs_" data-uid="SearchAThing.Sci.Vector3D.RotateAs*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_RotateAs_System_Double_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_System_Double_System_Double_" data-uid="SearchAThing.Sci.Vector3D.RotateAs(System.Double,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,System.Double,System.Double)">
+  RotateAs(double, Vector3D, Vector3D, double, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L819"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Note: tol must be Constants.NormalizedLengthTolerance
+if comparing normalized vectors
+rotation from-to will be multiplied for given angleFactor ( default 1.0 )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D RotateAs(double tol, Vector3D from, Vector3D to, double angleFactor = 1, double angleAddictionalRad = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>geometric tolerance ( use Constants.NormalizedLengthTolerance if vectors are normalized )</p>
+</dd>
+    <dt><code>from</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>point from describing rotation path</p>
+</dd>
+    <dt><code>to</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>point to describing rotation path</p>
+</dd>
+    <dt><code>angleFactor</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>optional angle rotation scaler</p>
+</dd>
+    <dt><code>angleAddictionalRad</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>optional angle (rad) component (added after angleFactor scaler)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Scalar_" data-uid="SearchAThing.Sci.Vector3D.Scalar*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Scalar_System_Double_System_Double_System_Double_" data-uid="SearchAThing.Sci.Vector3D.Scalar(System.Double,System.Double,System.Double)">
+  Scalar(double, double, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L868"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Scalar multiply each components</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Scalar(double xs, double ys, double zs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>xs</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>ys</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>zs</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_ScaleAbout_" data-uid="SearchAThing.Sci.Vector3D.ScaleAbout*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_ScaleAbout_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.ScaleAbout(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)">
+  ScaleAbout(Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L839"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Scale this point about the given origin with the given factor as (sx,sy,sz).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D ScaleAbout(Vector3D origin, Vector3D factor)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>origin</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>factor</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_ScaleAbout_" data-uid="SearchAThing.Sci.Vector3D.ScaleAbout*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_ScaleAbout_SearchAThing_Sci_Vector3D_System_Double_" data-uid="SearchAThing.Sci.Vector3D.ScaleAbout(SearchAThing.Sci.Vector3D,System.Double)">
+  ScaleAbout(Vector3D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L829"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Scale this point about the given origin with the given factor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D ScaleAbout(Vector3D origin, double factor)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>origin</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>factor</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Set_" data-uid="SearchAThing.Sci.Vector3D.Set*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Set_SearchAThing_Sci_OrdIdx_System_Double_" data-uid="SearchAThing.Sci.Vector3D.Set(SearchAThing.Sci.OrdIdx,System.Double)">
+  Set(OrdIdx, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L591"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>create a point copy of this one with component changed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Set(OrdIdx ordIdx, double value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ordIdx</code> <a class="xref" href="SearchAThing.Sci.OrdIdx.html">OrdIdx</a></dt>
+    <dd><p>component to change ( 0:x 1:y 2:z )</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>value to assign to the component</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>new vector with component changed</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Set_" data-uid="SearchAThing.Sci.Vector3D.Set*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Set_System_Int32_System_Double_" data-uid="SearchAThing.Sci.Vector3D.Set(System.Int32,System.Double)">
+  Set(int, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L614"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>create a point copy of this one with component changed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Set(int ordIdx, double value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ordIdx</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>component to change ( 0:x 1:y 2:z )</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>value to assign to the component</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>new vector with component changed</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_SetX_" data-uid="SearchAThing.Sci.Vector3D.SetX*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_SetX_System_Double_" data-uid="SearchAThing.Sci.Vector3D.SetX(System.Double)">
+  SetX(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L636"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>create new vector with X changed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D SetX(double value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>input vector</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>output vector with X changed</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_SetY_" data-uid="SearchAThing.Sci.Vector3D.SetY*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_SetY_System_Double_" data-uid="SearchAThing.Sci.Vector3D.SetY(System.Double)">
+  SetY(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L644"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>create new vector with Y changed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D SetY(double value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>input vector</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>output vector with Y changed</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_SetZ_" data-uid="SearchAThing.Sci.Vector3D.SetZ*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_SetZ_System_Double_" data-uid="SearchAThing.Sci.Vector3D.SetZ(System.Double)">
+  SetZ(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L652"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>create new vector with Z changed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D SetZ(double value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>input vector</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>output vector with Z changed</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Sign_" data-uid="SearchAThing.Sci.Vector3D.Sign*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Sign" data-uid="SearchAThing.Sci.Vector3D.Sign">
+  Sign()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1230"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>compute (Sign(v.x), Sign(v.y), Sign(v.z))</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Sign()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Split_" data-uid="SearchAThing.Sci.Vector3D.Split*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Split_System_Double_System_Collections_Generic_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.Sci.Vector3D.Split(System.Double,System.Collections.Generic.IEnumerable{SearchAThing.Sci.Vector3D})">
+  Split(double, IEnumerable&lt;Vector3D&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>split geometry in given break points.
+precondition: breaks must lie on the geometry perimeter</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Geometry&gt; Split(double tol, IEnumerable&lt;Vector3D&gt; breaks)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>breaks</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_SquaredDistance_" data-uid="SearchAThing.Sci.Vector3D.SquaredDistance*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_SquaredDistance_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.SquaredDistance(SearchAThing.Sci.Vector3D)">
+  SquaredDistance(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>(other.X - this.X)^2 + (other.Y - this.Y)^2 + (other.Z - this.Z)^2</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double SquaredDistance(Vector3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_StringRepresentation_" data-uid="SearchAThing.Sci.Vector3D.StringRepresentation*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_StringRepresentation" data-uid="SearchAThing.Sci.Vector3D.StringRepresentation">
+  StringRepresentation()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1075"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>string invariant representation &quot;(x,y,z)&quot;</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string StringRepresentation()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_ToDeg_" data-uid="SearchAThing.Sci.Vector3D.ToDeg*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_ToDeg" data-uid="SearchAThing.Sci.Vector3D.ToDeg">
+  ToDeg()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1207"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>convert xyz from rad to deg</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D ToDeg()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>xyz deg angles</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_ToDxfPoint_" data-uid="SearchAThing.Sci.Vector3D.ToDxfPoint*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_ToDxfPoint" data-uid="SearchAThing.Sci.Vector3D.ToDxfPoint">
+  ToDxfPoint()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1194"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>create dxf point from given vector3d</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Point ToDxfPoint()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Point</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_ToDxfVector2_" data-uid="SearchAThing.Sci.Vector3D.ToDxfVector2*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_ToDxfVector2" data-uid="SearchAThing.Sci.Vector3D.ToDxfVector2">
+  ToDxfVector2()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1169"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>convert to (netdxf) discarding z</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 ToDxfVector2()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_ToDxfVector3_" data-uid="SearchAThing.Sci.Vector3D.ToDxfVector3*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_ToDxfVector3" data-uid="SearchAThing.Sci.Vector3D.ToDxfVector3">
+  ToDxfVector3()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1174"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>convert to (netdxf) discarding z</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 ToDxfVector3()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_ToNVector2_" data-uid="SearchAThing.Sci.Vector3D.ToNVector2*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_ToNVector2" data-uid="SearchAThing.Sci.Vector3D.ToNVector2">
+  ToNVector2()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1179"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>convert to (system.numerics) Vector2 ( casting double to float, discarding z )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 ToNVector2()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_ToNVector3_" data-uid="SearchAThing.Sci.Vector3D.ToNVector3*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_ToNVector3" data-uid="SearchAThing.Sci.Vector3D.ToNVector3">
+  ToNVector3()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1184"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>convert to (system.numerics) Vector3 ( casting double to float )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 ToNVector3()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector3">Vector3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_ToPoint_" data-uid="SearchAThing.Sci.Vector3D.ToPoint*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_ToPoint" data-uid="SearchAThing.Sci.Vector3D.ToPoint">
+  ToPoint()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1189"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>To point (double x, double y)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Point ToPoint()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Point</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_ToRad_" data-uid="SearchAThing.Sci.Vector3D.ToRad*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_ToRad" data-uid="SearchAThing.Sci.Vector3D.ToRad">
+  ToRad()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1200"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>convert xyz from deg to rad</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D ToRad()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>xyz rad angles</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_ToString_" data-uid="SearchAThing.Sci.Vector3D.ToString*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_ToString" data-uid="SearchAThing.Sci.Vector3D.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1056"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>string invariant representation &quot;(x,y,z)&quot;
+w/3 decimal places</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_ToString_" data-uid="SearchAThing.Sci.Vector3D.ToString*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_ToString_System_Double_" data-uid="SearchAThing.Sci.Vector3D.ToString(System.Double)">
+  ToString(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1066"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>hash string with given tolerance</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToString(double tol)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_ToString_" data-uid="SearchAThing.Sci.Vector3D.ToString*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_ToString_System_Int32_" data-uid="SearchAThing.Sci.Vector3D.ToString(System.Int32)">
+  ToString(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1061"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>string invariant representation &quot;(x,y,z)&quot; w/given digits</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToString(int digits = 3)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>digits</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_ToUCS_" data-uid="SearchAThing.Sci.Vector3D.ToUCS*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_ToUCS_SearchAThing_Sci_CoordinateSystem3D_System_Boolean_" data-uid="SearchAThing.Sci.Vector3D.ToUCS(SearchAThing.Sci.CoordinateSystem3D,System.Boolean)">
+  ToUCS(CoordinateSystem3D, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L856"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Convert this wcs point to given cs coord</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D ToUCS(CoordinateSystem3D cs, bool evalCSOrigin = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cs</code> <a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd><p>dest CS</p>
+</dd>
+    <dt><code>evalCSOrigin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if true CS origin will subtracted before transform</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_ToWCS_" data-uid="SearchAThing.Sci.Vector3D.ToWCS*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_ToWCS_SearchAThing_Sci_CoordinateSystem3D_System_Boolean_" data-uid="SearchAThing.Sci.Vector3D.ToWCS(SearchAThing.Sci.CoordinateSystem3D,System.Boolean)">
+  ToWCS(CoordinateSystem3D, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L863"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Convert this ucs considered vector using given cs to the wcs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D ToWCS(CoordinateSystem3D cs, bool evalCSOrigin = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cs</code> <a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd><p>ucs point</p>
+</dd>
+    <dt><code>evalCSOrigin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if true CS origin will added after transform</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_Transform_" data-uid="SearchAThing.Sci.Vector3D.Transform*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_Transform_System_Numerics_Matrix4x4_" data-uid="SearchAThing.Sci.Vector3D.Transform(System.Numerics.Matrix4x4)">
+  Transform(Matrix4x4)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1265"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>return this vector transformed by given (float) transformation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Transform(Matrix4x4 transform)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>transform</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.matrix4x4">Matrix4x4</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_XYDistance_" data-uid="SearchAThing.Sci.Vector3D.XYDistance*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_XYDistance_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.XYDistance(SearchAThing.Sci.Vector3D)">
+  XYDistance(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L478"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>compute distance of this point from the given in 2d ( x,y ) without consider z component</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double XYDistance(Vector3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>other point</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_XYDistance_SearchAThing_Sci_Vector3D__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0016.cs">unit test</a>
+<img src="../src/test/Vector3D/Vector3DTest_0016.png" alt="image"></p>
+</div>
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
+  <a id="SearchAThing_Sci_Vector3D_op_Addition_" data-uid="SearchAThing.Sci.Vector3D.op_Addition*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_op_Addition_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.op_Addition(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)">
+  operator +(Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L904"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>sum</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D operator +(Vector3D a, Vector3D b)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>a</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>b</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_op_Division_" data-uid="SearchAThing.Sci.Vector3D.op_Division*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_op_Division_SearchAThing_Sci_Vector3D_System_Double_" data-uid="SearchAThing.Sci.Vector3D.op_Division(SearchAThing.Sci.Vector3D,System.Double)">
+  operator /(Vector3D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L940"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>scalar div</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D operator /(Vector3D v, double s)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>v</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>s</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_op_Division_" data-uid="SearchAThing.Sci.Vector3D.op_Division*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_op_Division_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.op_Division(System.Double,SearchAThing.Sci.Vector3D)">
+  operator /(double, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L935"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>scalar div</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D operator /(double s, Vector3D v)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>s</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_op_Implicit_" data-uid="SearchAThing.Sci.Vector3D.op_Implicit*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_op_Implicit_LibTessDotNet_Vec3__SearchAThing_Sci_Vector3D" data-uid="SearchAThing.Sci.Vector3D.op_Implicit(LibTessDotNet.Vec3)~SearchAThing.Sci.Vector3D">
+  implicit operator Vector3D(Vec3)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1164"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Convert given LibTessDotNet.Vec3 to Vector3D</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector3D(Vec3 v)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>v</code> <span class="xref">Vec3</span></dt>
+    <dd><p>input vector</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_op_Implicit_" data-uid="SearchAThing.Sci.Vector3D.op_Implicit*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_op_Implicit_SearchAThing_Sci_Vector3D__System_Numerics_Vector3" data-uid="SearchAThing.Sci.Vector3D.op_Implicit(SearchAThing.Sci.Vector3D)~System.Numerics.Vector3">
+  implicit operator Vector3(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1151"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Convert given Vector3D to System.Numerics.Vector3</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector3(Vector3D v)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>v</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>input vector</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector3">Vector3</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Vector3D_op_Implicit_SearchAThing_Sci_Vector3D__System_Numerics_Vector3_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>double to float conversion will be done</p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_op_Implicit_" data-uid="SearchAThing.Sci.Vector3D.op_Implicit*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_op_Implicit_SearchAThing_Sci_Vector3D__netDxf_Vector3" data-uid="SearchAThing.Sci.Vector3D.op_Implicit(SearchAThing.Sci.Vector3D)~netDxf.Vector3">
+  implicit operator Vector3(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1142"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Convert given Vector3D to (netdxf) Vector3</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector3(Vector3D v)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>v</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_op_Implicit_" data-uid="SearchAThing.Sci.Vector3D.op_Implicit*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_op_Implicit_System_Numerics_Vector2__SearchAThing_Sci_Vector3D" data-uid="SearchAThing.Sci.Vector3D.op_Implicit(System.Numerics.Vector2)~SearchAThing.Sci.Vector3D">
+  implicit operator Vector3D(Vector2)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1132"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>convert given (System.Numerics) Vector2 to a Vector3D ( with z=0 )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector3D(Vector2 v)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_op_Implicit_" data-uid="SearchAThing.Sci.Vector3D.op_Implicit*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_op_Implicit_System_Numerics_Vector3__SearchAThing_Sci_Vector3D" data-uid="SearchAThing.Sci.Vector3D.op_Implicit(System.Numerics.Vector3)~SearchAThing.Sci.Vector3D">
+  implicit operator Vector3D(Vector3)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1158"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Convert given System.Numerics.Vector3 to Vector3D</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector3D(Vector3 v)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector3">Vector3</a></dt>
+    <dd><p>input vector</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_op_Implicit_" data-uid="SearchAThing.Sci.Vector3D.op_Implicit*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_op_Implicit_netDxf_Vector2__SearchAThing_Sci_Vector3D" data-uid="SearchAThing.Sci.Vector3D.op_Implicit(netDxf.Vector2)~SearchAThing.Sci.Vector3D">
+  implicit operator Vector3D(Vector2)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1127"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>convert given (netdxf) Vector2 to a Vector3D ( assume z=0 )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector3D(Vector2 v)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>v</code> <span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_op_Implicit_" data-uid="SearchAThing.Sci.Vector3D.op_Implicit*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_op_Implicit_netDxf_Vector3__SearchAThing_Sci_Vector3D" data-uid="SearchAThing.Sci.Vector3D.op_Implicit(netDxf.Vector3)~SearchAThing.Sci.Vector3D">
+  implicit operator Vector3D(Vector3)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L1137"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Convert given (netdxf) Vector3 to Vector3D</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector3D(Vector3 v)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>v</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_op_Multiply_" data-uid="SearchAThing.Sci.Vector3D.op_Multiply*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_op_Multiply_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.op_Multiply(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)">
+  operator *(Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L930"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>scalar multiply vector components V1 * V2 =
+(V1.x * V2.x, V1.y * V2.y, V1.z * V2.z)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D operator *(Vector3D v1, Vector3D v2)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>v1</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>v2</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_op_Multiply_" data-uid="SearchAThing.Sci.Vector3D.op_Multiply*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_op_Multiply_SearchAThing_Sci_Vector3D_System_Double_" data-uid="SearchAThing.Sci.Vector3D.op_Multiply(SearchAThing.Sci.Vector3D,System.Double)">
+  operator *(Vector3D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L924"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>scalar mul</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D operator *(Vector3D v, double s)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>v</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>s</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_op_Multiply_" data-uid="SearchAThing.Sci.Vector3D.op_Multiply*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_op_Multiply_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.op_Multiply(System.Double,SearchAThing.Sci.Vector3D)">
+  operator *(double, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L919"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>scalar mul</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D operator *(double s, Vector3D v)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>s</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_op_Subtraction_" data-uid="SearchAThing.Sci.Vector3D.op_Subtraction*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_op_Subtraction_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.op_Subtraction(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)">
+  operator -(Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L914"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>sub</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D operator -(Vector3D a, Vector3D b)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>a</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>b</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Vector3D_op_UnaryNegation_" data-uid="SearchAThing.Sci.Vector3D.op_UnaryNegation*"></a>
+
+  <h3 id="SearchAThing_Sci_Vector3D_op_UnaryNegation_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Vector3D.op_UnaryNegation(SearchAThing.Sci.Vector3D)">
+  operator -(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L909"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>negate</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D operator -(Vector3D a)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>a</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Vector3D.cs/#L6" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

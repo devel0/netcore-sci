@@ -1,0 +1,174 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.LoopContainsEdgeMode
+  commentId: T:SearchAThing.Sci.LoopContainsEdgeMode
+  id: LoopContainsEdgeMode
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.LoopContainsEdgeMode.InsideExcludedPerimeter
+  - SearchAThing.Sci.LoopContainsEdgeMode.InsideOrPerimeter
+  - SearchAThing.Sci.LoopContainsEdgeMode.MidPointInside
+  - SearchAThing.Sci.LoopContainsEdgeMode.Perimeter
+  langs:
+  - csharp
+  - vb
+  name: LoopContainsEdgeMode
+  nameWithType: LoopContainsEdgeMode
+  fullName: SearchAThing.Sci.LoopContainsEdgeMode
+  type: Enum
+  source:
+    remote:
+      path: src/sci/Loop.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: LoopContainsEdgeMode
+    path: src/sci/Loop.cs
+    startLine: 20
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public enum LoopContainsEdgeMode
+    content.vb: Public Enum LoopContainsEdgeMode
+- uid: SearchAThing.Sci.LoopContainsEdgeMode.Perimeter
+  commentId: F:SearchAThing.Sci.LoopContainsEdgeMode.Perimeter
+  id: Perimeter
+  parent: SearchAThing.Sci.LoopContainsEdgeMode
+  langs:
+  - csharp
+  - vb
+  name: Perimeter
+  nameWithType: LoopContainsEdgeMode.Perimeter
+  fullName: SearchAThing.Sci.LoopContainsEdgeMode.Perimeter
+  type: Field
+  source:
+    remote:
+      path: src/sci/Loop.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Perimeter
+    path: src/sci/Loop.cs
+    startLine: 25
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: point is on perimeter
+  example: []
+  syntax:
+    content: Perimeter = 0
+    return:
+      type: SearchAThing.Sci.LoopContainsEdgeMode
+- uid: SearchAThing.Sci.LoopContainsEdgeMode.InsideExcludedPerimeter
+  commentId: F:SearchAThing.Sci.LoopContainsEdgeMode.InsideExcludedPerimeter
+  id: InsideExcludedPerimeter
+  parent: SearchAThing.Sci.LoopContainsEdgeMode
+  langs:
+  - csharp
+  - vb
+  name: InsideExcludedPerimeter
+  nameWithType: LoopContainsEdgeMode.InsideExcludedPerimeter
+  fullName: SearchAThing.Sci.LoopContainsEdgeMode.InsideExcludedPerimeter
+  type: Field
+  source:
+    remote:
+      path: src/sci/Loop.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: InsideExcludedPerimeter
+    path: src/sci/Loop.cs
+    startLine: 30
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: point is inside (perimeter excluded)
+  example: []
+  syntax:
+    content: InsideExcludedPerimeter = 1
+    return:
+      type: SearchAThing.Sci.LoopContainsEdgeMode
+- uid: SearchAThing.Sci.LoopContainsEdgeMode.InsideOrPerimeter
+  commentId: F:SearchAThing.Sci.LoopContainsEdgeMode.InsideOrPerimeter
+  id: InsideOrPerimeter
+  parent: SearchAThing.Sci.LoopContainsEdgeMode
+  langs:
+  - csharp
+  - vb
+  name: InsideOrPerimeter
+  nameWithType: LoopContainsEdgeMode.InsideOrPerimeter
+  fullName: SearchAThing.Sci.LoopContainsEdgeMode.InsideOrPerimeter
+  type: Field
+  source:
+    remote:
+      path: src/sci/Loop.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: InsideOrPerimeter
+    path: src/sci/Loop.cs
+    startLine: 35
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: point is inside or on perimeter
+  example: []
+  syntax:
+    content: InsideOrPerimeter = 2
+    return:
+      type: SearchAThing.Sci.LoopContainsEdgeMode
+- uid: SearchAThing.Sci.LoopContainsEdgeMode.MidPointInside
+  commentId: F:SearchAThing.Sci.LoopContainsEdgeMode.MidPointInside
+  id: MidPointInside
+  parent: SearchAThing.Sci.LoopContainsEdgeMode
+  langs:
+  - csharp
+  - vb
+  name: MidPointInside
+  nameWithType: LoopContainsEdgeMode.MidPointInside
+  fullName: SearchAThing.Sci.LoopContainsEdgeMode.MidPointInside
+  type: Field
+  source:
+    remote:
+      path: src/sci/Loop.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: MidPointInside
+    path: src/sci/Loop.cs
+    startLine: 40
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: midpoint is inside
+  example: []
+  syntax:
+    content: MidPointInside = 3
+    return:
+      type: SearchAThing.Sci.LoopContainsEdgeMode
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  href: SearchAThing.html
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+  spec.csharp:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+  spec.vb:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+- uid: SearchAThing.Sci.LoopContainsEdgeMode
+  commentId: T:SearchAThing.Sci.LoopContainsEdgeMode
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.LoopContainsEdgeMode.html
+  name: LoopContainsEdgeMode
+  nameWithType: LoopContainsEdgeMode
+  fullName: SearchAThing.Sci.LoopContainsEdgeMode

@@ -1,0 +1,83 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.Toolkit.WalkEdgeStopConditionDelegate
+  commentId: T:SearchAThing.Sci.Toolkit.WalkEdgeStopConditionDelegate
+  id: Toolkit.WalkEdgeStopConditionDelegate
+  parent: SearchAThing.Sci
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Toolkit.WalkEdgeStopConditionDelegate
+  nameWithType: Toolkit.WalkEdgeStopConditionDelegate
+  fullName: SearchAThing.Sci.Toolkit.WalkEdgeStopConditionDelegate
+  type: Delegate
+  source:
+    remote:
+      path: src/sci/Edge.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: WalkEdgeStopConditionDelegate
+    path: src/sci/Edge.cs
+    startLine: 321
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public delegate bool Toolkit.WalkEdgeStopConditionDelegate(Vector3D startVertex, Vector3D nextVertex)
+    parameters:
+    - id: startVertex
+      type: SearchAThing.Sci.Vector3D
+    - id: nextVertex
+      type: SearchAThing.Sci.Vector3D
+    return:
+      type: System.Boolean
+    content.vb: Public Delegate Function Toolkit.WalkEdgeStopConditionDelegate(startVertex As Vector3D, nextVertex As Vector3D) As Boolean
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  href: SearchAThing.html
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+  spec.csharp:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+  spec.vb:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+- uid: SearchAThing.Sci.Vector3D
+  commentId: T:SearchAThing.Sci.Vector3D
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Vector3D.html
+  name: Vector3D
+  nameWithType: Vector3D
+  fullName: SearchAThing.Sci.Vector3D
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

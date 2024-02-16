@@ -1,0 +1,873 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.Plane3D
+  commentId: T:SearchAThing.Sci.Plane3D
+  id: Plane3D
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.Plane3D.#ctor(SearchAThing.Sci.CoordinateSystem3D)
+  - SearchAThing.Sci.Plane3D.CS
+  - SearchAThing.Sci.Plane3D.Contains(System.Double,SearchAThing.Sci.Edge)
+  - SearchAThing.Sci.Plane3D.Contains(System.Double,SearchAThing.Sci.Line3D)
+  - SearchAThing.Sci.Plane3D.Contains(System.Double,SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.Plane3D.Intersect(System.Double,SearchAThing.Sci.Plane3D)
+  - SearchAThing.Sci.Plane3D.MiddlePlane(System.Double,SearchAThing.Sci.Plane3D)
+  - SearchAThing.Sci.Plane3D.Move(SearchAThing.Sci.Vector3D)
+  - SearchAThing.Sci.Plane3D.ToString
+  - SearchAThing.Sci.Plane3D.ToString(System.Int32)
+  - SearchAThing.Sci.Plane3D.XY
+  - SearchAThing.Sci.Plane3D.XZ
+  - SearchAThing.Sci.Plane3D.YZ
+  langs:
+  - csharp
+  - vb
+  name: Plane3D
+  nameWithType: Plane3D
+  fullName: SearchAThing.Sci.Plane3D
+  type: Class
+  source:
+    remote:
+      path: src/sci/Plane3D.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Plane3D
+    path: src/sci/Plane3D.cs
+    startLine: 5
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: encapsulate a CS to define a plane3d
+  example: []
+  syntax:
+    content: public class Plane3D
+    content.vb: Public Class Plane3D
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SearchAThing.Sci.Plane3D.CS
+  commentId: P:SearchAThing.Sci.Plane3D.CS
+  id: CS
+  parent: SearchAThing.Sci.Plane3D
+  langs:
+  - csharp
+  - vb
+  name: CS
+  nameWithType: Plane3D.CS
+  fullName: SearchAThing.Sci.Plane3D.CS
+  type: Property
+  source:
+    remote:
+      path: src/sci/Plane3D.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: CS
+    path: src/sci/Plane3D.cs
+    startLine: 8
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public CoordinateSystem3D CS { get; }
+    parameters: []
+    return:
+      type: SearchAThing.Sci.CoordinateSystem3D
+    content.vb: Public Property CS As CoordinateSystem3D
+  overload: SearchAThing.Sci.Plane3D.CS*
+- uid: SearchAThing.Sci.Plane3D.XY
+  commentId: F:SearchAThing.Sci.Plane3D.XY
+  id: XY
+  parent: SearchAThing.Sci.Plane3D
+  langs:
+  - csharp
+  - vb
+  name: XY
+  nameWithType: Plane3D.XY
+  fullName: SearchAThing.Sci.Plane3D.XY
+  type: Field
+  source:
+    remote:
+      path: src/sci/Plane3D.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: XY
+    path: src/sci/Plane3D.cs
+    startLine: 13
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: 'XY(z) plane : top view'
+  example: []
+  syntax:
+    content: public static readonly Plane3D XY
+    return:
+      type: SearchAThing.Sci.Plane3D
+    content.vb: Public Shared ReadOnly XY As Plane3D
+- uid: SearchAThing.Sci.Plane3D.XZ
+  commentId: F:SearchAThing.Sci.Plane3D.XZ
+  id: XZ
+  parent: SearchAThing.Sci.Plane3D
+  langs:
+  - csharp
+  - vb
+  name: XZ
+  nameWithType: Plane3D.XZ
+  fullName: SearchAThing.Sci.Plane3D.XZ
+  type: Field
+  source:
+    remote:
+      path: src/sci/Plane3D.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: XZ
+    path: src/sci/Plane3D.cs
+    startLine: 18
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: 'XZ(-y) plane : front view'
+  example: []
+  syntax:
+    content: public static readonly Plane3D XZ
+    return:
+      type: SearchAThing.Sci.Plane3D
+    content.vb: Public Shared ReadOnly XZ As Plane3D
+- uid: SearchAThing.Sci.Plane3D.YZ
+  commentId: F:SearchAThing.Sci.Plane3D.YZ
+  id: YZ
+  parent: SearchAThing.Sci.Plane3D
+  langs:
+  - csharp
+  - vb
+  name: YZ
+  nameWithType: Plane3D.YZ
+  fullName: SearchAThing.Sci.Plane3D.YZ
+  type: Field
+  source:
+    remote:
+      path: src/sci/Plane3D.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: YZ
+    path: src/sci/Plane3D.cs
+    startLine: 23
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: 'YZ(x) plane : side view'
+  example: []
+  syntax:
+    content: public static readonly Plane3D YZ
+    return:
+      type: SearchAThing.Sci.Plane3D
+    content.vb: Public Shared ReadOnly YZ As Plane3D
+- uid: SearchAThing.Sci.Plane3D.#ctor(SearchAThing.Sci.CoordinateSystem3D)
+  commentId: M:SearchAThing.Sci.Plane3D.#ctor(SearchAThing.Sci.CoordinateSystem3D)
+  id: '#ctor(SearchAThing.Sci.CoordinateSystem3D)'
+  parent: SearchAThing.Sci.Plane3D
+  langs:
+  - csharp
+  - vb
+  name: Plane3D(CoordinateSystem3D)
+  nameWithType: Plane3D.Plane3D(CoordinateSystem3D)
+  fullName: SearchAThing.Sci.Plane3D.Plane3D(SearchAThing.Sci.CoordinateSystem3D)
+  type: Constructor
+  source:
+    remote:
+      path: src/sci/Plane3D.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: .ctor
+    path: src/sci/Plane3D.cs
+    startLine: 35
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: build plane using cs as reference for origin and x,y axes
+  example: []
+  syntax:
+    content: public Plane3D(CoordinateSystem3D cs)
+    parameters:
+    - id: cs
+      type: SearchAThing.Sci.CoordinateSystem3D
+    content.vb: Public Sub New(cs As CoordinateSystem3D)
+  overload: SearchAThing.Sci.Plane3D.#ctor*
+  nameWithType.vb: Plane3D.New(CoordinateSystem3D)
+  fullName.vb: SearchAThing.Sci.Plane3D.New(SearchAThing.Sci.CoordinateSystem3D)
+  name.vb: New(CoordinateSystem3D)
+- uid: SearchAThing.Sci.Plane3D.Contains(System.Double,SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.Plane3D.Contains(System.Double,SearchAThing.Sci.Vector3D)
+  id: Contains(System.Double,SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.Plane3D
+  langs:
+  - csharp
+  - vb
+  name: Contains(double, Vector3D)
+  nameWithType: Plane3D.Contains(double, Vector3D)
+  fullName: SearchAThing.Sci.Plane3D.Contains(double, SearchAThing.Sci.Vector3D)
+  type: Method
+  source:
+    remote:
+      path: src/sci/Plane3D.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Contains
+    path: src/sci/Plane3D.cs
+    startLine: 43
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: states if given wcs point is contained in this plane
+  example: []
+  syntax:
+    content: public bool Contains(double tol, Vector3D pt)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: pt
+      type: SearchAThing.Sci.Vector3D
+    return:
+      type: System.Boolean
+    content.vb: Public Function Contains(tol As Double, pt As Vector3D) As Boolean
+  overload: SearchAThing.Sci.Plane3D.Contains*
+  nameWithType.vb: Plane3D.Contains(Double, Vector3D)
+  fullName.vb: SearchAThing.Sci.Plane3D.Contains(Double, SearchAThing.Sci.Vector3D)
+  name.vb: Contains(Double, Vector3D)
+- uid: SearchAThing.Sci.Plane3D.Contains(System.Double,SearchAThing.Sci.Line3D)
+  commentId: M:SearchAThing.Sci.Plane3D.Contains(System.Double,SearchAThing.Sci.Line3D)
+  id: Contains(System.Double,SearchAThing.Sci.Line3D)
+  parent: SearchAThing.Sci.Plane3D
+  langs:
+  - csharp
+  - vb
+  name: Contains(double, Line3D)
+  nameWithType: Plane3D.Contains(double, Line3D)
+  fullName: SearchAThing.Sci.Plane3D.Contains(double, SearchAThing.Sci.Line3D)
+  type: Method
+  source:
+    remote:
+      path: src/sci/Plane3D.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Contains
+    path: src/sci/Plane3D.cs
+    startLine: 48
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: states if given wcs segment is contained in this plane
+  example: []
+  syntax:
+    content: public bool Contains(double tol, Line3D line)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: line
+      type: SearchAThing.Sci.Line3D
+    return:
+      type: System.Boolean
+    content.vb: Public Function Contains(tol As Double, line As Line3D) As Boolean
+  overload: SearchAThing.Sci.Plane3D.Contains*
+  nameWithType.vb: Plane3D.Contains(Double, Line3D)
+  fullName.vb: SearchAThing.Sci.Plane3D.Contains(Double, SearchAThing.Sci.Line3D)
+  name.vb: Contains(Double, Line3D)
+- uid: SearchAThing.Sci.Plane3D.Contains(System.Double,SearchAThing.Sci.Edge)
+  commentId: M:SearchAThing.Sci.Plane3D.Contains(System.Double,SearchAThing.Sci.Edge)
+  id: Contains(System.Double,SearchAThing.Sci.Edge)
+  parent: SearchAThing.Sci.Plane3D
+  langs:
+  - csharp
+  - vb
+  name: Contains(double, Edge)
+  nameWithType: Plane3D.Contains(double, Edge)
+  fullName: SearchAThing.Sci.Plane3D.Contains(double, SearchAThing.Sci.Edge)
+  type: Method
+  source:
+    remote:
+      path: src/sci/Plane3D.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Contains
+    path: src/sci/Plane3D.cs
+    startLine: 53
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: states if given edge contained in this plane
+  example: []
+  syntax:
+    content: public bool Contains(double tol, Edge edge)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: edge
+      type: SearchAThing.Sci.Edge
+    return:
+      type: System.Boolean
+    content.vb: Public Function Contains(tol As Double, edge As Edge) As Boolean
+  overload: SearchAThing.Sci.Plane3D.Contains*
+  nameWithType.vb: Plane3D.Contains(Double, Edge)
+  fullName.vb: SearchAThing.Sci.Plane3D.Contains(Double, SearchAThing.Sci.Edge)
+  name.vb: Contains(Double, Edge)
+- uid: SearchAThing.Sci.Plane3D.Intersect(System.Double,SearchAThing.Sci.Plane3D)
+  commentId: M:SearchAThing.Sci.Plane3D.Intersect(System.Double,SearchAThing.Sci.Plane3D)
+  id: Intersect(System.Double,SearchAThing.Sci.Plane3D)
+  parent: SearchAThing.Sci.Plane3D
+  langs:
+  - csharp
+  - vb
+  name: Intersect(double, Plane3D)
+  nameWithType: Plane3D.Intersect(double, Plane3D)
+  fullName: SearchAThing.Sci.Plane3D.Intersect(double, SearchAThing.Sci.Plane3D)
+  type: Method
+  source:
+    remote:
+      path: src/sci/Plane3D.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Intersect
+    path: src/sci/Plane3D.cs
+    startLine: 60
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: return intersection line between two planes or null if they parallels
+  example: []
+  syntax:
+    content: public Line3D? Intersect(double tol, Plane3D other)
+    parameters:
+    - id: tol
+      type: System.Double
+      description: len tolerance
+    - id: other
+      type: SearchAThing.Sci.Plane3D
+      description: other plane
+    return:
+      type: SearchAThing.Sci.Line3D
+    content.vb: Public Function Intersect(tol As Double, other As Plane3D) As Line3D
+  overload: SearchAThing.Sci.Plane3D.Intersect*
+  nameWithType.vb: Plane3D.Intersect(Double, Plane3D)
+  fullName.vb: SearchAThing.Sci.Plane3D.Intersect(Double, SearchAThing.Sci.Plane3D)
+  name.vb: Intersect(Double, Plane3D)
+- uid: SearchAThing.Sci.Plane3D.Move(SearchAThing.Sci.Vector3D)
+  commentId: M:SearchAThing.Sci.Plane3D.Move(SearchAThing.Sci.Vector3D)
+  id: Move(SearchAThing.Sci.Vector3D)
+  parent: SearchAThing.Sci.Plane3D
+  langs:
+  - csharp
+  - vb
+  name: Move(Vector3D)
+  nameWithType: Plane3D.Move(Vector3D)
+  fullName: SearchAThing.Sci.Plane3D.Move(SearchAThing.Sci.Vector3D)
+  type: Method
+  source:
+    remote:
+      path: src/sci/Plane3D.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Move
+    path: src/sci/Plane3D.cs
+    startLine: 62
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public Plane3D Move(Vector3D delta)
+    parameters:
+    - id: delta
+      type: SearchAThing.Sci.Vector3D
+    return:
+      type: SearchAThing.Sci.Plane3D
+    content.vb: Public Function Move(delta As Vector3D) As Plane3D
+  overload: SearchAThing.Sci.Plane3D.Move*
+- uid: SearchAThing.Sci.Plane3D.MiddlePlane(System.Double,SearchAThing.Sci.Plane3D)
+  commentId: M:SearchAThing.Sci.Plane3D.MiddlePlane(System.Double,SearchAThing.Sci.Plane3D)
+  id: MiddlePlane(System.Double,SearchAThing.Sci.Plane3D)
+  parent: SearchAThing.Sci.Plane3D
+  langs:
+  - csharp
+  - vb
+  name: MiddlePlane(double, Plane3D)
+  nameWithType: Plane3D.MiddlePlane(double, Plane3D)
+  fullName: SearchAThing.Sci.Plane3D.MiddlePlane(double, SearchAThing.Sci.Plane3D)
+  type: Method
+  source:
+    remote:
+      path: src/sci/Plane3D.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: MiddlePlane
+    path: src/sci/Plane3D.cs
+    startLine: 67
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: retrieve the plane that is in the middle between this and other given
+  example: []
+  syntax:
+    content: public Plane3D MiddlePlane(double tol, Plane3D other)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: other
+      type: SearchAThing.Sci.Plane3D
+    return:
+      type: SearchAThing.Sci.Plane3D
+    content.vb: Public Function MiddlePlane(tol As Double, other As Plane3D) As Plane3D
+  overload: SearchAThing.Sci.Plane3D.MiddlePlane*
+  nameWithType.vb: Plane3D.MiddlePlane(Double, Plane3D)
+  fullName.vb: SearchAThing.Sci.Plane3D.MiddlePlane(Double, SearchAThing.Sci.Plane3D)
+  name.vb: MiddlePlane(Double, Plane3D)
+- uid: SearchAThing.Sci.Plane3D.ToString(System.Int32)
+  commentId: M:SearchAThing.Sci.Plane3D.ToString(System.Int32)
+  id: ToString(System.Int32)
+  parent: SearchAThing.Sci.Plane3D
+  langs:
+  - csharp
+  - vb
+  name: ToString(int)
+  nameWithType: Plane3D.ToString(int)
+  fullName: SearchAThing.Sci.Plane3D.ToString(int)
+  type: Method
+  source:
+    remote:
+      path: src/sci/Plane3D.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: ToString
+    path: src/sci/Plane3D.cs
+    startLine: 86
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public string ToString(int digits)
+    parameters:
+    - id: digits
+      type: System.Int32
+    return:
+      type: System.String
+    content.vb: Public Function ToString(digits As Integer) As String
+  overload: SearchAThing.Sci.Plane3D.ToString*
+  nameWithType.vb: Plane3D.ToString(Integer)
+  fullName.vb: SearchAThing.Sci.Plane3D.ToString(Integer)
+  name.vb: ToString(Integer)
+- uid: SearchAThing.Sci.Plane3D.ToString
+  commentId: M:SearchAThing.Sci.Plane3D.ToString
+  id: ToString
+  parent: SearchAThing.Sci.Plane3D
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Plane3D.ToString()
+  fullName: SearchAThing.Sci.Plane3D.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/sci/Plane3D.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: ToString
+    path: src/sci/Plane3D.cs
+    startLine: 88
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.Object.ToString
+  overload: SearchAThing.Sci.Plane3D.ToString*
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  href: SearchAThing.html
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+  spec.csharp:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+  spec.vb:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: SearchAThing.Sci.Plane3D.CS*
+  commentId: Overload:SearchAThing.Sci.Plane3D.CS
+  href: SearchAThing.Sci.Plane3D.html#SearchAThing_Sci_Plane3D_CS
+  name: CS
+  nameWithType: Plane3D.CS
+  fullName: SearchAThing.Sci.Plane3D.CS
+- uid: SearchAThing.Sci.CoordinateSystem3D
+  commentId: T:SearchAThing.Sci.CoordinateSystem3D
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.CoordinateSystem3D.html
+  name: CoordinateSystem3D
+  nameWithType: CoordinateSystem3D
+  fullName: SearchAThing.Sci.CoordinateSystem3D
+- uid: SearchAThing.Sci.Plane3D
+  commentId: T:SearchAThing.Sci.Plane3D
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Plane3D.html
+  name: Plane3D
+  nameWithType: Plane3D
+  fullName: SearchAThing.Sci.Plane3D
+- uid: SearchAThing.Sci.Plane3D.#ctor*
+  commentId: Overload:SearchAThing.Sci.Plane3D.#ctor
+  href: SearchAThing.Sci.Plane3D.html#SearchAThing_Sci_Plane3D__ctor_SearchAThing_Sci_CoordinateSystem3D_
+  name: Plane3D
+  nameWithType: Plane3D.Plane3D
+  fullName: SearchAThing.Sci.Plane3D.Plane3D
+  nameWithType.vb: Plane3D.New
+  fullName.vb: SearchAThing.Sci.Plane3D.New
+  name.vb: New
+- uid: SearchAThing.Sci.Plane3D.Contains*
+  commentId: Overload:SearchAThing.Sci.Plane3D.Contains
+  href: SearchAThing.Sci.Plane3D.html#SearchAThing_Sci_Plane3D_Contains_System_Double_SearchAThing_Sci_Vector3D_
+  name: Contains
+  nameWithType: Plane3D.Contains
+  fullName: SearchAThing.Sci.Plane3D.Contains
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: SearchAThing.Sci.Vector3D
+  commentId: T:SearchAThing.Sci.Vector3D
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Vector3D.html
+  name: Vector3D
+  nameWithType: Vector3D
+  fullName: SearchAThing.Sci.Vector3D
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: SearchAThing.Sci.Line3D
+  commentId: T:SearchAThing.Sci.Line3D
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Line3D.html
+  name: Line3D
+  nameWithType: Line3D
+  fullName: SearchAThing.Sci.Line3D
+- uid: SearchAThing.Sci.Edge
+  commentId: T:SearchAThing.Sci.Edge
+  parent: SearchAThing.Sci
+  href: SearchAThing.Sci.Edge.html
+  name: Edge
+  nameWithType: Edge
+  fullName: SearchAThing.Sci.Edge
+- uid: SearchAThing.Sci.Plane3D.Intersect*
+  commentId: Overload:SearchAThing.Sci.Plane3D.Intersect
+  href: SearchAThing.Sci.Plane3D.html#SearchAThing_Sci_Plane3D_Intersect_System_Double_SearchAThing_Sci_Plane3D_
+  name: Intersect
+  nameWithType: Plane3D.Intersect
+  fullName: SearchAThing.Sci.Plane3D.Intersect
+- uid: SearchAThing.Sci.Plane3D.Move*
+  commentId: Overload:SearchAThing.Sci.Plane3D.Move
+  href: SearchAThing.Sci.Plane3D.html#SearchAThing_Sci_Plane3D_Move_SearchAThing_Sci_Vector3D_
+  name: Move
+  nameWithType: Plane3D.Move
+  fullName: SearchAThing.Sci.Plane3D.Move
+- uid: SearchAThing.Sci.Plane3D.MiddlePlane*
+  commentId: Overload:SearchAThing.Sci.Plane3D.MiddlePlane
+  href: SearchAThing.Sci.Plane3D.html#SearchAThing_Sci_Plane3D_MiddlePlane_System_Double_SearchAThing_Sci_Plane3D_
+  name: MiddlePlane
+  nameWithType: Plane3D.MiddlePlane
+  fullName: SearchAThing.Sci.Plane3D.MiddlePlane
+- uid: SearchAThing.Sci.Plane3D.ToString*
+  commentId: Overload:SearchAThing.Sci.Plane3D.ToString
+  href: SearchAThing.Sci.Plane3D.html#SearchAThing_Sci_Plane3D_ToString_System_Int32_
+  name: ToString
+  nameWithType: Plane3D.ToString
+  fullName: SearchAThing.Sci.Plane3D.ToString
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )

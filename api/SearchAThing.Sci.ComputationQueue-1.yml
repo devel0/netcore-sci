@@ -1,0 +1,681 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.ComputationQueue`1
+  commentId: T:SearchAThing.Sci.ComputationQueue`1
+  id: ComputationQueue`1
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.ComputationQueue`1.#ctor(System.Int32)
+  - SearchAThing.Sci.ComputationQueue`1.Count
+  - SearchAThing.Sci.ComputationQueue`1.Current
+  - SearchAThing.Sci.ComputationQueue`1.Enq(`0)
+  - SearchAThing.Sci.ComputationQueue`1.GetItem(System.Int32)
+  - SearchAThing.Sci.ComputationQueue`1.MaxSize
+  - SearchAThing.Sci.ComputationQueue`1.Prev
+  - SearchAThing.Sci.ComputationQueue`1.PrevPrev
+  langs:
+  - csharp
+  - vb
+  name: ComputationQueue<T>
+  nameWithType: ComputationQueue<T>
+  fullName: SearchAThing.Sci.ComputationQueue<T>
+  type: Class
+  source:
+    remote:
+      path: src/sci/ComputationQueue.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: ComputationQueue
+    path: src/sci/ComputationQueue.cs
+    startLine: 7
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: >-
+    helper circular queue manager for computation.
+
+    at constructor the maxSize ( default=3 ) can be specified to allow retrieval of previous computed items
+  example: []
+  syntax:
+    content: 'public class ComputationQueue<T> where T : class'
+    typeParameters:
+    - id: T
+      description: type that hold computation data
+    content.vb: Public Class ComputationQueue(Of T As Class)
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: ComputationQueue(Of T)
+  fullName.vb: SearchAThing.Sci.ComputationQueue(Of T)
+  name.vb: ComputationQueue(Of T)
+- uid: SearchAThing.Sci.ComputationQueue`1.MaxSize
+  commentId: P:SearchAThing.Sci.ComputationQueue`1.MaxSize
+  id: MaxSize
+  parent: SearchAThing.Sci.ComputationQueue`1
+  langs:
+  - csharp
+  - vb
+  name: MaxSize
+  nameWithType: ComputationQueue<T>.MaxSize
+  fullName: SearchAThing.Sci.ComputationQueue<T>.MaxSize
+  type: Property
+  source:
+    remote:
+      path: src/sci/ComputationQueue.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: MaxSize
+    path: src/sci/ComputationQueue.cs
+    startLine: 14
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: max queue size
+  example: []
+  syntax:
+    content: public int MaxSize { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MaxSize As Integer
+  overload: SearchAThing.Sci.ComputationQueue`1.MaxSize*
+  nameWithType.vb: ComputationQueue(Of T).MaxSize
+  fullName.vb: SearchAThing.Sci.ComputationQueue(Of T).MaxSize
+- uid: SearchAThing.Sci.ComputationQueue`1.Count
+  commentId: P:SearchAThing.Sci.ComputationQueue`1.Count
+  id: Count
+  parent: SearchAThing.Sci.ComputationQueue`1
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: ComputationQueue<T>.Count
+  fullName: SearchAThing.Sci.ComputationQueue<T>.Count
+  type: Property
+  source:
+    remote:
+      path: src/sci/ComputationQueue.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Count
+    path: src/sci/ComputationQueue.cs
+    startLine: 21
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: actual inserted items in the queue
+  example: []
+  syntax:
+    content: public int Count { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Count As Integer
+  overload: SearchAThing.Sci.ComputationQueue`1.Count*
+  nameWithType.vb: ComputationQueue(Of T).Count
+  fullName.vb: SearchAThing.Sci.ComputationQueue(Of T).Count
+- uid: SearchAThing.Sci.ComputationQueue`1.GetItem(System.Int32)
+  commentId: M:SearchAThing.Sci.ComputationQueue`1.GetItem(System.Int32)
+  id: GetItem(System.Int32)
+  parent: SearchAThing.Sci.ComputationQueue`1
+  langs:
+  - csharp
+  - vb
+  name: GetItem(int)
+  nameWithType: ComputationQueue<T>.GetItem(int)
+  fullName: SearchAThing.Sci.ComputationQueue<T>.GetItem(int)
+  type: Method
+  source:
+    remote:
+      path: src/sci/ComputationQueue.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: GetItem
+    path: src/sci/ComputationQueue.cs
+    startLine: 28
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: retrieve item from the queue
+  example: []
+  syntax:
+    content: public T? GetItem(int prevCnt)
+    parameters:
+    - id: prevCnt
+      type: System.Int32
+      description: 0 for last inserted, 1 for prev, 2 for prevPrev, ...
+    return:
+      type: '{T}'
+      description: prev-th item in the queue
+    content.vb: Public Function GetItem(prevCnt As Integer) As T
+  overload: SearchAThing.Sci.ComputationQueue`1.GetItem*
+  nameWithType.vb: ComputationQueue(Of T).GetItem(Integer)
+  fullName.vb: SearchAThing.Sci.ComputationQueue(Of T).GetItem(Integer)
+  name.vb: GetItem(Integer)
+- uid: SearchAThing.Sci.ComputationQueue`1.Current
+  commentId: P:SearchAThing.Sci.ComputationQueue`1.Current
+  id: Current
+  parent: SearchAThing.Sci.ComputationQueue`1
+  langs:
+  - csharp
+  - vb
+  name: Current
+  nameWithType: ComputationQueue<T>.Current
+  fullName: SearchAThing.Sci.ComputationQueue<T>.Current
+  type: Property
+  source:
+    remote:
+      path: src/sci/ComputationQueue.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Current
+    path: src/sci/ComputationQueue.cs
+    startLine: 42
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: last inserted item
+  example: []
+  syntax:
+    content: public T? Current { get; }
+    parameters: []
+    return:
+      type: '{T}'
+    content.vb: Public ReadOnly Property Current As T
+  overload: SearchAThing.Sci.ComputationQueue`1.Current*
+  nameWithType.vb: ComputationQueue(Of T).Current
+  fullName.vb: SearchAThing.Sci.ComputationQueue(Of T).Current
+- uid: SearchAThing.Sci.ComputationQueue`1.Prev
+  commentId: P:SearchAThing.Sci.ComputationQueue`1.Prev
+  id: Prev
+  parent: SearchAThing.Sci.ComputationQueue`1
+  langs:
+  - csharp
+  - vb
+  name: Prev
+  nameWithType: ComputationQueue<T>.Prev
+  fullName: SearchAThing.Sci.ComputationQueue<T>.Prev
+  type: Property
+  source:
+    remote:
+      path: src/sci/ComputationQueue.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Prev
+    path: src/sci/ComputationQueue.cs
+    startLine: 47
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: previous inserted item ( penultimate )
+  example: []
+  syntax:
+    content: public T? Prev { get; }
+    parameters: []
+    return:
+      type: '{T}'
+    content.vb: Public ReadOnly Property Prev As T
+  overload: SearchAThing.Sci.ComputationQueue`1.Prev*
+  nameWithType.vb: ComputationQueue(Of T).Prev
+  fullName.vb: SearchAThing.Sci.ComputationQueue(Of T).Prev
+- uid: SearchAThing.Sci.ComputationQueue`1.PrevPrev
+  commentId: P:SearchAThing.Sci.ComputationQueue`1.PrevPrev
+  id: PrevPrev
+  parent: SearchAThing.Sci.ComputationQueue`1
+  langs:
+  - csharp
+  - vb
+  name: PrevPrev
+  nameWithType: ComputationQueue<T>.PrevPrev
+  fullName: SearchAThing.Sci.ComputationQueue<T>.PrevPrev
+  type: Property
+  source:
+    remote:
+      path: src/sci/ComputationQueue.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: PrevPrev
+    path: src/sci/ComputationQueue.cs
+    startLine: 52
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: previous previous inserted item ( antepeunltimate )
+  example: []
+  syntax:
+    content: public T? PrevPrev { get; }
+    parameters: []
+    return:
+      type: '{T}'
+    content.vb: Public ReadOnly Property PrevPrev As T
+  overload: SearchAThing.Sci.ComputationQueue`1.PrevPrev*
+  nameWithType.vb: ComputationQueue(Of T).PrevPrev
+  fullName.vb: SearchAThing.Sci.ComputationQueue(Of T).PrevPrev
+- uid: SearchAThing.Sci.ComputationQueue`1.#ctor(System.Int32)
+  commentId: M:SearchAThing.Sci.ComputationQueue`1.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: SearchAThing.Sci.ComputationQueue`1
+  langs:
+  - csharp
+  - vb
+  name: ComputationQueue(int)
+  nameWithType: ComputationQueue<T>.ComputationQueue(int)
+  fullName: SearchAThing.Sci.ComputationQueue<T>.ComputationQueue(int)
+  type: Constructor
+  source:
+    remote:
+      path: src/sci/ComputationQueue.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: .ctor
+    path: src/sci/ComputationQueue.cs
+    startLine: 59
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: >-
+    construct a computation queue with given size.
+
+    if queue size already at maxSize older element will be overwritten.
+  example: []
+  syntax:
+    content: public ComputationQueue(int maxSize = 3)
+    parameters:
+    - id: maxSize
+      type: System.Int32
+      description: max circular queue size
+    content.vb: Public Sub New(maxSize As Integer = 3)
+  overload: SearchAThing.Sci.ComputationQueue`1.#ctor*
+  nameWithType.vb: ComputationQueue(Of T).New(Integer)
+  fullName.vb: SearchAThing.Sci.ComputationQueue(Of T).New(Integer)
+  name.vb: New(Integer)
+- uid: SearchAThing.Sci.ComputationQueue`1.Enq(`0)
+  commentId: M:SearchAThing.Sci.ComputationQueue`1.Enq(`0)
+  id: Enq(`0)
+  parent: SearchAThing.Sci.ComputationQueue`1
+  langs:
+  - csharp
+  - vb
+  name: Enq(T)
+  nameWithType: ComputationQueue<T>.Enq(T)
+  fullName: SearchAThing.Sci.ComputationQueue<T>.Enq(T)
+  type: Method
+  source:
+    remote:
+      path: src/sci/ComputationQueue.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Enq
+    path: src/sci/ComputationQueue.cs
+    startLine: 69
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: >-
+    insert element in the queue.
+
+    if queue size already at maxSize older element will be overwritten
+  example: []
+  syntax:
+    content: public void Enq(T d)
+    parameters:
+    - id: d
+      type: '{T}'
+      description: data to enqueue
+    content.vb: Public Sub Enq(d As T)
+  overload: SearchAThing.Sci.ComputationQueue`1.Enq*
+  nameWithType.vb: ComputationQueue(Of T).Enq(T)
+  fullName.vb: SearchAThing.Sci.ComputationQueue(Of T).Enq(T)
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  href: SearchAThing.html
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+  spec.csharp:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+  spec.vb:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: SearchAThing.Sci.ComputationQueue`1.MaxSize*
+  commentId: Overload:SearchAThing.Sci.ComputationQueue`1.MaxSize
+  href: SearchAThing.Sci.ComputationQueue-1.html#SearchAThing_Sci_ComputationQueue_1_MaxSize
+  name: MaxSize
+  nameWithType: ComputationQueue<T>.MaxSize
+  fullName: SearchAThing.Sci.ComputationQueue<T>.MaxSize
+  nameWithType.vb: ComputationQueue(Of T).MaxSize
+  fullName.vb: SearchAThing.Sci.ComputationQueue(Of T).MaxSize
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: SearchAThing.Sci.ComputationQueue`1.Count*
+  commentId: Overload:SearchAThing.Sci.ComputationQueue`1.Count
+  href: SearchAThing.Sci.ComputationQueue-1.html#SearchAThing_Sci_ComputationQueue_1_Count
+  name: Count
+  nameWithType: ComputationQueue<T>.Count
+  fullName: SearchAThing.Sci.ComputationQueue<T>.Count
+  nameWithType.vb: ComputationQueue(Of T).Count
+  fullName.vb: SearchAThing.Sci.ComputationQueue(Of T).Count
+- uid: SearchAThing.Sci.ComputationQueue`1.GetItem*
+  commentId: Overload:SearchAThing.Sci.ComputationQueue`1.GetItem
+  href: SearchAThing.Sci.ComputationQueue-1.html#SearchAThing_Sci_ComputationQueue_1_GetItem_System_Int32_
+  name: GetItem
+  nameWithType: ComputationQueue<T>.GetItem
+  fullName: SearchAThing.Sci.ComputationQueue<T>.GetItem
+  nameWithType.vb: ComputationQueue(Of T).GetItem
+  fullName.vb: SearchAThing.Sci.ComputationQueue(Of T).GetItem
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: SearchAThing.Sci.ComputationQueue`1.Current*
+  commentId: Overload:SearchAThing.Sci.ComputationQueue`1.Current
+  href: SearchAThing.Sci.ComputationQueue-1.html#SearchAThing_Sci_ComputationQueue_1_Current
+  name: Current
+  nameWithType: ComputationQueue<T>.Current
+  fullName: SearchAThing.Sci.ComputationQueue<T>.Current
+  nameWithType.vb: ComputationQueue(Of T).Current
+  fullName.vb: SearchAThing.Sci.ComputationQueue(Of T).Current
+- uid: SearchAThing.Sci.ComputationQueue`1.Prev*
+  commentId: Overload:SearchAThing.Sci.ComputationQueue`1.Prev
+  href: SearchAThing.Sci.ComputationQueue-1.html#SearchAThing_Sci_ComputationQueue_1_Prev
+  name: Prev
+  nameWithType: ComputationQueue<T>.Prev
+  fullName: SearchAThing.Sci.ComputationQueue<T>.Prev
+  nameWithType.vb: ComputationQueue(Of T).Prev
+  fullName.vb: SearchAThing.Sci.ComputationQueue(Of T).Prev
+- uid: SearchAThing.Sci.ComputationQueue`1.PrevPrev*
+  commentId: Overload:SearchAThing.Sci.ComputationQueue`1.PrevPrev
+  href: SearchAThing.Sci.ComputationQueue-1.html#SearchAThing_Sci_ComputationQueue_1_PrevPrev
+  name: PrevPrev
+  nameWithType: ComputationQueue<T>.PrevPrev
+  fullName: SearchAThing.Sci.ComputationQueue<T>.PrevPrev
+  nameWithType.vb: ComputationQueue(Of T).PrevPrev
+  fullName.vb: SearchAThing.Sci.ComputationQueue(Of T).PrevPrev
+- uid: SearchAThing.Sci.ComputationQueue`1.#ctor*
+  commentId: Overload:SearchAThing.Sci.ComputationQueue`1.#ctor
+  href: SearchAThing.Sci.ComputationQueue-1.html#SearchAThing_Sci_ComputationQueue_1__ctor_System_Int32_
+  name: ComputationQueue
+  nameWithType: ComputationQueue<T>.ComputationQueue
+  fullName: SearchAThing.Sci.ComputationQueue<T>.ComputationQueue
+  nameWithType.vb: ComputationQueue(Of T).New
+  fullName.vb: SearchAThing.Sci.ComputationQueue(Of T).New
+  name.vb: New
+- uid: SearchAThing.Sci.ComputationQueue`1.Enq*
+  commentId: Overload:SearchAThing.Sci.ComputationQueue`1.Enq
+  href: SearchAThing.Sci.ComputationQueue-1.html#SearchAThing_Sci_ComputationQueue_1_Enq__0_
+  name: Enq
+  nameWithType: ComputationQueue<T>.Enq
+  fullName: SearchAThing.Sci.ComputationQueue<T>.Enq
+  nameWithType.vb: ComputationQueue(Of T).Enq
+  fullName.vb: SearchAThing.Sci.ComputationQueue(Of T).Enq

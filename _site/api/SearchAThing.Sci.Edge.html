@@ -1,0 +1,899 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Edge | netcore-sci </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Edge | netcore-sci ">
+      
+      <meta name="description" content="interface implemented by some type of geometries used in Loop such as Line3D, Arc3D and Circle3D">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/devel0/netcore-sci/new/master/apiSpec/new?filename=SearchAThing_Sci_Edge.md&amp;value=---%0Auid%3A%20SearchAThing.Sci.Edge%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="netcore-sci">
+            netcore-sci
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SearchAThing.Sci.Edge">
+
+
+
+  <h1 id="SearchAThing_Sci_Edge" data-uid="SearchAThing.Sci.Edge" class="text-break">
+Class Edge  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SearchAThing.html">SearchAThing</a>.<a class="xref" href="SearchAThing.Sci.html">Sci</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>netcore-sci.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>interface implemented by some type of geometries used in Loop such as Line3D, Arc3D and Circle3D</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class Edge : Geometry</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a></div>
+      <div><span class="xref">Edge</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="SearchAThing.Sci.Arc3D.html">Arc3D</a></div>
+      <div><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Geometry.html#SearchAThing_Sci_Geometry_Copy">Geometry.Copy()</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Geometry.html#SearchAThing_Sci_Geometry_GeomType">Geometry.GeomType</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Geometry.html#SearchAThing_Sci_Geometry_Vertexes">Geometry.Vertexes</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Geometry.html#SearchAThing_Sci_Geometry_GeomFrom">Geometry.GeomFrom</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Geometry.html#SearchAThing_Sci_Geometry_GeomTo">Geometry.GeomTo</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Geometry.html#SearchAThing_Sci_Geometry_Length">Geometry.Length</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Geometry.html#SearchAThing_Sci_Geometry_MidPoint">Geometry.MidPoint</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Geometry.html#SearchAThing_Sci_Geometry_Divide_System_Int32_System_Boolean_">Geometry.Divide(int, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Geometry.html#SearchAThing_Sci_Geometry_Split_System_Double_System_Collections_Generic_IEnumerable_SearchAThing_Sci_Vector3D__">Geometry.Split(double, IEnumerable&lt;Vector3D&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Geometry.html#SearchAThing_Sci_Geometry_Move_SearchAThing_Sci_Vector3D_">Geometry.Move(Vector3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Geometry.html#SearchAThing_Sci_Geometry_BBox_System_Double_">Geometry.BBox(double)</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Geometry.html#SearchAThing_Sci_Geometry_GeomIntersect_System_Double_SearchAThing_Sci_Geometry_SearchAThing_Sci_GeomSegmentMode_SearchAThing_Sci_GeomSegmentMode_">Geometry.GeomIntersect(double, Geometry, GeomSegmentMode, GeomSegmentMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Geometry.html#SearchAThing_Sci_Geometry_GeomEquals_System_Double_SearchAThing_Sci_Geometry_System_Boolean_">Geometry.GeomEquals(double, Geometry, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Geometry.html#SearchAThing_Sci_Geometry_DxfEntity">Geometry.DxfEntity</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SearchAThing_Sci_Edge__ctor_" data-uid="SearchAThing.Sci.Edge.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Edge__ctor_SearchAThing_Sci_GeometryType_" data-uid="SearchAThing.Sci.Edge.#ctor(SearchAThing.Sci.GeometryType)">
+  Edge(GeometryType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Edge(GeometryType type)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="SearchAThing.Sci.GeometryType.html">GeometryType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SearchAThing_Sci_Edge_SGeomFrom_" data-uid="SearchAThing.Sci.Edge.SGeomFrom*"></a>
+
+  <h3 id="SearchAThing_Sci_Edge_SGeomFrom" data-uid="SearchAThing.Sci.Edge.SGeomFrom">
+  SGeomFrom
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>GeomFrom (Sense:true) or GeomTo (Sense:false)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D SGeomFrom { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Edge_SGeomTo_" data-uid="SearchAThing.Sci.Edge.SGeomTo*"></a>
+
+  <h3 id="SearchAThing_Sci_Edge_SGeomTo" data-uid="SearchAThing.Sci.Edge.SGeomTo">
+  SGeomTo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>GeomTo (Sense:true) or GeomFrom (Sense:false)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D SGeomTo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Edge_Sense_" data-uid="SearchAThing.Sci.Edge.Sense*"></a>
+
+  <h3 id="SearchAThing_Sci_Edge_Sense" data-uid="SearchAThing.Sci.Edge.Sense">
+  Sense
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>allow to store info about sense; when false SGeomFrom = GeomTo and SGeomTo = GeomFrom</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Sense { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SearchAThing_Sci_Edge_CheckSense_" data-uid="SearchAThing.Sci.Edge.CheckSense*"></a>
+
+  <h3 id="SearchAThing_Sci_Edge_CheckSense_System_Double_SearchAThing_Sci_Edge_" data-uid="SearchAThing.Sci.Edge.CheckSense(System.Double,SearchAThing.Sci.Edge)">
+  CheckSense(double, Edge)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>states if this and/or next given edge need to be toggled in their sense to allow glueing.
+precedence is given to toggling sense of the next one.
+returns null if no solution.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public (bool needToggleSenseThis, bool needToggleSenseNext)? CheckSense(double tol, Edge nextEdge)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>nextEdge</code> <a class="xref" href="SearchAThing.Sci.Edge.html">Edge</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.needtogglesensethis">needToggleSenseThis</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.needtogglesensenext">needToggleSenseNext</a>)?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Edge_CopyFrom_" data-uid="SearchAThing.Sci.Edge.CopyFrom*"></a>
+
+  <h3 id="SearchAThing_Sci_Edge_CopyFrom_SearchAThing_Sci_Edge_" data-uid="SearchAThing.Sci.Edge.CopyFrom(SearchAThing.Sci.Edge)">
+  CopyFrom(Edge)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void CopyFrom(Edge other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Edge.html">Edge</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Edge_EdgeContainsPoint_" data-uid="SearchAThing.Sci.Edge.EdgeContainsPoint*"></a>
+
+  <h3 id="SearchAThing_Sci_Edge_EdgeContainsPoint_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Edge.EdgeContainsPoint(System.Double,SearchAThing.Sci.Vector3D)">
+  EdgeContainsPoint(double, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>States if edge contains given point on its perimeter</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool EdgeContainsPoint(double tol, Vector3D pt)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>pt</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Edge_EndpointMatches_" data-uid="SearchAThing.Sci.Edge.EndpointMatches*"></a>
+
+  <h3 id="SearchAThing_Sci_Edge_EndpointMatches_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Edge.EndpointMatches(System.Double,SearchAThing.Sci.Vector3D)">
+  EndpointMatches(double, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EndpointMatches(double tol, Vector3D endpoint1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>endpoint1</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Edge_EndpointMatches_" data-uid="SearchAThing.Sci.Edge.EndpointMatches*"></a>
+
+  <h3 id="SearchAThing_Sci_Edge_EndpointMatches_System_Double_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Edge.EndpointMatches(System.Double,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)">
+  EndpointMatches(double, Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EndpointMatches(double tol, Vector3D endpoint1, Vector3D endpoint2)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>endpoint1</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>endpoint2</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Edge_MoveEnd_" data-uid="SearchAThing.Sci.Edge.MoveEnd*"></a>
+
+  <h3 id="SearchAThing_Sci_Edge_MoveEnd_System_Double_SearchAThing_Sci_EdgeEnd_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Edge.MoveEnd(System.Double,SearchAThing.Sci.EdgeEnd,SearchAThing.Sci.Vector3D)">
+  MoveEnd(double, EdgeEnd, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>extends edge endpoint toward new given one.<br>
+returns null if edge can't extends toward new given end.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Edge? MoveEnd(double tol, EdgeEnd end, Vector3D newEnd)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>end</code> <a class="xref" href="SearchAThing.Sci.EdgeEnd.html">EdgeEnd</a></dt>
+    <dd></dd>
+    <dt><code>newEnd</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Edge.html">Edge</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Edge_Offset_" data-uid="SearchAThing.Sci.Edge.Offset*"></a>
+
+  <h3 id="SearchAThing_Sci_Edge_Offset_System_Double_SearchAThing_Sci_Vector3D_System_Double_" data-uid="SearchAThing.Sci.Edge.Offset(System.Double,SearchAThing.Sci.Vector3D,System.Double)">
+  Offset(double, Vector3D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>build offseted version of this edge toward refPt given for the amount specified by offset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Edge Offset(double tol, Vector3D refPt, double offset)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>refPt</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Edge.html">Edge</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Edge_OtherEndpoint_" data-uid="SearchAThing.Sci.Edge.OtherEndpoint*"></a>
+
+  <h3 id="SearchAThing_Sci_Edge_OtherEndpoint_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Edge.OtherEndpoint(System.Double,SearchAThing.Sci.Vector3D)">
+  OtherEndpoint(double, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D OtherEndpoint(double tol, Vector3D endpoint)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>endpoint</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Edge_ProgeCadScript_" data-uid="SearchAThing.Sci.Edge.ProgeCadScript*"></a>
+
+  <h3 id="SearchAThing_Sci_Edge_ProgeCadScript_System_Boolean_" data-uid="SearchAThing.Sci.Edge.ProgeCadScript(System.Boolean)">
+  ProgeCadScript(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract string ProgeCadScript(bool final = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>final</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Edge_Project_" data-uid="SearchAThing.Sci.Edge.Project*"></a>
+
+  <h3 id="SearchAThing_Sci_Edge_Project_System_Double_SearchAThing_Sci_Plane3D_" data-uid="SearchAThing.Sci.Edge.Project(System.Double,SearchAThing.Sci.Plane3D)">
+  Project(double, Plane3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>project this edge to given plane</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Edge Project(double tol, Plane3D prjPlane)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>prjPlane</code> <a class="xref" href="SearchAThing.Sci.Plane3D.html">Plane3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Edge.html">Edge</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Edge_Project_" data-uid="SearchAThing.Sci.Edge.Project*"></a>
+
+  <h3 id="SearchAThing_Sci_Edge_Project_System_Double_SearchAThing_Sci_Vector3D_System_Boolean_" data-uid="SearchAThing.Sci.Edge.Project(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)">
+  Project(double, Vector3D, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>project given pt to this edge.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Vector3D? Project(double tol, Vector3D pt, bool segmentMode = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>pt</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>segmentMode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Edge_QCadScript_" data-uid="SearchAThing.Sci.Edge.QCadScript*"></a>
+
+  <h3 id="SearchAThing_Sci_Edge_QCadScript_System_Boolean_" data-uid="SearchAThing.Sci.Edge.QCadScript(System.Boolean)">
+  QCadScript(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>qcad 2d script</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract string QCadScript(bool final = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>final</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>adds QQ command</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Edge_ToString_" data-uid="SearchAThing.Sci.Edge.ToString*"></a>
+
+  <h3 id="SearchAThing_Sci_Edge_ToString_System_Int32_" data-uid="SearchAThing.Sci.Edge.ToString(System.Int32)">
+  ToString(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract string ToString(int digits)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>digits</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Edge_ToggleSense_" data-uid="SearchAThing.Sci.Edge.ToggleSense*"></a>
+
+  <h3 id="SearchAThing_Sci_Edge_ToggleSense" data-uid="SearchAThing.Sci.Edge.ToggleSense">
+  ToggleSense()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Toggle Sense flag so that SGeomFrom, SGeomTo equals to GeomFrom, GeomTo (Sense:true)
+or GeomTo, GeomFrom (Sense:false)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Geometry ToggleSense()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/devel0/netcore-sci/blob/master/src/sci/Edge.cs/#L8" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

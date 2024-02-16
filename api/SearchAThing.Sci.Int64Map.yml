@@ -1,0 +1,645 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Sci.Int64Map
+  commentId: T:SearchAThing.Sci.Int64Map
+  id: Int64Map
+  parent: SearchAThing.Sci
+  children:
+  - SearchAThing.Sci.Int64Map.#ctor(System.Double,System.Collections.Generic.IEnumerable{System.Double},System.Boolean)
+  - SearchAThing.Sci.Int64Map.FromInt64(System.Int64)
+  - SearchAThing.Sci.Int64Map.Origin
+  - SearchAThing.Sci.Int64Map.ToInt64(System.Double)
+  - SearchAThing.Sci.Int64Map.Tolerance
+  langs:
+  - csharp
+  - vb
+  name: Int64Map
+  nameWithType: Int64Map
+  fullName: SearchAThing.Sci.Int64Map
+  type: Class
+  source:
+    remote:
+      path: src/sci/Int64Map.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Int64Map
+    path: src/sci/Int64Map.cs
+    startLine: 8
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: >-
+    Scan a given domain of doubles, determine the midpoint ( Origin )
+
+    and using the given tolerance it tests for integrity in conversion between values
+
+    from double to Int64 and vice-versa.
+
+    It can generate a Int64MapExceptionRange.
+  example: []
+  syntax:
+    content: public class Int64Map
+    content.vb: Public Class Int64Map
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: SearchAThing.Sci.Int64Map.Origin
+  commentId: P:SearchAThing.Sci.Int64Map.Origin
+  id: Origin
+  parent: SearchAThing.Sci.Int64Map
+  langs:
+  - csharp
+  - vb
+  name: Origin
+  nameWithType: Int64Map.Origin
+  fullName: SearchAThing.Sci.Int64Map.Origin
+  type: Property
+  source:
+    remote:
+      path: src/sci/Int64Map.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Origin
+    path: src/sci/Int64Map.cs
+    startLine: 11
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public double Origin { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Origin As Double
+  overload: SearchAThing.Sci.Int64Map.Origin*
+- uid: SearchAThing.Sci.Int64Map.Tolerance
+  commentId: P:SearchAThing.Sci.Int64Map.Tolerance
+  id: Tolerance
+  parent: SearchAThing.Sci.Int64Map
+  langs:
+  - csharp
+  - vb
+  name: Tolerance
+  nameWithType: Int64Map.Tolerance
+  fullName: SearchAThing.Sci.Int64Map.Tolerance
+  type: Property
+  source:
+    remote:
+      path: src/sci/Int64Map.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: Tolerance
+    path: src/sci/Int64Map.cs
+    startLine: 12
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public double Tolerance { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Tolerance As Double
+  overload: SearchAThing.Sci.Int64Map.Tolerance*
+- uid: SearchAThing.Sci.Int64Map.#ctor(System.Double,System.Collections.Generic.IEnumerable{System.Double},System.Boolean)
+  commentId: M:SearchAThing.Sci.Int64Map.#ctor(System.Double,System.Collections.Generic.IEnumerable{System.Double},System.Boolean)
+  id: '#ctor(System.Double,System.Collections.Generic.IEnumerable{System.Double},System.Boolean)'
+  parent: SearchAThing.Sci.Int64Map
+  langs:
+  - csharp
+  - vb
+  name: Int64Map(double, IEnumerable<double>, bool)
+  nameWithType: Int64Map.Int64Map(double, IEnumerable<double>, bool)
+  fullName: SearchAThing.Sci.Int64Map.Int64Map(double, System.Collections.Generic.IEnumerable<double>, bool)
+  type: Constructor
+  source:
+    remote:
+      path: src/sci/Int64Map.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: .ctor
+    path: src/sci/Int64Map.cs
+    startLine: 18
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  summary: >-
+    use small tolerance to avoid lost of precision
+
+    Note: too small tolerance can generate Int64MapExceptionRange
+  example: []
+  syntax:
+    content: public Int64Map(double tol, IEnumerable<double> domainValues, bool selfCheckTolerance = true)
+    parameters:
+    - id: tol
+      type: System.Double
+    - id: domainValues
+      type: System.Collections.Generic.IEnumerable{System.Double}
+    - id: selfCheckTolerance
+      type: System.Boolean
+    content.vb: Public Sub New(tol As Double, domainValues As IEnumerable(Of Double), selfCheckTolerance As Boolean = True)
+  overload: SearchAThing.Sci.Int64Map.#ctor*
+  nameWithType.vb: Int64Map.New(Double, IEnumerable(Of Double), Boolean)
+  fullName.vb: SearchAThing.Sci.Int64Map.New(Double, System.Collections.Generic.IEnumerable(Of Double), Boolean)
+  name.vb: New(Double, IEnumerable(Of Double), Boolean)
+- uid: SearchAThing.Sci.Int64Map.ToInt64(System.Double)
+  commentId: M:SearchAThing.Sci.Int64Map.ToInt64(System.Double)
+  id: ToInt64(System.Double)
+  parent: SearchAThing.Sci.Int64Map
+  langs:
+  - csharp
+  - vb
+  name: ToInt64(double)
+  nameWithType: Int64Map.ToInt64(double)
+  fullName: SearchAThing.Sci.Int64Map.ToInt64(double)
+  type: Method
+  source:
+    remote:
+      path: src/sci/Int64Map.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: ToInt64
+    path: src/sci/Int64Map.cs
+    startLine: 44
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public long ToInt64(double x)
+    parameters:
+    - id: x
+      type: System.Double
+    return:
+      type: System.Int64
+    content.vb: Public Function ToInt64(x As Double) As Long
+  overload: SearchAThing.Sci.Int64Map.ToInt64*
+  nameWithType.vb: Int64Map.ToInt64(Double)
+  fullName.vb: SearchAThing.Sci.Int64Map.ToInt64(Double)
+  name.vb: ToInt64(Double)
+- uid: SearchAThing.Sci.Int64Map.FromInt64(System.Int64)
+  commentId: M:SearchAThing.Sci.Int64Map.FromInt64(System.Int64)
+  id: FromInt64(System.Int64)
+  parent: SearchAThing.Sci.Int64Map
+  langs:
+  - csharp
+  - vb
+  name: FromInt64(long)
+  nameWithType: Int64Map.FromInt64(long)
+  fullName: SearchAThing.Sci.Int64Map.FromInt64(long)
+  type: Method
+  source:
+    remote:
+      path: src/sci/Int64Map.cs
+      branch: master
+      repo: git@github.com:devel0/netcore-sci.git
+    id: FromInt64
+    path: src/sci/Int64Map.cs
+    startLine: 45
+  assemblies:
+  - netcore-sci
+  namespace: SearchAThing.Sci
+  syntax:
+    content: public double FromInt64(long x)
+    parameters:
+    - id: x
+      type: System.Int64
+    return:
+      type: System.Double
+    content.vb: Public Function FromInt64(x As Long) As Double
+  overload: SearchAThing.Sci.Int64Map.FromInt64*
+  nameWithType.vb: Int64Map.FromInt64(Long)
+  fullName.vb: SearchAThing.Sci.Int64Map.FromInt64(Long)
+  name.vb: FromInt64(Long)
+references:
+- uid: SearchAThing.Sci
+  commentId: N:SearchAThing.Sci
+  href: SearchAThing.html
+  name: SearchAThing.Sci
+  nameWithType: SearchAThing.Sci
+  fullName: SearchAThing.Sci
+  spec.csharp:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+  spec.vb:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Sci
+    name: Sci
+    href: SearchAThing.Sci.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: SearchAThing.Sci.Int64Map.Origin*
+  commentId: Overload:SearchAThing.Sci.Int64Map.Origin
+  href: SearchAThing.Sci.Int64Map.html#SearchAThing_Sci_Int64Map_Origin
+  name: Origin
+  nameWithType: Int64Map.Origin
+  fullName: SearchAThing.Sci.Int64Map.Origin
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: SearchAThing.Sci.Int64Map.Tolerance*
+  commentId: Overload:SearchAThing.Sci.Int64Map.Tolerance
+  href: SearchAThing.Sci.Int64Map.html#SearchAThing_Sci_Int64Map_Tolerance
+  name: Tolerance
+  nameWithType: Int64Map.Tolerance
+  fullName: SearchAThing.Sci.Int64Map.Tolerance
+- uid: SearchAThing.Sci.Int64Map.#ctor*
+  commentId: Overload:SearchAThing.Sci.Int64Map.#ctor
+  href: SearchAThing.Sci.Int64Map.html#SearchAThing_Sci_Int64Map__ctor_System_Double_System_Collections_Generic_IEnumerable_System_Double__System_Boolean_
+  name: Int64Map
+  nameWithType: Int64Map.Int64Map
+  fullName: SearchAThing.Sci.Int64Map.Int64Map
+  nameWithType.vb: Int64Map.New
+  fullName.vb: SearchAThing.Sci.Int64Map.New
+  name.vb: New
+- uid: System.Collections.Generic.IEnumerable{System.Double}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Double}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<double>
+  nameWithType: IEnumerable<double>
+  fullName: System.Collections.Generic.IEnumerable<double>
+  nameWithType.vb: IEnumerable(Of Double)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Double)
+  name.vb: IEnumerable(Of Double)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: SearchAThing.Sci.Int64Map.ToInt64*
+  commentId: Overload:SearchAThing.Sci.Int64Map.ToInt64
+  href: SearchAThing.Sci.Int64Map.html#SearchAThing_Sci_Int64Map_ToInt64_System_Double_
+  name: ToInt64
+  nameWithType: Int64Map.ToInt64
+  fullName: SearchAThing.Sci.Int64Map.ToInt64
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: SearchAThing.Sci.Int64Map.FromInt64*
+  commentId: Overload:SearchAThing.Sci.Int64Map.FromInt64
+  href: SearchAThing.Sci.Int64Map.html#SearchAThing_Sci_Int64Map_FromInt64_System_Int64_
+  name: FromInt64
+  nameWithType: Int64Map.FromInt64
+  fullName: SearchAThing.Sci.Int64Map.FromInt64
