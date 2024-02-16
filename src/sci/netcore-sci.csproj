@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;net7.0</TargetFrameworks>
-		<LangVersion>11</LangVersion>
+		<TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>		
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<PackageId>netcore-sci</PackageId>
 		<PackageVersion>8.2.0</PackageVersion>
