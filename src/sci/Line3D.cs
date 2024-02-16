@@ -386,7 +386,7 @@ public class Line3D : Edge
     /// </summary>
     /// <param name="factor">factor to scale this segment</param>
     /// <returns>scaled segment</returns>
-    /// <remarks>[unit test](https://github.com/devel0/netcore-sci/tree/master/test/Line3D/Line3DTest_0001.cs)</remarks>
+    /// <remarks>[unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Line3D/Line3DTest_0001.cs)</remarks>
     public Line3D Scale(double factor) => Scale(this.MidPoint, factor);
 
     #region operators
@@ -535,8 +535,8 @@ public class Line3D : Edge
     /// </summary>             
     /// <param name="other">other 3d line</param>      
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Line3D/Line3DTest_0001.cs)
-    /// ![image](../test/Line3D/Line3DTest_0001.png)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Line3D/Line3DTest_0001.cs)
+    /// ![image](../src/test/Line3D/Line3DTest_0001.png)
     /// </remarks>    
     /// <returns>Perp segment from(on this), to(on other).</returns>
     public Line3D? ApparentIntersect(Line3D other)

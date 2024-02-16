@@ -120,7 +120,7 @@ public static partial class Ext
     /// <param name="rotation">rotation matrix</param>
     /// <returns>Vector3 with rotation angles(rad) around wcs xyz axes</returns>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Matrix4x4/Matrix4x4Test_0001.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Matrix4x4/Matrix4x4Test_0001.cs)
     /// </remarks>
     public static NVector3 ToEulerAngles(this Matrix4x4 rotation)
     {

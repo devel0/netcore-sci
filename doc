@@ -2,8 +2,7 @@
 
 exdir="$(dirname `readlink -f "$0"`)"
 
-docsdir="$exdir/docs"
-serve_port=8000
+serve_port=8080
 cmd=""
 
 #--
@@ -62,19 +61,16 @@ done
 #--[ build ]
 
 if [ "$1" == "build" ]; then    
-  rm -fr "$docsdir"
-  mkdir "$docsdir"
-  cd "$exdir"
-  doxygen
+  rm -fr "$exdir"/_site
+  rm -fr "$exdir"/api  
+  docfx "$exdir"/docfx.json
   exit 0
 fi
 
 #--[ serve ]
 
-if [ "$1" == "serve" ]; then
-  cd "$exdir"/docs/html
-  python3 -m http.server &
-  cd "$exdir"
+if [ "$1" == "serve" ]; then  
+  docfx "$exdir"/docfx.json --serve -p $serve_port    
   exit 0
 fi
 
@@ -92,7 +88,7 @@ if [ "$1" == "commit" ]; then
   git checkout docs && \
   git merge $DEFAULT_BRANCH --commit --no-edit && \
   ./doc build && \
-  git add -A docs && \
+  git add -A _site api && \
   git commit -a -m "doc" && \
   git checkout $DEFAULT_BRANCH && \
   git stash pop

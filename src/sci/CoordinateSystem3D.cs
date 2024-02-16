@@ -108,7 +108,7 @@ public partial class CoordinateSystem3D
     /// world cs : basex=(1,0,0) basey=(0,1,0) basez=(0,0,1)
     /// </summary>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0001.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0001.cs)
     /// </remarks>
     public static readonly CoordinateSystem3D WCS = XY;
 
@@ -318,7 +318,7 @@ public partial class CoordinateSystem3D
     /// <param name="other">cs to check equality against</param>
     /// <returns>true if this cs equals the given on, false otherwise</returns>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0001.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0001.cs)
     /// </remarks>
     public bool Equals(double tol, CoordinateSystem3D other) =>
         Origin.EqualsTol(tol, other.Origin) &&

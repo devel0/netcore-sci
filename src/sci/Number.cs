@@ -87,7 +87,7 @@ public static partial class Ext
     /// <param name="radTol">override rad tolerance</param>        
     /// <returns>angle normalized</returns>
     /// <remarks>
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Number/NumberTest_0003.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Number/NumberTest_0003.cs)
     /// </remarks>
     public static double NormalizeAngle(this double angle_rad, double maxRadExcluded = 2 * PI, double radTol = TwoPIRadTol)
     {
@@ -311,7 +311,7 @@ public static partial class Toolkit
     /// </para>
     /// </summary>     
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Number/NumberTest_0004.cs)        
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Number/NumberTest_0004.cs)        
     /// </remarks>
     public static IInterpolation LinearSplineInterpolate(IEnumerable<double> x, IEnumerable<double> y) =>
         LinearSpline.Interpolate(x, y);
