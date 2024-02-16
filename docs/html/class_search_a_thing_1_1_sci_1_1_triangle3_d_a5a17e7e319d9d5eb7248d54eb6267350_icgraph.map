@@ -1,5 +1,0 @@
-<map id="Contains" name="Contains">
-<area shape="rect" id="node1" title="States if a point is in this triangle." alt="" coords="267,5,345,31"/>
-<area shape="rect" id="node2" href="$class_search_a_thing_1_1_sci_1_1_triangle3_d.html#a13ec69799d98a544d3242130d0508c36" title="Restrict given this triangle coplanar line to be enclosed in the triangle shape." alt="" coords="132,5,219,31"/>
-<area shape="rect" id="node3" href="$class_search_a_thing_1_1_sci_1_1_triangle3_d.html#ac56dafbeedb2cb2158eaec3bc3ca8a96" title="intersect this triangle with given other, returning intersection line ( eventyally a point line ) or ..." alt="" coords="5,5,84,31"/>
-</map>

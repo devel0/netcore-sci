@@ -1,4 +1,0 @@
-<map id="CirclesTan12P" name="CirclesTan12P">
-<area shape="rect" id="node1" title="build 3d circle that tangent to lines t1,t2 and that intersects point p note: point p must contained ..." alt="" coords="151,5,263,31"/>
-<area shape="rect" id="node2" href="$class_search_a_thing_1_1_sci_1_1_circle3_d.html#a61180a3f3e5f199e13478993c43080c9" title="build 3d circle through point p, tangent to given t line, with given radius r &#160;&#160;they can be two" alt="" coords="5,5,103,31"/>
-</map>

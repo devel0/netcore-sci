@@ -1,4 +1,0 @@
-var searchData=
-[
-  ['radius_0',['Radius',['../class_search_a_thing_1_1_sci_1_1_arc3_d.html#abfdc7df20466a8a1b4772b3c75e59e4d',1,'SearchAThing::Sci::Arc3D']]]
-];

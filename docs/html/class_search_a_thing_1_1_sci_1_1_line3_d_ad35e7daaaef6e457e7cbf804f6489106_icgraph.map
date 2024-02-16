@@ -1,6 +1,0 @@
-<map id="RotateAboutAxis" name="RotateAboutAxis">
-<area shape="rect" id="node1" title="rotate this segment about given axis" alt="" coords="524,31,655,56"/>
-<area shape="rect" id="node2" href="$class_search_a_thing_1_1_sci_1_1_coordinate_system3_d.html#a9aff237d63db8e87d32956a557283d30" title="return another cs rotated respect given axis" alt="" coords="268,23,476,63"/>
-<area shape="rect" id="node3" href="$class_search_a_thing_1_1_sci_1_1_ext.html#a405c8bca2a5fc77b4b5dfe4723885d43" title=" " alt="" coords="5,5,220,31"/>
-<area shape="rect" id="node4" href="$class_search_a_thing_1_1_sci_1_1_ext.html#a92a05cfbaf78296d4d4d20d47685b469" title=" " alt="" coords="11,55,214,80"/>
-</map>

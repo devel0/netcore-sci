@@ -1,5 +1,0 @@
-<map id="PtAtAngle" name="PtAtAngle">
-<area shape="rect" id="node1" title="point on the arc circumnfere at given angle (rotating cs basex around cs basez) note: it start" alt="" coords="140,31,227,56"/>
-<area shape="rect" id="node2" href="$class_search_a_thing_1_1_sci_1_1_arc3_d.html#a70d5437b6e72ccefa0fc8ede9ff576a9" title="retrieve a discretized representation of this arc" alt="" coords="5,5,92,31"/>
-<area shape="rect" id="node3" href="$class_search_a_thing_1_1_sci_1_1_arc3_d.html#ab69dc258749ee37248a1342b257311b2" title="create a set of subarc from this by splitting through given split points split point are not required..." alt="" coords="23,55,74,80"/>
-</map>

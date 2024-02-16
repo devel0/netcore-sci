@@ -1,4 +1,0 @@
-<map id="Faces" name="Faces">
-<area shape="rect" id="node1" title="retrieve 6 faces (bottom, top, left, right, front, back) of bbox. (see Points property documentation ..." alt="" coords="132,5,191,31"/>
-<area shape="rect" id="node2" href="$class_search_a_thing_1_1_sci_1_1_b_box3_d.html#a29412e25a623a26e6c476d6795410506" title="find intersection points of given ray to this bbox faces" alt="" coords="5,5,84,31"/>
-</map>
