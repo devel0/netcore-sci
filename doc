@@ -61,8 +61,7 @@ done
 #--[ build ]
 
 if [ "$1" == "build" ]; then    
-  rm -fr "$exdir"/_site
-  rm -fr "$exdir"/api  
+  rm -fr "$exdir"/docs   
   docfx "$exdir"/docfx.json
   exit 0
 fi
@@ -88,7 +87,7 @@ if [ "$1" == "commit" ]; then
   git checkout docs && \
   git merge $DEFAULT_BRANCH --commit --no-edit && \
   ./doc build && \
-  git add -A _site api && \
+  git add -A docs && \
   git commit -a -m "doc" && \
   git checkout $DEFAULT_BRANCH && \
   git stash pop
