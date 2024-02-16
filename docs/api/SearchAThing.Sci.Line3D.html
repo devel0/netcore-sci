@@ -1,0 +1,3029 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Line3D | netcore-sci </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Line3D | netcore-sci ">
+      
+      <meta name="description" content="Defines a line by an application point (From) and an extension from there (V). To is computed as From+V. Line can be built by givin From and To, or From and V using specialized constructor with Line3DConstructMode. Line can be built from a point using LineTo(), LineV() or LineDir() extension methods.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/devel0/netcore-sci/new/docs/apiSpec/new?filename=SearchAThing_Sci_Line3D.md&amp;value=---%0Auid%3A%20SearchAThing.Sci.Line3D%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="netcore-sci">
+            netcore-sci
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SearchAThing.Sci.Line3D">
+
+
+
+  <h1 id="SearchAThing_Sci_Line3D" data-uid="SearchAThing.Sci.Line3D" class="text-break">
+Class Line3D  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SearchAThing.html">SearchAThing</a>.<a class="xref" href="SearchAThing.Sci.html">Sci</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>netcore-sci.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Defines a line by an application point (From) and an extension from there (V).
+To is computed as From+V.
+Line can be built by givin From and To, or From and V using specialized constructor with Line3DConstructMode.
+Line can be built from a point using LineTo(), LineV() or LineDir() extension methods.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Line3D : Edge</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a></div>
+      <div><a class="xref" href="SearchAThing.Sci.Edge.html">Edge</a></div>
+      <div><span class="xref">Line3D</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Edge.html#SearchAThing_Sci_Edge_CopyFrom_SearchAThing_Sci_Edge_">Edge.CopyFrom(Edge)</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Edge.html#SearchAThing_Sci_Edge_Sense">Edge.Sense</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Edge.html#SearchAThing_Sci_Edge_SGeomFrom">Edge.SGeomFrom</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Edge.html#SearchAThing_Sci_Edge_SGeomTo">Edge.SGeomTo</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Edge.html#SearchAThing_Sci_Edge_OtherEndpoint_System_Double_SearchAThing_Sci_Vector3D_">Edge.OtherEndpoint(double, Vector3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Edge.html#SearchAThing_Sci_Edge_EndpointMatches_System_Double_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_">Edge.EndpointMatches(double, Vector3D, Vector3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Edge.html#SearchAThing_Sci_Edge_EndpointMatches_System_Double_SearchAThing_Sci_Vector3D_">Edge.EndpointMatches(double, Vector3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Edge.html#SearchAThing_Sci_Edge_CheckSense_System_Double_SearchAThing_Sci_Edge_">Edge.CheckSense(double, Edge)</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Geometry.html#SearchAThing_Sci_Geometry_GeomType">Geometry.GeomType</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="SearchAThing.Sci.Ext.html#SearchAThing_Sci_Ext_ToDxfLine_SearchAThing_Sci_Line3D_">Ext.ToDxfLine(Line3D)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SearchAThing_Sci_Line3D__ctor_" data-uid="SearchAThing.Sci.Line3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D__ctor_SearchAThing_Sci_Line3D_" data-uid="SearchAThing.Sci.Line3D.#ctor(SearchAThing.Sci.Line3D)">
+  Line3D(Line3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L304"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>build a copy of given line</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D(Line3D l)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>l</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D__ctor_" data-uid="SearchAThing.Sci.Line3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D__ctor_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Line3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)">
+  Line3D(Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L315"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>build segment</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D(Vector3D from, Vector3D to)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>to</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D__ctor_" data-uid="SearchAThing.Sci.Line3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D__ctor_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Line3DConstructMode_" data-uid="SearchAThing.Sci.Line3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Line3DConstructMode)">
+  Line3D(Vector3D, Vector3D, Line3DConstructMode)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L339"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>build segment from plus the given vector form to</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D(Vector3D from, Vector3D v, Line3DConstructMode mode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>mode</code> <a class="xref" href="SearchAThing.Sci.Line3DConstructMode.html">Line3DConstructMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D__ctor_" data-uid="SearchAThing.Sci.Line3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D__ctor_System_Double_System_Double_System_Double_System_Double_" data-uid="SearchAThing.Sci.Line3D.#ctor(System.Double,System.Double,System.Double,System.Double)">
+  Line3D(double, double, double, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L324"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>z=0</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D(double x1, double y1, double x2, double y2)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>x1</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>y1</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>x2</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>y2</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D__ctor_" data-uid="SearchAThing.Sci.Line3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D__ctor_System_Double_System_Double_System_Double_System_Double_System_Double_System_Double_" data-uid="SearchAThing.Sci.Line3D.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+  Line3D(double, double, double, double, double, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L330"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D(double x1, double y1, double z1, double x2, double y2, double z2)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>x1</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>y1</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>z1</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>x2</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>y2</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>z2</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="SearchAThing_Sci_Line3D_XAxisLine" data-uid="SearchAThing.Sci.Line3D.XAxisLine">
+  XAxisLine
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L255"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Line3D XAxisLine</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SearchAThing_Sci_Line3D_YAxisLine" data-uid="SearchAThing.Sci.Line3D.YAxisLine">
+  YAxisLine
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L256"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Line3D YAxisLine</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SearchAThing_Sci_Line3D_ZAxisLine" data-uid="SearchAThing.Sci.Line3D.ZAxisLine">
+  ZAxisLine
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L257"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Line3D ZAxisLine</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SearchAThing_Sci_Line3D_A0ProgeCadScript_" data-uid="SearchAThing.Sci.Line3D.A0ProgeCadScript*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_A0ProgeCadScript" data-uid="SearchAThing.Sci.Line3D.A0ProgeCadScript">
+  A0ProgeCadScript
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L843"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string A0ProgeCadScript { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_A0QCadScript_" data-uid="SearchAThing.Sci.Line3D.A0QCadScript*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_A0QCadScript" data-uid="SearchAThing.Sci.Line3D.A0QCadScript">
+  A0QCadScript
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L841"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string A0QCadScript { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_CadScript_" data-uid="SearchAThing.Sci.Line3D.CadScript*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_CadScript" data-uid="SearchAThing.Sci.Line3D.CadScript">
+  CadScript
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L829"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CadScript { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Dir_" data-uid="SearchAThing.Sci.Line3D.Dir*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Dir" data-uid="SearchAThing.Sci.Line3D.Dir">
+  Dir
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L277"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>V normalized</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Dir { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_DisambiguatedPoints_" data-uid="SearchAThing.Sci.Line3D.DisambiguatedPoints*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_DisambiguatedPoints" data-uid="SearchAThing.Sci.Line3D.DisambiguatedPoints">
+  DisambiguatedPoints
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L283"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>retrieve a unique endpoint representation of this line3d segment (regardless its from-to or to-from order)
+such that From.Distance(Vector3D.Zero) less than To.Distance(Vector3D.Zero)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Vector3D&gt; DisambiguatedPoints { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_DxfEntity_" data-uid="SearchAThing.Sci.Line3D.DxfEntity*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_DxfEntity" data-uid="SearchAThing.Sci.Line3D.DxfEntity">
+  DxfEntity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L231"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>dxf entity representing this geom</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override EntityObject DxfEntity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">EntityObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_From_" data-uid="SearchAThing.Sci.Line3D.From*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_From" data-uid="SearchAThing.Sci.Line3D.From">
+  From
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L262"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>application point vector</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D From { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_GeomFrom_" data-uid="SearchAThing.Sci.Line3D.GeomFrom*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_GeomFrom" data-uid="SearchAThing.Sci.Line3D.GeomFrom">
+  GeomFrom
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>start point</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonIgnore]
+public override Vector3D GeomFrom { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_GeomTo_" data-uid="SearchAThing.Sci.Line3D.GeomTo*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_GeomTo" data-uid="SearchAThing.Sci.Line3D.GeomTo">
+  GeomTo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L123"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>end point</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonIgnore]
+public override Vector3D GeomTo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Inverted_" data-uid="SearchAThing.Sci.Line3D.Inverted*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Inverted" data-uid="SearchAThing.Sci.Line3D.Inverted">
+  Inverted
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L890"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>return inverted segment</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D Inverted { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Length_" data-uid="SearchAThing.Sci.Line3D.Length*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Length" data-uid="SearchAThing.Sci.Line3D.Length">
+  Length
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>geometry length ( 0 for point, line length for lines, perimeter for arc/circles )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override double Length { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_MidPoint_" data-uid="SearchAThing.Sci.Line3D.MidPoint*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_MidPoint" data-uid="SearchAThing.Sci.Line3D.MidPoint">
+  MidPoint
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L94"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Vector3D MidPoint { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Points_" data-uid="SearchAThing.Sci.Line3D.Points*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Points" data-uid="SearchAThing.Sci.Line3D.Points">
+  Points
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L285"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Vector3D&gt; Points { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Swapped_" data-uid="SearchAThing.Sci.Line3D.Swapped*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Swapped" data-uid="SearchAThing.Sci.Line3D.Swapped">
+  Swapped
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L885"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>return segment with swapped from,to</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D Swapped { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_To_" data-uid="SearchAThing.Sci.Line3D.To*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_To" data-uid="SearchAThing.Sci.Line3D.To">
+  To
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L272"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>From + V</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D To { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_V_" data-uid="SearchAThing.Sci.Line3D.V*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_V" data-uid="SearchAThing.Sci.Line3D.V">
+  V
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L267"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>vector depart at From to identify To</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D V { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Vertexes_" data-uid="SearchAThing.Sci.Line3D.Vertexes*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Vertexes" data-uid="SearchAThing.Sci.Line3D.Vertexes">
+  Vertexes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>vertexes of this geom ( can be 1 for points, 2 for line/arc/circles )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonIgnore]
+public override IEnumerable&lt;Vector3D&gt; Vertexes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SearchAThing_Sci_Line3D_ApparentIntersect_" data-uid="SearchAThing.Sci.Line3D.ApparentIntersect*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_ApparentIntersect_SearchAThing_Sci_Line3D_" data-uid="SearchAThing.Sci.Line3D.ApparentIntersect(SearchAThing.Sci.Line3D)">
+  ApparentIntersect(Line3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L542"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Find apparent intersection between this and given other line
+returning (shortest) segment perpendicular to either lines or null if lines parallels.
+This method will used from Intersect to find intersection between lines when
+perpendicular segment length not exceed given length tolerance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D? ApparentIntersect(Line3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd><p>other 3d line</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd><p>Perp segment from(on this), to(on other).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Line3D_ApparentIntersect_SearchAThing_Sci_Line3D__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Line3D/Line3DTest_0001.cs">unit test</a>
+<img src="../src/test/Line3D/Line3DTest_0001.png" alt="image"></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_BBox_" data-uid="SearchAThing.Sci.Line3D.BBox*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_BBox_System_Double_" data-uid="SearchAThing.Sci.Line3D.BBox(System.Double)">
+  BBox(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L143"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>bbox of this geom</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BBox3D BBox(double tol)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.BBox3D.html">BBox3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Bisect_" data-uid="SearchAThing.Sci.Line3D.Bisect*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Bisect_System_Double_SearchAThing_Sci_Line3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Line3D.Bisect(System.Double,SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)">
+  Bisect(double, Line3D, Vector3D?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L903"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>returns bisect of two given segment/lines
+( if given segment not share nodes but intesects returned bisect start from ip )
+bisect choosen will be the one between this and other withing shortest angle</p>
+<p>if two given lines are parallel and parallelRotationAxis is given then
+bisect results as this segment rotated PI/2 about given axis using To as rotcenter</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D? Bisect(double tol, Line3D other, Vector3D? parallelRotationAxis = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance</p>
+</dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+    <dt><code>parallelRotationAxis</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Colinear_" data-uid="SearchAThing.Sci.Line3D.Colinear*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Colinear_System_Double_SearchAThing_Sci_Line3D_" data-uid="SearchAThing.Sci.Line3D.Colinear(System.Double,SearchAThing.Sci.Line3D)">
+  Colinear(double, Line3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L692"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Colinear(double tol, Line3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_CommonPoint_" data-uid="SearchAThing.Sci.Line3D.CommonPoint*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_CommonPoint_System_Double_SearchAThing_Sci_Line3D_" data-uid="SearchAThing.Sci.Line3D.CommonPoint(System.Double,SearchAThing.Sci.Line3D)">
+  CommonPoint(double, Line3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L365"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>returns the common point from,to between two lines or null if not consecutives</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D? CommonPoint(double tol, Line3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Copy_" data-uid="SearchAThing.Sci.Line3D.Copy*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Copy" data-uid="SearchAThing.Sci.Line3D.Copy">
+  Copy()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>create copy of this geometry.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Geometry Copy()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Line3D_Copy_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>it's required to call base.CopyFrom(other) to ensure geometry properties to be copied.</p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Divide_" data-uid="SearchAThing.Sci.Line3D.Divide*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Divide_System_Int32_System_Boolean_" data-uid="SearchAThing.Sci.Line3D.Divide(System.Int32,System.Boolean)">
+  Divide(int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L128"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>find split points for this geometry splitter int cnt parts</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Vector3D&gt; Divide(int cnt, bool include_endpoints = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cnt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>include_endpoints</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if true GeomFrom and GeomTo will added</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_EdgeContainsPoint_" data-uid="SearchAThing.Sci.Line3D.EdgeContainsPoint*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_EdgeContainsPoint_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Line3D.EdgeContainsPoint(System.Double,SearchAThing.Sci.Vector3D)">
+  EdgeContainsPoint(double, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>States if edge contains given point on its perimeter</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool EdgeContainsPoint(double tol, Vector3D pt)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>pt</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_EdgeMove_" data-uid="SearchAThing.Sci.Line3D.EdgeMove*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_EdgeMove_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Line3D.EdgeMove(SearchAThing.Sci.Vector3D)">
+  EdgeMove(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Edge EdgeMove(Vector3D delta)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>delta</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Edge.html">Edge</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_EnsureFrom_" data-uid="SearchAThing.Sci.Line3D.EnsureFrom*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_EnsureFrom_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Line3D.EnsureFrom(System.Double,SearchAThing.Sci.Vector3D)">
+  EnsureFrom(double, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L772"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>if this segment from matches the given point returns this;
+if this segment to matches the given point return this with from,to swapped;
+precondition: this segment must have from or to equals given from</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D EnsureFrom(double tol, Vector3D ptFromDesired)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance</p>
+</dd>
+    <dt><code>ptFromDesired</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_EqualsTol_" data-uid="SearchAThing.Sci.Line3D.EqualsTol*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_EqualsTol_System_Double_SearchAThing_Sci_Line3D_System_Boolean_" data-uid="SearchAThing.Sci.Line3D.EqualsTol(System.Double,SearchAThing.Sci.Line3D,System.Boolean)">
+  EqualsTol(double, Line3D, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L351"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks if two lines are equals</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EqualsTol(double tol, Line3D other, bool strict = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance</p>
+</dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd><p>other line</p>
+</dd>
+    <dt><code>strict</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if false(default) two line equals even with swapped from,to</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_GeomEquals_" data-uid="SearchAThing.Sci.Line3D.GeomEquals*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_GeomEquals_System_Double_SearchAThing_Sci_Geometry_System_Boolean_" data-uid="SearchAThing.Sci.Line3D.GeomEquals(System.Double,SearchAThing.Sci.Geometry,System.Boolean)">
+  GeomEquals(double, Geometry, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L233"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>states if this geom equals to given other</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool GeomEquals(double tol, Geometry other, bool checkSense = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance</p>
+</dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a></dt>
+    <dd><p>other geom</p>
+</dd>
+    <dt><code>checkSense</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if false two geometry with different sense but same space coverage are considered equals</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_GeomIntersect_" data-uid="SearchAThing.Sci.Line3D.GeomIntersect*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_GeomIntersect_System_Double_SearchAThing_Sci_Geometry_SearchAThing_Sci_GeomSegmentMode_SearchAThing_Sci_GeomSegmentMode_" data-uid="SearchAThing.Sci.Line3D.GeomIntersect(System.Double,SearchAThing.Sci.Geometry,SearchAThing.Sci.GeomSegmentMode,SearchAThing.Sci.GeomSegmentMode)">
+  GeomIntersect(double, Geometry, GeomSegmentMode, GeomSegmentMode)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>find intersections between this and another geometry resulting in zero or more geometries.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Geometry&gt; GeomIntersect(double tol, Geometry _other, GeomSegmentMode thisSegmentMode = GeomSegmentMode.FromTo, GeomSegmentMode otherSegmentMode = GeomSegmentMode.FromTo)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>_other</code> <a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a></dt>
+    <dd></dd>
+    <dt><code>thisSegmentMode</code> <a class="xref" href="SearchAThing.Sci.GeomSegmentMode.html">GeomSegmentMode</a></dt>
+    <dd><p>if this is Line3D specifies how to consider</p>
+</dd>
+    <dt><code>otherSegmentMode</code> <a class="xref" href="SearchAThing.Sci.GeomSegmentMode.html">GeomSegmentMode</a></dt>
+    <dd><p>if other is Line3D specifies how to consider</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Intersect_" data-uid="SearchAThing.Sci.Line3D.Intersect*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Intersect_System_Double_SearchAThing_Sci_CoordinateSystem3D_" data-uid="SearchAThing.Sci.Line3D.Intersect(System.Double,SearchAThing.Sci.CoordinateSystem3D)">
+  Intersect(double, CoordinateSystem3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L711"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>returns null if this line is parallel to the cs xy plane,
+the intersection point otherwise</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D? Intersect(double tol, CoordinateSystem3D cs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>cs</code> <a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Intersect_" data-uid="SearchAThing.Sci.Line3D.Intersect*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Intersect_System_Double_SearchAThing_Sci_Line3D_SearchAThing_Sci_GeomSegmentMode_SearchAThing_Sci_GeomSegmentMode_" data-uid="SearchAThing.Sci.Line3D.Intersect(System.Double,SearchAThing.Sci.Line3D,SearchAThing.Sci.GeomSegmentMode,SearchAThing.Sci.GeomSegmentMode)">
+  Intersect(double, Line3D, GeomSegmentMode, GeomSegmentMode)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L661"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Intersects two lines with arbitrary segment mode for each.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D? Intersect(double tol, Line3D other, GeomSegmentMode thisSegmentMode, GeomSegmentMode otherSegmentMode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+    <dt><code>thisSegmentMode</code> <a class="xref" href="SearchAThing.Sci.GeomSegmentMode.html">GeomSegmentMode</a></dt>
+    <dd></dd>
+    <dt><code>otherSegmentMode</code> <a class="xref" href="SearchAThing.Sci.GeomSegmentMode.html">GeomSegmentMode</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Intersect_" data-uid="SearchAThing.Sci.Line3D.Intersect*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Intersect_System_Double_SearchAThing_Sci_Line3D_SearchAThing_Sci_LineIntersectBehavior_" data-uid="SearchAThing.Sci.Line3D.Intersect(System.Double,SearchAThing.Sci.Line3D,SearchAThing.Sci.LineIntersectBehavior)">
+  Intersect(double, Line3D, LineIntersectBehavior)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L511"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Find intersection point between this and other line using given tolerance.
+Returns null if no intersection, otherwise it returns a point on
+the shortest segment ( the one that's perpendicular to either lines )
+based on given behavior ( default midpoint ).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D? Intersect(double tol, Line3D other, LineIntersectBehavior behavior = LineIntersectBehavior.MidPoint)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+    <dt><code>behavior</code> <a class="xref" href="SearchAThing.Sci.LineIntersectBehavior.html">LineIntersectBehavior</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Intersect_" data-uid="SearchAThing.Sci.Line3D.Intersect*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Intersect_System_Double_SearchAThing_Sci_Line3D_System_Boolean_System_Boolean_" data-uid="SearchAThing.Sci.Line3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean)">
+  Intersect(double, Line3D, bool, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L647"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Intersects two lines with arbitrary segment mode for each.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D? Intersect(double tol, Line3D other, bool thisSegment, bool otherSegment)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+    <dt><code>thisSegment</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>otherSegment</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Intersect_" data-uid="SearchAThing.Sci.Line3D.Intersect*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Intersect_System_Double_SearchAThing_Sci_Plane3D_" data-uid="SearchAThing.Sci.Line3D.Intersect(System.Double,SearchAThing.Sci.Plane3D)">
+  Intersect(double, Plane3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L733"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>returns null if this line is parallel to the plane,
+the intersection point otherwise</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D? Intersect(double tol, Plane3D plane)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>plane</code> <a class="xref" href="SearchAThing.Sci.Plane3D.html">Plane3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_IsParallelTo_" data-uid="SearchAThing.Sci.Line3D.IsParallelTo*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_IsParallelTo_System_Double_SearchAThing_Sci_CoordinateSystem3D_" data-uid="SearchAThing.Sci.Line3D.IsParallelTo(System.Double,SearchAThing.Sci.CoordinateSystem3D)">
+  IsParallelTo(double, CoordinateSystem3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L697"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsParallelTo(double tol, CoordinateSystem3D cs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>cs</code> <a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_IsParallelTo_" data-uid="SearchAThing.Sci.Line3D.IsParallelTo*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_IsParallelTo_System_Double_SearchAThing_Sci_Plane3D_" data-uid="SearchAThing.Sci.Line3D.IsParallelTo(System.Double,SearchAThing.Sci.Plane3D)">
+  IsParallelTo(double, Plane3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L705"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsParallelTo(double tol, Plane3D plane)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>plane</code> <a class="xref" href="SearchAThing.Sci.Plane3D.html">Plane3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_LineContainsPoint_" data-uid="SearchAThing.Sci.Line3D.LineContainsPoint*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_LineContainsPoint_System_Double_SearchAThing_Sci_Vector3D_System_Boolean_System_Boolean_" data-uid="SearchAThing.Sci.Line3D.LineContainsPoint(System.Double,SearchAThing.Sci.Vector3D,System.Boolean,System.Boolean)">
+  LineContainsPoint(double, Vector3D, bool, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L432"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Infinite line contains point.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool LineContainsPoint(double tol, Vector3D p, bool segmentMode = false, bool excludeExtreme = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>p</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>segmentMode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>excludeExtreme</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_LineContainsPoint_" data-uid="SearchAThing.Sci.Line3D.LineContainsPoint*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_LineContainsPoint_System_Double_System_Double_System_Double_System_Double_System_Boolean_" data-uid="SearchAThing.Sci.Line3D.LineContainsPoint(System.Double,System.Double,System.Double,System.Double,System.Boolean)">
+  LineContainsPoint(double, double, double, double, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L426"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Infinite line contains point.
+Note: tol must be Constant.NormalizedLengthTolerance
+if comparing normalized vectors</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool LineContainsPoint(double tol, double x, double y, double z, bool segmentMode = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>z</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>segmentMode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Move_" data-uid="SearchAThing.Sci.Line3D.Move*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Move_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Line3D.Move(SearchAThing.Sci.Vector3D)">
+  Move(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L751"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>move this segment of given delta</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Geometry Move(Vector3D delta)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>delta</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_MoveEnd_" data-uid="SearchAThing.Sci.Line3D.MoveEnd*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_MoveEnd_System_Double_SearchAThing_Sci_EdgeEnd_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Line3D.MoveEnd(System.Double,SearchAThing.Sci.EdgeEnd,SearchAThing.Sci.Vector3D)">
+  MoveEnd(double, EdgeEnd, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L799"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>extends edge endpoint toward new given one.<br>
+returns null if edge can't extends toward new given end.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Edge? MoveEnd(double tol, EdgeEnd end, Vector3D newEnd)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>end</code> <a class="xref" href="SearchAThing.Sci.EdgeEnd.html">EdgeEnd</a></dt>
+    <dd></dd>
+    <dt><code>newEnd</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Edge.html">Edge</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_MoveMidpoint_" data-uid="SearchAThing.Sci.Line3D.MoveMidpoint*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_MoveMidpoint_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Line3D.MoveMidpoint(SearchAThing.Sci.Vector3D)">
+  MoveMidpoint(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L759"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Move this segment midpoint to the given coord</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D MoveMidpoint(Vector3D newMidpoint)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newMidpoint</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Normalized_" data-uid="SearchAThing.Sci.Line3D.Normalized*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Normalized" data-uid="SearchAThing.Sci.Line3D.Normalized">
+  Normalized()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L880"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>build a segment with same from and vector normalized</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D Normalized()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Offset_" data-uid="SearchAThing.Sci.Line3D.Offset*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Offset_System_Double_SearchAThing_Sci_Vector3D_System_Double_" data-uid="SearchAThing.Sci.Line3D.Offset(System.Double,SearchAThing.Sci.Vector3D,System.Double)">
+  Offset(double, Vector3D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L783"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>create offseted line toward refPt for given offset</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Edge Offset(double tol, Vector3D refPt, double offset)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>refPt</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Edge.html">Edge</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Perpendicular_" data-uid="SearchAThing.Sci.Line3D.Perpendicular*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Perpendicular_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Line3D.Perpendicular(System.Double,SearchAThing.Sci.Vector3D)">
+  Perpendicular(double, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L683"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build a perpendicular vector to this one starting from the given point p.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D? Perpendicular(double tol, Vector3D p)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>p</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_ProgeCadScript_" data-uid="SearchAThing.Sci.Line3D.ProgeCadScript*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_ProgeCadScript_System_Boolean_" data-uid="SearchAThing.Sci.Line3D.ProgeCadScript(System.Boolean)">
+  ProgeCadScript(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L838"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ProgeCadScript(bool final = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>final</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Project_" data-uid="SearchAThing.Sci.Line3D.Project*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Project_System_Double_SearchAThing_Sci_Plane3D_" data-uid="SearchAThing.Sci.Line3D.Project(System.Double,SearchAThing.Sci.Plane3D)">
+  Project(double, Plane3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>project this line to given projection plane</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Edge Project(double tol, Plane3D prjPlane)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>prjPlane</code> <a class="xref" href="SearchAThing.Sci.Plane3D.html">Plane3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Edge.html">Edge</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Project_" data-uid="SearchAThing.Sci.Line3D.Project*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Project_System_Double_SearchAThing_Sci_Vector3D_System_Boolean_" data-uid="SearchAThing.Sci.Line3D.Project(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)">
+  Project(double, Vector3D, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>project given pt to this line</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Vector3D? Project(double tol, Vector3D pt, bool segment_mode = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>pt</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>segment_mode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_QCadScript_" data-uid="SearchAThing.Sci.Line3D.QCadScript*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_QCadScript_System_Boolean_" data-uid="SearchAThing.Sci.Line3D.QCadScript(System.Boolean)">
+  QCadScript(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L835"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>2d qcad script representation ( vscode watch using var,nq )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string QCadScript(bool final = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>final</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Reverse_" data-uid="SearchAThing.Sci.Line3D.Reverse*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Reverse" data-uid="SearchAThing.Sci.Line3D.Reverse">
+  Reverse()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L376"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>return the segment with swapped from,to</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D Reverse()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_RotateAboutAxis_" data-uid="SearchAThing.Sci.Line3D.RotateAboutAxis*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_RotateAboutAxis_SearchAThing_Sci_Line3D_System_Double_" data-uid="SearchAThing.Sci.Line3D.RotateAboutAxis(SearchAThing.Sci.Line3D,System.Double)">
+  RotateAboutAxis(Line3D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L738"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>rotate this segment about given axis</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D RotateAboutAxis(Line3D axisSegment, double angleRad)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>axisSegment</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+    <dt><code>angleRad</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Scale_" data-uid="SearchAThing.Sci.Line3D.Scale*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Scale_SearchAThing_Sci_Vector3D_System_Double_" data-uid="SearchAThing.Sci.Line3D.Scale(SearchAThing.Sci.Vector3D,System.Double)">
+  Scale(Vector3D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L381"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>scale from,to of this line using given refpt and factor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D Scale(Vector3D refpt, double factor)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>refpt</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>factor</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Scale_" data-uid="SearchAThing.Sci.Line3D.Scale*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Scale_System_Double_" data-uid="SearchAThing.Sci.Line3D.Scale(System.Double)">
+  Scale(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L390"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>scale from,to of this line using given factor and assuming refpt = MidPoint</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D Scale(double factor)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>factor</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>factor to scale this segment</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd><p>scaled segment</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Line3D_Scale_System_Double__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Line3D/Line3DTest_0001.cs">unit test</a></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_SegmentContainsPoint_" data-uid="SearchAThing.Sci.Line3D.SegmentContainsPoint*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_SegmentContainsPoint_System_Double_SearchAThing_Sci_Vector3D_System_Boolean_" data-uid="SearchAThing.Sci.Line3D.SegmentContainsPoint(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)">
+  SegmentContainsPoint(double, Vector3D, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L486"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finite segment contains point.
+Note: tol must be Constant.NormalizedLengthTolerance
+if comparing normalized vectors</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SegmentContainsPoint(double tol, Vector3D p, bool excludeExtreme = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>p</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>excludeExtreme</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_SegmentContainsPoint_" data-uid="SearchAThing.Sci.Line3D.SegmentContainsPoint*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_SegmentContainsPoint_System_Double_System_Double_System_Double_System_Double_" data-uid="SearchAThing.Sci.Line3D.SegmentContainsPoint(System.Double,System.Double,System.Double,System.Double)">
+  SegmentContainsPoint(double, double, double, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L494"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finite segment contains point.
+Note: tol must be Constant.NormalizedLengthTolerance
+if comparing normalized vectors</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SegmentContainsPoint(double tol, double x, double y, double z)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>z</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_SemiLineContainsPoint_" data-uid="SearchAThing.Sci.Line3D.SemiLineContainsPoint*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_SemiLineContainsPoint_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Line3D.SemiLineContainsPoint(System.Double,SearchAThing.Sci.Vector3D)">
+  SemiLineContainsPoint(double, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L502"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>states if semiline From-To(inf) contains given point</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SemiLineContainsPoint(double tol, Vector3D p)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>len tolerance</p>
+</dd>
+    <dt><code>p</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>point to verify is it on semiline</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_SetLength_" data-uid="SearchAThing.Sci.Line3D.SetLength*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_SetLength_System_Double_" data-uid="SearchAThing.Sci.Line3D.SetLength(System.Double)">
+  SetLength(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L744"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>resize this segment to a new one with same From</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D SetLength(double len)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>len</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Split_" data-uid="SearchAThing.Sci.Line3D.Split*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Split_System_Double_System_Collections_Generic_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.Sci.Line3D.Split(System.Double,System.Collections.Generic.IEnumerable{SearchAThing.Sci.Vector3D})">
+  Split(double, IEnumerable&lt;Vector3D&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Split current segment into one or more depending on which
+of given split points was found on the segment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Geometry&gt; Split(double tol, IEnumerable&lt;Vector3D&gt; breaks)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance</p>
+</dd>
+    <dt><code>breaks</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd><p>break points</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a>&gt;</dt>
+    <dd><p>splitted segments starts from begin of line</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_ToString_" data-uid="SearchAThing.Sci.Line3D.ToString*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_ToString" data-uid="SearchAThing.Sci.Line3D.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L868"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>build an invariant string representation w/3 digits
+(f.x, f.y, f.z)-(t.x, t.y, t.z) L=len Δ=(v.x, v.y, v.z)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_ToString_" data-uid="SearchAThing.Sci.Line3D.ToString*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_ToString_System_Int32_" data-uid="SearchAThing.Sci.Line3D.ToString(System.Int32)">
+  ToString(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L874"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>build an invariant string representation w/given digits
+(f.x, f.y, f.z)-(t.x, t.y, t.z) L=len Δ=(v.x, v.y, v.z)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString(int digits = 3)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>digits</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_ToStringTol_" data-uid="SearchAThing.Sci.Line3D.ToStringTol*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_ToStringTol_System_Double_" data-uid="SearchAThing.Sci.Line3D.ToStringTol(System.Double)">
+  ToStringTol(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L848"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>hash string with given tolerance</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToStringTol(double tol)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_ToggleSense_" data-uid="SearchAThing.Sci.Line3D.ToggleSense*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_ToggleSense" data-uid="SearchAThing.Sci.Line3D.ToggleSense">
+  ToggleSense()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D ToggleSense()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_Transform_" data-uid="SearchAThing.Sci.Line3D.Transform*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_Transform_System_Numerics_Matrix4x4_" data-uid="SearchAThing.Sci.Line3D.Transform(System.Numerics.Matrix4x4)">
+  Transform(Matrix4x4)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L928"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D Transform(Matrix4x4 transform)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>transform</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.matrix4x4">Matrix4x4</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
+  <a id="SearchAThing_Sci_Line3D_op_Addition_" data-uid="SearchAThing.Sci.Line3D.op_Addition*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_op_Addition_SearchAThing_Sci_Line3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Line3D.op_Addition(SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)">
+  operator +(Line3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L410"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Move this line of given delta adding value either at From, To</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Line3D operator +(Line3D l, Vector3D delta)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>l</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+    <dt><code>delta</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_op_Multiply_" data-uid="SearchAThing.Sci.Line3D.op_Multiply*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_op_Multiply_SearchAThing_Sci_Line3D_System_Double_" data-uid="SearchAThing.Sci.Line3D.op_Multiply(SearchAThing.Sci.Line3D,System.Double)">
+  operator *(Line3D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L404"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>multiply Length by given scalar factor
+Note : this will change To</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Line3D operator *(Line3D l, double s)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>l</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+    <dt><code>s</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_op_Multiply_" data-uid="SearchAThing.Sci.Line3D.op_Multiply*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_op_Multiply_System_Double_SearchAThing_Sci_Line3D_" data-uid="SearchAThing.Sci.Line3D.op_Multiply(System.Double,SearchAThing.Sci.Line3D)">
+  operator *(double, Line3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L397"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>multiply Length by given scalar factor
+Note : this will change To</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Line3D operator *(double s, Line3D l)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>s</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>l</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Line3D_op_Subtraction_" data-uid="SearchAThing.Sci.Line3D.op_Subtraction*"></a>
+
+  <h3 id="SearchAThing_Sci_Line3D_op_Subtraction_SearchAThing_Sci_Line3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Line3D.op_Subtraction(SearchAThing.Sci.Line3D,SearchAThing.Sci.Vector3D)">
+  operator -(Line3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L416"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Move this line of given delta subtracting value either at From, To</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Line3D operator -(Line3D l, Vector3D delta)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>l</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+    <dt><code>delta</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Line3D.cs/#L18" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

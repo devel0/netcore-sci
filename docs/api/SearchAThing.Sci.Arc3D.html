@@ -1,0 +1,2558 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Arc3D | netcore-sci </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Arc3D | netcore-sci ">
+      
+      <meta name="description" content="base geometry for arc 3d entities. the CS origin is the Center of the arc. the CS basex, basey forms the arc plane. angles start, end are normalized [0,2pi) measured as angle from the basex right-hand rotating around cs basez. the arc coverage goes from the angle start point toward angle end point right-hand rotating arond cs basez. while the CS right hand rule allow to know the effective arc coverage Sense information allow to know the effective edge orientation.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/devel0/netcore-sci/new/docs/apiSpec/new?filename=SearchAThing_Sci_Arc3D.md&amp;value=---%0Auid%3A%20SearchAThing.Sci.Arc3D%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="netcore-sci">
+            netcore-sci
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SearchAThing.Sci.Arc3D">
+
+
+
+  <h1 id="SearchAThing_Sci_Arc3D" data-uid="SearchAThing.Sci.Arc3D" class="text-break">
+Class Arc3D  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SearchAThing.html">SearchAThing</a>.<a class="xref" href="SearchAThing.Sci.html">Sci</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>netcore-sci.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>base geometry for arc 3d entities.</p>
+<p>the CS origin is the Center of the arc.
+the CS basex, basey forms the arc plane.</p>
+<p>angles start, end are normalized [0,2pi) measured as angle from the basex
+right-hand rotating around cs basez.
+the arc coverage goes from the angle start point toward angle end point
+right-hand rotating arond cs basez.</p>
+<p>while the CS right hand rule allow to know the effective arc coverage
+Sense information allow to know the effective edge orientation.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Arc3D : Edge</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a></div>
+      <div><a class="xref" href="SearchAThing.Sci.Edge.html">Edge</a></div>
+      <div><span class="xref">Arc3D</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="SearchAThing.Sci.Circle3D.html">Circle3D</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Edge.html#SearchAThing_Sci_Edge_CopyFrom_SearchAThing_Sci_Edge_">Edge.CopyFrom(Edge)</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Edge.html#SearchAThing_Sci_Edge_Sense">Edge.Sense</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Edge.html#SearchAThing_Sci_Edge_SGeomFrom">Edge.SGeomFrom</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Edge.html#SearchAThing_Sci_Edge_SGeomTo">Edge.SGeomTo</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Edge.html#SearchAThing_Sci_Edge_OtherEndpoint_System_Double_SearchAThing_Sci_Vector3D_">Edge.OtherEndpoint(double, Vector3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Edge.html#SearchAThing_Sci_Edge_EndpointMatches_System_Double_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_">Edge.EndpointMatches(double, Vector3D, Vector3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Edge.html#SearchAThing_Sci_Edge_EndpointMatches_System_Double_SearchAThing_Sci_Vector3D_">Edge.EndpointMatches(double, Vector3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Edge.html#SearchAThing_Sci_Edge_CheckSense_System_Double_SearchAThing_Sci_Edge_">Edge.CheckSense(double, Edge)</a>
+    </div>
+    <div>
+      <a class="xref" href="SearchAThing.Sci.Geometry.html#SearchAThing_Sci_Geometry_GeomType">Geometry.GeomType</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SearchAThing_Sci_Arc3D__ctor_" data-uid="SearchAThing.Sci.Arc3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D__ctor_SearchAThing_Sci_Arc3D_" data-uid="SearchAThing.Sci.Arc3D.#ctor(SearchAThing.Sci.Arc3D)">
+  Arc3D(Arc3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L434"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>build a copy of given arc</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Arc3D(Arc3D arc)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arc</code> <a class="xref" href="SearchAThing.Sci.Arc3D.html">Arc3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D__ctor_" data-uid="SearchAThing.Sci.Arc3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D__ctor_SearchAThing_Sci_CoordinateSystem3D_System_Double_System_Double_System_Double_" data-uid="SearchAThing.Sci.Arc3D.#ctor(SearchAThing.Sci.CoordinateSystem3D,System.Double,System.Double,System.Double)">
+  Arc3D(CoordinateSystem3D, double, double, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L410"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>construct 3d arc</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Arc3D(CoordinateSystem3D cs, double r, double angleRadStart, double angleRadEnd)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cs</code> <a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd><p>coordinate system with origin at arc center, XY plane of cs contains the arc, angle is 0 at cs x-axis and increase right-hand around cs z-axis</p>
+</dd>
+    <dt><code>r</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>arc radius</p>
+</dd>
+    <dt><code>angleRadStart</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>arc angle start (rad). is not required that start angle less than end. It will normalized 0-2pi</p>
+</dd>
+    <dt><code>angleRadEnd</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>arc angle end (rad). is not require that end angle great than start. It will normalized 0-2pi</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D__ctor_" data-uid="SearchAThing.Sci.Arc3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D__ctor_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Arc3D.#ctor(SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)">
+  Arc3D(Vector3D, Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L489"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>build 3d arc by given 3 points (angles 0,2pi)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Arc3D(Vector3D p1, Vector3D p2, Vector3D p3)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>p1</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>first constraint point</p>
+</dd>
+    <dt><code>p2</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>second constraint point</p>
+</dd>
+    <dt><code>p3</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>third constraint point</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D__ctor_" data-uid="SearchAThing.Sci.Arc3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D__ctor_System_Double_SearchAThing_Sci_CoordinateSystem3D_System_Double_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Arc3D.#ctor(System.Double,SearchAThing.Sci.CoordinateSystem3D,System.Double,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)">
+  Arc3D(double, CoordinateSystem3D, double, Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L422"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>build arc with given cs, radius goind from,to vectors</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Arc3D(double tol, CoordinateSystem3D cs, double r, Vector3D from, Vector3D to)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>cs</code> <a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd></dd>
+    <dt><code>r</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>from</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>to</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D__ctor_" data-uid="SearchAThing.Sci.Arc3D.#ctor*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D__ctor_System_Double_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Arc3D.#ctor(System.Double,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D,SearchAThing.Sci.Vector3D)">
+  Arc3D(double, Vector3D, Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L513"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build arc by 3 given points.<br>
+Resulting simplified CS and normalized [0,2pi) AngleStart and AngleEnd will be choosen to meet follow requirements:
+fromPt = CS.Origin + (Radius * CS.BaseX).RotateAboutAxis(CS.BaseZ, AngleStart) ;
+toPt = CS.Origin + (Radius * CS.BaseX).RotateAboutAxis(CS.BaseZ, AngleEnd)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Arc3D(double tol, Vector3D fromPt, Vector3D insidePt, Vector3D toPt)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance</p>
+</dd>
+    <dt><code>fromPt</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>arc start point</p>
+</dd>
+    <dt><code>insidePt</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>arc inside point (ideally midpoint)</p>
+</dd>
+    <dt><code>toPt</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>arc end point</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SearchAThing_Sci_Arc3D_A0ProgeCadScript_" data-uid="SearchAThing.Sci.Arc3D.A0ProgeCadScript*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_A0ProgeCadScript" data-uid="SearchAThing.Sci.Arc3D.A0ProgeCadScript">
+  A0ProgeCadScript
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L141"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string A0ProgeCadScript { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_A0QCadScript_" data-uid="SearchAThing.Sci.Arc3D.A0QCadScript*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_A0QCadScript" data-uid="SearchAThing.Sci.Arc3D.A0QCadScript">
+  A0QCadScript
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L139"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string A0QCadScript { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Angle_" data-uid="SearchAThing.Sci.Arc3D.Angle*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Angle" data-uid="SearchAThing.Sci.Arc3D.Angle">
+  Angle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L567"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Arc (rad) angle length.
+angle between start-end or end-start depending on what start is less than end or not</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Angle { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_AngleEnd_" data-uid="SearchAThing.Sci.Arc3D.AngleEnd*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_AngleEnd" data-uid="SearchAThing.Sci.Arc3D.AngleEnd">
+  AngleEnd
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L555"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>end angle (rad) [0-2pi) respect cs xaxis rotating around cs zaxis
+note that start angle can be greather than end angle</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double AngleEnd { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_AngleEndDeg_" data-uid="SearchAThing.Sci.Arc3D.AngleEndDeg*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_AngleEndDeg" data-uid="SearchAThing.Sci.Arc3D.AngleEndDeg">
+  AngleEndDeg
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L557"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double AngleEndDeg { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_AngleStart_" data-uid="SearchAThing.Sci.Arc3D.AngleStart*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_AngleStart" data-uid="SearchAThing.Sci.Arc3D.AngleStart">
+  AngleStart
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L539"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>start angle (rad) [0-2pi) respect cs xaxis rotating around cs zaxis
+note that start angle can be greather than end angle</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double AngleStart { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_AngleStartDeg_" data-uid="SearchAThing.Sci.Arc3D.AngleStartDeg*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_AngleStartDeg" data-uid="SearchAThing.Sci.Arc3D.AngleStartDeg">
+  AngleStartDeg
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L545"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double AngleStartDeg { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_CS_" data-uid="SearchAThing.Sci.Arc3D.CS*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_CS" data-uid="SearchAThing.Sci.Arc3D.CS">
+  CS
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L386"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>coordinate system centered in arc center
+angle is 0 at X axis
+angle increase rotating right-hand on Z axis</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoordinateSystem3D CS { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Center_" data-uid="SearchAThing.Sci.Arc3D.Center*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Center" data-uid="SearchAThing.Sci.Arc3D.Center">
+  Center
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L662"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Center { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_ChordTriangleArea_" data-uid="SearchAThing.Sci.Arc3D.ChordTriangleArea*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_ChordTriangleArea" data-uid="SearchAThing.Sci.Arc3D.ChordTriangleArea">
+  ChordTriangleArea
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L706"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Area of chord triangle</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ChordTriangleArea { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_CircularSectorArea_" data-uid="SearchAThing.Sci.Arc3D.CircularSectorArea*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_CircularSectorArea" data-uid="SearchAThing.Sci.Arc3D.CircularSectorArea">
+  CircularSectorArea
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L701"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Area of circular sector</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double CircularSectorArea { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_DxfEntity_" data-uid="SearchAThing.Sci.Arc3D.DxfEntity*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_DxfEntity" data-uid="SearchAThing.Sci.Arc3D.DxfEntity">
+  DxfEntity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L329"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>dxf entity representing this geom</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override EntityObject DxfEntity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">EntityObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_From_" data-uid="SearchAThing.Sci.Arc3D.From*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_From" data-uid="SearchAThing.Sci.Arc3D.From">
+  From
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L592"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>point at angle start</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D From { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_GeomFrom_" data-uid="SearchAThing.Sci.Arc3D.GeomFrom*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_GeomFrom" data-uid="SearchAThing.Sci.Arc3D.GeomFrom">
+  GeomFrom
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L225"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>start point</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Vector3D GeomFrom { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_GeomTo_" data-uid="SearchAThing.Sci.Arc3D.GeomTo*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_GeomTo" data-uid="SearchAThing.Sci.Arc3D.GeomTo">
+  GeomTo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L227"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>end point</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Vector3D GeomTo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Length_" data-uid="SearchAThing.Sci.Arc3D.Length*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Length" data-uid="SearchAThing.Sci.Arc3D.Length">
+  Length
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L234"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Length of Arc from start to end</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override double Length { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_MidPoint_" data-uid="SearchAThing.Sci.Arc3D.MidPoint*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_MidPoint" data-uid="SearchAThing.Sci.Arc3D.MidPoint">
+  MidPoint
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L131"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>mid point eval as arc point at angle start + arc angle/2</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Vector3D MidPoint { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Radius_" data-uid="SearchAThing.Sci.Arc3D.Radius*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Radius" data-uid="SearchAThing.Sci.Arc3D.Radius">
+  Radius
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L391"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>radius of arc</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Radius { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Segment_" data-uid="SearchAThing.Sci.Arc3D.Segment*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Segment" data-uid="SearchAThing.Sci.Arc3D.Segment">
+  Segment
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L602"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>return From,To segment</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D Segment { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_SegmentArea_" data-uid="SearchAThing.Sci.Arc3D.SegmentArea*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_SegmentArea" data-uid="SearchAThing.Sci.Arc3D.SegmentArea">
+  SegmentArea
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L711"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Segment area ( CircularSectorArea - ChordTriangleArea )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double SegmentArea { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_SensedAngleEnd_" data-uid="SearchAThing.Sci.Arc3D.SensedAngleEnd*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_SensedAngleEnd" data-uid="SearchAThing.Sci.Arc3D.SensedAngleEnd">
+  SensedAngleEnd
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L559"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double SensedAngleEnd { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_SensedAngleEndDeg_" data-uid="SearchAThing.Sci.Arc3D.SensedAngleEndDeg*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_SensedAngleEndDeg" data-uid="SearchAThing.Sci.Arc3D.SensedAngleEndDeg">
+  SensedAngleEndDeg
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L561"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double SensedAngleEndDeg { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_SensedAngleStart_" data-uid="SearchAThing.Sci.Arc3D.SensedAngleStart*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_SensedAngleStart" data-uid="SearchAThing.Sci.Arc3D.SensedAngleStart">
+  SensedAngleStart
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L547"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double SensedAngleStart { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_SensedAngleStartDeg_" data-uid="SearchAThing.Sci.Arc3D.SensedAngleStartDeg*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_SensedAngleStartDeg" data-uid="SearchAThing.Sci.Arc3D.SensedAngleStartDeg">
+  SensedAngleStartDeg
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L549"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double SensedAngleStartDeg { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_To_" data-uid="SearchAThing.Sci.Arc3D.To*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_To" data-uid="SearchAThing.Sci.Arc3D.To">
+  To
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L597"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>point at angle end</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D To { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Vertexes_" data-uid="SearchAThing.Sci.Arc3D.Vertexes*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Vertexes" data-uid="SearchAThing.Sci.Arc3D.Vertexes">
+  Vertexes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L216"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>vertexes of this geom ( can be 1 for points, 2 for line/arc/circles )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Vector3D&gt; Vertexes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SearchAThing_Sci_Arc3D_BBox_" data-uid="SearchAThing.Sci.Arc3D.BBox*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_BBox_System_Double_" data-uid="SearchAThing.Sci.Arc3D.BBox(System.Double)">
+  BBox(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L273"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>compute wcs bbox executing a recursive bisect search of min and max</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BBox3D BBox(double tol)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.BBox3D.html">BBox3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Bulge_" data-uid="SearchAThing.Sci.Arc3D.Bulge*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Bulge_System_Double_" data-uid="SearchAThing.Sci.Arc3D.Bulge(System.Double)">
+  Bulge(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L623"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><a href="http://www.lee-mac.com/bulgeconversion.html">http://www.lee-mac.com/bulgeconversion.html</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Bulge(double tol)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>arc buldge value</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_CentreOfMass_" data-uid="SearchAThing.Sci.Arc3D.CentreOfMass*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_CentreOfMass_System_Double__" data-uid="SearchAThing.Sci.Arc3D.CentreOfMass(System.Double@)">
+  CentreOfMass(out double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L718"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>centre of mass of circular segment</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D CentreOfMass(out double A)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>A</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>arc area</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>location of arc centre of mass</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Contains_" data-uid="SearchAThing.Sci.Arc3D.Contains*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Contains_System_Double_SearchAThing_Sci_Vector3D_System_Boolean_" data-uid="SearchAThing.Sci.Arc3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)">
+  Contains(double, Vector3D, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L659"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>states if given point relies on this arc perimeter or shape depending on arguments</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool Contains(double tol, Vector3D pt, bool onlyPerimeter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance</p>
+</dd>
+    <dt><code>pt</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>point to check</p>
+</dd>
+    <dt><code>onlyPerimeter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if true it checks if point is on perimeter; if false it will check in area too</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Contains_" data-uid="SearchAThing.Sci.Arc3D.Contains*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Contains_System_Double_SearchAThing_Sci_Vector3D_System_Boolean_System_Boolean_" data-uid="SearchAThing.Sci.Arc3D.Contains(System.Double,SearchAThing.Sci.Vector3D,System.Boolean,System.Boolean)">
+  Contains(double, Vector3D, bool, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L634"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>statis if given point contained in arc perimeter/shape or circle perimeter/shape depending on specified mode</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool Contains(double tol, Vector3D pt, bool inArcAngleRange, bool onlyPerimeter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>len tolerance</p>
+</dd>
+    <dt><code>pt</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>point to test</p>
+</dd>
+    <dt><code>inArcAngleRange</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if point angle must contained in arc angles, false to test like a circle</p>
+</dd>
+    <dt><code>onlyPerimeter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true to test point contained only in perimeter, false to test also contained in area</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if arc contains given pt</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Copy_" data-uid="SearchAThing.Sci.Arc3D.Copy*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Copy" data-uid="SearchAThing.Sci.Arc3D.Copy">
+  Copy()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L209"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>create copy of this geometry.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Geometry Copy()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Arc3D_Copy_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>it's required to call base.CopyFrom(other) to ensure geometry properties to be copied.</p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Discretize_" data-uid="SearchAThing.Sci.Arc3D.Discretize*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Discretize_System_Double_" data-uid="SearchAThing.Sci.Arc3D.Discretize(System.Double)">
+  Discretize(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L970"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>retrieve a discretized representation of this arc</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Line3D&gt; Discretize(double maxLineAngleRadStep)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>maxLineAngleRadStep</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>lines angles max</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Divide_" data-uid="SearchAThing.Sci.Arc3D.Divide*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Divide_System_Int32_System_Boolean_" data-uid="SearchAThing.Sci.Arc3D.Divide(System.Int32,System.Boolean)">
+  Divide(int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L248"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>split arc into pieces and retrieve split points
+///</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Vector3D&gt; Divide(int cnt, bool include_endpoints = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cnt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>nr of piece</p>
+</dd>
+    <dt><code>include_endpoints</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if true returns also boundary points</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_EdgeContainsPoint_" data-uid="SearchAThing.Sci.Arc3D.EdgeContainsPoint*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_EdgeContainsPoint_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Arc3D.EdgeContainsPoint(System.Double,SearchAThing.Sci.Vector3D)">
+  EdgeContainsPoint(double, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>States if edge contains given point on its perimeter</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool EdgeContainsPoint(double tol, Vector3D pt)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>pt</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_EqualsTol_" data-uid="SearchAThing.Sci.Arc3D.EqualsTol*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_EqualsTol_System_Double_SearchAThing_Sci_Arc3D_" data-uid="SearchAThing.Sci.Arc3D.EqualsTol(System.Double,SearchAThing.Sci.Arc3D)">
+  EqualsTol(double, Arc3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L610"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks if two arcs are equals ( it checks agains swapped from-to too )</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EqualsTol(double tol, Arc3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance</p>
+</dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Arc3D.html">Arc3D</a></dt>
+    <dd><p>other arc</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>trus if two arcs equals</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_GeomEquals_" data-uid="SearchAThing.Sci.Arc3D.GeomEquals*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_GeomEquals_System_Double_SearchAThing_Sci_Geometry_System_Boolean_" data-uid="SearchAThing.Sci.Arc3D.GeomEquals(System.Double,SearchAThing.Sci.Geometry,System.Boolean)">
+  GeomEquals(double, Geometry, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L352"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>states if this geom equals to given other</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool GeomEquals(double tol, Geometry other, bool checkSense = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance</p>
+</dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a></dt>
+    <dd><p>other geom</p>
+</dd>
+    <dt><code>checkSense</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if false two geometry with different sense but same space coverage are considered equals</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_GeomIntersect_" data-uid="SearchAThing.Sci.Arc3D.GeomIntersect*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_GeomIntersect_System_Double_SearchAThing_Sci_Geometry_SearchAThing_Sci_GeomSegmentMode_SearchAThing_Sci_GeomSegmentMode_" data-uid="SearchAThing.Sci.Arc3D.GeomIntersect(System.Double,SearchAThing.Sci.Geometry,SearchAThing.Sci.GeomSegmentMode,SearchAThing.Sci.GeomSegmentMode)">
+  GeomIntersect(double, Geometry, GeomSegmentMode, GeomSegmentMode)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L287"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>find intersections between this and another geometry resulting in zero or more geometries.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Geometry&gt; GeomIntersect(double tol, Geometry _other, GeomSegmentMode thisSegmentMode, GeomSegmentMode otherSegmentMode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>_other</code> <a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a></dt>
+    <dd></dd>
+    <dt><code>thisSegmentMode</code> <a class="xref" href="SearchAThing.Sci.GeomSegmentMode.html">GeomSegmentMode</a></dt>
+    <dd><p>if this is Line3D specifies how to consider</p>
+</dd>
+    <dt><code>otherSegmentMode</code> <a class="xref" href="SearchAThing.Sci.GeomSegmentMode.html">GeomSegmentMode</a></dt>
+    <dd><p>if other is Line3D specifies how to consider</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Intersect_" data-uid="SearchAThing.Sci.Arc3D.Intersect*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Intersect_System_Double_SearchAThing_Sci_Arc3D_System_Boolean_" data-uid="SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.Arc3D,System.Boolean)">
+  Intersect(double, Arc3D, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L827"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>finds intersection points between two arcs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Vector3D&gt; Intersect(double tol, Arc3D other, bool onlyPerimeter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance</p>
+</dd>
+    <dt><code>other</code> <a class="xref" href="SearchAThing.Sci.Arc3D.html">Arc3D</a></dt>
+    <dd><p>other arc</p>
+</dd>
+    <dt><code>onlyPerimeter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true to test point contained only in perimeter, false to test also contained in area</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Intersect_" data-uid="SearchAThing.Sci.Arc3D.Intersect*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Intersect_System_Double_SearchAThing_Sci_CoordinateSystem3D_System_Boolean_System_Boolean_" data-uid="SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.CoordinateSystem3D,System.Boolean,System.Boolean)">
+  Intersect(double, CoordinateSystem3D, bool, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L910"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>find ips of intersect this arc to the given cs plane;
+return empty set if arc cs plane parallel to other given cs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Vector3D&gt; Intersect(double tol, CoordinateSystem3D cs, bool onlyPerimeter, bool inArcAngleRange)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>len tolerance</p>
+</dd>
+    <dt><code>cs</code> <a class="xref" href="SearchAThing.Sci.CoordinateSystem3D.html">CoordinateSystem3D</a></dt>
+    <dd><p>cs xy plane</p>
+</dd>
+    <dt><code>onlyPerimeter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if false it will check in the arc area too, otherwise only on arc perimeter</p>
+</dd>
+    <dt><code>inArcAngleRange</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if true find ips only for arc angle range</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd><p>sample</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SearchAThing_Sci_Arc3D_Intersect_System_Double_SearchAThing_Sci_CoordinateSystem3D_System_Boolean_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><a href="https://github.com/devel0/netcore-sci/tree/master/src/test/Arc3D/Arc3DTest_0001.cs">unit test</a>
+<img src="../src/test/Arc3D/Arc3DTest_0001.png" alt="image"></p>
+</div>
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Intersect_" data-uid="SearchAThing.Sci.Arc3D.Intersect*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Intersect_System_Double_SearchAThing_Sci_Line3D_System_Boolean_System_Boolean_" data-uid="SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean)">
+  Intersect(double, Line3D, bool, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L894"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>find ips of intersection between this arc and given line</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;Vector3D&gt; Intersect(double tol, Line3D l, bool onlyPerimeter, bool lineSegmentMode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance</p>
+</dd>
+    <dt><code>l</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd><p>line</p>
+</dd>
+    <dt><code>onlyPerimeter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>check intersection only along perimeter; if false it will check intersection along arc area shape border too</p>
+</dd>
+    <dt><code>lineSegmentMode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if true treat given line as segment; if false as infinite line</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd><p>intersection points between this arc and given line</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Intersect_" data-uid="SearchAThing.Sci.Arc3D.Intersect*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Intersect_System_Double_SearchAThing_Sci_Line3D_System_Boolean_System_Boolean_System_Boolean_" data-uid="SearchAThing.Sci.Arc3D.Intersect(System.Double,SearchAThing.Sci.Line3D,System.Boolean,System.Boolean,System.Boolean)">
+  Intersect(double, Line3D, bool, bool, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L847"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>states if this arc intersect given line</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Vector3D&gt; Intersect(double tol, Line3D l, bool onlyPerimeter, bool lineSegmentMode, bool arcSegmentMode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>arc tolerance</p>
+</dd>
+    <dt><code>l</code> <a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd><p>line to test intersect</p>
+</dd>
+    <dt><code>onlyPerimeter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>check intersection only along perimeter; if false it will check intersection along arc area shape border too</p>
+</dd>
+    <dt><code>lineSegmentMode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if true line treat as segment instead of infinite</p>
+</dd>
+    <dt><code>arcSegmentMode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if true arc treat as circle</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Move_" data-uid="SearchAThing.Sci.Arc3D.Move*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Move_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Arc3D.Move(SearchAThing.Sci.Vector3D)">
+  Move(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L450"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>create an arc copy with origin moved</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Geometry Move(Vector3D delta)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>delta</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>new arc origin delta</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_MoveEnd_" data-uid="SearchAThing.Sci.Arc3D.MoveEnd*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_MoveEnd_System_Double_SearchAThing_Sci_EdgeEnd_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Arc3D.MoveEnd(System.Double,SearchAThing.Sci.EdgeEnd,SearchAThing.Sci.Vector3D)">
+  MoveEnd(double, EdgeEnd, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L174"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>extends edge endpoint toward new given one.<br>
+returns null if edge can't extends toward new given end.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Edge? MoveEnd(double tol, EdgeEnd end, Vector3D newEnd)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>end</code> <a class="xref" href="SearchAThing.Sci.EdgeEnd.html">EdgeEnd</a></dt>
+    <dd></dd>
+    <dt><code>newEnd</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Edge.html">Edge</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Offset_" data-uid="SearchAThing.Sci.Arc3D.Offset*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Offset_System_Double_SearchAThing_Sci_Vector3D_System_Double_" data-uid="SearchAThing.Sci.Arc3D.Offset(System.Double,SearchAThing.Sci.Vector3D,System.Double)">
+  Offset(double, Vector3D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>create offseted arc toward refPt for given offset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Edge Offset(double tol, Vector3D refPt, double offset)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>refPt</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Edge.html">Edge</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Perpendicular_" data-uid="SearchAThing.Sci.Arc3D.Perpendicular*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Perpendicular_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Arc3D.Perpendicular(System.Double,SearchAThing.Sci.Vector3D)">
+  Perpendicular(double, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L667"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build a perpendicular vector to this arc starting from the given point p.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Line3D? Perpendicular(double tol, Vector3D p)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>p</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Line3D.html">Line3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_ProgeCadScript_" data-uid="SearchAThing.Sci.Arc3D.ProgeCadScript*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_ProgeCadScript_System_Boolean_" data-uid="SearchAThing.Sci.Arc3D.ProgeCadScript(System.Boolean)">
+  ProgeCadScript(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L136"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ProgeCadScript(bool final = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>final</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Project_" data-uid="SearchAThing.Sci.Arc3D.Project*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Project_System_Double_SearchAThing_Sci_Plane3D_" data-uid="SearchAThing.Sci.Arc3D.Project(System.Double,SearchAThing.Sci.Plane3D)">
+  Project(double, Plane3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>project this arc to given projection plane</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Edge Project(double tol, Plane3D prjPlane)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>prjPlane</code> <a class="xref" href="SearchAThing.Sci.Plane3D.html">Plane3D</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Edge.html">Edge</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Project_" data-uid="SearchAThing.Sci.Arc3D.Project*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Project_System_Double_SearchAThing_Sci_Vector3D_System_Boolean_" data-uid="SearchAThing.Sci.Arc3D.Project(System.Double,SearchAThing.Sci.Vector3D,System.Boolean)">
+  Project(double, Vector3D, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L682"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>project given point p to this arc.<br>
+returns null if ip falls outside arc perimeter and only_arc:true argument or p in the arc plane</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Vector3D? Project(double tol, Vector3D p, bool arcSegmentMode = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>p</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+    <dt><code>arcSegmentMode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_PtAngle_" data-uid="SearchAThing.Sci.Arc3D.PtAngle*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_PtAngle_System_Double_SearchAThing_Sci_Vector3D_" data-uid="SearchAThing.Sci.Arc3D.PtAngle(System.Double,SearchAThing.Sci.Vector3D)">
+  PtAngle(double, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L581"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>return the angle (rad) of the point respect cs x axis rotating around cs z axis
+to reach given point angle alignment</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double PtAngle(double tol, Vector3D pt)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance</p>
+</dd>
+    <dt><code>pt</code> <a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd><p>point to query angle respect csx axis for</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_PtAtAngle_" data-uid="SearchAThing.Sci.Arc3D.PtAtAngle*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_PtAtAngle_System_Double_" data-uid="SearchAThing.Sci.Arc3D.PtAtAngle(System.Double)">
+  PtAtAngle(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L573"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>point on the arc circumnfere at given angle (rotating cs basex around cs basez)
+note: it start</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D PtAtAngle(double angleRad)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>angleRad</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_QCadScript_" data-uid="SearchAThing.Sci.Arc3D.QCadScript*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_QCadScript_System_Boolean_" data-uid="SearchAThing.Sci.Arc3D.QCadScript(System.Boolean)">
+  QCadScript(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>qcad 2d script</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string QCadScript(bool final = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>final</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>adds QQ command</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Split_" data-uid="SearchAThing.Sci.Arc3D.Split*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Split_System_Double_System_Collections_Generic_IEnumerable_SearchAThing_Sci_Vector3D__" data-uid="SearchAThing.Sci.Arc3D.Split(System.Double,System.Collections.Generic.IEnumerable{SearchAThing.Sci.Vector3D})">
+  Split(double, IEnumerable&lt;Vector3D&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>returns this arc splitted by break points maintaining order from, to as this Start, End angle.
+precondition: breaks must lie on the arc angle range</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;Geometry&gt; Split(double tol, IEnumerable&lt;Vector3D&gt; breaks)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>length tolerance</p>
+</dd>
+    <dt><code>breaks</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Geometry.html">Geometry</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_Split_" data-uid="SearchAThing.Sci.Arc3D.Split*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_Split_System_Double_System_Collections_Generic_IEnumerable_SearchAThing_Sci_Vector3D__System_Boolean_" data-uid="SearchAThing.Sci.Arc3D.Split(System.Double,System.Collections.Generic.IEnumerable{SearchAThing.Sci.Vector3D},System.Boolean)">
+  Split(double, IEnumerable&lt;Vector3D&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L938"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>create a set of subarc from this by splitting through given split points
+split point are not required to be on perimeter of the arc ( a center arc to point line will split )
+generated subarcs will start from this arc angleFrom and contiguosly end to angleTo</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Arc3D&gt; Split(double tol, IEnumerable&lt;Vector3D&gt; _splitPts, bool validate_pts = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>arc length tolerance</p>
+</dd>
+    <dt><code>_splitPts</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Vector3D.html">Vector3D</a>&gt;</dt>
+    <dd><p>point where split arc</p>
+</dd>
+    <dt><code>validate_pts</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if true split only for split points on arc perimeter</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="SearchAThing.Sci.Arc3D.html">Arc3D</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_ToCircle3D_" data-uid="SearchAThing.Sci.Arc3D.ToCircle3D*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_ToCircle3D_System_Double_" data-uid="SearchAThing.Sci.Arc3D.ToCircle3D(System.Double)">
+  ToCircle3D(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L696"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Circle3D ToCircle3D(double tol)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Circle3D.html">Circle3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_ToString_" data-uid="SearchAThing.Sci.Arc3D.ToString*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_ToString" data-uid="SearchAThing.Sci.Arc3D.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L925"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_ToString_" data-uid="SearchAThing.Sci.Arc3D.ToString*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_ToString_System_Int32_" data-uid="SearchAThing.Sci.Arc3D.ToString(System.Int32)">
+  ToString(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L927"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString(int digits = 3)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>digits</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SearchAThing_Sci_Arc3D_ToggleSense_" data-uid="SearchAThing.Sci.Arc3D.ToggleSense*"></a>
+
+  <h3 id="SearchAThing_Sci_Arc3D_ToggleSense" data-uid="SearchAThing.Sci.Arc3D.ToggleSense">
+  ToggleSense()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L214"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Arc3D ToggleSense()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SearchAThing.Sci.Arc3D.html">Arc3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/devel0/netcore-sci/blob/docs/src/sci/Arc3D.cs/#L73" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
