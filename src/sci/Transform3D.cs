@@ -4,8 +4,8 @@ namespace SearchAThing.Sci;
 /// Use quaternion to append rotate transformations    
 /// </summary>
 /// <remarks>      
-/// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Transform3D/Transform3DTest_0001.cs)
-/// ![image](../test/Transform3D/Transform3DTest_0001.png)
+/// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Transform3D/Transform3DTest_0001.cs)
+/// ![image](../src/test/Transform3D/Transform3DTest_0001.png)
 /// </remarks>
 public class Transform3D
 {
@@ -16,7 +16,7 @@ public class Transform3D
     /// instantiate an identity transformation        
     /// </summary>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Transform3D/Transform3D_0001.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Transform3D/Transform3D_0001.cs)
     /// </remarks>
     public Transform3D()
     {
@@ -28,7 +28,7 @@ public class Transform3D
     /// </summary>        
     /// <param name="angleRad">rotation angle about X axis</param>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Transform3D/Transform3DTest_0001.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Transform3D/Transform3DTest_0001.cs)
     /// </remarks>
     public void RotateAboutXAxis(double angleRad)
     {
@@ -44,7 +44,7 @@ public class Transform3D
     /// </summary>
     /// <param name="angleRad">rotation angle about Y axis</param>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Transform3D/Transform3DTest_0001.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Transform3D/Transform3DTest_0001.cs)
     /// </remarks>
     public void RotateAboutYAxis(double angleRad)
     {
@@ -60,7 +60,7 @@ public class Transform3D
     /// </summary>
     /// <param name="angleRad">rotation angle about Z axis</param>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Transform3D/Transform3DTest_0001.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Transform3D/Transform3DTest_0001.cs)
     /// </remarks>
     public void RotateAboutZAxis(double angleRad)
     {
@@ -78,7 +78,7 @@ public class Transform3D
     /// <param name="axis">custom rotation axis</param>
     /// <param name="angleRad">rotation angle about given axis</param>                                
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Transform3D/Transform3DTest_0001.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Transform3D/Transform3DTest_0001.cs)
     /// </remarks>
     public void RotateAboutAxis(Vector3D axis, double angleRad)
     {
@@ -94,7 +94,7 @@ public class Transform3D
     /// </summary>
     /// <param name="v">vector to transform</param>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Transform3D/Transform3DTest_0001.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Transform3D/Transform3DTest_0001.cs)
     /// </remarks>
     public Vector3D Apply(Vector3D v)
     {

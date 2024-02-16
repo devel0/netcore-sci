@@ -904,8 +904,8 @@ public class Arc3D : Edge
     /// <param name="inArcAngleRange">if true find ips only for arc angle range</param>
     /// <returns>sample</returns>
     /// <remarks>            
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Arc3D/Arc3DTest_0001.cs)
-    /// ![image](../test/Arc3D/Arc3DTest_0001.png)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Arc3D/Arc3DTest_0001.cs)
+    /// ![image](../src/test/Arc3D/Arc3DTest_0001.png)
     /// </remarks>            
     public IEnumerable<Vector3D> Intersect(double tol, CoordinateSystem3D cs, bool onlyPerimeter, bool inArcAngleRange)
     {

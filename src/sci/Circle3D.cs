@@ -182,7 +182,7 @@ public class Circle3D : Arc3D
     /// </summary>
     /// <param name="tol">len tolerance</param>
     /// <param name="other">other circle</param>
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Circle3D/Circle3DTest_0001.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Circle3D/Circle3DTest_0001.cs)
     /// <returns></returns>
     public IEnumerable<Vector3D> Intersect(double tol, Circle3D other)
     {

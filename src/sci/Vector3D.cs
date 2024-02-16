@@ -19,7 +19,7 @@ public partial class Vector3D : Geometry
     /// ( Geometry Vertexes implementation )            
     /// </summary>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0002.cs)
     /// </remarks>
     [JsonIgnore]
     public override IEnumerable<Vector3D> Vertexes
@@ -35,7 +35,7 @@ public partial class Vector3D : Geometry
     /// ( Geometry GeomFrom implementation )            
     /// </summary>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0002.cs)
     /// </remarks>
     [JsonIgnore]
     public override Vector3D GeomFrom => this;
@@ -45,7 +45,7 @@ public partial class Vector3D : Geometry
     /// ( Geometry GeomTo implementation)             
     /// </summary>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0002.cs)
     /// </remarks>
     [JsonIgnore]
     public override Vector3D GeomTo => this;
@@ -56,7 +56,7 @@ public partial class Vector3D : Geometry
     /// ( Geometry Length implementation )            
     /// </summary>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0002.cs)
     /// </remarks>    
     public override double Length
     {
@@ -84,7 +84,7 @@ public partial class Vector3D : Geometry
     /// ( Geometry Divide implementation )            
     /// </summary>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0002.cs)
     /// </remarks>
     public override IEnumerable<Vector3D> Divide(int cnt, bool include_endpoints = false) => new[] { this };
 
@@ -99,7 +99,7 @@ public partial class Vector3D : Geometry
     /// </summary>
     /// <param name="tol">length tolerance</param>            
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0002.cs)
     /// </remarks>
     public override BBox3D BBox(double tol) => new BBox3D(new[] { this });
 
@@ -114,7 +114,7 @@ public partial class Vector3D : Geometry
     /// ( Geometry DxfEntity implementation )            
     /// </summary>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0002.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0002.cs)
     /// </remarks>        
     public override netDxf.Entities.EntityObject DxfEntity => this.ToDxfPoint();
 
@@ -132,7 +132,7 @@ public partial class Vector3D : Geometry
     /// zero vector (0,0,0)            
     /// </summary> 
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0001.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0001.cs)
     /// </remarks>           
     public static readonly Vector3D Zero = new Vector3D(0, 0, 0);
 
@@ -140,7 +140,7 @@ public partial class Vector3D : Geometry
     /// xaxis vector (1,0,0)            
     /// </summary>   
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0004.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0004.cs)
     /// </remarks>
     public static readonly Vector3D XAxis = new Vector3D(1, 0, 0);
 
@@ -148,7 +148,7 @@ public partial class Vector3D : Geometry
     /// yaxis vector (0,1,0)            
     /// </summary>            
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0004.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0004.cs)
     /// </remarks>
     public static readonly Vector3D YAxis = new Vector3D(0, 1, 0);
 
@@ -156,7 +156,7 @@ public partial class Vector3D : Geometry
     /// zaxis vector (0,0,1)            
     /// </summary>            
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0004.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0004.cs)
     /// </remarks>
     public static readonly Vector3D ZAxis = new Vector3D(0, 0, 1);
 
@@ -170,7 +170,7 @@ public partial class Vector3D : Geometry
     /// </summary>
     /// <param name="ord">0:(1,0,0) 1:(0,1,0) 2:(0,0,1)</param>                                    
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0004.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0004.cs)
     /// </remarks>
     public static Vector3D Axis(int ord)
     {
@@ -187,7 +187,7 @@ public partial class Vector3D : Geometry
     /// retrieve the component (0:X, 1:Y, 2:Z)            
     /// </summary>        
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0003.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0003.cs)
     /// </remarks>
     public double GetOrd(int ord)
     {
@@ -204,7 +204,7 @@ public partial class Vector3D : Geometry
     /// retrieve the component (0:X, 1:Y, 2:Z)            
     /// </summary>        
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0003.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0003.cs)
     /// </remarks>
     public double GetOrd(OrdIdx ord)
     {
@@ -221,7 +221,7 @@ public partial class Vector3D : Geometry
     /// X vector component            
     /// </summary>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0005.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0005.cs)
     /// </remarks>
     public double X { get; private set; }
 
@@ -229,7 +229,7 @@ public partial class Vector3D : Geometry
     /// Y vector component            
     /// </summary>            
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0005.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0005.cs)
     /// </remarks>
     public double Y { get; private set; }
 
@@ -237,7 +237,7 @@ public partial class Vector3D : Geometry
     /// Z vector component            
     /// </summary>            
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0005.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0005.cs)
     /// </remarks>
     public double Z { get; private set; }
 
@@ -245,7 +245,7 @@ public partial class Vector3D : Geometry
     /// zero vector            
     /// </summary>
     /// <remarks>  
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0006.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0006.cs)
     /// </remarks>
     [JsonConstructor]
     public Vector3D() : base(GeometryType.Vector3D)
@@ -266,7 +266,7 @@ public partial class Vector3D : Geometry
     /// build a vector (x,y,0) or (x,y,z) from given 2 or 3 doubles            
     /// </summary>            
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0007.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0007.cs)
     /// </remarks>
     public Vector3D(double[] arr) : base(GeometryType.Vector3D)
     {
@@ -280,7 +280,7 @@ public partial class Vector3D : Geometry
     /// build a vector by given components            
     /// </summary>            
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0008.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0008.cs)
     /// </remarks>
     public Vector3D(double x, double y, double z) : base(GeometryType.Vector3D)
     {
@@ -291,7 +291,7 @@ public partial class Vector3D : Geometry
     /// build a vector (x,y,0) by given components            
     /// </summary>            
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0008.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0008.cs)
     /// </remarks>
     public Vector3D(double x, double y) : base(GeometryType.Vector3D)
     {
@@ -319,7 +319,7 @@ public partial class Vector3D : Geometry
     /// </summary>
     /// <param name="cad_id_string">cad id string</param>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0009.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0009.cs)
     /// </remarks>
     public Vector3D(string cad_id_string) : base(GeometryType.Vector3D)
     {
@@ -338,7 +338,7 @@ public partial class Vector3D : Geometry
     /// enumerate coordinates            
     /// </summary>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0010.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0010.cs)
     /// </remarks>        
     public IEnumerable<double> Coordinates
     {
@@ -356,7 +356,7 @@ public partial class Vector3D : Geometry
     /// states if this is a zero vector            
     /// </summary>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0011.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0011.cs)
     /// </remarks>
     public bool IsZeroLength => (X + Y + Z).EqualsTol(NormalizedLengthTolerance, 0);
 
@@ -366,7 +366,7 @@ public partial class Vector3D : Geometry
     /// <param name="tol">geometric tolerance ( note: use Constants.NormalizedLengthTolerance )</param>
     /// <param name="other">vector to compare to this</param>            
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0012.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0012.cs)
     /// </remarks>            
     public bool EqualsTol(double tol, Vector3D? other)
     {
@@ -382,7 +382,7 @@ public partial class Vector3D : Geometry
     /// check if this vector equals the given one component by component using EqualsAutoTol            
     /// </summary>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0012.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0012.cs)
     /// </remarks>
     public bool EqualsAutoTol(Vector3D other)
     {
@@ -399,7 +399,7 @@ public partial class Vector3D : Geometry
     /// <param name="x">x coord</param>            
     /// <param name="y">y coord</param>            
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0012.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0012.cs)
     /// </remarks>
     public bool EqualsTol(double tol, double x, double y) =>
         X.EqualsTol(tol, x) && Y.EqualsTol(tol, y);
@@ -412,7 +412,7 @@ public partial class Vector3D : Geometry
     /// <param name="y">y coord</param>            
     /// <param name="z">z coord</param>            
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0012.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0012.cs)
     /// </remarks>
     public bool EqualsTol(double tol, double x, double y, double z) =>
         X.EqualsTol(tol, x) && Y.EqualsTol(tol, y) && Z.EqualsTol(tol, z);
@@ -421,7 +421,7 @@ public partial class Vector3D : Geometry
     /// create a normalized version of this vector            
     /// </summary>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0013.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0013.cs)
     /// </remarks>
     public Vector3D Normalized()
     {
@@ -433,7 +433,7 @@ public partial class Vector3D : Geometry
     /// compute distance between this point and the other given                        
     /// </summary>            
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0014.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0014.cs)
     /// </remarks>
     public double Distance(Vector3D other) => (this - other).Length;
 
@@ -457,8 +457,8 @@ public partial class Vector3D : Geometry
     /// <param name="tol">length tolerance ( used to check if point contained in line )</param>
     /// <param name="other">line</param>            
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0015.cs)
-    /// ![image](../test/Vector3D/Vector3DTest_0015.png)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0015.cs)
+    /// ![image](../src/test/Vector3D/Vector3DTest_0015.png)
     /// </remarks>
     public double Distance(double tol, Line3D other)
     {
@@ -472,8 +472,8 @@ public partial class Vector3D : Geometry
     /// </summary>
     /// <param name="other">other point</param>            
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0016.cs)
-    /// ![image](../test/Vector3D/Vector3DTest_0016.png)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0016.cs)
+    /// ![image](../src/test/Vector3D/Vector3DTest_0016.png)
     /// </remarks>
     public double XYDistance(Vector3D other) =>
         Sqrt((X - other.X) * (X - other.X) + (Y - other.Y) * (Y - other.Y));
@@ -484,7 +484,7 @@ public partial class Vector3D : Geometry
     /// </summary>
     /// <param name="other">second vector</param>            
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0017.cs)            
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0017.cs)            
     /// </remarks>
     public double DotProduct(Vector3D other) => X * other.X + Y * other.Y + Z * other.Z;
 
@@ -493,7 +493,7 @@ public partial class Vector3D : Geometry
     /// </summary>
     /// <param name="other">other vector</param>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0018.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0018.cs)
     /// </remarks>
     public bool IsPerpendicular(Vector3D other) =>
         Normalized().DotProduct(other.Normalized()).EqualsTol(NormalizedLengthTolerance, 0);
@@ -508,8 +508,8 @@ public partial class Vector3D : Geometry
     /// </summary>               
     /// <param name="other">other vector</param>            
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0019.cs)
-    /// ![image](../test/Vector3D/Vector3DTest_0019.png)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0019.cs)
+    /// ![image](../src/test/Vector3D/Vector3DTest_0019.png)
     /// </remarks>
     public Vector3D CrossProduct(Vector3D other) =>
         new Vector3D(Y * other.Z - Z * other.Y, -X * other.Z + Z * other.X, X * other.Y - Y * other.X);
@@ -521,8 +521,8 @@ public partial class Vector3D : Geometry
     /// <param name="to">other vector</param>
     /// <returns>angle between two vectors (rad)</returns>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0020.cs)
-    /// ![image](../test/Vector3D/Vector3DTest_0020.png)            
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0020.cs)
+    /// ![image](../src/test/Vector3D/Vector3DTest_0020.png)            
     /// </remarks>
     public double AngleRad(double tol, Vector3D to)
     {
@@ -554,8 +554,8 @@ public partial class Vector3D : Geometry
     /// <param name="to">other vector</param>
     /// <returns>projected vector ( will be colinear to the given one )</returns>
     /// <remarks>      
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0021.cs)
-    /// ![image](../test/Vector3D/Vector3DTest_0021.png)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0021.cs)
+    /// ![image](../src/test/Vector3D/Vector3DTest_0021.png)
     /// </remarks>
     public Vector3D Project(Vector3D to)
     {
@@ -1686,7 +1686,7 @@ public static partial class Ext
     /// </summary>            
     /// <returns>true if given vector are linearly independent</returns>
     /// <remarks>
-    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/test/Vector3D/Vector3DTest_0001.cs)
+    /// [unit test](https://github.com/devel0/netcore-sci/tree/master/src/test/Vector3D/Vector3DTest_0001.cs)
     /// </remarks>
     public static bool IsLinearIndependent(this IEnumerable<Vector3D> vectors)
     {
