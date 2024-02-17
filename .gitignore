@@ -344,6 +344,5 @@ out.dxf
 # libreoffice
 .~*#
 
-docs
-/_site
+/docs
 /api
